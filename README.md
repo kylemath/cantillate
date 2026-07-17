@@ -1,5 +1,7 @@
 # Cantillate
 
+🚀 **[Live Demo](https://kylemath.github.io/cantillate)** 🚀
+
 A web MVP for reading, understanding, and **practicing the cantillation
 (te'amim / trope)** of the weekly Torah parashah. This first build loads
 **Devarim (Deuteronomy) chapter 1** and runs entirely locally with no build
