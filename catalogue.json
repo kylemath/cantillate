@@ -1,0 +1,11 @@
+{
+  "id": "cantillate",
+  "title": "Cantillate",
+  "oneLiner": "Cantillation practice for torah reading",
+  "demoUrl": "https://github.com/kylemath/cantillate",
+  "screenshot": "https://raw.githubusercontent.com/kylemath/cantillate/main/screenshot.png",
+  "kind": "project",
+  "categories": ["webpage", "audio", "torah"],
+  "tags": ["webpage", "audio", "torah"],
+  "status": "published"
+}
