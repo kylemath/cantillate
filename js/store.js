@@ -102,6 +102,23 @@ export function getVerseModeScores(slug, verseN) {
   return out;
 }
 
+// Per-verse accuracy PROFILE from a whole-verse take: a { globalWordIndex:score }
+// map capturing the good/bad shape of that run, kept for the best-scoring take of
+// each skill so the whole-verse bar can render a gradient of where it went well.
+export function recordVerseProfile(slug, verseN, mode, score, profile) {
+  const d = load();
+  d.profiles = d.profiles || {};
+  const k = `${slug}:${verseN}:${mode}`;
+  const cur = d.profiles[k];
+  if (!cur || score >= cur.score) { d.profiles[k] = { score, profile }; save(d); }
+  return d.profiles[k];
+}
+
+export function getVerseProfile(slug, verseN, mode) {
+  const d = load();
+  return (d.profiles && d.profiles[`${slug}:${verseN}:${mode}`]) || null;
+}
+
 // Per-verse highest unlocked level.
 export function recordVerseLevel(slug, verseN, level) {
   const d = load();

@@ -161,18 +161,29 @@ export class ContourView {
     }
 
     // User mic pitch dots, colored by how close to the target (guitar-hero).
+    // A bang-on "perfect" note gets a bigger, glowing dot with a bright core so
+    // it's unmistakable that you're nailing the pitch.
     for (const s of this.userTrail) {
       if (!this._inRange(s.p)) continue;
       const x = this._x(s.t), y = this._y(s.p);
       const alpha = Math.min(0.95, 0.35 + s.rms * 8);
-      const r = 2.5 + Math.min(5, s.rms * 40);
-      const col = s.hit === 'perfect' ? `rgba(55,200,113,${alpha})`
+      const perfect = s.hit === 'perfect';
+      const r = (2.5 + Math.min(5, s.rms * 40)) * (perfect ? 1.7 : 1);
+      const col = perfect ? `rgba(70,240,140,${alpha})`
         : s.hit === 'close' ? `rgba(255,205,85,${alpha})`
           : s.hit === 'far' ? `rgba(255,107,90,${alpha})`
             : `rgba(255,150,90,${alpha})`;
+      if (perfect) { ctx.shadowColor = 'rgba(80,255,150,0.95)'; ctx.shadowBlur = 14; }
       ctx.beginPath();
       ctx.fillStyle = col;
       ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill();
+      if (perfect) {
+        // bright inner core, no shadow, for extra pop
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = `rgba(225,255,238,${Math.min(1, alpha + 0.25)})`;
+        ctx.beginPath(); ctx.arc(x, y, r * 0.42, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.shadowBlur = 0;
     }
 
     // Playhead.

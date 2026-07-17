@@ -399,10 +399,52 @@ function practiceWord(verseN, wi) {
   const segs = buildLineMelody(tokenize(state.data.verses[verseN - 1].text));
   const groups = groupByMaqaf(segs);
   const idx = groups.findIndex((g) => g.some((s) => s.index === wi));
-  state.unitIndex = idx < 0 ? 0 : idx;
+  gotoPractice(verseN, state.level, idx < 0 ? 0 : idx);
+}
+
+// Jump into phrase practice (stage 3) for the clicked phrase.
+function practicePhrase(verseN, pi) {
+  gotoPractice(verseN, 3, pi);
+}
+
+// Jump into whole-verse practice: stay on the current line stage if already on
+// one, else the base full-verse stage (4).
+function practiceVerse(verseN) {
+  const cur = levelById(state.level);
+  gotoPractice(verseN, cur.unit === 'line' ? cur.id : 4, 0);
+}
+
+// Jump to a specific stage (e.g. a handicap skill badge).
+function practiceStage(verseN, levelId) {
+  gotoPractice(verseN, levelId, 0);
+}
+
+function gotoPractice(verseN, levelId, unitIndex) {
+  state.selectedVerse = verseN;
+  state.level = levelId;
+  state.unitIndex = unitIndex;
   renderVerses();
   renderStageBar();
   renderPractice();
+}
+
+// Delegated click handling for the accuracy panel: text words and bar segments
+// (and skill badges) jump into the matching practice.
+function wireAccPanel() {
+  const el = $('accPanel');
+  if (!el) return;
+  el.addEventListener('click', (e) => {
+    const t = e.target.closest('[data-kind]');
+    if (!t) return;
+    const v = state.selectedVerse;
+    if (v == null) return;
+    switch (t.dataset.kind) {
+      case 'word': practiceWord(v, parseInt(t.dataset.idx, 10)); break;
+      case 'phrase': practicePhrase(v, parseInt(t.dataset.idx, 10)); break;
+      case 'verse': practiceVerse(v); break;
+      case 'skill': practiceStage(v, parseInt(t.dataset.level, 10)); break;
+    }
+  });
 }
 
 // Render the whole reading as a continuous, justified Torah-scroll column:
@@ -645,6 +687,7 @@ function renderPractice() {
 
   renderLegend(unitSegs);
   renderAccuracyPanel();
+  wireAccPanel();
   applyHighlight();
   // Start the zoom view at the beginning of the line (rightmost, RTL).
   if (zoomable) tlScroll.scrollLeft = tlScroll.scrollWidth - tlScroll.clientWidth;
@@ -671,6 +714,7 @@ function renderAccuracyPanel() {
   // Bar 1 — one meter per WORD.
   const wordSegs = segs.map((s, i) => ({
     t0: layout[i].t0, t1: layout[i].t1, score: wordScores[s.index] || 0, title: s.token,
+    kind: 'word', idx: s.index,
   }));
 
   // Bar 2 — one meter per PHRASE (fewer divisions).
@@ -678,18 +722,69 @@ function renderAccuracyPanel() {
   const phraseSegs = phrases.map((ph, pi) => {
     const first = segs.indexOf(ph[0]);
     const last = segs.indexOf(ph[ph.length - 1]);
-    return { t0: layout[first].t0, t1: layout[last].t1, score: phraseScores[pi] || 0, title: `Phrase ${pi + 1}` };
+    return { t0: layout[first].t0, t1: layout[last].t1, score: phraseScores[pi] || 0, title: `Phrase ${pi + 1}`, kind: 'phrase', idx: pi };
   });
-
-  // Bar 3 — the WHOLE VERSE (one division): its base full-verse accuracy.
-  const verseSeg = [{ t0: 0, t1: 1, score: modeScores.base || 0, title: 'Whole verse (all aids)' }];
 
   const cur = level.unit;
   el.innerHTML =
-      scoreBar('Words', wordSegs, { active: cur === 'word', hint: 'one bar per word' })
-    + scoreBar('Phrases', phraseSegs, { active: cur === 'phrase', hint: 'one bar per phrase (up to each pause)' })
-    + scoreBar('Whole verse', verseSeg, { active: cur === 'line', single: true, hint: 'the full pasuk, all aids' })
+      accTextRow(segs, layout)
+    + scoreBar('Words', wordSegs, { active: cur === 'word', hint: 'one bar per word — click to practice a word' })
+    + scoreBar('Phrases', phraseSegs, { active: cur === 'phrase', hint: 'one bar per phrase — click to practice a phrase' })
+    + verseGradientRow(segs, layout, cur === 'line')
     + renderSkillBadges(modeScores);
+}
+
+// A Hebrew word row aligned over the bars (same time-span geometry), so it's
+// clear which stretch of the pasuk each bar segment corresponds to. Each word is
+// clickable to jump straight into practicing it.
+function accTextRow(segs, layout) {
+  const aids = aidsForLevel();
+  let cells = '';
+  for (let i = 0; i < segs.length; i++) {
+    const w = Math.max(0.01, layout[i].t1 - layout[i].t0);
+    cells += `<span class="aw" data-kind="word" data-idx="${segs[i].index}" style="flex:${w.toFixed(4)} 1 0"`
+      + ` title="${escapeHtml(segs[i].token)} — click to practice">${escapeHtml(renderWord(segs[i].token, aids))}</span>`;
+  }
+  return `<div class="acc-words hebrew">${cells}</div>`;
+}
+
+// The whole-verse bar (one "division") rendered as a left-to-right gradient of
+// the good/bad sections captured during the best full-verse run, so you can see
+// where the whole-pasuk performance held up and where it slipped.
+function verseGradientRow(segs, layout, active) {
+  const base = store.getVerseModeScores(state.slug, state.selectedVerse).base || 0;
+  const prof = store.getVerseProfile(state.slug, state.selectedVerse, 'base');
+  let inner = '';
+  if (prof && prof.profile) {
+    const vals = segs.map((s) => prof.profile[s.index]).filter((x) => x != null && x > 0);
+    if (vals.length) {
+      const [lo, hi] = adaptiveRange(vals);
+      const stops = [];
+      segs.forEach((s, i) => {
+        const sc = prof.profile[s.index];
+        if (sc == null || sc <= 0) return;
+        stops.push({ c: (layout[i].t0 + layout[i].t1) / 2, col: rampColor(sc, lo, hi, true) });
+      });
+      stops.sort((a, b) => a.c - b.c);
+      // RTL: 'to left' puts 0% on the right (verse start). Pad both ends solid.
+      const parts = [`${stops[0].col} 0%`]
+        .concat(stops.map((st) => `${st.col} ${(st.c * 100).toFixed(1)}%`))
+        .concat([`${stops[stops.length - 1].col} 100%`]);
+      inner = `<div class="secseg clickable" data-kind="verse" style="flex:1 1 0" title="Whole verse: ${base}/100 — click to practice">`
+        + `<div class="secfill" style="height:100%;background:linear-gradient(to left, ${parts.join(', ')})"></div>`
+        + `${base > 0 ? `<span class="seclbl">${base}</span>` : ''}</div>`;
+    }
+  }
+  if (!inner) {
+    inner = `<div class="secseg clickable" data-kind="verse" style="flex:1 1 0" title="Whole verse: ${base > 0 ? base + '/100' : 'not yet practiced'} — click to practice">`
+      + (base > 0
+        ? `<div class="secfill" style="height:${Math.max(8, base)}%;background:${rampColor(base, 0, 100, true)}"></div><span class="seclbl">${base}</span>`
+        : '<div class="secfill empty"></div>')
+      + '</div>';
+  }
+  return `<div class="scorebar-row${active ? ' active' : ''}">`
+    + '<div class="sb-label">Whole verse <span class="hint">— good &amp; bad sections from your best full-verse run</span></div>'
+    + `<div class="section-bar">${inner}</div></div>`;
 }
 
 // Verse word layout normalized to 0..1 across the verse, from the recorded word
@@ -723,7 +818,8 @@ function scoreBar(label, segs, opts = {}) {
       ? `<div class="secfill" style="height:${Math.max(8, sc)}%;background:${rampColor(sc, lo, hi, true)}"></div>`
         + `${w > 0.08 || opts.single ? `<span class="seclbl">${sc}</span>` : ''}`
       : `<div class="secfill empty"></div>`;
-    bars += `<div class="secseg" style="flex:${w.toFixed(4)} 1 0" title="${escapeHtml(s.title + ': ' + (sc > 0 ? sc + '/100' : 'not yet practiced'))}">${inner}</div>`;
+    const data = s.kind ? ` data-kind="${s.kind}" data-idx="${s.idx}"` : '';
+    bars += `<div class="secseg${s.kind ? ' clickable' : ''}"${data} style="flex:${w.toFixed(4)} 1 0" title="${escapeHtml(s.title + ': ' + (sc > 0 ? sc + '/100' : 'not yet practiced'))}">${inner}</div>`;
   }
   return `<div class="scorebar-row${opts.active ? ' active' : ''}">`
     + `<div class="sb-label">${label}${opts.hint ? ` <span class="hint">${opts.hint}</span>` : ''}</div>`
@@ -742,8 +838,8 @@ function renderSkillBadges(modeScores) {
     const locked = m.level > unlocked;
     const dot = sc > 0 ? rampColor(sc, lo, hi, true) : (locked ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.12)');
     const val = sc > 0 ? sc : (locked ? '🔒' : '–');
-    const title = `${m.label}: ${sc > 0 ? sc + '/100' : (locked ? 'locked — reach stage ' + m.level : 'not yet attempted')}`;
-    return `<div class="skill${sc > 0 ? ' earned' : ''}${locked ? ' locked' : ''}" title="${escapeHtml(title)}">`
+    const title = `${m.label}: ${sc > 0 ? sc + '/100' : (locked ? 'locked — reach stage ' + m.level : 'not yet attempted')} — click to practice`;
+    return `<div class="skill clickable${sc > 0 ? ' earned' : ''}${locked ? ' locked' : ''}" data-kind="skill" data-level="${m.level}" title="${escapeHtml(title)}">`
       + `<span class="sk-dot" style="background:${dot}"></span>`
       + `<span class="sk-name">${m.label}</span><span class="sk-val">${val}</span></div>`;
   }).join('');
@@ -1115,6 +1211,7 @@ function finishRecording() {
   // improves its true best across every level it's practiced in context.
   const bounds = (coach && coach.wordBounds) || [0];
   const wordScores = [];
+  const profileByGi = {}; // this take's per-word scores (good/bad shape)
   for (let wi = 0; wi < bounds.length; wi++) {
     const t0 = bounds[wi];
     const t1 = wi + 1 < bounds.length ? bounds[wi + 1] : 1.0001;
@@ -1123,6 +1220,7 @@ function finishRecording() {
     const sc = tPts.length ? Math.round(scoreTrail(uS, tPts)) : 0;
     wordScores.push(sc);
     const gi = state.unitSegs[wi] ? state.unitSegs[wi].index : wi;
+    profileByGi[gi] = sc;
     store.recordWordScore(state.slug, state.selectedVerse, gi, sc);
   }
 
@@ -1144,6 +1242,7 @@ function finishRecording() {
     });
     const skill = skillForLevel(level) || 'base';
     store.recordVerseModeScore(state.slug, state.selectedVerse, skill, headline);
+    store.recordVerseProfile(state.slug, state.selectedVerse, skill, headline, profileByGi);
     const md = VERSE_MODES.find((m) => m.key === skill);
     label = `${md ? md.label : 'Full verse'} accuracy`;
   } else {

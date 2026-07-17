@@ -229,6 +229,20 @@ canvas.spectro { width: 100%; height: 150px; display: block; }
 .sb-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 4px; }
 .sb-label .hint { text-transform: none; letter-spacing: 0; }
 
+/* Hebrew word row aligned over the bars (same flex geometry as the meters). */
+.acc-words { display: flex; direction: rtl; border: 1px solid transparent; margin-bottom: 2px; }
+.acc-words .aw { flex-basis: 0; min-width: 0; text-align: center; overflow: hidden; white-space: nowrap;
+  font-size: 15px; line-height: 1.3; padding: 1px 0; border-inline-start: 1px solid transparent;
+  border-radius: 5px; cursor: pointer; }
+.acc-words .aw:first-child { border-inline-start: none; }
+.acc-words .aw:hover { background: rgba(255,255,255,0.10); }
+
+/* Clickable bar segments + skill badges jump into the matching practice. */
+.section-bar .secseg.clickable { cursor: pointer; }
+.section-bar .secseg.clickable:hover { outline: 1px solid var(--accent); outline-offset: -1px; }
+.skill.clickable { cursor: pointer; }
+.skill.clickable:hover { border-color: var(--accent); }
+
 /* Bar-chart meter: bar height = score, width = time span, color adaptive. */
 .section-bar { display: flex; direction: rtl; height: 44px; border-radius: 8px; overflow: hidden;
   border: 1px solid var(--line); background: rgba(255,255,255,0.03);
