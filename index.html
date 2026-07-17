@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cantillate — Learn Torah Cantillation</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Cantillate</h1>
+      <span class="sub">Read · understand · chant the weekly parashah</span>
+    </div>
+    <div class="controls">
+      <label class="label" for="parashah">Reading</label>
+      <select id="parashah"></select>
+      <label class="label" for="division">Division</label>
+      <select id="division">
+        <option value="full">Full parashah</option>
+        <option value="1">Part 1 of 3</option>
+        <option value="2">Part 2 of 3</option>
+        <option value="3">Part 3 of 3</option>
+      </select>
+      <label class="label" for="tonic">Tonic</label>
+      <select id="tonic">
+        <option value="196.00">G3</option>
+        <option value="220.00" selected>A3</option>
+        <option value="246.94">B3</option>
+        <option value="261.63">C4</option>
+        <option value="293.66">D4</option>
+      </select>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <span class="label">Show / hide:</span>
+    <button id="tgVowels" class="toggle on">Vowels (niqqud)</button>
+    <button id="tgTaamim" class="toggle on">Cantillation (te'amim)</button>
+    <span class="label" style="margin-inline-start:12px;">Font:</span>
+    <button id="tgFont" class="toggle">Scroll (STA"M)</button>
+    <span class="label" style="margin-inline-start:12px;">Score overlay:</span>
+    <span class="seg" id="overlaySeg">
+      <button class="ov on" data-ov="off">Off</button>
+      <button class="ov" data-ov="word">Words</button>
+      <button class="ov" data-ov="phrase">Phrases</button>
+      <button class="ov" data-ov="verse">Verse</button>
+    </span>
+    <span class="label" style="margin-inline-start:12px;">View:</span>
+    <button id="tgScrollView" class="toggle">📜 Torah column</button>
+    <span class="legend-scale" style="margin-inline-start:12px;">
+      <span>low</span><span class="bar"></span><span>high</span>
+    </span>
+  </div>
+
+  <div class="toolbar fambar" id="famBar"></div>
+  <div class="toolbar stagebar" id="stageBar"></div>
+
+  <main>
+    <section class="textpane">
+      <p class="pane-title" id="textTitle">Text</p>
+      <div id="verses"></div>
+    </section>
+
+    <div class="splitter" id="splitter" title="Drag to resize · double-click to reset"></div>
+
+    <section class="practice">
+      <div id="practice">
+        <p class="empty">Select a verse on the left to begin practicing.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="src">
+    Text: <span id="srcVersion"></span> ·
+    <a href="https://www.sefaria.org" target="_blank" rel="noopener">Sefaria</a> (Leningrad Codex, public domain / MAM CC-BY).
+    Fonts: Frank Ruehl CLM &amp; Stam Ashkenaz CLM (Culmus project, GPL + font exception).
+    Recorded chant: <a href="https://pockettorah.com" target="_blank" rel="noopener">PocketTorah</a> (CC-BY-SA).
+    Synthesized "voice guide" motifs are stylized Ashkenazi approximations for practice.
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

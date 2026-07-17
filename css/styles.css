@@ -1,0 +1,270 @@
+@font-face {
+  font-family: 'FrankRuehl';
+  src: url('../fonts/FrankRuehlCLM-Medium.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'FrankRuehl';
+  src: url('../fonts/FrankRuehlCLM-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'StamAshkenaz';
+  src: url('../fonts/StamAshkenazCLM.ttf') format('truetype');
+}
+
+:root {
+  --bg: #0f1220;
+  --panel: #171b2e;
+  --panel-2: #1f2540;
+  --text: #e7e9f3;
+  --muted: #9aa0bd;
+  --accent: #5aa0ff;
+  --accent-2: #ff8c5a;
+  --good: #37c871;
+  --bad: #e0555b;
+  --line: rgba(255,255,255,0.08);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: radial-gradient(1200px 600px at 80% -10%, #1a2140 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.4;
+}
+
+header.topbar {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 14px 20px; border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(30,36,64,0.6), transparent);
+}
+.brand { display: flex; flex-direction: column; }
+.brand h1 { margin: 0; font-size: 20px; letter-spacing: 0.5px; }
+.brand .sub { color: var(--muted); font-size: 12px; }
+
+.controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-left: auto; }
+select, button {
+  background: var(--panel-2); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 7px 11px; font-size: 13px; cursor: pointer;
+}
+select:hover, button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); color: #08101f; border-color: transparent; font-weight: 600; }
+button.warn { background: var(--accent-2); color: #201007; border-color: transparent; font-weight: 600; }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+button.toggle.on { background: var(--accent); color: #08101f; border-color: transparent; }
+
+/* Segmented control (e.g. the left-column score overlay selector). */
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg .ov { border: none; border-radius: 0; padding: 7px 11px; background: var(--panel-2);
+  border-inline-start: 1px solid var(--line); font-size: 13px; }
+.seg .ov:first-child { border-inline-start: none; }
+.seg .ov:hover { border-color: transparent; background: rgba(255,255,255,0.06); }
+.seg .ov.on { background: var(--accent); color: #08101f; font-weight: 600; }
+
+.toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 10px 20px; border-bottom: 1px solid var(--line); }
+.toolbar .label { color: var(--muted); font-size: 12px; margin-inline-end: 4px; }
+
+main { display: grid; grid-template-columns: var(--leftw, 360px) 6px 1fr; gap: 0; height: calc(100vh - 118px); }
+.splitter { cursor: col-resize; background: var(--line); transition: background .12s; }
+.splitter:hover, .splitter.dragging { background: var(--accent); }
+/* Compact verse cards when the left pane is dragged narrow. */
+main.narrow-left .textpane { padding: 12px 8px; }
+main.narrow-left .textpane .pane-title { font-size: 10px; }
+main.narrow-left .textpane .verse { padding: 8px; margin-bottom: 6px; }
+main.narrow-left .textpane .hebrew { font-size: 15px; line-height: 1.5; padding-top: 16px; }
+main.narrow-left .textpane .vscore { font-size: 10px; }
+@media (max-width: 900px) { main { grid-template-columns: 1fr; height: auto; } .splitter { display: none; } }
+
+.phead { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.phead h2 { margin: 0; }
+.stagetag { font-size: 12px; font-weight: 600; color: var(--muted); margin-inline-start: 8px; }
+
+/* Persistent stage selector (top bar) */
+.stagebar { gap: 6px; }
+.stagebtn { font-size: 12px; padding: 6px 10px; border-radius: 8px; }
+.stagebtn.cur { background: var(--accent); color: #08101f; border-color: transparent; font-weight: 700; }
+.stagebtn.locked { opacity: 0.5; }
+.stagebtn.locked.cur { opacity: 1; background: var(--panel-2); color: var(--text); box-shadow: 0 0 0 2px var(--accent-2) inset; }
+
+/* Locked stage page */
+.locked-page { text-align: center; max-width: 460px; margin: 48px auto; color: var(--muted); }
+.locked-page .lock-icon { font-size: 44px; opacity: 0.7; }
+.locked-page h3 { color: var(--text); margin: 10px 0; }
+.locked-page .next { margin: 14px 0 18px; color: var(--text); }
+
+.textpane, .practice { overflow-y: auto; padding: 16px 20px; }
+.textpane { border-inline-end: 1px solid var(--line); }
+.pane-title { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 10px; }
+
+.verse {
+  position: relative; padding: 12px 14px; margin-bottom: 10px; border-radius: 12px;
+  background: var(--panel); border: 1px solid var(--line); cursor: pointer;
+  transition: border-color .15s, transform .05s;
+}
+.verse:hover { border-color: var(--accent); }
+.verse.active { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(90,160,255,0.25); }
+.verse .vnum {
+  position: absolute; top: 8px; inset-inline-start: 10px; font-size: 11px; color: var(--muted);
+  background: var(--panel-2); border-radius: 6px; padding: 1px 6px;
+}
+.verse .vscore-wrap {
+  position: absolute; top: 8px; inset-inline-end: 10px; display: flex; align-items: center; gap: 5px;
+}
+.verse .vscore { font-size: 11px; font-weight: 700; border-radius: 6px; padding: 1px 7px; color: #fff; }
+.verse .vpips { display: flex; gap: 3px; }
+.verse .vpip { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.hebrew {
+  direction: rtl; text-align: right; font-family: 'FrankRuehl', serif;
+  font-size: 30px; line-height: 1.9; padding-top: 14px;
+}
+.hebrew.scroll { font-family: 'StamAshkenaz', serif; font-size: 34px; letter-spacing: 2px; }
+.hebrew .w { padding: 0 2px; border-radius: 6px; transition: background .1s, opacity .1s; cursor: pointer; }
+.textpane .hebrew .w:hover { outline: 1px dashed rgba(255,255,255,0.35); }
+.hebrew .w.cur { background: rgba(255,215,0,0.28); }
+.hebrew .w.sel { background: rgba(90,160,255,0.22); }
+.hebrew .w.hl { background: rgba(255,255,255,0.14); outline: 1px solid currentColor; }
+.hebrew .w.dim { opacity: 0.28; }
+
+/* Trope family key bar */
+.fambar { gap: 6px; }
+.famchip {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12px;
+  padding: 4px 9px; border-radius: 999px;
+}
+.famchip .sw { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.famchip.active { border-color: var(--c); box-shadow: 0 0 0 2px var(--c) inset; }
+.famclear { font-size: 12px; border-radius: 999px; padding: 4px 10px; }
+.famhint { margin-inline-start: 4px; }
+.markicon { font-family: 'FrankRuehl', serif; direction: rtl; unicode-bidi: isolate; color: var(--text); }
+.famchip .markicon { font-size: 17px; line-height: 1; }
+.famchip .markicon .mk { margin-inline-start: 3px; }
+.markicon.big { font-size: 20px; margin-inline-end: 6px; vertical-align: middle; }
+.tname .sw { width: 11px; height: 11px; border-radius: 50%; display: inline-block; margin-inline-end: 5px; vertical-align: middle; }
+
+.practice { background: rgba(255,255,255,0.01); }
+.practice h2 { margin: 0 0 4px; font-size: 18px; }
+.levelrow { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
+.lvlbtn { padding: 6px 9px; font-size: 12px; border-radius: 8px; }
+.lvlbtn.cur { background: var(--accent); color: #08101f; border-color: transparent; font-weight: 700; }
+.lvlbtn.locked { opacity: 0.35; }
+.leveldesc { color: var(--muted); font-size: 13px; margin: 4px 0 12px; }
+.aidchips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.chip { font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.chip.on { color: var(--good); border-color: var(--good); }
+.chip.off { color: var(--muted); text-decoration: line-through; }
+
+.unit-nav { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+.unit-nav .u-label { color: var(--muted); font-size: 12px; }
+
+.canvas-wrap { position: relative; background: #0b0e1a; border: 1px solid var(--line); border-radius: 12px; margin: 10px 0; overflow: hidden; }
+canvas.contour { width: 100%; height: 220px; display: block; }
+canvas.spectro { width: 100%; height: 150px; display: block; }
+.spectro-label { font-size: 12px; color: var(--text); margin: 10px 0 2px; }
+.cmp-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px; color: var(--muted); margin: -2px 0 4px; }
+.cmp-legend .swatch { display: inline-block; width: 18px; height: 0; vertical-align: middle; margin-inline-end: 5px; }
+.cmp-legend .swatch.coach { border-top: 4px solid var(--accent); }
+.cmp-legend .swatch.real { border-top: 3px solid rgb(120,255,180); }
+.cmp-legend .swatch.you { border-top: 3px dotted var(--accent-2); }
+.tapword { margin: 4px 0 6px; }
+
+/* Faithful Torah-scroll column view of the whole reading */
+.scroll-column {
+  direction: rtl; text-align: justify; text-align-last: right;
+  font-family: 'StamAshkenaz', serif;
+  font-size: 30px; line-height: 2.15; letter-spacing: 1px;
+  color: #2a2016;
+  background: #e9d7b0;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0) 8%),
+    radial-gradient(120% 60% at 50% 0%, rgba(120,80,30,0.10), rgba(120,80,30,0) 60%);
+  border: 1px solid #c9b38a; border-radius: 8px;
+  padding: 22px 26px; box-shadow: inset 0 0 40px rgba(120,80,30,0.18);
+  max-width: 42ch; margin: 0 auto;
+}
+.scroll-column .sw { cursor: pointer; border-radius: 4px; padding: 0 1px; }
+.scroll-column .sw:hover { background: rgba(120,80,30,0.15); }
+.scroll-column .sw.sel { background: rgba(200,150,60,0.35); }
+
+/* Guitar-hero zoom: a horizontally scrollable strip of the timeline. */
+.tl-scroll { overflow: hidden; }
+.tl-scroll.scrolling { overflow-x: auto; overflow-y: hidden; scroll-behavior: auto; }
+.tl-inner { width: 100%; }
+.tl-inner .spectro-label { position: sticky; left: 4px; width: max-content;
+  background: rgba(11,14,26,0.85); padding: 2px 6px; border-radius: 6px; z-index: 3; }
+.zoomtoggle { font-size: 12px; border-radius: 8px; padding: 4px 9px; margin-inline-start: 8px; }
+
+/* Aligned practice timeline: RTL words over notes over spectrogram.
+   Right margin (34px) holds the scale; left margin (8px) matches the canvases.
+   Each word is rendered normally and centered over its note group. */
+.timeline { position: relative; }
+.timeline-words { position: relative; height: 48px; margin: 6px 34px 2px 8px; }
+.tlword {
+  position: absolute; top: 50%; transform: translate(-50%, -50%);
+  direction: rtl; white-space: nowrap; line-height: 1;
+  padding: 0 2px; border-radius: 6px;
+}
+.tlword.cur { background: rgba(255,215,0,0.20); }
+.mode-indicator { margin: 8px 0 2px; }
+.mode-pill {
+  display: inline-block; font-size: 12px; font-weight: 700; color: #08101f;
+  background: var(--accent); border-radius: 999px; padding: 3px 10px;
+}
+
+.transport { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 10px 0; }
+.result { font-size: 14px; margin: 8px 0; min-height: 22px; }
+.result .scorelabel { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-inline-end: 4px; }
+.result .num { font-weight: 800; font-size: 22px; }
+.result .ceil { font-weight: 700; font-size: 14px; color: var(--muted); }
+.result .stars { color: #ffd23f; font-size: 18px; letter-spacing: 2px; }
+
+/* Accuracy panel: three bar-chart meters (words -> phrases -> whole verse, each
+   with fewer divisions) plus a row of independent handicap skill badges. */
+.accuracy-panel { margin: 10px 0 2px; display: flex; flex-direction: column; gap: 8px; }
+.accuracy-panel:empty { display: none; }
+
+.scorebar-row { }
+.scorebar-row.active .sb-label { color: var(--text); }
+.scorebar-row.active .section-bar { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.sb-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 4px; }
+.sb-label .hint { text-transform: none; letter-spacing: 0; }
+
+/* Bar-chart meter: bar height = score, width = time span, color adaptive. */
+.section-bar { display: flex; direction: rtl; height: 44px; border-radius: 8px; overflow: hidden;
+  border: 1px solid var(--line); background: rgba(255,255,255,0.03);
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 24%, rgba(255,255,255,0.05) 24%, rgba(255,255,255,0.05) calc(24% + 1px)); }
+.section-bar .secseg { position: relative; height: 100%; min-width: 2px; border-inline-start: 1px solid rgba(0,0,0,0.28); }
+.section-bar .secseg:first-child { border-inline-start: none; }
+.section-bar .secfill { position: absolute; left: 0; right: 0; bottom: 0; border-radius: 2px 2px 0 0; transition: height .18s ease; }
+.section-bar .secfill.empty { height: 3px; background: rgba(255,255,255,0.09); }
+.section-bar .seclbl { position: absolute; top: 2px; left: 0; right: 0; text-align: center;
+  font-size: 9px; font-weight: 700; color: var(--muted); direction: ltr; }
+
+.skills { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill { display: flex; align-items: center; gap: 6px; padding: 3px 9px 3px 7px; border-radius: 999px;
+  border: 1px solid var(--line); background: rgba(255,255,255,0.02); font-size: 11px; color: var(--muted); }
+.skill.earned { color: var(--text); }
+.skill.locked { opacity: 0.55; }
+.skill .sk-dot { width: 10px; height: 10px; border-radius: 50%; }
+.skill .sk-val { font-weight: 800; font-size: 12px; direction: ltr; }
+
+.legend { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+.legend h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 8px; }
+.tropes { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.trope { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; cursor: pointer; }
+.trope:hover { border-color: var(--c); }
+.trope.active { border-color: var(--c); box-shadow: 0 0 0 2px var(--c) inset; }
+.trope .tname { font-size: 12px; font-weight: 700; }
+.trope .avgn { font-size: 9px; font-weight: 500; color: var(--muted); }
+.trope .tmean { font-size: 10px; color: var(--muted); font-style: italic; margin-top: 1px; }
+.trope .trole { font-size: 10px; color: var(--muted); }
+.trope canvas { width: 100%; height: 42px; display: block; margin-top: 4px; }
+.trope .tnote { font-size: 10px; color: var(--muted); margin-top: 3px; }
+
+.hint { color: var(--muted); font-size: 12px; }
+.empty { color: var(--muted); text-align: center; margin-top: 40px; }
+.legend-scale { display:flex; align-items:center; gap:8px; font-size:11px; color:var(--muted); }
+.legend-scale .bar { height:10px; width:120px; border-radius:6px;
+  background: linear-gradient(90deg, var(--bad), #e0b34e, var(--good)); }
+footer.src { padding: 10px 20px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--line); }
+footer.src a { color: var(--accent); }
