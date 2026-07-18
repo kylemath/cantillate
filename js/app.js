@@ -5,7 +5,12 @@ import { playSegment, stopVerseAudio } from './realaudio.js';
 import { startMic, stopMic } from './pitch.js';
 import { ContourView, Spectrogram, scoreTrail, sampleContour } from './viz.js';
 import { LEVELS, levelById, VERSE_MODES, skillForLevel } from './levels.js';
+import { aliyotFor, parashahOf, currentTriennialYear } from './aliyot.js';
 import * as store from './store.js';
+
+// An aliyah's scroll+yad challenge unlocks once every pasuk in it has reached at
+// least this stage (i.e., the learner has worked it up to whole-verse practice).
+const ALIYAH_READY_LEVEL = 4;
 
 const AVAILABLE = [
   { slug: 'devarim1', file: 'data/devarim1.json', label: 'Devarim (Deuteronomy) 1' },
@@ -24,7 +29,12 @@ const state = {
   showVowels: true,
   showTaamim: true,
   scroll: false,
+  showEnglish: false, // show the English (Koren Jerusalem) translation column
   overlay: 'off',     // left-column score overlay: 'off'|'word'|'phrase'|'verse'
+  cycle: 'triennial', // aliyah cycle: 'annual' | 'triennial'
+  triYear: 1,         // triennial cycle year (1-3)
+  aliyah: null,       // currently-open aliyah challenge (null = normal practice)
+  aliyahCue: 'word',  // yad outline granularity in aliyah mode: 'word' | 'phrase'
   scrollView: false,  // render the text pane as a continuous Torah column
   scrollZoom: false,  // guitar-hero: zoom to ~5 words and auto-scroll the line
   tonicHz: 220,
@@ -62,14 +72,30 @@ async function init() {
   bindToggle('tgVowels', () => { state.showVowels = !state.showVowels; refreshText(); });
   bindToggle('tgTaamim', () => { state.showTaamim = !state.showTaamim; refreshText(); });
   bindToggle('tgFont', () => { state.scroll = !state.scroll; refreshText(); });
+  bindToggle('tgEnglish', () => { state.showEnglish = !state.showEnglish; renderVerses(); });
   $('overlaySeg').querySelectorAll('.ov').forEach((b) => {
     b.addEventListener('click', () => { state.overlay = b.dataset.ov; syncToggleUI(); renderVerses(); });
   });
   bindToggle('tgScrollView', () => { state.scrollView = !state.scrollView; renderVerses(); });
 
+  // Default to the triennial cycle, year 1 (the 📅 Today button jumps to the
+  // current cycle year on demand).
+  $('triYear').value = String(state.triYear);
+  $('cycleSeg').querySelectorAll('.cyc').forEach((b) => {
+    b.addEventListener('click', () => { state.cycle = b.dataset.cyc; syncCycleUI(); renderAliyot(); renderVerses(); });
+  });
+  $('triYear').addEventListener('change', (e) => { state.triYear = parseInt(e.target.value, 10); renderAliyot(); renderVerses(); });
+  $('cycToday').addEventListener('click', () => {
+    state.triYear = currentTriennialYear();
+    $('triYear').value = String(state.triYear);
+    syncCycleUI(); renderAliyot(); renderVerses();
+  });
+  syncCycleUI();
+
   renderFamilyBar();
   document.addEventListener('keydown', onKey);
   setupSplitter();
+  setupWordLookup();
 }
 
 // Draggable divider between the verse list and the practice pane. The width is
@@ -192,9 +218,15 @@ function syncToggleUI() {
   $('tgVowels').classList.toggle('on', state.showVowels);
   $('tgTaamim').classList.toggle('on', state.showTaamim);
   $('tgFont').classList.toggle('on', state.scroll);
+  $('tgEnglish').classList.toggle('on', state.showEnglish);
   const seg = $('overlaySeg');
   if (seg) seg.querySelectorAll('.ov').forEach((b) => b.classList.toggle('on', b.dataset.ov === state.overlay));
   $('tgScrollView').classList.toggle('on', state.scrollView);
+}
+function syncCycleUI() {
+  const seg = $('cycleSeg');
+  if (seg) seg.querySelectorAll('.cyc').forEach((b) => b.classList.toggle('on', b.dataset.cyc === state.cycle));
+  $('triYear').style.display = state.cycle === 'triennial' ? '' : 'none';
 }
 
 async function loadData(slug) {
@@ -222,7 +254,9 @@ async function loadData(slug) {
   $('textTitle').textContent = `${state.data.book.en} ${state.data.chapter} — ${state.data.book.he}`;
   $('srcVersion').textContent = state.data.heVersionTitle || state.data.versionTitle || 'Masoretic text';
   renderVerses();
+  renderAliyot();
   renderStageBar();
+  $('practice').classList.remove('aliyah-fill');
   $('practice').innerHTML = '<p class="empty">Select a verse on the left to begin practicing.</p>';
 }
 
@@ -237,8 +271,8 @@ function pitchVerse(verseN) {
 // Build the coach line (note steps derived from the recording) for a set of
 // unit segments, laid out on a shared time window (the exact recorded times), so
 // it aligns with the time-aligned spectrogram and the stretched word overlay.
-function buildCoach(unitSegs) {
-  const pv = pitchVerse(state.selectedVerse);
+function buildCoach(unitSegs, verseN = state.selectedVerse) {
+  const pv = pitchVerse(verseN);
   if (!pv) return null;
   const words = unitSegs
     .map((seg) => ({ seg, pw: pv.words.find((w) => w.i === seg.index) }))
@@ -328,10 +362,17 @@ function renderVerses() {
   const box = $('verses');
   box.innerHTML = '';
   const [start, end] = divisionRange();
+  // Aliyah cards are woven in after the verse that completes each aliyah.
+  const maxV = state.data.verses.length;
+  const aliyahByEnd = {};
+  aliyotFor(state.slug, state.cycle, state.triYear).forEach((a) => {
+    aliyahByEnd[Math.min(a.end, maxV)] = a;
+  });
   for (let i = start; i <= end; i++) {
     const v = state.data.verses[i - 1];
     const div = document.createElement('div');
     div.className = 'verse' + (state.selectedVerse === i ? ' active' : '');
+    div.dataset.v = i;
     // No single summed verse score: show the base full-verse accuracy as the
     // badge, with a pip per earned handicap skill (each its own score).
     const modeScores = store.getVerseModeScores(state.slug, i);
@@ -351,8 +392,10 @@ function renderVerses() {
     const badge = (base > 0 || pips)
       ? `<span class="vscore-wrap">${base > 0 ? `<span class="vscore" style="background:${scoreColor(base)};color:#fff" title="Full-verse accuracy">${base}</span>` : ''}${pips ? `<span class="vpips">${pips}</span>` : ''}</span>`
       : '';
+    const enHtml = state.showEnglish && v.en
+      ? `<div class="ventext">${escapeHtml(v.en)}</div>` : '';
     div.innerHTML = `<span class="vnum">${state.data.book.he} ${toHebrewNum(i)} · v${i}</span>${badge}
-      <div class="hebrew ${state.scroll ? 'scroll' : ''}">${heHtml}</div>`;
+      <div class="vbody${state.showEnglish ? ' bilingual' : ''}">${enHtml}<div class="hebrew ${state.scroll ? 'scroll' : ''}">${heHtml}</div></div>`;
     // Clicking a single word jumps to word practice for that word; clicking
     // elsewhere in the verse just selects the verse.
     div.addEventListener('click', (e) => {
@@ -361,6 +404,7 @@ function renderVerses() {
       else selectVerse(i);
     });
     box.appendChild(div);
+    if (aliyahByEnd[i]) box.appendChild(buildAliyahCard(aliyahByEnd[i]));
   }
 }
 
@@ -384,8 +428,16 @@ function overlayScorer(verseN, segs) {
     return { score: (wi) => ps[tok2ph[wi]], lo, hi };
   }
   if (mode === 'verse') {
-    const base = store.getVerseModeScores(state.slug, verseN).base || 0;
-    return { score: () => (base > 0 ? base : undefined), lo: 0, hi: 100 };
+    // Tint each word by the per-word good/bad shape of your best full-verse runs
+    // — the same gradient used for the whole-verse bar — falling back to a flat
+    // best whole-verse score if no full-verse take has been recorded yet.
+    const profile = bestVerseProfile(verseN);
+    if (profile) {
+      const [lo, hi] = adaptiveRange(Object.values(profile));
+      return { score: (wi) => profile[wi], lo, hi };
+    }
+    const best = bestVerseScore(verseN);
+    return { score: () => (best > 0 ? best : undefined), lo: 0, hi: 100 };
   }
   return { score: () => undefined, lo: 0, hi: 100 };
 }
@@ -470,12 +522,356 @@ function renderScrollColumn() {
 
 function selectVerse(n) {
   state.selectedVerse = n;
+  state.aliyah = null; // leave aliyah mode when a single verse is chosen
   // Keep the chosen stage consistent across verses (navigation is independent of
   // per-verse unlock progress).
   state.unitIndex = 0;
   renderVerses();
+  renderAliyot();
   renderStageBar();
   renderPractice();
+}
+
+// ---------------------------------------------------------------------------
+// Aliyah tier: a higher-level challenge above the per-verse stages. Each aliyah
+// (a Torah-reading section) can be chanted from the bare scroll with a virtual
+// yad cueing its start and end — but only once every pasuk in it has been worked
+// up to at least the whole-verse stage.
+// ---------------------------------------------------------------------------
+
+// Verse numbers of an aliyah that actually exist in the loaded chapter.
+function aliyahVerses(a) {
+  const max = (state.data && state.data.verses.length) || a.end;
+  const out = [];
+  for (let n = a.start; n <= Math.min(a.end, max); n++) out.push(n);
+  return out;
+}
+
+// Readiness = how many of the aliyah's pesukim have reached ALIYAH_READY_LEVEL.
+function aliyahReadiness(a) {
+  const vs = aliyahVerses(a);
+  const ready = vs.filter((n) => store.getVerseLevel(state.slug, n) >= ALIYAH_READY_LEVEL).length;
+  return { ready, total: vs.length, done: vs.length > 0 && ready === vs.length };
+}
+
+// Top panel now holds only the parashah/cycle context; the individual aliyah
+// cards are woven into the verse list (each after the pesukim that unlock it).
+function renderAliyot() {
+  const box = $('aliyot');
+  if (!box) return;
+  const par = parashahOf(state.slug);
+  if (!par) { box.innerHTML = ''; return; }
+  const list = aliyotFor(state.slug, state.cycle, state.triYear);
+  const cycleLabel = state.cycle === 'triennial' ? `Triennial · Year ${state.triYear}` : 'Annual';
+  let html = `<div class="aliyot-head">${par.he} <span class="hint">${cycleLabel} · ${par.ref}</span></div>`;
+  html += list.length
+    ? '<p class="hint aliyot-note">Each aliyah appears in the text below, after the pesukim that unlock it.</p>'
+    : `<p class="hint aliyot-note">This cycle's reading falls outside the loaded chapter (${state.data.book.en} ${state.data.chapter}). Switch cycle or add more chapters.</p>`;
+  box.innerHTML = html;
+}
+
+// A single aliyah card element, inserted inline after its last unlocking pasuk.
+function buildAliyahCard(a) {
+  const r = aliyahReadiness(a);
+  const score = store.getAliyahScore(state.slug, state.cycle, state.triYear, a.n);
+  const pct = r.total ? Math.round((r.ready / r.total) * 100) : 0;
+  const open = state.aliyah && state.aliyah.n === a.n && state.aliyah.cycle === state.cycle && state.aliyah.year === state.triYear;
+  const badge = score > 0 ? `<span class="al-score" style="background:${scoreColor(score)}">${score}</span>` : '';
+  const action = r.done
+    ? `<button class="al-go">${score > 0 ? '↻ Chant again' : '▶ Chant aliyah'}</button>`
+    : `<span class="al-lock" title="Reach stage ${ALIYAH_READY_LEVEL} on every pasuk first">🔒 ${r.ready}/${r.total} pesukim ready</span>`;
+  const el = document.createElement('div');
+  el.className = `aliyah${open ? ' open' : ''}${r.done ? ' ready' : ''}`;
+  el.innerHTML = `
+    <div class="al-main">
+      <span class="al-n">${toHebrewNum(a.n)}</span>
+      <span class="al-label">Aliyah ${a.n} <span class="hint">ends ${a.ref}</span></span>
+      ${badge}
+    </div>
+    <div class="al-prog"><span style="width:${pct}%;background:${r.done ? 'var(--good)' : 'var(--accent-2)'}"></span></div>
+    <div class="al-actions">${action}</div>`;
+  const go = el.querySelector('.al-go');
+  if (go) go.addEventListener('click', () => openAliyah(a));
+  return el;
+}
+
+function openAliyah(a) {
+  stopAll();
+  state.aliyah = { ...a, cycle: state.cycle, year: state.triYear };
+  renderAliyot();
+  renderAliyahView();
+}
+
+// Concatenate the aliyah's verses into one timeline: each segment carries its
+// audio window, coach line, duration, and global start/end (with a small gap
+// between verses), so the yad and the recording clock can run continuously.
+function aliyahTimeline(a) {
+  const GAP = 0.35;
+  let tAcc = 0;
+  const segs = [];
+  for (const n of aliyahVerses(a)) {
+    const info = verseAudio(n);
+    const vsegs = buildLineMelody(tokenize(state.data.verses[n - 1].text));
+    const coach = buildCoach(vsegs, n);
+    const aStart = coach ? coach.start : (info ? info.start : 0);
+    const aEnd = coach ? coach.end : (info ? info.end : 0);
+    const dur = coach ? coach.dur : Math.max(1.2, (aEnd - aStart) || vsegs.length * 0.5);
+    segs.push({ n, file: info && info.file, vsegs, coach, aStart, aEnd, dur, gStart: tAcc, gEnd: tAcc + dur });
+    tAcc += dur + GAP;
+  }
+  return { segs, total: tAcc };
+}
+
+const ALIYAH_CONTEXT = 8; // verses of surrounding scroll shown before/after
+
+function renderAliyahView() {
+  const a = state.aliyah;
+  const par = parashahOf(state.slug);
+  const maxV = state.data.verses.length;
+  const first = a.start, last = Math.min(a.end, maxV);
+  const from = Math.max(1, first - ALIYAH_CONTEXT);
+  const to = Math.min(maxV, last + ALIYAH_CONTEXT);
+  // Render surrounding verses too (dimmed) so the aliyah's start and end are seen
+  // in the context of the scroll's columns, like a real reading.
+  const scrollHtml = [];
+  for (let n = from; n <= to; n++) {
+    const segs = buildLineMelody(tokenize(state.data.verses[n - 1].text));
+    const inAliyah = n >= first && n <= last;
+    const words = segs.map((s, wi) => `<span class="sw${inAliyah ? '' : ' ctx'}" data-verse="${n}" data-widx="${wi}">${escapeHtml(toScroll(s.token))}</span>`).join(' ');
+    scrollHtml.push(`<span class="al-verse${inAliyah ? '' : ' ctx'}">${words}</span>`);
+  }
+  const p = $('practice');
+  p.classList.add('aliyah-fill');
+  p.innerHTML = `
+    <div class="aliyah-view">
+    <div class="phead">
+      <h2>${par.he} · Aliyah ${a.n} <span class="stagetag">${a.cycle === 'triennial' ? 'Triennial Yr ' + a.year : 'Annual'} · ${a.ref}</span></h2>
+      <button id="alBack">← Verses</button>
+    </div>
+    <p class="leveldesc">Chant the whole aliyah from the bare scroll. A grey outline marks the current spot and, subtly, where to begin and end — as in a real reading. Faded text is the surrounding scroll for context.</p>
+    <div class="al-cuebar">
+      <span class="label">Outline:</span>
+      <span class="seg" id="aliyaCueSeg">
+        <button class="cue" data-cue="word">Word</button>
+        <button class="cue" data-cue="phrase">Phrase</button>
+      </span>
+    </div>
+    <div class="aliyah-scroll scroll-column" id="aliyahScroll">${scrollHtml.join(' ')}</div>
+    <div class="transport">
+      <button class="primary" id="alGuide">▶ Guided read (real chant)</button>
+      <button class="warn" id="alRec">● Record my aliyah</button>
+      <button id="alStop" disabled>■ Stop</button>
+    </div>
+    <div class="livemeter" id="aliyaMeter" hidden>
+      <span class="lm-label">Live aliyah</span>
+      <div class="lm-track"><div class="lm-fill" id="aliyaMeterFill"></div></div>
+      <span class="lm-val"><b id="aliyaMeterVal">0</b>%</span>
+    </div>
+    <div class="result" id="aliyaResult"><span class="hint">Listen to the guided read to learn the flow, then record your own chant of the whole aliyah.</span></div>
+    </div>
+  `;
+  const tl = aliyahTimeline(a);
+  state._aliyaTl = tl;
+  markAliyahEnds(tl, false);
+  // One-time: bring the aliyah's start into view (with context above it).
+  const startEl = $('aliyahScroll').querySelector('.sw.yad-start');
+  if (startEl) startEl.scrollIntoView({ block: 'center' });
+  $('aliyaCueSeg').querySelectorAll('.cue').forEach((b) => {
+    b.classList.toggle('on', b.dataset.cue === state.aliyahCue);
+    b.addEventListener('click', () => {
+      state.aliyahCue = b.dataset.cue;
+      $('aliyaCueSeg').querySelectorAll('.cue').forEach((x) => x.classList.toggle('on', x.dataset.cue === state.aliyahCue));
+    });
+  });
+  $('alBack').addEventListener('click', () => {
+    stopAliyah();
+    state.aliyah = null;
+    renderAliyot();
+    if (state.selectedVerse) renderPractice();
+    else { $('practice').classList.remove('aliyah-fill'); $('practice').innerHTML = '<p class="empty">Select a verse on the left to begin practicing.</p>'; }
+  });
+  $('alGuide').addEventListener('click', () => playAliyahGuided(tl));
+  $('alRec').addEventListener('click', () => recordAliyahRun(tl));
+  $('alStop').addEventListener('click', () => { stopAliyah(); setAliyahButtons(false); });
+}
+
+function setAliyahButtons(running) {
+  const g = $('alGuide'), r = $('alRec'), s = $('alStop');
+  if (g) g.disabled = running;
+  if (r) r.disabled = running;
+  if (s) s.disabled = !running;
+}
+
+// Subtle start/end cueing: glow the aliyah's first word (where to begin) always,
+// and its last word (where to end) once the read/recording completes.
+function markAliyahEnds(tl, atEnd) {
+  const box = $('aliyahScroll');
+  if (!box) return;
+  box.querySelectorAll('.yad-start,.yad-end').forEach((e) => e.classList.remove('yad-start', 'yad-end'));
+  const first = tl.segs[0];
+  if (first) {
+    const el = box.querySelector(`.sw[data-verse="${first.n}"][data-widx="0"]`);
+    if (el) el.classList.add('yad-start');
+  }
+  if (atEnd) {
+    const last = tl.segs[tl.segs.length - 1];
+    if (last && last.vsegs.length) {
+      const el = box.querySelector(`.sw[data-verse="${last.n}"][data-widx="${last.vsegs.length - 1}"]`);
+      if (el) el.classList.add('yad-end');
+    }
+  }
+}
+
+// Local word indices belonging to the same phrase as `widx` within a verse
+// segment (memoized on the segment). Phrases split at disjunctive accents.
+function aliyahPhraseMembers(seg, widx) {
+  if (!seg._phraseByWidx) {
+    seg._phraseByWidx = {};
+    splitPhrases(seg.vsegs).forEach((ph) => {
+      const members = ph.map((s) => seg.vsegs.indexOf(s)).filter((x) => x >= 0);
+      members.forEach((wi) => { seg._phraseByWidx[wi] = members; });
+    });
+  }
+  return seg._phraseByWidx[widx] || [widx];
+}
+
+// Outline the current spot with a grey box (no layout shift, no auto-scroll).
+// Granularity follows state.aliyahCue: a single word or its whole phrase.
+function highlightAliyah(verseN, widx) {
+  const box = $('aliyahScroll');
+  if (!box) return;
+  box.querySelectorAll('.yad-cur').forEach((e) => e.classList.remove('yad-cur'));
+  if (verseN == null) return;
+  let members = [widx];
+  if (state.aliyahCue === 'phrase' && state._aliyaTl) {
+    const seg = state._aliyaTl.segs.find((s) => s.n === verseN);
+    if (seg) members = aliyahPhraseMembers(seg, widx);
+  }
+  members.forEach((wi) => {
+    const el = box.querySelector(`.sw[data-verse="${verseN}"][data-widx="${wi}"]`);
+    if (el) el.classList.add('yad-cur');
+  });
+}
+
+function stopAliyah() {
+  state._aliyaRunning = null;
+  clearTimeout(state._aliyaTimer);
+  stopVerseAudio();
+  stopMic();
+  stopLiveMeter();
+}
+
+// Guided read: play the real chant across the whole aliyah, chaining verses, the
+// yad following the current word — a listening/reading run to learn the flow.
+function playAliyahGuided(tl) {
+  stopAliyah();
+  state._aliyaRunning = 'guide';
+  setAliyahButtons(true);
+  markAliyahEnds(tl, false);
+  let i = 0;
+  const playNext = () => {
+    if (state._aliyaRunning !== 'guide') return;
+    if (i >= tl.segs.length) { finishGuide(tl); return; }
+    const seg = tl.segs[i];
+    if (!seg.file) { i++; playNext(); return; }
+    $('aliyaResult').innerHTML = `<span class="hint">Reading verse ${seg.n}…</span>`;
+    playSegment(seg.file, seg.aStart, seg.aEnd, {
+      onProgress: (t01) => { if (seg.coach) highlightAliyah(seg.n, wordAtTime(seg.coach, t01)); },
+      onEnd: () => { i += 1; playNext(); },
+      onError: () => { i += 1; playNext(); },
+    });
+  };
+  playNext();
+}
+
+function finishGuide(tl) {
+  if (state._aliyaRunning !== 'guide') return;
+  state._aliyaRunning = null;
+  setAliyahButtons(false);
+  highlightAliyah(null);
+  markAliyahEnds(tl, true);
+  $('aliyaResult').innerHTML = '<span class="hint">That\'s the whole aliyah. Now record your own chant.</span>';
+}
+
+// Record run: one continuous mic session over the aliyah timeline. The yad paces
+// you (start cue → moving pointer → end cue); afterward each verse slice is
+// scored against its coach and averaged into the aliyah accuracy.
+async function recordAliyahRun(tl) {
+  stopAliyah();
+  state._aliyaRunning = 'rec';
+  state._aliyaSamples = [];
+  state._aliyaDiffs = [];
+  setAliyahButtons(true);
+  markAliyahEnds(tl, false);
+  startLiveMeter('aliyaMeter', 'aliyaMeterFill', 'aliyaMeterVal');
+  const leadIn = 500;
+  const t0 = performance.now() + leadIn;
+  $('aliyaResult').innerHTML = '<span class="hint">Get ready… begin at the glowing first word and follow the yad.</span>';
+  await startMic((hz, rms) => {
+    if (state._aliyaRunning !== 'rec') return;
+    const now = performance.now();
+    if (now < t0) return;
+    const tG = (now - t0) / 1000;
+    if (tG >= tl.total) { finishAliyahRecord(tl); return; }
+    state._aliyaSamples.push({ tG, hz: hz > 0 ? hz : 0, rms });
+    const seg = tl.segs.find((s) => tG >= s.gStart && tG < s.gEnd);
+    if (seg && seg.coach) {
+      const t01 = (tG - seg.gStart) / (seg.dur || 1);
+      highlightAliyah(seg.n, wordAtTime(seg.coach, t01));
+      // Live meter: instantaneous accuracy vs a running key-offset estimate.
+      if (hz > 0 && rms >= 0.01) {
+        const rawT = 12 * Math.log2(hz / (seg.coach.tonicHz || 200));
+        const tgt = sampleContour(seg.coach.points, t01);
+        state._aliyaDiffs.push(tgt - rawT);
+        if (state._aliyaDiffs.length > 200) state._aliyaDiffs.shift();
+        feedLiveMeter((rawT + median(state._aliyaDiffs)) - tgt);
+      }
+    } else {
+      highlightAliyah(null);
+    }
+  }, () => {});
+  state._aliyaTimer = setTimeout(() => finishAliyahRecord(tl), leadIn + tl.total * 1000 + 900);
+}
+
+function scoreAliyahVerse(seg, samples) {
+  if (!seg.coach || !seg.coach.points.length) return 0;
+  const local = samples.filter((s) => s.tG >= seg.gStart && s.tG < seg.gEnd && s.hz > 0);
+  if (local.length < 3) return 0;
+  const tonic = seg.coach.tonicHz || 200;
+  const trail = [];
+  const diffs = [];
+  for (const s of local) {
+    const t01 = (s.tG - seg.gStart) / (seg.dur || 1);
+    const rawT = 12 * Math.log2(s.hz / tonic);
+    diffs.push(sampleContour(seg.coach.points, t01) - rawT);
+    trail.push({ t: t01, rawT, rms: s.rms });
+  }
+  const off = median(diffs);
+  for (const p of trail) p.sp = p.rawT + off;
+  return Math.round(scoreTrail(trail, seg.coach.points));
+}
+
+function finishAliyahRecord(tl) {
+  if (state._aliyaRunning !== 'rec') return;
+  state._aliyaRunning = null;
+  clearTimeout(state._aliyaTimer);
+  stopMic();
+  stopLiveMeter();
+  highlightAliyah(null);
+  const samples = state._aliyaSamples || [];
+  const perVerse = tl.segs.map((seg) => scoreAliyahVerse(seg, samples)).filter((x) => x > 0);
+  const score = perVerse.length ? Math.round(perVerse.reduce((a, b) => a + b, 0) / perVerse.length) : 0;
+  const a = state.aliyah;
+  store.recordAliyahScore(state.slug, a.cycle, a.year, a.n, score);
+  markAliyahEnds(tl, true);
+  setAliyahButtons(false);
+  const msg = score >= 80 ? 'Beautiful — that\'s reading-ready.'
+    : score > 0 ? 'Keep polishing the weaker pesukim, then run the aliyah again.'
+      : 'No clear pitch captured — check your mic and follow the yad.';
+  $('aliyaResult').innerHTML = `<span class="scorelabel">Aliyah accuracy</span> `
+    + `<span class="num">${score}</span><span class="ceil"> / 100</span>`
+    + `<br><span class="hint">${msg}</span>`;
+  renderAliyot();
 }
 
 // Persistent top-of-window stage selector. Any stage is navigable; stages not
@@ -544,6 +940,7 @@ function currentUnits() {
 }
 
 function renderPractice() {
+  $('practice').classList.remove('aliyah-fill');
   const v = state.data.verses[state.selectedVerse - 1];
   const level = levelById(state.level);
   // Navigation is free, but a stage not yet unlocked for this verse shows a
@@ -578,25 +975,34 @@ function renderPractice() {
   const p = $('practice');
   p.innerHTML = `
     <div class="phead">
-      <h2>${state.data.book.he} ${toHebrewNum(state.selectedVerse)} · verse ${state.selectedVerse} <span class="stagetag">Stage ${level.id}: ${level.label}</span></h2>
+      <h2>${state.data.book.he} ${toHebrewNum(state.selectedVerse)} · v${state.selectedVerse}<span class="stagetag">${level.id}. ${level.label}</span></h2>
+      <div class="aidchips">${chips}</div>
+      ${units.length > 1 ? `<div class="unit-nav">
+        <button id="uPrev">◀</button>
+        <span class="u-label">${cap(level.unit)} ${state.unitIndex + 1}/${units.length}</span>
+        <button id="uNext">▶</button>
+      </div>` : ''}
+      <span class="mode-indicator" id="modeIndicator"></span>
+      ${hasReal ? '<span class="keyshint" title="Tap a word, or keys: ← → next/prev word · Space replay · ↓ record · Esc stop">⌨</span>' : ''}
     </div>
-    <div class="aidchips">${chips}</div>
-    <p class="leveldesc">${level.desc}</p>
+    ${level.unit === 'line' && state.showEnglish && v.en ? `<p class="practice-en">${escapeHtml(v.en)}</p>` : ''}
 
-    ${units.length > 1 ? `<div class="unit-nav">
-      <button id="uPrev">◀</button>
-      <span class="u-label">${cap(level.unit)} ${state.unitIndex + 1} / ${units.length}</span>
-      <button id="uNext">▶</button>
-    </div>` : ''}
-
-    <div class="mode-indicator" id="modeIndicator"></div>
-    ${hasReal ? '<p class="hint tapword">Tap a word, or use keys: <b>←</b> next word · <b>→</b> previous · <b>Space</b> replay · <b>↓</b> record · <b>Esc</b> stop.</p>' : ''}
+    <div class="topstatus">
+      <div class="result" id="result"><span class="hint">${hasReal
+        ? 'Hear the real cantor, or use the voice guide, then record your try.'
+        : (level.mode === 'listen' ? 'Listen, then record yourself repeating it.' : 'Follow the moving cue and sing along as you record.')}</span></div>
+      <div class="livemeter" id="liveMeter" hidden>
+        <span class="lm-label">Live ${level.unit === 'line' ? 'verse' : level.unit}</span>
+        <div class="lm-track"><div class="lm-fill" id="liveMeterFill"></div></div>
+        <span class="lm-val"><b id="liveMeterVal">0</b>%</span>
+      </div>
+    </div>
 
     <div class="timeline">
       <div class="cmp-legend">
-        <span><span class="swatch coach"></span> coach notes (from recording)</span>
-        <span><span class="swatch real"></span> live recording pitch</span>
-        <span><span class="swatch you"></span> your voice</span>
+        <span><span class="swatch coach"></span> coach</span>
+        <span><span class="swatch real"></span> recording</span>
+        <span><span class="swatch you"></span> you</span>
       </div>
       <div class="tl-scroll" id="tlScroll">
         <div class="tl-inner" id="tlInner">
@@ -618,9 +1024,6 @@ function renderPractice() {
       <button class="warn" id="btnRec">● Record my try</button>
       <button id="btnStop" disabled>■ Stop</button>
     </div>
-    <div class="result" id="result"><span class="hint">${hasReal
-      ? 'Hear the real cantor chant the whole verse, or use the voice guide for this ' + level.unit + ', then record your try.'
-      : (level.mode === 'listen' ? 'Listen, then record yourself repeating it.' : 'Follow the moving cue and sing along as you record.')}</span></div>
 
     <div class="accuracy-panel" id="accPanel"></div>
 
@@ -660,9 +1063,7 @@ function renderPractice() {
     : level.unit === 'phrase' ? 'Phrase timeline' : 'Whole-verse timeline (piano-trope)';
   const zoomBtn = level.unit === 'line'
     ? ` <button id="btnZoom" class="zoomtoggle">${state.scrollZoom ? '↔ Fit whole line' : '🎸 Scroll (zoom ' + ZOOM_WORDS + ' words)'}</button>` : '';
-  $('modeIndicator').innerHTML = `<span class="mode-pill">${modeName}</span>`
-    + (units.length > 1 ? ` <span class="hint">— ◀ ▶ moves to the next ${level.unit} and updates the graph</span>` : '')
-    + zoomBtn;
+  $('modeIndicator').innerHTML = `<span class="mode-pill">${modeName}</span>${zoomBtn}`;
   if (zoomBtn) {
     $('btnZoom').addEventListener('click', () => { state.scrollZoom = !state.scrollZoom; renderPractice(); });
   }
@@ -748,20 +1149,44 @@ function accTextRow(segs, layout) {
   return `<div class="acc-words hebrew">${cells}</div>`;
 }
 
+// Best per-word score across ALL full-verse runs (any skill), so the whole-verse
+// gradient/overlay reflects your best full-pasuk shape even if you've mostly
+// practiced at a harder stage than the base. Returns a { globalWordIndex:score }
+// map, or null if no full-verse take has been recorded.
+function bestVerseProfile(verseN) {
+  const profs = store.getVerseProfiles(state.slug, verseN);
+  const keys = Object.keys(profs);
+  if (!keys.length) return null;
+  const merged = {};
+  for (const k of keys) {
+    const p = (profs[k] && profs[k].profile) || {};
+    for (const gi of Object.keys(p)) {
+      if (p[gi] > (merged[gi] || 0)) merged[gi] = p[gi];
+    }
+  }
+  return Object.keys(merged).length ? merged : null;
+}
+
+// The highest whole-verse accuracy recorded across any skill (for the bar label).
+function bestVerseScore(verseN) {
+  const ms = store.getVerseModeScores(state.slug, verseN);
+  return Math.max(0, ...VERSE_MODES.map((m) => ms[m.key] || 0));
+}
+
 // The whole-verse bar (one "division") rendered as a left-to-right gradient of
-// the good/bad sections captured during the best full-verse run, so you can see
-// where the whole-pasuk performance held up and where it slipped.
+// the good/bad sections captured during your best full-verse runs, so you can
+// see where the whole-pasuk performance held up and where it slipped.
 function verseGradientRow(segs, layout, active) {
-  const base = store.getVerseModeScores(state.slug, state.selectedVerse).base || 0;
-  const prof = store.getVerseProfile(state.slug, state.selectedVerse, 'base');
+  const scoreVal = bestVerseScore(state.selectedVerse);
+  const profile = bestVerseProfile(state.selectedVerse);
   let inner = '';
-  if (prof && prof.profile) {
-    const vals = segs.map((s) => prof.profile[s.index]).filter((x) => x != null && x > 0);
+  if (profile) {
+    const vals = segs.map((s) => profile[s.index]).filter((x) => x != null && x > 0);
     if (vals.length) {
       const [lo, hi] = adaptiveRange(vals);
       const stops = [];
       segs.forEach((s, i) => {
-        const sc = prof.profile[s.index];
+        const sc = profile[s.index];
         if (sc == null || sc <= 0) return;
         stops.push({ c: (layout[i].t0 + layout[i].t1) / 2, col: rampColor(sc, lo, hi, true) });
       });
@@ -770,15 +1195,15 @@ function verseGradientRow(segs, layout, active) {
       const parts = [`${stops[0].col} 0%`]
         .concat(stops.map((st) => `${st.col} ${(st.c * 100).toFixed(1)}%`))
         .concat([`${stops[stops.length - 1].col} 100%`]);
-      inner = `<div class="secseg clickable" data-kind="verse" style="flex:1 1 0" title="Whole verse: ${base}/100 — click to practice">`
+      inner = `<div class="secseg clickable" data-kind="verse" style="flex:1 1 0" title="Whole verse: ${scoreVal}/100 — click to practice">`
         + `<div class="secfill" style="height:100%;background:linear-gradient(to left, ${parts.join(', ')})"></div>`
-        + `${base > 0 ? `<span class="seclbl">${base}</span>` : ''}</div>`;
+        + `${scoreVal > 0 ? `<span class="seclbl">${scoreVal}</span>` : ''}</div>`;
     }
   }
   if (!inner) {
-    inner = `<div class="secseg clickable" data-kind="verse" style="flex:1 1 0" title="Whole verse: ${base > 0 ? base + '/100' : 'not yet practiced'} — click to practice">`
-      + (base > 0
-        ? `<div class="secfill" style="height:${Math.max(8, base)}%;background:${rampColor(base, 0, 100, true)}"></div><span class="seclbl">${base}</span>`
+    inner = `<div class="secseg clickable" data-kind="verse" style="flex:1 1 0" title="Whole verse: ${scoreVal > 0 ? scoreVal + '/100' : 'not yet practiced'} — click to practice">`
+      + (scoreVal > 0
+        ? `<div class="secfill" style="height:${Math.max(8, scoreVal)}%;background:${rampColor(scoreVal, 0, 100, true)}"></div><span class="seclbl">${scoreVal}</span>`
         : '<div class="secfill empty"></div>')
       + '</div>';
   }
@@ -1124,6 +1549,7 @@ async function startRecording() {
   state._diffs = [];
   state.view.clearUser();
   if (state.userSpectro) state.userSpectro.clearPlot();
+  startLiveMeter('liveMeter', 'liveMeterFill', 'liveMeterVal');
   $('btnRec').disabled = true;
   $('btnStop').disabled = false;
   $('result').innerHTML = '<span class="hint">Recording… start on any comfortable pitch; your first note is matched to the coach, so just follow the shape.</span>';
@@ -1164,6 +1590,7 @@ async function startRecording() {
         hit = ae <= 2.0 ? 'close' : 'far';
       }
       state.view.pushUser(t01, styled, rms, hit, rawT);
+      if (rms >= 0.01) feedLiveMeter(err);
     } else {
       state.view.pushUser(t01, null, rms);
     }
@@ -1191,6 +1618,7 @@ function finishRecording() {
   clearTimeout(state._recTimer);
   stopMic();
   stopPlayback();
+  stopLiveMeter();
   highlightWord(-1);
   $('btnRec').disabled = false;
   $('btnStop').disabled = true;
@@ -1272,6 +1700,7 @@ function finishRecording() {
   $('result').innerHTML = msg;
   renderAccuracyPanel();
   renderVerses();
+  renderAliyot();
   applyHighlight();
   renderStageBar();
 }
@@ -1419,6 +1848,156 @@ function escapeHtml(s) {
   return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+// --- Live "guitar-hero" score meter ----------------------------------------
+// The meter shows the CUMULATIVE score-so-far, computed exactly like the final
+// scoreTrail (100·e^(-meanError/τ) over all voiced frames), so it converges to
+// the score you'll actually get — by the final seconds it's essentially there.
+const LIVE_DEAD = 0.35, LIVE_MAXDEV = 4, LIVE_TAU = 2.5;
+
+function startLiveMeter(containerId, fillId, valId) {
+  state._lm = { c: $(containerId), f: $(fillId), v: $(valId) };
+  state._liveSum = 0;
+  state._liveCount = 0;
+  if (state._lm.c) state._lm.c.hidden = false;
+  drawLiveMeter(0);
+}
+
+// Feed one voiced frame's pitch error (semitones); accumulate into the running
+// mean error and redraw the cumulative score.
+function feedLiveMeter(err) {
+  let e = Math.min(LIVE_MAXDEV, Math.abs(err));
+  e = Math.max(0, e - LIVE_DEAD);
+  state._liveSum += e;
+  state._liveCount += 1;
+  const meanErr = state._liveSum / state._liveCount;
+  drawLiveMeter(100 * Math.exp(-meanErr / LIVE_TAU));
+}
+
+function drawLiveMeter(scoreVal) {
+  const lm = state._lm;
+  if (!lm || !lm.f) return;
+  const s = Math.max(0, Math.min(100, Math.round(scoreVal)));
+  lm.f.style.width = s + '%';
+  lm.f.style.background = rampColor(s, 0, 100, true);
+  if (lm.v) lm.v.textContent = s;
+}
+
+function stopLiveMeter() {
+  if (state._lm && state._lm.c) state._lm.c.hidden = true;
+  state._lm = null;
+}
+
+// --- Hover-hold word translation lookup (Sefaria lexicon) ------------------
+const _wordCache = new Map();
+
+// Reduce a Masoretic token to a searchable term: drop cantillation + niqqud,
+// and if it's a maqaf-compound, take the longest sub-word.
+function lookupTerm(token) {
+  const noMarks = token.replace(/[\u0591-\u05BD\u05BF-\u05C7]/g, '');
+  const parts = noMarks.split('\u05BE').map((s) => s.trim()).filter(Boolean);
+  parts.sort((a, b) => b.length - a.length);
+  return (parts[0] || noMarks).replace(/\u05BE/g, '');
+}
+
+function _stripTags(s) {
+  return (s || '').replace(/<[^>]+>/g, '').replace(/&[a-z]+;/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+// Parse the Sefaria /api/words response into { lemma, glosses[] }.
+function extractGlosses(data) {
+  const entries = Array.isArray(data) ? data : [];
+  const lemma = entries.length ? entries[0].headword : '';
+  const out = [];
+  const seen = new Set();
+  const add = (t) => {
+    let g = _stripTags(t);
+    if (!g) return;
+    if (g.length > 90) g = g.slice(0, 88) + '…';
+    if (!seen.has(g)) { seen.add(g); out.push(g); }
+  };
+  for (const e of entries) {
+    const senses = (e.content && e.content.senses) || [];
+    for (const s of senses) { if (s.definition) add(s.definition); }
+    if (out.length >= 5) break;
+  }
+  return { lemma, glosses: out.slice(0, 5) };
+}
+
+// Returns a promise of { lemma, glosses } or null on network failure.
+function lookupWord(token) {
+  const term = lookupTerm(token);
+  if (!term) return Promise.resolve({ lemma: '', glosses: [] });
+  if (_wordCache.has(term)) return _wordCache.get(term);
+  const p = fetch(`https://www.sefaria.org/api/words/${encodeURIComponent(term)}?never_split=1`)
+    .then((r) => (r.ok ? r.json() : []))
+    .then((d) => extractGlosses(d))
+    .catch(() => null);
+  _wordCache.set(term, p);
+  return p;
+}
+
+function setupWordLookup() {
+  const pop = document.createElement('div');
+  pop.className = 'wordpop';
+  pop.hidden = true;
+  document.body.appendChild(pop);
+  state._wordpop = pop;
+  let timer = null;
+  const box = $('verses');
+  if (!box) return;
+  const hide = () => { clearTimeout(timer); pop.hidden = true; pop._forEl = null; };
+  box.addEventListener('mouseover', (e) => {
+    const w = e.target.closest('.w');
+    if (!w) return;
+    clearTimeout(timer);
+    timer = setTimeout(() => showWordPop(w), 450); // hover-hold delay
+  });
+  box.addEventListener('mouseout', (e) => {
+    const w = e.target.closest('.w');
+    if (!w) return;
+    if (e.relatedTarget && (w.contains(e.relatedTarget) || pop.contains(e.relatedTarget))) return;
+    hide();
+  });
+  box.addEventListener('scroll', hide, true);
+  window.addEventListener('scroll', hide, true);
+}
+
+function positionWordPop(pop, w) {
+  const r = w.getBoundingClientRect();
+  const pr = pop.getBoundingClientRect();
+  let left = window.scrollX + r.left + r.width / 2 - pr.width / 2;
+  left = Math.max(8, Math.min(left, window.scrollX + window.innerWidth - pr.width - 8));
+  let top = window.scrollY + r.top - pr.height - 8;
+  if (top < window.scrollY + 4) top = window.scrollY + r.bottom + 8; // flip below if no room
+  pop.style.left = `${left}px`;
+  pop.style.top = `${top}px`;
+}
+
+async function showWordPop(w) {
+  const pop = state._wordpop;
+  if (!pop) return;
+  const verseEl = w.closest('.verse');
+  if (!verseEl) return;
+  const v = parseInt(verseEl.dataset.v, 10);
+  const wi = parseInt(w.dataset.wi, 10);
+  const tokens = tokenize(state.data.verses[v - 1].text);
+  const token = tokens[wi] || '';
+  const term = lookupTerm(token);
+  pop._forEl = w;
+  pop.innerHTML = `<div class="wp-head">${escapeHtml(term)}</div><div class="wp-body"><span class="wp-muted">looking up…</span></div>`;
+  pop.hidden = false;
+  positionWordPop(pop, w);
+  const res = await lookupWord(token);
+  if (pop._forEl !== w || pop.hidden) return; // hovered away / hidden meanwhile
+  let body;
+  if (res === null) body = '<span class="wp-muted">Lookup unavailable (offline).</span>';
+  else if (!res.glosses.length) body = '<span class="wp-muted">No dictionary entry found.</span>';
+  else body = `<ul>${res.glosses.map((g) => `<li>${escapeHtml(g)}</li>`).join('')}</ul>`;
+  const head = res && res.lemma ? `${escapeHtml(term)} <span class="wp-lemma">${escapeHtml(res.lemma)}</span>` : escapeHtml(term);
+  pop.innerHTML = `<div class="wp-head">${head}</div><div class="wp-body">${body}</div>`;
+  positionWordPop(pop, w);
+}
 
 // Hebrew numerals for verse labels (1..999).
 function toHebrewNum(n) {

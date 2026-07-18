@@ -55,13 +55,13 @@ button.warn { background: var(--accent-2); color: #201007; border-color: transpa
 button:disabled { opacity: 0.4; cursor: not-allowed; }
 button.toggle.on { background: var(--accent); color: #08101f; border-color: transparent; }
 
-/* Segmented control (e.g. the left-column score overlay selector). */
+/* Segmented control (e.g. the score-overlay and aliyah-cycle selectors). */
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.seg .ov { border: none; border-radius: 0; padding: 7px 11px; background: var(--panel-2);
+.seg button { border: none; border-radius: 0; padding: 7px 11px; background: var(--panel-2);
   border-inline-start: 1px solid var(--line); font-size: 13px; }
-.seg .ov:first-child { border-inline-start: none; }
-.seg .ov:hover { border-color: transparent; background: rgba(255,255,255,0.06); }
-.seg .ov.on { background: var(--accent); color: #08101f; font-weight: 600; }
+.seg button:first-child { border-inline-start: none; }
+.seg button:hover { border-color: transparent; background: rgba(255,255,255,0.06); }
+.seg button.on { background: var(--accent); color: #08101f; font-weight: 600; }
 
 .toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 10px 20px; border-bottom: 1px solid var(--line); }
 .toolbar .label { color: var(--muted); font-size: 12px; margin-inline-end: 4px; }
@@ -77,9 +77,11 @@ main.narrow-left .textpane .hebrew { font-size: 15px; line-height: 1.5; padding-
 main.narrow-left .textpane .vscore { font-size: 10px; }
 @media (max-width: 900px) { main { grid-template-columns: 1fr; height: auto; } .splitter { display: none; } }
 
-.phead { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.phead { display: flex; align-items: center; justify-content: flex-start; gap: 6px 10px; flex-wrap: wrap; margin-bottom: 4px; }
 .phead h2 { margin: 0; }
-.stagetag { font-size: 12px; font-weight: 600; color: var(--muted); margin-inline-start: 8px; }
+.stagetag { font-size: 11px; font-weight: 600; color: var(--muted); margin-inline-start: 6px; padding: 1px 7px;
+  background: var(--panel-2); border-radius: 6px; }
+.keyshint { font-size: 14px; color: var(--muted); cursor: help; margin-inline-start: auto; }
 
 /* Persistent stage selector (top bar) */
 .stagebar { gap: 6px; }
@@ -115,6 +117,65 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 .verse .vscore { font-size: 11px; font-weight: 700; border-radius: 6px; padding: 1px 7px; color: #fff; }
 .verse .vpips { display: flex; gap: 3px; }
 .verse .vpip { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+
+/* Bilingual layout: Koren-style English column to the left of the Hebrew. The
+   top padding clears the absolutely-positioned verse label / score. */
+.vbody.bilingual { display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap; padding-top: 22px; }
+.vbody.bilingual .ventext { flex: 1 1 45%; min-width: 150px; }
+.vbody.bilingual .hebrew { flex: 1 1 45%; min-width: 150px; }
+.ventext { direction: ltr; text-align: left; font-size: 16px; line-height: 1.6; color: #cdd2e6; }
+
+/* Hover-hold word translation popover. */
+.wordpop { position: absolute; z-index: 60; max-width: 300px; pointer-events: none;
+  background: var(--panel-2); border: 1px solid var(--line); border-radius: 9px;
+  padding: 8px 11px; box-shadow: 0 8px 24px rgba(0,0,0,0.45); font-size: 12px; color: var(--text); }
+.wordpop .wp-head { font-family: 'FrankRuehl', serif; font-size: 17px; font-weight: 700; margin-bottom: 4px; direction: rtl; }
+.wordpop .wp-lemma { font-size: 13px; font-weight: 400; color: var(--muted); margin-inline-start: 6px; }
+.wordpop .wp-body { direction: ltr; }
+.wordpop .wp-body ul { margin: 0; padding-inline-start: 16px; }
+.wordpop .wp-body li { margin: 2px 0; }
+.wordpop .wp-muted { color: var(--muted); font-style: italic; }
+/* Aliyot panel (left pane, above the verse list). */
+.aliyot-panel { margin: 0 0 12px; }
+.aliyot-panel:empty { display: none; }
+.aliyot-head { font-size: 12px; font-weight: 700; margin: 0 0 6px; }
+.aliyot-head .hint { font-weight: 400; }
+.aliyot-note { margin: 4px 0 0; }
+.aliyah { border: 1px solid var(--line); border-inline-start: 3px solid var(--accent-2); border-radius: 9px;
+  padding: 7px 9px; margin: 4px 0 12px; background: var(--panel); }
+.aliyah.ready { border-inline-start-color: var(--good); }
+.aliyah.ready { border-color: rgba(55,200,113,0.4); }
+.aliyah.open { box-shadow: 0 0 0 2px var(--accent) inset; }
+.aliyah .al-main { display: flex; align-items: center; gap: 8px; }
+.aliyah .al-n { font-family: 'FrankRuehl', serif; font-size: 16px; color: var(--accent); min-width: 18px; }
+.aliyah .al-label { font-size: 12px; font-weight: 600; flex: 1; }
+.aliyah .al-label .hint { font-weight: 400; }
+.aliyah .al-score { margin-inline-start: auto; font-size: 11px; font-weight: 700; color: #fff; border-radius: 6px; padding: 1px 7px; }
+.aliyah .al-prog { height: 5px; border-radius: 3px; background: rgba(255,255,255,0.08); margin: 6px 0 6px; overflow: hidden; }
+.aliyah .al-prog span { display: block; height: 100%; border-radius: 3px; }
+.aliyah .al-actions { display: flex; }
+.aliyah .al-go { padding: 4px 10px; font-size: 12px; }
+.aliyah .al-lock { font-size: 12px; color: var(--muted); }
+
+/* Aliyah scroll+yad practice view — fills the whole pane height. */
+#practice.aliyah-fill { height: 100%; display: flex; flex-direction: column; }
+.aliyah-view { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.aliyah-scroll { flex: 1; min-height: 140px; overflow: auto; margin: 10px 0; }
+.aliyah-scroll .al-verse { }
+/* Surrounding context (verses before/after the aliyah): faded, not the focus. */
+.aliyah-scroll .al-verse.ctx, .aliyah-scroll .sw.ctx { opacity: 0.38; }
+/* Current-spot cue: a grey outline that never reflows the text (outline +
+   box-shadow don't take layout space, and we don't auto-scroll). */
+.aliyah-scroll .sw { transition: outline-color .12s, box-shadow .12s; border-radius: 5px; padding: 0 1px; }
+.aliyah-scroll .sw.yad-cur { outline: 2px solid rgba(150,155,170,0.9); outline-offset: 2px;
+  background: rgba(140,145,160,0.14); }
+.aliyah-scroll .sw.yad-start { box-shadow: 0 0 0 2px rgba(55,200,113,0.6); animation: yadpulse 1.5s ease-in-out infinite; }
+.aliyah-scroll .sw.yad-end { box-shadow: 0 0 0 2px rgba(255,120,90,0.6); }
+@keyframes yadpulse { 0%,100% { box-shadow: 0 0 0 2px rgba(55,200,113,0.25); } 50% { box-shadow: 0 0 0 2px rgba(55,200,113,0.7); } }
+
+.al-cuebar { display: flex; align-items: center; gap: 8px; margin: 6px 0 2px; }
+.al-cuebar .label { color: var(--muted); font-size: 12px; }
+
 .hebrew {
   direction: rtl; text-align: right; font-family: 'FrankRuehl', serif;
   font-size: 30px; line-height: 1.9; padding-top: 14px;
@@ -144,24 +205,27 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 .tname .sw { width: 11px; height: 11px; border-radius: 50%; display: inline-block; margin-inline-end: 5px; vertical-align: middle; }
 
 .practice { background: rgba(255,255,255,0.01); }
-.practice h2 { margin: 0 0 4px; font-size: 18px; }
+.practice h2 { margin: 0; font-size: 15px; }
 .levelrow { display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0; }
 .lvlbtn { padding: 6px 9px; font-size: 12px; border-radius: 8px; }
 .lvlbtn.cur { background: var(--accent); color: #08101f; border-color: transparent; font-weight: 700; }
 .lvlbtn.locked { opacity: 0.35; }
-.leveldesc { color: var(--muted); font-size: 13px; margin: 4px 0 12px; }
-.aidchips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.leveldesc { color: var(--muted); font-size: 13px; margin: 2px 0 6px; }
+.practice-en { direction: ltr; font-size: 17px; line-height: 1.6; color: #cdd2e6; margin: 0 0 12px;
+  padding-inline-start: 10px; border-inline-start: 3px solid var(--line); }
+.aidchips { display: flex; gap: 5px; flex-wrap: wrap; margin: 0; }
 .chip { font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
 .chip.on { color: var(--good); border-color: var(--good); }
 .chip.off { color: var(--muted); text-decoration: line-through; }
 
-.unit-nav { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+.unit-nav { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
 .unit-nav .u-label { color: var(--muted); font-size: 12px; }
+.unit-nav button { padding: 2px 8px; font-size: 12px; }
 
-.canvas-wrap { position: relative; background: #0b0e1a; border: 1px solid var(--line); border-radius: 12px; margin: 10px 0; overflow: hidden; }
-canvas.contour { width: 100%; height: 220px; display: block; }
-canvas.spectro { width: 100%; height: 150px; display: block; }
-.spectro-label { font-size: 12px; color: var(--text); margin: 10px 0 2px; }
+.canvas-wrap { position: relative; background: #0b0e1a; border: 1px solid var(--line); border-radius: 12px; margin: 6px 0; overflow: hidden; }
+canvas.contour { width: 100%; height: 210px; display: block; }
+canvas.spectro { width: 100%; height: 120px; display: block; }
+.spectro-label { font-size: 11px; color: var(--text); margin: 6px 0 2px; }
 .cmp-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px; color: var(--muted); margin: -2px 0 4px; }
 .cmp-legend .swatch { display: inline-block; width: 18px; height: 0; vertical-align: middle; margin-inline-end: 5px; }
 .cmp-legend .swatch.coach { border-top: 4px solid var(--accent); }
@@ -205,7 +269,7 @@ canvas.spectro { width: 100%; height: 150px; display: block; }
   padding: 0 2px; border-radius: 6px;
 }
 .tlword.cur { background: rgba(255,215,0,0.20); }
-.mode-indicator { margin: 8px 0 2px; }
+.mode-indicator { margin: 0; display: inline-flex; align-items: center; gap: 6px; }
 .mode-pill {
   display: inline-block; font-size: 12px; font-weight: 700; color: #08101f;
   background: var(--accent); border-radius: 999px; padding: 3px 10px;
@@ -218,15 +282,31 @@ canvas.spectro { width: 100%; height: 150px; display: block; }
 .result .ceil { font-weight: 700; font-size: 14px; color: var(--muted); }
 .result .stars { color: #ffd23f; font-size: 18px; letter-spacing: 2px; }
 
+/* Sticky top status strip: keeps the score + live meter visible while singing. */
+.topstatus { position: sticky; top: 0; z-index: 6; display: flex; align-items: center; gap: 16px;
+  flex-wrap: wrap; background: var(--bg); padding: 8px 0; margin: 2px 0 6px; border-bottom: 1px solid var(--line); }
+.topstatus .result { flex: 1 1 240px; margin: 0; }
+.topstatus .livemeter { flex: 1 1 220px; margin: 0; }
+
+/* Live guitar-hero score meter (during recording). */
+.livemeter { display: flex; align-items: center; gap: 10px; margin: 8px 0 2px; }
+.livemeter[hidden] { display: none; }
+.livemeter .lm-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); min-width: 78px; }
+.livemeter .lm-track { flex: 1; height: 16px; border-radius: 8px; background: rgba(255,255,255,0.06);
+  border: 1px solid var(--line); overflow: hidden; }
+.livemeter .lm-fill { height: 100%; width: 0; transition: width .12s linear, background .2s; }
+.livemeter .lm-val { min-width: 46px; text-align: right; color: var(--muted); }
+.livemeter .lm-val b { font-size: 18px; font-weight: 800; color: var(--text); }
+
 /* Accuracy panel: three bar-chart meters (words -> phrases -> whole verse, each
    with fewer divisions) plus a row of independent handicap skill badges. */
-.accuracy-panel { margin: 10px 0 2px; display: flex; flex-direction: column; gap: 8px; }
+.accuracy-panel { margin: 8px 0 2px; display: flex; flex-direction: column; gap: 5px; }
 .accuracy-panel:empty { display: none; }
 
 .scorebar-row { }
 .scorebar-row.active .sb-label { color: var(--text); }
 .scorebar-row.active .section-bar { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
-.sb-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 4px; }
+.sb-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 2px; }
 .sb-label .hint { text-transform: none; letter-spacing: 0; }
 
 /* Hebrew word row aligned over the bars (same flex geometry as the meters). */
@@ -244,7 +324,7 @@ canvas.spectro { width: 100%; height: 150px; display: block; }
 .skill.clickable:hover { border-color: var(--accent); }
 
 /* Bar-chart meter: bar height = score, width = time span, color adaptive. */
-.section-bar { display: flex; direction: rtl; height: 44px; border-radius: 8px; overflow: hidden;
+.section-bar { display: flex; direction: rtl; height: 30px; border-radius: 8px; overflow: hidden;
   border: 1px solid var(--line); background: rgba(255,255,255,0.03);
   background-image: repeating-linear-gradient(0deg, transparent, transparent 24%, rgba(255,255,255,0.05) 24%, rgba(255,255,255,0.05) calc(24% + 1px)); }
 .section-bar .secseg { position: relative; height: 100%; min-width: 2px; border-inline-start: 1px solid rgba(0,0,0,0.28); }

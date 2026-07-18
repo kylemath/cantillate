@@ -38,6 +38,7 @@
     <span class="label">Show / hide:</span>
     <button id="tgVowels" class="toggle on">Vowels (niqqud)</button>
     <button id="tgTaamim" class="toggle on">Cantillation (te'amim)</button>
+    <button id="tgEnglish" class="toggle">English</button>
     <span class="label" style="margin-inline-start:12px;">Font:</span>
     <button id="tgFont" class="toggle">Scroll (STA"M)</button>
     <span class="label" style="margin-inline-start:12px;">Score overlay:</span>
@@ -49,6 +50,17 @@
     </span>
     <span class="label" style="margin-inline-start:12px;">View:</span>
     <button id="tgScrollView" class="toggle">📜 Torah column</button>
+    <span class="label" style="margin-inline-start:12px;">Aliyot:</span>
+    <span class="seg" id="cycleSeg">
+      <button class="cyc on" data-cyc="annual">Annual</button>
+      <button class="cyc" data-cyc="triennial">Triennial</button>
+    </span>
+    <select id="triYear" style="display:none">
+      <option value="1">Year 1</option>
+      <option value="2">Year 2</option>
+      <option value="3">Year 3</option>
+    </select>
+    <button id="cycToday" class="toggle" title="Set the cycle year from today's Hebrew date">📅 Today</button>
     <span class="legend-scale" style="margin-inline-start:12px;">
       <span>low</span><span class="bar"></span><span>high</span>
     </span>
@@ -60,6 +72,7 @@
   <main>
     <section class="textpane">
       <p class="pane-title" id="textTitle">Text</p>
+      <div id="aliyot" class="aliyot-panel"></div>
       <div id="verses"></div>
     </section>
 

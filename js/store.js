@@ -119,6 +119,39 @@ export function getVerseProfile(slug, verseN, mode) {
   return (d.profiles && d.profiles[`${slug}:${verseN}:${mode}`]) || null;
 }
 
+// All stored whole-verse profiles for a verse, keyed by skill/mode.
+export function getVerseProfiles(slug, verseN) {
+  const d = load();
+  const out = {};
+  if (d.profiles) {
+    const prefix = `${slug}:${verseN}:`;
+    for (const k of Object.keys(d.profiles)) {
+      if (k.startsWith(prefix)) out[k.slice(prefix.length)] = d.profiles[k];
+    }
+  }
+  return out;
+}
+
+// Per-aliyah best chant score, keyed by slug:cycle:year:aliyahNumber. Year is
+// only meaningful for the triennial cycle (use 0 for annual).
+function aliyahKey(slug, cycle, year, n) {
+  return `${slug}:${cycle}:${cycle === 'triennial' ? year : 0}:${n}`;
+}
+
+export function recordAliyahScore(slug, cycle, year, n, score) {
+  const d = load();
+  d.aliyot = d.aliyot || {};
+  const k = aliyahKey(slug, cycle, year, n);
+  d.aliyot[k] = Math.max(d.aliyot[k] || 0, score);
+  save(d);
+  return d.aliyot[k];
+}
+
+export function getAliyahScore(slug, cycle, year, n) {
+  const d = load();
+  return (d.aliyot && d.aliyot[aliyahKey(slug, cycle, year, n)]) || 0;
+}
+
 // Per-verse highest unlocked level.
 export function recordVerseLevel(slug, verseN, level) {
   const d = load();
