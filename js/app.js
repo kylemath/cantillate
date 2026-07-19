@@ -8,6 +8,7 @@ import { LEVELS, levelById, VERSE_MODES, skillForLevel } from './levels.js';
 import { aliyotFor, parashahOf, currentTriennialYear } from './aliyot.js';
 import * as store from './store.js';
 import * as auth from './auth.js';
+import * as scores from './scores.js';
 
 // An aliyah's scroll+yad challenge unlocks once every pasuk in it has reached at
 // least this stage (i.e., the learner has worked it up to whole-verse practice).
@@ -70,21 +71,48 @@ function verseRefLabel(verse, n) {
   return `${toHebrewNum(n)}`;
 }
 
+// A human ref for a verse range (e.g. "1:1–1:10"), used when rebuilding labels
+// for user-edited aliyah boundaries.
+function rangeRef(startN, endN) {
+  const vs = state.data.verses;
+  const s = vs[startN - 1], e = vs[endN - 1];
+  if (!s || !e) return '';
+  const sL = verseRefLabel(s, startN), eL = verseRefLabel(e, endN);
+  return sL === eL ? sL : `${sL}–${eL}`;
+}
+
 // The parashah context for the current reading: prefer the data file's own
 // parashah block (multi-chapter readings), else the hardcoded table in aliyot.js.
 function parashahForReading() {
   return (state.data && state.data.parashah) || parashahOf(state.slug);
 }
 
-// The aliyah list for a cycle/year: prefer the data file's own aliyot block
-// (with sequential-n start/end indices), else the hardcoded table in aliyot.js.
-function aliyotForReading(cycle, year) {
+// A stable key for a cycle+year partition, used for per-user custom-boundary
+// storage (annual is one partition; each triennial year is its own).
+function cycleKeyFor(cycle, year) {
+  return cycle === 'triennial' ? `tri${year}` : 'annual';
+}
+
+// The DEFAULT aliyah list for a cycle/year: prefer the data file's own aliyot
+// block (with sequential-n start/end indices), else the hardcoded table.
+function defaultAliyot(cycle, year) {
   if (state.data && state.data.aliyot) {
     return cycle === 'triennial'
       ? (state.data.aliyot.triennial[year] || [])
       : (state.data.aliyot.annual || []);
   }
   return aliyotFor(state.slug, cycle, year);
+}
+
+// The aliyah list the USER sees/practices: their saved custom boundaries if any,
+// else the default partition. Leaderboards deliberately ignore custom overrides
+// (they roll up from pesukim onto the default partition), so this only affects
+// what the user chants as a single aliyah take.
+function aliyotForReading(cycle, year) {
+  const base = defaultAliyot(cycle, year);
+  const custom = state.slug && store.getAliyotCustom(state.slug, cycleKeyFor(cycle, year));
+  if (custom && custom.length) return custom;
+  return base;
 }
 
 async function init() {
@@ -139,6 +167,96 @@ async function init() {
   setupWordLookup();
   setupAuth();
   setupLeaderboard();
+  setupAliyotEditor();
+}
+
+// ---------------------------------------------------------------------------
+// Per-user aliyah boundary editor. A rabbi/teacher may divide the reading
+// differently; this lets a user set where each aliyah ends (starts follow
+// automatically) and saves it for the current cycle/year partition. Leaderboards
+// keep using the default partition, so custom splits never fragment the boards.
+// ---------------------------------------------------------------------------
+function setupAliyotEditor() {
+  const btn = $('btnEditAliyot');
+  const modal = $('aliyotEditModal');
+  if (!btn || !modal) return;
+  btn.addEventListener('click', () => openAliyotEditor());
+  modal.querySelectorAll('[data-close]').forEach((el) => {
+    el.addEventListener('click', () => { modal.hidden = true; });
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) modal.hidden = true; });
+}
+
+function openAliyotEditor() {
+  const modal = $('aliyotEditModal');
+  const body = $('aliyotEditBody');
+  if (!modal || !body) return;
+  const maxV = state.data.verses.length;
+  const list = aliyotForReading(state.cycle, state.triYear);
+  if (!list.length) {
+    body.innerHTML = `<p class="lb-empty">This cycle's aliyot fall outside the loaded text, so there are no boundaries to edit here.</p>`;
+    modal.hidden = false;
+    return;
+  }
+  const firstStart = list[0].start;
+  const rows = list.map((a, i) => {
+    const isLast = i === list.length - 1;
+    return `<div class="al-edit-row" data-n="${a.n}">
+      <span class="al-edit-n">Aliyah ${a.n}</span>
+      <label class="al-edit-lbl">ends at verse</label>
+      <input class="al-edit-end" type="number" min="1" max="${maxV}" value="${Math.min(a.end, maxV)}" ${isLast ? 'disabled title="the last aliyah ends the reading"' : ''} />
+      <span class="al-edit-ref" data-ref></span>
+    </div>`;
+  }).join('');
+  body.innerHTML = `<div class="al-edit-list" data-first="${firstStart}" data-max="${maxV}">${rows}</div>`;
+  const refresh = () => refreshEditorRefs(body);
+  body.querySelectorAll('.al-edit-end').forEach((inp) => inp.addEventListener('input', refresh));
+  refresh();
+  $('aliyotSave').onclick = () => { saveAliyotEditor(body); modal.hidden = true; };
+  $('aliyotReset').onclick = () => {
+    store.setAliyotCustom(state.slug, cycleKeyFor(state.cycle, state.triYear), null);
+    modal.hidden = true;
+    renderAliyot(); renderVerses();
+  };
+  modal.hidden = false;
+}
+
+// Live-update the "start–end" ref shown next to each editable row as the user
+// types, so it's clear which pesukim each aliyah covers.
+function refreshEditorRefs(body) {
+  const wrap = body.querySelector('.al-edit-list');
+  if (!wrap) return;
+  const rows = [...wrap.querySelectorAll('.al-edit-row')];
+  const maxV = parseInt(wrap.dataset.max, 10);
+  let start = parseInt(wrap.dataset.first, 10);
+  rows.forEach((row, i) => {
+    const inp = row.querySelector('.al-edit-end');
+    let end = i === rows.length - 1 ? maxV : parseInt(inp.value, 10);
+    if (!Number.isFinite(end)) end = start;
+    end = Math.max(start, Math.min(maxV, end));
+    row.querySelector('[data-ref]').textContent = rangeRef(start, end);
+    start = end + 1;
+  });
+}
+
+function saveAliyotEditor(body) {
+  const wrap = body.querySelector('.al-edit-list');
+  if (!wrap) return;
+  const rows = [...wrap.querySelectorAll('.al-edit-row')];
+  const maxV = parseInt(wrap.dataset.max, 10);
+  let start = parseInt(wrap.dataset.first, 10);
+  const list = rows.map((row, i) => {
+    const n = parseInt(row.dataset.n, 10);
+    const inp = row.querySelector('.al-edit-end');
+    let end = i === rows.length - 1 ? maxV : parseInt(inp.value, 10);
+    if (!Number.isFinite(end)) end = start;
+    end = Math.max(start, Math.min(maxV, end));
+    const entry = { n, start, end, ref: rangeRef(start, end) };
+    start = end + 1;
+    return entry;
+  });
+  store.setAliyotCustom(state.slug, cycleKeyFor(state.cycle, state.triYear), list);
+  renderAliyot(); renderVerses();
 }
 
 // Mobile off-canvas "pesukim" drawer: the verse list overlays the practice pane
@@ -237,25 +355,43 @@ function setupLeaderboard() {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) modal.hidden = true; });
 }
 
+let lbTab = 'overall';
+let lbAliyahSel = null; // { cycle, year, n } chosen in the Aliyah tab
+
 async function openLeaderboard() {
   const modal = $('lbModal');
   const body = $('lbBody');
   if (!modal || !body) return;
   modal.hidden = false;
-  if (!auth.isConfigured()) {
-    body.innerHTML = `<p class="lb-empty">The leaderboard isn't set up yet. Add your Firebase config in
-      <code>js/firebase-config.js</code> (see the README) to enable Google sign-in, cloud-saved progress and this shared leaderboard.</p>
-      ${localSummaryHtml()}`;
-    return;
-  }
-  body.innerHTML = '<p class="lb-empty">Loading…</p>';
-  const rows = await auth.getLeaderboard(25);
-  const me = auth.getUser();
-  if (!rows.length) {
-    body.innerHTML = `<p class="lb-empty">No one's on the board yet — ${me ? 'keep practicing to climb it!' : 'sign in and start practicing to be the first!'}</p>
-      ${localSummaryHtml()}`;
-    return;
-  }
+  renderLbShell(body);
+}
+
+// Tab strip + a body region that each tab fills in. Overall is the classic
+// global XP board; the others are the canonical per-scope boards.
+function renderLbShell(body) {
+  const tabs = [
+    ['overall', 'Overall'],
+    ['pasuk', 'This pasuk'],
+    ['aliyah', 'This aliyah'],
+    ['parasha', 'This parasha'],
+  ];
+  body.innerHTML = `<div class="lb-tabs">${tabs.map(([id, l]) =>
+    `<button class="lb-tab ${lbTab === id ? 'on' : ''}" data-tab="${id}">${l}</button>`).join('')}</div>
+    <div class="lb-tabbody" id="lbTabBody"><p class="lb-empty">Loading…</p></div>`;
+  body.querySelectorAll('.lb-tab').forEach((b) => {
+    b.addEventListener('click', () => { lbTab = b.dataset.tab; renderLbShell(body); });
+  });
+  renderLbTab();
+}
+
+function lbNotConfigured() {
+  return `<p class="lb-empty">The shared leaderboard isn't set up yet. Add your Firebase config in
+    <code>js/firebase-config.js</code> (see the README) to enable it.</p>${localSummaryHtml()}`;
+}
+
+// Render one board's rows into an HTML table. `metric` picks which numeric
+// column(s) to show; `star` adds a ⭐ marker for partial-coverage entries.
+function boardTable(rows, { cols, me }) {
   const list = rows.map((r, i) => {
     const rank = i + 1;
     const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `${rank}`;
@@ -264,20 +400,180 @@ async function openLeaderboard() {
       ? `<img class="lb-av" src="${escapeHtml(r.photo)}" alt="" referrerpolicy="no-referrer" />`
       : `<span class="lb-av fallback">${escapeHtml(initial)}</span>`;
     const isMe = me && r.uid === me.uid;
+    const star = r.partial ? ' <span class="lb-star" title="Covered only part of the parashah (e.g. one triennial third)">⭐</span>' : '';
+    const cyc = r.cycle && r.cycle !== 'annual' ? ` <span class="lb-youtag">tri</span>` : '';
+    const numCols = cols.map((c) => `<td class="lb-num">${(r[c.key] != null ? r[c.key] : 0).toLocaleString ? (r[c.key] || 0).toLocaleString() : (r[c.key] || 0)}</td>`).join('');
     return `<tr class="${isMe ? 'me' : ''}">
       <td class="lb-rank">${medal}</td>
-      <td class="lb-who">${av}<span class="lb-name">${escapeHtml(r.name)}${isMe ? ' <span class="lb-youtag">you</span>' : ''}</span></td>
-      <td class="lb-xp">${r.xp.toLocaleString()}</td>
-      <td class="lb-num" title="Verses at whole-verse stage or beyond">${r.versesMastered}</td>
-      <td class="lb-num" title="Aliyot chanted at 80+">${r.aliyotComplete}</td>
+      <td class="lb-who">${av}<span class="lb-name">${escapeHtml(r.name || 'Anonymous')}${isMe ? ' <span class="lb-youtag">you</span>' : ''}${cyc}${star}</span></td>
+      ${numCols}
     </tr>`;
   }).join('');
-  body.innerHTML = `
-    <table class="lb-table">
-      <thead><tr><th></th><th>Reader</th><th>XP</th><th title="Verses at whole-verse stage or beyond">Verses</th><th title="Aliyot chanted at 80+">Aliyot</th></tr></thead>
-      <tbody>${list}</tbody>
-    </table>
-    ${me ? '' : '<p class="hint lb-signin-note">Sign in to save your progress to the cloud and appear here.</p>'}`;
+  return `<table class="lb-table"><thead><tr><th></th><th>Reader</th>${cols.map((c) => `<th title="${escapeHtml(c.title || '')}">${c.label}</th>`).join('')}</tr></thead><tbody>${list}</tbody></table>`;
+}
+
+async function renderLbTab() {
+  const el = $('lbTabBody');
+  if (!el) return;
+  const me = auth.getUser();
+  if (!auth.isConfigured()) { el.innerHTML = lbNotConfigured(); return; }
+  el.innerHTML = '<p class="lb-empty">Loading…</p>';
+
+  if (lbTab === 'overall') {
+    const rows = await auth.getLeaderboard(25);
+    if (!rows.length) {
+      el.innerHTML = `<p class="lb-empty">No one's on the board yet — ${me ? 'keep practicing to climb it!' : 'sign in and start practicing to be the first!'}</p>${localSummaryHtml()}`;
+      return;
+    }
+    el.innerHTML = boardTable(rows, {
+      me,
+      cols: [
+        { key: 'xp', label: 'XP', title: 'Sum of best whole-verse & aliyah accuracies' },
+        { key: 'versesMastered', label: 'Verses', title: 'Verses at whole-verse stage or beyond' },
+        { key: 'aliyotComplete', label: 'Aliyot', title: 'Aliyot chanted at 80+' },
+      ],
+    }) + (me ? '' : '<p class="hint lb-signin-note">Sign in to appear here.</p>');
+    return;
+  }
+
+  if (typeof auth.getBoard !== 'function') { el.innerHTML = '<p class="lb-empty">Per-scope boards are still loading — try again in a moment.</p>'; return; }
+
+  if (lbTab === 'pasuk') {
+    if (state.selectedVerse == null) { el.innerHTML = '<p class="lb-empty">Select a pasuk on the left to see its leaderboard.</p>'; return; }
+    const v = state.selectedVerse;
+    const refId = scores.pasukIdFor(state.data, v);
+    const rows = await auth.getBoard('pasuk', refId, 25);
+    const mine = store.getVerseRuns(state.slug, v).slice(0, 5);
+    const label = `${(state.data.book && state.data.book.en) || ''} ${verseRefLabel(state.data.verses[v - 1], v)}`;
+    const mineHtml = mine.length
+      ? `<div class="lb-local"><h3>Your top runs on this pasuk</h3><div class="lb-runs">${mine.map((s) => `<span class="lb-run" style="background:${scoreColor(s)}">${s}</span>`).join('')}</div></div>`
+      : '<p class="hint">Record this pasuk to log your runs.</p>';
+    el.innerHTML = `<p class="lb-scope">🎯 ${escapeHtml(label)} — top readers (all cycles)</p>`
+      + (rows.length ? boardTable(rows, { me, cols: [{ key: 'score', label: 'Score', title: 'Best whole-verse accuracy' }] }) : '<p class="lb-empty">No scores yet for this pasuk.</p>')
+      + mineHtml;
+    return;
+  }
+
+  if (lbTab === 'aliyah') {
+    el.innerHTML = renderAliyahBoardPicker();
+    wireAliyahBoardPicker();
+    return;
+  }
+
+  if (lbTab === 'parasha') {
+    const par = parashahForReading();
+    const refId = scores.parashaIdFor(par, state.slug);
+    const rows = await auth.getBoard('parasha', refId, 25);
+    el.innerHTML = `<p class="lb-scope">📖 ${escapeHtml((par && (par.en || par.he)) || state.slug)} — top readers (⭐ = partial coverage)</p>`
+      + (rows.length ? boardTable(rows, { me, cols: [{ key: 'score', label: 'Score', title: 'Overall parashah accuracy (rolled up from pesukim)' }] }) : '<p class="lb-empty">No scores yet for this parashah.</p>');
+    return;
+  }
+}
+
+// The Aliyah tab needs to know WHICH aliyah; default to the open/selected one,
+// else the first of the current cycle, with a dropdown to switch.
+function renderAliyahBoardPicker() {
+  const cycle = state.cycle, year = state.triYear;
+  const list = defaultAliyot(cycle, year);
+  if (!list.length) return '<p class="lb-empty">This cycle has no aliyot inside the loaded text.</p>';
+  if (!lbAliyahSel || lbAliyahSel.cycle !== cycle || lbAliyahSel.year !== year || !list.some((a) => a.n === lbAliyahSel.n)) {
+    const openN = state.aliyah && state.aliyah.n;
+    lbAliyahSel = { cycle, year, n: openN || list[0].n };
+  }
+  const opts = list.map((a) => `<option value="${a.n}" ${a.n === lbAliyahSel.n ? 'selected' : ''}>Aliyah ${a.n} · ${a.ref || ''}</option>`).join('');
+  const cycLbl = cycle === 'triennial' ? `Triennial Yr ${year}` : 'Annual';
+  return `<div class="lb-aliyah-pick"><span class="label">${cycLbl}:</span> <select id="lbAliyahSel">${opts}</select></div>
+    <div id="lbAliyahBoard"><p class="lb-empty">Loading…</p></div>`;
+}
+
+function wireAliyahBoardPicker() {
+  const sel = $('lbAliyahSel');
+  if (sel) sel.onchange = () => { lbAliyahSel.n = parseInt(sel.value, 10); loadAliyahBoard(); };
+  loadAliyahBoard();
+}
+
+async function loadAliyahBoard() {
+  const box = $('lbAliyahBoard');
+  if (!box || !lbAliyahSel) return;
+  const me = auth.getUser();
+  const par = parashahForReading();
+  const parId = scores.parashaIdFor(par, state.slug);
+  const refId = scores.aliyahIdFor(parId, lbAliyahSel.cycle, lbAliyahSel.year, lbAliyahSel.n);
+  const rows = await auth.getBoard('aliyah', refId, 25);
+  box.innerHTML = rows.length
+    ? boardTable(rows, { me, cols: [{ key: 'score', label: 'Score', title: 'Aliyah accuracy (direct take or rolled up from pesukim)' }] })
+    : '<p class="lb-empty">No scores yet for this aliyah — chant it (or its pesukim) to be first.</p>';
+}
+
+// ---------------------------------------------------------------------------
+// Hierarchical leaderboard feed. After any scoring event we recompute the
+// canonical scope scores for the current reading (pasuk / aliyah / parasha) and
+// hand them to the sync layer, which only writes the ones that improved. The
+// aliyah/parasha scores are rolled up from pesukim (with the average-based floor
+// in scores.js) so a learner who has only done pesukim still appears — at a low,
+// improvable score — until they record the continuous chain.
+// ---------------------------------------------------------------------------
+function pasukBest(verseN) {
+  return bestVerseScore(verseN);
+}
+
+function computeScopeEntries() {
+  const par = parashahForReading();
+  const parId = scores.parashaIdFor(par, state.slug);
+  const maxV = state.data.verses.length;
+  const entries = [];
+
+  // Pasuk: each verse's best whole-verse accuracy (cycle-independent).
+  const allBests = [];
+  for (let n = 1; n <= maxV; n++) {
+    const sc = pasukBest(n);
+    if (sc > 0) {
+      allBests.push(sc);
+      entries.push({ type: 'pasuk', refId: scores.pasukIdFor(state.data, n), score: sc, label: `${(state.data.book && state.data.book.en) || ''} ${verseRefLabel(state.data.verses[n - 1], n)}` });
+    }
+  }
+
+  // Aliyah: for every DEFAULT partition (annual + each triennial year), the
+  // max(direct take, derived floor from its pesukim).
+  const partitions = [['annual', 0]];
+  for (let y = 1; y <= 3; y++) partitions.push(['triennial', y]);
+  for (const [cycle, year] of partitions) {
+    const list = defaultAliyot(cycle, year);
+    for (const a of list) {
+      const childBests = [];
+      for (let n = a.start; n <= Math.min(a.end, maxV); n++) {
+        const b = pasukBest(n);
+        if (b > 0) childBests.push(b);
+      }
+      const direct = store.getAliyahScore(state.slug, cycle, year, a.n);
+      const sc = scores.deriveScore(direct, childBests);
+      if (sc > 0) {
+        entries.push({ type: 'aliyah', refId: scores.aliyahIdFor(parId, cycle, year, a.n), score: sc, cycle, label: `Aliyah ${a.n} · ${a.ref || ''}` });
+      }
+    }
+  }
+
+  // Parasha: rolled up from all pesukim. `partial` (⭐ on the board) marks a
+  // reader who has only covered a fraction of the parashah (e.g. one triennial
+  // third).
+  if (allBests.length) {
+    const parScore = scores.deriveScore(0, allBests);
+    if (parScore > 0) {
+      const coverage = allBests.length / maxV;
+      entries.push({ type: 'parasha', refId: parId, score: parScore, partial: coverage < 0.5, label: (par && (par.en || par.he)) || state.slug });
+    }
+  }
+  return entries;
+}
+
+// Fire-and-forget: recompute and push scope scores if the sync layer supports
+// it and the user is signed in. Guarded so it is a no-op offline or before the
+// per-scope board functions are available.
+function maybePushScopes() {
+  try {
+    if (typeof auth.pushScopeScores !== 'function') return;
+    auth.pushScopeScores(computeScopeEntries());
+  } catch (e) { /* leaderboard push is best-effort */ }
 }
 
 // A read-only summary of THIS browser's local progress, shown when the shared
@@ -438,10 +734,15 @@ async function loadData(slug) {
     const ar = await fetch(`data/${slug}_audio.json`);
     if (ar.ok) state.audio = await ar.json();
   } catch (e) { /* no recorded audio available */ }
+  // Prefer the slim pitch payload (no heavy per-frame `raw` arrays ≈ 40% smaller);
+  // fall back to the original monolith if the slim file hasn't been generated yet.
   try {
-    const pr = await fetch(`data/${slug}_pitch.json`);
+    let pr = await fetch(`data/${slug}_pitch.slim.json`);
+    if (!pr.ok) pr = await fetch(`data/${slug}_pitch.json`);
     if (pr.ok) state.pitch = await pr.json();
   } catch (e) { /* no extracted pitch available */ }
+  // Load the faint-underlay `raw` contours lazily so they never block first paint.
+  loadRawContoursDeferred(slug);
   state.shapes = null;
   try {
     const sr = await fetch(`data/${slug}_shapes.json`);
@@ -457,6 +758,34 @@ async function loadData(slug) {
   renderStageBar();
   $('practice').classList.remove('aliyah-fill');
   $('practice').innerHTML = '<p class="empty">Select a verse on the left to begin practicing.</p>';
+}
+
+// Fetch the per-frame `raw` contours (used only for the faint coach underlay)
+// after the main payload, then merge them into the resident pitch data and
+// refresh any open view — unless a recording is in progress (don't disrupt it).
+async function loadRawContoursDeferred(slug) {
+  try {
+    const rr = await fetch(`data/${slug}_pitch.raw.json`);
+    if (!rr.ok) return; // monolith fallback already carries raw, or none exists
+    const raw = await rr.json();
+    if (state.slug !== slug || !state.pitch) return; // reading changed meanwhile
+    mergeRawContours(state.pitch, raw);
+    if (state.recording || state._aliyaRunning || state.playingReal) return;
+    if (state.aliyah) renderAliyahView();
+    else if (state.selectedVerse != null) renderPractice();
+  } catch (e) { /* underlay is optional */ }
+}
+
+function mergeRawContours(pitch, raw) {
+  if (!pitch || !pitch.verses || !raw || !raw.verses) return;
+  for (const vn of Object.keys(raw.verses)) {
+    const pv = pitch.verses[vn];
+    const rv = raw.verses[vn];
+    if (!pv || !pv.words || !rv || !rv.words) continue;
+    const byI = {};
+    rv.words.forEach((w) => { byI[w.i] = w.raw; });
+    pv.words.forEach((w) => { if (byI[w.i] != null) w.raw = byI[w.i]; });
+  }
 }
 
 function verseAudio(verseN) {
@@ -1074,6 +1403,7 @@ function finishAliyahRecord(tl) {
     + `<span class="num">${score}</span><span class="ceil"> / 100</span>`
     + `<br><span class="hint">${msg}</span>`;
   renderAliyot();
+  maybePushScopes();
 }
 
 // Persistent top-of-window stage selector. Any stage is navigable; stages not
@@ -1873,6 +2203,7 @@ function finishRecording() {
     const skill = skillForLevel(level) || 'base';
     store.recordVerseModeScore(state.slug, state.selectedVerse, skill, headline);
     store.recordVerseProfile(state.slug, state.selectedVerse, skill, headline, profileByGi);
+    store.recordVerseRun(state.slug, state.selectedVerse, headline);
     const md = VERSE_MODES.find((m) => m.key === skill);
     label = `${md ? md.label : 'Full verse'} accuracy`;
   } else {
@@ -1905,6 +2236,7 @@ function finishRecording() {
   renderAliyot();
   applyHighlight();
   renderStageBar();
+  maybePushScopes();
 }
 
 // Greyed page shown when navigating to a stage not yet unlocked for this verse.

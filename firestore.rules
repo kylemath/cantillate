@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Each user's full progress snapshot: readable/writable only by that user.
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+    // Global XP leaderboard summary: world-readable, owner-writable.
+    match /leaderboard/{uid} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == uid;
+    }
+    // Hierarchical per-scope boards (pasuk / aliyah / parasha):
+    // boards/{type}/refs/{refId}/entries/{uid}
+    // world-readable, and each user may only write their own entry document.
+    match /boards/{type}/refs/{refId}/entries/{uid} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}

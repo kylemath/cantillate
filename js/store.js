@@ -41,15 +41,44 @@ export function mergeRemote(remote) {
 // Buckets whose values are single "best" numbers (higher wins).
 const MAX_BUCKETS = ['verses', 'words', 'phrases', 'modes', 'aliyot', 'levels'];
 
+// How many recent/best runs to keep per pasuk (for "your top-N scores").
+const RUNS_CAP = 20;
+
 function mergeProgress(a, b) {
   const out = {};
   for (const bucket of MAX_BUCKETS) {
     out[bucket] = mergeMax(a[bucket], b[bucket]);
   }
   out.profiles = mergeProfiles(a.profiles, b.profiles);
+  out.runs = mergeRuns(a.runs, b.runs);
+  // Custom aliyah boundaries: prefer the most recently edited per key.
+  out.aliyotCustom = mergeCustom(a.aliyotCustom, b.aliyotCustom);
   // Preserve any unknown buckets a future version might add (prefer local).
   for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) {
     if (!(k in out)) out[k] = a[k] !== undefined ? a[k] : b[k];
+  }
+  return out;
+}
+
+// Per-pasuk top-N run history: union both sides, keep the best RUNS_CAP.
+function mergeRuns(a = {}, b = {}) {
+  const out = {};
+  for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) {
+    const merged = [...(a[k] || []), ...(b[k] || [])]
+      .map((x) => Number(x) || 0)
+      .sort((x, y) => y - x)
+      .slice(0, RUNS_CAP);
+    out[k] = merged;
+  }
+  return out;
+}
+
+// Custom boundaries carry an `updatedAt` epoch so the newer edit wins on merge.
+function mergeCustom(a = {}, b = {}) {
+  const out = { ...a };
+  for (const k of Object.keys(b)) {
+    const cur = out[k];
+    if (!cur || (b[k] && (b[k].updatedAt || 0) >= (cur.updatedAt || 0))) out[k] = b[k];
   }
   return out;
 }
@@ -229,4 +258,48 @@ export function recordVerseLevel(slug, verseN, level) {
 export function getVerseLevel(slug, verseN) {
   const d = load();
   return (d.levels && d.levels[`${slug}:${verseN}`]) || 1;
+}
+
+// --- Per-pasuk run history (top-N) ------------------------------------------
+// Keeps the best RUNS_CAP whole-verse scores for a pasuk, so the leaderboard can
+// show "your top N scores" for that verse (not just the single best). Keyed by
+// slug:verseN.
+export function recordVerseRun(slug, verseN, score) {
+  const s = Number(score) || 0;
+  if (s <= 0) return;
+  const d = load();
+  d.runs = d.runs || {};
+  const k = `${slug}:${verseN}`;
+  const arr = (d.runs[k] || []).concat(s).sort((a, b) => b - a).slice(0, RUNS_CAP);
+  d.runs[k] = arr;
+  save(d);
+  return arr;
+}
+
+export function getVerseRuns(slug, verseN) {
+  const d = load();
+  return (d.runs && d.runs[`${slug}:${verseN}`]) || [];
+}
+
+// --- Per-user custom aliyah boundaries -------------------------------------
+// Overrides the default aliyah partition for one user, per slug+cycle. Value is
+// { list: [{ n, start, end }], updatedAt }. Leaderboards ignore these overrides
+// (they roll up from pesukim onto the canonical default partition); this only
+// changes what the user practices as a single aliyah take.
+function customKey(slug, cycle) { return `${slug}:${cycle}`; }
+
+export function getAliyotCustom(slug, cycle) {
+  const d = load();
+  const rec = d.aliyotCustom && d.aliyotCustom[customKey(slug, cycle)];
+  return rec && Array.isArray(rec.list) ? rec.list : null;
+}
+
+export function setAliyotCustom(slug, cycle, list) {
+  const d = load();
+  d.aliyotCustom = d.aliyotCustom || {};
+  const k = customKey(slug, cycle);
+  if (!list) delete d.aliyotCustom[k];
+  else d.aliyotCustom[k] = { list, updatedAt: Date.now() };
+  save(d);
+  return list;
 }

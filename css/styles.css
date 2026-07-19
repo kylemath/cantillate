@@ -489,3 +489,26 @@ footer.src a { color: var(--accent); }
 .lb-local-stats { display: flex; gap: 18px; }
 .lb-local-stats b { color: var(--accent); font-size: 17px; }
 .lb-local-stats span { font-size: 12px; color: var(--muted); }
+
+/* Hierarchical leaderboard: tabs + per-scope views */
+.lb-tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.lb-tab { font-size: 12px; padding: 5px 10px; border-radius: 999px; background: transparent;
+  border: 1px solid var(--line); color: var(--muted); cursor: pointer; }
+.lb-tab.on { background: var(--accent); color: #08101f; border-color: transparent; font-weight: 700; }
+.lb-tabbody { min-height: 60px; }
+.lb-scope { font-size: 13px; color: var(--text); margin: 0 0 10px; }
+.lb-star { font-size: 12px; }
+.lb-runs { display: flex; gap: 6px; flex-wrap: wrap; }
+.lb-run { display: inline-flex; align-items: center; justify-content: center; min-width: 30px;
+  padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; color: #fff; }
+.lb-aliyah-pick { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.lb-aliyah-pick select { font-size: 13px; }
+
+/* Aliyah boundary editor */
+.al-edit-list { display: flex; flex-direction: column; gap: 8px; }
+.al-edit-row { display: grid; grid-template-columns: 90px auto 76px 1fr; align-items: center; gap: 8px; }
+.al-edit-n { font-weight: 600; font-size: 13px; }
+.al-edit-lbl { font-size: 12px; color: var(--muted); text-align: right; }
+.al-edit-end { width: 70px; font-size: 13px; padding: 4px 6px; }
+.al-edit-ref { font-size: 12px; color: var(--muted); }
+.aliyot-edit-actions { display: flex; gap: 10px; justify-content: flex-end; }

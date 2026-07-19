@@ -180,6 +180,10 @@ service cloud.firestore {
       allow read: if true;
       allow write: if request.auth != null && request.auth.uid == uid;
     }
+    match /boards/{type}/refs/{refId}/entries/{uid} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == uid;
+    }
   }
 }
 ```

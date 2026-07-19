@@ -62,6 +62,7 @@
       <option value="3">Year 3</option>
     </select>
     <button id="cycToday" class="toggle" title="Set the cycle year from today's Hebrew date">📅 Today</button>
+    <button id="btnEditAliyot" class="toggle" title="Adjust the aliyah boundaries to match your teacher's division (saved for you)">✎ Boundaries</button>
     <span class="legend-scale" style="margin-inline-start:12px;">
       <span>low</span><span class="bar"></span><span>high</span>
     </span>
@@ -110,8 +111,37 @@
     </div>
   </div>
 
+  <div id="aliyotEditModal" class="modal" hidden>
+    <div class="modal-backdrop" data-close="1"></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>✎ Aliyah boundaries</h2>
+        <button class="modal-close" data-close="1" title="Close">✕</button>
+      </div>
+      <div class="modal-body" id="aliyotEditBody"></div>
+      <div class="modal-foot aliyot-edit-actions">
+        <button id="aliyotReset" class="auth-btn">Reset to default</button>
+        <button id="aliyotSave" class="auth-btn primary">Save for me</button>
+      </div>
+      <p class="hint modal-foot">Set where each aliyah ends. Starts follow automatically. Your division is saved to your account; leaderboards still combine everyone on the standard division.</p>
+    </div>
+  </div>
+
   <button id="pasukFab" class="pasuk-fab" aria-label="Open pesukim" title="Show pesukim">☰</button>
 
   <script type="module" src="js/app.js"></script>
+  <script>
+    // Register the offline/asset cache (service worker). Scoped to this folder so
+    // it works both at the GitHub Pages subpath and at the local dev root.
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        const base = document.currentScript && document.currentScript.src
+          ? new URL('.', document.currentScript.src)
+          : new URL('.', window.location.href);
+        navigator.serviceWorker.register(new URL('sw.js', base).href, { scope: base.pathname })
+          .catch((e) => console.warn('[sw] registration failed', e));
+      });
+    }
+  </script>
 </body>
 </html>

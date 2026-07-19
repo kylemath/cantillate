@@ -221,24 +221,105 @@ export function sampleContour(points, t) {
 // deadzone forgives sub-quartertone jitter, and a per-note clamp keeps one bad
 // note from tanking the whole score. Returns fractional precision (round only
 // at display time) so aggregates stay smooth.
+//
+// Reliability: the raw user trail arrives at a jittery ~60Hz rAF rate, so a plain
+// per-frame mean depends on how many frames happened to land during each note —
+// sustained notes get overweighted and run-to-run frame counts vary. To make the
+// score reproducible we (1) resample the user pitch onto a FIXED uniform time
+// grid so every equal slice of the timeline counts equally regardless of frame
+// rate, (2) aggregate with a TRIMMED mean so a couple of dropout/octave-glitch
+// cells can't dominate, and (3) apply a smooth COVERAGE factor so sparse/silent
+// takes can't score high. Public signature and 0..100 exponential character are
+// unchanged.
 export function scoreTrail(userTrail, targetPoints, opts = {}) {
   if (!userTrail.length || !targetPoints.length) return 0;
   const dead = opts.deadzone ?? 0.35;
   const maxdev = opts.maxdev ?? 4;
   const tau = opts.tau ?? 2.5;
+  const GRID = opts.grid ?? 200;          // fixed uniform samples over [0,1]
+  const trim = opts.trim ?? 0.1;          // fraction of worst cells dropped
+  const minCoverage = opts.minCoverage ?? 0.35;
   const sorted = [...targetPoints].sort((a, b) => a.t - b.t);
-  let err = 0, count = 0;
+
+  // Voiced user frames only, sorted by time, using offset-corrected pitch.
+  const voiced = [];
   for (const s of userTrail) {
     if (s.rms < 0.01) continue;
     const up = s.sp != null ? s.sp : s.p; // offset-corrected pitch when available
-    let e = Math.abs(up - sampleContour(sorted, s.t));
+    if (up == null) continue;
+    voiced.push({ t: s.t, p: up });
+  }
+  voiced.sort((a, b) => a.t - b.t);
+  if (!voiced.length) return 0;
+
+  const step = 1 / GRID;
+  const window = 1.5 * step; // max distance from a grid time to a voiced frame
+  const errors = [];         // per-cell errors over VOICED grid cells only
+  let voicedCells = 0;
+  let j = 0;                 // sweep pointer into `voiced` (grid times increase)
+
+  for (let g = 0; g < GRID; g++) {
+    const tg = (g + 0.5) * step; // sample at cell centers
+    // Advance so voiced[j-1].t <= tg < voiced[j].t (bracketing frames).
+    while (j < voiced.length && voiced[j].t < tg) j++;
+    const before = j > 0 ? voiced[j - 1] : null;
+    const after = j < voiced.length ? voiced[j] : null;
+
+    // Interpolate the user's pitch at tg from the nearest voiced frame(s).
+    let up = null;
+    if (before && after) {
+      // Linear interp only when the bracket is tight; else use the nearer frame.
+      if (tg - before.t <= window && after.t - tg <= window) {
+        const f = (tg - before.t) / (after.t - before.t || 1);
+        up = before.p + (after.p - before.p) * f;
+      } else if (tg - before.t <= after.t - tg) {
+        if (tg - before.t <= window) up = before.p;
+      } else if (after.t - tg <= window) {
+        up = after.p;
+      }
+    } else if (before && tg - before.t <= window) {
+      up = before.p;
+    } else if (after && after.t - tg <= window) {
+      up = after.p;
+    }
+
+    // No voiced frame near this cell -> a gap: counts toward coverage, not error.
+    if (up == null) continue;
+    voicedCells++;
+    let e = Math.abs(up - sampleContour(sorted, tg));
     e = Math.min(maxdev, e);
     e = Math.max(0, e - dead);
-    err += e; count++;
+    errors.push(e);
   }
-  if (!count) return 0;
-  const meanErr = err / count;
-  return Math.max(0, Math.min(100, 100 * Math.exp(-meanErr / tau)));
+
+  if (!errors.length) return 0;
+
+  // Trimmed mean: drop the worst `trim` fraction so a few glitch cells (dropouts,
+  // octave errors) don't tank an otherwise good take. Fall back to plain mean
+  // when there are too few cells for trimming to be meaningful.
+  let meanErr;
+  if (errors.length >= 5) {
+    const asc = errors.slice().sort((a, b) => a - b);
+    const keep = Math.max(1, asc.length - Math.floor(trim * asc.length));
+    let sum = 0;
+    for (let i = 0; i < keep; i++) sum += asc[i];
+    meanErr = sum / keep;
+  } else {
+    meanErr = errors.reduce((a, b) => a + b, 0) / errors.length;
+  }
+
+  // Coverage: fraction of the timeline the user actually sang over. Below the
+  // threshold the take is too sparse to trust, so smoothly scale the score down
+  // (monotonic, never a hard zero) rather than rewarding silence.
+  const coverage = voicedCells / GRID;
+  let covFactor = 1;
+  if (coverage < minCoverage) {
+    const r = coverage / minCoverage;      // 0..1
+    covFactor = r * r * (3 - 2 * r);       // smoothstep: smooth & monotonic
+  }
+
+  const score = 100 * Math.exp(-meanErr / tau) * covFactor;
+  return Math.max(0, Math.min(100, score));
 }
 
 // Time-aligned spectrogram: columns are placed by their position in the played
