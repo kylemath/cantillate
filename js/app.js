@@ -741,8 +741,11 @@ async function loadData(slug) {
     if (!pr.ok) pr = await fetch(`data/${slug}_pitch.json`);
     if (pr.ok) state.pitch = await pr.json();
   } catch (e) { /* no extracted pitch available */ }
-  // Load the faint-underlay `raw` contours lazily so they never block first paint.
-  loadRawContoursDeferred(slug);
+  // Phase 2: the faint-underlay `raw` contours are NOT loaded up front anymore.
+  // They're fetched per-verse (tiny shard) when a pasuk is practiced, or as the
+  // whole-reading monolith when an aliyah (many verses) is opened.
+  _rawLoaded = new Set();
+  _rawMonolithTried = false;
   state.shapes = null;
   try {
     const sr = await fetch(`data/${slug}_shapes.json`);
@@ -760,20 +763,72 @@ async function loadData(slug) {
   $('practice').innerHTML = '<p class="empty">Select a verse on the left to begin practicing.</p>';
 }
 
-// Fetch the per-frame `raw` contours (used only for the faint coach underlay)
-// after the main payload, then merge them into the resident pitch data and
-// refresh any open view — unless a recording is in progress (don't disrupt it).
+// Verses whose `raw` underlay has been loaded (or attempted), so we never
+// re-fetch. Reset per reading in loadData.
+let _rawLoaded = new Set();
+let _rawMonolithTried = false;
+
+// Does a verse already carry per-frame `raw` data (from a shard, the monolith,
+// or the original pitch file)?
+function verseHasRaw(pv) {
+  return pv && pv.words && pv.words.some((w) => Array.isArray(w.raw) && w.raw.length);
+}
+
+// Merge an array of { i, raw } word entries into a resident verse object.
+function mergeRawWords(pv, words) {
+  if (!pv || !pv.words || !Array.isArray(words)) return;
+  const byI = {};
+  words.forEach((w) => { byI[w.i] = w.raw; });
+  pv.words.forEach((w) => { if (byI[w.i] != null) w.raw = byI[w.i]; });
+}
+
+// Phase 2: fetch just ONE verse's `raw` contour shard on demand (a few KB), for
+// single-pasuk practice. Falls back to the whole-reading raw monolith if the
+// shard isn't deployed. Re-renders the open view once, unless busy.
+async function ensureRawForVerse(n) {
+  if (n == null || !state.pitch || !state.pitch.verses) return;
+  const key = `${state.slug}:${n}`;
+  if (_rawLoaded.has(key)) return;
+  const pv = state.pitch.verses[String(n)];
+  if (!pv) return;
+  if (verseHasRaw(pv)) { _rawLoaded.add(key); return; }
+  _rawLoaded.add(key);
+  const slug = state.slug;
+  try {
+    const rr = await fetch(`data/pitch/${slug}/${n}.raw.json`);
+    if (rr.ok) {
+      const words = await rr.json();
+      if (state.slug !== slug) return;
+      mergeRawWords(state.pitch.verses[String(n)], words);
+      refreshUnderlayFor(n);
+      return;
+    }
+  } catch (e) { /* fall through to monolith */ }
+  loadRawContoursDeferred(slug); // shard missing → try the monolith once
+}
+
+// Load the whole-reading `raw` monolith (used when an aliyah spanning many verses
+// is opened, or as a fallback when per-verse shards aren't deployed). Merges and
+// refreshes an open view unless a recording/playback is in progress.
 async function loadRawContoursDeferred(slug) {
+  if (_rawMonolithTried && slug === state.slug) return;
+  _rawMonolithTried = true;
   try {
     const rr = await fetch(`data/${slug}_pitch.raw.json`);
-    if (!rr.ok) return; // monolith fallback already carries raw, or none exists
+    if (!rr.ok) return;
     const raw = await rr.json();
     if (state.slug !== slug || !state.pitch) return; // reading changed meanwhile
     mergeRawContours(state.pitch, raw);
-    if (state.recording || state._aliyaRunning || state.playingReal) return;
+    if (window.__cantillateBusy || state.playingReal) return;
     if (state.aliyah) renderAliyahView();
     else if (state.selectedVerse != null) renderPractice();
   } catch (e) { /* underlay is optional */ }
+}
+
+function refreshUnderlayFor(n) {
+  if (window.__cantillateBusy || state.playingReal) return;
+  if (state.aliyah) { if (aliyahVerses(state.aliyah).some((v) => v === n)) renderAliyahView(); }
+  else if (state.selectedVerse === n) renderPractice();
 }
 
 function mergeRawContours(pitch, raw) {
@@ -782,9 +837,7 @@ function mergeRawContours(pitch, raw) {
     const pv = pitch.verses[vn];
     const rv = raw.verses[vn];
     if (!pv || !pv.words || !rv || !rv.words) continue;
-    const byI = {};
-    rv.words.forEach((w) => { byI[w.i] = w.raw; });
-    pv.words.forEach((w) => { if (byI[w.i] != null) w.raw = byI[w.i]; });
+    mergeRawWords(pv, rv.words);
   }
 }
 
@@ -1157,6 +1210,7 @@ const ALIYAH_CONTEXT = 8; // verses of surrounding scroll shown before/after
 
 function renderAliyahView() {
   const a = state.aliyah;
+  loadRawContoursDeferred(state.slug); // phase-2: an aliyah spans many verses → load the raw monolith
   const par = parashahForReading();
   const maxV = state.data.verses.length;
   const first = a.start, last = Math.min(a.end, maxV);
@@ -1286,6 +1340,7 @@ function highlightAliyah(verseN, widx) {
 
 function stopAliyah() {
   state._aliyaRunning = null;
+  window.__cantillateBusy = false;
   clearTimeout(state._aliyaTimer);
   stopVerseAudio();
   stopMic();
@@ -1330,6 +1385,7 @@ function finishGuide(tl) {
 async function recordAliyahRun(tl) {
   stopAliyah();
   state._aliyaRunning = 'rec';
+  window.__cantillateBusy = true; // hold off any service-worker auto-reload
   state._aliyaSamples = [];
   state._aliyaDiffs = [];
   setAliyahButtons(true);
@@ -1385,6 +1441,7 @@ function scoreAliyahVerse(seg, samples) {
 function finishAliyahRecord(tl) {
   if (state._aliyaRunning !== 'rec') return;
   state._aliyaRunning = null;
+  window.__cantillateBusy = false;
   clearTimeout(state._aliyaTimer);
   stopMic();
   stopLiveMeter();
@@ -1485,6 +1542,7 @@ function renderPractice() {
     syncToggleUI();
     renderVerses();
   }
+  ensureRawForVerse(state.selectedVerse); // phase-2: load this pasuk's underlay on demand
   state.verseSegs = buildLineMelody(tokenize(v.text));
   const units = currentUnits();
   state.units = units;
@@ -2075,6 +2133,7 @@ async function startRecording() {
   stopVerseAudio();
   state.playingReal = false;
   state.recording = true;
+  window.__cantillateBusy = true; // hold off any service-worker auto-reload
   // Transpose-invariant: track (target - rawPitch) each frame and shift the
   // whole line by the best-fit (median) offset, so singing the right shape in a
   // different key still scores well. Only the relative shape is judged.
@@ -2147,6 +2206,7 @@ function stopAll() {
 function finishRecording() {
   if (!state.recording) return;
   state.recording = false;
+  window.__cantillateBusy = false;
   clearTimeout(state._recTimer);
   stopMic();
   stopPlayback();

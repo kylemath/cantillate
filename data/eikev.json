@@ -1,0 +1,1092 @@
+{
+  "slug": "eikev",
+  "book": {
+    "en": "Deuteronomy",
+    "he": "דברים",
+    "translit": "Devarim"
+  },
+  "multiChapter": true,
+  "ref": "Deuteronomy 7:12-11:25",
+  "heRef": "דברים ז׳:י״ב-י״א:כ״ה",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 7,
+      "v": 12,
+      "ref": "7:12",
+      "text": "וְהָיָ֣ה&thinsp;<b>׀</b> עֵ֣קֶב תִּשְׁמְע֗וּן אֵ֤ת הַמִּשְׁפָּטִים֙ הָאֵ֔לֶּה וּשְׁמַרְתֶּ֥ם וַעֲשִׂיתֶ֖ם אֹתָ֑ם וְשָׁמַר֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ לְךָ֗ אֶֽת־הַבְּרִית֙ וְאֶת־הַחֶ֔סֶד אֲשֶׁ֥ר נִשְׁבַּ֖ע לַאֲבֹתֶֽיךָ׃",
+      "en": "Wherefore it shall come to pass, if you hearken to these judgments, and keep, and do them, that the Lord thy God shall keep unto thee the covenant and the troth which he swore to thy fathers:"
+    },
+    {
+      "n": 2,
+      "c": 7,
+      "v": 13,
+      "ref": "7:13",
+      "text": "וַאֲהֵ֣בְךָ֔ וּבֵרַכְךָ֖ וְהִרְבֶּ֑ךָ וּבֵרַ֣ךְ פְּרִֽי־בִטְנְךָ֣ וּפְרִֽי־אַ֠דְמָתֶ֠ךָ דְּגָ֨נְךָ֜ וְתִירֹשְׁךָ֣ וְיִצְהָרֶ֗ךָ שְׁגַר־אֲלָפֶ֙יךָ֙ וְעַשְׁתְּרֹ֣ת צֹאנֶ֔ךָ עַ֚ל הָֽאֲדָמָ֔ה אֲשֶׁר־נִשְׁבַּ֥ע לַאֲבֹתֶ֖יךָ לָ֥תֶת לָֽךְ׃",
+      "en": "and he will love thee, and bless thee, and multiply thee: and will bless the fruit of thy womb, and the fruit of thy land, thy corn, and thy wine, and thy oil, the increase of thy cattle, and the flocks of thy sheep, in the land which he swore to thy fathers to give thee."
+    },
+    {
+      "n": 3,
+      "c": 7,
+      "v": 14,
+      "ref": "7:14",
+      "text": "בָּר֥וּךְ תִּֽהְיֶ֖ה מִכׇּל־הָעַמִּ֑ים לֹא־יִהְיֶ֥ה בְךָ֛ עָקָ֥ר וַֽעֲקָרָ֖ה וּבִבְהֶמְתֶּֽךָ׃",
+      "en": "Thou shalt be blessed above all peoples: there shall not be male or female barren among you, or among your cattle."
+    },
+    {
+      "n": 4,
+      "c": 7,
+      "v": 15,
+      "ref": "7:15",
+      "text": "וְהֵסִ֧יר יְהֹוָ֛ה מִמְּךָ֖ כׇּל־חֹ֑לִי וְכׇל־מַדְוֵי֩ מִצְרַ֨יִם הָרָעִ֜ים אֲשֶׁ֣ר יָדַ֗עְתָּ לֹ֤א יְשִׂימָם֙ בָּ֔ךְ וּנְתָנָ֖ם בְּכׇל־שֹׂנְאֶֽיךָ׃",
+      "en": "And the Lord will take away from thee all sickness, and will put none of the evil diseases of Miżrayim, which thou knowst, upon thee; but will lay them upon all those who hate thee."
+    },
+    {
+      "n": 5,
+      "c": 7,
+      "v": 16,
+      "ref": "7:16",
+      "text": "וְאָכַלְתָּ֣ אֶת־כׇּל־הָֽעַמִּ֗ים אֲשֶׁ֨ר יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ נֹתֵ֣ן לָ֔ךְ לֹא־תָח֥וֹס עֵֽינְךָ֖ עֲלֵיהֶ֑ם וְלֹ֤א תַעֲבֹד֙ אֶת־אֱלֹ֣הֵיהֶ֔ם כִּֽי־מוֹקֵ֥שׁ ה֖וּא לָֽךְ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And thou shalt consume all the peoples which the Lord thy God shall deliver to thee; thy eye shall have no pity upon them: neither shalt thou serve their gods; for that will be a snare to thee."
+    },
+    {
+      "n": 6,
+      "c": 7,
+      "v": 17,
+      "ref": "7:17",
+      "text": "כִּ֤י תֹאמַר֙ בִּלְבָ֣בְךָ֔ רַבִּ֛ים הַגּוֹיִ֥ם הָאֵ֖לֶּה מִמֶּ֑נִּי אֵיכָ֥ה אוּכַ֖ל לְהוֹרִישָֽׁם׃",
+      "en": "If thou shalt say in thy heart, These nations are more than I; how can I dispossess them?"
+    },
+    {
+      "n": 7,
+      "c": 7,
+      "v": 18,
+      "ref": "7:18",
+      "text": "לֹ֥א תִירָ֖א מֵהֶ֑ם זָכֹ֣ר תִּזְכֹּ֗ר אֵ֤ת אֲשֶׁר־עָשָׂה֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ לְפַרְעֹ֖ה וּלְכׇל־מִצְרָֽיִם׃",
+      "en": "Thou shalt not be afraid of them: but shalt well remember what the Lord thy God did to Par῾o, and to all Miżrayim;"
+    },
+    {
+      "n": 8,
+      "c": 7,
+      "v": 19,
+      "ref": "7:19",
+      "text": "הַמַּסֹּ֨ת הַגְּדֹלֹ֜ת אֲשֶׁר־רָא֣וּ עֵינֶ֗יךָ וְהָאֹתֹ֤ת וְהַמֹּֽפְתִים֙ וְהַיָּ֤ד הַחֲזָקָה֙ וְהַזְּרֹ֣עַ הַנְּטוּיָ֔ה אֲשֶׁ֥ר הוֹצִֽאֲךָ֖ יְהֹוָ֣ה אֱלֹהֶ֑יךָ כֵּֽן־יַעֲשֶׂ֞ה יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ לְכׇל־הָ֣עַמִּ֔ים אֲשֶׁר־אַתָּ֥ה יָרֵ֖א מִפְּנֵיהֶֽם׃",
+      "en": "the great trials which thy eyes saw, and the signs, and the wonders, and the mighty hand, and the stretched out arm, whereby the Lord thy God brought thee out: so shall the Lord thy God do to all the people of whom thou art afraid."
+    },
+    {
+      "n": 9,
+      "c": 7,
+      "v": 20,
+      "ref": "7:20",
+      "text": "וְגַם֙ אֶת־הַצִּרְעָ֔ה יְשַׁלַּ֛ח יְהֹוָ֥ה אֱלֹהֶ֖יךָ בָּ֑ם עַד־אֲבֹ֗ד הַנִּשְׁאָרִ֛ים וְהַנִּסְתָּרִ֖ים מִפָּנֶֽיךָ׃",
+      "en": "Moreover the Lord thy God will send the hornet among them, until they that are left, and hide themselves from thee, be destroyed."
+    },
+    {
+      "n": 10,
+      "c": 7,
+      "v": 21,
+      "ref": "7:21",
+      "text": "לֹ֥א תַעֲרֹ֖ץ מִפְּנֵיהֶ֑ם כִּֽי־יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ בְּקִרְבֶּ֔ךָ אֵ֥ל גָּד֖וֹל וְנוֹרָֽא׃",
+      "en": "Thou shalt not be terrified by them: for the Lord thy God is among you, a mighty God and terrible."
+    },
+    {
+      "n": 11,
+      "c": 7,
+      "v": 22,
+      "ref": "7:22",
+      "text": "וְנָשַׁל֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ אֶת־הַגּוֹיִ֥ם הָאֵ֛ל מִפָּנֶ֖יךָ מְעַ֣ט מְעָ֑ט לֹ֤א תוּכַל֙ כַּלֹּתָ֣ם מַהֵ֔ר פֶּן־תִּרְבֶּ֥ה עָלֶ֖יךָ חַיַּ֥ת הַשָּׂדֶֽה׃",
+      "en": "And the Lord thy God will put out those nations before thee by little and little: thou mayst not consume them at once, lest the wild beasts of the field increase upon thee."
+    },
+    {
+      "n": 12,
+      "c": 7,
+      "v": 23,
+      "ref": "7:23",
+      "text": "וּנְתָנָ֛ם יְהֹוָ֥ה אֱלֹהֶ֖יךָ לְפָנֶ֑יךָ וְהָמָם֙ מְהוּמָ֣ה גְדֹלָ֔ה עַ֖ד הִשָּׁמְדָֽם׃",
+      "en": "But the Lord thy God shall deliver them to thee, and shall destroy them with a mighty destruction, until they are destroyed."
+    },
+    {
+      "n": 13,
+      "c": 7,
+      "v": 24,
+      "ref": "7:24",
+      "text": "וְנָתַ֤ן מַלְכֵיהֶם֙ בְּיָדֶ֔ךָ וְהַאֲבַדְתָּ֣ אֶת־שְׁמָ֔ם מִתַּ֖חַת הַשָּׁמָ֑יִם לֹֽא־יִתְיַצֵּ֥ב אִישׁ֙ בְּפָנֶ֔יךָ עַ֥ד הִשְׁמִֽדְךָ֖ אֹתָֽם׃",
+      "en": "And he shall deliver their kings into thy hand, and thou shalt destroy their name from under heaven: there shall no man be able to stand before thee, until thou hast destroyed them."
+    },
+    {
+      "n": 14,
+      "c": 7,
+      "v": 25,
+      "ref": "7:25",
+      "text": "פְּסִילֵ֥י אֱלֹהֵיהֶ֖ם תִּשְׂרְפ֣וּן בָּאֵ֑שׁ לֹֽא־תַחְמֹד֩ כֶּ֨סֶף וְזָהָ֤ב עֲלֵיהֶם֙ וְלָקַחְתָּ֣ לָ֔ךְ פֶּ֚ן תִּוָּקֵ֣שׁ בּ֔וֹ כִּ֧י תוֹעֲבַ֛ת יְהֹוָ֥ה אֱלֹהֶ֖יךָ הֽוּא׃",
+      "en": "The carvings of their gods shall you burn with fire: thou shalt not desire the silver or gold that is on them, or take it to thee, lest thou be snared with it: for it is an abomination to the Lord thy God."
+    },
+    {
+      "n": 15,
+      "c": 7,
+      "v": 26,
+      "ref": "7:26",
+      "text": "וְלֹא־תָבִ֤יא תֽוֹעֵבָה֙ אֶל־בֵּיתֶ֔ךָ וְהָיִ֥יתָ חֵ֖רֶם כָּמֹ֑הוּ שַׁקֵּ֧ץ&thinsp;<small>׀</small>&thinsp;תְּשַׁקְּצֶ֛נּוּ וְתַעֵ֥ב&thinsp;<small>׀</small>&thinsp;תְּֽתַעֲבֶ֖נּוּ כִּי־חֵ֥רֶם הֽוּא׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Neither shalt thou bring an abomination into thy house, lest thou become accursed like it: but thou shalt utterly detest it, and thou shalt utterly abhor it; for it is a cursed thing."
+    },
+    {
+      "n": 16,
+      "c": 8,
+      "v": 1,
+      "ref": "8:1",
+      "text": "כׇּל־הַמִּצְוָ֗ה אֲשֶׁ֨ר אָנֹכִ֧י מְצַוְּךָ֛ הַיּ֖וֹם תִּשְׁמְר֣וּן לַעֲשׂ֑וֹת לְמַ֨עַן תִּֽחְי֜וּן וּרְבִיתֶ֗ם וּבָאתֶם֙ וִֽירִשְׁתֶּ֣ם אֶת־הָאָ֔רֶץ אֲשֶׁר־נִשְׁבַּ֥ע יְהֹוָ֖ה לַאֲבֹתֵיכֶֽם׃",
+      "en": "All the commandments which I command thee this day shall you observe to do, that you may live, and multiply, and go in and possess the land which the Lord swore to your fathers."
+    },
+    {
+      "n": 17,
+      "c": 8,
+      "v": 2,
+      "ref": "8:2",
+      "text": "וְזָכַרְתָּ֣ אֶת־כׇּל־הַדֶּ֗רֶךְ אֲשֶׁ֨ר הוֹלִֽיכְךָ֜ יְהֹוָ֧ה אֱלֹהֶ֛יךָ זֶ֛ה אַרְבָּעִ֥ים שָׁנָ֖ה בַּמִּדְבָּ֑ר לְמַ֨עַן עַנֹּֽתְךָ֜ לְנַסֹּֽתְךָ֗ לָדַ֜עַת אֶת־אֲשֶׁ֧ר בִּֽלְבָבְךָ֛ הֲתִשְׁמֹ֥ר <span class=\"mam-kq-trivial\">מִצְוֺתָ֖ו</span> אִם־לֹֽא׃",
+      "en": "And thou shalt remember all the way which the Lord thy God led thee these forty years in the wilderness, to humble thee, and to prove thee, to know what was in thy heart, whether thou wouldst keep his commandments, or no."
+    },
+    {
+      "n": 18,
+      "c": 8,
+      "v": 3,
+      "ref": "8:3",
+      "text": "וַֽיְעַנְּךָ֮ וַיַּרְעִבֶ֒ךָ֒ וַיַּאֲכִֽלְךָ֤ אֶת־הַמָּן֙ אֲשֶׁ֣ר לֹא־יָדַ֔עְתָּ וְלֹ֥א יָדְע֖וּן אֲבֹתֶ֑יךָ לְמַ֣עַן הוֹדִֽיעֲךָ֗ כִּ֠י לֹ֣א עַל־הַלֶּ֤חֶם לְבַדּוֹ֙ יִחְיֶ֣ה הָֽאָדָ֔ם כִּ֛י עַל־כׇּל־מוֹצָ֥א פִֽי־יְהֹוָ֖ה יִחְיֶ֥ה הָאָדָֽם׃",
+      "en": "And he humbled thee, and suffered thee to hunger, and fed thee with manna, which thou knewest not, neither did thy fathers know; that he might make thee know that man does not live by bread only, but by every word that proceeds out of the mouth of the Lord does man live."
+    },
+    {
+      "n": 19,
+      "c": 8,
+      "v": 4,
+      "ref": "8:4",
+      "text": "שִׂמְלָ֨תְךָ֜ לֹ֤א בָֽלְתָה֙ מֵֽעָלֶ֔יךָ וְרַגְלְךָ֖ לֹ֣א בָצֵ֑קָה זֶ֖ה אַרְבָּעִ֥ים שָׁנָֽה׃",
+      "en": "Thy garment grew not old upon thee, nor did thy foot swell, these forty years."
+    },
+    {
+      "n": 20,
+      "c": 8,
+      "v": 5,
+      "ref": "8:5",
+      "text": "וְיָדַעְתָּ֖ עִם־לְבָבֶ֑ךָ כִּ֗י כַּאֲשֶׁ֨ר יְיַסֵּ֥ר אִישׁ֙ אֶת־בְּנ֔וֹ יְהֹוָ֥ה אֱלֹהֶ֖יךָ מְיַסְּרֶֽךָּ׃",
+      "en": "Thou shalt also consider in thy heart, that, as a man chastens his son, so the Lord thy God chastens thee."
+    },
+    {
+      "n": 21,
+      "c": 8,
+      "v": 6,
+      "ref": "8:6",
+      "text": "וְשָׁ֣מַרְתָּ֔ אֶת־מִצְוֺ֖ת יְהֹוָ֣ה אֱלֹהֶ֑יךָ לָלֶ֥כֶת בִּדְרָכָ֖יו וּלְיִרְאָ֥ה אֹתֽוֹ׃",
+      "en": "Therefore thou shalt keep the commandments of the Lord thy God, to walk in his ways, and to fear him."
+    },
+    {
+      "n": 22,
+      "c": 8,
+      "v": 7,
+      "ref": "8:7",
+      "text": "כִּ֚י יְהֹוָ֣ה אֱלֹהֶ֔יךָ מְבִֽיאֲךָ֖ אֶל־אֶ֣רֶץ טוֹבָ֑ה אֶ֚רֶץ נַ֣חֲלֵי מָ֔יִם עֲיָנֹת֙ וּתְהֹמֹ֔ת יֹצְאִ֥ים בַּבִּקְעָ֖ה וּבָהָֽר׃",
+      "en": "For the Lord thy God brings thee into a good land, a land of water courses, of fountains and depths that spring out of valleys and hills;"
+    },
+    {
+      "n": 23,
+      "c": 8,
+      "v": 8,
+      "ref": "8:8",
+      "text": "אֶ֤רֶץ חִטָּה֙ וּשְׂעֹרָ֔ה וְגֶ֥פֶן וּתְאֵנָ֖ה וְרִמּ֑וֹן אֶֽרֶץ־זֵ֥ית שֶׁ֖מֶן וּדְבָֽשׁ׃",
+      "en": "a land of wheat, and barley, and vines, and fig trees, and pomegranates; a land of olive oil, and honey;"
+    },
+    {
+      "n": 24,
+      "c": 8,
+      "v": 9,
+      "ref": "8:9",
+      "text": "אֶ֗רֶץ אֲשֶׁ֨ר לֹ֤א בְמִסְכֵּנֻת֙ תֹּֽאכַל־בָּ֣הּ לֶ֔חֶם לֹֽא־תֶחְסַ֥ר כֹּ֖ל בָּ֑הּ אֶ֚רֶץ אֲשֶׁ֣ר אֲבָנֶ֣יהָ בַרְזֶ֔ל וּמֵהֲרָרֶ֖יהָ תַּחְצֹ֥ב נְחֹֽשֶׁת׃",
+      "en": "a land in which thou shalt eat bread without scarceness, thou shalt not lack any thing in it; a land the stones of which are iron, and out of whose hills thou mayst dig brass."
+    },
+    {
+      "n": 25,
+      "c": 8,
+      "v": 10,
+      "ref": "8:10",
+      "text": "וְאָכַלְתָּ֖ וְשָׂבָ֑עְתָּ וּבֵֽרַכְתָּ֙ אֶת־יְהֹוָ֣ה אֱלֹהֶ֔יךָ עַל־הָאָ֥רֶץ הַטֹּבָ֖ה אֲשֶׁ֥ר נָֽתַן־לָֽךְ׃",
+      "en": "When thou hast eaten and art replete, then thou shalt bless the Lord thy God for the good land which he has given thee."
+    },
+    {
+      "n": 26,
+      "c": 8,
+      "v": 11,
+      "ref": "8:11",
+      "text": "הִשָּׁ֣מֶר לְךָ֔ פֶּן־תִּשְׁכַּ֖ח אֶת־יְהֹוָ֣ה אֱלֹהֶ֑יךָ לְבִלְתִּ֨י שְׁמֹ֤ר מִצְוֺתָיו֙ וּמִשְׁפָּטָ֣יו וְחֻקֹּתָ֔יו אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖ הַיּֽוֹם׃",
+      "en": "Beware that thou forget not the Lord thy God, in not keeping his commandments, and his judgments, and his statutes, which I command thee this day:"
+    },
+    {
+      "n": 27,
+      "c": 8,
+      "v": 12,
+      "ref": "8:12",
+      "text": "פֶּן־תֹּאכַ֖ל וְשָׂבָ֑עְתָּ וּבָתִּ֥ים טֹבִ֛ים תִּבְנֶ֖ה וְיָשָֽׁבְתָּ׃",
+      "en": "lest\n\t\t\t\twhen thou hast eaten and art replete, and hast built goodly houses, and dwelt in them;"
+    },
+    {
+      "n": 28,
+      "c": 8,
+      "v": 13,
+      "ref": "8:13",
+      "text": "וּבְקָֽרְךָ֤ וְצֹֽאנְךָ֙ יִרְבְּיֻ֔ן וְכֶ֥סֶף וְזָהָ֖ב יִרְבֶּה־לָּ֑ךְ וְכֹ֥ל אֲשֶׁר־לְךָ֖ יִרְבֶּֽה׃",
+      "en": "and when thy herds and thy flocks multiply, and thy silver and thy gold are multiplied, and all that thou hast is multiplied;"
+    },
+    {
+      "n": 29,
+      "c": 8,
+      "v": 14,
+      "ref": "8:14",
+      "text": "וְרָ֖ם לְבָבֶ֑ךָ וְשָֽׁכַחְתָּ֙ אֶת־יְהֹוָ֣ה אֱלֹהֶ֔יךָ הַמּוֹצִיאֲךָ֛ מֵאֶ֥רֶץ מִצְרַ֖יִם מִבֵּ֥ית עֲבָדִֽים׃",
+      "en": "then thy heart be lifted up, and thou forget the Lord thy God, who brought thee out of the land of Miżrayim, from the house of bondage;"
+    },
+    {
+      "n": 30,
+      "c": 8,
+      "v": 15,
+      "ref": "8:15",
+      "text": "הַמּוֹלִ֨יכְךָ֜ בַּמִּדְבָּ֣ר&thinsp;<b>׀</b> הַגָּדֹ֣ל וְהַנּוֹרָ֗א נָחָ֤שׁ&thinsp;<small>׀</small>&thinsp;שָׂרָף֙ וְעַקְרָ֔ב וְצִמָּא֖וֹן אֲשֶׁ֣ר אֵֽין־מָ֑יִם הַמּוֹצִ֤יא לְךָ֙ מַ֔יִם מִצּ֖וּר הַֽחַלָּמִֽישׁ׃",
+      "en": "who led thee through that great and terrible wilderness, in which were venomous serpents, and scorpions, and drought, where there was no water; who brought forth water for thee out of the rock of flint;"
+    },
+    {
+      "n": 31,
+      "c": 8,
+      "v": 16,
+      "ref": "8:16",
+      "text": "הַמַּאֲכִ֨לְךָ֥ מָן֙ בַּמִּדְבָּ֔ר אֲשֶׁ֥ר לֹא־יָדְע֖וּן אֲבֹתֶ֑יךָ לְמַ֣עַן עַנֹּֽתְךָ֗ וּלְמַ֙עַן֙ נַסֹּתֶ֔ךָ לְהֵיטִֽבְךָ֖ בְּאַחֲרִיתֶֽךָ׃",
+      "en": "who fed thee in the wilderness with manna, which thy fathers knew not, that he might afflict thee, and that he might prove thee, to do thee good at thy latter end;"
+    },
+    {
+      "n": 32,
+      "c": 8,
+      "v": 17,
+      "ref": "8:17",
+      "text": "וְאָמַרְתָּ֖ בִּלְבָבֶ֑ךָ כֹּחִי֙ וְעֹ֣צֶם יָדִ֔י עָ֥שָׂה לִ֖י אֶת־הַחַ֥יִל הַזֶּֽה׃",
+      "en": "and thou say in thy heart, My power and the might of my hand have gotten me this wealth."
+    },
+    {
+      "n": 33,
+      "c": 8,
+      "v": 18,
+      "ref": "8:18",
+      "text": "וְזָֽכַרְתָּ֙ אֶת־יְהֹוָ֣ה אֱלֹהֶ֔יךָ כִּ֣י ה֗וּא הַנֹּתֵ֥ן לְךָ֛ כֹּ֖חַ לַעֲשׂ֣וֹת חָ֑יִל לְמַ֨עַן הָקִ֧ים אֶת־בְּרִית֛וֹ אֲשֶׁר־נִשְׁבַּ֥ע לַאֲבֹתֶ֖יךָ כַּיּ֥וֹם הַזֶּֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "But thou shalt remember the Lord thy God: for it is he who gives thee power to get wealth, that he may establish his covenant which he swore to thy fathers, as it is this day."
+    },
+    {
+      "n": 34,
+      "c": 8,
+      "v": 19,
+      "ref": "8:19",
+      "text": "וְהָיָ֗ה אִם־שָׁכֹ֤חַ תִּשְׁכַּח֙ אֶת־יְהֹוָ֣ה אֱלֹהֶ֔יךָ וְהָֽלַכְתָּ֗ אַחֲרֵי֙ אֱלֹהִ֣ים אֲחֵרִ֔ים וַעֲבַדְתָּ֖ם וְהִשְׁתַּחֲוִ֣יתָ לָהֶ֑ם הַעִדֹ֤תִי בָכֶם֙ הַיּ֔וֹם כִּ֥י אָבֹ֖ד תֹּאבֵדֽוּן׃",
+      "en": "And it shall be, if thou do at all forget the Lord thy God, and walk after other gods, and serve them, and worship them, I testify against you this day that you shall surely perish."
+    },
+    {
+      "n": 35,
+      "c": 8,
+      "v": 20,
+      "ref": "8:20",
+      "text": "כַּגּוֹיִ֗ם אֲשֶׁ֤ר יְהֹוָה֙ מַאֲבִ֣יד מִפְּנֵיכֶ֔ם כֵּ֖ן תֹּאבֵד֑וּן עֵ֚קֶב לֹ֣א תִשְׁמְע֔וּן בְּק֖וֹל יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "As the nations which the Lord destroys before your face, so shall you perish; because you would not be obedient to the voice of the Lord your God."
+    },
+    {
+      "n": 36,
+      "c": 9,
+      "v": 1,
+      "ref": "9:1",
+      "text": "שְׁמַ֣ע יִשְׂרָאֵ֗ל אַתָּ֨ה עֹבֵ֤ר הַיּוֹם֙ אֶת־הַיַּרְדֵּ֔ן לָבֹא֙ לָרֶ֣שֶׁת גּוֹיִ֔ם גְּדֹלִ֥ים וַעֲצֻמִ֖ים מִמֶּ֑ךָּ עָרִ֛ים גְּדֹלֹ֥ת וּבְצֻרֹ֖ת בַּשָּׁמָֽיִם׃",
+      "en": "Hear, O Yisra᾽el: Thou art to pass over the Yarden this day, to go in to possess nations greater and mightier than thyself, cities great and fortified up to heaven,"
+    },
+    {
+      "n": 37,
+      "c": 9,
+      "v": 2,
+      "ref": "9:2",
+      "text": "עַֽם־גָּד֥וֹל וָרָ֖ם בְּנֵ֣י עֲנָקִ֑ים אֲשֶׁ֨ר אַתָּ֤ה יָדַ֙עְתָּ֙ וְאַתָּ֣ה שָׁמַ֔עְתָּ מִ֣י יִתְיַצֵּ֔ב לִפְנֵ֖י בְּנֵ֥י עֲנָֽק׃",
+      "en": "a people great and tall, the children of the ῾Anaqim, whom thou knowst, and of whom thou hast heard say, Who can stand before the children of ῾Anaq!"
+    },
+    {
+      "n": 38,
+      "c": 9,
+      "v": 3,
+      "ref": "9:3",
+      "text": "וְיָדַעְתָּ֣ הַיּ֗וֹם כִּי֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ הֽוּא־הָעֹבֵ֤ר לְפָנֶ֙יךָ֙ אֵ֣שׁ אֹֽכְלָ֔ה ה֧וּא יַשְׁמִידֵ֛ם וְה֥וּא יַכְנִיעֵ֖ם לְפָנֶ֑יךָ וְהֽוֹרַשְׁתָּ֤ם וְהַֽאֲבַדְתָּם֙ מַהֵ֔ר כַּאֲשֶׁ֛ר דִּבֶּ֥ר יְהֹוָ֖ה לָֽךְ׃",
+      "en": "Understand therefore this day, that the Lord thy God is he who goes over before thee; as a consuming fire he shall destroy them, and he shall bring them down before thy face: so shalt thou drive them out, and destroy them quickly, as the Lord has said to thee."
+    },
+    {
+      "n": 39,
+      "c": 9,
+      "v": 4,
+      "ref": "9:4",
+      "text": "אַל־תֹּאמַ֣ר בִּלְבָבְךָ֗ בַּהֲדֹ֣ף יְהֹוָה֩ אֱלֹהֶ֨יךָ אֹתָ֥ם&thinsp;<small>׀</small>&thinsp;מִלְּפָנֶ֘יךָ֮ לֵאמֹר֒ בְּצִדְקָתִי֙ הֱבִיאַ֣נִי יְהֹוָ֔ה לָרֶ֖שֶׁת אֶת־הָאָ֣רֶץ הַזֹּ֑את וּבְרִשְׁעַת֙ הַגּוֹיִ֣ם הָאֵ֔לֶּה יְהֹוָ֖ה מוֹרִישָׁ֥ם מִפָּנֶֽיךָ׃",
+      "en": "Speak not thou in thy heart, after the Lord thy God has cast them out from before thee, saying, For my righteousness the Lord has brought me in to possess this land: and for the wickedness of these nations the Lord does drive them out from before thee."
+    },
+    {
+      "n": 40,
+      "c": 9,
+      "v": 5,
+      "ref": "9:5",
+      "text": "לֹ֣א בְצִדְקָתְךָ֗ וּבְיֹ֙שֶׁר֙ לְבָ֣בְךָ֔ אַתָּ֥ה בָ֖א לָרֶ֣שֶׁת אֶת־אַרְצָ֑ם כִּ֞י בְּרִשְׁעַ֣ת&thinsp;<b>׀</b> הַגּוֹיִ֣ם הָאֵ֗לֶּה יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ מוֹרִישָׁ֣ם מִפָּנֶ֔יךָ וּלְמַ֜עַן הָקִ֣ים אֶת־הַדָּבָ֗ר אֲשֶׁ֨ר נִשְׁבַּ֤ע יְהֹוָה֙ לַאֲבֹתֶ֔יךָ לְאַבְרָהָ֥ם לְיִצְחָ֖ק וּֽלְיַעֲקֹֽב׃",
+      "en": "Not for thy righteousness, or for the uprightness of thine heart, dost thou go to possess their land: but on account of the wickedness of these nations the Lord thy God does drive them out from before thee, and that he may perform the word which the Lord swore to thy fathers, Avraham, Yiżĥaq, and Ya῾aqov."
+    },
+    {
+      "n": 41,
+      "c": 9,
+      "v": 6,
+      "ref": "9:6",
+      "text": "וְיָדַעְתָּ֗ כִּ֠י לֹ֤א בְצִדְקָֽתְךָ֙ יְהֹוָ֣ה אֱ֠לֹהֶ֠יךָ נֹתֵ֨ן לְךָ֜ אֶת־הָאָ֧רֶץ הַטּוֹבָ֛ה הַזֹּ֖את לְרִשְׁתָּ֑הּ כִּ֥י עַם־קְשֵׁה־עֹ֖רֶף אָֽתָּה׃",
+      "en": "Understand therefore, that the Lord thy God gives thee not this good land to possess it for thy righteousness; for thou art a stiffnecked people."
+    },
+    {
+      "n": 42,
+      "c": 9,
+      "v": 7,
+      "ref": "9:7",
+      "text": "זְכֹר֙ אַל־תִּשְׁכַּ֔ח אֵ֧ת אֲשֶׁר־הִקְצַ֛פְתָּ אֶת־יְהֹוָ֥ה אֱלֹהֶ֖יךָ בַּמִּדְבָּ֑ר לְמִן־הַיּ֞וֹם אֲשֶׁר־יָצָ֣אתָ&thinsp;<b>׀</b> מֵאֶ֣רֶץ מִצְרַ֗יִם עַד־בֹּֽאֲכֶם֙ עַד־הַמָּק֣וֹם הַזֶּ֔ה מַמְרִ֥ים הֱיִיתֶ֖ם עִם־יְהֹוָֽה׃",
+      "en": "Remember, and\n\t\t\t\tforget not, how thou didst provoke the Lord thy God to anger in the wilderness: from the day that thou didst depart out of the land of Miżrayim, until you came to this place, you have been rebellious against the Lord."
+    },
+    {
+      "n": 43,
+      "c": 9,
+      "v": 8,
+      "ref": "9:8",
+      "text": "וּבְחֹרֵ֥ב הִקְצַפְתֶּ֖ם אֶת־יְהֹוָ֑ה וַיִּתְאַנַּ֧ף יְהֹוָ֛ה בָּכֶ֖ם לְהַשְׁמִ֥יד אֶתְכֶֽם׃",
+      "en": "Also in Ḥorev you provoked the Lord to anger, so that the Lord was angry with you to have destroyed you."
+    },
+    {
+      "n": 44,
+      "c": 9,
+      "v": 9,
+      "ref": "9:9",
+      "text": "בַּעֲלֹתִ֣י הָהָ֗רָה לָקַ֜חַת לוּחֹ֤ת הָֽאֲבָנִים֙ לוּחֹ֣ת הַבְּרִ֔ית אֲשֶׁר־כָּרַ֥ת יְהֹוָ֖ה עִמָּכֶ֑ם וָאֵשֵׁ֣ב בָּהָ֗ר אַרְבָּעִ֥ים יוֹם֙ וְאַרְבָּעִ֣ים לַ֔יְלָה לֶ֚חֶם לֹ֣א אָכַ֔לְתִּי וּמַ֖יִם לֹ֥א שָׁתִֽיתִי׃",
+      "en": "When I was gone up into the mountain to receive the tablets of stone, the tablets of the covenant which the Lord made with you, then I abode in the mountain forty days and forty nights, I neither did eat bread nor drink water:"
+    },
+    {
+      "n": 45,
+      "c": 9,
+      "v": 10,
+      "ref": "9:10",
+      "text": "וַיִּתֵּ֨ן יְהֹוָ֜ה אֵלַ֗י אֶת־שְׁנֵי֙ לוּחֹ֣ת הָֽאֲבָנִ֔ים כְּתֻבִ֖ים בְּאֶצְבַּ֣ע אֱלֹהִ֑ים וַעֲלֵיהֶ֗ם כְּֽכׇל־הַדְּבָרִ֡ים אֲשֶׁ֣ר דִּבֶּר֩ יְהֹוָ֨ה עִמָּכֶ֥ם בָּהָ֛ר מִתּ֥וֹךְ הָאֵ֖שׁ בְּי֥וֹם הַקָּהָֽל׃",
+      "en": "and the Lord delivered to me two tablets of stone written with the finger of God; and on them was written according to all the words which the Lord spoke with you in the mountain out of the midst of the fire on the day of the assembly."
+    },
+    {
+      "n": 46,
+      "c": 9,
+      "v": 11,
+      "ref": "9:11",
+      "text": "וַיְהִ֗י מִקֵּץ֙ אַרְבָּעִ֣ים י֔וֹם וְאַרְבָּעִ֖ים לָ֑יְלָה נָתַ֨ן יְהֹוָ֜ה אֵלַ֗י אֶת־שְׁנֵ֛י לֻחֹ֥ת הָאֲבָנִ֖ים לֻח֥וֹת הַבְּרִֽית׃",
+      "en": "And it came to pass at the end of forty days and forty nights, that the Lord gave me the two tablets of stone, the tables of the covenant."
+    },
+    {
+      "n": 47,
+      "c": 9,
+      "v": 12,
+      "ref": "9:12",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֵלַ֗י ק֣וּם רֵ֤ד מַהֵר֙ מִזֶּ֔ה כִּ֚י שִׁחֵ֣ת עַמְּךָ֔ אֲשֶׁ֥ר הוֹצֵ֖אתָ מִמִּצְרָ֑יִם סָ֣רוּ מַהֵ֗ר מִן־הַדֶּ֙רֶךְ֙ אֲשֶׁ֣ר צִוִּיתִ֔ם עָשׂ֥וּ לָהֶ֖ם מַסֵּכָֽה׃",
+      "en": "And the Lord said to me, Arise, get thee down quickly from here; for thy people which thou hast brought forth out of Miżrayim have become corrupt; they are quickly turned aside out of the way which I commanded them; they have made them a molten image."
+    },
+    {
+      "n": 48,
+      "c": 9,
+      "v": 13,
+      "ref": "9:13",
+      "text": "וַיֹּ֥אמֶר יְהֹוָ֖ה אֵלַ֣י לֵאמֹ֑ר רָאִ֙יתִי֙ אֶת־הָעָ֣ם הַזֶּ֔ה וְהִנֵּ֥ה עַם־קְשֵׁה־עֹ֖רֶף הֽוּא׃",
+      "en": "And the Lord spoke to me saying, I have seen this people, and, behold, it is a stiffnecked people:"
+    },
+    {
+      "n": 49,
+      "c": 9,
+      "v": 14,
+      "ref": "9:14",
+      "text": "הֶ֤רֶף מִמֶּ֙נִּי֙ וְאַשְׁמִידֵ֔ם וְאֶמְחֶ֣ה אֶת־שְׁמָ֔ם מִתַּ֖חַת הַשָּׁמָ֑יִם וְאֶֽעֱשֶׂה֙ אֽוֹתְךָ֔ לְגוֹי־עָצ֥וּם וָרָ֖ב מִמֶּֽנּוּ׃",
+      "en": "let me alone, that I may destroy them, and blot out their name from under heaven: and I will make of thee a nation mightier and greater than they."
+    },
+    {
+      "n": 50,
+      "c": 9,
+      "v": 15,
+      "ref": "9:15",
+      "text": "וָאֵ֗פֶן וָֽאֵרֵד֙ מִן־הָהָ֔ר וְהָהָ֖ר בֹּעֵ֣ר בָּאֵ֑שׁ וּשְׁנֵי֙ לוּחֹ֣ת הַבְּרִ֔ית עַ֖ל שְׁתֵּ֥י יָדָֽי׃",
+      "en": "So I turned and came down from the mountain, and the mountain burned with fire: and the two tablets of the covenant were in my two hands."
+    },
+    {
+      "n": 51,
+      "c": 9,
+      "v": 16,
+      "ref": "9:16",
+      "text": "וָאֵ֗רֶא וְהִנֵּ֤ה חֲטָאתֶם֙ לַיהֹוָ֣ה אֱלֹֽהֵיכֶ֔ם עֲשִׂיתֶ֣ם לָכֶ֔ם עֵ֖גֶל מַסֵּכָ֑ה סַרְתֶּ֣ם מַהֵ֔ר מִן־הַדֶּ֕רֶךְ אֲשֶׁר־צִוָּ֥ה יְהֹוָ֖ה אֶתְכֶֽם׃",
+      "en": "And I looked, and, behold, you had sinned against the Lord your God, and had made a molten calf: you had turned aside quickly out of the way which the Lord had commanded you."
+    },
+    {
+      "n": 52,
+      "c": 9,
+      "v": 17,
+      "ref": "9:17",
+      "text": "וָאֶתְפֹּשׂ֙ בִּשְׁנֵ֣י הַלֻּחֹ֔ת וָֽאַשְׁלִכֵ֔ם מֵעַ֖ל שְׁתֵּ֣י יָדָ֑י וָאֲשַׁבְּרֵ֖ם לְעֵינֵיכֶֽם׃",
+      "en": "And I took the two tablets, and cast them out of my two hands, and broke them before your eyes."
+    },
+    {
+      "n": 53,
+      "c": 9,
+      "v": 18,
+      "ref": "9:18",
+      "text": "וָֽאֶתְנַפַּל֩ לִפְנֵ֨י יְהֹוָ֜ה כָּרִאשֹׁנָ֗ה אַרְבָּעִ֥ים יוֹם֙ וְאַרְבָּעִ֣ים לַ֔יְלָה לֶ֚חֶם לֹ֣א אָכַ֔לְתִּי וּמַ֖יִם לֹ֣א שָׁתִ֑יתִי עַ֤ל כׇּל־חַטַּאתְכֶם֙ אֲשֶׁ֣ר חֲטָאתֶ֔ם לַעֲשׂ֥וֹת הָרַ֛ע בְּעֵינֵ֥י יְהֹוָ֖ה לְהַכְעִיסֽוֹ׃",
+      "en": "And I fell down before the Lord, as at the first, forty days and forty nights: I did neither eat bread, nor drink water, because of all your sins which you sinned, in doing wickedly in the sight of the Lord, to provoke him to anger."
+    },
+    {
+      "n": 54,
+      "c": 9,
+      "v": 19,
+      "ref": "9:19",
+      "text": "כִּ֣י יָגֹ֗רְתִּי מִפְּנֵ֤י הָאַף֙ וְהַ֣חֵמָ֔ה אֲשֶׁ֨ר קָצַ֧ף יְהֹוָ֛ה עֲלֵיכֶ֖ם לְהַשְׁמִ֣יד אֶתְכֶ֑ם וַיִּשְׁמַ֤ע יְהֹוָה֙ אֵלַ֔י גַּ֖ם בַּפַּ֥עַם הַהִֽוא׃",
+      "en": "For I was afraid of the anger and hot displeasure, with which the Lord was angry against you to destroy you. But the Lord hearkened to me at that time also."
+    },
+    {
+      "n": 55,
+      "c": 9,
+      "v": 20,
+      "ref": "9:20",
+      "text": "וּֽבְאַהֲרֹ֗ן הִתְאַנַּ֧ף יְהֹוָ֛ה מְאֹ֖ד לְהַשְׁמִיד֑וֹ וָֽאֶתְפַּלֵּ֛ל גַּם־בְּעַ֥ד אַהֲרֹ֖ן בָּעֵ֥ת הַהִֽוא׃",
+      "en": "And the Lord was very angry with Aharon to have destroyed him: and I prayed for Aharon also at the same time."
+    },
+    {
+      "n": 56,
+      "c": 9,
+      "v": 21,
+      "ref": "9:21",
+      "text": "וְֽאֶת־חַטַּאתְכֶ֞ם אֲשֶׁר־עֲשִׂיתֶ֣ם אֶת־הָעֵ֗גֶל לָקַ֘חְתִּי֮ וָאֶשְׂרֹ֣ף אֹת֣וֹ&thinsp;<small>׀</small>&thinsp;בָּאֵשׁ֒ וָאֶכֹּ֨ת אֹת֤וֹ טָחוֹן֙ הֵיטֵ֔ב עַ֥ד אֲשֶׁר־דַּ֖ק לְעָפָ֑ר וָֽאַשְׁלִךְ֙ אֶת־עֲפָר֔וֹ אֶל־הַנַּ֖חַל הַיֹּרֵ֥ד מִן־הָהָֽר׃",
+      "en": "And I took your sin, the calf which you had made, and burnt it with fire, and stamped it, and ground it very small, until it was as fine as dust: and I cast the dust of it into the stream that descended out of the mountain."
+    },
+    {
+      "n": 57,
+      "c": 9,
+      "v": 22,
+      "ref": "9:22",
+      "text": "וּבְתַבְעֵרָה֙ וּבְמַסָּ֔ה וּבְקִבְרֹ֖ת הַֽתַּאֲוָ֑ה מַקְצִפִ֥ים הֱיִיתֶ֖ם אֶת־יְהֹוָֽה׃",
+      "en": "And at Tav῾era, and at Massa, and at Qivrot-hatta᾽ava, you provoked\n\t\t\t\tthe Lord to anger."
+    },
+    {
+      "n": 58,
+      "c": 9,
+      "v": 23,
+      "ref": "9:23",
+      "text": "וּבִשְׁלֹ֨חַ יְהֹוָ֜ה אֶתְכֶ֗ם מִקָּדֵ֤שׁ בַּרְנֵ֙עַ֙ לֵאמֹ֔ר עֲלוּ֙ וּרְשׁ֣וּ אֶת־הָאָ֔רֶץ אֲשֶׁ֥ר נָתַ֖תִּי לָכֶ֑ם וַתַּמְר֗וּ אֶת־פִּ֤י יְהֹוָה֙ אֱלֹ֣הֵיכֶ֔ם וְלֹ֤א הֶֽאֱמַנְתֶּם֙ ל֔וֹ וְלֹ֥א שְׁמַעְתֶּ֖ם בְּקֹלֽוֹ׃",
+      "en": "Likewise when the Lord sent you from Qadesh-barne῾a, saying, Go up and possess the land which I have given you; then you rebelled against the commandment of the Lord your God, and you believed him not, nor hearkened to his voice."
+    },
+    {
+      "n": 59,
+      "c": 9,
+      "v": 24,
+      "ref": "9:24",
+      "text": "מַמְרִ֥ים הֱיִיתֶ֖ם עִם־יְהֹוָ֑ה מִיּ֖וֹם דַּעְתִּ֥י אֶתְכֶֽם׃",
+      "en": "You have been rebellious against the Lord from the day that I knew you."
+    },
+    {
+      "n": 60,
+      "c": 9,
+      "v": 25,
+      "ref": "9:25",
+      "text": "וָֽאֶתְנַפַּ֞ל לִפְנֵ֣י יְהֹוָ֗ה אֵ֣ת אַרְבָּעִ֥ים הַיּ֛וֹם וְאֶת־אַרְבָּעִ֥ים הַלַּ֖יְלָה אֲשֶׁ֣ר הִתְנַפָּ֑לְתִּי כִּֽי־אָמַ֥ר יְהֹוָ֖ה לְהַשְׁמִ֥יד אֶתְכֶֽם׃",
+      "en": "Thus I fell down before the Lord forty days and forty nights, as I fell down at the first; because the Lord had said he would destroy you."
+    },
+    {
+      "n": 61,
+      "c": 9,
+      "v": 26,
+      "ref": "9:26",
+      "text": "וָאֶתְפַּלֵּ֣ל אֶל־יְהֹוָה֮ וָאֹמַר֒ אֲדֹנָ֣י יֱהֹוִ֗ה אַל־תַּשְׁחֵ֤ת עַמְּךָ֙ וְנַחֲלָ֣תְךָ֔ אֲשֶׁ֥ר פָּדִ֖יתָ בְּגׇדְלֶ֑ךָ אֲשֶׁר־הוֹצֵ֥אתָ מִמִּצְרַ֖יִם בְּיָ֥ד חֲזָקָֽה׃",
+      "en": "I prayed therefore to the Lord, and said, O Lord God, destroy not thy people and thy inheritance, which thou hast redeemed through thy greatness, which thou hast brought out of Miżrayim with a mighty hand."
+    },
+    {
+      "n": 62,
+      "c": 9,
+      "v": 27,
+      "ref": "9:27",
+      "text": "זְכֹר֙ לַעֲבָדֶ֔יךָ לְאַבְרָהָ֥ם לְיִצְחָ֖ק וּֽלְיַעֲקֹ֑ב אַל־תֵּ֗פֶן אֶל־קְשִׁי֙ הָעָ֣ם הַזֶּ֔ה וְאֶל־רִשְׁע֖וֹ וְאֶל־חַטָּאתֽוֹ׃",
+      "en": "Remember thy servants, Avraham, Yiżĥaq, and Ya῾aqov; look not to the stubbornness of this people, nor to their wickedness, nor to their sin:"
+    },
+    {
+      "n": 63,
+      "c": 9,
+      "v": 28,
+      "ref": "9:28",
+      "text": "פֶּן־יֹאמְר֗וּ הָאָ֘רֶץ֮ אֲשֶׁ֣ר הוֹצֵאתָ֣נוּ מִשָּׁם֒ מִבְּלִי֙ יְכֹ֣לֶת יְהֹוָ֔ה לַהֲבִיאָ֕ם אֶל־הָאָ֖רֶץ אֲשֶׁר־דִּבֶּ֣ר לָהֶ֑ם וּמִשִּׂנְאָת֣וֹ אוֹתָ֔ם הוֹצִיאָ֖ם לַהֲמִתָ֥ם בַּמִּדְבָּֽר׃",
+      "en": "lest the land from which thou didst bring us out say, Because the Lord was not able to bring them into the land which he promised them, and because he hated them, he has brought them out to slay them in the wilderness."
+    },
+    {
+      "n": 64,
+      "c": 9,
+      "v": 29,
+      "ref": "9:29",
+      "text": "וְהֵ֥ם עַמְּךָ֖ וְנַחֲלָתֶ֑ךָ אֲשֶׁ֤ר הוֹצֵ֙אתָ֙ בְּכֹחֲךָ֣ הַגָּדֹ֔ל וּבִֽזְרֹעֲךָ֖ הַנְּטוּיָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Yet they are thy people and thy inheritance, which thou didst bring out by thy mighty power and by thy stretched-out arm."
+    },
+    {
+      "n": 65,
+      "c": 10,
+      "v": 1,
+      "ref": "10:1",
+      "text": "בָּעֵ֨ת הַהִ֜וא אָמַ֧ר יְהֹוָ֣ה אֵלַ֗י פְּסׇל־לְךָ֞ שְׁנֵֽי־לוּחֹ֤ת אֲבָנִים֙ כָּרִ֣אשֹׁנִ֔ים וַעֲלֵ֥ה אֵלַ֖י הָהָ֑רָה וְעָשִׂ֥יתָ לְּךָ֖ אֲר֥וֹן עֵֽץ׃",
+      "en": "At that time the Lord said to me, Hew for thyself two tablets of stone like the first, and come up to me into the mountain, and make for thyself an ark of wood."
+    },
+    {
+      "n": 66,
+      "c": 10,
+      "v": 2,
+      "ref": "10:2",
+      "text": "וְאֶכְתֹּב֙ עַל־הַלֻּחֹ֔ת אֶ֨ת־הַדְּבָרִ֔ים אֲשֶׁ֥ר הָי֛וּ עַל־הַלֻּחֹ֥ת הָרִאשֹׁנִ֖ים אֲשֶׁ֣ר שִׁבַּ֑רְתָּ וְשַׂמְתָּ֖ם בָּאָרֽוֹן׃",
+      "en": "And I will write on the tablets the words that were on the first tablets which thou didst break, and thou shalt put them in the ark."
+    },
+    {
+      "n": 67,
+      "c": 10,
+      "v": 3,
+      "ref": "10:3",
+      "text": "וָאַ֤עַשׂ אֲרוֹן֙ עֲצֵ֣י שִׁטִּ֔ים וָאֶפְסֹ֛ל שְׁנֵי־לֻחֹ֥ת אֲבָנִ֖ים כָּרִאשֹׁנִ֑ים וָאַ֣עַל הָהָ֔רָה וּשְׁנֵ֥י הַלֻּחֹ֖ת בְּיָדִֽי׃",
+      "en": "And I made an ark of shittim wood, and hewed two tablets of stone like the first, and went up to the mountain, having the two tablets in my hand."
+    },
+    {
+      "n": 68,
+      "c": 10,
+      "v": 4,
+      "ref": "10:4",
+      "text": "וַיִּכְתֹּ֨ב עַֽל־הַלֻּחֹ֜ת כַּמִּכְתָּ֣ב הָרִאשׁ֗וֹן אֵ֚ת עֲשֶׂ֣רֶת הַדְּבָרִ֔ים אֲשֶׁ֣ר דִּבֶּר֩ יְהֹוָ֨ה אֲלֵיכֶ֥ם בָּהָ֛ר מִתּ֥וֹךְ הָאֵ֖שׁ בְּי֣וֹם הַקָּהָ֑ל וַיִּתְּנֵ֥ם יְהֹוָ֖ה אֵלָֽי׃",
+      "en": "And he wrote on the tablets, according to the first writing, the ten Words, which the Lord spoke to you in the mountain out of the midst of the fire in the day of the assembly: and the Lord gave them to me."
+    },
+    {
+      "n": 69,
+      "c": 10,
+      "v": 5,
+      "ref": "10:5",
+      "text": "וָאֵ֗פֶן וָֽאֵרֵד֙ מִן־הָהָ֔ר וָֽאָשִׂם֙ אֶת־הַלֻּחֹ֔ת בָּאָר֖וֹן אֲשֶׁ֣ר עָשִׂ֑יתִי וַיִּ֣הְיוּ שָׁ֔ם כַּאֲשֶׁ֥ר צִוַּ֖נִי יְהֹוָֽה׃",
+      "en": "And I turned and came down from the mountain, and put the tablets in the ark which I had made; and there they were, as the Lord commanded me."
+    },
+    {
+      "n": 70,
+      "c": 10,
+      "v": 6,
+      "ref": "10:6",
+      "text": "וּבְנֵ֣י יִשְׂרָאֵ֗ל נָ֥סְע֛וּ מִבְּאֵרֹ֥ת בְּנֵי־יַעֲקָ֖ן מוֹסֵרָ֑ה שָׁ֣ם מֵ֤ת אַהֲרֹן֙ וַיִּקָּבֵ֣ר שָׁ֔ם וַיְכַהֵ֛ן אֶלְעָזָ֥ר בְּנ֖וֹ תַּחְתָּֽיו׃",
+      "en": "And the children of Yisra᾽el took their journey from Be᾽erot-bene-ya῾aqan to Mosera: there Aharon died, and there he was buried; and El῾azar his son ministered in the priest’s office in his place."
+    },
+    {
+      "n": 71,
+      "c": 10,
+      "v": 7,
+      "ref": "10:7",
+      "text": "מִשָּׁ֥ם נָסְע֖וּ הַגֻּדְגֹּ֑דָה וּמִן־הַגֻּדְגֹּ֣דָה יׇטְבָ֔תָה אֶ֖רֶץ נַ֥חֲלֵי מָֽיִם׃",
+      "en": "From thence they journeyed to Gudgoda; and from Gudgoda to Yotvata, a land of streaming wadis."
+    },
+    {
+      "n": 72,
+      "c": 10,
+      "v": 8,
+      "ref": "10:8",
+      "text": "בָּעֵ֣ת הַהִ֗וא הִבְדִּ֤יל יְהֹוָה֙ אֶת־שֵׁ֣בֶט הַלֵּוִ֔י לָשֵׂ֖את אֶת־אֲר֣וֹן בְּרִית־יְהֹוָ֑ה לַעֲמֹד֩ לִפְנֵ֨י יְהֹוָ֤ה לְשָֽׁרְתוֹ֙ וּלְבָרֵ֣ךְ בִּשְׁמ֔וֹ עַ֖ד הַיּ֥וֹם הַזֶּֽה׃",
+      "en": "At that time the Lord separated the tribe of Levi, to bear the ark of the covenant of the Lord, to stand before the Lord to minister to him, and to bless in his name, to this day."
+    },
+    {
+      "n": 73,
+      "c": 10,
+      "v": 9,
+      "ref": "10:9",
+      "text": "עַל־כֵּ֞ן לֹֽא־הָיָ֧ה לְלֵוִ֛י חֵ֥לֶק וְנַחֲלָ֖ה עִם־אֶחָ֑יו יְהֹוָה֙ ה֣וּא נַחֲלָת֔וֹ כַּאֲשֶׁ֥ר דִּבֶּ֛ר יְהֹוָ֥ה אֱלֹהֶ֖יךָ לֽוֹ׃",
+      "en": "Therefore Levi has no part or inheritance with his brethren; the Lord is his inheritance, according as the Lord thy God promised him."
+    },
+    {
+      "n": 74,
+      "c": 10,
+      "v": 10,
+      "ref": "10:10",
+      "text": "וְאָנֹכִ֞י עָמַ֣דְתִּי בָהָ֗ר כַּיָּמִים֙ הָרִ֣אשֹׁנִ֔ים אַרְבָּעִ֣ים י֔וֹם וְאַרְבָּעִ֖ים לָ֑יְלָה וַיִּשְׁמַ֨ע יְהֹוָ֜ה אֵלַ֗י גַּ֚ם בַּפַּ֣עַם הַהִ֔וא לֹא־אָבָ֥ה יְהֹוָ֖ה הַשְׁחִיתֶֽךָ׃",
+      "en": "And I stayed in the mountain, like the first time, forty days and forty nights; and the Lord hearkened to me at that time also, and the Lord would not destroy thee."
+    },
+    {
+      "n": 75,
+      "c": 10,
+      "v": 11,
+      "ref": "10:11",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֵלַ֔י ק֛וּם לֵ֥ךְ לְמַסַּ֖ע לִפְנֵ֣י הָעָ֑ם וְיָבֹ֙אוּ֙ וְיִֽירְשׁ֣וּ אֶת־הָאָ֔רֶץ אֲשֶׁר־נִשְׁבַּ֥עְתִּי לַאֲבֹתָ֖ם לָתֵ֥ת לָהֶֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And the Lord said to me, Arise, take thy journey before the people, that they may go in and possess the land, which I swore to their fathers to give them."
+    },
+    {
+      "n": 76,
+      "c": 10,
+      "v": 12,
+      "ref": "10:12",
+      "text": "וְעַתָּה֙ יִשְׂרָאֵ֔ל מָ֚ה יְהֹוָ֣ה אֱלֹהֶ֔יךָ שֹׁאֵ֖ל מֵעִמָּ֑ךְ כִּ֣י אִם־לְ֠יִרְאָ֠ה אֶת־יְהֹוָ֨ה אֱלֹהֶ֜יךָ לָלֶ֤כֶת בְּכׇל־דְּרָכָיו֙ וּלְאַהֲבָ֣ה אֹת֔וֹ וְלַֽעֲבֹד֙ אֶת־יְהֹוָ֣ה אֱלֹהֶ֔יךָ בְּכׇל־לְבָבְךָ֖ וּבְכׇל־נַפְשֶֽׁךָ׃",
+      "en": "And now, Yisra᾽el, what does the Lord thy God require of thee, but to fear the Lord thy God, to walk in all his ways, and to love him, and to serve the Lord thy God with all thy heart and with all thy soul,"
+    },
+    {
+      "n": 77,
+      "c": 10,
+      "v": 13,
+      "ref": "10:13",
+      "text": "לִשְׁמֹ֞ר אֶת־מִצְוֺ֤ת יְהֹוָה֙ וְאֶת־חֻקֹּתָ֔יו אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖ הַיּ֑וֹם לְט֖וֹב לָֽךְ׃",
+      "en": "to keep the commandments of the Lord, and his statutes, which I command thee this day for thy good?"
+    },
+    {
+      "n": 78,
+      "c": 10,
+      "v": 14,
+      "ref": "10:14",
+      "text": "הֵ֚ן לַיהֹוָ֣ה אֱלֹהֶ֔יךָ הַשָּׁמַ֖יִם וּשְׁמֵ֣י הַשָּׁמָ֑יִם הָאָ֖רֶץ וְכׇל־אֲשֶׁר־בָּֽהּ׃",
+      "en": "Behold, the heaven and the heaven of heavens belongs to the Lord thy God, the earth also, with all that is on it."
+    },
+    {
+      "n": 79,
+      "c": 10,
+      "v": 15,
+      "ref": "10:15",
+      "text": "רַ֧ק בַּאֲבֹתֶ֛יךָ חָשַׁ֥ק יְהֹוָ֖ה לְאַהֲבָ֣ה אוֹתָ֑ם וַיִּבְחַ֞ר בְּזַרְעָ֣ם אַחֲרֵיהֶ֗ם בָּכֶ֛ם מִכׇּל־הָעַמִּ֖ים כַּיּ֥וֹם הַזֶּֽה׃",
+      "en": "Only the Lord took delight in thy fathers to love them, and he chose their seed after them, even you above all people, as it is this day."
+    },
+    {
+      "n": 80,
+      "c": 10,
+      "v": 16,
+      "ref": "10:16",
+      "text": "וּמַלְתֶּ֕ם אֵ֖ת עׇרְלַ֣ת לְבַבְכֶ֑ם וְעׇ֨רְפְּכֶ֔ם לֹ֥א תַקְשׁ֖וּ עֽוֹד׃",
+      "en": "Circumcise therefore the foreskin of your heart, and be stiffnecked no more."
+    },
+    {
+      "n": 81,
+      "c": 10,
+      "v": 17,
+      "ref": "10:17",
+      "text": "כִּ֚י יְהֹוָ֣ה אֱלֹֽהֵיכֶ֔ם ה֚וּא אֱלֹהֵ֣י הָֽאֱלֹהִ֔ים וַאֲדֹנֵ֖י הָאֲדֹנִ֑ים הָאֵ֨ל הַגָּדֹ֤ל הַגִּבֹּר֙ וְהַנּוֹרָ֔א אֲשֶׁר֙ לֹא־יִשָּׂ֣א פָנִ֔ים וְלֹ֥א יִקַּ֖ח שֹֽׁחַד׃",
+      "en": "For the Lord your God is God of gods, and Lord of lords, a great God, a mighty, and a terrible, who favours no person, and takes no bribe:"
+    },
+    {
+      "n": 82,
+      "c": 10,
+      "v": 18,
+      "ref": "10:18",
+      "text": "עֹשֶׂ֛ה מִשְׁפַּ֥ט יָת֖וֹם וְאַלְמָנָ֑ה וְאֹהֵ֣ב גֵּ֔ר לָ֥תֶת ל֖וֹ לֶ֥חֶם וְשִׂמְלָֽה׃",
+      "en": "he executes the judgment of the fatherless and widow, and loves the stranger, giving him food and raiment."
+    },
+    {
+      "n": 83,
+      "c": 10,
+      "v": 19,
+      "ref": "10:19",
+      "text": "וַאֲהַבְתֶּ֖ם אֶת־הַגֵּ֑ר כִּֽי־גֵרִ֥ים הֱיִיתֶ֖ם בְּאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "Love therefore the stranger: for you were strangers in the land of Miżrayim."
+    },
+    {
+      "n": 84,
+      "c": 10,
+      "v": 20,
+      "ref": "10:20",
+      "text": "אֶת־יְהֹוָ֧ה אֱלֹהֶ֛יךָ תִּירָ֖א אֹת֣וֹ תַעֲבֹ֑ד וּב֣וֹ תִדְבָּ֔ק וּבִשְׁמ֖וֹ תִּשָּׁבֵֽעַ׃",
+      "en": "Thou shalt fear the Lord thy God; him shalt thou serve, and to him shalt thou hold fast, and swear by his name."
+    },
+    {
+      "n": 85,
+      "c": 10,
+      "v": 21,
+      "ref": "10:21",
+      "text": "ה֥וּא תְהִלָּתְךָ֖ וְה֣וּא אֱלֹהֶ֑יךָ אֲשֶׁר־עָשָׂ֣ה אִתְּךָ֗ אֶת־הַגְּדֹלֹ֤ת וְאֶת־הַנּֽוֹרָאֹת֙ הָאֵ֔לֶּה אֲשֶׁ֥ר רָא֖וּ עֵינֶֽיךָ׃",
+      "en": "He is thy praise, and he is thy God, who has done for thee these great and terrible things, which thy eyes have seen."
+    },
+    {
+      "n": 86,
+      "c": 10,
+      "v": 22,
+      "ref": "10:22",
+      "text": "בְּשִׁבְעִ֣ים נֶ֔פֶשׁ יָרְד֥וּ אֲבֹתֶ֖יךָ מִצְרָ֑יְמָה וְעַתָּ֗ה שָֽׂמְךָ֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ כְּכוֹכְבֵ֥י הַשָּׁמַ֖יִם לָרֹֽב׃",
+      "en": "Thy fathers went down to Miżrayim with seventy persons; and now the Lord thy God has made thee as the stars of heaven for multitude."
+    },
+    {
+      "n": 87,
+      "c": 11,
+      "v": 1,
+      "ref": "11:1",
+      "text": "וְאָ֣הַבְתָּ֔ אֵ֖ת יְהֹוָ֣ה אֱלֹהֶ֑יךָ וְשָׁמַרְתָּ֣ מִשְׁמַרְתּ֗וֹ וְחֻקֹּתָ֧יו וּמִשְׁפָּטָ֛יו וּמִצְוֺתָ֖יו כׇּל־הַיָּמִֽים׃",
+      "en": "Therefore thou shalt love the Lord thy God, and keep his charge, and his statutes, and his judgments, and his commandments, always."
+    },
+    {
+      "n": 88,
+      "c": 11,
+      "v": 2,
+      "ref": "11:2",
+      "text": "וִֽידַעְתֶּם֮ הַיּוֹם֒ כִּ֣י&thinsp;<b>׀</b> לֹ֣א אֶת־בְּנֵיכֶ֗ם אֲשֶׁ֤ר לֹֽא־יָדְעוּ֙ וַאֲשֶׁ֣ר לֹא־רָא֔וּ אֶת־מוּסַ֖ר יְהֹוָ֣ה אֱלֹהֵיכֶ֑ם אֶת־גׇּדְל֕וֹ אֶת־יָדוֹ֙ הַחֲזָקָ֔ה וּזְרֹע֖וֹ הַנְּטוּיָֽה׃",
+      "en": "And know this day: for I speak not with your children who have not known, and have not seen the chastisement of the Lord your God, his greatness, his mighty hand, and his stretched-out arm,"
+    },
+    {
+      "n": 89,
+      "c": 11,
+      "v": 3,
+      "ref": "11:3",
+      "text": "וְאֶת־אֹֽתֹתָיו֙ וְאֶֽת־מַעֲשָׂ֔יו אֲשֶׁ֥ר עָשָׂ֖ה בְּת֣וֹךְ מִצְרָ֑יִם לְפַרְעֹ֥ה מֶֽלֶךְ־מִצְרַ֖יִם וּלְכׇל־אַרְצֽוֹ׃",
+      "en": "and his miracles, and his acts, which he did in the midst of Miżrayim to Par῾o the king of Miżrayim, and to all his land;"
+    },
+    {
+      "n": 90,
+      "c": 11,
+      "v": 4,
+      "ref": "11:4",
+      "text": "וַאֲשֶׁ֣ר עָשָׂה֩ לְחֵ֨יל מִצְרַ֜יִם לְסוּסָ֣יו וּלְרִכְבּ֗וֹ אֲשֶׁ֨ר הֵצִ֜יף אֶת־מֵ֤י יַם־סוּף֙ עַל־פְּנֵיהֶ֔ם בְּרׇדְפָ֖ם אַחֲרֵיכֶ֑ם וַיְאַבְּדֵ֣ם יְהֹוָ֔ה עַ֖ד הַיּ֥וֹם הַזֶּֽה׃",
+      "en": "and what he did to the army of Miżrayim, to their horses, and to their chariots; how he made the water of the Sea of Suf overflow them as they pursued after you, and how the Lord destroyed them unto this day;"
+    },
+    {
+      "n": 91,
+      "c": 11,
+      "v": 5,
+      "ref": "11:5",
+      "text": "וַאֲשֶׁ֥ר עָשָׂ֛ה לָכֶ֖ם בַּמִּדְבָּ֑ר עַד־בֹּאֲכֶ֖ם עַד־הַמָּק֥וֹם הַזֶּֽה׃",
+      "en": "and what he did to you in the wilderness, until you came to this place;"
+    },
+    {
+      "n": 92,
+      "c": 11,
+      "v": 6,
+      "ref": "11:6",
+      "text": "וַאֲשֶׁ֨ר עָשָׂ֜ה לְדָתָ֣ן וְלַאֲבִירָ֗ם בְּנֵ֣י אֱלִיאָב֮ בֶּן־רְאוּבֵן֒ אֲשֶׁ֨ר פָּצְתָ֤ה הָאָ֙רֶץ֙ אֶת־פִּ֔יהָ וַתִּבְלָעֵ֥ם וְאֶת־בָּתֵּיהֶ֖ם וְאֶת־אׇהֳלֵיהֶ֑ם וְאֵ֤ת כׇּל־הַיְקוּם֙ אֲשֶׁ֣ר בְּרַגְלֵיהֶ֔ם בְּקֶ֖רֶב כׇּל־יִשְׂרָאֵֽל׃",
+      "en": "and what he did to Datan and Aviram, the sons of Eli᾽av, the son of Re᾽uven: how the earth opened its mouth, and swallowed them up, and their households, and their tents, and all the living substance that followed them, in the midst of all Yisra᾽el:"
+    },
+    {
+      "n": 93,
+      "c": 11,
+      "v": 7,
+      "ref": "11:7",
+      "text": "כִּ֤י עֵֽינֵיכֶם֙ הָֽרֹאֹ֔ת אֶת־כׇּל־מַעֲשֵׂ֥ה יְהֹוָ֖ה הַגָּדֹ֑ל אֲשֶׁ֖ר עָשָֽׂה׃",
+      "en": "but your eyes have seen all the great acts of the Lord which he did."
+    },
+    {
+      "n": 94,
+      "c": 11,
+      "v": 8,
+      "ref": "11:8",
+      "text": "וּשְׁמַרְתֶּם֙ אֶת־כׇּל־הַמִּצְוָ֔ה אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖ הַיּ֑וֹם לְמַ֣עַן תֶּחֶזְק֗וּ וּבָאתֶם֙ וִֽירִשְׁתֶּ֣ם אֶת־הָאָ֔רֶץ אֲשֶׁ֥ר אַתֶּ֛ם עֹבְרִ֥ים שָׁ֖מָּה לְרִשְׁתָּֽהּ׃",
+      "en": "Therefore shall you keep all the commandments which I command you this day, that you may be strong, and go in and possess the land, into which you go to possess it;"
+    },
+    {
+      "n": 95,
+      "c": 11,
+      "v": 9,
+      "ref": "11:9",
+      "text": "וּלְמַ֨עַן תַּאֲרִ֤יכוּ יָמִים֙ עַל־הָ֣אֲדָמָ֔ה אֲשֶׁר֩ נִשְׁבַּ֨ע יְהֹוָ֧ה לַאֲבֹתֵיכֶ֛ם לָתֵ֥ת לָהֶ֖ם וּלְזַרְעָ֑ם אֶ֛רֶץ זָבַ֥ת חָלָ֖ב וּדְבָֽשׁ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and that you may prolong your days in the land, which the Lord swore to your fathers to give to them and to their seed, a land flowing with milk and honey."
+    },
+    {
+      "n": 96,
+      "c": 11,
+      "v": 10,
+      "ref": "11:10",
+      "text": "כִּ֣י הָאָ֗רֶץ אֲשֶׁ֨ר אַתָּ֤ה בָא־שָׁ֙מָּה֙ לְרִשְׁתָּ֔הּ לֹ֣א כְאֶ֤רֶץ מִצְרַ֙יִם֙ הִ֔וא אֲשֶׁ֥ר יְצָאתֶ֖ם מִשָּׁ֑ם אֲשֶׁ֤ר תִּזְרַע֙ אֶֽת־זַרְעֲךָ֔ וְהִשְׁקִ֥יתָ בְרַגְלְךָ֖ כְּגַ֥ן הַיָּרָֽק׃",
+      "en": "For the land, into which thou goest to possess it, is not as the land of Miżrayim, from whence you came out, where thou didst sow thy seed, and didst water it with thy foot, like a garden of vegetables:"
+    },
+    {
+      "n": 97,
+      "c": 11,
+      "v": 11,
+      "ref": "11:11",
+      "text": "וְהָאָ֗רֶץ אֲשֶׁ֨ר אַתֶּ֜ם עֹבְרִ֥ים שָׁ֙מָּה֙ לְרִשְׁתָּ֔הּ אֶ֥רֶץ הָרִ֖ים וּבְקָעֹ֑ת לִמְטַ֥ר הַשָּׁמַ֖יִם תִּשְׁתֶּה־מָּֽיִם׃",
+      "en": "but the land, into which you go to possess it, is a land of hills and valleys, and drinks water of the rain of heaven:"
+    },
+    {
+      "n": 98,
+      "c": 11,
+      "v": 12,
+      "ref": "11:12",
+      "text": "אֶ֕רֶץ אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֶ֖יךָ דֹּרֵ֣שׁ אֹתָ֑הּ תָּמִ֗יד עֵינֵ֨י יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ בָּ֔הּ מֵֽרֵשִׁית֙ הַשָּׁנָ֔ה וְעַ֖ד אַחֲרִ֥ית שָׁנָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "a land which the Lord thy God cares for: the eyes of the Lord thy God are always upon it, from the beginning of the year to the end of the year."
+    },
+    {
+      "n": 99,
+      "c": 11,
+      "v": 13,
+      "ref": "11:13",
+      "text": "וְהָיָ֗ה אִם־שָׁמֹ֤עַ תִּשְׁמְעוּ֙ אֶל־מִצְוֺתַ֔י אֲשֶׁ֧ר אָנֹכִ֛י מְצַוֶּ֥ה אֶתְכֶ֖ם הַיּ֑וֹם לְאַהֲבָ֞ה אֶת־יְהֹוָ֤ה אֱלֹֽהֵיכֶם֙ וּלְעׇבְד֔וֹ בְּכׇל־לְבַבְכֶ֖ם וּבְכׇל־נַפְשְׁכֶֽם׃",
+      "en": "And it shall come to pass, if you hearken diligently to my commandments which I command you this day, to love the Lord your God, and to serve him with all your heart and with all your soul,"
+    },
+    {
+      "n": 100,
+      "c": 11,
+      "v": 14,
+      "ref": "11:14",
+      "text": "וְנָתַתִּ֧י מְטַֽר־אַרְצְכֶ֛ם בְּעִתּ֖וֹ יוֹרֶ֣ה וּמַלְק֑וֹשׁ וְאָסַפְתָּ֣ דְגָנֶ֔ךָ וְתִירֹֽשְׁךָ֖ וְיִצְהָרֶֽךָ׃",
+      "en": "that I will give you the rain of your land in its due season, the early rain and the late rain, that thou mayst gather in thy corn, and thy wine, and thy oil."
+    },
+    {
+      "n": 101,
+      "c": 11,
+      "v": 15,
+      "ref": "11:15",
+      "text": "וְנָתַתִּ֛י עֵ֥שֶׂב בְּשָׂדְךָ֖ לִבְהֶמְתֶּ֑ךָ וְאָכַלְתָּ֖ וְשָׂבָֽעְתָּ׃",
+      "en": "And I will send grass in thy fields for thy cattle, that thou mayst eat and be full."
+    },
+    {
+      "n": 102,
+      "c": 11,
+      "v": 16,
+      "ref": "11:16",
+      "text": "הִשָּֽׁמְר֣וּ לָכֶ֔ם פֶּ֥ן יִפְתֶּ֖ה לְבַבְכֶ֑ם וְסַרְתֶּ֗ם וַעֲבַדְתֶּם֙ אֱלֹהִ֣ים אֲחֵרִ֔ים וְהִשְׁתַּחֲוִיתֶ֖ם לָהֶֽם׃",
+      "en": "Take heed to yourselves, that your heart be not deceived, and you turn aside, and serve other gods, and worship them;"
+    },
+    {
+      "n": 103,
+      "c": 11,
+      "v": 17,
+      "ref": "11:17",
+      "text": "וְחָרָ֨ה אַף־יְהֹוָ֜ה בָּכֶ֗ם וְעָצַ֤ר אֶת־הַשָּׁמַ֙יִם֙ וְלֹֽא־יִהְיֶ֣ה מָטָ֔ר וְהָ֣אֲדָמָ֔ה לֹ֥א תִתֵּ֖ן אֶת־יְבוּלָ֑הּ וַאֲבַדְתֶּ֣ם מְהֵרָ֗ה מֵעַל֙ הָאָ֣רֶץ הַטֹּבָ֔ה אֲשֶׁ֥ר יְהֹוָ֖ה נֹתֵ֥ן לָכֶֽם׃",
+      "en": "and then the Lord’s anger be inflamed against you, and he shut up the heavens, that there be no rain, and that the land yield not its fruit; and you perish quickly from off the good land which the Lord gives you."
+    },
+    {
+      "n": 104,
+      "c": 11,
+      "v": 18,
+      "ref": "11:18",
+      "text": "וְשַׂמְתֶּם֙ אֶת־דְּבָרַ֣י אֵ֔לֶּה עַל־לְבַבְכֶ֖ם וְעַֽל־נַפְשְׁכֶ֑ם וּקְשַׁרְתֶּ֨ם אֹתָ֤ם לְאוֹת֙ עַל־יֶדְכֶ֔ם וְהָי֥וּ לְטוֹטָפֹ֖ת בֵּ֥ין עֵינֵיכֶֽם׃",
+      "en": "And you shall lay up these my words in your heart and in your soul, and bind them for a sign upon your hand, and they will be as frontlets between your eyes."
+    },
+    {
+      "n": 105,
+      "c": 11,
+      "v": 19,
+      "ref": "11:19",
+      "text": "וְלִמַּדְתֶּ֥ם אֹתָ֛ם אֶת־בְּנֵיכֶ֖ם לְדַבֵּ֣ר בָּ֑ם בְּשִׁבְתְּךָ֤ בְּבֵיתֶ֙ךָ֙ וּבְלֶכְתְּךָ֣ בַדֶּ֔רֶךְ וּֽבְשׇׁכְבְּךָ֖ וּבְקוּמֶֽךָ׃",
+      "en": "And you shall teach them your children, speaking of them when thou dost sit in thy house, and when thou dost walk by the way, when thou liest down, and when thou risest up."
+    },
+    {
+      "n": 106,
+      "c": 11,
+      "v": 20,
+      "ref": "11:20",
+      "text": "וּכְתַבְתָּ֛ם עַל־מְזוּז֥וֹת בֵּיתֶ֖ךָ וּבִשְׁעָרֶֽיךָ׃",
+      "en": "And thou shalt write them upon the door posts of thy house, and upon thy gates:"
+    },
+    {
+      "n": 107,
+      "c": 11,
+      "v": 21,
+      "ref": "11:21",
+      "text": "לְמַ֨עַן יִרְבּ֤וּ יְמֵיכֶם֙ וִימֵ֣י בְנֵיכֶ֔ם עַ֚ל הָֽאֲדָמָ֔ה אֲשֶׁ֨ר נִשְׁבַּ֧ע יְהֹוָ֛ה לַאֲבֹתֵיכֶ֖ם לָתֵ֣ת לָהֶ֑ם כִּימֵ֥י הַשָּׁמַ֖יִם עַל־הָאָֽרֶץ<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי תימן הָאָֽרֶ<big>ץ</big> בצד״י גדולה)</i>׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "that your days may be multiplied, and the days of your children, in the land which the Lord swore to your fathers to give them, as the days of heaven upon the earth."
+    },
+    {
+      "n": 108,
+      "c": 11,
+      "v": 22,
+      "ref": "11:22",
+      "text": "כִּי֩ אִם־שָׁמֹ֨ר תִּשְׁמְר֜וּן אֶת־כׇּל־הַמִּצְוָ֣ה הַזֹּ֗את אֲשֶׁ֧ר אָנֹכִ֛י מְצַוֶּ֥ה אֶתְכֶ֖ם לַעֲשֹׂתָ֑הּ לְאַהֲבָ֞ה אֶת־יְהֹוָ֧ה אֱלֹהֵיכֶ֛ם לָלֶ֥כֶת בְּכׇל־דְּרָכָ֖יו וּלְדׇבְקָה־בֽוֹ׃",
+      "en": "For if you shall diligently keep all these commandments which I command you, to do them, to love the Lord your God, to walk in all his ways, and to hold fast to him;"
+    },
+    {
+      "n": 109,
+      "c": 11,
+      "v": 23,
+      "ref": "11:23",
+      "text": "וְהוֹרִ֧ישׁ יְהֹוָ֛ה אֶת־כׇּל־הַגּוֹיִ֥ם הָאֵ֖לֶּה מִלִּפְנֵיכֶ֑ם וִֽירִשְׁתֶּ֣ם גּוֹיִ֔ם גְּדֹלִ֥ים וַעֲצֻמִ֖ים מִכֶּֽם׃",
+      "en": "then will the Lord drive out all these nations from before you, and you shall possess greater nations and mightier than yourselves."
+    },
+    {
+      "n": 110,
+      "c": 11,
+      "v": 24,
+      "ref": "11:24",
+      "text": "כׇּל־הַמָּק֗וֹם אֲשֶׁ֨ר תִּדְרֹ֧ךְ כַּֽף־רַגְלְכֶ֛ם בּ֖וֹ לָכֶ֣ם יִהְיֶ֑ה מִן־הַמִּדְבָּ֨ר וְהַלְּבָנ֜וֹן מִן־הַנָּהָ֣ר נְהַר־פְּרָ֗ת וְעַד֙ הַיָּ֣ם הָאַֽחֲר֔וֹן יִהְיֶ֖ה גְּבֻלְכֶֽם׃",
+      "en": "Every place whereon the sole of your foot shall tread shall be yours: from the wilderness to the Levanon, from the river, the river Perat, to the uttermost sea shall be your border."
+    },
+    {
+      "n": 111,
+      "c": 11,
+      "v": 25,
+      "ref": "11:25",
+      "text": "לֹא־יִתְיַצֵּ֥ב אִ֖ישׁ בִּפְנֵיכֶ֑ם פַּחְדְּכֶ֨ם וּמוֹרַֽאֲכֶ֜ם יִתֵּ֣ן&thinsp;<b>׀</b> יְהֹוָ֣ה אֱלֹֽהֵיכֶ֗ם עַל־פְּנֵ֤י כׇל־הָאָ֙רֶץ֙ אֲשֶׁ֣ר תִּדְרְכוּ־בָ֔הּ כַּאֲשֶׁ֖ר דִּבֶּ֥ר לָכֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "There shall no man be able to stand against you: for the Lord your God shall lay the fear of you and the dread of you upon all the land that you shall tread upon, as he has spoken to you."
+    }
+  ],
+  "parashah": {
+    "en": "Eikev",
+    "he": "עֵקֶב",
+    "translit": "Eikev",
+    "ref": "Deuteronomy 7:12–11:25"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 25,
+        "ref": "7:12–8:10"
+      },
+      {
+        "n": 2,
+        "start": 26,
+        "end": 38,
+        "ref": "8:11–9:3"
+      },
+      {
+        "n": 3,
+        "start": 39,
+        "end": 64,
+        "ref": "9:4–9:29"
+      },
+      {
+        "n": 4,
+        "start": 65,
+        "end": 75,
+        "ref": "10:1–10:11"
+      },
+      {
+        "n": 5,
+        "start": 76,
+        "end": 95,
+        "ref": "10:12–11:9"
+      },
+      {
+        "n": 6,
+        "start": 96,
+        "end": 107,
+        "ref": "11:10–11:21"
+      },
+      {
+        "n": 7,
+        "start": 108,
+        "end": 111,
+        "ref": "11:22–11:25"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 6,
+          "ref": "7:12–7:17"
+        },
+        {
+          "n": 2,
+          "start": 7,
+          "end": 12,
+          "ref": "7:18–7:23"
+        },
+        {
+          "n": 3,
+          "start": 13,
+          "end": 17,
+          "ref": "7:24–8:2"
+        },
+        {
+          "n": 4,
+          "start": 18,
+          "end": 22,
+          "ref": "8:3–8:7"
+        },
+        {
+          "n": 5,
+          "start": 23,
+          "end": 27,
+          "ref": "8:8–8:12"
+        },
+        {
+          "n": 6,
+          "start": 28,
+          "end": 32,
+          "ref": "8:13–8:17"
+        },
+        {
+          "n": 7,
+          "start": 33,
+          "end": 37,
+          "ref": "8:18–9:2"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 38,
+          "end": 43,
+          "ref": "9:3–9:8"
+        },
+        {
+          "n": 2,
+          "start": 44,
+          "end": 49,
+          "ref": "9:9–9:14"
+        },
+        {
+          "n": 3,
+          "start": 50,
+          "end": 54,
+          "ref": "9:15–9:19"
+        },
+        {
+          "n": 4,
+          "start": 55,
+          "end": 59,
+          "ref": "9:20–9:24"
+        },
+        {
+          "n": 5,
+          "start": 60,
+          "end": 64,
+          "ref": "9:25–9:29"
+        },
+        {
+          "n": 6,
+          "start": 65,
+          "end": 69,
+          "ref": "10:1–10:5"
+        },
+        {
+          "n": 7,
+          "start": 70,
+          "end": 74,
+          "ref": "10:6–10:10"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 75,
+          "end": 80,
+          "ref": "10:11–10:16"
+        },
+        {
+          "n": 2,
+          "start": 81,
+          "end": 86,
+          "ref": "10:17–10:22"
+        },
+        {
+          "n": 3,
+          "start": 87,
+          "end": 91,
+          "ref": "11:1–11:5"
+        },
+        {
+          "n": 4,
+          "start": 92,
+          "end": 96,
+          "ref": "11:6–11:10"
+        },
+        {
+          "n": 5,
+          "start": 97,
+          "end": 101,
+          "ref": "11:11–11:15"
+        },
+        {
+          "n": 6,
+          "start": 102,
+          "end": 106,
+          "ref": "11:16–11:20"
+        },
+        {
+          "n": 7,
+          "start": 107,
+          "end": 111,
+          "ref": "11:21–11:25"
+        }
+      ]
+    }
+  }
+}

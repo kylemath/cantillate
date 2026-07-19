@@ -131,14 +131,31 @@
 
   <script type="module" src="js/app.js"></script>
   <script>
-    // Register the offline/asset cache (service worker). Scoped to this folder so
-    // it works both at the GitHub Pages subpath and at the local dev root.
+    // Register the offline/asset cache (service worker) and auto-refresh to a new
+    // deploy. Because sw.js's VERSION is content-hashed (scripts/stamp_version.py),
+    // any real change ships a new SW; it self-activates (skipWaiting + claim),
+    // which fires `controllerchange`, and we reload once to pick up fresh assets —
+    // but never on the first install, and never mid-recording (see __cantillateBusy).
     if ('serviceWorker' in navigator) {
+      const swURL = new URL('sw.js', window.location.href).href;
+      const scope = new URL('.', window.location.href).pathname;
+      const hadController = !!navigator.serviceWorker.controller;
+      let reloadPending = false;
+      const reloadWhenIdle = () => {
+        if (window.__cantillateBusy) { setTimeout(reloadWhenIdle, 3000); return; }
+        window.location.reload();
+      };
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!hadController || reloadPending) return; // first install: nothing to refresh
+        reloadPending = true;
+        reloadWhenIdle();
+      });
       window.addEventListener('load', () => {
-        const base = document.currentScript && document.currentScript.src
-          ? new URL('.', document.currentScript.src)
-          : new URL('.', window.location.href);
-        navigator.serviceWorker.register(new URL('sw.js', base).href, { scope: base.pathname })
+        navigator.serviceWorker.register(swURL, { scope })
+          .then((reg) => {
+            reg.update();                                    // check immediately
+            setInterval(() => reg.update(), 30 * 60 * 1000);  // ...and periodically
+          })
           .catch((e) => console.warn('[sw] registration failed', e));
       });
     }

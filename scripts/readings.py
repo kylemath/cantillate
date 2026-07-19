@@ -36,22 +36,42 @@ REGISTRY = {
                    ((5, 1), (5, 18)), ((5, 19), (6, 3)), ((6, 4), (6, 25)), ((7, 1), (7, 11))],
     },
 
+    "eikev": {
+        "label": "Eikev (Deuteronomy 7:12\u201311:25)",
+        "sefaria_book": "Deuteronomy",
+        "book": {"en": "Deuteronomy", "he": "\u05d3\u05d1\u05e8\u05d9\u05dd", "translit": "Devarim"},
+        "parashah": {"en": "Eikev", "he": "\u05e2\u05b5\u05e7\u05b6\u05d1", "translit": "Eikev",
+                     "ref": "Deuteronomy 7:12\u201311:25"},
+        "multiChapter": True,
+        "ref": "Deuteronomy 7:12-11:25",
+        "heRef": "\u05d3\u05d1\u05e8\u05d9\u05dd \u05d6\u05f3:\u05d9\u05f4\u05d1-\u05d9\u05f4\u05d0:\u05db\u05f4\u05d4",
+        "range": [(7, 12, None), (8, 1, None), (9, 1, None), (10, 1, None), (11, 1, 25)],
+        "pt_files": [1, 2, 3, 4, 5, 6, 7],
+        # PocketTorah names for Eikev (verified in the repo): lowercase labels,
+        # capitalized audio.
+        "pt_label": "eikev-{i}.txt",
+        "pt_audio": "Eikev-{i}.mp3",
+        "audio_slug": "eikev",
+        # Standard Ashkenazi annual aliyot for Eikev.
+        "annual": [((7, 12), (8, 10)), ((8, 11), (9, 3)), ((9, 4), (9, 29)),
+                   ((10, 1), (10, 11)), ((10, 12), (11, 9)), ((11, 10), (11, 21)),
+                   ((11, 22), (11, 25))],
+    },
+
     # ---- TEMPLATE: copy, fill in, run `build_reading.py <slug>` ---------------
-    # "eikev": {
-    #     "label": "Eikev (Deuteronomy 7:12\u201311:25)",
+    # "slug": {
+    #     "label": "Name (Book c:v\u2013c:v)",
     #     "sefaria_book": "Deuteronomy",
     #     "book": {"en": "Deuteronomy", "he": "\u05d3\u05d1\u05e8\u05d9\u05dd", "translit": "Devarim"},
-    #     "parashah": {"en": "Eikev", "he": "\u05e2\u05b5\u05e7\u05b6\u05d1", "translit": "Eikev",
-    #                  "ref": "Deuteronomy 7:12\u201311:25"},
+    #     "parashah": {"en": "Name", "he": "...", "translit": "Name", "ref": "Book c:v\u2013c:v"},
     #     "multiChapter": True,
-    #     "ref": "Deuteronomy 7:12-11:25",
-    #     "heRef": "\u05d3\u05d1\u05e8\u05d9\u05dd \u05d6\u05f3:\u05d9\u05f4\u05d1-\u05d9\u05f4\u05d0:\u05db\u05f4\u05d4",
-    #     "range": [(7, 12, None), (8, 1, None), (9, 1, None), (10, 1, None), (11, 1, 25)],
+    #     "ref": "Book c:v-c:v",
+    #     "heRef": "...",
+    #     "range": [(c, v0, None), (c+1, 1, vN)],
     #     "pt_files": [1, 2, 3, 4, 5, 6, 7],
-    #     "pt_label": "Eikev-{i}.txt",   # <-- verify exact name in the PocketTorah repo
-    #     "pt_audio": "Eikev-{i}.mp3",   # <-- verify exact name
-    #     "audio_slug": "eikev",
-    #     "annual": [((7, 12), (9, 3)), ((9, 4), (9, 29)), ((10, 1), (10, 11)),
-    #                ((10, 12), (11, 9)), ((11, 10), (11, 21)), ((11, 22), (11, 25)), ((11, 25), (11, 25))],
+    #     "pt_label": "name-{i}.txt",   # <-- verify exact name in the PocketTorah repo
+    #     "pt_audio": "Name-{i}.mp3",   # <-- verify exact name
+    #     "audio_slug": "name",
+    #     "annual": [((c, v0), (c, vE)), ...],
     # },
 }

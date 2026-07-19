@@ -8,5 +8,10 @@
     "slug": "vaetchanan",
     "file": "data/vaetchanan.json",
     "label": "Va'etchanan (Deuteronomy 3:23–7:11)"
+  },
+  {
+    "slug": "eikev",
+    "file": "data/eikev.json",
+    "label": "Eikev (Deuteronomy 7:12–11:25)"
   }
 ]
