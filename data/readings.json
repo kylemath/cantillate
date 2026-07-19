@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "devarim1",
+    "file": "data/devarim1.json",
+    "label": "Devarim (Deuteronomy) 1"
+  },
+  {
+    "slug": "vaetchanan",
+    "file": "data/vaetchanan.json",
+    "label": "Va'etchanan (Deuteronomy 3:23–7:11)"
+  }
+]

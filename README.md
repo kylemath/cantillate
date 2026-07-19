@@ -3,9 +3,10 @@
 🚀 **[Live Demo](https://kylemath.github.io/cantillate)** 🚀
 
 A web MVP for reading, understanding, and **practicing the cantillation
-(te'amim / trope)** of the weekly Torah parashah. This first build loads
-**Devarim (Deuteronomy) chapter 1** and runs entirely locally with no build
-step and no external services at runtime.
+(te'amim / trope)** of the weekly Torah parashah. It ships **Devarim
+(Deuteronomy) chapter 1** and the full parashah **Va'etchanan (Deut 3:23–7:11)**,
+and runs entirely locally with no build step and no external services at runtime.
+Readings are data-driven — see [Adding a reading / parashah](#adding-a-reading--parashah).
 
 ## What it does today
 
@@ -74,17 +75,46 @@ access. (Mic + Web Audio need `http://`, so opening the file directly won't work
 The server supports HTTP Range requests so individual verses/words can be seeked
 within the shared mp3 tracks.)
 
-## Refresh / add texts
+## Adding a reading / parashah
+
+Readings are **data-driven and auto-discovered**: the app lists whatever is in
+`data/readings.json`, which the build script maintains. Adding a reading (a single
+chapter *or* a full multi-chapter parashah) is two steps:
+
+1. **Add a registry entry** in `scripts/readings.py` — copy the `TEMPLATE` and fill
+   in: the book, the verse `range`, the PocketTorah label/audio file names, the
+   local `audio_slug`, and the 7 **annual aliyah boundaries** as `(chapter, verse)`
+   pairs. (Look up the exact PocketTorah names in the repo's `data/torah/labels`
+   and `data/audio` folders — they're inconsistent, e.g. `Va’ethanan-1.txt` uses a
+   curly apostrophe while `Vaethanan-1.mp3` doesn't.)
+2. **Run one command:**
 
 ```bash
-python3 scripts/fetch_text.py Deuteronomy 1 --out data/devarim1.json --slug devarim1
-python3 scripts/fetch_audio.py            # recorded chant + per-verse/word timings
-python3 -m venv .venv && .venv/bin/pip install numpy
-.venv/bin/python scripts/extract_pitch.py # derive per-word note steps from audio
+python3 -m venv .venv && .venv/bin/pip install numpy   # once
+.venv/bin/python scripts/build_reading.py <slug>
 ```
 
-Change the book/chapter and register the new file in `AVAILABLE` at the top of
-`js/app.js`.
+That single command fetches the Masoretic Hebrew + Koren-Jerusalem English
+(Sefaria), downloads and time-aligns the recorded chant + word onsets
+(PocketTorah), extracts the per-word coach note-steps and per-trope shapes, and
+**registers the reading in `data/readings.json`**. Reload the app and it appears
+in the Reading menu — no JS edit needed.
+
+It writes `data/<slug>.json`, `data/<slug>_audio.json`, `data/<slug>_pitch.json`,
+`data/<slug>_shapes.json` and `audio/<audio_slug>-*.mp3`. Verses use a sequential
+index `n` internally, with `c`/`v`/`ref` for chapter:verse display, so a reading
+can span multiple chapters. Annual aliyot come from your boundaries; a triennial
+split is approximated as even thirds.
+
+**Notes:**
+- The build prints an alignment self-check (audio onsets vs. Masoretic word count,
+  and app-tokenizer vs. onsets). The only known misalignment is the **Ten
+  Commandments** (in Yitro and Va'etchanan): their dual cantillation
+  (*ta'am elyon/tachton*) segments the written text differently from the sung
+  reading, so those few verses have an imperfect coach line.
+- The legacy single-chapter scripts (`fetch_text.py`, `fetch_audio.py`,
+  `extract_pitch.py`) still exist; `build_reading.py` reuses their logic. The
+  original `devarim1` reading was built with them.
 
 ## Project layout
 
@@ -100,13 +130,18 @@ js/viz.js             canvas: coach contour, real/user overlays, spectrogram, sc
 js/levels.js          level/aid progression config
 js/store.js           localStorage scores + unlocks
 js/app.js             UI controller / glue
+data/readings.json    reading manifest (auto-discovered by the app)
 data/devarim1.json    local Hebrew text (Masoretic, with vowels + te'amim)
+data/vaetchanan.json  parashat Va'etchanan text + aliyot (multi-chapter reading)
 fonts/                Culmus fonts (modern Frank Ruehl + scroll Stam Ashkenaz)
-scripts/fetch_text.py fetch/refresh text from Sefaria
-scripts/fetch_audio.py fetch recorded chant + per-verse/word timings
+scripts/readings.py   registry of buildable readings (add an entry here)
+scripts/build_reading.py  ONE command: text+English+audio+pitch+shapes+register
+scripts/fetch_text.py fetch/refresh text from Sefaria (legacy single-chapter)
+scripts/fetch_translation.py fetch + merge an English translation
+scripts/fetch_audio.py fetch recorded chant + per-verse/word timings (legacy)
 scripts/extract_pitch.py derive per-word note steps from the recordings (numpy)
 scripts/serve.py      range-enabled static server (audio seeking)
-audio/                bundled recorded chant (Devarim files 1-4)
+audio/                bundled recorded chant (Devarim 1–4, Va'ethanan 1–7)
 ```
 
 ## Toward mobile (Android / iOS)
@@ -122,7 +157,7 @@ modules that port directly.
   the public domain; the MAM digital edition is distributed CC-BY.
 - **Recorded chant:** audio and word-timing metadata from
   [PocketTorah](https://pockettorah.com) (Neiss & Schwartz), released CC-BY-SA.
-  Only Devarim files 1–4 (covering Deut 1) are bundled in `audio/`.
+  Bundled in `audio/`: Devarim 1–4 (Deut 1) and Va'ethanan 1–7 (Deut 3:23–7:11).
 - **Fonts:** *Frank Ruehl CLM* and *Stam Ashkenaz CLM* from the
   [Culmus project](https://culmus.sourceforge.io) (GPLv2 with a font embedding
   exception).

@@ -82,15 +82,36 @@ export function renderWord(raw, { showVowels, showTaamim, scroll }) {
 // into separate words (the maqaf stays on the leading word as a visual joiner),
 // so each word is navigable on its own and aligns 1:1 with the audio word
 // onsets. The closing sof-pasuk ׃ stays on the final word.
+// Source text (Sefaria MAM) carries a few non-letter artifacts that must not
+// leak into or distort word tokenization:
+//  - inline HTML around punctuation, e.g. a paseq as `&thinsp;<b>׀</b>`;
+//  - Masoretic section markers `{ס}` / `{פ}` / `{ר}` (petucha/setuma);
+//  - the paseq `׀` (U+05C0), which SEPARATES two words (it counts as a word
+//    boundary in the Masoretic word count / audio onsets) but is often glued
+//    to its neighbors with no surrounding space.
+const MARKUP = /<[^>]*>|&[#a-zA-Z0-9]+;/g;
+const SECTION = /\{[^}]*\}/g;                   // {ס} {פ} section markers
+const PASEQ = '\u05C0';                          // ׀ word separator
+const SPLIT_RE = /([\u05BE\u05C0])/;             // maqaf or paseq (kept on leader)
+
 export function tokenize(verseText) {
+  const cleaned = verseText.replace(MARKUP, '').replace(SECTION, ' ');
   const out = [];
-  for (const w of verseText.trim().split(/\s+/)) {
+  for (const w of cleaned.trim().split(/\s+/)) {
     if (!w) continue;
-    const parts = w.split(MAQAF);
-    parts.forEach((p, i) => {
-      if (p === '') return;
-      out.push(i < parts.length - 1 ? p + MAQAF : p);
-    });
+    // Split on maqaf/paseq, keeping the joiner attached to the leading word, so
+    // each Masoretic word is its own token (1:1 with the audio onsets).
+    let cur = '';
+    for (const s of w.split(SPLIT_RE)) {
+      if (s === '') continue;
+      if (s === MAQAF || s === PASEQ) {
+        if (cur !== '') { out.push(cur + s); cur = ''; }
+      } else {
+        if (cur !== '') out.push(cur);
+        cur = s;
+      }
+    }
+    if (cur !== '') out.push(cur);
   }
   return out;
 }

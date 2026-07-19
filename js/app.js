@@ -12,8 +12,12 @@ import * as store from './store.js';
 // least this stage (i.e., the learner has worked it up to whole-verse practice).
 const ALIYAH_READY_LEVEL = 4;
 
-const AVAILABLE = [
+// Readings are auto-discovered from data/readings.json (updated by
+// scripts/build_reading.py). This hardcoded list is the fallback if the manifest
+// can't be loaded, so adding a reading normally needs no code change here.
+let AVAILABLE = [
   { slug: 'devarim1', file: 'data/devarim1.json', label: 'Devarim (Deuteronomy) 1' },
+  { slug: 'vaetchanan', file: 'data/vaetchanan.json', label: "Va'etchanan (Deuteronomy 3:23–7:11)" },
 ];
 
 const state = {
@@ -56,7 +60,42 @@ const state = {
 
 const $ = (id) => document.getElementById(id);
 
+// User-facing label for a verse. Multi-chapter readings carry per-verse chapter
+// (c) and verse (v) numbers, shown as plain "chapter:verse" so the reference is
+// unambiguous across chapters. Single-chapter readings (no c/v) fall back to the
+// Hebrew-numeral verse index, as before.
+function verseRefLabel(verse, n) {
+  if (verse && verse.c != null && verse.v != null) return `${verse.c}:${verse.v}`;
+  return `${toHebrewNum(n)}`;
+}
+
+// The parashah context for the current reading: prefer the data file's own
+// parashah block (multi-chapter readings), else the hardcoded table in aliyot.js.
+function parashahForReading() {
+  return (state.data && state.data.parashah) || parashahOf(state.slug);
+}
+
+// The aliyah list for a cycle/year: prefer the data file's own aliyot block
+// (with sequential-n start/end indices), else the hardcoded table in aliyot.js.
+function aliyotForReading(cycle, year) {
+  if (state.data && state.data.aliyot) {
+    return cycle === 'triennial'
+      ? (state.data.aliyot.triennial[year] || [])
+      : (state.data.aliyot.annual || []);
+  }
+  return aliyotFor(state.slug, cycle, year);
+}
+
 async function init() {
+  // Auto-discover readings from the manifest (falls back to the hardcoded list).
+  try {
+    const rr = await fetch('data/readings.json');
+    if (rr.ok) {
+      const list = await rr.json();
+      if (Array.isArray(list) && list.length) AVAILABLE = list;
+    }
+  } catch (e) { /* keep the hardcoded fallback */ }
+
   // Populate parashah selector.
   const sel = $('parashah');
   AVAILABLE.forEach((p) => {
@@ -251,7 +290,10 @@ async function loadData(slug) {
     const sr = await fetch(`data/${slug}_shapes.json`);
     if (sr.ok) state.shapes = (await sr.json()).shapes;
   } catch (e) { /* no averaged trope shapes available */ }
-  $('textTitle').textContent = `${state.data.book.en} ${state.data.chapter} — ${state.data.book.he}`;
+  const par = state.data.parashah;
+  $('textTitle').textContent = par
+    ? `${par.en} — ${par.he}`
+    : `${state.data.book.en} ${state.data.chapter} — ${state.data.book.he}`;
   $('srcVersion').textContent = state.data.heVersionTitle || state.data.versionTitle || 'Masoretic text';
   renderVerses();
   renderAliyot();
@@ -365,7 +407,7 @@ function renderVerses() {
   // Aliyah cards are woven in after the verse that completes each aliyah.
   const maxV = state.data.verses.length;
   const aliyahByEnd = {};
-  aliyotFor(state.slug, state.cycle, state.triYear).forEach((a) => {
+  aliyotForReading(state.cycle, state.triYear).forEach((a) => {
     aliyahByEnd[Math.min(a.end, maxV)] = a;
   });
   for (let i = start; i <= end; i++) {
@@ -394,7 +436,7 @@ function renderVerses() {
       : '';
     const enHtml = state.showEnglish && v.en
       ? `<div class="ventext">${escapeHtml(v.en)}</div>` : '';
-    div.innerHTML = `<span class="vnum">${state.data.book.he} ${toHebrewNum(i)} · v${i}</span>${badge}
+    div.innerHTML = `<span class="vnum">${state.data.book.he} ${verseRefLabel(v, i)}${state.data.multiChapter ? '' : ` · v${i}`}</span>${badge}
       <div class="vbody${state.showEnglish ? ' bilingual' : ''}">${enHtml}<div class="hebrew ${state.scroll ? 'scroll' : ''}">${heHtml}</div></div>`;
     // Clicking a single word jumps to word practice for that word; clicking
     // elsewhere in the verse just selects the verse.
@@ -559,9 +601,9 @@ function aliyahReadiness(a) {
 function renderAliyot() {
   const box = $('aliyot');
   if (!box) return;
-  const par = parashahOf(state.slug);
+  const par = parashahForReading();
   if (!par) { box.innerHTML = ''; return; }
-  const list = aliyotFor(state.slug, state.cycle, state.triYear);
+  const list = aliyotForReading(state.cycle, state.triYear);
   const cycleLabel = state.cycle === 'triennial' ? `Triennial · Year ${state.triYear}` : 'Annual';
   let html = `<div class="aliyot-head">${par.he} <span class="hint">${cycleLabel} · ${par.ref}</span></div>`;
   html += list.length
@@ -626,7 +668,7 @@ const ALIYAH_CONTEXT = 8; // verses of surrounding scroll shown before/after
 
 function renderAliyahView() {
   const a = state.aliyah;
-  const par = parashahOf(state.slug);
+  const par = parashahForReading();
   const maxV = state.data.verses.length;
   const first = a.start, last = Math.min(a.end, maxV);
   const from = Math.max(1, first - ALIYAH_CONTEXT);
@@ -975,7 +1017,7 @@ function renderPractice() {
   const p = $('practice');
   p.innerHTML = `
     <div class="phead">
-      <h2>${state.data.book.he} ${toHebrewNum(state.selectedVerse)} · v${state.selectedVerse}<span class="stagetag">${level.id}. ${level.label}</span></h2>
+      <h2>${state.data.book.he} ${verseRefLabel(v, state.selectedVerse)}${state.data.multiChapter ? '' : ` · v${state.selectedVerse}`}<span class="stagetag">${level.id}. ${level.label}</span></h2>
       <div class="aidchips">${chips}</div>
       ${units.length > 1 ? `<div class="unit-nav">
         <button id="uPrev">◀</button>
@@ -1708,10 +1750,11 @@ function finishRecording() {
 // Greyed page shown when navigating to a stage not yet unlocked for this verse.
 function renderLockedPage(level, unlocked) {
   const frontier = levelById(unlocked);
+  const v = state.data.verses[state.selectedVerse - 1];
   const p = $('practice');
   p.innerHTML = `
     <div class="phead">
-      <h2>${state.data.book.he} ${toHebrewNum(state.selectedVerse)} · verse ${state.selectedVerse} <span class="stagetag">Stage ${level.id}: ${level.label}</span></h2>
+      <h2>${state.data.book.he} ${verseRefLabel(v, state.selectedVerse)}${state.data.multiChapter ? '' : ` · verse ${state.selectedVerse}`} <span class="stagetag">Stage ${level.id}: ${level.label}</span></h2>
     </div>
     <div class="locked-page">
       <div class="lock-icon">🔒</div>
