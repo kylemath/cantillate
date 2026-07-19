@@ -75,7 +75,81 @@ main.narrow-left .textpane .pane-title { font-size: 10px; }
 main.narrow-left .textpane .verse { padding: 8px; margin-bottom: 6px; }
 main.narrow-left .textpane .hebrew { font-size: 15px; line-height: 1.5; padding-top: 16px; }
 main.narrow-left .textpane .vscore { font-size: 10px; }
-@media (max-width: 900px) { main { grid-template-columns: 1fr; height: auto; } .splitter { display: none; } }
+/* Off-canvas pasuk drawer controls — hidden on desktop, shown on mobile. */
+.pasuk-fab, .drawer-close { display: none; }
+.drawer-backdrop {
+  position: fixed; inset: 0; z-index: 39; background: rgba(6,8,18,0.55);
+  backdrop-filter: blur(2px); opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+
+/* --- Mobile / compact layout ------------------------------------------- */
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; height: auto; }
+  .splitter { display: none; }
+
+  /* Keep the settings & parashah controls (like desktop) but pack the busy
+     toolbars into single horizontally-scrollable rows to reclaim vertical space
+     for the practice area. */
+  header.topbar { padding: 10px 14px; gap: 10px; }
+  .toolbar { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; padding: 8px 14px; scrollbar-width: thin; }
+  .toolbar > * { flex: 0 0 auto; }
+
+  /* Trope-family key adds little on a small screen — hide to save space. */
+  .fambar { display: none; }
+
+  /* The pasuk list becomes an off-canvas drawer that overlays the practice pane
+     instead of consuming horizontal (or vertical) space. */
+  .textpane {
+    position: fixed; top: 0; inset-inline-start: 0; height: 100%;
+    width: min(86vw, 360px); z-index: 40; margin: 0; padding-top: 48px;
+    background: var(--panel); border-inline-end: 1px solid var(--line);
+    box-shadow: 8px 0 34px rgba(0,0,0,0.5);
+    transform: translateX(-104%); transition: transform .22s ease;
+  }
+  body.pasuk-open .textpane { transform: translateX(0); }
+  body.pasuk-open .drawer-backdrop { opacity: 1; pointer-events: auto; }
+
+  .drawer-close {
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; top: 8px; inset-inline-end: 10px; width: 34px; height: 34px;
+    font-size: 15px; border-radius: 8px; z-index: 2;
+  }
+  .pasuk-fab {
+    display: flex; align-items: center; justify-content: center;
+    position: fixed; inset-block-end: 18px; inset-inline-start: 16px; z-index: 41;
+    width: 52px; height: 52px; border-radius: 50%; font-size: 21px; padding: 0;
+    background: var(--accent); color: #08101f; border-color: transparent;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  }
+  body.pasuk-open .pasuk-fab { background: var(--panel-2); color: var(--text); }
+
+  /* Stage selector: one scrollable row of compact chips. */
+  .stagebar { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; padding: 7px 14px; }
+  .stagebar > * { flex: 0 0 auto; }
+  .stagebtn { font-size: 11px; padding: 5px 8px; }
+
+  /* Practice pane fills the width; trim its padding a touch. */
+  .practice { padding: 14px 14px 84px; }
+}
+
+/* Portrait phones: hide progress (accuracy/score panel) to save vertical space;
+   it stays available in landscape "practice" mode. */
+@media (max-width: 900px) and (orientation: portrait) {
+  #accPanel { display: none; }
+}
+
+/* Landscape "practice" mode: strip the chrome down so the practice canvases and
+   transport get as much of the short viewport height as possible. */
+@media (max-width: 900px) and (orientation: landscape) {
+  header.topbar { padding: 6px 12px; }
+  .brand .sub { display: none; }
+  .brand h1 { font-size: 16px; }
+  footer.src { display: none; }
+  .practice { padding: 10px 14px 72px; }
+  canvas.contour { height: 150px; }
+  canvas.spectro { height: 90px; }
+}
 
 .phead { display: flex; align-items: center; justify-content: flex-start; gap: 6px 10px; flex-wrap: wrap; margin-bottom: 4px; }
 .phead h2 { margin: 0; }
@@ -362,3 +436,56 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
   background: linear-gradient(90deg, var(--bad), #e0b34e, var(--good)); }
 footer.src { padding: 10px 20px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--line); }
 footer.src a { color: var(--accent); }
+
+/* --- Account (Google sign-in) chip in the topbar ------------------------- */
+.authbox { display: flex; align-items: center; gap: 8px; margin-inline-start: 6px; }
+.auth-note { color: var(--muted); font-size: 12px; cursor: pointer; border: 1px dashed var(--line);
+  border-radius: 8px; padding: 6px 9px; text-decoration: none; }
+.auth-note:hover { border-color: var(--accent); color: var(--text); }
+.auth-btn { font-size: 13px; display: inline-flex; align-items: center; gap: 7px; }
+.auth-btn.primary { background: var(--accent); color: #08101f; border-color: transparent; font-weight: 600; }
+.auth-btn .g-mark { display: inline-flex; align-items: center; justify-content: center;
+  width: 17px; height: 17px; border-radius: 50%; background: #fff; color: #4285F4;
+  font-weight: 800; font-size: 12px; }
+.auth-user { display: inline-flex; align-items: center; gap: 7px; background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px 3px 3px; max-width: 220px; }
+.auth-user .av-img, .auth-user .av-fallback { width: 24px; height: 24px; border-radius: 50%; flex: 0 0 auto; }
+.auth-user .av-fallback { display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent); color: #08101f; font-weight: 700; font-size: 12px; }
+.auth-user .av-img { object-fit: cover; }
+.auth-name { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; }
+
+/* --- Modal (leaderboard) ------------------------------------------------- */
+.modal { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; }
+.modal[hidden] { display: none; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(6,8,18,0.66); backdrop-filter: blur(2px); }
+.modal-card { position: relative; z-index: 1; width: min(560px, 92vw); max-height: 84vh; overflow: auto;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.modal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.modal-head h2 { margin: 0; font-size: 18px; }
+.modal-close { background: transparent; border: none; font-size: 15px; color: var(--muted); padding: 4px 8px; }
+.modal-close:hover { color: var(--text); border-color: transparent; }
+.modal-foot { margin: 12px 0 0; }
+
+.lb-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.lb-table th { text-align: left; color: var(--muted); font-weight: 600; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.4px; padding: 4px 8px; border-bottom: 1px solid var(--line); }
+.lb-table td { padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.lb-table tr.me { background: rgba(90,160,255,0.12); }
+.lb-rank { font-size: 15px; width: 34px; text-align: center; }
+.lb-who { display: flex; align-items: center; gap: 8px; }
+.lb-av { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+.lb-av.fallback { display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent-2); color: #201007; font-weight: 700; font-size: 12px; }
+.lb-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 220px; }
+.lb-youtag { font-size: 10px; background: var(--accent); color: #08101f; border-radius: 999px; padding: 1px 6px; font-weight: 700; }
+.lb-xp { font-weight: 700; color: var(--accent); }
+.lb-num { text-align: center; color: var(--muted); width: 60px; }
+.lb-empty { color: var(--muted); text-align: center; padding: 18px 0; }
+.lb-signin-note { text-align: center; margin-top: 12px; }
+.lb-local { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.lb-local h3 { margin: 0 0 8px; font-size: 13px; color: var(--muted); }
+.lb-local-stats { display: flex; gap: 18px; }
+.lb-local-stats b { color: var(--accent); font-size: 17px; }
+.lb-local-stats span { font-size: 12px; color: var(--muted); }

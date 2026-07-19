@@ -5,8 +5,22 @@
 A web MVP for reading, understanding, and **practicing the cantillation
 (te'amim / trope)** of the weekly Torah parashah. It ships **Devarim
 (Deuteronomy) chapter 1** and the full parashah **Va'etchanan (Deut 3:23–7:11)**,
-and runs entirely locally with no build step and no external services at runtime.
+and runs entirely locally with no build step and no external services at runtime
+(an **optional** Google sign-in for cloud-saved progress + leaderboards can be
+turned on — see [Accounts, saved progress & leaderboards](#accounts-saved-progress--leaderboards)).
 Readings are data-driven — see [Adding a reading / parashah](#adding-a-reading--parashah).
+
+## Quick start
+
+```bash
+./serve.sh            # starts a local server at http://localhost:8000
+```
+
+Then open **http://localhost:8000** in Chrome/Edge/Safari and allow microphone
+access. No build step, no install. On a phone it works in the mobile browser:
+tap the ☰ button to open the pesukim list, and rotate to landscape for a
+larger practice view. (Mic + Web Audio require `http://`, so opening the file
+directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
 
 ## What it does today
 
@@ -116,6 +130,64 @@ split is approximated as even thirds.
   `extract_pitch.py`) still exist; `build_reading.py` reuses their logic. The
   original `devarim1` reading was built with them.
 
+## Accounts, saved progress & leaderboards
+
+Sign-in is **optional and off by default**. Out of the box the app is unchanged:
+all practice scores, unlocks and heatmaps live in `localStorage` in the browser,
+with no account and no network. If you enable it, users can **sign in with
+Google** to sync that same progress to the cloud (so it follows them across
+devices) and appear on a shared **leaderboard**.
+
+It's built on **Firebase** (Google Auth + Firestore) loaded from the CDN as ES
+modules, so there's still **no build step**. When the config below is left as
+placeholders, none of it loads — the app stays 100% offline and the sign-in
+button just reads "Sign-in not set up".
+
+### How progress syncs
+
+- Progress is still written to `localStorage` first, so reads stay instant and
+  offline-friendly (`js/store.js` is unchanged in behavior).
+- On sign-in, the account's cloud progress is **merged** with whatever is local
+  (keeping the *best* of each score/level), so nothing is lost — including
+  anything earned while logged out.
+- After that, every change is pushed to Firestore (debounced), which also
+  updates a small public **leaderboard summary** (`XP` = the sum of your best
+  whole-verse and aliyah accuracies, plus verse/aliyah counts).
+
+### Enable it (~5 minutes)
+
+1. Create a project at the [Firebase console](https://console.firebase.google.com).
+2. **Build → Authentication → Sign-in method → Google → Enable.** Add your site's
+   domain (e.g. `kylemath.github.io` and `localhost`) under **Authentication →
+   Settings → Authorized domains.**
+3. **Build → Firestore Database → Create database** (production mode is fine).
+4. **Project settings → General → Your apps → Web app** (`</>`), register an app,
+   and copy the `firebaseConfig` values into `js/firebase-config.js`. (These are
+   *not* secrets — a web config is meant to ship in the client; access is gated
+   by the security rules below, so it's safe to commit for a public site.)
+5. Paste these **Firestore security rules** (Firestore → Rules): each user can
+   read/write only their own progress doc; leaderboard summaries are world-readable
+   but writable only by their owner.
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+    match /leaderboard/{uid} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}
+```
+
+Reload the app: the topbar shows **Sign in with Google**, and the toolbar's
+**🏆 Leaderboard** button opens the shared board (it shows your local-only
+progress until sign-in is configured).
+
 ## Project layout
 
 ```
@@ -128,7 +200,9 @@ js/pitch.js           microphone + shared pitch detection (autocorrelation)
 js/realaudio.js       recorded-chant playback + live spectrogram/pitch analysis
 js/viz.js             canvas: coach contour, real/user overlays, spectrogram, scoring
 js/levels.js          level/aid progression config
-js/store.js           localStorage scores + unlocks
+js/store.js           localStorage scores + unlocks (+ cloud merge/sync hooks)
+js/auth.js            optional Google sign-in + Firestore progress sync + leaderboard
+js/firebase-config.js Firebase web config (placeholders = offline-only; see above)
 js/app.js             UI controller / glue
 data/readings.json    reading manifest (auto-discovered by the app)
 data/devarim1.json    local Hebrew text (Masoretic, with vowels + te'amim)

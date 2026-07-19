@@ -7,6 +7,7 @@ import { ContourView, Spectrogram, scoreTrail, sampleContour } from './viz.js';
 import { LEVELS, levelById, VERSE_MODES, skillForLevel } from './levels.js';
 import { aliyotFor, parashahOf, currentTriennialYear } from './aliyot.js';
 import * as store from './store.js';
+import * as auth from './auth.js';
 
 // An aliyah's scroll+yad challenge unlocks once every pasuk in it has reached at
 // least this stage (i.e., the learner has worked it up to whole-verse practice).
@@ -134,7 +135,163 @@ async function init() {
   renderFamilyBar();
   document.addEventListener('keydown', onKey);
   setupSplitter();
+  setupPasukDrawer();
   setupWordLookup();
+  setupAuth();
+  setupLeaderboard();
+}
+
+// Mobile off-canvas "pesukim" drawer: the verse list overlays the practice pane
+// (toggled by the floating hamburger) so it never eats horizontal or vertical
+// space on a phone. On desktop the drawer controls are hidden via CSS and the
+// verse list stays a normal grid column, so these handlers are harmless there.
+function openPasukDrawer() { document.body.classList.add('pasuk-open'); }
+function closePasukDrawer() { document.body.classList.remove('pasuk-open'); }
+function setupPasukDrawer() {
+  const fab = $('pasukFab');
+  const backdrop = $('drawerBackdrop');
+  const closeBtn = $('drawerClose');
+  if (fab) fab.addEventListener('click', () => document.body.classList.toggle('pasuk-open'));
+  if (backdrop) backdrop.addEventListener('click', closePasukDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closePasukDrawer);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('pasuk-open')) closePasukDrawer();
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Account, cloud-synced progress & leaderboard (all optional). Sign-in mirrors
+// the existing localStorage progress to Firestore so it follows the user across
+// devices and can feed a shared leaderboard. When Firebase isn't configured (or
+// the user stays logged out) the app behaves exactly as before, fully offline.
+// ---------------------------------------------------------------------------
+const authState = { configured: false, user: null, busy: false };
+
+function setupAuth() {
+  renderAuthBox();
+  auth.initAuth({
+    onUserChange: (user, info) => {
+      authState.configured = !!(info && info.configured);
+      authState.user = user;
+      authState.busy = false;
+      renderAuthBox();
+    },
+    // Cloud progress merged into local on sign-in — refresh everything so the
+    // newly-synced scores/levels show up immediately.
+    onProgressMerged: () => refreshProgressViews(),
+  });
+}
+
+function renderAuthBox() {
+  const box = $('authBox');
+  if (!box) return;
+  if (authState.user) {
+    const u = authState.user;
+    const initial = (u.displayName || u.email || '?').trim().charAt(0).toUpperCase();
+    const avatar = u.photoURL
+      ? `<img class="av-img" src="${escapeHtml(u.photoURL)}" alt="" referrerpolicy="no-referrer" />`
+      : `<span class="av-fallback">${escapeHtml(initial)}</span>`;
+    box.innerHTML = `
+      <span class="auth-user" title="${escapeHtml(u.email || u.displayName || '')}">
+        ${avatar}<span class="auth-name">${escapeHtml(u.displayName || u.email || 'Signed in')}</span>
+      </span>
+      <button id="btnSignOut" class="auth-btn" title="Sign out">Sign out</button>`;
+    $('btnSignOut').addEventListener('click', async () => {
+      try { await auth.signOutUser(); } catch (e) { /* ignore */ }
+    });
+    return;
+  }
+  if (!authState.configured) {
+    box.innerHTML = `<a class="auth-note" href="firebase-setup.html" title="Open the ~5-minute setup checklist to enable Google sign-in, cloud-saved progress and the leaderboard. Progress is saved locally in this browser meanwhile.">Sign-in not set up ↗</a>`;
+    return;
+  }
+  box.innerHTML = `<button id="btnSignIn" class="auth-btn primary" ${authState.busy ? 'disabled' : ''}>
+      <span class="g-mark">G</span> ${authState.busy ? 'Signing in…' : 'Sign in with Google'}</button>`;
+  $('btnSignIn').addEventListener('click', async () => {
+    authState.busy = true; renderAuthBox();
+    try {
+      await auth.signIn();
+    } catch (e) {
+      authState.busy = false; renderAuthBox();
+      console.warn('sign-in failed', e);
+    }
+  });
+}
+
+// Re-render every view that reflects stored progress (scores, levels, badges).
+function refreshProgressViews() {
+  renderVerses();
+  renderAliyot();
+  renderStageBar();
+  if (state.selectedVerse != null && !state.aliyah) renderPractice();
+}
+
+function setupLeaderboard() {
+  const btn = $('btnLeaderboard');
+  const modal = $('lbModal');
+  if (!btn || !modal) return;
+  btn.addEventListener('click', () => openLeaderboard());
+  modal.querySelectorAll('[data-close]').forEach((el) => {
+    el.addEventListener('click', () => { modal.hidden = true; });
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) modal.hidden = true; });
+}
+
+async function openLeaderboard() {
+  const modal = $('lbModal');
+  const body = $('lbBody');
+  if (!modal || !body) return;
+  modal.hidden = false;
+  if (!auth.isConfigured()) {
+    body.innerHTML = `<p class="lb-empty">The leaderboard isn't set up yet. Add your Firebase config in
+      <code>js/firebase-config.js</code> (see the README) to enable Google sign-in, cloud-saved progress and this shared leaderboard.</p>
+      ${localSummaryHtml()}`;
+    return;
+  }
+  body.innerHTML = '<p class="lb-empty">Loading…</p>';
+  const rows = await auth.getLeaderboard(25);
+  const me = auth.getUser();
+  if (!rows.length) {
+    body.innerHTML = `<p class="lb-empty">No one's on the board yet — ${me ? 'keep practicing to climb it!' : 'sign in and start practicing to be the first!'}</p>
+      ${localSummaryHtml()}`;
+    return;
+  }
+  const list = rows.map((r, i) => {
+    const rank = i + 1;
+    const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `${rank}`;
+    const initial = (r.name || '?').trim().charAt(0).toUpperCase();
+    const av = r.photo
+      ? `<img class="lb-av" src="${escapeHtml(r.photo)}" alt="" referrerpolicy="no-referrer" />`
+      : `<span class="lb-av fallback">${escapeHtml(initial)}</span>`;
+    const isMe = me && r.uid === me.uid;
+    return `<tr class="${isMe ? 'me' : ''}">
+      <td class="lb-rank">${medal}</td>
+      <td class="lb-who">${av}<span class="lb-name">${escapeHtml(r.name)}${isMe ? ' <span class="lb-youtag">you</span>' : ''}</span></td>
+      <td class="lb-xp">${r.xp.toLocaleString()}</td>
+      <td class="lb-num" title="Verses at whole-verse stage or beyond">${r.versesMastered}</td>
+      <td class="lb-num" title="Aliyot chanted at 80+">${r.aliyotComplete}</td>
+    </tr>`;
+  }).join('');
+  body.innerHTML = `
+    <table class="lb-table">
+      <thead><tr><th></th><th>Reader</th><th>XP</th><th title="Verses at whole-verse stage or beyond">Verses</th><th title="Aliyot chanted at 80+">Aliyot</th></tr></thead>
+      <tbody>${list}</tbody>
+    </table>
+    ${me ? '' : '<p class="hint lb-signin-note">Sign in to save your progress to the cloud and appear here.</p>'}`;
+}
+
+// A read-only summary of THIS browser's local progress, shown when the shared
+// board isn't available, so the button is still useful offline.
+function localSummaryHtml() {
+  const s = auth.computeSummary(store.getAll());
+  return `<div class="lb-local">
+    <h3>Your progress on this device</h3>
+    <div class="lb-local-stats">
+      <span><b>${s.xp.toLocaleString()}</b> XP</span>
+      <span><b>${s.versesMastered}</b> verses</span>
+      <span><b>${s.aliyotComplete}</b> aliyot</span>
+    </div>
+  </div>`;
 }
 
 // Draggable divider between the verse list and the practice pane. The width is
@@ -517,6 +674,7 @@ function gotoPractice(verseN, levelId, unitIndex) {
   state.selectedVerse = verseN;
   state.level = levelId;
   state.unitIndex = unitIndex;
+  closePasukDrawer();
   renderVerses();
   renderStageBar();
   renderPractice();
@@ -565,6 +723,7 @@ function renderScrollColumn() {
 function selectVerse(n) {
   state.selectedVerse = n;
   state.aliyah = null; // leave aliyah mode when a single verse is chosen
+  closePasukDrawer();
   // Keep the chosen stage consistent across verses (navigation is independent of
   // per-verse unlock progress).
   state.unitIndex = 0;
@@ -639,6 +798,7 @@ function buildAliyahCard(a) {
 
 function openAliyah(a) {
   stopAll();
+  closePasukDrawer();
   state.aliyah = { ...a, cycle: state.cycle, year: state.triYear };
   renderAliyot();
   renderAliyahView();

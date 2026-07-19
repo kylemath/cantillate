@@ -5,7 +5,71 @@ function load() {
   try { return JSON.parse(localStorage.getItem(KEY)) || {}; }
   catch (e) { return {}; }
 }
-function save(d) { localStorage.setItem(KEY, JSON.stringify(d)); }
+
+// Listeners notified after every write, so an optional cloud-sync layer can
+// mirror progress without any of the record*/get* helpers below having to know
+// it exists. Purely additive: with no listeners registered this is a no-op.
+const saveListeners = [];
+export function onSave(cb) { if (typeof cb === 'function') saveListeners.push(cb); }
+
+function save(d) {
+  localStorage.setItem(KEY, JSON.stringify(d));
+  for (const cb of saveListeners) { try { cb(d); } catch (e) { /* ignore listener errors */ } }
+}
+
+// The entire progress object (verses/words/phrases/modes/profiles/aliyot/levels).
+// Used by the cloud-sync layer to snapshot and push; callers should treat it as
+// read-only.
+export function getAll() { return load(); }
+
+// Overwrite all progress (used after signing in, once the merged cloud+local
+// snapshot has been computed). Triggers save listeners like any other write.
+export function replaceAll(d) { save(d || {}); }
+
+// Deep-merge a remote snapshot into local progress, keeping the BEST of each:
+// scores/levels take the max, and whole-verse profiles keep the higher-scoring
+// take. This lets a signed-in user's progress from other devices combine with
+// whatever they earned locally (incl. while logged out) without ever losing a
+// best. Returns the merged object (and persists it).
+export function mergeRemote(remote) {
+  const local = load();
+  const merged = mergeProgress(local, remote || {});
+  save(merged);
+  return merged;
+}
+
+// Buckets whose values are single "best" numbers (higher wins).
+const MAX_BUCKETS = ['verses', 'words', 'phrases', 'modes', 'aliyot', 'levels'];
+
+function mergeProgress(a, b) {
+  const out = {};
+  for (const bucket of MAX_BUCKETS) {
+    out[bucket] = mergeMax(a[bucket], b[bucket]);
+  }
+  out.profiles = mergeProfiles(a.profiles, b.profiles);
+  // Preserve any unknown buckets a future version might add (prefer local).
+  for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) {
+    if (!(k in out)) out[k] = a[k] !== undefined ? a[k] : b[k];
+  }
+  return out;
+}
+
+function mergeMax(a = {}, b = {}) {
+  const out = { ...a };
+  for (const k of Object.keys(b)) {
+    out[k] = Math.max(Number(out[k]) || 0, Number(b[k]) || 0);
+  }
+  return out;
+}
+
+function mergeProfiles(a = {}, b = {}) {
+  const out = { ...a };
+  for (const k of Object.keys(b)) {
+    const cur = out[k];
+    if (!cur || (b[k] && b[k].score >= (cur.score || 0))) out[k] = b[k];
+  }
+  return out;
+}
 
 // Per-verse best score (for the heatmap) keyed by slug:verseNumber.
 export function recordVerseScore(slug, verseN, score) {
