@@ -2,11 +2,18 @@
 """Registry of buildable readings for scripts/build_reading.py.
 
 Each entry says where to get the text (Sefaria), the recorded chant + word-onset
-labels (PocketTorah), the verse range, and the annual aliyah boundaries. To add a
-reading: copy the TEMPLATE below, fill it in (look up the exact PocketTorah file
-names in the repo — they are inconsistent about apostrophes/spelling), then run:
+labels (PocketTorah), and the verse range. To add a reading: copy the TEMPLATE
+below, fill it in (look up the exact PocketTorah file names in the repo — they
+are inconsistent about apostrophes/spelling), then run:
 
     .venv/bin/python scripts/build_reading.py <slug>
+
+Aliyot are NOT hand-typed: both the annual (full kriyah) and triennial (+maftir)
+boundaries are fetched from Hebcal by parashah name (see scripts/aliyot_build.py)
+and mapped onto the reading's verse indices. The parashah is matched from
+`parashah.en`; set an explicit `hebcal` key only if the auto-match fails (e.g.
+combined parshiyot). The `annual` tuples below are kept solely as an OFFLINE
+FALLBACK for when Hebcal can't be reached.
 
 See README.md ("Adding a reading / parashah") for the full walkthrough.
 """
@@ -31,7 +38,8 @@ REGISTRY = {
         "pt_label": "Va\u2019ethanan-{i}.txt",   # NOTE the curly apostrophe U+2019
         "pt_audio": "Vaethanan-{i}.mp3",         # NOTE: no apostrophe, capital V
         "audio_slug": "vaethanan",
-        # Annual aliyot as ((chapter,verse) start, (chapter,verse) end) inclusive.
+        # Offline fallback only; live annual+triennial aliyot come from Hebcal
+        # (parashah "Vaetchanan"). ((chapter,verse) start, (chapter,verse) end).
         "annual": [((3, 23), (4, 4)), ((4, 5), (4, 40)), ((4, 41), (4, 49)),
                    ((5, 1), (5, 18)), ((5, 19), (6, 3)), ((6, 4), (6, 25)), ((7, 1), (7, 11))],
     },
@@ -52,7 +60,7 @@ REGISTRY = {
         "pt_label": "eikev-{i}.txt",
         "pt_audio": "Eikev-{i}.mp3",
         "audio_slug": "eikev",
-        # Standard Ashkenazi annual aliyot for Eikev.
+        # Offline fallback only; live aliyot come from Hebcal (parashah "Eikev").
         "annual": [((7, 12), (8, 10)), ((8, 11), (9, 3)), ((9, 4), (9, 29)),
                    ((10, 1), (10, 11)), ((10, 12), (11, 9)), ((11, 10), (11, 21)),
                    ((11, 22), (11, 25))],
@@ -72,6 +80,10 @@ REGISTRY = {
     #     "pt_label": "name-{i}.txt",   # <-- verify exact name in the PocketTorah repo
     #     "pt_audio": "Name-{i}.mp3",   # <-- verify exact name
     #     "audio_slug": "name",
+    #     # Aliyot (annual + triennial + maftir) are fetched from Hebcal by
+    #     # parashah name; no need to type them. "annual" is an OFFLINE FALLBACK
+    #     # only. Add "hebcal": "ExactHebcalName" if the parashah.en auto-match
+    #     # fails (e.g. a combined parashah).
     #     "annual": [((c, v0), (c, vE)), ...],
     # },
     #

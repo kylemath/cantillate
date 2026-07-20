@@ -3283,8 +3283,13 @@ async function startRecording(opts = {}) {
       const info = verseAudio(state.selectedVerse);
       let anchored = false;
       const anchor = () => { if (!anchored) { anchored = true; state.recStart = performance.now(); } };
+      // Show the example spectrogram (and its green pitch line) live while the
+      // duet guide plays, exactly as when the chant is played on its own.
+      const tonic = (state.coach && state.coach.tonicHz) || 200;
+      if (state.spectro) state.spectro.clearPlot();
       playSegment(info.file, state.coach.start, state.coach.end, {
         onProgress: anchor,
+        onAnalysis: (a) => onRealAnalysis(a, tonic),
         onEnd: () => {},
         onError: () => { if (state.recording) anchor(); },
       });

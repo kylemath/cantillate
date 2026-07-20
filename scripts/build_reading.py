@@ -37,6 +37,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import fetch_translation as ftr           # noqa: E402  (clean + get_english)
 import extract_pitch as ep                # noqa: E402  (f0_track, tokenize, make_steps, ...)
 from readings import REGISTRY             # noqa: E402
+from aliyot_build import build_aliyot_doc, HEBCAL_ATTRIBUTION  # noqa: E402
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUDIO_DIR = os.path.join(HERE, "audio")
@@ -195,29 +196,16 @@ def build_text(cfg):
         bounds.append((cum, cum + row["_wc"]))
         cum += row["_wc"]
 
-    # aliyot (source-independent)
-    cv_to_n = {(r["c"], r["v"]): r["n"] for r in verses}
-
-    def find_n(c, v):
-        if (c, v) in cv_to_n:
-            return cv_to_n[(c, v)]
-        cands = [r for r in verses if r["c"] == c and r["v"] <= v]
-        best = max(cands, key=lambda r: r["v"]) if cands else verses[0]
-        print(f"    snapped aliyah {c}:{v} -> {best['ref']}")
-        return best["n"]
-
-    annual = []
-    for ai, ((c0, v0), (c1, v1)) in enumerate(cfg.get("annual") or [], start=1):
-        s, e = find_n(c0, v0), find_n(c1, v1)
-        annual.append({"n": ai, "start": s, "end": e,
-                       "ref": f"{verses[s-1]['ref']}{EN_DASH}{verses[e-1]['ref']}"})
-
-    triennial = {}
-    for yi, (ylo, yhi) in enumerate(split_contig(1, N, 3), start=1):
-        triennial[str(yi)] = [
-            {"n": si, "start": s, "end": e,
-             "ref": f"{verses[s-1]['ref']}{EN_DASH}{verses[e-1]['ref']}"}
-            for si, (s, e) in enumerate(split_contig(ylo, yhi, 7), start=1)]
+    # aliyot (source-independent): real annual + triennial (+ maftir) boundaries
+    # from Hebcal, mapped onto this reading's verse indices. Falls back to the
+    # registry `annual` tuples + an even split only if Hebcal is unreachable.
+    parashah_name = (cfg.get("parashah") or {}).get("en")
+    aliyot_doc, aliyot_src = build_aliyot_doc(
+        verses, parashah_name=parashah_name, hebcal_key=cfg.get("hebcal"),
+        fallback_annual=cfg.get("annual"))
+    print(f"  aliyot: source={aliyot_src}; annual={len(aliyot_doc['annual'])} aliyot, "
+          f"triennial years={sorted(aliyot_doc['triennial'])}, "
+          f"maftir={'yes' if aliyot_doc.get('maftir') else 'no'}")
 
     for row in verses:
         row.pop("_wc", None)
@@ -229,8 +217,10 @@ def build_text(cfg):
                 "source": "https://www.sefaria.org", "verses": verses}
     if cfg.get("parashah"):
         text_doc["parashah"] = cfg["parashah"]
-    if annual or triennial:
-        text_doc["aliyot"] = {"annual": annual, "triennial": triennial}
+    if aliyot_doc["annual"] or aliyot_doc["triennial"]:
+        text_doc["aliyot"] = aliyot_doc
+        if aliyot_src == "hebcal":
+            text_doc["aliyotAttribution"] = HEBCAL_ATTRIBUTION
 
     _write(f"{cfg['slug']}.json", text_doc)
     return verses, bounds

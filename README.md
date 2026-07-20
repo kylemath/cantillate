@@ -48,7 +48,10 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
 - **Voice spectrogram + live overlay** — a time-aligned log-frequency spectrogram
   shows the singing voice with its fundamental ("tonal line") and harmonics; the
   recording's live pitch (green) and your mic pitch (orange) overlay the coach
-  steps for direct comparison.
+  steps for direct comparison. The example spectrogram renders the same way when
+  you **sing a duet** (the recorded chant plays as a guide while you record) as it
+  does when you play the chant on its own, so you can watch the cantor's
+  spectrogram and your own side by side.
 - **Voice guide** — a synthesized, *voice-like* rendering of the trope that
   articulates each syllable (stops/gaps + formant color), not a flat pure tone.
 - **Tone-shape practice** — every cantillation accent is drawn as a *linear tone
@@ -119,8 +122,15 @@ in the Reading menu — no JS edit needed.
 It writes `data/<slug>.json`, `data/<slug>_audio.json`, `data/<slug>_pitch.json`,
 `data/<slug>_shapes.json` and `audio/<audio_slug>-*.mp3`. Verses use a sequential
 index `n` internally, with `c`/`v`/`ref` for chapter:verse display, so a reading
-can span multiple chapters. Annual aliyot come from your boundaries; a triennial
-split is approximated as even thirds.
+can span multiple chapters. Both the **annual** (full kriyah) and the 3-year
+**triennial** aliyot — plus the **maftir** — are the real, standard boundaries
+fetched from Hebcal (`hebcal-leyning` + `hebcal-triennial`, BSD-2-Clause;
+triennial per R. Eisenberg's CJLS system) and mapped onto the reading's verse
+indices (see `scripts/aliyot_build.py`). The tables are cached under
+`data/hebcal/`; set `HEBCAL_REFRESH=1` to re-download. The registry `annual`
+tuples remain only as an offline fallback if Hebcal can't be reached. To
+re-derive boundaries for already-built readings without re-running audio/pitch,
+run `.venv/bin/python scripts/update_aliyot.py [slug ...]`.
 
 ### Multiple voices (switchable audio sources)
 
