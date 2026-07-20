@@ -2,16 +2,42 @@
   {
     "slug": "devarim1",
     "file": "data/devarim1.json",
-    "label": "Devarim (Deuteronomy) 1"
+    "label": "Devarim (Deuteronomy) 1",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true
+      }
+    ]
   },
   {
     "slug": "vaetchanan",
     "file": "data/vaetchanan.json",
-    "label": "Va'etchanan (Deuteronomy 3:23–7:11)"
+    "label": "Va'etchanan (Deuteronomy 3:23–7:11)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true
+      }
+    ]
   },
   {
     "slug": "eikev",
     "file": "data/eikev.json",
-    "label": "Eikev (Deuteronomy 7:12–11:25)"
+    "label": "Eikev (Deuteronomy 7:12–11:25)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true
+      },
+      {
+        "id": "ptaudioonly",
+        "label": "PocketTorah (audio only — demo)",
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA."
+      }
+    ]
   }
 ]

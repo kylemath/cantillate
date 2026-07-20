@@ -74,4 +74,39 @@ REGISTRY = {
     #     "audio_slug": "name",
     #     "annual": [((c, v0), (c, vE)), ...],
     # },
+    #
+    # ---- MULTIPLE VOICES (audio sources) --------------------------------------
+    # To offer more than one recorded voice for a reading, replace the top-level
+    # pt_* fields above with a `sources` list. The FIRST source (or the one with
+    # "default": True) uses the original unsuffixed data files; others use
+    # `_<id>`-suffixed files and audio under audio/<id>/. Each source aligns its
+    # own word onsets and gets its own extracted pitch/shapes (so the coach line,
+    # spectrogram and scoring match that voice). Two source kinds:
+    #
+    #   "kind": "pockettorah"  -> fetches labels + MP3s from the PocketTorah repo
+    #                             (fields: pt_files, pt_label, pt_audio, audio_slug)
+    #   "kind": "local"        -> drop-in for audio you host yourself (e.g. a
+    #                             licensed recording once you have permission).
+    #                             Provide MP3s at audio/<id>/<audio_slug>-<i>.mp3
+    #                             and comma-separated word-onset tracks at
+    #                             data/local_sources/<id>/<pt_label>. No download.
+    #
+    # "slug": {
+    #     ... text fields (label, sefaria_book, range, annual, ...) ...
+    #     "sources": [
+    #         {"id": "pockettorah", "label": "PocketTorah (Neiss & Schwartz)",
+    #          "default": True, "kind": "pockettorah",
+    #          "pt_files": [1, 2, 3, 4, 5, 6, 7], "pt_label": "name-{i}.txt",
+    #          "pt_audio": "Name-{i}.mp3", "audio_slug": "name",
+    #          "source_url": "https://pockettorah.com",
+    #          "license": "PocketTorah audio & timing metadata, CC-BY-SA.",
+    #          "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA."},
+    #         {"id": "reader2", "label": "Reader 2", "kind": "local",
+    #          "pt_files": [1, 2, 3, 4, 5, 6, 7], "pt_label": "name-{i}.txt",
+    #          "audio_slug": "name",
+    #          "source_url": "https://example.org",
+    #          "license": "Used with permission.",
+    #          "attribution": "Recorded chanting courtesy of Reader 2."},
+    #     ],
+    # },
 }

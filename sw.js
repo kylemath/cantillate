@@ -14,7 +14,7 @@
  */
 
 // Bump VERSION to invalidate all previously cached content on next activate.
-const VERSION = 'v-8a4accbd2433';
+const VERSION = 'v-25cff734d4e8';
 const SHELL_CACHE = 'cantillate-shell-' + VERSION;
 const DATA_CACHE = 'cantillate-data-' + VERSION;
 
@@ -47,6 +47,12 @@ const SHELL_ASSETS = [
   './js/auth.js',
   './js/firebase-config.js',
   './js/scores.js',
+  './js/offline.js',
+  './manifest.webmanifest',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
+  './icons/apple-touch-icon.png',
+  './icons/favicon-32.png',
 ].map(function (path) {
   return new URL(path, SCOPE_BASE).href;
 });

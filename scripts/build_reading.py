@@ -7,13 +7,21 @@ registry:
 Produces (matching the app's schema, keyed by a sequential per-reading verse
 index n):
     data/<slug>.json          Hebrew (MAM) + English + verses + annual/triennial aliyot
-    data/<slug>_audio.json    per-verse PocketTorah audio ranges + word onsets
+    data/<slug>_audio.json    per-verse audio ranges + word onsets (default voice)
     data/<slug>_pitch.json    per-word note steps (coach line) from the recording
     data/<slug>_shapes.json   representative per-trope pitch shapes
 and downloads audio/<audio_slug>-<i>.mp3, then registers the reading in
 data/readings.json (the app auto-discovers it — no JS edit needed).
 
-Sources: Sefaria API (text) + PocketTorah GitHub (audio, labels, WLC word counts).
+A reading may offer more than one recorded voice (audio source). Declare a
+`sources` list in scripts/readings.py (see the template there). The default
+source keeps the unsuffixed names above; each additional source `<id>` writes
+data/<slug>_<id>_audio.json / _pitch.json / _shapes.json and audio/<id>/*.mp3,
+and is listed under the reading's `sources` in data/readings.json so the app
+shows a voice selector. Text + aliyot are built once (voice-independent).
+
+Sources: Sefaria API (text) + PocketTorah GitHub (audio, labels, WLC word
+counts), plus optional `local` drop-in voices you host yourself.
 Reuses fetch_translation.get_english/clean and the extract_pitch.py DSP pipeline.
 """
 import json
@@ -84,7 +92,69 @@ def split_contig(lo, hi, parts):
     return out
 
 
-def build_text_audio(cfg):
+DEFAULT_SOURCE = "pockettorah"
+LOCAL_LABELS_DIR = os.path.join(DATA_DIR, "local_sources")
+
+
+def is_default_source(src):
+    return src.get("id", DEFAULT_SOURCE) == DEFAULT_SOURCE
+
+
+# Output data-file name for a source. The default source keeps the original
+# unsuffixed names (zero migration); other sources use a `_<id>` suffix. Must
+# stay in sync with srcPath() in js/app.js.
+def out_name(cfg, src, suffix):
+    sid = src.get("id", DEFAULT_SOURCE)
+    return f"{cfg['slug']}_{suffix}" if sid == DEFAULT_SOURCE else f"{cfg['slug']}_{sid}_{suffix}"
+
+
+# Web-relative MP3 path stored in the audio doc's "file" field (what the app
+# fetches). Default source lives at audio/<slug>-<i>.mp3; others are namespaced
+# under audio/<id>/ so voices never collide.
+def mp3_rel(src, i):
+    sid = src.get("id", DEFAULT_SOURCE)
+    slug = src["audio_slug"]
+    sub = "" if sid == DEFAULT_SOURCE else f"{sid}/"
+    return f"audio/{sub}{slug}-{i}.mp3"
+
+
+def mp3_disk(src, i):
+    return os.path.join(HERE, mp3_rel(src, i))
+
+
+# Normalise a reading's audio sources. A cfg may declare an explicit `sources`
+# list (each PocketTorah-style remote fetch, or a `local` drop-in), or use the
+# legacy top-level pt_* fields (treated as a single default PocketTorah source).
+def reading_sources(cfg):
+    if cfg.get("sources"):
+        out = []
+        for s in cfg["sources"]:
+            d = dict(s)
+            d.setdefault("id", DEFAULT_SOURCE)
+            d.setdefault("kind", "pockettorah")
+            out.append(d)
+        return out
+    return [{
+        "id": DEFAULT_SOURCE,
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": True,
+        "kind": "pockettorah",
+        "pt_files": cfg["pt_files"],
+        "pt_label": cfg["pt_label"],
+        "pt_audio": cfg["pt_audio"],
+        "audio_slug": cfg["audio_slug"],
+        "source_url": "https://pockettorah.com",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC.",
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+    }]
+
+
+def build_text(cfg):
+    """Fetch text + aliyot (source-independent) and write data/<slug>.json.
+
+    Returns (verses, bounds) where `verses` has no _wc (matching the doc) and
+    `bounds` gives each verse's cumulative WLC word span for audio alignment.
+    """
     book = cfg["sefaria_book"]
     chapters_needed = sorted({c for c, _, _ in cfg["range"]})
 
@@ -125,52 +195,7 @@ def build_text_audio(cfg):
         bounds.append((cum, cum + row["_wc"]))
         cum += row["_wc"]
 
-    # labels + audio
-    labels, foff, off = {}, {}, 0
-    for i in cfg["pt_files"]:
-        name = urllib.parse.quote(cfg["pt_label"].format(i=i))
-        onsets = [float(x) for x in get(f"{RAW}/data/torah/labels/{name}")
-                  .decode("utf-8-sig").strip().split(",") if x.strip()]
-        labels[i], foff[i] = onsets, off
-        off += len(onsets)
-        dest = os.path.join(AUDIO_DIR, f"{cfg['audio_slug']}-{i}.mp3")
-        if not os.path.exists(dest):
-            print(f"  downloading {cfg['pt_audio'].format(i=i)} ...")
-            with open(dest, "wb") as f:
-                f.write(get(f"{RAW}/data/audio/{cfg['pt_audio'].format(i=i)}"))
-
-    frange, acc = {}, 0
-    for i in cfg["pt_files"]:
-        frange[i] = (acc, acc + len(labels[i]))
-        acc += len(labels[i])
-
-    def file_for(gw):
-        for i in cfg["pt_files"]:
-            s, e = frange[i]
-            if s <= gw < e:
-                return i
-        return None
-
-    audio_verses, mism = {}, []
-    for idx, row in enumerate(verses):
-        gs, ge = bounds[idx]
-        fi = file_for(gs)
-        if fi is None:
-            mism.append((row["ref"], "no audio file"))
-            continue
-        ons = labels[fi]
-        ls, le = gs - foff[fi], ge - foff[fi]
-        wons = ons[ls:le]
-        if len(wons) != row["_wc"]:
-            mism.append((row["ref"], f"onsets {len(wons)} != wc {row['_wc']}"))
-        audio_verses[str(row["n"])] = {
-            "file": f"audio/{cfg['audio_slug']}-{fi}.mp3",
-            "start": round(ons[ls], 3),
-            "end": round(ons[le], 3) if le < len(ons) else None,
-            "onsets": [round(x, 3) for x in wons],
-        }
-
-    # aliyot
+    # aliyot (source-independent)
     cv_to_n = {(r["c"], r["v"]): r["n"] for r in verses}
 
     def find_n(c, v):
@@ -207,38 +232,115 @@ def build_text_audio(cfg):
     if annual or triennial:
         text_doc["aliyot"] = {"annual": annual, "triennial": triennial}
 
-    audio_doc = {"slug": cfg["slug"], "source": "https://pockettorah.com",
-                 "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC.",
-                 "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
-                 "verses": audio_verses}
-
     _write(f"{cfg['slug']}.json", text_doc)
-    _write(f"{cfg['slug']}_audio.json", audio_doc)
+    return verses, bounds
+
+
+# Load this source's per-file word-onset tracks, ensuring the MP3s are present.
+# PocketTorah sources fetch labels + audio from GitHub; `local` drop-in sources
+# read comma-separated onsets from data/local_sources/<id>/ and require the MP3s
+# to already exist under audio/<id>/ (e.g. licensed material provided offline).
+def load_source_tracks(src):
+    kind = src.get("kind", "pockettorah")
+    sid = src.get("id", DEFAULT_SOURCE)
+    labels = {}
+    for i in src["pt_files"]:
+        dest = mp3_disk(src, i)
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        if kind == "pockettorah":
+            name = urllib.parse.quote(src["pt_label"].format(i=i))
+            raw = get(f"{RAW}/data/torah/labels/{name}").decode("utf-8-sig")
+            if not os.path.exists(dest):
+                print(f"  downloading {src['pt_audio'].format(i=i)} ...")
+                with open(dest, "wb") as f:
+                    f.write(get(f"{RAW}/data/audio/{src['pt_audio'].format(i=i)}"))
+        elif kind == "local":
+            lbl = os.path.join(LOCAL_LABELS_DIR, sid, src["pt_label"].format(i=i))
+            if not os.path.exists(lbl):
+                raise SystemExit(f"local source '{sid}': missing onset labels {lbl}")
+            if not os.path.exists(dest):
+                raise SystemExit(f"local source '{sid}': missing audio {dest}")
+            with open(lbl, encoding="utf-8-sig") as f:
+                raw = f.read()
+        else:
+            raise SystemExit(f"unknown source kind '{kind}' for '{sid}'")
+        labels[i] = [float(x) for x in raw.strip().split(",") if x.strip()]
+    return labels
+
+
+def build_audio(cfg, src, verses, bounds):
+    """Align this source's word onsets to the reading and write its audio doc."""
+    labels = load_source_tracks(src)
+    foff, off = {}, 0
+    for i in src["pt_files"]:
+        foff[i] = off
+        off += len(labels[i])
+
+    frange, acc = {}, 0
+    for i in src["pt_files"]:
+        frange[i] = (acc, acc + len(labels[i]))
+        acc += len(labels[i])
+
+    def file_for(gw):
+        for i in src["pt_files"]:
+            s, e = frange[i]
+            if s <= gw < e:
+                return i
+        return None
+
+    audio_verses, mism = {}, []
+    for idx, row in enumerate(verses):
+        gs, ge = bounds[idx]
+        wc_expected = ge - gs
+        fi = file_for(gs)
+        if fi is None:
+            mism.append((row["ref"], "no audio file"))
+            continue
+        ons = labels[fi]
+        ls, le = gs - foff[fi], ge - foff[fi]
+        wons = ons[ls:le]
+        if len(wons) != wc_expected:
+            mism.append((row["ref"], f"onsets {len(wons)} != wc {wc_expected}"))
+        audio_verses[str(row["n"])] = {
+            "file": mp3_rel(src, fi),
+            "start": round(ons[ls], 3),
+            "end": round(ons[le], 3) if le < len(ons) else None,
+            "onsets": [round(x, 3) for x in wons],
+        }
+
+    audio_doc = {"slug": cfg["slug"],
+                 "source": src.get("source_url", "https://pockettorah.com"),
+                 "license": src.get("license", "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."),
+                 "attribution": src.get("attribution", "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA."),
+                 "verses": audio_verses}
+    _write(out_name(cfg, src, "audio.json"), audio_doc)
     print(f"  audio-onset vs WLC mismatches: {len(mism)}" + (f" {mism}" if mism else ""))
     # app-tokenizer alignment (what actually drives the coach)
     tokmm = [(r["ref"], len(js_tokenize(r["text"])), len(audio_verses[str(r["n"])]["onsets"]))
              for r in verses if str(r["n"]) in audio_verses
              and len(js_tokenize(r["text"])) != len(audio_verses[str(r["n"])]["onsets"])]
     print(f"  app-tokenizer vs onset mismatches: {len(tokmm)}" + (f" {tokmm}" if tokmm else ""))
-    return verses, audio_verses
+    return audio_verses
 
 
-def extract_pitch(cfg, verses, audio_verses):
+def extract_pitch(cfg, src, verses, audio_verses):
+    audio_slug = src["audio_slug"]
+    sid = src.get("id", DEFAULT_SOURCE)
     text_by_n = {r["n"]: r for r in verses}
     tracks, durations = {}, {}
-    for i in cfg["pt_files"]:
-        src = os.path.join(AUDIO_DIR, f"{cfg['audio_slug']}-{i}.mp3")
-        dst = os.path.join(WAV_DIR, f"{cfg['audio_slug']}-{i}.wav")
+    for i in src["pt_files"]:
+        mp3 = mp3_disk(src, i)
+        dst = os.path.join(WAV_DIR, f"{sid}-{audio_slug}-{i}.wav")
         if not os.path.exists(dst):
             os.makedirs(WAV_DIR, exist_ok=True)
-            subprocess.run(["afconvert", "-f", "WAVE", "-d", f"LEI16@{ep.SR}", src, dst], check=True)
+            subprocess.run(["afconvert", "-f", "WAVE", "-d", f"LEI16@{ep.SR}", mp3, dst], check=True)
         sig = ep.read_wav_mono(dst)
         durations[i] = len(sig) / ep.SR
-        print(f"  analyzing {cfg['audio_slug']}-{i} ({durations[i]:.0f}s)...")
+        print(f"  analyzing {audio_slug}-{i} ({durations[i]:.0f}s)...")
         tracks[i] = ep.f0_track(sig)
 
     def file_num(path):
-        return int(path.split(f"{cfg['audio_slug']}-")[1].split(".")[0])
+        return int(path.split(f"{audio_slug}-")[1].split(".")[0])
 
     trope_data, out_verses = {}, {}
     for v in sorted(int(k) for k in audio_verses.keys()):
@@ -302,8 +404,9 @@ def extract_pitch(cfg, verses, audio_verses):
         out_verses[str(v)] = {"tonicHz": round(tonic, 2), "start": round(vstart, 3),
                               "end": round(vend, 3), "file": info["file"], "words": words}
 
-    _write(f"{cfg['slug']}_pitch.json", {"slug": cfg["slug"], "source": "https://pockettorah.com",
-           "license": "Derived pitch analysis of PocketTorah recordings (CC-BY-SA).",
+    _write(out_name(cfg, src, "pitch.json"), {"slug": cfg["slug"],
+           "source": src.get("source_url", "https://pockettorah.com"),
+           "license": src.get("pitch_license", "Derived pitch analysis of the source recording."),
            "note": "Per-word note steps from the recording's fundamental; semitones vs each verse's median (tonic).",
            "verses": out_verses}, indent=1)
     print(f"  pitch: {len(out_verses)} verses")
@@ -317,7 +420,7 @@ def extract_pitch(cfg, verses, audio_verses):
         shapes[key] = {"n": len(insts), "steps": rep["steps"],
                        "contour": [{"t": round(float(xs[i]), 3), "p": round(float(rep["r"][i]), 2)}
                                    for i in range(ep.NSHAPE)]}
-    _write(f"{cfg['slug']}_shapes.json", {"slug": cfg["slug"],
+    _write(out_name(cfg, src, "shapes.json"), {"slug": cfg["slug"],
            "note": "Most-representative (medoid-by-mean) pitch shape per trope.", "shapes": shapes}, indent=1)
     print(f"  shapes: {len(shapes)} tropes")
 
@@ -329,16 +432,35 @@ def _write(name, doc, indent=2):
     print(f"  wrote {name}")
 
 
-def register(cfg):
+def manifest_sources(sources):
+    out = []
+    for s in sources:
+        entry = {"id": s.get("id", DEFAULT_SOURCE),
+                 "label": s.get("label", s.get("id", DEFAULT_SOURCE))}
+        if s.get("default"):
+            entry["default"] = True
+        if s.get("attribution"):
+            entry["attribution"] = s["attribution"]
+        if s.get("license"):
+            entry["license"] = s["license"]
+        out.append(entry)
+    # Guarantee exactly one default (first source if none flagged).
+    if out and not any(e.get("default") for e in out):
+        out[0]["default"] = True
+    return out
+
+
+def register(cfg, sources):
     try:
         manifest = json.load(open(MANIFEST, encoding="utf-8"))
     except FileNotFoundError:
         manifest = [{"slug": "devarim1", "file": "data/devarim1.json", "label": "Devarim (Deuteronomy) 1"}]
-    entry = {"slug": cfg["slug"], "file": f"data/{cfg['slug']}.json", "label": cfg["label"]}
+    entry = {"slug": cfg["slug"], "file": f"data/{cfg['slug']}.json", "label": cfg["label"],
+             "sources": manifest_sources(sources)}
     manifest = [m for m in manifest if m["slug"] != cfg["slug"]] + [entry]
     with open(MANIFEST, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    print(f"  registered '{cfg['slug']}' in data/readings.json")
+    print(f"  registered '{cfg['slug']}' in data/readings.json ({len(entry['sources'])} source(s))")
 
 
 def main():
@@ -347,16 +469,21 @@ def main():
         sys.exit(1)
     slug = sys.argv[1]
     cfg = dict(REGISTRY[slug], slug=slug)
+    sources = reading_sources(cfg)
     os.makedirs(AUDIO_DIR, exist_ok=True)
     os.makedirs(DATA_DIR, exist_ok=True)
-    print(f"== building '{slug}' ==")
-    print("[1/3] text + audio")
-    verses, audio_verses = build_text_audio(cfg)
-    print("[2/3] pitch + shapes")
-    extract_pitch(cfg, verses, audio_verses)
+    print(f"== building '{slug}' ({len(sources)} audio source(s)) ==")
+    print("[1/3] text")
+    verses, bounds = build_text(cfg)
+    print("[2/3] audio + pitch per source")
+    for src in sources:
+        print(f"  -- source '{src.get('id', DEFAULT_SOURCE)}' ({src.get('kind', 'pockettorah')}) --")
+        audio_verses = build_audio(cfg, src, verses, bounds)
+        extract_pitch(cfg, src, verses, audio_verses)
     print("[3/3] register")
-    register(cfg)
-    print(f"done: {slug} ({len(verses)} verses). Reload the app; it's in the Reading menu.")
+    register(cfg, sources)
+    print(f"done: {slug} ({len(verses)} verses, {len(sources)} source(s)). "
+          f"Reload the app; it's in the Reading menu.")
 
 
 if __name__ == "__main__":

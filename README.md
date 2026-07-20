@@ -122,6 +122,35 @@ index `n` internally, with `c`/`v`/`ref` for chapter:verse display, so a reading
 can span multiple chapters. Annual aliyot come from your boundaries; a triennial
 split is approximated as even thirds.
 
+### Multiple voices (switchable audio sources)
+
+A reading can offer more than one recorded voice for the **example** and **duet**
+practice. Users pick the voice from a **Voice** selector in the top bar (shown
+only when a reading has more than one source); the choice is remembered in
+`localStorage` and applied to any reading that offers it. Each voice ships its own
+word-onset alignment and its own extracted pitch/shapes, so the coach line,
+spectrogram overlay and scoring match whichever voice is playing.
+
+To add a voice, declare a `sources` list on the reading in `scripts/readings.py`
+(see the template's *MULTIPLE VOICES* block) instead of the top-level `pt_*`
+fields, then rebuild. The default source keeps the unsuffixed file names above;
+each additional source `<id>` writes `data/<slug>_<id>_audio.json` /
+`_pitch.json` / `_shapes.json` and `audio/<id>/*.mp3`, and is listed under the
+reading's `sources` in `data/readings.json`. Sources come in two kinds:
+`pockettorah` (fetches labels + MP3s from the PocketTorah repo) and `local` (a
+drop-in for audio you host yourself — provide the MP3s under `audio/<id>/` and
+comma-separated onset tracks under `data/local_sources/<id>/`; nothing is
+downloaded). A source with no pitch/shapes files still plays, just without the
+coach line / spectrogram overlay.
+
+> Note: the `eikev` reading ships a demonstration second voice
+> (`ptaudioonly` — the same PocketTorah audio with no coach data) purely to show
+> the selector and its graceful degradation. Licensed voices such as the
+> [Chabad trainer](https://www.chabad.org/library/howto/trainer_cdo/aid/1771208)
+> (readers Chayim B. Alevsky and Michoel Slavin) are **not** bundled: that audio
+> is copyrighted with no redistribution license, so it can only be added as a
+> `local` source once you have written permission.
+
 **Notes:**
 - The build prints an alignment self-check (audio onsets vs. Masoretic word count,
   and app-tokenizer vs. onsets). The only known misalignment is the **Ten

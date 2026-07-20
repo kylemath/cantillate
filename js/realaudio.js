@@ -5,6 +5,7 @@
 // or a single word) using the mp3 track times.
 
 import { detectPitch } from './pitch.js';
+import { getObjectUrl } from './offline.js';
 
 let ctx = null;
 const cache = new Map(); // url -> { el, source, analyser }
@@ -21,7 +22,9 @@ function getEntry(url) {
   if (!e) {
     const el = new Audio();
     el.preload = 'auto';
-    el.src = url;
+    // Prefer a locally-stored blob (downloaded for offline) so playback uses no
+    // network; fall back to the network path when the reading isn't downloaded.
+    el.src = getObjectUrl(url) || url;
     const c = ensureCtx();
     const source = c.createMediaElementSource(el);
     const analyser = c.createAnalyser();

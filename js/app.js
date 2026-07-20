@@ -10,6 +10,7 @@ import { aliyotFor, parashahOf, currentTriennialYear } from './aliyot.js';
 import * as store from './store.js';
 import * as auth from './auth.js';
 import * as scores from './scores.js';
+import * as offline from './offline.js';
 
 // An aliyah's scroll+yad challenge unlocks once every pasuk in it has reached at
 // least this stage (i.e., the learner has worked it up to whole-verse practice).
@@ -28,6 +29,8 @@ const state = {
   audio: null,        // per-verse recorded-chant ranges
   pitch: null,        // per-word extracted note steps
   shapes: null,       // averaged per-trope shapes (for legend icons)
+  sources: [],        // the current reading's available audio sources (voices)
+  audioSource: null,  // id of the active audio source (voice) for this reading
   coach: null,        // current window's coach data
   verseSegs: [],      // all word segments of the selected verse
   units: [],          // current pages (word-groups / phrases / verse)
@@ -193,6 +196,7 @@ async function init() {
 
   sel.addEventListener('change', () => loadData(sel.value));
   $('tonic').addEventListener('change', (e) => { state.tonicHz = parseFloat(e.target.value); });
+  $('audioSource').addEventListener('change', (e) => { switchAudioSource(e.target.value); });
 
   bindToggle('tgVowels', () => { state.showVowels = !state.showVowels; refreshText(); });
   bindToggle('tgTaamim', () => { state.showTaamim = !state.showTaamim; refreshText(); });
@@ -229,6 +233,8 @@ async function init() {
   setupAuth();
   setupLeaderboard();
   setupAliyotEditor();
+  setupOfflineButton();
+  setupNetBadge();
 }
 
 // ---------------------------------------------------------------------------
@@ -1277,6 +1283,130 @@ function syncPortionUI() {
   if (el) el.value = state.cycle === 'triennial' ? `tri${state.triYear}` : 'annual';
 }
 
+// ---------------------------------------------------------------------------
+// Audio sources (voices). A reading can offer more than one recorded voice for
+// the example + duet practice (e.g. PocketTorah plus another reader). The
+// default source ('pockettorah') uses the original unsuffixed file names for
+// zero migration; any other source id `sid` uses `_<sid>`-suffixed files and a
+// per-source raw-shard subfolder. See scripts/build_reading.py for the build.
+// ---------------------------------------------------------------------------
+
+const DEFAULT_SOURCE = 'pockettorah';
+const SOURCE_PREF_KEY = 'cantillate.audioSource';
+
+function isDefaultSource(sid) {
+  return !sid || sid === DEFAULT_SOURCE;
+}
+
+// Data file path for a reading's audio source. `suffix` is the trailing part,
+// e.g. 'audio.json', 'pitch.slim.json', 'pitch.json', 'shapes.json',
+// 'pitch.raw.json'.
+function srcPath(slug, sid, suffix) {
+  return isDefaultSource(sid)
+    ? `data/${slug}_${suffix}`
+    : `data/${slug}_${sid}_${suffix}`;
+}
+
+// Per-verse raw-contour shard path for the active source.
+function rawShardPath(slug, sid, n) {
+  return isDefaultSource(sid)
+    ? `data/pitch/${slug}/${n}.raw.json`
+    : `data/pitch/${slug}/${sid}/${n}.raw.json`;
+}
+
+// The sources a reading advertises (from its manifest entry). Falls back to a
+// single default PocketTorah source so older manifest entries keep working.
+function readingSources(meta) {
+  const list = meta && Array.isArray(meta.sources) ? meta.sources.filter((s) => s && s.id) : [];
+  if (list.length) return list;
+  return [{ id: DEFAULT_SOURCE, label: 'PocketTorah (Neiss & Schwartz)', default: true }];
+}
+
+function loadSourcePref() {
+  try { return localStorage.getItem(SOURCE_PREF_KEY) || null; } catch (e) { return null; }
+}
+
+function saveSourcePref(sid) {
+  try { localStorage.setItem(SOURCE_PREF_KEY, sid); } catch (e) { /* private mode */ }
+}
+
+// Choose the active source for a reading: the user's saved voice if this reading
+// offers it, otherwise the reading's declared default (or the first listed).
+function resolveAudioSource(sources) {
+  const pref = loadSourcePref();
+  if (pref && sources.some((s) => s.id === pref)) return pref;
+  const def = sources.find((s) => s.default) || sources[0];
+  return def ? def.id : DEFAULT_SOURCE;
+}
+
+// Fetch the recorded-chant / pitch / shapes data for `slug` at source `sid` and
+// populate state. Missing files degrade gracefully (playback without a coach
+// line / spectrogram overlay), exactly as a reading with no recording does.
+async function loadAudioSource(slug, sid) {
+  state.audioSource = sid;
+  state.audio = null;
+  state.pitch = null;
+  state.shapes = null;
+  // Phase 2: the faint-underlay `raw` contours are NOT loaded up front anymore.
+  // They're fetched per-verse (tiny shard) when a pasuk is practiced, or as the
+  // whole-reading monolith when an aliyah (many verses) is opened.
+  _rawLoaded = new Set();
+  _rawMonolithTried = false;
+  try {
+    const ar = await fetch(srcPath(slug, sid, 'audio.json'));
+    if (ar.ok) state.audio = await ar.json();
+  } catch (e) { /* no recorded audio available */ }
+  // Prefer the slim pitch payload (no heavy per-frame `raw` arrays ≈ 40% smaller);
+  // fall back to the original monolith if the slim file hasn't been generated yet.
+  try {
+    let pr = await fetch(srcPath(slug, sid, 'pitch.slim.json'));
+    if (!pr.ok) pr = await fetch(srcPath(slug, sid, 'pitch.json'));
+    if (pr.ok) state.pitch = await pr.json();
+  } catch (e) { /* no extracted pitch available */ }
+  try {
+    const sr = await fetch(srcPath(slug, sid, 'shapes.json'));
+    if (sr.ok) state.shapes = (await sr.json()).shapes;
+  } catch (e) { /* no averaged trope shapes available */ }
+}
+
+// Populate + show/hide the topbar voice selector for the current reading.
+function renderSourceSelector() {
+  const sel = $('audioSource');
+  const label = $('audioSourceLabel');
+  if (!sel) return;
+  const sources = state.sources || [];
+  const multi = sources.length > 1;
+  sel.hidden = !multi;
+  if (label) label.hidden = !multi;
+  sel.innerHTML = '';
+  sources.forEach((s) => {
+    const o = document.createElement('option');
+    o.value = s.id;
+    o.textContent = s.label || s.id;
+    sel.appendChild(o);
+  });
+  sel.value = state.audioSource;
+}
+
+// Switch the active voice without reloading the reading's text. Re-fetches the
+// source's audio/pitch/shapes, re-primes offline, and redraws the open view.
+async function switchAudioSource(sid) {
+  const slug = state.slug;
+  if (!slug || sid === state.audioSource) return;
+  saveSourcePref(sid);
+  await loadAudioSource(slug, sid);
+  if (state.slug !== slug) return; // reading changed while loading
+  renderSourceSelector();
+  renderGuide();
+  applyHighlight();
+  if (state.aliyah) renderAliyahView();
+  else if (state.selectedVerse != null) renderPractice();
+  try {
+    await offline.primeReading(readingAudioFiles());
+  } catch (e) { /* offline store unavailable */ }
+  refreshOfflineButton();
+}
+
 async function loadData(slug) {
   const meta = AVAILABLE.find((p) => p.slug === slug);
   const resp = await fetch(meta.file);
@@ -1285,30 +1415,13 @@ async function loadData(slug) {
   state.selectedVerse = null;
   if (state.aliyah) setAliyahLayout(false); // leave aliyah layout when the reading changes
   state.aliyah = null;
-  // Optional recorded-chant data (may not exist for every reading).
-  state.audio = null;
-  state.pitch = null;
-  try {
-    const ar = await fetch(`data/${slug}_audio.json`);
-    if (ar.ok) state.audio = await ar.json();
-  } catch (e) { /* no recorded audio available */ }
-  // Prefer the slim pitch payload (no heavy per-frame `raw` arrays ≈ 40% smaller);
-  // fall back to the original monolith if the slim file hasn't been generated yet.
-  try {
-    let pr = await fetch(`data/${slug}_pitch.slim.json`);
-    if (!pr.ok) pr = await fetch(`data/${slug}_pitch.json`);
-    if (pr.ok) state.pitch = await pr.json();
-  } catch (e) { /* no extracted pitch available */ }
-  // Phase 2: the faint-underlay `raw` contours are NOT loaded up front anymore.
-  // They're fetched per-verse (tiny shard) when a pasuk is practiced, or as the
-  // whole-reading monolith when an aliyah (many verses) is opened.
-  _rawLoaded = new Set();
-  _rawMonolithTried = false;
-  state.shapes = null;
-  try {
-    const sr = await fetch(`data/${slug}_shapes.json`);
-    if (sr.ok) state.shapes = (await sr.json()).shapes;
-  } catch (e) { /* no averaged trope shapes available */ }
+  // Resolve which recorded voice (audio source) to load for this reading, then
+  // fetch its recorded-chant / pitch / shapes data. Honours the user's saved
+  // voice preference when this reading offers it, else the reading's default.
+  state.sources = readingSources(meta);
+  const effectiveSource = resolveAudioSource(state.sources);
+  await loadAudioSource(slug, effectiveSource);
+  renderSourceSelector();
   const par = state.data.parashah;
   $('textTitle').textContent = par
     ? `${par.en} — ${par.he}`
@@ -1321,6 +1434,137 @@ async function loadData(slug) {
   applyHighlight();
   $('practice').classList.remove('aliyah-fill');
   $('practice').innerHTML = '<p class="empty">Select a verse on the left to begin practicing.</p>';
+  // Offline: register any already-downloaded audio for this reading so playback
+  // uses local blobs, and refresh the "⬇ Offline" button to reflect its state.
+  try {
+    await offline.primeReading(readingAudioFiles());
+  } catch (e) { /* offline store unavailable */ }
+  refreshOfflineButton();
+}
+
+// ---------------------------------------------------------------------------
+// Offline mode. After a one-time "download", a reading's recorded chant is
+// stored in IndexedDB and its text/pitch/shapes JSON is warmed in the service-
+// worker cache, so the reading works with no network and no recurring data use.
+// ---------------------------------------------------------------------------
+
+// Unique recorded-chant MP3 paths referenced by the currently loaded reading.
+function readingAudioFiles() {
+  const out = new Set();
+  const verses = state.audio && state.audio.verses;
+  if (verses) {
+    for (const k of Object.keys(verses)) {
+      const f = verses[k] && verses[k].file;
+      if (f) out.add(f);
+    }
+  }
+  return Array.from(out);
+}
+
+// The reading's JSON payloads worth warming into the SW cache for offline use.
+// Optional files (raw monolith, slim vs full pitch) are included best-effort;
+// downloadReading swallows any that 404.
+function readingDataFiles(slug) {
+  const meta = AVAILABLE.find((p) => p.slug === slug);
+  const files = [];
+  if (meta && meta.file) files.push(meta.file);
+  const sid = state.audioSource;
+  files.push(
+    srcPath(slug, sid, 'audio.json'),
+    srcPath(slug, sid, 'pitch.slim.json'),
+    srcPath(slug, sid, 'pitch.json'),
+    srcPath(slug, sid, 'shapes.json'),
+    srcPath(slug, sid, 'pitch.raw.json')
+  );
+  return files;
+}
+
+let _offlineBusy = false;
+
+async function refreshOfflineButton() {
+  const btn = $('btnOffline');
+  if (!btn) return;
+  if (!offline.offlineSupported()) { btn.hidden = true; return; }
+  const files = readingAudioFiles();
+  if (!files.length) { btn.hidden = true; return; } // no recorded chant for this reading
+  btn.hidden = false;
+  if (_offlineBusy) return;
+  const st = await offline.readingStatus(files);
+  btn.dataset.slug = state.slug;
+  if (st.complete) {
+    btn.textContent = '✓ Offline';
+    btn.classList.add('on');
+    btn.title = 'This reading is downloaded — its chant plays with no network. Click to remove the download and free space.';
+  } else {
+    const est = await offline.estimateReadingSize(files);
+    const size = est.known && est.bytes ? ` (${offline.formatBytes(est.bytes)})` : '';
+    btn.textContent = st.cached > 0 ? `⬇ Offline (${st.cached}/${st.total})` : `⬇ Offline${size}`;
+    btn.classList.remove('on');
+    btn.title = 'Download this reading\u2019s audio so it plays with no network (minimal data after the first download).';
+  }
+}
+
+function setupOfflineButton() {
+  const btn = $('btnOffline');
+  if (!btn) return;
+  btn.addEventListener('click', async () => {
+    if (_offlineBusy) return;
+    const files = readingAudioFiles();
+    if (!files.length) return;
+    const slug = state.slug;
+    const st = await offline.readingStatus(files);
+    if (st.complete) {
+      // Toggle off: remove the download to free space.
+      _offlineBusy = true;
+      btn.classList.add('working');
+      btn.textContent = 'Removing…';
+      try { await offline.removeReading(files); } catch (e) { /* ignore */ }
+      _offlineBusy = false;
+      btn.classList.remove('working');
+      refreshOfflineButton();
+      return;
+    }
+    // Download.
+    _offlineBusy = true;
+    btn.classList.add('working');
+    btn.disabled = false;
+    const spec = { audioFiles: files, dataFiles: readingDataFiles(slug) };
+    try {
+      await offline.downloadReading(spec, (p) => {
+        if (state.slug !== slug) return;
+        const pct = p.total ? Math.round((p.loaded / p.total) * 100) : 0;
+        btn.textContent = `Downloading… ${pct}%`;
+      });
+      btn.classList.add('flash');
+      setTimeout(() => btn.classList.remove('flash'), 900);
+    } catch (e) {
+      btn.textContent = '⚠ Retry download';
+      btn.title = 'Download failed (are you offline?). Click to try again.';
+      _offlineBusy = false;
+      btn.classList.remove('working');
+      return;
+    }
+    _offlineBusy = false;
+    btn.classList.remove('working');
+    refreshOfflineButton();
+  });
+}
+
+// A small online/offline badge; also flips a body class so other UI (e.g. auth)
+// can react. Sefaria word lookup already degrades gracefully when offline.
+function setupNetBadge() {
+  const badge = $('netBadge');
+  if (!badge) return;
+  const update = () => {
+    const online = navigator.onLine;
+    document.body.classList.toggle('is-offline', !online);
+    badge.hidden = online;              // only show the badge when offline
+    badge.textContent = '⚡ Offline';
+    badge.title = online ? 'Online' : 'You are offline — downloaded readings still work.';
+  };
+  window.addEventListener('online', update);
+  window.addEventListener('offline', update);
+  update();
 }
 
 // Verses whose `raw` underlay has been loaded (or attempted), so we never
@@ -1355,7 +1599,7 @@ async function ensureRawForVerse(n) {
   _rawLoaded.add(key);
   const slug = state.slug;
   try {
-    const rr = await fetch(`data/pitch/${slug}/${n}.raw.json`);
+    const rr = await fetch(rawShardPath(slug, state.audioSource, n));
     if (rr.ok) {
       const words = await rr.json();
       if (state.slug !== slug) return;
@@ -1374,7 +1618,7 @@ async function loadRawContoursDeferred(slug) {
   if (_rawMonolithTried && slug === state.slug) return;
   _rawMonolithTried = true;
   try {
-    const rr = await fetch(`data/${slug}_pitch.raw.json`);
+    const rr = await fetch(srcPath(slug, state.audioSource, 'pitch.raw.json'));
     if (!rr.ok) return;
     const raw = await rr.json();
     if (state.slug !== slug || !state.pitch) return; // reading changed meanwhile

@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Cantillate — Learn Torah Cantillation</title>
-  <link rel="icon" href="data:," />
+
+  <!-- Installable PWA: manifest, theme + iOS home-screen metadata. -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="Read, understand, and practice chanting the weekly Torah parashah with recorded cantillation, live pitch feedback, and offline downloads." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Cantillate" />
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -33,6 +45,10 @@
         <option value="261.63">C4</option>
         <option value="293.66">D4</option>
       </select>
+      <label class="label" for="audioSource" id="audioSourceLabel" hidden>Voice</label>
+      <select id="audioSource" title="Choose which recorded voice to hear for the example and duet practice" hidden></select>
+      <button id="btnOffline" class="toggle offline-btn" title="Download this reading's audio so it plays with no network (uses minimal data after the first download)" hidden>⬇ Offline</button>
+      <span id="netBadge" class="net-badge" title="Network status" hidden></span>
       <div id="authBox" class="authbox"></div>
     </div>
   </header>

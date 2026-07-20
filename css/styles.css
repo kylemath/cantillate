@@ -55,6 +55,19 @@ button.warn { background: var(--accent-2); color: #201007; border-color: transpa
 button:disabled { opacity: 0.4; cursor: not-allowed; }
 button.toggle.on { background: var(--accent); color: #08101f; border-color: transparent; }
 
+/* Offline download button + network badge. */
+.offline-btn.on { background: var(--good); color: #04210f; border-color: transparent; }
+.offline-btn.working { opacity: 0.85; cursor: progress; }
+.offline-btn.flash { animation: offline-flash 0.9s ease; }
+@keyframes offline-flash {
+  0% { box-shadow: 0 0 0 0 rgba(55,200,113,0.6); }
+  100% { box-shadow: 0 0 0 10px rgba(55,200,113,0); }
+}
+.net-badge {
+  font-size: 12px; font-weight: 600; color: #201007;
+  background: var(--accent-2); border-radius: 6px; padding: 4px 8px; white-space: nowrap;
+}
+
 /* Segmented control (e.g. the score-overlay and aliyah-cycle selectors). */
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
 .seg button { border: none; border-radius: 0; padding: 7px 11px; background: var(--panel-2);
