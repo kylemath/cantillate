@@ -14,7 +14,7 @@
  */
 
 // Bump VERSION to invalidate all previously cached content on next activate.
-const VERSION = 'v-51f66c62e812';
+const VERSION = 'v-8a4accbd2433';
 const SHELL_CACHE = 'cantillate-shell-' + VERSION;
 const DATA_CACHE = 'cantillate-data-' + VERSION;
 

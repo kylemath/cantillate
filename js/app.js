@@ -1,4 +1,4 @@
-import { tokenize, renderWord, toScroll, stripNikud } from './hebrew.js';
+import { tokenize, renderWord, toScroll, stripNikud, stripTaamim } from './hebrew.js';
 import { buildLineMelody, splitPhrases, FAMILIES, markGlyph, NAMES,
   motifFor, nameFor, SOF_PASUK_MOTIF, SOF_PASUK_NAME } from './trope.js';
 import { singSteps, playTone, stopPlayback } from './audio.js';
@@ -201,7 +201,7 @@ async function init() {
   $('overlaySeg').querySelectorAll('.ov').forEach((b) => {
     b.addEventListener('click', () => { state.overlay = b.dataset.ov; syncToggleUI(); renderVerses(); });
   });
-  bindToggle('tgScrollView', () => { state.scrollView = !state.scrollView; renderVerses(); });
+  bindToggle('tgScrollView', () => { if (state.aliyah) return; state.scrollView = !state.scrollView; renderVerses(); });
 
   // A single "Portion" selector is the sole control for how much of the parashah
   // you read: the full annual reading, or one shorter triennial-cycle year. The
@@ -1283,6 +1283,8 @@ async function loadData(slug) {
   state.data = await resp.json();
   state.slug = slug;
   state.selectedVerse = null;
+  if (state.aliyah) setAliyahLayout(false); // leave aliyah layout when the reading changes
+  state.aliyah = null;
   // Optional recorded-chant data (may not exist for every reading).
   state.audio = null;
   state.pitch = null;
@@ -1658,6 +1660,12 @@ function wireAccPanel() {
 function renderScrollPane() {
   const box = $('scrollVerses');
   if (!box) return;
+  const title = document.querySelector('#scrollpane .pane-title');
+  // In aliyah mode the shared STA"M pane shows the open aliyah (with surrounding
+  // context) instead of the whole reading, so the scroll stays put in the same
+  // window whether you're referencing a verse or chanting an aliyah.
+  if (state.aliyah) { renderAliyahScroll(box); return; }
+  if (title) title.innerHTML = 'Torah column (STA&ldquo;M)';
   if (!state.scrollView) { box.innerHTML = ''; return; }
   const [start, end] = divisionRange();
   let html = '<div class="scroll-column">';
@@ -1675,7 +1683,38 @@ function renderScrollPane() {
   });
 }
 
+// Populate the shared STA"M scroll pane (#scrollVerses) with the open aliyah:
+// the aliyah's verses plus surrounding context (dimmed), each word tagged so the
+// yad cues (start / end / current spot) can highlight it. Reuses the same
+// left-hand "Torah column" window and .scroll-column styling (word-level
+// no-wrap, parchment) as regular reference, so entering/leaving aliyah mode
+// doesn't move the scroll — only the practice pane's controls swap in.
+function renderAliyahScroll(box) {
+  box = box || $('scrollVerses');
+  if (!box) return;
+  const a = state.aliyah;
+  if (!a) { box.innerHTML = ''; return; }
+  const maxV = state.data.verses.length;
+  const first = a.start, last = Math.min(a.end, maxV);
+  const from = Math.max(1, first - ALIYAH_CONTEXT);
+  const to = Math.min(maxV, last + ALIYAH_CONTEXT);
+  const scrollHtml = [];
+  for (let n = from; n <= to; n++) {
+    const segs = buildLineMelody(tokenize(state.data.verses[n - 1].text));
+    const inAliyah = n >= first && n <= last;
+    const words = segs.map((s, wi) => `<span class="sw${inAliyah ? '' : ' ctx'}" data-verse="${n}" data-widx="${wi}">${escapeHtml(toScroll(s.token))}</span>`).join(' ');
+    scrollHtml.push(`<span class="al-verse${inAliyah ? '' : ' ctx'}">${words}</span>`);
+  }
+  box.innerHTML = `<div class="scroll-column aliyah-scroll" id="aliyahScroll">${scrollHtml.join(' ')}</div>`;
+  const title = document.querySelector('#scrollpane .pane-title');
+  if (title) title.innerHTML = `Aliyah ${a.n} <span class="hint" style="text-transform:none;letter-spacing:0">STA&ldquo;M</span>`;
+  // Re-apply the start/end cues after any rebuild (e.g. a toolbar toggle) so the
+  // yad markers survive re-renders of the pane.
+  if (state._aliyaTl) markAliyahEnds(state._aliyaTl, !!state._aliyaEnded);
+}
+
 function selectVerse(n) {
+  if (state.aliyah) setAliyahLayout(false);
   state.selectedVerse = n;
   state.aliyah = null; // leave aliyah mode when a single verse is chosen
   closePasukDrawer();
@@ -1756,8 +1795,26 @@ function openAliyah(a) {
   stopAll();
   closePasukDrawer();
   state.aliyah = { ...a, cycle: state.cycle, year: state.triYear };
+  state._aliyaEnded = false;
+  setAliyahLayout(true);
   renderAliyot();
   renderAliyahView();
+}
+
+// Toggle the aliyah reading layout: reveal the shared STA"M pane (remembering
+// whether scroll view was on so we can restore it on exit) and flag the body so
+// the CSS can re-flow the panes (a control panel on desktop; a stacked scroll +
+// controls on mobile).
+function setAliyahLayout(on) {
+  document.body.classList.toggle('aliyah-open', on);
+  if (on) {
+    if (state._scrollViewBeforeAliyah == null) state._scrollViewBeforeAliyah = state.scrollView;
+    state.scrollView = true;
+  } else if (state._scrollViewBeforeAliyah != null) {
+    state.scrollView = state._scrollViewBeforeAliyah;
+    state._scrollViewBeforeAliyah = null;
+  }
+  syncToggleUI();
 }
 
 // Concatenate the aliyah's verses into one timeline: each segment carries its
@@ -1786,19 +1843,10 @@ function renderAliyahView() {
   const a = state.aliyah;
   loadRawContoursDeferred(state.slug); // phase-2: an aliyah spans many verses → load the raw monolith
   const par = parashahForReading();
-  const maxV = state.data.verses.length;
-  const first = a.start, last = Math.min(a.end, maxV);
-  const from = Math.max(1, first - ALIYAH_CONTEXT);
-  const to = Math.min(maxV, last + ALIYAH_CONTEXT);
-  // Render surrounding verses too (dimmed) so the aliyah's start and end are seen
-  // in the context of the scroll's columns, like a real reading.
-  const scrollHtml = [];
-  for (let n = from; n <= to; n++) {
-    const segs = buildLineMelody(tokenize(state.data.verses[n - 1].text));
-    const inAliyah = n >= first && n <= last;
-    const words = segs.map((s, wi) => `<span class="sw${inAliyah ? '' : ' ctx'}" data-verse="${n}" data-widx="${wi}">${escapeHtml(toScroll(s.token))}</span>`).join(' ');
-    scrollHtml.push(`<span class="al-verse${inAliyah ? '' : ' ctx'}">${words}</span>`);
-  }
+  // The STA"M scroll itself lives in the shared left "Torah column" pane
+  // (renderAliyahScroll); this practice pane holds only the aliyah's controls —
+  // header, outline cues, transport, live meter and result — so switching to and
+  // from a single-verse view leaves the scroll in place rather than replacing it.
   const p = $('practice');
   p.classList.add('aliyah-fill');
   p.innerHTML = `
@@ -1807,7 +1855,7 @@ function renderAliyahView() {
       <h2>${par.he} · Aliyah ${a.n} <span class="stagetag">${a.cycle === 'triennial' ? 'Triennial Yr ' + a.year : 'Annual'} · ${a.ref}</span></h2>
       <button id="alBack">← Verses</button>
     </div>
-    <p class="leveldesc">Chant the whole aliyah from the bare scroll. A grey outline marks the current spot and, subtly, where to begin and end — as in a real reading. Faded text is the surrounding scroll for context.</p>
+    <p class="leveldesc">Chant the whole aliyah from the bare scroll on the left. A grey outline marks the current spot and, subtly, where to begin and end — as in a real reading. Faded text is the surrounding scroll for context.</p>
     <div class="al-cuebar">
       <span class="label">Outline:</span>
       <span class="seg" id="aliyaCueSeg">
@@ -1828,7 +1876,6 @@ function renderAliyahView() {
       <span class="lm-val"><b id="aliyaMeterVal">0</b>%</span>
     </div>
     </div>
-    <div class="aliyah-scroll scroll-column" id="aliyahScroll">${scrollHtml.join(' ')}</div>
     <div class="aliyah-dock">
     <div class="result" id="aliyaResult"><span class="hint">Listen to the guided read to learn the flow, then record your own chant — or sing a duet along with the real chant.</span></div>
     </div>
@@ -1836,9 +1883,11 @@ function renderAliyahView() {
   `;
   const tl = aliyahTimeline(a);
   state._aliyaTl = tl;
-  markAliyahEnds(tl, false);
+  // Build the scroll in the shared pane (this also applies the start cue).
+  renderAliyahScroll();
   // One-time: bring the aliyah's start into view (with context above it).
-  const startEl = $('aliyahScroll').querySelector('.sw.yad-start');
+  const box = $('aliyahScroll');
+  const startEl = box && box.querySelector('.sw.yad-start');
   if (startEl) startEl.scrollIntoView({ block: 'center' });
   $('aliyaCueSeg').querySelectorAll('.cue').forEach((b) => {
     b.classList.toggle('on', b.dataset.cue === state.aliyahCue);
@@ -1850,7 +1899,9 @@ function renderAliyahView() {
   $('alBack').addEventListener('click', () => {
     stopAliyah();
     state.aliyah = null;
+    setAliyahLayout(false);
     renderAliyot();
+    renderScrollPane();
     if (state.selectedVerse) renderPractice();
     else { $('practice').classList.remove('aliyah-fill'); $('practice').innerHTML = '<p class="empty">Select a verse on the left to begin practicing.</p>'; }
   });
@@ -1934,6 +1985,7 @@ function stopAliyah() {
 function playAliyahGuided(tl) {
   stopAliyah();
   state._aliyaRunning = 'guide';
+  state._aliyaEnded = false;
   setAliyahButtons(true);
   markAliyahEnds(tl, false);
   let i = 0;
@@ -1955,6 +2007,7 @@ function playAliyahGuided(tl) {
 function finishGuide(tl) {
   if (state._aliyaRunning !== 'guide') return;
   state._aliyaRunning = null;
+  state._aliyaEnded = true;
   setAliyahButtons(false);
   highlightAliyah(null);
   markAliyahEnds(tl, true);
@@ -1968,6 +2021,7 @@ async function recordAliyahRun(tl, opts = {}) {
   const duet = !!(opts && opts.duet);
   stopAliyah();
   state._aliyaRunning = 'rec';
+  state._aliyaEnded = false;
   state._aliyaAssisted = duet; // a duet (sing-along) take is scaled down + capped
   state._aliyaGuideTimers = [];
   window.__cantillateBusy = true; // hold off any service-worker auto-reload
@@ -2049,6 +2103,7 @@ function finishAliyahRecord(tl) {
   if (state._aliyaRunning !== 'rec') return;
   const assisted = !!state._aliyaAssisted; // duet take: scaled down + capped (see scores.js)
   state._aliyaRunning = null;
+  state._aliyaEnded = true;
   state._aliyaAssisted = false;
   window.__cantillateBusy = false;
   clearTimeout(state._aliyaTimer);
@@ -2681,17 +2736,25 @@ function wordSpan(token, seg, ctx, wi, score, lo, hi) {
 // colour, leaving the consonants + vowels in the neutral word colour. Used by
 // the "Trope only" colour mode. Falls back to plain text where there are no
 // marks to colour (scroll font, or with cantillation hidden).
+//
+// We can't just wrap each te'am in its own coloured <span>: a combining mark
+// alone in an element is shaped in isolation, so the browser renders it on a
+// dotted-circle placeholder and loses its proper positioning. Instead we stack
+// two fully-shaped copies of the word — a coloured copy underneath, and a grey
+// copy on top with the te'amim stripped out. The te'amim are zero-width
+// combining marks, so removing them doesn't shift any letter or vowel: the grey
+// layer covers its coloured twin exactly, leaving only the coloured cantillation
+// marks (which exist solely in the bottom layer) peeking through.
 function renderWordTropeColored(raw, ctx, color) {
   if (ctx.scroll || !ctx.showTaamim) return escapeHtml(renderWord(raw, ctx));
-  const s = ctx.showVowels ? raw : stripNikud(raw);
-  let out = '';
-  for (const ch of s) {
-    const cp = ch.codePointAt(0);
-    // Cantillation accents live in U+0591..U+05AF.
-    if (cp >= 0x0591 && cp <= 0x05AF) out += `<span class="tm" style="color:${color}">${escapeHtml(ch)}</span>`;
-    else out += escapeHtml(ch);
-  }
-  return out;
+  const pointed = ctx.showVowels ? raw : stripNikud(raw);
+  const noTaam = stripTaamim(pointed);
+  // If there's nothing to strip, there are no accents to colour — render plainly.
+  if (noTaam === pointed) return escapeHtml(pointed);
+  return `<span class="tc">`
+    + `<span class="tc-mark" style="color:${color}">${escapeHtml(pointed)}</span>`
+    + `<span class="tc-base" aria-hidden="true">${escapeHtml(noTaam)}</span>`
+    + `</span>`;
 }
 
 // Apply the current family/trope highlight across both panes (matches pop,

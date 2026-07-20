@@ -263,10 +263,12 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 .aliyah .al-go { padding: 4px 10px; font-size: 12px; }
 .aliyah .al-lock { font-size: 12px; color: var(--muted); }
 
-/* Aliyah scroll+yad practice view — fills the whole pane height. */
+/* Aliyah controls pane (the STA"M scroll itself lives in the shared #scrollVerses
+   pane; see .aliyah-scroll below). */
 #practice.aliyah-fill { height: 100%; display: flex; flex-direction: column; }
 .aliyah-view { display: flex; flex-direction: column; flex: 1; min-height: 0; }
-.aliyah-scroll { flex: 1; min-height: 140px; overflow: auto; margin: 10px 0; }
+/* The aliyah scroll + yad, rendered into the shared Torah-column pane. */
+.aliyah-scroll { min-height: 140px; overflow: auto; margin: 10px 0; }
 .aliyah-scroll .al-verse { }
 /* Surrounding context (verses before/after the aliyah): faded, not the focus. */
 .aliyah-scroll .al-verse.ctx, .aliyah-scroll .sw.ctx { opacity: 0.38; }
@@ -293,6 +295,16 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 .hebrew .w.sel { background: rgba(90,160,255,0.22); }
 .hebrew .w.hl { background: rgba(255,255,255,0.14); outline: 1px solid currentColor; }
 .hebrew .w.dim { opacity: 0.28; }
+
+/* "Trope only" colour mode: two stacked, fully-shaped copies of the word so the
+   cantillation marks can be coloured without isolating (and thus breaking) the
+   combining glyphs. Both copies share a single grid cell so they overlay
+   exactly: the coloured .tc-mark carries the te'amim, and the grey .tc-base
+   (te'amim stripped) sits on top, hiding the coloured letters + vowels so only
+   the coloured te'amim show through. */
+.tc { display: inline-grid; }
+.tc-mark, .tc-base { grid-area: 1 / 1; white-space: nowrap; }
+.tc-base { color: inherit; pointer-events: none; }
 
 /* Trope family key bar */
 .fambar { gap: 6px; }
@@ -426,19 +438,37 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
     border-inline: none; border-radius: 0; box-shadow: inset 0 0 40px rgba(120,80,30,0.14);
   }
 
-  /* Aliyah (right) view: the parchment fills the viewport; the header and the
-     transport dock become slim translucent overlays floating over the scroll. */
-  #practice.aliyah-fill {
-    position: fixed; inset: 0; z-index: 45; height: 100%; padding: 0;
-    background: #e2cfa5;
+  /* Aliyah (reading) mode on a phone: the STA"M scroll takes over the shared
+     "Torah column" pane — dropped in-flow, full width — as the reading surface,
+     with the aliyah's controls stacked in the practice pane just below it (so
+     the scroll stays in the same place as regular reference, not a separate
+     full-screen view). The verses drawer + its FAB step aside meanwhile. */
+  body.aliyah-open .scrollpane {
+    position: static; transform: none; display: block; z-index: auto;
+    width: 100%; max-width: 100%; height: auto; box-shadow: none;
+    margin: 0; padding: 8px 12px; border-inline-end: none; background: #e2cfa5;
   }
-  .aliyah-view { height: 100%; padding: 0; }
+  body.aliyah-open .textpane,
+  body.aliyah-open .pasuk-fab { display: none; }
+  body.aliyah-open .scrollpane .pane-title { margin: 0 0 6px; color: #4a3a26; }
+  body.aliyah-open .scrollpane .scroll-column {
+    max-width: none; border: none; border-radius: 0; margin: 0;
+    box-shadow: inset 0 0 40px rgba(120,80,30,0.14);
+    max-height: 56vh; overflow: auto;
+  }
+
+  /* The practice pane becomes an ordinary in-flow control panel under the scroll
+     rather than a fixed full-screen surface. */
+  body.aliyah-open #practice.aliyah-fill {
+    position: static; inset: auto; z-index: auto; height: auto;
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); background: #e2cfa5;
+  }
+  .aliyah-view { height: auto; padding: 0; }
   .aliyah-view .leveldesc { display: none; }
 
   .aliyah-view .phead {
-    order: 0; margin: 0; gap: 6px 10px; align-items: center;
-    padding: 8px 12px; flex-wrap: nowrap;
-    background: rgba(226,207,165,0.94); backdrop-filter: blur(3px);
+    order: 0; margin: 0 0 6px; gap: 6px 10px; align-items: center;
+    padding: 6px 0; flex-wrap: nowrap; background: transparent;
     border-bottom: 1px solid #c9b38a; color: #2a2016;
   }
   .aliyah-view .phead h2 { font-size: 13px; color: #2a2016; flex: 1; min-width: 0;
@@ -448,33 +478,20 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
     color: #2a2016; border-color: #c9b38a; }
 
   .aliyah-view .al-cuebar {
-    margin: 0; padding: 6px 12px; gap: 8px;
-    background: rgba(226,207,165,0.9); border-bottom: 1px solid #c9b38a;
+    margin: 0; padding: 6px 0; gap: 8px;
+    background: transparent; border-bottom: 1px solid #c9b38a;
   }
   .aliyah-view .al-cuebar .label { color: #4a3a26; }
 
-  /* Top control bar: transport + live meter float over the parchment, above the
-     scroll, with a translucent parchment backing. */
-  .aliyah-view .aliyah-top {
-    padding: 8px 12px; gap: 6px; background: rgba(226,207,165,0.94);
-    backdrop-filter: blur(3px); border-bottom: 1px solid #c9b38a;
-  }
+  .aliyah-view .aliyah-top { padding: 8px 0; gap: 6px; background: transparent; }
   .aliyah-top .transport { margin: 0; gap: 6px; }
   .aliyah-top .transport button { flex: 1 1 auto; font-size: 12px; padding: 8px 10px; }
   .aliyah-top .livemeter { margin: 6px 0 0; }
   .aliyah-top .livemeter .lm-label { color: #4a3a26; }
   .aliyah-top .livemeter .lm-val { color: #4a3a26; }
 
-  /* The scroll grows to fill everything between the overlays, edge to edge. */
-  .aliyah-scroll {
-    flex: 1; margin: 0; border: none; border-radius: 0; max-width: none;
-    box-shadow: none;
-  }
-
-  /* Foot dock: the result panel floats over the parchment. */
   .aliyah-dock {
-    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
-    gap: 6px; background: rgba(226,207,165,0.94); backdrop-filter: blur(3px);
+    padding: 8px 0 0; gap: 6px; background: transparent;
     border-top: 1px solid #c9b38a;
   }
   .aliyah-dock .result { margin: 0; color: #2a2016; }
