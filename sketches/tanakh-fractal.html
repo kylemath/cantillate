@@ -26,7 +26,23 @@
   #stage { position:absolute; inset:0; }
   canvas { display:block; width:100%; height:100%; }
   #cap { position:fixed; left:14px; bottom:10px; z-index:10; color:var(--muted);
-         font-size:11px; max-width:60ch; }
+         font-size:11px; max-width:52ch; }
+  #stage canvas { cursor:default; }
+  .info { position:fixed; right:14px; top:70px; width:264px; z-index:11;
+          background:rgba(20,22,28,.94); border:1px solid #333846; border-radius:12px;
+          padding:14px 16px; box-shadow:0 12px 40px rgba(0,0,0,.5); }
+  .info[hidden] { display:none; }
+  .info .kind { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+  .info h3 { margin:2px 0 2px; color:var(--accent); font-size:17px; }
+  .info .he { font-size:22px; direction:rtl; color:var(--ink); margin:0 0 6px; }
+  .info dl { display:grid; grid-template-columns:auto 1fr; gap:3px 12px; margin:10px 0 0; font-size:12px; }
+  .info dt { color:var(--muted); } .info dd { margin:0; color:var(--ink); }
+  .info .swatch { display:inline-block; width:11px; height:11px; border-radius:3px; vertical-align:-1px; margin-inline-end:6px; }
+  .info .close { position:absolute; top:8px; right:10px; background:none; border:0; color:var(--muted);
+                 font-size:16px; cursor:pointer; }
+  .info .close:hover { color:var(--ink); }
+  .info .hint { color:var(--muted); font-size:11px; margin:10px 0 0; }
+  #zoomSeg button { min-width:30px; font-size:15px; line-height:1; }
 </style>
 </head>
 <body>
@@ -41,23 +57,33 @@
   <button class="btn" id="reseed">↻ Reseed</button>
   <button class="btn" id="save">⭳ PNG</button>
   <div class="sep"></div>
-  <span class="note">Cycle</span>
-  <div class="seg" id="cycleSeg">
-    <button data-cycle="annual" class="on">Annual</button>
-    <button data-cycle="triennial">Triennial</button>
-  </div>
-  <div class="seg" id="yearSeg" style="display:none" title="Which third of each parashah this year reads">
-    <button data-year="1" class="on">1st ⅓</button>
-    <button data-year="2">2nd ⅓</button>
-    <button data-year="3">3rd ⅓</button>
-  </div>
+  <!-- Triennial controls hidden for now (annual-only focus); engine + hash still
+       support it, ready for a later colour-coded triennial pass. -->
+  <span id="cycleCtl" style="display:none">
+    <span class="note">Cycle</span>
+    <div class="seg" id="cycleSeg">
+      <button data-cycle="annual" class="on">Annual</button>
+      <button data-cycle="triennial">Triennial</button>
+    </div>
+    <div class="seg" id="yearSeg" style="display:none" title="Which third of each parashah this year reads">
+      <button data-year="1" class="on">1st ⅓</button>
+      <button data-year="2">2nd ⅓</button>
+      <button data-year="3">3rd ⅓</button>
+    </div>
+  </span>
   <label class="chk"><input type="checkbox" id="tgBloom" checked> bloom outward</label>
   <div class="sep"></div>
+  <label class="chk"><input type="checkbox" id="tgSeams" checked> start/end marks</label>
   <label class="chk"><input type="checkbox" id="tgLabels" checked> book labels</label>
   <label class="chk"><input type="checkbox" id="tgPasuk" checked> pesukim</label>
+  <div class="sep"></div>
+  <span class="seg" id="zoomSeg" title="Zoom (or scroll on the canvas)">
+    <button id="zOut">−</button><button id="zReset" title="Reset view">⤢</button><button id="zIn">+</button>
+  </span>
   <span class="note" id="seedNote"></span>
 </div>
 <div id="stage"><canvas id="c"></canvas></div>
+<aside id="info" class="info" hidden></aside>
 <div id="cap"></div>
 
 <script>
@@ -86,7 +112,7 @@
 const TORAH = [
   { en:"Genesis",     tr:"Bereshit",  he:"בְּרֵאשִׁית", hue: 28, parashot:[
     ["Bereshit",146],["Noach",153],["Lech-Lecha",126],["Vayera",147],
-    ["Chayei Sarah",105],["Toldot",106],["Vayetzei",148],["Vayishlach",154],
+    ["Chayei Sarah",105],["Toldot",106],["Vayetzei",148],["Vayishlach",153],
     ["Vayeshev",112],["Miketz",146],["Vayigash",106],["Vayechi",85] ]},
   { en:"Exodus",      tr:"Shemot",    he:"שְׁמוֹת", hue: 96, parashot:[
     ["Shemot",124],["Va'era",121],["Bo",106],["Beshalach",116],["Yitro",75],
@@ -104,6 +130,67 @@ const TORAH = [
     ["Shoftim",97],["Ki Teitzei",110],["Ki Tavo",122],["Nitzavim",40],
     ["Vayelech",30],["Ha'azinu",52],["V'Zot HaBerachah",41] ]},
 ];
+
+/* ---- 1b. Real ANNUAL aliyah verse counts (standard full-kriyah) -----------
+   Per-parashah [aliyah1..aliyah7] pesukim, computed from Hebcal's leyning
+   ranges against Sefaria's Hebrew chapter lengths (sums are the true parashah
+   verse totals). Used to size aliyot exactly instead of an even split.        */
+const ALIYOT = {
+  "Bereshit":[34,16,27,21,4,28,16],
+  "Noach":[14,16,22,15,10,44,32],
+  "Lech-Lecha":[13,11,14,20,10,37,21],
+  "Vayera":[14,19,20,40,17,13,24],
+  "Chayei Sarah":[16,13,17,26,15,11,7],
+  "Toldot":[21,7,10,7,33,23,5],
+  "Vayetzei":[13,17,31,14,32,26,15],
+  "Vayishlach":[10,17,8,15,42,37,24],
+  "Vayeshev":[11,11,14,30,6,17,23],
+  "Miketz":[14,24,14,23,35,14,22],
+  "Vayigash":[13,11,11,9,28,17,17],
+  "Vayechi":[13,7,6,18,8,27,6],
+  "Shemot":[17,15,15,15,24,14,24],
+  "Va'era":[12,15,9,28,12,26,19],
+  "Bo":[11,12,9,27,8,23,16],
+  "Beshalach":[14,6,11,32,11,26,16],
+  "Yitro":[12,11,4,6,13,20,9],
+  "Mishpatim":[19,21,23,9,14,6,26],
+  "Terumah":[16,24,14,16,7,8,11],
+  "Tetzaveh":[14,18,13,18,19,9,10],
+  "Ki Tisa":[45,47,5,7,9,17,9],
+  "Vayakhel":[20,9,13,12,35,13,20],
+  "Pekudei":[12,20,11,11,16,11,11],
+  "Vayikra":[13,10,10,17,26,19,16],
+  "Tzav":[11,22,28,13,8,8,7],
+  "Shmini":[16,7,12,4,5,32,15],
+  "Tazria":[13,12,6,5,11,15,5],
+  "Metzora":[12,8,12,21,19,13,5],
+  "Achrei Mot":[17,7,10,7,14,16,9],
+  "Kedoshim":[14,8,10,5,7,15,5],
+  "Emor":[15,25,17,22,10,12,23],
+  "Behar":[13,5,6,4,10,8,11],
+  "Bechukotai":[3,4,37,15,6,7,6],
+  "Bamidbar":[19,35,34,13,26,12,20],
+  "Nasso":[17,12,10,48,41,30,18],
+  "Beha'alotcha":[14,12,14,19,24,31,22],
+  "Sh'lach":[20,20,18,27,9,10,15],
+  "Korach":[13,6,24,7,9,24,12],
+  "Chukat":[17,11,7,8,17,11,16],
+  "Balak":[11,8,18,15,14,17,21],
+  "Pinchas":[13,47,19,18,15,27,29],
+  "Matot":[16,12,12,17,13,19,23],
+  "Masei":[10,39,22,14,8,26,13],
+  "Devarim":[10,11,17,9,29,21,8],
+  "Va'etchanan":[11,36,9,18,15,22,11],
+  "Eikev":[25,13,26,11,20,12,4],
+  "Re'eh":[17,18,22,21,8,18,22],
+  "Shoftim":[18,7,5,8,22,17,20],
+  "Ki Teitzei":[12,9,29,17,6,9,28],
+  "Ki Tavo":[11,4,4,10,22,63,8],
+  "Nitzavim":[3,3,14,6,4,4,6],
+  "Vayelech":[3,3,3,4,6,5,6],
+  "Ha'azinu":[6,6,6,10,11,4,9],
+  "V'Zot HaBerachah":[7,5,5,4,5,3,12],
+};
 
 /* ---- 2. seeded RNG (mulberry32) — deterministic per seed ------------------ */
 function rng(seed){ let a = seed>>>0; return ()=>{ a|=0; a=a+0x6D2B79F5|0;
@@ -130,49 +217,77 @@ function layout(cfg, rand, o){
   const A  = 7;                                            // aliyot per parashah (always 7)
   const bloomOut = (cfg.bloomOut ?? 0.55) * (o.bloom ? 1 : -1); // +out / −in
   const a0 = -Math.PI/2 + cfg.rotate;                      // first petal points up
-  const books = TORAH.map((b,i)=>{
+
+  // root: the whole Torah
+  const totalV = TORAH.reduce((s,b)=>s+b.parashot.reduce((t,p)=>t+p[1],0),0);
+  const root = { type:'torah', label:'Torah', he:'תּוֹרָה', x:0, y:0, r:R0, hue:44,
+                 idx:0, count:1, pang:0, parent:null, verses:totalV,
+                 nParashot: TORAH.reduce((s,b)=>s+b.parashot.length,0) };
+
+  root.books = TORAH.map((b,i)=>{
     const ang = a0 + i*2*Math.PI/nB;
     const d   = R0 + Rb;                                    // external tangency: kiss centre
     const bx  = Math.cos(ang)*d, by = Math.sin(ang)*d;
+    const bVerses = b.parashot.reduce((t,p)=>t+p[1],0);
+    const book = { type:'book', book:b, label:b.tr, he:b.he, en:b.en,
+                   x:bx, y:by, r:Rb, hue:b.hue, idx:i, count:nB, pang:ang,
+                   parent:root, verses:bVerses, nParashot:b.parashot.length };
 
     // parashot: necklace inside the book, first slot faces the Torah centre
     const nk = necklace(b.parashot.length);
     const pr = nk.r*Rb, pring = nk.ring*Rb;
     const pOff = ang + Math.PI + cfg.parashaSpin;          // point ring toward centre
-    const parashot = b.parashot.map(([name,vn],j)=>{
+    book.parashot = b.parashot.map(([name,vn],j)=>{
       const pa = pOff + j*2*Math.PI/b.parashot.length;
       const px = bx + Math.cos(pa)*pring, py = by + Math.sin(pa)*pring;
+      // real annual aliyot (exact) when available; else fall back to even split
+      const real = ALIYOT[name];
+      const vTotal = real ? real.reduce((s,x)=>s+x,0) : vn;
+      const shown = o.cycle==='triennial' ? splitVerses(vTotal,3)[(o.triYear||1)-1] : vTotal;
+      const par = { type:'parasha', label:name, x:px, y:py, r:pr, hue:b.hue, idx:j,
+                    count:b.parashot.length, pang:pa, parent:book, book:b,
+                    verses:vTotal, shown, realAliyot: !!real && o.cycle!=='triennial' };
 
       // aliyot: necklace inside the parashah
       const ak = necklace(A);
       const ar = ak.r*pr, aring = ak.ring*pr;
       const aOff = pa + Math.PI + cfg.aliyaSpin;
-      // triennial: read only the (triYear)-th third of the parashah this year
-      const shown = o.cycle==='triennial' ? splitVerses(vn,3)[(o.triYear||1)-1] : vn;
-      const counts = splitVerses(shown, A);
-      const aliyot = [];
-      for(let k=0;k<A;k++){
+      const counts = (real && o.cycle!=='triennial') ? real : splitVerses(shown, A);
+      let vStart = 1;
+      par.aliyot = counts.map((nv,k)=>{
         const aa = aOff + k*2*Math.PI/A;
         const ax = px + Math.cos(aa)*aring, ay = py + Math.sin(aa)*aring;
-        const nv = counts[k];
-
+        const al = { type:'aliyah', label:`Aliyah ${k+1}`, x:ax, y:ay, r:ar, hue:b.hue,
+                     idx:k, count:A, pang:aa, parent:par, verses:nv,
+                     vFrom:vStart, vTo:vStart+nv-1 };
+        vStart += nv;
         // pesukim: rimonim strung around the aliyah rim, blooming outward.
-        // bead radius from tangency on the rim; centres pushed out by bloomOut.
         const vr = ar*Math.sin(Math.PI/Math.max(nv,2))*0.92;
         const Rr = ar + vr*bloomOut;
         const vSpin = aa + rand()*0.5;
-        const pesukim = [];
-        for(let q=0;q<nv;q++){
+        al.pesukim = Array.from({length:nv},(_,q)=>{
           const va = vSpin + q*2*Math.PI/nv;
-          pesukim.push({ x:ax+Math.cos(va)*Rr, y:ay+Math.sin(va)*Rr, r:vr, ang:va, i:q });
-        }
-        aliyot.push({ x:ax, y:ay, r:ar, idx:k, verses:nv, hue:b.hue, pesukim });
-      }
-      return { name, x:px, y:py, r:pr, hue:b.hue, idx:j, verses:vn, aliyot };
+          return { type:'pasuk', x:ax+Math.cos(va)*Rr, y:ay+Math.sin(va)*Rr, r:vr,
+                   ang:va, pang:va, idx:q, count:nv, parent:al, hue:b.hue,
+                   verseNo: al.vFrom+q };
+        });
+        return al;
+      });
+      return par;
     });
-    return { book:b, x:bx, y:by, r:Rb, hue:b.hue, ang, parashot };
+    return book;
   });
-  return { x:0, y:0, r:R0, books, A };
+  root.A = A;
+  return root;
+}
+
+// flatten every node into one array (for hit-testing), most-specific last
+function collectNodes(T){
+  const out=[T];
+  T.books.forEach(b=>{ out.push(b);
+    b.parashot.forEach(pa=>{ out.push(pa);
+      pa.aliyot.forEach(al=>{ out.push(al); al.pesukim.forEach(p=>out.push(p)); }); }); });
+  return out;
 }
 
 /* ---- 4. THREE IDEAS: same tree, different styling ------------------------- */
@@ -182,7 +297,7 @@ function layout(cfg, rand, o){
 const IDEAS = [
   { /* 0 — Parchment: quiet sepia line-art; pesukim are little inked rimonim. */
     name:"Parchment", bookScale:1.26, rotate:0, parashaSpin:0, aliyaSpin:0, bloomOut:0.4,
-    bg1:"#f4ecd8", bg2:"#e7dcbe",
+    bg1:"#f4ecd8", bg2:"#e7dcbe", seam:"rgba(150,54,30,.85)",
     draw(ctx,T,S,o){ const lw=px=>px/S; const ink="#3a2a1a";
       if(o.pasuk) forPasuk(T,p=>{ if(p.r*S<0.5) return;
         rimon(ctx,p,S,"rgba(58,42,26,.30)","rgba(58,42,26,.55)"); });
@@ -198,7 +313,7 @@ const IDEAS = [
   { /* 1 — Rose Window: stained-glass petals; pesukim are rimonim on the aliyah
          rims, blooming outward past the book circles. */
     name:"Rose Window", bookScale:1.42, rotate:0.02, parashaSpin:0.18, aliyaSpin:0.12, bloomOut:0.62,
-    bg1:"#0a0f24", bg2:"#04060f",
+    bg1:"#0a0f24", bg2:"#04060f", seam:"rgba(255,224,150,.92)",
     draw(ctx,T,S,o){ const lw=px=>px/S;
       T.books.forEach(b=>{
         fillCircle(ctx,b.x,b.y,b.r, hsla(b.hue,68,50,.12));               // petal wash
@@ -221,7 +336,7 @@ const IDEAS = [
   },
   { /* 2 — Neon Bloom: dark, luminous strokes; glowing rimonim bloom outward.  */
     name:"Neon Bloom", bookScale:1.42, rotate:-0.04, parashaSpin:-0.12, aliyaSpin:-0.1, bloomOut:0.72,
-    bg1:"#07080e", bg2:"#0c0f1a",
+    bg1:"#07080e", bg2:"#0c0f1a", seam:"rgba(225,240,255,.92)",
     draw(ctx,T,S,o){ const lw=px=>px/S;
       T.books.forEach(b=> fillCircle(ctx,b.x,b.y,b.r, hsla(b.hue,80,45,.07)) );
       ctx.globalCompositeOperation="lighter";
@@ -276,89 +391,265 @@ function labelBooks(ctx,T,color){
   ctx.restore();
 }
 
-/* ---- 6. render loop ------------------------------------------------------- */
+/* ---- 5b. start/end SEAM markers ------------------------------------------
+   Each ring wraps 360°, so where the LAST child meets the FIRST is invisible.
+   We draw a radial "seam" line in that gap, a filled dot on the first child and
+   an open ring on the last — at every level, revealed progressively by zoom.  */
+function drawSeams(ctx,T,S,idea){
+  const col=idea.seam;
+  function seam(cx,cy,cr,chr,count,firstPang,children){
+    const ga=firstPang - Math.PI/count;                    // gap angle (last→first)
+    // a short, constant-on-screen radial tick sitting in the last→first gap
+    const half=Math.min(chr*1.1, 9/S);
+    ctx.strokeStyle=col; ctx.lineWidth=1.4/S; ctx.beginPath();
+    ctx.moveTo(cx+Math.cos(ga)*(cr-half), cy+Math.sin(ga)*(cr-half));
+    ctx.lineTo(cx+Math.cos(ga)*(cr+half), cy+Math.sin(ga)*(cr+half)); ctx.stroke();
+    // first child = filled dot, last child = open ring (both small, capped)
+    const m=Math.max(1.4/S, Math.min(chr*0.32, 5/S));
+    const f=children[0], l=children[children.length-1];
+    ctx.fillStyle=col; ctx.beginPath(); ctx.arc(f.x,f.y,m,0,7); ctx.fill();
+    ctx.lineWidth=1.3/S; ctx.beginPath(); ctx.arc(l.x,l.y,m*1.3,0,7); ctx.stroke();
+  }
+  const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+  // books around the Torah (always shown)
+  seam(0,0, dist(T.books[0],T), T.books[0].r, T.books.length, T.books[0].pang, T.books);
+  T.books.forEach(b=>{
+    if(b.r*S>70) seam(b.x,b.y, dist(b.parashot[0],b), b.parashot[0].r,
+                      b.parashot.length, b.parashot[0].pang, b.parashot);
+    b.parashot.forEach(pa=>{
+      if(pa.r*S>46) seam(pa.x,pa.y, dist(pa.aliyot[0],pa), pa.aliyot[0].r,
+                         pa.aliyot.length, pa.aliyot[0].pang, pa.aliyot);
+      pa.aliyot.forEach(al=>{
+        if(al.r*S>34 && al.pesukim.length>1)
+          seam(al.x,al.y, dist(al.pesukim[0],al), al.pesukim[0].r,
+               al.pesukim.length, al.pesukim[0].pang, al.pesukim);
+      });
+    });
+  });
+}
+
+/* ---- 6. state + render loop ----------------------------------------------- */
 const canvas=document.getElementById("c"), ctx=canvas.getContext("2d");
-let seed=Math.floor(Math.random()*1e9), ideaIdx=0;
-let opts={ labels:true, pasuk:true, cycle:'annual', triYear:1, bloom:true };
-// URL: #idea,seed,cycle  e.g. #1,12345,tri2 — handy for reproducing a frame
+const scene=document.createElement("canvas"), sctx=scene.getContext("2d");
+let seed=Math.floor(Math.random()*1e9), ideaIdx=0, DPR=1;
+let opts={ labels:true, pasuk:true, seams:true, cycle:'annual', triYear:1, bloom:true };
+let view={ zoom:1, panX:0, panY:0 };
+let TREE=null, NODES=[], TX={S:1,ox:0,oy:0};
+let hoverNode=null, selNode=null, animRAF=null;
 (function(){ const m=(location.hash||"").slice(1).split(",");
   if(m[0]!=="") ideaIdx=Math.max(0,Math.min(IDEAS.length-1,+m[0]||0));
   if(m[1]) seed=+m[1]||seed;
   if(m[2] && m[2].startsWith('tri')){ opts.cycle='triennial';
-    opts.triYear=Math.min(3,Math.max(1,+m[2].slice(3)||1)); } })();
+    opts.triYear=Math.min(3,Math.max(1,+m[2].slice(3)||1)); }
+  if(m[3] && m[3][0]==='z') view.zoom=Math.max(0.5,Math.min(80,+m[3].slice(1)||1));
+  opts.cycle='annual'; opts.triYear=1; })();   // annual-only focus for now
 
-function resize(){ const dpr=Math.min(2,devicePixelRatio||1);
-  const w=innerWidth, h=innerHeight-0;
-  canvas.width=w*dpr; canvas.height=h*dpr; canvas.style.width=w+"px"; canvas.style.height=h+"px";
-  ctx.setTransform(dpr,0,0,dpr,0,0); render(); }
+function resize(){ DPR=Math.min(2,devicePixelRatio||1);
+  const w=innerWidth, h=innerHeight;
+  canvas.width=w*DPR; canvas.height=h*DPR; canvas.style.width=w+"px"; canvas.style.height=h+"px";
+  scene.width=canvas.width; scene.height=canvas.height;
+  buildScene(); paint(); }
 
+// full rebuild: tree → flat node list → scene → paint (idea/seed/opts changed)
 function render(){
   const idea=IDEAS[ideaIdx];
-  const w=canvas.clientWidth, h=canvas.clientHeight;
-  // background
-  const bg=ctx.createLinearGradient(0,0,0,h);
-  bg.addColorStop(0,idea.bg1); bg.addColorStop(1,idea.bg2);
-  ctx.fillStyle=bg; ctx.fillRect(0,0,w,h);
-
-  const rand=rng(seed + ideaIdx*97);
-  const T=layout(idea,rand,opts);
-  // world extent: torah(1) + 2*book radius, plus headroom for outward bloom
-  const extent=(1+2*idea.bookScale)*1.24;
-  const scale=Math.min(w,h)/(2*extent);
-  WORLD=scale;
-  ctx.save();
-  ctx.translate(w/2, h/2 + 14);         // nudge below top bar
-  ctx.scale(scale,scale);
-  ctx.lineJoin="round"; ctx.lineCap="round";
-  // labels helper uses raw world coords; temporarily draw them post-transform:
-  idea.draw(ctx,T,scale,opts);
-  ctx.restore();
-
-  const cyc = opts.cycle==='triennial'
-    ? `triennial yr ${opts.triYear} (⅓) · 7 aliyot` : 'annual · 7 aliyot';
-  document.getElementById("seedNote").textContent=`seed ${seed} · ${idea.name} · ${cyc} · 54 parashot · ${totalPesukim()} pesukim shown`;
+  TREE=layout(idea, rng(seed+ideaIdx*97), opts);
+  NODES=collectNodes(TREE);
+  selNode=null; hoverNode=null; showInfo(null);
+  buildScene(); paint();
+  const cyc = opts.cycle==='triennial' ? `triennial yr ${opts.triYear} (⅓)` : 'annual';
+  document.getElementById("seedNote").textContent=
+    `seed ${seed} · ${idea.name} · ${cyc} · 5 books · 54 parashot · ${totalPesukim()} pesukim`;
   document.getElementById("cap").textContent =
-    "Fractal: Torah (centre) → 5 books (petals) → parashot (necklace in each book) → 7 aliyot (necklace in each parashah) → pesukim (rimonim on the aliyah rims, blooming outward past the book circles). Triennial shows one third of each parashah per year.";
+    "Scroll to zoom · drag to pan · hover to inspect · click to select. Torah → books → parashot → 7 aliyot → pesukim (rimonim). Marks show each ring's first (dot) & last (ring).";
+  syncHash();
 }
+
+// (re)draw the whole static scene to the offscreen canvas at the current
+// zoom+pan. Rebuilt on zoom/pan/opts; the cheap blit+overlay handles hover.
+function fitScale(){ const idea=IDEAS[ideaIdx];
+  const w=canvas.clientWidth, h=canvas.clientHeight;
+  return Math.min(w,h)/(2*(1+2*idea.bookScale)*1.24); }
+function buildScene(){
+  const idea=IDEAS[ideaIdx];
+  const w=canvas.clientWidth, h=canvas.clientHeight;
+  const S=fitScale()*view.zoom;
+  TX={ S, ox:w/2+view.panX, oy:h/2+14+view.panY };
+  WORLD=S;
+  sctx.setTransform(DPR,0,0,DPR,0,0);
+  const bg=sctx.createLinearGradient(0,0,0,h); bg.addColorStop(0,idea.bg1); bg.addColorStop(1,idea.bg2);
+  sctx.fillStyle=bg; sctx.fillRect(0,0,w,h);
+  sctx.save(); sctx.translate(TX.ox,TX.oy); sctx.scale(S,S);
+  sctx.lineJoin="round"; sctx.lineCap="round";
+  if(TREE){ idea.draw(sctx,TREE,S,opts); if(opts.seams) drawSeams(sctx,TREE,S,idea); }
+  sctx.restore();
+}
+
+// blit the cached scene, then draw the live overlay (hover/selection) on top
+function paint(){
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.drawImage(scene,0,0);
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  drawOverlay();
+}
+
+function ex(){ return TX.ox; } function ey(){ return TX.oy; }
+
+function drawOverlay(){
+  const S=TX.S;
+  ctx.save(); ctx.translate(ex(),ey()); ctx.scale(S,S); ctx.lineJoin="round";
+  if(selNode) highlight(selNode,S,`hsla(${selNode.hue},95%,72%,1)`,2.4,0.22);
+  if(hoverNode && hoverNode!==selNode){
+    const pulse=0.5+0.5*Math.sin(performance.now()/280);
+    highlight(hoverNode,S,`hsla(${hoverNode.hue},95%,${72}%,${0.75+0.2*pulse})`,1.8,0.14+0.12*pulse);
+  }
+  ctx.restore();
+  if(selNode) flag(selNode,true);
+  if(hoverNode && hoverNode!==selNode) flag(hoverNode,false);
+}
+function highlight(n,S,stroke,w,fillA){
+  const r=Math.max(n.r, 2/S);
+  ctx.beginPath(); ctx.arc(n.x,n.y,r,0,7);
+  ctx.fillStyle=`hsla(${n.hue},90%,60%,${fillA})`; ctx.fill();
+  ctx.strokeStyle=stroke; ctx.lineWidth=Math.max(w/S, r*0.03); ctx.stroke();
+}
+function flag(n,sel){
+  const S=TX.S, sx=n.x*S+ex(), sy=n.y*S+ey(), rr=n.r*S;
+  const text=flagText(n); ctx.save();
+  ctx.font="600 12px -apple-system,system-ui,sans-serif";
+  const tw=ctx.measureText(text).width, pad=7, bw=tw+pad*2, bh=22;
+  let bx=sx-bw/2, by=sy-rr-bh-10; if(by<58) by=sy+rr+10;         // flip below if off-top
+  bx=Math.max(6,Math.min(innerWidth-bw-6,bx));
+  ctx.strokeStyle="rgba(255,255,255,.25)"; ctx.lineWidth=1;      // pole
+  ctx.beginPath(); ctx.moveTo(sx, by>sy?sy+rr:sy-rr); ctx.lineTo(sx, by<sy?by+bh:by); ctx.stroke();
+  ctx.fillStyle=sel?"rgba(201,163,91,.96)":"rgba(20,22,28,.95)";
+  ctx.strokeStyle=sel?"rgba(201,163,91,1)":"rgba(140,147,163,.6)";
+  roundRect(ctx,bx,by,bw,bh,7); ctx.fill(); ctx.stroke();
+  ctx.fillStyle=sel?"#1a1206":"#e7e2d4"; ctx.textAlign="left"; ctx.textBaseline="middle";
+  ctx.fillText(text,bx+pad,by+bh/2+0.5); ctx.restore();
+}
+function roundRect(c,x,y,w,h,r){ c.beginPath(); c.moveTo(x+r,y);
+  c.arcTo(x+w,y,x+w,y+h,r); c.arcTo(x+w,y+h,x,y+h,r);
+  c.arcTo(x,y+h,x,y,r); c.arcTo(x,y,x+w,y,r); c.closePath(); }
+function flagText(n){
+  if(n.type==='torah')   return 'Torah · 5 books';
+  if(n.type==='book')    return `${n.label} · ${n.nParashot} parashot`;
+  if(n.type==='parasha') return `${n.label} · ${n.verses} pesukim`;
+  if(n.type==='aliyah')  return `${n.parent.label} · Aliyah ${n.idx+1}`;
+  if(n.type==='pasuk')   return `${n.parent.parent.label} · pasuk ${n.verseNo}`;
+  return '';
+}
+
+/* ---- 7. hit-testing + info panel ------------------------------------------ */
+function pickNode(mx,my){
+  const S=TX.S, wx=(mx-ex())/S, wy=(my-ey())/S;
+  let best=null, bestR=Infinity;
+  for(const n of NODES){ const dx=wx-n.x, dy=wy-n.y;
+    if(dx*dx+dy*dy <= n.r*n.r && n.r<bestR){ best=n; bestR=n.r; } }
+  return best;
+}
+const $info=document.getElementById("info");
+function showInfo(n){
+  if(!n){ $info.hidden=true; $info.innerHTML=""; return; }
+  const sw=`<span class="swatch" style="background:hsl(${n.hue},70%,55%)"></span>`;
+  const rows=[];
+  const add=(k,v)=>rows.push(`<dt>${k}</dt><dd>${v}</dd>`);
+  let kind='', title='', he='';
+  if(n.type==='torah'){ kind='The whole'; title='Torah'; he=n.he;
+    add('Books','5'); add('Parashot',n.nParashot); add('Pesukim',n.verses); }
+  else if(n.type==='book'){ kind='Sefer · book'; title=`${n.label}`; he=n.he;
+    add('English',n.en); add('Parashot',n.nParashot); add('Pesukim',n.verses);
+    add('Position',`${n.idx+1} of ${n.count}`); }
+  else if(n.type==='parasha'){ kind=`Parashah · in ${n.book.tr}`; title=n.label;
+    add('Book',n.book.tr); add('Pesukim',n.verses); add('Aliyot',TREE.A);
+    add('Position',`${n.idx+1} of ${n.count} in book`); }
+  else if(n.type==='aliyah'){ const ra=n.parent.realAliyot; kind=`Aliyah · in ${n.parent.label}`;
+    title=`Aliyah ${n.idx+1}`;
+    add('Parashah',n.parent.label); add('Book',n.parent.book.tr);
+    add('Pesukim',`${n.verses}${ra?'':' (approx.)'}`);
+    add('Verses',`${n.vFrom}–${n.vTo} of parashah`); }
+  else if(n.type==='pasuk'){ kind=`Pasuk · verse`; title=`Pasuk ${n.verseNo}`;
+    add('Aliyah',`${n.parent.idx+1} of 7`); add('Parashah',n.parent.parent.label);
+    add('Book',n.parent.parent.book.tr); add('# in parashah',n.verseNo); }
+  const approx = (n.type==='aliyah' && !n.parent.realAliyot) ||
+                 (n.type==='pasuk'  && !n.parent.parent.realAliyot);
+  $info.innerHTML =
+    `<button class="close" title="Close">✕</button>`+
+    `<div class="kind">${kind}</div><h3>${sw}${title}</h3>`+
+    (he?`<div class="he">${he}</div>`:``)+
+    `<dl>${rows.join('')}</dl>`+
+    (approx ? `<p class="hint">Counts split evenly across 7 aliyot here (no exact boundary data for this reading).</p>`
+     : (n.type==='aliyah'||n.type==='pasuk'
+        ? `<p class="hint">Standard annual full-kriyah division.</p>`:``));
+  $info.hidden=false;
+  $info.querySelector('.close').onclick=()=>{ selNode=null; showInfo(null); paint(); };
+}
+
 function totalPesukim(){ let n=0; TORAH.forEach(b=>b.parashot.forEach(p=>{
   n += opts.cycle==='triennial' ? splitVerses(p[1],3)[(opts.triYear||1)-1] : p[1]; })); return n; }
 
-/* ---- 7. UI ---------------------------------------------------------------- */
-document.getElementById("ideaSeg").addEventListener("click",e=>{
-  const b=e.target.closest("button"); if(!b) return;
-  [...e.currentTarget.children].forEach(x=>x.classList.remove("on"));
-  b.classList.add("on"); ideaIdx=+b.dataset.idea; render();
+/* ---- 8. interaction: hover / select / zoom / pan -------------------------- */
+function ensureAnim(){ if(animRAF) return;
+  const step=()=>{ paint(); animRAF = hoverNode ? requestAnimationFrame(step) : null; };
+  animRAF=requestAnimationFrame(step); }
+
+let dragging=false, moved=false, dsx=0, dsy=0, dp0=null;
+canvas.addEventListener("pointerdown",e=>{ dragging=true; moved=false;
+  dsx=e.clientX; dsy=e.clientY; dp0={x:view.panX,y:view.panY}; canvas.setPointerCapture(e.pointerId); });
+canvas.addEventListener("pointermove",e=>{
+  const rect=canvas.getBoundingClientRect(), mx=e.clientX-rect.left, my=e.clientY-rect.top;
+  if(dragging){ const ddx=e.clientX-dsx, ddy=e.clientY-dsy;
+    if(Math.hypot(ddx,ddy)>3){ moved=true; canvas.style.cursor='grabbing'; }
+    view.panX=dp0.x+ddx; view.panY=dp0.y+ddy; buildScene(); paint(); return; }
+  const n=pickNode(mx,my);
+  if(n!==hoverNode){ hoverNode=n; canvas.style.cursor=n?'pointer':'default'; ensureAnim(); paint(); }
 });
+canvas.addEventListener("pointerup",e=>{
+  dragging=false; canvas.style.cursor=hoverNode?'pointer':'default';
+  if(!moved){ const rect=canvas.getBoundingClientRect();
+    const n=pickNode(e.clientX-rect.left,e.clientY-rect.top);
+    selNode=(n===selNode)?null:n; showInfo(selNode); paint(); }
+});
+canvas.addEventListener("pointerleave",()=>{ hoverNode=null; paint(); });
+canvas.addEventListener("wheel",e=>{ e.preventDefault();
+  const rect=canvas.getBoundingClientRect(), mx=e.clientX-rect.left, my=e.clientY-rect.top;
+  zoomAt(mx,my, Math.exp(-e.deltaY*0.0016));
+},{passive:false});
+function zoomAt(mx,my,factor){
+  const w=canvas.clientWidth, h=canvas.clientHeight;
+  const S0=TX.S, wx=(mx-TX.ox)/S0, wy=(my-TX.oy)/S0;   // world point under cursor
+  view.zoom=Math.max(0.5,Math.min(80, view.zoom*factor));
+  const S1=fitScale()*view.zoom;
+  view.panX = (mx - wx*S1) - w/2;                       // keep that point under cursor
+  view.panY = (my - wy*S1) - (h/2+14);
+  buildScene(); paint();
+}
+function resetView(){ view={zoom:1,panX:0,panY:0}; buildScene(); paint(); }
+
+/* ---- 9. UI wiring --------------------------------------------------------- */
+function segClick(id,fn){ document.getElementById(id).addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  [...e.currentTarget.children].forEach(x=>x.classList.remove("on")); b.classList.add("on"); fn(b); }); }
+segClick("ideaSeg", b=>{ ideaIdx=+b.dataset.idea; render(); });
+segClick("cycleSeg", b=>{ opts.cycle=b.dataset.cycle;
+  document.getElementById("yearSeg").style.display = opts.cycle==='triennial'?'':'none'; render(); });
+segClick("yearSeg", b=>{ opts.triYear=+b.dataset.year; render(); });
 document.getElementById("reseed").onclick=()=>{ seed=Math.floor(Math.random()*1e9); render(); };
 document.getElementById("save").onclick=()=>{ const a=document.createElement("a");
   a.download=`tanakh-fractal-${IDEAS[ideaIdx].name.replace(/\W+/g,'-')}-${seed}.png`;
   a.href=canvas.toDataURL("image/png"); a.click(); };
-document.getElementById("cycleSeg").addEventListener("click",e=>{
-  const b=e.target.closest("button"); if(!b) return;
-  [...e.currentTarget.children].forEach(x=>x.classList.remove("on"));
-  b.classList.add("on"); opts.cycle=b.dataset.cycle;
-  document.getElementById("yearSeg").style.display = opts.cycle==='triennial' ? '' : 'none';
-  render();
-});
-document.getElementById("yearSeg").addEventListener("click",e=>{
-  const b=e.target.closest("button"); if(!b) return;
-  [...e.currentTarget.children].forEach(x=>x.classList.remove("on"));
-  b.classList.add("on"); opts.triYear=+b.dataset.year; render();
-});
+document.getElementById("zIn").onclick=()=>zoomAt(canvas.clientWidth/2,canvas.clientHeight/2,1.4);
+document.getElementById("zOut").onclick=()=>zoomAt(canvas.clientWidth/2,canvas.clientHeight/2,1/1.4);
+document.getElementById("zReset").onclick=resetView;
 document.getElementById("tgBloom").onchange=e=>{ opts.bloom=e.target.checked; render(); };
-document.getElementById("tgLabels").onchange=e=>{ opts.labels=e.target.checked; render(); };
-document.getElementById("tgPasuk").onchange=e=>{ opts.pasuk=e.target.checked; render(); };
+document.getElementById("tgSeams").onchange=e=>{ opts.seams=e.target.checked; buildScene(); paint(); };
+document.getElementById("tgLabels").onchange=e=>{ opts.labels=e.target.checked; buildScene(); paint(); };
+document.getElementById("tgPasuk").onchange=e=>{ opts.pasuk=e.target.checked; buildScene(); paint(); };
 addEventListener("resize",resize);
-// reflect initial idea/seed/cycle in the UI and keep the hash in sync
 function syncHash(){ location.hash=`${ideaIdx},${seed},${opts.cycle==='triennial'?'tri'+opts.triYear:'ann'}`; }
-[...document.querySelectorAll("#ideaSeg button")].forEach((b,i)=>
-  b.classList.toggle("on", i===ideaIdx));
-[...document.querySelectorAll("#cycleSeg button")].forEach(b=>
-  b.classList.toggle("on", b.dataset.cycle===opts.cycle));
-[...document.querySelectorAll("#yearSeg button")].forEach(b=>
-  b.classList.toggle("on", +b.dataset.year===opts.triYear));
-document.getElementById("yearSeg").style.display = opts.cycle==='triennial' ? '' : 'none';
-const _render=render; render=function(){ _render(); syncHash(); };
+[...document.querySelectorAll("#ideaSeg button")].forEach((b,i)=>b.classList.toggle("on",i===ideaIdx));
+render();
 resize();
 </script>
 </body>
