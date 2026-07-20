@@ -41,6 +41,18 @@
   <button class="btn" id="reseed">↻ Reseed</button>
   <button class="btn" id="save">⭳ PNG</button>
   <div class="sep"></div>
+  <span class="note">Cycle</span>
+  <div class="seg" id="cycleSeg">
+    <button data-cycle="annual" class="on">Annual</button>
+    <button data-cycle="triennial">Triennial</button>
+  </div>
+  <div class="seg" id="yearSeg" style="display:none" title="Which third of each parashah this year reads">
+    <button data-year="1" class="on">1st ⅓</button>
+    <button data-year="2">2nd ⅓</button>
+    <button data-year="3">3rd ⅓</button>
+  </div>
+  <label class="chk"><input type="checkbox" id="tgBloom" checked> bloom outward</label>
+  <div class="sep"></div>
   <label class="chk"><input type="checkbox" id="tgLabels" checked> book labels</label>
   <label class="chk"><input type="checkbox" id="tgPasuk" checked> pesukim</label>
   <span class="note" id="seedNote"></span>
@@ -52,17 +64,22 @@
 /* ============================================================================
    TANAKH FRACTAL — generative kissing-circle sketch
    ----------------------------------------------------------------------------
-   Structure (fractal, 3 nested levels of tangent "kissing" circles):
+   Structure (fractal, 5 nested levels of tangent "kissing" circles):
      Level 0  Torah      one central circle
      Level 1  Sefer      5 book circles OUTSIDE, each tangent to (kissing) the
                          central circle, arranged as 5 petals
-     Level 2  Parashah   n circles INSIDE each book, each tangent to the book's
-                         inner rim and to its neighbours (a "necklace" packing)
-     Level 3  Pasuk      one small circle per verse, wrapping 360° INSIDE each
-                         parashah circle
+     Level 2  Parashah   n circles INSIDE each book (a "necklace" packing)
+     Level 3  Aliyah     the reading division INSIDE each parashah — always 7
+                         aliyot, necklace-packed. In the TRIENNIAL cycle only one
+                         third of the parashah is read each year (year 1/2/3), so
+                         those 7 aliyot cover 1/3 of the verses → bigger pesukim.
+     Level 4  Pasuk      one RIMON (pomegranate) per verse, sitting on the aliyah
+                         rim and blooming OUTWARD — so the leaves poke outside the
+                         book circles: the same "petals kiss the outside" rule as
+                         the books do to the Torah, applied all the way down.
 
-   The GEOMETRY is one engine (layout()). The three "ideas" are just STYLES that
-   read the same node tree, so you can iterate the look without touching layout.
+   The GEOMETRY is one engine (layout()). The "ideas" are just STYLES that read
+   the same node tree, so you can iterate the look without touching layout.
    ========================================================================== */
 
 /* ---- 1. DATA: the five books, their parashot, and verse (pasuk) counts ---- */
@@ -101,10 +118,17 @@ function rng(seed){ let a = seed>>>0; return ()=>{ a|=0; a=a+0x6D2B79F5|0;
 function necklace(k){ if(k<=1) return {r:0.72, ring:0}; const s=Math.sin(Math.PI/k);
   const r=s/(1+s); return { r, ring:1-r }; }               // normalised to parent R=1
 
-function layout(cfg, rand){
+// spread `total` verses across `k` aliyot as evenly as possible (approx. — real
+// annual aliyot are uneven, but this keeps the ring counts honest to the total)
+function splitVerses(total,k){ const base=Math.floor(total/k), rem=total%k;
+  return Array.from({length:k},(_,i)=> Math.max(1, base+(i<rem?1:0))); }
+
+function layout(cfg, rand, o){
   const R0 = 1;                                            // Torah radius (unit)
   const Rb = cfg.bookScale;                                // book radius / R0
   const nB = TORAH.length;
+  const A  = 7;                                            // aliyot per parashah (always 7)
+  const bloomOut = (cfg.bloomOut ?? 0.55) * (o.bloom ? 1 : -1); // +out / −in
   const a0 = -Math.PI/2 + cfg.rotate;                      // first petal points up
   const books = TORAH.map((b,i)=>{
     const ang = a0 + i*2*Math.PI/nB;
@@ -119,20 +143,36 @@ function layout(cfg, rand){
       const pa = pOff + j*2*Math.PI/b.parashot.length;
       const px = bx + Math.cos(pa)*pring, py = by + Math.sin(pa)*pring;
 
-      // pesukim: necklace (or dots) wrapping 360° inside the parashah
-      const vk = necklace(vn);
-      const vr = vk.r*pr, vring = vk.ring*pr;
-      const vSpin = pa + Math.PI + rand()*0.6;
-      const pesukim = [];
-      for(let q=0;q<vn;q++){
-        const va = vSpin + q*2*Math.PI/vn;
-        pesukim.push({ x:px+Math.cos(va)*vring, y:py+Math.sin(va)*vring, r:vr, i:q });
+      // aliyot: necklace inside the parashah
+      const ak = necklace(A);
+      const ar = ak.r*pr, aring = ak.ring*pr;
+      const aOff = pa + Math.PI + cfg.aliyaSpin;
+      // triennial: read only the (triYear)-th third of the parashah this year
+      const shown = o.cycle==='triennial' ? splitVerses(vn,3)[(o.triYear||1)-1] : vn;
+      const counts = splitVerses(shown, A);
+      const aliyot = [];
+      for(let k=0;k<A;k++){
+        const aa = aOff + k*2*Math.PI/A;
+        const ax = px + Math.cos(aa)*aring, ay = py + Math.sin(aa)*aring;
+        const nv = counts[k];
+
+        // pesukim: rimonim strung around the aliyah rim, blooming outward.
+        // bead radius from tangency on the rim; centres pushed out by bloomOut.
+        const vr = ar*Math.sin(Math.PI/Math.max(nv,2))*0.92;
+        const Rr = ar + vr*bloomOut;
+        const vSpin = aa + rand()*0.5;
+        const pesukim = [];
+        for(let q=0;q<nv;q++){
+          const va = vSpin + q*2*Math.PI/nv;
+          pesukim.push({ x:ax+Math.cos(va)*Rr, y:ay+Math.sin(va)*Rr, r:vr, ang:va, i:q });
+        }
+        aliyot.push({ x:ax, y:ay, r:ar, idx:k, verses:nv, hue:b.hue, pesukim });
       }
-      return { name, x:px, y:py, r:pr, hue:b.hue, idx:j, verses:vn, pesukim };
+      return { name, x:px, y:py, r:pr, hue:b.hue, idx:j, verses:vn, aliyot };
     });
     return { book:b, x:bx, y:by, r:Rb, hue:b.hue, ang, parashot };
   });
-  return { x:0, y:0, r:R0, books };
+  return { x:0, y:0, r:R0, books, A };
 }
 
 /* ---- 4. THREE IDEAS: same tree, different styling ------------------------- */
@@ -140,15 +180,14 @@ function layout(cfg, rand){
    width w in world units renders w·S px. To get a constant on-screen weight we
    always set lineWidth = px / S. Helper: lw(px). */
 const IDEAS = [
-  { /* 0 — Parchment: quiet sepia line-art, everything stroked, no fill.
-         Small petals so the 5 books read as distinct, cleanly-kissing lobes. */
-    name:"Parchment", bookScale:1.26, rotate:0, parashaSpin:0,
-    bg1:"#f4ecd8", bg2:"#e7dcbe", pasuk:"ring",
+  { /* 0 — Parchment: quiet sepia line-art; pesukim are little inked rimonim. */
+    name:"Parchment", bookScale:1.26, rotate:0, parashaSpin:0, aliyaSpin:0, bloomOut:0.4,
+    bg1:"#f4ecd8", bg2:"#e7dcbe",
     draw(ctx,T,S,o){ const lw=px=>px/S; const ink="#3a2a1a";
-      if(o.pasuk) forPasuk(T,p=>{ if(p.r*S<0.6) return;          // skip sub-pixel
-        ctx.strokeStyle="rgba(58,42,26,.28)"; ctx.lineWidth=lw(0.55); ring(ctx,p); });
-      forParasha(T,pa=>{ ctx.strokeStyle="rgba(58,42,26,.75)"; ctx.lineWidth=lw(0.9);
-        ring(ctx,pa); fillCircle(ctx,pa.x,pa.y,lw(1.2),"rgba(58,42,26,.7)"); });
+      if(o.pasuk) forPasuk(T,p=>{ if(p.r*S<0.5) return;
+        rimon(ctx,p,S,"rgba(58,42,26,.30)","rgba(58,42,26,.55)"); });
+      forAliyah(T,al=>{ ctx.strokeStyle="rgba(58,42,26,.45)"; ctx.lineWidth=lw(0.55); ring(ctx,al); });
+      forParasha(T,pa=>{ ctx.strokeStyle="rgba(58,42,26,.78)"; ctx.lineWidth=lw(0.95); ring(ctx,pa); });
       T.books.forEach(b=>{ ctx.strokeStyle=ink; ctx.lineWidth=lw(2.2); ring(ctx,b);
         ctx.strokeStyle="rgba(58,42,26,.28)"; ctx.lineWidth=lw(0.7); circle(ctx,b.x,b.y,b.r*1.05); });
       ctx.strokeStyle=ink; ctx.lineWidth=lw(3); ring(ctx,T);
@@ -156,22 +195,22 @@ const IDEAS = [
       if(o.labels) labelBooks(ctx,T,"rgba(58,42,26,.92)");
     }
   },
-  { /* 1 — Rose Window: translucent stained-glass petals layered on dark glass */
-    name:"Rose Window", bookScale:1.42, rotate:0.02, parashaSpin:0.18, pasuk:"dots",
+  { /* 1 — Rose Window: stained-glass petals; pesukim are rimonim on the aliyah
+         rims, blooming outward past the book circles. */
+    name:"Rose Window", bookScale:1.42, rotate:0.02, parashaSpin:0.18, aliyaSpin:0.12, bloomOut:0.62,
     bg1:"#0a0f24", bg2:"#04060f",
     draw(ctx,T,S,o){ const lw=px=>px/S;
       T.books.forEach(b=>{
         fillCircle(ctx,b.x,b.y,b.r, hsla(b.hue,68,50,.12));               // petal wash
         b.parashot.forEach(pa=>{
           fillCircle(ctx,pa.x,pa.y,pa.r, hsla(pa.hue+pa.idx*5,72,58,.20));
-          ctx.strokeStyle=hsla(pa.hue,85,78,.55); ctx.lineWidth=lw(1); ring(ctx,pa);
+          ctx.strokeStyle=hsla(pa.hue,85,78,.5); ctx.lineWidth=lw(0.9); ring(ctx,pa);
         });
-        ctx.strokeStyle=hsla(b.hue,85,80,.7); ctx.lineWidth=lw(1.8); ring(ctx,b);
       });
-      if(o.pasuk){ ctx.globalCompositeOperation="lighter";            // verses = points of light
-        forPasuk2(T,(pa,p)=>{ const t=p.i/pa.verses;
-          fillCircle(ctx,p.x,p.y,Math.max(lw(1.1),p.r*.85), hsla(pa.hue+t*36,95,74,.9)); });
-        ctx.globalCompositeOperation="source-over"; }
+      forAliyah(T,(al,pa)=>{ ctx.strokeStyle=hsla(pa.hue,82,76,.34); ctx.lineWidth=lw(0.6); ring(ctx,al); });
+      T.books.forEach(b=>{ ctx.strokeStyle=hsla(b.hue,85,80,.7); ctx.lineWidth=lw(1.8); ring(ctx,b); });
+      if(o.pasuk) forPasuk(T,(p,al,pa)=>{ const t=p.i/Math.max(1,al.verses);
+        rimon(ctx,p,S, hsla(pa.hue+t*30,92,66,.92), hsla(pa.hue+t*30,95,82,.95)); });
       const g=ctx.createRadialGradient(0,0,0,0,0,T.r*1.15);           // core
       g.addColorStop(0,"rgba(255,246,222,.98)"); g.addColorStop(.55,"rgba(201,163,91,.55)");
       g.addColorStop(1,"rgba(201,163,91,0)");
@@ -180,19 +219,20 @@ const IDEAS = [
       if(o.labels) labelBooks(ctx,T,"rgba(232,226,210,.92)");
     }
   },
-  { /* 2 — Neon Bloom: dark, thin luminous strokes, hue drifts by parashah    */
-    name:"Neon Bloom", bookScale:1.42, rotate:-0.04, parashaSpin:-0.12, pasuk:"ring",
+  { /* 2 — Neon Bloom: dark, luminous strokes; glowing rimonim bloom outward.  */
+    name:"Neon Bloom", bookScale:1.42, rotate:-0.04, parashaSpin:-0.12, aliyaSpin:-0.1, bloomOut:0.72,
     bg1:"#07080e", bg2:"#0c0f1a",
     draw(ctx,T,S,o){ const lw=px=>px/S;
-      T.books.forEach(b=> fillCircle(ctx,b.x,b.y,b.r, hsla(b.hue,80,45,.07)) ); // faint petal body
+      T.books.forEach(b=> fillCircle(ctx,b.x,b.y,b.r, hsla(b.hue,80,45,.07)) );
       ctx.globalCompositeOperation="lighter";
-      forParasha(T,pa=>{ const h=pa.hue + pa.idx*6;
-        if(o.pasuk) pa.pesukim.forEach(p=>{ if(p.r*S<0.4) return; const t=p.i/pa.verses;
-          ctx.strokeStyle=hsla(h + t*30, 90, 64, .5); ctx.lineWidth=lw(0.8); ring(ctx,p); });
-        ctx.strokeStyle=hsla(h,95,68,.9); ctx.lineWidth=lw(1.4); ring(ctx,pa);
-        fillCircle(ctx,pa.x,pa.y,Math.max(lw(1.4),pa.r*.06), hsla(h,95,82,.95));
-      });
-      T.books.forEach(b=>{ ctx.strokeStyle=hsla(b.hue,90,64,.75); ctx.lineWidth=lw(1.6); ring(ctx,b); });
+      forParasha(T,pa=>{ ctx.strokeStyle=hsla(pa.hue+pa.idx*6,95,68,.85); ctx.lineWidth=lw(1.2); ring(ctx,pa); });
+      forAliyah(T,(al,pa)=>{ const h=pa.hue+pa.idx*6+al.idx*3;
+        ctx.strokeStyle=hsla(h,90,66,.7); ctx.lineWidth=lw(0.8); ring(ctx,al);
+        fillCircle(ctx,al.x,al.y,Math.max(lw(1.2),al.r*.06), hsla(h,95,82,.9)); });
+      if(o.pasuk) forPasuk(T,(p,al,pa)=>{ if(p.r*S<0.4) return; const h=pa.hue+pa.idx*6;
+        const t=p.i/Math.max(1,al.verses);
+        rimon(ctx,p,S, hsla(h+t*30,95,70,.85), hsla(h+t*30,95,86,.9)); });
+      T.books.forEach(b=>{ ctx.strokeStyle=hsla(b.hue,90,64,.7); ctx.lineWidth=lw(1.6); ring(ctx,b); });
       ctx.globalCompositeOperation="source-over";
       const g=ctx.createRadialGradient(0,0,0,0,0,T.r);
       g.addColorStop(0,"rgba(255,255,255,.95)"); g.addColorStop(1,"rgba(120,160,255,.06)");
@@ -202,7 +242,6 @@ const IDEAS = [
     }
   },
 ];
-function forPasuk2(T,fn){ forParasha(T,pa=>pa.pesukim.forEach(p=>fn(pa,p))); }
 
 /* ---- 5. tiny draw helpers (work in the scaled world space) ---------------- */
 let WORLD=1;                                              // px per unit (for label sizing)
@@ -211,8 +250,19 @@ function ring(ctx,n){ ctx.beginPath(); ctx.arc(n.x,n.y,Math.abs(n.r),0,7); ctx.s
 function fillCircle(ctx,x,y,r,fill){ ctx.beginPath(); ctx.arc(x,y,Math.abs(r),0,7);
   ctx.fillStyle=fill; ctx.fill(); }
 function hsla(h,s,l,a){ return `hsla(${h},${s}%,${l}%,${a})`; }
-function forParasha(T,fn){ T.books.forEach(b=>b.parashot.forEach(fn)); }
-function forPasuk(T,fn){ forParasha(T,pa=>pa.pesukim.forEach(fn)); }
+function forParasha(T,fn){ T.books.forEach(b=>b.parashot.forEach(pa=>fn(pa,b))); }
+function forAliyah(T,fn){ forParasha(T,(pa,b)=>pa.aliyot.forEach(al=>fn(al,pa,b))); }
+function forPasuk(T,fn){ forAliyah(T,(al,pa)=>al.pesukim.forEach(p=>fn(p,al,pa))); }
+// a rimon (pomegranate): round body + a little outward-pointing crown (calyx)
+function rimon(ctx,p,S,fill,crown){
+  fillCircle(ctx,p.x,p.y,p.r,fill);
+  if(p.r*S<1.4) return;                                   // too small to bother w/ crown
+  const tx=p.x+Math.cos(p.ang)*p.r, ty=p.y+Math.sin(p.ang)*p.r, cl=p.r*0.85;
+  ctx.strokeStyle=crown; ctx.lineWidth=Math.max(0.4/S, p.r*0.16); ctx.beginPath();
+  for(const dth of [-0.42,0,0.42]){ ctx.moveTo(tx,ty);
+    ctx.lineTo(tx+Math.cos(p.ang+dth)*cl, ty+Math.sin(p.ang+dth)*cl); }
+  ctx.stroke();
+}
 function labelBooks(ctx,T,color){
   // Drawn inside the scaled world transform, so divide the desired px size by
   // WORLD (px-per-unit) to keep the label a constant on-screen size.
@@ -229,11 +279,13 @@ function labelBooks(ctx,T,color){
 /* ---- 6. render loop ------------------------------------------------------- */
 const canvas=document.getElementById("c"), ctx=canvas.getContext("2d");
 let seed=Math.floor(Math.random()*1e9), ideaIdx=0;
-let opts={ labels:true, pasuk:true };
-// URL: #idea,seed  e.g. #2,12345 — handy for sharing/reproducing a frame
-(function(){ const m=(location.hash||"").slice(1).split(","); 
+let opts={ labels:true, pasuk:true, cycle:'annual', triYear:1, bloom:true };
+// URL: #idea,seed,cycle  e.g. #1,12345,tri2 — handy for reproducing a frame
+(function(){ const m=(location.hash||"").slice(1).split(",");
   if(m[0]!=="") ideaIdx=Math.max(0,Math.min(IDEAS.length-1,+m[0]||0));
-  if(m[1]) seed=+m[1]||seed; })();
+  if(m[1]) seed=+m[1]||seed;
+  if(m[2] && m[2].startsWith('tri')){ opts.cycle='triennial';
+    opts.triYear=Math.min(3,Math.max(1,+m[2].slice(3)||1)); } })();
 
 function resize(){ const dpr=Math.min(2,devicePixelRatio||1);
   const w=innerWidth, h=innerHeight-0;
@@ -249,9 +301,9 @@ function render(){
   ctx.fillStyle=bg; ctx.fillRect(0,0,w,h);
 
   const rand=rng(seed + ideaIdx*97);
-  const T=layout(idea,rand);
-  // world extent: torah(1) + 2*book radius
-  const extent=(1+2*idea.bookScale)*1.16;
+  const T=layout(idea,rand,opts);
+  // world extent: torah(1) + 2*book radius, plus headroom for outward bloom
+  const extent=(1+2*idea.bookScale)*1.24;
   const scale=Math.min(w,h)/(2*extent);
   WORLD=scale;
   ctx.save();
@@ -262,11 +314,14 @@ function render(){
   idea.draw(ctx,T,scale,opts);
   ctx.restore();
 
-  document.getElementById("seedNote").textContent=`seed ${seed} · ${idea.name} · 54 parashot · ${totalPesukim()} pesukim`;
+  const cyc = opts.cycle==='triennial'
+    ? `triennial yr ${opts.triYear} (⅓) · 7 aliyot` : 'annual · 7 aliyot';
+  document.getElementById("seedNote").textContent=`seed ${seed} · ${idea.name} · ${cyc} · 54 parashot · ${totalPesukim()} pesukim shown`;
   document.getElementById("cap").textContent =
-    "Fractal kissing circles: Torah (centre) → 5 books (petals) → parashot (necklace inside each book) → pesukim (necklace/dots inside each parashah). Same geometry, three styles.";
+    "Fractal: Torah (centre) → 5 books (petals) → parashot (necklace in each book) → 7 aliyot (necklace in each parashah) → pesukim (rimonim on the aliyah rims, blooming outward past the book circles). Triennial shows one third of each parashah per year.";
 }
-function totalPesukim(){ let n=0; TORAH.forEach(b=>b.parashot.forEach(p=>n+=p[1])); return n; }
+function totalPesukim(){ let n=0; TORAH.forEach(b=>b.parashot.forEach(p=>{
+  n += opts.cycle==='triennial' ? splitVerses(p[1],3)[(opts.triYear||1)-1] : p[1]; })); return n; }
 
 /* ---- 7. UI ---------------------------------------------------------------- */
 document.getElementById("ideaSeg").addEventListener("click",e=>{
@@ -278,13 +333,31 @@ document.getElementById("reseed").onclick=()=>{ seed=Math.floor(Math.random()*1e
 document.getElementById("save").onclick=()=>{ const a=document.createElement("a");
   a.download=`tanakh-fractal-${IDEAS[ideaIdx].name.replace(/\W+/g,'-')}-${seed}.png`;
   a.href=canvas.toDataURL("image/png"); a.click(); };
+document.getElementById("cycleSeg").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  [...e.currentTarget.children].forEach(x=>x.classList.remove("on"));
+  b.classList.add("on"); opts.cycle=b.dataset.cycle;
+  document.getElementById("yearSeg").style.display = opts.cycle==='triennial' ? '' : 'none';
+  render();
+});
+document.getElementById("yearSeg").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  [...e.currentTarget.children].forEach(x=>x.classList.remove("on"));
+  b.classList.add("on"); opts.triYear=+b.dataset.year; render();
+});
+document.getElementById("tgBloom").onchange=e=>{ opts.bloom=e.target.checked; render(); };
 document.getElementById("tgLabels").onchange=e=>{ opts.labels=e.target.checked; render(); };
 document.getElementById("tgPasuk").onchange=e=>{ opts.pasuk=e.target.checked; render(); };
 addEventListener("resize",resize);
-// reflect initial idea/seed in the UI and keep the hash in sync
-function syncHash(){ location.hash=`${ideaIdx},${seed}`; }
+// reflect initial idea/seed/cycle in the UI and keep the hash in sync
+function syncHash(){ location.hash=`${ideaIdx},${seed},${opts.cycle==='triennial'?'tri'+opts.triYear:'ann'}`; }
 [...document.querySelectorAll("#ideaSeg button")].forEach((b,i)=>
   b.classList.toggle("on", i===ideaIdx));
+[...document.querySelectorAll("#cycleSeg button")].forEach(b=>
+  b.classList.toggle("on", b.dataset.cycle===opts.cycle));
+[...document.querySelectorAll("#yearSeg button")].forEach(b=>
+  b.classList.toggle("on", +b.dataset.year===opts.triYear));
+document.getElementById("yearSeg").style.display = opts.cycle==='triennial' ? '' : 'none';
 const _render=render; render=function(){ _render(); syncHash(); };
 resize();
 </script>
