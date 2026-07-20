@@ -24,8 +24,10 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
 
 ## What it does today
 
-- **Pick a reading & division** — Devarim 1, as the full parashah or one of three
-  parts (a triennial-style division).
+- **Pick a reading & portion** — choose a parashah, then a single **Portion**
+  control sets how much you read: the full annual parashah, or one shorter
+  **triennial-cycle year** (which narrows the verses shown *and* switches to that
+  year's aliyot). 📅 Today jumps to the current triennial year.
 - **Text with real vowels + cantillation** — the Masoretic (Leningrad Codex)
   text, stored locally in `data/devarim1.json`.
 - **Show / hide aids** — toggle niqqud (vowels) and te'amim (cantillation marks),
