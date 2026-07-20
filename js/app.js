@@ -714,6 +714,7 @@ function syncToggleUI() {
   const seg = $('overlaySeg');
   if (seg) seg.querySelectorAll('.ov').forEach((b) => b.classList.toggle('on', b.dataset.ov === state.overlay));
   $('tgScrollView').classList.toggle('on', state.scrollView);
+  document.body.classList.toggle('scroll-view', state.scrollView);
 }
 function syncCycleUI() {
   const seg = $('cycleSeg');
@@ -1242,6 +1243,7 @@ function renderAliyahView() {
       </span>
     </div>
     <div class="aliyah-scroll scroll-column" id="aliyahScroll">${scrollHtml.join(' ')}</div>
+    <div class="aliyah-dock">
     <div class="transport">
       <button class="primary" id="alGuide">▶ Guided read (real chant)</button>
       <button class="warn" id="alRec">● Record my aliyah</button>
@@ -1253,6 +1255,7 @@ function renderAliyahView() {
       <span class="lm-val"><b id="aliyaMeterVal">0</b>%</span>
     </div>
     <div class="result" id="aliyaResult"><span class="hint">Listen to the guided read to learn the flow, then record your own chant of the whole aliyah.</span></div>
+    </div>
     </div>
   `;
   const tl = aliyahTimeline(a);

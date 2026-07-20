@@ -307,11 +307,18 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 .cmp-legend .swatch.you { border-top: 3px dotted var(--accent-2); }
 .tapword { margin: 4px 0 6px; }
 
+/* The scroll column's parents are size containers so the glyphs can scale to
+   the available width (see the clamp() below) — this keeps a real-scroll look
+   whether the pane is dragged narrow (left) or shown in the aliyah view (right). */
+#verses, .aliyah-view { container-type: inline-size; }
+
 /* Faithful Torah-scroll column view of the whole reading */
 .scroll-column {
   direction: rtl; text-align: justify; text-align-last: right;
   font-family: 'StamAshkenaz', serif;
-  font-size: 30px; line-height: 2.15; letter-spacing: 1px;
+  /* Scale the letters to the column width so a thin pane shrinks the script
+     instead of forcing awkward one-word-per-line justification. */
+  font-size: clamp(15px, 7.4cqi, 30px); line-height: 2.15; letter-spacing: 1px;
   color: #2a2016;
   background: #e9d7b0;
   background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0) 8%),
@@ -320,9 +327,73 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
   padding: 22px 26px; box-shadow: inset 0 0 40px rgba(120,80,30,0.18);
   max-width: 42ch; margin: 0 auto;
 }
-.scroll-column .sw { cursor: pointer; border-radius: 4px; padding: 0 1px; }
+/* Each word is an unbreakable unit: never split a word across lines, however
+   thin the column gets. */
+.scroll-column .sw { cursor: pointer; border-radius: 4px; padding: 0 1px; white-space: nowrap; }
 .scroll-column .sw:hover { background: rgba(120,80,30,0.15); }
 .scroll-column .sw.sel { background: rgba(200,150,60,0.35); }
+
+/* The aliyah-view controls (transport / meter / result) are grouped so they can
+   dock at the foot of the pane; on desktop the group is transparent and simply
+   stacks its children as before. */
+.aliyah-dock { display: flex; flex-direction: column; }
+
+/* --- Mobile: show the real scroll full-screen with a minimal control overlay - */
+@media (max-width: 900px) {
+  /* Torah-column (left) view: let the pasuk drawer fill the screen so the scroll
+     is read edge-to-edge rather than in a narrow rail. */
+  body.scroll-view .textpane { width: 100vw; max-width: 100vw; }
+  body.scroll-view .textpane .scroll-column {
+    border-inline: none; border-radius: 0; box-shadow: inset 0 0 40px rgba(120,80,30,0.14);
+  }
+
+  /* Aliyah (right) view: the parchment fills the viewport; the header and the
+     transport dock become slim translucent overlays floating over the scroll. */
+  #practice.aliyah-fill {
+    position: fixed; inset: 0; z-index: 45; height: 100%; padding: 0;
+    background: #e2cfa5;
+  }
+  .aliyah-view { height: 100%; padding: 0; }
+  .aliyah-view .leveldesc { display: none; }
+
+  .aliyah-view .phead {
+    order: 0; margin: 0; gap: 6px 10px; align-items: center;
+    padding: 8px 12px; flex-wrap: nowrap;
+    background: rgba(226,207,165,0.94); backdrop-filter: blur(3px);
+    border-bottom: 1px solid #c9b38a; color: #2a2016;
+  }
+  .aliyah-view .phead h2 { font-size: 13px; color: #2a2016; flex: 1; min-width: 0;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .aliyah-view .phead .stagetag { display: none; }
+  .aliyah-view .phead #alBack { flex: 0 0 auto; background: rgba(42,32,22,0.08);
+    color: #2a2016; border-color: #c9b38a; }
+
+  .aliyah-view .al-cuebar {
+    margin: 0; padding: 6px 12px; gap: 8px;
+    background: rgba(226,207,165,0.9); border-bottom: 1px solid #c9b38a;
+  }
+  .aliyah-view .al-cuebar .label { color: #4a3a26; }
+
+  /* The scroll grows to fill everything between the overlays, edge to edge. */
+  .aliyah-scroll {
+    flex: 1; margin: 0; border: none; border-radius: 0; max-width: none;
+    box-shadow: none;
+  }
+
+  /* Foot dock: floats over the parchment with a translucent parchment backing. */
+  .aliyah-dock {
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+    gap: 6px; background: rgba(226,207,165,0.94); backdrop-filter: blur(3px);
+    border-top: 1px solid #c9b38a;
+  }
+  .aliyah-dock .transport { margin: 0; gap: 6px; }
+  .aliyah-dock .transport button { flex: 1 1 auto; font-size: 12px; padding: 8px 10px; }
+  .aliyah-dock .livemeter { margin: 0; }
+  .aliyah-dock .livemeter .lm-label { color: #4a3a26; }
+  .aliyah-dock .livemeter .lm-val { color: #4a3a26; }
+  .aliyah-dock .result { margin: 0; color: #2a2016; }
+  .aliyah-dock .result .hint { color: #4a3a26; }
+}
 
 /* Guitar-hero zoom: a horizontally scrollable strip of the timeline. */
 .tl-scroll { overflow: hidden; }
