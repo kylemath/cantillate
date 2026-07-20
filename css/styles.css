@@ -275,6 +275,11 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 .aliyah .al-actions { display: flex; }
 .aliyah .al-go { padding: 4px 10px; font-size: 12px; }
 .aliyah .al-lock { font-size: 12px; color: var(--muted); }
+/* Maftir: the closing repeat, flagged with its own accent so it reads as a
+   distinct unit sitting alongside (not another numbered aliyah). */
+.aliyah.maftir { border-inline-start-color: var(--accent); }
+.aliyah.maftir.ready { border-inline-start-color: var(--good); }
+.aliyah.maftir .al-n { font-size: 12px; letter-spacing: -1px; }
 
 /* Aliyah controls pane (the STA"M scroll itself lives in the shared #scrollVerses
    pane; see .aliyah-scroll below). */

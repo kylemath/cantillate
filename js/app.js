@@ -127,6 +127,18 @@ function aliyotForReading(cycle, year) {
   return base;
 }
 
+// The maftir for a cycle/year (a distinct scored unit that repeats the closing
+// pesukim), or null if this reading has no maftir data. It carries n:'M' and the
+// same start/end verse-index + ref shape as an aliyah, so the card, practice
+// view and scoring treat it like an aliyah keyed 'M'. Read straight from the
+// data file (maftir isn't user-editable), gracefully null for the hardcoded
+// fallback table.
+function maftirForReading(cycle, year) {
+  const m = state.data && state.data.aliyot && state.data.aliyot.maftir;
+  if (!m) return null;
+  return cycle === 'triennial' ? (m.triennial && m.triennial[year]) || null : m.annual || null;
+}
+
 // The Deuteronomy summer readings this app ships are chanted on consecutive
 // Shabbatot anchored to Tisha B'Av (9 Av): Devarim on Shabbat Chazon (the
 // Shabbat on/before 9 Av), then Va'etchanan (Nachamu) and Eikev on the two
@@ -766,14 +778,26 @@ function enumerateAliyahScopes(metas) {
       const list = aliyot
         ? (cycle === 'triennial' ? (aliyot.triennial[year] || []) : (aliyot.annual || []))
         : aliyotFor(m.slug, cycle, year);
+      const cycleLabel = cycle === 'triennial' ? `Triennial · Yr ${year}` : 'Annual';
       for (const a of list) {
         scopes.push({
           type: 'aliyah', slug: m.slug, cycle, year, n: a.n, ref: a.ref,
           refId: scores.aliyahIdFor(parId, cycle, year, a.n),
-          parName,
-          cycleLabel: cycle === 'triennial' ? `Triennial · Yr ${year}` : 'Annual',
+          parName, cycleLabel,
           label: `Aliyah ${a.n}${a.ref ? ` · ${a.ref}` : ''}`,
           localBest: store.getAliyahScore(m.slug, cycle, year, a.n),
+        });
+      }
+      // Maftir is its own scored unit (n:'M'), keyed like an aliyah.
+      const maf = aliyot && aliyot.maftir
+        && (cycle === 'triennial' ? (aliyot.maftir.triennial && aliyot.maftir.triennial[year]) : aliyot.maftir.annual);
+      if (maf) {
+        scopes.push({
+          type: 'aliyah', slug: m.slug, cycle, year, n: maf.n, ref: maf.ref,
+          refId: scores.aliyahIdFor(parId, cycle, year, maf.n),
+          parName, cycleLabel,
+          label: `Maftir${maf.ref ? ` · ${maf.ref}` : ''}`,
+          localBest: store.getAliyahScore(m.slug, cycle, year, maf.n),
         });
       }
     }
@@ -900,8 +924,9 @@ async function navigateToScope(scope) {
     renderVerses();
     renderAliyot();
     const list = aliyotForReading(scope.cycle, state.triYear);
-    const a = list.find((x) => x.n === scope.n)
+    let a = list.find((x) => x.n === scope.n)
       || defaultAliyot(scope.cycle, state.triYear).find((x) => x.n === scope.n);
+    if (!a && scope.n === 'M') a = maftirForReading(scope.cycle, state.triYear);
     if (a) openAliyah(a);
   } else {
     // Show the whole parashah so the target pasuk is visible in the list, then
@@ -945,8 +970,8 @@ function computeScopeEntries() {
   const partitions = [['annual', 0]];
   for (let y = 1; y <= 3; y++) partitions.push(['triennial', y]);
   for (const [cycle, year] of partitions) {
-    const list = defaultAliyot(cycle, year);
-    for (const a of list) {
+    // Score an aliyah/maftir as max(direct take, floor derived from its pesukim).
+    const scoreUnit = (a, label) => {
       const childBests = [];
       for (let n = a.start; n <= Math.min(a.end, maxV); n++) {
         const b = pasukBest(n);
@@ -955,9 +980,12 @@ function computeScopeEntries() {
       const direct = store.getAliyahScore(state.slug, cycle, year, a.n);
       const sc = scores.deriveScore(direct, childBests);
       if (sc > 0) {
-        entries.push({ type: 'aliyah', refId: scores.aliyahIdFor(parId, cycle, year, a.n), score: sc, cycle, label: `Aliyah ${a.n} · ${a.ref || ''}` });
+        entries.push({ type: 'aliyah', refId: scores.aliyahIdFor(parId, cycle, year, a.n), score: sc, cycle, label });
       }
-    }
+    };
+    for (const a of defaultAliyot(cycle, year)) scoreUnit(a, `Aliyah ${a.n} · ${a.ref || ''}`);
+    const maf = maftirForReading(cycle, year);
+    if (maf) scoreUnit(maf, `Maftir · ${maf.ref || ''}`);
   }
 
   // Parasha: rolled up from all pesukim. `partial` (⭐ on the board) marks a
@@ -1835,12 +1863,18 @@ function renderVerses() {
   const box = $('verses');
   box.innerHTML = '';
   const [start, end] = divisionRange();
-  // Aliyah cards are woven in after the verse that completes each aliyah.
+  // Aliyah cards are woven in after the verse that completes each aliyah; the
+  // maftir card follows the aliyah it shares an ending pasuk with (same end
+  // verse), so several cards can attach to one verse.
   const maxV = state.data.verses.length;
-  const aliyahByEnd = {};
-  aliyotForReading(state.cycle, state.triYear).forEach((a) => {
-    aliyahByEnd[Math.min(a.end, maxV)] = a;
-  });
+  const cardsByEnd = {};
+  const attachCard = (a) => {
+    const key = Math.min(a.end, maxV);
+    (cardsByEnd[key] = cardsByEnd[key] || []).push(buildAliyahCard(a));
+  };
+  aliyotForReading(state.cycle, state.triYear).forEach(attachCard);
+  const maftir = maftirForReading(state.cycle, state.triYear);
+  if (maftir) attachCard(maftir);
   for (let i = start; i <= end; i++) {
     const v = state.data.verses[i - 1];
     const div = document.createElement('div');
@@ -1877,7 +1911,7 @@ function renderVerses() {
       else selectVerse(i);
     });
     box.appendChild(div);
-    if (aliyahByEnd[i]) box.appendChild(buildAliyahCard(aliyahByEnd[i]));
+    if (cardsByEnd[i]) cardsByEnd[i].forEach((el) => box.appendChild(el));
   }
 }
 
@@ -2028,7 +2062,7 @@ function renderAliyahScroll(box) {
   }
   box.innerHTML = `<div class="scroll-column aliyah-scroll" id="aliyahScroll">${scrollHtml.join(' ')}</div>`;
   const title = document.querySelector('#scrollpane .pane-title');
-  if (title) title.innerHTML = `Aliyah ${a.n} <span class="hint" style="text-transform:none;letter-spacing:0">STA&ldquo;M</span>`;
+  if (title) title.innerHTML = `${a.n === 'M' ? 'Maftir' : 'Aliyah ' + a.n} <span class="hint" style="text-transform:none;letter-spacing:0">STA&ldquo;M</span>`;
   // Re-apply the start/end cues after any rebuild (e.g. a toolbar toggle) so the
   // yad markers survive re-renders of the pane.
   if (state._aliyaTl) markAliyahEnds(state._aliyaTl, !!state._aliyaEnded);
@@ -2087,22 +2121,29 @@ function renderAliyot() {
   box.innerHTML = html;
 }
 
-// A single aliyah card element, inserted inline after its last unlocking pasuk.
+// A single aliyah (or maftir) card element, inserted inline after its last
+// unlocking pasuk. The maftir (a.n === 'M') repeats the closing pesukim, so it's
+// labelled distinctly but otherwise practised and scored just like an aliyah.
 function buildAliyahCard(a) {
+  const isMaftir = a.n === 'M';
   const r = aliyahReadiness(a);
   const score = store.getAliyahScore(state.slug, state.cycle, state.triYear, a.n);
   const pct = r.total ? Math.round((r.ready / r.total) * 100) : 0;
   const open = state.aliyah && state.aliyah.n === a.n && state.aliyah.cycle === state.cycle && state.aliyah.year === state.triYear;
   const badge = score > 0 ? `<span class="al-score" style="background:${scoreColor(score)}">${score}</span>` : '';
+  const unit = isMaftir ? 'maftir' : 'aliyah';
   const action = r.done
-    ? `<button class="al-go">${score > 0 ? '↻ Chant again' : '▶ Chant aliyah'}</button>`
+    ? `<button class="al-go">${score > 0 ? '↻ Chant again' : `▶ Chant ${unit}`}</button>`
     : `<span class="al-lock" title="Reach stage ${ALIYAH_READY_LEVEL} on every pasuk first">🔒 ${r.ready}/${r.total} pesukim ready</span>`;
   const el = document.createElement('div');
-  el.className = `aliyah${open ? ' open' : ''}${r.done ? ' ready' : ''}`;
+  el.className = `aliyah${isMaftir ? ' maftir' : ''}${open ? ' open' : ''}${r.done ? ' ready' : ''}`;
+  const label = isMaftir
+    ? `Maftir <span class="hint">${a.ref}</span>`
+    : `Aliyah ${a.n} <span class="hint">ends ${a.ref}</span>`;
   el.innerHTML = `
     <div class="al-main">
-      <span class="al-n">${toHebrewNum(a.n)}</span>
-      <span class="al-label">Aliyah ${a.n} <span class="hint">ends ${a.ref}</span></span>
+      <span class="al-n">${isMaftir ? 'מפ' : toHebrewNum(a.n)}</span>
+      <span class="al-label">${label}</span>
       ${badge}
     </div>
     <div class="al-prog"><span style="width:${pct}%;background:${r.done ? 'var(--good)' : 'var(--accent-2)'}"></span></div>
@@ -2173,7 +2214,7 @@ function renderAliyahView() {
   p.innerHTML = `
     <div class="aliyah-view">
     <div class="phead">
-      <h2>${par.he} · Aliyah ${a.n} <span class="stagetag">${a.cycle === 'triennial' ? 'Triennial Yr ' + a.year : 'Annual'} · ${a.ref}</span></h2>
+      <h2>${par.he} · ${a.n === 'M' ? 'Maftir' : 'Aliyah ' + a.n} <span class="stagetag">${a.cycle === 'triennial' ? 'Triennial Yr ' + a.year : 'Annual'} · ${a.ref}</span></h2>
       <button id="alBack">← Verses</button>
     </div>
     <p class="leveldesc">Chant the whole aliyah from the bare scroll on the left. A grey outline marks the current spot and, subtly, where to begin and end — as in a real reading. Faded text is the surrounding scroll for context.</p>
@@ -2447,7 +2488,7 @@ function finishAliyahRecord(tl) {
     : assisted ? 'Nice duet. Now try it solo — a solo take can score higher.'
       : score >= 80 ? 'Beautiful — that\'s reading-ready.'
         : 'Keep polishing the weaker pesukim, then run the aliyah again.';
-  $('aliyaResult').innerHTML = `<span class="scorelabel">${assisted ? 'Duet accuracy' : 'Aliyah accuracy'}</span> `
+  $('aliyaResult').innerHTML = `<span class="scorelabel">${assisted ? 'Duet accuracy' : (a.n === 'M' ? 'Maftir accuracy' : 'Aliyah accuracy')}</span> `
     + `<span class="num">${score}</span><span class="ceil"> / 100</span>`
     + `<br><span class="hint">${msg}</span>`;
   renderAliyot();
