@@ -404,6 +404,13 @@ function randomNickname() {
   return `${a} ${n}`;
 }
 
+// A random cartoon avatar (used to give anonymous submitters a friendly default
+// picture instead of a bare initial).
+function randomAvatar() {
+  const i = Math.floor(Math.random() * AV_EMOJI.length);
+  return emojiAvatar(AV_EMOJI[i], AV_COLORS[i % AV_COLORS.length]);
+}
+
 // The choosable avatars: Google photo (if any) + cartoon faces + solid colours.
 function avatarOptions(g) {
   const opts = [];
@@ -434,30 +441,64 @@ function setupProfile() {
     auth.saveProfile({ name: g.name || 'Anonymous', photo: g.photo || '' });
     modal.hidden = true; profileDraft = null; renderAuthBox();
   });
-  $('profileSave').addEventListener('click', () => {
+  $('profileSave').addEventListener('click', async () => {
     const name = ((profileDraft && profileDraft.name) || '').trim() || 'Anonymous';
     const photo = (profileDraft && profileDraft.photo) || '';
-    auth.saveProfile({ name, photo });
-    modal.hidden = true; profileDraft = null; renderAuthBox();
+    const anonSubmit = !!(profileDraft && profileDraft.anonSubmit);
+    modal.hidden = true; profileDraft = null;
+    if (anonSubmit) await submitAnon({ name, photo });
+    else auth.saveProfile({ name, photo });
+    renderAuthBox();
   });
 }
 
-function openProfileModal({ firstTime = false } = {}) {
+// Post the current scores to the shared leaderboard without a Google account:
+// remember the chosen anonymous identity, sign in anonymously (so Firestore's
+// rules accept the write), then publish the summary + per-scope entries. All
+// best-effort — on any failure the app stays exactly as it was.
+async function submitAnon({ name, photo }) {
+  // Persist the chosen identity locally FIRST, so the first-login profile prompt
+  // (fired by onProgressMerged mid sign-in) sees it as already chosen and won't
+  // pop a second modal.
+  store.setProfile({ chosen: true, name, photo });
+  renderAuthBox();
+  try {
+    if (!auth.getUser()) await auth.signInAnon();
+    await auth.saveProfile({ name, photo }); // publishes the leaderboard summary
+    maybePushScopes();                        // publishes per-scope entries
+  } catch (e) {
+    console.warn('[anon] leaderboard submit failed', e);
+  }
+}
+
+function openProfileModal({ firstTime = false, anonSubmit = false } = {}) {
   const modal = $('profileModal');
-  if (!modal || !auth.getUser()) return;
-  const g = auth.getGoogleIdentity() || {};
+  if (!modal) return;
+  // Editing an existing identity needs a session; anonymous submission doesn't
+  // (it creates the session on Save).
+  if (!anonSubmit && !auth.getUser()) return;
+  const g = anonSubmit ? {} : (auth.getGoogleIdentity() || {});
   const cur = store.getProfile();
   profileDraft = {
     firstTime,
+    anonSubmit,
     name: (cur && cur.chosen && cur.name) ? cur.name : (g.name || randomNickname()),
-    photo: (cur && cur.chosen) ? (cur.photo || '') : (g.photo || ''),
+    photo: (cur && cur.chosen && cur.photo) ? cur.photo : (g.photo || (anonSubmit ? randomAvatar() : '')),
   };
   const title = $('profileTitle');
   const intro = $('profileIntro');
   const keep = $('profileKeepGoogle');
-  if (title) title.textContent = firstTime ? 'Welcome! How would you like to appear?' : 'Edit how you appear';
-  if (intro) intro.hidden = false;
-  if (keep) keep.hidden = !(g && (g.name || g.photo));
+  const save = $('profileSave');
+  if (title) title.textContent = anonSubmit ? '🏆 Submit to the leaderboard'
+    : (firstTime ? 'Welcome! How would you like to appear?' : 'Edit how you appear');
+  if (intro) {
+    intro.hidden = false;
+    intro.textContent = anonSubmit
+      ? 'No account needed — pick a nickname and a cartoon or solid-colour avatar, and your score goes up under that anonymous identity. Sign in with Google later to keep it across devices.'
+      : 'Stay anonymous if you like — pick a nickname and a cartoon or solid-colour avatar instead of your Google name and photo. You can change this anytime.';
+  }
+  if (keep) keep.hidden = anonSubmit || !(g && (g.name || g.photo));
+  if (save) save.textContent = anonSubmit ? 'Save & submit' : 'Save';
   renderProfileBody();
   modal.hidden = false;
   const nameInput = $('profileName');
@@ -500,21 +541,36 @@ function renderAuthBox() {
   if (!box) return;
   if (authState.user) {
     const u = authState.user;
+    const anon = !!(auth.isAnon && auth.isAnon());
     const prof = store.getProfile();
-    const name = (prof && prof.chosen && prof.name) ? prof.name : (u.displayName || u.email || 'Signed in');
+    const name = (prof && prof.chosen && prof.name) ? prof.name : (u.displayName || u.email || (anon ? 'Anonymous' : 'Signed in'));
     const photo = (prof && prof.chosen) ? (prof.photo || '') : (u.photoURL || '');
     const initial = (name || '?').trim().charAt(0).toUpperCase();
     const avatar = photo
       ? `<img class="av-img" src="${escapeHtml(photo)}" alt="" referrerpolicy="no-referrer" />`
       : `<span class="av-fallback">${escapeHtml(initial)}</span>`;
+    const anonTag = anon ? '<span class="auth-anon" title="Posting anonymously — not signed in to an account">anon</span>' : '';
+    // Anonymous sessions also get a Google button to upgrade in place (linking
+    // keeps the same nickname + progress).
+    const upgrade = anon
+      ? `<button id="btnSignIn" class="auth-btn primary" ${authState.busy ? 'disabled' : ''} title="Keep your progress across devices by linking a Google account">
+          <span class="g-mark">G</span> ${authState.busy ? 'Signing in…' : 'Sign in'}</button>`
+      : '';
     box.innerHTML = `
       <button class="auth-user" id="btnEditProfile" title="Edit your nickname & avatar">
-        ${avatar}<span class="auth-name">${escapeHtml(name)}</span>
+        ${avatar}<span class="auth-name">${escapeHtml(name)}</span>${anonTag}
       </button>
+      ${upgrade}
       <button id="btnSignOut" class="auth-btn" title="Sign out">Sign out</button>`;
     $('btnEditProfile').addEventListener('click', () => openProfileModal({ firstTime: false }));
     $('btnSignOut').addEventListener('click', async () => {
       try { await auth.signOutUser(); } catch (e) { /* ignore */ }
+    });
+    const upgradeBtn = $('btnSignIn');
+    if (upgradeBtn) upgradeBtn.addEventListener('click', async () => {
+      authState.busy = true; renderAuthBox();
+      try { await auth.signIn(); }
+      catch (e) { authState.busy = false; renderAuthBox(); console.warn('sign-in failed', e); }
     });
     return;
   }
@@ -603,6 +659,11 @@ function avatarHtml(r) {
     : `<span class="lb-av fallback">${escapeHtml(initial)}</span>`;
 }
 
+// Small "anon" pill for readers who posted without a Google account.
+function anonTagHtml(r) {
+  return r && r.anon ? ' <span class="lb-anon" title="Posted anonymously (no account)">anon</span>' : '';
+}
+
 // Render one board's rows into an HTML table (used by the Overall XP board).
 function boardTable(rows, { cols, me }) {
   const list = rows.map((r, i) => {
@@ -614,7 +675,7 @@ function boardTable(rows, { cols, me }) {
     const numCols = cols.map((c) => `<td class="lb-num">${(r[c.key] != null ? r[c.key] : 0).toLocaleString ? (r[c.key] || 0).toLocaleString() : (r[c.key] || 0)}</td>`).join('');
     return `<tr class="${isMe ? 'me' : ''}">
       <td class="lb-rank">${medal}</td>
-      <td class="lb-who">${avatarHtml(r)}<span class="lb-name">${escapeHtml(r.name || 'Anonymous')}${isMe ? ' <span class="lb-youtag">you</span>' : ''}${cyc}${star}</span></td>
+      <td class="lb-who">${avatarHtml(r)}<span class="lb-name">${escapeHtml(r.name || 'Anonymous')}${isMe ? ' <span class="lb-youtag">you</span>' : ''}${anonTagHtml(r)}${cyc}${star}</span></td>
       ${numCols}
     </tr>`;
   }).join('');
@@ -631,7 +692,7 @@ async function renderLbTab() {
     el.innerHTML = '<p class="lb-empty">Loading…</p>';
     const rows = await auth.getLeaderboard(25);
     if (!rows.length) {
-      el.innerHTML = `<p class="lb-empty">No one's on the board yet — ${me ? 'keep practicing to climb it!' : 'sign in and start practicing to be the first!'}</p>${localSummaryHtml()}`;
+      el.innerHTML = `<p class="lb-empty">No one's on the board yet — ${me ? 'keep practicing to climb it!' : 'record a full verse to post the first score (anonymously — no account needed), or sign in.'}</p>${localSummaryHtml()}`;
       return;
     }
     el.innerHTML = boardTable(rows, {
@@ -641,7 +702,7 @@ async function renderLbTab() {
         { key: 'versesMastered', label: 'Verses', title: 'Verses at whole-verse stage or beyond' },
         { key: 'aliyotComplete', label: 'Aliyot', title: 'Aliyot chanted at 80+' },
       ],
-    }) + (me ? '' : '<p class="hint lb-signin-note">Sign in to appear here.</p>');
+    }) + (me ? '' : '<p class="hint lb-signin-note">Record a full verse to appear here — anonymously, or sign in to sync across devices.</p>');
     return;
   }
 
@@ -806,7 +867,7 @@ async function renderScopeBrowse(type) {
       const idx = _lbBrowse.push(s) - 1;
       const isMine = (s.localBest || 0) > 0;
       const holder = r.s.top
-        ? `${avatarHtml(r.s.top)}<span class="lb-name">${escapeHtml(r.s.top.name || 'Anonymous')}${(me && r.s.top.uid === me.uid) ? ' <span class="lb-youtag">you</span>' : ''}</span>`
+        ? `${avatarHtml(r.s.top)}<span class="lb-name">${escapeHtml(r.s.top.name || 'Anonymous')}${(me && r.s.top.uid === me.uid) ? ' <span class="lb-youtag">you</span>' : ''}${anonTagHtml(r.s.top)}</span>`
         : `<span class="lb-av fallback">★</span><span class="lb-name lb-you-only">You</span>`;
       const yourTag = (r.s.top && isMine) ? `<span class="lb-yourbest" title="Your best on this ${type}">you ${s.localBest}</span>` : '';
       html += `<tr class="lb-browserow" data-idx="${idx}" title="Practice &amp; challenge">
@@ -920,6 +981,22 @@ function maybePushScopes() {
     if (typeof auth.pushScopeScores !== 'function') return;
     auth.pushScopeScores(computeScopeEntries());
   } catch (e) { /* leaderboard push is best-effort */ }
+}
+
+// After a full-verse take, invite a logged-out user to post their score to the
+// shared board anonymously. Signed-in users already sync automatically, and it
+// stays hidden entirely when the leaderboard isn't configured (offline mode).
+function maybeOfferLeaderboardSubmit(score) {
+  if (!auth.isConfigured() || auth.getUser() || !(score > 0)) return;
+  const result = $('result');
+  if (!result || result.querySelector('.submit-anon-wrap')) return;
+  const wrap = document.createElement('div');
+  wrap.className = 'submit-anon-wrap';
+  wrap.innerHTML = `
+    <span class="hint submit-anon-note">Post this to the shared leaderboard under an anonymous nickname &amp; avatar — no account needed.</span>
+    <button type="button" class="auth-btn primary submit-anon-btn">🏆 Submit to leaderboard</button>`;
+  wrap.querySelector('.submit-anon-btn').addEventListener('click', () => openProfileModal({ anonSubmit: true }));
+  result.appendChild(wrap);
 }
 
 // A read-only summary of THIS browser's local progress, shown when the shared
@@ -3372,6 +3449,7 @@ function finishRecording() {
   applyHighlight();
   renderStageBar();
   maybePushScopes();
+  if (level.unit === 'line') maybeOfferLeaderboardSubmit(headline);
 }
 
 // Greyed page shown when navigating to a stage not yet unlocked for this verse.

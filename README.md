@@ -167,7 +167,9 @@ Sign-in is **optional and off by default**. Out of the box the app is unchanged:
 all practice scores, unlocks and heatmaps live in `localStorage` in the browser,
 with no account and no network. If you enable it, users can **sign in with
 Google** to sync that same progress to the cloud (so it follows them across
-devices) and appear on a shared **leaderboard**.
+devices) and appear on a shared **leaderboard**. Users who'd rather not sign in
+can still **post a full-verse score anonymously** — see
+[Submit a score without an account](#submit-a-score-without-an-account).
 
 It's built on **Firebase** (Google Auth + Firestore) loaded from the CDN as ES
 modules, so there's still **no build step**. When the config below is left as
@@ -188,6 +190,24 @@ external avatar service), so this works fully offline and the chosen identity is
 what shows up everywhere on the shared leaderboards. It syncs with the rest of
 your progress, so it follows you across devices.
 
+### Submit a score without an account
+
+Signing in is never required to compete. **After recording a full verse**, a
+logged-out reader sees a **🏆 Submit to leaderboard** button. Tapping it opens
+the same nickname + avatar picker (pre-filled with a random anonymous identity),
+and on **Save & submit** the app signs in with **Firebase Anonymous Auth** (a
+real, throwaway `uid` behind the scenes — no email, no Google account) and posts
+their pesukim/aliyah/parashah scores just like a signed-in user. Anonymous
+entries are tagged with an **`anon`** flag and show a small **anon** pill on the
+board.
+
+The anonymous identity persists in the browser (with a topbar chip you can edit
+like any profile), and it can be **upgraded in place**: tapping **Sign in** on an
+anonymous session *links* a Google account to the same `uid`, so the nickname,
+progress and leaderboard standing carry over. Anonymous submission needs the
+Anonymous provider enabled (step 2b below); if it isn't, the app simply doesn't
+show the submit button and stays offline-only for logged-out users.
+
 ### How progress syncs
 
 - Progress is still written to `localStorage` first, so reads stay instant and
@@ -205,6 +225,11 @@ your progress, so it follows you across devices.
 2. **Build → Authentication → Sign-in method → Google → Enable.** Add your site's
    domain (e.g. `kylemath.github.io` and `localhost`) under **Authentication →
    Settings → Authorized domains.**
+2b. *(optional, for logged-out submissions)* On the same **Sign-in method** page,
+   enable **Anonymous**. This lets readers post a full-verse score without a
+   Google account (see [Submit a score without an account](#submit-a-score-without-an-account)).
+   The existing security rules already cover it, since anonymous users are still
+   authenticated (`request.auth != null`).
 3. **Build → Firestore Database → Create database** (production mode is fine).
 4. **Project settings → General → Your apps → Web app** (`</>`), register an app,
    and copy the `firebaseConfig` values into `js/firebase-config.js`. (These are

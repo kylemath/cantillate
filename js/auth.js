@@ -27,6 +27,12 @@ let pushTimer = null;
 export { isConfigured };
 export function getUser() { return currentUser; }
 
+// True when the current session is a Firebase *anonymous* sign-in — i.e. the
+// user submitted scores without a Google account. Everything they publish is
+// tagged with this so the leaderboard can mark them as anonymous.
+export function isAnon() { return !!(currentUser && currentUser.isAnonymous); }
+function anonFlag() { return isAnon(); }
+
 // The user's raw Google identity (before any anonymous override), or null when
 // signed out. Used by the profile picker to offer "keep my Google name/photo".
 export function getGoogleIdentity() {
@@ -125,7 +131,27 @@ async function handleUser(user) {
 export async function signIn() {
   if (!auth || !fb) throw new Error('Sign-in is not configured.');
   const provider = new fb.GoogleAuthProvider();
+  // Upgrade path: if the user is currently anonymous, LINK the Google identity
+  // to the same uid so their anonymous progress + leaderboard standing carry
+  // over. If that account already exists (or linking fails), fall back to a
+  // normal sign-in — handleUser still merges the local progress in either way.
+  if (currentUser && currentUser.isAnonymous && fb.linkWithPopup) {
+    try {
+      await fb.linkWithPopup(currentUser, provider);
+      return;
+    } catch (e) {
+      console.warn('[auth] could not link anonymous account, signing in fresh:', e);
+    }
+  }
   await fb.signInWithPopup(auth, provider);
+}
+
+// Sign in anonymously (no Google account) so a logged-out user can still post
+// scores to the shared leaderboard. Requires the Anonymous provider to be
+// enabled in the Firebase console; see the README.
+export async function signInAnon() {
+  if (!auth || !fb || !fb.signInAnonymously) throw new Error('Anonymous sign-in is not configured.');
+  await fb.signInAnonymously(auth);
 }
 
 export async function signOutUser() {
@@ -153,6 +179,7 @@ async function pushNow() {
     await fb.setDoc(fb.doc(db, 'leaderboard', currentUser.uid), {
       name: id.name,
       photo: id.photo,
+      anon: anonFlag(),
       ...summary,
       updatedAt: fb.serverTimestamp(),
     });
@@ -234,6 +261,7 @@ export async function pushScopeScores(entries) {
         uid,
         name: id.name,
         photo: id.photo,
+        anon: anonFlag(),
         score: Math.round(score),
         cycle: entry.cycle || null,
         partial: !!entry.partial,
@@ -272,6 +300,7 @@ export async function getBoard(type, refId, n = 25) {
         uid: d.id,
         name: v.name || 'Anonymous',
         photo: v.photo || '',
+        anon: !!v.anon,
         score: v.score || 0,
         cycle: v.cycle || null,
         partial: !!v.partial,
@@ -301,6 +330,7 @@ export async function getLeaderboard(n = 25) {
         uid: d.id,
         name: v.name || 'Anonymous',
         photo: v.photo || '',
+        anon: !!v.anon,
         xp: v.xp || 0,
         versesMastered: v.versesMastered || 0,
         aliyotComplete: v.aliyotComplete || 0,
