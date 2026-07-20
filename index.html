@@ -53,13 +53,13 @@
     </span>
     <span class="label" style="margin-inline-start:12px;">View:</span>
     <button id="tgScrollView" class="toggle">📜 Torah column</button>
+    <button id="tgGuide" class="toggle" title="Trope guide — colours, melodic shapes &amp; meanings; tap a family or trope to spotlight it in the pesukim">🎨 Trope guide</button>
     <span class="legend-scale" style="margin-inline-start:12px;">
       <span>low</span><span class="bar"></span><span>high</span>
     </span>
     <button id="btnLeaderboard" class="toggle" style="margin-inline-start:12px;" title="See how your practice compares">🏆 Leaderboard</button>
   </div>
 
-  <div class="toolbar fambar" id="famBar"></div>
   <div class="toolbar stagebar" id="stageBar"></div>
 
   <div id="drawerBackdrop" class="drawer-backdrop"></div>
@@ -95,6 +95,28 @@
     </section>
   </main>
 
+  <!-- Optional vertical "Trope guide": one panel that unifies the old always-on
+       family key (top) and the per-unit vocal-shape legend (bottom). It lists
+       every family (grouped) with each accent's melodic diagram and meaning, and
+       drives the same highlight-in-the-pesukim behavior. Slides in from the side. -->
+  <aside class="guidepane" id="guidePane" aria-hidden="true">
+    <button class="drawer-close" id="guideClose" aria-label="Close trope guide">✕</button>
+    <div class="guide-head">
+      <p class="pane-title">Trope guide</p>
+      <div class="guide-controls">
+        <span class="label">Colour:</span>
+        <span class="seg" id="colorSeg" title="How much colour to show in the pointed pesukim">
+          <button class="cm on" data-cm="full" title="Colour the word, its vowels and the trope by family">Full</button>
+          <button class="cm" data-cm="trope" title="Colour only the cantillation mark; word &amp; vowels stay grey">Trope only</button>
+          <button class="cm" data-cm="grey" title="No colour — everything grey">None</button>
+        </span>
+        <button id="guideClear" class="famclear" title="Clear the current highlight">Clear</button>
+      </div>
+      <p class="hint">Tap a <b>family</b> or a single <b>trope</b> to spotlight it in the pesukim. Connectors take the colour of the accent they lead into.</p>
+    </div>
+    <div class="guide-body" id="guideBody"></div>
+  </aside>
+
   <footer class="src">
     Text: <span id="srcVersion"></span> ·
     <a href="https://www.sefaria.org" target="_blank" rel="noopener">Sefaria</a> (Leningrad Codex, public domain / MAM CC-BY).
@@ -128,6 +150,22 @@
         <button id="aliyotSave" class="auth-btn primary">Save for me</button>
       </div>
       <p class="hint modal-foot">Set where each aliyah ends. Starts follow automatically. Your division is saved to your account; leaderboards still combine everyone on the standard division.</p>
+    </div>
+  </div>
+
+  <div id="profileModal" class="modal" hidden>
+    <div class="modal-backdrop" data-close="1"></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="profileTitle">Choose how you appear</h2>
+        <button class="modal-close" data-close="1" title="Close">✕</button>
+      </div>
+      <p class="hint profile-intro" id="profileIntro">Stay anonymous if you like — pick a nickname and a cartoon or solid-colour avatar instead of your Google name and photo. You can change this anytime.</p>
+      <div class="modal-body" id="profileBody"></div>
+      <div class="modal-foot profile-actions">
+        <button id="profileKeepGoogle" class="auth-btn">Use my Google name &amp; photo</button>
+        <button id="profileSave" class="auth-btn primary">Save</button>
+      </div>
     </div>
   </div>
 

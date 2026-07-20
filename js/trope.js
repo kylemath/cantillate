@@ -15,22 +15,26 @@ import { TAAM, primaryTaam, countSyllables } from './hebrew.js';
 // a pickup into the following disjunctive, so it is colored contextually (see
 // buildLineMelody) by the phrase it leads into rather than a generic grey.
 // Members are te'amim codepoints (plus the virtual 'sof' key for Sof Pasuk).
+// Palette: eight hues spread around the wheel and tuned for legibility on the
+// dark background, so adjacent families are as visually distinct as possible
+// (blue · cyan · green · yellow · orange · red · magenta · violet). Connectors
+// reuse their governing accent's hue, desaturated (see muteColor / buildLineMelody).
 export const FAMILIES = [
-  { id: 'sofpasuk', label: 'End / major pause', color: '#4d7cff',
+  { id: 'sofpasuk', label: 'End / major pause', color: '#4d8dff',
     members: ['sof', TAAM.ETNACHTA, TAAM.ATNAH_HAFUKH] },
-  { id: 'tipcha', label: 'Tipcha (pre-pause dip)', color: '#2bb6a8',
+  { id: 'tipcha', label: 'Tipcha (pre-pause dip)', color: '#1fc8d8',
     members: [TAAM.TIPCHA, TAAM.DEHI] },
-  { id: 'zaqef', label: 'Zaqef / Pashta group', color: '#a86bff',
+  { id: 'zaqef', label: 'Zaqef / Pashta group', color: '#b070ff',
     members: [TAAM.ZAQEF_QATAN, TAAM.ZAQEF_GADOL, TAAM.PASHTA, TAAM.YETIV] },
-  { id: 'segol', label: 'Segol / Zarqa', color: '#ff9f45',
+  { id: 'segol', label: 'Segol / Zarqa', color: '#ff8a2a',
     members: [TAAM.SEGOL, TAAM.ZARQA, TAAM.ZINOR] },
-  { id: 'revia', label: 'Revia', color: '#39c56b',
+  { id: 'revia', label: 'Revia', color: '#34c94a',
     members: [TAAM.REVIA] },
-  { id: 'geresh', label: 'Geresh / Gershayim', color: '#ff5db1',
+  { id: 'geresh', label: 'Geresh / Gershayim', color: '#ff4fb0',
     members: [TAAM.GERESH, TAAM.GERESH_MUQDAM, TAAM.GERSHAYIM] },
-  { id: 'tevir', label: 'Tevir', color: '#c98a2b',
+  { id: 'tevir', label: 'Tevir', color: '#ffd11a',
     members: [TAAM.TEVIR] },
-  { id: 'ornament', label: 'Ornamental / rare', color: '#e0555b',
+  { id: 'ornament', label: 'Ornamental / rare', color: '#ff5347',
     members: [TAAM.TELISHA_GEDOLA, TAAM.PAZER, TAAM.QARNEY_PARA, TAAM.SHALSHELET] },
 ];
 

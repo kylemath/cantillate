@@ -53,6 +53,8 @@ function mergeProgress(a, b) {
   out.runs = mergeRuns(a.runs, b.runs);
   // Custom aliyah boundaries: prefer the most recently edited per key.
   out.aliyotCustom = mergeCustom(a.aliyotCustom, b.aliyotCustom);
+  // Public identity (chosen anon name/avatar): keep the most recently edited.
+  out.profile = mergeNewer(a.profile, b.profile);
   // Preserve any unknown buckets a future version might add (prefer local).
   for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) {
     if (!(k in out)) out[k] = a[k] !== undefined ? a[k] : b[k];
@@ -81,6 +83,14 @@ function mergeCustom(a = {}, b = {}) {
     if (!cur || (b[k] && (b[k].updatedAt || 0) >= (cur.updatedAt || 0))) out[k] = b[k];
   }
   return out;
+}
+
+// Keep whichever object carries the newer `updatedAt` (used for single-value
+// records like the public identity profile that shouldn't be field-merged).
+function mergeNewer(a, b) {
+  if (!a) return b || undefined;
+  if (!b) return a;
+  return (b.updatedAt || 0) >= (a.updatedAt || 0) ? b : a;
 }
 
 function mergeMax(a = {}, b = {}) {
@@ -302,4 +312,21 @@ export function setAliyotCustom(slug, cycle, list) {
   else d.aliyotCustom[k] = { list, updatedAt: Date.now() };
   save(d);
   return list;
+}
+
+// --- Public identity (optional anonymous name + avatar) --------------------
+// How a signed-in user chooses to appear on the shared leaderboard, instead of
+// their Google display name/photo. `{ chosen, name, photo, updatedAt }` where
+// `photo` may be a data-URL (generated cartoon/solid-colour avatar), a remote
+// URL, or '' (fall back to an initial). Synced like the rest of progress.
+export function getProfile() {
+  const d = load();
+  return d.profile || null;
+}
+
+export function setProfile(profile) {
+  const d = load();
+  d.profile = { chosen: true, name: '', photo: '', ...(profile || {}), updatedAt: Date.now() };
+  save(d);
+  return d.profile;
 }

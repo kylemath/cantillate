@@ -145,6 +145,20 @@ modules, so there's still **no build step**. When the config below is left as
 placeholders, none of it loads — the app stays 100% offline and the sign-in
 button just reads "Sign-in not set up".
 
+### Anonymous nickname & avatar
+
+Signing in uses Google, but you don't have to *appear* as your Google name and
+photo. **On your first sign-in** a friendly picker offers to set an **anonymous
+nickname** (with a 🎲 suggestion button) and a **cartoon or solid-colour
+avatar** instead — or you can tap **"Use my Google name & photo"** to keep the
+defaults. Whatever you choose (or dismiss) is remembered, so you're only asked
+once; you can change it anytime by clicking your name/avatar chip in the topbar.
+
+The avatars are generated locally as inline SVG data-URLs (no network, no
+external avatar service), so this works fully offline and the chosen identity is
+what shows up everywhere on the shared leaderboards. It syncs with the rest of
+your progress, so it follows you across devices.
+
 ### How progress syncs
 
 - Progress is still written to `localStorage` first, so reads stay instant and
@@ -192,7 +206,12 @@ service cloud.firestore {
 
 Reload the app: the topbar shows **Sign in with Google**, and the toolbar's
 **🏆 Leaderboard** button opens the shared board (it shows your local-only
-progress until sign-in is configured).
+progress until sign-in is configured). The board has three tabs: **Aliyot** and
+**Pesukim** browse the current record-holder for *every* aliyah / pasuk across
+all readings, grouped by parashah and sorted best-first — tap any row to jump
+straight into practicing (and challenging) that unit — and **Overall** is the
+classic global XP ranking. When you start a take, the live meter also marks your
+own best (dashed) and the current record score (dotted) as targets to beat.
 
 ## Project layout
 

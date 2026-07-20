@@ -1,5 +1,6 @@
-import { tokenize, renderWord, toScroll } from './hebrew.js';
-import { buildLineMelody, splitPhrases, FAMILIES, markGlyph } from './trope.js';
+import { tokenize, renderWord, toScroll, stripNikud } from './hebrew.js';
+import { buildLineMelody, splitPhrases, FAMILIES, markGlyph, NAMES,
+  motifFor, nameFor, SOF_PASUK_MOTIF, SOF_PASUK_NAME } from './trope.js';
 import { singSteps, playTone, stopPlayback } from './audio.js';
 import { playSegment, stopVerseAudio } from './realaudio.js';
 import { startMic, stopMic } from './pitch.js';
@@ -61,7 +62,12 @@ const state = {
   expectedDur: 2.5,
   recStart: 0,
   highlight: null,    // { kind: 'taam'|'family', value }
+  guideOpen: false,   // the optional vertical "Trope guide" panel is shown
+  colorMode: 'full',  // pesukim colouring: 'full' | 'trope' | 'grey'
 };
+
+// Neutral ink for words/vowels when colour is limited to the trope (or off).
+const INK_GREY = '#aab0c8';
 
 const $ = (id) => document.getElementById(id);
 
@@ -118,6 +124,52 @@ function aliyotForReading(cycle, year) {
   return base;
 }
 
+// The Deuteronomy summer readings this app ships are chanted on consecutive
+// Shabbatot anchored to Tisha B'Av (9 Av): Devarim on Shabbat Chazon (the
+// Shabbat on/before 9 Av), then Va'etchanan (Nachamu) and Eikev on the two
+// Shabbatot after. Mapping each slug to its week offset from Devarim's Shabbat
+// lets the app open the parashah of the UPCOMING Shabbat by default.
+const READING_WEEK_OFFSET = { devarim1: 0, vaetchanan: 1, eikev: 2 };
+
+// Gregorian date (local noon) of 9 Av in the given civil year, found via the
+// browser's built-in Hebrew calendar. 9 Av always lands in Jul–Aug/Sep.
+function dateOf9Av(civilYear) {
+  const fmt = new Intl.DateTimeFormat('en-US-u-ca-hebrew', { month: 'long', day: 'numeric' });
+  for (let m = 5; m <= 8; m++) { // Jun–Sep (0-indexed)
+    const days = new Date(civilYear, m + 1, 0).getDate();
+    for (let d = 1; d <= days; d++) {
+      const dt = new Date(civilYear, m, d, 12);
+      let mo, da;
+      for (const p of fmt.formatToParts(dt)) {
+        if (p.type === 'month') mo = p.value;
+        if (p.type === 'day') da = p.value;
+      }
+      if (mo === 'Av' && da === '9') return dt;
+    }
+  }
+  return null;
+}
+
+// Slug of the reading for the upcoming Shabbat (this coming Saturday, or today
+// if today is Saturday), or null if that Shabbat is outside the shipped set.
+function upcomingParashahSlug(available, today = new Date()) {
+  // The next Saturday (inclusive of today when today is Shabbat).
+  const sat = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 12);
+  sat.setDate(sat.getDate() + ((6 - sat.getDay() + 7) % 7));
+
+  const nineAv = dateOf9Av(sat.getFullYear());
+  if (!nineAv) return null;
+
+  // Devarim's Shabbat (Shabbat Chazon): the last Saturday on/before 9 Av.
+  const devSat = new Date(nineAv);
+  devSat.setDate(devSat.getDate() - ((devSat.getDay() - 6 + 7) % 7));
+
+  // Which week (relative to Devarim's Shabbat) the upcoming Shabbat falls in.
+  const weekIdx = Math.round((sat - devSat) / (7 * 864e5));
+  const slug = Object.keys(READING_WEEK_OFFSET).find((k) => READING_WEEK_OFFSET[k] === weekIdx);
+  return slug && available.some((a) => a.slug === slug) ? slug : null;
+}
+
 async function init() {
   // Auto-discover readings from the manifest (falls back to the hardcoded list).
   try {
@@ -134,7 +186,10 @@ async function init() {
     const o = document.createElement('option');
     o.value = p.slug; o.textContent = p.label; sel.appendChild(o);
   });
-  await loadData(AVAILABLE[0].slug);
+  // Open the upcoming week's parashah by default (falls back to the first).
+  const startSlug = upcomingParashahSlug(AVAILABLE) || AVAILABLE[0].slug;
+  sel.value = startSlug;
+  await loadData(startSlug);
 
   sel.addEventListener('change', () => loadData(sel.value));
   $('tonic').addEventListener('change', (e) => { state.tonicHz = parseFloat(e.target.value); });
@@ -165,7 +220,7 @@ async function init() {
   syncPortionUI();
 
   state.readScale = loadReadScale();
-  renderFamilyBar();
+  setupGuide();
   document.addEventListener('keydown', onKey);
   setupSplitter();
   setupLeftSize();
@@ -295,6 +350,7 @@ const authState = { configured: false, user: null, busy: false };
 
 function setupAuth() {
   renderAuthBox();
+  setupProfile();
   auth.initAuth({
     onUserChange: (user, info) => {
       authState.configured = !!(info && info.configured);
@@ -303,9 +359,134 @@ function setupAuth() {
       renderAuthBox();
     },
     // Cloud progress merged into local on sign-in — refresh everything so the
-    // newly-synced scores/levels show up immediately.
-    onProgressMerged: () => refreshProgressViews(),
+    // newly-synced scores/levels show up immediately, and (on the very first
+    // login) offer to pick an anonymous nickname/avatar.
+    onProgressMerged: () => {
+      refreshProgressViews();
+      renderAuthBox();
+      if (auth.getUser() && !auth.hasChosenProfile()) openProfileModal({ firstTime: true });
+    },
   });
+}
+
+// --- Public identity picker (anonymous nickname + cartoon/solid avatar) -----
+// Signed-in users can appear on the leaderboard under a nickname and a locally
+// generated avatar instead of their Google name/photo. Avatars are inline SVG
+// data-URLs (no network), so they render anywhere an <img> does.
+const AV_COLORS = ['#e05a5a', '#e0894e', '#e0c24e', '#7bd66a', '#4ec9b0',
+  '#5aa0ff', '#8a7bff', '#d76ad6', '#e06aa0', '#9aa7b3'];
+const AV_EMOJI = ['🦁', '🦊', '🐼', '🐨', '🐵', '🐸', '🦉', '🐧',
+  '🦄', '🐝', '🐢', '🐬', '🦖', '🐙', '🦜', '🐺'];
+const AV_ADJ = ['Quiet', 'Curious', 'Wandering', 'Gentle', 'Bold', 'Hidden',
+  'Ancient', 'Bright', 'Swift', 'Humble', 'Radiant', 'Steady', 'Nimble', 'Calm'];
+const AV_NOUN = ['Scribe', 'Cantor', 'Pilgrim', 'Lamp', 'Cedar', 'River', 'Ram',
+  'Dove', 'Scroll', 'Ember', 'Comet', 'Falcon', 'Willow', 'Harp'];
+
+function svgDataUrl(svg) { return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg); }
+
+function colorAvatar(color) {
+  return svgDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96"><circle cx="48" cy="48" r="48" fill="${color}"/></svg>`);
+}
+
+function emojiAvatar(emoji, bg) {
+  return svgDataUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96"><circle cx="48" cy="48" r="48" fill="${bg}"/><text x="48" y="50" dy=".35em" text-anchor="middle" font-size="52">${emoji}</text></svg>`);
+}
+
+function randomNickname() {
+  const a = AV_ADJ[Math.floor(Math.random() * AV_ADJ.length)];
+  const n = AV_NOUN[Math.floor(Math.random() * AV_NOUN.length)];
+  return `${a} ${n}`;
+}
+
+// The choosable avatars: Google photo (if any) + cartoon faces + solid colours.
+function avatarOptions(g) {
+  const opts = [];
+  if (g && g.photo) opts.push({ id: 'google', label: 'Your Google photo', photo: g.photo });
+  AV_EMOJI.forEach((e, i) => opts.push({ id: 'e' + i, label: 'Cartoon avatar', photo: emojiAvatar(e, AV_COLORS[i % AV_COLORS.length]) }));
+  AV_COLORS.forEach((c, i) => opts.push({ id: 'c' + i, label: 'Solid colour', photo: colorAvatar(c) }));
+  return opts;
+}
+
+let profileDraft = null;
+
+function setupProfile() {
+  const modal = $('profileModal');
+  if (!modal) return;
+  const commitDefaultIfFirst = () => {
+    // Dismissing the first-time prompt keeps the Google defaults but marks the
+    // choice as made, so the user isn't asked again on every sign-in.
+    if (profileDraft && profileDraft.firstTime && auth.getUser() && !auth.hasChosenProfile()) {
+      const g = auth.getGoogleIdentity() || {};
+      auth.saveProfile({ name: g.name || 'Anonymous', photo: g.photo || '' });
+    }
+  };
+  const close = () => { commitDefaultIfFirst(); modal.hidden = true; profileDraft = null; renderAuthBox(); };
+  modal.querySelectorAll('[data-close]').forEach((el) => el.addEventListener('click', close));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) close(); });
+  $('profileKeepGoogle').addEventListener('click', () => {
+    const g = auth.getGoogleIdentity() || {};
+    auth.saveProfile({ name: g.name || 'Anonymous', photo: g.photo || '' });
+    modal.hidden = true; profileDraft = null; renderAuthBox();
+  });
+  $('profileSave').addEventListener('click', () => {
+    const name = ((profileDraft && profileDraft.name) || '').trim() || 'Anonymous';
+    const photo = (profileDraft && profileDraft.photo) || '';
+    auth.saveProfile({ name, photo });
+    modal.hidden = true; profileDraft = null; renderAuthBox();
+  });
+}
+
+function openProfileModal({ firstTime = false } = {}) {
+  const modal = $('profileModal');
+  if (!modal || !auth.getUser()) return;
+  const g = auth.getGoogleIdentity() || {};
+  const cur = store.getProfile();
+  profileDraft = {
+    firstTime,
+    name: (cur && cur.chosen && cur.name) ? cur.name : (g.name || randomNickname()),
+    photo: (cur && cur.chosen) ? (cur.photo || '') : (g.photo || ''),
+  };
+  const title = $('profileTitle');
+  const intro = $('profileIntro');
+  const keep = $('profileKeepGoogle');
+  if (title) title.textContent = firstTime ? 'Welcome! How would you like to appear?' : 'Edit how you appear';
+  if (intro) intro.hidden = false;
+  if (keep) keep.hidden = !(g && (g.name || g.photo));
+  renderProfileBody();
+  modal.hidden = false;
+  const nameInput = $('profileName');
+  if (nameInput) nameInput.focus();
+}
+
+function renderProfileBody() {
+  const body = $('profileBody');
+  if (!body || !profileDraft) return;
+  const g = auth.getGoogleIdentity() || {};
+  const opts = avatarOptions(g);
+  const cells = opts.map((o) => `
+    <button type="button" class="av-opt ${o.photo === profileDraft.photo ? 'sel' : ''}" data-photo="${escapeHtml(o.photo)}" title="${escapeHtml(o.label)}">
+      <img src="${escapeHtml(o.photo)}" alt="" />
+    </button>`).join('');
+  body.innerHTML = `
+    <label class="profile-field">
+      <span class="profile-label">Nickname</span>
+      <span class="profile-name-row">
+        <input id="profileName" type="text" maxlength="40" value="${escapeHtml(profileDraft.name)}" placeholder="Anonymous" autocomplete="off" spellcheck="false" />
+        <button type="button" id="profileRandom" class="auth-btn" title="Suggest an anonymous nickname">🎲</button>
+      </span>
+    </label>
+    <p class="profile-label profile-pic-label">Picture</p>
+    <div class="av-grid">${cells}</div>`;
+  $('profileName').addEventListener('input', (e) => { profileDraft.name = e.target.value; });
+  $('profileRandom').addEventListener('click', () => {
+    profileDraft.name = randomNickname();
+    $('profileName').value = profileDraft.name;
+    $('profileName').focus();
+  });
+  body.querySelectorAll('.av-opt').forEach((b) => b.addEventListener('click', () => {
+    profileDraft.photo = b.dataset.photo;
+    body.querySelectorAll('.av-opt').forEach((x) => x.classList.toggle('sel', x === b));
+  }));
 }
 
 function renderAuthBox() {
@@ -313,15 +494,19 @@ function renderAuthBox() {
   if (!box) return;
   if (authState.user) {
     const u = authState.user;
-    const initial = (u.displayName || u.email || '?').trim().charAt(0).toUpperCase();
-    const avatar = u.photoURL
-      ? `<img class="av-img" src="${escapeHtml(u.photoURL)}" alt="" referrerpolicy="no-referrer" />`
+    const prof = store.getProfile();
+    const name = (prof && prof.chosen && prof.name) ? prof.name : (u.displayName || u.email || 'Signed in');
+    const photo = (prof && prof.chosen) ? (prof.photo || '') : (u.photoURL || '');
+    const initial = (name || '?').trim().charAt(0).toUpperCase();
+    const avatar = photo
+      ? `<img class="av-img" src="${escapeHtml(photo)}" alt="" referrerpolicy="no-referrer" />`
       : `<span class="av-fallback">${escapeHtml(initial)}</span>`;
     box.innerHTML = `
-      <span class="auth-user" title="${escapeHtml(u.email || u.displayName || '')}">
-        ${avatar}<span class="auth-name">${escapeHtml(u.displayName || u.email || 'Signed in')}</span>
-      </span>
+      <button class="auth-user" id="btnEditProfile" title="Edit your nickname & avatar">
+        ${avatar}<span class="auth-name">${escapeHtml(name)}</span>
+      </button>
       <button id="btnSignOut" class="auth-btn" title="Sign out">Sign out</button>`;
+    $('btnEditProfile').addEventListener('click', () => openProfileModal({ firstTime: false }));
     $('btnSignOut').addEventListener('click', async () => {
       try { await auth.signOutUser(); } catch (e) { /* ignore */ }
     });
@@ -376,6 +561,7 @@ async function openLeaderboard() {
   const body = $('lbBody');
   if (!modal || !body) return;
   modal.hidden = false;
+  _boardTopCache.clear(); // refetch record-holders on each open so the board is current
   renderLbShell(body);
 }
 
@@ -646,11 +832,15 @@ async function navigateToScope(scope) {
     syncPortionUI();
     renderVerses();
     renderAliyot();
-    const list = aliyotForReading(scope.cycle, scope.triYear);
+    const list = aliyotForReading(scope.cycle, state.triYear);
     const a = list.find((x) => x.n === scope.n)
-      || defaultAliyot(scope.cycle, scope.triYear).find((x) => x.n === scope.n);
+      || defaultAliyot(scope.cycle, state.triYear).find((x) => x.n === scope.n);
     if (a) openAliyah(a);
   } else {
+    // Show the whole parashah so the target pasuk is visible in the list, then
+    // open it for practice.
+    state.cycle = 'annual';
+    syncPortionUI();
     selectVerse(scope.n);
   }
 }
@@ -880,10 +1070,20 @@ function applyReadScale(scale, rerender) {
 // Keyboard shortcuts (RTL): ← next page/word, → previous, Space/P play,
 // ↓ record (press again to restart), ↑ sing along (voice guide + record in
 // sync), Escape stop. Modifier combos (e.g. Ctrl/Cmd+R to refresh) and typing
-// in a control are left to the browser.
+// in a control are left to the browser. In aliyah mode the same keys drive the
+// aliyah transport (Space guided read, ↓ record, ↑ duet, Esc stop).
 function onKey(e) {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
   if (/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(e.target.tagName)) return;
+  if (state.aliyah) {
+    const tl = state._aliyaTl;
+    if (!tl) return;
+    if (e.key === ' ' || e.key === 'p') { e.preventDefault(); if (!state._aliyaRunning) playAliyahGuided(tl); }
+    else if (e.key === 'ArrowDown') { e.preventDefault(); recordAliyahRun(tl); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); recordAliyahRun(tl, { duet: true }); }
+    else if (e.key === 'Escape') { e.preventDefault(); stopAliyah(); setAliyahButtons(false); }
+    return;
+  }
   if (state.selectedVerse == null) return;
   const units = state.units;
   if (!units || !units.length) return;
@@ -926,36 +1126,126 @@ function playUnit() {
   });
 }
 
-// Clickable color key of trope families; click to highlight all members in the
-// text, click again (or "Clear") to reset.
-function renderFamilyBar() {
-  const bar = $('famBar');
-  if (!bar) return;
-  const chips = FAMILIES.map((f) => {
-    const glyphs = f.members
-      .map((m) => `<span class="mk">${markGlyph(m)}</span>`)
-      .join('');
-    return `
-    <button class="famchip" data-fam="${f.id}" style="--c:${f.color}">
-      <span class="sw" style="background:${f.color}"></span>
-      <span class="markicon">${glyphs}</span>${f.label}
-    </button>`;
-  }).join('');
-  bar.innerHTML = `<span class="label">Trope families:</span>${chips}
-    <button id="famClear" class="famclear">Clear</button>
-    <span class="hint famhint">Connectors take the color of the accent they lead into.</span>`;
-  bar.querySelectorAll('.famchip').forEach((b) => {
-    b.addEventListener('click', () => {
-      const id = b.dataset.fam;
-      if (state.highlight && state.highlight.kind === 'family' && state.highlight.value === id) {
-        state.highlight = null;
-      } else {
-        state.highlight = { kind: 'family', value: id };
-      }
-      applyHighlight();
-    });
+// ---------------------------------------------------------------------------
+// Trope guide — ONE optional vertical panel that unifies what used to be two
+// always-on interfaces: the trope-family key (formerly a top toolbar row) and
+// the per-unit vocal-shape legend (formerly at the foot of the practice pane,
+// usually off-screen). It lists every family grouped, each accent showing its
+// melodic diagram + meaning, and clicking a family or a single trope spotlights
+// its words in the pesukim (click again, or "Clear", to reset). Which parts of
+// the text carry colour is chosen by the "Colour" control (full / trope / none).
+// ---------------------------------------------------------------------------
+function setupGuide() {
+  renderGuide();
+  const tg = $('tgGuide');
+  if (tg) tg.addEventListener('click', () => toggleGuide());
+  const gc = $('guideClose');
+  if (gc) gc.addEventListener('click', () => toggleGuide(false));
+  const clr = $('guideClear');
+  if (clr) clr.addEventListener('click', () => { state.highlight = null; applyHighlight(); });
+  const seg = $('colorSeg');
+  if (seg) seg.querySelectorAll('.cm').forEach((b) => {
+    b.addEventListener('click', () => setColorMode(b.dataset.cm));
   });
-  $('famClear').addEventListener('click', () => { state.highlight = null; applyHighlight(); });
+}
+
+function toggleGuide(force) {
+  state.guideOpen = force != null ? force : !state.guideOpen;
+  document.body.classList.toggle('guide-open', state.guideOpen);
+  const tg = $('tgGuide');
+  if (tg) tg.classList.toggle('on', state.guideOpen);
+  const pane = $('guidePane');
+  if (pane) pane.setAttribute('aria-hidden', String(!state.guideOpen));
+}
+
+// Colour mode for the pointed pesukim (and the aligned practice words):
+//   full  — word, vowels and trope all take the family colour (as before)
+//   trope — only the cantillation mark is coloured; word + vowels stay grey
+//   grey  — no colour at all (everything neutral grey)
+function setColorMode(mode) {
+  state.colorMode = mode;
+  const seg = $('colorSeg');
+  if (seg) seg.querySelectorAll('.cm').forEach((b) => b.classList.toggle('on', b.dataset.cm === mode));
+  refreshText();
+}
+
+// Toggle a family/trope highlight (clicking the active one clears it).
+function toggleHighlight(kind, value) {
+  const cur = state.highlight;
+  const same = cur && cur.kind === kind && String(cur.value) === String(value);
+  state.highlight = same ? null : { kind, value };
+  applyHighlight();
+}
+
+// One trope's card: swatch, name + meaning, role, its melodic diagram and note.
+// `m` is a te'am codepoint (number) or the virtual 'sof' key for Sof Pasuk.
+function tropeCardHtml(m, color) {
+  const isSof = m === 'sof';
+  const taamVal = isSof ? 'sof' : String(m);
+  const name = isSof ? SOF_PASUK_NAME : nameFor(m);
+  const glyph = markGlyph(m);
+  const shapeKey = isSof ? 'sof' : String(m);
+  const shape = state.shapes && state.shapes[shapeKey];
+  const avgNote = shape ? ` <span class="avgn">of ${shape.n}</span>` : '';
+  const meaning = name.meaning ? `<div class="tmean">“${name.meaning}”</div>` : '';
+  return `<div class="trope g-trope" data-taam="${taamVal}" data-member="${shapeKey}" data-color="${color}" style="--c:${color}">
+    <div class="tname"><span class="sw" style="background:${color}"></span>${name.he} · ${name.en}${avgNote}</div>
+    ${meaning}
+    <div class="trole">${glyph ? `<span class="markicon big" style="color:${color}">${glyph}</span>` : ''}${name.role}${name.role === 'conjunctive' ? ' → coloured by the accent it leads into' : ''}</div>
+    <canvas width="150" height="42"></canvas>
+    <div class="tnote">${name.note}</div>
+  </div>`;
+}
+
+// Draw a trope's melodic diagram: the averaged shape from the recording when we
+// have one, else the stylized motif from trope.js.
+function drawTropeDiagram(canvas, member, color) {
+  if (!canvas) return;
+  const shape = state.shapes && state.shapes[member];
+  if (shape && shape.steps && shape.steps.length) { drawMiniSteps(canvas, shape.steps, color); return; }
+  const motif = member === 'sof' ? SOF_PASUK_MOTIF : motifFor(Number(member));
+  drawMini(canvas, motif, color);
+}
+
+function renderGuide() {
+  const body = $('guideBody');
+  if (!body) return;
+  let html = '';
+  FAMILIES.forEach((f) => {
+    const glyphs = f.members.map((m) => `<span class="mk">${markGlyph(m)}</span>`).join('');
+    html += `<div class="guide-fam">
+      <button class="famchip guide-fam-head" data-fam="${f.id}" style="--c:${f.color}">
+        <span class="sw" style="background:${f.color}"></span>
+        <span class="gf-label">${f.label}</span>
+        <span class="markicon">${glyphs}</span>
+      </button>
+      <div class="guide-tropes">${f.members.map((m) => tropeCardHtml(m, f.color)).join('')}</div>
+    </div>`;
+  });
+  // Connectors (conjunctive accents): no fixed family colour of their own — each
+  // one is a pickup into the following disjunctive, so it's grouped on its own
+  // and shown in neutral grey.
+  const conj = Object.keys(NAMES).map(Number).filter((cp) => NAMES[cp].role === 'conjunctive');
+  if (conj.length) {
+    html += `<div class="guide-fam">
+      <div class="famchip guide-fam-head static" style="--c:${INK_GREY}">
+        <span class="sw" style="background:${INK_GREY}"></span>
+        <span class="gf-label">Connectors (conjunctive)</span>
+      </div>
+      <p class="hint gf-note">No fixed tune — each leads into the next accent and takes its colour (muted).</p>
+      <div class="guide-tropes">${conj.map((m) => tropeCardHtml(m, INK_GREY)).join('')}</div>
+    </div>`;
+  }
+  body.innerHTML = html;
+  body.querySelectorAll('.g-trope').forEach((el) => {
+    drawTropeDiagram(el.querySelector('canvas'), el.dataset.member, el.dataset.color);
+  });
+  body.querySelectorAll('.guide-fam-head[data-fam]').forEach((b) => {
+    b.addEventListener('click', () => toggleHighlight('family', b.dataset.fam));
+  });
+  body.querySelectorAll('.g-trope').forEach((el) => {
+    el.addEventListener('click', () => toggleHighlight('taam', el.dataset.taam));
+  });
 }
 
 function bindToggle(id, fn) {
@@ -1025,6 +1315,8 @@ async function loadData(slug) {
   renderVerses();
   renderAliyot();
   renderStageBar();
+  renderGuide();   // redraw the trope diagrams now that this reading's averaged shapes are in
+  applyHighlight();
   $('practice').classList.remove('aliyah-fill');
   $('practice').innerHTML = '<p class="empty">Select a verse on the left to begin practicing.</p>';
 }
@@ -1167,6 +1459,7 @@ function divisionRange() {
 function refreshText() {
   renderVerses();
   if (state.selectedVerse != null) renderPractice();
+  applyHighlight();
 }
 
 function scoreColor(score) {
@@ -1372,7 +1665,7 @@ function renderScrollPane() {
     const segs = buildLineMelody(tokenize(state.data.verses[i - 1].text));
     segs.forEach((s) => {
       const sel = state.selectedVerse === i ? ' sel' : '';
-      html += `<span class="sw${sel}" data-verse="${i}" data-taam="${s.taam == null ? 'none' : s.taam}" data-fam="${s.familyId}">${escapeHtml(toScroll(s.token))}</span> `;
+      html += `<span class="sw${sel}" data-verse="${i}" data-widx="${s.index}" data-taam="${s.taam == null ? 'none' : s.taam}" data-fam="${s.familyId}">${escapeHtml(toScroll(s.token))}</span> `;
     });
   }
   html += '</div>';
@@ -1522,19 +1815,22 @@ function renderAliyahView() {
         <button class="cue" data-cue="phrase">Phrase</button>
       </span>
     </div>
-    <div class="aliyah-scroll scroll-column" id="aliyahScroll">${scrollHtml.join(' ')}</div>
-    <div class="aliyah-dock">
+    <div class="aliyah-top">
     <div class="transport">
-      <button class="primary" id="alGuide">▶ Guided read (real chant)</button>
-      <button class="warn" id="alRec">● Record my aliyah</button>
-      <button id="alStop" disabled>■ Stop</button>
+      <button class="primary" id="alGuide" title="Play the real chant across the whole aliyah (Space)">▶ Guided read (real chant)</button>
+      <button class="warn" id="alRec" title="Record your solo chant of the aliyah (↓)">● Record my aliyah</button>
+      <button id="alDuet" title="Sing along with the real chant while recording (↑)">⇅ Duet (sing along)</button>
+      <button id="alStop" disabled title="Stop (Esc)">■ Stop</button>
     </div>
     <div class="livemeter" id="aliyaMeter" hidden>
       <span class="lm-label">Live aliyah</span>
       <div class="lm-track"><div class="lm-fill" id="aliyaMeterFill"></div></div>
       <span class="lm-val"><b id="aliyaMeterVal">0</b>%</span>
     </div>
-    <div class="result" id="aliyaResult"><span class="hint">Listen to the guided read to learn the flow, then record your own chant of the whole aliyah.</span></div>
+    </div>
+    <div class="aliyah-scroll scroll-column" id="aliyahScroll">${scrollHtml.join(' ')}</div>
+    <div class="aliyah-dock">
+    <div class="result" id="aliyaResult"><span class="hint">Listen to the guided read to learn the flow, then record your own chant — or sing a duet along with the real chant.</span></div>
     </div>
     </div>
   `;
@@ -1560,13 +1856,15 @@ function renderAliyahView() {
   });
   $('alGuide').addEventListener('click', () => playAliyahGuided(tl));
   $('alRec').addEventListener('click', () => recordAliyahRun(tl));
+  $('alDuet').addEventListener('click', () => recordAliyahRun(tl, { duet: true }));
   $('alStop').addEventListener('click', () => { stopAliyah(); setAliyahButtons(false); });
 }
 
 function setAliyahButtons(running) {
-  const g = $('alGuide'), r = $('alRec'), s = $('alStop');
+  const g = $('alGuide'), r = $('alRec'), d = $('alDuet'), s = $('alStop');
   if (g) g.disabled = running;
   if (r) r.disabled = running;
+  if (d) d.disabled = running;
   if (s) s.disabled = !running;
 }
 
@@ -1625,6 +1923,7 @@ function stopAliyah() {
   state._aliyaRunning = null;
   window.__cantillateBusy = false;
   clearTimeout(state._aliyaTimer);
+  if (state._aliyaGuideTimers) { state._aliyaGuideTimers.forEach(clearTimeout); state._aliyaGuideTimers = []; }
   stopVerseAudio();
   stopMic();
   stopLiveMeter();
@@ -1665,18 +1964,43 @@ function finishGuide(tl) {
 // Record run: one continuous mic session over the aliyah timeline. The yad paces
 // you (start cue → moving pointer → end cue); afterward each verse slice is
 // scored against its coach and averaged into the aliyah accuracy.
-async function recordAliyahRun(tl) {
+async function recordAliyahRun(tl, opts = {}) {
+  const duet = !!(opts && opts.duet);
   stopAliyah();
   state._aliyaRunning = 'rec';
+  state._aliyaAssisted = duet; // a duet (sing-along) take is scaled down + capped
+  state._aliyaGuideTimers = [];
   window.__cantillateBusy = true; // hold off any service-worker auto-reload
   state._aliyaSamples = [];
   state._aliyaDiffs = [];
   setAliyahButtons(true);
   markAliyahEnds(tl, false);
   startLiveMeter('aliyaMeter', 'aliyaMeterFill', 'aliyaMeterVal');
+  // Mark your best + the record holder for this aliyah on the meter.
+  {
+    const a = state.aliyah;
+    if (a) {
+      const parId = scores.parashaIdFor(parashahForReading(), state.slug);
+      showRecordMeterMarks('aliyaMeterFill', 'aliyah', scores.aliyahIdFor(parId, a.cycle, a.year, a.n), store.getAliyahScore(state.slug, a.cycle, a.year, a.n));
+    }
+  }
   const leadIn = 500;
   const t0 = performance.now() + leadIn;
-  $('aliyaResult').innerHTML = '<span class="hint">Get ready… begin at the glowing first word and follow the yad.</span>';
+  $('aliyaResult').innerHTML = duet
+    ? '<span class="hint">Duet — sing along with the real chant (use headphones + a wired mic) as you follow the yad.</span>'
+    : '<span class="hint">Get ready… begin at the glowing first word and follow the yad.</span>';
+  // Duet: play the real chant in time with your take, one segment per verse,
+  // each scheduled at its slot on the shared timeline so the two stay aligned.
+  if (duet) {
+    for (const seg of tl.segs) {
+      if (!seg.file) continue;
+      const delay = Math.max(0, (t0 + seg.gStart * 1000) - performance.now());
+      state._aliyaGuideTimers.push(setTimeout(() => {
+        if (state._aliyaRunning !== 'rec') return;
+        playSegment(seg.file, seg.aStart, seg.aEnd, { onEnd: () => {}, onError: () => {} });
+      }, delay));
+    }
+  }
   await startMic((hz, rms) => {
     if (state._aliyaRunning !== 'rec') return;
     const now = performance.now();
@@ -1723,23 +2047,31 @@ function scoreAliyahVerse(seg, samples) {
 
 function finishAliyahRecord(tl) {
   if (state._aliyaRunning !== 'rec') return;
+  const assisted = !!state._aliyaAssisted; // duet take: scaled down + capped (see scores.js)
   state._aliyaRunning = null;
+  state._aliyaAssisted = false;
   window.__cantillateBusy = false;
   clearTimeout(state._aliyaTimer);
+  if (state._aliyaGuideTimers) { state._aliyaGuideTimers.forEach(clearTimeout); state._aliyaGuideTimers = []; }
+  stopVerseAudio();
   stopMic();
   stopLiveMeter();
   highlightAliyah(null);
   const samples = state._aliyaSamples || [];
   const perVerse = tl.segs.map((seg) => scoreAliyahVerse(seg, samples)).filter((x) => x > 0);
-  const score = perVerse.length ? Math.round(perVerse.reduce((a, b) => a + b, 0) / perVerse.length) : 0;
+  const raw = perVerse.length ? Math.round(perVerse.reduce((a, b) => a + b, 0) / perVerse.length) : 0;
+  // A duet is easier than an unaided read, so it's worth less and capped below
+  // the solo ceiling — a sing-along can never beat a strong solo take.
+  const score = assisted ? scores.assistedScore(raw) : raw;
   const a = state.aliyah;
   store.recordAliyahScore(state.slug, a.cycle, a.year, a.n, score);
   markAliyahEnds(tl, true);
   setAliyahButtons(false);
-  const msg = score >= 80 ? 'Beautiful — that\'s reading-ready.'
-    : score > 0 ? 'Keep polishing the weaker pesukim, then run the aliyah again.'
-      : 'No clear pitch captured — check your mic and follow the yad.';
-  $('aliyaResult').innerHTML = `<span class="scorelabel">Aliyah accuracy</span> `
+  const msg = score <= 0 ? 'No clear pitch captured — check your mic and follow the yad.'
+    : assisted ? 'Nice duet. Now try it solo — a solo take can score higher.'
+      : score >= 80 ? 'Beautiful — that\'s reading-ready.'
+        : 'Keep polishing the weaker pesukim, then run the aliyah again.';
+  $('aliyaResult').innerHTML = `<span class="scorelabel">${assisted ? 'Duet accuracy' : 'Aliyah accuracy'}</span> `
     + `<span class="num">${score}</span><span class="ceil"> / 100</span>`
     + `<br><span class="hint">${msg}</span>`;
   renderAliyot();
@@ -1915,11 +2247,6 @@ function renderPractice() {
     </div>
 
     <div class="accuracy-panel" id="accPanel"></div>
-
-    <div class="legend">
-      <h3>Cantillation in this ${level.unit} — tap a trope to highlight it in the text</h3>
-      <div class="tropes" id="tropes"></div>
-    </div>
   `;
 
   if (units.length > 1) {
@@ -1991,7 +2318,6 @@ function renderPractice() {
     readSize.addEventListener('change', (e) => applyReadScale(parseFloat(e.target.value), true));
   }
 
-  renderLegend(unitSegs);
   renderAccuracyPanel();
   wireAccPanel();
   applyHighlight();
@@ -2275,7 +2601,7 @@ function onRealAnalysis({ t01, hz, freq, sampleRate, fftSize }, tonicHz) {
 
 function onRealEnd() {
   state.playingReal = false;
-  document.querySelectorAll('.verse.active .w, #timelineWords .w').forEach((w) => w.classList.remove('cur'));
+  document.querySelectorAll('.verse.active .w, #timelineWords .w, #scrollVerses .sw').forEach((w) => w.classList.remove('cur'));
   if (state.view) state.view.setPlayhead(null);
   $('btnStop').disabled = true;
   $('result').innerHTML = '<span class="hint">Green = the recording\u2019s pitch; the colored bars are the coach note steps. Now record your try.</span>';
@@ -2307,17 +2633,13 @@ function playRealChant() {
     wireTimelineWordClicks(verseSegs, true);
   }
   if ($('modeIndicator')) $('modeIndicator').innerHTML = '<span class="mode-pill">Whole-verse timeline (piano-trope)</span>';
-  const card = document.querySelector('.verse.active');
-  const words = card ? card.querySelectorAll('.w') : [];
   const tonic = coach ? coach.tonicHz : 200;
   $('btnStop').disabled = false;
   $('result').innerHTML = '<span class="hint">Playing the recorded chant of the whole verse…</span>';
   playSegment(info.file, info.start, info.end, {
     onProgress: (t01) => {
       state.view.setPlayhead(t01);
-      const wi = wordAtTime(coach, t01);
-      highlightWord(wi);
-      words.forEach((w, i) => w.classList.toggle('cur', i === wi));
+      highlightWord(wordAtTime(coach, t01));
       scrollFollow(t01);
     },
     onAnalysis: (a) => onRealAnalysis(a, tonic),
@@ -2346,8 +2668,30 @@ function wordSpan(token, seg, ctx, wi, score, lo, hi) {
   const col = lo != null && hi != null ? rampColor(score, lo, hi) : scoreColor(score);
   const bg = score != null && score > 0 ? `;background:${col}` : '';
   const title = score != null && score > 0 ? ` title="${score}/100"` : '';
+  const mode = state.colorMode;
+  const textColor = mode === 'full' ? seg.color : INK_GREY;
+  const inner = mode === 'trope'
+    ? renderWordTropeColored(token, ctx, seg.color)
+    : escapeHtml(renderWord(token, ctx));
   return `<span class="w" data-wi="${wi}" data-taam="${taam}" data-fam="${seg.familyId}"${title}`
-    + ` style="color:${seg.color}${bg}">${escapeHtml(renderWord(token, ctx))}</span>`;
+    + ` style="color:${textColor}${bg}">${inner}</span>`;
+}
+
+// Render a word as HTML where ONLY the cantillation mark(s) carry the trope
+// colour, leaving the consonants + vowels in the neutral word colour. Used by
+// the "Trope only" colour mode. Falls back to plain text where there are no
+// marks to colour (scroll font, or with cantillation hidden).
+function renderWordTropeColored(raw, ctx, color) {
+  if (ctx.scroll || !ctx.showTaamim) return escapeHtml(renderWord(raw, ctx));
+  const s = ctx.showVowels ? raw : stripNikud(raw);
+  let out = '';
+  for (const ch of s) {
+    const cp = ch.codePointAt(0);
+    // Cantillation accents live in U+0591..U+05AF.
+    if (cp >= 0x0591 && cp <= 0x05AF) out += `<span class="tm" style="color:${color}">${escapeHtml(ch)}</span>`;
+    else out += escapeHtml(ch);
+  }
+  return out;
 }
 
 // Apply the current family/trope highlight across both panes (matches pop,
@@ -2374,6 +2718,25 @@ function applyHighlight() {
 
 function highlightWord(idx) {
   document.querySelectorAll('#timelineWords .w').forEach((n) => n.classList.toggle('cur', parseInt(n.dataset.wi, 10) === idx));
+  // Mirror the current word (the "yad") onto the left reading columns — the
+  // pointed nekudot text and the STA"M scroll — so you can follow along reading
+  // from either the columns or the words-above-the-notes, as in aliyah mode.
+  const gi = (idx != null && idx >= 0 && state.unitSegs && state.unitSegs[idx]) ? state.unitSegs[idx].index : -1;
+  highlightReadingWord(gi);
+}
+
+// Move the current-word cue in the selected pasuk's left windows: the pointed
+// full-nekudot text (#verses) and the STA"M column (#scrollVerses). Pass a
+// global (verse-local) word index, or -1 to clear.
+function highlightReadingWord(gi) {
+  document.querySelectorAll('#verses .hebrew .w.cur, #scrollVerses .sw.cur')
+    .forEach((n) => n.classList.remove('cur'));
+  if (gi == null || gi < 0 || state.selectedVerse == null) return;
+  const v = state.selectedVerse;
+  const wEl = document.querySelector(`#verses .verse[data-v="${v}"] .hebrew .w[data-wi="${gi}"]`);
+  if (wEl) wEl.classList.add('cur');
+  const swEl = document.querySelector(`#scrollVerses .sw[data-verse="${v}"][data-widx="${gi}"]`);
+  if (swEl) swEl.classList.add('cur');
 }
 
 // Tapping a word (timeline or reading line) focuses & plays it from the recording.
@@ -2407,11 +2770,13 @@ function renderStretchedWords(container, coach, aids, unitSegs) {
     span.dataset.wi = wi;
     span.dataset.taam = ow.seg.taam == null ? 'none' : ow.seg.taam;
     span.dataset.fam = ow.seg.familyId;
-    span.style.color = ow.seg.color;
+    const mode = state.colorMode;
+    span.style.color = mode === 'full' ? ow.seg.color : INK_GREY;
     // Center the whole word over the midpoint of its notes (RTL axis).
     const centerT = (ow.t0 + ow.t1) / 2;
     span.style.left = ((1 - centerT) * 100) + '%';
-    span.textContent = renderWord(ow.seg.token, aids);
+    if (mode === 'trope') span.innerHTML = renderWordTropeColored(ow.seg.token, aids, ow.seg.color);
+    else span.textContent = renderWord(ow.seg.token, aids);
     container.appendChild(span);
   });
 }
@@ -2463,6 +2828,11 @@ async function startRecording(opts = {}) {
   state.view.clearUser();
   if (state.userSpectro) state.userSpectro.clearPlot();
   startLiveMeter('liveMeter', 'liveMeterFill', 'liveMeterVal');
+  // Whole-verse takes map to the pasuk board, so mark your best + the record
+  // holder on the meter as targets to beat.
+  if (level.unit === 'line' && state.selectedVerse != null) {
+    showRecordMeterMarks('liveMeterFill', 'pasuk', scores.pasukIdFor(state.data, state.selectedVerse), bestVerseScore(state.selectedVerse));
+  }
   $('btnRec').disabled = true;
   $('btnStop').disabled = false;
   $('result').innerHTML = singAlong
@@ -2580,7 +2950,7 @@ function stopAll() {
   stopVerseAudio();
   if (state.playingReal) {
     state.playingReal = false;
-    document.querySelectorAll('.verse.active .w, #timelineWords .w').forEach((w) => w.classList.remove('cur'));
+    document.querySelectorAll('.verse.active .w, #timelineWords .w, #scrollVerses .sw').forEach((w) => w.classList.remove('cur'));
     if (state.view) state.view.setPlayhead(null);
     $('btnStop').disabled = true;
   }
@@ -2721,8 +3091,11 @@ function renderLockedPage(level, unlocked) {
   });
 }
 
+// Legacy per-unit legend (kept for reference / potential reuse). The unified
+// Trope guide panel (renderGuide) now provides this, so #tropes may not exist.
 function renderLegend(segs) {
   const box = $('tropes');
+  if (!box) return;
   box.innerHTML = '';
   // De-duplicate by trope name within the unit.
   const seen = new Set();
@@ -2877,8 +3250,45 @@ function drawLiveMeter(scoreVal) {
 }
 
 function stopLiveMeter() {
+  if (state._lm && state._lm.f && state._lm.f.parentElement) {
+    state._lm.f.parentElement.querySelectorAll('.lm-mark').forEach((m) => m.remove());
+  }
   if (state._lm && state._lm.c) state._lm.c.hidden = true;
   state._lm = null;
+}
+
+// "Beat this" markers drawn over a live meter: each is a dotted vertical line at
+// its score%. Your own best and the shared record holder get distinct styles so
+// you can see, mid-take, exactly what you're chasing.
+function setMeterMarks(fillId, marks) {
+  const fill = $(fillId);
+  const track = fill && fill.parentElement;
+  if (!track) return;
+  track.querySelectorAll('.lm-mark').forEach((m) => m.remove());
+  (marks || []).forEach((m) => {
+    if (!m || !(m.score > 0)) return;
+    const pos = Math.max(0, Math.min(100, m.score));
+    const el = document.createElement('div');
+    el.className = `lm-mark lm-mark-${m.cls}`;
+    el.style.left = pos + '%';
+    el.title = `${m.label}: ${Math.round(m.score)}/100`;
+    el.innerHTML = `<span class="lm-mark-flag">${m.cls === 'top' ? '🏆' : ''}${Math.round(m.score)}</span>`;
+    track.appendChild(el);
+  });
+}
+
+// Place the personal-best marker right away (local, instant), then stream in the
+// shared record-holder's mark once the board responds. Guarded so a late board
+// reply never draws onto a meter whose take has already ended.
+function showRecordMeterMarks(fillId, type, refId, yourBest) {
+  const yourMark = { score: yourBest, cls: 'you', label: 'Your best' };
+  setMeterMarks(fillId, [yourMark]);
+  boardTop(type, refId).then((top) => {
+    if (!state._lm || !state._lm.f || state._lm.f.id !== fillId) return;
+    const marks = [yourMark];
+    if (top && top.score > 0) marks.push({ score: top.score, cls: 'top', label: `Top — ${top.name || 'record holder'}` });
+    setMeterMarks(fillId, marks);
+  }).catch(() => {});
 }
 
 // --- Hover-hold word translation lookup (Sefaria lexicon) ------------------

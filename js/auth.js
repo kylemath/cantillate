@@ -27,6 +27,45 @@ let pushTimer = null;
 export { isConfigured };
 export function getUser() { return currentUser; }
 
+// The user's raw Google identity (before any anonymous override), or null when
+// signed out. Used by the profile picker to offer "keep my Google name/photo".
+export function getGoogleIdentity() {
+  if (!currentUser) return null;
+  return {
+    name: currentUser.displayName || '',
+    photo: currentUser.photoURL || '',
+    email: currentUser.email || '',
+  };
+}
+
+// Whether the signed-in user has already picked how they appear (so we only
+// prompt for it once, on first login).
+export function hasChosenProfile() {
+  const p = store.getProfile();
+  return !!(p && p.chosen);
+}
+
+// The name/photo the user should actually appear as: their chosen anonymous
+// profile if set, otherwise their Google defaults. This is the single source of
+// truth for everything we publish (leaderboard summary + per-scope entries).
+export function publicIdentity() {
+  const p = store.getProfile();
+  if (p && p.chosen) {
+    return { name: p.name || 'Anonymous', photo: p.photo || '' };
+  }
+  return {
+    name: (currentUser && currentUser.displayName) || 'Anonymous',
+    photo: (currentUser && currentUser.photoURL) || '',
+  };
+}
+
+// Persist a chosen public identity and immediately re-publish it so the
+// leaderboard summary reflects the new name/photo right away.
+export async function saveProfile({ name, photo } = {}) {
+  store.setProfile({ chosen: true, name: name || 'Anonymous', photo: photo || '' });
+  await pushNow();
+}
+
 // Wire up the sync layer. Safe to call even when unconfigured — it simply
 // reports that sign-in is unavailable and does nothing else.
 export async function initAuth({ onUserChange, onProgressMerged } = {}) {
@@ -105,14 +144,15 @@ async function pushNow() {
   clearTimeout(pushTimer);
   const data = store.getAll();
   const summary = computeSummary(data);
+  const id = publicIdentity();
   try {
     await fb.setDoc(fb.doc(db, 'users', currentUser.uid), {
       data,
       updatedAt: fb.serverTimestamp(),
     });
     await fb.setDoc(fb.doc(db, 'leaderboard', currentUser.uid), {
-      name: currentUser.displayName || 'Anonymous',
-      photo: currentUser.photoURL || '',
+      name: id.name,
+      photo: id.photo,
       ...summary,
       updatedAt: fb.serverTimestamp(),
     });
@@ -179,6 +219,7 @@ export async function pushScopeScores(entries) {
   if (!Array.isArray(entries) || entries.length === 0) return;
   try {
     const uid = currentUser.uid;
+    const id = publicIdentity();
     const pushed = loadPushedScopes(uid);
     const jobs = [];
     for (const entry of entries) {
@@ -191,8 +232,8 @@ export async function pushScopeScores(entries) {
       const ref = fb.doc(db, 'boards', entry.type, 'refs', safeRef, 'entries', uid);
       const payload = {
         uid,
-        name: currentUser.displayName || 'Anonymous',
-        photo: currentUser.photoURL || '',
+        name: id.name,
+        photo: id.photo,
         score: Math.round(score),
         cycle: entry.cycle || null,
         partial: !!entry.partial,
