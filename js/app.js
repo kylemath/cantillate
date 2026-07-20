@@ -625,8 +625,9 @@ function setupSplitter() {
 }
 
 // Keyboard shortcuts (RTL): ← next page/word, → previous, Space/P play,
-// ↓ record, Escape stop. Modifier combos (e.g. Ctrl/Cmd+R to refresh) and
-// typing in a control are left to the browser.
+// ↓ record (press again to restart), ↑ sing along (voice guide + record in
+// sync), Escape stop. Modifier combos (e.g. Ctrl/Cmd+R to refresh) and typing
+// in a control are left to the browser.
 function onKey(e) {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
   if (/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(e.target.tagName)) return;
@@ -637,6 +638,7 @@ function onKey(e) {
   else if (e.key === 'ArrowRight') { e.preventDefault(); goToUnit(state.unitIndex - 1, true); }
   else if (e.key === ' ' || e.key === 'p') { e.preventDefault(); playUnit(); }
   else if (e.key === 'ArrowDown') { e.preventDefault(); startRecording(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); startRecording({ singAlong: true }); }
   else if (e.key === 'Escape') { e.preventDefault(); stopAll(); }
 }
 
@@ -1615,6 +1617,7 @@ function renderPractice() {
       <button class="${hasReal ? '' : 'primary'}" id="btnPlay">▶ Hear voice guide</button>
       <button id="btnTonic">Give me the tonic</button>
       <button class="warn" id="btnRec">● Record my try</button>
+      <button id="btnSing">▶● Sing along</button>
       <button id="btnStop" disabled>■ Stop</button>
     </div>
 
@@ -1676,7 +1679,8 @@ function renderPractice() {
   wireTimelineWordClicks(unitSegs, hasReal);
   $('btnPlay').addEventListener('click', playTarget);
   $('btnTonic').addEventListener('click', () => playTone(state.tonicHz, 1.2));
-  $('btnRec').addEventListener('click', startRecording);
+  $('btnRec').addEventListener('click', () => startRecording());
+  $('btnSing').addEventListener('click', () => startRecording({ singAlong: true }));
   $('btnStop').addEventListener('click', stopAll);
 
   renderLegend(unitSegs);
@@ -2127,15 +2131,20 @@ function playTarget() {
   state.expectedDur = res.durationSec;
 }
 
-async function startRecording() {
-  if (state.recording) return;
+async function startRecording(opts = {}) {
+  const singAlong = !!(opts && opts.singAlong);
+  // Re-press to restart: abort the take in progress (without scoring it) and
+  // begin a fresh one — the same way tapping the guide button restarts the audio.
+  if (state.recording) cancelRecording();
   const level = levelById(state.level);
-  // In "listen" mode, play the target first as a lead-in cue.
-  if (level.mode === 'listen') playTarget();
+  // In "listen" mode, play the target first as a lead-in cue. When singing
+  // along, the guide instead plays together with the recording (see below).
+  if (level.mode === 'listen' && !singAlong) playTarget();
 
   stopVerseAudio();
   state.playingReal = false;
   state.recording = true;
+  state._singAlong = singAlong;
   window.__cantillateBusy = true; // hold off any service-worker auto-reload
   // Transpose-invariant: track (target - rawPitch) each frame and shift the
   // whole line by the best-fit (median) offset, so singing the right shape in a
@@ -2146,13 +2155,24 @@ async function startRecording() {
   startLiveMeter('liveMeter', 'liveMeterFill', 'liveMeterVal');
   $('btnRec').disabled = true;
   $('btnStop').disabled = false;
-  $('result').innerHTML = '<span class="hint">Recording… start on any comfortable pitch; your first note is matched to the coach, so just follow the shape.</span>';
+  $('result').innerHTML = singAlong
+    ? '<span class="hint">Sing along — the voice guide plays (use headphones + a wired mic) as you match its shape.</span>'
+    : '<span class="hint">Recording… start on any comfortable pitch; your first note is matched to the coach, so just follow the shape.</span>';
 
   const dur = unitDuration();
   state.expectedDur = dur;
   const bounds = state.coach ? state.coach.wordBounds : [0];
-  const leadIn = level.mode === 'listen' ? dur * 1000 + 250 : 250;
-  state.recStart = performance.now() + leadIn;
+  // Sing-along guide choice: single words (early levels) use the clean synth
+  // tones; phrases and whole lines use the real recorded voice, which is much
+  // easier and less distracting to chant along with. The record window is a
+  // short count-in before the tone guide, but for the voice guide it is anchored
+  // to the audio's true start (below) so the two stay in sync despite decode lag.
+  const voiceGuide = singAlong && (level.unit === 'phrase' || level.unit === 'line')
+    && !!verseAudio(state.selectedVerse) && !!state.coach;
+  const leadIn = singAlong ? (voiceGuide ? 0 : 500) : (level.mode === 'listen' ? dur * 1000 + 250 : 250);
+  // Voice guide holds the window closed (recStart in the future) until the audio
+  // actually begins; every other mode starts after a fixed lead-in.
+  state.recStart = voiceGuide ? Infinity : performance.now() + leadIn;
 
   await startMic((hz, rms, frame) => {
     const now = performance.now();
@@ -2190,8 +2210,60 @@ async function startRecording() {
     }
   }, () => {});
 
-  // Safety auto-stop.
-  state._recTimer = setTimeout(finishRecording, (leadIn + dur * 1000 + 600));
+  // Sing-along: launch the guide together with the record window.
+  if (singAlong && state.recording) {
+    if (voiceGuide) {
+      // Real recorded voice as the duet guide. Anchor the record window to the
+      // moment the audio truly starts (first progress tick), so the take lines
+      // up with the chant despite the audio element's decode/start latency.
+      const info = verseAudio(state.selectedVerse);
+      let anchored = false;
+      const anchor = () => { if (!anchored) { anchored = true; state.recStart = performance.now(); } };
+      playSegment(info.file, state.coach.start, state.coach.end, {
+        onProgress: anchor,
+        onEnd: () => {},
+        onError: () => { if (state.recording) anchor(); },
+      });
+    } else {
+      // Synth tone guide: schedule it to sound right as the window opens.
+      // singSteps schedules ~60 ms ahead internally, so fire that much early.
+      state.recStart = performance.now() + 500;
+      state._guideTimer = setTimeout(() => {
+        if (state.recording) playGuideAudioOnly();
+      }, 500 - 60);
+    }
+  }
+
+  // Safety auto-stop. The record loop normally ends the take when t01 reaches 1;
+  // this is a backstop, and for the voice guide it also covers the case where the
+  // audio never starts (recStart would otherwise stay in the future).
+  const base = voiceGuide ? (performance.now() + 3500) : state.recStart;
+  const stopIn = Math.max(0, base - performance.now()) + dur * 1000 + 800;
+  state._recTimer = setTimeout(finishRecording, stopIn);
+}
+
+// Abort the recording in progress without scoring or saving it, leaving the UI
+// ready to begin again. Used both by "restart" (re-pressing record) and by the
+// start of a new take.
+function cancelRecording() {
+  clearTimeout(state._recTimer);
+  clearTimeout(state._guideTimer);
+  stopMic();
+  stopPlayback();
+  stopVerseAudio();
+  stopLiveMeter();
+  highlightWord(-1);
+  state.recording = false;
+  state._singAlong = false;
+  window.__cantillateBusy = false;
+}
+
+// Play the coach's target contour as audio only (no visual callbacks), so the
+// live recording keeps driving the playhead/highlight while the singer hears
+// the exact shape being scored.
+function playGuideAudioOnly() {
+  if (!state.coach || !state.coach.steps.length) return;
+  singSteps(state.coach.steps, { tonicHz: state.tonicHz, durationSec: state.coach.dur });
 }
 
 function stopAll() {
@@ -2208,11 +2280,15 @@ function stopAll() {
 
 function finishRecording() {
   if (!state.recording) return;
+  const assisted = !!state._singAlong; // duet take: scored lower, capped (see scores.js)
   state.recording = false;
+  state._singAlong = false;
   window.__cantillateBusy = false;
   clearTimeout(state._recTimer);
+  clearTimeout(state._guideTimer);
   stopMic();
   stopPlayback();
+  stopVerseAudio();
   stopLiveMeter();
   highlightWord(-1);
   $('btnRec').disabled = false;
@@ -2232,6 +2308,12 @@ function finishRecording() {
   // per word keyed by its global index. Because words are scored the same way
   // whether sung alone, in a phrase, or in the whole line, a word keeps and
   // improves its true best across every level it's practiced in context.
+  // Assisted (sing-along) takes are worth less and are capped below the solo
+  // ceiling, so a duet can never beat a strong solo (see scores.js). The penalty
+  // is applied to what we STORE (word/phrase/verse bests + leaderboard), so every
+  // downstream number stays consistent and a later solo can always exceed it.
+  const grade = (raw) => (assisted ? scores.assistedScore(raw) : Math.round(raw));
+
   const bounds = (coach && coach.wordBounds) || [0];
   const wordScores = [];
   const profileByGi = {}; // this take's per-word scores (good/bad shape)
@@ -2240,7 +2322,7 @@ function finishRecording() {
     const t1 = wi + 1 < bounds.length ? bounds[wi + 1] : 1.0001;
     const uS = trail.filter((s) => s.t >= t0 && s.t < t1);
     const tPts = coach ? coach.steps.filter((s) => s.w === wi).flatMap((s) => [{ t: s.t0, p: s.p }, { t: s.t1, p: s.p }]) : [];
-    const sc = tPts.length ? Math.round(scoreTrail(uS, tPts)) : 0;
+    const sc = tPts.length ? grade(scoreTrail(uS, tPts)) : 0;
     wordScores.push(sc);
     const gi = state.unitSegs[wi] ? state.unitSegs[wi].index : wi;
     profileByGi[gi] = sc;
@@ -2252,7 +2334,7 @@ function finishRecording() {
   // it under the right layer: a phrase take updates that phrase's best; a whole-
   // verse take updates BOTH each phrase it contains and the verse's score for the
   // current skill (aids config). Word bests were already updated above.
-  const rawAcc = coach && coach.points && coach.points.length ? Math.round(scoreTrail(trail, coach.points))
+  const rawAcc = coach && coach.points && coach.points.length ? grade(scoreTrail(trail, coach.points))
     : (wordScores.length ? Math.round(wordScores.reduce((a, b) => a + b, 0) / wordScores.length) : 0);
   const headline = rawAcc;
   let label;
@@ -2292,6 +2374,9 @@ function finishRecording() {
     if (next > level.id) msg += `<br><span class="hint" style="color:var(--good)">Stage ${next} unlocked!</span>`;
   } else {
     msg += `<br><span class="hint">Reach ${level.threshold}+ to unlock the next stage.</span>`;
+  }
+  if (assisted) {
+    msg += `<br><span class="hint">🎧 Assisted take (sang with the guide): scaled to ${Math.round(scores.ASSIST_MULT * 100)}% and capped at ${scores.ASSIST_CAP}. Record solo to break the cap, reach 100, and top the leaderboard.</span>`;
   }
   $('result').innerHTML = msg;
   renderAccuracyPanel();

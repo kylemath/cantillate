@@ -77,3 +77,21 @@ export function isDerivedOnly(directScore, childScores) {
   const floor = Math.round(avg(childScores) * CHAIN_PENALTY);
   return floor >= direct && direct <= 0;
 }
+
+// --- Assisted (sing-along) scoring ------------------------------------------
+// A sing-along take is a duet: the learner chants over the recorded-voice (or
+// tone) guide, so raw quality is inflated — following a cue in real time is far
+// easier than recalling the melody unaided. To preserve the incentive to sing
+// solo, an assisted take is both (a) scaled down and (b) hard-capped BELOW the
+// solo ceiling. That directly resolves the "a duet always sounds better" worry:
+// no matter how clean the duet is, it can never beat a strong solo, because the
+// entire upper tail (mastery + top of the leaderboard) is solo-only. Beneath the
+// cap it still counts, so scaffolding genuinely rewards a beginner.
+export const ASSIST_MULT = 0.9;   // an assisted take is worth 90% of its raw ...
+export const ASSIST_CAP = 80;     // ... and can never record above this (solo -> 100).
+
+// Convert a raw take accuracy into what an assisted (sing-along) take records.
+export function assistedScore(raw) {
+  const r = Math.max(0, Number(raw) || 0);
+  return Math.min(ASSIST_CAP, Math.round(r * ASSIST_MULT));
+}
