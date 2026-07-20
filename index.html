@@ -16,13 +16,15 @@
     <div class="controls">
       <label class="label" for="parashah">Reading</label>
       <select id="parashah"></select>
-      <label class="label" for="division">Division</label>
-      <select id="division">
-        <option value="full">Full parashah</option>
-        <option value="1">Part 1 of 3</option>
-        <option value="2">Part 2 of 3</option>
-        <option value="3">Part 3 of 3</option>
+      <label class="label" for="portion">Portion</label>
+      <select id="portion" title="Read the whole annual parashah, or one shorter triennial-cycle year (its own third + aliyot)">
+        <option value="annual">Full parashah (annual)</option>
+        <option value="tri1">Triennial · Year 1</option>
+        <option value="tri2">Triennial · Year 2</option>
+        <option value="tri3">Triennial · Year 3</option>
       </select>
+      <button id="cycToday" class="toggle" title="Jump to the triennial year for today's Hebrew date">📅 Today</button>
+      <button id="btnEditAliyot" class="toggle" title="Adjust the aliyah boundaries to match your teacher's division (saved for you)">✎ Boundaries</button>
       <label class="label" for="tonic">Tonic</label>
       <select id="tonic">
         <option value="196.00">G3</option>
@@ -51,18 +53,6 @@
     </span>
     <span class="label" style="margin-inline-start:12px;">View:</span>
     <button id="tgScrollView" class="toggle">📜 Torah column</button>
-    <span class="label" style="margin-inline-start:12px;">Aliyot:</span>
-    <span class="seg" id="cycleSeg">
-      <button class="cyc on" data-cyc="annual">Annual</button>
-      <button class="cyc" data-cyc="triennial">Triennial</button>
-    </span>
-    <select id="triYear" style="display:none">
-      <option value="1">Year 1</option>
-      <option value="2">Year 2</option>
-      <option value="3">Year 3</option>
-    </select>
-    <button id="cycToday" class="toggle" title="Set the cycle year from today's Hebrew date">📅 Today</button>
-    <button id="btnEditAliyot" class="toggle" title="Adjust the aliyah boundaries to match your teacher's division (saved for you)">✎ Boundaries</button>
     <span class="legend-scale" style="margin-inline-start:12px;">
       <span>low</span><span class="bar"></span><span>high</span>
     </span>
@@ -75,9 +65,23 @@
   <div id="drawerBackdrop" class="drawer-backdrop"></div>
 
   <main>
+    <section class="scrollpane" id="scrollpane">
+      <button class="drawer-close" id="drawerCloseScroll" aria-label="Close Torah column">✕</button>
+      <p class="pane-title">Torah column (STA&ldquo;M)</p>
+      <div id="scrollVerses"></div>
+    </section>
+
+    <div class="splitter splitter2" id="splitter2" title="Drag to resize · double-click to reset"></div>
+
     <section class="textpane" id="textpane">
       <button class="drawer-close" id="drawerClose" aria-label="Close pesukim">✕</button>
-      <p class="pane-title" id="textTitle">Text</p>
+      <div class="pane-head">
+        <p class="pane-title" id="textTitle">Text</p>
+        <label class="leftsize" title="Verse text size — smaller fits more, larger reads easier">
+          <span class="rs-ico">א</span>
+          <input type="range" id="leftSize" min="0.6" max="1.8" step="0.05" value="1" aria-label="Verse text size">
+        </label>
+      </div>
       <div id="aliyot" class="aliyot-panel"></div>
       <div id="verses"></div>
     </section>

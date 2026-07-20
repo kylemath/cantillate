@@ -37,6 +37,8 @@ const state = {
   scroll: false,
   showEnglish: false, // show the English (Koren Jerusalem) translation column
   overlay: 'off',     // left-column score overlay: 'off'|'word'|'phrase'|'verse'
+  // The "Portion" selector drives these two: annual = whole parashah;
+  // triennial + triYear = one shorter year (its own aliyot AND verse range).
   cycle: 'triennial', // aliyah cycle: 'annual' | 'triennial'
   triYear: 1,         // triennial cycle year (1-3)
   aliyah: null,       // currently-open aliyah challenge (null = normal practice)
@@ -44,7 +46,8 @@ const state = {
   scrollView: false,  // render the text pane as a continuous Torah column
   scrollZoom: false,  // guitar-hero: zoom to ~5 words and auto-scroll the line
   tonicHz: 220,
-  division: 'full',
+  division: 'full',  // legacy field; verse range now derives from cycle/triYear (see divisionRange)
+  readScale: 1.6,     // reading-size multiplier: bigger Hebrew, smaller notation
   selectedVerse: null,
   level: 1,
   unitIndex: 0,
@@ -134,7 +137,6 @@ async function init() {
   await loadData(AVAILABLE[0].slug);
 
   sel.addEventListener('change', () => loadData(sel.value));
-  $('division').addEventListener('change', (e) => { state.division = e.target.value; renderVerses(); });
   $('tonic').addEventListener('change', (e) => { state.tonicHz = parseFloat(e.target.value); });
 
   bindToggle('tgVowels', () => { state.showVowels = !state.showVowels; refreshText(); });
@@ -146,23 +148,27 @@ async function init() {
   });
   bindToggle('tgScrollView', () => { state.scrollView = !state.scrollView; renderVerses(); });
 
-  // Default to the triennial cycle, year 1 (the 📅 Today button jumps to the
-  // current cycle year on demand).
-  $('triYear').value = String(state.triYear);
-  $('cycleSeg').querySelectorAll('.cyc').forEach((b) => {
-    b.addEventListener('click', () => { state.cycle = b.dataset.cyc; syncCycleUI(); renderAliyot(); renderVerses(); });
+  // A single "Portion" selector is the sole control for how much of the parashah
+  // you read: the full annual reading, or one shorter triennial-cycle year. The
+  // triennial year drives both the aliyah boundaries AND the range of verses
+  // shown (see divisionRange), so there is one place to choose a shorter reading
+  // instead of two overlapping controls. (📅 Today jumps to the current year.)
+  $('portion').addEventListener('change', (e) => {
+    applyPortion(e.target.value);
+    renderAliyot(); renderVerses();
   });
-  $('triYear').addEventListener('change', (e) => { state.triYear = parseInt(e.target.value, 10); renderAliyot(); renderVerses(); });
   $('cycToday').addEventListener('click', () => {
+    state.cycle = 'triennial';
     state.triYear = currentTriennialYear();
-    $('triYear').value = String(state.triYear);
-    syncCycleUI(); renderAliyot(); renderVerses();
+    syncPortionUI(); renderAliyot(); renderVerses();
   });
-  syncCycleUI();
+  syncPortionUI();
 
+  state.readScale = loadReadScale();
   renderFamilyBar();
   document.addEventListener('keydown', onKey);
   setupSplitter();
+  setupLeftSize();
   setupPasukDrawer();
   setupWordLookup();
   setupAuth();
@@ -269,9 +275,11 @@ function setupPasukDrawer() {
   const fab = $('pasukFab');
   const backdrop = $('drawerBackdrop');
   const closeBtn = $('drawerClose');
+  const closeBtnScroll = $('drawerCloseScroll');
   if (fab) fab.addEventListener('click', () => document.body.classList.toggle('pasuk-open'));
   if (backdrop) backdrop.addEventListener('click', closePasukDrawer);
   if (closeBtn) closeBtn.addEventListener('click', closePasukDrawer);
+  if (closeBtnScroll) closeBtnScroll.addEventListener('click', closePasukDrawer);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && document.body.classList.contains('pasuk-open')) closePasukDrawer();
   });
@@ -594,6 +602,7 @@ function localSummaryHtml() {
 // persisted and never changes automatically, so the horizontal scale stays
 // consistent across words/verses/levels.
 const LEFTW_KEY = 'cantillate.leftw';
+const SCROLLW_KEY = 'cantillate.scrollw';
 function applyLeftW(px) {
   const mainEl = document.querySelector('main');
   const max = Math.max(160, window.innerWidth - 380);
@@ -602,17 +611,22 @@ function applyLeftW(px) {
   mainEl.classList.toggle('narrow-left', w > 0 && w < 210);
   try { localStorage.setItem(LEFTW_KEY, String(Math.round(w))); } catch (e) { /* ignore */ }
 }
-function setupSplitter() {
+// Width of the optional STA"M column (leftmost; only shown in scroll view).
+function applyScrollW(px) {
   const mainEl = document.querySelector('main');
-  const splitter = $('splitter');
-  const saved = parseInt(localStorage.getItem(LEFTW_KEY) || '', 10);
-  applyLeftW(Number.isFinite(saved) ? saved : 360);
+  const max = Math.max(200, window.innerWidth - 480);
+  const w = Math.max(140, Math.min(max, px));
+  mainEl.style.setProperty('--scrollw', w + 'px');
+  try { localStorage.setItem(SCROLLW_KEY, String(Math.round(w))); } catch (e) { /* ignore */ }
+}
+
+// Attach drag + double-click-reset behaviour to a splitter. onDrag receives the
+// pointer's client X; onReset runs on double-click.
+function bindSplitter(splitter, onDrag, onReset) {
+  if (!splitter) return;
   let dragging = false;
-  const onMove = (e) => {
-    if (!dragging) return;
-    const x = (e.touches ? e.touches[0].clientX : e.clientX) - mainEl.getBoundingClientRect().left;
-    applyLeftW(x);
-  };
+  const cx = (e) => (e.touches ? e.touches[0].clientX : e.clientX);
+  const onMove = (e) => { if (dragging) onDrag(cx(e)); };
   const stop = () => { dragging = false; splitter.classList.remove('dragging'); document.body.style.userSelect = ''; };
   const start = (e) => { dragging = true; splitter.classList.add('dragging'); document.body.style.userSelect = 'none'; e.preventDefault(); };
   splitter.addEventListener('mousedown', start);
@@ -621,7 +635,104 @@ function setupSplitter() {
   window.addEventListener('touchmove', onMove, { passive: false });
   window.addEventListener('mouseup', stop);
   window.addEventListener('touchend', stop);
-  splitter.addEventListener('dblclick', () => applyLeftW(360)); // reset
+  if (onReset) splitter.addEventListener('dblclick', onReset);
+}
+
+function setupSplitter() {
+  const mainEl = document.querySelector('main');
+  const mainLeft = () => mainEl.getBoundingClientRect().left;
+  const savedL = parseInt(localStorage.getItem(LEFTW_KEY) || '', 10);
+  applyLeftW(Number.isFinite(savedL) ? savedL : 360);
+  const savedS = parseInt(localStorage.getItem(SCROLLW_KEY) || '', 10);
+  applyScrollW(Number.isFinite(savedS) ? savedS : 300);
+
+  // Divider between the pointed verses and the practice pane. Measured from the
+  // textpane's OWN left edge, so it behaves identically whether or not the STA"M
+  // column is shown to its left.
+  bindSplitter($('splitter'), (clientX) => {
+    const tp = $('textpane');
+    const tpLeft = tp.getBoundingClientRect().left - mainLeft();
+    applyLeftW(clientX - mainLeft() - tpLeft);
+  }, () => applyLeftW(360));
+
+  // Divider between the STA"M column (leftmost) and the pointed verses.
+  bindSplitter($('splitter2'), (clientX) => applyScrollW(clientX - mainLeft()), () => applyScrollW(300));
+}
+
+// --- Left-panel (verse list) text size -----------------------------------
+// A persisted multiplier on the pointed Hebrew + English verse text, so the
+// reader can shrink it to fit more pesukim on screen or enlarge it to read
+// comfortably. Applied as a CSS variable on the textpane (pure CSS, no rebuild).
+const LEFTSCALE_KEY = 'cantillate.leftscale';
+const LEFT_MIN = 0.6, LEFT_MAX = 1.8;
+function loadLeftScale() {
+  const v = parseFloat(localStorage.getItem(LEFTSCALE_KEY) || '');
+  return Number.isFinite(v) ? Math.max(LEFT_MIN, Math.min(LEFT_MAX, v)) : 1.0;
+}
+function applyLeftScale(scale) {
+  const v = Math.max(LEFT_MIN, Math.min(LEFT_MAX, Number(scale) || 1));
+  const tp = $('textpane');
+  if (tp) tp.style.setProperty('--left-scale', String(v));
+  try { localStorage.setItem(LEFTSCALE_KEY, String(v)); } catch (e) { /* ignore */ }
+}
+function setupLeftSize() {
+  const el = $('leftSize');
+  const s = loadLeftScale();
+  applyLeftScale(s);
+  if (el) {
+    el.value = String(s);
+    el.addEventListener('input', (e) => applyLeftScale(parseFloat(e.target.value)));
+  }
+}
+
+// --- Reading size --------------------------------------------------------
+// The learner should watch the WORDS, not the notation. A persisted multiplier
+// enlarges the aligned Hebrew glyphs while the note-step contour and the two
+// spectrograms shrink to make room, so the reading dominates the practice pane.
+const READSCALE_KEY = 'cantillate.readscale';
+const READ_MIN = 1.0, READ_MAX = 3.4;
+function loadReadScale() {
+  const v = parseFloat(localStorage.getItem(READSCALE_KEY) || '');
+  return Number.isFinite(v) ? Math.max(READ_MIN, Math.min(READ_MAX, v)) : 1.6;
+}
+
+// Base glyph size (px) for the aligned practice row before the user multiplier —
+// fewer words on a page get bigger defaults. Multiplied by state.readScale.
+function readingBaseFont(nWords) {
+  return nWords === 1 ? 40 : nWords <= 4 ? 30 : nWords <= 9 ? 25 : 20;
+}
+function readingFontPx(nWords) {
+  return Math.round(readingBaseFont(nWords) * (state.readScale || 1));
+}
+
+// Note-panel heights that shrink as the reading grows, so enlarging the text
+// costs the notation its space (not the reading's). Floors keep them usable.
+function noteHeights() {
+  const s = state.readScale || 1;
+  const mobile = window.innerWidth <= 720;
+  const cBase = mobile ? 150 : 210, sBase = mobile ? 90 : 120;
+  const contour = Math.round(Math.max(mobile ? 66 : 88, cBase - (s - 1) * 62));
+  const spectro = Math.round(Math.max(mobile ? 30 : 40, sBase - (s - 1) * 46));
+  return { contour, spectro };
+}
+
+// Apply a new reading size. During an active take we only resize the text (no
+// rebuild, so audio isn't interrupted); when idle we re-render so the note
+// canvases are re-created crisply at their new, smaller heights.
+function applyReadScale(scale, rerender) {
+  const s = Math.max(READ_MIN, Math.min(READ_MAX, Number(scale) || 1));
+  state.readScale = s;
+  try { localStorage.setItem(READSCALE_KEY, String(s)); } catch (e) { /* ignore */ }
+  const tw = $('timelineWords');
+  if (tw && state.coach && state.coach.overlayWords) {
+    const n = state.coach.overlayWords.length || 1;
+    tw.style.fontSize = readingFontPx(n) + 'px';
+    tw.style.height = Math.round(readingFontPx(n) * 1.35) + 'px';
+  }
+  if (rerender && state.selectedVerse != null && !state.aliyah
+      && !state.recording && !state.playingReal) {
+    renderPractice();
+  }
 }
 
 // Keyboard shortcuts (RTL): ← next page/word, → previous, Space/P play,
@@ -718,10 +829,20 @@ function syncToggleUI() {
   $('tgScrollView').classList.toggle('on', state.scrollView);
   document.body.classList.toggle('scroll-view', state.scrollView);
 }
-function syncCycleUI() {
-  const seg = $('cycleSeg');
-  if (seg) seg.querySelectorAll('.cyc').forEach((b) => b.classList.toggle('on', b.dataset.cyc === state.cycle));
-  $('triYear').style.display = state.cycle === 'triennial' ? '' : 'none';
+// Map the unified Portion selector's value onto the underlying cycle/year state
+// (kept separate because scoring, leaderboards and aliyah storage all key off
+// cycle + triYear). "annual" = the whole parashah; "triN" = triennial year N.
+function applyPortion(val) {
+  if (val === 'annual') {
+    state.cycle = 'annual';
+  } else {
+    state.cycle = 'triennial';
+    state.triYear = parseInt(val.slice(3), 10) || 1;
+  }
+}
+function syncPortionUI() {
+  const el = $('portion');
+  if (el) el.value = state.cycle === 'triennial' ? `tri${state.triYear}` : 'annual';
 }
 
 async function loadData(slug) {
@@ -882,15 +1003,23 @@ function buildCoach(unitSegs, verseN = state.selectedVerse) {
   return { start, end, dur, steps, raw, wordBounds, overlayWords, points, tonicHz: pv.tonicHz };
 }
 
+// The range of verses to show, derived from the current portion. Annual shows
+// the whole parashah; a triennial year shows only that year's span. We use the
+// year's actual aliyot (first start .. last end) so the verses on screen match
+// exactly what you practice that year, falling back to even thirds only if a
+// reading has no triennial aliyot data.
 function divisionRange() {
-  const verses = state.data.verses;
-  const n = verses.length;
-  if (state.division === 'full') return [1, n];
+  const n = state.data.verses.length;
+  if (state.cycle !== 'triennial') return [1, n];
+  const list = aliyotForReading('triennial', state.triYear);
+  if (list && list.length) {
+    let start = Infinity, end = 0;
+    list.forEach((a) => { start = Math.min(start, a.start); end = Math.max(end, a.end); });
+    return [Math.max(1, start), Math.min(n, end)];
+  }
   const third = Math.ceil(n / 3);
-  const part = parseInt(state.division, 10);
-  const start = (part - 1) * third + 1;
-  const end = Math.min(n, part * third);
-  return [start, end];
+  const start = (state.triYear - 1) * third + 1;
+  return [start, Math.min(n, state.triYear * third)];
 }
 
 function refreshText() {
@@ -942,7 +1071,9 @@ function adaptiveRange(scores, minSpan = 16) {
 }
 
 function renderVerses() {
-  if (state.scrollView) { renderScrollColumn(); return; }
+  // The pointed per-verse list always renders here; the STA"M Torah column is a
+  // separate, optional pane (renderScrollPane) shown alongside it in scroll view.
+  renderScrollPane();
   const box = $('verses');
   box.innerHTML = '';
   const [start, end] = divisionRange();
@@ -1086,9 +1217,13 @@ function wireAccPanel() {
 
 // Render the whole reading as a continuous, justified Torah-scroll column:
 // consonants only (no niqqud / te'amim / verse numbers), STA"M script, on
-// parchment — a faithful representation of the scroll's format.
-function renderScrollColumn() {
-  const box = $('verses');
+// parchment — a faithful representation of the scroll's format. This lives in
+// its own pane (#scrollVerses) so it can sit beside the pointed verses rather
+// than replacing them; it only populates when scroll view is on.
+function renderScrollPane() {
+  const box = $('scrollVerses');
+  if (!box) return;
+  if (!state.scrollView) { box.innerHTML = ''; return; }
   const [start, end] = divisionRange();
   let html = '<div class="scroll-column">';
   for (let i = start; i <= end; i++) {
@@ -1471,6 +1606,13 @@ function finishAliyahRecord(tl) {
 // Persistent top-of-window stage selector. Any stage is navigable; stages not
 // yet unlocked for the current verse are marked, and opening one shows a locked
 // page (see renderPractice).
+function selectStage(levelId) {
+  state.level = levelId;
+  state.unitIndex = 0;
+  renderStageBar();
+  if (state.selectedVerse != null) renderPractice();
+}
+
 function renderStageBar() {
   const bar = $('stageBar');
   if (!bar) return;
@@ -1481,15 +1623,20 @@ function renderStageBar() {
     return `<button class="stagebtn ${cur ? 'cur' : ''} ${locked ? 'locked' : ''}" data-lvl="${l.id}">`
       + `${locked ? '🔒 ' : '✓ '}${l.id}. ${l.label}</button>`;
   }).join('');
-  bar.innerHTML = `<span class="label">Stage:</span>${btns}`;
+  // Mobile shows this compact <select> instead of the chip row (CSS toggles which
+  // is visible); both paths call selectStage so behaviour is identical.
+  const opts = LEVELS.map((l) => {
+    const locked = l.id > unlocked;
+    return `<option value="${l.id}" ${l.id === state.level ? 'selected' : ''}>`
+      + `${locked ? '🔒 ' : '✓ '}${l.id}. ${l.label}</option>`;
+  }).join('');
+  bar.innerHTML = `<span class="label">Stage:</span>${btns}`
+    + `<select class="stage-select" id="stageSelect" aria-label="Practice stage">${opts}</select>`;
   bar.querySelectorAll('.stagebtn').forEach((b) => {
-    b.addEventListener('click', () => {
-      state.level = parseInt(b.dataset.lvl, 10);
-      state.unitIndex = 0;
-      renderStageBar();
-      if (state.selectedVerse != null) renderPractice();
-    });
+    b.addEventListener('click', () => selectStage(parseInt(b.dataset.lvl, 10)));
   });
+  const sel = $('stageSelect');
+  if (sel) sel.addEventListener('change', () => selectStage(parseInt(sel.value, 10)));
 }
 
 const MAQAF = '\u05BE';
@@ -1502,7 +1649,6 @@ const DEADZONE = 0.9, MAXDEV = 4, PULL = 0.55;
 // Auto-scroll the zoomed timeline so the playhead stays ~70% across (RTL), with
 // the upcoming words visible to its left.
 function scrollFollow(t01) {
-  if (!state.scrollZoom) return;
   const sc = $('tlScroll'), inner = $('tlInner');
   if (!sc || !inner || !sc.classList.contains('scrolling')) return;
   const W = inner.clientWidth, visW = sc.clientWidth;
@@ -1578,7 +1724,11 @@ function renderPractice() {
         <button id="uNext">▶</button>
       </div>` : ''}
       <span class="mode-indicator" id="modeIndicator"></span>
-      ${hasReal ? '<span class="keyshint" title="Tap a word, or keys: ← → next/prev word · Space replay · ↓ record · Esc stop">⌨</span>' : ''}
+      <label class="readsize" title="Reading size — enlarge the Hebrew, shrink the notation">
+        <span class="rs-ico">א</span>
+        <input type="range" id="readSize" min="${READ_MIN}" max="${READ_MAX}" step="0.1" value="${state.readScale}" aria-label="Reading size">
+      </label>
+      ${hasReal ? '<span class="keyshint" title="Tap a word, or keys: ← → next/prev word · Space replay · ↓ record · ↑ sing along · Esc stop">⌨</span>' : ''}
     </div>
     ${level.unit === 'line' && state.showEnglish && v.en ? `<p class="practice-en">${escapeHtml(v.en)}</p>` : ''}
 
@@ -1634,20 +1784,28 @@ function renderPractice() {
     $('uNext').addEventListener('click', () => goToUnit(state.unitIndex + 1, true));
   }
 
-  // Guitar-hero zoom: widen the timeline to ~5 words visible and scroll it.
-  // Must set the virtual width BEFORE creating the canvas views.
-  const zoomable = level.unit === 'line' && state.scrollZoom;
+  // Timeline width. Give every word room at the current reading size; when the
+  // content is wider than the pane it scrolls (guitar-hero) and the playhead
+  // auto-follows. The zoom toggle just forces a minimum spread. Must be set
+  // BEFORE creating the canvas views (they read their box on construction).
   const tlScroll = $('tlScroll');
   const tlInner = $('tlInner');
-  if (zoomable) {
-    const visW = tlScroll.clientWidth || 800;
-    const factor = Math.max(1, unitSegs.length / ZOOM_WORDS);
-    tlInner.style.width = Math.round(visW * factor) + 'px';
-    tlScroll.classList.add('scrolling');
-  } else {
-    tlInner.style.width = '100%';
-    tlScroll.classList.remove('scrolling');
-  }
+  const visW = tlScroll.clientWidth || 800;
+  const fpx = readingFontPx(unitSegs.length);
+  const needW = Math.round(unitSegs.length * fpx * 4.0); // room per word at this size
+  const zoomW = (level.unit === 'line' && state.scrollZoom)
+    ? Math.round(visW * Math.max(1, unitSegs.length / ZOOM_WORDS)) : 0;
+  const useW = Math.max(visW, needW, zoomW);
+  const scrolling = useW > visW + 2;
+  tlInner.style.width = scrolling ? useW + 'px' : '100%';
+  tlScroll.classList.toggle('scrolling', scrolling);
+
+  // Shrink the notation (contour + spectrograms) so the enlarged reading has
+  // room — the notes cost the space, not the words.
+  const nh = noteHeights();
+  $('contour').style.height = nh.contour + 'px';
+  $('spectro').style.height = nh.spectro + 'px';
+  $('userSpectro').style.height = nh.spectro + 'px';
 
   // Canvas + coach line (note steps derived from the recording).
   state.view = new ContourView($('contour'));
@@ -1682,13 +1840,20 @@ function renderPractice() {
   $('btnRec').addEventListener('click', () => startRecording());
   $('btnSing').addEventListener('click', () => startRecording({ singAlong: true }));
   $('btnStop').addEventListener('click', stopAll);
+  const readSize = $('readSize');
+  if (readSize) {
+    // Live text resize while dragging (no rebuild), then re-render on release so
+    // the note canvases are re-created crisply at their new heights.
+    readSize.addEventListener('input', (e) => applyReadScale(parseFloat(e.target.value), false));
+    readSize.addEventListener('change', (e) => applyReadScale(parseFloat(e.target.value), true));
+  }
 
   renderLegend(unitSegs);
   renderAccuracyPanel();
   wireAccPanel();
   applyHighlight();
-  // Start the zoom view at the beginning of the line (rightmost, RTL).
-  if (zoomable) tlScroll.scrollLeft = tlScroll.scrollWidth - tlScroll.clientWidth;
+  // Start a scrolling line at its beginning (rightmost, RTL).
+  if (scrolling) tlScroll.scrollLeft = tlScroll.scrollWidth - tlScroll.clientWidth;
 }
 
 // The accuracy panel shows one of two distinct views depending on the stage:
@@ -2089,7 +2254,9 @@ function wireTimelineWordClicks(segs, hasReal) {
 function renderStretchedWords(container, coach, aids, unitSegs) {
   container.innerHTML = '';
   const nWords = coach.overlayWords.length;
-  container.style.fontSize = nWords === 1 ? '40px' : nWords <= 4 ? '30px' : nWords <= 9 ? '25px' : '20px';
+  const fpx = readingFontPx(nWords);
+  container.style.fontSize = fpx + 'px';
+  container.style.height = Math.round(fpx * 1.35) + 'px';
   coach.overlayWords.forEach((ow) => {
     const wi = unitSegs.indexOf(ow.seg);
     const span = document.createElement('span');

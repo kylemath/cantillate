@@ -69,11 +69,20 @@ button.toggle.on { background: var(--accent); color: #08101f; border-color: tran
 main { display: grid; grid-template-columns: var(--leftw, 360px) 6px 1fr; gap: 0; height: calc(100vh - 118px); }
 .splitter { cursor: col-resize; background: var(--line); transition: background .12s; }
 .splitter:hover, .splitter.dragging { background: var(--accent); }
+
+/* Optional STA"M Torah-column pane: a third column to the LEFT of the pointed
+   verses, shown only in scroll view (desktop). Off-screen it is display:none so
+   the two-column grid is unchanged. */
+.scrollpane { display: none; overflow-y: auto; padding: 16px 20px; border-inline-end: 1px solid var(--line); }
+.splitter2 { display: none; }
+body.scroll-view main { grid-template-columns: var(--scrollw, 300px) 6px var(--leftw, 360px) 6px 1fr; }
+body.scroll-view .scrollpane { display: block; }
+body.scroll-view .splitter2 { display: block; }
 /* Compact verse cards when the left pane is dragged narrow. */
 main.narrow-left .textpane { padding: 12px 8px; }
 main.narrow-left .textpane .pane-title { font-size: 10px; }
 main.narrow-left .textpane .verse { padding: 8px; margin-bottom: 6px; }
-main.narrow-left .textpane .hebrew { font-size: 15px; line-height: 1.5; padding-top: 16px; }
+main.narrow-left .textpane .hebrew { font-size: calc(15px * var(--left-scale, 1)); line-height: 1.5; padding-top: 16px; }
 main.narrow-left .textpane .vscore { font-size: 10px; }
 /* Off-canvas pasuk drawer controls — hidden on desktop, shown on mobile. */
 .pasuk-fab, .drawer-close { display: none; }
@@ -84,16 +93,27 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 
 /* --- Mobile / compact layout ------------------------------------------- */
 @media (max-width: 900px) {
-  main { grid-template-columns: 1fr; height: auto; }
-  .splitter { display: none; }
+  main, body.scroll-view main { grid-template-columns: 1fr; height: auto; }
+  .splitter, .splitter2 { display: none; }
 
-  /* Keep the settings & parashah controls (like desktop) but pack the busy
-     toolbars into single horizontally-scrollable rows to reclaim vertical space
-     for the practice area. */
+  /* One column on a phone: the STA"M column and the pointed verses share the
+     same off-canvas drawer slot; only one shows at a time — the pointed verses
+     normally, the Torah column when scroll view is on. */
+  .scrollpane {
+    position: fixed; top: 0; inset-inline-start: 0; height: 100%;
+    width: min(86vw, 360px); z-index: 40; margin: 0; padding-top: 48px;
+    background: var(--panel); border-inline-end: 1px solid var(--line);
+    box-shadow: 8px 0 34px rgba(0,0,0,0.5);
+    transform: translateX(-104%); transition: transform .22s ease; display: none;
+  }
+  body.pasuk-open .scrollpane { transform: translateX(0); }
+  body.scroll-view .scrollpane { display: block; }
+  body.scroll-view .textpane { display: none; }
+
+  /* Keep every control, but let the busy toolbar wrap onto multiple compact rows
+     instead of scrolling sideways (bad touch UX). */
   header.topbar { padding: 10px 14px; gap: 10px; }
-  .toolbar { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
-    -webkit-overflow-scrolling: touch; padding: 8px 14px; scrollbar-width: thin; }
-  .toolbar > * { flex: 0 0 auto; }
+  .toolbar { flex-wrap: wrap; padding: 8px 14px; row-gap: 8px; }
 
   /* Trope-family key adds little on a small screen — hide to save space. */
   .fambar { display: none; }
@@ -124,10 +144,13 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
   }
   body.pasuk-open .pasuk-fab { background: var(--panel-2); color: var(--text); }
 
-  /* Stage selector: one scrollable row of compact chips. */
-  .stagebar { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; padding: 7px 14px; }
-  .stagebar > * { flex: 0 0 auto; }
-  .stagebtn { font-size: 11px; padding: 5px 8px; }
+  /* Stage selector: a single full-width dropdown replaces the sideways-scrolling
+     chip row. The chips are hidden; the <select> (kept in sync by renderStageBar)
+     drives stage changes through the same selectStage path. */
+  .stagebar { flex-wrap: wrap; padding: 7px 14px; }
+  .stagebar .stagebtn { display: none; }
+  .stage-select { display: block; flex: 1 1 auto; min-width: 0; max-width: 100%;
+    font-size: 13px; padding: 8px 10px; }
 
   /* Practice pane fills the width; trim its padding a touch. */
   .practice { padding: 14px 14px 84px; }
@@ -159,6 +182,8 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 
 /* Persistent stage selector (top bar) */
 .stagebar { gap: 6px; }
+/* The dropdown is a mobile-only alternative to the chip row (see media query). */
+.stage-select { display: none; }
 .stagebtn { font-size: 12px; padding: 6px 10px; border-radius: 8px; }
 .stagebtn.cur { background: var(--accent); color: #08101f; border-color: transparent; font-weight: 700; }
 .stagebtn.locked { opacity: 0.5; }
@@ -173,6 +198,13 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 .textpane, .practice { overflow-y: auto; padding: 16px 20px; }
 .textpane { border-inline-end: 1px solid var(--line); }
 .pane-title { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 10px; }
+
+/* Left-panel header: pane title + a verse text-size slider. */
+.pane-head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.pane-head .pane-title { margin: 0; flex: 1; min-width: 0; }
+.leftsize { display: inline-flex; align-items: center; gap: 5px; flex: 0 0 auto; }
+.leftsize .rs-ico { font-family: 'FrankRuehl', 'StamAshkenaz', serif; font-size: 16px; color: var(--muted); line-height: 1; }
+.leftsize input[type="range"] { width: 84px; accent-color: var(--accent); cursor: pointer; }
 
 .verse {
   position: relative; padding: 12px 14px; margin-bottom: 10px; border-radius: 12px;
@@ -197,7 +229,7 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 .vbody.bilingual { display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap; padding-top: 22px; }
 .vbody.bilingual .ventext { flex: 1 1 45%; min-width: 150px; }
 .vbody.bilingual .hebrew { flex: 1 1 45%; min-width: 150px; }
-.ventext { direction: ltr; text-align: left; font-size: 16px; line-height: 1.6; color: #cdd2e6; }
+.ventext { direction: ltr; text-align: left; font-size: calc(16px * var(--left-scale, 1)); line-height: 1.6; color: #cdd2e6; }
 
 /* Hover-hold word translation popover. */
 .wordpop { position: absolute; z-index: 60; max-width: 300px; pointer-events: none;
@@ -252,9 +284,9 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 
 .hebrew {
   direction: rtl; text-align: right; font-family: 'FrankRuehl', serif;
-  font-size: 30px; line-height: 1.9; padding-top: 14px;
+  font-size: calc(30px * var(--left-scale, 1)); line-height: 1.9; padding-top: 14px;
 }
-.hebrew.scroll { font-family: 'StamAshkenaz', serif; font-size: 34px; letter-spacing: 2px; }
+.hebrew.scroll { font-family: 'StamAshkenaz', serif; font-size: calc(34px * var(--left-scale, 1)); letter-spacing: 2px; }
 .hebrew .w { padding: 0 2px; border-radius: 6px; transition: background .1s, opacity .1s; cursor: pointer; }
 .textpane .hebrew .w:hover { outline: 1px dashed rgba(255,255,255,0.35); }
 .hebrew .w.cur { background: rgba(255,215,0,0.28); }
@@ -310,7 +342,7 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 /* The scroll column's parents are size containers so the glyphs can scale to
    the available width (see the clamp() below) — this keeps a real-scroll look
    whether the pane is dragged narrow (left) or shown in the aliyah view (right). */
-#verses, .aliyah-view { container-type: inline-size; }
+#verses, #scrollVerses, .aliyah-view { container-type: inline-size; }
 
 /* Faithful Torah-scroll column view of the whole reading */
 .scroll-column {
@@ -340,10 +372,10 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 
 /* --- Mobile: show the real scroll full-screen with a minimal control overlay - */
 @media (max-width: 900px) {
-  /* Torah-column (left) view: let the pasuk drawer fill the screen so the scroll
-     is read edge-to-edge rather than in a narrow rail. */
-  body.scroll-view .textpane { width: 100vw; max-width: 100vw; }
-  body.scroll-view .textpane .scroll-column {
+  /* Torah-column view: let the STA"M drawer fill the screen so the scroll is
+     read edge-to-edge rather than in a narrow rail. */
+  body.scroll-view .scrollpane { width: 100vw; max-width: 100vw; }
+  body.scroll-view .scrollpane .scroll-column {
     border-inline: none; border-radius: 0; box-shadow: inset 0 0 40px rgba(120,80,30,0.14);
   }
 
@@ -419,6 +451,11 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
   display: inline-block; font-size: 12px; font-weight: 700; color: #08101f;
   background: var(--accent); border-radius: 999px; padding: 3px 10px;
 }
+
+/* Reading-size control: enlarges the aligned Hebrew, shrinks the notation. */
+.readsize { display: inline-flex; align-items: center; gap: 6px; margin-inline-start: auto; }
+.readsize .rs-ico { font-family: 'FrankRuehl', 'StamAshkenaz', serif; font-size: 20px; color: var(--muted); line-height: 1; }
+.readsize input[type="range"] { width: 110px; accent-color: var(--accent); cursor: pointer; }
 
 .transport { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 10px 0; }
 .result { font-size: 14px; margin: 8px 0; min-height: 22px; }
