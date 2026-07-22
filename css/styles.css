@@ -86,7 +86,7 @@ main { display: grid; grid-template-columns: var(--leftw, 360px) 6px 1fr; gap: 0
 /* Optional STA"M Torah-column pane: a third column to the LEFT of the pointed
    verses, shown only in scroll view (desktop). Off-screen it is display:none so
    the two-column grid is unchanged. */
-.scrollpane { display: none; overflow-y: auto; padding: 16px 20px; border-inline-end: 1px solid var(--line); }
+.scrollpane { display: none; overflow-y: auto; overflow-x: hidden; padding: 16px 20px; border-inline-end: 1px solid var(--line); }
 .splitter2 { display: none; }
 body.scroll-view main { grid-template-columns: var(--scrollw, 300px) 6px var(--leftw, 360px) 6px 1fr; }
 body.scroll-view .scrollpane { display: block; }
@@ -104,29 +104,94 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
   backdrop-filter: blur(2px); opacity: 0; pointer-events: none; transition: opacity .2s;
 }
 
+/* Mobile app-bar + pull-down settings sheet. On desktop the sheet is
+   display:contents (transparent to layout, so header + toolbar render exactly
+   as before) and the slim app-bar is hidden. The mobile media query below turns
+   the sheet into a pull-down panel and reveals the app-bar. */
+.mobilebar { display: none; }
+.settings-sheet { display: contents; }
+
 /* --- Mobile / compact layout ------------------------------------------- */
-@media (max-width: 900px) {
+/* "Compact" = phone-shaped: NARROW (portrait phones) OR SHORT (landscape phones,
+   which are frequently WIDER than 900px — e.g. ~926px on large phones — so a
+   width-only breakpoint wrongly fell back to the desktop chrome on rotation).
+   Desktop/laptop is both wide AND tall (see the min-width+min-height block). */
+@media (max-width: 900px), (max-height: 600px) {
+  /* Off-canvas drawers (esp. the trope guidepane, parked at translateX(104%) off
+     the right edge) otherwise widen the page and push the sticky stage dropdown
+     off-screen. `clip` stops the horizontal overflow without creating a scroll
+     container, so `position: sticky` on the app-bar/stage bar still works. */
+  html { overflow-x: clip; }
+
   main, body.scroll-view main { grid-template-columns: 1fr; height: auto; }
   .splitter, .splitter2 { display: none; }
 
-  /* One column on a phone: the STA"M column and the pointed verses share the
-     same off-canvas drawer slot; only one shows at a time — the pointed verses
-     normally, the Torah column when scroll view is on. */
+  /* On a phone the verse PICKER (left drawer) is ALWAYS the pointed, verse-by-
+     verse text — never the STA"M. The STA"M Torah column is a separate, on-demand
+     FULL-SCREEN reader (see below), so the two never share the drawer slot. */
   .scrollpane {
-    position: fixed; top: 0; inset-inline-start: 0; height: 100%;
-    width: min(86vw, 360px); z-index: 40; margin: 0; padding-top: 48px;
-    background: var(--panel); border-inline-end: 1px solid var(--line);
-    box-shadow: 8px 0 34px rgba(0,0,0,0.5);
-    transform: translateX(-104%); transition: transform .22s ease; display: none;
+    position: fixed; inset: 0; z-index: 47; margin: 0;
+    width: 100vw; max-width: 100vw; height: 100%; padding-top: 48px;
+    background: var(--panel); border: none; box-shadow: none;
+    display: none; overflow-y: auto;
   }
-  body.pasuk-open .scrollpane { transform: translateX(0); }
+  /* Torah column view (toggled from settings): the STA"M fills the screen. */
   body.scroll-view .scrollpane { display: block; }
-  body.scroll-view .textpane { display: none; }
 
-  /* Keep every control, but let the busy toolbar wrap onto multiple compact rows
-     instead of scrolling sideways (bad touch UX). */
-  header.topbar { padding: 10px 14px; gap: 10px; }
-  .toolbar { flex-wrap: wrap; padding: 8px 14px; row-gap: 8px; }
+  /* --- App-bar + pull-down settings sheet ------------------------------- */
+  /* A slim, always-visible top strip replaces the tall stack of toolbars. Its
+     ⚙ button pulls down the settings sheet; the app title lives here so the
+     header's brand can move into the sheet. */
+  .mobilebar {
+    display: flex; align-items: center; gap: 10px;
+    position: sticky; top: 0; z-index: 30; height: 46px;
+    padding: 0 12px; background: var(--bg); border-bottom: 1px solid var(--line);
+  }
+  .mobilebar .mb-menu {
+    font-size: 17px; line-height: 1; padding: 7px 12px; border-radius: 9px;
+    background: var(--panel-2);
+  }
+  body.settings-open .mobilebar .mb-menu { background: var(--accent); color: #08101f; border-color: transparent; }
+  .mobilebar .mb-title { font-weight: 700; font-size: 16px; letter-spacing: 0.5px; }
+  /* Verse picker lives in the app-bar (right side) so it's always reachable —
+     including mid-practice — without colliding with the corner transport. */
+  .mobilebar .mb-verses {
+    margin-inline-start: auto; font-size: 13px; padding: 7px 12px; border-radius: 9px;
+    background: var(--panel-2); white-space: nowrap;
+  }
+  body.pasuk-open .mobilebar .mb-verses { background: var(--accent); color: #08101f; border-color: transparent; }
+
+  /* The sheet: a panel that slides DOWN from the top (a "pull-down menu") holding
+     every reading/display control, so the toolbars stop consuming the screen. */
+  .settings-sheet {
+    display: block; position: fixed; top: 0; inset-inline: 0; z-index: 46;
+    max-height: 90vh; overflow-y: auto;
+    background: var(--panel); border-bottom: 1px solid var(--line);
+    box-shadow: 0 14px 44px rgba(0,0,0,0.55);
+    transform: translateY(-105%); transition: transform .24s ease;
+    padding: 46px 14px 18px;
+  }
+  body.settings-open .settings-sheet { transform: translateY(0); }
+  body.settings-open #settingsBackdrop { opacity: 1; pointer-events: auto; }
+  #settingsBackdrop { z-index: 44; }
+
+  /* Stack the header controls vertically inside the sheet; the brand title is
+     already shown in the app-bar. */
+  .settings-sheet header.topbar {
+    flex-direction: column; align-items: stretch; gap: 12px;
+    padding: 0; border: none; background: none;
+  }
+  .settings-sheet .brand { display: none; }
+  .settings-sheet .controls { margin: 0; gap: 8px 10px; }
+  /* Let selects shrink instead of overflowing the screen (the root cause of the
+     off-screen stage dropdown), and give each a comfortable tap target. */
+  .settings-sheet .controls select { flex: 1 1 46%; min-width: 0; max-width: 100%; padding: 9px 11px; }
+  .settings-sheet .controls .label { flex: 1 1 100%; margin: 2px 0 -2px; }
+  .settings-sheet .controls .authbox { flex: 1 1 100%; margin: 4px 0 0; }
+  .settings-sheet .toolbar {
+    flex-wrap: wrap; padding: 12px 0 0; margin-top: 4px;
+    border: none; border-top: 1px solid var(--line); row-gap: 10px;
+  }
 
   /* Trope-family key adds little on a small screen — hide to save space. */
   .fambar { display: none; }
@@ -141,32 +206,119 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
     transform: translateX(-104%); transition: transform .22s ease;
   }
   body.pasuk-open .textpane { transform: translateX(0); }
-  body.pasuk-open .drawer-backdrop { opacity: 1; pointer-events: auto; }
+  /* Scoped to the pasuk backdrop only: a generic `.drawer-backdrop` selector
+     would also light up the settings-sheet backdrop (a separate element), whose
+     higher z-index would then cover the verse drawer with a blurred, click-
+     blocking layer — making verse selection appear broken. */
+  body.pasuk-open #drawerBackdrop { opacity: 1; pointer-events: auto; }
 
   .drawer-close {
     display: flex; align-items: center; justify-content: center;
     position: absolute; top: 8px; inset-inline-end: 10px; width: 34px; height: 34px;
     font-size: 15px; border-radius: 8px; z-index: 2;
   }
-  .pasuk-fab {
-    display: flex; align-items: center; justify-content: center;
-    position: fixed; inset-block-end: 18px; inset-inline-start: 16px; z-index: 41;
-    width: 52px; height: 52px; border-radius: 50%; font-size: 21px; padding: 0;
-    background: var(--accent); color: #08101f; border-color: transparent;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-  }
-  body.pasuk-open .pasuk-fab { background: var(--panel-2); color: var(--text); }
+  /* The floating verse FAB is replaced by the app-bar "Verses" button (it sat in
+     the bottom-left corner, colliding with the docked transport). Kept in the
+     DOM but hidden so its handlers/behaviour elsewhere stay intact. */
+  .pasuk-fab { display: none; }
 
   /* Stage selector: a single full-width dropdown replaces the sideways-scrolling
      chip row. The chips are hidden; the <select> (kept in sync by renderStageBar)
-     drives stage changes through the same selectStage path. */
-  .stagebar { flex-wrap: wrap; padding: 7px 14px; }
+     drives stage changes through the same selectStage path. It sticks just under
+     the app-bar so the user can always advance a stage — the core flow that was
+     unreachable when this row was pushed off-screen. */
+  .stagebar {
+    flex-wrap: nowrap; gap: 8px; padding: 8px 12px;
+    position: sticky; top: 46px; z-index: 29;
+    background: var(--bg);
+  }
+  .stagebar .label { flex: 0 0 auto; }
   .stagebar .stagebtn { display: none; }
-  .stage-select { display: block; flex: 1 1 auto; min-width: 0; max-width: 100%;
-    font-size: 13px; padding: 8px 10px; }
+  /* Scoped to .stagebar so this beats the desktop `.stage-select { display:none }`
+     default regardless of source order (both are otherwise equal specificity —
+     the reason the dropdown was invisible and stages were unreachable). */
+  .stagebar .stage-select { display: block; flex: 1 1 auto; min-width: 0; max-width: 100%;
+    font-size: 14px; padding: 9px 10px; }
 
-  /* Practice pane fills the width; trim its padding a touch. */
-  .practice { padding: 14px 14px 84px; }
+  /* --- Simplified mobile practice (coach + scores + transport only) ------- */
+  /* Mirror the desktop "analysis" collapse on mobile — but always on, since the
+     toggle is hidden here: drop the spectrograms and the detailed accuracy bars
+     so only the target coach line, the score/live-meter, and the transport show. */
+  #practice.hide-analysis #tlExtras,
+  #practice #accPanel { display: none; }
+  /* Trim the phead down to the essentials; the big edge arrows replace the tiny
+     inline unit-nav, and the coach line makes the legend/aids redundant here. */
+  #practice .aidchips,
+  #practice .mode-indicator,
+  #practice .readsize,
+  #practice .keyshint,
+  #practice .unit-nav,
+  #practice .cmp-legend { display: none; }
+
+  .practice { padding: 10px 12px 88px; }
+
+  /* Transport docked to the bottom edge (corners): Listen bottom-left, Stop
+     bottom-right, Record/Duet between. Reuses the existing buttons + all their
+     recording-lifecycle wiring; disabled ones simply dim (Stop hides until it's
+     actionable). Non-essential buttons are dropped to keep it uncluttered.
+     Scoped to the single-verse practice pane (not .aliyah-fill), which keeps its
+     own control layout. */
+  #practice:not(.aliyah-fill) > .transport {
+    position: fixed; inset-inline: 0; bottom: 0; z-index: 45; margin: 0;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    gap: 8px; justify-content: space-between; flex-wrap: nowrap;
+    background: linear-gradient(0deg, rgba(11,14,26,0.97) 55%, rgba(11,14,26,0));
+    pointer-events: none;
+  }
+  #practice:not(.aliyah-fill) > .transport > button {
+    pointer-events: auto; flex: 0 1 auto; min-width: 0; font-size: 12px;
+    padding: 12px 14px; border-radius: 999px; box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .transport #btnRealWord,
+  .transport #btnTonic { display: none; }               /* non-essential on mobile */
+  .transport #btnReal ~ #btnPlay { display: none; }       /* voice guide hidden when real chant exists */
+  .transport #btnStop:disabled { display: none; }         /* Stop appears only when actionable */
+  body.settings-open .transport,
+  body.settings-open .unit-edge,
+  body.settings-open .pasuk-edge { display: none; }       /* don't float over the pull-down sheet */
+
+  /* --- STA"M Torah-column view (level 8 single-verse) --------------------- */
+  /* Float the transport + pasuk arrows OVER the full-screen STA"M scroll (which
+     sits at z-index:47) so you can read the bare column AND control recording /
+     step through pesukim. The word/phrase edge arrows give way to whole-pasuk
+     advance (each jump opens the target verse at its highest unlocked stage). */
+  body.scroll-view #practice:not(.aliyah-fill) > .transport { z-index: 48; }
+  body.scroll-view #practice .unit-edge { display: none; }
+  /* Whole-pasuk advance arrows: shown BOTH in the STA"M scroll AND in the
+     full-verse (line) coach — where there are no word/phrase units to step
+     through — so left/right always moves between pesukim there. */
+  body.scroll-view #practice .pasuk-edge,
+  #practice.unit-line .pasuk-edge {
+    position: fixed; top: 50%; transform: translateY(-50%); z-index: 48;
+    width: 42px; height: 66px; padding: 0; font-size: 30px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(31,37,64,0.85); color: var(--text); border: 1px solid var(--line);
+    border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+  }
+  body.scroll-view #practice .pasuk-edge-next,
+  #practice.unit-line .pasuk-edge-next { inset-inline-start: 6px; }
+  body.scroll-view #practice .pasuk-edge-prev,
+  #practice.unit-line .pasuk-edge-prev { inset-inline-end: 6px; }
+
+  /* Large edge arrows for thumb-reach unit advance (word/phrase). RTL: the LEFT
+     edge advances to the next unit; the RIGHT edge goes back. Swipes do the same. */
+  /* Scoped to #practice so it beats the desktop `.unit-edge { display:none }`
+     default regardless of source order. */
+  #practice .unit-edge {
+    position: fixed; top: 50%; transform: translateY(-50%); z-index: 45;
+    width: 42px; height: 66px; padding: 0; font-size: 30px; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(31,37,64,0.72); color: var(--text); border: 1px solid var(--line);
+    border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  }
+  #practice .unit-edge-next { inset-inline-start: 6px; }
+  #practice .unit-edge-prev { inset-inline-end: 6px; }
 }
 
 /* Portrait phones: hide progress (accuracy/score panel) to save vertical space;
@@ -176,15 +328,23 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 }
 
 /* Landscape "practice" mode: strip the chrome down so the practice canvases and
-   transport get as much of the short viewport height as possible. */
-@media (max-width: 900px) and (orientation: landscape) {
+   transport get as much of the short viewport height as possible. Keyed on a
+   SHORT landscape viewport (not width) so wide landscape phones match too. */
+@media (orientation: landscape) and (max-height: 600px) {
   header.topbar { padding: 6px 12px; }
   .brand .sub { display: none; }
   .brand h1 { font-size: 16px; }
   footer.src { display: none; }
-  .practice { padding: 10px 14px 72px; }
+  .practice { padding: 8px 14px 76px; }
   canvas.contour { height: 150px; }
   canvas.spectro { height: 90px; }
+  /* Reclaim vertical space: slim the sticky app-bar + stage bar so the coach
+     line dominates the short landscape height. */
+  .mobilebar { height: 38px; }
+  .mobilebar .mb-menu { padding: 5px 11px; }
+  .stagebar { top: 38px; padding: 5px 12px; }
+  .stagebar .stage-select { padding: 6px 10px; }
+  #practice .unit-edge { height: 56px; }
 }
 
 .phead { display: flex; align-items: center; justify-content: flex-start; gap: 6px 10px; flex-wrap: wrap; margin-bottom: 4px; }
@@ -297,6 +457,13 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
   background: rgba(140,145,160,0.14); }
 .aliyah-scroll .sw.yad-start { box-shadow: 0 0 0 2px rgba(55,200,113,0.6); animation: yadpulse 1.5s ease-in-out infinite; }
 .aliyah-scroll .sw.yad-end { box-shadow: 0 0 0 2px rgba(255,120,90,0.6); }
+/* Post-take "notes hit" clue: a tint + underline under each aliyah word by how
+   well its notes were hit (green = mostly hit, amber = partial, red = missed).
+   Background + inset underline don't reflow the text; the underline (em-based)
+   scales with the script. */
+.aliyah-scroll .sw.word-hit { background: rgba(55,200,113,0.30); box-shadow: inset 0 -0.14em 0 rgba(40,175,95,0.85); }
+.aliyah-scroll .sw.word-partial { background: rgba(235,185,55,0.30); box-shadow: inset 0 -0.14em 0 rgba(210,160,40,0.85); }
+.aliyah-scroll .sw.word-miss { background: rgba(220,90,70,0.26); box-shadow: inset 0 -0.14em 0 rgba(200,70,55,0.8); }
 @keyframes yadpulse { 0%,100% { box-shadow: 0 0 0 2px rgba(55,200,113,0.25); } 50% { box-shadow: 0 0 0 2px rgba(55,200,113,0.7); } }
 
 .al-cuebar { display: flex; align-items: center; gap: 8px; margin: 6px 0 2px; }
@@ -399,6 +566,21 @@ body.guide-open .guidepane { transform: translateX(0); }
 .unit-nav { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
 .unit-nav .u-label { color: var(--muted); font-size: 12px; }
 .unit-nav button { padding: 2px 8px; font-size: 12px; }
+/* Large edge advance arrows + portrait rotate prompt are mobile-only (shown in
+   the max-width:900px media query); hidden on desktop. */
+.unit-edge, .pasuk-edge { display: none; }
+.rotate-prompt {
+  position: fixed; inset: 0; z-index: 60; display: flex; align-items: center;
+  justify-content: center; text-align: center; padding: 24px;
+  background: rgba(6,8,18,0.93); backdrop-filter: blur(4px);
+}
+.rotate-prompt[hidden] { display: none; }
+.rotate-card { max-width: 300px; }
+.rotate-ico { font-size: 52px; line-height: 1; display: inline-block;
+  animation: rotate-hint 2.2s ease-in-out infinite; }
+.rotate-title { font-size: 18px; font-weight: 700; margin: 12px 0 4px; }
+.rotate-card .toggle { margin-top: 16px; }
+@keyframes rotate-hint { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(90deg); } }
 
 .canvas-wrap { position: relative; background: #0b0e1a; border: 1px solid var(--line); border-radius: 12px; margin: 6px 0; overflow: hidden; }
 canvas.contour { width: 100%; height: 210px; display: block; }
@@ -411,6 +593,15 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 .cmp-legend .swatch.you { border-top: 3px dotted var(--accent-2); }
 .tapword { margin: 4px 0 6px; }
 
+/* Toggle that reveals/collapses the analysis panels (spectrograms + accuracy
+   bars). Sits at the right end of the timeline legend. Desktop-only. */
+.analysis-toggle {
+  margin-inline-start: auto; font-size: 11px; padding: 3px 9px; border-radius: 999px;
+  color: var(--muted); background: transparent; border: 1px solid var(--line);
+}
+.analysis-toggle.on { color: #08101f; background: var(--accent); border-color: transparent; font-weight: 700; }
+@media (max-width: 900px), (max-height: 600px) { .analysis-toggle { display: none; } }
+
 /* The scroll column's parents are size containers so the glyphs can scale to
    the available width (see the clamp() below) — this keeps a real-scroll look
    whether the pane is dragged narrow (left) or shown in the aliyah view (right). */
@@ -420,15 +611,22 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 .scroll-column {
   direction: rtl; text-align: justify; text-align-last: right;
   font-family: 'StamAshkenaz', serif;
-  /* Scale the letters to the column width so a thin pane shrinks the script
-     instead of forcing awkward one-word-per-line justification. */
-  font-size: clamp(15px, 7.4cqi, 30px); line-height: 2.15; letter-spacing: 1px;
+  /* Scale the letters to the column width so narrowing the pane SHRINKS the
+     script rather than re-wrapping it — the same words stay on the same lines
+     (like a fixed scroll) at any width. The block is self-similar: everything
+     affecting wrapping is font-relative (padding/letter-spacing in em, max-width
+     in ch, unitless line-height) and only the font-size tracks the container
+     (cqi). CRITICAL: the font must NOT get pinned at the clamp bounds within the
+     usable width range, because a pinned (fixed-px) font is exactly what makes
+     the justified gaps flex and then the text wrap before it finally shrinks.
+     So the max is generous (only caps truly huge panes) and the floor is low. */
+  font-size: clamp(9px, 7.4cqi, 40px); line-height: 2.15; letter-spacing: 0.05em;
   color: #2a2016;
   background: #e9d7b0;
   background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0) 8%),
     radial-gradient(120% 60% at 50% 0%, rgba(120,80,30,0.10), rgba(120,80,30,0) 60%);
   border: 1px solid #c9b38a; border-radius: 8px;
-  padding: 22px 26px; box-shadow: inset 0 0 40px rgba(120,80,30,0.18);
+  padding: 1.05em 1.25em; box-shadow: inset 0 0 40px rgba(120,80,30,0.18);
   max-width: 42ch; margin: 0 auto;
 }
 /* Each word is an unbreakable unit: never split a word across lines, however
@@ -436,10 +634,88 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 .scroll-column .sw { cursor: pointer; border-radius: 4px; padding: 0 1px; white-space: nowrap; }
 .scroll-column .sw:hover { background: rgba(120,80,30,0.15); }
 .scroll-column .sw.sel { background: rgba(200,150,60,0.35); }
+/* Post-take per-word accuracy shading (same clue as the aliyah reader): green =
+   mostly hit, amber = partial, red = missed, with a colored underline. Placed
+   after .sel and before .cur so it wins over the whole-verse selected fill but
+   the moving pointer still shows on top. */
+.scroll-column .sw.word-hit { background: rgba(55,200,113,0.30); box-shadow: inset 0 -0.14em 0 rgba(40,175,95,0.85); }
+.scroll-column .sw.word-partial { background: rgba(235,185,55,0.30); box-shadow: inset 0 -0.14em 0 rgba(210,160,40,0.85); }
+.scroll-column .sw.word-miss { background: rgba(220,90,70,0.26); box-shadow: inset 0 -0.14em 0 rgba(200,70,55,0.8); }
 /* Current-word "yad" cue while a pasuk plays / records, so you can read the STA"M
    column and follow the spot (mirrors the pointed-text and timeline highlight). */
 .scroll-column .sw.cur { background: rgba(255,190,60,0.5); outline: 2px solid rgba(150,95,20,0.6);
   outline-offset: 1px; border-radius: 4px; }
+
+/* Large call-to-action shown on the note-coach at the STA"M stage (level 8):
+   opens the bare Torah-column scroll on demand instead of forcing it open. Styled
+   like a strip of parchment so it reads as "open the scroll". */
+.open-stam {
+  display: block; width: 100%; margin: 12px 0 6px; padding: 14px 18px;
+  font-family: inherit; font-size: 15px; font-weight: 700; letter-spacing: 0.3px;
+  color: #2a2016; text-align: center; cursor: pointer;
+  background: linear-gradient(180deg, #ecdcb6, #dcc79a);
+  border: 1px solid #c9b38a; border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.28), inset 0 0 24px rgba(120,80,30,0.12);
+}
+.open-stam:hover { filter: brightness(1.04); }
+.open-stam:active { transform: translateY(1px); }
+
+/* Exact tikkun layout. Each source page is a fixed 42-line column drawn at a
+   native 25em width. A SINGLE font-size scales the whole page — glyphs, padding,
+   line height and the 25em width all track it — so changing the font-size zooms
+   the finished page as one canvas (like browser zoom) without ever re-wrapping a
+   line. The font-size tracks the pane via container-query width (4cqw makes the
+   25em page exactly fill the pane), capped at the native 22px so a very wide pane
+   centres the page instead of stretching the script. The page is a normal,
+   horizontally-centred in-flow block: no transforms, no absolute positioning, so
+   nothing lands off-screen and there is no leftover side border. */
+.scroll-column.tikkun-column {
+  width: 100%; max-width: none; margin: 0; padding: 0;
+  border: 0; border-radius: 0; box-shadow: none; background: transparent;
+  line-height: normal; letter-spacing: normal; text-align: initial;
+  overflow: visible;
+}
+.scroll-page-shell { width: 100%; margin: 0 0 18px; }
+.scroll-page {
+  position: relative; box-sizing: border-box;
+  width: 25em; margin: 0 auto;
+  font-size: min(4cqw, 22px);
+  padding: 1.7em 1.55em 1.55em;
+  direction: rtl; color: #2a2016;
+  font-family: 'StamAshkenaz', serif; line-height: 1.62;
+  background: #e9d7b0;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0) 8%),
+    radial-gradient(120% 60% at 50% 0%, rgba(120,80,30,0.10), rgba(120,80,30,0) 60%);
+  border: 1px solid #c9b38a; border-radius: 8px;
+  box-shadow: inset 0 0 40px rgba(120,80,30,0.18);
+}
+.scroll-page-number {
+  position: absolute; inset-block-start: 0.5em; inset-inline-start: 0.7em;
+  direction: rtl; font: 0.5em/1.2 system-ui, sans-serif; color: rgba(74,58,38,0.55);
+}
+.scroll-line {
+  position: relative; display: flex; align-items: baseline;
+  height: 1.62em; direction: rtl; white-space: nowrap;
+}
+.scroll-line-column {
+  flex: 1; display: flex; justify-content: space-between; min-width: 0;
+}
+.scroll-line-column:nth-child(2) { margin-inline-start: 5em; width: 12em; flex: 0 0 auto; }
+/* Full justification to BOTH margins, like a scribal column: the words of a line
+   spread edge to edge. `gap` is the MINIMUM inter-word space; space-between then
+   distributes the remaining width evenly between the words so the line fills the
+   column from the right margin to the left. */
+.scroll-line-fragment {
+  flex: 1; display: flex; justify-content: space-between; align-items: baseline;
+  gap: 0.28em;
+}
+/* Paragraph-closing lines stay ragged — a scroll never stretches the final line
+   of a parashah (petucha) or a short setuma run across the full width. */
+.scroll-line.petucha .scroll-line-fragment,
+.scroll-line-fragment.setuma { flex: 0 1 auto; justify-content: flex-start; }
+.tikkun-column .scroll-word { padding: 0; white-space: nowrap; }
+.tikkun-column .scroll-word.ctx { opacity: 0.38; }
+.tikkun-column .scroll-word.out-of-range { opacity: 0.12; }
 
 /* The aliyah-view controls: the transport + live meter sit at the TOP (above the
    scroll) in .aliyah-top; the result panel docks at the foot in .aliyah-dock. On
@@ -448,7 +724,7 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 .aliyah-dock { display: flex; flex-direction: column; }
 
 /* --- Mobile: show the real scroll full-screen with a minimal control overlay - */
-@media (max-width: 900px) {
+@media (max-width: 900px), (max-height: 600px) {
   /* Torah-column view: let the STA"M drawer fill the screen so the scroll is
      read edge-to-edge rather than in a narrow rail. */
   body.scroll-view .scrollpane { width: 100vw; max-width: 100vw; }
@@ -514,6 +790,36 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
   }
   .aliyah-dock .result { margin: 0; color: #2a2016; }
   .aliyah-dock .result .hint { color: #4a3a26; }
+
+  /* Float the aliyah transport as a bottom overlay bar (matching the STA"M
+     single-verse view), so the controls hover over the scroll rather than
+     pushing it up the screen. The scroll reclaims the freed height. */
+  body.aliyah-open .scrollpane .scroll-column { max-height: calc(100vh - 220px); }
+  /* The pane is the sole mobile aliyah scroller. Keeping overflow off the fixed
+     tikkun page avoids nested scrollbars and preserves its scaled page height. */
+  body.aliyah-open .scrollpane {
+    max-height: calc(100vh - 220px); overflow-y: auto;
+  }
+  body.aliyah-open .scrollpane .tikkun-column {
+    max-height: none; overflow: visible;
+  }
+  body.aliyah-open #practice.aliyah-fill { padding-bottom: 78px; }
+  body.aliyah-open .aliyah-view .transport {
+    position: fixed; inset-inline: 0; bottom: 0; z-index: 48; margin: 0;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    gap: 8px; justify-content: space-between; flex-wrap: nowrap;
+    background: linear-gradient(0deg, rgba(11,14,26,0.97) 55%, rgba(11,14,26,0));
+    pointer-events: none;
+  }
+  body.aliyah-open .aliyah-view .transport button {
+    pointer-events: auto; flex: 0 1 auto; font-size: 12px; padding: 11px 13px;
+    border-radius: 999px; box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+    background: var(--panel-2); color: var(--text); border-color: var(--line);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  body.aliyah-open .aliyah-view .transport button.primary { background: var(--accent); color: #08101f; border-color: transparent; }
+  body.aliyah-open .aliyah-view .transport button.warn { background: var(--accent-2); color: #201007; border-color: transparent; }
+  body.aliyah-open .aliyah-view .transport #alStop:disabled { display: none; }
 }
 
 /* Guitar-hero zoom: a horizontally scrollable strip of the timeline. */
@@ -539,6 +845,45 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 .mode-pill {
   display: inline-block; font-size: 12px; font-weight: 700; color: #08101f;
   background: var(--accent); border-radius: 999px; padding: 3px 10px;
+}
+
+/* --- Desktop: coaching-line-first layout --------------------------------- *
+ * The practice pane becomes a flex column that fills its grid cell, and the
+ * coaching contour (`.contour-wrap`) flex-fills whatever height the fixed
+ * chrome (header, live meter, transport) leaves — so the piano-style note
+ * lines and pitch trace take the MAJORITY of the vertical space and slight
+ * tone variations are legible. The analysis panels (spectrograms + accuracy
+ * bars) collapse behind the "🔬 Analysis" toggle; hidden by default so the
+ * contour is maximally dominant. Mobile is unaffected (own media queries). */
+/* Requires a TALL viewport too, so short landscape phones (wide but < 600px
+   tall) use the compact layout instead of this desktop flex-fill. */
+@media (min-width: 901px) and (min-height: 601px) {
+  .practice { display: flex; flex-direction: column; }
+  #practice:not(.aliyah-fill) {
+    flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
+  }
+  /* Fixed chrome keeps its natural height; only the timeline grows. */
+  #practice:not(.aliyah-fill) > .phead,
+  #practice:not(.aliyah-fill) > .practice-en,
+  #practice:not(.aliyah-fill) > .topstatus,
+  #practice:not(.aliyah-fill) > .transport,
+  #practice:not(.aliyah-fill) > .accuracy-panel { flex: 0 0 auto; }
+
+  #practice:not(.aliyah-fill) .timeline {
+    flex: 1 1 auto; min-height: 260px; display: flex; flex-direction: column;
+  }
+  #practice:not(.aliyah-fill) .tl-scroll { flex: 1 1 auto; min-height: 0; }
+  #practice:not(.aliyah-fill) .tl-scroll .tl-inner {
+    height: 100%; display: flex; flex-direction: column;
+  }
+  /* The coaching canvas fills the leftover height. */
+  #practice:not(.aliyah-fill) .contour-wrap { flex: 1 1 auto; min-height: 180px; }
+  #practice:not(.aliyah-fill) .contour-wrap canvas.contour { height: 100%; }
+
+  /* Collapsed analysis: drop the spectrograms + accuracy bars so the contour
+     claims their space. Toggled on -> they reappear below the contour. */
+  #practice.hide-analysis #tlExtras,
+  #practice.hide-analysis #accPanel { display: none; }
 }
 
 /* Reading-size control: enlarges the aligned Hebrew, shrinks the notation. */
@@ -583,6 +928,8 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
    with fewer divisions) plus a row of independent handicap skill badges. */
 .accuracy-panel { margin: 8px 0 2px; display: flex; flex-direction: column; gap: 5px; }
 .accuracy-panel:empty { display: none; }
+.acc-model-badge { font-size: 11px; padding: 3px 8px; border-radius: 6px;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
 
 .scorebar-row { }
 .scorebar-row.active .sb-label { color: var(--text); }

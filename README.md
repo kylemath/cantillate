@@ -66,11 +66,11 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
   cantillation-mark glyphs; tap a family (or a trope card) to **highlight every
   occurrence in the text**.
 - **Torah-column view** — toggle "📜 Torah column" (or reach Level 8) to replace
-  the verse-by-verse cards with a continuous, justified, right-to-left STA"M
-  column on parchment: consonants only, no verse numbers, no maqaf/sof-pasuk —
-  the authentic scroll format. (Exact scribal line/paragraph breaks would need a
-  dedicated tikkun dataset; the column format, justification and script are
-  faithful.) Tap any word to jump to it for practice.
+  the verse-by-verse cards with fixed, right-to-left STA"M pages on parchment:
+  consonants only, no verse numbers, no maqaf/sof-pasuk. Page and line boundaries
+  follow tikkun.io's modern Davidovich 245-column / 42-line layout; the completed
+  page scales as one unit on desktop and mobile, so its lines never re-wrap.
+  Tap any word to jump to it for practice.
 - **Level progression** — start with everything shown and *hear & repeat* single
   words; advance to generating words, phrases, then whole lines guitar-hero style
   with a moving cue; then aids are removed one at a time (cantillation → vowels →

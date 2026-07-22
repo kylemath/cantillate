@@ -19,6 +19,7 @@ export class ContourView {
     this.steps = [];       // [{t0,t1,p,color,connector}]
     this.raw = [];         // [{t,p}] faint underlay
     this.wordBounds = [];  // [t01,...]
+    this.noteStatus = {};  // {stepIndex: 'hit'|'miss'} — Note-hit "gem" shading
     this.userTrail = [];
     this.realTrail = [];
     this.playhead = null;
@@ -41,6 +42,7 @@ export class ContourView {
     this.steps = steps;
     this.raw = raw;
     this.wordBounds = wordBounds;
+    this.noteStatus = {};
     this.userTrail = [];
     this.realTrail = [];
     this.playhead = null;
@@ -69,7 +71,11 @@ export class ContourView {
   // displayed dynamic range; such points are clipped out of the traces.
   _inRange(p) { return p >= this.yMin - 0.5 && p <= this.yMax + 0.5; }
 
-  clearUser() { this.userTrail = []; this.draw(); }
+  clearUser() { this.userTrail = []; this.noteStatus = {}; this.draw(); }
+  // Guitar-Hero "gem lights up": mark a coach note-step (by its index) hit/missed
+  // so its bar is shaded green/red once the playhead has passed it.
+  setNoteStatus(idx, status) { this.noteStatus[idx] = status; this.draw(); }
+  clearNoteStatus() { this.noteStatus = {}; this.draw(); }
   pushUser(t01, semitone, rms, hit, rawT) {
     // Keep the entire session (reset each new recording via clearUser).
     if (semitone != null) this.userTrail.push({ t: t01, p: semitone, rms: rms || 0, hit, rawT });
@@ -92,6 +98,13 @@ export class ContourView {
     const ctx = this.ctx;
     ctx.clearRect(0, 0, this.w, this.h);
     const xR = this.w - RM;
+    // Pixels per semitone at the current canvas height. On the tall desktop
+    // contour this is large, so we size the note "gems" and the user-pitch dots
+    // RELATIVE to it: the bars read like piano keys and the trace never grows so
+    // fat it swallows the gems (the original fixed-px sizes dwarfed them on a
+    // short canvas). Slight tone variations stay legible because a semitone now
+    // spans many pixels.
+    const pxPerSemi = (this.h - 34) / Math.max(1e-3, this.yMax - this.yMin);
 
     // Semitone gridlines (labels on the right for the RTL axis).
     ctx.font = '10px system-ui, sans-serif';
@@ -131,16 +144,31 @@ export class ContourView {
       ctx.stroke();
     }
 
-    // Coach note steps: horizontal bars, no diagonal connectors.
-    for (const s of this.steps) {
+    // Coach note steps: horizontal bars, no diagonal connectors. In Note-hit
+    // mode a completed note's bar lights up green (hit) or red (missed). Bar
+    // thickness scales with the vertical resolution (≈half a semitone band, so
+    // the notes look like piano keys) but is clamped to stay readable on any
+    // canvas height.
+    const barW = Math.max(4, Math.min(pxPerSemi * 0.5, 16));
+    const connW = Math.max(3, barW * 0.6);
+    for (let i = 0; i < this.steps.length; i++) {
+      const s = this.steps[i];
       const xa = this._x(s.t0), xb = this._x(s.t1), y = this._y(s.p);
       let left = Math.min(xa, xb), right = Math.max(xa, xb);
       if (right - left < 3) right = left + 3;
-      ctx.strokeStyle = s.color || '#5aa0ff';
       ctx.lineCap = 'round';
-      ctx.globalAlpha = 0.25; ctx.lineWidth = (s.connector ? 3 : 5) + 4;
+      const w = s.connector ? connW : barW;
+      const status = this.noteStatus[i];
+      // "Gem" halo behind the bar once the note is completed.
+      if (status === 'hit' || status === 'miss') {
+        ctx.strokeStyle = status === 'hit' ? 'rgba(70,240,140,0.55)' : 'rgba(255,90,80,0.5)';
+        ctx.globalAlpha = 1; ctx.lineWidth = w + 10;
+        ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
+      }
+      ctx.strokeStyle = s.color || '#5aa0ff';
+      ctx.globalAlpha = 0.25; ctx.lineWidth = w + 4;
       ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
-      ctx.globalAlpha = 1; ctx.lineWidth = s.connector ? 3 : 5;
+      ctx.globalAlpha = 1; ctx.lineWidth = w;
       ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
     }
 
@@ -154,7 +182,11 @@ export class ContourView {
         const r = this.realTrail[i];
         if (!this._inRange(r.p)) { pen = false; continue; } // clip outliers
         const x = this._x(r.t), y = this._y(r.p);
-        if (i > 0 && (r.t - this.realTrail[i - 1].t) > 0.05) pen = false;
+        // Break the stroke across word gaps AND on any backward jump in time
+        // (e.g. audio looping/seeking to the start), so no long line connects the
+        // end of one pass to the beginning of the next.
+        const dt = i > 0 ? r.t - this.realTrail[i - 1].t : 0;
+        if (i > 0 && (dt > 0.05 || dt < 0)) pen = false;
         if (!pen) { ctx.moveTo(x, y); pen = true; } else ctx.lineTo(x, y);
       }
       ctx.stroke();
@@ -168,7 +200,10 @@ export class ContourView {
       const x = this._x(s.t), y = this._y(s.p);
       const alpha = Math.min(0.95, 0.35 + s.rms * 8);
       const perfect = s.hit === 'perfect';
-      const r = (2.5 + Math.min(5, s.rms * 40)) * (perfect ? 1.7 : 1);
+      let r = (2.5 + Math.min(5, s.rms * 40)) * (perfect ? 1.7 : 1);
+      // Never let a loud frame's dot spill past ~0.6 semitone, so the trace
+      // can't swallow the note gems or blur out fine pitch differences.
+      r = Math.max(1.5, Math.min(r, pxPerSemi * 0.6));
       const col = perfect ? `rgba(70,240,140,${alpha})`
         : s.hit === 'close' ? `rgba(255,205,85,${alpha})`
           : s.hit === 'far' ? `rgba(255,107,90,${alpha})`
@@ -320,6 +355,93 @@ export function scoreTrail(userTrail, targetPoints, opts = {}) {
 
   const score = 100 * Math.exp(-meanErr / tau) * covFactor;
   return Math.max(0, Math.min(100, score));
+}
+
+// Flatten coach note-steps ({t0,t1,p}) into the polyline of {t,p} points the
+// contour scorer consumes (two points per step: on at t0, off at t1). This is
+// exactly how buildCoach derives `coach.points`, so scoring a subset of steps
+// this way reproduces the melody scorer's existing behaviour.
+export function stepsToPoints(steps) {
+  const pts = [];
+  for (const s of steps || []) { pts.push({ t: s.t0, p: s.p }); pts.push({ t: s.t1, p: s.p }); }
+  return pts;
+}
+
+// --- Guitar-Hero-style NOTE scoring (alternative to the melody/contour scorer) -
+//
+// Each coach step is a "note gem": a target pitch `p` (semitones vs the tonic)
+// held over a time window [t0,t1] on the normalized 0..1 timeline. A note is
+// graded by the FRACTION of its duration your (offset-corrected) pitch sits
+// within `band` semitones of the target; the note "hits" once that fraction
+// clears `minFrac`. Unlike scoreTrail — which samples a uniform time grid, so
+// long held notes dominate — every note is weighted EQUALLY here, so quick
+// ornamental steps count as much as sustained ones. Timing is forgiven by the
+// note's own duration plus a small interpolation `window`; being early/late just
+// eats into the in-band fraction rather than being mischarged as a pitch error.
+//
+// Returns { score (0..100 = mean per-note in-band fraction), hits, total,
+// longest (longest hit streak), notes: [{w, frac, hit}] } so callers can show
+// the headline number, a "hits/total" badge and a combo streak.
+export function scoreNotes(userTrail, steps, opts = {}) {
+  const band = opts.band ?? 1.5;        // semitones counted as "on the note"
+  const minFrac = opts.minFrac ?? 0.5;  // in-band fraction needed to "hit" a note
+  const K = opts.samples ?? 8;          // sub-samples across each note window
+  const window = opts.window ?? 0.04;   // max time gap (in t01) to a voiced frame
+  const total = (steps || []).length;
+  if (!userTrail || !userTrail.length || !total) return { score: 0, hits: 0, total, longest: 0, notes: [] };
+
+  // Voiced, offset-corrected user frames, sorted by time (same filter as scoreTrail).
+  const voiced = [];
+  for (const s of userTrail) {
+    if (s.rms < 0.01) continue;
+    const up = s.sp != null ? s.sp : s.p;
+    if (up == null) continue;
+    voiced.push({ t: s.t, p: up });
+  }
+  voiced.sort((a, b) => a.t - b.t);
+  if (!voiced.length) return { score: 0, hits: 0, total, longest: 0, notes: [] };
+
+  // User pitch at time tg: linear interp inside `window`, nearer frame otherwise,
+  // null when there's no voiced frame close enough (a gap -> counts as off-note).
+  const pitchAt = (tg) => {
+    let before = null, after = null;
+    for (let i = 0; i < voiced.length; i++) {
+      if (voiced[i].t <= tg) before = voiced[i];
+      else { after = voiced[i]; break; }
+    }
+    if (before && after) {
+      if (tg - before.t <= window && after.t - tg <= window) {
+        const f = (tg - before.t) / (after.t - before.t || 1);
+        return before.p + (after.p - before.p) * f;
+      }
+      if (tg - before.t <= after.t - tg) return (tg - before.t <= window) ? before.p : null;
+      return (after.t - tg <= window) ? after.p : null;
+    }
+    if (before && tg - before.t <= window) return before.p;
+    if (after && after.t - tg <= window) return after.p;
+    return null;
+  };
+
+  const notes = [];
+  let hits = 0, sumFrac = 0, streak = 0, longest = 0;
+  const ordered = [...steps].sort((a, b) => a.t0 - b.t0);
+  for (const st of ordered) {
+    const dur = Math.max(1e-4, st.t1 - st.t0);
+    let inBand = 0;
+    for (let k = 0; k < K; k++) {
+      const tg = st.t0 + ((k + 0.5) / K) * dur;
+      const up = pitchAt(tg);
+      if (up != null && Math.abs(up - st.p) <= band) inBand++;
+    }
+    const frac = inBand / K;
+    const hit = frac >= minFrac;
+    sumFrac += frac;
+    if (hit) { hits++; streak++; if (streak > longest) longest = streak; }
+    else streak = 0;
+    notes.push({ w: st.w, frac, hit });
+  }
+  const score = Math.max(0, Math.min(100, 100 * (sumFrac / ordered.length)));
+  return { score, hits, total: ordered.length, longest, notes };
 }
 
 // Time-aligned spectrogram: columns are placed by their position in the played

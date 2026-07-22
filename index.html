@@ -20,6 +20,21 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- Mobile-only slim app bar: an always-visible top strip with a menu button
+       that pulls down the settings sheet (all the reading/display controls) and
+       the app title. Hidden on desktop, where the full header shows instead. -->
+  <div class="mobilebar" id="mobileBar">
+    <button id="settingsToggle" class="mb-menu" aria-label="Settings menu" aria-expanded="false" title="Reading &amp; display settings">⚙</button>
+    <span class="mb-title">Cantillate</span>
+    <button id="mobileVersesBtn" class="mb-verses" aria-label="Choose a verse" title="Pick a verse to practice">📖 Verses</button>
+  </div>
+
+  <!-- Settings sheet: on desktop this wrapper is display:contents (invisible to
+       layout, so the header + toolbar render exactly as before). On mobile it
+       becomes a pull-down sheet toggled by the app-bar button, so all the dense
+       controls stop eating the screen and the practice surface gets the room. -->
+  <div class="settings-sheet" id="settingsSheet">
+    <button class="drawer-close" id="settingsClose" aria-label="Close settings">✕</button>
   <header class="topbar">
     <div class="brand">
       <h1>Cantillate</h1>
@@ -67,6 +82,11 @@
       <button class="ov" data-ov="phrase">Phrases</button>
       <button class="ov" data-ov="verse">Verse</button>
     </span>
+    <span class="label" style="margin-inline-start:12px;">Scoring:</span>
+    <span class="seg" id="scoreModelSeg" title="Which scoring model counts (both are always shown side by side for testing). Melody = pitch-shape match; Note-hit = Guitar-Hero-style per-note hits.">
+      <button class="sm on" data-sm="contour">Melody</button>
+      <button class="sm" data-sm="gh">Note-hit (beta)</button>
+    </span>
     <span class="label" style="margin-inline-start:12px;">View:</span>
     <button id="tgScrollView" class="toggle">📜 Torah column</button>
     <button id="tgGuide" class="toggle" title="Trope guide — colours, melodic shapes &amp; meanings; tap a family or trope to spotlight it in the pesukim">🎨 Trope guide</button>
@@ -75,9 +95,11 @@
     </span>
     <button id="btnLeaderboard" class="toggle" style="margin-inline-start:12px;" title="See how your practice compares">🏆 Leaderboard</button>
   </div>
+  </div><!-- /.settings-sheet -->
 
   <div class="toolbar stagebar" id="stageBar"></div>
 
+  <div id="settingsBackdrop" class="drawer-backdrop"></div>
   <div id="drawerBackdrop" class="drawer-backdrop"></div>
 
   <main>
@@ -186,6 +208,19 @@
   </div>
 
   <button id="pasukFab" class="pasuk-fab" aria-label="Open pesukim" title="Show pesukim">☰</button>
+
+  <!-- Portrait rotate prompt (mobile practice only). The note-coach is designed
+       for landscape; where the platform blocks a programmatic orientation lock
+       (iOS Safari) this guides the user to turn the phone. STA"M reading is the
+       intentional portrait view, so it's exempt (see maybeShowRotate). -->
+  <div id="rotatePrompt" class="rotate-prompt" hidden>
+    <div class="rotate-card">
+      <div class="rotate-ico" aria-hidden="true">↻</div>
+      <p class="rotate-title">Rotate to practice</p>
+      <p class="hint">The note-coach works best in landscape — turn your phone sideways.</p>
+      <button id="rotateAnyway" class="toggle">Continue in portrait</button>
+    </div>
+  </div>
 
   <script type="module" src="js/app.js"></script>
   <script>

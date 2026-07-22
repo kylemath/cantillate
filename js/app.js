@@ -4,13 +4,14 @@ import { buildLineMelody, splitPhrases, FAMILIES, markGlyph, NAMES,
 import { singSteps, playTone, stopPlayback } from './audio.js';
 import { playSegment, stopVerseAudio } from './realaudio.js';
 import { startMic, stopMic } from './pitch.js';
-import { ContourView, Spectrogram, scoreTrail, sampleContour } from './viz.js';
+import { ContourView, Spectrogram, scoreTrail, scoreNotes, stepsToPoints, sampleContour } from './viz.js';
 import { LEVELS, levelById, VERSE_MODES, skillForLevel } from './levels.js';
 import { aliyotFor, parashahOf, currentTriennialYear } from './aliyot.js';
 import * as store from './store.js';
 import * as auth from './auth.js';
 import * as scores from './scores.js';
 import * as offline from './offline.js';
+import { loadTikkunData, renderTikkunPages, TIKKUN_DATA_URL } from './tikkun.js';
 
 // An aliyah's scroll+yad challenge unlocks once every pasuk in it has reached at
 // least this stage (i.e., the learner has worked it up to whole-verse practice).
@@ -26,6 +27,7 @@ let AVAILABLE = [
 
 const state = {
   data: null,
+  tikkun: null,       // fixed Davidovich 245-column / 42-line page layout
   audio: null,        // per-verse recorded-chant ranges
   pitch: null,        // per-word extracted note steps
   shapes: null,       // averaged per-trope shapes (for legend icons)
@@ -52,6 +54,8 @@ const state = {
   tonicHz: 220,
   division: 'full',  // legacy field; verse range now derives from cycle/triYear (see divisionRange)
   readScale: 1.6,     // reading-size multiplier: bigger Hebrew, smaller notation
+  showAnalysis: false, // desktop: reveal the spectrograms + accuracy bars (off = the
+                       // coaching contour fills the pane so slight tone shifts show)
   selectedVerse: null,
   level: 1,
   unitIndex: 0,
@@ -67,6 +71,11 @@ const state = {
   highlight: null,    // { kind: 'taam'|'family', value }
   guideOpen: false,   // the optional vertical "Trope guide" panel is shown
   colorMode: 'full',  // pesukim colouring: 'full' | 'trope' | 'grey'
+  // Which scoring model "counts" (stored bests, stars, unlocks). Both models are
+  // always computed and shown side by side for dev/testing (see scoreSteps).
+  //   'contour' = melody/shape scorer (scoreTrail, the original)
+  //   'gh'      = Guitar-Hero note-hit scorer (scoreNotes)
+  scoreModel: 'contour',
 };
 
 // Neutral ink for words/vowels when colour is limited to the trope (or off).
@@ -217,7 +226,11 @@ async function init() {
   $('overlaySeg').querySelectorAll('.ov').forEach((b) => {
     b.addEventListener('click', () => { state.overlay = b.dataset.ov; syncToggleUI(); renderVerses(); });
   });
-  bindToggle('tgScrollView', () => { if (state.aliyah) return; state.scrollView = !state.scrollView; renderVerses(); });
+  initScoreModel();
+  $('scoreModelSeg').querySelectorAll('.sm').forEach((b) => {
+    b.addEventListener('click', () => setScoreModel(b.dataset.sm));
+  });
+  bindToggle('tgScrollView', () => { if (state.aliyah) return; state.scrollView = !state.scrollView; renderVerses(); maybeShowRotate(); });
 
   // A single "Portion" selector is the sole control for how much of the parashah
   // you read: the full annual reading, or one shorter triennial-cycle year. The
@@ -236,10 +249,13 @@ async function init() {
   syncPortionUI();
 
   state.readScale = loadReadScale();
+  state.showAnalysis = loadAnalysisPref();
   setupGuide();
   document.addEventListener('keydown', onKey);
   setupSplitter();
   setupLeftSize();
+  setupSettingsSheet();
+  setupOrientation();
   setupPasukDrawer();
   setupWordLookup();
   setupAuth();
@@ -338,6 +354,26 @@ function saveAliyotEditor(body) {
   renderAliyot(); renderVerses();
 }
 
+// Mobile pull-down "settings" sheet: on a phone the dense header controls and
+// display toolbar live in a sheet that slides down from the slim app-bar, so
+// they stop eating the screen. On desktop the sheet is display:contents (a
+// no-op wrapper) and the app-bar is hidden, so this is inert there.
+function setupSettingsSheet() {
+  const toggle = $('settingsToggle');
+  const backdrop = $('settingsBackdrop');
+  const closeBtn = $('settingsClose');
+  const setOpen = (open) => {
+    document.body.classList.toggle('settings-open', open);
+    if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  if (toggle) toggle.addEventListener('click', () => setOpen(!document.body.classList.contains('settings-open')));
+  if (backdrop) backdrop.addEventListener('click', () => setOpen(false));
+  if (closeBtn) closeBtn.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('settings-open')) setOpen(false);
+  });
+}
+
 // Mobile off-canvas "pesukim" drawer: the verse list overlays the practice pane
 // (toggled by the floating hamburger) so it never eats horizontal or vertical
 // space on a phone. On desktop the drawer controls are hidden via CSS and the
@@ -350,9 +386,17 @@ function setupPasukDrawer() {
   const closeBtn = $('drawerClose');
   const closeBtnScroll = $('drawerCloseScroll');
   if (fab) fab.addEventListener('click', () => document.body.classList.toggle('pasuk-open'));
+  // App-bar "Verses" button (compact): the verse picker lives here rather than a
+  // bottom-corner FAB, which collided with the corner-docked transport buttons.
+  const versesBtn = $('mobileVersesBtn');
+  if (versesBtn) versesBtn.addEventListener('click', () => document.body.classList.toggle('pasuk-open'));
   if (backdrop) backdrop.addEventListener('click', closePasukDrawer);
   if (closeBtn) closeBtn.addEventListener('click', closePasukDrawer);
-  if (closeBtnScroll) closeBtnScroll.addEventListener('click', closePasukDrawer);
+  // The STA"M pane is the on-demand full-screen Torah-column reader (mobile), so
+  // its close button exits scroll view rather than closing the pointed drawer.
+  if (closeBtnScroll) closeBtnScroll.addEventListener('click', () => {
+    state.scrollView = false; syncToggleUI(); renderVerses(); maybeShowRotate();
+  });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && document.body.classList.contains('pasuk-open')) closePasukDrawer();
   });
@@ -1061,6 +1105,28 @@ function applyScrollW(px) {
   const w = Math.max(140, Math.min(max, px));
   mainEl.style.setProperty('--scrollw', w + 'px');
   try { localStorage.setItem(SCROLLW_KEY, String(Math.round(w))); } catch (e) { /* ignore */ }
+  fitScrollPages();
+}
+
+// The whole tikkun page scales from its own font-size via a container query
+// (see .scroll-page in styles.css: 4cqw makes the 25em page fill the pane, capped
+// at the native size). That is pure CSS and reflow-free, so resizing needs no JS
+// re-layout here — we only (re)assert the one-time scroll to the reading's start
+// once the pane has a measurable width.
+function fitScrollPages() {
+  const box = $('scrollVerses');
+  if (!box) return;
+  if (!box.clientWidth) return;
+  if (box.dataset.scrollToStart === '1') requestAnimationFrame(scrollTikkunStartIntoView);
+}
+// Re-assert the start position whenever the pane's viewport changes (splitter
+// drag, mobile reflow, drawer open, orientation change, etc.).
+let _scrollRO = null;
+function observeScrollPane() {
+  const box = $('scrollVerses');
+  if (!box || _scrollRO || typeof ResizeObserver === 'undefined') return;
+  _scrollRO = new ResizeObserver(() => fitScrollPages());
+  _scrollRO.observe(box);
 }
 
 // Attach drag + double-click-reset behaviour to a splitter. onDrag receives the
@@ -1100,6 +1166,8 @@ function setupSplitter() {
 
   // Divider between the STA"M column (leftmost) and the pointed verses.
   bindSplitter($('splitter2'), (clientX) => applyScrollW(clientX - mainLeft()), () => applyScrollW(300));
+  observeScrollPane();
+  window.addEventListener('resize', fitScrollPages);
 }
 
 // --- Left-panel (verse list) text size -----------------------------------
@@ -1150,6 +1218,9 @@ function readingFontPx(nWords) {
 
 // Note-panel heights that shrink as the reading grows, so enlarging the text
 // costs the notation its space (not the reading's). Floors keep them usable.
+// On desktop the coaching contour ignores this shrink — it flex-fills the pane
+// so slight tone variations are visible (see .contour-wrap in the CSS); only the
+// spectrograms use `contour`/`spectro` there. Mobile keeps the fixed heights.
 function noteHeights() {
   const s = state.readScale || 1;
   const mobile = window.innerWidth <= 720;
@@ -1157,6 +1228,39 @@ function noteHeights() {
   const contour = Math.round(Math.max(mobile ? 66 : 88, cBase - (s - 1) * 62));
   const spectro = Math.round(Math.max(mobile ? 30 : 40, sBase - (s - 1) * 46));
   return { contour, spectro };
+}
+
+// Desktop puts the coaching contour center-stage: the spectrograms + accuracy
+// bars ("analysis") collapse behind a toggle so the note lines fill the pane.
+// Default OFF (collapsed) so the coaching line dominates out of the box.
+const ANALYSIS_KEY = 'cantillate.showAnalysis';
+function loadAnalysisPref() {
+  try { return localStorage.getItem(ANALYSIS_KEY) === '1'; } catch (e) { return false; }
+}
+// True on the desktop grid layout (where the collapse/flex-fill applies). A
+// desktop/laptop is both WIDE and TALL; phones — including landscape phones that
+// are wider than 900px but short — use the compact layout (matches the CSS
+// "(max-width:900px), (max-height:600px)" breakpoint).
+function isDesktopLayout() { return window.innerWidth > 900 && window.innerHeight > 600; }
+
+// Show/hide the analysis panels. When idle we rebuild the practice pane so every
+// canvas is re-created crisply at its new size; mid-take we just flip the class
+// and re-fit the contour so we never interrupt recording/playback.
+function toggleAnalysis() {
+  const show = !state.showAnalysis;
+  state.showAnalysis = show;
+  try { localStorage.setItem(ANALYSIS_KEY, show ? '1' : '0'); } catch (e) { /* ignore */ }
+  const idle = !state.recording && !state.playingReal;
+  if (idle && state.selectedVerse != null && !state.aliyah) {
+    renderPractice();
+    return;
+  }
+  const p = $('practice');
+  if (p) p.classList.toggle('hide-analysis', !show);
+  const btn = $('btnAnalysis');
+  if (btn) { btn.classList.toggle('on', show); btn.setAttribute('aria-pressed', show ? 'true' : 'false'); }
+  // The contour's flex height just changed — re-fit its backing store & redraw.
+  if (state.view) { state.view._resize(); state.view.draw(); }
 }
 
 // Apply a new reading size. During an active take we only resize the text (no
@@ -1206,6 +1310,17 @@ function onKey(e) {
   else if (e.key === 'Escape') { e.preventDefault(); stopAll(); }
 }
 
+// Advance whole-pasuk in STA"M reading (level 8 / Torah-column view). Jumps to
+// the next/previous verse in the current portion and — via selectVerse — opens
+// it at that verse's highest UNLOCKED stage (so a fully-learned pasuk stays in
+// the scroll, while one that still needs work drops to its word/phrase coach).
+function goToVerse(delta) {
+  if (state.selectedVerse == null || state.aliyah) return;
+  const [start, end] = divisionRange();
+  const n = Math.max(start, Math.min(end, state.selectedVerse + delta));
+  if (n !== state.selectedVerse) selectVerse(n);
+}
+
 // Move to another page (word-group / phrase / verse) and optionally play it.
 function goToUnit(idx, play) {
   const units = state.units;
@@ -1226,6 +1341,7 @@ function playUnit() {
   stopVerseAudio();
   state.playingReal = true;
   if (state.spectro) state.spectro.clearPlot();
+  if (state.view) state.view.clearReal(); // reset the green detected-tone line on replay
   const tonic = coach.tonicHz || 200;
   $('btnStop').disabled = false;
   $('result').innerHTML = '<span class="hint">Playing this ' + (state.unitSegs.length > 1 ? 'unit (with the pauses between words)' : 'word') + ' from the recording…</span>';
@@ -1235,6 +1351,62 @@ function playUnit() {
     onEnd: onRealEnd,
     onError: onRealError,
   });
+}
+
+// Touch swipes on the practice timeline advance between units (word/phrase).
+// RTL: swiping the content leftward reveals the NEXT unit; rightward the prev.
+// Skipped when the timeline itself is horizontally scrolling (guitar-hero zoom),
+// where the gesture belongs to the scroll.
+function wirePracticeSwipe() {
+  const el = document.querySelector('#practice .timeline');
+  if (!el) return;
+  if (el.querySelector('.tl-scroll.scrolling')) return;
+  let x0 = 0, y0 = 0, t0 = 0, active = false;
+  el.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
+    const t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; t0 = Date.now(); active = true;
+  }, { passive: true });
+  el.addEventListener('touchend', (e) => {
+    if (!active) return; active = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - x0, dy = t.clientY - y0, dt = Date.now() - t0;
+    if (dt > 600 || Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    // Word/phrase levels swipe between units; the whole-verse (line) level has a
+    // single unit, so it swipes between pesukim instead. RTL: left = forward.
+    const units = state.units;
+    const wholeVerse = !units || units.length < 2;
+    if (dx < 0) { wholeVerse ? goToVerse(1) : goToUnit(state.unitIndex + 1, true); }
+    else { wholeVerse ? goToVerse(-1) : goToUnit(state.unitIndex - 1, true); }
+  }, { passive: true });
+}
+
+// --- Orientation: the note-coach wants landscape on a phone -----------------
+// We attempt a real lock where the platform allows it (Android / installed PWA);
+// iOS Safari ignores programmatic locks, so a portrait overlay prompts the user
+// to rotate. STA"M reading is the deliberate portrait view, so it's exempt.
+function isMobileLayout() { return !isDesktopLayout(); }
+function isPortrait() { return window.matchMedia('(orientation: portrait)').matches; }
+function maybeShowRotate() {
+  const el = $('rotatePrompt');
+  if (!el) return;
+  const practicing = state.selectedVerse != null && !state.aliyah;
+  const show = isMobileLayout() && isPortrait() && practicing
+    && !state.allowPortrait && !document.body.classList.contains('scroll-view');
+  el.hidden = !show;
+  document.body.classList.toggle('rotate-blocking', show);
+}
+async function tryLockLandscape() {
+  try {
+    if (screen.orientation && screen.orientation.lock) await screen.orientation.lock('landscape');
+  } catch (e) { /* unsupported (e.g. iOS) — the rotate prompt guides instead */ }
+}
+function setupOrientation() {
+  const onChange = () => maybeShowRotate();
+  window.addEventListener('resize', onChange);
+  window.addEventListener('orientationchange', () => setTimeout(onChange, 200));
+  const anyway = $('rotateAnyway');
+  if (anyway) anyway.addEventListener('click', () => { state.allowPortrait = true; maybeShowRotate(); });
+  maybeShowRotate();
 }
 
 // ---------------------------------------------------------------------------
@@ -1369,8 +1541,11 @@ function syncToggleUI() {
   $('tgEnglish').classList.toggle('on', state.showEnglish);
   const seg = $('overlaySeg');
   if (seg) seg.querySelectorAll('.ov').forEach((b) => b.classList.toggle('on', b.dataset.ov === state.overlay));
+  const sms = $('scoreModelSeg');
+  if (sms) sms.querySelectorAll('.sm').forEach((b) => b.classList.toggle('on', b.dataset.sm === state.scoreModel));
   $('tgScrollView').classList.toggle('on', state.scrollView);
   document.body.classList.toggle('scroll-view', state.scrollView);
+  if (state.scrollView) requestAnimationFrame(fitScrollPages);
 }
 // Map the unified Portion selector's value onto the underlying cycle/year state
 // (kept separate because scoring, leaderboards and aliyah storage all key off
@@ -1398,6 +1573,51 @@ function syncPortionUI() {
 
 const DEFAULT_SOURCE = 'pockettorah';
 const SOURCE_PREF_KEY = 'cantillate.audioSource';
+
+// --- Scoring model selection (dev/testing) ---------------------------------
+// Two scorers run in parallel; this picks which one "counts" toward stored
+// bests, stars and unlocks. Both are always shown side by side. Selectable via
+// the toolbar, a `?score=gh|contour` URL param (wins + persists), or the saved
+// preference. Defaults to the original melody/contour scorer.
+const SCORE_MODEL_KEY = 'cantillate.scoreModel';
+
+function initScoreModel() {
+  let m = null;
+  try { const q = new URLSearchParams(location.search).get('score'); if (q) m = q; } catch (e) { /* ignore */ }
+  if (m !== 'contour' && m !== 'gh') { try { m = localStorage.getItem(SCORE_MODEL_KEY); } catch (e) { m = null; } }
+  state.scoreModel = m === 'gh' ? 'gh' : 'contour';
+  try { localStorage.setItem(SCORE_MODEL_KEY, state.scoreModel); } catch (e) { /* private mode */ }
+  syncToggleUI();
+}
+
+function setScoreModel(m) {
+  state.scoreModel = m === 'gh' ? 'gh' : 'contour';
+  try { localStorage.setItem(SCORE_MODEL_KEY, state.scoreModel); } catch (e) { /* private mode */ }
+  syncToggleUI();
+  // Refresh the "which model" badge on the score bars (bars themselves show
+  // saved bests, which don't change with the toggle).
+  if (state.selectedVerse != null && !state.aliyah) renderAccuracyPanel();
+}
+
+// Score a set of coach note-steps against the user trail with BOTH models, so we
+// can show them side by side while testing. `active` is the currently-selected
+// model's 0..100 (what gets stored / drives stars & unlocks). The contour value
+// flattens the steps to a polyline exactly as buildCoach does, so with the
+// default model this is identical to the previous scoreTrail(...) calls.
+function scoreSteps(trail, steps) {
+  const contour = scoreTrail(trail, stepsToPoints(steps));
+  const gh = scoreNotes(trail, steps);
+  return { contour, gh: gh.score, ghDetail: gh, active: state.scoreModel === 'gh' ? gh.score : contour };
+}
+
+// The note-hit scorer tends to run tougher than the melody scorer, so when it is
+// the active model we EASE the level-up milestones (scaled below the melody
+// thresholds). Melody keeps its original thresholds unchanged.
+const GH_THRESHOLD_SCALE = 0.8;
+function effectiveThreshold(level) {
+  const t = (level && level.threshold) || 0;
+  return state.scoreModel === 'gh' ? Math.round(t * GH_THRESHOLD_SCALE) : t;
+}
 
 function isDefaultSource(sid) {
   return !sid || sid === DEFAULT_SOURCE;
@@ -1514,8 +1734,15 @@ async function switchAudioSource(sid) {
 
 async function loadData(slug) {
   const meta = AVAILABLE.find((p) => p.slug === slug);
-  const resp = await fetch(meta.file);
+  const [resp, tikkun] = await Promise.all([
+    fetch(meta.file),
+    loadTikkunData().catch((e) => {
+      console.warn('[tikkun] fixed page data unavailable; using continuous fallback', e);
+      return null;
+    }),
+  ]);
   state.data = await resp.json();
+  state.tikkun = tikkun;
   state.slug = slug;
   state.selectedVerse = null;
   if (state.aliyah) setAliyahLayout(false); // leave aliyah layout when the reading changes
@@ -1573,6 +1800,7 @@ function readingDataFiles(slug) {
   const meta = AVAILABLE.find((p) => p.slug === slug);
   const files = [];
   if (meta && meta.file) files.push(meta.file);
+  files.push(TIKKUN_DATA_URL);
   const sid = state.audioSource;
   files.push(
     srcPath(slug, sid, 'audio.json'),
@@ -2007,11 +2235,25 @@ function wireAccPanel() {
   });
 }
 
-// Render the whole reading as a continuous, justified Torah-scroll column:
-// consonants only (no niqqud / te'amim / verse numbers), STA"M script, on
-// parchment — a faithful representation of the scroll's format. This lives in
-// its own pane (#scrollVerses) so it can sit beside the pointed verses rather
-// than replacing them; it only populates when scroll view is on.
+function bindScrollWordSelection(box) {
+  box.querySelectorAll('.sw').forEach((el) => {
+    el.addEventListener('click', () => selectVerse(parseInt(el.dataset.verse, 10)));
+  });
+}
+
+function scrollTikkunStartIntoView() {
+  const pane = $('scrollpane');
+  const box = $('scrollVerses');
+  const start = box && box.querySelector('.range-start');
+  if (!pane || !start || !pane.clientHeight) return;
+  const delta = start.getBoundingClientRect().top - pane.getBoundingClientRect().top;
+  pane.scrollTop = Math.max(0, pane.scrollTop + delta - 48);
+  delete box.dataset.scrollToStart;
+}
+
+// Render explicit Davidovich tikkun pages and line boundaries. Every line is a
+// fixed, non-wrapping row; resize scales the completed page as one canvas. The
+// old continuous flow remains as a data-unavailable fallback.
 function renderScrollPane() {
   const box = $('scrollVerses');
   if (!box) return;
@@ -2023,6 +2265,26 @@ function renderScrollPane() {
   if (title) title.innerHTML = 'Torah column (STA&ldquo;M)';
   if (!state.scrollView) { box.innerHTML = ''; return; }
   const [start, end] = divisionRange();
+  const layoutKey = `${state.slug}:${start}-${end}`;
+  const previousKey = box.dataset.layoutKey;
+  const tikkun = renderTikkunPages(state.tikkun, state.data, {
+    focusStart: start,
+    focusEnd: end,
+    contextStart: start,
+    contextEnd: end,
+    selectedVerse: state.selectedVerse,
+  });
+  if (tikkun) {
+    box.innerHTML = tikkun.html;
+    box.dataset.layoutKey = layoutKey;
+    if (previousKey !== layoutKey) box.dataset.scrollToStart = '1';
+    bindScrollWordSelection(box);
+    fitScrollPages();
+    if (box.dataset.scrollToStart === '1') requestAnimationFrame(scrollTikkunStartIntoView);
+    applyScrollWordHits();
+    return;
+  }
+
   let html = '<div class="scroll-column">';
   for (let i = start; i <= end; i++) {
     const segs = buildLineMelody(tokenize(state.data.verses[i - 1].text));
@@ -2033,9 +2295,33 @@ function renderScrollPane() {
   }
   html += '</div>';
   box.innerHTML = html;
-  box.querySelectorAll('.sw').forEach((el) => {
-    el.addEventListener('click', () => selectVerse(parseInt(el.dataset.verse, 10)));
-  });
+  bindScrollWordSelection(box);
+  // Re-apply the per-word accuracy shading after any rebuild (a toolbar toggle,
+  // pasuk change, etc.), so the STA"M column keeps its last take's clue.
+  applyScrollWordHits();
+}
+
+// Mirror the aliyah reader's per-word "notes hit" clue onto the single-verse
+// STA"M column: after a take, tint each word green (mostly hit) / amber (partial)
+// / red (missed) with a colored underline. `scoreByGi` maps a verse-local word
+// index to its 0..100 score. Kept in state so pane rebuilds can re-apply it.
+function paintScrollWordHits(verseN, scoreByGi) {
+  state._scrollWordHits = { verse: verseN, scores: scoreByGi || {} };
+  applyScrollWordHits();
+}
+function clearScrollWordHits(box) {
+  box = box || $('scrollVerses');
+  if (!box) return;
+  box.querySelectorAll('.sw.word-hit, .sw.word-partial, .sw.word-miss')
+    .forEach((e) => e.classList.remove('word-hit', 'word-partial', 'word-miss'));
+}
+function applyScrollWordHits() {
+  const box = $('scrollVerses');
+  if (!box || state.aliyah) return; // aliyah paints via applyAliyahWordHits
+  clearScrollWordHits(box);
+  const wh = state._scrollWordHits;
+  if (!wh) return;
+  for (const gi in wh.scores) paintWordTint(box, wh.verse, parseInt(gi, 10), wh.scores[gi] / 100);
 }
 
 // Populate the shared STA"M scroll pane (#scrollVerses) with the open aliyah:
@@ -2053,19 +2339,36 @@ function renderAliyahScroll(box) {
   const first = a.start, last = Math.min(a.end, maxV);
   const from = Math.max(1, first - ALIYAH_CONTEXT);
   const to = Math.min(maxV, last + ALIYAH_CONTEXT);
-  const scrollHtml = [];
-  for (let n = from; n <= to; n++) {
-    const segs = buildLineMelody(tokenize(state.data.verses[n - 1].text));
-    const inAliyah = n >= first && n <= last;
-    const words = segs.map((s, wi) => `<span class="sw${inAliyah ? '' : ' ctx'}" data-verse="${n}" data-widx="${wi}">${escapeHtml(toScroll(s.token))}</span>`).join(' ');
-    scrollHtml.push(`<span class="al-verse${inAliyah ? '' : ' ctx'}">${words}</span>`);
+  const tikkun = renderTikkunPages(state.tikkun, state.data, {
+    focusStart: first,
+    focusEnd: last,
+    contextStart: from,
+    contextEnd: to,
+    selectedVerse: state.selectedVerse,
+    columnClass: 'aliyah-scroll',
+    columnId: 'aliyahScroll',
+  });
+  if (tikkun) {
+    box.innerHTML = tikkun.html;
+  } else {
+    const scrollHtml = [];
+    for (let n = from; n <= to; n++) {
+      const segs = buildLineMelody(tokenize(state.data.verses[n - 1].text));
+      const inAliyah = n >= first && n <= last;
+      const words = segs.map((s, wi) => `<span class="sw${inAliyah ? '' : ' ctx'}" data-verse="${n}" data-widx="${wi}">${escapeHtml(toScroll(s.token))}</span>`).join(' ');
+      scrollHtml.push(`<span class="al-verse${inAliyah ? '' : ' ctx'}">${words}</span>`);
+    }
+    box.innerHTML = `<div class="scroll-column aliyah-scroll" id="aliyahScroll">${scrollHtml.join(' ')}</div>`;
   }
-  box.innerHTML = `<div class="scroll-column aliyah-scroll" id="aliyahScroll">${scrollHtml.join(' ')}</div>`;
   const title = document.querySelector('#scrollpane .pane-title');
   if (title) title.innerHTML = `${a.n === 'M' ? 'Maftir' : 'Aliyah ' + a.n} <span class="hint" style="text-transform:none;letter-spacing:0">STA&ldquo;M</span>`;
+  fitScrollPages();
   // Re-apply the start/end cues after any rebuild (e.g. a toolbar toggle) so the
   // yad markers survive re-renders of the pane.
   if (state._aliyaTl) markAliyahEnds(state._aliyaTl, !!state._aliyaEnded);
+  // Re-apply the per-word "notes hit" tint too, so a toolbar toggle / rebuild
+  // after a finished run doesn't wipe the clue.
+  if (state._aliyaWordHits) applyAliyahWordHits(state._aliyaWordHits);
 }
 
 function selectVerse(n) {
@@ -2073,6 +2376,7 @@ function selectVerse(n) {
   state.selectedVerse = n;
   state.aliyah = null; // leave aliyah mode when a single verse is chosen
   closePasukDrawer();
+  tryLockLandscape(); // best-effort; ignored where the platform disallows it
   // Open the highest level this pasuk has unlocked, so returning to a verse
   // resumes at its hardest reached stage rather than a fixed earlier one.
   state.level = store.getVerseLevel(state.slug, n);
@@ -2332,6 +2636,67 @@ function highlightAliyah(verseN, widx) {
   });
 }
 
+// Live per-word accuracy while recording an aliyah: accumulate whether each frame
+// of the CURRENT (yad-pointed) word lands within the note band, and tint that
+// word by its running in-band fraction so accuracy shows up as it's sung. When
+// the yad moves on, the previous word keeps its live tint; the post-run pass
+// (applyAliyahWordHits) later repaints every word with the authoritative score.
+const LIVE_HIT_BAND_GH = 1.5;      // note-hit band (matches scoreNotes' default)
+const LIVE_HIT_BAND_MELODY = 0.9;  // contour "perfect" zone (matches DEADZONE)
+function trackLiveWordHit(verseN, widx, inBand) {
+  const cur = state._aliyaLiveWord;
+  if (!cur || cur.verseN !== verseN || cur.widx !== widx) {
+    state._aliyaLiveWord = { verseN, widx, inband: 0, total: 0 };
+  }
+  const w = state._aliyaLiveWord;
+  w.total++;
+  if (inBand) w.inband++;
+  paintWordTint($('aliyahScroll'), verseN, widx, w.inband / w.total);
+}
+// Single-verse (non-aliyah) twin of trackLiveWordHit: while recording one pasuk,
+// tint the yad-pointed word in the STA"M column (#scrollVerses) live by its
+// running in-band fraction, so the same green/amber/red clue shows up AS it's
+// sung (level 8 etc.) instead of only after the take. finishRecording ->
+// paintScrollWordHits repaints every word with the authoritative score, so the
+// clue stays (and is corrected) once the run ends — exactly like aliyah mode.
+function trackLiveScrollWordHit(verseN, gi, inBand) {
+  if (verseN == null || gi == null || gi < 0) return;
+  const cur = state._scrollLiveWord;
+  if (!cur || cur.verseN !== verseN || cur.gi !== gi) {
+    state._scrollLiveWord = { verseN, gi, inband: 0, total: 0 };
+  }
+  const w = state._scrollLiveWord;
+  w.total++;
+  if (inBand) w.inband++;
+  paintWordTint($('scrollVerses'), verseN, gi, w.inband / w.total);
+}
+// Score ONE word with the contour (melody) model: restrict the trail and the
+// word's steps to the word's own time window and re-normalize both to [0,1] so
+// scoreTrail grades just that word's shape (rather than the word's tiny slice of
+// the whole-verse timeline). Returns 0..100, matching scoreNotes' scale.
+function wordContourScore(trail, wSteps) {
+  if (!wSteps || !wSteps.length) return 0;
+  let wt0 = Infinity, wt1 = -Infinity;
+  for (const s of wSteps) { if (s.t0 < wt0) wt0 = s.t0; if (s.t1 > wt1) wt1 = s.t1; }
+  const span = wt1 - wt0;
+  if (!(span > 0)) return 0;
+  const remTrail = [];
+  for (const p of trail) {
+    if (p.t < wt0 || p.t > wt1) continue;
+    remTrail.push({ t: (p.t - wt0) / span, sp: p.sp, rms: p.rms });
+  }
+  const remPts = stepsToPoints(wSteps).map((pt) => ({ t: (pt.t - wt0) / span, p: pt.p }));
+  return scoreTrail(remTrail, remPts);
+}
+
+function paintWordTint(box, verseN, widx, frac) {
+  if (!box) return;
+  const el = box.querySelector(`.sw[data-verse="${verseN}"][data-widx="${widx}"]`);
+  if (!el) return;
+  el.classList.remove('word-hit', 'word-partial', 'word-miss');
+  el.classList.add(frac >= 0.66 ? 'word-hit' : frac >= 0.33 ? 'word-partial' : 'word-miss');
+}
+
 function stopAliyah() {
   state._aliyaRunning = null;
   window.__cantillateBusy = false;
@@ -2389,6 +2754,9 @@ async function recordAliyahRun(tl, opts = {}) {
   window.__cantillateBusy = true; // hold off any service-worker auto-reload
   state._aliyaSamples = [];
   state._aliyaDiffs = [];
+  state._aliyaWordHits = null; // wipe any prior take's per-word hit tint
+  state._aliyaLiveWord = null; // reset the live per-word accuracy accumulator
+  clearAliyahWordHits();
   setAliyahButtons(true);
   markAliyahEnds(tl, false);
   startLiveMeter('aliyaMeter', 'aliyaMeterFill', 'aliyaMeterVal');
@@ -2427,14 +2795,22 @@ async function recordAliyahRun(tl, opts = {}) {
     const seg = tl.segs.find((s) => tG >= s.gStart && tG < s.gEnd);
     if (seg && seg.coach) {
       const t01 = (tG - seg.gStart) / (seg.dur || 1);
-      highlightAliyah(seg.n, wordAtTime(seg.coach, t01));
-      // Live meter: instantaneous accuracy vs a running key-offset estimate.
+      const widx = wordAtTime(seg.coach, t01);
+      highlightAliyah(seg.n, widx);
+      // Live meter + live per-word tint: as each word is sung, colour the very
+      // word the yad is on by how well its notes are landing so far (green =
+      // on, amber = shaky, red = off). The post-run pass repaints authoritatively.
       if (hz > 0 && rms >= 0.01) {
         const rawT = 12 * Math.log2(hz / (seg.coach.tonicHz || 200));
         const tgt = sampleContour(seg.coach.points, t01);
         state._aliyaDiffs.push(tgt - rawT);
         if (state._aliyaDiffs.length > 200) state._aliyaDiffs.shift();
-        feedLiveMeter((rawT + median(state._aliyaDiffs)) - tgt);
+        const err = (rawT + median(state._aliyaDiffs)) - tgt;
+        feedLiveMeter(err);
+        // "Good frame" band follows the selected model: the note-hit band for
+        // Note-hit mode, the tighter contour "perfect" zone for Melody mode.
+        const band = state.scoreModel === 'gh' ? LIVE_HIT_BAND_GH : LIVE_HIT_BAND_MELODY;
+        trackLiveWordHit(seg.n, widx, Math.abs(err) <= band);
       }
     } else {
       highlightAliyah(null);
@@ -2444,9 +2820,9 @@ async function recordAliyahRun(tl, opts = {}) {
 }
 
 function scoreAliyahVerse(seg, samples) {
-  if (!seg.coach || !seg.coach.points.length) return 0;
+  if (!seg.coach || !seg.coach.points.length) return { score: 0, wordHits: [] };
   const local = samples.filter((s) => s.tG >= seg.gStart && s.tG < seg.gEnd && s.hz > 0);
-  if (local.length < 3) return 0;
+  if (local.length < 3) return { score: 0, wordHits: [] };
   const tonic = seg.coach.tonicHz || 200;
   const trail = [];
   const diffs = [];
@@ -2458,7 +2834,43 @@ function scoreAliyahVerse(seg, samples) {
   }
   const off = median(diffs);
   for (const p of trail) p.sp = p.rawT + off;
-  return Math.round(scoreTrail(trail, seg.coach.points));
+  const score = Math.round(scoreSteps(trail, seg.coach.steps).active);
+  // Per-word accuracy clue for the scroll overlay, following the SELECTED model:
+  // Note-hit mode uses each word's note-hit in-band fraction; Melody mode uses a
+  // per-word slice of the contour scorer (the word's steps + frames re-normalized
+  // to their own window). Map each coach word back to its position in the verse
+  // so we can tint the matching STA"M word.
+  const wordHits = [];
+  const ow = seg.coach.overlayWords || [];
+  const vsegs = seg.vsegs || [];
+  for (let wi = 0; wi < ow.length; wi++) {
+    const wSteps = seg.coach.steps.filter((st) => st.w === wi);
+    if (!wSteps.length) continue;
+    const wScore = state.scoreModel === 'gh'
+      ? scoreNotes(trail, wSteps).score
+      : wordContourScore(trail, wSteps);
+    const widx = vsegs.indexOf(ow[wi].seg);
+    if (widx >= 0) wordHits.push({ widx, frac: wScore / 100 });
+  }
+  return { score, wordHits };
+}
+
+// Paint a subtle per-word "notes hit" clue onto the aliyah STA"M scroll: green
+// tint where the word's notes were mostly hit, amber partial, red mostly missed.
+function clearAliyahWordHits() {
+  const box = $('aliyahScroll');
+  if (!box) return;
+  box.querySelectorAll('.sw.word-hit, .sw.word-partial, .sw.word-miss')
+    .forEach((e) => e.classList.remove('word-hit', 'word-partial', 'word-miss'));
+}
+
+function applyAliyahWordHits(perVerse) {
+  const box = $('aliyahScroll');
+  if (!box) return;
+  clearAliyahWordHits();
+  for (const { seg, wordHits } of perVerse) {
+    for (const wh of wordHits) paintWordTint(box, seg.n, wh.widx, wh.frac);
+  }
 }
 
 function finishAliyahRecord(tl) {
@@ -2475,8 +2887,9 @@ function finishAliyahRecord(tl) {
   stopLiveMeter();
   highlightAliyah(null);
   const samples = state._aliyaSamples || [];
-  const perVerse = tl.segs.map((seg) => scoreAliyahVerse(seg, samples)).filter((x) => x > 0);
-  const raw = perVerse.length ? Math.round(perVerse.reduce((a, b) => a + b, 0) / perVerse.length) : 0;
+  const perVerse = tl.segs.map((seg) => ({ seg, ...scoreAliyahVerse(seg, samples) }));
+  const scored = perVerse.map((x) => x.score).filter((x) => x > 0);
+  const raw = scored.length ? Math.round(scored.reduce((a, b) => a + b, 0) / scored.length) : 0;
   // A duet is easier than an unaided read, so it's worth less and capped below
   // the solo ceiling — a sing-along can never beat a strong solo take.
   const score = assisted ? scores.assistedScore(raw) : raw;
@@ -2493,6 +2906,10 @@ function finishAliyahRecord(tl) {
     + `<br><span class="hint">${msg}</span>`;
   renderAliyot();
   maybePushScopes();
+  // Paint the per-word "notes hit" clue LAST, so no earlier render can wipe it,
+  // and remember it so a later pane rebuild (toolbar toggle) can re-apply it.
+  state._aliyaWordHits = perVerse;
+  applyAliyahWordHits(perVerse);
 }
 
 // Persistent top-of-window stage selector. Any stage is navigable; stages not
@@ -2579,12 +2996,10 @@ function renderPractice() {
   // greyed page explaining the next step.
   const unlocked = store.getVerseLevel(state.slug, state.selectedVerse);
   if (level.id > unlocked) { renderLockedPage(level, unlocked); return; }
-  // The hardest level presents the text as a continuous Torah column.
-  if (level.scrollColumn && !state.scrollView) {
-    state.scrollView = true;
-    syncToggleUI();
-    renderVerses();
-  }
+  // The hardest level is read from the bare Torah column — but it no longer
+  // force-opens the STA"M scroll (that felt jarring, like aliyah mode). Instead
+  // it shows the normal note coach with a prominent button to open the scroll on
+  // demand (see the .open-stam button + wiring below).
   ensureRawForVerse(state.selectedVerse); // phase-2: load this pasuk's underlay on demand
   state.verseSegs = buildLineMelody(tokenize(v.text));
   const units = currentUnits();
@@ -2622,16 +3037,29 @@ function renderPractice() {
       </label>
       ${hasReal ? '<span class="keyshint" title="Tap a word, or keys: ← → next/prev word · Space replay · ↓ record · ↑ sing along · Esc stop">⌨</span>' : ''}
     </div>
+    ${units.length > 1 ? `
+    <button class="unit-edge unit-edge-next" id="uEdgeNext" aria-label="Next ${level.unit}" title="Next ${level.unit} (swipe left)">‹</button>
+    <button class="unit-edge unit-edge-prev" id="uEdgePrev" aria-label="Previous ${level.unit}" title="Previous ${level.unit} (swipe right)">›</button>` : ''}
+    <!-- Whole-pasuk advance (shown only in the STA"M Torah-column view). -->
+    <button class="pasuk-edge pasuk-edge-next" id="pEdgeNext" aria-label="Next pasuk" title="Next pasuk">‹</button>
+    <button class="pasuk-edge pasuk-edge-prev" id="pEdgePrev" aria-label="Previous pasuk" title="Previous pasuk">›</button>
     ${level.unit === 'line' && state.showEnglish && v.en ? `<p class="practice-en">${escapeHtml(v.en)}</p>` : ''}
+
+    ${level.scrollColumn ? `<button id="openStam" class="open-stam" title="Read this pasuk from the bare Torah column">📜 Open the STA&ldquo;M scroll</button>` : ''}
 
     <div class="topstatus">
       <div class="result" id="result"><span class="hint">${hasReal
         ? 'Hear the real cantor, or use the voice guide, then record your try.'
         : (level.mode === 'listen' ? 'Listen, then record yourself repeating it.' : 'Follow the moving cue and sing along as you record.')}</span></div>
       <div class="livemeter" id="liveMeter" hidden>
-        <span class="lm-label">Live ${level.unit === 'line' ? 'verse' : level.unit}</span>
+        <span class="lm-label" title="Melody/shape scorer (live estimate)">Live melody</span>
         <div class="lm-track"><div class="lm-fill" id="liveMeterFill"></div></div>
         <span class="lm-val"><b id="liveMeterVal">0</b>%</span>
+      </div>
+      <div class="livemeter" id="liveMeterGh" hidden>
+        <span class="lm-label" title="Guitar-Hero note-hit scorer (live estimate)">Live note-hit</span>
+        <div class="lm-track"><div class="lm-fill" id="liveMeterGhFill"></div></div>
+        <span class="lm-val"><b id="liveMeterGhVal">0</b>%</span>
       </div>
     </div>
 
@@ -2640,15 +3068,18 @@ function renderPractice() {
         <span><span class="swatch coach"></span> coach</span>
         <span><span class="swatch real"></span> recording</span>
         <span><span class="swatch you"></span> you</span>
+        <button id="btnAnalysis" class="analysis-toggle ${state.showAnalysis ? 'on' : ''}" aria-pressed="${state.showAnalysis ? 'true' : 'false'}" title="Show or hide the spectrograms &amp; accuracy bars. Hidden, the coaching line fills the pane so slight tone changes stand out.">🔬 Analysis</button>
       </div>
       <div class="tl-scroll" id="tlScroll">
         <div class="tl-inner" id="tlInner">
           <div class="timeline-words hebrew ${aids.scroll ? 'scroll' : ''}" id="timelineWords"></div>
-          <div class="canvas-wrap"><canvas class="contour" id="contour"></canvas></div>
-          <div class="spectro-label">Example spectrogram <span class="hint">— fundamental (white) &amp; harmonics</span></div>
-          <div class="canvas-wrap"><canvas class="spectro" id="spectro"></canvas></div>
-          <div class="spectro-label">Your voice <span class="hint">— record to compare &amp; match the example</span></div>
-          <div class="canvas-wrap"><canvas class="spectro" id="userSpectro"></canvas></div>
+          <div class="canvas-wrap contour-wrap"><canvas class="contour" id="contour"></canvas></div>
+          <div class="tl-extras" id="tlExtras">
+            <div class="spectro-label">Example spectrogram <span class="hint">— fundamental (white) &amp; harmonics</span></div>
+            <div class="canvas-wrap"><canvas class="spectro" id="spectro"></canvas></div>
+            <div class="spectro-label">Your voice <span class="hint">— record to compare &amp; match the example</span></div>
+            <div class="canvas-wrap"><canvas class="spectro" id="userSpectro"></canvas></div>
+          </div>
         </div>
       </div>
     </div>
@@ -2669,7 +3100,23 @@ function renderPractice() {
   if (units.length > 1) {
     $('uPrev').addEventListener('click', () => goToUnit(state.unitIndex - 1, true));
     $('uNext').addEventListener('click', () => goToUnit(state.unitIndex + 1, true));
+    // Large edge arrows (mobile): mirror the ◀/▶ nav for thumb reach. In RTL the
+    // next unit is to the LEFT, so the left-edge chevron advances.
+    const eNext = $('uEdgeNext'), ePrev = $('uEdgePrev');
+    if (eNext) eNext.addEventListener('click', () => goToUnit(state.unitIndex + 1, true));
+    if (ePrev) ePrev.addEventListener('click', () => goToUnit(state.unitIndex - 1, true));
   }
+  // Pasuk-advance arrows (STA"M view): left = next pasuk (RTL), right = previous.
+  const pNext = $('pEdgeNext'), pPrev = $('pEdgePrev');
+  if (pNext) pNext.addEventListener('click', () => goToVerse(1));
+  if (pPrev) pPrev.addEventListener('click', () => goToVerse(-1));
+  // Large call-to-action (level 8): open the full STA"M scroll on demand rather
+  // than forcing it on. The scroll's own ✕ closes it back to this coach.
+  const openStam = $('openStam');
+  if (openStam) openStam.addEventListener('click', () => {
+    state.scrollView = true; syncToggleUI(); renderVerses(); maybeShowRotate();
+  });
+  wirePracticeSwipe();
 
   // Timeline width. Give every word room at the current reading size; when the
   // content is wider than the pane it scrolls (guitar-hero) and the playhead
@@ -2687,10 +3134,21 @@ function renderPractice() {
   tlInner.style.width = scrolling ? useW + 'px' : '100%';
   tlScroll.classList.toggle('scrolling', scrolling);
 
-  // Shrink the notation (contour + spectrograms) so the enlarged reading has
-  // room — the notes cost the space, not the words.
+  // Collapse the analysis panels (spectrograms + accuracy bars) unless the user
+  // has opted in. On desktop this lets the coaching contour flex-fill the pane;
+  // on mobile the class is inert (the CSS collapse is desktop-only).
+  p.classList.toggle('hide-analysis', !state.showAnalysis);
+  // Whole-verse (line) levels have no word/phrase units to step through, so the
+  // big edge arrows advance between PESUKIM there (via the .pasuk-edge arrows) —
+  // mirroring the STA"M scroll's verse nav so full-verse modes keep left/right.
+  p.classList.toggle('unit-line', level.unit === 'line');
+
+  // Notation heights. The spectrograms shrink as the reading grows (the notes
+  // cost the space, not the words). On desktop the coaching contour instead
+  // flex-fills the pane (CSS), so we clear its inline height and let the box
+  // drive the canvas; on mobile it keeps the computed fixed height.
   const nh = noteHeights();
-  $('contour').style.height = nh.contour + 'px';
+  $('contour').style.height = isDesktopLayout() ? '' : nh.contour + 'px';
   $('spectro').style.height = nh.spectro + 'px';
   $('userSpectro').style.height = nh.spectro + 'px';
 
@@ -2727,6 +3185,8 @@ function renderPractice() {
   $('btnRec').addEventListener('click', () => startRecording());
   $('btnSing').addEventListener('click', () => startRecording({ singAlong: true }));
   $('btnStop').addEventListener('click', stopAll);
+  const btnAnalysis = $('btnAnalysis');
+  if (btnAnalysis) btnAnalysis.addEventListener('click', toggleAnalysis);
   const readSize = $('readSize');
   if (readSize) {
     // Live text resize while dragging (no rebuild), then re-render on release so
@@ -2740,6 +3200,7 @@ function renderPractice() {
   applyHighlight();
   // Start a scrolling line at its beginning (rightmost, RTL).
   if (scrolling) tlScroll.scrollLeft = tlScroll.scrollWidth - tlScroll.clientWidth;
+  maybeShowRotate();
 }
 
 // The accuracy panel shows one of two distinct views depending on the stage:
@@ -2775,8 +3236,10 @@ function renderAccuracyPanel() {
   });
 
   const cur = level.unit;
+  const modelName = state.scoreModel === 'gh' ? 'Note-hit' : 'Melody';
   el.innerHTML =
-      accTextRow(segs, layout)
+      `<div class="acc-model-badge hint">New takes are scored &amp; saved with the <b>${modelName}</b> model (set by the <b>Scoring</b> toggle above); bars show your saved bests.</div>`
+    + accTextRow(segs, layout)
     + scoreBar('Words', wordSegs, { active: cur === 'word', hint: 'one bar per word — click to practice a word' })
     + scoreBar('Phrases', phraseSegs, { active: cur === 'phrase', hint: 'one bar per phrase — click to practice a phrase' })
     + verseGradientRow(segs, layout, cur === 'line')
@@ -2931,8 +3394,8 @@ function scorePhrasesInLine(trail, coach, unitSegs) {
     const a = Math.min(...idxs), b = Math.max(...idxs);
     const t0 = bounds[a], t1 = b + 1 < bounds.length ? bounds[b + 1] : 1.0001;
     const uS = trail.filter((s) => s.t >= t0 && s.t < t1);
-    const tPts = coach.steps.filter((s) => s.w >= a && s.w <= b).flatMap((s) => [{ t: s.t0, p: s.p }, { t: s.t1, p: s.p }]);
-    return tPts.length ? Math.round(scoreTrail(uS, tPts)) : 0;
+    const phSteps = coach.steps.filter((s) => s.w >= a && s.w <= b);
+    return phSteps.length ? Math.round(scoreSteps(uS, phSteps).active) : 0;
   });
 }
 
@@ -2967,6 +3430,7 @@ function playWord(seg) {
   stopVerseAudio();
   state.playingReal = true;
   state.spectro.clearPlot();
+  if (state.view) state.view.clearReal(); // reset the green detected-tone line on replay
 
   // Rebuild the view for this single word.
   state.unitSegs = [seg];
@@ -3043,6 +3507,7 @@ function playRealChant() {
   stopVerseAudio();
   state.playingReal = true;
   if (state.spectro) state.spectro.clearPlot();
+  if (state.view) state.view.clearReal(); // reset the green detected-tone line on replay
   if (coach) {
     state.targetPoints = coach.points;
     state.view.setCoach({ steps: coach.steps, raw: coach.raw, wordBounds: coach.wordBounds });
@@ -3245,6 +3710,9 @@ async function startRecording(opts = {}) {
   state.playingReal = false;
   state.recording = true;
   state._singAlong = singAlong;
+  state._scrollWordHits = null; // wipe the prior take's per-word STA"M tint
+  state._scrollLiveWord = null; // reset the live per-word accumulator
+  clearScrollWordHits();
   window.__cantillateBusy = true; // hold off any service-worker auto-reload
   // Transpose-invariant: track (target - rawPitch) each frame and shift the
   // whole line by the best-fit (median) offset, so singing the right shape in a
@@ -3253,10 +3721,12 @@ async function startRecording(opts = {}) {
   state.view.clearUser();
   if (state.userSpectro) state.userSpectro.clearPlot();
   startLiveMeter('liveMeter', 'liveMeterFill', 'liveMeterVal');
+  startGhLiveMeter(); // second meter: live Note-hit estimate, for side-by-side compare
   // Whole-verse takes map to the pasuk board, so mark your best + the record
   // holder on the meter as targets to beat.
   if (level.unit === 'line' && state.selectedVerse != null) {
-    showRecordMeterMarks('liveMeterFill', 'pasuk', scores.pasukIdFor(state.data, state.selectedVerse), bestVerseScore(state.selectedVerse));
+    const goalBars = state._ghLm ? ['liveMeterFill', 'liveMeterGhFill'] : ['liveMeterFill'];
+    showRecordMeterMarks(goalBars, 'pasuk', scores.pasukIdFor(state.data, state.selectedVerse), bestVerseScore(state.selectedVerse));
   }
   $('btnRec').disabled = true;
   $('btnStop').disabled = false;
@@ -3285,8 +3755,10 @@ async function startRecording(opts = {}) {
     const t01 = (now - state.recStart) / 1000 / dur;
     if (t01 >= 1) { finishRecording(); return; }
     state.view.setPlayhead(t01);
-    highlightWord(wordAtTime(state.coach, t01));
+    const liveWi = wordAtTime(state.coach, t01);
+    highlightWord(liveWi);
     scrollFollow(t01);
+    updateNoteShading(t01); // Note-hit mode: light up each coach bar as it's passed
     // Live spectrogram of the user's voice, aligned in time with the example.
     if (frame && state.userSpectro) {
       state.userSpectro.pushAt(t01, frame.freq, frame.sampleRate, frame.fftSize, hz > 0 ? hz : 0);
@@ -3299,17 +3771,20 @@ async function startRecording(opts = {}) {
       state._diffs.push(tgt - rawT);
       const O = median(state._diffs);
       const aligned = rawT + O;
-      // Guitar-hero "magnet": snap to target when close, pull + clamp when off.
-      const err = aligned - tgt, ae = Math.abs(err), sgn = Math.sign(err);
-      let styled, hit;
-      if (ae <= DEADZONE) { styled = tgt + err * 0.2; hit = 'perfect'; }
-      else {
-        const off2 = Math.min(MAXDEV, DEADZONE + (ae - DEADZONE) * PULL);
-        styled = tgt + sgn * off2;
-        hit = ae <= 2.0 ? 'close' : 'far';
-      }
+      const err = aligned - tgt;
+      // Colour + magnet the live dot by the SELECTED scoring model's criteria,
+      // so the green/red feedback matches how this take will actually be scored.
+      const { styled, hit } = classifyLiveFrame(t01, aligned, tgt, err);
       state.view.pushUser(t01, styled, rms, hit, rawT);
-      if (rms >= 0.01) feedLiveMeter(err);
+      if (rms >= 0.01) {
+        feedLiveMeter(err); feedGhLiveMeter(t01, aligned);
+        // Live per-word STA"M tint (mirrors aliyah mode): colour the yad-pointed
+        // word by how well its notes are landing so far, using the SAME in-band
+        // band as the aliyah live clue and the selected scoring model.
+        const band = state.scoreModel === 'gh' ? LIVE_HIT_BAND_GH : LIVE_HIT_BAND_MELODY;
+        const liveGi = (state.unitSegs && state.unitSegs[liveWi]) ? state.unitSegs[liveWi].index : -1;
+        trackLiveScrollWordHit(state.selectedVerse, liveGi, Math.abs(err) <= band);
+      }
     } else {
       state.view.pushUser(t01, null, rms);
     }
@@ -3328,6 +3803,7 @@ async function startRecording(opts = {}) {
       // duet guide plays, exactly as when the chant is played on its own.
       const tonic = (state.coach && state.coach.tonicHz) || 200;
       if (state.spectro) state.spectro.clearPlot();
+      if (state.view) state.view.clearReal(); // reset the green detected-tone line each duet
       playSegment(info.file, state.coach.start, state.coach.end, {
         onProgress: anchor,
         onAnalysis: (a) => onRealAnalysis(a, tonic),
@@ -3362,6 +3838,7 @@ function cancelRecording() {
   stopPlayback();
   stopVerseAudio();
   stopLiveMeter();
+  stopGhLiveMeter();
   highlightWord(-1);
   state.recording = false;
   state._singAlong = false;
@@ -3399,7 +3876,8 @@ function finishRecording() {
   stopMic();
   stopPlayback();
   stopVerseAudio();
-  stopLiveMeter();
+  // NB: unlike cancel, we do NOT hide the live meters here — they stay visible
+  // after the take, frozen at the final scores below, as a reference.
   highlightWord(-1);
   $('btnRec').disabled = false;
   $('btnStop').disabled = true;
@@ -3431,21 +3909,39 @@ function finishRecording() {
     const t0 = bounds[wi];
     const t1 = wi + 1 < bounds.length ? bounds[wi + 1] : 1.0001;
     const uS = trail.filter((s) => s.t >= t0 && s.t < t1);
-    const tPts = coach ? coach.steps.filter((s) => s.w === wi).flatMap((s) => [{ t: s.t0, p: s.p }, { t: s.t1, p: s.p }]) : [];
-    const sc = tPts.length ? grade(scoreTrail(uS, tPts)) : 0;
+    const wSteps = coach ? coach.steps.filter((s) => s.w === wi) : [];
+    const sc = wSteps.length ? grade(scoreSteps(uS, wSteps).active) : 0;
     wordScores.push(sc);
     const gi = state.unitSegs[wi] ? state.unitSegs[wi].index : wi;
     profileByGi[gi] = sc;
     store.recordWordScore(state.slug, state.selectedVerse, gi, sc);
   }
+  // Paint the per-word accuracy onto the STA"M column (green/amber/red), the same
+  // line-by-line clue the aliyah reader shows — so a level-8 read from the bare
+  // scroll gets the same at-a-glance feedback on which words landed.
+  paintScrollWordHits(state.selectedVerse, profileByGi);
 
   // --- Continuous take score (per section, never summed) -------------------
   // Score the take as one continuous pass (so transitions/timing count) and file
   // it under the right layer: a phrase take updates that phrase's best; a whole-
   // verse take updates BOTH each phrase it contains and the verse's score for the
   // current skill (aids config). Word bests were already updated above.
-  const rawAcc = coach && coach.points && coach.points.length ? grade(scoreTrail(trail, coach.points))
-    : (wordScores.length ? Math.round(wordScores.reduce((a, b) => a + b, 0) / wordScores.length) : 0);
+  // Compute BOTH models over the whole take (shown side by side for testing);
+  // `compare.active` is the selected model's score, which is what counts.
+  let compare = null;
+  let rawAcc;
+  if (coach && coach.steps && coach.steps.length) {
+    compare = scoreSteps(trail, coach.steps);
+    rawAcc = grade(compare.active);
+    // Final, authoritative "gem" shading from the note scorer (Note-hit mode).
+    if (state.scoreModel === 'gh' && state.view && compare.ghDetail && compare.ghDetail.notes) {
+      compare.ghDetail.notes.forEach((n, i) => state.view.setNoteStatus(i, n.hit ? 'hit' : 'miss'));
+    }
+  } else if (wordScores.length) {
+    rawAcc = Math.round(wordScores.reduce((a, b) => a + b, 0) / wordScores.length);
+  } else {
+    rawAcc = 0;
+  }
   const headline = rawAcc;
   let label;
   if (level.unit === 'phrase') {
@@ -3465,11 +3961,24 @@ function finishRecording() {
     label = 'Word accuracy';
   }
 
-  const stars = headline >= 95 ? '★★★' : headline >= 85 ? '★★' : headline >= level.threshold ? '★' : '';
+  const th = effectiveThreshold(level); // eased for the note-hit model (see above)
+  const stars = headline >= 95 ? '★★★' : headline >= 85 ? '★★' : headline >= th ? '★' : '';
   const prize = headline >= 95 ? ' ✨ Masterful!' : headline >= 85 ? ' 🎉 Great!' : '';
   let msg = `<span class="scorelabel">${label}</span> `
-    + `<span class="num" style="color:${headline >= level.threshold ? 'var(--good)' : 'var(--accent-2)'}">${headline}</span>`
+    + `<span class="num" style="color:${headline >= th ? 'var(--good)' : 'var(--accent-2)'}">${headline}</span>`
     + `<span class="ceil"> / 100</span> <span class="stars">${stars}</span>${prize} `;
+  // Dev/testing: show BOTH scoring models side by side. The selected one (bold)
+  // is the score that counts; the other is informational only.
+  if (compare) {
+    const mel = grade(compare.contour), gh = grade(compare.gh);
+    const d = compare.ghDetail;
+    const badge = `${d.hits}/${d.total} notes${d.longest > 1 ? `, streak ${d.longest}` : ''}`;
+    const melOn = state.scoreModel === 'contour', ghOn = state.scoreModel === 'gh';
+    msg += `<br><span class="hint">Scoring compare — `
+      + `${melOn ? '<b>' : ''}Melody ${mel}${melOn ? '</b>' : ''} · `
+      + `${ghOn ? '<b>' : ''}Note-hit ${gh}${ghOn ? '</b>' : ''} `
+      + `<span style="opacity:.7">(${badge})</span> · counting <b>${ghOn ? 'Note-hit' : 'Melody'}</b></span>`;
+  }
   // Point out the trickiest word in this take.
   if (wordScores.length > 1) {
     let minI = 0; for (let i = 1; i < wordScores.length; i++) if (wordScores[i] < wordScores[minI]) minI = i;
@@ -3478,17 +3987,24 @@ function finishRecording() {
       msg += `<br><span class="hint">Trickiest: <b style="color:${seg.color}">${renderWord(seg.token, aidsForLevel())}</b> (${wordScores[minI]}) — see the score bars below.</span>`;
     }
   }
-  if (headline >= level.threshold) {
+  if (headline >= th) {
     const next = Math.min(LEVELS.length, level.id + 1);
     store.recordVerseLevel(state.slug, state.selectedVerse, next);
     if (next > level.id) msg += `<br><span class="hint" style="color:var(--good)">Stage ${next} unlocked!</span>`;
   } else {
-    msg += `<br><span class="hint">Reach ${level.threshold}+ to unlock the next stage.</span>`;
+    msg += `<br><span class="hint">Reach ${th}+ to unlock the next stage.</span>`;
   }
   if (assisted) {
     msg += `<br><span class="hint">🎧 Assisted take (sang with the guide): scaled to ${Math.round(scores.ASSIST_MULT * 100)}% and capped at ${scores.ASSIST_CAP}. Record solo to break the cap, reach 100, and top the leaderboard.</span>`;
   }
   $('result').innerHTML = msg;
+  // Freeze BOTH live meters at their FINAL scores (not the running estimate) and
+  // leave them on screen for reference, so you can compare the two models after
+  // the take. The goal markers ("Your best" / record) stay too.
+  if (compare) {
+    if (state._lm) drawLiveMeter(grade(compare.contour));
+    if (state._ghLm) drawGhLiveMeter(grade(compare.gh));
+  }
   renderAccuracyPanel();
   renderVerses();
   renderAliyot();
@@ -3511,7 +4027,7 @@ function renderLockedPage(level, unlocked) {
       <div class="lock-icon">🔒</div>
       <h3>This stage is locked</h3>
       <p class="leveldesc">${level.desc}</p>
-      <p class="next">To unlock it, complete <b>Stage ${unlocked}: ${frontier.label}</b> on this verse — score <b>${frontier.threshold}+</b>.</p>
+      <p class="next">To unlock it, complete <b>Stage ${unlocked}: ${frontier.label}</b> on this verse — score <b>${effectiveThreshold(frontier)}+</b>.</p>
       <button class="primary" id="btnGoFrontier">▶ Go to Stage ${unlocked}: ${frontier.label}</button>
     </div>`;
   $('btnGoFrontier').addEventListener('click', () => {
@@ -3656,6 +4172,10 @@ function startLiveMeter(containerId, fillId, valId) {
   state._lm = { c: $(containerId), f: $(fillId), v: $(valId) };
   state._liveSum = 0;
   state._liveCount = 0;
+  // Bump the meter token so a late board reply from a PREVIOUS take can't draw
+  // its goal markers onto this new take's meter.
+  state._meterToken = (state._meterToken || 0) + 1;
+  setMeterMarks(fillId, []); // clear any goal markers frozen from a prior take
   if (state._lm.c) state._lm.c.hidden = false;
   drawLiveMeter(0);
 }
@@ -3688,6 +4208,113 @@ function stopLiveMeter() {
   state._lm = null;
 }
 
+// --- Second live meter: Guitar-Hero note-hit running estimate ----------------
+// Runs alongside the melody meter during a take so you can compare both models
+// live. As each voiced frame arrives we find the coach note-step covering that
+// moment and tally whether the (offset-corrected) pitch is within band; the
+// displayed score is the mean in-band fraction over every note touched so far,
+// which converges toward the final scoreNotes headline. Frames in the gaps
+// between notes are ignored (they aren't scored notes), same as scoreNotes.
+const GH_LIVE_BAND = 1.5; // semitones — keep in sync with scoreNotes' default
+
+function startGhLiveMeter() {
+  const c = $('liveMeterGh');
+  // Only meaningful when we have discrete coach steps to score against.
+  if (!c || !state.coach || !state.coach.steps || !state.coach.steps.length) {
+    state._ghLm = null;
+    return;
+  }
+  state._ghLm = { c, f: $('liveMeterGhFill'), v: $('liveMeterGhVal'), notes: new Map(), done: new Set() };
+  setMeterMarks('liveMeterGhFill', []); // clear goal markers frozen from a prior take
+  c.hidden = false;
+  drawGhLiveMeter(0);
+}
+
+// Progressive "gem lights up": in Note-hit mode, once the playhead passes a coach
+// note-step, shade its bar green (hit) or red (missed) from the in-band tally so
+// far. Runs every frame (voiced or not) so skipped/silent notes still turn red
+// as the playhead sweeps past them.
+function updateNoteShading(t01) {
+  if (state.scoreModel !== 'gh' || !state._ghLm || !state.view || !state.coach) return;
+  const steps = state.coach.steps || [];
+  const lm = state._ghLm;
+  for (let i = 0; i < steps.length; i++) {
+    if (t01 >= steps[i].t1 && !lm.done.has(i)) {
+      lm.done.add(i);
+      const r = lm.notes.get(i);
+      const frac = r && r.samples ? r.inBand / r.samples : 0;
+      state.view.setNoteStatus(i, frac >= 0.5 ? 'hit' : 'miss');
+    }
+  }
+}
+
+function feedGhLiveMeter(t01, alignedPitch) {
+  const lm = state._ghLm;
+  if (!lm || !state.coach) return;
+  const steps = state.coach.steps;
+  let idx = -1;
+  for (let i = 0; i < steps.length; i++) {
+    if (t01 >= steps[i].t0 && t01 < steps[i].t1) { idx = i; break; }
+  }
+  if (idx < 0) return; // in a gap between notes — not a scored moment
+  let rec = lm.notes.get(idx);
+  if (!rec) { rec = { inBand: 0, samples: 0 }; lm.notes.set(idx, rec); }
+  rec.samples += 1;
+  if (Math.abs(alignedPitch - steps[idx].p) <= GH_LIVE_BAND) rec.inBand += 1;
+  let sum = 0, n = 0;
+  lm.notes.forEach((r) => { sum += r.inBand / r.samples; n += 1; });
+  drawGhLiveMeter(n ? 100 * (sum / n) : 0);
+}
+
+function drawGhLiveMeter(scoreVal) {
+  const lm = state._ghLm;
+  if (!lm || !lm.f) return;
+  const s = Math.max(0, Math.min(100, Math.round(scoreVal)));
+  lm.f.style.width = s + '%';
+  lm.f.style.background = rampColor(s, 0, 100, true);
+  if (lm.v) lm.v.textContent = s;
+}
+
+function stopGhLiveMeter() {
+  if (state._ghLm && state._ghLm.c) state._ghLm.c.hidden = true;
+  state._ghLm = null;
+}
+
+// The coach note-step covering a given moment (null in the gaps between notes).
+function currentCoachStep(t01) {
+  const steps = state.coach && state.coach.steps;
+  if (!steps) return null;
+  for (let i = 0; i < steps.length; i++) if (t01 >= steps[i].t0 && t01 < steps[i].t1) return steps[i];
+  return null;
+}
+
+// Decide a live mic frame's dot colour ('perfect'|'close'|'far'|null) and its
+// magnet-pulled y position, using the SELECTED scoring model's own criteria so
+// the on-screen feedback matches the score:
+//   - Melody: distance to the interpolated coach contour, DEADZONE/2.0 tiers.
+//   - Note-hit: distance to the CURRENT note's flat target; inside the band =
+//     green (this frame counts as in-band), just outside = yellow, off = red,
+//     and in the gaps between notes there's no target (neutral orange dot).
+function classifyLiveFrame(t01, aligned, tgt, err) {
+  if (state.scoreModel === 'gh') {
+    const step = currentCoachStep(t01);
+    if (!step) return { styled: aligned, hit: null };
+    const d = aligned - step.p, ad = Math.abs(d), sgn = Math.sign(d);
+    let hit, styled;
+    if (ad <= GH_LIVE_BAND) { hit = 'perfect'; styled = step.p + d * 0.2; }
+    else {
+      hit = ad <= GH_LIVE_BAND * 1.6 ? 'close' : 'far';
+      styled = step.p + sgn * Math.min(MAXDEV, GH_LIVE_BAND + (ad - GH_LIVE_BAND) * PULL);
+    }
+    return { styled, hit };
+  }
+  // Melody (contour) mode: original guitar-hero magnet toward the contour.
+  const ae = Math.abs(err), sgn = Math.sign(err);
+  if (ae <= DEADZONE) return { styled: tgt + err * 0.2, hit: 'perfect' };
+  const off2 = Math.min(MAXDEV, DEADZONE + (ae - DEADZONE) * PULL);
+  return { styled: tgt + sgn * off2, hit: ae <= 2.0 ? 'close' : 'far' };
+}
+
 // "Beat this" markers drawn over a live meter: each is a dotted vertical line at
 // its score%. Your own best and the shared record holder get distinct styles so
 // you can see, mid-take, exactly what you're chasing.
@@ -3712,13 +4339,17 @@ function setMeterMarks(fillId, marks) {
 // shared record-holder's mark once the board responds. Guarded so a late board
 // reply never draws onto a meter whose take has already ended.
 function showRecordMeterMarks(fillId, type, refId, yourBest) {
+  // `fillId` may be a single id or an array (e.g. both the melody and note-hit
+  // bars), so the same "beat this" goal shows on every meter.
+  const fills = Array.isArray(fillId) ? fillId : [fillId];
+  const token = state._meterToken;
   const yourMark = { score: yourBest, cls: 'you', label: 'Your best' };
-  setMeterMarks(fillId, [yourMark]);
+  fills.forEach((f) => setMeterMarks(f, [yourMark]));
   boardTop(type, refId).then((top) => {
-    if (!state._lm || !state._lm.f || state._lm.f.id !== fillId) return;
+    if (state._meterToken !== token) return; // a newer take started
     const marks = [yourMark];
     if (top && top.score > 0) marks.push({ score: top.score, cls: 'top', label: `Top — ${top.name || 'record holder'}` });
-    setMeterMarks(fillId, marks);
+    fills.forEach((f) => setMeterMarks(f, marks));
   }).catch(() => {});
 }
 
@@ -3778,21 +4409,72 @@ function setupWordLookup() {
   document.body.appendChild(pop);
   state._wordpop = pop;
   let timer = null;
+  // On touch devices tapping a word emulates a `mouseover`, which would pop the
+  // translation up the instant you try to select/practice a verse. Track when
+  // the last interaction was touch so we suppress hover popups there and instead
+  // require a deliberate long-press (hold) to reveal the translation.
+  let touchMode = false;
+  let longPressed = false; // a hold just opened the popup → swallow the ensuing click
+  let touchStart = null;
   const box = $('verses');
   if (!box) return;
   const hide = () => { clearTimeout(timer); pop.hidden = true; pop._forEl = null; };
+
+  // Desktop: hover-hold.
   box.addEventListener('mouseover', (e) => {
+    if (touchMode) return; // ignore the mouse events touch devices synthesize
     const w = e.target.closest('.w');
     if (!w) return;
     clearTimeout(timer);
     timer = setTimeout(() => showWordPop(w), 450); // hover-hold delay
   });
   box.addEventListener('mouseout', (e) => {
+    if (touchMode) return;
     const w = e.target.closest('.w');
     if (!w) return;
     if (e.relatedTarget && (w.contains(e.relatedTarget) || pop.contains(e.relatedTarget))) return;
     hide();
   });
+
+  // Mobile: press-and-hold a word to reveal its translation; a plain tap still
+  // just selects the verse / opens word practice.
+  const LONG_PRESS = 500;   // ms to hold before the translation appears
+  const MOVE_CANCEL = 10;   // px of finger travel that counts as a scroll, not a hold
+  box.addEventListener('touchstart', (e) => {
+    touchMode = true;
+    longPressed = false;
+    const w = e.target.closest('.w');
+    if (!w) return;
+    const t = e.touches[0];
+    touchStart = { x: t.clientX, y: t.clientY };
+    clearTimeout(timer);
+    timer = setTimeout(() => { longPressed = true; showWordPop(w); }, LONG_PRESS);
+  }, { passive: true });
+  box.addEventListener('touchmove', (e) => {
+    if (!touchStart) return;
+    const t = e.touches[0];
+    if (Math.abs(t.clientX - touchStart.x) > MOVE_CANCEL ||
+        Math.abs(t.clientY - touchStart.y) > MOVE_CANCEL) {
+      clearTimeout(timer); // moved → it's a scroll, not a hold
+    }
+  }, { passive: true });
+  box.addEventListener('touchend', () => { clearTimeout(timer); touchStart = null; });
+  box.addEventListener('touchcancel', () => { clearTimeout(timer); touchStart = null; hide(); });
+
+  // Swallow the click a completed long-press would otherwise fire, so holding a
+  // word only reveals the translation instead of also jumping into practice.
+  box.addEventListener('click', (e) => {
+    if (!longPressed) return;
+    longPressed = false;
+    e.stopPropagation();
+    e.preventDefault();
+  }, true); // capture: run before the per-verse click handler
+
+  // A tap anywhere outside a word dismisses an open long-press popup.
+  document.addEventListener('touchstart', (e) => {
+    if (touchMode && !pop.hidden && !(e.target.closest && e.target.closest('.w'))) hide();
+  }, { passive: true });
+
   box.addEventListener('scroll', hide, true);
   window.addEventListener('scroll', hide, true);
 }

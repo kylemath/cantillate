@@ -91,11 +91,20 @@ export function renderWord(raw, { showVowels, showTaamim, scroll }) {
 //    to its neighbors with no surrounding space.
 const MARKUP = /<[^>]*>|&[#a-zA-Z0-9]+;/g;
 const SECTION = /\{[^}]*\}/g;                   // {ס} {פ} section markers
+// MAM embeds non-reading annotation content inside markup. Strip the content,
+// not just its tags: otherwise a ketiv plus its qere becomes two sung words and
+// footnote prose is mistaken for additional words at the end of a pasuk.
+const KETIV_NOTE = /<span[^>]*\bmam-kq-k\b[^>]*>[\s\S]*?<\/span>/gi;
+const FOOTNOTE = /<i[^>]*\bfootnote\b[^>]*>[\s\S]*?<\/i>/gi;
 const PASEQ = '\u05C0';                          // ׀ word separator
 const SPLIT_RE = /([\u05BE\u05C0])/;             // maqaf or paseq (kept on leader)
 
 export function tokenize(verseText) {
-  const cleaned = verseText.replace(MARKUP, '').replace(SECTION, ' ');
+  const cleaned = verseText
+    .replace(KETIV_NOTE, '')
+    .replace(FOOTNOTE, '')
+    .replace(MARKUP, '')
+    .replace(SECTION, ' ');
   const out = [];
   for (const w of cleaned.trim().split(/\s+/)) {
     if (!w) continue;

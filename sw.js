@@ -14,7 +14,7 @@
  */
 
 // Bump VERSION to invalidate all previously cached content on next activate.
-const VERSION = 'v-d53b3c2ca45a';
+const VERSION = 'v-6b9fa091dc18';
 const SHELL_CACHE = 'cantillate-shell-' + VERSION;
 const DATA_CACHE = 'cantillate-data-' + VERSION;
 
@@ -48,6 +48,7 @@ const SHELL_ASSETS = [
   './js/firebase-config.js',
   './js/scores.js',
   './js/offline.js',
+  './js/tikkun.js',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
