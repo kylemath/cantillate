@@ -38,11 +38,19 @@ export function mergeRemote(remote) {
   return merged;
 }
 
-// Buckets whose values are single "best" numbers (higher wins).
-const MAX_BUCKETS = ['verses', 'words', 'phrases', 'modes', 'aliyot', 'levels'];
+// Buckets whose values are single "best" numbers (higher wins). `aliyaSolo` holds
+// the best *continuous solo* full-aliyah take (no duet), tracked separately from
+// `aliyot` (which also counts duet takes, capped) so the leaderboard can rank
+// solo above duet above a derived floor.
+const MAX_BUCKETS = ['verses', 'words', 'phrases', 'modes', 'aliyot', 'levels', 'aliyaSolo'];
 
 // How many recent/best runs to keep per pasuk (for "your top-N scores").
 const RUNS_CAP = 20;
+
+// How many attempts to keep in the ordered run-log (for the leaderboard colourbar
+// of score-over-runs). Larger than RUNS_CAP because these are chronological, not
+// just the bests.
+const RUNLOG_CAP = 50;
 
 function mergeProgress(a, b) {
   const out = {};
@@ -51,6 +59,13 @@ function mergeProgress(a, b) {
   }
   out.profiles = mergeProfiles(a.profiles, b.profiles);
   out.runs = mergeRuns(a.runs, b.runs);
+  // Ordered attempt histories (for the score-over-runs colourbar): union both
+  // sides in chronological order and keep the most recent RUNLOG_CAP.
+  out.runlog = mergeRunLog(a.runlog, b.runlog);
+  out.aliyaRunlog = mergeRunLog(a.aliyaRunlog, b.aliyaRunlog);
+  // Cumulative practice seconds: max, not sum, so repeatedly syncing the same
+  // progress back and forth between devices can't inflate the total.
+  out.time = mergeTime(a.time, b.time);
   // Custom aliyah boundaries: prefer the most recently edited per key.
   out.aliyotCustom = mergeCustom(a.aliyotCustom, b.aliyotCustom);
   // Public identity (chosen anon name/avatar): keep the most recently edited.
@@ -60,6 +75,26 @@ function mergeProgress(a, b) {
     if (!(k in out)) out[k] = a[k] !== undefined ? a[k] : b[k];
   }
   return out;
+}
+
+// Per-scope ordered attempt history: union both sides, sort chronologically,
+// keep the most recent RUNLOG_CAP entries. Each entry is { s, t, duet? }.
+function mergeRunLog(a = {}, b = {}) {
+  const out = {};
+  for (const k of new Set([...Object.keys(a || {}), ...Object.keys(b || {})])) {
+    const merged = [...((a && a[k]) || []), ...((b && b[k]) || [])]
+      .filter((x) => x && typeof x.s === 'number')
+      .sort((x, y) => (x.t || 0) - (y.t || 0))
+      .slice(-RUNLOG_CAP);
+    out[k] = merged;
+  }
+  return out;
+}
+
+function mergeTime(a, b) {
+  const as = (a && Number(a.sec)) || 0;
+  const bs = (b && Number(b.sec)) || 0;
+  return { sec: Math.max(as, bs) };
 }
 
 // Per-pasuk top-N run history: union both sides, keep the best RUNS_CAP.
@@ -289,6 +324,105 @@ export function recordVerseRun(slug, verseN, score) {
 export function getVerseRuns(slug, verseN) {
   const d = load();
   return (d.runs && d.runs[`${slug}:${verseN}`]) || [];
+}
+
+// --- Ordered attempt log (for the score-over-runs colourbar) ----------------
+// Unlike `runs` (top-N bests, numbers only), `runlog` keeps attempts in the
+// order they happened with a timestamp, so the leaderboard can draw a strip of
+// score-per-attempt. Keyed slug:verseN, capped at RUNLOG_CAP.
+export function recordVerseRunLog(slug, verseN, score, ts) {
+  const s = Number(score) || 0;
+  if (s <= 0) return;
+  const d = load();
+  d.runlog = d.runlog || {};
+  const k = `${slug}:${verseN}`;
+  const arr = (d.runlog[k] || []).concat({ s: Math.round(s), t: ts || Date.now() });
+  arr.sort((a, b) => (a.t || 0) - (b.t || 0));
+  d.runlog[k] = arr.slice(-RUNLOG_CAP);
+  save(d);
+  return d.runlog[k];
+}
+
+export function getVerseRunLog(slug, verseN) {
+  const d = load();
+  return (d.runlog && d.runlog[`${slug}:${verseN}`]) || [];
+}
+
+// Per-aliyah ordered attempt log. Each entry carries the `duet` flag so the
+// colourbar can distinguish solo takes from assisted (sing-along) ones.
+export function recordAliyahRunLog(slug, cycle, year, n, score, duet, ts) {
+  const s = Number(score) || 0;
+  if (s <= 0) return;
+  const d = load();
+  d.aliyaRunlog = d.aliyaRunlog || {};
+  const k = aliyahKey(slug, cycle, year, n);
+  const arr = (d.aliyaRunlog[k] || []).concat({ s: Math.round(s), t: ts || Date.now(), duet: !!duet });
+  arr.sort((a, b) => (a.t || 0) - (b.t || 0));
+  d.aliyaRunlog[k] = arr.slice(-RUNLOG_CAP);
+  save(d);
+  return d.aliyaRunlog[k];
+}
+
+export function getAliyahRunLog(slug, cycle, year, n) {
+  const d = load();
+  return (d.aliyaRunlog && d.aliyaRunlog[aliyahKey(slug, cycle, year, n)]) || [];
+}
+
+// --- Solo full-aliyah best --------------------------------------------------
+// The best *continuous solo* full-aliyah take (no duet), tracked apart from the
+// combined `aliyot` best so the aliyah leaderboard can rank a genuine solo chain
+// above a duet (capped) above a derived-from-pesukim floor.
+export function recordAliyahSolo(slug, cycle, year, n, score) {
+  const d = load();
+  d.aliyaSolo = d.aliyaSolo || {};
+  const k = aliyahKey(slug, cycle, year, n);
+  d.aliyaSolo[k] = Math.max(d.aliyaSolo[k] || 0, Number(score) || 0);
+  save(d);
+  return d.aliyaSolo[k];
+}
+
+export function getAliyahSolo(slug, cycle, year, n) {
+  const d = load();
+  return (d.aliyaSolo && d.aliyaSolo[aliyahKey(slug, cycle, year, n)]) || 0;
+}
+
+// --- Practice time ----------------------------------------------------------
+// Rough estimate, in seconds, of how long the reader has spent practicing.
+// Tracked accurately going forward (each recorded take adds its window's
+// duration); for progress made before tracking existed, we fall back to an
+// estimate derived from how many attempts are on record.
+const AVG_VERSE_SEC = 8;    // a single whole-verse/word take
+const AVG_ALIYAH_SEC = 90;  // a continuous aliyah take
+
+export function addPracticeSeconds(sec) {
+  const s = Number(sec) || 0;
+  if (s <= 0) return;
+  const d = load();
+  d.time = d.time || { sec: 0 };
+  d.time.sec = (Number(d.time.sec) || 0) + Math.round(s);
+  save(d);
+  return d.time.sec;
+}
+
+// Total practice seconds: the greater of the accurately-tracked total and an
+// estimate backfilled from attempt counts (so existing users aren't shown ~0).
+export function getPracticeSeconds() {
+  const d = load();
+  const tracked = (d.time && Number(d.time.sec)) || 0;
+  let verseAttempts = 0;
+  const runlog = d.runlog || {};
+  const runs = d.runs || {};
+  for (const k of new Set([...Object.keys(runlog), ...Object.keys(runs)])) {
+    verseAttempts += Math.max((runlog[k] || []).length, (runs[k] || []).length);
+  }
+  let aliyahAttempts = 0;
+  const alog = d.aliyaRunlog || {};
+  const aliyot = d.aliyot || {};
+  for (const k of new Set([...Object.keys(alog), ...Object.keys(aliyot)])) {
+    aliyahAttempts += Math.max((alog[k] || []).length, (aliyot[k] || 0) > 0 ? 1 : 0);
+  }
+  const estimate = verseAttempts * AVG_VERSE_SEC + aliyahAttempts * AVG_ALIYAH_SEC;
+  return Math.max(tracked, estimate);
 }
 
 // --- Per-user custom aliyah boundaries -------------------------------------

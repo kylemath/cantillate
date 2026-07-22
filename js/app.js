@@ -666,12 +666,20 @@ function setupLeaderboard() {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) modal.hidden = true; });
 }
 
-let lbTab = 'aliyah';
+// Leaderboard navigation state. `lbSection` is the top-level screen; `lbDetail`,
+// when set, is a per-scope drill-down (pasuk or aliyah board) layered on top.
+let lbSection = 'pasuk';        // 'pasuk' | 'aliyah' | 'sefer' | 'overall'
+let lbDetail = null;            // { scope, view } where view is 'you' | 'overall'
+let lbAliyahCycle = 'annual';   // Aliyot screen: 'annual' | 'triennial'
+let lbAliyahYear = 1;           // triennial year (1-3) when the toggle is triennial
+let lbSeferSel = null;          // Sefer screen: selected book (English name)
+let lbSeferSort = 'pesukim';    // Sefer table sort column
+let lbSeferDir = -1;            // sort direction: -1 desc, 1 asc
 
 // How many per-scope board tops we're willing to fetch on one browse render.
 // Aliyot across the shipped readings stay well under this; the far larger pasuk
 // set exceeds it, so for pesukim we only enrich the ones you've scored (keeping
-// the modal snappy) — see renderScopeBrowse.
+// the modal snappy) — see renderPasukList / renderAliyahList.
 const MAX_BOARD_FETCH = 160;
 
 async function openLeaderboard() {
@@ -679,27 +687,58 @@ async function openLeaderboard() {
   const body = $('lbBody');
   if (!modal || !body) return;
   modal.hidden = false;
+  lbDetail = null; // always open on the section list, not a stale drill-down
   _boardTopCache.clear(); // refetch record-holders on each open so the board is current
+  // Publish this reader's latest corpus aggregates so the Sefer/Overall boards
+  // are current for everyone (best-effort, a no-op offline / signed out).
+  if (typeof auth.updateSummaryExtras === 'function') {
+    computeCorpusAggregates().then((agg) => { if (agg) auth.updateSummaryExtras(agg.summaryExtras); }).catch(() => {});
+  }
   renderLbShell(body);
 }
 
-// Tab strip + a body region that each tab fills in. "Overall" is the classic
-// global XP board; "Aliyot"/"Pesukim" browse the top score for EVERY aliyah /
-// pasuk across all readings (grouped by parashah), each row linking straight to
-// practicing that unit — so the board doubles as a challenge directory.
+// Section nav + a body region each section fills in. Four screens:
+//   Pesukim  — every pasuk with a score, grouped by parashah, verse order;
+//   Aliyot   — the 7 aliyot + maftir per parashah (annual or triennial toggle);
+//   Sefer    — a per-book table ranking readers by how much they've practiced;
+//   Overall  — a cross-book table (all sefarim) with XP + hours.
+// Tapping a pasuk/aliyah row opens a drill-down board (top scores + a colourbar
+// of score-over-runs, with a You/Overall toggle) via lbDetail.
 function renderLbShell(body) {
-  const tabs = [
-    ['aliyah', 'Aliyot'],
+  // A drill-down board takes over the whole body when open.
+  if (lbDetail) { renderLbDetail(body); return; }
+  const secs = [
     ['pasuk', 'Pesukim'],
+    ['aliyah', 'Aliyot'],
+    ['sefer', 'Sefer'],
     ['overall', 'Overall'],
   ];
-  body.innerHTML = `<div class="lb-tabs">${tabs.map(([id, l]) =>
-    `<button class="lb-tab ${lbTab === id ? 'on' : ''}" data-tab="${id}">${l}</button>`).join('')}</div>
+  body.innerHTML = `<div class="lb-tabs">${secs.map(([id, l]) =>
+    `<button class="lb-tab ${lbSection === id ? 'on' : ''}" data-sec="${id}">${l}</button>`).join('')}</div>
     <div class="lb-tabbody" id="lbTabBody"><p class="lb-empty">Loading…</p></div>`;
   body.querySelectorAll('.lb-tab').forEach((b) => {
-    b.addEventListener('click', () => { lbTab = b.dataset.tab; renderLbShell(body); });
+    b.addEventListener('click', () => { lbSection = b.dataset.sec; renderLbShell(body); });
   });
-  renderLbTab();
+  renderLbSection();
+}
+
+// Open a per-scope drill-down board (pasuk or aliyah) and re-render.
+function openLbDetail(scope) {
+  lbDetail = { scope, view: 'you' };
+  renderLbShell($('lbBody'));
+}
+
+// Close the drill-down, returning to the section list.
+function closeLbDetail() {
+  lbDetail = null;
+  renderLbShell($('lbBody'));
+}
+
+function renderLbSection() {
+  if (lbSection === 'pasuk') return renderPasukList();
+  if (lbSection === 'aliyah') return renderAliyahList();
+  if (lbSection === 'sefer') return renderSefer();
+  if (lbSection === 'overall') return renderOverall();
 }
 
 function lbNotConfigured() {
@@ -738,32 +777,18 @@ function boardTable(rows, { cols, me }) {
   return `<table class="lb-table"><thead><tr><th></th><th>Reader</th>${cols.map((c) => `<th title="${escapeHtml(c.title || '')}">${c.label}</th>`).join('')}</tr></thead><tbody>${list}</tbody></table>`;
 }
 
-async function renderLbTab() {
-  const el = $('lbTabBody');
-  if (!el) return;
-  const me = auth.getUser();
-
-  if (lbTab === 'overall') {
-    if (!auth.isConfigured()) { el.innerHTML = lbNotConfigured(); return; }
-    el.innerHTML = '<p class="lb-empty">Loading…</p>';
-    const rows = await auth.getLeaderboard(25);
-    if (!rows.length) {
-      el.innerHTML = `<p class="lb-empty">No one's on the board yet — ${me ? 'keep practicing to climb it!' : 'record a full verse to post the first score (anonymously — no account needed), or sign in.'}</p>${localSummaryHtml()}`;
-      return;
-    }
-    el.innerHTML = boardTable(rows, {
-      me,
-      cols: [
-        { key: 'xp', label: 'XP', title: 'Sum of best whole-verse & aliyah accuracies' },
-        { key: 'versesMastered', label: 'Verses', title: 'Verses at whole-verse stage or beyond' },
-        { key: 'aliyotComplete', label: 'Aliyot', title: 'Aliyot chanted at 80+' },
-      ],
-    }) + (me ? '' : '<p class="hint lb-signin-note">Record a full verse to appear here — anonymously, or sign in to sync across devices.</p>');
-    return;
-  }
-
-  // 'aliyah' | 'pasuk' — the browsable top-scores directory.
-  renderScopeBrowse(lbTab);
+// A horizontal strip of one cell per attempt (run 1, 2, 3…), each coloured by
+// its score, so a reader's progression is visible at a glance and commensurate
+// across readers (same attempt-index axis). Empty runs render a muted note.
+function colourbarHtml(runs, { showAxis = false } = {}) {
+  const arr = (runs || []).map((x) => Math.max(0, Math.min(100, Math.round(Number(x) || 0))));
+  if (!arr.length) return '<span class="lb-cb-empty">no runs yet</span>';
+  const cells = arr.map((s, i) =>
+    `<span class="lb-cb-cell" style="background:${scoreColorSolid(s)}" title="Run ${i + 1}: ${s}"></span>`).join('');
+  const axis = showAxis
+    ? `<div class="lb-cb-axis"><span>run 1</span><span>${arr.length} runs · best ${Math.max(...arr)}</span></div>`
+    : '';
+  return `<div class="lb-colourbar">${cells}</div>${axis}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -887,70 +912,500 @@ async function boardTop(type, refId) {
   return top;
 }
 
-async function renderScopeBrowse(type) {
+// The highest local roll-up score for one aliyah of a given reading: the
+// max(direct take, derived floor from its pesukim), mirroring computeScopeEntries
+// but for any reading (not just the resident one), plus its incomplete/solo tags.
+function localAliyahDisplay(m, cycle, year, a) {
+  const maxV = (m.data.verses || []).length;
+  const childBests = [];
+  for (let n = a.start; n <= Math.min(a.end || maxV, maxV); n++) {
+    const ms = store.getVerseModeScores(m.slug, n);
+    let b = store.getVerseScore(m.slug, n) || 0;
+    for (const k of Object.keys(ms)) b = Math.max(b, ms[k] || 0);
+    if (b > 0) childBests.push(b);
+  }
+  const direct = store.getAliyahScore(m.slug, cycle, year, a.n);
+  const solo = store.getAliyahSolo(m.slug, cycle, year, a.n);
+  return { score: scores.deriveScore(direct, childBests), incomplete: direct <= 0, solo: solo > 0 };
+}
+
+// ---------------------------------------------------------------------------
+// Pesukim screen: every pasuk that has a score, grouped by parashah in verse
+// order, one row each showing the top score. Tap a row to open its board.
+// ---------------------------------------------------------------------------
+async function renderPasukList() {
   const el = $('lbTabBody');
   if (!el) return;
   el.innerHTML = '<p class="lb-empty">Loading…</p>';
   const me = auth.getUser();
   const metas = await loadAllReadingsMeta();
-  const scopes = type === 'aliyah' ? enumerateAliyahScopes(metas) : enumeratePasukScopes(metas);
+  const scopes = enumeratePasukScopes(metas);
 
-  // Fetch shared record-holders: for the (small) aliyah set, all of them; for
-  // the (large) pasuk set only the ones you've scored, to keep it responsive.
   const configured = auth.isConfigured();
   const canFetchAll = configured && scopes.length <= MAX_BOARD_FETCH;
   const toFetch = configured ? (canFetchAll ? scopes : scopes.filter((s) => s.localBest > 0)) : [];
-  await Promise.all(toFetch.map(async (s) => { s.top = await boardTop(type, s.refId); }));
+  await Promise.all(toFetch.map(async (s) => { s.top = await boardTop('pasuk', s.refId); }));
 
-  const rows = scopes.map((s) => {
-    const topScore = s.top ? s.top.score : 0;
-    return { s, best: Math.max(topScore, s.localBest || 0) };
-  }).filter((r) => r.best > 0);
-
+  const rows = scopes.map((s) => ({ s, best: Math.max(s.top ? s.top.score : 0, s.localBest || 0) }))
+    .filter((r) => r.best > 0);
   if (!rows.length) {
-    const noun = type === 'aliyah' ? 'aliyah' : 'pasuk';
-    el.innerHTML = `<p class="lb-empty">No ${noun} scores yet — record ${type === 'aliyah' ? 'an aliyah' : 'a pasuk'} to put it on the board.</p>` + localSummaryHtml();
+    el.innerHTML = '<p class="lb-empty">No pasuk scores yet — record a full verse to put it on the board.</p>' + localSummaryHtml();
     return;
   }
 
-  // Group by parashah, sort rows within a group and groups by their best score.
+  // Group by parashah, preserving verse order within each group.
   const groups = new Map();
   for (const r of rows) {
     if (!groups.has(r.s.parName)) groups.set(r.s.parName, []);
     groups.get(r.s.parName).push(r);
   }
-  const groupArr = [...groups.entries()].map(([name, gr]) => {
-    gr.sort((a, b) => b.best - a.best);
-    return { name, gr, max: gr[0].best };
-  }).sort((a, b) => b.max - a.max);
-
-  _lbBrowse = [];
   const partial = configured && !canFetchAll;
-  let html = `<p class="lb-scope">🏆 Top ${type === 'aliyah' ? 'aliyot' : 'pesukim'} across all readings — tap a row to practice &amp; challenge it`
-    + `${partial ? ` <span class="hint">(showing the ${type === 'aliyah' ? 'aliyot' : 'pesukim'} you've scored)</span>` : ''}</p>`;
-  for (const g of groupArr) {
-    html += `<div class="lb-group"><h3 class="lb-group-h">📖 ${escapeHtml(g.name)}</h3><table class="lb-table"><tbody>`;
-    for (const r of g.gr) {
+  let html = `<p class="lb-scope">Every pasuk you or others have chanted, in order. Tap one for its board and your score-over-runs.${partial ? ' <span class="hint">(showing pesukim you\'ve scored)</span>' : ''}</p>`;
+  _lbBrowse = [];
+  for (const [name, gr] of groups) {
+    html += `<div class="lb-group"><h3 class="lb-group-h">📖 ${escapeHtml(name)}</h3><table class="lb-table"><tbody>`;
+    for (const r of gr) {
       const s = r.s;
       const idx = _lbBrowse.push(s) - 1;
-      const isMine = (s.localBest || 0) > 0;
-      const holder = r.s.top
-        ? `${avatarHtml(r.s.top)}<span class="lb-name">${escapeHtml(r.s.top.name || 'Anonymous')}${(me && r.s.top.uid === me.uid) ? ' <span class="lb-youtag">you</span>' : ''}${anonTagHtml(r.s.top)}</span>`
-        : `<span class="lb-av fallback">★</span><span class="lb-name lb-you-only">You</span>`;
-      const yourTag = (r.s.top && isMine) ? `<span class="lb-yourbest" title="Your best on this ${type}">you ${s.localBest}</span>` : '';
-      html += `<tr class="lb-browserow" data-idx="${idx}" title="Practice &amp; challenge">
-        <td class="lb-scopelbl"><b>${escapeHtml(s.label)}</b>${s.cycleLabel ? `<span class="lb-cyc-tag">${escapeHtml(s.cycleLabel)}</span>` : ''}</td>
+      const holder = s.top
+        ? `${avatarHtml(s.top)}<span class="lb-name">${escapeHtml(s.top.name || 'Anonymous')}${(me && s.top.uid === me.uid) ? ' <span class="lb-youtag">you</span>' : ''}${anonTagHtml(s.top)}</span>`
+        : '<span class="lb-av fallback">★</span><span class="lb-name lb-you-only">You</span>';
+      const yourTag = (s.top && (s.localBest || 0) > 0) ? `<span class="lb-yourbest" title="Your best">you ${s.localBest}</span>` : '';
+      html += `<tr class="lb-browserow" data-idx="${idx}" title="Open board">
+        <td class="lb-scopelbl"><b>${escapeHtml(s.label)}</b></td>
         <td class="lb-who">${holder}${yourTag}</td>
         <td class="lb-num lb-bignum" style="color:${scoreColorSolid(r.best)}">${r.best}</td>
-        <td class="lb-go">▶</td>
+        <td class="lb-go">›</td>
       </tr>`;
     }
     html += '</tbody></table></div>';
   }
   el.innerHTML = html;
   el.querySelectorAll('.lb-browserow').forEach((tr) => {
-    tr.addEventListener('click', () => navigateToScope(_lbBrowse[parseInt(tr.dataset.idx, 10)]));
+    tr.addEventListener('click', () => openLbDetail(_lbBrowse[parseInt(tr.dataset.idx, 10)]));
   });
+}
+
+// ---------------------------------------------------------------------------
+// Aliyot screen: annual/triennial toggle; per parashah the 7 aliyot + maftir,
+// each with its top score and an "incomplete" tag when no continuous take
+// exists. Tap a row for its board.
+// ---------------------------------------------------------------------------
+async function renderAliyahList() {
+  const el = $('lbTabBody');
+  if (!el) return;
+  const cycle = lbAliyahCycle;
+  const year = lbAliyahYear;
+
+  const yearBtns = cycle === 'triennial'
+    ? `<span class="lb-yeartoggle">${[1, 2, 3].map((y) =>
+      `<button class="lb-yr ${y === year ? 'on' : ''}" data-yr="${y}">Yr ${y}</button>`).join('')}</span>`
+    : '';
+  const toggle = `<div class="lb-subtoggle">
+    <span class="seg lb-cycseg">
+      <button class="lb-cyc ${cycle === 'annual' ? 'on' : ''}" data-cyc="annual">Full year (annual)</button>
+      <button class="lb-cyc ${cycle === 'triennial' ? 'on' : ''}" data-cyc="triennial">Triennial</button>
+    </span>${yearBtns}</div>`;
+
+  el.innerHTML = toggle + '<p class="lb-empty">Loading…</p>';
+  const bindToggles = () => {
+    el.querySelectorAll('.lb-cyc').forEach((b) => b.addEventListener('click', () => { lbAliyahCycle = b.dataset.cyc; renderAliyahList(); }));
+    el.querySelectorAll('.lb-yr').forEach((b) => b.addEventListener('click', () => { lbAliyahYear = parseInt(b.dataset.yr, 10); renderAliyahList(); }));
+  };
+
+  const me = auth.getUser();
+  const metas = await loadAllReadingsMeta();
+
+  // Enumerate the aliyot (+ maftir) for the selected partition, carrying start/end.
+  const scopes = [];
+  for (const m of metas) {
+    const par = (m.data && m.data.parashah) || parashahOf(m.slug);
+    const parName = parashaNameOf(m.data, m.slug, m.label);
+    const parId = scores.parashaIdFor(par, m.slug);
+    const aliyot = m.data && m.data.aliyot;
+    const list = aliyot
+      ? (cycle === 'triennial' ? ((aliyot.triennial && aliyot.triennial[year]) || []) : (aliyot.annual || []))
+      : aliyotFor(m.slug, cycle, year);
+    const units = list.slice();
+    const maf = aliyot && aliyot.maftir
+      && (cycle === 'triennial' ? (aliyot.maftir.triennial && aliyot.maftir.triennial[year]) : aliyot.maftir.annual);
+    if (maf) units.push(maf);
+    for (const a of units) {
+      scopes.push({
+        type: 'aliyah', slug: m.slug, cycle, year, n: a.n, ref: a.ref, start: a.start, end: a.end,
+        refId: scores.aliyahIdFor(parId, cycle, year, a.n), parName,
+        label: a.n === 'M' ? `Maftir${a.ref ? ` · ${a.ref}` : ''}` : `Aliyah ${a.n}${a.ref ? ` · ${a.ref}` : ''}`,
+        localDisplay: localAliyahDisplay(m, cycle, year, a),
+      });
+    }
+  }
+
+  const configured = auth.isConfigured();
+  const canFetchAll = configured && scopes.length <= MAX_BOARD_FETCH;
+  const toFetch = configured ? (canFetchAll ? scopes : scopes.filter((s) => s.localDisplay.score > 0)) : [];
+  await Promise.all(toFetch.map(async (s) => { s.top = await boardTop('aliyah', s.refId); }));
+
+  const rows = scopes.map((s) => {
+    const topScore = s.top ? s.top.score : 0;
+    const local = s.localDisplay.score;
+    const best = Math.max(topScore, local);
+    const incomplete = topScore >= local ? (s.top ? s.top.incomplete : s.localDisplay.incomplete) : s.localDisplay.incomplete;
+    return { s, best, incomplete };
+  }).filter((r) => r.best > 0);
+
+  if (!rows.length) {
+    el.innerHTML = toggle + '<p class="lb-empty">No aliyah scores yet for this cycle — record an aliyah to put it on the board.</p>' + localSummaryHtml();
+    bindToggles();
+    return;
+  }
+
+  const groups = new Map();
+  for (const r of rows) {
+    if (!groups.has(r.s.parName)) groups.set(r.s.parName, []);
+    groups.get(r.s.parName).push(r);
+  }
+  let html = toggle + `<p class="lb-scope">Solo, back-to-back takes score highest; a duet is capped; practising only the pesukim gives a lower "incomplete" floor. Tap for the board.</p>`;
+  _lbBrowse = [];
+  for (const [name, gr] of groups) {
+    html += `<div class="lb-group"><h3 class="lb-group-h">📖 ${escapeHtml(name)}</h3><table class="lb-table"><tbody>`;
+    for (const r of gr) {
+      const s = r.s;
+      const idx = _lbBrowse.push(s) - 1;
+      const holder = s.top
+        ? `${avatarHtml(s.top)}<span class="lb-name">${escapeHtml(s.top.name || 'Anonymous')}${(me && s.top.uid === me.uid) ? ' <span class="lb-youtag">you</span>' : ''}${anonTagHtml(s.top)}</span>`
+        : '<span class="lb-av fallback">★</span><span class="lb-name lb-you-only">You</span>';
+      const tag = r.incomplete ? ' <span class="lb-incomplete" title="No continuous take yet — this is a floor derived from the pesukim. Record the whole aliyah solo to raise it.">incomplete</span>' : '';
+      html += `<tr class="lb-browserow" data-idx="${idx}" title="Open board">
+        <td class="lb-scopelbl"><b>${escapeHtml(s.label)}</b>${tag}</td>
+        <td class="lb-who">${holder}</td>
+        <td class="lb-num lb-bignum" style="color:${scoreColorSolid(r.best)}">${r.best}</td>
+        <td class="lb-go">›</td>
+      </tr>`;
+    }
+    html += '</tbody></table></div>';
+  }
+  el.innerHTML = html;
+  bindToggles();
+  el.querySelectorAll('.lb-browserow').forEach((tr) => {
+    tr.addEventListener('click', () => openLbDetail(_lbBrowse[parseInt(tr.dataset.idx, 10)]));
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Drill-down board for one pasuk / aliyah: top scores + a colourbar of each
+// reader's score-over-runs, with a You / Overall toggle and a Practice button.
+// ---------------------------------------------------------------------------
+function renderLbDetail(body) {
+  const scope = lbDetail.scope;
+  const overallOk = auth.isConfigured();
+  body.innerHTML = `<div class="lb-detailhead">
+      <button class="lb-back" id="lbBack">‹ Back</button>
+      <h3 class="lb-detail-title">${escapeHtml(scope.label)}</h3>
+      <span class="seg lb-viewseg">
+        <button class="lb-view ${lbDetail.view === 'you' ? 'on' : ''}" data-view="you">You</button>
+        <button class="lb-view ${lbDetail.view === 'overall' ? 'on' : ''}" data-view="overall" ${overallOk ? '' : 'disabled title="Sign in to compare with others"'}>Overall</button>
+      </span>
+      <button class="auth-btn lb-practice" id="lbPractice">▶ Practice</button>
+    </div>
+    <div id="lbDetailBody"><p class="lb-empty">Loading…</p></div>`;
+  body.querySelector('#lbBack').addEventListener('click', closeLbDetail);
+  body.querySelector('#lbPractice').addEventListener('click', () => navigateToScope(scope));
+  body.querySelectorAll('.lb-view').forEach((b) => {
+    if (b.disabled) return;
+    b.addEventListener('click', () => { lbDetail.view = b.dataset.view; renderLbDetail(body); });
+  });
+  renderLbDetailBody();
+}
+
+function localRunLogFor(scope) {
+  return scope.type === 'aliyah'
+    ? store.getAliyahRunLog(scope.slug, scope.cycle, scope.year, scope.n)
+    : store.getVerseRunLog(scope.slug, scope.n);
+}
+
+async function renderLbDetailBody() {
+  const el = $('lbDetailBody');
+  if (!el) return;
+  const scope = lbDetail.scope;
+  const me = auth.getUser();
+
+  if (lbDetail.view === 'you' || !auth.isConfigured()) {
+    const log = localRunLogFor(scope);
+    let runs = log.map((x) => x.s);
+    // Per-run history only started being logged recently. For progress made
+    // before then, fall back to the older top-N bests (pesukim) or at least the
+    // single best score, so the "You" board isn't blank for existing users.
+    // Per-run history only started being logged recently. For progress made
+    // before then, show a single cell as a yardstick of the current best rather
+    // than the older top-N bests (which cluster at near-identical high values).
+    let approx = false;
+    if (!runs.length) {
+      approx = true;
+      const b = scope.type === 'pasuk'
+        ? localVerseBest(scope.slug, scope.n)
+        : Math.max(
+          store.getAliyahScore(scope.slug, scope.cycle, scope.year, scope.n),
+          scope.localDisplay ? scope.localDisplay.score : 0,
+        );
+      if (b > 0) runs = [b];
+    }
+    if (!runs.length) {
+      el.innerHTML = '<p class="lb-empty">You haven\'t recorded this yet. Hit Practice to post your first run.</p>';
+      return;
+    }
+    const best = Math.max(...runs);
+    const soloNote = scope.type === 'aliyah' && log.some((x) => x.duet)
+      ? '<p class="hint">Runs marked from duet takes are capped; a solo take can score higher.</p>' : '';
+    const label = approx
+      ? 'Your current best (per-run history starts from your next take):'
+      : 'Your score over runs (oldest → newest):';
+    el.innerHTML = `<div class="lb-youdetail">
+      <div class="lb-youhead"><span class="lb-detail-best" style="color:${scoreColorSolid(best)}">${best}</span><span class="ceil"> / 100 best</span></div>
+      <p class="lb-cb-label">${label}</p>
+      ${colourbarHtml(runs, { showAxis: true })}
+      ${soloNote}
+    </div>`;
+    return;
+  }
+
+  // Overall: one colourbar row per reader, aligned on the attempt-index axis.
+  el.innerHTML = '<p class="lb-empty">Loading…</p>';
+  const rows = await auth.getBoard(scope.type, scope.refId, 25);
+  if (!rows.length) {
+    el.innerHTML = '<p class="lb-empty">No one\'s posted a score here yet.</p>';
+    return;
+  }
+  let html = '<table class="lb-table lb-cbtable"><thead><tr><th></th><th>Reader</th><th>Best</th><th class="lb-cb-th">Score over runs</th></tr></thead><tbody>';
+  rows.forEach((r, i) => {
+    const rank = i + 1;
+    const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `${rank}`;
+    const isMe = me && r.uid === me.uid;
+    const inc = r.incomplete ? ' <span class="lb-incomplete">incomplete</span>' : '';
+    html += `<tr class="${isMe ? 'me' : ''}">
+      <td class="lb-rank">${medal}</td>
+      <td class="lb-who">${avatarHtml(r)}<span class="lb-name">${escapeHtml(r.name || 'Anonymous')}${isMe ? ' <span class="lb-youtag">you</span>' : ''}${anonTagHtml(r)}${inc}</span></td>
+      <td class="lb-num lb-bignum" style="color:${scoreColorSolid(r.score)}">${r.score}</td>
+      <td class="lb-cb-td">${colourbarHtml(r.runs && r.runs.length ? r.runs : [r.score])}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+// ---------------------------------------------------------------------------
+// Sefer screen: pick a book, then a ranked table of readers by how much of that
+// book they've practiced (pesukim / aliyot / parashot, each count + depth),
+// with a sefer score and XP. Sortable by column.
+// ---------------------------------------------------------------------------
+async function renderSefer() {
+  const el = $('lbTabBody');
+  if (!el) return;
+  el.innerHTML = '<p class="lb-empty">Loading…</p>';
+  const metas = await loadAllReadingsMeta();
+  const books = [...new Set(metas.map((m) => (m.data.book && m.data.book.en) || m.slug))];
+  if (!books.length) { el.innerHTML = '<p class="lb-empty">No readings loaded.</p>'; return; }
+  if (!lbSeferSel || !books.includes(lbSeferSel)) lbSeferSel = books[0];
+
+  const picker = `<div class="lb-subtoggle"><span class="seg lb-bookseg">${books.map((b) =>
+    `<button class="lb-book ${b === lbSeferSel ? 'on' : ''}" data-book="${escapeHtml(b)}">${escapeHtml(b)}</button>`).join('')}</span></div>`;
+
+  // Gather rows: signed-in => everyone from the leaderboard collection; else the
+  // local user only.
+  let rows = [];
+  const me = auth.getUser();
+  if (auth.isConfigured() && me) {
+    const lb = await auth.getLeaderboard(50);
+    rows = lb.map((r) => ({ name: r.name, photo: r.photo, anon: r.anon, uid: r.uid, xp: r.xp, sefer: (r.perSefer && r.perSefer[lbSeferSel]) || null }))
+      .filter((r) => r.sefer);
+    // Overlay this reader's freshly-computed local row so their own numbers are
+    // always accurate even if the cloud doc hasn't been pushed yet.
+    const agg = await computeCorpusAggregates();
+    const meS = agg.perSefer[lbSeferSel];
+    if (meS) {
+      const id = auth.publicIdentity ? auth.publicIdentity() : { name: 'You', photo: '' };
+      const meRow = { name: id.name, photo: id.photo, anon: auth.isAnon && auth.isAnon(), uid: me.uid, xp: agg.xp, sefer: meS, isMe: true };
+      const i = rows.findIndex((r) => r.uid === me.uid);
+      if (i >= 0) rows[i] = meRow; else rows.push(meRow);
+    }
+  } else {
+    const agg = await computeCorpusAggregates();
+    const s = agg.perSefer[lbSeferSel];
+    if (s) rows = [{ name: 'You', photo: '', anon: false, uid: 'me', xp: agg.xp, sefer: s, isMe: true }];
+  }
+
+  if (!rows.length) {
+    el.innerHTML = picker + `<p class="lb-empty">No one's practiced ${escapeHtml(lbSeferSel)} yet.</p>` + (auth.isConfigured() ? '' : localSummaryHtml());
+    bindBooks();
+    return;
+  }
+
+  const getVal = (r, key) => {
+    if (key === 'xp') return r.xp || 0;
+    if (key === 'score') return r.sefer.score || 0;
+    return (r.sefer[key] || 0) * 1000 + (r.sefer[key + 'Depth'] || 0); // count first, depth tiebreak
+  };
+  rows.sort((a, b) => lbSeferDir * (getVal(a, lbSeferSort) - getVal(b, lbSeferSort)));
+
+  const cols = [
+    { key: 'pesukim', label: 'Pesukim', title: 'Pesukim practiced (bar = average practice depth)' },
+    { key: 'aliyot', label: 'Aliyot', title: 'Aliyot practiced (bar = average take score)' },
+    { key: 'parashot', label: 'Parashot', title: 'Parashot with any practice (bar = of total in book)' },
+    { key: 'score', label: 'Sefer score', title: 'Combined: pesukim depth + aliyot + parashot' },
+    { key: 'xp', label: 'XP', title: 'Mastery points: sum of your best whole-verse & aliyah accuracies' },
+  ];
+  const th = cols.map((c) => {
+    const on = lbSeferSort === c.key;
+    const arrow = on ? (lbSeferDir < 0 ? ' ▾' : ' ▴') : '';
+    return `<th class="lb-sort ${on ? 'on' : ''}" data-key="${c.key}" title="${escapeHtml(c.title)}">${c.label}${arrow}</th>`;
+  }).join('');
+
+  const cell = (r, key) => {
+    const val = r.sefer[key] || 0;
+    const depth = key === 'parashot'
+      ? (r.sefer.parashotTotal ? Math.round(val / r.sefer.parashotTotal * 100) : 0)
+      : (r.sefer[key + 'Depth'] || 0);
+    return `<td class="lb-num"><span class="lb-cell-num">${val}</span><span class="lb-depth"><span class="lb-depth-fill" style="width:${depth}%;background:${scoreColorSolid(depth)}"></span></span></td>`;
+  };
+
+  let html = picker + `<p class="lb-scope">How much of <b>${escapeHtml(lbSeferSel)}</b> each reader has practiced. Tap a column to sort.</p>`;
+  html += `<table class="lb-table lb-sefertable"><thead><tr><th></th><th>Reader</th>${th}</tr></thead><tbody>`;
+  rows.forEach((r, i) => {
+    const isMe = r.isMe || (me && r.uid === me.uid);
+    html += `<tr class="${isMe ? 'me' : ''}">
+      <td class="lb-rank">${i + 1}</td>
+      <td class="lb-who">${avatarHtml(r)}<span class="lb-name">${escapeHtml(r.name || 'Anonymous')}${isMe ? ' <span class="lb-youtag">you</span>' : ''}${anonTagHtml(r)}</span></td>
+      ${cell(r, 'pesukim')}${cell(r, 'aliyot')}${cell(r, 'parashot')}
+      <td class="lb-num lb-bignum">${r.sefer.score || 0}</td>
+      <td class="lb-num">${(r.xp || 0).toLocaleString()}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  if (!auth.isConfigured() || !me) html += '<p class="hint lb-signin-note">Sign in to rank against other readers.</p>';
+  el.innerHTML = html;
+  bindBooks();
+  el.querySelectorAll('.lb-sort').forEach((h) => h.addEventListener('click', () => {
+    const key = h.dataset.key;
+    if (lbSeferSort === key) lbSeferDir *= -1; else { lbSeferSort = key; lbSeferDir = -1; }
+    renderSefer();
+  }));
+
+  function bindBooks() {
+    el.querySelectorAll('.lb-book').forEach((b) => b.addEventListener('click', () => { lbSeferSel = b.dataset.book; renderSefer(); }));
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Overall screen: a cross-book table summing practice across all sefarim, plus
+// XP (mastery points) and an estimated hours-studying total.
+// ---------------------------------------------------------------------------
+async function renderOverall() {
+  const el = $('lbTabBody');
+  if (!el) return;
+  el.innerHTML = '<p class="lb-empty">Loading…</p>';
+  const me = auth.getUser();
+  let rows = [];
+  if (auth.isConfigured() && me) {
+    rows = (await auth.getLeaderboard(50)).slice();
+    // Overlay the current reader's freshly-computed totals (cloud may be stale).
+    const agg = await computeCorpusAggregates();
+    const id = auth.publicIdentity ? auth.publicIdentity() : { name: 'You', photo: '' };
+    const meRow = { name: id.name, photo: id.photo, anon: auth.isAnon && auth.isAnon(), uid: me.uid, isMe: true,
+      xp: agg.xp, hours: agg.hours, pesukim: agg.totals.pesukim, aliyot: agg.totals.aliyot, parashot: agg.totals.parashot, sefarim: agg.totals.sefarim };
+    const i = rows.findIndex((r) => r.uid === me.uid);
+    if (i >= 0) rows[i] = meRow; else rows.push(meRow);
+  } else {
+    const agg = await computeCorpusAggregates();
+    rows = [{ name: 'You', photo: '', anon: false, uid: 'me', isMe: true,
+      xp: agg.xp, hours: agg.hours, pesukim: agg.totals.pesukim, aliyot: agg.totals.aliyot, parashot: agg.totals.parashot, sefarim: agg.totals.sefarim }];
+  }
+  if (!rows.length) {
+    el.innerHTML = `<p class="lb-empty">No one's on the board yet — ${me ? 'keep practicing to climb it!' : 'record a full verse to post a score, or sign in.'}</p>${localSummaryHtml()}`;
+    return;
+  }
+  rows = rows.slice().sort((a, b) => (b.xp || 0) - (a.xp || 0));
+  let html = '<p class="lb-scope">Everything, everywhere: total practice across the five books of the Torah.</p>';
+  html += `<table class="lb-table lb-overalltable"><thead><tr><th></th><th>Reader</th>
+    <th title="Mastery points: sum of your best whole-verse & aliyah accuracies">XP</th>
+    <th title="Pesukim practiced across all books">Pesukim</th>
+    <th title="Aliyot practiced across all books">Aliyot</th>
+    <th title="Parashot with any practice">Parashot</th>
+    <th title="Books touched (of 5)">Sefarim</th>
+    <th title="Estimated time spent practicing">Hours</th></tr></thead><tbody>`;
+  rows.forEach((r, i) => {
+    const rank = i + 1;
+    const medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `${rank}`;
+    const isMe = r.isMe || (me && r.uid === me.uid);
+    html += `<tr class="${isMe ? 'me' : ''}">
+      <td class="lb-rank">${medal}</td>
+      <td class="lb-who">${avatarHtml(r)}<span class="lb-name">${escapeHtml(r.name || 'Anonymous')}${isMe ? ' <span class="lb-youtag">you</span>' : ''}${anonTagHtml(r)}</span></td>
+      <td class="lb-num lb-bignum">${(r.xp || 0).toLocaleString()}</td>
+      <td class="lb-num">${r.pesukim || 0}</td>
+      <td class="lb-num">${r.aliyot || 0}</td>
+      <td class="lb-num">${r.parashot || 0}</td>
+      <td class="lb-num">${r.sefarim || 0} / 5</td>
+      <td class="lb-num">${(Number(r.hours) || 0).toFixed(1)}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  if (!auth.isConfigured() || !me) html += '<p class="hint lb-signin-note">Sign in to rank against other readers and sync across devices.</p>';
+  el.innerHTML = html;
+}
+
+// Compute corpus-wide practice aggregates (per-sefer + overall totals + hours)
+// from local progress and the loaded readings metadata. Used both to render the
+// local (signed-out) Sefer/Overall rows and to publish `summaryExtras` for the
+// shared boards.
+async function computeCorpusAggregates() {
+  const metas = await loadAllReadingsMeta();
+  const perSefer = {};
+  const ensure = (book) => perSefer[book] || (perSefer[book] = {
+    book, pesukim: 0, pesukimLevelSum: 0, aliyot: 0, aliyotScoreSum: 0,
+    parashotSet: new Set(), parashotPracticed: new Set(),
+  });
+  for (const m of metas) {
+    const book = (m.data.book && m.data.book.en) || m.slug;
+    const parName = parashaNameOf(m.data, m.slug, m.label);
+    const S = ensure(book);
+    S.parashotSet.add(parName);
+    const verses = m.data.verses || [];
+    let parPracticed = 0;
+    for (let n = 1; n <= verses.length; n++) {
+      const lvl = store.getVerseLevel(m.slug, n);
+      const ms = store.getVerseModeScores(m.slug, n);
+      let best = store.getVerseScore(m.slug, n) || 0;
+      for (const k of Object.keys(ms)) best = Math.max(best, ms[k] || 0);
+      if (lvl > 1 || best > 0) { S.pesukim++; S.pesukimLevelSum += lvl; parPracticed++; }
+    }
+    if (parPracticed > 0) S.parashotPracticed.add(parName);
+    const aliyot = m.data.aliyot;
+    const partitions = [['annual', 0], ['triennial', 1], ['triennial', 2], ['triennial', 3]];
+    for (const [cycle, year] of partitions) {
+      const list = aliyot ? (cycle === 'triennial' ? ((aliyot.triennial && aliyot.triennial[year]) || []) : (aliyot.annual || [])) : [];
+      const units = list.slice();
+      const maf = aliyot && aliyot.maftir && (cycle === 'triennial' ? (aliyot.maftir.triennial && aliyot.maftir.triennial[year]) : aliyot.maftir.annual);
+      if (maf) units.push(maf);
+      for (const a of units) {
+        const sc = store.getAliyahScore(m.slug, cycle, year, a.n);
+        if (sc > 0) { S.aliyot++; S.aliyotScoreSum += sc; }
+      }
+    }
+  }
+  const perSeferOut = {};
+  const totals = { pesukim: 0, aliyot: 0, parashot: 0, sefarim: 0 };
+  for (const book of Object.keys(perSefer)) {
+    const S = perSefer[book];
+    const pesukimDepth = S.pesukim ? Math.round((S.pesukimLevelSum / S.pesukim) / LEVELS.length * 100) : 0;
+    const aliyotDepth = S.aliyot ? Math.round(S.aliyotScoreSum / S.aliyot) : 0;
+    const parashot = S.parashotPracticed.size;
+    const score = Math.round(S.pesukimLevelSum + S.aliyotScoreSum / 10 + parashot * 20);
+    perSeferOut[book] = { book, pesukim: S.pesukim, pesukimDepth, aliyot: S.aliyot, aliyotDepth, parashot, parashotTotal: S.parashotSet.size, score };
+    totals.pesukim += S.pesukim; totals.aliyot += S.aliyot; totals.parashot += parashot;
+    if (S.pesukim > 0 || S.aliyot > 0) totals.sefarim++;
+  }
+  const hours = Math.round(store.getPracticeSeconds() / 360) / 10;
+  const xp = auth.computeSummary(store.getAll()).xp;
+  const summaryExtras = { hours, pesukim: totals.pesukim, aliyot: totals.aliyot, parashot: totals.parashot, sefarim: totals.sefarim, perSefer: perSeferOut };
+  return { perSefer: perSeferOut, totals, hours, xp, summaryExtras };
 }
 
 // Jump from a leaderboard row to actually practicing that unit: load its reading
@@ -1005,7 +1460,7 @@ function computeScopeEntries() {
     const sc = pasukBest(n);
     if (sc > 0) {
       allBests.push(sc);
-      entries.push({ type: 'pasuk', refId: scores.pasukIdFor(state.data, n), score: sc, label: `${(state.data.book && state.data.book.en) || ''} ${verseRefLabel(state.data.verses[n - 1], n)}` });
+      entries.push({ type: 'pasuk', refId: scores.pasukIdFor(state.data, n), score: sc, label: `${(state.data.book && state.data.book.en) || ''} ${verseRefLabel(state.data.verses[n - 1], n)}`, runs: store.getVerseRunLog(state.slug, n).map((x) => x.s) });
     }
   }
 
@@ -1022,9 +1477,16 @@ function computeScopeEntries() {
         if (b > 0) childBests.push(b);
       }
       const direct = store.getAliyahScore(state.slug, cycle, year, a.n);
+      const solo = store.getAliyahSolo(state.slug, cycle, year, a.n);
       const sc = scores.deriveScore(direct, childBests);
       if (sc > 0) {
-        entries.push({ type: 'aliyah', refId: scores.aliyahIdFor(parId, cycle, year, a.n), score: sc, cycle, label });
+        // `incomplete` = no continuous take yet (score is only the derived floor
+        // from pesukim); `solo` = a genuine solo full-aliyah chain exists.
+        entries.push({
+          type: 'aliyah', refId: scores.aliyahIdFor(parId, cycle, year, a.n), score: sc, cycle, label,
+          incomplete: direct <= 0, solo: solo > 0,
+          runs: store.getAliyahRunLog(state.slug, cycle, year, a.n).map((x) => x.s),
+        });
       }
     };
     for (const a of defaultAliyot(cycle, year)) scoreUnit(a, `Aliyah ${a.n} · ${a.ref || ''}`);
@@ -1053,6 +1515,15 @@ function maybePushScopes() {
     if (typeof auth.pushScopeScores !== 'function') return;
     auth.pushScopeScores(computeScopeEntries());
   } catch (e) { /* leaderboard push is best-effort */ }
+  // Recompute the corpus-wide aggregates (per-sefer + overall practice counts +
+  // hours) and hand them to the sync layer for the Sefer/Overall boards.
+  try {
+    if (typeof auth.updateSummaryExtras === 'function') {
+      computeCorpusAggregates().then((agg) => {
+        if (agg) auth.updateSummaryExtras(agg.summaryExtras);
+      }).catch(() => {});
+    }
+  } catch (e) { /* best-effort */ }
 }
 
 // After a full-verse take, invite a logged-out user to post their score to the
@@ -2895,6 +3366,12 @@ function finishAliyahRecord(tl) {
   const score = assisted ? scores.assistedScore(raw) : raw;
   const a = state.aliyah;
   store.recordAliyahScore(state.slug, a.cycle, a.year, a.n, score);
+  // Log this continuous take (with the duet flag) for the score-over-runs
+  // colourbar, and separately record a genuine solo chain so the leaderboard can
+  // rank solo takes above duet takes above a derived-from-pesukim floor.
+  store.recordAliyahRunLog(state.slug, a.cycle, a.year, a.n, score, assisted);
+  if (!assisted && raw > 0) store.recordAliyahSolo(state.slug, a.cycle, a.year, a.n, raw);
+  store.addPracticeSeconds(tl.total || 0);
   markAliyahEnds(tl, true);
   setAliyahButtons(false);
   const msg = score <= 0 ? 'No clear pitch captured — check your mic and follow the yad.'
@@ -3955,6 +4432,8 @@ function finishRecording() {
     store.recordVerseModeScore(state.slug, state.selectedVerse, skill, headline);
     store.recordVerseProfile(state.slug, state.selectedVerse, skill, headline, profileByGi);
     store.recordVerseRun(state.slug, state.selectedVerse, headline);
+    // Chronological attempt log for the leaderboard's score-over-runs colourbar.
+    store.recordVerseRunLog(state.slug, state.selectedVerse, headline);
     const md = VERSE_MODES.find((m) => m.key === skill);
     label = `${md ? md.label : 'Full verse'} accuracy`;
   } else {
@@ -4005,6 +4484,9 @@ function finishRecording() {
     if (state._lm) drawLiveMeter(grade(compare.contour));
     if (state._ghLm) drawGhLiveMeter(grade(compare.gh));
   }
+  // Estimate of time spent: count this take's recording window (accurate going
+  // forward; historical progress is estimated from attempt counts in the store).
+  store.addPracticeSeconds((coach && coach.dur) || state.expectedDur || 0);
   renderAccuracyPanel();
   renderVerses();
   renderAliyot();

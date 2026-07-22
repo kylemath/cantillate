@@ -23,6 +23,10 @@ let db = null;
 let currentUser = null;
 let synced = false;    // true once this session's cloud progress has merged in
 let pushTimer = null;
+// Extra, corpus-wide summary fields (per-sefer practice aggregates + hours)
+// computed in app.js where the readings metadata lives, then merged into the
+// public leaderboard doc on the next push. See updateSummaryExtras.
+let summaryExtras = null;
 
 export { isConfigured };
 export function getUser() { return currentUser; }
@@ -177,6 +181,7 @@ async function pushNow() {
       updatedAt: fb.serverTimestamp(),
     });
     await fb.setDoc(fb.doc(db, 'leaderboard', currentUser.uid), {
+      ...(summaryExtras || {}),
       name: id.name,
       photo: id.photo,
       anon: anonFlag(),
@@ -186,6 +191,15 @@ async function pushNow() {
   } catch (e) {
     console.warn('[auth] could not save progress:', e);
   }
+}
+
+// Stash corpus-wide summary aggregates (per-sefer practice counts + hours) to be
+// published with the next leaderboard-doc push. Computed by app.js (which owns
+// the readings metadata) and merged into the public doc so the Sefer/Overall
+// boards can rank users. A no-op offline / signed out.
+export function updateSummaryExtras(extras) {
+  summaryExtras = extras || null;
+  schedulePush();
 }
 
 // Derive public leaderboard metrics from the raw progress object. "XP" is the
@@ -255,7 +269,11 @@ export async function pushScopeScores(entries) {
       const safeRef = sanitizeRefId(entry.refId);
       const cacheKey = `${entry.type}:${safeRef}`;
       const prev = Number(pushed[cacheKey]) || 0;
-      if (score <= prev) continue;
+      const runs = Array.isArray(entry.runs) ? entry.runs.map((x) => Math.round(Number(x) || 0)).slice(-50) : [];
+      const prevN = Number(pushed[cacheKey + '#n']) || 0;
+      // Write when the best improves OR a new attempt lengthens the run history
+      // (so the score-over-runs colourbar stays current even on non-PB takes).
+      if (score <= prev && runs.length <= prevN) continue;
       const ref = fb.doc(db, 'boards', entry.type, 'refs', safeRef, 'entries', uid);
       const payload = {
         uid,
@@ -265,12 +283,15 @@ export async function pushScopeScores(entries) {
         score: Math.round(score),
         cycle: entry.cycle || null,
         partial: !!entry.partial,
+        incomplete: !!entry.incomplete,
+        solo: !!entry.solo,
+        runs,
         label: entry.label || null,
         updatedAt: fb.serverTimestamp(),
       };
       jobs.push(
         fb.setDoc(ref, payload)
-          .then(() => { pushed[cacheKey] = score; })
+          .then(() => { pushed[cacheKey] = Math.max(score, prev); pushed[cacheKey + '#n'] = runs.length; })
           .catch((e) => { console.warn('[auth] could not push scope score:', cacheKey, e); }),
       );
     }
@@ -304,6 +325,9 @@ export async function getBoard(type, refId, n = 25) {
         score: v.score || 0,
         cycle: v.cycle || null,
         partial: !!v.partial,
+        incomplete: !!v.incomplete,
+        solo: !!v.solo,
+        runs: Array.isArray(v.runs) ? v.runs : [],
       });
     });
     return rows;
@@ -334,6 +358,12 @@ export async function getLeaderboard(n = 25) {
         xp: v.xp || 0,
         versesMastered: v.versesMastered || 0,
         aliyotComplete: v.aliyotComplete || 0,
+        hours: Number(v.hours) || 0,
+        pesukim: Number(v.pesukim) || 0,
+        aliyot: Number(v.aliyot) || 0,
+        parashot: Number(v.parashot) || 0,
+        sefarim: Number(v.sefarim) || 0,
+        perSefer: (v.perSefer && typeof v.perSefer === 'object') ? v.perSefer : {},
       });
     });
     return rows;

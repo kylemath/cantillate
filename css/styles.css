@@ -1105,6 +1105,56 @@ footer.src a { color: var(--accent); }
 .lb-go { width: 24px; text-align: center; color: var(--muted); }
 .lb-browserow:hover .lb-go { color: var(--accent); }
 
+/* Section sub-toggles (annual/triennial, triennial year, sefer picker) */
+.lb-subtoggle { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.lb-cycseg, .lb-bookseg, .lb-yeartoggle { display: inline-flex; gap: 4px; flex-wrap: wrap;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.lb-cyc, .lb-yr, .lb-book { font-size: 12px; padding: 4px 12px; border-radius: 999px; background: transparent;
+  border: none; color: var(--muted); cursor: pointer; font-weight: 600; }
+.lb-cyc.on, .lb-yr.on, .lb-book.on { background: var(--accent); color: #08101f; }
+
+/* "Incomplete" tag: a derived-floor aliyah with no continuous take yet. */
+.lb-incomplete { font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px;
+  background: rgba(255,180,90,0.16); color: var(--accent-2); border-radius: 999px; padding: 1px 6px; font-weight: 700; margin-inline-start: 6px; }
+
+/* Colourbar: one cell per attempt, coloured by score. */
+.lb-colourbar { display: flex; gap: 2px; align-items: stretch; min-height: 18px; }
+.lb-cb-cell { flex: 1 1 6px; min-width: 5px; max-width: 22px; height: 18px; border-radius: 2px; }
+.lb-cb-axis { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); margin-top: 4px; }
+.lb-cb-empty { font-size: 11px; color: var(--muted); font-style: italic; }
+.lb-cb-label { font-size: 12px; color: var(--muted); margin: 12px 0 6px; }
+
+/* Drill-down detail header + view toggle */
+.lb-detailhead { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.lb-back { background: transparent; border: 1px solid var(--line); color: var(--muted); border-radius: 999px;
+  padding: 4px 12px; cursor: pointer; font-size: 12px; }
+.lb-back:hover { color: var(--accent); border-color: var(--accent); }
+.lb-detail-title { margin: 0; font-size: 15px; flex: 1 1 auto; }
+.lb-viewseg { display: inline-flex; gap: 4px; background: rgba(255,255,255,0.05); border: 1px solid var(--line);
+  border-radius: 999px; padding: 3px; }
+.lb-view { font-size: 12px; padding: 4px 12px; border-radius: 999px; background: transparent; border: none;
+  color: var(--muted); cursor: pointer; font-weight: 600; }
+.lb-view.on { background: var(--accent); color: #08101f; }
+.lb-view:disabled { opacity: 0.4; cursor: not-allowed; }
+.lb-practice { font-size: 12px; padding: 5px 12px; }
+
+.lb-youdetail { padding: 4px 2px; }
+.lb-youhead { display: flex; align-items: baseline; gap: 4px; }
+.lb-detail-best { font-size: 30px; font-weight: 800; }
+
+/* Colourbar table (overall drill-down): a colourbar per reader row. */
+.lb-cbtable .lb-cb-th { width: 45%; }
+.lb-cb-td { min-width: 140px; }
+
+/* Sefer table: count + depth bar per cell, sortable headers. */
+.lb-sort { cursor: pointer; user-select: none; white-space: nowrap; }
+.lb-sort:hover { color: var(--text); }
+.lb-sort.on { color: var(--accent); }
+.lb-sefertable .lb-num, .lb-overalltable .lb-num { width: auto; min-width: 62px; }
+.lb-cell-num { display: block; font-weight: 700; color: var(--text); font-size: 13px; }
+.lb-depth { display: block; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.08); margin-top: 3px; overflow: hidden; }
+.lb-depth-fill { display: block; height: 100%; border-radius: 2px; }
+
 /* Aliyah boundary editor */
 .al-edit-list { display: flex; flex-direction: column; gap: 8px; }
 .al-edit-row { display: grid; grid-template-columns: 90px auto 76px 1fr; align-items: center; gap: 8px; }
