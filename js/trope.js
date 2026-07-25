@@ -27,7 +27,7 @@ export const FAMILIES = [
   { id: 'zaqef', label: 'Zaqef / Pashta group', color: '#b070ff',
     members: [TAAM.ZAQEF_QATAN, TAAM.ZAQEF_GADOL, TAAM.PASHTA, TAAM.YETIV] },
   { id: 'segol', label: 'Segol / Zarqa', color: '#ff8a2a',
-    members: [TAAM.SEGOL, TAAM.ZARQA, TAAM.ZINOR] },
+    members: [TAAM.SEGOL, TAAM.ZINOR, TAAM.ZARQA] },
   { id: 'revia', label: 'Revia', color: '#34c94a',
     members: [TAAM.REVIA] },
   { id: 'geresh', label: 'Geresh / Gershayim', color: '#ff4fb0',
@@ -37,6 +37,51 @@ export const FAMILIES = [
   { id: 'ornament', label: 'Ornamental / rare', color: '#ff5347',
     members: [TAAM.TELISHA_GEDOLA, TAAM.PAZER, TAAM.QARNEY_PARA, TAAM.SHALSHELET] },
 ];
+
+// The classical hierarchy of the disjunctives ("kings and their servants"). Each
+// disjunctive divides the domain governed by the accent above it, so the verse is
+// a nested structure rather than a flat run of pauses:
+//
+//   1 EMPEROR  Silluq / Etnachta          divide the verse itself
+//   2 KING     Zaqef, Segol, Tipcha, ...  divide each half
+//   3 DUKE     Revia, Zarqa, Pashta, ...  divide a king's domain
+//   4 COUNT    Geresh, Pazer, Telisha...  divide a duke's domain
+//
+// Splitting at a rank keeps every WEAKER accent inside the unit, so an Etnachta is
+// practiced together with the Tipcha (and its connectors) that build up to it,
+// instead of stranded on its own — see splitAtRank.
+export const RANK = { EMPEROR: 1, KING: 2, DUKE: 3, COUNT: 4, CONNECTOR: 9 };
+
+export const RANK_LABELS = {
+  [RANK.EMPEROR]: 'Emperor',
+  [RANK.KING]: 'King',
+  [RANK.DUKE]: 'Duke',
+  [RANK.COUNT]: 'Count',
+};
+
+const _rankByTaam = new Map([
+  ['sof', RANK.EMPEROR], [TAAM.ETNACHTA, RANK.EMPEROR], [TAAM.ATNAH_HAFUKH, RANK.EMPEROR],
+  [TAAM.SEGOL, RANK.KING], [TAAM.SHALSHELET, RANK.KING], [TAAM.ZAQEF_QATAN, RANK.KING],
+  [TAAM.ZAQEF_GADOL, RANK.KING], [TAAM.TIPCHA, RANK.KING], [TAAM.DEHI, RANK.KING],
+  [TAAM.REVIA, RANK.DUKE], [TAAM.ZARQA, RANK.DUKE], [TAAM.ZINOR, RANK.DUKE],
+  [TAAM.PASHTA, RANK.DUKE], [TAAM.YETIV, RANK.DUKE], [TAAM.TEVIR, RANK.DUKE],
+  [TAAM.GERESH, RANK.COUNT], [TAAM.GERESH_MUQDAM, RANK.COUNT], [TAAM.GERSHAYIM, RANK.COUNT],
+  [TAAM.TELISHA_GEDOLA, RANK.COUNT], [TAAM.PAZER, RANK.COUNT], [TAAM.QARNEY_PARA, RANK.COUNT],
+]);
+
+// Rank of an accent codepoint (or 'sof'); connectors and unaccented words return
+// RANK.CONNECTOR, which is weaker than every disjunctive so they never split.
+export function rankFor(taam) {
+  return _rankByTaam.get(taam) || RANK.CONNECTOR;
+}
+
+// Rank of the accent that closes a segment, honouring the virtual Sof Pasuk.
+export function rankOfSeg(seg) {
+  if (!seg) return RANK.CONNECTOR;
+  if (seg.isSofPasuk) return RANK.EMPEROR;
+  if (seg.name && seg.name.role !== 'disjunctive') return RANK.CONNECTOR;
+  return rankFor(seg.taam);
+}
 
 const NEUTRAL = '#6b7290';
 const _famByTaam = new Map();
@@ -143,8 +188,8 @@ export const NAMES = {
   [TAAM.ZAQEF_GADOL]:   { he: 'זָקֵף גָּדוֹל', en: 'Zaqef Gadol', meaning: 'large upright', role: 'disjunctive', note: 'A bigger, more ornamented Zaqef.' },
   [TAAM.TIPCHA]:        { he: 'טִפְחָא', en: 'Tipcha', meaning: 'handbreadth / diagonal', role: 'disjunctive', note: 'Gentle descent; often precedes Etnachta / Sof Pasuk.' },
   [TAAM.REVIA]:         { he: 'רְבִיעַ', en: 'Revia', meaning: 'resting / crouching (a fourth)', role: 'disjunctive', note: 'Rise and hover, a medium pause.' },
-  [TAAM.ZARQA]:         { he: 'זַרְקָא', en: 'Zarqa', meaning: 'scatterer / sprinkler', role: 'disjunctive', note: 'A scattering zig-zag that leaps up and back.' },
-  [TAAM.ZINOR]:         { he: 'צִנּוֹר', en: 'Zinor', meaning: 'pipe / channel', role: 'disjunctive', note: 'Zarqa-shaped accent.' },
+  [TAAM.ZARQA]:         { he: 'צִנּוֹרִית', en: 'Tsinnorit', meaning: 'little pipe / channel', role: 'disjunctive', note: 'The rarer of the two marks Unicode splits the Zarqa across; the Masoretic text mostly uses the other one.' },
+  [TAAM.ZINOR]:         { he: 'זַרְקָא', en: 'Zarqa', meaning: 'scatterer / sprinkler', role: 'disjunctive', note: 'A scattering zig-zag that leaps up and back. Always leads to a Segol. (Unicode names this codepoint "Zinor", but in a Torah text it is the ordinary Zarqa.)' },
   [TAAM.PASHTA]:        { he: 'פַּשְׁטָא', en: 'Pashta', meaning: 'stretching forward', role: 'disjunctive', note: 'A rising accent on the stressed syllable.' },
   [TAAM.YETIV]:         { he: 'יְתִיב', en: 'Yetiv', meaning: 'resting / sitting', role: 'disjunctive', note: 'A pre-positioned turn, dip and rise.' },
   [TAAM.TEVIR]:         { he: 'תְּבִיר', en: 'Tevir', meaning: 'broken', role: 'disjunctive', note: 'A descending break.' },
@@ -253,20 +298,39 @@ export function semitoneToFreq(tonicHz, semitones) {
   return tonicHz * Math.pow(2, semitones / 12);
 }
 
-// Split line segments into phrases, breaking after each disjunctive accent
-// (a pause) or the end of the verse.
-export function splitPhrases(segs) {
-  const phrases = [];
+// Divide a verse at a chosen level of the accent hierarchy: break only after a
+// disjunctive whose rank is at least as strong as `maxRank`, so every weaker
+// accent (and every connector) stays inside the unit it builds up to. Dividing at
+// RANK.EMPEROR yields the verse's halves at the Etnachta; at RANK.KING the
+// Zaqef/Tipcha measures; at RANK.COUNT every disjunctive, the finest division.
+export function splitAtRank(segs, maxRank = RANK.COUNT) {
+  const units = [];
   let cur = [];
   segs.forEach((seg) => {
     cur.push(seg);
-    if (seg.name.role === 'disjunctive' || seg.isSofPasuk) {
-      phrases.push(cur);
-      cur = [];
-    }
+    if (rankOfSeg(seg) <= maxRank) { units.push(cur); cur = []; }
   });
-  if (cur.length) phrases.push(cur);
-  return phrases;
+  if (cur.length) units.push(cur);
+  return units;
+}
+
+// Split line segments into phrases: every disjunctive is a break, EXCEPT where
+// that would strand a stronger accent on its own. A lone Etnachta or Sof Pasuk
+// with no connector of its own is musically the tail of the Tipcha phrase that
+// leads into it, so it is folded back into that phrase rather than practiced as a
+// one-word fragment with no run-up.
+export function splitPhrases(segs) {
+  const raw = splitAtRank(segs, RANK.COUNT);
+  const out = [];
+  raw.forEach((unit) => {
+    const prev = out[out.length - 1];
+    const foldsBack = prev
+      && unit.length === 1
+      && rankOfSeg(unit[0]) < rankOfSeg(prev[prev.length - 1]);
+    if (foldsBack) prev.push(...unit);
+    else out.push(unit);
+  });
+  return out;
 }
 
 // Flatten an arbitrary list of segments (a word, phrase, or whole line) into a

@@ -441,6 +441,42 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 .aliyah.maftir.ready { border-inline-start-color: var(--good); }
 .aliyah.maftir .al-n { font-size: 12px; letter-spacing: -1px; }
 
+/* Collapsible aliyah sections. Closed, the whole parashah is seven rows you can
+   take in at once; open, one aliyah's pesukim sit in front of you without the
+   rest of the reading pushing them off screen. */
+.alsec { margin: 0 0 6px; }
+.alsec-head { display: flex; align-items: center; gap: 8px; width: 100%; text-align: start;
+  padding: 8px 10px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel);
+  cursor: pointer; }
+.alsec-head:hover { border-color: var(--accent); }
+.alsec.open > .alsec-head { border-end-start-radius: 0; border-end-end-radius: 0; border-block-end-color: transparent; }
+.alsec-head.ready { border-inline-start: 3px solid var(--good); }
+.alsec-caret { color: var(--muted); font-size: 11px; transition: transform .15s ease; }
+.alsec.open .alsec-caret { transform: rotate(90deg); }
+.alsec-label { font-size: 12px; font-weight: 600; flex: 1; }
+.alsec-label .hint { font-weight: 400; }
+.alsec-head .al-n { font-family: 'FrankRuehl', serif; font-size: 16px; color: var(--accent); min-width: 18px; }
+.alsec-head .al-score { font-size: 11px; font-weight: 700; color: #fff; border-radius: 6px; padding: 1px 7px; }
+.alsec-prog { width: 54px; height: 5px; border-radius: 3px; background: rgba(255,255,255,0.08); overflow: hidden; flex: none; }
+.alsec-prog span { display: block; height: 100%; border-radius: 3px; }
+.alsec-body { border: 1px solid var(--line); border-block-start: none;
+  border-end-start-radius: 9px; border-end-end-radius: 9px; padding: 8px 8px 4px; }
+.alsec.untitled .alsec-head { background: transparent; border-style: dashed; }
+.alsec-note { margin: 0 0 8px; }
+
+/* Verse chains: the rung between one pasuk and a whole aliyah, where the joins
+   between consecutive verses get their own practice. */
+.chains { margin: 8px 0 10px; }
+.chains-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.chains-title { font-size: 12px; font-weight: 600; flex: 1; }
+.chain-sizes button { padding: 2px 8px; font-size: 11px; }
+.chain-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.chain { display: inline-flex; align-items: center; gap: 5px; padding: 4px 9px; font-size: 12px;
+  border-radius: 999px; }
+.chain.ready { border-color: rgba(55,200,113,0.5); }
+.chain-score { font-size: 10px; font-weight: 700; color: #fff; border-radius: 5px; padding: 0 5px; }
+.chains-note { margin: 6px 0 0; }
+
 /* Aliyah controls pane (the STA"M scroll itself lives in the shared #scrollVerses
    pane; see .aliyah-scroll below). */
 #practice.aliyah-fill { height: 100%; display: flex; flex-direction: column; }
@@ -566,6 +602,12 @@ body.guide-open .guidepane { transform: translateX(0); }
 .unit-nav { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
 .unit-nav .u-label { color: var(--muted); font-size: 12px; }
 .unit-nav button { padding: 2px 8px; font-size: 12px; }
+/* How coarsely the sections stage cuts the verse (phrases -> halves). */
+.divide-nav { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
+.divide-nav .label { color: var(--muted); font-size: 12px; }
+.divide-nav .seg button { padding: 2px 8px; font-size: 11px; }
+.divide-nav .seg button:disabled { opacity: 0.35; cursor: default; }
+.divide-nav .seg button:disabled:hover { background: var(--panel-2); }
 /* Large edge advance arrows + portrait rotate prompt are mobile-only (shown in
    the max-width:900px media query); hidden on desktop. */
 .unit-edge, .pasuk-edge { display: none; }
@@ -892,6 +934,16 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 .readsize input[type="range"] { width: 110px; accent-color: var(--accent); cursor: pointer; }
 
 .transport { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 10px 0; }
+/* Hold-and-scrub group: pause the chant and step back a word at a time to retry
+   the stretch you fumbled, instead of restarting the pasuk. */
+.transport-scrub { display: inline-flex; gap: 4px; align-items: center; }
+.transport-scrub button { padding: 6px 10px; font-variant-numeric: tabular-nums; }
+.transport-scrub kbd { font: inherit; font-size: 11px; opacity: 0.65; border: 1px solid var(--line);
+  border-radius: 4px; padding: 0 4px; margin-inline-start: 2px; }
+.transport-scrub button:disabled { opacity: 0.4; }
+.transport-scrub button[aria-pressed="true"] { background: var(--accent); color: #08101f; font-weight: 600; }
+/* While held, dim the moving parts so it's obvious nothing is running. */
+body.transport-paused .timeline { opacity: 0.82; }
 .result { font-size: 14px; margin: 8px 0; min-height: 22px; }
 .result .scorelabel { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-inline-end: 4px; }
 .result .num { font-weight: 800; font-size: 22px; }
@@ -980,6 +1032,13 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 .trope .avgn { font-size: 9px; font-weight: 500; color: var(--muted); }
 .trope .tmean { font-size: 10px; color: var(--muted); font-style: italic; margin-top: 1px; }
 .trope .trole { font-size: 10px; color: var(--muted); }
+/* Where a pause sits in the hierarchy that divides the verse. Stronger accents
+   read heavier, so the four tiers are legible at a glance. */
+.trope .trank { border: 1px solid var(--line); border-radius: 999px; padding: 0 5px; margin-inline-start: 4px;
+  font-size: 9px; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+.trope .trank.r1 { color: #cfe0ff; border-color: rgba(120,170,255,0.55); background: rgba(90,150,255,0.16); }
+.trope .trank.r2 { color: #cfe0ff; border-color: rgba(120,170,255,0.35); }
+.trope .trank.r3, .trope .trank.r4 { opacity: 0.8; }
 .trope canvas { width: 100%; height: 42px; display: block; margin-top: 4px; }
 .trope .tnote { font-size: 10px; color: var(--muted); margin-top: 3px; }
 

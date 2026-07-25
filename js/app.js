@@ -1,11 +1,13 @@
 import { tokenize, renderWord, toScroll, stripNikud, stripTaamim } from './hebrew.js';
-import { buildLineMelody, splitPhrases, FAMILIES, markGlyph, NAMES,
-  motifFor, nameFor, SOF_PASUK_MOTIF, SOF_PASUK_NAME } from './trope.js';
+import { buildLineMelody, splitPhrases, splitAtRank, RANK, RANK_LABELS, rankFor, FAMILIES,
+  markGlyph, NAMES, motifFor, nameFor, SOF_PASUK_MOTIF, SOF_PASUK_NAME } from './trope.js';
 import { singSteps, playTone, stopPlayback } from './audio.js';
-import { playSegment, stopVerseAudio } from './realaudio.js';
+import { playSegment, stopVerseAudio, pauseVerseAudio, resumeVerseAudio, seekVerseAudio,
+  previewVerseAudio, isVerseAudioLoaded, isVerseAudioPaused, verseAudioProgress } from './realaudio.js';
 import { startMic, stopMic } from './pitch.js';
 import { ContourView, Spectrogram, scoreTrail, scoreNotes, stepsToPoints, sampleContour } from './viz.js';
-import { LEVELS, levelById, VERSE_MODES, skillForLevel } from './levels.js';
+import { LEVELS, levelById, VERSE_MODES, skillForLevel, DIVISIONS, divisionByRank,
+  FULL_VERSE_LEVEL } from './levels.js';
 import { aliyotFor, parashahOf, currentTriennialYear } from './aliyot.js';
 import * as store from './store.js';
 import * as auth from './auth.js';
@@ -15,7 +17,7 @@ import { loadTikkunData, renderTikkunPages, TIKKUN_DATA_URL } from './tikkun.js'
 
 // An aliyah's scroll+yad challenge unlocks once every pasuk in it has reached at
 // least this stage (i.e., the learner has worked it up to whole-verse practice).
-const ALIYAH_READY_LEVEL = 4;
+const ALIYAH_READY_LEVEL = FULL_VERSE_LEVEL;
 
 // Readings are auto-discovered from data/readings.json (updated by
 // scripts/build_reading.py). This hardcoded list is the fallback if the manifest
@@ -47,6 +49,9 @@ const state = {
   // triennial + triYear = one shorter year (its own aliyot AND verse range).
   cycle: 'triennial', // aliyah cycle: 'annual' | 'triennial'
   triYear: 1,         // triennial cycle year (1-3)
+  readingId: null,    // the menu entry in use (may differ from slug for excerpts)
+  excerpt: null,      // manifest entry when the reading is a named passage
+  drill: null,        // manifest entry when the reading is a synthetic drill set
   aliyah: null,       // currently-open aliyah challenge (null = normal practice)
   aliyahCue: 'word',  // yad outline granularity in aliyah mode: 'word' | 'phrase'
   scrollView: false,  // render the text pane as a continuous Torah column
@@ -59,6 +64,11 @@ const state = {
   selectedVerse: null,
   level: 1,
   unitIndex: 0,
+  divideRank: null,   // section stage: how coarsely to cut the verse (see DIVISIONS)
+  openAliyot: null,   // Set of expanded aliyah keys in the left pesukim list
+  chainSize: 2,       // pesukim per verse-chain run (see buildChainStrip)
+  paused: false,      // transport is held mid-verse (see pauseTransport)
+  pausedAt: 0,        // normalized position, 0..1, where the transport is held
   recording: false,
   playingReal: false,
   view: null,
@@ -88,8 +98,19 @@ const $ = (id) => document.getElementById(id);
 // unambiguous across chapters. Single-chapter readings (no c/v) fall back to the
 // Hebrew-numeral verse index, as before.
 function verseRefLabel(verse, n) {
+  // Drill lines aren't scripture, so they carry their own label ("shalom · 3.2")
+  // instead of a chapter:verse that would imply one.
+  if (verse && verse.ref && verse.label) return `${verse.label} · ${verse.ref}`;
   if (verse && verse.c != null && verse.v != null) return `${verse.c}:${verse.v}`;
   return `${toHebrewNum(n)}`;
+}
+
+// The running verse number shown after the reference. A single-chapter reading
+// needs it (its ref is only a Hebrew numeral); a multi-chapter one already reads
+// "6:4", and a drill line carries its own label, so both suppress it.
+function verseIndexSuffix(verse, n, word = 'v') {
+  if (state.data.multiChapter || (verse && verse.label)) return '';
+  return ` · ${word}${n}`;
 }
 
 // A human ref for a verse range (e.g. "1:1–1:10"), used when rebuilding labels
@@ -194,6 +215,33 @@ function upcomingParashahSlug(available, today = new Date()) {
   return slug && available.some((a) => a.slug === slug) ? slug : null;
 }
 
+// Group the reading menu into <optgroup>s so the weekly parashiyot, the
+// standalone prayers and the trope drills read as three different kinds of thing
+// rather than one long list.
+function renderReadingMenu(sel) {
+  sel.innerHTML = '';
+  const order = [];
+  const byGroup = new Map();
+  for (const p of AVAILABLE) {
+    const g = p.group || 'Parashiyot';
+    if (!byGroup.has(g)) { byGroup.set(g, []); order.push(g); }
+    byGroup.get(g).push(p);
+  }
+  const single = order.length < 2;
+  for (const g of order) {
+    const parent = single ? sel : document.createElement('optgroup');
+    if (!single) parent.label = g;
+    for (const p of byGroup.get(g)) {
+      const o = document.createElement('option');
+      o.value = p.slug;
+      o.textContent = p.label;
+      if (p.note) o.title = p.note;
+      parent.appendChild(o);
+    }
+    if (!single) sel.appendChild(parent);
+  }
+}
+
 async function init() {
   // Auto-discover readings from the manifest (falls back to the hardcoded list).
   try {
@@ -204,14 +252,15 @@ async function init() {
     }
   } catch (e) { /* keep the hardcoded fallback */ }
 
-  // Populate parashah selector.
+  // Populate the reading selector. Entries carry an optional `group` so the
+  // parashiyot, the standalone prayers and the trope drills stay visually
+  // separate in one menu.
   const sel = $('parashah');
-  AVAILABLE.forEach((p) => {
-    const o = document.createElement('option');
-    o.value = p.slug; o.textContent = p.label; sel.appendChild(o);
-  });
-  // Open the upcoming week's parashah by default (falls back to the first).
-  const startSlug = upcomingParashahSlug(AVAILABLE) || AVAILABLE[0].slug;
+  renderReadingMenu(sel);
+  // Open the upcoming week's parashah by default (falls back to the first
+  // full parashah, never a drill or an excerpt).
+  const firstParashah = AVAILABLE.find((p) => readingKind(p) === 'parashah') || AVAILABLE[0];
+  const startSlug = upcomingParashahSlug(AVAILABLE) || firstParashah.slug;
   sel.value = startSlug;
   await loadData(startSlug);
 
@@ -1753,19 +1802,31 @@ function applyReadScale(scale, rerender) {
   }
 }
 
-// Keyboard shortcuts (RTL): ← next page/word, → previous, Space/P play,
-// ↓ record (press again to restart), ↑ sing along (voice guide + record in
-// sync), Escape stop. Modifier combos (e.g. Ctrl/Cmd+R to refresh) and typing
-// in a control are left to the browser. In aliyah mode the same keys drive the
-// aliyah transport (Space guided read, ↓ record, ↑ duet, Esc stop).
+// Keyboard shortcuts (RTL): ← next page/word, → previous, Space/P play — or,
+// once something is running, hold it; "," and "." step back and forward one word
+// so you can retry the bit you fumbled without restarting the pasuk; ↓ record
+// (press again to restart), ↑ sing along (voice guide + record in sync), Escape
+// stop. Modifier combos (e.g. Ctrl/Cmd+R to refresh) and typing in a control are
+// left to the browser. In aliyah mode the same keys drive the aliyah transport
+// (Space guided read, ↓ record, ↑ duet, Esc stop).
 function onKey(e) {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
   if (/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(e.target.tagName)) return;
+  // Step keys work the same everywhere something is running.
+  if (e.key === ',' || e.key === '.') {
+    if (!transportLive()) return;
+    e.preventDefault();
+    stepWord(e.key === ',' ? -1 : 1);
+    return;
+  }
   if (state.aliyah) {
     const tl = state._aliyaTl;
     if (!tl) return;
-    if (e.key === ' ' || e.key === 'p') { e.preventDefault(); if (!state._aliyaRunning) playAliyahGuided(tl); }
-    else if (e.key === 'ArrowDown') { e.preventDefault(); recordAliyahRun(tl); }
+    if (e.key === ' ' || e.key === 'p') {
+      e.preventDefault();
+      if (state._aliyaRunning) togglePause();
+      else playAliyahGuided(tl);
+    } else if (e.key === 'ArrowDown') { e.preventDefault(); recordAliyahRun(tl); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); recordAliyahRun(tl, { duet: true }); }
     else if (e.key === 'Escape') { e.preventDefault(); stopAliyah(); setAliyahButtons(false); }
     return;
@@ -1775,10 +1836,205 @@ function onKey(e) {
   if (!units || !units.length) return;
   if (e.key === 'ArrowLeft') { e.preventDefault(); goToUnit(state.unitIndex + 1, true); }
   else if (e.key === 'ArrowRight') { e.preventDefault(); goToUnit(state.unitIndex - 1, true); }
-  else if (e.key === ' ' || e.key === 'p') { e.preventDefault(); playUnit(); }
-  else if (e.key === 'ArrowDown') { e.preventDefault(); startRecording(); }
+  else if (e.key === ' ' || e.key === 'p') {
+    e.preventDefault();
+    if (transportLive()) togglePause();
+    else playUnit();
+  } else if (e.key === 'ArrowDown') { e.preventDefault(); startRecording(); }
   else if (e.key === 'ArrowUp') { e.preventDefault(); startRecording({ singAlong: true }); }
   else if (e.key === 'Escape') { e.preventDefault(); stopAll(); }
+}
+
+// ---------------------------------------------------------------------------
+// Transport: pause and step by one word
+//
+// Chanting is learned by repeating the stretch you keep fumbling, not the whole
+// pasuk. So anything time-based — the recorded chant, a duet, or your own take —
+// can be held with Space and nudged a word at a time with "," and "." . Paused,
+// stepping plays just the word you land on so you can hear it before carrying on;
+// while it's still rolling, stepping simply moves the playhead. Rewinding into a
+// take also discards what you sang past that point, so the second attempt at a
+// phrase replaces the first instead of scoring on top of it.
+// ---------------------------------------------------------------------------
+
+// Is there a time-based activity that can be paused or scrubbed right now?
+function transportLive() {
+  return state.recording || state.playingReal || isVerseAudioLoaded()
+    || (!!state.aliyah && !!state._aliyaRunning);
+}
+
+// Normalized position, 0..1, within whatever window is currently running.
+function transportPos() {
+  if (state.paused) return state.pausedAt;
+  if (state.recording) {
+    const dur = state.expectedDur || unitDuration();
+    return clamp01((performance.now() - state.recStart) / 1000 / (dur || 1));
+  }
+  const p = verseAudioProgress();
+  return p != null ? p : 0;
+}
+
+function clamp01(x) { return Math.min(1, Math.max(0, Number(x) || 0)); }
+
+function togglePause() {
+  if (state.paused) resumeTransport();
+  else pauseTransport();
+}
+
+function pauseTransport() {
+  if (state.paused || !transportLive()) return;
+  state.pausedAt = transportPos();
+  state.paused = true;
+  state._pausedSince = performance.now();
+  // The synthesized voice guide is scheduled ahead on the audio clock and can't
+  // be held mid-note, so pausing simply silences it.
+  stopPlayback();
+  pauseVerseAudio();
+  if (state.aliyah) pauseAliyahTimers();
+  else clearTimeout(state._recTimer);
+  syncTransportUI();
+}
+
+function resumeTransport() {
+  if (!state.paused) return;
+  state.paused = false;
+  const held = performance.now() - (state._pausedSince || performance.now());
+  state._pausedSince = 0;
+  if (state.recording) {
+    const dur = (state.expectedDur || unitDuration()) * 1000;
+    state.recStart = performance.now() - state.pausedAt * dur;
+    // Re-arm the backstop that ends the take, minus what has already been sung.
+    state._recTimer = setTimeout(finishRecording, Math.max(400, (1 - state.pausedAt) * dur + 800));
+  }
+  if (state.aliyah) resumeAliyahTimers(held);
+  resumeVerseAudio();
+  syncTransportUI();
+}
+
+// Step the playhead one word back (-1) or forward (+1) within the current window.
+function stepWord(delta) {
+  const coach = state.aliyah ? aliyahCoachAtPos() : state.coach;
+  if (!coach || !coach.wordBounds || !coach.wordBounds.length) return;
+  const bounds = coach.wordBounds;
+  const here = state.aliyah ? aliyahLocalPos() : transportPos();
+  let idx = 0;
+  for (let i = 0; i < bounds.length; i++) if (here >= bounds[i]) idx = i;
+  const target = Math.max(0, Math.min(bounds.length - 1, idx + delta));
+  seekTo(bounds[target], target + 1 < bounds.length ? bounds[target + 1] : 1);
+  announceStep(coach, target);
+}
+
+// Move everything — audio, record clock, playhead, karaoke highlight — to `t01`.
+// `wordEnd` bounds the little preview played when we're parked.
+function seekTo(t01, wordEnd) {
+  const pos = clamp01(t01);
+  if (state.recording) {
+    // Re-singing over a stretch replaces it, so drop the frames (and note gems)
+    // recorded past this point before the take continues.
+    if (state.view) state.view.rewindUser(pos);
+    if (state._diffs) state._diffs.length = 0;
+    const dur = (state.expectedDur || unitDuration()) * 1000;
+    if (!state.paused) state.recStart = performance.now() - pos * dur;
+  }
+  state.pausedAt = pos;
+  if (state.paused && wordEnd != null) previewVerseAudio(pos, wordEnd);
+  else seekVerseAudio(pos);
+  const coach = state.aliyah ? aliyahCoachAtPos() : state.coach;
+  if (state.view && !state.aliyah) state.view.setPlayhead(pos);
+  if (coach) {
+    if (state.aliyah) {
+      const seg = aliyahSegAtPos();
+      if (seg) highlightAliyah(seg.n, wordAtTime(coach, pos));
+    } else {
+      highlightWord(wordAtTime(coach, pos));
+      scrollFollow(pos);
+    }
+  }
+  syncTransportUI();
+}
+
+function announceStep(coach, wordIdx) {
+  const el = state.aliyah ? $('aliyaResult') : $('result');
+  if (!el) return;
+  const ow = coach.overlayWords && coach.overlayWords[wordIdx];
+  const seg = ow && ow.seg;
+  const where = seg
+    ? `<b style="color:${seg.color}">${renderWord(seg.token, aidsForLevel())}</b> · ${seg.name.en}`
+    : `word ${wordIdx + 1}`;
+  el.innerHTML = `<span class="hint">${state.paused ? '⏸ Paused at' : '↦'} ${where}`
+    + `${state.paused ? ' — Space to carry on, <b>,</b> / <b>.</b> to keep stepping.' : ''}</span>`;
+}
+
+// Reflect the paused state on the transport buttons (and the body, so the CSS can
+// mark the pane as held).
+function syncTransportUI() {
+  document.body.classList.toggle('transport-paused', state.paused);
+  const btn = $('btnPause') || $('alPause');
+  if (btn) {
+    btn.textContent = state.paused ? '▶ Resume' : '⏸ Pause';
+    btn.disabled = !transportLive();
+    btn.setAttribute('aria-pressed', state.paused ? 'true' : 'false');
+  }
+  for (const id of ['btnStepBack', 'btnStepFwd', 'alStepBack', 'alStepFwd']) {
+    const b = $(id);
+    if (b) b.disabled = !transportLive();
+  }
+}
+
+// Clear the paused flag whenever a take or playback ends, so a fresh one starts
+// from a clean transport.
+function resetTransport() {
+  state.paused = false;
+  state.pausedAt = 0;
+  state._pausedSince = 0;
+  document.body.classList.remove('transport-paused');
+  syncTransportUI();
+}
+
+// --- Aliyah-mode helpers for the shared transport ---------------------------
+// In the aliyah reader the timeline spans many verses, so "position" has to be
+// resolved to the verse segment under the playhead before the shared code can
+// treat it like a single window.
+
+function aliyahElapsed() {
+  if (!state._aliyaT0) return 0;
+  if (state.paused) return state._aliyaPausedAt || 0;
+  return (performance.now() - state._aliyaT0) / 1000;
+}
+
+function aliyahSegAtPos() {
+  const tl = state._aliyaTl;
+  if (!tl) return null;
+  const tG = aliyahElapsed();
+  return tl.segs.find((s) => tG >= s.gStart && tG < s.gEnd) || tl.segs[0] || null;
+}
+
+function aliyahCoachAtPos() {
+  const seg = aliyahSegAtPos();
+  return seg ? seg.coach : null;
+}
+
+function aliyahLocalPos() {
+  const seg = aliyahSegAtPos();
+  if (!seg) return 0;
+  return clamp01((aliyahElapsed() - seg.gStart) / (seg.dur || 1));
+}
+
+function pauseAliyahTimers() {
+  state._aliyaPausedAt = aliyahElapsed();
+  clearTimeout(state._aliyaTimer);
+  if (state._aliyaGuideTimers) { state._aliyaGuideTimers.forEach(clearTimeout); state._aliyaGuideTimers = []; }
+}
+
+function resumeAliyahTimers(heldMs) {
+  if (state._aliyaT0) state._aliyaT0 += heldMs;
+  const tl = state._aliyaTl;
+  if (!tl) return;
+  if (state._aliyaRunning === 'rec') {
+    const remaining = Math.max(400, (tl.total - aliyahElapsed()) * 1000 + 900);
+    state._aliyaTimer = setTimeout(() => finishAliyahRecord(tl), remaining);
+    if (state._aliyaDuet) scheduleAliyahDuet(tl, state._aliyaT0);
+  }
 }
 
 // Advance whole-pasuk in STA"M reading (level 8 / Torah-column view). Jumps to
@@ -1815,7 +2071,9 @@ function playUnit() {
   if (state.view) state.view.clearReal(); // reset the green detected-tone line on replay
   const tonic = coach.tonicHz || 200;
   $('btnStop').disabled = false;
-  $('result').innerHTML = '<span class="hint">Playing this ' + (state.unitSegs.length > 1 ? 'unit (with the pauses between words)' : 'word') + ' from the recording…</span>';
+  resetTransport();
+  syncTransportUI();
+  $('result').innerHTML = '<span class="hint">Playing this ' + (state.unitSegs.length > 1 ? 'unit (with the pauses between words)' : 'word') + ' from the recording… Space holds it, <b>,</b> / <b>.</b> step a word.</span>';
   playSegment(info.file, coach.start, coach.end, {
     onProgress: (t01) => { state.view.setPlayhead(t01); highlightWord(wordAtTime(coach, t01)); scrollFollow(t01); },
     onAnalysis: (a) => onRealAnalysis(a, tonic),
@@ -1933,6 +2191,21 @@ function toggleHighlight(kind, value) {
 
 // One trope's card: swatch, name + meaning, role, its melodic diagram and note.
 // `m` is a te'am codepoint (number) or the virtual 'sof' key for Sof Pasuk.
+// Where a disjunctive sits in the hierarchy that divides the verse — the same
+// ranking the "Divide" control uses to cut a pasuk into halves and sections.
+const RANK_TIPS = {
+  [RANK.EMPEROR]: 'Emperor — divides the verse itself',
+  [RANK.KING]: 'King — divides half a verse',
+  [RANK.DUKE]: 'Duke — divides a king\u2019s stretch',
+  [RANK.COUNT]: 'Count — divides a duke\u2019s stretch',
+};
+function rankBadge(taam) {
+  const rank = rankFor(taam);
+  const tip = RANK_TIPS[rank];
+  if (!tip) return '';
+  return ` <span class="trank r${rank}" title="${tip}">${RANK_LABELS[rank]}</span>`;
+}
+
 function tropeCardHtml(m, color) {
   const isSof = m === 'sof';
   const taamVal = isSof ? 'sof' : String(m);
@@ -1945,7 +2218,7 @@ function tropeCardHtml(m, color) {
   return `<div class="trope g-trope" data-taam="${taamVal}" data-member="${shapeKey}" data-color="${color}" style="--c:${color}">
     <div class="tname"><span class="sw" style="background:${color}"></span>${name.he} · ${name.en}${avgNote}</div>
     ${meaning}
-    <div class="trole">${glyph ? `<span class="markicon big" style="color:${color}">${glyph}</span>` : ''}${name.role}${name.role === 'conjunctive' ? ' → coloured by the accent it leads into' : ''}</div>
+    <div class="trole">${glyph ? `<span class="markicon big" style="color:${color}">${glyph}</span>` : ''}${name.role}${name.role === 'conjunctive' ? ' → coloured by the accent it leads into' : ''}${rankBadge(m)}</div>
     <canvas width="150" height="42"></canvas>
     <div class="tnote">${name.note}</div>
   </div>`;
@@ -2032,6 +2305,13 @@ function applyPortion(val) {
 function syncPortionUI() {
   const el = $('portion');
   if (el) el.value = state.cycle === 'triennial' ? `tri${state.triYear}` : 'annual';
+  // A fixed passage or a drill set has no annual/triennial choice to make, so the
+  // portion controls (and the aliyah-boundary editor) come off the bar entirely.
+  const fixed = !!(state.excerpt || state.drill);
+  for (const id of ['portion', 'cycToday', 'btnEditAliyot']) {
+    const c = $(id);
+    if (c) c.hidden = fixed;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -2203,8 +2483,23 @@ async function switchAudioSource(sid) {
   refreshOfflineButton();
 }
 
-async function loadData(slug) {
-  const meta = AVAILABLE.find((p) => p.slug === slug);
+// A reading entry can be one of three kinds:
+//   parashah  the default — its own text, recording and extracted pitch
+//   excerpt   a named passage (the Shema, the Ten Commandments) that reuses a
+//             parashah's files and simply narrows the verses on screen, so it
+//             comes with the real recorded chant for free and its practice
+//             counts toward that parashah's progress
+//   drill     a synthetic exercise set with no recording; the coach line is
+//             built from the trope motifs in trope.js (see buildSyntheticCoach)
+function readingKind(meta) { return (meta && meta.kind) || 'parashah'; }
+
+// Where a reading's data files live. An excerpt borrows its parent's.
+function dataSlugOf(meta) { return (meta && meta.base) || (meta && meta.slug); }
+
+async function loadData(readingId) {
+  const meta = AVAILABLE.find((p) => p.slug === readingId);
+  const kind = readingKind(meta);
+  const dataSlug = dataSlugOf(meta);
   const [resp, tikkun] = await Promise.all([
     fetch(meta.file),
     loadTikkunData().catch((e) => {
@@ -2214,21 +2509,32 @@ async function loadData(slug) {
   ]);
   state.data = await resp.json();
   state.tikkun = tikkun;
-  state.slug = slug;
+  state.readingId = readingId;
+  // Progress is filed under the DATA slug, so working through the Shema also
+  // advances the pesukim of Va'etchanan rather than starting a parallel tally.
+  state.slug = dataSlug;
+  state.excerpt = kind === 'excerpt' ? meta : null;
+  state.drill = kind === 'drill' ? meta : null;
   state.selectedVerse = null;
   if (state.aliyah) setAliyahLayout(false); // leave aliyah layout when the reading changes
   state.aliyah = null;
+  // An excerpt is a fixed passage, so the annual/triennial portion control has
+  // nothing to choose; pin it to annual and hide the picker (see syncPortionUI).
+  if (kind !== 'parashah') { state.cycle = 'annual'; state.triYear = 1; }
+  syncPortionUI();
   // Resolve which recorded voice (audio source) to load for this reading, then
   // fetch its recorded-chant / pitch / shapes data. Honours the user's saved
   // voice preference when this reading offers it, else the reading's default.
   state.sources = readingSources(meta);
   const effectiveSource = resolveAudioSource(state.sources);
-  await loadAudioSource(slug, effectiveSource);
+  await loadAudioSource(dataSlug, effectiveSource);
   renderSourceSelector();
   const par = state.data.parashah;
-  $('textTitle').textContent = par
-    ? `${par.en} — ${par.he}`
-    : `${state.data.book.en} ${state.data.chapter} — ${state.data.book.he}`;
+  $('textTitle').textContent = kind !== 'parashah'
+    ? meta.label
+    : par
+      ? `${par.en} — ${par.he}`
+      : `${state.data.book.en} ${state.data.chapter} — ${state.data.book.he}`;
   $('srcVersion').textContent = state.data.heVersionTitle || state.data.versionTitle || 'Masoretic text';
   renderVerses();
   renderAliyot();
@@ -2462,7 +2768,11 @@ function pitchVerse(verseN) {
 // it aligns with the time-aligned spectrogram and the stretched word overlay.
 function buildCoach(unitSegs, verseN = state.selectedVerse) {
   const pv = pitchVerse(verseN);
-  if (!pv) return null;
+  // A drill line has no recording to derive steps from, so its coach is
+  // synthesized from the trope motifs — which is exactly what it teaches. A real
+  // reading with audio but no extracted pitch still gets no coach line, because a
+  // synthetic one wouldn't line up with the cantor.
+  if (!pv) return verseAudio(verseN) ? null : buildSyntheticCoach(unitSegs);
   const words = unitSegs
     .map((seg) => ({ seg, pw: pv.words.find((w) => w.i === seg.index) }))
     .filter((x) => x.pw && x.pw.start != null);
@@ -2487,6 +2797,47 @@ function buildCoach(unitSegs, verseN = state.selectedVerse) {
   return { start, end, dur, steps, raw, wordBounds, overlayWords, points, tonicHz: pv.tonicHz };
 }
 
+// Turn one accent's motif — a handful of { t, p } control points — into the same
+// staircase of held note steps that the pitch extractor produces from a
+// recording, so a drill line drives the identical coach line, voice guide,
+// spectrogram and scoring as a real pasuk does.
+const SYNTH_SEC_PER_SYLLABLE = 0.5;
+function motifSteps(contour) {
+  const pts = (contour && contour.length ? contour : [{ t: 0, p: 0 }]);
+  // Each control point is held until the next one; the last takes the remainder,
+  // widened so a motif whose final point sits at t=1 still sounds.
+  const widths = pts.map((pt, i) => (i + 1 < pts.length ? pts[i + 1].t - pt.t : Math.max(1 - pt.t, 1 / pts.length)));
+  const total = widths.reduce((a, b) => a + b, 0) || 1;
+  let acc = 0;
+  return pts.map((pt, i) => {
+    const t0 = acc / total;
+    acc += widths[i];
+    return { t0, t1: acc / total, p: pt.p };
+  });
+}
+
+function buildSyntheticCoach(unitSegs) {
+  if (!unitSegs || !unitSegs.length) return null;
+  const durs = unitSegs.map((seg) => Math.max(0.6, (seg.syllables || 1) * SYNTH_SEC_PER_SYLLABLE));
+  const dur = durs.reduce((a, b) => a + b, 0);
+  const steps = [], wordBounds = [], overlayWords = [], points = [];
+  let acc = 0;
+  unitSegs.forEach((seg, wi) => {
+    const w0 = acc / dur;
+    const wdur = durs[wi] / dur;
+    acc += durs[wi];
+    wordBounds.push(w0);
+    const ws = motifSteps(seg.contour).map((s) => ({
+      t0: w0 + s.t0 * wdur, t1: w0 + s.t1 * wdur, p: s.p,
+      color: seg.color, connector: seg.isConnector, w: wi,
+    }));
+    ws.forEach((s) => { steps.push(s); points.push({ t: s.t0, p: s.p }, { t: s.t1, p: s.p }); });
+    overlayWords.push({ seg, t0: w0, t1: w0 + wdur, steps: ws });
+  });
+  return { start: 0, end: dur, dur, steps, raw: [], wordBounds, overlayWords, points,
+    tonicHz: state.tonicHz, synthetic: true };
+}
+
 // The range of verses to show, derived from the current portion. Annual shows
 // the whole parashah; a triennial year shows only that year's span. We use the
 // year's actual aliyot (first start .. last end) so the verses on screen match
@@ -2494,6 +2845,10 @@ function buildCoach(unitSegs, verseN = state.selectedVerse) {
 // reading has no triennial aliyot data.
 function divisionRange() {
   const n = state.data.verses.length;
+  // An excerpt is a fixed passage carved out of its parent reading, so the range
+  // is simply the verses it names.
+  const ex = state.excerpt && state.excerpt.range;
+  if (ex) return [Math.max(1, ex[0]), Math.min(n, ex[1])];
   if (state.cycle !== 'triennial') return [1, n];
   const list = aliyotForReading('triennial', state.triYear);
   if (list && list.length) {
@@ -2555,6 +2910,78 @@ function adaptiveRange(scores, minSpan = 16) {
   return [lo, hi];
 }
 
+// --- Left pesukim list: collapsible aliyah sections -------------------------
+// The list is grouped into the reading's seven aliyot (plus any pesukim that fall
+// outside them), each an accordion that opens to reveal its verses. Collapsed,
+// the whole parashah is seven rows you can see at once; expanded, one aliyah's
+// pesukim are in front of you without the rest of the reading pushing them off
+// screen.
+
+const ALIYOT_OPEN_KEY = 'cantillate.openAliyot';
+
+function plural(n, one, many) { return `${n} ${n === 1 ? one : many}`; }
+
+function sectionKey(a) {
+  return `${state.readingId}:${cycleKeyFor(state.cycle, state.triYear)}:${a ? a.n : 'free'}`;
+}
+
+// Drills and excerpts group their pesukim by their own named lessons/passages
+// rather than by aliyot, so the accordion works the same for a trope drill set as
+// it does for a parashah.
+function readingGroups() {
+  const meta = state.drill || state.excerpt;
+  const list = meta && Array.isArray(meta.groups) ? meta.groups : null;
+  if (list) return list;
+  return state.data && Array.isArray(state.data.groups) ? state.data.groups : null;
+}
+
+function loadOpenSections() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(ALIYOT_OPEN_KEY));
+    return new Set(Array.isArray(raw) ? raw : []);
+  } catch (e) { return new Set(); }
+}
+
+function saveOpenSections() {
+  try { localStorage.setItem(ALIYOT_OPEN_KEY, JSON.stringify([...state.openAliyot])); }
+  catch (e) { /* private mode: sections just won't be remembered */ }
+}
+
+function openSections() {
+  if (!state.openAliyot) state.openAliyot = loadOpenSections();
+  return state.openAliyot;
+}
+
+function toggleSection(key) {
+  const open = openSections();
+  if (open.has(key)) open.delete(key); else open.add(key);
+  saveOpenSections();
+  renderVerses();
+}
+
+// Cut the visible verse range into aliyah sections, with any pesukim that fall
+// between (or outside) the aliyot kept as their own untitled group so no verse
+// can disappear from the list.
+function verseSections(start, end) {
+  const groups = readingGroups();
+  const source = groups
+    ? groups.map((g, i) => ({ n: g.id || i + 1, title: g.title, note: g.note, ref: g.ref || '', start: g.start, end: g.end, plain: true }))
+    : aliyotForReading(state.cycle, state.triYear);
+  const list = source
+    .map((a) => ({ ...a, start: Math.max(a.start, start), end: Math.min(a.end, end) }))
+    .filter((a) => a.end >= a.start)
+    .sort((a, b) => a.start - b.start);
+  const out = [];
+  let cursor = start;
+  for (const a of list) {
+    if (a.start > cursor) out.push({ aliyah: null, start: cursor, end: a.start - 1 });
+    out.push({ aliyah: a, start: a.start, end: a.end });
+    cursor = a.end + 1;
+  }
+  if (cursor <= end) out.push({ aliyah: null, start: cursor, end });
+  return out;
+}
+
 function renderVerses() {
   // The pointed per-verse list always renders here; the STA"M Torah column is a
   // separate, optional pane (renderScrollPane) shown alongside it in scroll view.
@@ -2562,56 +2989,126 @@ function renderVerses() {
   const box = $('verses');
   box.innerHTML = '';
   const [start, end] = divisionRange();
-  // Aliyah cards are woven in after the verse that completes each aliyah; the
-  // maftir card follows the aliyah it shares an ending pasuk with (same end
-  // verse), so several cards can attach to one verse.
+  // The maftir repeats an aliyah's closing pesukim rather than owning its own
+  // span, so it stays a card pinned inside whichever section ends where it does.
   const maxV = state.data.verses.length;
-  const cardsByEnd = {};
-  const attachCard = (a) => {
-    const key = Math.min(a.end, maxV);
-    (cardsByEnd[key] = cardsByEnd[key] || []).push(buildAliyahCard(a));
-  };
-  aliyotForReading(state.cycle, state.triYear).forEach(attachCard);
   const maftir = maftirForReading(state.cycle, state.triYear);
-  if (maftir) attachCard(maftir);
-  for (let i = start; i <= end; i++) {
-    const v = state.data.verses[i - 1];
-    const div = document.createElement('div');
-    div.className = 'verse' + (state.selectedVerse === i ? ' active' : '');
-    div.dataset.v = i;
-    // No single summed verse score: show the base full-verse accuracy as the
-    // badge, with a pip per earned handicap skill (each its own score).
-    const modeScores = store.getVerseModeScores(state.slug, i);
-    const base = modeScores.base || 0;
-    const tokens = tokenize(v.text);
-    const segs = buildLineMelody(tokens);
-    // Per-token overlay score, chosen by the current overlay mode, so the left
-    // column can show word / phrase / whole-verse skill on the text itself.
-    const ov = overlayScorer(i, segs);
-    const heHtml = tokens
-      .map((t, wi) => wordSpan(t, segs[wi], state, wi, ov.score(wi), ov.lo, ov.hi))
-      .join(' ');
-    const pips = VERSE_MODES.filter((m) => m.key !== 'base').map((m) => {
-      const sc = modeScores[m.key] || 0;
-      return sc > 0 ? `<span class="vpip" style="background:${scoreColor(sc)}" title="${m.label}: ${sc}"></span>` : '';
-    }).join('');
-    const badge = (base > 0 || pips)
-      ? `<span class="vscore-wrap">${base > 0 ? `<span class="vscore" style="background:${scoreColor(base)};color:#fff" title="Full-verse accuracy">${base}</span>` : ''}${pips ? `<span class="vpips">${pips}</span>` : ''}</span>`
-      : '';
-    const enHtml = state.showEnglish && v.en
-      ? `<div class="ventext">${escapeHtml(v.en)}</div>` : '';
-    div.innerHTML = `<span class="vnum">${state.data.book.he} ${verseRefLabel(v, i)}${state.data.multiChapter ? '' : ` · v${i}`}</span>${badge}
-      <div class="vbody${state.showEnglish ? ' bilingual' : ''}">${enHtml}<div class="hebrew ${state.scroll ? 'scroll' : ''}">${heHtml}</div></div>`;
-    // Clicking a single word jumps to word practice for that word; clicking
-    // elsewhere in the verse just selects the verse.
-    div.addEventListener('click', (e) => {
-      const wEl = e.target.closest('.w');
-      if (wEl && wEl.dataset.wi != null) practiceWord(i, parseInt(wEl.dataset.wi, 10));
-      else selectVerse(i);
-    });
-    box.appendChild(div);
-    if (cardsByEnd[i]) cardsByEnd[i].forEach((el) => box.appendChild(el));
+  const open = openSections();
+  const sections = verseSections(start, end);
+  // Always show the section holding the selected verse, even if it was collapsed
+  // — otherwise selecting a verse from elsewhere would hide it.
+  const active = sections.find((s) => state.selectedVerse != null
+    && state.selectedVerse >= s.start && state.selectedVerse <= s.end);
+
+  for (const sec of sections) {
+    const key = sectionKey(sec.aliyah);
+    const isOpen = open.has(key) || sec === active || sections.length === 1;
+    box.appendChild(buildVerseSection(sec, key, isOpen, maftir, maxV));
   }
+}
+
+// One accordion: a summary head (always visible) plus the pesukim, verse chains
+// and aliyah card, which only render when the section is open.
+function buildVerseSection(sec, key, isOpen, maftir, maxV) {
+  const wrap = document.createElement('div');
+  const a = sec.aliyah;
+  wrap.className = `alsec${isOpen ? ' open' : ''}${a ? '' : ' untitled'}`;
+  wrap.dataset.key = key;
+
+  const count = sec.end - sec.start + 1;
+  if (a && a.plain) {
+    // A drill lesson or a named passage: a title and its pesukim, with none of the
+    // aliyah machinery (no readiness gate, no chant-the-whole-thing challenge).
+    const head = document.createElement('button');
+    head.className = 'alsec-head';
+    head.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    head.innerHTML = `<span class="alsec-caret" aria-hidden="true">▸</span>
+      <span class="alsec-label">${escapeHtml(a.title || '')} <span class="hint">${a.ref ? a.ref + ' · ' : ''}${plural(count, state.drill ? 'line' : 'pasuk', state.drill ? 'lines' : 'pesukim')}</span></span>`;
+    head.addEventListener('click', () => toggleSection(key));
+    wrap.appendChild(head);
+  } else if (a) {
+    const r = aliyahReadiness(a);
+    const score = store.getAliyahScore(state.slug, state.cycle, state.triYear, a.n);
+    const pct = r.total ? Math.round((r.ready / r.total) * 100) : 0;
+    const head = document.createElement('button');
+    head.className = `alsec-head${r.done ? ' ready' : ''}`;
+    head.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    head.innerHTML = `
+      <span class="alsec-caret" aria-hidden="true">▸</span>
+      <span class="al-n">${toHebrewNum(a.n)}</span>
+      <span class="alsec-label">Aliyah ${a.n} <span class="hint">${a.ref} · ${plural(count, 'pasuk', 'pesukim')}</span></span>
+      ${score > 0 ? `<span class="al-score" style="background:${scoreColor(score)}">${score}</span>` : ''}
+      <span class="alsec-prog" title="${r.ready}/${r.total} pesukim at the whole-verse stage"><span style="width:${pct}%;background:${r.done ? 'var(--good)' : 'var(--accent-2)'}"></span></span>`;
+    head.addEventListener('click', () => toggleSection(key));
+    wrap.appendChild(head);
+  } else {
+    const head = document.createElement('button');
+    head.className = 'alsec-head';
+    head.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    head.innerHTML = `<span class="alsec-caret" aria-hidden="true">▸</span>
+      <span class="alsec-label">Pesukim <span class="hint">${rangeRef(sec.start, sec.end)} · ${count}</span></span>`;
+    head.addEventListener('click', () => toggleSection(key));
+    wrap.appendChild(head);
+  }
+
+  if (!isOpen) return wrap;
+
+  const body = document.createElement('div');
+  body.className = 'alsec-body';
+  if (a && a.note) {
+    const note = document.createElement('p');
+    note.className = 'hint alsec-note';
+    note.textContent = a.note;
+    body.appendChild(note);
+  }
+  for (let i = sec.start; i <= sec.end; i++) body.appendChild(buildVerseRow(i));
+  if (a && !a.plain) {
+    body.appendChild(buildChainStrip(a));
+    body.appendChild(buildAliyahCard(a));
+    if (maftir && Math.min(maftir.end, maxV) >= sec.start && Math.min(maftir.end, maxV) <= sec.end) {
+      body.appendChild(buildAliyahCard(maftir));
+    }
+  }
+  wrap.appendChild(body);
+  return wrap;
+}
+
+function buildVerseRow(i) {
+  const v = state.data.verses[i - 1];
+  const div = document.createElement('div');
+  div.className = 'verse' + (state.selectedVerse === i ? ' active' : '');
+  div.dataset.v = i;
+  // No single summed verse score: show the base full-verse accuracy as the
+  // badge, with a pip per earned handicap skill (each its own score).
+  const modeScores = store.getVerseModeScores(state.slug, i);
+  const base = modeScores.base || 0;
+  const tokens = tokenize(v.text);
+  const segs = buildLineMelody(tokens);
+  // Per-token overlay score, chosen by the current overlay mode, so the left
+  // column can show word / phrase / whole-verse skill on the text itself.
+  const ov = overlayScorer(i, segs);
+  const heHtml = tokens
+    .map((t, wi) => wordSpan(t, segs[wi], state, wi, ov.score(wi), ov.lo, ov.hi))
+    .join(' ');
+  const pips = VERSE_MODES.filter((m) => m.key !== 'base').map((m) => {
+    const sc = modeScores[m.key] || 0;
+    return sc > 0 ? `<span class="vpip" style="background:${scoreColor(sc)}" title="${m.label}: ${sc}"></span>` : '';
+  }).join('');
+  const badge = (base > 0 || pips)
+    ? `<span class="vscore-wrap">${base > 0 ? `<span class="vscore" style="background:${scoreColor(base)};color:#fff" title="Full-verse accuracy">${base}</span>` : ''}${pips ? `<span class="vpips">${pips}</span>` : ''}</span>`
+    : '';
+  const enHtml = state.showEnglish && v.en
+    ? `<div class="ventext">${escapeHtml(v.en)}</div>` : '';
+  div.innerHTML = `<span class="vnum">${state.data.book.he} ${verseRefLabel(v, i)}${verseIndexSuffix(v, i)}</span>${badge}
+    <div class="vbody${state.showEnglish ? ' bilingual' : ''}">${enHtml}<div class="hebrew ${state.scroll ? 'scroll' : ''}">${heHtml}</div></div>`;
+  // Clicking a single word jumps to word practice for that word; clicking
+  // elsewhere in the verse just selects the verse.
+  div.addEventListener('click', (e) => {
+    const wEl = e.target.closest('.w');
+    if (wEl && wEl.dataset.wi != null) practiceWord(i, parseInt(wEl.dataset.wi, 10));
+    else selectVerse(i);
+  });
+  return div;
 }
 
 // Build the per-token score accessor for the current left-column overlay mode:
@@ -2669,7 +3166,7 @@ function practicePhrase(verseN, pi) {
 // one, else the base full-verse stage (4).
 function practiceVerse(verseN) {
   const cur = levelById(state.level);
-  gotoPractice(verseN, cur.unit === 'line' ? cur.id : 4, 0);
+  gotoPractice(verseN, cur.unit === 'line' ? cur.id : FULL_VERSE_LEVEL, 0);
 }
 
 // Jump to a specific stage (e.g. a handicap skill badge).
@@ -2681,6 +3178,7 @@ function gotoPractice(verseN, levelId, unitIndex) {
   state.selectedVerse = verseN;
   state.level = levelId;
   state.unitIndex = unitIndex;
+  state.divideRank = null;
   closePasukDrawer();
   renderVerses();
   renderStageBar();
@@ -2832,7 +3330,7 @@ function renderAliyahScroll(box) {
     box.innerHTML = `<div class="scroll-column aliyah-scroll" id="aliyahScroll">${scrollHtml.join(' ')}</div>`;
   }
   const title = document.querySelector('#scrollpane .pane-title');
-  if (title) title.innerHTML = `${a.n === 'M' ? 'Maftir' : 'Aliyah ' + a.n} <span class="hint" style="text-transform:none;letter-spacing:0">STA&ldquo;M</span>`;
+  if (title) title.innerHTML = `${chunkTitle(a)} <span class="hint" style="text-transform:none;letter-spacing:0">STA&ldquo;M</span>`;
   fitScrollPages();
   // Re-apply the start/end cues after any rebuild (e.g. a toolbar toggle) so the
   // yad markers survive re-renders of the pane.
@@ -2852,6 +3350,7 @@ function selectVerse(n) {
   // resumes at its hardest reached stage rather than a fixed earlier one.
   state.level = store.getVerseLevel(state.slug, n);
   state.unitIndex = 0;
+  state.divideRank = null;
   renderVerses();
   renderAliyot();
   renderStageBar();
@@ -2885,15 +3384,103 @@ function aliyahReadiness(a) {
 function renderAliyot() {
   const box = $('aliyot');
   if (!box) return;
+  const meta = state.drill || state.excerpt;
+  if (meta) {
+    // A drill set or a named passage: say what it is and where it comes from,
+    // rather than which aliyot it covers.
+    const par = parashahForReading();
+    const from = state.excerpt ? ` <span class="hint">from ${par ? par.en : state.slug}</span>` : '';
+    box.innerHTML = `<div class="aliyot-head">${escapeHtml(meta.label)}${from}</div>`
+      + (meta.note ? `<p class="hint aliyot-note">${escapeHtml(meta.note)}</p>` : '')
+      + (state.drill ? '<p class="hint aliyot-note">No recorded cantor here — the coach line is synthesized straight from the accents, so the mark is the only clue to the tune.</p>' : '');
+    return;
+  }
   const par = parashahForReading();
   if (!par) { box.innerHTML = ''; return; }
   const list = aliyotForReading(state.cycle, state.triYear);
   const cycleLabel = state.cycle === 'triennial' ? `Triennial · Year ${state.triYear}` : 'Annual';
   let html = `<div class="aliyot-head">${par.he} <span class="hint">${cycleLabel} · ${par.ref}</span></div>`;
   html += list.length
-    ? '<p class="hint aliyot-note">Each aliyah appears in the text below, after the pesukim that unlock it.</p>'
+    ? '<p class="hint aliyot-note">Tap an aliyah below to open its pesukim.</p>'
     : `<p class="hint aliyot-note">This cycle's reading falls outside the loaded chapter (${state.data.book.en} ${state.data.chapter}). Switch cycle or add more chapters.</p>`;
   box.innerHTML = html;
+}
+
+// --- Verse chains -----------------------------------------------------------
+// Knowing every pasuk of an aliyah cold still leaves the joins between them
+// unrehearsed, which is where a long aliyah usually falls apart. A chain is a
+// short run of consecutive pesukim — pairs by default, or triples — chanted
+// straight through, so the seams get their own practice before the whole aliyah
+// is attempted. Chains reuse the aliyah reader (bare scroll + yad) with a verse
+// range of their own.
+
+const CHAIN_SIZES = [2, 3, 4];
+
+// Split an aliyah into back-to-back runs of `size` pesukim. A trailing remainder
+// of one verse is absorbed into the previous run rather than offered as a
+// pointless one-verse "chain".
+function chainRuns(a, size) {
+  const verses = aliyahVerses(a);
+  const runs = [];
+  for (let i = 0; i < verses.length; i += size) {
+    runs.push({ start: verses[i], end: verses[Math.min(i + size - 1, verses.length - 1)] });
+  }
+  if (runs.length > 1) {
+    const last = runs[runs.length - 1];
+    if (last.start === last.end) { runs[runs.length - 2].end = last.end; runs.pop(); }
+  }
+  return runs.filter((r) => r.end > r.start);
+}
+
+function buildChainStrip(a) {
+  const el = document.createElement('div');
+  el.className = 'chains';
+  const runs = chainRuns(a, state.chainSize);
+  if (!runs.length) { el.hidden = true; return el; }
+  const sizes = CHAIN_SIZES.map((n) => `<button class="cs${n === state.chainSize ? ' on' : ''}" data-size="${n}">${n}</button>`).join('');
+  const chips = runs.map((r) => {
+    const score = store.getChainScore(state.slug, r.start, r.end);
+    const ready = chainReadiness(r);
+    return `<button class="chain${ready ? ' ready' : ''}" data-start="${r.start}" data-end="${r.end}"`
+      + ` title="Chant pesukim ${rangeRef(r.start, r.end)} straight through">`
+      + `${rangeRef(r.start, r.end)}`
+      + `${score > 0 ? `<span class="chain-score" style="background:${scoreColor(score)}">${score}</span>` : ''}`
+      + `</button>`;
+  }).join('');
+  el.innerHTML = `<div class="chains-head">
+      <span class="chains-title">🔗 Chain pesukim</span>
+      <span class="seg chain-sizes">${sizes}</span>
+    </div>
+    <div class="chain-list">${chips}</div>
+    <p class="hint chains-note">Chant a run of pesukim without stopping, so the joins between them get practiced before the whole aliyah.</p>`;
+  el.querySelectorAll('.cs').forEach((b) => b.addEventListener('click', () => {
+    state.chainSize = parseInt(b.dataset.size, 10);
+    renderVerses();
+  }));
+  el.querySelectorAll('.chain').forEach((b) => b.addEventListener('click', () => {
+    openChain(parseInt(b.dataset.start, 10), parseInt(b.dataset.end, 10));
+  }));
+  return el;
+}
+
+// A chain is "ready" once every pasuk in it has reached the whole-verse stage.
+// Unlike an aliyah this is only a cue, not a lock — chaining verses is how you
+// get them there.
+function chainReadiness(r) {
+  for (let n = r.start; n <= r.end; n++) {
+    if (store.getVerseLevel(state.slug, n) < ALIYAH_READY_LEVEL) return false;
+  }
+  return true;
+}
+
+function openChain(startV, endV) {
+  openAliyah({
+    n: `C${startV}-${endV}`,
+    kind: 'chain',
+    start: startV,
+    end: endV,
+    ref: rangeRef(startV, endV),
+  });
 }
 
 // A single aliyah (or maftir) card element, inserted inline after its last
@@ -2926,6 +3513,22 @@ function buildAliyahCard(a) {
   const go = el.querySelector('.al-go');
   if (go) go.addEventListener('click', () => openAliyah(a));
   return el;
+}
+
+// What kind of multi-verse unit is open: a numbered aliyah, the maftir, or a
+// short verse chain. They share the whole reader, so this is only about wording
+// and where the score is filed.
+function chunkKind(a) {
+  if (!a) return 'aliyah';
+  if (a.kind) return a.kind;
+  return a.n === 'M' ? 'maftir' : 'aliyah';
+}
+
+function chunkTitle(a) {
+  const kind = chunkKind(a);
+  if (kind === 'maftir') return 'Maftir';
+  if (kind === 'chain') return `Pesukim ${a.ref}`;
+  return `Aliyah ${a.n}`;
 }
 
 function openAliyah(a) {
@@ -2989,10 +3592,12 @@ function renderAliyahView() {
   p.innerHTML = `
     <div class="aliyah-view">
     <div class="phead">
-      <h2>${par.he} · ${a.n === 'M' ? 'Maftir' : 'Aliyah ' + a.n} <span class="stagetag">${a.cycle === 'triennial' ? 'Triennial Yr ' + a.year : 'Annual'} · ${a.ref}</span></h2>
+      <h2>${par.he} · ${chunkTitle(a)} <span class="stagetag">${a.cycle === 'triennial' ? 'Triennial Yr ' + a.year : 'Annual'} · ${a.ref}</span></h2>
       <button id="alBack">← Verses</button>
     </div>
-    <p class="leveldesc">Chant the whole aliyah from the bare scroll on the left. A grey outline marks the current spot and, subtly, where to begin and end — as in a real reading. Faded text is the surrounding scroll for context.</p>
+    <p class="leveldesc">${chunkKind(a) === 'chain'
+      ? 'Chant these pesukim straight through from the bare scroll on the left, without pausing at the verse joins — that seam is what a whole aliyah is built from.'
+      : 'Chant the whole aliyah from the bare scroll on the left. A grey outline marks the current spot and, subtly, where to begin and end — as in a real reading. Faded text is the surrounding scroll for context.'}</p>
     <div class="al-cuebar">
       <span class="label">Outline:</span>
       <span class="seg" id="aliyaCueSeg">
@@ -3002,9 +3607,14 @@ function renderAliyahView() {
     </div>
     <div class="aliyah-top">
     <div class="transport">
-      <button class="primary" id="alGuide" title="Play the real chant across the whole aliyah (Space)">▶ Guided read (real chant)</button>
-      <button class="warn" id="alRec" title="Record your solo chant of the aliyah (↓)">● Record my aliyah</button>
+      <button class="primary" id="alGuide" title="Play the real chant across the whole ${chunkKind(a) === 'chain' ? 'chain' : 'aliyah'} (Space)">▶ Guided read (real chant)</button>
+      <button class="warn" id="alRec" title="Record your solo chant (↓)">● Record my ${chunkKind(a) === 'chain' ? 'chain' : 'aliyah'}</button>
       <button id="alDuet" title="Sing along with the real chant while recording (↑)">⇅ Duet (sing along)</button>
+      <span class="transport-scrub">
+        <button id="alStepBack" disabled title="Back one word — key: ,">⟲ Word <kbd>,</kbd></button>
+        <button id="alPause" disabled aria-pressed="false" title="Pause / resume — key: Space">⏸ Pause</button>
+        <button id="alStepFwd" disabled title="Forward one word — key: .">Word ⟳ <kbd>.</kbd></button>
+      </span>
       <button id="alStop" disabled title="Stop (Esc)">■ Stop</button>
     </div>
     <div class="livemeter" id="aliyaMeter" hidden>
@@ -3046,6 +3656,10 @@ function renderAliyahView() {
   $('alRec').addEventListener('click', () => recordAliyahRun(tl));
   $('alDuet').addEventListener('click', () => recordAliyahRun(tl, { duet: true }));
   $('alStop').addEventListener('click', () => { stopAliyah(); setAliyahButtons(false); });
+  $('alPause').addEventListener('click', togglePause);
+  $('alStepBack').addEventListener('click', () => stepWord(-1));
+  $('alStepFwd').addEventListener('click', () => stepWord(1));
+  syncTransportUI();
 }
 
 function setAliyahButtons(running) {
@@ -3054,6 +3668,7 @@ function setAliyahButtons(running) {
   if (r) r.disabled = running;
   if (d) d.disabled = running;
   if (s) s.disabled = !running;
+  syncTransportUI();
 }
 
 // Subtle start/end cueing: glow the aliyah's first word (where to begin) always,
@@ -3170,12 +3785,14 @@ function paintWordTint(box, verseN, widx, frac) {
 
 function stopAliyah() {
   state._aliyaRunning = null;
+  state._aliyaDuet = false;
   window.__cantillateBusy = false;
   clearTimeout(state._aliyaTimer);
   if (state._aliyaGuideTimers) { state._aliyaGuideTimers.forEach(clearTimeout); state._aliyaGuideTimers = []; }
   stopVerseAudio();
   stopMic();
   stopLiveMeter();
+  resetTransport();
 }
 
 // Guided read: play the real chant across the whole aliyah, chaining verses, the
@@ -3184,6 +3801,8 @@ function playAliyahGuided(tl) {
   stopAliyah();
   state._aliyaRunning = 'guide';
   state._aliyaEnded = false;
+  state._aliyaDuet = false;
+  resetTransport();
   setAliyahButtons(true);
   markAliyahEnds(tl, false);
   let i = 0;
@@ -3192,12 +3811,16 @@ function playAliyahGuided(tl) {
     if (i >= tl.segs.length) { finishGuide(tl); return; }
     const seg = tl.segs[i];
     if (!seg.file) { i++; playNext(); return; }
-    $('aliyaResult').innerHTML = `<span class="hint">Reading verse ${seg.n}…</span>`;
+    // Anchor the shared clock to this verse's slot so pausing and stepping resolve
+    // to the right segment while the guided read chains through the aliyah.
+    state._aliyaT0 = performance.now() - seg.gStart * 1000;
+    $('aliyaResult').innerHTML = `<span class="hint">Reading verse ${seg.n}… Space holds it, <b>,</b> / <b>.</b> step a word.</span>`;
     playSegment(seg.file, seg.aStart, seg.aEnd, {
       onProgress: (t01) => { if (seg.coach) highlightAliyah(seg.n, wordAtTime(seg.coach, t01)); },
       onEnd: () => { i += 1; playNext(); },
       onError: () => { i += 1; playNext(); },
     });
+    syncTransportUI();
   };
   playNext();
 }
@@ -3206,6 +3829,7 @@ function finishGuide(tl) {
   if (state._aliyaRunning !== 'guide') return;
   state._aliyaRunning = null;
   state._aliyaEnded = true;
+  resetTransport();
   setAliyahButtons(false);
   highlightAliyah(null);
   markAliyahEnds(tl, true);
@@ -3231,36 +3855,35 @@ async function recordAliyahRun(tl, opts = {}) {
   setAliyahButtons(true);
   markAliyahEnds(tl, false);
   startLiveMeter('aliyaMeter', 'aliyaMeterFill', 'aliyaMeterVal');
-  // Mark your best + the record holder for this aliyah on the meter.
+  // Mark your best + the record holder for this aliyah on the meter. Chains are
+  // personal practice runs with no shared board, so they get no marks.
   {
     const a = state.aliyah;
-    if (a) {
+    if (a && chunkKind(a) !== 'chain') {
       const parId = scores.parashaIdFor(parashahForReading(), state.slug);
       showRecordMeterMarks('aliyaMeterFill', 'aliyah', scores.aliyahIdFor(parId, a.cycle, a.year, a.n), store.getAliyahScore(state.slug, a.cycle, a.year, a.n));
     }
   }
   const leadIn = 500;
   const t0 = performance.now() + leadIn;
+  // Kept on state so the shared transport can hold the run and shift the whole
+  // timeline (clock, backstop and duet cues) by however long it was paused.
+  state._aliyaT0 = t0;
+  state._aliyaDuet = duet;
+  state._aliyaPausedAt = 0;
+  resetTransport();
   $('aliyaResult').innerHTML = duet
     ? '<span class="hint">Duet — sing along with the real chant (use headphones + a wired mic) as you follow the yad.</span>'
     : '<span class="hint">Get ready… begin at the glowing first word and follow the yad.</span>';
   // Duet: play the real chant in time with your take, one segment per verse,
   // each scheduled at its slot on the shared timeline so the two stay aligned.
-  if (duet) {
-    for (const seg of tl.segs) {
-      if (!seg.file) continue;
-      const delay = Math.max(0, (t0 + seg.gStart * 1000) - performance.now());
-      state._aliyaGuideTimers.push(setTimeout(() => {
-        if (state._aliyaRunning !== 'rec') return;
-        playSegment(seg.file, seg.aStart, seg.aEnd, { onEnd: () => {}, onError: () => {} });
-      }, delay));
-    }
-  }
+  if (duet) scheduleAliyahDuet(tl, t0);
   await startMic((hz, rms) => {
     if (state._aliyaRunning !== 'rec') return;
+    if (state.paused) return; // held mid-take: the clock and the samples both stop
     const now = performance.now();
-    if (now < t0) return;
-    const tG = (now - t0) / 1000;
+    if (now < state._aliyaT0) return;
+    const tG = (now - state._aliyaT0) / 1000;
     if (tG >= tl.total) { finishAliyahRecord(tl); return; }
     state._aliyaSamples.push({ tG, hz: hz > 0 ? hz : 0, rms });
     const seg = tl.segs.find((s) => tG >= s.gStart && tG < s.gEnd);
@@ -3288,6 +3911,25 @@ async function recordAliyahRun(tl, opts = {}) {
     }
   }, () => {});
   state._aliyaTimer = setTimeout(() => finishAliyahRecord(tl), leadIn + tl.total * 1000 + 900);
+  syncTransportUI();
+}
+
+// (Re)schedule the duet guide: one recorded verse per timeline slot, anchored to
+// `t0`. Called again after a pause so the remaining verses land at their shifted
+// slots instead of all at once.
+function scheduleAliyahDuet(tl, t0) {
+  if (state._aliyaGuideTimers) state._aliyaGuideTimers.forEach(clearTimeout);
+  state._aliyaGuideTimers = [];
+  const now = performance.now();
+  for (const seg of tl.segs) {
+    if (!seg.file) continue;
+    const at = t0 + seg.gStart * 1000;
+    if (at + seg.dur * 1000 < now) continue; // already sung past this verse
+    state._aliyaGuideTimers.push(setTimeout(() => {
+      if (state._aliyaRunning !== 'rec' || state.paused) return;
+      playSegment(seg.file, seg.aStart, seg.aEnd, { onEnd: () => {}, onError: () => {} });
+    }, Math.max(0, at - now)));
+  }
 }
 
 function scoreAliyahVerse(seg, samples) {
@@ -3350,7 +3992,9 @@ function finishAliyahRecord(tl) {
   state._aliyaRunning = null;
   state._aliyaEnded = true;
   state._aliyaAssisted = false;
+  state._aliyaDuet = false;
   window.__cantillateBusy = false;
+  resetTransport();
   clearTimeout(state._aliyaTimer);
   if (state._aliyaGuideTimers) { state._aliyaGuideTimers.forEach(clearTimeout); state._aliyaGuideTimers = []; }
   stopVerseAudio();
@@ -3365,24 +4009,34 @@ function finishAliyahRecord(tl) {
   // the solo ceiling — a sing-along can never beat a strong solo take.
   const score = assisted ? scores.assistedScore(raw) : raw;
   const a = state.aliyah;
-  store.recordAliyahScore(state.slug, a.cycle, a.year, a.n, score);
-  // Log this continuous take (with the duet flag) for the score-over-runs
-  // colourbar, and separately record a genuine solo chain so the leaderboard can
-  // rank solo takes above duet takes above a derived-from-pesukim floor.
-  store.recordAliyahRunLog(state.slug, a.cycle, a.year, a.n, score, assisted);
-  if (!assisted && raw > 0) store.recordAliyahSolo(state.slug, a.cycle, a.year, a.n, raw);
+  const kind = chunkKind(a);
+  if (kind === 'chain') {
+    // A chain is a practice run between pasuk and aliyah, so it keeps its own
+    // best and stays off the aliyah boards.
+    store.recordChainScore(state.slug, a.start, a.end, score);
+  } else {
+    store.recordAliyahScore(state.slug, a.cycle, a.year, a.n, score);
+    // Log this continuous take (with the duet flag) for the score-over-runs
+    // colourbar, and separately record a genuine solo chain so the leaderboard can
+    // rank solo takes above duet takes above a derived-from-pesukim floor.
+    store.recordAliyahRunLog(state.slug, a.cycle, a.year, a.n, score, assisted);
+    if (!assisted && raw > 0) store.recordAliyahSolo(state.slug, a.cycle, a.year, a.n, raw);
+  }
   store.addPracticeSeconds(tl.total || 0);
   markAliyahEnds(tl, true);
   setAliyahButtons(false);
   const msg = score <= 0 ? 'No clear pitch captured — check your mic and follow the yad.'
     : assisted ? 'Nice duet. Now try it solo — a solo take can score higher.'
-      : score >= 80 ? 'Beautiful — that\'s reading-ready.'
-        : 'Keep polishing the weaker pesukim, then run the aliyah again.';
-  $('aliyaResult').innerHTML = `<span class="scorelabel">${assisted ? 'Duet accuracy' : (a.n === 'M' ? 'Maftir accuracy' : 'Aliyah accuracy')}</span> `
+      : score >= 80 ? (kind === 'chain' ? 'Those pesukim run together cleanly — try a longer chain.' : 'Beautiful — that\'s reading-ready.')
+        : 'Keep polishing the weaker pesukim, then run it again.';
+  const scoreLabel = assisted ? 'Duet accuracy'
+    : kind === 'chain' ? 'Chain accuracy' : kind === 'maftir' ? 'Maftir accuracy' : 'Aliyah accuracy';
+  $('aliyaResult').innerHTML = `<span class="scorelabel">${scoreLabel}</span> `
     + `<span class="num">${score}</span><span class="ceil"> / 100</span>`
     + `<br><span class="hint">${msg}</span>`;
   renderAliyot();
-  maybePushScopes();
+  renderVerses(); // refresh the chain chips / aliyah cards with the new best
+  if (kind !== 'chain') maybePushScopes();
   // Paint the per-word "notes hit" clue LAST, so no earlier render can wipe it,
   // and remember it so a later pane rebuild (toolbar toggle) can re-apply it.
   state._aliyaWordHits = perVerse;
@@ -3395,6 +4049,7 @@ function finishAliyahRecord(tl) {
 function selectStage(levelId) {
   state.level = levelId;
   state.unitIndex = 0;
+  state.divideRank = null; // each stage opens at its own default division
   renderStageBar();
   if (state.selectedVerse != null) renderPractice();
 }
@@ -3455,6 +4110,26 @@ function groupByMaqaf(segs) {
   return groups;
 }
 
+// How coarsely the "sections" stage is cutting the verse right now: the reader's
+// choice if they've moved the Divide control, else the stage's default.
+function currentDivideRank() {
+  const level = levelById(state.level);
+  if (level.unit !== 'section') return null;
+  return state.divideRank || level.divide;
+}
+
+// The coarsest division that still breaks THIS verse into more than one piece.
+// A short pasuk has no Etnachta to split at, so asking for halves would hand back
+// the whole verse and the stage would teach nothing; fall to the next rank down.
+function usableDivideRank(segs, wanted) {
+  const ranks = DIVISIONS.map((d) => d.rank).sort((a, b) => a - b);
+  const start = ranks.indexOf(wanted);
+  for (let i = Math.max(0, start); i < ranks.length; i++) {
+    if (splitAtRank(segs, ranks[i]).length > 1) return ranks[i];
+  }
+  return RANK.COUNT;
+}
+
 function currentUnits() {
   const v = state.data.verses[state.selectedVerse - 1];
   const tokens = tokenize(v.text);
@@ -3462,7 +4137,51 @@ function currentUnits() {
   const level = levelById(state.level);
   if (level.unit === 'word') return groupByMaqaf(segs);
   if (level.unit === 'phrase') return splitPhrases(segs);
+  if (level.unit === 'section') return splitAtRank(segs, usableDivideRank(segs, currentDivideRank()));
   return [segs];
+}
+
+// A verse-stable key for a multi-word unit: the span of word indices it covers.
+// Unlike an ordinal it survives a change of division, so a section's best score
+// still belongs to the same stretch of text whether you reached it via halves or
+// via clauses.
+function unitSpanKey(unitSegs) {
+  if (!unitSegs || !unitSegs.length) return null;
+  return `${unitSegs[0].index}-${unitSegs[unitSegs.length - 1].index}`;
+}
+
+// The accent that closes a unit, named for the UI ("… up to the Etnachta").
+function unitCloseName(unitSegs) {
+  const last = unitSegs && unitSegs[unitSegs.length - 1];
+  return last ? last.name : null;
+}
+
+// How many whole-verse phrases start before this unit does. Section takes score
+// the phrases they contain, and those bests are filed by verse-wide phrase index.
+function phraseOffsetOf(unitSegs) {
+  if (!unitSegs || !unitSegs.length || !state.verseSegs.length) return 0;
+  const first = unitSegs[0].index;
+  const phrases = splitPhrases(state.verseSegs);
+  const at = phrases.findIndex((ph) => ph.length && ph[0].index === first);
+  return at < 0 ? 0 : at;
+}
+
+// The "Divide" control on the sections stage: how big a bite of the verse to
+// chant. A division that can't actually split THIS pasuk (no Etnachta in a short
+// one, say) is shown greyed rather than hidden, so the hierarchy stays legible.
+function divideControlHtml(segs) {
+  const active = usableDivideRank(segs, currentDivideRank());
+  const btns = DIVISIONS.slice().reverse().map((d) => {
+    const n = splitAtRank(segs, d.rank).length;
+    const dead = n < 2;
+    return `<button class="dv${d.rank === active ? ' on' : ''}" data-rank="${d.rank}"`
+      + `${dead ? ' disabled' : ''} title="${d.hint}${dead ? ' (this pasuk has no such division)' : ` — ${n} pieces`}">`
+      + `${d.label}</button>`;
+  }).join('');
+  return `<div class="divide-nav">
+    <span class="label" title="How much of the verse to chant at once">Divide:</span>
+    <span class="seg" id="divideSeg">${btns}</span>
+  </div>`;
 }
 
 function renderPractice() {
@@ -3500,19 +4219,20 @@ function renderPractice() {
   const p = $('practice');
   p.innerHTML = `
     <div class="phead">
-      <h2>${state.data.book.he} ${verseRefLabel(v, state.selectedVerse)}${state.data.multiChapter ? '' : ` · v${state.selectedVerse}`}<span class="stagetag">${level.id}. ${level.label}</span></h2>
+      <h2>${state.data.book.he} ${verseRefLabel(v, state.selectedVerse)}${verseIndexSuffix(v, state.selectedVerse)}<span class="stagetag">${level.id}. ${level.label}</span></h2>
       <div class="aidchips">${chips}</div>
       ${units.length > 1 ? `<div class="unit-nav">
         <button id="uPrev">◀</button>
         <span class="u-label">${cap(level.unit)} ${state.unitIndex + 1}/${units.length}</span>
         <button id="uNext">▶</button>
       </div>` : ''}
+      ${level.unit === 'section' ? divideControlHtml(state.verseSegs) : ''}
       <span class="mode-indicator" id="modeIndicator"></span>
       <label class="readsize" title="Reading size — enlarge the Hebrew, shrink the notation">
         <span class="rs-ico">א</span>
         <input type="range" id="readSize" min="${READ_MIN}" max="${READ_MAX}" step="0.1" value="${state.readScale}" aria-label="Reading size">
       </label>
-      ${hasReal ? '<span class="keyshint" title="Tap a word, or keys: ← → next/prev word · Space replay · ↓ record · ↑ sing along · Esc stop">⌨</span>' : ''}
+      ${hasReal ? '<span class="keyshint" title="Tap a word, or keys: ← → next/prev unit · Space play, then hold · , and . step back/forward one word · ↓ record · ↑ sing along · Esc stop">⌨</span>' : ''}
     </div>
     ${units.length > 1 ? `
     <button class="unit-edge unit-edge-next" id="uEdgeNext" aria-label="Next ${level.unit}" title="Next ${level.unit} (swipe left)">‹</button>
@@ -3568,6 +4288,11 @@ function renderPractice() {
       <button id="btnTonic">Give me the tonic</button>
       <button class="warn" id="btnRec">● Record my try</button>
       <button id="btnSing">▶● Sing along</button>
+      <span class="transport-scrub">
+        <button id="btnStepBack" disabled title="Back one word — key: ,   (while paused, it plays the word you land on)">⟲ Word <kbd>,</kbd></button>
+        <button id="btnPause" disabled aria-pressed="false" title="Pause / resume — key: Space">⏸ Pause</button>
+        <button id="btnStepFwd" disabled title="Forward one word — key: .">Word ⟳ <kbd>.</kbd></button>
+      </span>
       <button id="btnStop" disabled>■ Stop</button>
     </div>
 
@@ -3583,6 +4308,14 @@ function renderPractice() {
     if (eNext) eNext.addEventListener('click', () => goToUnit(state.unitIndex + 1, true));
     if (ePrev) ePrev.addEventListener('click', () => goToUnit(state.unitIndex - 1, true));
   }
+  const divideSeg = $('divideSeg');
+  if (divideSeg) divideSeg.querySelectorAll('.dv').forEach((b) => {
+    b.addEventListener('click', () => {
+      state.divideRank = parseInt(b.dataset.rank, 10);
+      state.unitIndex = 0;
+      renderPractice();
+    });
+  });
   // Pasuk-advance arrows (STA"M view): left = next pasuk (RTL), right = previous.
   const pNext = $('pEdgeNext'), pPrev = $('pEdgePrev');
   if (pNext) pNext.addEventListener('click', () => goToVerse(1));
@@ -3635,8 +4368,12 @@ function renderPractice() {
   state.userSpectro = new Spectrogram($('userSpectro'));
   const coach = buildCoach(unitSegs);
   state.coach = coach;
+  const closeName = unitCloseName(unitSegs);
   const modeName = level.unit === 'word' ? 'Single-word focus'
-    : level.unit === 'phrase' ? 'Phrase timeline' : 'Whole-verse timeline (piano-trope)';
+    : level.unit === 'phrase' ? 'Phrase timeline'
+      : level.unit === 'section'
+        ? `${divisionByRank(usableDivideRank(state.verseSegs, currentDivideRank())).label.replace(/s$/, '')}${closeName ? ` — up to the ${closeName.en}` : ''}`
+        : 'Whole-verse timeline (piano-trope)';
   const zoomBtn = level.unit === 'line'
     ? ` <button id="btnZoom" class="zoomtoggle">${state.scrollZoom ? '↔ Fit whole line' : '🎸 Scroll (zoom ' + ZOOM_WORDS + ' words)'}</button>` : '';
   $('modeIndicator').innerHTML = `<span class="mode-pill">${modeName}</span>${zoomBtn}`;
@@ -3661,7 +4398,11 @@ function renderPractice() {
   $('btnTonic').addEventListener('click', () => playTone(state.tonicHz, 1.2));
   $('btnRec').addEventListener('click', () => startRecording());
   $('btnSing').addEventListener('click', () => startRecording({ singAlong: true }));
+  $('btnPause').addEventListener('click', togglePause);
+  $('btnStepBack').addEventListener('click', () => stepWord(-1));
+  $('btnStepFwd').addEventListener('click', () => stepWord(1));
   $('btnStop').addEventListener('click', stopAll);
+  syncTransportUI();
   const btnAnalysis = $('btnAnalysis');
   if (btnAnalysis) btnAnalysis.addEventListener('click', toggleAnalysis);
   const readSize = $('readSize');
@@ -3959,6 +4700,7 @@ function onRealAnalysis({ t01, hz, freq, sampleRate, fftSize }, tonicHz) {
 
 function onRealEnd() {
   state.playingReal = false;
+  resetTransport();
   document.querySelectorAll('.verse.active .w, #timelineWords .w, #scrollVerses .sw').forEach((w) => w.classList.remove('cur'));
   if (state.view) state.view.setPlayhead(null);
   $('btnStop').disabled = true;
@@ -3994,7 +4736,9 @@ function playRealChant() {
   if ($('modeIndicator')) $('modeIndicator').innerHTML = '<span class="mode-pill">Whole-verse timeline (piano-trope)</span>';
   const tonic = coach ? coach.tonicHz : 200;
   $('btnStop').disabled = false;
-  $('result').innerHTML = '<span class="hint">Playing the recorded chant of the whole verse…</span>';
+  resetTransport();
+  syncTransportUI();
+  $('result').innerHTML = '<span class="hint">Playing the recorded chant of the whole verse… Space holds it, <b>,</b> / <b>.</b> step a word.</span>';
   playSegment(info.file, info.start, info.end, {
     onProgress: (t01) => {
       state.view.setPlayhead(t01);
@@ -4178,6 +4922,7 @@ async function startRecording(opts = {}) {
   // Re-press to restart: abort the take in progress (without scoring it) and
   // begin a fresh one — the same way tapping the guide button restarts the audio.
   if (state.recording) cancelRecording();
+  resetTransport();
   const level = levelById(state.level);
   // In "listen" mode, play the target first as a lead-in cue. When singing
   // along, the guide instead plays together with the recording (see below).
@@ -4227,6 +4972,7 @@ async function startRecording(opts = {}) {
   state.recStart = voiceGuide ? Infinity : performance.now() + leadIn;
 
   await startMic((hz, rms, frame) => {
+    if (state.paused) return; // held mid-take: the clock and the trail both stop
     const now = performance.now();
     if (now < state.recStart) { return; } // lead-in; let playback drive the cue
     const t01 = (now - state.recStart) / 1000 / dur;
@@ -4320,6 +5066,7 @@ function cancelRecording() {
   state.recording = false;
   state._singAlong = false;
   window.__cantillateBusy = false;
+  resetTransport();
 }
 
 // Play the coach's target contour as audio only (no visual callbacks), so the
@@ -4340,6 +5087,9 @@ function stopAll() {
   }
   if (state.recording) finishRecording();
   else stopPlayback();
+  // Last: the transport buttons key off `recording`/`playingReal`, so clearing
+  // them first would leave the pause button armed with nothing to pause.
+  resetTransport();
 }
 
 function finishRecording() {
@@ -4348,6 +5098,7 @@ function finishRecording() {
   state.recording = false;
   state._singAlong = false;
   window.__cantillateBusy = false;
+  resetTransport();
   clearTimeout(state._recTimer);
   clearTimeout(state._guideTimer);
   stopMic();
@@ -4424,6 +5175,19 @@ function finishRecording() {
   if (level.unit === 'phrase') {
     store.recordPhraseScore(state.slug, state.selectedVerse, state.unitIndex, headline);
     label = `Phrase ${state.unitIndex + 1} accuracy`;
+  } else if (level.unit === 'section') {
+    // Sections span several phrases, so a section take also refreshes the best of
+    // each phrase inside it — the same way a whole-verse take does.
+    const span = unitSpanKey(state.unitSegs);
+    if (span) store.recordSectionScore(state.slug, state.selectedVerse, span, headline);
+    // Phrase bests are keyed by their position in the WHOLE verse, so shift this
+    // section's phrase scores by however many phrases precede it.
+    const offset = phraseOffsetOf(state.unitSegs);
+    scorePhrasesInLine(trail, coach, state.unitSegs).forEach((sc, pi) => {
+      if (sc > 0) store.recordPhraseScore(state.slug, state.selectedVerse, offset + pi, sc);
+    });
+    const div = divisionByRank(usableDivideRank(state.verseSegs, currentDivideRank()));
+    label = `${div.label.replace(/s$/, '')} ${state.unitIndex + 1} accuracy`;
   } else if (level.unit === 'line') {
     scorePhrasesInLine(trail, coach, state.unitSegs).forEach((sc, pi) => {
       if (sc > 0) store.recordPhraseScore(state.slug, state.selectedVerse, pi, sc);
@@ -4503,7 +5267,7 @@ function renderLockedPage(level, unlocked) {
   const p = $('practice');
   p.innerHTML = `
     <div class="phead">
-      <h2>${state.data.book.he} ${verseRefLabel(v, state.selectedVerse)}${state.data.multiChapter ? '' : ` · verse ${state.selectedVerse}`} <span class="stagetag">Stage ${level.id}: ${level.label}</span></h2>
+      <h2>${state.data.book.he} ${verseRefLabel(v, state.selectedVerse)}${verseIndexSuffix(v, state.selectedVerse, 'verse ')} <span class="stagetag">Stage ${level.id}: ${level.label}</span></h2>
     </div>
     <div class="locked-page">
       <div class="lock-icon">🔒</div>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Cantillate module smoke test</title></head>
+<body>
+<pre id="out">running…</pre>
+<script type="module">
+// Headless smoke test for the pure (DOM-free) modules: it imports each one,
+// exercises the segmentation and store logic, and prints PASS/FAIL lines that a
+// scripted browser run can grep. Not part of the app; see README.
+const lines = [];
+const log = (ok, msg) => lines.push(`${ok ? 'PASS' : 'FAIL'} ${msg}`);
+const flush = () => { document.getElementById('out').textContent = lines.join('\n') + '\nDONE'; };
+window.onerror = (m) => { log(false, `uncaught: ${m}`); flush(); };
+
+try {
+  const hebrew = await import('../js/hebrew.js');
+  const trope = await import('../js/trope.js');
+  const levels = await import('../js/levels.js');
+  const store = await import('../js/store.js');
+  const viz = await import('../js/viz.js');
+  const audio = await import('../js/audio.js');
+  const realaudio = await import('../js/realaudio.js');
+  log(true, 'all modules import');
+
+  for (const fn of ['splitPhrases', 'splitAtRank', 'rankFor', 'rankOfSeg', 'buildLineMelody'])
+    log(typeof trope[fn] === 'function', `trope.${fn} exported`);
+  for (const fn of ['pauseVerseAudio', 'resumeVerseAudio', 'seekVerseAudio', 'previewVerseAudio',
+    'isVerseAudioLoaded', 'isVerseAudioPaused', 'verseAudioProgress'])
+    log(typeof realaudio[fn] === 'function', `realaudio.${fn} exported`);
+  for (const fn of ['recordSectionScore', 'getSectionScores', 'recordChainScore', 'getChainScore'])
+    log(typeof store[fn] === 'function', `store.${fn} exported`);
+
+  log(levels.LEVELS.length === 9, `9 stages (got ${levels.LEVELS.length})`);
+  log(levels.LEVELS.every((l, i) => l.id === i + 1), 'stage ids are 1..n in order');
+  log(levels.VERSE_MODES.every((m) => levels.levelById(m.level).skill === m.key),
+    'every verse skill points at its stage');
+  log(levels.LEVELS[3].unit === 'section', 'stage 4 is the sections stage');
+  log(levels.FULL_VERSE_LEVEL === 5, 'full-verse stage is 5');
+
+  // A real pasuk with a Tipcha immediately before the Etnachta (Deut 6:4, Shema).
+  const shema = 'שְׁמַ֖ע יִשְׂרָאֵ֑ל יְהֹוָ֥ה אֱלֹהֵ֖ינוּ יְהֹוָ֥ה ׀ אֶחָֽד׃';
+  const segs = trope.buildLineMelody(hebrew.tokenize(shema));
+  log(segs.length === 6, `Shema tokenizes to 6 words (got ${segs.length})`);
+  const R = trope.RANK;
+  log(trope.rankOfSeg(segs[1]) === R.EMPEROR, 'Etnachta ranks as an emperor');
+  log(trope.rankOfSeg(segs[segs.length - 1]) === R.EMPEROR, 'Sof Pasuk ranks as an emperor');
+  log(trope.rankOfSeg(segs[0]) === R.KING, 'Tipcha ranks as a king');
+
+  const halves = trope.splitAtRank(segs, R.EMPEROR);
+  log(halves.length === 2, `Etnachta splits the verse in two (got ${halves.length})`);
+  const all = trope.splitAtRank(segs, R.COUNT);
+  log(all.length > halves.length, 'every disjunctive gives a finer division');
+  log(trope.splitAtRank(segs, R.COUNT).reduce((a, u) => a + u.length, 0) === segs.length,
+    'a division covers every word exactly once');
+
+  // The fold-back rule: no unit may be a lone word closing on a STRONGER accent
+  // than the phrase before it (that word would have no run-up to sing).
+  const phrases = trope.splitPhrases(segs);
+  const stranded = phrases.some((u, i) => i > 0 && u.length === 1
+    && trope.rankOfSeg(u[0]) < trope.rankOfSeg(phrases[i - 1][phrases[i - 1].length - 1]));
+  log(!stranded, 'no phrase strands a strong accent without its build-up');
+
+  // Ordering: coarser divisions never produce more pieces than finer ones.
+  const counts = [R.EMPEROR, R.KING, R.DUKE, R.COUNT].map((r) => trope.splitAtRank(segs, r).length);
+  log(counts.every((n, i) => i === 0 || n >= counts[i - 1]), `divisions nest: ${counts.join(' <= ')}`);
+
+  // Rewinding a take drops what was sung past the point and un-lights its gems.
+  const view = Object.create(viz.ContourView.prototype);
+  view.userTrail = [{ t: 0.1 }, { t: 0.4 }, { t: 0.9 }];
+  view.noteStatus = { 0: 'hit', 1: 'hit' };
+  view.steps = [{ t0: 0, t1: 0.3 }, { t0: 0.5, t1: 0.8 }];
+  view.draw = () => {};
+  view.rewindUser(0.5);
+  log(view.userTrail.length === 2, `rewind keeps only earlier frames (got ${view.userTrail.length})`);
+  log(view.noteStatus[0] === 'hit' && view.noteStatus[1] === undefined,
+    'rewind un-lights only the notes after the point');
+
+  // Progress migration: stages 4+ shift up by one, below stays put.
+  localStorage.setItem('cantillate.v1', JSON.stringify({ levels: { 'x:1': 3, 'x:2': 4, 'x:3': 8 } }));
+  const lv = store.getAll().levels;
+  log(lv['x:1'] === 3 && lv['x:2'] === 5 && lv['x:3'] === 9,
+    `old unlocks migrate (got ${JSON.stringify(lv)})`);
+  log(store.getAll().schema === 2, 'migration is recorded once');
+
+  store.recordSectionScore('x', 1, '0-4', 70);
+  store.recordSectionScore('x', 1, '0-4', 55);
+  log(store.getSectionScores('x', 1)['0-4'] === 70, 'section keeps its best score');
+  store.recordChainScore('x', 3, 5, 61);
+  log(store.getChainScore('x', 3, 5) === 61, 'chain score round-trips');
+  localStorage.removeItem('cantillate.v1');
+
+  log(typeof audio.singSteps === 'function', 'audio.singSteps exported');
+
+  // The reading manifest: every entry resolvable, every excerpt range and drill
+  // group inside its data file.
+  const readings = await (await fetch('../data/readings.json')).json();
+  const kinds = {};
+  for (const r of readings) kinds[r.kind || 'parashah'] = (kinds[r.kind || 'parashah'] || 0) + 1;
+  log(kinds.excerpt > 0 && kinds.drill > 0, `manifest has all three kinds: ${JSON.stringify(kinds)}`);
+  log(new Set(readings.map((r) => r.slug)).size === readings.length, 'reading slugs are unique');
+
+  const files = new Map();
+  for (const r of readings) {
+    if (!files.has(r.file)) files.set(r.file, await (await fetch('../' + r.file)).json());
+  }
+  for (const r of readings) {
+    const data = files.get(r.file);
+    log(!!(data && data.verses && data.verses.length), `${r.slug}: data file loads`);
+    if (r.range) {
+      log(r.range[0] >= 1 && r.range[1] <= data.verses.length && r.range[0] <= r.range[1],
+        `${r.slug}: range ${r.range.join('-')} fits ${data.verses.length} verses`);
+    }
+    for (const g of r.groups || data.groups || []) {
+      const inRange = g.start >= 1 && g.end <= data.verses.length && g.start <= g.end;
+      const inExcerpt = !r.range || (g.start >= r.range[0] && g.end <= r.range[1]);
+      log(inRange && inExcerpt, `${r.slug}: group "${g.title}" covers ${g.start}-${g.end}`);
+    }
+    if (r.kind === 'excerpt') log(!!files.get(r.file) && !!r.base, `${r.slug}: names a base reading`);
+  }
+
+  // Drill lines must be chantable: real accents, one per word, ending in Sof Pasuk.
+  const drills = files.get(readings.find((r) => r.kind === 'drill').file);
+  const drillSegs = drills.verses.map((v) => trope.buildLineMelody(hebrew.tokenize(v.text)));
+  let multi = 0, noAccent = 0, badEnd = 0;
+  drills.verses.forEach((v, li) => {
+    const words = v.text.split(' ');
+    if (!words[words.length - 1].endsWith('\u05C3')) badEnd++;
+    for (const w of words) {
+      const marks = [...w].filter((c) => c.codePointAt(0) >= 0x0591 && c.codePointAt(0) <= 0x05AE);
+      if (marks.length > 1) multi++;
+    }
+    if (drillSegs[li].some((s, i) => i < drillSegs[li].length - 1 && s.taam == null)) noAccent++;
+  });
+  log(multi === 0, `drill words carry one accent each (${multi} exceptions)`);
+  log(badEnd === 0, `every drill line ends in a Sof Pasuk (${badEnd} exceptions)`);
+  log(noAccent === 0, `every drill word resolves to a trope (${noAccent} lines with gaps)`);
+
+  // The point of the set: nothing you will meet in the shipped Torah readings is
+  // left undrilled. Measured against the corpus rather than against trope.js's
+  // full table, which also carries the poetic-books accents (Dehi, Zinor, Ole,
+  // Iluy, Atnah Hafukh) that never occur in a Torah reading.
+  const taught = new Set(drillSegs.flat().map((s) => String(s.taam)));
+  const inCorpus = new Set(['sof']);
+  for (const r of readings) {
+    if ((r.kind || 'parashah') !== 'parashah') continue;
+    for (const v of files.get(r.file).verses) {
+      for (const s of trope.buildLineMelody(hebrew.tokenize(v.text))) inCorpus.add(String(s.taam));
+    }
+  }
+  inCorpus.delete('null');
+  const missing = [...inCorpus].filter((k) => !taught.has(k))
+    .map((k) => (k === 'sof' ? 'Sof Pasuk' : trope.nameFor(+k).en));
+  log(missing.length === 0,
+    `the drills cover all ${inCorpus.size} accents used in the shipped readings`
+    + (missing.length ? `, missing ${missing.join(', ')}` : ''));
+
+  // Unicode splits the Zarqa across two codepoints and the Masoretic text mostly
+  // uses U+05AE, so drilling U+0598 would teach a glyph the reader rarely meets.
+  const zarqaUse = (cp) => readings.filter((r) => (r.kind || 'parashah') === 'parashah')
+    .reduce((n, r) => n + files.get(r.file).verses
+      .reduce((m, v) => m + [...v.text].filter((c) => c.codePointAt(0) === cp).length, 0), 0);
+  const dominant = zarqaUse(0x05AE) >= zarqaUse(0x0598) ? 0x05AE : 0x0598;
+  log(taught.has(String(dominant)),
+    `the drills use the Zarqa codepoint the text does (U+05AE ${zarqaUse(0x05AE)}\u00d7 vs U+0598 ${zarqaUse(0x0598)}\u00d7)`);
+
+  // Each drill is a real verse shape, not a list: it divides at an Etnachta, and
+  // it is long enough that the sections stage has something to divide.
+  drillSegs.forEach((segs2, li) => {
+    const halves = trope.splitAtRank(segs2, trope.RANK.EMPEROR);
+    const sections = trope.splitAtRank(segs2, trope.RANK.KING);
+    log(halves.length === 2 && segs2.length >= 20 && sections.length > halves.length,
+      `drill ${li + 1}: ${segs2.length} words, ${halves.length} halves, ${sections.length} sections`);
+  });
+
+  // Pauses arrive with a run-up, the way they do in scripture: no unit of the
+  // finest division is a lone word closing on a stronger accent than the one before.
+  drillSegs.forEach((segs2, li) => {
+    const ph = trope.splitPhrases(segs2);
+    const stranded = ph.filter((u, i) => i > 0 && u.length === 1
+      && trope.rankOfSeg(u[0]) < trope.rankOfSeg(ph[i - 1][ph[i - 1].length - 1]));
+    log(stranded.length === 0, `drill ${li + 1}: ${ph.length} phrases, none stranded`);
+  });
+
+  // A drill line has no recording, so its coach must come from the motifs.
+  const dsegs = drillSegs[drillSegs.length - 1];
+  log(dsegs.every((s) => s.contour && s.contour.length), 'every drill word has a motif to synthesize from');
+  log(dsegs.every((s) => s.color), 'every drill word gets a trope colour');
+} catch (e) {
+  log(false, `threw: ${e && e.stack ? e.stack : e}`);
+}
+flush();
+</script>
+</body>
+</html>

@@ -1,8 +1,30 @@
 // Lightweight persistence of practice scores and progress in localStorage.
 const KEY = 'cantillate.v1';
 
+// Bumped whenever the shape or meaning of stored progress changes; `migrate`
+// brings older saves forward so nobody loses an unlock.
+const SCHEMA = 2;
+
+// Schema 2 inserted "Sing the sections" as stage 4, pushing the whole-verse
+// stages from 4-8 up to 5-9. Shift every stored unlock at or above the old
+// whole-verse stage so a reader keeps the difficulty they had earned.
+function migrate(d) {
+  if (!d || d.schema >= SCHEMA) return d;
+  if (d.levels) {
+    const shifted = {};
+    for (const k of Object.keys(d.levels)) {
+      const lvl = Number(d.levels[k]) || 1;
+      shifted[k] = lvl >= 4 ? lvl + 1 : lvl;
+    }
+    d.levels = shifted;
+  }
+  d.schema = SCHEMA;
+  try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) { /* quota / private mode */ }
+  return d;
+}
+
 function load() {
-  try { return JSON.parse(localStorage.getItem(KEY)) || {}; }
+  try { return migrate(JSON.parse(localStorage.getItem(KEY)) || {}); }
   catch (e) { return {}; }
 }
 
@@ -42,7 +64,7 @@ export function mergeRemote(remote) {
 // the best *continuous solo* full-aliyah take (no duet), tracked separately from
 // `aliyot` (which also counts duet takes, capped) so the leaderboard can rank
 // solo above duet above a derived floor.
-const MAX_BUCKETS = ['verses', 'words', 'phrases', 'modes', 'aliyot', 'levels', 'aliyaSolo'];
+const MAX_BUCKETS = ['verses', 'words', 'phrases', 'sections', 'chains', 'modes', 'aliyot', 'levels', 'aliyaSolo'];
 
 // How many recent/best runs to keep per pasuk (for "your top-N scores").
 const RUNS_CAP = 20;
@@ -216,6 +238,32 @@ export function getPhraseScores(slug, verseN) {
   return out;
 }
 
+// Per-section best score within a verse. Sections are the larger musical spans
+// (clauses / thirds / halves) the reader strings phrases into, so they are keyed
+// by the WORD RANGE they cover rather than an ordinal: the same stretch of text
+// keeps its score whether it was reached by dividing the verse at the Etnachta or
+// at the Zaqef.
+export function recordSectionScore(slug, verseN, span, score) {
+  const d = load();
+  d.sections = d.sections || {};
+  const k = `${slug}:${verseN}:${span}`;
+  d.sections[k] = Math.max(d.sections[k] || 0, score);
+  save(d);
+  return d.sections[k];
+}
+
+export function getSectionScores(slug, verseN) {
+  const d = load();
+  const out = {};
+  if (d.sections) {
+    const prefix = `${slug}:${verseN}:`;
+    for (const k of Object.keys(d.sections)) {
+      if (k.startsWith(prefix)) out[k.slice(prefix.length)] = d.sections[k];
+    }
+  }
+  return out;
+}
+
 // Per-verse whole-verse accuracy, tracked separately for each "skill" (the aid
 // configuration: base / notaamim / novowels / scroll / column). These are never
 // summed — each is its own score you improve over time.
@@ -268,6 +316,26 @@ export function getVerseProfiles(slug, verseN) {
     }
   }
   return out;
+}
+
+// --- Verse chains -----------------------------------------------------------
+// The tier between a single pasuk and a whole aliyah: a short run of consecutive
+// pesukim chanted without stopping, so the joins between verses get practiced.
+// Keyed by the verse range, e.g. "vaetchanan:90-92".
+function chainKey(slug, startV, endV) { return `${slug}:${startV}-${endV}`; }
+
+export function recordChainScore(slug, startV, endV, score) {
+  const d = load();
+  d.chains = d.chains || {};
+  const k = chainKey(slug, startV, endV);
+  d.chains[k] = Math.max(d.chains[k] || 0, Number(score) || 0);
+  save(d);
+  return d.chains[k];
+}
+
+export function getChainScore(slug, startV, endV) {
+  const d = load();
+  return (d.chains && d.chains[chainKey(slug, startV, endV)]) || 0;
 }
 
 // Per-aliyah best chant score, keyed by slug:cycle:year:aliyahNumber. Year is

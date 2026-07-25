@@ -9,7 +9,10 @@ import { getObjectUrl } from './offline.js';
 
 let ctx = null;
 const cache = new Map(); // url -> { el, source, analyser }
-let active = null;       // { el, raf }
+// The one segment currently loaded in the transport. It survives a pause (so the
+// window can be resumed or scrubbed word-by-word) and is only torn down by
+// stopVerseAudio or by reaching the end of the segment.
+let active = null;       // { el, raf, start, end, total, cb, paused, previewFrom, previewUntil }
 
 function ensureCtx() {
   if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -70,6 +73,7 @@ export function playSegment(url, start, end, cb = {}) {
     };
 
     const tick = () => {
+      if (!active || active.paused) return;
       const t = e.el.currentTime;
       const t01 = Math.min(1, Math.max(0, (t - start) / (total || 1)));
       analyser.getFloatTimeDomainData(timeBuf);
@@ -79,18 +83,99 @@ export function playSegment(url, start, end, cb = {}) {
         cb.onAnalysis({ t01, hz, freq: freqBuf, sampleRate: ctx.sampleRate, fftSize: analyser.fftSize });
       }
       if (cb.onProgress) cb.onProgress(t01);
+      // A word preview plays one word and parks the transport back at its start,
+      // so scrubbing while paused stays paused.
+      if (active.previewUntil != null && t >= active.previewUntil) {
+        holdAt(active.previewFrom);
+        return;
+      }
       if (end != null && t >= end) { finish(); return; }
-      if (active) active.raf = requestAnimationFrame(tick);
+      active.raf = requestAnimationFrame(tick);
+    };
+
+    // Freeze the transport at an absolute track time without tearing it down.
+    const holdAt = (time) => {
+      if (!active) return;
+      cancelAnimationFrame(active.raf);
+      active.paused = true;
+      active.previewUntil = null;
+      try { active.el.pause(); } catch (err) { /* noop */ }
+      if (time != null) { try { active.el.currentTime = time; } catch (err) { /* noop */ } }
+      if (cb.onProgress) cb.onProgress(clamp01((active.el.currentTime - start) / (total || 1)));
     };
 
     e.el.onended = () => { if (active && active.el === e.el) finish(); };
     e.el.play().then(() => {
-      active = { el: e.el, raf: requestAnimationFrame(tick) };
+      active = { el: e.el, raf: 0, start, end, total, cb, paused: false, tick, holdAt };
+      active.raf = requestAnimationFrame(tick);
     }).catch((err) => { if (cb.onError) cb.onError(err); });
   };
 
   if (e.el.readyState >= 1 && !isNaN(e.el.duration)) begin();
   else e.el.addEventListener('loadedmetadata', begin, { once: true });
+}
+
+function clamp01(x) { return Math.min(1, Math.max(0, x)); }
+
+// --- Transport: pause / resume / scrub the loaded segment -------------------
+// The verse window stays loaded while paused, so a reader who fumbles a word can
+// stop, step back over it, and carry on from there instead of restarting.
+
+export function isVerseAudioLoaded() { return !!active; }
+export function isVerseAudioPaused() { return !!(active && active.paused); }
+export function isVerseAudioPlaying() { return !!(active && !active.paused); }
+
+// Where the transport sits in the current segment, 0..1, or null if idle.
+export function verseAudioProgress() {
+  if (!active) return null;
+  return clamp01((active.el.currentTime - active.start) / (active.total || 1));
+}
+
+export function pauseVerseAudio() {
+  if (!active || active.paused) return false;
+  active.holdAt(null);
+  return true;
+}
+
+export function resumeVerseAudio() {
+  if (!active) return false;
+  // Cancel any word preview first: left armed, it would park the transport again
+  // a moment after we resumed, and playback would silently stop.
+  active.previewUntil = null;
+  if (!active.paused) return true;
+  active.paused = false;
+  active.el.play().then(() => {
+    if (active) active.raf = requestAnimationFrame(active.tick);
+  }).catch(() => { if (active) active.paused = true; });
+  return true;
+}
+
+// Jump to a normalized position in the segment. While paused the transport stays
+// paused (the playhead just moves); while playing it keeps rolling from there.
+export function seekVerseAudio(t01) {
+  if (!active) return false;
+  const time = active.start + clamp01(t01) * (active.total || 1);
+  try { active.el.currentTime = time; } catch (e) { return false; }
+  if (active.paused && active.cb.onProgress) active.cb.onProgress(clamp01(t01));
+  return true;
+}
+
+// Play a single stretch of the segment and return to `fromT01` paused, so
+// stepping between words while paused lets you hear the word you land on.
+export function previewVerseAudio(fromT01, toT01) {
+  if (!active) return false;
+  const dur = active.total || 1;
+  const from = active.start + clamp01(fromT01) * dur;
+  try { active.el.currentTime = from; } catch (e) { return false; }
+  active.previewFrom = from;
+  active.previewUntil = Math.min(active.end != null ? active.end : Infinity, active.start + clamp01(toT01) * dur);
+  if (active.paused) {
+    active.paused = false;
+    active.el.play().then(() => {
+      if (active) active.raf = requestAnimationFrame(active.tick);
+    }).catch(() => { if (active) active.paused = true; });
+  }
+  return true;
 }
 
 // Backward-compatible alias for verse-level playback.

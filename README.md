@@ -24,10 +24,16 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
 
 ## What it does today
 
-- **Pick a reading & portion** — choose a parashah, then a single **Portion**
-  control sets how much you read: the full annual parashah, or one shorter
-  **triennial-cycle year** (which narrows the verses shown *and* switches to that
-  year's aliyot). 📅 Today jumps to the current triennial year.
+- **Pick a reading & portion** — the Reading menu is grouped into **Parashiyot**,
+  **Trope drills** and **Prayers & common passages**. For a parashah, a single
+  **Portion** control sets how much you read: the full annual parashah, or one
+  shorter **triennial-cycle year** (which narrows the verses shown *and* switches
+  to that year's aliyot). 📅 Today jumps to the current triennial year.
+- **Pesukim grouped by aliyah** — the verse list is an accordion of the reading's
+  seven aliyot. Collapsed, the whole parashah is seven rows you can see at once;
+  open one and its pesukim (plus its verse chains and the aliyah challenge) are in
+  front of you without the rest of the reading pushing them off screen. Which
+  section you had open is remembered.
 - **Text with real vowels + cantillation** — the Masoretic (Leningrad Codex)
   text, stored locally in `data/devarim1.json`.
 - **Show / hide aids** — toggle niqqud (vowels) and te'amim (cantillation marks),
@@ -71,10 +77,22 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
   follow tikkun.io's modern Davidovich 245-column / 42-line layout; the completed
   page scales as one unit on desktop and mobile, so its lines never re-wrap.
   Tap any word to jump to it for practice.
+- **Hold and rewind a word at a time** — anything running (the recorded chant, the
+  voice guide, a duet, your own take) can be held with **Space** and nudged with
+  **,** and **.** — one word back, one word forward. Fumble a word halfway through
+  a pasuk and you can stop, step back over it and carry on, instead of restarting
+  the verse. Paused, stepping plays just the word you land on so you can hear it
+  first. Rewinding *into a take* also discards what you sang past that point, so
+  the retry replaces the fumbled stretch rather than scoring on top of it.
 - **Level progression** — start with everything shown and *hear & repeat* single
-  words; advance to generating words, phrases, then whole lines guitar-hero style
-  with a moving cue; then aids are removed one at a time (cantillation → vowels →
-  scroll font) as your scores improve.
+  words; advance to generating words, then phrases, then the verse's larger
+  **sections**, then whole lines guitar-hero style with a moving cue; then aids
+  are removed one at a time (cantillation → vowels → scroll font) as your scores
+  improve.
+- **Divide a pasuk the way the accents do** — see
+  [The accent hierarchy](#the-accent-hierarchy-how-a-pasuk-is-divided).
+- **Chain pesukim before chanting a whole aliyah** — see
+  [Verse chains](#verse-chains-the-rung-between-pasuk-and-aliyah).
 - **Cantillation teaching** — each accent in the current unit is listed with its
   Hebrew/English name, mark glyph, role, and a **data-driven mini shape**: the
   averaged (time-normalized) pitch contour of *every* instance of that trope in
@@ -82,6 +100,125 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
   how the accent is actually sung, not a hand-drawn guess.
 - **Heatmap** — toggle the score overlay to color each verse by how well you've
   chanted it, so you can target weak spots.
+
+## The accent hierarchy: how a pasuk is divided
+
+The te'amim are not a flat run of pauses — they are a nesting hierarchy, and the
+app now models it (`RANK` in `js/trope.js`):
+
+| Rank | Accents | Divides |
+|---|---|---|
+| **Emperor** | Silluq (Sof Pasuk), Etnachta | the verse itself |
+| **King** | Zaqef Qatan/Gadol, Segol, Shalshelet, Tipcha | each half of the verse |
+| **Duke** | Revia, Zarqa, Pashta, Yetiv, Tevir | a king's stretch |
+| **Count** | Geresh, Gershayim, Telisha Gedola, Pazer, Qarney Para | a duke's stretch |
+
+`splitAtRank(segs, rank)` cuts a verse at one level of that hierarchy, keeping
+every *weaker* accent inside the unit it builds up to. Two things follow:
+
+- **Phrases (stage 3) never strand a strong accent.** Breaking at every
+  disjunctive can leave an Etnachta alone on its own word when the word before it
+  carries a Tipcha — musically meaningless, since the Tipcha *is* the run-up to
+  the Etnachta. `splitPhrases` folds such a lone word back into the phrase that
+  leads into it, so a pause is always practiced with its approach.
+- **Sections (stage 4) are a real stage of their own,** sitting between phrases
+  and the whole pasuk. Its **Divide** control slides between *Phrases → Clauses →
+  Sections → Halves*, so a long verse can be drilled in halves (split at the
+  Etnachta) or thirds (at the Zaqef/Tipcha) before you attempt it whole. A
+  division that can't cut *this* pasuk (no Etnachta in a short verse) is shown
+  greyed rather than hidden, so the hierarchy stays legible. Section bests are
+  keyed by the **word range** they cover, so the same stretch of text keeps its
+  score whichever division you reached it by.
+
+The Trope guide labels every accent with its rank, so the tiers you practice and
+the tiers you read are the same thing.
+
+## Verse chains: the rung between pasuk and aliyah
+
+Knowing every pasuk of an aliyah cold still leaves the *joins* between them
+unrehearsed, which is usually where a long aliyah falls apart. Open an aliyah in
+the verse list and it offers **verse chains**: back-to-back runs of 2, 3 or 4
+pesukim chanted straight through. A chain reuses the aliyah reader (bare STA"M
+scroll, moving yad, guided read / solo / duet) over a shorter span, and keeps its
+own best score. Chains are personal practice, so they aren't gated behind
+readiness and don't post to the leaderboards.
+
+## Trope drills & cantillated prayers
+
+The parashah readings teach a tune by imitation: you hear the cantor and copy
+him, so the melody always arrives before the mark does and you never learn to
+*read* the accents. Two reading kinds address that, and both appear in the
+Reading menu alongside the parashiyot:
+
+- **Trope drills** (`data/trope-drills.json`, built by `scripts/build_drills.py`)
+  — two long practice pesukim, each built from **one Hebrew root**, so the
+  syllables stay familiar and the only thing changing from word to word is the
+  trope, the way a language course drills a new alphabet one letter at a time.
+  *The everyday progression* (ש־ל־ם: shalom, shalem, shilem, Shlomo, meshulam,
+  shilumim) carries the accents in almost every verse; *the rare flourishes*
+  (ד־ב־ר: davar, diber, dever, midbar) carries everything else, down to the
+  Yerach ben Yomo and Qarney Para that occur once each in the whole Torah.
+
+  They are **not** grouped tier by tier. The accents run in the orders you
+  actually meet them — each pause approached by the connectors that serve it
+  (Qadma→Azla, Mahpach→Pashta→Munach→Zaqef, Darga→Tevir,
+  Mercha→Tipcha→Munach→Etnachta) — and each drill divides at an Etnachta like a
+  real pasuk, so the Divide control can take it in halves before you chant it end
+  to end. Word lengths vary so the line has some rhythm and the ornate accents get
+  the syllables they need to unfold. There is no recording: the coach line, the
+  note steps and the scoring all come from the motifs in `js/trope.js` via
+  `buildSyntheticCoach`, which is exactly what these lines teach. Everything else
+  — record, duet, hold-and-rewind, the spectrogram — works as it does for a real
+  pasuk.
+
+  `scripts/smoke.html` checks the set against the corpus: the drills must cover
+  **every accent that occurs in the shipped readings**, and must use the same
+  codepoints the text does. That check earns its keep — Unicode splits the Zarqa
+  across `U+0598` and `U+05AE`, and the Masoretic text overwhelmingly uses
+  `U+05AE` (21× vs 5× across the three parashiyot), so drilling the other one
+  would have taught a glyph the reader mostly won't meet. Both are in the drill
+  now, side by side, since both turn up.
+- **Prayers & common passages** — the Shema and V'ahavta, V'haya im shamo'a, the
+  Ten Commandments, V'zot haTorah, Ein od milvado, and the verse behind Birkat
+  haMazon. These are `kind: "excerpt"` entries: they reuse a parashah's text,
+  recording and extracted pitch and simply narrow the verses on screen, so they
+  come with the real recorded chant for free and **count toward that parashah's
+  progress** rather than starting a parallel tally.
+
+Adding either is a manifest edit in `data/readings.json` — no JS change:
+
+```jsonc
+// a named passage carved out of a parashah already in the app
+{ "slug": "shema", "file": "data/vaetchanan.json", "kind": "excerpt",
+  "base": "vaetchanan", "group": "Prayers & common passages",
+  "label": "Shema & V'ahavta (Deut 6:4–9)", "range": [90, 95],
+  "groups": [ { "title": "Shema Yisrael", "ref": "6:4", "start": 90, "end": 90 } ] }
+```
+
+`range` and `groups` use the reading's sequential verse index `n` (see
+`data/<slug>.json`), which is also what the audio and pitch files are keyed by.
+
+## Tests
+
+Two headless-Chrome harnesses, both driven over the DevTools protocol (the repo
+has no Node toolchain). Start the server first, then:
+
+```bash
+.venv/bin/pip install websocket-client   # once
+./serve.sh 8123 &
+.venv/bin/python scripts/run_smoke.py    # modules: segmentation, ranks, store, manifest
+.venv/bin/python scripts/check_app.py    # the real UI, incl. pause/rewind against live audio
+```
+
+`scripts/run_smoke.py` loads `scripts/smoke.html`, which exercises the DOM-free
+modules (accent ranks and every division, the phrase fold-back rule, the progress
+migration, section/chain scores) and validates every entry in
+`data/readings.json`. `scripts/check_app.py` walks the actual app: the reading
+menu, the aliyah accordion, verse chains, all nine stages, the Divide control, the
+drill set and the excerpts — then plays the recorded chant and records a duet with
+a fake microphone to check that Space holds it, `,` and `.` step a word, and
+resuming and stopping behave. `scripts/shot.py` grabs a screenshot for eyeballing
+a change.
 
 ## Run it
 
@@ -288,14 +425,15 @@ js/audio.js           Web Audio synthesis of the target melody
 js/pitch.js           microphone + shared pitch detection (autocorrelation)
 js/realaudio.js       recorded-chant playback + live spectrogram/pitch analysis
 js/viz.js             canvas: coach contour, real/user overlays, spectrogram, scoring
-js/levels.js          level/aid progression config
+js/levels.js          stage ladder, aid progression + the division ranks
 js/store.js           localStorage scores + unlocks (+ cloud merge/sync hooks)
 js/auth.js            optional Google sign-in + Firestore progress sync + leaderboard
 js/firebase-config.js Firebase web config (placeholders = offline-only; see above)
 js/app.js             UI controller / glue
-data/readings.json    reading manifest (auto-discovered by the app)
+data/readings.json    reading manifest: parashiyot, drills + prayer excerpts
 data/devarim1.json    local Hebrew text (Masoretic, with vowels + te'amim)
 data/vaetchanan.json  parashat Va'etchanan text + aliyot (multi-chapter reading)
+data/trope-drills.json  synthetic te'amim exercises (no recording)
 fonts/                Culmus fonts (modern Frank Ruehl + scroll Stam Ashkenaz)
 scripts/readings.py   registry of buildable readings (add an entry here)
 scripts/build_reading.py  ONE command: text+English+audio+pitch+shapes+register
@@ -303,7 +441,12 @@ scripts/fetch_text.py fetch/refresh text from Sefaria (legacy single-chapter)
 scripts/fetch_translation.py fetch + merge an English translation
 scripts/fetch_audio.py fetch recorded chant + per-verse/word timings (legacy)
 scripts/extract_pitch.py derive per-word note steps from the recordings (numpy)
+scripts/build_drills.py   regenerate data/trope-drills.json
 scripts/serve.py      range-enabled static server (audio seeking)
+scripts/smoke.html    module tests (run via run_smoke.py)
+scripts/run_smoke.py  headless module test runner
+scripts/check_app.py  headless UI walkthrough (see Tests)
+scripts/shot.py       headless screenshot helper
 audio/                bundled recorded chant (Devarim 1–4, Va'ethanan 1–7)
 ```
 

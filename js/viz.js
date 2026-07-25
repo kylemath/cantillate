@@ -72,6 +72,17 @@ export class ContourView {
   _inRange(p) { return p >= this.yMin - 0.5 && p <= this.yMax + 0.5; }
 
   clearUser() { this.userTrail = []; this.noteStatus = {}; this.draw(); }
+  // Roll the take back to `t01`: drop everything sung after that point and un-light
+  // the note gems beyond it, so re-singing from there replaces the fumbled stretch
+  // instead of layering a second attempt on top of it.
+  rewindUser(t01) {
+    this.userTrail = this.userTrail.filter((s) => s.t < t01);
+    for (const i of Object.keys(this.noteStatus)) {
+      const step = this.steps[i];
+      if (!step || step.t1 > t01) delete this.noteStatus[i];
+    }
+    this.draw();
+  }
   // Guitar-Hero "gem lights up": mark a coach note-step (by its index) hit/missed
   // so its bar is shaded green/red once the playhead has passed it.
   setNoteStatus(idx, status) { this.noteStatus[idx] = status; this.draw(); }

@@ -2,6 +2,7 @@
   {
     "slug": "devarim1",
     "file": "data/devarim1.json",
+    "group": "Parashiyot",
     "label": "Devarim (Deuteronomy) 1",
     "sources": [
       {
@@ -14,7 +15,8 @@
   {
     "slug": "vaetchanan",
     "file": "data/vaetchanan.json",
-    "label": "Va'etchanan (Deuteronomy 3:23–7:11)",
+    "group": "Parashiyot",
+    "label": "Va'etchanan (Deuteronomy 3:23\u20137:11)",
     "sources": [
       {
         "id": "pockettorah",
@@ -26,7 +28,8 @@
   {
     "slug": "eikev",
     "file": "data/eikev.json",
-    "label": "Eikev (Deuteronomy 7:12–11:25)",
+    "group": "Parashiyot",
+    "label": "Eikev (Deuteronomy 7:12\u201311:25)",
     "sources": [
       {
         "id": "pockettorah",
@@ -35,9 +38,91 @@
       },
       {
         "id": "ptaudioonly",
-        "label": "PocketTorah (audio only — demo)",
+        "label": "PocketTorah (audio only \u2014 demo)",
         "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA."
       }
+    ]
+  },
+  {
+    "slug": "trope-drills",
+    "file": "data/trope-drills.json",
+    "kind": "drill",
+    "group": "Trope drills",
+    "label": "One word, every accent",
+    "note": "Synthesized practice \u2014 no recorded cantor. Built by scripts/build_drills.py."
+  },
+  {
+    "slug": "shema",
+    "file": "data/vaetchanan.json",
+    "kind": "excerpt",
+    "base": "vaetchanan",
+    "group": "Prayers & common passages",
+    "label": "Shema & V'ahavta (Deut 6:4\u20139)",
+    "range": [90, 95],
+    "groups": [
+      { "title": "Shema Yisrael", "ref": "6:4", "start": 90, "end": 90 },
+      { "title": "V'ahavta", "ref": "6:5\u20139", "start": 91, "end": 95 }
+    ]
+  },
+  {
+    "slug": "vehaya",
+    "file": "data/eikev.json",
+    "kind": "excerpt",
+    "base": "eikev",
+    "group": "Prayers & common passages",
+    "label": "V'haya im shamo'a (Deut 11:13\u201321)",
+    "range": [99, 107],
+    "groups": [
+      { "title": "Second paragraph of the Shema", "ref": "11:13\u201321", "start": 99, "end": 107 }
+    ]
+  },
+  {
+    "slug": "aseret",
+    "file": "data/vaetchanan.json",
+    "kind": "excerpt",
+    "base": "vaetchanan",
+    "group": "Prayers & common passages",
+    "label": "Aseret haDibrot (Deut 5:6\u201318)",
+    "note": "The Ten Commandments carry a dual cantillation (ta'am elyon / tachton); the recording follows one and the printed text the other, so the coach line is approximate here.",
+    "range": [62, 74],
+    "groups": [
+      { "title": "The Ten Commandments", "ref": "5:6\u201318", "start": 62, "end": 74 }
+    ]
+  },
+  {
+    "slug": "vezot-hatorah",
+    "file": "data/vaetchanan.json",
+    "kind": "excerpt",
+    "base": "vaetchanan",
+    "group": "Prayers & common passages",
+    "label": "V'zot haTorah (Deut 4:44\u201345)",
+    "range": [51, 52],
+    "groups": [
+      { "title": "Said as the Torah is raised", "ref": "4:44\u201345", "start": 51, "end": 52 }
+    ]
+  },
+  {
+    "slug": "ein-od",
+    "file": "data/vaetchanan.json",
+    "kind": "excerpt",
+    "base": "vaetchanan",
+    "group": "Prayers & common passages",
+    "label": "Ein od milvado (Deut 4:35\u201340)",
+    "range": [42, 47],
+    "groups": [
+      { "title": "There is none beside Him", "ref": "4:35\u201340", "start": 42, "end": 47 }
+    ]
+  },
+  {
+    "slug": "birkat-hamazon-verse",
+    "file": "data/eikev.json",
+    "kind": "excerpt",
+    "base": "eikev",
+    "group": "Prayers & common passages",
+    "label": "V'achalta v'savata (Deut 8:10)",
+    "range": [25, 25],
+    "groups": [
+      { "title": "The verse behind Birkat haMazon", "ref": "8:10", "start": 25, "end": 25 }
     ]
   }
 ]

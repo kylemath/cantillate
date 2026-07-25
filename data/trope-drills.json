@@ -1,0 +1,52 @@
+{
+ "slug": "trope-drills",
+ "book": {
+  "en": "Trope drills",
+  "he": "תַרְגִיל",
+  "translit": "Targil"
+ },
+ "multiChapter": false,
+ "chapter": null,
+ "synthetic": true,
+ "ref": "Cantillation drills",
+ "heRef": "תַרְגִילֵי טְעָמִים",
+ "versionTitle": "Cantillate practice drills",
+ "heVersionTitle": "Synthesized practice drills (no recording)",
+ "license": "CC0",
+ "parashah": {
+  "en": "Trope drills",
+  "he": "תַרְגִילֵי טְעָמִים",
+  "translit": "Targilei Te'amim",
+  "ref": "One root, every accent"
+ },
+ "groups": [
+  {
+   "title": "1 · The everyday progression",
+   "note": "One root, ש־ל־ם, in every form: shalom (peace), shalem (whole), shilem (he repaid), Shlomo, meshulam (requited), shilumim (recompense). The accents run in the order you actually meet them: each pause arrives with the connectors that serve it, and the verse divides at the Etnachta like a real one. Long on purpose — use Divide on the sections stage to take it in halves first.",
+   "start": 1,
+   "end": 1
+  },
+  {
+   "title": "2 · The rare flourishes",
+   "note": "The same idea on ד־ב־ר: davar (a word), diber (he spoke), dever (plague), midbar (wilderness). This one carries everything the first verse leaves out — Shalshelet opening the verse, the Zarqa–Segol pair, both Telishot, Pazer, Gershayim, Yetiv, Zaqef Gadol, Mercha Kefula, and the Yerach ben Yomo with Qarney Para that appear once each in the entire Torah. Note the Zarqa: Unicode splits it across two marks, and this is the one the Torah text uses.",
+   "start": 2,
+   "end": 2
+  }
+ ],
+ "verses": [
+  {
+   "n": 1,
+   "label": "ש־ל־ם",
+   "ref": "shalom",
+   "text": "שָׁלֵ֨ם מְשֻׁלָּ֜ם שִׁלֵּ֣ם שִׁלּוּמִ֗ים שָׁל֤וֹם שָׁלֵם֙ שִׁלֵּ֣ם הַשָּׁל֔וֹם שְׁלֹמֹ֥ה שְׁלוֹמ֖וֹ שָׁלֵ֣ם מְשֻׁלָּ֑ם שִׁלֵּ֣ם שְׁלוֹמָ֔ם שָׁל֧וֹם שָׁלֵ֛ם שְׁלֹמֹ֥ה שְׁלוֹמ֖וֹ שָׁל֥וֹם הַשָּׁלֽוֹם׃",
+   "en": "Trope order — Qadma · Azla (Geresh) · Munach · Revia · Mahpach · Pashta · Munach · Zaqef Qatan · Mercha · Tipcha · Munach · Etnachta · Munach · Zaqef Qatan · Darga · Tevir · Mercha · Tipcha · Mercha · Silluq (Sof Pasuk)"
+  },
+  {
+   "n": 2,
+   "label": "ד־ב־ר",
+   "ref": "davar",
+   "text": "הַדְּבָרִ֓ים דָּבָ֣ר דְּבָרִים֘ דִּבְרֵיהֶם֮ דִּבֵּ֣ר וּבַמִּדְבָּר֒ מְ֠דַבְּרִים דָּבָ֣ר הַדְּבָרִ֡ים דְּבָרִים֩ דִּבְרֵיהֶ֞ם דֶּ֣בֶר וַיְדַבֵּ֗ר מִ֚דְבָּר כִּדְבָרְ֕ךָ דְּבָרִ֦ים דִּבֵּ֛ר דָּבָ֥ר מִדְבָּ֖ר דִּבֵּ֣ר הַדְּבָרִ֑ים מְדַבְּרִ֪ים וּבַמִּדְבָּ֟ר דָּבָ֥ר מִדְבָּ֖ר דִּבֵּ֥ר הַדְּבָרִֽים׃",
+   "en": "Trope order — Shalshelet · Munach · Tsinnorit · Zarqa · Munach · Segol · Telisha Gedola · Munach · Pazer · Telisha Qetana · Gershayim · Munach · Revia · Yetiv · Zaqef Gadol · Mercha Kefula · Tevir · Mercha · Tipcha · Munach · Etnachta · Yerach ben Yomo · Qarney Para · Mercha · Tipcha · Mercha · Silluq (Sof Pasuk)"
+  }
+ ]
+}
