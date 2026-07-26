@@ -75,6 +75,15 @@
     <button id="tgEnglish" class="toggle">English</button>
     <span class="label" style="margin-inline-start:12px;">Font:</span>
     <button id="tgFont" class="toggle">Scroll (STA"M)</button>
+    <span class="label" style="margin-inline-start:12px;">Hand:</span>
+    <span class="seg" id="stamHandSeg" title="Which scribal hand the STA&quot;M is drawn in — verse cards, Torah column and tikkun pages all follow this. Shlomo joins the mem's vav-leg to the base (as a sofer writes it); Ashkenaz leaves it detached, which can read as a kaf plus a vav.">
+      <button class="sh on" data-sh="shlomo">Shlomo</button>
+      <button class="sh" data-sh="ashkenaz">Ashkenaz</button>
+    </span>
+    <label class="stamtrack" title="Space between the letters of the STA&quot;M. Opening it up makes the notch inside a mem plainly smaller than a real gap between letters, so the mem stops reading as a kaf plus a vav.">
+      <span class="rs-ico stam-ico">מם</span>
+      <input type="range" id="stamTrack" min="0" max="0.1" step="0.005" aria-label="STA&quot;M letter spacing">
+    </label>
     <span class="label" style="margin-inline-start:12px;">Score overlay:</span>
     <span class="seg" id="overlaySeg">
       <button class="ov on" data-ov="off">Off</button>

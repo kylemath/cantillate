@@ -12,8 +12,23 @@
   font-family: 'StamAshkenaz';
   src: url('../fonts/StamAshkenazCLM.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'ShlomoStam';
+  src: url('../fonts/ShlomoStam.ttf') format('truetype');
+}
 
 :root {
+  /* Which scribal hand the STA"M surfaces are drawn in. Every scroll surface
+     (verse cards, Torah column, tikkun page) reads this one variable, so the
+     hand switches everywhere at once; body.hand-ashkenaz overrides it. */
+  --stam: 'ShlomoStam', 'StamAshkenaz', serif;
+  /* Tracking for the STA"M. The mem is a kaf and a vav sharing one base, and the
+     notch between them cannot be closed — closing it would make it a final mem —
+     so the way to stop it reading as two letters is to open up the space between
+     REAL letters until the notch is plainly the smaller gap. Em-based, so it
+     holds at any reading size. The fixed tikkun page opts out; see .scroll-page. */
+  --stam-track: 0.05em;
+
   --bg: #0f1220;
   --panel: #171b2e;
   --panel-2: #1f2540;
@@ -25,6 +40,21 @@
   --bad: #e0555b;
   --line: rgba(255,255,255,0.08);
 }
+
+/* Both hands join the mem's vav-leg to the base, but Stam Ashkenaz CLM draws it
+   short and light under a wide notch, so it reads as a vav standing beside a
+   kaf; Shlomo Stam runs it long and heavy into the base under a near-closed
+   notch, as a sofer writes it. Both are offered because the hand a reader
+   trains on should be the one in their own scroll. */
+body.hand-ashkenaz { --stam: 'StamAshkenaz', serif; }
+
+/* Toolbar tracking slider. Its icon is two mems set in the live script at the
+   live tracking, so the control shows what it does: drag until the gap between
+   the two letters clearly beats the notch inside each one. */
+.stamtrack { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto;
+  margin-inline-start: 8px; }
+.stamtrack input[type="range"] { width: 84px; accent-color: var(--accent); cursor: pointer; }
+.stam-ico { font-family: var(--stam); letter-spacing: var(--stam-track); }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
@@ -509,7 +539,7 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
   direction: rtl; text-align: right; font-family: 'FrankRuehl', serif;
   font-size: calc(30px * var(--left-scale, 1)); line-height: 1.9; padding-top: 14px;
 }
-.hebrew.scroll { font-family: 'StamAshkenaz', serif; font-size: calc(34px * var(--left-scale, 1)); letter-spacing: 2px; }
+.hebrew.scroll { font-family: var(--stam); font-size: calc(34px * var(--left-scale, 1)); letter-spacing: var(--stam-track); }
 .hebrew .w { padding: 0 2px; border-radius: 6px; transition: background .1s, opacity .1s; cursor: pointer; }
 .textpane .hebrew .w:hover { outline: 1px dashed rgba(255,255,255,0.35); }
 .hebrew .w.cur { background: rgba(255,215,0,0.28); }
@@ -652,7 +682,7 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 /* Faithful Torah-scroll column view of the whole reading */
 .scroll-column {
   direction: rtl; text-align: justify; text-align-last: right;
-  font-family: 'StamAshkenaz', serif;
+  font-family: var(--stam);
   /* Scale the letters to the column width so narrowing the pane SHRINKS the
      script rather than re-wrapping it — the same words stay on the same lines
      (like a fixed scroll) at any width. The block is self-similar: everything
@@ -662,7 +692,7 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
      usable width range, because a pinned (fixed-px) font is exactly what makes
      the justified gaps flex and then the text wrap before it finally shrinks.
      So the max is generous (only caps truly huge panes) and the floor is low. */
-  font-size: clamp(9px, 7.4cqi, 40px); line-height: 2.15; letter-spacing: 0.05em;
+  font-size: clamp(9px, 7.4cqi, 40px); line-height: 2.15; letter-spacing: var(--stam-track);
   color: #2a2016;
   background: #e9d7b0;
   background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0) 8%),
@@ -724,7 +754,16 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
   font-size: min(4cqw, 22px);
   padding: 1.7em 1.55em 1.55em;
   direction: rtl; color: #2a2016;
-  font-family: 'StamAshkenaz', serif; line-height: 1.62;
+  font-family: var(--stam); line-height: 1.62;
+  /* Deliberately NOT tracked by --stam-track. This page is a fixed 25em replica
+     of a Davidovich column whose 42 lines must land exactly where the scroll
+     puts them, and there is no room to open it up: in the Shlomo hand the
+     tightest line in data/tikkun-torah-245.json already spends 21.45em of its
+     21.90em usable width (19.77em of glyphs plus the 0.28em minimum word gaps),
+     so anything past ~0.013em per letter pushes words out of the column. The
+     tracking slider works on the surfaces that can flex — the verse cards and
+     the aliyah scroll; here the scroll's own spacing stands. */
+  letter-spacing: normal;
   background: #e9d7b0;
   background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0) 8%),
     radial-gradient(120% 60% at 50% 0%, rgba(120,80,30,0.10), rgba(120,80,30,0) 60%);

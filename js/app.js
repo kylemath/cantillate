@@ -54,6 +54,8 @@ const state = {
   drill: null,        // manifest entry when the reading is a synthetic drill set
   aliyah: null,       // currently-open aliyah challenge (null = normal practice)
   aliyahCue: 'word',  // yad outline granularity in aliyah mode: 'word' | 'phrase'
+  stamHand: 'shlomo', // scribal hand for every STA"M surface: 'shlomo' | 'ashkenaz'
+  stamTrack: 0.05,    // STA"M letter-spacing, em (see applyStamTrack)
   scrollView: false,  // render the text pane as a continuous Torah column
   scrollZoom: false,  // guitar-hero: zoom to ~5 words and auto-scroll the line
   tonicHz: 220,
@@ -279,6 +281,11 @@ async function init() {
   $('scoreModelSeg').querySelectorAll('.sm').forEach((b) => {
     b.addEventListener('click', () => setScoreModel(b.dataset.sm));
   });
+  initStamHand();
+  $('stamHandSeg').querySelectorAll('.sh').forEach((b) => {
+    b.addEventListener('click', () => setStamHand(b.dataset.sh));
+  });
+  setupStamTrack();
   bindToggle('tgScrollView', () => { if (state.aliyah) return; state.scrollView = !state.scrollView; renderVerses(); maybeShowRotate(); });
 
   // A single "Portion" selector is the sole control for how much of the parashah
@@ -2287,6 +2294,9 @@ function syncToggleUI() {
   if (seg) seg.querySelectorAll('.ov').forEach((b) => b.classList.toggle('on', b.dataset.ov === state.overlay));
   const sms = $('scoreModelSeg');
   if (sms) sms.querySelectorAll('.sm').forEach((b) => b.classList.toggle('on', b.dataset.sm === state.scoreModel));
+  const shs = $('stamHandSeg');
+  if (shs) shs.querySelectorAll('.sh').forEach((b) => b.classList.toggle('on', b.dataset.sh === state.stamHand));
+  document.body.classList.toggle('hand-ashkenaz', state.stamHand === 'ashkenaz');
   $('tgScrollView').classList.toggle('on', state.scrollView);
   document.body.classList.toggle('scroll-view', state.scrollView);
   if (state.scrollView) requestAnimationFrame(fitScrollPages);
@@ -2339,6 +2349,60 @@ function initScoreModel() {
   state.scoreModel = m === 'gh' ? 'gh' : 'contour';
   try { localStorage.setItem(SCORE_MODEL_KEY, state.scoreModel); } catch (e) { /* private mode */ }
   syncToggleUI();
+}
+
+// --- Scribal hand for the STA"M -------------------------------------------
+// Two bundled scroll fonts. Shlomo Stam draws the letters as a sofer writes
+// them — notably the mem, whose vav-leg runs long and heavy into the base under
+// a near-closed notch, where Stam Ashkenaz CLM's is short and light under a wide
+// one and so reads as a vav beside a kaf. Ashkenaz stays available: the hand you
+// train on should be the hand in the scroll you'll read from. The CSS does the
+// swap through the --stam variable; nothing needs re-rendering.
+const STAM_HAND_KEY = 'cantillate.stamHand';
+
+function initStamHand() {
+  let h = null;
+  try { h = localStorage.getItem(STAM_HAND_KEY); } catch (e) { h = null; }
+  state.stamHand = h === 'ashkenaz' ? 'ashkenaz' : 'shlomo';
+  syncToggleUI();
+}
+
+function setStamHand(h) {
+  state.stamHand = h === 'ashkenaz' ? 'ashkenaz' : 'shlomo';
+  try { localStorage.setItem(STAM_HAND_KEY, state.stamHand); } catch (e) { /* private mode */ }
+  syncToggleUI();
+}
+
+// Tracking (letter-spacing) for the STA"M, in em so it holds at any reading
+// size. Nothing about the mem's own notch can be tightened — it is what keeps it
+// an open mem rather than a final one — so the reader's lever is the space
+// between real letters. Applied as a CSS variable; the scroll surfaces pick it
+// up without a re-render. The fixed tikkun column is exempt — its lines have no
+// width to spare (see .scroll-page).
+const STAM_TRACK_KEY = 'cantillate.stamTrack';
+const TRACK_MIN = 0, TRACK_MAX = 0.1, TRACK_DEFAULT = 0.05;
+
+function loadStamTrack() {
+  let v = NaN;
+  try { v = parseFloat(localStorage.getItem(STAM_TRACK_KEY) || ''); } catch (e) { /* ignore */ }
+  return Number.isFinite(v) ? Math.max(TRACK_MIN, Math.min(TRACK_MAX, v)) : TRACK_DEFAULT;
+}
+
+function applyStamTrack(em) {
+  const v = Math.max(TRACK_MIN, Math.min(TRACK_MAX, Number(em)));
+  state.stamTrack = v;
+  document.body.style.setProperty('--stam-track', v + 'em');
+  try { localStorage.setItem(STAM_TRACK_KEY, String(v)); } catch (e) { /* private mode */ }
+}
+
+function setupStamTrack() {
+  const el = $('stamTrack');
+  const v = loadStamTrack();
+  applyStamTrack(v);
+  if (el) {
+    el.value = String(v);
+    el.addEventListener('input', (e) => applyStamTrack(parseFloat(e.target.value)));
+  }
 }
 
 function setScoreModel(m) {

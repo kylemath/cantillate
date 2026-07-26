@@ -116,6 +116,30 @@ STEPS = [
      "(()=>{__t.openFirst(); const key=__t.q('.alsec.open').dataset.key;"
      " __t.q('#tgEnglish').click(); __t.q('#tgEnglish').click();"
      " const now=__t.q('.alsec.open'); return now&&now.dataset.key===key ? 'OK '+key : 'lost the open section';})()"),
+    ("the STA\"M is drawn in the Shlomo hand by default",
+     "(()=>{if(!__t.q('.hebrew.scroll')) __t.q('#tgFont').click();"
+     " const el=__t.q('.hebrew.scroll'); if(!el) return 'no STA\\u201cM text on screen';"
+     " const fam=getComputedStyle(el).fontFamily;"
+     " return /ShlomoStam/.test(fam) ? 'OK '+fam : fam;})()"),
+    ("switching to the Ashkenaz hand changes the script and is remembered",
+     "(()=>{const pick=(h)=>__t.all('#stamHandSeg .sh').find(b=>b.dataset.sh===h).click();"
+     " pick('ashkenaz');"
+     " const fam=getComputedStyle(__t.q('.hebrew.scroll')).fontFamily;"
+     " const saved=localStorage.getItem('cantillate.stamHand');"
+     # Leave the toolbar exactly as we found it for the steps that follow.
+     " pick('shlomo'); __t.q('#tgFont').click();"
+     " return /StamAshkenaz/.test(fam)&&!/Shlomo/.test(fam)&&saved==='ashkenaz'"
+     "   ? 'OK '+fam : `${fam} / saved=${saved}`;})()"),
+    ("the tracking slider opens up the space between STA\"M letters",
+     "(()=>{if(!__t.q('.hebrew.scroll')) __t.q('#tgFont').click();"
+     " const el=__t.q('.hebrew.scroll'), s=__t.q('#stamTrack');"
+     " const px=()=>parseFloat(getComputedStyle(el).letterSpacing)||0;"
+     " const set=(v)=>{s.value=v; s.dispatchEvent(new Event('input'));};"
+     " const before=px(); set('0.1'); const wide=px();"
+     " const saved=parseFloat(localStorage.getItem('cantillate.stamTrack'));"
+     " set('0.05'); __t.q('#tgFont').click();"
+     " return wide>before&&saved===0.1 ? `OK ${before}px -> ${wide}px`"
+     "   : `${before}px -> ${wide}px, saved=${saved}`;})()"),
     ("chain chips are offered inside an aliyah",
      "(()=>{__t.openFirst(); const c=__t.all('.alsec.open .chain').length;"
      " return c>0 ? `OK ${c} chain(s)` : 'no chains offered';})()"),

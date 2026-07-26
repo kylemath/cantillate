@@ -1,5 +1,19 @@
 # Third-party notices
 
+## Bundled fonts
+
+`fonts/FrankRuehlCLM-Medium.ttf`, `fonts/FrankRuehlCLM-Bold.ttf` and
+`fonts/StamAshkenazCLM.ttf` are from the [Culmus Project](https://culmus.sourceforge.io/),
+by Maxim Iorsh and Yoram Gnat, under the GNU General Public License with the font
+exception clause.
+
+`fonts/ShlomoStam.ttf` is Shlomo Stam by Shlomo Orbach (2011), a derivative of
+Ezra SIL SR, under the SIL Open Font License 1.1. The full licence and copyright
+notice — which the OFL requires to travel with the font — is in
+`fonts/ShlomoStam-OFL.txt`, along with a note about the contradictory
+non-commercial boilerplate the build tool left in the binary's Windows name
+record.
+
 ## tikkun.io Torah page data
 
 `data/tikkun-torah-245.json` contains Torah page and line layout data derived

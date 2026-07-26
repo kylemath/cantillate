@@ -40,6 +40,16 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
   text, stored locally in `data/devarim1.json`.
 - **Show / hide aids** — toggle niqqud (vowels) and te'amim (cantillation marks),
   and switch between a **modern Hebrew font** and a **Torah-scroll STA"M font**.
+  A **Hand** control picks which scribal hand the STA"M is drawn in — *Shlomo*
+  (the default: the mem's vav-leg runs down to the base with only a hairline
+  break at the roof, as a sofer writes it) or *Ashkenaz* (the older Culmus font,
+  whose detached mem-leg can read as a kaf plus a vav). It applies everywhere the
+  scroll script appears: verse cards, the Torah column and the tikkun pages.
+  Beside it, a **tracking slider** sets the space between STA"M letters. The
+  notch inside a mem can't be closed — that notch is what keeps it an open mem
+  and not a final one — so opening up the space between *real* letters is what
+  stops a mem reading as a kaf plus a vav. The fixed tikkun pages opt out: their
+  42 lines have no width to spare.
 - **Hear the real chant** — the actual recorded cantor's chanting of the selected
   verse (PocketTorah, CC-BY-SA), with karaoke-style word highlighting. You can
   also **tap any word** (or use "Hear this word") to play just that word, sliced
@@ -505,7 +515,7 @@ data/vaetchanan.json  parashat Va'etchanan text + aliyot (multi-chapter reading)
 data/trope-drills.json  synthetic te'amim exercises (no recording of their own)
 data/trope-index.json   recorded verses as accent sequences (drives the splicer)
 data/trope-shapes.json  how each accent is really sung, measured corpus-wide
-fonts/                Culmus fonts (modern Frank Ruehl + scroll Stam Ashkenaz)
+fonts/                modern Frank Ruehl + two STA"M hands (Shlomo, Ashkenaz)
 scripts/readings.py   registry of buildable readings (add an entry here)
 scripts/build_reading.py  ONE command: text+English+audio+pitch+shapes+register
 scripts/fetch_text.py fetch/refresh text from Sefaria (legacy single-chapter)
@@ -540,7 +550,8 @@ modules that port directly.
   Bundled in `audio/`: Devarim 1–4 (Deut 1) and Va'ethanan 1–7 (Deut 3:23–7:11).
 - **Fonts:** *Frank Ruehl CLM* and *Stam Ashkenaz CLM* from the
   [Culmus project](https://culmus.sourceforge.io) (GPLv2 with a font embedding
-  exception).
+  exception); *Shlomo Stam* by Shlomo Orbach, a derivative of Ezra SIL SR, under
+  the SIL Open Font License 1.1 (see `fonts/ShlomoStam-OFL.txt`).
 - **Cantillation motifs:** stylized approximations of the Ashkenazi Torah reading
   tradition, defined in `js/trope.js` and intended to be refined per tradition.
   They convey the *shape* of each accent; they are not a substitute for a teacher.
