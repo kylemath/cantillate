@@ -1,0 +1,1073 @@
+{
+  "slug": "devarim",
+  "book": {
+    "en": "Deuteronomy",
+    "he": "דברים",
+    "translit": "Devarim"
+  },
+  "multiChapter": true,
+  "ref": "Deuteronomy 1:1-3:22",
+  "heRef": "דברים א׳:א-ג׳:כ״ב",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 1,
+      "v": 1,
+      "ref": "1:1",
+      "text": "אֵ֣לֶּה הַדְּבָרִ֗ים אֲשֶׁ֨ר דִּבֶּ֤ר מֹשֶׁה֙ אֶל־כׇּל־יִשְׂרָאֵ֔ל בְּעֵ֖בֶר הַיַּרְדֵּ֑ן בַּמִּדְבָּ֡ר בָּֽעֲרָבָה֩ מ֨וֹל ס֜וּף בֵּֽין־פָּארָ֧ן וּבֵֽין־תֹּ֛פֶל וְלָבָ֥ן וַחֲצֵרֹ֖ת וְדִ֥י זָהָֽב׃",
+      "en": "THESE are the words which Moshe spoke to all Yisra᾽el on the other side of the Yarden, in the wilderness over against Suf, between Paran, and Tofel, and Lavan, and Ḥażerot, and Di-zahav."
+    },
+    {
+      "n": 2,
+      "c": 1,
+      "v": 2,
+      "ref": "1:2",
+      "text": "אַחַ֨ד עָשָׂ֥ר יוֹם֙ מֵֽחֹרֵ֔ב דֶּ֖רֶךְ הַר־שֵׂעִ֑יר עַ֖ד קָדֵ֥שׁ בַּרְנֵֽעַ׃",
+      "en": "It is eleven days’ journey from Ḥorev by the way of mount Se῾ir to Qadesh-barnea."
+    },
+    {
+      "n": 3,
+      "c": 1,
+      "v": 3,
+      "ref": "1:3",
+      "text": "וַֽיְהִי֙ בְּאַרְבָּעִ֣ים שָׁנָ֔ה בְּעַשְׁתֵּֽי־עָשָׂ֥ר חֹ֖דֶשׁ בְּאֶחָ֣ד לַחֹ֑דֶשׁ דִּבֶּ֤ר מֹשֶׁה֙ אֶל־בְּנֵ֣י יִשְׂרָאֵ֔ל כְּ֠כֹ֠ל אֲשֶׁ֨ר צִוָּ֧ה יְהֹוָ֛ה אֹת֖וֹ אֲלֵהֶֽם׃",
+      "en": "And it came to pass in the fortieth year, in the eleventh month, on the first day of the month, that Moshe spoke to the children of Yisra᾽el, according to all that the Lord had given him in commandment to them;"
+    },
+    {
+      "n": 4,
+      "c": 1,
+      "v": 4,
+      "ref": "1:4",
+      "text": "אַחֲרֵ֣י הַכֹּת֗וֹ אֵ֚ת סִיחֹן֙ מֶ֣לֶךְ הָֽאֱמֹרִ֔י אֲשֶׁ֥ר יוֹשֵׁ֖ב בְּחֶשְׁבּ֑וֹן וְאֵ֗ת ע֚וֹג מֶ֣לֶךְ הַבָּשָׁ֔ן אֲשֶׁר־יוֹשֵׁ֥ב בְּעַשְׁתָּרֹ֖ת בְּאֶדְרֶֽעִי׃",
+      "en": "after he had slain Siĥon the king of the Emori, who dwelt in Ḥeshbon, and ῾Og the king of Bashan, who dwelt at ῾Ashtarot in Edre῾i:"
+    },
+    {
+      "n": 5,
+      "c": 1,
+      "v": 5,
+      "ref": "1:5",
+      "text": "בְּעֵ֥בֶר הַיַּרְדֵּ֖ן בְּאֶ֣רֶץ מוֹאָ֑ב הוֹאִ֣יל מֹשֶׁ֔ה בֵּאֵ֛ר אֶת־הַתּוֹרָ֥ה הַזֹּ֖את לֵאמֹֽר׃",
+      "en": "beyond the Yarden, in the land of Mo᾽av, Moshe began to declare this Tora, saying,"
+    },
+    {
+      "n": 6,
+      "c": 1,
+      "v": 6,
+      "ref": "1:6",
+      "text": "יְהֹוָ֧ה אֱלֹהֵ֛ינוּ דִּבֶּ֥ר אֵלֵ֖ינוּ בְּחֹרֵ֣ב לֵאמֹ֑ר רַב־לָכֶ֥ם שֶׁ֖בֶת בָּהָ֥ר הַזֶּֽה׃",
+      "en": "The Lord our God spoke to us in Ḥorev, saying, You have dwelt long enough in this mountain:"
+    },
+    {
+      "n": 7,
+      "c": 1,
+      "v": 7,
+      "ref": "1:7",
+      "text": "פְּנ֣וּ&thinsp;<b>׀</b> וּסְע֣וּ לָכֶ֗ם וּבֹ֨אוּ הַ֥ר הָֽאֱמֹרִי֮ וְאֶל־כׇּל־שְׁכֵנָיו֒ בָּעֲרָבָ֥ה בָהָ֛ר וּבַשְּׁפֵלָ֥ה וּבַנֶּ֖גֶב וּבְח֣וֹף הַיָּ֑ם אֶ֤רֶץ הַֽכְּנַעֲנִי֙ וְהַלְּבָנ֔וֹן עַד־הַנָּהָ֥ר הַגָּדֹ֖ל נְהַר־פְּרָֽת׃",
+      "en": "turn, and take your journey, and go to the mountain of the Emori, and to all the places near it, in the plain, in the hills, and in the lowland, and in the Negev, and by the sea side, to the land of the Kena῾ani, and the Levanon, as far as the great river, the river Perat."
+    },
+    {
+      "n": 8,
+      "c": 1,
+      "v": 8,
+      "ref": "1:8",
+      "text": "רְאֵ֛ה נָתַ֥תִּי לִפְנֵיכֶ֖ם אֶת־הָאָ֑רֶץ בֹּ֚אוּ וּרְשׁ֣וּ אֶת־הָאָ֔רֶץ אֲשֶׁ֣ר נִשְׁבַּ֣ע יְ֠הֹוָ֠ה לַאֲבֹ֨תֵיכֶ֜ם לְאַבְרָהָ֨ם לְיִצְחָ֤ק וּֽלְיַעֲקֹב֙ לָתֵ֣ת לָהֶ֔ם וּלְזַרְעָ֖ם אַחֲרֵיהֶֽם׃",
+      "en": "Behold, I have set the land before you: go in and possess the land which the Lord swore to your fathers, Avraham, Yiżĥaq, and Ya῾aqov, to give to them and to their seed after them."
+    },
+    {
+      "n": 9,
+      "c": 1,
+      "v": 9,
+      "ref": "1:9",
+      "text": "וָאֹמַ֣ר אֲלֵכֶ֔ם בָּעֵ֥ת הַהִ֖וא לֵאמֹ֑ר לֹא־אוּכַ֥ל לְבַדִּ֖י שְׂאֵ֥ת אֶתְכֶֽם׃",
+      "en": "And I spoke to you at that time, saying, I am not able to bear you myself alone:"
+    },
+    {
+      "n": 10,
+      "c": 1,
+      "v": 10,
+      "ref": "1:10",
+      "text": "יְהֹוָ֥ה אֱלֹהֵיכֶ֖ם הִרְבָּ֣ה אֶתְכֶ֑ם וְהִנְּכֶ֣ם הַיּ֔וֹם כְּכוֹכְבֵ֥י הַשָּׁמַ֖יִם לָרֹֽב׃",
+      "en": "the Lord your God has multiplied you, and, behold, you are this day like the stars of heaven for multitude."
+    },
+    {
+      "n": 11,
+      "c": 1,
+      "v": 11,
+      "ref": "1:11",
+      "text": "יְהֹוָ֞ה אֱלֹהֵ֣י אֲבֽוֹתֵכֶ֗ם יֹסֵ֧ף עֲלֵיכֶ֛ם כָּכֶ֖ם אֶ֣לֶף פְּעָמִ֑ים וִיבָרֵ֣ךְ אֶתְכֶ֔ם כַּאֲשֶׁ֖ר דִּבֶּ֥ר לָכֶֽם׃",
+      "en": "(The Lord God of your fathers make you a thousand times so many more as you are, and bless you, as he has promised you!)"
+    },
+    {
+      "n": 12,
+      "c": 1,
+      "v": 12,
+      "ref": "1:12",
+      "text": "אֵיכָ֥ה אֶשָּׂ֖א לְבַדִּ֑י טׇרְחֲכֶ֥ם וּמַֽשַּׂאֲכֶ֖ם וְרִֽיבְכֶֽם׃",
+      "en": "How can I myself alone bear your care, and your burden, and your strife?"
+    },
+    {
+      "n": 13,
+      "c": 1,
+      "v": 13,
+      "ref": "1:13",
+      "text": "הָב֣וּ לָ֠כֶ֠ם אֲנָשִׁ֨ים חֲכָמִ֧ים וּנְבֹנִ֛ים וִידֻעִ֖ים לְשִׁבְטֵיכֶ֑ם וַאֲשִׂימֵ֖ם בְּרָאשֵׁיכֶֽם׃",
+      "en": "Take wise men, and understanding, and known among your tribes, and I will make them rulers over you."
+    },
+    {
+      "n": 14,
+      "c": 1,
+      "v": 14,
+      "ref": "1:14",
+      "text": "וַֽתַּעֲנ֖וּ אֹתִ֑י וַתֹּ֣אמְר֔וּ טֽוֹב־הַדָּבָ֥ר אֲשֶׁר־דִּבַּ֖רְתָּ לַעֲשֽׂוֹת׃",
+      "en": "And you answered me, and said, The thing which thou hast spoken is good for us to do."
+    },
+    {
+      "n": 15,
+      "c": 1,
+      "v": 15,
+      "ref": "1:15",
+      "text": "וָאֶקַּ֞ח אֶת־רָאשֵׁ֣י שִׁבְטֵיכֶ֗ם אֲנָשִׁ֤ים חֲכָמִים֙ וִֽידֻעִ֔ים וָאֶתֵּ֥ן אוֹתָ֛ם רָאשִׁ֖ים עֲלֵיכֶ֑ם שָׂרֵ֨י אֲלָפִ֜ים וְשָׂרֵ֣י מֵא֗וֹת וְשָׂרֵ֤י חֲמִשִּׁים֙ וְשָׂרֵ֣י עֲשָׂרֹ֔ת וְשֹׁטְרִ֖ים לְשִׁבְטֵיכֶֽם׃",
+      "en": "So I took the chief of your tribes, wise men, and known, and made them heads over you, captains over thousands, and captains over hundreds, and captains over fifties, and captains over tens, and officers among your tribes."
+    },
+    {
+      "n": 16,
+      "c": 1,
+      "v": 16,
+      "ref": "1:16",
+      "text": "וָאֲצַוֶּה֙ אֶת־שֹׁ֣פְטֵיכֶ֔ם בָּעֵ֥ת הַהִ֖וא לֵאמֹ֑ר שָׁמֹ֤עַ בֵּין־אֲחֵיכֶם֙ וּשְׁפַטְתֶּ֣ם צֶ֔דֶק בֵּֽין־אִ֥ישׁ וּבֵין־אָחִ֖יו וּבֵ֥ין גֵּרֽוֹ׃",
+      "en": "And I charged your judges at that time, saying, Hear the causes between your brethren, and judge righteously between every man and his brother, and the stranger that is with him."
+    },
+    {
+      "n": 17,
+      "c": 1,
+      "v": 17,
+      "ref": "1:17",
+      "text": "לֹֽא־תַכִּ֨ירוּ פָנִ֜ים בַּמִּשְׁפָּ֗ט כַּקָּטֹ֤ן כַּגָּדֹל֙ תִּשְׁמָע֔וּן לֹ֤א תָג֙וּרוּ֙ מִפְּנֵי־אִ֔ישׁ כִּ֥י הַמִּשְׁפָּ֖ט לֵאלֹהִ֣ים ה֑וּא וְהַדָּבָר֙ אֲשֶׁ֣ר יִקְשֶׁ֣ה מִכֶּ֔ם תַּקְרִב֥וּן אֵלַ֖י וּשְׁמַעְתִּֽיו׃",
+      "en": "Do not respect persons in judgment; but hear the small as well as the great; do not be afraid of the face of any man; for the judgment is God’s: and the cause that is too hard for you, bring it to me, and I will hear it."
+    },
+    {
+      "n": 18,
+      "c": 1,
+      "v": 18,
+      "ref": "1:18",
+      "text": "וָאֲצַוֶּ֥ה אֶתְכֶ֖ם בָּעֵ֣ת הַהִ֑וא אֵ֥ת כׇּל־הַדְּבָרִ֖ים אֲשֶׁ֥ר תַּעֲשֽׂוּן׃",
+      "en": "And I commanded you at that time all the things which you should do."
+    },
+    {
+      "n": 19,
+      "c": 1,
+      "v": 19,
+      "ref": "1:19",
+      "text": "וַנִּסַּ֣ע מֵחֹרֵ֗ב וַנֵּ֡לֶךְ אֵ֣ת כׇּל־הַמִּדְבָּ֣ר הַגָּדוֹל֩ וְהַנּוֹרָ֨א הַה֜וּא אֲשֶׁ֣ר רְאִיתֶ֗ם דֶּ֚רֶךְ הַ֣ר הָֽאֱמֹרִ֔י כַּאֲשֶׁ֥ר צִוָּ֛ה יְהֹוָ֥ה אֱלֹהֵ֖ינוּ אֹתָ֑נוּ וַנָּבֹ֕א עַ֖ד קָדֵ֥שׁ בַּרְנֵֽעַ׃",
+      "en": "And when we departed from Ḥorev, we went through all that great and terrible wilderness, which you saw; by the way of the mountain of the Emori, as the Lord our God commanded us; and we came to Qadesh-barnea."
+    },
+    {
+      "n": 20,
+      "c": 1,
+      "v": 20,
+      "ref": "1:20",
+      "text": "וָאֹמַ֖ר אֲלֵכֶ֑ם בָּאתֶם֙ עַד־הַ֣ר הָאֱמֹרִ֔י אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֵ֖ינוּ נֹתֵ֥ן לָֽנוּ׃",
+      "en": "And I said to you, You are come to the mountain of the Emori, which the Lord our God gives to us."
+    },
+    {
+      "n": 21,
+      "c": 1,
+      "v": 21,
+      "ref": "1:21",
+      "text": "רְ֠אֵ֠ה נָתַ֨ן יְהֹוָ֧ה אֱלֹהֶ֛יךָ לְפָנֶ֖יךָ אֶת־הָאָ֑רֶץ עֲלֵ֣ה רֵ֗שׁ כַּאֲשֶׁר֩ דִּבֶּ֨ר יְהֹוָ֜ה אֱלֹהֵ֤י אֲבֹתֶ֙יךָ֙ לָ֔ךְ אַל־תִּירָ֖א וְאַל־תֵּחָֽת׃",
+      "en": "Behold, the Lord thy God has set the land before thee: go up and possess it, as the Lord God of thy fathers has said to thee; fear not, nor be discouraged."
+    },
+    {
+      "n": 22,
+      "c": 1,
+      "v": 22,
+      "ref": "1:22",
+      "text": "וַתִּקְרְב֣וּן אֵלַי֮ כֻּלְּכֶם֒ וַתֹּאמְר֗וּ נִשְׁלְחָ֤ה אֲנָשִׁים֙ לְפָנֵ֔ינוּ וְיַחְפְּרוּ־לָ֖נוּ אֶת־הָאָ֑רֶץ וְיָשִׁ֤בוּ אֹתָ֙נוּ֙ דָּבָ֔ר אֶת־הַדֶּ֙רֶךְ֙ אֲשֶׁ֣ר נַעֲלֶה־בָּ֔הּ וְאֵת֙ הֶֽעָרִ֔ים אֲשֶׁ֥ר נָבֹ֖א אֲלֵיהֶֽן׃",
+      "en": "And you came near to me every one of you, and said, We will send men before us, and they shall search us out the land, and bring us back word by what way we must go up, and into what cities we shall come."
+    },
+    {
+      "n": 23,
+      "c": 1,
+      "v": 23,
+      "ref": "1:23",
+      "text": "וַיִּיטַ֥ב בְּעֵינַ֖י הַדָּבָ֑ר וָאֶקַּ֤ח מִכֶּם֙ שְׁנֵ֣ים עָשָׂ֣ר אֲנָשִׁ֔ים אִ֥ישׁ אֶחָ֖ד לַשָּֽׁבֶט׃",
+      "en": "And the saying pleased me well: and I took twelve men of you, one for a tribe:"
+    },
+    {
+      "n": 24,
+      "c": 1,
+      "v": 24,
+      "ref": "1:24",
+      "text": "וַיִּפְנוּ֙ וַיַּעֲל֣וּ הָהָ֔רָה וַיָּבֹ֖אוּ עַד־נַ֣חַל אֶשְׁכֹּ֑ל וַֽיְרַגְּל֖וּ אֹתָֽהּ׃",
+      "en": "and they turned and went up to the mountain, and came to the wadi of Eshkol, and searched it out."
+    },
+    {
+      "n": 25,
+      "c": 1,
+      "v": 25,
+      "ref": "1:25",
+      "text": "וַיִּקְח֤וּ בְיָדָם֙ מִפְּרִ֣י הָאָ֔רֶץ וַיּוֹרִ֖דוּ אֵלֵ֑ינוּ וַיָּשִׁ֨בוּ אֹתָ֤נוּ דָבָר֙ וַיֹּ֣אמְר֔וּ טוֹבָ֣ה הָאָ֔רֶץ אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֵ֖ינוּ נֹתֵ֥ן לָֽנוּ׃",
+      "en": "And they took of the fruit of the land in their hands, and brought it down to us, and brought us back word, and said, It is a good land which the Lord our God gives us."
+    },
+    {
+      "n": 26,
+      "c": 1,
+      "v": 26,
+      "ref": "1:26",
+      "text": "וְלֹ֥א אֲבִיתֶ֖ם לַעֲלֹ֑ת וַתַּמְר֕וּ אֶת־פִּ֥י יְהֹוָ֖ה אֱלֹהֵיכֶֽם׃",
+      "en": "Yet you would not go up, but rebelled against the commandment of the Lord your God:"
+    },
+    {
+      "n": 27,
+      "c": 1,
+      "v": 27,
+      "ref": "1:27",
+      "text": "וַתֵּרָגְנ֤וּ בְאׇהֳלֵיכֶם֙ וַתֹּ֣אמְר֔וּ בְּשִׂנְאַ֤ת יְהֹוָה֙ אֹתָ֔נוּ הוֹצִיאָ֖נוּ מֵאֶ֣רֶץ מִצְרָ֑יִם לָתֵ֥ת אֹתָ֛נוּ בְּיַ֥ד הָאֱמֹרִ֖י לְהַשְׁמִידֵֽנוּ׃",
+      "en": "and you murmured in your tents, and said, Because the Lord hated us, he has brought us forth out of the land of Miżrayim, to deliver us into the hand of the Emori, to destroy us."
+    },
+    {
+      "n": 28,
+      "c": 1,
+      "v": 28,
+      "ref": "1:28",
+      "text": "אָנָ֣ה&thinsp;<b>׀</b> אֲנַ֣חְנוּ עֹלִ֗ים אַחֵ֩ינוּ֩ הֵמַ֨סּוּ אֶת־לְבָבֵ֜נוּ לֵאמֹ֗ר עַ֣ם גָּד֤וֹל וָרָם֙ מִמֶּ֔נּוּ עָרִ֛ים גְּדֹלֹ֥ת וּבְצוּרֹ֖ת בַּשָּׁמָ֑יִם וְגַם־בְּנֵ֥י עֲנָקִ֖ים רָאִ֥ינוּ שָֽׁם׃",
+      "en": "Whither shall we go up? our brethren have made our heart faint, saying, The people are greater and taller than we; the cities are great and fortified up to heaven; and moreover we have seen the sons of the ῾Anaqim there."
+    },
+    {
+      "n": 29,
+      "c": 1,
+      "v": 29,
+      "ref": "1:29",
+      "text": "וָאֹמַ֖ר אֲלֵכֶ֑ם לֹא־תַעַרְצ֥וּן וְלֹא־תִֽירְא֖וּן מֵהֶֽם׃",
+      "en": "Then I said to you, Dread not, neither be afraid of them."
+    },
+    {
+      "n": 30,
+      "c": 1,
+      "v": 30,
+      "ref": "1:30",
+      "text": "יְהֹוָ֤ה אֱלֹֽהֵיכֶם֙ הַהֹלֵ֣ךְ לִפְנֵיכֶ֔ם ה֖וּא יִלָּחֵ֣ם לָכֶ֑ם כְּ֠כֹ֠ל אֲשֶׁ֨ר עָשָׂ֧ה אִתְּכֶ֛ם בְּמִצְרַ֖יִם לְעֵינֵיכֶֽם׃",
+      "en": "The Lord your God who goes before you, he shall fight for you, according to all that he did for you in Miżrayim before your eyes;"
+    },
+    {
+      "n": 31,
+      "c": 1,
+      "v": 31,
+      "ref": "1:31",
+      "text": "וּבַמִּדְבָּר֙ אֲשֶׁ֣ר רָאִ֔יתָ אֲשֶׁ֤ר נְשָׂאֲךָ֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ כַּאֲשֶׁ֥ר יִשָּׂא־אִ֖ישׁ אֶת־בְּנ֑וֹ בְּכׇל־הַדֶּ֙רֶךְ֙ אֲשֶׁ֣ר הֲלַכְתֶּ֔ם עַד־בֹּאֲכֶ֖ם עַד־הַמָּק֥וֹם הַזֶּֽה׃",
+      "en": "and in the wilderness, where thou hast seen how that the Lord thy God bore thee, as a man bears his son, in all the way that you went, until you came to this place."
+    },
+    {
+      "n": 32,
+      "c": 1,
+      "v": 32,
+      "ref": "1:32",
+      "text": "וּבַדָּבָ֖ר הַזֶּ֑ה אֵֽינְכֶם֙ מַאֲמִינִ֔ם בַּיהֹוָ֖ה אֱלֹהֵיכֶֽם׃",
+      "en": "Yet in this thing you did not believe the Lord your God,"
+    },
+    {
+      "n": 33,
+      "c": 1,
+      "v": 33,
+      "ref": "1:33",
+      "text": "הַהֹלֵ֨ךְ לִפְנֵיכֶ֜ם בַּדֶּ֗רֶךְ לָת֥וּר לָכֶ֛ם מָק֖וֹם לַחֲנֹֽתְכֶ֑ם בָּאֵ֣שׁ&thinsp;<b>׀</b> לַ֗יְלָה לַרְאֹֽתְכֶם֙ בַּדֶּ֙רֶךְ֙ אֲשֶׁ֣ר תֵּֽלְכוּ־בָ֔הּ וּבֶעָנָ֖ן יוֹמָֽם׃",
+      "en": "who went in the way before you, to search you out a place to pitch your tents in, in fire by night, to show you by what way you should go, and in a cloud by day."
+    },
+    {
+      "n": 34,
+      "c": 1,
+      "v": 34,
+      "ref": "1:34",
+      "text": "וַיִּשְׁמַ֥ע יְהֹוָ֖ה אֶת־ק֣וֹל דִּבְרֵיכֶ֑ם וַיִּקְצֹ֖ף וַיִּשָּׁבַ֥ע לֵאמֹֽר׃",
+      "en": "And the Lord heard the voice of your words, and was angry, and swore, saying,"
+    },
+    {
+      "n": 35,
+      "c": 1,
+      "v": 35,
+      "ref": "1:35",
+      "text": "אִם־יִרְאֶ֥ה אִישׁ֙ בָּאֲנָשִׁ֣ים הָאֵ֔לֶּה הַדּ֥וֹר הָרָ֖ע הַזֶּ֑ה אֵ֚ת הָאָ֣רֶץ הַטּוֹבָ֔ה אֲשֶׁ֣ר נִשְׁבַּ֔עְתִּי לָתֵ֖ת לַאֲבֹתֵיכֶֽם׃",
+      "en": "Surely not one of these men of this evil generation shall see that good land, which I swore to give to your fathers,"
+    },
+    {
+      "n": 36,
+      "c": 1,
+      "v": 36,
+      "ref": "1:36",
+      "text": "זֽוּלָתִ֞י כָּלֵ֤ב בֶּן־יְפֻנֶּה֙ ה֣וּא יִרְאֶ֔נָּה וְלֽוֹ־אֶתֵּ֧ן אֶת־הָאָ֛רֶץ אֲשֶׁ֥ר דָּֽרַךְ־בָּ֖הּ וּלְבָנָ֑יו יַ֕עַן אֲשֶׁ֥ר מִלֵּ֖א אַחֲרֵ֥י יְהֹוָֽה׃",
+      "en": "save Kalev the son of Yefunne; he shall see it, and to him will I give the land that he has trodden upon, and to his children, because he has wholly followed the Lord."
+    },
+    {
+      "n": 37,
+      "c": 1,
+      "v": 37,
+      "ref": "1:37",
+      "text": "גַּם־בִּי֙ הִתְאַנַּ֣ף יְהֹוָ֔ה בִּגְלַלְכֶ֖ם לֵאמֹ֑ר גַּם־אַתָּ֖ה לֹא־תָבֹ֥א שָֽׁם׃",
+      "en": "Also the Lord was angry with me for your sakes, saying, Thou also shalt not go in there."
+    },
+    {
+      "n": 38,
+      "c": 1,
+      "v": 38,
+      "ref": "1:38",
+      "text": "יְהוֹשֻׁ֤עַ בִּן־נוּן֙ הָעֹמֵ֣ד לְפָנֶ֔יךָ ה֖וּא יָ֣בֹא שָׁ֑מָּה אֹת֣וֹ חַזֵּ֔ק כִּי־ה֖וּא יַנְחִלֶ֥נָּה אֶת־יִשְׂרָאֵֽל׃",
+      "en": "But Yehoshua the son of Nun, who stands before thee, he shall go in there: encourage him: for he shall cause Yisra᾽el to inherit it."
+    },
+    {
+      "n": 39,
+      "c": 1,
+      "v": 39,
+      "ref": "1:39",
+      "text": "וְטַפְּכֶם֩ אֲשֶׁ֨ר אֲמַרְתֶּ֜ם לָבַ֣ז יִהְיֶ֗ה וּ֠בְנֵיכֶ֠ם אֲשֶׁ֨ר לֹא־יָדְע֤וּ הַיּוֹם֙ ט֣וֹב וָרָ֔ע הֵ֖מָּה יָבֹ֣אוּ שָׁ֑מָּה וְלָהֶ֣ם אֶתְּנֶ֔נָּה וְהֵ֖ם יִירָשֽׁוּהָ׃",
+      "en": "And your little ones, concerning whom you said they should be a prey, and your children who in that day had no knowledge of good and evil, they shall go in there, and to them will I give it, and they shall possess it."
+    },
+    {
+      "n": 40,
+      "c": 1,
+      "v": 40,
+      "ref": "1:40",
+      "text": "וְאַתֶּ֖ם פְּנ֣וּ לָכֶ֑ם וּסְע֥וּ הַמִּדְבָּ֖רָה דֶּ֥רֶךְ יַם־סֽוּף׃",
+      "en": "But as for you, turn, and take your journey into the wilderness by the way of the Sea of Suf."
+    },
+    {
+      "n": 41,
+      "c": 1,
+      "v": 41,
+      "ref": "1:41",
+      "text": "וַֽתַּעֲנ֣וּ&thinsp;<b>׀</b> וַתֹּאמְר֣וּ אֵלַ֗י חָטָ֘אנוּ֮ לַיהֹוָה֒ אֲנַ֤חְנוּ נַעֲלֶה֙ וְנִלְחַ֔מְנוּ כְּכֹ֥ל אֲשֶׁר־צִוָּ֖נוּ יְהֹוָ֣ה אֱלֹהֵ֑ינוּ וַֽתַּחְגְּר֗וּ אִ֚ישׁ אֶת־כְּלֵ֣י מִלְחַמְתּ֔וֹ וַתָּהִ֖ינוּ לַעֲלֹ֥ת הָהָֽרָה׃",
+      "en": "Then you answered and said to me, We have sinned against the Lord, we will go up and fight, according to all that the Lord our God commanded us. And you girded on every man his weapons of war, and ventured to go up into the hill."
+    },
+    {
+      "n": 42,
+      "c": 1,
+      "v": 42,
+      "ref": "1:42",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֵלַ֗י אֱמֹ֤ר לָהֶם֙ לֹ֤א תַֽעֲלוּ֙ וְלֹא־תִלָּ֣חֲמ֔וּ כִּ֥י אֵינֶ֖נִּי בְּקִרְבְּכֶ֑ם וְלֹא֙ תִּנָּ֣גְפ֔וּ לִפְנֵ֖י אֹיְבֵיכֶֽם׃",
+      "en": "And the Lord said to me, Say to them, Neither go up, nor fight; for I am not among you; lest you be smitten before your enemies."
+    },
+    {
+      "n": 43,
+      "c": 1,
+      "v": 43,
+      "ref": "1:43",
+      "text": "וָאֲדַבֵּ֥ר אֲלֵיכֶ֖ם וְלֹ֣א שְׁמַעְתֶּ֑ם וַתַּמְרוּ֙ אֶת־פִּ֣י יְהֹוָ֔ה וַתָּזִ֖דוּ וַתַּעֲל֥וּ הָהָֽרָה׃",
+      "en": "So I spoke to you; and you would not hear, but rebelled against the commandment of the Lord, and went presumptuously up into the hill."
+    },
+    {
+      "n": 44,
+      "c": 1,
+      "v": 44,
+      "ref": "1:44",
+      "text": "וַיֵּצֵ֨א הָאֱמֹרִ֜י הַיֹּשֵׁ֨ב בָּהָ֤ר הַהוּא֙ לִקְרַאתְכֶ֔ם וַיִּרְדְּפ֣וּ אֶתְכֶ֔ם כַּאֲשֶׁ֥ר תַּעֲשֶׂ֖ינָה הַדְּבֹרִ֑ים וַֽיַּכְּת֥וּ אֶתְכֶ֛ם בְּשֵׂעִ֖יר עַד־חׇרְמָֽה׃",
+      "en": "And the Emori, who dwelt in that mountain, came out against you, and chased you, as bees do, and beat you down in Se῾ir, as far as Ḥorma."
+    },
+    {
+      "n": 45,
+      "c": 1,
+      "v": 45,
+      "ref": "1:45",
+      "text": "וַתָּשֻׁ֥בוּ וַתִּבְכּ֖וּ לִפְנֵ֣י יְהֹוָ֑ה וְלֹֽא־שָׁמַ֤ע יְהֹוָה֙ בְּקֹ֣לְכֶ֔ם וְלֹ֥א הֶאֱזִ֖ין אֲלֵיכֶֽם׃",
+      "en": "And you returned and wept before the Lord; but the Lord would not hearken to your voice, nor give ear to you."
+    },
+    {
+      "n": 46,
+      "c": 1,
+      "v": 46,
+      "ref": "1:46",
+      "text": "וַתֵּשְׁב֥וּ בְקָדֵ֖שׁ יָמִ֣ים רַבִּ֑ים כַּיָּמִ֖ים אֲשֶׁ֥ר יְשַׁבְתֶּֽם׃",
+      "en": "So you abode in Qadesh many days, according to the days that you abode there."
+    },
+    {
+      "n": 47,
+      "c": 2,
+      "v": 1,
+      "ref": "2:1",
+      "text": "וַנֵּ֜פֶן וַנִּסַּ֤ע הַמִּדְבָּ֙רָה֙ דֶּ֣רֶךְ יַם־ס֔וּף כַּאֲשֶׁ֛ר דִּבֶּ֥ר יְהֹוָ֖ה אֵלָ֑י וַנָּ֥סׇב אֶת־הַר־שֵׂעִ֖יר יָמִ֥ים רַבִּֽים׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Then we turned, and took our journey into the wilderness by the way of the Sea of Suf, as the Lord spoke to me: and we went about mount Se῾ir many days."
+    },
+    {
+      "n": 48,
+      "c": 2,
+      "v": 2,
+      "ref": "2:2",
+      "text": "וַיֹּ֥אמֶר יְהֹוָ֖ה אֵלַ֥י לֵאמֹֽר׃",
+      "en": "And the Lord spoke to me, saying,"
+    },
+    {
+      "n": 49,
+      "c": 2,
+      "v": 3,
+      "ref": "2:3",
+      "text": "רַב־לָכֶ֕ם סֹ֖ב אֶת־הָהָ֣ר הַזֶּ֑ה פְּנ֥וּ לָכֶ֖ם צָפֹֽנָה׃",
+      "en": "You have compassed this mountain long enough: turn northwards."
+    },
+    {
+      "n": 50,
+      "c": 2,
+      "v": 4,
+      "ref": "2:4",
+      "text": "וְאֶת־הָעָם֮ צַ֣ו לֵאמֹר֒ אַתֶּ֣ם עֹֽבְרִ֗ים בִּגְבוּל֙ אֲחֵיכֶ֣ם בְּנֵי־עֵשָׂ֔ו הַיֹּשְׁבִ֖ים בְּשֵׂעִ֑יר וְיִֽירְא֣וּ מִכֶּ֔ם וְנִשְׁמַרְתֶּ֖ם מְאֹֽד׃",
+      "en": "And command the people, saying, You are to pass through the border of your brethren the children of ῾Esav, who dwell in Se῾ir; and they shall be afraid of you: take good heed to yourselves therefore:"
+    },
+    {
+      "n": 51,
+      "c": 2,
+      "v": 5,
+      "ref": "2:5",
+      "text": "אַל־תִּתְגָּר֣וּ בָ֔ם כִּ֠י לֹֽא־אֶתֵּ֤ן לָכֶם֙ מֵֽאַרְצָ֔ם עַ֖ד מִדְרַ֣ךְ כַּף־רָ֑גֶל כִּֽי־יְרֻשָּׁ֣ה לְעֵשָׂ֔ו נָתַ֖תִּי אֶת־הַ֥ר שֵׂעִֽיר׃",
+      "en": "meddle not with them; for I will not give you of their land, no, not so much as a foot breadth; because I have given mount Se῾ir to ῾Esav for a possession."
+    },
+    {
+      "n": 52,
+      "c": 2,
+      "v": 6,
+      "ref": "2:6",
+      "text": "אֹ֣כֶל תִּשְׁבְּר֧וּ מֵֽאִתָּ֛ם בַּכֶּ֖סֶף וַאֲכַלְתֶּ֑ם וְגַם־מַ֜יִם תִּכְר֧וּ מֵאִתָּ֛ם בַּכֶּ֖סֶף וּשְׁתִיתֶֽם׃",
+      "en": "You shall buy food of them for money, that you may eat; and you shall also buy water of them for money, that you may drink."
+    },
+    {
+      "n": 53,
+      "c": 2,
+      "v": 7,
+      "ref": "2:7",
+      "text": "כִּי֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ בֵּֽרַכְךָ֗ בְּכֹל֙ מַעֲשֵׂ֣ה יָדֶ֔ךָ יָדַ֣ע לֶכְתְּךָ֔ אֶת־הַמִּדְבָּ֥ר הַגָּדֹ֖ל הַזֶּ֑ה זֶ֣ה&thinsp;<b>׀</b> אַרְבָּעִ֣ים שָׁנָ֗ה יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ עִמָּ֔ךְ לֹ֥א חָסַ֖רְתָּ דָּבָֽר׃",
+      "en": "For the Lord thy God has blessed thee in all the work of thy hand: he knows thy walking through this great wilderness: these forty years the Lord thy God has been with thee; thou hast lacked nothing."
+    },
+    {
+      "n": 54,
+      "c": 2,
+      "v": 8,
+      "ref": "2:8",
+      "text": "וַֽנַּעֲבֹ֞ר מֵאֵ֧ת אַחֵ֣ינוּ בְנֵי־עֵשָׂ֗ו הַיֹּֽשְׁבִים֙ בְּשֵׂעִ֔יר מִדֶּ֙רֶךְ֙ הָֽעֲרָבָ֔ה מֵאֵילַ֖ת וּמֵעֶצְיֹ֣ן גָּ֑בֶר&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַנֵּ֙פֶן֙ וַֽנַּעֲבֹ֔ר דֶּ֖רֶךְ מִדְבַּ֥ר מוֹאָֽב׃",
+      "en": "And when we passed by from our brethren the children of ῾Esav, who dwelt in Se῾ir, through the way of the ῾Arava from Elat and from ῾Eżyon-gever,    we turned and passed by the way of the wilderness of Mo᾽av."
+    },
+    {
+      "n": 55,
+      "c": 2,
+      "v": 9,
+      "ref": "2:9",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֵלַ֗י אַל־תָּ֙צַר֙ אֶת־מוֹאָ֔ב וְאַל־תִּתְגָּ֥ר בָּ֖ם מִלְחָמָ֑ה כִּ֠י לֹֽא־אֶתֵּ֨ן לְךָ֤ מֵֽאַרְצוֹ֙ יְרֻשָּׁ֔ה כִּ֣י לִבְנֵי־ל֔וֹט נָתַ֥תִּי אֶת־עָ֖ר יְרֻשָּֽׁה׃",
+      "en": "And the Lord said to me, Do not\n\t\t\t\tharass Mo᾽av, nor contend with them in battle: for I will not give thee of their land for a possession; because I have given ῾Ar to the children of Lot for a possession."
+    },
+    {
+      "n": 56,
+      "c": 2,
+      "v": 10,
+      "ref": "2:10",
+      "text": "הָאֵמִ֥ים לְפָנִ֖ים יָ֣שְׁבוּ בָ֑הּ עַ֣ם גָּד֥וֹל וְרַ֛ב וָרָ֖ם כָּעֲנָקִֽים׃",
+      "en": "(The Emim dwelt there in times past, a people great, and many, and tall, like the ῾Anaqim;"
+    },
+    {
+      "n": 57,
+      "c": 2,
+      "v": 11,
+      "ref": "2:11",
+      "text": "רְפָאִ֛ים יֵחָשְׁב֥וּ אַף־הֵ֖ם כָּעֲנָקִ֑ים וְהַמֹּ֣אָבִ֔ים יִקְרְא֥וּ לָהֶ֖ם אֵמִֽים׃",
+      "en": "who also were considered Refa᾽im as the ῾Anaqim; but the Mo᾽avim call them Emim."
+    },
+    {
+      "n": 58,
+      "c": 2,
+      "v": 12,
+      "ref": "2:12",
+      "text": "וּבְשֵׂעִ֞יר יָשְׁב֣וּ הַחֹרִים֮ לְפָנִים֒ וּבְנֵ֧י עֵשָׂ֣ו יִֽירָשׁ֗וּם וַיַּשְׁמִידוּם֙ מִפְּנֵיהֶ֔ם וַיֵּשְׁב֖וּ תַּחְתָּ֑ם כַּאֲשֶׁ֧ר עָשָׂ֣ה יִשְׂרָאֵ֗ל לְאֶ֙רֶץ֙ יְרֻשָּׁת֔וֹ אֲשֶׁר־נָתַ֥ן יְהֹוָ֖ה לָהֶֽם׃",
+      "en": "The Ḥorim also dwelt in Se῾ir beforetime; but the children of ῾Esav succeeded them, and they destroyed them from before them, and dwelt in their place; as Yisra᾽el did to the land of his possession, which the Lord gave to them.)"
+    },
+    {
+      "n": 59,
+      "c": 2,
+      "v": 13,
+      "ref": "2:13",
+      "text": "עַתָּ֗ה קֻ֛מוּ וְעִבְר֥וּ לָכֶ֖ם אֶת־נַ֣חַל זָ֑רֶד וַֽנַּעֲבֹ֖ר אֶת־נַ֥חַל זָֽרֶד׃",
+      "en": "Now rise up, and get you over the wadi Zered. And we went over the wadi Zered."
+    },
+    {
+      "n": 60,
+      "c": 2,
+      "v": 14,
+      "ref": "2:14",
+      "text": "וְהַיָּמִ֞ים אֲשֶׁר־הָלַ֣כְנוּ&thinsp;<b>׀</b> מִקָּדֵ֣שׁ בַּרְנֵ֗עַ עַ֤ד אֲשֶׁר־עָבַ֙רְנוּ֙ אֶת־נַ֣חַל זֶ֔רֶד שְׁלֹשִׁ֥ים וּשְׁמֹנֶ֖ה שָׁנָ֑ה עַד־תֹּ֨ם כׇּל־הַדּ֜וֹר אַנְשֵׁ֤י הַמִּלְחָמָה֙ מִקֶּ֣רֶב הַֽמַּחֲנֶ֔ה כַּאֲשֶׁ֛ר נִשְׁבַּ֥ע יְהֹוָ֖ה לָהֶֽם׃",
+      "en": "And the days in which we came from Qadesh-Barnea, until we were come over the wadi Zered, were thirty eight years; until all the generation of the men of war were wasted out from among the host, as the Lord swore to them."
+    },
+    {
+      "n": 61,
+      "c": 2,
+      "v": 15,
+      "ref": "2:15",
+      "text": "וְגַ֤ם יַד־יְהֹוָה֙ הָ֣יְתָה בָּ֔ם לְהֻמָּ֖ם מִקֶּ֣רֶב הַֽמַּחֲנֶ֑ה עַ֖ד תֻּמָּֽם׃",
+      "en": "For indeed the hand of the Lord was against them, to destroy them from among the host, until they were consumed."
+    },
+    {
+      "n": 62,
+      "c": 2,
+      "v": 16,
+      "ref": "2:16",
+      "text": "וַיְהִ֨י כַאֲשֶׁר־תַּ֜מּוּ כׇּל־אַנְשֵׁ֧י הַמִּלְחָמָ֛ה לָמ֖וּת מִקֶּ֥רֶב הָעָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "So it came to pass, when all the men of war were consumed and dead from among the people,"
+    },
+    {
+      "n": 63,
+      "c": 2,
+      "v": 17,
+      "ref": "2:17",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֵלַ֥י לֵאמֹֽר׃",
+      "en": "that the Lord spoke to me, saying,"
+    },
+    {
+      "n": 64,
+      "c": 2,
+      "v": 18,
+      "ref": "2:18",
+      "text": "אַתָּ֨ה עֹבֵ֥ר הַיּ֛וֹם אֶת־גְּב֥וּל מוֹאָ֖ב אֶת־עָֽר׃",
+      "en": "Thou art to pass over through ῾Ar, the border of Mo᾽av, this day:"
+    },
+    {
+      "n": 65,
+      "c": 2,
+      "v": 19,
+      "ref": "2:19",
+      "text": "וְקָרַבְתָּ֗ מ֚וּל בְּנֵ֣י עַמּ֔וֹן אַל־תְּצֻרֵ֖ם וְאַל־תִּתְגָּ֣ר בָּ֑ם כִּ֣י לֹֽא־אֶ֠תֵּ֠ן מֵאֶ֨רֶץ בְּנֵי־עַמּ֤וֹן לְךָ֙ יְרֻשָּׁ֔ה כִּ֥י לִבְנֵי־ל֖וֹט נְתַתִּ֥יהָ יְרֻשָּֽׁה׃",
+      "en": "and when thou comest near, opposite the children of ῾Ammon, harass them not, nor contend with them: for I will not give thee of the land of the children of ῾Ammon any possession; because I have given it to the children of Lot for a possession."
+    },
+    {
+      "n": 66,
+      "c": 2,
+      "v": 20,
+      "ref": "2:20",
+      "text": "אֶֽרֶץ־רְפָאִ֥ים תֵּחָשֵׁ֖ב אַף־הִ֑וא רְפָאִ֤ים יָֽשְׁבוּ־בָהּ֙ לְפָנִ֔ים וְהָֽעַמֹּנִ֔ים יִקְרְא֥וּ לָהֶ֖ם זַמְזֻמִּֽים׃",
+      "en": "(That also was considered a land of Refa᾽im: Refa᾽im dwelt therein in old time; and the ῾Ammonim call them Zamzummim."
+    },
+    {
+      "n": 67,
+      "c": 2,
+      "v": 21,
+      "ref": "2:21",
+      "text": "עַ֣ם גָּד֥וֹל וְרַ֛ב וָרָ֖ם כָּעֲנָקִ֑ים וַיַּשְׁמִידֵ֤ם יְהֹוָה֙ מִפְּנֵיהֶ֔ם וַיִּירָשֻׁ֖ם וַיֵּשְׁב֥וּ תַחְתָּֽם׃",
+      "en": "A people great, and many, and tall, like the ῾Anaqim; but the Lord destroyed them before them; and they succeeded them, and dwelt in their place:"
+    },
+    {
+      "n": 68,
+      "c": 2,
+      "v": 22,
+      "ref": "2:22",
+      "text": "כַּאֲשֶׁ֤ר עָשָׂה֙ לִבְנֵ֣י עֵשָׂ֔ו הַיֹּשְׁבִ֖ים בְּשֵׂעִ֑יר אֲשֶׁ֨ר הִשְׁמִ֤יד אֶת־הַחֹרִי֙ מִפְּנֵיהֶ֔ם וַיִּֽירָשֻׁם֙ וַיֵּשְׁב֣וּ תַחְתָּ֔ם עַ֖ד הַיּ֥וֹם הַזֶּֽה׃",
+      "en": "as he did to the children of ῾Esav, who dwelt in Se῾ir, when he destroyed the Ḥorim from before them; and they succeeded them, and dwelt in their stead until this very day:"
+    },
+    {
+      "n": 69,
+      "c": 2,
+      "v": 23,
+      "ref": "2:23",
+      "text": "וְהָֽעַוִּ֛ים הַיֹּשְׁבִ֥ים בַּחֲצֵרִ֖ים עַד־עַזָּ֑ה כַּפְתֹּרִים֙ הַיֹּצְאִ֣ים מִכַּפְתֹּ֔ר הִשְׁמִידֻ֖ם וַיֵּשְׁב֥וּ תַחְתָּֽם׃",
+      "en": "and the ῾Avvim who dwelt in Ḥażerim, as far as ῾Azza; Kaftorim who came from Kaftor, destroyed them and dwelt in their stead.)"
+    },
+    {
+      "n": 70,
+      "c": 2,
+      "v": 24,
+      "ref": "2:24",
+      "text": "ק֣וּמוּ סְּע֗וּ וְעִבְרוּ֮ אֶת־נַ֣חַל אַרְנֹן֒ רְאֵ֣ה נָתַ֣תִּי בְ֠יָדְךָ֠ אֶת־סִיחֹ֨ן מֶֽלֶךְ־חֶשְׁבּ֧וֹן הָֽאֱמֹרִ֛י וְאֶת־אַרְצ֖וֹ הָחֵ֣ל רָ֑שׁ וְהִתְגָּ֥ר בּ֖וֹ מִלְחָמָֽה׃",
+      "en": "Rise up, take your journey, and pass over the wadi Arnon: behold, I have given into thy hand Siĥon the Emorite, king of Ḥeshbon, and his land: begin to possess it, and contend with him in battle."
+    },
+    {
+      "n": 71,
+      "c": 2,
+      "v": 25,
+      "ref": "2:25",
+      "text": "הַיּ֣וֹם הַזֶּ֗ה אָחֵל֙ תֵּ֤ת פַּחְדְּךָ֙ וְיִרְאָ֣תְךָ֔ עַל־פְּנֵי֙ הָֽעַמִּ֔ים תַּ֖חַת כׇּל־הַשָּׁמָ֑יִם אֲשֶׁ֤ר יִשְׁמְעוּן֙ שִׁמְעֲךָ֔ וְרָגְז֥וּ וְחָל֖וּ מִפָּנֶֽיךָ׃",
+      "en": "This day will I begin to put the dread of thee and the fear of thee upon the nations that are under the whole heaven, who shall hear report of thee, and shall tremble, and quake because of thee."
+    },
+    {
+      "n": 72,
+      "c": 2,
+      "v": 26,
+      "ref": "2:26",
+      "text": "וָאֶשְׁלַ֤ח מַלְאָכִים֙ מִמִּדְבַּ֣ר קְדֵמ֔וֹת אֶל־סִיח֖וֹן מֶ֣לֶךְ חֶשְׁבּ֑וֹן דִּבְרֵ֥י שָׁל֖וֹם לֵאמֹֽר׃",
+      "en": "And I sent messengers out of the wilderness of Qedemot to Siĥon king of Ḥeshbon with words of peace, saying,"
+    },
+    {
+      "n": 73,
+      "c": 2,
+      "v": 27,
+      "ref": "2:27",
+      "text": "אֶעְבְּרָ֣ה בְאַרְצֶ֔ךָ בַּדֶּ֥רֶךְ בַּדֶּ֖רֶךְ אֵלֵ֑ךְ לֹ֥א אָס֖וּר יָמִ֥ין וּשְׂמֹֽאול׃",
+      "en": "Let me pass through thy land: I will go along by the high way, I will neither turn to the right hand nor to the left."
+    },
+    {
+      "n": 74,
+      "c": 2,
+      "v": 28,
+      "ref": "2:28",
+      "text": "אֹ֣כֶל בַּכֶּ֤סֶף תַּשְׁבִּרֵ֙נִי֙ וְאָכַ֔לְתִּי וּמַ֛יִם בַּכֶּ֥סֶף תִּתֶּן־לִ֖י וְשָׁתִ֑יתִי רַ֖ק אֶעְבְּרָ֥ה בְרַגְלָֽי׃",
+      "en": "Thou shall sell me food for money, that I may eat; and\n\t\t\t\tgive me water for money, that I may drink: only I will pass through with those who follow me;"
+    },
+    {
+      "n": 75,
+      "c": 2,
+      "v": 29,
+      "ref": "2:29",
+      "text": "כַּאֲשֶׁ֨ר עָֽשׂוּ־לִ֜י בְּנֵ֣י עֵשָׂ֗ו הַיֹּֽשְׁבִים֙ בְּשֵׂעִ֔יר וְהַמּ֣וֹאָבִ֔ים הַיֹּשְׁבִ֖ים בְּעָ֑ר עַ֤ד אֲשֶֽׁר־אֶֽעֱבֹר֙ אֶת־הַיַּרְדֵּ֔ן אֶל־הָאָ֕רֶץ אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֵ֖ינוּ נֹתֵ֥ן לָֽנוּ׃",
+      "en": "(as the children of ῾Esav who dwell in Se῾ir, and the Mo᾽avim who dwell in ῾Ar, did to me;) until I shall pass over the Yarden into the land which the Lord our God gives us."
+    },
+    {
+      "n": 76,
+      "c": 2,
+      "v": 30,
+      "ref": "2:30",
+      "text": "וְלֹ֣א אָבָ֗ה סִיחֹן֙ מֶ֣לֶךְ חֶשְׁבּ֔וֹן הַעֲבִרֵ֖נוּ בּ֑וֹ כִּֽי־הִקְשָׁה֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ אֶת־רוּח֗וֹ וְאִמֵּץ֙ אֶת־לְבָב֔וֹ לְמַ֛עַן תִּתּ֥וֹ בְיָדְךָ֖ כַּיּ֥וֹם הַזֶּֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "But Siĥon king of Ḥeshbon would not let us pass by him: for the Lord thy God hardened his spirit, and made his heart obstinate, that he might deliver him into thy hand, as is apparent this day."
+    },
+    {
+      "n": 77,
+      "c": 2,
+      "v": 31,
+      "ref": "2:31",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֵלַ֔י רְאֵ֗ה הַֽחִלֹּ֙תִי֙ תֵּ֣ת לְפָנֶ֔יךָ אֶת־סִיחֹ֖ן וְאֶת־אַרְצ֑וֹ הָחֵ֣ל רָ֔שׁ לָרֶ֖שֶׁת אֶת־אַרְצֽוֹ׃",
+      "en": "And the Lord said to me, Behold, I have begun to give Siĥon and his land before thee: begin to possess, that thou mayst inherit his land."
+    },
+    {
+      "n": 78,
+      "c": 2,
+      "v": 32,
+      "ref": "2:32",
+      "text": "וַיֵּצֵא֩ סִיחֹ֨ן לִקְרָאתֵ֜נוּ ה֧וּא וְכׇל־עַמּ֛וֹ לַמִּלְחָמָ֖ה יָֽהְצָה׃",
+      "en": "Then Siĥon came out against us, he and all his people, to fight at Yahaż."
+    },
+    {
+      "n": 79,
+      "c": 2,
+      "v": 33,
+      "ref": "2:33",
+      "text": "וַֽיִּתְּנֵ֛הוּ יְהֹוָ֥ה אֱלֹהֵ֖ינוּ לְפָנֵ֑ינוּ וַנַּ֥ךְ אֹת֛וֹ וְאֶת־<span class=\"mam-kq-trivial\">בָּנָ֖ו</span> וְאֶת־כׇּל־עַמּֽוֹ׃",
+      "en": "And the Lord our God delivered him before us; and we smote him, and his sons, and all his people."
+    },
+    {
+      "n": 80,
+      "c": 2,
+      "v": 34,
+      "ref": "2:34",
+      "text": "וַנִּלְכֹּ֤ד אֶת־כׇּל־עָרָיו֙ בָּעֵ֣ת הַהִ֔וא וַֽנַּחֲרֵם֙ אֶת־כׇּל־עִ֣יר מְתִ֔ם וְהַנָּשִׁ֖ים וְהַטָּ֑ף לֹ֥א הִשְׁאַ֖רְנוּ שָׂרִֽיד׃",
+      "en": "And we took all his cities at that time, and devoted to destruction every city, the men, and the women, and the little ones; we left none remaining:"
+    },
+    {
+      "n": 81,
+      "c": 2,
+      "v": 35,
+      "ref": "2:35",
+      "text": "רַ֥ק הַבְּהֵמָ֖ה בָּזַ֣זְנוּ לָ֑נוּ וּשְׁלַ֥ל הֶעָרִ֖ים אֲשֶׁ֥ר לָכָֽדְנוּ׃",
+      "en": "only the cattle we took for a prey to ourselves, and the spoil of the cities which we took;"
+    },
+    {
+      "n": 82,
+      "c": 2,
+      "v": 36,
+      "ref": "2:36",
+      "text": "מֵֽעֲרֹעֵ֡ר אֲשֶׁר֩ עַל־שְׂפַת־נַ֨חַל אַרְנֹ֜ן וְהָעִ֨יר אֲשֶׁ֤ר בַּנַּ֙חַל֙ וְעַד־הַגִּלְעָ֔ד לֹ֤א הָֽיְתָה֙ קִרְיָ֔ה אֲשֶׁ֥ר שָׂגְבָ֖ה מִמֶּ֑נּוּ אֶת־הַכֹּ֕ל נָתַ֛ן יְהֹוָ֥ה אֱלֹהֵ֖ינוּ לְפָנֵֽינוּ׃",
+      "en": "From ῾Aro῾er, which is by the edge of the wadi of Arnon, and from the city that is by the wadi, as far as Gil῾ad, there was not one city too strong for us: the Lord our God delivered all to us:"
+    },
+    {
+      "n": 83,
+      "c": 2,
+      "v": 37,
+      "ref": "2:37",
+      "text": "רַ֛ק אֶל־אֶ֥רֶץ בְּנֵי־עַמּ֖וֹן לֹ֣א קָרָ֑בְתָּ כׇּל־יַ֞ד נַ֤חַל יַבֹּק֙ וְעָרֵ֣י הָהָ֔ר וְכֹ֥ל אֲשֶׁר־צִוָּ֖ה יְהֹוָ֥ה אֱלֹהֵֽינוּ׃",
+      "en": "only to the land of the children of ῾Ammon thou didst not come, nor to any place of the torrent of Yabboq, nor to the cities in the mountains, nor to whatever place the Lord our God forbad us."
+    },
+    {
+      "n": 84,
+      "c": 3,
+      "v": 1,
+      "ref": "3:1",
+      "text": "וַנֵּ֣פֶן וַנַּ֔עַל דֶּ֖רֶךְ הַבָּשָׁ֑ן וַיֵּצֵ֣א עוֹג֩ מֶֽלֶךְ־הַבָּשָׁ֨ן לִקְרָאתֵ֜נוּ ה֧וּא וְכׇל־עַמּ֛וֹ לַמִּלְחָמָ֖ה אֶדְרֶֽעִי׃",
+      "en": "Then we turned, and went up the way to Bashan: and ῾Og the king of Bashan came out against us, he and all his people, to battle at Edre῾i."
+    },
+    {
+      "n": 85,
+      "c": 3,
+      "v": 2,
+      "ref": "3:2",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֤ה אֵלַי֙ אַל־תִּירָ֣א אֹת֔וֹ כִּ֣י בְיָדְךָ֞ נָתַ֧תִּי אֹת֛וֹ וְאֶת־כׇּל־עַמּ֖וֹ וְאֶת־אַרְצ֑וֹ וְעָשִׂ֣יתָ לּ֔וֹ כַּאֲשֶׁ֣ר עָשִׂ֗יתָ לְסִיחֹן֙ מֶ֣לֶךְ הָֽאֱמֹרִ֔י אֲשֶׁ֥ר יוֹשֵׁ֖ב בְּחֶשְׁבּֽוֹן׃",
+      "en": "And the Lord said to me, Fear him not: for I will deliver him, and all his people, and his land, into thy hand; and thou shalt do to him as thou didst to Siĥon king of the Emori, who dwelt at Ḥeshbon."
+    },
+    {
+      "n": 86,
+      "c": 3,
+      "v": 3,
+      "ref": "3:3",
+      "text": "וַיִּתֵּן֩ יְהֹוָ֨ה אֱלֹהֵ֜ינוּ בְּיָדֵ֗נוּ גַּ֛ם אֶת־ע֥וֹג מֶֽלֶךְ־הַבָּשָׁ֖ן וְאֶת־כׇּל־עַמּ֑וֹ וַנַּכֵּ֕הוּ עַד־בִּלְתִּ֥י הִשְׁאִֽיר־ל֖וֹ שָׂרִֽיד׃",
+      "en": "So the Lord our God delivered into our hands ῾Og also, the king of Bashan, and all his people: and we smote him until none was left to him remaining."
+    },
+    {
+      "n": 87,
+      "c": 3,
+      "v": 4,
+      "ref": "3:4",
+      "text": "וַנִּלְכֹּ֤ד אֶת־כׇּל־עָרָיו֙ בָּעֵ֣ת הַהִ֔וא לֹ֤א הָֽיְתָה֙ קִרְיָ֔ה אֲשֶׁ֥ר לֹא־לָקַ֖חְנוּ מֵֽאִתָּ֑ם שִׁשִּׁ֥ים עִיר֙ כׇּל־חֶ֣בֶל אַרְגֹּ֔ב מַמְלֶ֥כֶת ע֖וֹג בַּבָּשָֽׁן׃",
+      "en": "And we took all his cities at that time, there was not a city which we took not from them, sixty cities, all the region of Argov, the kingdom of ῾Og in Bashan."
+    },
+    {
+      "n": 88,
+      "c": 3,
+      "v": 5,
+      "ref": "3:5",
+      "text": "כׇּל־אֵ֜לֶּה עָרִ֧ים בְּצֻרֹ֛ת חוֹמָ֥ה גְבֹהָ֖ה דְּלָתַ֣יִם וּבְרִ֑יחַ לְבַ֛ד מֵעָרֵ֥י הַפְּרָזִ֖י הַרְבֵּ֥ה מְאֹֽד׃",
+      "en": "All these cities were fortified with high walls, gates, and bars; besides unwalled towns a great many."
+    },
+    {
+      "n": 89,
+      "c": 3,
+      "v": 6,
+      "ref": "3:6",
+      "text": "וַנַּחֲרֵ֣ם אוֹתָ֔ם כַּאֲשֶׁ֣ר עָשִׂ֔ינוּ לְסִיחֹ֖ן מֶ֣לֶךְ חֶשְׁבּ֑וֹן הַחֲרֵם֙ כׇּל־עִ֣יר מְתִ֔ם הַנָּשִׁ֖ים וְהַטָּֽף׃",
+      "en": "And we devoted them to destruction, as we did to Siĥon king of Ḥeshbon, utterly destroying the men, women, and children, of every city."
+    },
+    {
+      "n": 90,
+      "c": 3,
+      "v": 7,
+      "ref": "3:7",
+      "text": "וְכׇל־הַבְּהֵמָ֛ה וּשְׁלַ֥ל הֶעָרִ֖ים בַּזּ֥וֹנוּ לָֽנוּ׃",
+      "en": "But all the cattle, and the spoil of the cities, we took for a prey to ourselves."
+    },
+    {
+      "n": 91,
+      "c": 3,
+      "v": 8,
+      "ref": "3:8",
+      "text": "וַנִּקַּ֞ח בָּעֵ֤ת הַהִוא֙ אֶת־הָאָ֔רֶץ מִיַּ֗ד שְׁנֵי֙ מַלְכֵ֣י הָאֱמֹרִ֔י אֲשֶׁ֖ר בְּעֵ֣בֶר הַיַּרְדֵּ֑ן מִנַּ֥חַל אַרְנֹ֖ן עַד־הַ֥ר חֶרְמֽוֹן׃",
+      "en": "And we took at that time out of the hand of the two kings of the Emori the land that was on this side of the Yarden, from the wadi of Arnon to mount Ḥermon;"
+    },
+    {
+      "n": 92,
+      "c": 3,
+      "v": 9,
+      "ref": "3:9",
+      "text": "צִידֹנִ֛ים יִקְרְא֥וּ לְחֶרְמ֖וֹן שִׂרְיֹ֑ן וְהָ֣אֱמֹרִ֔י יִקְרְאוּ־ל֖וֹ שְׂנִֽיר׃",
+      "en": "(which Ḥermon the Żidonim call Siryon; and the Emori call it Senir;)"
+    },
+    {
+      "n": 93,
+      "c": 3,
+      "v": 10,
+      "ref": "3:10",
+      "text": "כֹּ֣ל&thinsp;<b>׀</b> עָרֵ֣י הַמִּישֹׁ֗ר וְכׇל־הַגִּלְעָד֙ וְכׇל־הַבָּשָׁ֔ן עַד־סַלְכָ֖ה וְאֶדְרֶ֑עִי עָרֵ֛י מַמְלֶ֥כֶת ע֖וֹג בַּבָּשָֽׁן׃",
+      "en": "all the cities of the plain, and all Gil῾ad, and all Bashan, as far as Salkha and Edre῾i, cities of the kingdom of ῾Og in Bashan."
+    },
+    {
+      "n": 94,
+      "c": 3,
+      "v": 11,
+      "ref": "3:11",
+      "text": "כִּ֣י רַק־ע֞וֹג מֶ֣לֶךְ הַבָּשָׁ֗ן נִשְׁאַר֮ מִיֶּ֣תֶר הָרְפָאִים֒ הִנֵּ֤ה עַרְשׂוֹ֙ עֶ֣רֶשׂ בַּרְזֶ֔ל הֲלֹ֣ה הִ֔וא בְּרַבַּ֖ת בְּנֵ֣י עַמּ֑וֹן תֵּ֧שַׁע אַמּ֣וֹת אׇרְכָּ֗הּ וְאַרְבַּ֥ע אַמּ֛וֹת רׇחְבָּ֖הּ בְּאַמַּת־אִֽישׁ׃",
+      "en": "For only ῾Og king of Bashan remained of the remnant of the Refa᾽im; behold, his bed is a bed of iron; is it not in Rabba of the children of ῾Ammon? nine cubits is the length of it, and four cubits the breadth of it, after the cubit of a man."
+    },
+    {
+      "n": 95,
+      "c": 3,
+      "v": 12,
+      "ref": "3:12",
+      "text": "וְאֶת־הָאָ֧רֶץ הַזֹּ֛את יָרַ֖שְׁנוּ בָּעֵ֣ת הַהִ֑וא מֵעֲרֹעֵ֞ר אֲשֶׁר־עַל־נַ֣חַל אַרְנֹ֗ן וַחֲצִ֤י הַֽר־הַגִּלְעָד֙ וְעָרָ֔יו נָתַ֕תִּי לָרֽאוּבֵנִ֖י וְלַגָּדִֽי׃",
+      "en": "And this land, which we possessed at that time, from ῾Aro῾er, which is by the wadi Arnon, and half mount Gil῾ad, and its cities, I gave to the Re᾽uveni and to the Gadi."
+    },
+    {
+      "n": 96,
+      "c": 3,
+      "v": 13,
+      "ref": "3:13",
+      "text": "וְיֶ֨תֶר הַגִּלְעָ֤ד וְכׇל־הַבָּשָׁן֙ מַמְלֶ֣כֶת ע֔וֹג נָתַ֕תִּי לַחֲצִ֖י שֵׁ֣בֶט הַֽמְנַשֶּׁ֑ה כֹּ֣ל חֶ֤בֶל הָֽאַרְגֹּב֙ לְכׇל־הַבָּשָׁ֔ן הַה֥וּא יִקָּרֵ֖א אֶ֥רֶץ רְפָאִֽים׃",
+      "en": "And the rest of Gil῾ad, and all Bashan, being the kingdom of ῾Og, I gave to the half tribe of Menashshe; all the region of Argov, with all Bashan, which was called the land of Refa᾽im."
+    },
+    {
+      "n": 97,
+      "c": 3,
+      "v": 14,
+      "ref": "3:14",
+      "text": "יָאִ֣יר בֶּן־מְנַשֶּׁ֗ה לָקַח֙ אֶת־כׇּל־חֶ֣בֶל אַרְגֹּ֔ב עַד־גְּב֥וּל הַגְּשׁוּרִ֖י וְהַמַּֽעֲכָתִ֑י וַיִּקְרָא֩ אֹתָ֨ם עַל־שְׁמ֤וֹ אֶת־הַבָּשָׁן֙ חַוֺּ֣ת יָאִ֔יר עַ֖ד הַיּ֥וֹם הַזֶּֽה׃",
+      "en": "Ya᾽ir the son of Menashshe took all the country of Argov as far as the border of the Geshuri and the Ma῾akhati; and called them (that is the Bashan) after his name, Ḥavvot-ya᾽ir, to this day."
+    },
+    {
+      "n": 98,
+      "c": 3,
+      "v": 15,
+      "ref": "3:15",
+      "text": "וּלְמָכִ֖יר נָתַ֥תִּי אֶת־הַגִּלְעָֽד׃",
+      "en": "And I gave Gil῾ad to Makhir."
+    },
+    {
+      "n": 99,
+      "c": 3,
+      "v": 16,
+      "ref": "3:16",
+      "text": "וְלָראוּבֵנִ֨י וְלַגָּדִ֜י נָתַ֤תִּי מִן־הַגִּלְעָד֙ וְעַד־נַ֣חַל אַרְנֹ֔ן תּ֥וֹךְ הַנַּ֖חַל וּגְבֻ֑ל וְעַד֙ יַבֹּ֣ק הַנַּ֔חַל גְּב֖וּל בְּנֵ֥י עַמּֽוֹן׃",
+      "en": "And to the Re᾽uveni and to the Gadi I gave from Gil῾ad to the wadi Arnon, the middle of the wadi as a border, as far as the torrent of Yabboq, which is the border of the children of ῾Ammon;"
+    },
+    {
+      "n": 100,
+      "c": 3,
+      "v": 17,
+      "ref": "3:17",
+      "text": "וְהָֽעֲרָבָ֖ה וְהַיַּרְדֵּ֣ן וּגְבֻ֑ל מִכִּנֶּ֗רֶת וְעַ֨ד יָ֤ם הָֽעֲרָבָה֙ יָ֣ם הַמֶּ֔לַח תַּ֛חַת אַשְׁדֹּ֥ת הַפִּסְגָּ֖ה מִזְרָֽחָה׃",
+      "en": "the ῾Arava also and the Yarden, as a border, from Kinneret as far as the Sea of the ῾Arava, even the Salt Sea, under the slopes of Pisga eastward."
+    },
+    {
+      "n": 101,
+      "c": 3,
+      "v": 18,
+      "ref": "3:18",
+      "text": "וָאֲצַ֣ו אֶתְכֶ֔ם בָּעֵ֥ת הַהִ֖וא לֵאמֹ֑ר יְהֹוָ֣ה אֱלֹהֵיכֶ֗ם נָתַ֨ן לָכֶ֜ם אֶת־הָאָ֤רֶץ הַזֹּאת֙ לְרִשְׁתָּ֔הּ חֲלוּצִ֣ים תַּֽעַבְר֗וּ לִפְנֵ֛י אֲחֵיכֶ֥ם בְּנֵֽי־יִשְׂרָאֵ֖ל כׇּל־בְּנֵי־חָֽיִל׃",
+      "en": "And I commanded you at that time, saying, The Lord your God has given you this land to possess it: pass over armed before your brethren the children of Yisra᾽el, all that are fit for the war."
+    },
+    {
+      "n": 102,
+      "c": 3,
+      "v": 19,
+      "ref": "3:19",
+      "text": "רַ֠ק נְשֵׁיכֶ֣ם וְטַפְּכֶם֮ וּמִקְנֵכֶם֒ יָדַ֕עְתִּי כִּֽי־מִקְנֶ֥ה רַ֖ב לָכֶ֑ם יֵֽשְׁבוּ֙ בְּעָ֣רֵיכֶ֔ם אֲשֶׁ֥ר נָתַ֖תִּי לָכֶֽם׃",
+      "en": "But your wives, and your little ones, and your cattle, (for I know that you have much cattle,) shall abide in your cities which I have given you;"
+    },
+    {
+      "n": 103,
+      "c": 3,
+      "v": 20,
+      "ref": "3:20",
+      "text": "עַ֠ד אֲשֶׁר־יָנִ֨יחַ יְהֹוָ֥ה&thinsp;<small>׀</small>&thinsp;לַֽאֲחֵיכֶם֮ כָּכֶם֒ וְיָרְשׁ֣וּ גַם־הֵ֔ם אֶת־הָאָ֕רֶץ אֲשֶׁ֨ר יְהֹוָ֧ה אֱלֹהֵיכֶ֛ם נֹתֵ֥ן לָהֶ֖ם בְּעֵ֣בֶר הַיַּרְדֵּ֑ן וְשַׁבְתֶּ֗ם אִ֚ישׁ לִֽירֻשָּׁת֔וֹ אֲשֶׁ֥ר נָתַ֖תִּי לָכֶֽם׃",
+      "en": "until the Lord gives rest to your brethren, as well as to you, and until they also possess the land which the Lord our God has given them beyond the Yarden: and then shall you return every man to his possession, which I have given you."
+    },
+    {
+      "n": 104,
+      "c": 3,
+      "v": 21,
+      "ref": "3:21",
+      "text": "וְאֶת־יְהוֹשׁ֣וּעַ צִוֵּ֔יתִי בָּעֵ֥ת הַהִ֖וא לֵאמֹ֑ר עֵינֶ֣יךָ הָרֹאֹ֗ת אֵת֩ כׇּל־אֲשֶׁ֨ר עָשָׂ֜ה יְהֹוָ֤ה אֱלֹהֵיכֶם֙ לִשְׁנֵי֙ הַמְּלָכִ֣ים הָאֵ֔לֶּה כֵּֽן־יַעֲשֶׂ֤ה יְהֹוָה֙ לְכׇל־הַמַּמְלָכ֔וֹת אֲשֶׁ֥ר אַתָּ֖ה עֹבֵ֥ר שָֽׁמָּה׃",
+      "en": "And I commanded Yehoshua at that time, saying, Thy eyes have seen all that the Lord your God has done to these two kings; so shall the Lord do to all the kingdoms into which thou dost pass."
+    },
+    {
+      "n": 105,
+      "c": 3,
+      "v": 22,
+      "ref": "3:22",
+      "text": "לֹ֖א תִּֽירָא֑וּם כִּ֚י יְהֹוָ֣ה אֱלֹֽהֵיכֶ֔ם ה֖וּא הַנִּלְחָ֥ם לָכֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "You shall not fear them: for the Lord your God he shall fight for you."
+    }
+  ],
+  "parashah": {
+    "en": "Devarim",
+    "he": "דְּבָרִים",
+    "translit": "Devarim",
+    "ref": "Deuteronomy 1:1–3:22"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 10,
+        "ref": "1:1–1:10"
+      },
+      {
+        "n": 2,
+        "start": 11,
+        "end": 21,
+        "ref": "1:11–1:21"
+      },
+      {
+        "n": 3,
+        "start": 22,
+        "end": 38,
+        "ref": "1:22–1:38"
+      },
+      {
+        "n": 4,
+        "start": 39,
+        "end": 47,
+        "ref": "1:39–2:1"
+      },
+      {
+        "n": 5,
+        "start": 48,
+        "end": 76,
+        "ref": "2:2–2:30"
+      },
+      {
+        "n": 6,
+        "start": 77,
+        "end": 97,
+        "ref": "2:31–3:14"
+      },
+      {
+        "n": 7,
+        "start": 98,
+        "end": 105,
+        "ref": "3:15–3:22"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "1:1–1:3"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 7,
+          "ref": "1:4–1:7"
+        },
+        {
+          "n": 3,
+          "start": 8,
+          "end": 10,
+          "ref": "1:8–1:10"
+        },
+        {
+          "n": 4,
+          "start": 11,
+          "end": 21,
+          "ref": "1:11–1:21"
+        },
+        {
+          "n": 5,
+          "start": 22,
+          "end": 28,
+          "ref": "1:22–1:28"
+        },
+        {
+          "n": 6,
+          "start": 29,
+          "end": 38,
+          "ref": "1:29–1:38"
+        },
+        {
+          "n": 7,
+          "start": 39,
+          "end": 47,
+          "ref": "1:39–2:1"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 48,
+          "end": 51,
+          "ref": "2:2–2:5"
+        },
+        {
+          "n": 2,
+          "start": 52,
+          "end": 58,
+          "ref": "2:6–2:12"
+        },
+        {
+          "n": 3,
+          "start": 59,
+          "end": 62,
+          "ref": "2:13–2:16"
+        },
+        {
+          "n": 4,
+          "start": 63,
+          "end": 65,
+          "ref": "2:17–2:19"
+        },
+        {
+          "n": 5,
+          "start": 66,
+          "end": 68,
+          "ref": "2:20–2:22"
+        },
+        {
+          "n": 6,
+          "start": 69,
+          "end": 71,
+          "ref": "2:23–2:25"
+        },
+        {
+          "n": 7,
+          "start": 72,
+          "end": 76,
+          "ref": "2:26–2:30"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 77,
+          "end": 80,
+          "ref": "2:31–2:34"
+        },
+        {
+          "n": 2,
+          "start": 81,
+          "end": 83,
+          "ref": "2:35–2:37"
+        },
+        {
+          "n": 3,
+          "start": 84,
+          "end": 86,
+          "ref": "3:1–3:3"
+        },
+        {
+          "n": 4,
+          "start": 87,
+          "end": 90,
+          "ref": "3:4–3:7"
+        },
+        {
+          "n": 5,
+          "start": 91,
+          "end": 94,
+          "ref": "3:8–3:11"
+        },
+        {
+          "n": 6,
+          "start": 95,
+          "end": 97,
+          "ref": "3:12–3:14"
+        },
+        {
+          "n": 7,
+          "start": 98,
+          "end": 105,
+          "ref": "3:15–3:22"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 103,
+        "end": 105,
+        "ref": "3:20–3:22"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 39,
+          "end": 47,
+          "ref": "1:39–2:1"
+        },
+        "2": {
+          "n": "M",
+          "start": 74,
+          "end": 76,
+          "ref": "2:28–2:30"
+        },
+        "3": {
+          "n": "M",
+          "start": 103,
+          "end": 105,
+          "ref": "3:20–3:22"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

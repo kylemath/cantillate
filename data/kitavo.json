@@ -1,0 +1,1209 @@
+{
+  "slug": "kitavo",
+  "book": {
+    "en": "Deuteronomy",
+    "he": "דברים",
+    "translit": "Devarim"
+  },
+  "multiChapter": true,
+  "ref": "Deuteronomy 26:1-29:8",
+  "heRef": "דברים כ״ו:א-כ״ט:ח",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 26,
+      "v": 1,
+      "ref": "26:1",
+      "text": "וְהָיָה֙ כִּֽי־תָב֣וֹא אֶל־הָאָ֔רֶץ אֲשֶׁר֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ נֹתֵ֥ן לְךָ֖ נַחֲלָ֑ה וִֽירִשְׁתָּ֖הּ וְיָשַׁ֥בְתָּ בָּֽהּ׃",
+      "en": "And it shall be, when thou art come in to the land which the Lord thy God gives thee for an inheritance, and dost possess it and dost dwelt therein:"
+    },
+    {
+      "n": 2,
+      "c": 26,
+      "v": 2,
+      "ref": "26:2",
+      "text": "וְלָקַחְתָּ֞ מֵרֵאשִׁ֣ית&thinsp;<b>׀</b> כׇּל־פְּרִ֣י הָאֲדָמָ֗ה אֲשֶׁ֨ר תָּבִ֧יא מֵֽאַרְצְךָ֛ אֲשֶׁ֨ר יְהֹוָ֧ה אֱלֹהֶ֛יךָ נֹתֵ֥ן לָ֖ךְ וְשַׂמְתָּ֣ בַטֶּ֑נֶא וְהָֽלַכְתָּ֙ אֶל־הַמָּק֔וֹם אֲשֶׁ֤ר יִבְחַר֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ לְשַׁכֵּ֥ן שְׁמ֖וֹ שָֽׁם׃",
+      "en": "that thou shalt take of the first of all the fruit of the earth, which thou shalt bring of thy land that the Lord thy God gives thee, and shalt put it in a basket, and shalt go to the place which the Lord thy God shall choose to place his name there."
+    },
+    {
+      "n": 3,
+      "c": 26,
+      "v": 3,
+      "ref": "26:3",
+      "text": "וּבָאתָ֙ אֶל־הַכֹּהֵ֔ן אֲשֶׁ֥ר יִהְיֶ֖ה בַּיָּמִ֣ים הָהֵ֑ם וְאָמַרְתָּ֣ אֵלָ֗יו הִגַּ֤דְתִּי הַיּוֹם֙ לַיהֹוָ֣ה אֱלֹהֶ֔יךָ כִּי־בָ֙אתִי֙ אֶל־הָאָ֔רֶץ אֲשֶׁ֨ר נִשְׁבַּ֧ע יְהֹוָ֛ה לַאֲבֹתֵ֖ינוּ לָ֥תֶת לָֽנוּ׃",
+      "en": "And thou shalt go to the priest that shall be in those days, and say to him, I profess this day to the Lord thy God, that I am come to the country which the Lord swore to our fathers to give us."
+    },
+    {
+      "n": 4,
+      "c": 26,
+      "v": 4,
+      "ref": "26:4",
+      "text": "וְלָקַ֧ח הַכֹּהֵ֛ן הַטֶּ֖נֶא מִיָּדֶ֑ךָ וְהִ֨נִּיח֔וֹ לִפְנֵ֕י מִזְבַּ֖ח יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "And the priest shall take the basket out of thy hand, and set it down before the altar of the Lord thy God."
+    },
+    {
+      "n": 5,
+      "c": 26,
+      "v": 5,
+      "ref": "26:5",
+      "text": "וְעָנִ֨יתָ וְאָמַרְתָּ֜ לִפְנֵ֣י&thinsp;<b>׀</b> יְהֹוָ֣ה אֱלֹהֶ֗יךָ אֲרַמִּי֙ אֹבֵ֣ד אָבִ֔י וַיֵּ֣רֶד מִצְרַ֔יְמָה וַיָּ֥גׇר שָׁ֖ם בִּמְתֵ֣י מְעָ֑ט וַֽיְהִי־שָׁ֕ם לְג֥וֹי גָּד֖וֹל עָצ֥וּם וָרָֽב׃",
+      "en": "And thou shalt speak and say before the Lord thy God, An Arammian nomad was my father, and he went down to Miżrayim, and sojourned there with a few, and became there a nation, great, mighty, and populous:"
+    },
+    {
+      "n": 6,
+      "c": 26,
+      "v": 6,
+      "ref": "26:6",
+      "text": "וַיָּרֵ֧עוּ אֹתָ֛נוּ הַמִּצְרִ֖ים וַיְעַנּ֑וּנוּ וַיִּתְּנ֥וּ עָלֵ֖ינוּ עֲבֹדָ֥ה קָשָֽׁה׃",
+      "en": "and the Miżrim dealt ill with us, and afflicted us, and laid upon us hard bondage:"
+    },
+    {
+      "n": 7,
+      "c": 26,
+      "v": 7,
+      "ref": "26:7",
+      "text": "וַנִּצְעַ֕ק אֶל־יְהֹוָ֖ה אֱלֹהֵ֣י אֲבֹתֵ֑ינוּ וַיִּשְׁמַ֤ע יְהֹוָה֙ אֶת־קֹלֵ֔נוּ וַיַּ֧רְא אֶת־עׇנְיֵ֛נוּ וְאֶת־עֲמָלֵ֖נוּ וְאֶֽת־לַחֲצֵֽנוּ׃",
+      "en": "and when we cried to the Lord God of our fathers, the Lord heard our voice, and looked on our affliction, and our labour, and our oppression:"
+    },
+    {
+      "n": 8,
+      "c": 26,
+      "v": 8,
+      "ref": "26:8",
+      "text": "וַיּוֹצִאֵ֤נוּ יְהֹוָה֙ מִמִּצְרַ֔יִם בְּיָ֤ד חֲזָקָה֙ וּבִזְרֹ֣עַ נְטוּיָ֔ה וּבְמֹרָ֖א גָּדֹ֑ל וּבְאֹת֖וֹת וּבְמֹפְתִֽים׃",
+      "en": "and the Lord brought us out of Miżrayim with a mighty hand, and with an outstretched arm, and with great terribleness, and with signs, and with wonders:"
+    },
+    {
+      "n": 9,
+      "c": 26,
+      "v": 9,
+      "ref": "26:9",
+      "text": "וַיְבִאֵ֖נוּ אֶל־הַמָּק֣וֹם הַזֶּ֑ה וַיִּתֶּן־לָ֙נוּ֙ אֶת־הָאָ֣רֶץ הַזֹּ֔את אֶ֛רֶץ זָבַ֥ת חָלָ֖ב וּדְבָֽשׁ׃",
+      "en": "and he brought us to this place, and gave us this land, a land flowing with milk and honey."
+    },
+    {
+      "n": 10,
+      "c": 26,
+      "v": 10,
+      "ref": "26:10",
+      "text": "וְעַתָּ֗ה הִנֵּ֤ה הֵבֵ֙אתִי֙ אֶת־רֵאשִׁית֙ פְּרִ֣י הָאֲדָמָ֔ה אֲשֶׁר־נָתַ֥תָּה לִּ֖י יְהֹוָ֑ה וְהִנַּחְתּ֗וֹ לִפְנֵי֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ וְהִֽשְׁתַּחֲוִ֔יתָ לִפְנֵ֖י יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "And now, behold, I have brought the firstfruits of the land, which thou, O Lord, hast given me. And thou shalt set it before the Lord thy God, and worship before the Lord thy God:"
+    },
+    {
+      "n": 11,
+      "c": 26,
+      "v": 11,
+      "ref": "26:11",
+      "text": "וְשָׂמַחְתָּ֣ בְכׇל־הַטּ֗וֹב אֲשֶׁ֧ר נָֽתַן־לְךָ֛ יְהֹוָ֥ה אֱלֹהֶ֖יךָ וּלְבֵיתֶ֑ךָ אַתָּה֙ וְהַלֵּוִ֔י וְהַגֵּ֖ר אֲשֶׁ֥ר בְּקִרְבֶּֽךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and thou shalt rejoice in every good thing which the Lord thy God has given thee, and thy house, thou, and the Levite, and the stranger that is among you."
+    },
+    {
+      "n": 12,
+      "c": 26,
+      "v": 12,
+      "ref": "26:12",
+      "text": "כִּ֣י תְכַלֶּ֞ה לַ֠עְשֵׂ֠ר אֶת־כׇּל־מַעְשַׂ֧ר תְּבוּאָתְךָ֛ בַּשָּׁנָ֥ה הַשְּׁלִישִׁ֖ת שְׁנַ֣ת הַֽמַּעֲשֵׂ֑ר וְנָתַתָּ֣ה לַלֵּוִ֗י לַגֵּר֙ לַיָּת֣וֹם וְלָֽאַלְמָנָ֔ה וְאָכְל֥וּ בִשְׁעָרֶ֖יךָ וְשָׂבֵֽעוּ׃",
+      "en": "When thou hast made an end of tithing all the tithes of thy produce in the third year, which is the year of tithing, and hast given it the Levite, the stranger, the fatherless, and the widow, that they may eat within thy gates, and be replete;"
+    },
+    {
+      "n": 13,
+      "c": 26,
+      "v": 13,
+      "ref": "26:13",
+      "text": "וְאָמַרְתָּ֡ לִפְנֵי֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ בִּעַ֧רְתִּי הַקֹּ֣דֶשׁ מִן־הַבַּ֗יִת וְגַ֨ם נְתַתִּ֤יו לַלֵּוִי֙ וְלַגֵּר֙ לַיָּת֣וֹם וְלָאַלְמָנָ֔ה כְּכׇל־מִצְוָתְךָ֖ אֲשֶׁ֣ר צִוִּיתָ֑נִי לֹֽא־עָבַ֥רְתִּי מִמִּצְוֺתֶ֖יךָ וְלֹ֥א שָׁכָֽחְתִּי׃",
+      "en": "then thou shalt say before the Lord thy God, I have removed the hallowed things out of my house, and also have given them to the Levite, and to the stranger, to the fatherless, and to the widow, according to all thy commandments which thou hast commanded me: I have not transgressed thy commandments, neither have I forgotten them:"
+    },
+    {
+      "n": 14,
+      "c": 26,
+      "v": 14,
+      "ref": "26:14",
+      "text": "לֹא־אָכַ֨לְתִּי בְאֹנִ֜י מִמֶּ֗נּוּ וְלֹא־בִעַ֤רְתִּי מִמֶּ֙נּוּ֙ בְּטָמֵ֔א וְלֹא־נָתַ֥תִּי מִמֶּ֖נּוּ לְמֵ֑ת שָׁמַ֗עְתִּי בְּקוֹל֙ יְהֹוָ֣ה אֱלֹהָ֔י עָשִׂ֕יתִי כְּכֹ֖ל אֲשֶׁ֥ר צִוִּיתָֽנִי׃",
+      "en": "I have not eaten of it in my mourning, neither have I consumed any part of it when unclean, nor given of it for the dead: but I have hearkened to the voice of the Lord my God, and have done according to all that thou hast commanded me."
+    },
+    {
+      "n": 15,
+      "c": 26,
+      "v": 15,
+      "ref": "26:15",
+      "text": "הַשְׁקִ֩יפָה֩ מִמְּע֨וֹן קׇדְשְׁךָ֜ מִן־הַשָּׁמַ֗יִם וּבָרֵ֤ךְ אֶֽת־עַמְּךָ֙ אֶת־יִשְׂרָאֵ֔ל וְאֵת֙ הָאֲדָמָ֔ה אֲשֶׁ֥ר נָתַ֖תָּה לָ֑נוּ כַּאֲשֶׁ֤ר נִשְׁבַּ֙עְתָּ֙ לַאֲבֹתֵ֔ינוּ אֶ֛רֶץ זָבַ֥ת חָלָ֖ב וּדְבָֽשׁ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Look down from thy holy habitation, from heaven, and bless thy people Yisra᾽el, and the land which thou hast given us, as thou didst swear to our fathers, a land flowing with milk and honey."
+    },
+    {
+      "n": 16,
+      "c": 26,
+      "v": 16,
+      "ref": "26:16",
+      "text": "הַיּ֣וֹם הַזֶּ֗ה יְהֹוָ֨ה אֱלֹהֶ֜יךָ מְצַוְּךָ֧ לַעֲשׂ֛וֹת אֶת־הַחֻקִּ֥ים הָאֵ֖לֶּה וְאֶת־הַמִּשְׁפָּטִ֑ים וְשָׁמַרְתָּ֤ וְעָשִׂ֙יתָ֙ אוֹתָ֔ם בְּכׇל־לְבָבְךָ֖ וּבְכׇל־נַפְשֶֽׁךָ׃",
+      "en": "This day the Lord thy God\n\t\t\t\thas commanded thee to do these statutes and judgments: thou shalt therefore keep and do them with all thy heart, and with all thy soul."
+    },
+    {
+      "n": 17,
+      "c": 26,
+      "v": 17,
+      "ref": "26:17",
+      "text": "אֶת־יְהֹוָ֥ה הֶאֱמַ֖רְתָּ הַיּ֑וֹם לִהְיוֹת֩ לְךָ֨ לֵֽאלֹהִ֜ים וְלָלֶ֣כֶת בִּדְרָכָ֗יו וְלִשְׁמֹ֨ר חֻקָּ֧יו וּמִצְוֺתָ֛יו וּמִשְׁפָּטָ֖יו וְלִשְׁמֹ֥עַ בְּקֹלֽוֹ׃",
+      "en": "Thou hast avouched the Lord this day to be thy God, and to walk in his ways, and to keep his statutes, and his commandments, and his judgments, and to hearken to his voice:"
+    },
+    {
+      "n": 18,
+      "c": 26,
+      "v": 18,
+      "ref": "26:18",
+      "text": "וַֽיהֹוָ֞ה הֶאֱמִֽירְךָ֣ הַיּ֗וֹם לִהְי֥וֹת לוֹ֙ לְעַ֣ם סְגֻלָּ֔ה כַּאֲשֶׁ֖ר דִּבֶּר־לָ֑ךְ וְלִשְׁמֹ֖ר כׇּל־מִצְוֺתָֽיו׃",
+      "en": "and the Lord has avouched thee this day to be a people for his own possession, as he has promised thee, and that thou shouldst keep all his commandments;"
+    },
+    {
+      "n": 19,
+      "c": 26,
+      "v": 19,
+      "ref": "26:19",
+      "text": "וּֽלְתִתְּךָ֣ עֶלְי֗וֹן עַ֤ל כׇּל־הַגּוֹיִם֙ אֲשֶׁ֣ר עָשָׂ֔ה לִתְהִלָּ֖ה וּלְשֵׁ֣ם וּלְתִפְאָ֑רֶת וְלִֽהְיֹתְךָ֧ עַם־קָדֹ֛שׁ לַיהֹוָ֥ה אֱלֹהֶ֖יךָ כַּאֲשֶׁ֥ר דִּבֵּֽר׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and to make thee high above all nations which he has made, in praise, and in name, and in honour; and that thou mayst be a holy people to the Lord thy God, as he has spoken."
+    },
+    {
+      "n": 20,
+      "c": 27,
+      "v": 1,
+      "ref": "27:1",
+      "text": "וַיְצַ֤ו מֹשֶׁה֙ וְזִקְנֵ֣י יִשְׂרָאֵ֔ל אֶת־הָעָ֖ם לֵאמֹ֑ר שָׁמֹר֙ אֶת־כׇּל־הַמִּצְוָ֔ה אֲשֶׁ֧ר אָנֹכִ֛י מְצַוֶּ֥ה אֶתְכֶ֖ם הַיּֽוֹם׃",
+      "en": "And Moshe with the elders of Yisra᾽el commanded the people, saying, Keep all the commandments which I command you this day."
+    },
+    {
+      "n": 21,
+      "c": 27,
+      "v": 2,
+      "ref": "27:2",
+      "text": "וְהָיָ֗ה בַּיּוֹם֮ אֲשֶׁ֣ר תַּעַבְר֣וּ אֶת־הַיַּרְדֵּן֒ אֶל־הָאָ֕רֶץ אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֶ֖יךָ נֹתֵ֣ן לָ֑ךְ וַהֲקֵמֹתָ֤ לְךָ֙ אֲבָנִ֣ים גְּדֹל֔וֹת וְשַׂדְתָּ֥ אֹתָ֖ם בַּשִּֽׂיד׃",
+      "en": "And it shall be on the day when you shall pass over the Yarden to the land which the Lord thy God gives thee, that thou shalt set thee up great stones, and cover them with plaster:"
+    },
+    {
+      "n": 22,
+      "c": 27,
+      "v": 3,
+      "ref": "27:3",
+      "text": "וְכָתַבְתָּ֣ עֲלֵיהֶ֗ן אֶֽת־כׇּל־דִּבְרֵ֛י הַתּוֹרָ֥ה הַזֹּ֖את בְּעׇבְרֶ֑ךָ לְמַ֡עַן אֲשֶׁר֩ תָּבֹ֨א אֶל־הָאָ֜רֶץ אֲֽשֶׁר־יְהֹוָ֥ה אֱלֹהֶ֣יךָ&thinsp;<b>׀</b> נֹתֵ֣ן לְךָ֗ אֶ֣רֶץ זָבַ֤ת חָלָב֙ וּדְבַ֔שׁ כַּאֲשֶׁ֥ר דִּבֶּ֛ר יְהֹוָ֥ה אֱלֹהֵֽי־אֲבֹתֶ֖יךָ לָֽךְ׃",
+      "en": "and thou shalt write upon them all the words of this Tora, when thou art passed over, that thou mayst go in to the land which the Lord thy God gives thee, a land flowing with milk and honey; as the Lord God of thy fathers has promised thee."
+    },
+    {
+      "n": 23,
+      "c": 27,
+      "v": 4,
+      "ref": "27:4",
+      "text": "וְהָיָה֮ בְּעׇבְרְכֶ֣ם אֶת־הַיַּרְדֵּן֒ תָּקִ֜ימוּ אֶת־הָאֲבָנִ֣ים הָאֵ֗לֶּה אֲשֶׁ֨ר אָנֹכִ֜י מְצַוֶּ֥ה אֶתְכֶ֛ם הַיּ֖וֹם בְּהַ֣ר עֵיבָ֑ל וְשַׂדְתָּ֥ אוֹתָ֖ם בַּשִּֽׂיד׃",
+      "en": "And it shall be when you have gone over the Yarden, that you shall set up these stones, which I command you this day in mount ῾Eval, and thou shalt cover them with plaster."
+    },
+    {
+      "n": 24,
+      "c": 27,
+      "v": 5,
+      "ref": "27:5",
+      "text": "וּבָנִ֤יתָ שָּׁם֙ מִזְבֵּ֔חַ לַיהֹוָ֖ה אֱלֹהֶ֑יךָ מִזְבַּ֣ח אֲבָנִ֔ים לֹא־תָנִ֥יף עֲלֵיהֶ֖ם בַּרְזֶֽל׃",
+      "en": "And there shalt thou build an altar to the Lord thy God, an altar of stones: thou shalt not lift up any iron tool upon them."
+    },
+    {
+      "n": 25,
+      "c": 27,
+      "v": 6,
+      "ref": "27:6",
+      "text": "אֲבָנִ֤ים שְׁלֵמוֹת֙ תִּבְנֶ֔ה אֶת־מִזְבַּ֖ח יְהֹוָ֣ה אֱלֹהֶ֑יךָ וְהַעֲלִ֤יתָ עָלָיו֙ עוֹלֹ֔ת לַיהֹוָ֖ה אֱלֹהֶֽיךָ׃",
+      "en": "Thou shalt build the altar of the Lord thy God of whole stones: and thou shalt offer burnt offerings upon it to the Lord thy God:"
+    },
+    {
+      "n": 26,
+      "c": 27,
+      "v": 7,
+      "ref": "27:7",
+      "text": "וְזָבַחְתָּ֥ שְׁלָמִ֖ים וְאָכַ֣לְתָּ שָּׁ֑ם וְשָׂ֣מַחְתָּ֔ לִפְנֵ֖י יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "and thou shalt offer peace offerings, and shalt eat there, and rejoice before the Lord thy God."
+    },
+    {
+      "n": 27,
+      "c": 27,
+      "v": 8,
+      "ref": "27:8",
+      "text": "וְכָתַבְתָּ֣ עַל־הָאֲבָנִ֗ים אֶֽת־כׇּל־דִּבְרֵ֛י הַתּוֹרָ֥ה הַזֹּ֖את בַּאֵ֥ר הֵיטֵֽב׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And thou shalt write upon the stones all the words of this Tora very plainly."
+    },
+    {
+      "n": 28,
+      "c": 27,
+      "v": 9,
+      "ref": "27:9",
+      "text": "וַיְדַבֵּ֤ר מֹשֶׁה֙ וְהַכֹּהֲנִ֣ים הַלְוִיִּ֔ם אֶ֥ל כׇּל־יִשְׂרָאֵ֖ל לֵאמֹ֑ר הַסְכֵּ֤ת&thinsp;<small>׀</small>&thinsp;וּשְׁמַע֙ יִשְׂרָאֵ֔ל הַיּ֤וֹם הַזֶּה֙ נִהְיֵ֣יתָֽ לְעָ֔ם לַיהֹוָ֖ה אֱלֹהֶֽיךָ׃",
+      "en": "And Moshe and the priests the Levites spoke to all Yisra᾽el saying, Take heed, and hearken, O Yisra᾽el; this day thou art become the people of the Lord thy God."
+    },
+    {
+      "n": 29,
+      "c": 27,
+      "v": 10,
+      "ref": "27:10",
+      "text": "וְשָׁ֣מַעְתָּ֔ בְּק֖וֹל יְהֹוָ֣ה אֱלֹהֶ֑יךָ וְעָשִׂ֤יתָ אֶת־מִצְוֺתָו֙ וְאֶת־חֻקָּ֔יו אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖ הַיּֽוֹם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt therefore obey the voice of the Lord thy God, and do his commandments and his statutes, which I command thee this day."
+    },
+    {
+      "n": 30,
+      "c": 27,
+      "v": 11,
+      "ref": "27:11",
+      "text": "וַיְצַ֤ו מֹשֶׁה֙ אֶת־הָעָ֔ם בַּיּ֥וֹם הַה֖וּא לֵאמֹֽר׃",
+      "en": "And Moshe charged the people the same day, saying,"
+    },
+    {
+      "n": 31,
+      "c": 27,
+      "v": 12,
+      "ref": "27:12",
+      "text": "אֵ֠לֶּה יַֽעַמְד֞וּ לְבָרֵ֤ךְ אֶת־הָעָם֙ עַל־הַ֣ר גְּרִזִ֔ים בְּעׇבְרְכֶ֖ם אֶת־הַיַּרְדֵּ֑ן שִׁמְעוֹן֙ וְלֵוִ֣י וִֽיהוּדָ֔ה וְיִשָּׂשכָ֖ר וְיוֹסֵ֥ף וּבִנְיָמִֽן׃",
+      "en": "These shall stand upon mount Gerizzim to bless the people, when you are come over the Yarden; Shim῾on, and Levi, and Yehuda, and Yissakhar, and Yosef, and Binyamin:"
+    },
+    {
+      "n": 32,
+      "c": 27,
+      "v": 13,
+      "ref": "27:13",
+      "text": "וְאֵ֛לֶּה יַֽעַמְד֥וּ עַל־הַקְּלָלָ֖ה בְּהַ֣ר עֵיבָ֑ל רְאוּבֵן֙ גָּ֣ד וְאָשֵׁ֔ר וּזְבוּלֻ֖ן דָּ֥ן וְנַפְתָּלִֽי׃",
+      "en": "and these shall stand on mount ῾Eval to curse; Re᾽uven, Gad, and Asher, and Zevulun, Dan, and Naftali."
+    },
+    {
+      "n": 33,
+      "c": 27,
+      "v": 14,
+      "ref": "27:14",
+      "text": "וְעָנ֣וּ הַלְוִיִּ֗ם וְאָ֥מְר֛וּ אֶל־כׇּל־אִ֥ישׁ יִשְׂרָאֵ֖ל ק֥וֹל רָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the Levites shall speak, and say to all the men of Yisra᾽el with a loud voice,"
+    },
+    {
+      "n": 34,
+      "c": 27,
+      "v": 15,
+      "ref": "27:15",
+      "text": "אָר֣וּר הָאִ֡ישׁ אֲשֶׁ֣ר יַעֲשֶׂה֩ פֶ֨סֶל וּמַסֵּכָ֜ה תּוֹעֲבַ֣ת יְהֹוָ֗ה מַעֲשֵׂ֛ה יְדֵ֥י חָרָ֖שׁ וְשָׂ֣ם בַּסָּ֑תֶר וְעָנ֧וּ כׇל־הָעָ֛ם וְאָמְר֖וּ אָמֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Cursed be the man that makes any carved or molten idol, an abomination to the Lord, the work of the hands of a craftsman, and sets it up in secret. And all the people shall answer and say, Amen."
+    },
+    {
+      "n": 35,
+      "c": 27,
+      "v": 16,
+      "ref": "27:16",
+      "text": "אָר֕וּר מַקְלֶ֥ה אָבִ֖יו וְאִמּ֑וֹ וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Cursed be he that dishonours his father or his mother. And all the people shall say, Amen."
+    },
+    {
+      "n": 36,
+      "c": 27,
+      "v": 17,
+      "ref": "27:17",
+      "text": "אָר֕וּר מַסִּ֖יג גְּב֣וּל רֵעֵ֑הוּ וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Cursed be he that removes his neighbour’s landmark. And all the people shall say, Amen."
+    },
+    {
+      "n": 37,
+      "c": 27,
+      "v": 18,
+      "ref": "27:18",
+      "text": "אָר֕וּר מַשְׁגֶּ֥ה עִוֵּ֖ר בַּדָּ֑רֶךְ וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Cursed be he that makes the blind to wander out of the way. And all the people shall say, Amen."
+    },
+    {
+      "n": 38,
+      "c": 27,
+      "v": 19,
+      "ref": "27:19",
+      "text": "אָר֗וּר מַטֶּ֛ה מִשְׁפַּ֥ט גֵּר־יָת֖וֹם וְאַלְמָנָ֑ה וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(ספק פרשה סתומה בכתר ארם צובה)</i>",
+      "en": "Cursed be he that perverts the judgment of the stranger, fatherless, and widow. And all the people shall say, Amen."
+    },
+    {
+      "n": 39,
+      "c": 27,
+      "v": 20,
+      "ref": "27:20",
+      "text": "אָר֗וּר שֹׁכֵב֙ עִם־אֵ֣שֶׁת אָבִ֔יו כִּ֥י גִלָּ֖ה כְּנַ֣ף אָבִ֑יו וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Cursed be he that lies with his father’s wife; because he uncovers his father’s skirt. And all the people shall say, Amen."
+    },
+    {
+      "n": 40,
+      "c": 27,
+      "v": 21,
+      "ref": "27:21",
+      "text": "אָר֕וּר שֹׁכֵ֖ב עִם־כׇּל־בְּהֵמָ֑ה וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Cursed be he that lies with any manner of beast. And all the people shall say, Amen."
+    },
+    {
+      "n": 41,
+      "c": 27,
+      "v": 22,
+      "ref": "27:22",
+      "text": "אָר֗וּר שֹׁכֵב֙ עִם־אֲחֹת֔וֹ בַּת־אָבִ֖יו א֣וֹ בַת־אִמּ֑וֹ וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Cursed be he that lies with his sister, the daughter of his father, or the daughter of his mother. And all the people shall say, Amen."
+    },
+    {
+      "n": 42,
+      "c": 27,
+      "v": 23,
+      "ref": "27:23",
+      "text": "אָר֕וּר שֹׁכֵ֖ב עִם־חֹֽתַנְתּ֑וֹ וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Cursed be he that lies with his mother in law. And all the people shall say, Amen."
+    },
+    {
+      "n": 43,
+      "c": 27,
+      "v": 24,
+      "ref": "27:24",
+      "text": "אָר֕וּר מַכֵּ֥ה רֵעֵ֖הוּ בַּסָּ֑תֶר וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Cursed be he that smites his neighbour secretly. And all the people shall say, Amen."
+    },
+    {
+      "n": 44,
+      "c": 27,
+      "v": 25,
+      "ref": "27:25",
+      "text": "אָרוּר֙ לֹקֵ֣חַ שֹׁ֔חַד לְהַכּ֥וֹת נֶ֖פֶשׁ דָּ֣ם נָקִ֑י וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Cursed be he that takes a bribe to slay an innocent person. And all the people shall say, Amen."
+    },
+    {
+      "n": 45,
+      "c": 27,
+      "v": 26,
+      "ref": "27:26",
+      "text": "אָר֗וּר אֲשֶׁ֧ר לֹא־יָקִ֛ים אֶת־דִּבְרֵ֥י הַתּוֹרָֽה־הַזֹּ֖את לַעֲשׂ֣וֹת אוֹתָ֑ם וְאָמַ֥ר כׇּל־הָעָ֖ם אָמֵֽן׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Cursed be he that does not maintain all the words of this Tora to do them. And all the people shall say, Amen."
+    },
+    {
+      "n": 46,
+      "c": 28,
+      "v": 1,
+      "ref": "28:1",
+      "text": "וְהָיָ֗ה אִם־שָׁמ֤וֹעַ תִּשְׁמַע֙ בְּקוֹל֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ לִשְׁמֹ֤ר לַעֲשׂוֹת֙ אֶת־כׇּל־מִצְוֺתָ֔יו אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖ הַיּ֑וֹם וּנְתָ֨נְךָ֜ יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ עֶלְי֔וֹן עַ֖ל כׇּל־גּוֹיֵ֥י הָאָֽרֶץ׃",
+      "en": "And it shall come to pass, if thou shalt hearken diligently to the voice of the Lord thy God, to observe and to do all his commandments which I command thee this day, that the Lord thy God will set thee on high above all the nations of the earth:"
+    },
+    {
+      "n": 47,
+      "c": 28,
+      "v": 2,
+      "ref": "28:2",
+      "text": "וּבָ֧אוּ עָלֶ֛יךָ כׇּל־הַבְּרָכ֥וֹת הָאֵ֖לֶּה וְהִשִּׂיגֻ֑ךָ כִּ֣י תִשְׁמַ֔ע בְּק֖וֹל יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "and all these blessings shall come on thee, and overtake thee, if thou shalt hearken to the voice of the Lord thy God."
+    },
+    {
+      "n": 48,
+      "c": 28,
+      "v": 3,
+      "ref": "28:3",
+      "text": "בָּר֥וּךְ אַתָּ֖ה בָּעִ֑יר וּבָר֥וּךְ אַתָּ֖ה בַּשָּׂדֶֽה׃",
+      "en": "Blessed shalt thou be in the city, and blessed shalt thou be in the field."
+    },
+    {
+      "n": 49,
+      "c": 28,
+      "v": 4,
+      "ref": "28:4",
+      "text": "בָּר֧וּךְ פְּרִֽי־בִטְנְךָ֛ וּפְרִ֥י אַדְמָתְךָ֖ וּפְרִ֣י בְהֶמְתֶּ֑ךָ שְׁגַ֥ר אֲלָפֶ֖יךָ וְעַשְׁתְּר֥וֹת צֹאנֶֽךָ׃",
+      "en": "Blessed shall be the fruit of thy body, and the fruit of thy ground, and the fruit of thy beasts, the increase of thy cattle, and the flocks of thy sheep."
+    },
+    {
+      "n": 50,
+      "c": 28,
+      "v": 5,
+      "ref": "28:5",
+      "text": "בָּר֥וּךְ טַנְאֲךָ֖ וּמִשְׁאַרְתֶּֽךָ׃",
+      "en": "Blessed shall be thy basket and thy store."
+    },
+    {
+      "n": 51,
+      "c": 28,
+      "v": 6,
+      "ref": "28:6",
+      "text": "בָּר֥וּךְ אַתָּ֖ה בְּבֹאֶ֑ךָ וּבָר֥וּךְ אַתָּ֖ה בְּצֵאתֶֽךָ׃",
+      "en": "Blessed shalt thou be when thou comest in, and blessed shalt thou be when thou goest out."
+    },
+    {
+      "n": 52,
+      "c": 28,
+      "v": 7,
+      "ref": "28:7",
+      "text": "יִתֵּ֨ן יְהֹוָ֤ה אֶת־אֹיְבֶ֙יךָ֙ הַקָּמִ֣ים עָלֶ֔יךָ נִגָּפִ֖ים לְפָנֶ֑יךָ בְּדֶ֤רֶךְ אֶחָד֙ יֵצְא֣וּ אֵלֶ֔יךָ וּבְשִׁבְעָ֥ה דְרָכִ֖ים יָנ֥וּסוּ לְפָנֶֽיךָ׃",
+      "en": "The Lord shall cause thy enemies that rise up against thee to be smitten before thy face: they shall come out against thee one way, and flee before thee seven ways."
+    },
+    {
+      "n": 53,
+      "c": 28,
+      "v": 8,
+      "ref": "28:8",
+      "text": "יְצַ֨ו יְהֹוָ֤ה אִתְּךָ֙ אֶת־הַבְּרָכָ֔ה בַּאֲסָמֶ֕יךָ וּבְכֹ֖ל מִשְׁלַ֣ח יָדֶ֑ךָ וּבֵ֣רַכְךָ֔ בָּאָ֕רֶץ אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֶ֖יךָ נֹתֵ֥ן לָֽךְ׃",
+      "en": "The Lord shall command the blessing upon thee in thy barns, and in all that thou settest thy hand unto; and he shall bless thee in the land which the Lord thy God gives thee."
+    },
+    {
+      "n": 54,
+      "c": 28,
+      "v": 9,
+      "ref": "28:9",
+      "text": "יְקִֽימְךָ֨ יְהֹוָ֥ה לוֹ֙ לְעַ֣ם קָד֔וֹשׁ כַּאֲשֶׁ֖ר נִֽשְׁבַּֽע־לָ֑ךְ כִּ֣י תִשְׁמֹ֗ר אֶת־מִצְוֺת֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ וְהָלַכְתָּ֖ בִּדְרָכָֽיו׃",
+      "en": "The Lord shall establish thee a holy people \t\t\t\tto himself, as he has sworn to thee, if thou shalt keep the commandments of the Lord thy God, and walk in his ways."
+    },
+    {
+      "n": 55,
+      "c": 28,
+      "v": 10,
+      "ref": "28:10",
+      "text": "וְרָאוּ֙ כׇּל־עַמֵּ֣י הָאָ֔רֶץ כִּ֛י שֵׁ֥ם יְהֹוָ֖ה נִקְרָ֣א עָלֶ֑יךָ וְיָֽרְא֖וּ מִמֶּֽךָּ׃",
+      "en": "And all people of the earth shall see that thou art called by the name of the Lord; and they shall be afraid of thee."
+    },
+    {
+      "n": 56,
+      "c": 28,
+      "v": 11,
+      "ref": "28:11",
+      "text": "וְהוֹתִרְךָ֤ יְהֹוָה֙ לְטוֹבָ֔ה בִּפְרִ֧י בִטְנְךָ֛ וּבִפְרִ֥י בְהֶמְתְּךָ֖ וּבִפְרִ֣י אַדְמָתֶ֑ךָ עַ֚ל הָאֲדָמָ֔ה אֲשֶׁ֨ר נִשְׁבַּ֧ע יְהֹוָ֛ה לַאֲבֹתֶ֖יךָ לָ֥תֶת לָֽךְ׃",
+      "en": "And the Lord shall make thee plenteous in goods, in the fruit of thy body, and in the fruit of thy cattle, and in the fruit of thy ground, in the land which the Lord swore to thy fathers to give thee."
+    },
+    {
+      "n": 57,
+      "c": 28,
+      "v": 12,
+      "ref": "28:12",
+      "text": "יִפְתַּ֣ח יְהֹוָ֣ה&thinsp;<small>׀</small>&thinsp;לְ֠ךָ֠ אֶת־אוֹצָר֨וֹ הַטּ֜וֹב אֶת־הַשָּׁמַ֗יִם לָתֵ֤ת מְטַֽר־אַרְצְךָ֙ בְּעִתּ֔וֹ וּלְבָרֵ֕ךְ אֵ֖ת כׇּל־מַעֲשֵׂ֣ה יָדֶ֑ךָ וְהִלְוִ֙יתָ֙ גּוֹיִ֣ם רַבִּ֔ים וְאַתָּ֖ה לֹ֥א תִלְוֶֽה׃",
+      "en": "The Lord shall open to thee his good treasure, the heaven, to give the rain to thy land in its season, and to bless all the work of thy hand: and thou shalt lend to many nations, and thou shalt not borrow."
+    },
+    {
+      "n": 58,
+      "c": 28,
+      "v": 13,
+      "ref": "28:13",
+      "text": "וּנְתָֽנְךָ֨ יְהֹוָ֤ה לְרֹאשׁ֙ וְלֹ֣א לְזָנָ֔ב וְהָיִ֙יתָ֙ רַ֣ק לְמַ֔עְלָה וְלֹ֥א תִהְיֶ֖ה לְמָ֑טָּה כִּֽי־תִשְׁמַ֞ע אֶל־מִצְוֺ֣ת&thinsp;<b>׀</b> יְהֹוָ֣ה אֱלֹהֶ֗יךָ אֲשֶׁ֨ר אָנֹכִ֧י מְצַוְּךָ֛ הַיּ֖וֹם לִשְׁמֹ֥ר וְלַעֲשֽׂוֹת׃",
+      "en": "And the Lord shall make thee the head, and not the tail; and thou shalt be above only, and thou shalt not be beneath; if thou hearken to the commandments of the Lord thy God, which I command thee this day, to observe and to do them:"
+    },
+    {
+      "n": 59,
+      "c": 28,
+      "v": 14,
+      "ref": "28:14",
+      "text": "וְלֹ֣א תָס֗וּר מִכׇּל־הַדְּבָרִים֙ אֲשֶׁ֨ר אָנֹכִ֜י מְצַוֶּ֥ה אֶתְכֶ֛ם הַיּ֖וֹם יָמִ֣ין וּשְׂמֹ֑אול לָלֶ֗כֶת אַחֲרֵ֛י אֱלֹהִ֥ים אֲחֵרִ֖ים לְעׇבְדָֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and thou shalt not go aside from any of the words which I command thee this day, to the right hand, or to the left, to go after other gods to serve them."
+    },
+    {
+      "n": 60,
+      "c": 28,
+      "v": 15,
+      "ref": "28:15",
+      "text": "וְהָיָ֗ה אִם־לֹ֤א תִשְׁמַע֙ בְּקוֹל֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ לִשְׁמֹ֤ר לַעֲשׂוֹת֙ אֶת־כׇּל־מִצְוֺתָ֣יו וְחֻקֹּתָ֔יו אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖ הַיּ֑וֹם וּבָ֧אוּ עָלֶ֛יךָ כׇּל־הַקְּלָל֥וֹת הָאֵ֖לֶּה וְהִשִּׂיגֽוּךָ׃",
+      "en": "But it shall come to pass, if thou will not hearken to the voice of the Lord thy God, to observe to do all his commandments and his statutes which I command thee this day: that all these curses shall come upon thee, and overtake thee:"
+    },
+    {
+      "n": 61,
+      "c": 28,
+      "v": 16,
+      "ref": "28:16",
+      "text": "אָר֥וּר אַתָּ֖ה בָּעִ֑יר וְאָר֥וּר אַתָּ֖ה בַּשָּׂדֶֽה׃",
+      "en": "cursed shalt thou be in the city, and cursed shalt thou be in the field."
+    },
+    {
+      "n": 62,
+      "c": 28,
+      "v": 17,
+      "ref": "28:17",
+      "text": "אָר֥וּר טַנְאֲךָ֖ וּמִשְׁאַרְתֶּֽךָ׃",
+      "en": "Cursed shall be thy basket and thy store."
+    },
+    {
+      "n": 63,
+      "c": 28,
+      "v": 18,
+      "ref": "28:18",
+      "text": "אָר֥וּר פְּרִֽי־בִטְנְךָ֖ וּפְרִ֣י אַדְמָתֶ֑ךָ שְׁגַ֥ר אֲלָפֶ֖יךָ וְעַשְׁתְּרֹ֥ת צֹאנֶֽךָ׃",
+      "en": "Cursed shall be the fruit of thy body, and the fruit of thy land, the increase of thy cattle, and the young of thy sheep."
+    },
+    {
+      "n": 64,
+      "c": 28,
+      "v": 19,
+      "ref": "28:19",
+      "text": "אָר֥וּר אַתָּ֖ה בְּבֹאֶ֑ךָ וְאָר֥וּר אַתָּ֖ה בְּצֵאתֶֽךָ׃",
+      "en": "Cursed shalt thou be when thou comest in, and cursed shalt thou be when thou goest out."
+    },
+    {
+      "n": 65,
+      "c": 28,
+      "v": 20,
+      "ref": "28:20",
+      "text": "יְשַׁלַּ֣ח יְהֹוָ֣ה&thinsp;<small>׀</small>&thinsp;בְּ֠ךָ֠ אֶת־הַמְּאֵרָ֤ה אֶת־הַמְּהוּמָה֙ וְאֶת־הַמִּגְעֶ֔רֶת בְּכׇל־מִשְׁלַ֥ח יָדְךָ֖ אֲשֶׁ֣ר תַּעֲשֶׂ֑ה עַ֣ד הִשָּׁמֶדְךָ֤ וְעַד־אֲבׇדְךָ֙ מַהֵ֔ר מִפְּנֵ֛י רֹ֥עַ מַֽעֲלָלֶ֖יךָ אֲשֶׁ֥ר עֲזַבְתָּֽנִי׃",
+      "en": "The Lord shall send upon thee cursing, confusion, and failure, in all that thou settest thy hand to do, until thou art destroyed, and until thou perish quickly: because of the wickedness of thy doings, in that thou hast forsaken me."
+    },
+    {
+      "n": 66,
+      "c": 28,
+      "v": 21,
+      "ref": "28:21",
+      "text": "יַדְבֵּ֧ק יְהֹוָ֛ה בְּךָ֖ אֶת־הַדָּ֑בֶר עַ֚ד כַּלֹּת֣וֹ אֹֽתְךָ֔ מֵעַל֙ הָאֲדָמָ֔ה אֲשֶׁר־אַתָּ֥ה בָא־שָׁ֖מָּה לְרִשְׁתָּֽהּ׃",
+      "en": "The Lord shall make the pestilence cleave to thee, until it consumes thee from off the land, into which thou goest to possess it."
+    },
+    {
+      "n": 67,
+      "c": 28,
+      "v": 22,
+      "ref": "28:22",
+      "text": "יַכְּכָ֣ה יְ֠הֹוָ֠ה בַּשַּׁחֶ֨פֶת וּבַקַּדַּ֜חַת וּבַדַּלֶּ֗קֶת וּבַֽחַרְחֻר֙ וּבַחֶ֔רֶב וּבַשִּׁדָּפ֖וֹן וּבַיֵּרָק֑וֹן וּרְדָפ֖וּךָ עַ֥ד אׇבְדֶֽךָ׃",
+      "en": "The Lord shall smite thee with a consumption, and with a fever, and with an inflammation, and with an extreme burning, and with the sword, and with blasting, and with mildew; and they shall pursue thee until thou perish."
+    },
+    {
+      "n": 68,
+      "c": 28,
+      "v": 23,
+      "ref": "28:23",
+      "text": "וְהָי֥וּ שָׁמֶ֛יךָ אֲשֶׁ֥ר עַל־רֹאשְׁךָ֖ נְחֹ֑שֶׁת וְהָאָ֥רֶץ אֲשֶׁר־תַּחְתֶּ֖יךָ בַּרְזֶֽל׃",
+      "en": "And thy heaven that is over thy head shall be brass, and the earth that is under thee shall be iron."
+    },
+    {
+      "n": 69,
+      "c": 28,
+      "v": 24,
+      "ref": "28:24",
+      "text": "יִתֵּ֧ן יְהֹוָ֛ה אֶת־מְטַ֥ר אַרְצְךָ֖ אָבָ֣ק וְעָפָ֑ר מִן־הַשָּׁמַ֙יִם֙ יֵרֵ֣ד עָלֶ֔יךָ עַ֖ד הִשָּׁמְדָֽךְ׃",
+      "en": "The Lord shall make the rain of thy land powder and dust: from heaven shall it come down upon thee, until thou be destroyed."
+    },
+    {
+      "n": 70,
+      "c": 28,
+      "v": 25,
+      "ref": "28:25",
+      "text": "יִתֶּנְךָ֨ יְהֹוָ֥ה&thinsp;<small>׀</small>&thinsp;נִגָּף֮ לִפְנֵ֣י אֹיְבֶ֒יךָ֒ בְּדֶ֤רֶךְ אֶחָד֙ תֵּצֵ֣א אֵלָ֔יו וּבְשִׁבְעָ֥ה דְרָכִ֖ים תָּנ֣וּס לְפָנָ֑יו וְהָיִ֣יתָ לְזַֽעֲוָ֔ה לְכֹ֖ל מַמְלְכ֥וֹת הָאָֽרֶץ׃",
+      "en": "The Lord shall cause thee to be smitten before thy enemies: thou shalt go out one way against them, and flee seven ways before them: and shalt be a horror to all the kingdoms of the earth."
+    },
+    {
+      "n": 71,
+      "c": 28,
+      "v": 26,
+      "ref": "28:26",
+      "text": "וְהָיְתָ֤ה נִבְלָֽתְךָ֙ לְמַֽאֲכָ֔ל לְכׇל־ע֥וֹף הַשָּׁמַ֖יִם וּלְבֶהֱמַ֣ת הָאָ֑רֶץ וְאֵ֖ין מַחֲרִֽיד׃",
+      "en": "And thy carcass shall be food for all birds of the air, and for the beasts of the earth, and no man shall scare them away."
+    },
+    {
+      "n": 72,
+      "c": 28,
+      "v": 27,
+      "ref": "28:27",
+      "text": "יַכְּכָ֨ה יְהֹוָ֜ה בִּשְׁחִ֤ין מִצְרַ֙יִם֙ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(ובעפלים)</span> <span class=\"mam-kq-q\">[וּבַטְּחֹרִ֔ים]</span></span> וּבַגָּרָ֖ב וּבֶחָ֑רֶס אֲשֶׁ֥ר לֹא־תוּכַ֖ל לְהֵרָפֵֽא׃",
+      "en": "The Lord will smite thee \t\t\t\twith the pox of Miżrayim, and with the emerods, and with the scab, and with the itch, whereof thou canst not be healed."
+    },
+    {
+      "n": 73,
+      "c": 28,
+      "v": 28,
+      "ref": "28:28",
+      "text": "יַכְּכָ֣ה יְהֹוָ֔ה בְּשִׁגָּע֖וֹן וּבְעִוָּר֑וֹן וּבְתִמְה֖וֹן לֵבָֽב׃",
+      "en": "The Lord shall smite thee with madness, and blindness, and astonishment of heart."
+    },
+    {
+      "n": 74,
+      "c": 28,
+      "v": 29,
+      "ref": "28:29",
+      "text": "וְהָיִ֜יתָ מְמַשֵּׁ֣שׁ בַּֽצׇּהֳרַ֗יִם כַּאֲשֶׁ֨ר יְמַשֵּׁ֤שׁ הַֽעִוֵּר֙ בָּאֲפֵלָ֔ה וְלֹ֥א תַצְלִ֖יחַ אֶת־דְּרָכֶ֑יךָ וְהָיִ֜יתָ אַ֣ךְ עָשׁ֧וּק וְגָז֛וּל כׇּל־הַיָּמִ֖ים וְאֵ֥ין מוֹשִֽׁיעַ׃",
+      "en": "And thou shalt grope at noonday, as the blind man gropes in darkness, and thou shalt not prosper in thy ways: and thou shalt be only oppressed and robbed evermore, and no man shall save thee."
+    },
+    {
+      "n": 75,
+      "c": 28,
+      "v": 30,
+      "ref": "28:30",
+      "text": "אִשָּׁ֣ה תְאָרֵ֗שׂ וְאִ֤ישׁ אַחֵר֙ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(ישגלנה)</span> <span class=\"mam-kq-q\">[יִשְׁכָּבֶ֔נָּה]</span></span> בַּ֥יִת תִּבְנֶ֖ה וְלֹא־תֵשֵׁ֣ב בּ֑וֹ כֶּ֥רֶם תִּטַּ֖ע וְלֹ֥א תְחַלְּלֶֽנּוּ׃",
+      "en": "Thou shalt betroth a wife, and another man shall lie with her: thou shalt build a house, and thou shalt not dwell in it: thou shalt plant a vineyard, and shalt not gather its grapes."
+    },
+    {
+      "n": 76,
+      "c": 28,
+      "v": 31,
+      "ref": "28:31",
+      "text": "שׁוֹרְךָ֞ טָב֣וּחַ לְעֵינֶ֗יךָ וְלֹ֣א תֹאכַל֮ מִמֶּ֒נּוּ֒ חֲמֹֽרְךָ֙ גָּז֣וּל מִלְּפָנֶ֔יךָ וְלֹ֥א יָשׁ֖וּב לָ֑ךְ צֹֽאנְךָ֙ נְתֻנ֣וֹת לְאֹיְבֶ֔יךָ וְאֵ֥ין לְךָ֖ מוֹשִֽׁיעַ׃",
+      "en": "Thy ox shall be slaughtered before thy eyes, and thou shalt not eat of it: thy ass shall be violently taken away from before thy face, and shall not be restored to thee: thy sheep shall be given to thy enemies, and thou shalt have none to come to the rescue."
+    },
+    {
+      "n": 77,
+      "c": 28,
+      "v": 32,
+      "ref": "28:32",
+      "text": "בָּנֶ֨יךָ וּבְנֹתֶ֜יךָ נְתֻנִ֨ים לְעַ֤ם אַחֵר֙ וְעֵינֶ֣יךָ רֹא֔וֹת וְכָל֥וֹת אֲלֵיהֶ֖ם כׇּל־הַיּ֑וֹם וְאֵ֥ין לְאֵ֖ל יָדֶֽךָ׃",
+      "en": "Thy sons and thy daughters shall be given to another people, and thy eyes shall look, and fail with longing for them all the day long: and there shall be no might in thy hand."
+    },
+    {
+      "n": 78,
+      "c": 28,
+      "v": 33,
+      "ref": "28:33",
+      "text": "פְּרִ֤י אַדְמָֽתְךָ֙ וְכׇל־יְגִ֣יעֲךָ֔ יֹאכַ֥ל עַ֖ם אֲשֶׁ֣ר לֹא־יָדָ֑עְתָּ וְהָיִ֗יתָ רַ֛ק עָשׁ֥וּק וְרָצ֖וּץ כׇּל־הַיָּמִֽים׃",
+      "en": "The fruit of thy land, and all thy labours, shall a nation which thou knowst not eat up; and thou shalt be only oppressed and crushed always:"
+    },
+    {
+      "n": 79,
+      "c": 28,
+      "v": 34,
+      "ref": "28:34",
+      "text": "וְהָיִ֖יתָ מְשֻׁגָּ֑ע מִמַּרְאֵ֥ה עֵינֶ֖יךָ אֲשֶׁ֥ר תִּרְאֶֽה׃",
+      "en": "so that thou shalt be mad for the sight of thy eyes which thou shalt see."
+    },
+    {
+      "n": 80,
+      "c": 28,
+      "v": 35,
+      "ref": "28:35",
+      "text": "יַכְּכָ֨ה יְהֹוָ֜ה בִּשְׁחִ֣ין רָ֗ע עַל־הַבִּרְכַּ֙יִם֙ וְעַל־הַשֹּׁקַ֔יִם אֲשֶׁ֥ר לֹא־תוּכַ֖ל לְהֵרָפֵ֑א מִכַּ֥ף רַגְלְךָ֖ וְעַ֥ד קׇדְקֳדֶֽךָ׃",
+      "en": "The Lord shall smite thee in the knees, and in the legs, with a festering eruption that cannot be healed, from the sole of thy foot to the top of thy head."
+    },
+    {
+      "n": 81,
+      "c": 28,
+      "v": 36,
+      "ref": "28:36",
+      "text": "יוֹלֵ֨ךְ יְהֹוָ֜ה אֹתְךָ֗ וְאֶֽת־מַלְכְּךָ֙ אֲשֶׁ֣ר תָּקִ֣ים עָלֶ֔יךָ אֶל־גּ֕וֹי אֲשֶׁ֥ר לֹא־יָדַ֖עְתָּ אַתָּ֣ה וַאֲבֹתֶ֑יךָ וְעָבַ֥דְתָּ שָּׁ֛ם אֱלֹהִ֥ים אֲחֵרִ֖ים עֵ֥ץ וָאָֽבֶן׃",
+      "en": "The Lord shall bring thee, and thy king whom thou shalt set over thee, to a nation which neither thou nor thy fathers have known; and there shalt thou serve other gods, of wood and stone."
+    },
+    {
+      "n": 82,
+      "c": 28,
+      "v": 37,
+      "ref": "28:37",
+      "text": "וְהָיִ֣יתָ לְשַׁמָּ֔ה לְמָשָׁ֖ל וְלִשְׁנִינָ֑ה בְּכֹל֙ הָֽעַמִּ֔ים אֲשֶׁר־יְנַהֶגְךָ֥ יְהֹוָ֖ה שָֽׁמָּה׃",
+      "en": "And thou shalt become an astonishment, a proverb, and a byword, among all nations into which the Lord shall lead thee."
+    },
+    {
+      "n": 83,
+      "c": 28,
+      "v": 38,
+      "ref": "28:38",
+      "text": "זֶ֥רַע רַ֖ב תּוֹצִ֣יא הַשָּׂדֶ֑ה וּמְעַ֣ט תֶּאֱסֹ֔ף כִּ֥י יַחְסְלֶ֖נּוּ הָאַרְבֶּֽה׃",
+      "en": "Thou shalt carry much grain out into the field, and shalt gather but little in; for the locust shall consume it."
+    },
+    {
+      "n": 84,
+      "c": 28,
+      "v": 39,
+      "ref": "28:39",
+      "text": "כְּרָמִ֥ים תִּטַּ֖ע וְעָבָ֑דְתָּ וְיַ֤יִן לֹֽא־תִשְׁתֶּה֙ וְלֹ֣א תֶאֱגֹ֔ר כִּ֥י תֹאכְלֶ֖נּוּ הַתֹּלָֽעַת׃",
+      "en": "Thou shalt plant vineyards, and dress them, but shalt neither drink of the wine, nor gather the grapes; for the worms shall eat them."
+    },
+    {
+      "n": 85,
+      "c": 28,
+      "v": 40,
+      "ref": "28:40",
+      "text": "זֵיתִ֛ים יִהְי֥וּ לְךָ֖ בְּכׇל־גְּבוּלֶ֑ךָ וְשֶׁ֙מֶן֙ לֹ֣א תָס֔וּךְ כִּ֥י יִשַּׁ֖ל זֵיתֶֽךָ׃",
+      "en": "Thou shalt have olive trees throughout all thy borders, but thou shalt not anoint thyself with the oil; for thy olive shall cast its fruit."
+    },
+    {
+      "n": 86,
+      "c": 28,
+      "v": 41,
+      "ref": "28:41",
+      "text": "בָּנִ֥ים וּבָנ֖וֹת תּוֹלִ֑יד וְלֹא־יִהְי֣וּ לָ֔ךְ כִּ֥י יֵלְכ֖וּ בַּשֶּֽׁבִי׃",
+      "en": "Thou shalt beget sons and daughters, but thou shalt not enjoy them; for they shall go into captivity."
+    },
+    {
+      "n": 87,
+      "c": 28,
+      "v": 42,
+      "ref": "28:42",
+      "text": "כׇּל־עֵצְךָ֖ וּפְרִ֣י אַדְמָתֶ֑ךָ יְיָרֵ֖שׁ הַצְּלָצַֽל׃",
+      "en": "All thy trees and fruit of thy land shall the beetle consume."
+    },
+    {
+      "n": 88,
+      "c": 28,
+      "v": 43,
+      "ref": "28:43",
+      "text": "הַגֵּר֙ אֲשֶׁ֣ר בְּקִרְבְּךָ֔ יַעֲלֶ֥ה עָלֶ֖יךָ מַ֣עְלָה מָּ֑עְלָה וְאַתָּ֥ה תֵרֵ֖ד מַ֥טָּה מָּֽטָּה׃",
+      "en": "The stranger that is in the midst of thee shall get up above thee very high; and thou shalt come down very low."
+    },
+    {
+      "n": 89,
+      "c": 28,
+      "v": 44,
+      "ref": "28:44",
+      "text": "ה֣וּא יַלְוְךָ֔ וְאַתָּ֖ה לֹ֣א תַלְוֶ֑נּוּ ה֚וּא יִהְיֶ֣ה לְרֹ֔אשׁ וְאַתָּ֖ה תִּֽהְיֶ֥ה לְזָנָֽב׃",
+      "en": "He shall lend to thee, and thou shalt not lend to him: he shall be the head, and thou shalt be the tail."
+    },
+    {
+      "n": 90,
+      "c": 28,
+      "v": 45,
+      "ref": "28:45",
+      "text": "וּבָ֨אוּ עָלֶ֜יךָ כׇּל־הַקְּלָל֣וֹת הָאֵ֗לֶּה וּרְדָפ֙וּךָ֙ וְהִשִּׂיג֔וּךָ עַ֖ד הִשָּׁמְדָ֑ךְ כִּי־לֹ֣א שָׁמַ֗עְתָּ בְּקוֹל֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ לִשְׁמֹ֛ר מִצְוֺתָ֥יו וְחֻקֹּתָ֖יו אֲשֶׁ֥ר צִוָּֽךְ׃",
+      "en": "Moreover all these curses shall come upon thee, and shall pursue thee, and overtake thee, till thou be destroyed; because thou wouldst not hearken to the voice of the Lord thy God, to keep his commandments and his statutes which he commanded thee:"
+    },
+    {
+      "n": 91,
+      "c": 28,
+      "v": 46,
+      "ref": "28:46",
+      "text": "וְהָי֣וּ בְךָ֔ לְא֖וֹת וּלְמוֹפֵ֑ת וּֽבְזַרְעֲךָ֖ עַד־עוֹלָֽם׃",
+      "en": "and they shall be upon thee for a sign and for a wonder, and upon thy seed for ever."
+    },
+    {
+      "n": 92,
+      "c": 28,
+      "v": 47,
+      "ref": "28:47",
+      "text": "תַּ֗חַת אֲשֶׁ֤ר לֹא־עָבַ֙דְתָּ֙ אֶת־יְהֹוָ֣ה אֱלֹהֶ֔יךָ בְּשִׂמְחָ֖ה וּבְט֣וּב לֵבָ֑ב מֵרֹ֖ב כֹּֽל׃",
+      "en": "Because thou wouldst not serve the Lord thy God with joyfulness, and with gladness of heart, for the abundance of all things;"
+    },
+    {
+      "n": 93,
+      "c": 28,
+      "v": 48,
+      "ref": "28:48",
+      "text": "וְעָבַדְתָּ֣ אֶת־אֹיְבֶ֗יךָ אֲשֶׁ֨ר יְשַׁלְּחֶ֤נּוּ יְהֹוָה֙ בָּ֔ךְ בְּרָעָ֧ב וּבְצָמָ֛א וּבְעֵירֹ֖ם וּבְחֹ֣סֶר כֹּ֑ל וְנָתַ֞ן עֹ֤ל בַּרְזֶל֙ עַל־צַוָּארֶ֔ךָ עַ֥ד הִשְׁמִיד֖וֹ אֹתָֽךְ׃",
+      "en": "therefore shalt thou serve thy enemies which the Lord \t\t\t\tshall send against thee, in hunger, and in thirst, and in nakedness, and in want of all things: and he shall put a yoke of iron upon thy neck, until he have destroyed thee."
+    },
+    {
+      "n": 94,
+      "c": 28,
+      "v": 49,
+      "ref": "28:49",
+      "text": "יִשָּׂ֣א יְהֹוָה֩ עָלֶ֨יךָ גּ֤וֹי מֵֽרָחֹק֙ מִקְצֵ֣ה הָאָ֔רֶץ כַּאֲשֶׁ֥ר יִדְאֶ֖ה הַנָּ֑שֶׁר גּ֕וֹי אֲשֶׁ֥ר לֹא־תִשְׁמַ֖ע לְשֹׁנֽוֹ׃",
+      "en": "The Lord shall bring a nation against thee from far, from the end of the earth, which will swoop down like the vulture; a nation whose tongue thou shalt not understand;"
+    },
+    {
+      "n": 95,
+      "c": 28,
+      "v": 50,
+      "ref": "28:50",
+      "text": "גּ֖וֹי עַ֣ז פָּנִ֑ים אֲשֶׁ֨ר לֹא־יִשָּׂ֤א פָנִים֙ לְזָקֵ֔ן וְנַ֖עַר לֹ֥א יָחֹֽן׃",
+      "en": "a nation of fierce countenance, which shall not respect the person of the old, nor show favour to the young:"
+    },
+    {
+      "n": 96,
+      "c": 28,
+      "v": 51,
+      "ref": "28:51",
+      "text": "וְ֠אָכַ֠ל פְּרִ֨י בְהֶמְתְּךָ֥ וּפְרִֽי־אַדְמָתְךָ֮ עַ֣ד הִשָּׁמְדָךְ֒ אֲשֶׁ֨ר לֹא־יַשְׁאִ֜יר לְךָ֗ דָּגָן֙ תִּיר֣וֹשׁ וְיִצְהָ֔ר שְׁגַ֥ר אֲלָפֶ֖יךָ וְעַשְׁתְּרֹ֣ת צֹאנֶ֑ךָ עַ֥ד הַאֲבִיד֖וֹ אֹתָֽךְ׃",
+      "en": "and he shall eat the fruit of thy cattle, and the fruit of thy land, until thou be destroyed: such a one as shall not leave thee either corn, wine, or oil, or the increase of thy cattle, or the young of thy sheep, until he have destroyed thee."
+    },
+    {
+      "n": 97,
+      "c": 28,
+      "v": 52,
+      "ref": "28:52",
+      "text": "וְהֵצַ֨ר לְךָ֜ בְּכׇל־שְׁעָרֶ֗יךָ עַ֣ד רֶ֤דֶת חֹמֹתֶ֙יךָ֙ הַגְּבֹהֹ֣ת וְהַבְּצֻר֔וֹת אֲשֶׁ֥ר אַתָּ֛ה בֹּטֵ֥חַ בָּהֵ֖ן בְּכׇל־אַרְצֶ֑ךָ וְהֵצַ֤ר לְךָ֙ בְּכׇל־שְׁעָרֶ֔יךָ בְּכׇ֨ל־אַרְצְךָ֔ אֲשֶׁ֥ר נָתַ֛ן יְהֹוָ֥ה אֱלֹהֶ֖יךָ לָֽךְ׃",
+      "en": "And he shall besiege thee in all thy gates, until thy high and fortified walls come down, wherein thou didst trust, throughout all thy land: and he shall besiege thee in all thy gates throughout all thy land, which the Lord thy God has given thee."
+    },
+    {
+      "n": 98,
+      "c": 28,
+      "v": 53,
+      "ref": "28:53",
+      "text": "וְאָכַלְתָּ֣ פְרִֽי־בִטְנְךָ֗ בְּשַׂ֤ר בָּנֶ֙יךָ֙ וּבְנֹתֶ֔יךָ אֲשֶׁ֥ר נָתַן־לְךָ֖ יְהֹוָ֣ה אֱלֹהֶ֑יךָ בְּמָצוֹר֙ וּבְמָצ֔וֹק אֲשֶׁר־יָצִ֥יק לְךָ֖ אֹיְבֶֽךָ׃",
+      "en": "And thou shalt eat the fruit of thy own body, the flesh of thy sons, and of thy daughters, which the Lord thy God has given thee, in the siege, and in the distress, with which thy enemy shall distress thee:"
+    },
+    {
+      "n": 99,
+      "c": 28,
+      "v": 54,
+      "ref": "28:54",
+      "text": "הָאִישׁ֙ הָרַ֣ךְ בְּךָ֔ וְהֶעָנֹ֖ג מְאֹ֑ד תֵּרַ֨ע עֵינ֤וֹ בְאָחִיו֙ וּבְאֵ֣שֶׁת חֵיק֔וֹ וּבְיֶ֥תֶר בָּנָ֖יו אֲשֶׁ֥ר יוֹתִֽיר׃",
+      "en": "the man that is tender among you, and very delicate, his eye shall be evil towards his brother, and towards the wife of his bosom, and towards the remnant of his children which he shall leave:"
+    },
+    {
+      "n": 100,
+      "c": 28,
+      "v": 55,
+      "ref": "28:55",
+      "text": "מִתֵּ֣ת&thinsp;<b>׀</b> לְאַחַ֣ד מֵהֶ֗ם מִבְּשַׂ֤ר בָּנָיו֙ אֲשֶׁ֣ר יֹאכֵ֔ל מִבְּלִ֥י הִשְׁאִֽיר־ל֖וֹ כֹּ֑ל בְּמָצוֹר֙ וּבְמָצ֔וֹק אֲשֶׁ֨ר יָצִ֥יק לְךָ֛ אֹיִבְךָ֖ בְּכׇל־שְׁעָרֶֽיךָ׃",
+      "en": "so that he will not give to any of them of the flesh of his children whom he shall eat, when he has nothing left him; because of the siege, and of the distress, with which thy enemies shall distress thee in all thy gates."
+    },
+    {
+      "n": 101,
+      "c": 28,
+      "v": 56,
+      "ref": "28:56",
+      "text": "הָרַכָּ֨ה בְךָ֜ וְהָעֲנֻגָּ֗ה אֲשֶׁ֨ר לֹֽא־נִסְּתָ֤ה כַף־רַגְלָהּ֙ הַצֵּ֣ג עַל־הָאָ֔רֶץ מֵהִתְעַנֵּ֖ג וּמֵרֹ֑ךְ תֵּרַ֤ע עֵינָהּ֙ בְּאִ֣ישׁ חֵיקָ֔הּ וּבִבְנָ֖הּ וּבְבִתָּֽהּ׃",
+      "en": "The tender and delicate woman among you, who would not venture to set the sole of her foot upon the ground for fastidiousness and delicateness, her eye shall be evil towards the husband of her bosom, and towards her son, and towards her daughter,"
+    },
+    {
+      "n": 102,
+      "c": 28,
+      "v": 57,
+      "ref": "28:57",
+      "text": "וּֽבְשִׁלְיָתָ֞הּ הַיּוֹצֵ֣ת&thinsp;<b>׀</b> מִבֵּ֣ין רַגְלֶ֗יהָ וּבְבָנֶ֙יהָ֙ אֲשֶׁ֣ר תֵּלֵ֔ד כִּֽי־תֹאכְלֵ֥ם בְּחֹסֶר־כֹּ֖ל בַּסָּ֑תֶר בְּמָצוֹר֙ וּבְמָצ֔וֹק אֲשֶׁ֨ר יָצִ֥יק לְךָ֛ אֹיִבְךָ֖ בִּשְׁעָרֶֽיךָ׃",
+      "en": "and towards her afterbirth that comes out from her, and towards her children whom she shall bear: for she shall eat them for want of all things in secret; because of the siege and distress, wherewith thy enemy shall distress thee in thy gates."
+    },
+    {
+      "n": 103,
+      "c": 28,
+      "v": 58,
+      "ref": "28:58",
+      "text": "אִם־לֹ֨א תִשְׁמֹ֜ר לַעֲשׂ֗וֹת אֶת־כׇּל־דִּבְרֵי֙ הַתּוֹרָ֣ה הַזֹּ֔את הַכְּתֻבִ֖ים בַּסֵּ֣פֶר הַזֶּ֑ה לְ֠יִרְאָ֠ה אֶת־הַשֵּׁ֞ם הַנִּכְבָּ֤ד וְהַנּוֹרָא֙ הַזֶּ֔ה אֵ֖ת יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "If thou wilt not observe to do all the words of this Tora that are written in this book, that thou mayst fear this glorious and fearful name, the Lord thy God;"
+    },
+    {
+      "n": 104,
+      "c": 28,
+      "v": 59,
+      "ref": "28:59",
+      "text": "וְהִפְלָ֤א יְהֹוָה֙ אֶת־מַכֹּ֣תְךָ֔ וְאֵ֖ת מַכּ֣וֹת זַרְעֶ֑ךָ מַכּ֤וֹת גְּדֹלֹת֙ וְנֶ֣אֱמָנ֔וֹת וׇחֳלָיִ֖ם רָעִ֥ים וְנֶאֱמָנִֽים׃",
+      "en": "then the Lord will make thy plagues remarkable, and the plagues of thy offspring, even great plagues, and of long continuance, and severe sicknesses, and of long continuance."
+    },
+    {
+      "n": 105,
+      "c": 28,
+      "v": 60,
+      "ref": "28:60",
+      "text": "וְהֵשִׁ֣יב בְּךָ֗ אֵ֚ת כׇּל־מַדְוֵ֣ה מִצְרַ֔יִם אֲשֶׁ֥ר יָגֹ֖רְתָּ מִפְּנֵיהֶ֑ם וְדָבְק֖וּ בָּֽךְ׃",
+      "en": "Moreover he will bring upon thee all the diseases of Miżrayim, which thou wast afraid of; and they shall cleave to thee."
+    },
+    {
+      "n": 106,
+      "c": 28,
+      "v": 61,
+      "ref": "28:61",
+      "text": "גַּ֤ם כׇּל־חֳלִי֙ וְכׇל־מַכָּ֔ה אֲשֶׁר֙ לֹ֣א כָת֔וּב בְּסֵ֖פֶר הַתּוֹרָ֣ה הַזֹּ֑את יַעְלֵ֤ם יְהֹוָה֙ עָלֶ֔יךָ עַ֖ד הִשָּׁמְדָֽךְ׃",
+      "en": "Also every sickness, and every plague, which is not written in the book of this Tora, them will the Lord bring upon thee, until thou art destroyed."
+    },
+    {
+      "n": 107,
+      "c": 28,
+      "v": 62,
+      "ref": "28:62",
+      "text": "וְנִשְׁאַרְתֶּם֙ בִּמְתֵ֣י מְעָ֔ט תַּ֚חַת אֲשֶׁ֣ר הֱיִיתֶ֔ם כְּכוֹכְבֵ֥י הַשָּׁמַ֖יִם לָרֹ֑ב כִּֽי־לֹ֣א שָׁמַ֔עְתָּ בְּק֖וֹל יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "And you shall be left few in number, whereas you were as the stars of heaven for multitude; because thou wouldst not obey the voice of the Lord thy God."
+    },
+    {
+      "n": 108,
+      "c": 28,
+      "v": 63,
+      "ref": "28:63",
+      "text": "וְ֠הָיָ֠ה כַּאֲשֶׁר־שָׂ֨שׂ יְהֹוָ֜ה עֲלֵיכֶ֗ם לְהֵיטִ֣יב אֶתְכֶם֮ וּלְהַרְבּ֣וֹת אֶתְכֶם֒ כֵּ֣ן יָשִׂ֤ישׂ יְהֹוָה֙ עֲלֵיכֶ֔ם לְהַאֲבִ֥יד אֶתְכֶ֖ם וּלְהַשְׁמִ֣יד אֶתְכֶ֑ם וְנִסַּחְתֶּם֙ מֵעַ֣ל הָאֲדָמָ֔ה אֲשֶׁר־אַתָּ֥ה בָא־שָׁ֖מָּה לְרִשְׁתָּֽהּ׃",
+      "en": "And it shall come to pass, that as the Lord rejoiced over you to do you good, and to multiply you; so the Lord will rejoice over you to destroy you, and to annihilate you; and you shall be plucked from off the land into which thou goest to possess it."
+    },
+    {
+      "n": 109,
+      "c": 28,
+      "v": 64,
+      "ref": "28:64",
+      "text": "וֶהֱפִֽיצְךָ֤ יְהֹוָה֙ בְּכׇל־הָ֣עַמִּ֔ים מִקְצֵ֥ה הָאָ֖רֶץ וְעַד־קְצֵ֣ה הָאָ֑רֶץ וְעָבַ֨דְתָּ שָּׁ֜ם אֱלֹהִ֣ים אֲחֵרִ֗ים אֲשֶׁ֧ר לֹא־יָדַ֛עְתָּ אַתָּ֥ה וַאֲבֹתֶ֖יךָ עֵ֥ץ וָאָֽבֶן׃",
+      "en": "And the Lord shall scatter thee among all peoples, from the one end of the earth to the other; and there thou shalt serve other gods, which neither thou nor thy fathers have known, wood and stone."
+    },
+    {
+      "n": 110,
+      "c": 28,
+      "v": 65,
+      "ref": "28:65",
+      "text": "וּבַגּוֹיִ֤ם הָהֵם֙ לֹ֣א תַרְגִּ֔יעַ וְלֹא־יִהְיֶ֥ה מָנ֖וֹחַ לְכַף־רַגְלֶ֑ךָ וְנָתַן֩ יְהֹוָ֨ה לְךָ֥ שָׁם֙ לֵ֣ב רַגָּ֔ז וְכִלְי֥וֹן עֵינַ֖יִם וְדַאֲב֥וֹן נָֽפֶשׁ׃",
+      "en": "And among these nations shalt thou find no ease, neither shall the sole of thy foot have rest; but the Lord shall give thee there a trembling heart, and failing of eyes, and despair of mind:"
+    },
+    {
+      "n": 111,
+      "c": 28,
+      "v": 66,
+      "ref": "28:66",
+      "text": "וְהָי֣וּ חַיֶּ֔יךָ תְּלֻאִ֥ים לְךָ֖ מִנֶּ֑גֶד וּפָֽחַדְתָּ֙ לַ֣יְלָה וְיוֹמָ֔ם וְלֹ֥א תַאֲמִ֖ין בְּחַיֶּֽיךָ׃",
+      "en": "and thy life shall hang in doubt before thee; and thou shalt fear day and night, and shalt have no assurance of thy life:"
+    },
+    {
+      "n": 112,
+      "c": 28,
+      "v": 67,
+      "ref": "28:67",
+      "text": "בַּבֹּ֤קֶר תֹּאמַר֙ מִֽי־יִתֵּ֣ן עֶ֔רֶב וּבָעֶ֥רֶב תֹּאמַ֖ר מִֽי־יִתֵּ֣ן בֹּ֑קֶר מִפַּ֤חַד לְבָֽבְךָ֙ אֲשֶׁ֣ר תִּפְחָ֔ד וּמִמַּרְאֵ֥ה עֵינֶ֖יךָ אֲשֶׁ֥ר תִּרְאֶֽה׃",
+      "en": "in the morning thou shalt say, Would it were evening! and at evening thou shalt say, Would it were morning! for the fear of thy heart with which thou shalt fear, and for the sight of thy eyes which thou shalt see."
+    },
+    {
+      "n": 113,
+      "c": 28,
+      "v": 68,
+      "ref": "28:68",
+      "text": "וֶהֱשִֽׁיבְךָ֨ יְהֹוָ֥ה&thinsp;<small>׀</small>&thinsp;מִצְרַ֘יִם֮ בׇּאֳנִיּוֹת֒ בַּדֶּ֙רֶךְ֙ אֲשֶׁ֣ר אָמַ֣רְתִּֽי לְךָ֔ לֹא־תֹסִ֥יף ע֖וֹד לִרְאֹתָ֑הּ וְהִתְמַכַּרְתֶּ֨ם שָׁ֧ם לְאֹיְבֶ֛יךָ לַעֲבָדִ֥ים וְלִשְׁפָח֖וֹת וְאֵ֥ין קֹנֶֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the Lord shall bring thee back into Miżrayim with ships, by that road of which I spoke to thee, Thou shalt see it no more again: and there you shall be sold to your enemies for bondmen and bondwomen, and no man shall buy you."
+    },
+    {
+      "n": 114,
+      "c": 28,
+      "v": 69,
+      "ref": "28:69",
+      "text": "אֵ֩לֶּה֩ דִבְרֵ֨י הַבְּרִ֜ית אֲֽשֶׁר־צִוָּ֧ה יְהֹוָ֣ה אֶת־מֹשֶׁ֗ה לִכְרֹ֛ת אֶת־בְּנֵ֥י יִשְׂרָאֵ֖ל בְּאֶ֣רֶץ מוֹאָ֑ב מִלְּבַ֣ד הַבְּרִ֔ית אֲשֶׁר־כָּרַ֥ת אִתָּ֖ם בְּחֹרֵֽב׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "These are the words of the covenant, which the Lord commanded Moshe to make with the children of Yisra᾽el in the land of Mo᾽av, besides the covenant which he made with them in Ḥorev."
+    },
+    {
+      "n": 115,
+      "c": 29,
+      "v": 1,
+      "ref": "29:1",
+      "text": "וַיִּקְרָ֥א מֹשֶׁ֛ה אֶל־כׇּל־יִשְׂרָאֵ֖ל וַיֹּ֣אמֶר אֲלֵהֶ֑ם אַתֶּ֣ם רְאִיתֶ֗ם אֵ֣ת כׇּל־אֲשֶׁר֩ עָשָׂ֨ה יְהֹוָ֤ה לְעֵֽינֵיכֶם֙ בְּאֶ֣רֶץ מִצְרַ֔יִם לְפַרְעֹ֥ה וּלְכׇל־עֲבָדָ֖יו וּלְכׇל־אַרְצֽוֹ׃",
+      "en": "And Moshe called to all Yisra᾽el, and said to them, You have seen all that the Lord did before your eyes in the land of Miżrayim to Par῾o, and to all his servants, and to all his land;"
+    },
+    {
+      "n": 116,
+      "c": 29,
+      "v": 2,
+      "ref": "29:2",
+      "text": "הַמַּסּוֹת֙ הַגְּדֹלֹ֔ת אֲשֶׁ֥ר רָא֖וּ עֵינֶ֑יךָ הָאֹתֹ֧ת וְהַמֹּפְתִ֛ים הַגְּדֹלִ֖ים הָהֵֽם׃",
+      "en": "the great trials which thy eyes have seen, the signs, and those great miracles:"
+    },
+    {
+      "n": 117,
+      "c": 29,
+      "v": 3,
+      "ref": "29:3",
+      "text": "וְלֹא־נָתַן֩ יְהֹוָ֨ה לָכֶ֥ם לֵב֙ לָדַ֔עַת וְעֵינַ֥יִם לִרְא֖וֹת וְאׇזְנַ֣יִם לִשְׁמֹ֑עַ עַ֖ד הַיּ֥וֹם הַזֶּֽה׃",
+      "en": "yet the Lord has not given you a heart to perceive, and eyes to see, and ears to hear, until this day."
+    },
+    {
+      "n": 118,
+      "c": 29,
+      "v": 4,
+      "ref": "29:4",
+      "text": "וָאוֹלֵ֥ךְ אֶתְכֶ֛ם אַרְבָּעִ֥ים שָׁנָ֖ה בַּמִּדְבָּ֑ר לֹֽא־בָל֤וּ שַׂלְמֹֽתֵיכֶם֙ מֵעֲלֵיכֶ֔ם וְנַעַלְךָ֥ לֹֽא־בָלְתָ֖ה מֵעַ֥ל רַגְלֶֽךָ׃",
+      "en": "And I have led you forty years in the wilderness: your clothes are not worn old upon you, and thy shoe is not worn old upon thy foot."
+    },
+    {
+      "n": 119,
+      "c": 29,
+      "v": 5,
+      "ref": "29:5",
+      "text": "לֶ֚חֶם לֹ֣א אֲכַלְתֶּ֔ם וְיַ֥יִן וְשֵׁכָ֖ר לֹ֣א שְׁתִיתֶ֑ם לְמַ֙עַן֙ תֵּֽדְע֔וּ כִּ֛י אֲנִ֥י יְהֹוָ֖ה אֱלֹהֵיכֶֽם׃",
+      "en": "You have not eaten bread, neither have you drunk wine or strong drink: that you might know that I am the Lord your God."
+    },
+    {
+      "n": 120,
+      "c": 29,
+      "v": 6,
+      "ref": "29:6",
+      "text": "וַתָּבֹ֖אוּ אֶל־הַמָּק֣וֹם הַזֶּ֑ה וַיֵּצֵ֣א סִיחֹ֣ן מֶֽלֶךְ־חֶ֠שְׁבּ֠וֹן וְע֨וֹג מֶלֶךְ־הַבָּשָׁ֧ן לִקְרָאתֵ֛נוּ לַמִּלְחָמָ֖ה וַנַּכֵּֽם׃",
+      "en": "And when you came to this place, Siĥon the king of Ḥeshbon, and ῾Og the king of Bashan, came out against us to battle, and we smote them:"
+    },
+    {
+      "n": 121,
+      "c": 29,
+      "v": 7,
+      "ref": "29:7",
+      "text": "וַנִּקַּח֙ אֶת־אַרְצָ֔ם וַנִּתְּנָ֣הּ לְנַחֲלָ֔ה לָראוּבֵנִ֖י וְלַגָּדִ֑י וְלַחֲצִ֖י שֵׁ֥בֶט הַֽמְנַשִּֽׁי׃",
+      "en": "and we took their land, and gave it for an inheritance to the Re᾽uveni, and to the Gadi, and to the half tribe of the Menashshi."
+    },
+    {
+      "n": 122,
+      "c": 29,
+      "v": 8,
+      "ref": "29:8",
+      "text": "וּשְׁמַרְתֶּ֗ם אֶת־דִּבְרֵי֙ הַבְּרִ֣ית הַזֹּ֔את וַעֲשִׂיתֶ֖ם אֹתָ֑ם לְמַ֣עַן תַּשְׂכִּ֔ילוּ אֵ֖ת כׇּל־אֲשֶׁ֥ר תַּעֲשֽׂוּן׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Keep therefore the words of this covenant, and do them, that you may prosper in all that you do."
+    }
+  ],
+  "parashah": {
+    "en": "Ki Tavo",
+    "he": "כִּי תָבוֹא",
+    "translit": "Ki Tavo",
+    "ref": "Deuteronomy 26:1–29:8"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 11,
+        "ref": "26:1–26:11"
+      },
+      {
+        "n": 2,
+        "start": 12,
+        "end": 15,
+        "ref": "26:12–26:15"
+      },
+      {
+        "n": 3,
+        "start": 16,
+        "end": 19,
+        "ref": "26:16–26:19"
+      },
+      {
+        "n": 4,
+        "start": 20,
+        "end": 29,
+        "ref": "27:1–27:10"
+      },
+      {
+        "n": 5,
+        "start": 30,
+        "end": 51,
+        "ref": "27:11–28:6"
+      },
+      {
+        "n": 6,
+        "start": 52,
+        "end": 114,
+        "ref": "28:7–28:69"
+      },
+      {
+        "n": 7,
+        "start": 115,
+        "end": 122,
+        "ref": "29:1–29:8"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "26:1–26:3"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 8,
+          "ref": "26:4–26:8"
+        },
+        {
+          "n": 3,
+          "start": 9,
+          "end": 11,
+          "ref": "26:9–26:11"
+        },
+        {
+          "n": 4,
+          "start": 12,
+          "end": 15,
+          "ref": "26:12–26:15"
+        },
+        {
+          "n": 5,
+          "start": 16,
+          "end": 19,
+          "ref": "26:16–26:19"
+        },
+        {
+          "n": 6,
+          "start": 20,
+          "end": 23,
+          "ref": "27:1–27:4"
+        },
+        {
+          "n": 7,
+          "start": 24,
+          "end": 29,
+          "ref": "27:5–27:10"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 12,
+          "end": 15,
+          "ref": "26:12–26:15"
+        },
+        {
+          "n": 2,
+          "start": 16,
+          "end": 19,
+          "ref": "26:16–26:19"
+        },
+        {
+          "n": 3,
+          "start": 20,
+          "end": 22,
+          "ref": "27:1–27:3"
+        },
+        {
+          "n": 4,
+          "start": 23,
+          "end": 27,
+          "ref": "27:4–27:8"
+        },
+        {
+          "n": 5,
+          "start": 25,
+          "end": 29,
+          "ref": "27:6–27:10"
+        },
+        {
+          "n": 6,
+          "start": 30,
+          "end": 48,
+          "ref": "27:11–28:3"
+        },
+        {
+          "n": 7,
+          "start": 49,
+          "end": 51,
+          "ref": "28:4–28:6"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 30,
+          "end": 48,
+          "ref": "27:11–28:3"
+        },
+        {
+          "n": 2,
+          "start": 49,
+          "end": 51,
+          "ref": "28:4–28:6"
+        },
+        {
+          "n": 3,
+          "start": 52,
+          "end": 56,
+          "ref": "28:7–28:11"
+        },
+        {
+          "n": 4,
+          "start": 57,
+          "end": 59,
+          "ref": "28:12–28:14"
+        },
+        {
+          "n": 5,
+          "start": 60,
+          "end": 114,
+          "ref": "28:15–28:69"
+        },
+        {
+          "n": 6,
+          "start": 115,
+          "end": 119,
+          "ref": "29:1–29:5"
+        },
+        {
+          "n": 7,
+          "start": 120,
+          "end": 122,
+          "ref": "29:6–29:8"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 120,
+        "end": 122,
+        "ref": "29:6–29:8"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 26,
+          "end": 29,
+          "ref": "27:7–27:10"
+        },
+        "2": {
+          "n": "M",
+          "start": 49,
+          "end": 51,
+          "ref": "28:4–28:6"
+        },
+        "3": {
+          "n": "M",
+          "start": 120,
+          "end": 122,
+          "ref": "29:6–29:8"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

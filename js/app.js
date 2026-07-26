@@ -2443,6 +2443,15 @@ async function loadAudioSource(slug, sid) {
     const sr = await fetch(srcPath(slug, sid, 'shapes.json'));
     if (sr.ok) state.shapes = (await sr.json()).shapes;
   } catch (e) { /* no averaged trope shapes available */ }
+  // A reading with no recording of its own (a drill set) borrows the corpus-wide
+  // measured shapes, so its coach line and voice guide teach the melody the
+  // cantor actually sings rather than a hand-drawn approximation.
+  if (!state.shapes) {
+    try {
+      const cr = await fetch('data/trope-shapes.json');
+      if (cr.ok) state.shapes = (await cr.json()).shapes;
+    } catch (e) { /* fall back to the stylized motifs in trope.js */ }
+  }
 }
 
 // Populate + show/hide the topbar voice selector for the current reading.
@@ -2797,6 +2806,17 @@ function buildCoach(unitSegs, verseN = state.selectedVerse) {
   return { start, end, dur, steps, raw, wordBounds, overlayWords, points, tonicHz: pv.tonicHz };
 }
 
+// How an accent is actually sung, measured across every recorded reading
+// (data/trope-shapes.json). A drill has no recording of its own, so without this
+// its coach line would be trope.js's hand-drawn sketch — and the reader would be
+// taught a melody the cantor never sings. Loaded for drills in loadData.
+function measuredShapeFor(seg) {
+  const key = (seg.isSofPasuk || seg.taam === 'sof') ? 'sof'
+    : (seg.taam == null ? 'none' : String(seg.taam));
+  const sh = state.shapes && state.shapes[key];
+  return sh && sh.steps && sh.steps.length ? sh : null;
+}
+
 // Turn one accent's motif — a handful of { t, p } control points — into the same
 // staircase of held note steps that the pitch extractor produces from a
 // recording, so a drill line drives the identical coach line, voice guide,
@@ -2816,9 +2836,18 @@ function motifSteps(contour) {
   });
 }
 
-function buildSyntheticCoach(unitSegs) {
+// Lay a set of segments out on a timeline of their own. Each word is sung with
+// the accent's MEASURED shape and MEASURED duration where the corpus has one
+// (so a Shalshelet takes its real six and a half seconds, not a nominal two),
+// falling back to the stylized motif for anything never recorded. `durOf` lets a
+// caller override the timing — the spliced recitation uses the real length of the
+// word actually being played.
+function buildSyntheticCoach(unitSegs, durOf) {
   if (!unitSegs || !unitSegs.length) return null;
-  const durs = unitSegs.map((seg) => Math.max(0.6, (seg.syllables || 1) * SYNTH_SEC_PER_SYLLABLE));
+  const shapes = unitSegs.map(measuredShapeFor);
+  const durs = unitSegs.map((seg, i) => (durOf && durOf(i))
+    || (shapes[i] && shapes[i].dur)
+    || Math.max(0.6, (seg.syllables || 1) * SYNTH_SEC_PER_SYLLABLE));
   const dur = durs.reduce((a, b) => a + b, 0);
   const steps = [], wordBounds = [], overlayWords = [], points = [];
   let acc = 0;
@@ -2827,7 +2856,8 @@ function buildSyntheticCoach(unitSegs) {
     const wdur = durs[wi] / dur;
     acc += durs[wi];
     wordBounds.push(w0);
-    const ws = motifSteps(seg.contour).map((s) => ({
+    const base = shapes[wi] ? shapes[wi].steps : motifSteps(seg.contour);
+    const ws = base.map((s) => ({
       t0: w0 + s.t0 * wdur, t1: w0 + s.t1 * wdur, p: s.p,
       color: seg.color, connector: seg.isConnector, w: wi,
     }));
@@ -2835,7 +2865,7 @@ function buildSyntheticCoach(unitSegs) {
     overlayWords.push({ seg, t0: w0, t1: w0 + wdur, steps: ws });
   });
   return { start: 0, end: dur, dur, steps, raw: [], wordBounds, overlayWords, points,
-    tonicHz: state.tonicHz, synthetic: true };
+    tonicHz: state.tonicHz, synthetic: true, measured: shapes.some(Boolean) };
 }
 
 // The range of verses to show, derived from the current portion. Annual shows
@@ -3392,7 +3422,7 @@ function renderAliyot() {
     const from = state.excerpt ? ` <span class="hint">from ${par ? par.en : state.slug}</span>` : '';
     box.innerHTML = `<div class="aliyot-head">${escapeHtml(meta.label)}${from}</div>`
       + (meta.note ? `<p class="hint aliyot-note">${escapeHtml(meta.note)}</p>` : '')
-      + (state.drill ? '<p class="hint aliyot-note">No recorded cantor here — the coach line is synthesized straight from the accents, so the mark is the only clue to the tune.</p>' : '');
+      + (state.drill ? '<p class="hint aliyot-note">These words were never recorded, so the voice is synthesized \u2014 but the melody and the timing of every accent are measured from the cantor across all the recorded readings, not guessed. <b>▶ Sing these words</b> chants the drill itself; <b>🎤 Same tropes, real voice</b> finds the same accents in the readings and splices a human recitation of them (different words, same tune).</p>' : '');
     return;
   }
   const par = parashahForReading();
@@ -4284,7 +4314,8 @@ function renderPractice() {
     <div class="transport">
       ${hasReal ? `<button class="primary" id="btnReal">♪ Hear real chant (verse)</button>` : ''}
       ${hasReal ? `<button id="btnRealWord">♪ Hear this ${level.unit === 'word' ? 'word' : level.unit} (real)</button>` : ''}
-      <button class="${hasReal ? '' : 'primary'}" id="btnPlay">▶ Hear voice guide</button>
+      <button class="${hasReal ? '' : 'primary'}" id="btnPlay">${state.drill ? '▶ Sing these words' : '▶ Hear voice guide'}</button>
+      ${state.drill ? `<button id="btnRecite" title="Find the same accents in the recorded readings and splice them together. A human voice, but different words — the drill's own words were never recorded.">🎤 Same tropes, real voice</button>` : ''}
       <button id="btnTonic">Give me the tonic</button>
       <button class="warn" id="btnRec">● Record my try</button>
       <button id="btnSing">▶● Sing along</button>
@@ -4394,6 +4425,8 @@ function renderPractice() {
     $('btnRealWord').addEventListener('click', playUnit);
   }
   wireTimelineWordClicks(unitSegs, hasReal);
+  const btnRecite = $('btnRecite');
+  if (btnRecite) btnRecite.addEventListener('click', playRecitation);
   $('btnPlay').addEventListener('click', playTarget);
   $('btnTonic').addEventListener('click', () => playTone(state.tonicHz, 1.2));
   $('btnRec').addEventListener('click', () => startRecording());
@@ -4751,6 +4784,211 @@ function playRealChant() {
   });
 }
 
+// ---------------------------------------------------------------------------
+// A real recitation of a trope sequence that was never recorded
+//
+// Nobody has ever chanted "shalom" with a pazer on it, so the drills have no
+// recording of their own. But the tune belongs to the accent, not the word, and
+// the bundled readings hold thousands of recorded, word-aligned instances of the
+// same accents. So instead of synthesizing, we search the corpus
+// (data/trope-index.json) for the drill's accent sequence and splice the cantor's
+// own voice together — greedily taking the longest runs that match, so the seams
+// land between phrases instead of between every word. The words that come out are
+// not the drill's words; the melody is exactly the drill's melody.
+// ---------------------------------------------------------------------------
+
+let _tropeIndex, _tropeIndexPromise;
+
+function loadTropeIndex() {
+  if (_tropeIndex !== undefined) return Promise.resolve(_tropeIndex);
+  if (!_tropeIndexPromise) {
+    _tropeIndexPromise = fetch('data/trope-index.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((doc) => {
+        if (doc) {
+          // One pass to bucket every recorded word by the accent it carries, so a
+          // search only walks candidates that could possibly match.
+          const byAccent = new Map();
+          doc.readings.forEach((rd, ri) => rd.verses.forEach((v, vi) => {
+            v.a.forEach((code, wi) => {
+              let list = byAccent.get(code);
+              if (!list) byAccent.set(code, (list = []));
+              list.push([ri, vi, wi]);
+            });
+          }));
+          doc.byAccent = byAccent;
+        }
+        _tropeIndex = doc;
+        return doc;
+      })
+      .catch(() => { _tropeIndex = null; return null; });
+  }
+  return _tropeIndexPromise;
+}
+
+// The accent a segment carries, in the index's encoding (0 = Sof Pasuk, -1 = none).
+function accentCodeOf(seg) {
+  if (!seg) return -1;
+  if (seg.isSofPasuk || seg.taam === 'sof') return 0;
+  return seg.taam == null ? -1 : seg.taam;
+}
+
+// Cover the unit's accent sequence with as few slices of real audio as possible.
+// Anything the corpus can't supply comes back as a `synth` chunk.
+function findRecitation(unitSegs, doc) {
+  const target = unitSegs.map(accentCodeOf);
+  const plan = [];
+  let i = 0;
+  while (i < target.length) {
+    let best = null;
+    const candidates = doc.byAccent.get(target[i]) || [];
+    for (const [ri, vi, wi] of candidates) {
+      const a = doc.readings[ri].verses[vi].a;
+      let k = 0;
+      while (i + k < target.length && wi + k < a.length && a[wi + k] === target[i + k]) k++;
+      if (!best || k > best.k) best = { ri, vi, wi, k };
+      if (best.k === target.length - i) break; // nothing could beat a full match
+    }
+    if (!best || !best.k) { plan.push({ kind: 'synth', at: i, count: 1 }); i += 1; }
+    else { plan.push({ kind: 'real', at: i, count: best.k, ...best }); i += best.k; }
+  }
+  return plan;
+}
+
+// The audio window for one spliced chunk, plus where each of its words begins.
+function recitationSlice(doc, chunk) {
+  const v = doc.readings[chunk.ri].verses[chunk.vi];
+  const start = v.onsets[chunk.wi];
+  const lastIdx = chunk.wi + chunk.count;
+  const end = lastIdx < v.onsets.length ? v.onsets[lastIdx]
+    : (v.end != null ? v.end : start + chunk.count * 0.8);
+  return { verse: v, reading: doc.readings[chunk.ri], start, end: Math.max(end, start + 0.2) };
+}
+
+function recitationSourceLabel(doc, plan) {
+  const real = plan.filter((c) => c.kind === 'real');
+  const synth = plan.length - real.length;
+  const words = real.reduce((n, c) => n + c.count, 0);
+  const total = plan.reduce((n, c) => n + c.count, 0);
+  return `${words} of ${total} words from the recorded chant in ${real.length} splice${real.length === 1 ? '' : 's'}`
+    + (synth ? `; ${synth} synthesized (no recording of that accent exists)` : '');
+}
+
+// Re-lay the coach on the timing of the audio that is about to play, and show the
+// words that are actually being sung. Without this the reader watches their own
+// drill words above bars spaced by nominal durations while a different verse
+// plays at its own pace — everything drifts, and the accents look wrong even
+// though they are right.
+function installRecitationView(plan, doc, unitSegs) {
+  const real = [];      // per target word: the recorded word and how long it lasts
+  for (const chunk of plan) {
+    if (chunk.kind !== 'real') { real.push(null); continue; }
+    const v = doc.readings[chunk.ri].verses[chunk.vi];
+    for (let j = 0; j < chunk.count; j++) {
+      const i = chunk.wi + j;
+      const from = v.onsets[i];
+      const to = i + 1 < v.onsets.length ? v.onsets[i + 1] : (v.end != null ? v.end : from + 0.9);
+      real.push({ token: (v.w && v.w[i]) || '', dur: Math.max(0.25, to - from) });
+    }
+  }
+  // Keep each segment's accent, colour and name (they are the drill's), but show
+  // the recorded word in place of the drill's invented one.
+  const shown = unitSegs.map((seg, i) => (real[i] && real[i].token
+    ? { ...seg, token: real[i].token } : seg));
+  const coach = buildSyntheticCoach(shown, (i) => real[i] && real[i].dur);
+  state.coach = coach;
+  state.unitSegs = shown;
+  if (coach) {
+    state.targetPoints = coach.points;
+    state.view.setCoach({ steps: coach.steps, raw: coach.raw, wordBounds: coach.wordBounds });
+    renderStretchedWords($('timelineWords'), coach, aidsForLevel(), shown);
+  }
+  return coach;
+}
+
+async function playRecitation() {
+  const unitSegs = state.unitSegs;
+  if (!unitSegs || !unitSegs.length) return;
+  stopAll();
+  const btn = $('btnRecite');
+  if (btn) { btn.disabled = true; btn.textContent = '… finding a recitation'; }
+  $('result').innerHTML = '<span class="hint">Searching the recorded readings for this trope sequence…</span>';
+  const doc = await loadTropeIndex();
+  if (btn) { btn.disabled = false; btn.textContent = '♪ Hear it chanted for real'; }
+  if (!doc || !doc.readings.length) {
+    $('result').innerHTML = '<span class="hint">No recorded readings are available to splice from.</span>';
+    return;
+  }
+  const plan = findRecitation(unitSegs, doc);
+  installRecitationView(plan, doc, unitSegs);
+  const runId = (state._recitationId = (state._recitationId || 0) + 1);
+  state.playingReal = true;
+  if (state.spectro) state.spectro.clearPlot();
+  if (state.view) state.view.clearReal();
+  $('btnStop').disabled = false;
+  resetTransport();
+  syncTransportUI();
+  const summary = recitationSourceLabel(doc, plan);
+
+  let ci = 0;
+  const next = () => {
+    if (state._recitationId !== runId) return;      // superseded or stopped
+    if (ci >= plan.length) {
+      state.playingReal = false;
+      highlightWord(-1);
+      if (state.view) state.view.setPlayhead(null);
+      $('btnStop').disabled = true;
+      resetTransport();
+      $('result').innerHTML = `<span class="hint">That is the real chant of this trope sequence — ${summary}. `
+        + 'The words on screen are the recorded ones, not the drill\u2019s — same accents, same tune. '
+        + '<button id="btnBackToDrill" class="linkish">↩ back to the drill\u2019s words</button></span>';
+      const back = $('btnBackToDrill');
+      if (back) back.addEventListener('click', () => renderPractice());
+      return;
+    }
+    const chunk = plan[ci++];
+    // Position the playhead inside the word too, so it glides with the audio
+    // rather than jumping a word at a time.
+    const cue = (j, frac) => {
+      const i = chunk.at + j;
+      highlightWord(i);
+      const b = state.coach && state.coach.wordBounds;
+      if (state.view && b && b[i] != null) {
+        const t1 = i + 1 < b.length ? b[i + 1] : 1;
+        const t = b[i] + Math.min(1, Math.max(0, frac || 0)) * (t1 - b[i]);
+        state.view.setPlayhead(t);
+        scrollFollow(t);
+      }
+    };
+    if (chunk.kind === 'synth') {
+      const seg = state.unitSegs[chunk.at];
+      cue(0);
+      $('result').innerHTML = `<span class="hint">Synthesized — <b>${seg.name.en}</b> is not recorded anywhere in the readings. (${summary})</span>`;
+      const one = buildSyntheticCoach([seg]);
+      singSteps(one.steps, { tonicHz: state.tonicHz, durationSec: one.dur, onEnd: next });
+      return;
+    }
+    const { verse, reading, start, end } = recitationSlice(doc, chunk);
+    const span = (end - start) || 1;
+    $('result').innerHTML = `<span class="hint">Real chant · <b>${escapeHtml(reading.label)} ${verse.ref}</b>`
+      + ` — ${chunk.count} word${chunk.count === 1 ? '' : 's'}. (${summary})</span>`;
+    cue(0);
+    playSegment(verse.file, start, end, {
+      onProgress: (t01) => {
+        const t = start + t01 * span;
+        let j = 0;
+        for (let x = 0; x < chunk.count; x++) if (t >= verse.onsets[chunk.wi + x]) j = x;
+        const from = verse.onsets[chunk.wi + j];
+        const to = chunk.wi + j + 1 < verse.onsets.length ? verse.onsets[chunk.wi + j + 1] : end;
+        cue(j, (t - from) / ((to - from) || 1));
+      },
+      onEnd: next,
+      onError: next,
+    });
+  };
+  next();
+}
+
 // Which word index is active at normalized time t01 (using coach word bounds).
 function wordAtTime(coach, t01) {
   if (!coach) return 0;
@@ -5078,6 +5316,7 @@ function playGuideAudioOnly() {
 }
 
 function stopAll() {
+  state._recitationId = (state._recitationId || 0) + 1; // abandon any spliced chain
   stopVerseAudio();
   if (state.playingReal) {
     state.playingReal = false;

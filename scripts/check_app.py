@@ -88,9 +88,20 @@ if (!sessionStorage.getItem('__checked')) {
 # beginning with "OK"; anything else (including a throw) fails the step. Making
 # every probe state its own verdict keeps a merely-truthy result from passing.
 STEPS = [
-    ("reading menu is grouped by kind",
+    ("the reading menu is grouped by sefer, in chumash order",
      "(()=>{const g=__t.all('#parashah optgroup').map(o=>o.label);"
-     " return g.length>=3 ? 'OK '+g.join(' | ') : 'only '+g.join('|');})()"),
+     " const books=['Bereshit','Shemot','Vayikra','Bamidbar','Devarim'];"
+     " const seen=g.filter(l=>books.some(b=>l.startsWith(b)));"
+     " const pos=seen.map(l=>books.findIndex(b=>l.startsWith(b)));"
+     " const ordered=pos.every((n,i)=>i===0||n>pos[i-1]);"
+     " return seen.length>=2 && ordered && g.length>seen.length"
+     "   ? 'OK '+g.join(' | ') : 'out of order or ungrouped: '+g.join(' | ');})()"),
+    ("each sefer lists its parashiyot in order",
+     "(()=>{const d=__t.all('#parashah optgroup').find(o=>o.label.startsWith('Devarim'));"
+     " if(!d) return 'no Devarim group';"
+     " const first=[...d.children].map(o=>o.textContent.split('(')[0].trim());"
+     " return /^Devarim/.test(first[0]) && /Va.etchanan/.test(first[2]||first[1])"
+     "   ? 'OK '+first.slice(0,4).join(', ')+' \\u2026' : first.slice(0,4).join(', ');})()"),
     ("aliyot render as collapsible sections, all closed",
      "(()=>{const n=__t.all('.alsec').length, open=__t.all('.alsec.open').length;"
      " return n===7&&open===0 ? 'OK 7 sections, none expanded' : `${n} sections, ${open} open`;})()"),
@@ -262,12 +273,55 @@ READING_STEPS = [
          " if (__t.q('.locked-page')) return 'whole-line stage locked';"
          " const w=__t.all('#timelineWords .w').length;"
          " return w>1 ? `OK ${w} words on the coach timeline` : `${w} word(s) — no coach built`;})()"),
-        ("no real-chant controls where there is no recording",
+        ("no whole-verse chant button where the drill has no recording of its own",
          "(()=>document.getElementById('btnReal') ? 'offered a chant that does not exist'"
-         " : (document.getElementById('btnPlay').className.includes('primary') ? 'OK voice guide is primary' : 'guide not primary'))()"),
+         " : 'OK absent, the spliced recitation takes its place')()"),
         ("the drill still records and scores",
          "(()=>['btnRec','btnSing','btnPause','btnStepBack'].every(i=>document.getElementById(i))"
          " ? 'OK full transport' : 'transport incomplete')()"),
+        # The drills have no recording of their own, so the app splices one out of
+        # the corpus: the same accents, sung by the cantor on different words.
+        # A drill's own words were never recorded, so its coach line has to come
+        # from the corpus-wide measured shapes, not trope.js's hand-drawn motifs.
+        ("the drill is taught with measured shapes, not sketches",
+         "(()=>{__t.pickVerse(); __t.stage(4);"
+         " const w=__t.all('#timelineWords .w').length;"
+         " if (w < 2) return 'no coach built';"
+         " return fetch('data/trope-shapes.json').then(r=>r.json()).then(d=>{"
+         "   const n=Object.keys(d.shapes||{}).length;"
+         "   const timed=Object.values(d.shapes).filter(s=>s.dur).length;"
+         "   return n>20 && timed>20 ? `OK ${n} accents measured, ${timed} timed` : `${n} shapes, ${timed} timed`;});})()"),
+        ("a real recitation can be spliced for the drill",
+         "(()=>{const b=document.getElementById('btnRecite');"
+         " if (!b) return 'no recite button';"
+         " b.click();"
+         " return __t.settle(()=>/Real chant/.test(__t.q('#result').textContent),"
+         "  'OK spliced', 'never found a recitation', 20000);})()"),
+        ("every word of it comes from the recorded chant",
+         "(()=>{const t=__t.q('#result').textContent;"
+         " const m=t.match(/(\\d+) of (\\d+) words/);"
+         " if (!m) return 'no splice summary: '+t.slice(0,80);"
+         " return m[1]===m[2] && !/synthesized/.test(t) ? `OK ${m[0]}` : t.slice(0,140);})()"),
+        # A splice only proves itself when playback crosses a seam into the next
+        # source verse, so poll until that happens rather than for a fixed window.
+        # The complaint that started this: the drill's words stayed on screen over
+        # bars spaced by nominal durations while a different verse played, so the
+        # accents looked wrong even though they were right.
+        ("the splice shows the words it is actually singing",
+         "(()=>{const shown=__t.all('#timelineWords .w').map(e=>e.textContent.trim());"
+         " const drill=/\\u05e9\\u05dc|\\u05d3\\u05d1\\u05e8/;"   # shalom / davar roots
+         " const stillDrill=shown.filter(w=>drill.test(w)).length;"
+         " return shown.length>2 && stillDrill<shown.length/2"
+         "   ? `OK showing ${shown.slice(0,3).join(' ')} \\u2026` : `still showing the drill: ${shown.slice(0,3).join(' ')}`;})()"),
+        ("the cue follows the spliced chant across its seams",
+         "(()=>{const seen=new Set(); let maxWord=-1;"
+         " const grab=()=>{const m=__t.q('#result').textContent.match(/Real chant \\u00b7 ([^\\u2014]+)/);"
+         "   if(m) seen.add(m[1].trim()); maxWord=Math.max(maxWord,__t.wordAt());};"
+         " return new Promise(res=>{const t0=Date.now();"
+         "   const iv=setInterval(()=>{ grab();"
+         "     if (seen.size>1 && maxWord>1 || Date.now()-t0>40000) { clearInterval(iv); __t.key('Escape');"
+         "       res(seen.size>1 && maxWord>1 ? `OK crossed ${seen.size} source verses, reached word ${maxWord}`"
+         "         : `${seen.size} source(s), furthest word ${maxWord}`); } }, 150);});})()"),
     ]),
     ("shema", [
         ("the excerpt shows only its own passage",

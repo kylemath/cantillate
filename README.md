@@ -24,7 +24,9 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
 
 ## What it does today
 
-- **Pick a reading & portion** — the Reading menu is grouped into **Parashiyot**,
+- **Pick a reading & portion** — the Reading menu is grouped **by sefer** in
+  chumash order (Bereshit · Genesis, Bamidbar · Numbers, Devarim · Deuteronomy),
+  with each sefer's parashiyot in the order the book runs, followed by
   **Trope drills** and **Prayers & common passages**. For a parashah, a single
   **Portion** control sets how much you read: the full annual parashah, or one
   shorter **triennial-cycle year** (which narrows the verses shown *and* switches
@@ -164,20 +166,55 @@ Reading menu alongside the parashiyot:
   (Qadma→Azla, Mahpach→Pashta→Munach→Zaqef, Darga→Tevir,
   Mercha→Tipcha→Munach→Etnachta) — and each drill divides at an Etnachta like a
   real pasuk, so the Divide control can take it in halves before you chant it end
-  to end. Word lengths vary so the line has some rhythm and the ornate accents get
-  the syllables they need to unfold. There is no recording: the coach line, the
-  note steps and the scoring all come from the motifs in `js/trope.js` via
-  `buildSyntheticCoach`, which is exactly what these lines teach. Everything else
-  — record, duet, hold-and-rewind, the spectrogram — works as it does for a real
-  pasuk.
+  to end. Everything else — record, duet, hold-and-rewind, the spectrogram — works
+  as it does for a real pasuk.
+
+  **The melody is measured, not sketched.** `js/trope.js` carries hand-drawn
+  motifs for each accent; they convey the shape but they are guesses, and for a
+  drill the coach line is the *only* thing telling you what the accent sounds
+  like. So `scripts/build_trope_shapes.py` merges every reading's measured
+  `*_shapes.json` into `data/trope-shapes.json` — for each accent, the most
+  representative recorded instance corpus-wide (weighted so a parashah with three
+  examples can't outvote one with three hundred) plus the **median duration the
+  cantor really spends on it**. A drill is then laid out on those real lengths:
+  a Munach gets its second, a Shalshelet its full six and a half. Readings with
+  their own recording are unaffected — they keep using their own extracted pitch.
 
   `scripts/smoke.html` checks the set against the corpus: the drills must cover
   **every accent that occurs in the shipped readings**, and must use the same
   codepoints the text does. That check earns its keep — Unicode splits the Zarqa
   across `U+0598` and `U+05AE`, and the Masoretic text overwhelmingly uses
-  `U+05AE` (21× vs 5× across the three parashiyot), so drilling the other one
-  would have taught a glyph the reader mostly won't meet. Both are in the drill
-  now, side by side, since both turn up.
+  `U+05AE`, so drilling the other one would have taught a glyph the reader mostly
+  won't meet. Both are in the drill now, side by side, since both turn up.
+
+### Two ways to hear a drill
+
+**▶ Sing these words** chants the drill itself. Synthesized voice — nobody has
+ever recorded *shalom* with a Pazer on it — but every accent's melody and length
+come from `data/trope-shapes.json`, measured off the cantor.
+
+**🎤 Same tropes, real voice** is a human recitation of the same accent sequence.
+The tune belongs to the accent, not the word, and the bundled readings hold
+~19,000 recorded, word-aligned instances of those accents, so this searches the
+corpus for the drill's accent *sequence* and splices the cantor's own voice
+together, greedily taking the longest runs it can so the seams fall between
+phrases rather than between every word. Both drills currently come out **entirely
+from real audio** — the everyday progression in 3 splices, the rare flourishes in
+12 — which is only true because of the three non-Deuteronomy readings below.
+
+While it plays, the pane shows **the words being sung, not the drill's**, laid out
+on their real durations. That matters: the first version left the drill's words on
+screen over bars spaced by nominal lengths while a different verse played at its
+own pace, so the accents looked wrong even though they were right (they were
+verified correct word for word). A **↩ back to the drill's words** link restores
+the drill when the recitation ends.
+
+`data/trope-index.json` (`scripts/build_trope_index.py`, run automatically at the
+end of every `build_reading.py`) is what makes the search cheap: every recorded
+verse reduced to its mp3, its word onsets and one accent per word, ~335 KB for the
+whole corpus. It deliberately **skips any verse whose tokens don't line up 1:1
+with the audio onsets**, so a mis-split verse can never splice the wrong slice of
+audio into a drill.
 - **Prayers & common passages** — the Shema and V'ahavta, V'haya im shamo'a, the
   Ten Commandments, V'zot haTorah, Ein od milvado, and the verse behind Birkat
   haMazon. These are `kind: "excerpt"` entries: they reuse a parashah's text,
@@ -231,6 +268,28 @@ access. (Mic + Web Audio need `http://`, so opening the file directly won't work
 The server supports HTTP Range requests so individual verses/words can be seeked
 within the shared mp3 tracks.)
 
+## What's bundled
+
+All of **Deuteronomy** — Devarim, Va'etchanan, Eikev, Re'eh, Shoftim, Ki Teitzei,
+Ki Tavo, Nitzavim, Vayeilech, Ha'azinu and V'zot HaBerakhah — plus `devarim1`, the
+original single-chapter reading the app started from (it overlaps Devarim 1).
+
+Three readings from outside Deuteronomy are here for one reason: they are the only
+places the four rarest accents are ever sung, so without them the trope drills had
+nothing real to point at.
+
+| Reading | Carries |
+|---|---|
+| **Vayera** (Gen 18:1–22:24) | Shalshelet, at 19:16 — one of only four in the Torah |
+| **Matot** (Num 30:2–32:42) | Mercha Kefula, at 32:42 |
+| **Masei** (Num 33:1–36:13) | Yerach ben Yomo *and* Qarney Para, both at 35:5 — the only occurrence of either in the entire Torah |
+
+Two caveats on alignment. The **Ten Commandments** (Va'etchanan 5) carry a dual
+cantillation, and **Ha'azinu** is laid out as poetry in two columns; in both the
+text splits words differently from the recording, so their coach lines are
+approximate. The splice index drops any verse that doesn't line up, so neither can
+leak into the trope drills.
+
 ## Adding a reading / parashah
 
 Readings are **data-driven and auto-discovered**: the app lists whatever is in
@@ -252,9 +311,19 @@ python3 -m venv .venv && .venv/bin/pip install numpy   # once
 
 That single command fetches the Masoretic Hebrew + Koren-Jerusalem English
 (Sefaria), downloads and time-aligns the recorded chant + word onsets
-(PocketTorah), extracts the per-word coach note-steps and per-trope shapes, and
-**registers the reading in `data/readings.json`**. Reload the app and it appears
-in the Reading menu — no JS edit needed.
+(PocketTorah), extracts the per-word coach note-steps and per-trope shapes,
+**registers the reading in `data/readings.json`** (re-filing the whole menu by
+sefer in chumash order — see `scripts/organize_readings.py`, which reads each
+reading's book and opening verse from its own data file, so this works for a
+reading built by any route), and rebuilds `data/trope-index.json` so the trope
+drills can immediately splice from the new recording. Reload the app and it appears in the Reading menu — no JS edit
+needed. A parashah takes about ten seconds end to end.
+
+PocketTorah's file names are inconsistent — sometimes *within* one parashah
+(Nitzavim ships `Nitzavim-1..6.txt` next to `nitzavim-7.txt`; Vayera ships
+`vayera-1.txt` next to `Vayera-2..7.txt`). Where that happens, `pt_label` /
+`pt_audio` accept a dict of per-file overrides with a `"*"` default instead of a
+plain format string.
 
 It writes `data/<slug>.json`, `data/<slug>_audio.json`, `data/<slug>_pitch.json`,
 `data/<slug>_shapes.json` and `audio/<audio_slug>-*.mp3`. Verses use a sequential
@@ -433,7 +502,9 @@ js/app.js             UI controller / glue
 data/readings.json    reading manifest: parashiyot, drills + prayer excerpts
 data/devarim1.json    local Hebrew text (Masoretic, with vowels + te'amim)
 data/vaetchanan.json  parashat Va'etchanan text + aliyot (multi-chapter reading)
-data/trope-drills.json  synthetic te'amim exercises (no recording)
+data/trope-drills.json  synthetic te'amim exercises (no recording of their own)
+data/trope-index.json   recorded verses as accent sequences (drives the splicer)
+data/trope-shapes.json  how each accent is really sung, measured corpus-wide
 fonts/                Culmus fonts (modern Frank Ruehl + scroll Stam Ashkenaz)
 scripts/readings.py   registry of buildable readings (add an entry here)
 scripts/build_reading.py  ONE command: text+English+audio+pitch+shapes+register
@@ -442,12 +513,15 @@ scripts/fetch_translation.py fetch + merge an English translation
 scripts/fetch_audio.py fetch recorded chant + per-verse/word timings (legacy)
 scripts/extract_pitch.py derive per-word note steps from the recordings (numpy)
 scripts/build_drills.py   regenerate data/trope-drills.json
+scripts/build_trope_index.py  regenerate the splice index
+scripts/build_trope_shapes.py regenerate the measured per-accent shapes
+scripts/organize_readings.py  group the Reading menu by sefer, in chumash order
 scripts/serve.py      range-enabled static server (audio seeking)
 scripts/smoke.html    module tests (run via run_smoke.py)
 scripts/run_smoke.py  headless module test runner
 scripts/check_app.py  headless UI walkthrough (see Tests)
 scripts/shot.py       headless screenshot helper
-audio/                bundled recorded chant (Devarim 1–4, Va'ethanan 1–7)
+audio/                bundled recorded chant (all of Deuteronomy + Vayera/Matot/Masei)
 ```
 
 ## Toward mobile (Android / iOS)

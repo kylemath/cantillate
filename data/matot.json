@@ -1,0 +1,1109 @@
+{
+  "slug": "matot",
+  "book": {
+    "en": "Numbers",
+    "he": "במדבר",
+    "translit": "Bamidbar"
+  },
+  "multiChapter": true,
+  "ref": "Numbers 30:2-32:42",
+  "heRef": "במדבר ל׳:ב-ל״ב:מ״ב",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 30,
+      "v": 2,
+      "ref": "30:2",
+      "text": "וַיְדַבֵּ֤ר מֹשֶׁה֙ אֶל־רָאשֵׁ֣י הַמַּטּ֔וֹת לִבְנֵ֥י יִשְׂרָאֵ֖ל לֵאמֹ֑ר זֶ֣ה הַדָּבָ֔ר אֲשֶׁ֖ר צִוָּ֥ה יְהֹוָֽה׃",
+      "en": "And Moshe spoke to the heads of the tribes of the children of Yisra᾽el, saying, This is the thing which the Lord has commanded."
+    },
+    {
+      "n": 2,
+      "c": 30,
+      "v": 3,
+      "ref": "30:3",
+      "text": "אִישׁ֩ כִּֽי־יִדֹּ֨ר נֶ֜דֶר לַֽיהֹוָ֗ה אֽוֹ־הִשָּׁ֤בַע שְׁבֻעָה֙ לֶאְסֹ֤ר אִסָּר֙ עַל־נַפְשׁ֔וֹ לֹ֥א יַחֵ֖ל דְּבָר֑וֹ כְּכׇל־הַיֹּצֵ֥א מִפִּ֖יו יַעֲשֶֽׂה׃",
+      "en": "If a man vow a vow to the Lord, or swear an oath to bind his soul with a bond; he shall not break his word, he shall do according to all that proceeds out of his mouth."
+    },
+    {
+      "n": 3,
+      "c": 30,
+      "v": 4,
+      "ref": "30:4",
+      "text": "וְאִשָּׁ֕ה כִּֽי־תִדֹּ֥ר נֶ֖דֶר לַיהֹוָ֑ה וְאָסְרָ֥ה אִסָּ֛ר בְּבֵ֥ית אָבִ֖יהָ בִּנְעֻרֶֽיהָ׃",
+      "en": "If a woman also vow a vow to the Lord, and bind herself by a bond, being in her father’s house in her youth;"
+    },
+    {
+      "n": 4,
+      "c": 30,
+      "v": 5,
+      "ref": "30:5",
+      "text": "וְשָׁמַ֨ע אָבִ֜יהָ אֶת־נִדְרָ֗הּ וֶֽאֱסָרָהּ֙ אֲשֶׁ֣ר אָֽסְרָ֣ה עַל־נַפְשָׁ֔הּ וְהֶחֱרִ֥ישׁ לָ֖הּ אָבִ֑יהָ וְקָ֙מוּ֙ כׇּל־נְדָרֶ֔יהָ וְכׇל־אִסָּ֛ר אֲשֶׁר־אָסְרָ֥ה עַל־נַפְשָׁ֖הּ יָקֽוּם׃",
+      "en": "and her father hear her vow, and her bond with which she has bound herself, and her father shall hold his peace at her: then all her vows shall stand, and every bond with which she has bound herself shall stand."
+    },
+    {
+      "n": 5,
+      "c": 30,
+      "v": 6,
+      "ref": "30:6",
+      "text": "וְאִם־הֵנִ֨יא אָבִ֣יהָ אֹתָהּ֮ בְּי֣וֹם שׇׁמְעוֹ֒ כׇּל־נְדָרֶ֗יהָ וֶֽאֱסָרֶ֛יהָ אֲשֶׁר־אָסְרָ֥ה עַל־נַפְשָׁ֖הּ לֹ֣א יָק֑וּם וַֽיהֹוָה֙ יִֽסְלַח־לָ֔הּ כִּי־הֵנִ֥יא אָבִ֖יהָ אֹתָֽהּ׃",
+      "en": "But if her father disallow her in the day that he hears; not any of her vows, or of her bonds with which she has bound herself, shall stand: and the Lord shall forgive her, because her father disallowed her."
+    },
+    {
+      "n": 6,
+      "c": 30,
+      "v": 7,
+      "ref": "30:7",
+      "text": "וְאִם־הָי֤וֹ תִֽהְיֶה֙ לְאִ֔ישׁ וּנְדָרֶ֖יהָ עָלֶ֑יהָ א֚וֹ מִבְטָ֣א שְׂפָתֶ֔יהָ אֲשֶׁ֥ר אָסְרָ֖ה עַל־נַפְשָֽׁהּ׃",
+      "en": "And if she be married to a husband, when she vowed, or uttered aught out of her lips, with which she bound herself;"
+    },
+    {
+      "n": 7,
+      "c": 30,
+      "v": 8,
+      "ref": "30:8",
+      "text": "וְשָׁמַ֥ע אִישָׁ֛הּ בְּי֥וֹם שׇׁמְע֖וֹ וְהֶחֱרִ֣ישׁ לָ֑הּ וְקָ֣מוּ נְדָרֶ֗יהָ וֶֽאֱסָרֶ֛הָ אֲשֶׁר־אָסְרָ֥ה עַל־נַפְשָׁ֖הּ יָקֻֽמוּ׃",
+      "en": "and her husband heard it, and held his peace at her in the day that he heard it: then her vows shall stand, and her bonds with which she bound herself shall stand."
+    },
+    {
+      "n": 8,
+      "c": 30,
+      "v": 9,
+      "ref": "30:9",
+      "text": "וְ֠אִ֠ם בְּי֨וֹם שְׁמֹ֣עַ אִישָׁהּ֮ יָנִ֣יא אוֹתָהּ֒ וְהֵפֵ֗ר אֶת־נִדְרָהּ֙ אֲשֶׁ֣ר עָלֶ֔יהָ וְאֵת֙ מִבְטָ֣א שְׂפָתֶ֔יהָ אֲשֶׁ֥ר אָסְרָ֖ה עַל־נַפְשָׁ֑הּ וַיהֹוָ֖ה יִֽסְלַֽח־לָֽהּ׃",
+      "en": "But if her husband disallowed her on the day that he heard it; then he shall make her vow which she vowed, and that which she uttered with her lips, with which she bound her soul, of no effect: and the Lord shall forgive her."
+    },
+    {
+      "n": 9,
+      "c": 30,
+      "v": 10,
+      "ref": "30:10",
+      "text": "וְנֵ֥דֶר אַלְמָנָ֖ה וּגְרוּשָׁ֑ה כֹּ֛ל אֲשֶׁר־אָסְרָ֥ה עַל־נַפְשָׁ֖הּ יָק֥וּם עָלֶֽיהָ׃",
+      "en": "But every vow of a widow, and of her that is divorced, with which they have bound their souls, shall stand against her."
+    },
+    {
+      "n": 10,
+      "c": 30,
+      "v": 11,
+      "ref": "30:11",
+      "text": "וְאִם־בֵּ֥ית אִישָׁ֖הּ נָדָ֑רָה אֽוֹ־אָסְרָ֥ה אִסָּ֛ר עַל־נַפְשָׁ֖הּ בִּשְׁבֻעָֽה׃",
+      "en": "And if she vowed in her husband’s house, or bound herself by a bond with an oath;"
+    },
+    {
+      "n": 11,
+      "c": 30,
+      "v": 12,
+      "ref": "30:12",
+      "text": "וְשָׁמַ֤ע אִישָׁהּ֙ וְהֶחֱרִ֣שׁ לָ֔הּ לֹ֥א הֵנִ֖יא אֹתָ֑הּ וְקָ֙מוּ֙ כׇּל־נְדָרֶ֔יהָ וְכׇל־אִסָּ֛ר אֲשֶׁר־אָסְרָ֥ה עַל־נַפְשָׁ֖הּ יָקֽוּם׃",
+      "en": "and her husband heard it, and held his peace at her, and disallowed her not: then all her vows shall stand, and every bond with which she bound her soul shall stand."
+    },
+    {
+      "n": 12,
+      "c": 30,
+      "v": 13,
+      "ref": "30:13",
+      "text": "וְאִם־הָפֵר֩ יָפֵ֨ר אֹתָ֥ם&thinsp;<small>׀</small>&thinsp;אִישָׁהּ֮ בְּי֣וֹם שׇׁמְעוֹ֒ כׇּל־מוֹצָ֨א שְׂפָתֶ֧יהָ לִנְדָרֶ֛יהָ וּלְאִסַּ֥ר נַפְשָׁ֖הּ לֹ֣א יָק֑וּם אִישָׁ֣הּ הֲפֵרָ֔ם וַיהֹוָ֖ה יִֽסְלַֽח־לָֽהּ׃",
+      "en": "But if her husband made them void on the day he heard them; then whatever proceeded out of her lips concerning her vows, or concerning the bond of the soul, shall not stand: her husband has made them void; and the Lord shall forgive her."
+    },
+    {
+      "n": 13,
+      "c": 30,
+      "v": 14,
+      "ref": "30:14",
+      "text": "כׇּל־נֵ֛דֶר וְכׇל־שְׁבֻעַ֥ת אִסָּ֖ר לְעַנֹּ֣ת נָ֑פֶשׁ אִישָׁ֥הּ יְקִימֶ֖נּוּ וְאִישָׁ֥הּ יְפֵרֶֽנּוּ׃",
+      "en": "Every vow, and every binding oath to afflict the soul, her husband may let it stand, or her husband may make it void."
+    },
+    {
+      "n": 14,
+      "c": 30,
+      "v": 15,
+      "ref": "30:15",
+      "text": "וְאִם־הַחֲרֵשׁ֩ יַחֲרִ֨ישׁ לָ֥הּ אִישָׁהּ֮ מִיּ֣וֹם אֶל־יוֹם֒ וְהֵקִים֙ אֶת־כׇּל־נְדָרֶ֔יהָ א֥וֹ אֶת־כׇּל־אֱסָרֶ֖יהָ אֲשֶׁ֣ר עָלֶ֑יהָ הֵקִ֣ים אֹתָ֔ם כִּי־הֶחֱרִ֥שׁ לָ֖הּ בְּי֥וֹם שׇׁמְעֽוֹ׃",
+      "en": "But if her husband hold his peace at her from day to day; then he confirms all her vows, or all her bonds, which are upon her: he confirms them, because he held his peace at her in the day that he heard them."
+    },
+    {
+      "n": 15,
+      "c": 30,
+      "v": 16,
+      "ref": "30:16",
+      "text": "וְאִם־הָפֵ֥ר יָפֵ֛ר אֹתָ֖ם אַחֲרֵ֣י שׇׁמְע֑וֹ וְנָשָׂ֖א אֶת־עֲוֺנָֽהּ׃",
+      "en": "But if he should annul them after he has heard them; then he shall bear her iniquity."
+    },
+    {
+      "n": 16,
+      "c": 30,
+      "v": 17,
+      "ref": "30:17",
+      "text": "אֵ֣לֶּה הַֽחֻקִּ֗ים אֲשֶׁ֨ר צִוָּ֤ה יְהֹוָה֙ אֶת־מֹשֶׁ֔ה בֵּ֥ין אִ֖ישׁ לְאִשְׁתּ֑וֹ בֵּֽין־אָ֣ב לְבִתּ֔וֹ בִּנְעֻרֶ֖יהָ בֵּ֥ית אָבִֽיהָ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "These are the statutes, which the Lord commanded Moshe, between a man and his wife, between the father and his daughter, being yet in her youth in her father’s house."
+    },
+    {
+      "n": 17,
+      "c": 31,
+      "v": 1,
+      "ref": "31:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe saying,"
+    },
+    {
+      "n": 18,
+      "c": 31,
+      "v": 2,
+      "ref": "31:2",
+      "text": "נְקֹ֗ם נִקְמַת֙ בְּנֵ֣י יִשְׂרָאֵ֔ל מֵאֵ֖ת הַמִּדְיָנִ֑ים אַחַ֖ר תֵּאָסֵ֥ף אֶל־עַמֶּֽיךָ׃",
+      "en": "Execute the vengeance of the children of Yisra᾽el on the Midyanim: afterwards thou shalt be gathered to thy people."
+    },
+    {
+      "n": 19,
+      "c": 31,
+      "v": 3,
+      "ref": "31:3",
+      "text": "וַיְדַבֵּ֤ר מֹשֶׁה֙ אֶל־הָעָ֣ם לֵאמֹ֔ר הֵחָלְצ֧וּ מֵאִתְּכֶ֛ם אֲנָשִׁ֖ים לַצָּבָ֑א וְיִהְיוּ֙ עַל־מִדְיָ֔ן לָתֵ֥ת נִקְמַת־יְהֹוָ֖ה בְּמִדְיָֽן׃",
+      "en": "And Moshe spoke to the people, saying, Arm from yourselves men for the army, and let them go against Midyan and avenge the Lord on Midyan."
+    },
+    {
+      "n": 20,
+      "c": 31,
+      "v": 4,
+      "ref": "31:4",
+      "text": "אֶ֚לֶף לַמַּטֶּ֔ה אֶ֖לֶף לַמַּטֶּ֑ה לְכֹל֙ מַטּ֣וֹת יִשְׂרָאֵ֔ל תִּשְׁלְח֖וּ לַצָּבָֽא׃",
+      "en": "Of every tribe a thousand, throughout all the tribes of Yisra᾽el, shall you send to the war."
+    },
+    {
+      "n": 21,
+      "c": 31,
+      "v": 5,
+      "ref": "31:5",
+      "text": "וַיִּמָּֽסְרוּ֙ מֵאַלְפֵ֣י יִשְׂרָאֵ֔ל אֶ֖לֶף לַמַּטֶּ֑ה שְׁנֵים־עָשָׂ֥ר אֶ֖לֶף חֲלוּצֵ֥י צָבָֽא׃",
+      "en": "So there were delivered out of the thousands of Yisra᾽el, a thousand of every tribe, twelve thousand armed for war."
+    },
+    {
+      "n": 22,
+      "c": 31,
+      "v": 6,
+      "ref": "31:6",
+      "text": "וַיִּשְׁלַ֨ח אֹתָ֥ם מֹשֶׁ֛ה אֶ֥לֶף לַמַּטֶּ֖ה לַצָּבָ֑א אֹ֠תָ֠ם וְאֶת־פִּ֨ינְחָ֜ס בֶּן־אֶלְעָזָ֤ר הַכֹּהֵן֙ לַצָּבָ֔א וּכְלֵ֥י הַקֹּ֛דֶשׁ וַחֲצֹצְר֥וֹת הַתְּרוּעָ֖ה בְּיָדֽוֹ׃",
+      "en": "And Moshe sent them to the war, a thousand of every tribe, them and Pineĥas the son of El῾azar the priest, to the war, with the holy instruments, and the trumpets to blow in his hand."
+    },
+    {
+      "n": 23,
+      "c": 31,
+      "v": 7,
+      "ref": "31:7",
+      "text": "וַֽיִּצְבְּאוּ֙ עַל־מִדְיָ֔ן כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶׁ֑ה וַיַּֽהַרְג֖וּ כׇּל־זָכָֽר׃",
+      "en": "And they warred against Midyan, as the Lord commanded Moshe, and they slew all the males."
+    },
+    {
+      "n": 24,
+      "c": 31,
+      "v": 8,
+      "ref": "31:8",
+      "text": "וְאֶת־מַלְכֵ֨י מִדְיָ֜ן הָרְג֣וּ עַל־חַלְלֵיהֶ֗ם אֶת־אֱוִ֤י וְאֶת־רֶ֙קֶם֙ וְאֶת־צ֤וּר וְאֶת־חוּר֙ וְאֶת־רֶ֔בַע חֲמֵ֖שֶׁת מַלְכֵ֣י מִדְיָ֑ן וְאֵת֙ בִּלְעָ֣ם בֶּן־בְּע֔וֹר הָרְג֖וּ בֶּחָֽרֶב׃",
+      "en": "And they slew the kings of Midyan, beside the rest of them that were slain; namely, Evi, and Reqem, and Żur, and Ḥur, and Reva, five kings of Midyan: Bil῾am also the son of Be῾or they slew with the sword."
+    },
+    {
+      "n": 25,
+      "c": 31,
+      "v": 9,
+      "ref": "31:9",
+      "text": "וַיִּשְׁבּ֧וּ בְנֵי־יִשְׂרָאֵ֛ל אֶת־נְשֵׁ֥י מִדְיָ֖ן וְאֶת־טַפָּ֑ם וְאֵ֨ת כׇּל־בְּהֶמְתָּ֧ם וְאֶת־כׇּל־מִקְנֵהֶ֛ם וְאֶת־כׇּל־חֵילָ֖ם בָּזָֽזוּ׃",
+      "en": "And the children of Yisra᾽el took all the women of Midyan captives, and their little ones, and took the spoil of all their cattle, and all their flocks, and all their goods."
+    },
+    {
+      "n": 26,
+      "c": 31,
+      "v": 10,
+      "ref": "31:10",
+      "text": "וְאֵ֤ת כׇּל־עָרֵיהֶם֙ בְּמ֣וֹשְׁבֹתָ֔ם וְאֵ֖ת כׇּל־טִֽירֹתָ֑ם שָׂרְפ֖וּ בָּאֵֽשׁ׃",
+      "en": "And they burnt all the cities in which they dwelt, and all their encampments, with fire."
+    },
+    {
+      "n": 27,
+      "c": 31,
+      "v": 11,
+      "ref": "31:11",
+      "text": "וַיִּקְחוּ֙ אֶת־כׇּל־הַשָּׁלָ֔ל וְאֵ֖ת כׇּל־הַמַּלְק֑וֹחַ בָּאָדָ֖ם וּבַבְּהֵמָֽה׃",
+      "en": "And they took all the spoil, and all the prey, both of men and of beasts."
+    },
+    {
+      "n": 28,
+      "c": 31,
+      "v": 12,
+      "ref": "31:12",
+      "text": "וַיָּבִ֡אוּ אֶל־מֹשֶׁה֩ וְאֶל־אֶלְעָזָ֨ר הַכֹּהֵ֜ן וְאֶל־עֲדַ֣ת בְּנֵֽי־יִשְׂרָאֵ֗ל אֶת־הַשְּׁבִ֧י וְאֶת־הַמַּלְק֛וֹחַ וְאֶת־הַשָּׁלָ֖ל אֶל־הַֽמַּחֲנֶ֑ה אֶל־עַֽרְבֹ֣ת מוֹאָ֔ב אֲשֶׁ֖ר עַל־יַרְדֵּ֥ן יְרֵחֽוֹ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And they brought the captives, and the prey, and the spoil, to Moshe, and El῾azar the priest, and to the congregation of the children of Yisra᾽el, to the camp at the plains of Mo᾽av, which are by Yarden near Yereĥo."
+    },
+    {
+      "n": 29,
+      "c": 31,
+      "v": 13,
+      "ref": "31:13",
+      "text": "וַיֵּ֨צְא֜וּ מֹשֶׁ֨ה וְאֶלְעָזָ֧ר הַכֹּהֵ֛ן וְכׇל־נְשִׂיאֵ֥י הָעֵדָ֖ה לִקְרָאתָ֑ם אֶל־מִח֖וּץ לַֽמַּחֲנֶֽה׃",
+      "en": "And Moshe, and El῾azar the priest, and all the princes of the congregation, went out to meet them outside the camp."
+    },
+    {
+      "n": 30,
+      "c": 31,
+      "v": 14,
+      "ref": "31:14",
+      "text": "וַיִּקְצֹ֣ף מֹשֶׁ֔ה עַ֖ל פְּקוּדֵ֣י הֶחָ֑יִל שָׂרֵ֤י הָאֲלָפִים֙ וְשָׂרֵ֣י הַמֵּא֔וֹת הַבָּאִ֖ים מִצְּבָ֥א הַמִּלְחָמָֽה׃",
+      "en": "And Moshe was angry with the officers of the host, the captains over thousands, and captains over hundreds, who came from the battle."
+    },
+    {
+      "n": 31,
+      "c": 31,
+      "v": 15,
+      "ref": "31:15",
+      "text": "וַיֹּ֥אמֶר אֲלֵיהֶ֖ם מֹשֶׁ֑ה הַֽחִיִּיתֶ֖ם כׇּל־נְקֵבָֽה׃",
+      "en": "And Moshe said to them, Have you saved all the women alive?"
+    },
+    {
+      "n": 32,
+      "c": 31,
+      "v": 16,
+      "ref": "31:16",
+      "text": "הֵ֣ן הֵ֜נָּה הָי֨וּ לִבְנֵ֤י יִשְׂרָאֵל֙ בִּדְבַ֣ר בִּלְעָ֔ם לִמְסׇר־מַ֥עַל בַּיהֹוָ֖ה עַל־דְּבַר־פְּע֑וֹר וַתְּהִ֥י הַמַּגֵּפָ֖ה בַּעֲדַ֥ת יְהֹוָֽה׃",
+      "en": "Behold, these caused the children of Yisra᾽el, through the counsel of Bil῾am, to revolt against the Lord in the matter of Pe῾or, and there was a plague among the congregation of the Lord."
+    },
+    {
+      "n": 33,
+      "c": 31,
+      "v": 17,
+      "ref": "31:17",
+      "text": "וְעַתָּ֕ה הִרְג֥וּ כׇל־זָכָ֖ר בַּטָּ֑ף וְכׇל־אִשָּׁ֗ה יֹדַ֥עַת אִ֛ישׁ לְמִשְׁכַּ֥ב זָכָ֖ר הֲרֹֽגוּ׃",
+      "en": "Now therefore kill every male among the little ones, and kill every woman that has known man by lying with him."
+    },
+    {
+      "n": 34,
+      "c": 31,
+      "v": 18,
+      "ref": "31:18",
+      "text": "וְכֹל֙ הַטַּ֣ף בַּנָּשִׁ֔ים אֲשֶׁ֥ר לֹא־יָדְע֖וּ מִשְׁכַּ֣ב זָכָ֑ר הַחֲי֖וּ לָכֶֽם׃",
+      "en": "But all the women children, that have not known man by lying with him, keep alive for yourselves."
+    },
+    {
+      "n": 35,
+      "c": 31,
+      "v": 19,
+      "ref": "31:19",
+      "text": "וְאַתֶּ֗ם חֲנ֛וּ מִח֥וּץ לַֽמַּחֲנֶ֖ה שִׁבְעַ֣ת יָמִ֑ים כֹּל֩ הֹרֵ֨ג נֶ֜פֶשׁ וְכֹ֣ל&thinsp;<b>׀</b> נֹגֵ֣עַ בֶּֽחָלָ֗ל תִּֽתְחַטְּא֞וּ בַּיּ֤וֹם הַשְּׁלִישִׁי֙ וּבַיּ֣וֹם הַשְּׁבִיעִ֔י אַתֶּ֖ם וּשְׁבִיכֶֽם׃",
+      "en": "And abide outside the camp seven days: whoever has killed any person, and whoever has touched any slain, purify both yourselves and your captives on the third day, and on the seventh day."
+    },
+    {
+      "n": 36,
+      "c": 31,
+      "v": 20,
+      "ref": "31:20",
+      "text": "וְכׇל־בֶּ֧גֶד וְכׇל־כְּלִי־ע֛וֹר וְכׇל־מַעֲשֵׂ֥ה עִזִּ֖ים וְכׇל־כְּלִי־עֵ֑ץ תִּתְחַטָּֽאוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And purify every garment, and all that is made of skins, and all work of goats’ hair, and all things made of wood."
+    },
+    {
+      "n": 37,
+      "c": 31,
+      "v": 21,
+      "ref": "31:21",
+      "text": "וַיֹּ֨אמֶר אֶלְעָזָ֤ר הַכֹּהֵן֙ אֶל־אַנְשֵׁ֣י הַצָּבָ֔א הַבָּאִ֖ים לַמִּלְחָמָ֑ה זֹ֚את חֻקַּ֣ת הַתּוֹרָ֔ה אֲשֶׁר־צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "And El῾azar the priest said to the men of war which went to the battle, This is the ordinance of the Tora which the Lord commanded Moshe;"
+    },
+    {
+      "n": 38,
+      "c": 31,
+      "v": 22,
+      "ref": "31:22",
+      "text": "אַ֥ךְ אֶת־הַזָּהָ֖ב וְאֶת־הַכָּ֑סֶף אֶֽת־הַנְּחֹ֙שֶׁת֙ אֶת־הַבַּרְזֶ֔ל אֶֽת־הַבְּדִ֖יל וְאֶת־הָעֹפָֽרֶת׃",
+      "en": "only the gold, and the silver, the brass, the iron, the tin, and the lead,"
+    },
+    {
+      "n": 39,
+      "c": 31,
+      "v": 23,
+      "ref": "31:23",
+      "text": "כׇּל־דָּבָ֞ר אֲשֶׁר־יָבֹ֣א בָאֵ֗שׁ תַּעֲבִ֤ירוּ בָאֵשׁ֙ וְטָהֵ֔ר אַ֕ךְ בְּמֵ֥י נִדָּ֖ה יִתְחַטָּ֑א וְכֹ֨ל אֲשֶׁ֧ר לֹֽא־יָבֹ֛א בָּאֵ֖שׁ תַּעֲבִ֥ירוּ בַמָּֽיִם׃",
+      "en": "every thing that passes through the fire, you shall make it go through the fire, and it shall be clean: nevertheless it shall be purified with the water of sprinkling: and all that does not pass through the fire shall you make to go through water."
+    },
+    {
+      "n": 40,
+      "c": 31,
+      "v": 24,
+      "ref": "31:24",
+      "text": "וְכִבַּסְתֶּ֧ם בִּגְדֵיכֶ֛ם בַּיּ֥וֹם הַשְּׁבִיעִ֖י וּטְהַרְתֶּ֑ם וְאַחַ֖ר תָּבֹ֥אוּ אֶל־הַֽמַּחֲנֶֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And you shall wash your clothes on the seventh day, and you shall be clean, and afterwards you shall come into the camp."
+    },
+    {
+      "n": 41,
+      "c": 31,
+      "v": 25,
+      "ref": "31:25",
+      "text": "וַיֹּ֥אמֶר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe saying,"
+    },
+    {
+      "n": 42,
+      "c": 31,
+      "v": 26,
+      "ref": "31:26",
+      "text": "שָׂ֗א אֵ֣ת רֹ֤אשׁ מַלְק֙וֹחַ֙ הַשְּׁבִ֔י בָּאָדָ֖ם וּבַבְּהֵמָ֑ה אַתָּה֙ וְאֶלְעָזָ֣ר הַכֹּהֵ֔ן וְרָאשֵׁ֖י אֲב֥וֹת הָעֵדָֽה׃",
+      "en": "Take the sum of the prey that was taken, both of man and of beast, thou, and El῾azar the priest, and the chief fathers of the congregation:"
+    },
+    {
+      "n": 43,
+      "c": 31,
+      "v": 27,
+      "ref": "31:27",
+      "text": "וְחָצִ֙יתָ֙ אֶת־הַמַּלְק֔וֹחַ בֵּ֚ין תֹּפְשֵׂ֣י הַמִּלְחָמָ֔ה הַיֹּצְאִ֖ים לַצָּבָ֑א וּבֵ֖ין כׇּל־הָעֵדָֽה׃",
+      "en": "and divide the prey into two parts; between those who took the war upon them, who went out to battle, and between all the congregation:"
+    },
+    {
+      "n": 44,
+      "c": 31,
+      "v": 28,
+      "ref": "31:28",
+      "text": "וַהֲרֵמֹתָ֨ מֶ֜כֶס לַֽיהֹוָ֗ה מֵאֵ֞ת אַנְשֵׁ֤י הַמִּלְחָמָה֙ הַיֹּצְאִ֣ים לַצָּבָ֔א אֶחָ֣ד נֶ֔פֶשׁ מֵחֲמֵ֖שׁ הַמֵּא֑וֹת מִן־הָאָדָם֙ וּמִן־הַבָּקָ֔ר וּמִן־הַחֲמֹרִ֖ים וּמִן־הַצֹּֽאן׃",
+      "en": "and levy a tribute to the Lord of the men of war who went out to battle: one soul of five hundred, both of the persons, and of the beef cattle, and of the asses, and of the sheep:"
+    },
+    {
+      "n": 45,
+      "c": 31,
+      "v": 29,
+      "ref": "31:29",
+      "text": "מִמַּֽחֲצִיתָ֖ם תִּקָּ֑חוּ וְנָתַתָּ֛ה לְאֶלְעָזָ֥ר הַכֹּהֵ֖ן תְּרוּמַ֥ת יְהֹוָֽה׃",
+      "en": "from their half shall you take it, and give it to El῾azar the priest, for an offering set apart to the Lord."
+    },
+    {
+      "n": 46,
+      "c": 31,
+      "v": 30,
+      "ref": "31:30",
+      "text": "וּמִמַּחֲצִ֨ת בְּנֵֽי־יִשְׂרָאֵ֜ל תִּקַּ֣ח&thinsp;<b>׀</b> אֶחָ֣ד&thinsp;<b>׀</b> אָחֻ֣ז מִן־הַחֲמִשִּׁ֗ים מִן־הָאָדָ֧ם מִן־הַבָּקָ֛ר מִן־הַחֲמֹרִ֥ים וּמִן־הַצֹּ֖אן מִכׇּל־הַבְּהֵמָ֑ה וְנָתַתָּ֤ה אֹתָם֙ לַלְוִיִּ֔ם שֹׁמְרֵ֕י מִשְׁמֶ֖רֶת מִשְׁכַּ֥ן יְהֹוָֽה׃",
+      "en": "And of the children of Yisra᾽el’s half, thou shalt take one portion of fifty, of the persons, of the beef cattle, of the asses, and of the flocks, of all manner of beasts, and give them to the Levites, who keep the charge of the tabernacle of the Lord."
+    },
+    {
+      "n": 47,
+      "c": 31,
+      "v": 31,
+      "ref": "31:31",
+      "text": "וַיַּ֣עַשׂ מֹשֶׁ֔ה וְאֶלְעָזָ֖ר הַכֹּהֵ֑ן כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "And Moshe and El῾azar the priest did as the Lord commanded Moshe."
+    },
+    {
+      "n": 48,
+      "c": 31,
+      "v": 32,
+      "ref": "31:32",
+      "text": "וַֽיְהִי֙ הַמַּלְק֔וֹחַ יֶ֣תֶר הַבָּ֔ז אֲשֶׁ֥ר בָּזְז֖וּ עַ֣ם הַצָּבָ֑א צֹ֗אן שֵׁשׁ־מֵא֥וֹת אֶ֛לֶף וְשִׁבְעִ֥ים אֶ֖לֶף וַחֲמֵ֥שֶׁת אֲלָפִֽים׃",
+      "en": "And the booty, being the rest of the prey which the men of war had caught, was six hundred and seventy five thousand sheep."
+    },
+    {
+      "n": 49,
+      "c": 31,
+      "v": 33,
+      "ref": "31:33",
+      "text": "וּבָקָ֕ר שְׁנַ֥יִם וְשִׁבְעִ֖ים אָֽלֶף׃",
+      "en": "And seventy two thousand head of beef,"
+    },
+    {
+      "n": 50,
+      "c": 31,
+      "v": 34,
+      "ref": "31:34",
+      "text": "וַחֲמֹרִ֕ים אֶחָ֥ד וְשִׁשִּׁ֖ים אָֽלֶף׃",
+      "en": "and sixty one thousand asses,"
+    },
+    {
+      "n": 51,
+      "c": 31,
+      "v": 35,
+      "ref": "31:35",
+      "text": "וְנֶ֣פֶשׁ אָדָ֔ם מִ֨ן־הַנָּשִׁ֔ים אֲשֶׁ֥ר לֹֽא־יָדְע֖וּ מִשְׁכַּ֣ב זָכָ֑ר כׇּל־נֶ֕פֶשׁ שְׁנַ֥יִם וּשְׁלֹשִׁ֖ים אָֽלֶף׃",
+      "en": "and thirty two thousand persons in all, of women that had not known man by lying with him."
+    },
+    {
+      "n": 52,
+      "c": 31,
+      "v": 36,
+      "ref": "31:36",
+      "text": "וַתְּהִי֙ הַֽמֶּחֱצָ֔ה חֵ֕לֶק הַיֹּצְאִ֖ים בַּצָּבָ֑א מִסְפַּ֣ר הַצֹּ֗אן שְׁלֹשׁ־מֵא֥וֹת אֶ֙לֶף֙ וּשְׁלֹשִׁ֣ים אֶ֔לֶף וְשִׁבְעַ֥ת אֲלָפִ֖ים וַחֲמֵ֥שׁ מֵאֽוֹת׃",
+      "en": "And the half, which was the portion of those who went out to war, was in number three hundred and thirty seven thousand, five hundred sheep:"
+    },
+    {
+      "n": 53,
+      "c": 31,
+      "v": 37,
+      "ref": "31:37",
+      "text": "וַיְהִ֛י הַמֶּ֥כֶס לַֽיהֹוָ֖ה מִן־הַצֹּ֑אן שֵׁ֥שׁ מֵא֖וֹת חָמֵ֥שׁ וְשִׁבְעִֽים׃",
+      "en": "and the Lord’s tribute of the sheep was six hundred and seventy five."
+    },
+    {
+      "n": 54,
+      "c": 31,
+      "v": 38,
+      "ref": "31:38",
+      "text": "וְהַ֨בָּקָ֔ר שִׁשָּׁ֥ה וּשְׁלֹשִׁ֖ים אָ֑לֶף וּמִכְסָ֥ם לַיהֹוָ֖ה שְׁנַ֥יִם וְשִׁבְעִֽים׃",
+      "en": "And the beef cattle were thirty six thousand; of which the Lord’s tribute was seventy two."
+    },
+    {
+      "n": 55,
+      "c": 31,
+      "v": 39,
+      "ref": "31:39",
+      "text": "וַחֲמֹרִ֕ים שְׁלֹשִׁ֥ים אֶ֖לֶף וַחֲמֵ֣שׁ מֵא֑וֹת וּמִכְסָ֥ם לַֽיהֹוָ֖ה אֶחָ֥ד וְשִׁשִּֽׁים׃",
+      "en": "And the asses were thirty thousand, five hundred; of which the Lord’s tribute was sixty one."
+    },
+    {
+      "n": 56,
+      "c": 31,
+      "v": 40,
+      "ref": "31:40",
+      "text": "וְנֶ֣פֶשׁ אָדָ֔ם שִׁשָּׁ֥ה עָשָׂ֖ר אָ֑לֶף וּמִכְסָם֙ לַֽיהֹוָ֔ה שְׁנַ֥יִם וּשְׁלֹשִׁ֖ים נָֽפֶשׁ׃",
+      "en": "And the persons were sixteen thousand; of which the Lord’s tribute was thirty two persons."
+    },
+    {
+      "n": 57,
+      "c": 31,
+      "v": 41,
+      "ref": "31:41",
+      "text": "וַיִּתֵּ֣ן מֹשֶׁ֗ה אֶת־מֶ֙כֶס֙ תְּרוּמַ֣ת יְהֹוָ֔ה לְאֶלְעָזָ֖ר הַכֹּהֵ֑ן כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "And Moshe gave the tribute, which was the Lord’s gift, to El῾azar the priest, as the Lord commanded Moshe."
+    },
+    {
+      "n": 58,
+      "c": 31,
+      "v": 42,
+      "ref": "31:42",
+      "text": "וּמִֽמַּחֲצִ֖ית בְּנֵ֣י יִשְׂרָאֵ֑ל אֲשֶׁר֙ חָצָ֣ה מֹשֶׁ֔ה מִן־הָאֲנָשִׁ֖ים הַצֹּבְאִֽים׃",
+      "en": "And of the children of Yisra᾽el’s half, which Moshe divided from the men that warred,"
+    },
+    {
+      "n": 59,
+      "c": 31,
+      "v": 43,
+      "ref": "31:43",
+      "text": "וַתְּהִ֛י מֶחֱצַ֥ת הָעֵדָ֖ה מִן־הַצֹּ֑אן שְׁלֹשׁ־מֵא֥וֹת אֶ֙לֶף֙ וּשְׁלֹשִׁ֣ים אֶ֔לֶף שִׁבְעַ֥ת אֲלָפִ֖ים וַחֲמֵ֥שׁ מֵאֽוֹת׃",
+      "en": "(now the half that pertained to the congregation was three hundred and thirty seven thousand, five hundred sheep,"
+    },
+    {
+      "n": 60,
+      "c": 31,
+      "v": 44,
+      "ref": "31:44",
+      "text": "וּבָקָ֕ר שִׁשָּׁ֥ה וּשְׁלֹשִׁ֖ים אָֽלֶף׃",
+      "en": "and thirty six thousand head of beef,"
+    },
+    {
+      "n": 61,
+      "c": 31,
+      "v": 45,
+      "ref": "31:45",
+      "text": "וַחֲמֹרִ֕ים שְׁלֹשִׁ֥ים אֶ֖לֶף וַחֲמֵ֥שׁ מֵאֽוֹת׃",
+      "en": "and thirty thousand five hundred asses,"
+    },
+    {
+      "n": 62,
+      "c": 31,
+      "v": 46,
+      "ref": "31:46",
+      "text": "וְנֶ֣פֶשׁ אָדָ֔ם שִׁשָּׁ֥ה עָשָׂ֖ר אָֽלֶף׃",
+      "en": "and sixteen thousand persons;)"
+    },
+    {
+      "n": 63,
+      "c": 31,
+      "v": 47,
+      "ref": "31:47",
+      "text": "וַיִּקַּ֨ח מֹשֶׁ֜ה מִמַּחֲצִ֣ת בְּנֵֽי־יִשְׂרָאֵ֗ל אֶת־הָֽאָחֻז֙ אֶחָ֣ד מִן־הַחֲמִשִּׁ֔ים מִן־הָאָדָ֖ם וּמִן־הַבְּהֵמָ֑ה וַיִּתֵּ֨ן אֹתָ֜ם לַלְוִיִּ֗ם שֹֽׁמְרֵי֙ מִשְׁמֶ֙רֶת֙ מִשְׁכַּ֣ן יְהֹוָ֔ה כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "and of the children of Yisra᾽el’s half, Moshe took one portion of fifty, both of man and of beast, and gave them to the Levites, who kept the charge of the tabernacle of the Lord; as the Lord commanded Moshe."
+    },
+    {
+      "n": 64,
+      "c": 31,
+      "v": 48,
+      "ref": "31:48",
+      "text": "וַֽיִּקְרְבוּ֙ אֶל־מֹשֶׁ֔ה הַפְּקֻדִ֕ים אֲשֶׁ֖ר לְאַלְפֵ֣י הַצָּבָ֑א שָׂרֵ֥י הָאֲלָפִ֖ים וְשָׂרֵ֥י הַמֵּאֽוֹת׃",
+      "en": "And the officers who were over the thousands of the host, the captains of thousands, and captains of hundreds, came near to Moshe:"
+    },
+    {
+      "n": 65,
+      "c": 31,
+      "v": 49,
+      "ref": "31:49",
+      "text": "וַיֹּֽאמְרוּ֙ אֶל־מֹשֶׁ֔ה עֲבָדֶ֣יךָ נָֽשְׂא֗וּ אֶת־רֹ֛אשׁ אַנְשֵׁ֥י הַמִּלְחָמָ֖ה אֲשֶׁ֣ר בְּיָדֵ֑נוּ וְלֹא־נִפְקַ֥ד מִמֶּ֖נּוּ אִֽישׁ׃",
+      "en": "and they said to Moshe, Thy servants have taken the sum of the men of war who are under our charge, and not one man of us is missing."
+    },
+    {
+      "n": 66,
+      "c": 31,
+      "v": 50,
+      "ref": "31:50",
+      "text": "וַנַּקְרֵ֞ב אֶת־קׇרְבַּ֣ן יְהֹוָ֗ה אִישׁ֩ אֲשֶׁ֨ר מָצָ֤א כְלִֽי־זָהָב֙ אֶצְעָדָ֣ה וְצָמִ֔יד טַבַּ֖עַת עָגִ֣יל וְכוּמָ֑ז לְכַפֵּ֥ר עַל־נַפְשֹׁתֵ֖ינוּ לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "We have therefore brought an offering for the Lord, what every man has gotten, of jewels of gold, chains, and bracelets, rings, earrings, and girdles, to make atonement for our souls before the Lord."
+    },
+    {
+      "n": 67,
+      "c": 31,
+      "v": 51,
+      "ref": "31:51",
+      "text": "וַיִּקַּ֨ח מֹשֶׁ֜ה וְאֶלְעָזָ֧ר הַכֹּהֵ֛ן אֶת־הַזָּהָ֖ב מֵֽאִתָּ֑ם כֹּ֖ל כְּלִ֥י מַעֲשֶֽׂה׃",
+      "en": "And Moshe and El῾azar the priest took the gold of them, all wrought jewels."
+    },
+    {
+      "n": 68,
+      "c": 31,
+      "v": 52,
+      "ref": "31:52",
+      "text": "וַיְהִ֣י&thinsp;<b>׀</b> כׇּל־זְהַ֣ב הַתְּרוּמָ֗ה אֲשֶׁ֤ר הֵרִ֙ימוּ֙ לַֽיהֹוָ֔ה שִׁשָּׁ֨ה עָשָׂ֥ר אֶ֛לֶף שְׁבַע־מֵא֥וֹת וַחֲמִשִּׁ֖ים שָׁ֑קֶל מֵאֵת֙ שָׂרֵ֣י הָֽאֲלָפִ֔ים וּמֵאֵ֖ת שָׂרֵ֥י הַמֵּאֽוֹת׃",
+      "en": "And all the gold of the offering that they offered up to the Lord, of the captains of thousands, and of the captains of hundreds, was sixteen thousand seven hundred and fifty shekels."
+    },
+    {
+      "n": 69,
+      "c": 31,
+      "v": 53,
+      "ref": "31:53",
+      "text": "אַנְשֵׁי֙ הַצָּבָ֔א בָּזְז֖וּ אִ֥ישׁ לֽוֹ׃",
+      "en": "(For the men of war had taken spoil, every man for himself.)"
+    },
+    {
+      "n": 70,
+      "c": 31,
+      "v": 54,
+      "ref": "31:54",
+      "text": "וַיִּקַּ֨ח מֹשֶׁ֜ה וְאֶלְעָזָ֤ר הַכֹּהֵן֙ אֶת־הַזָּהָ֔ב מֵאֵ֛ת שָׂרֵ֥י הָאֲלָפִ֖ים וְהַמֵּא֑וֹת וַיָּבִ֤אוּ אֹתוֹ֙ אֶל־אֹ֣הֶל מוֹעֵ֔ד זִכָּר֥וֹן לִבְנֵֽי־יִשְׂרָאֵ֖ל לִפְנֵ֥י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Moshe and El῾azar the priest took the gold of the captains of thousands and of hundreds, and brought it to the Tent of Meeting, a memorial for the children of Yisra᾽el before the Lord."
+    },
+    {
+      "n": 71,
+      "c": 32,
+      "v": 1,
+      "ref": "32:1",
+      "text": "וּמִקְנֶ֣ה&thinsp;<b>׀</b> רַ֗ב הָיָ֞ה לִבְנֵ֧י רְאוּבֵ֛ן וְלִבְנֵי־גָ֖ד עָצ֣וּם מְאֹ֑ד וַיִּרְא֞וּ אֶת־אֶ֤רֶץ יַעְזֵר֙ וְאֶת־אֶ֣רֶץ גִּלְעָ֔ד וְהִנֵּ֥ה הַמָּק֖וֹם מְק֥וֹם מִקְנֶֽה׃",
+      "en": "Now the children of Re᾽uven and the children of Gad had a very great multitude of cattle: and when they saw the land of Ya῾zer, and the land of Gil῾ad, that, behold, the place was a place for cattle;"
+    },
+    {
+      "n": 72,
+      "c": 32,
+      "v": 2,
+      "ref": "32:2",
+      "text": "וַיָּבֹ֥אוּ בְנֵֽי־גָ֖ד וּבְנֵ֣י רְאוּבֵ֑ן וַיֹּאמְר֤וּ אֶל־מֹשֶׁה֙ וְאֶל־אֶלְעָזָ֣ר הַכֹּהֵ֔ן וְאֶל־נְשִׂיאֵ֥י הָעֵדָ֖ה לֵאמֹֽר׃",
+      "en": "the children of Gad and the children of Re᾽uven came and spoke to Moshe, and to El῾azar the priest, and to the princes of the congregation, saying,"
+    },
+    {
+      "n": 73,
+      "c": 32,
+      "v": 3,
+      "ref": "32:3",
+      "text": "עֲטָר֤וֹת וְדִיבֹן֙ וְיַעְזֵ֣ר וְנִמְרָ֔ה וְחֶשְׁבּ֖וֹן וְאֶלְעָלֵ֑ה וּשְׂבָ֥ם וּנְב֖וֹ וּבְעֹֽן׃",
+      "en": "῾Atarot, and Divon, and Ya῾zer, and Nimra, and Ḥeshbon, and El῾ale, and Sevam, and Nevo, and Be῾on,"
+    },
+    {
+      "n": 74,
+      "c": 32,
+      "v": 4,
+      "ref": "32:4",
+      "text": "הָאָ֗רֶץ אֲשֶׁ֨ר הִכָּ֤ה יְהֹוָה֙ לִפְנֵי֙ עֲדַ֣ת יִשְׂרָאֵ֔ל אֶ֥רֶץ מִקְנֶ֖ה הִ֑וא וְלַֽעֲבָדֶ֖יךָ מִקְנֶֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "the country which the Lord smote before the congregation of Yisra᾽el, is a land for cattle, and thy servants have cattle:"
+    },
+    {
+      "n": 75,
+      "c": 32,
+      "v": 5,
+      "ref": "32:5",
+      "text": "וַיֹּאמְר֗וּ אִם־מָצָ֤אנוּ חֵן֙ בְּעֵינֶ֔יךָ יֻתַּ֞ן אֶת־הָאָ֧רֶץ הַזֹּ֛את לַעֲבָדֶ֖יךָ לַאֲחֻזָּ֑ה אַל־תַּעֲבִרֵ֖נוּ אֶת־הַיַּרְדֵּֽן׃",
+      "en": "and they said, If we have found favour in thy sight, let this land be given to thy servants for a possession, and bring us not over the Yarden."
+    },
+    {
+      "n": 76,
+      "c": 32,
+      "v": 6,
+      "ref": "32:6",
+      "text": "וַיֹּ֣אמֶר מֹשֶׁ֔ה לִבְנֵי־גָ֖ד וְלִבְנֵ֣י רְאוּבֵ֑ן הַאַֽחֵיכֶ֗ם יָבֹ֙אוּ֙ לַמִּלְחָמָ֔ה וְאַתֶּ֖ם תֵּ֥שְׁבוּ פֹֽה׃",
+      "en": "And Moshe said to the children of Gad and to the children of Re᾽uven, Shall your brethren go to war, and shall you sit here?"
+    },
+    {
+      "n": 77,
+      "c": 32,
+      "v": 7,
+      "ref": "32:7",
+      "text": "וְלָ֣מָּה <span class=\"mam-kq\"><span class=\"mam-kq-k\">(תנואון)</span> <span class=\"mam-kq-q\">[תְנִיא֔וּן]</span></span> אֶת־לֵ֖ב בְּנֵ֣י יִשְׂרָאֵ֑ל מֵֽעֲבֹר֙ אֶל־הָאָ֔רֶץ אֲשֶׁר־נָתַ֥ן לָהֶ֖ם יְהֹוָֽה׃",
+      "en": "And why do you dishearten the children of Yisra᾽el from going over into the land which the Lord has given them?"
+    },
+    {
+      "n": 78,
+      "c": 32,
+      "v": 8,
+      "ref": "32:8",
+      "text": "כֹּ֥ה עָשׂ֖וּ אֲבֹתֵיכֶ֑ם בְּשׇׁלְחִ֥י אֹתָ֛ם מִקָּדֵ֥שׁ בַּרְנֵ֖עַ לִרְא֥וֹת אֶת־הָאָֽרֶץ׃",
+      "en": "Thus did your fathers, when I sent them from Qadesh-barnea to see the land."
+    },
+    {
+      "n": 79,
+      "c": 32,
+      "v": 9,
+      "ref": "32:9",
+      "text": "וַֽיַּעֲל֞וּ עַד־נַ֣חַל אֶשְׁכּ֗וֹל וַיִּרְאוּ֙ אֶת־הָאָ֔רֶץ וַיָּנִ֕יאוּ אֶת־לֵ֖ב בְּנֵ֣י יִשְׂרָאֵ֑ל לְבִלְתִּי־בֹא֙ אֶל־הָאָ֔רֶץ אֲשֶׁר־נָתַ֥ן לָהֶ֖ם יְהֹוָֽה׃",
+      "en": "For when they went up to the wadi of Eshkol, and saw the land, they disheartened the children of Yisra᾽el, that they should not go into the land which the Lord had given them."
+    },
+    {
+      "n": 80,
+      "c": 32,
+      "v": 10,
+      "ref": "32:10",
+      "text": "וַיִּֽחַר־אַ֥ף יְהֹוָ֖ה בַּיּ֣וֹם הַה֑וּא וַיִּשָּׁבַ֖ע לֵאמֹֽר׃",
+      "en": "And the Lord’s anger burned at that time, and he swore, saying,"
+    },
+    {
+      "n": 81,
+      "c": 32,
+      "v": 11,
+      "ref": "32:11",
+      "text": "אִם־יִרְא֨וּ הָאֲנָשִׁ֜ים הָעֹלִ֣ים מִמִּצְרַ֗יִם מִבֶּ֨ן עֶשְׂרִ֤ים שָׁנָה֙ וָמַ֔עְלָה אֵ֚ת הָאֲדָמָ֔ה אֲשֶׁ֥ר נִשְׁבַּ֛עְתִּי לְאַבְרָהָ֥ם לְיִצְחָ֖ק וּֽלְיַעֲקֹ֑ב כִּ֥י לֹא־מִלְא֖וּ אַחֲרָֽי׃",
+      "en": "Surely none of the men that came up out of Miżrayim, from twenty years old and upward, shall see the land which I swore to Avraham, to Yiżĥaq, and to Ya῾aqov; because they have not wholly followed me:"
+    },
+    {
+      "n": 82,
+      "c": 32,
+      "v": 12,
+      "ref": "32:12",
+      "text": "בִּלְתִּ֞י כָּלֵ֤ב בֶּן־יְפֻנֶּה֙ הַקְּנִזִּ֔י וִיהוֹשֻׁ֖עַ בִּן־נ֑וּן כִּ֥י מִלְא֖וּ אַחֲרֵ֥י יְהֹוָֽה׃",
+      "en": "save Kalev son of Yefunne the Qenizzite, and Yehoshua the son of Nun: for they have wholly followed the Lord."
+    },
+    {
+      "n": 83,
+      "c": 32,
+      "v": 13,
+      "ref": "32:13",
+      "text": "וַיִּֽחַר־אַ֤ף יְהֹוָה֙ בְּיִשְׂרָאֵ֔ל וַיְנִעֵם֙ בַּמִּדְבָּ֔ר אַרְבָּעִ֖ים שָׁנָ֑ה עַד־תֹּם֙ כׇּל־הַדּ֔וֹר הָעֹשֶׂ֥ה הָרַ֖ע בְּעֵינֵ֥י יְהֹוָֽה׃",
+      "en": "And the Lord’s anger burned against Yisra᾽el, and he made them wander in the wilderness for forty years, until all the generation, that had done evil in the sight of the Lord, was consumed."
+    },
+    {
+      "n": 84,
+      "c": 32,
+      "v": 14,
+      "ref": "32:14",
+      "text": "וְהִנֵּ֣ה קַמְתֶּ֗ם תַּ֚חַת אֲבֹ֣תֵיכֶ֔ם תַּרְבּ֖וּת אֲנָשִׁ֣ים חַטָּאִ֑ים לִסְפּ֣וֹת ע֗וֹד עַ֛ל חֲר֥וֹן אַף־יְהֹוָ֖ה אֶל־יִשְׂרָאֵֽל׃",
+      "en": "And, behold, you are risen up in place of your fathers, a brood of sinful men, to augment yet the fierce anger of the Lord towards Yisra᾽el."
+    },
+    {
+      "n": 85,
+      "c": 32,
+      "v": 15,
+      "ref": "32:15",
+      "text": "כִּ֤י תְשׁוּבֻן֙ מֵֽאַחֲרָ֔יו וְיָסַ֣ף ע֔וֹד לְהַנִּיח֖וֹ בַּמִּדְבָּ֑ר וְשִֽׁחַתֶּ֖ם לְכׇל־הָעָ֥ם הַזֶּֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For if you turn away from after him, he will yet again leave them in the wilderness; and you will destroy all this people."
+    },
+    {
+      "n": 86,
+      "c": 32,
+      "v": 16,
+      "ref": "32:16",
+      "text": "וַיִּגְּשׁ֤וּ אֵלָיו֙ וַיֹּ֣אמְר֔וּ גִּדְרֹ֥ת צֹ֛אן נִבְנֶ֥ה לְמִקְנֵ֖נוּ פֹּ֑ה וְעָרִ֖ים לְטַפֵּֽנוּ׃",
+      "en": "And they came near to him, and said, We will build sheepfolds here for our cattle, and cities for our little ones:"
+    },
+    {
+      "n": 87,
+      "c": 32,
+      "v": 17,
+      "ref": "32:17",
+      "text": "וַאֲנַ֜חְנוּ נֵחָלֵ֣ץ חֻשִׁ֗ים לִפְנֵי֙ בְּנֵ֣י יִשְׂרָאֵ֔ל עַ֛ד אֲשֶׁ֥ר אִם־הֲבִֽיאֹנֻ֖ם אֶל־מְקוֹמָ֑ם וְיָשַׁ֤ב טַפֵּ֙נוּ֙ בְּעָרֵ֣י הַמִּבְצָ֔ר מִפְּנֵ֖י יֹשְׁבֵ֥י הָאָֽרֶץ׃",
+      "en": "but we ourselves will go ready armed before the children of Yisra᾽el, until we have brought them to their place: and our little ones shall dwell in the fortified cities because of the inhabitants of the land."
+    },
+    {
+      "n": 88,
+      "c": 32,
+      "v": 18,
+      "ref": "32:18",
+      "text": "לֹ֥א נָשׁ֖וּב אֶל־בָּתֵּ֑ינוּ עַ֗ד הִתְנַחֵל֙ בְּנֵ֣י יִשְׂרָאֵ֔ל אִ֖ישׁ נַחֲלָתֽוֹ׃",
+      "en": "We will not return to our houses, until the children of Yisra᾽el have inherited every man his inheritance."
+    },
+    {
+      "n": 89,
+      "c": 32,
+      "v": 19,
+      "ref": "32:19",
+      "text": "כִּ֣י לֹ֤א נִנְחַל֙ אִתָּ֔ם מֵעֵ֥בֶר לַיַּרְדֵּ֖ן וָהָ֑לְאָה כִּ֣י בָ֤אָה נַחֲלָתֵ֙נוּ֙ אֵלֵ֔ינוּ מֵעֵ֥בֶר הַיַּרְדֵּ֖ן מִזְרָֽחָה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "For we will not inherit with them on yonder side of the Yarden, and farther off; because our inheritance is fallen to us on this side of the Yarden eastward."
+    },
+    {
+      "n": 90,
+      "c": 32,
+      "v": 20,
+      "ref": "32:20",
+      "text": "וַיֹּ֤אמֶר אֲלֵיהֶם֙ מֹשֶׁ֔ה אִֽם־תַּעֲשׂ֖וּן אֶת־הַדָּבָ֣ר הַזֶּ֑ה אִם־תֵּחָ֥לְצ֛וּ לִפְנֵ֥י יְהֹוָ֖ה לַמִּלְחָמָֽה׃",
+      "en": "And Moshe said to them, If you will do this thing, if you will go armed before the Lord to war,"
+    },
+    {
+      "n": 91,
+      "c": 32,
+      "v": 21,
+      "ref": "32:21",
+      "text": "וְעָבַ֨ר לָכֶ֧ם כׇּל־חָל֛וּץ אֶת־הַיַּרְדֵּ֖ן לִפְנֵ֣י יְהֹוָ֑ה עַ֧ד הוֹרִישׁ֛וֹ אֶת־אֹיְבָ֖יו מִפָּנָֽיו׃",
+      "en": "and will go all of you armed over the Yarden before the Lord, until he has driven out his enemies before him,"
+    },
+    {
+      "n": 92,
+      "c": 32,
+      "v": 22,
+      "ref": "32:22",
+      "text": "וְנִכְבְּשָׁ֨ה הָאָ֜רֶץ לִפְנֵ֤י יְהֹוָה֙ וְאַחַ֣ר תָּשֻׁ֔בוּ וִהְיִיתֶ֧ם נְקִיִּ֛ם מֵיְהֹוָ֖ה וּמִיִּשְׂרָאֵ֑ל וְ֠הָיְתָ֠ה הָאָ֨רֶץ הַזֹּ֥את לָכֶ֛ם לַאֲחֻזָּ֖ה לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "and the land be subdued before the Lord: then afterwards you shall return, and be guiltless before the Lord, and before Yisra᾽el; and this land shall be your possession before the Lord."
+    },
+    {
+      "n": 93,
+      "c": 32,
+      "v": 23,
+      "ref": "32:23",
+      "text": "וְאִם־לֹ֤א תַעֲשׂוּן֙ כֵּ֔ן הִנֵּ֥ה חֲטָאתֶ֖ם לַיהֹוָ֑ה וּדְעוּ֙ חַטַּאתְכֶ֔ם אֲשֶׁ֥ר תִּמְצָ֖א אֶתְכֶֽם׃",
+      "en": "But if you will not do so, behold, you have sinned against the Lord: and be sure your sin will find you out."
+    },
+    {
+      "n": 94,
+      "c": 32,
+      "v": 24,
+      "ref": "32:24",
+      "text": "בְּנֽוּ־לָכֶ֤ם עָרִים֙ לְטַפְּכֶ֔ם וּגְדֵרֹ֖ת לְצֹנַאֲכֶ֑ם וְהַיֹּצֵ֥א מִפִּיכֶ֖ם תַּעֲשֽׂוּ׃",
+      "en": "Build cities for your little ones, and folds for your sheep; and do that which has proceeded out of your mouth."
+    },
+    {
+      "n": 95,
+      "c": 32,
+      "v": 25,
+      "ref": "32:25",
+      "text": "וַיֹּ֤אמֶר בְּנֵי־גָד֙ וּבְנֵ֣י רְאוּבֵ֔ן אֶל־מֹשֶׁ֖ה לֵאמֹ֑ר עֲבָדֶ֣יךָ יַעֲשׂ֔וּ כַּאֲשֶׁ֥ר אֲדֹנִ֖י מְצַוֶּֽה׃",
+      "en": "And the children of Gad and the children of Re᾽uven spoke to Moshe, saying, Thy servants will do as my lord commands."
+    },
+    {
+      "n": 96,
+      "c": 32,
+      "v": 26,
+      "ref": "32:26",
+      "text": "טַפֵּ֣נוּ נָשֵׁ֔ינוּ מִקְנֵ֖נוּ וְכׇל־בְּהֶמְתֵּ֑נוּ יִֽהְיוּ־שָׁ֖ם בְּעָרֵ֥י הַגִּלְעָֽד׃",
+      "en": "Our little ones, our wives, our flocks, and all our cattle, shall be there in the cities of Gil῾ad:"
+    },
+    {
+      "n": 97,
+      "c": 32,
+      "v": 27,
+      "ref": "32:27",
+      "text": "וַעֲבָדֶ֨יךָ יַֽעַבְר֜וּ כׇּל־חֲל֥וּץ צָבָ֛א לִפְנֵ֥י יְהֹוָ֖ה לַמִּלְחָמָ֑ה כַּאֲשֶׁ֥ר אֲדֹנִ֖י דֹּבֵֽר׃",
+      "en": "but thy servants will pass over, every man armed for war, before the Lord to battle, as my lord says."
+    },
+    {
+      "n": 98,
+      "c": 32,
+      "v": 28,
+      "ref": "32:28",
+      "text": "וַיְצַ֤ו לָהֶם֙ מֹשֶׁ֔ה אֵ֚ת אֶלְעָזָ֣ר הַכֹּהֵ֔ן וְאֵ֖ת יְהוֹשֻׁ֣עַ בִּן־נ֑וּן וְאֶת־רָאשֵׁ֛י אֲב֥וֹת הַמַּטּ֖וֹת לִבְנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "So concerning them Moshe commanded El῾azar the priest, and Yehoshua the son of Nun, and the chief fathers of the tribes of the children of Yisra᾽el:"
+    },
+    {
+      "n": 99,
+      "c": 32,
+      "v": 29,
+      "ref": "32:29",
+      "text": "וַיֹּ֨אמֶר מֹשֶׁ֜ה אֲלֵהֶ֗ם אִם־יַעַבְר֣וּ בְנֵי־גָ֣ד וּבְנֵי־רְאוּבֵ֣ן&thinsp;<small>׀</small>&thinsp;אִ֠תְּכֶ֠ם אֶֽת־הַיַּרְדֵּ֞ן כׇּל־חָל֤וּץ לַמִּלְחָמָה֙ לִפְנֵ֣י יְהֹוָ֔ה וְנִכְבְּשָׁ֥ה הָאָ֖רֶץ לִפְנֵיכֶ֑ם וּנְתַתֶּ֥ם לָהֶ֛ם אֶת־אֶ֥רֶץ הַגִּלְעָ֖ד לַאֲחֻזָּֽה׃",
+      "en": "and Moshe said to them, If the children of Gad and the children of Re᾽uven will pass with you over the Yarden, every man armed to battle, before the Lord, and the land shall be subdued before you; then you shall give them the land of Gil῾ad for a possession:"
+    },
+    {
+      "n": 100,
+      "c": 32,
+      "v": 30,
+      "ref": "32:30",
+      "text": "וְאִם־לֹ֧א יַֽעַבְר֛וּ חֲלוּצִ֖ים אִתְּכֶ֑ם וְנֹֽאחֲז֥וּ בְתֹכְכֶ֖ם בְּאֶ֥רֶץ כְּנָֽעַן׃",
+      "en": "but if they will not pass over with you armed, they shall have possessions among you in the land of Kena῾an."
+    },
+    {
+      "n": 101,
+      "c": 32,
+      "v": 31,
+      "ref": "32:31",
+      "text": "וַיַּֽעֲנ֧וּ בְנֵי־גָ֛ד וּבְנֵ֥י רְאוּבֵ֖ן לֵאמֹ֑ר אֵת֩ אֲשֶׁ֨ר דִּבֶּ֧ר יְהֹוָ֛ה אֶל־עֲבָדֶ֖יךָ כֵּ֥ן נַעֲשֶֽׂה׃",
+      "en": "And the children of Gad and the children of Re᾽uven answered, saying, as the Lord has said to thy servants, so will we do."
+    },
+    {
+      "n": 102,
+      "c": 32,
+      "v": 32,
+      "ref": "32:32",
+      "text": "נַ֣חְנוּ נַעֲבֹ֧ר חֲלוּצִ֛ים לִפְנֵ֥י יְהֹוָ֖ה אֶ֣רֶץ כְּנָ֑עַן וְאִתָּ֙נוּ֙ אֲחֻזַּ֣ת נַחֲלָתֵ֔נוּ מֵעֵ֖בֶר לַיַּרְדֵּֽן׃",
+      "en": "We will pass over armed before the Lord into the land of Kena῾an, that the possession of our inheritance may be ours on this side of the Yarden."
+    },
+    {
+      "n": 103,
+      "c": 32,
+      "v": 33,
+      "ref": "32:33",
+      "text": "וַיִּתֵּ֣ן לָהֶ֣ם&thinsp;<small>׀</small>&thinsp;מֹשֶׁ֡ה לִבְנֵי־גָד֩ וְלִבְנֵ֨י רְאוּבֵ֜ן וְלַחֲצִ֣י&thinsp;<b>׀</b> שֵׁ֣בֶט&thinsp;<b>׀</b> מְנַשֶּׁ֣ה בֶן־יוֹסֵ֗ף אֶת־מַמְלֶ֙כֶת֙ סִיחֹן֙ מֶ֣לֶךְ הָֽאֱמֹרִ֔י וְאֶ֨ת־מַמְלֶ֔כֶת ע֖וֹג מֶ֣לֶךְ הַבָּשָׁ֑ן הָאָ֗רֶץ לְעָרֶ֙יהָ֙ בִּגְבֻלֹ֔ת עָרֵ֥י הָאָ֖רֶץ סָבִֽיב׃",
+      "en": "And Moshe gave to them, to the children of Gad, and to the children of Re᾽uven, and to half the tribe of Menashshe the son of Yosef, the kingdom of Siĥon king of the Emori, and the kingdom of ῾Og king of Bashan, the land, with its cities in the borders, the cities of the country round about."
+    },
+    {
+      "n": 104,
+      "c": 32,
+      "v": 34,
+      "ref": "32:34",
+      "text": "וַיִּבְנ֣וּ בְנֵי־גָ֔ד אֶת־דִּיבֹ֖ן וְאֶת־עֲטָרֹ֑ת וְאֵ֖ת עֲרֹעֵֽר׃",
+      "en": "And the children of Gad built Divon, and ῾Atarot, and ῾Aro῾er,"
+    },
+    {
+      "n": 105,
+      "c": 32,
+      "v": 35,
+      "ref": "32:35",
+      "text": "וְאֶת־עַטְרֹ֥ת שׁוֹפָ֛ן וְאֶת־יַעְזֵ֖ר וְיׇגְבְּהָֽה׃",
+      "en": "and ῾Atrot-shofan, and Ya῾zer, and Yogbeha,"
+    },
+    {
+      "n": 106,
+      "c": 32,
+      "v": 36,
+      "ref": "32:36",
+      "text": "וְאֶת־בֵּ֥ית נִמְרָ֖ה וְאֶת־בֵּ֣ית הָרָ֑ן עָרֵ֥י מִבְצָ֖ר וְגִדְרֹ֥ת צֹֽאן׃",
+      "en": "and Bet-nimra, and Bet-haran, fortified cities: and folds for sheep."
+    },
+    {
+      "n": 107,
+      "c": 32,
+      "v": 37,
+      "ref": "32:37",
+      "text": "וּבְנֵ֤י רְאוּבֵן֙ בָּנ֔וּ אֶת־חֶשְׁבּ֖וֹן וְאֶת־אֶלְעָלֵ֑א וְאֵ֖ת קִרְיָתָֽיִם׃",
+      "en": "And the children of Re᾽uven built Ḥeshbon, and El῾ale, and Qiryatayim,"
+    },
+    {
+      "n": 108,
+      "c": 32,
+      "v": 38,
+      "ref": "32:38",
+      "text": "וְאֶת־נְב֞וֹ וְאֶת־בַּ֧עַל מְע֛וֹן מֽוּסַבֹּ֥ת שֵׁ֖ם וְאֶת־שִׂבְמָ֑ה וַיִּקְרְא֣וּ בְשֵׁמֹ֔ת אֶת־שְׁמ֥וֹת הֶעָרִ֖ים אֲשֶׁ֥ר בָּנֽוּ׃",
+      "en": "and Nevo, and Ba῾al-me῾on, (their names being changed,) and Sivma: and gave other names to the cities which they built."
+    },
+    {
+      "n": 109,
+      "c": 32,
+      "v": 39,
+      "ref": "32:39",
+      "text": "וַיֵּ֨לְכ֜וּ בְּנֵ֨י מָכִ֧יר בֶּן־מְנַשֶּׁ֛ה גִּלְעָ֖דָה וַֽיִּלְכְּדֻ֑הָ וַיּ֖וֹרֶשׁ אֶת־הָאֱמֹרִ֥י אֲשֶׁר־בָּֽהּ׃",
+      "en": "And the children of Makhir the son of Menashshe went to Gil῾ad, and took it, and dispossessed the Emori who were in it."
+    },
+    {
+      "n": 110,
+      "c": 32,
+      "v": 40,
+      "ref": "32:40",
+      "text": "וַיִּתֵּ֤ן מֹשֶׁה֙ אֶת־הַגִּלְעָ֔ד לְמָכִ֖יר בֶּן־מְנַשֶּׁ֑ה וַיֵּ֖שֶׁב בָּֽהּ׃",
+      "en": "And Moshe gave Gil῾ad to Makhir the son of Menashshe; and he dwelt in it."
+    },
+    {
+      "n": 111,
+      "c": 32,
+      "v": 41,
+      "ref": "32:41",
+      "text": "וְיָאִ֤יר בֶּן־מְנַשֶּׁה֙ הָלַ֔ךְ וַיִּלְכֹּ֖ד אֶת־חַוֺּתֵיהֶ֑ם וַיִּקְרָ֥א אֶתְהֶ֖ן חַוֺּ֥ת יָאִֽיר׃",
+      "en": "And Ya᾽ir the son of Menashshe went and took their villages, and called them Ḥavvot-ya᾽ir."
+    },
+    {
+      "n": 112,
+      "c": 32,
+      "v": 42,
+      "ref": "32:42",
+      "text": "וְנֹ֣בַח הָלַ֔ךְ וַיִּלְכֹּ֥ד אֶת־קְנָ֖ת וְאֶת־בְּנֹתֶ֑יהָ וַיִּקְרָ֧א לָ֦הֿ נֹ֖בַח בִּשְׁמֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Novaĥ went and took Qenat, and its hamlets, and called it Novaĥ, after his own name."
+    }
+  ],
+  "parashah": {
+    "en": "Matot",
+    "he": "מַטּוֹת",
+    "translit": "Matot",
+    "ref": "Numbers 30:2–32:42"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 16,
+        "ref": "30:2–30:17"
+      },
+      {
+        "n": 2,
+        "start": 17,
+        "end": 28,
+        "ref": "31:1–31:12"
+      },
+      {
+        "n": 3,
+        "start": 29,
+        "end": 40,
+        "ref": "31:13–31:24"
+      },
+      {
+        "n": 4,
+        "start": 41,
+        "end": 57,
+        "ref": "31:25–31:41"
+      },
+      {
+        "n": 5,
+        "start": 58,
+        "end": 70,
+        "ref": "31:42–31:54"
+      },
+      {
+        "n": 6,
+        "start": 71,
+        "end": 89,
+        "ref": "32:1–32:19"
+      },
+      {
+        "n": 7,
+        "start": 90,
+        "end": 112,
+        "ref": "32:20–32:42"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 6,
+          "ref": "30:2–30:7"
+        },
+        {
+          "n": 2,
+          "start": 7,
+          "end": 12,
+          "ref": "30:8–30:13"
+        },
+        {
+          "n": 3,
+          "start": 13,
+          "end": 18,
+          "ref": "30:14–31:2"
+        },
+        {
+          "n": 4,
+          "start": 19,
+          "end": 23,
+          "ref": "31:3–31:7"
+        },
+        {
+          "n": 5,
+          "start": 24,
+          "end": 28,
+          "ref": "31:8–31:12"
+        },
+        {
+          "n": 6,
+          "start": 29,
+          "end": 33,
+          "ref": "31:13–31:17"
+        },
+        {
+          "n": 7,
+          "start": 34,
+          "end": 38,
+          "ref": "31:18–31:22"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 39,
+          "end": 44,
+          "ref": "31:23–31:28"
+        },
+        {
+          "n": 2,
+          "start": 45,
+          "end": 50,
+          "ref": "31:29–31:34"
+        },
+        {
+          "n": 3,
+          "start": 51,
+          "end": 55,
+          "ref": "31:35–31:39"
+        },
+        {
+          "n": 4,
+          "start": 56,
+          "end": 60,
+          "ref": "31:40–31:44"
+        },
+        {
+          "n": 5,
+          "start": 61,
+          "end": 65,
+          "ref": "31:45–31:49"
+        },
+        {
+          "n": 6,
+          "start": 66,
+          "end": 70,
+          "ref": "31:50–31:54"
+        },
+        {
+          "n": 7,
+          "start": 71,
+          "end": 75,
+          "ref": "32:1–32:5"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 76,
+          "end": 81,
+          "ref": "32:6–32:11"
+        },
+        {
+          "n": 2,
+          "start": 82,
+          "end": 87,
+          "ref": "32:12–32:17"
+        },
+        {
+          "n": 3,
+          "start": 88,
+          "end": 92,
+          "ref": "32:18–32:22"
+        },
+        {
+          "n": 4,
+          "start": 93,
+          "end": 97,
+          "ref": "32:23–32:27"
+        },
+        {
+          "n": 5,
+          "start": 98,
+          "end": 102,
+          "ref": "32:28–32:32"
+        },
+        {
+          "n": 6,
+          "start": 103,
+          "end": 107,
+          "ref": "32:33–32:37"
+        },
+        {
+          "n": 7,
+          "start": 108,
+          "end": 112,
+          "ref": "32:38–32:42"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 109,
+        "end": 112,
+        "ref": "32:39–32:42"
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

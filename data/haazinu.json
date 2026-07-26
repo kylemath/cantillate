@@ -1,0 +1,629 @@
+{
+  "slug": "haazinu",
+  "book": {
+    "en": "Deuteronomy",
+    "he": "דברים",
+    "translit": "Devarim"
+  },
+  "multiChapter": true,
+  "ref": "Deuteronomy 32:1-52",
+  "heRef": "דברים ל״ב:א-נ״ב",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 32,
+      "v": 1,
+      "ref": "32:1",
+      "text": "הַאֲזִ֥ינוּ הַשָּׁמַ֖יִם וַאֲדַבֵּ֑רָה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְתִשְׁמַ֥ע הָאָ֖רֶץ אִמְרֵי־פִֽי׃",
+      "en": "Give ear, O heavens, and I will speak; and hear, O earth, the words of my mouth."
+    },
+    {
+      "n": 2,
+      "c": 32,
+      "v": 2,
+      "ref": "32:2",
+      "text": "יַעֲרֹ֤ף כַּמָּטָר֙ לִקְחִ֔י&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;תִּזַּ֥ל כַּטַּ֖ל אִמְרָתִ֑י כִּשְׂעִירִ֣ם עֲלֵי־דֶ֔שֶׁא&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְכִרְבִיבִ֖ים עֲלֵי־עֵֽשֶׂב׃",
+      "en": "My doctrine shall drop as the rain, my speech shall distil as the dew, as the small rain upon the tender herb, and as the showers upon the grass:"
+    },
+    {
+      "n": 3,
+      "c": 32,
+      "v": 3,
+      "ref": "32:3",
+      "text": "כִּ֛י שֵׁ֥ם יְהֹוָ֖ה אֶקְרָ֑א&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;הָב֥וּ גֹ֖דֶל לֵאלֹהֵֽינוּ׃",
+      "en": "because I will call on the name of the Lord: ascribe greatness to our God."
+    },
+    {
+      "n": 4,
+      "c": 32,
+      "v": 4,
+      "ref": "32:4",
+      "text": "הַצּוּר֙ תָּמִ֣ים פׇּֽעֳל֔וֹ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;כִּ֥י כׇל־דְּרָכָ֖יו מִשְׁפָּ֑ט אֵ֤ל אֱמוּנָה֙ וְאֵ֣ין עָ֔וֶל&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;צַדִּ֥יק וְיָשָׁ֖ר הֽוּא׃",
+      "en": "He is the Rock, his work is perfect: for all his ways are justice: a God of truth and without iniquity, just and right is he."
+    },
+    {
+      "n": 5,
+      "c": 32,
+      "v": 5,
+      "ref": "32:5",
+      "text": "שִׁחֵ֥ת ל֛וֹ לֹ֖א בָּנָ֣יו מוּמָ֑ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;דּ֥וֹר עִקֵּ֖שׁ וּפְתַלְתֹּֽל׃",
+      "en": "Not his the corruption, but the blemish of his sons: they are a perverse and crooked generation."
+    },
+    {
+      "n": 6,
+      "c": 32,
+      "v": 6,
+      "ref": "32:6",
+      "text": "<big>הַ</big> לְיְהֹוָה֙<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי תימן <big>הַֽ</big>לְיהֹוָה֙ בתיבה אחת)</i> תִּגְמְלוּ־זֹ֔את&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;עַ֥ם נָבָ֖ל וְלֹ֣א חָכָ֑ם הֲלוֹא־הוּא֙ אָבִ֣יךָ קָּנֶ֔ךָ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ה֥וּא עָשְׂךָ֖ וַֽיְכֹנְנֶֽךָ׃",
+      "en": "Do you thus requite the Lord, O foolish people and unwise? is not he thy father that bought thee? has he not made thee, and established thee?"
+    },
+    {
+      "n": 7,
+      "c": 32,
+      "v": 7,
+      "ref": "32:7",
+      "text": "זְכֹר֙ יְמ֣וֹת עוֹלָ֔ם בִּ֖ינוּ שְׁנ֣וֹת דֹּר־וָדֹ֑ר&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;שְׁאַ֤ל אָבִ֙יךָ֙ וְיַגֵּ֔דְךָ זְקֵנֶ֖יךָ וְיֹ֥אמְרוּ לָֽךְ׃",
+      "en": "Remember the days of old consider the years of many generations: ask thy father, and he will recount it to thee; thy elders, and they will tell thee."
+    },
+    {
+      "n": 8,
+      "c": 32,
+      "v": 8,
+      "ref": "32:8",
+      "text": "בְּהַנְחֵ֤ל עֶלְיוֹן֙ גּוֹיִ֔ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;בְּהַפְרִיד֖וֹ בְּנֵ֣י אָדָ֑ם יַצֵּב֙ גְּבֻלֹ֣ת עַמִּ֔ים&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;לְמִסְפַּ֖ר בְּנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "When the most High divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yisra᾽el."
+    },
+    {
+      "n": 9,
+      "c": 32,
+      "v": 9,
+      "ref": "32:9",
+      "text": "כִּ֛י חֵ֥לֶק יְהֹוָ֖ה עַמּ֑וֹ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;יַעֲקֹ֖ב חֶ֥בֶל נַחֲלָתֽוֹ׃",
+      "en": "For the Lord’s portion is his people; Ya῾aqov is the lot of his inheritance."
+    },
+    {
+      "n": 10,
+      "c": 32,
+      "v": 10,
+      "ref": "32:10",
+      "text": "יִמְצָאֵ֙הוּ֙ בְּאֶ֣רֶץ מִדְבָּ֔ר&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וּבְתֹ֖הוּ יְלֵ֣ל יְשִׁמֹ֑ן יְסֹבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;יִצְּרֶ֖נְהוּ כְּאִישׁ֥וֹן עֵינֽוֹ׃",
+      "en": "He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye."
+    },
+    {
+      "n": 11,
+      "c": 32,
+      "v": 11,
+      "ref": "32:11",
+      "text": "כְּנֶ֙שֶׁר֙ יָעִ֣יר קִנּ֔וֹ עַל־גּוֹזָלָ֖יו יְרַחֵ֑ף&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;יִפְרֹ֤שׂ כְּנָפָיו֙ יִקָּחֵ֔הוּ יִשָּׂאֵ֖הוּ עַל־אֶבְרָתֽוֹ׃",
+      "en": "As an eagle stirs up her nest, broods over her young, spreads abroad her wings takes them, bears them on her pinions:"
+    },
+    {
+      "n": 12,
+      "c": 32,
+      "v": 12,
+      "ref": "32:12",
+      "text": "יְהֹוָ֖ה בָּדָ֣ד יַנְחֶ֑נּוּ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְאֵ֥ין עִמּ֖וֹ אֵ֥ל נֵכָֽר׃",
+      "en": "so the Lord alone did lead him, and there was no strange god with him."
+    },
+    {
+      "n": 13,
+      "c": 32,
+      "v": 13,
+      "ref": "32:13",
+      "text": "יַרְכִּבֵ֙הוּ֙ עַל־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[בָּ֣מֳתֵי]</span> <span class=\"mam-kq-k\">(במותי)</span></span> אָ֔רֶץ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַיֹּאכַ֖ל תְּנוּבֹ֣ת שָׂדָ֑י וַיֵּנִקֵ֤הֽוּ דְבַשׁ֙ מִסֶּ֔לַע&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְשֶׁ֖מֶן מֵחַלְמִ֥ישׁ צֽוּר׃",
+      "en": "He made him ride on the high places of the earth, and he ate the produce of the fields; and he made him suck honey out of the rock, and oil out of the flinty rock;"
+    },
+    {
+      "n": 14,
+      "c": 32,
+      "v": 14,
+      "ref": "32:14",
+      "text": "חֶמְאַ֨ת בָּקָ֜ר וַחֲלֵ֣ב צֹ֗אן&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;עִם־חֵ֨לֶב כָּרִ֜ים וְאֵילִ֤ים בְּנֵֽי־בָשָׁן֙ וְעַתּוּדִ֔ים&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;עִם־חֵ֖לֶב כִּלְי֣וֹת חִטָּ֑ה וְדַם־עֵנָ֖ב תִּשְׁתֶּה־חָֽמֶר׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "butter of kine, and milk of sheep, with fat of lambs, and rams of the breed of Bashan, and goats, with the fat of kidneys of wheat; and thou didst drink wine of the pure blood of the grape."
+    },
+    {
+      "n": 15,
+      "c": 32,
+      "v": 15,
+      "ref": "32:15",
+      "text": "וַיִּשְׁמַ֤ן יְשֻׁרוּן֙ וַיִּבְעָ֔ט שָׁמַ֖נְתָּ עָבִ֣יתָ כָּשִׂ֑יתָ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַיִּטֹּשׁ֙ אֱל֣וֹהַּ עָשָׂ֔הוּ וַיְנַבֵּ֖ל צ֥וּר יְשֻׁעָתֽוֹ׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "But Yeshurun grew fat, and kicked: thou art grown fat, thou art become thick, thou art covered with fatness; then he forsook God who made him, and lightly esteemed the Rock of his salvation."
+    },
+    {
+      "n": 16,
+      "c": 32,
+      "v": 16,
+      "ref": "32:16",
+      "text": "יַקְנִאֻ֖הוּ בְּזָרִ֑ים בְּתוֹעֵבֹ֖ת יַכְעִיסֻֽהוּ׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "They provoked him to jealousy with strange gods, with abominations they provoked him to anger."
+    },
+    {
+      "n": 17,
+      "c": 32,
+      "v": 17,
+      "ref": "32:17",
+      "text": "יִזְבְּח֗וּ לַשֵּׁדִים֙ לֹ֣א אֱלֹ֔הַּ אֱלֹהִ֖ים לֹ֣א יְדָע֑וּם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;חֲדָשִׁים֙ מִקָּרֹ֣ב בָּ֔אוּ לֹ֥א שְׂעָר֖וּם אֲבֹתֵיכֶֽם׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "They sacrificed to powerless spirits; to gods whom they knew not, to new gods that came newly up, whom your fathers feared not."
+    },
+    {
+      "n": 18,
+      "c": 32,
+      "v": 18,
+      "ref": "32:18",
+      "text": "צ֥וּר יְלָדְךָ֖ תֶּ֑שִׁ<small>י</small> וַתִּשְׁכַּ֖ח אֵ֥ל מְחֹלְלֶֽךָ׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Of the Rock that begot thee thou art unmindful, and hast forgotten God that formed thee."
+    },
+    {
+      "n": 19,
+      "c": 32,
+      "v": 19,
+      "ref": "32:19",
+      "text": "וַיַּ֥רְא יְהֹוָ֖ה וַיִּנְאָ֑ץ מִכַּ֥עַס בָּנָ֖יו וּבְנֹתָֽיו׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And when the Lord saw it, he abhorred them, because of the provocation of his sons, and of his daughters."
+    },
+    {
+      "n": 20,
+      "c": 32,
+      "v": 20,
+      "ref": "32:20",
+      "text": "וַיֹּ֗אמֶר אַסְתִּ֤ירָה פָנַי֙ מֵהֶ֔ם אֶרְאֶ֖ה מָ֣ה אַחֲרִיתָ֑ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;כִּ֣י ד֤וֹר תַּהְפֻּכֹת֙ הֵ֔מָּה בָּנִ֖ים לֹא־אֵמֻ֥ן בָּֽם׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he said, I will hide my face from them, I will see what their end shall be: for they are a very perverse generation, children in whom is no faith."
+    },
+    {
+      "n": 21,
+      "c": 32,
+      "v": 21,
+      "ref": "32:21",
+      "text": "הֵ֚ם קִנְא֣וּנִי בְלֹא־אֵ֔ל כִּעֲס֖וּנִי בְּהַבְלֵיהֶ֑ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַֽאֲנִי֙ אַקְנִיאֵ֣ם בְּלֹא־עָ֔ם בְּג֥וֹי נָבָ֖ל אַכְעִיסֵֽם׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "They have moved me to jealousy with a no god; they have provoked me to anger with their vanities: and I will move them to jealousy with a no people; I will provoke them to anger with a vile nation."
+    },
+    {
+      "n": 22,
+      "c": 32,
+      "v": 22,
+      "ref": "32:22",
+      "text": "כִּי־אֵשׁ֙ קָדְחָ֣ה בְאַפִּ֔י וַתִּיקַ֖ד עַד־שְׁא֣וֹל תַּחְתִּ֑ית&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַתֹּ֤אכַל אֶ֙רֶץ֙ וִֽיבֻלָ֔הּ וַתְּלַהֵ֖ט מוֹסְדֵ֥י הָרִֽים׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For a fire is kindled in my anger, and shall burn to the nethermost parts of the earth, and shall consume the earth with its produce, and set on fire the foundations of the mountains."
+    },
+    {
+      "n": 23,
+      "c": 32,
+      "v": 23,
+      "ref": "32:23",
+      "text": "אַסְפֶּ֥ה עָלֵ֖ימוֹ רָע֑וֹת חִצַּ֖י אֲכַלֶּה־בָּֽם׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "I will heap mischiefs upon them; I will spend my arrows on them."
+    },
+    {
+      "n": 24,
+      "c": 32,
+      "v": 24,
+      "ref": "32:24",
+      "text": "מְזֵ֥י רָעָ֛ב וּלְחֻ֥מֵי רֶ֖שֶׁף וְקֶ֣טֶב מְרִירִ֑י&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְשֶׁן־בְּהֵמֹת֙ אֲשַׁלַּח־בָּ֔ם עִם־חֲמַ֖ת זֹחֲלֵ֥י עָפָֽר׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "They shall be sucked empty by hunger, and devoured with burning heat, and with bitter destruction: I will also send the teeth of beasts upon them, with the poison of crawling things of the dust."
+    },
+    {
+      "n": 25,
+      "c": 32,
+      "v": 25,
+      "ref": "32:25",
+      "text": "מִחוּץ֙ תְּשַׁכֶּל־חֶ֔רֶב וּמֵחֲדָרִ֖ים אֵימָ֑ה גַּם־בָּחוּר֙ גַּם־בְּתוּלָ֔ה יוֹנֵ֖ק עִם־אִ֥ישׁ שֵׂיבָֽה׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The sword without, and terror within, shall destroy both the young man and the virgin, the suckling also with the man of grey hairs."
+    },
+    {
+      "n": 26,
+      "c": 32,
+      "v": 26,
+      "ref": "32:26",
+      "text": "אָמַ֖רְתִּי אַפְאֵיהֶ֑ם אַשְׁבִּ֥יתָה מֵאֱנ֖וֹשׁ זִכְרָֽם׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "I said, I would scatter them into corners, I would make the remembrance of them to cease from among men:"
+    },
+    {
+      "n": 27,
+      "c": 32,
+      "v": 27,
+      "ref": "32:27",
+      "text": "לוּלֵ֗י כַּ֤עַס אוֹיֵב֙ אָג֔וּר פֶּֽן־יְנַכְּר֖וּ צָרֵ֑ימוֹ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;פֶּן־יֹֽאמְרוּ֙ יָדֵ֣נוּ רָ֔מָה וְלֹ֥א יְהֹוָ֖ה פָּעַ֥ל כׇּל־זֹֽאת׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "were it not for the heaped up wrath of the enemy, lest their adversaries should misdeem, and lest they should say, Our hand is high, and the Lord has not done all this."
+    },
+    {
+      "n": 28,
+      "c": 32,
+      "v": 28,
+      "ref": "32:28",
+      "text": "כִּי־ג֛וֹי אֹבַ֥ד עֵצ֖וֹת הֵ֑מָּה וְאֵ֥ין בָּהֶ֖ם תְּבוּנָֽה׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For they are a nation void of counsel, neither is there any understanding in them."
+    },
+    {
+      "n": 29,
+      "c": 32,
+      "v": 29,
+      "ref": "32:29",
+      "text": "ל֥וּ חָכְמ֖וּ יַשְׂכִּ֣ילוּ זֹ֑את יָבִ֖ינוּ לְאַחֲרִיתָֽם׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "O that they were wise, that they understood this, that they would consider their latter end!"
+    },
+    {
+      "n": 30,
+      "c": 32,
+      "v": 30,
+      "ref": "32:30",
+      "text": "אֵיכָ֞ה יִרְדֹּ֤ף אֶחָד֙ אֶ֔לֶף וּשְׁנַ֖יִם יָנִ֣יסוּ רְבָבָ֑ה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;אִם־לֹא֙ כִּֽי־צוּרָ֣ם מְכָרָ֔ם וַֽיהֹוָ֖ה הִסְגִּירָֽם׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "How should one man chase a thousand, and two put ten thousand to flight, unless their Rock had sold them, and the Lord had shut them up?"
+    },
+    {
+      "n": 31,
+      "c": 32,
+      "v": 31,
+      "ref": "32:31",
+      "text": "כִּ֛י לֹ֥א כְצוּרֵ֖נוּ צוּרָ֑ם וְאֹיְבֵ֖ינוּ פְּלִילִֽים׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For their rock is not as our Rock, even our enemies themselves being judges."
+    },
+    {
+      "n": 32,
+      "c": 32,
+      "v": 32,
+      "ref": "32:32",
+      "text": "כִּֽי־מִגֶּ֤פֶן סְדֹם֙ גַּפְנָ֔ם וּמִשַּׁדְמֹ֖ת עֲמֹרָ֑ה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;עֲנָבֵ֙מוֹ֙ עִנְּבֵי־ר֔וֹשׁ אַשְׁכְּלֹ֥ת מְרֹרֹ֖ת לָֽמוֹ׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For their vine is of the vine of Sedom, and of the fields of ῾Amora: their grapes are grapes of gall, their clusters are bitter:"
+    },
+    {
+      "n": 33,
+      "c": 32,
+      "v": 33,
+      "ref": "32:33",
+      "text": "חֲמַ֥ת תַּנִּינִ֖ם יֵינָ֑ם וְרֹ֥אשׁ פְּתָנִ֖ים אַכְזָֽר׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "their wine is the fierceness of crocodiles, and the cruel venom of asps."
+    },
+    {
+      "n": 34,
+      "c": 32,
+      "v": 34,
+      "ref": "32:34",
+      "text": "הֲלֹא־ה֖וּא כָּמֻ֣ס עִמָּדִ֑י חָת֖וּם בְּאוֹצְרֹתָֽי׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Is not this laid up in store with me, and sealed up among my treasures?"
+    },
+    {
+      "n": 35,
+      "c": 32,
+      "v": 35,
+      "ref": "32:35",
+      "text": "לִ֤י נָקָם֙ וְשִׁלֵּ֔ם לְעֵ֖ת תָּמ֣וּט רַגְלָ֑ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;כִּ֤י קָרוֹב֙ י֣וֹם אֵידָ֔ם וְחָ֖שׁ עֲתִדֹ֥ת לָֽמוֹ׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "To me belongs vengeance, and recompense, when their foot slides: for the day of their calamity is at hand, and the things that shall come upon them make haste."
+    },
+    {
+      "n": 36,
+      "c": 32,
+      "v": 36,
+      "ref": "32:36",
+      "text": "כִּֽי־יָדִ֤ין יְהֹוָה֙ עַמּ֔וֹ וְעַל־עֲבָדָ֖יו יִתְנֶחָ֑ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;כִּ֤י יִרְאֶה֙ כִּֽי־אָ֣זְלַת יָ֔ד וְאֶ֖פֶס עָצ֥וּר וְעָזֽוּב׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For the Lord shall judge his people, and repent himself for his servants, when he sees that their power is gone, and there is none shut up, or left."
+    },
+    {
+      "n": 37,
+      "c": 32,
+      "v": 37,
+      "ref": "32:37",
+      "text": "וְאָמַ֖ר אֵ֣י אֱלֹהֵ֑ימוֹ צ֖וּר חָסָ֥יוּ בֽוֹ׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he shall say, Where are their gods, their rock in whom they trusted,"
+    },
+    {
+      "n": 38,
+      "c": 32,
+      "v": 38,
+      "ref": "32:38",
+      "text": "אֲשֶׁ֨ר חֵ֤לֶב זְבָחֵ֙ימוֹ֙ יֹאכֵ֔לוּ יִשְׁתּ֖וּ יֵ֣ין נְסִיכָ֑ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;יָק֙וּמוּ֙ וְיַעְזְרֻכֶ֔ם יְהִ֥י עֲלֵיכֶ֖ם סִתְרָֽה׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "those that did eat the fat of their sacrifices, and drank the wine of their drink offerings? let them rise up and help you, and be your protection."
+    },
+    {
+      "n": 39,
+      "c": 32,
+      "v": 39,
+      "ref": "32:39",
+      "text": "רְא֣וּ&thinsp;<b>׀</b> עַתָּ֗ה כִּ֣י אֲנִ֤י אֲנִי֙ ה֔וּא וְאֵ֥ין אֱלֹהִ֖ים עִמָּדִ֑י&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;אֲנִ֧י אָמִ֣ית וַאֲחַיֶּ֗ה מָחַ֙צְתִּי֙ וַאֲנִ֣י אֶרְפָּ֔א&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְאֵ֥ין מִיָּדִ֖י מַצִּֽיל׃",
+      "en": "See now that I, even I, am he, and there is no god with me: I kill, and I make alive; I wound, and I heal: neither is there any that can deliver out of my hand."
+    },
+    {
+      "n": 40,
+      "c": 32,
+      "v": 40,
+      "ref": "32:40",
+      "text": "כִּֽי־אֶשָּׂ֥א אֶל־שָׁמַ֖יִם יָדִ֑י&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְאָמַ֕רְתִּי חַ֥י אָנֹכִ֖י לְעֹלָֽם׃",
+      "en": "For I lift up my hand to heaven, and say, I live for ever."
+    },
+    {
+      "n": 41,
+      "c": 32,
+      "v": 41,
+      "ref": "32:41",
+      "text": "אִם־שַׁנּוֹתִי֙ בְּרַ֣ק חַרְבִּ֔י&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְתֹאחֵ֥ז בְּמִשְׁפָּ֖ט יָדִ֑י אָשִׁ֤יב נָקָם֙ לְצָרָ֔י&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְלִמְשַׂנְאַ֖י אֲשַׁלֵּֽם׃",
+      "en": "If I whet my glittering sword, and my hand take hold on judgment; I will render vengeance to my enemies, and will reward those who hate me."
+    },
+    {
+      "n": 42,
+      "c": 32,
+      "v": 42,
+      "ref": "32:42",
+      "text": "אַשְׁכִּ֤יר חִצַּי֙ מִדָּ֔ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְחַרְבִּ֖י תֹּאכַ֣ל בָּשָׂ֑ר מִדַּ֤ם חָלָל֙ וְשִׁבְיָ֔ה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;מֵרֹ֖אשׁ פַּרְע֥וֹת אוֹיֵֽב׃",
+      "en": "I will make my arrows drunk with blood, and my sword shall devour flesh; with the blood of the slain and of the captives; with the head of the wild bands of the enemy."
+    },
+    {
+      "n": 43,
+      "c": 32,
+      "v": 43,
+      "ref": "32:43",
+      "text": "הַרְנִ֤ינוּ גוֹיִם֙ עַמּ֔וֹ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;כִּ֥י דַם־עֲבָדָ֖יו יִקּ֑וֹם וְנָקָם֙ יָשִׁ֣יב לְצָרָ֔יו&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְכִפֶּ֥ר אַדְמָת֖וֹ עַמּֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Rejoice, O nations, with his people: for he will avenge the blood of his servants, and will render vengeance to his adversaries and will forgive his land, and his people."
+    },
+    {
+      "n": 44,
+      "c": 32,
+      "v": 44,
+      "ref": "32:44",
+      "text": "וַיָּבֹ֣א מֹשֶׁ֗ה וַיְדַבֵּ֛ר אֶת־כׇּל־דִּבְרֵ֥י הַשִּׁירָֽה־הַזֹּ֖את בְּאׇזְנֵ֣י הָעָ֑ם ה֖וּא וְהוֹשֵׁ֥עַ בִּן־נֽוּן׃",
+      "en": "And Moshe came and spoke all the words of this poem in the ears of the people, he, and Hoshea the son of Nun."
+    },
+    {
+      "n": 45,
+      "c": 32,
+      "v": 45,
+      "ref": "32:45",
+      "text": "וַיְכַ֣ל מֹשֶׁ֗ה לְדַבֵּ֛ר אֶת־כׇּל־הַדְּבָרִ֥ים הָאֵ֖לֶּה אֶל־כׇּל־יִשְׂרָאֵֽל׃",
+      "en": "And Moshe made an end of speaking all these words to all Yisra᾽el:"
+    },
+    {
+      "n": 46,
+      "c": 32,
+      "v": 46,
+      "ref": "32:46",
+      "text": "וַיֹּ֤אמֶר אֲלֵהֶם֙ שִׂ֣ימוּ לְבַבְכֶ֔ם לְכׇ֨ל־הַדְּבָרִ֔ים אֲשֶׁ֧ר אָנֹכִ֛י מֵעִ֥יד בָּכֶ֖ם הַיּ֑וֹם אֲשֶׁ֤ר תְּצַוֻּם֙ אֶת־בְּנֵיכֶ֔ם לִשְׁמֹ֣ר לַעֲשׂ֔וֹת אֶת־כׇּל־דִּבְרֵ֖י הַתּוֹרָ֥ה הַזֹּֽאת׃",
+      "en": "and he said to them, Set your hearts to all the words which I testify among you this day, which you shall command your children to observe to do, all the words of this Tora."
+    },
+    {
+      "n": 47,
+      "c": 32,
+      "v": 47,
+      "ref": "32:47",
+      "text": "כִּ֠י לֹא־דָבָ֨ר רֵ֥ק הוּא֙ מִכֶּ֔ם כִּי־ה֖וּא חַיֵּיכֶ֑ם וּבַדָּבָ֣ר הַזֶּ֗ה תַּאֲרִ֤יכוּ יָמִים֙ עַל־הָ֣אֲדָמָ֔ה אֲשֶׁ֨ר אַתֶּ֜ם עֹבְרִ֧ים אֶת־הַיַּרְדֵּ֛ן שָׁ֖מָּה לְרִשְׁתָּֽהּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "For it is not a vain thing for you; because it is your life: and through this word you shall prolong your days in the land, into which you go over the Yarden to possess it."
+    },
+    {
+      "n": 48,
+      "c": 32,
+      "v": 48,
+      "ref": "32:48",
+      "text": "וַיְדַבֵּ֤ר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה בְּעֶ֛צֶם הַיּ֥וֹם הַזֶּ֖ה לֵאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe that same day, saying,"
+    },
+    {
+      "n": 49,
+      "c": 32,
+      "v": 49,
+      "ref": "32:49",
+      "text": "עֲלֵ֡ה אֶל־הַר֩ הָעֲבָרִ֨ים הַזֶּ֜ה הַר־נְב֗וֹ אֲשֶׁר֙ בְּאֶ֣רֶץ מוֹאָ֔ב אֲשֶׁ֖ר עַל־פְּנֵ֣י יְרֵח֑וֹ וּרְאֵה֙ אֶת־אֶ֣רֶץ כְּנַ֔עַן אֲשֶׁ֨ר אֲנִ֥י נֹתֵ֛ן לִבְנֵ֥י יִשְׂרָאֵ֖ל לַאֲחֻזָּֽה׃",
+      "en": "Go up into this mount ῾Avarim, to mount Nevo, which is in the land of Mo᾽av, that is facing Yereĥo; and behold the land of Kena῾an, which I give to the children of Yisra᾽el for a possession:"
+    },
+    {
+      "n": 50,
+      "c": 32,
+      "v": 50,
+      "ref": "32:50",
+      "text": "וּמֻ֗ת בָּהָר֙ אֲשֶׁ֤ר אַתָּה֙ עֹלֶ֣ה שָׁ֔מָּה וְהֵאָסֵ֖ף אֶל־עַמֶּ֑יךָ כַּֽאֲשֶׁר־מֵ֞ת אַהֲרֹ֤ן אָחִ֙יךָ֙ בְּהֹ֣ר הָהָ֔ר וַיֵּאָ֖סֶף אֶל־עַמָּֽיו׃",
+      "en": "and die in the mount into which thou goest up, and be gathered to thy people; as Aharon thy brother died in mount Hor, and was gathered to his people:"
+    },
+    {
+      "n": 51,
+      "c": 32,
+      "v": 51,
+      "ref": "32:51",
+      "text": "עַל֩ אֲשֶׁ֨ר מְעַלְתֶּ֜ם בִּ֗י בְּתוֹךְ֙ בְּנֵ֣י יִשְׂרָאֵ֔ל בְּמֵֽי־מְרִיבַ֥ת קָדֵ֖שׁ מִדְבַּר־צִ֑ן עַ֣ל אֲשֶׁ֤ר לֹֽא־קִדַּשְׁתֶּם֙ אוֹתִ֔י בְּת֖וֹךְ בְּנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "because you transgressed against me among the children of Yisra᾽el at the waters of Merivat-qadesh, in the wilderness of Żin; because you sanctified me not in the midst of the children of Yisra᾽el."
+    },
+    {
+      "n": 52,
+      "c": 32,
+      "v": 52,
+      "ref": "32:52",
+      "text": "כִּ֥י מִנֶּ֖גֶד תִּרְאֶ֣ה אֶת־הָאָ֑רֶץ וְשָׁ֙מָּה֙ לֹ֣א תָב֔וֹא אֶל־הָאָ֕רֶץ אֲשֶׁר־אֲנִ֥י נֹתֵ֖ן לִבְנֵ֥י יִשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Yet thou shalt see the land before thee; but thou shalt not go there into the land which I give to the children of Yisra᾽el."
+    }
+  ],
+  "parashah": {
+    "en": "Ha'azinu",
+    "he": "הַאֲזִינוּ",
+    "translit": "Ha'azinu",
+    "ref": "Deuteronomy 32:1–52"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 6,
+        "ref": "32:1–32:6"
+      },
+      {
+        "n": 2,
+        "start": 7,
+        "end": 12,
+        "ref": "32:7–32:12"
+      },
+      {
+        "n": 3,
+        "start": 13,
+        "end": 18,
+        "ref": "32:13–32:18"
+      },
+      {
+        "n": 4,
+        "start": 19,
+        "end": 28,
+        "ref": "32:19–32:28"
+      },
+      {
+        "n": 5,
+        "start": 29,
+        "end": 39,
+        "ref": "32:29–32:39"
+      },
+      {
+        "n": 6,
+        "start": 40,
+        "end": 43,
+        "ref": "32:40–32:43"
+      },
+      {
+        "n": 7,
+        "start": 44,
+        "end": 52,
+        "ref": "32:44–32:52"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "32:1–32:3"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 6,
+          "ref": "32:4–32:6"
+        },
+        {
+          "n": 3,
+          "start": 7,
+          "end": 9,
+          "ref": "32:7–32:9"
+        },
+        {
+          "n": 4,
+          "start": 10,
+          "end": 12,
+          "ref": "32:10–32:12"
+        },
+        {
+          "n": 5,
+          "start": 13,
+          "end": 14,
+          "ref": "32:13–32:14"
+        },
+        {
+          "n": 6,
+          "start": 15,
+          "end": 16,
+          "ref": "32:15–32:16"
+        },
+        {
+          "n": 7,
+          "start": 17,
+          "end": 18,
+          "ref": "32:17–32:18"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 19,
+          "end": 21,
+          "ref": "32:19–32:21"
+        },
+        {
+          "n": 2,
+          "start": 22,
+          "end": 24,
+          "ref": "32:22–32:24"
+        },
+        {
+          "n": 3,
+          "start": 25,
+          "end": 27,
+          "ref": "32:25–32:27"
+        },
+        {
+          "n": 4,
+          "start": 28,
+          "end": 29,
+          "ref": "32:28–32:29"
+        },
+        {
+          "n": 5,
+          "start": 30,
+          "end": 31,
+          "ref": "32:30–32:31"
+        },
+        {
+          "n": 6,
+          "start": 32,
+          "end": 33,
+          "ref": "32:32–32:33"
+        },
+        {
+          "n": 7,
+          "start": 34,
+          "end": 35,
+          "ref": "32:34–32:35"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 36,
+          "end": 38,
+          "ref": "32:36–32:38"
+        },
+        {
+          "n": 2,
+          "start": 39,
+          "end": 41,
+          "ref": "32:39–32:41"
+        },
+        {
+          "n": 3,
+          "start": 42,
+          "end": 44,
+          "ref": "32:42–32:44"
+        },
+        {
+          "n": 4,
+          "start": 45,
+          "end": 46,
+          "ref": "32:45–32:46"
+        },
+        {
+          "n": 5,
+          "start": 47,
+          "end": 48,
+          "ref": "32:47–32:48"
+        },
+        {
+          "n": 6,
+          "start": 49,
+          "end": 50,
+          "ref": "32:49–32:50"
+        },
+        {
+          "n": 7,
+          "start": 51,
+          "end": 52,
+          "ref": "32:51–32:52"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 48,
+        "end": 52,
+        "ref": "32:48–32:52"
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

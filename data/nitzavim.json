@@ -1,0 +1,533 @@
+{
+  "slug": "nitzavim",
+  "book": {
+    "en": "Deuteronomy",
+    "he": "דברים",
+    "translit": "Devarim"
+  },
+  "multiChapter": true,
+  "ref": "Deuteronomy 29:9-30:20",
+  "heRef": "דברים כ״ט:ט-ל׳:כ",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 29,
+      "v": 9,
+      "ref": "29:9",
+      "text": "אַתֶּ֨ם נִצָּבִ֤ים הַיּוֹם֙ כֻּלְּכֶ֔ם לִפְנֵ֖י יְהֹוָ֣ה אֱלֹהֵיכֶ֑ם רָאשֵׁיכֶ֣ם שִׁבְטֵיכֶ֗ם זִקְנֵיכֶם֙ וְשֹׁ֣טְרֵיכֶ֔ם כֹּ֖ל אִ֥ישׁ יִשְׂרָאֵֽל׃",
+      "en": "You stand this day all of you before the Lord your God; your captains of your tribes, your elders, and your officers, with all the men of Yisra᾽el,"
+    },
+    {
+      "n": 2,
+      "c": 29,
+      "v": 10,
+      "ref": "29:10",
+      "text": "טַפְּכֶ֣ם נְשֵׁיכֶ֔ם וְגֵ֣רְךָ֔ אֲשֶׁ֖ר בְּקֶ֣רֶב מַחֲנֶ֑יךָ מֵחֹטֵ֣ב עֵצֶ֔יךָ עַ֖ד שֹׁאֵ֥ב מֵימֶֽיךָ׃",
+      "en": "your little ones, your wives, and thy stranger that is in thy camp, from the hewer of thy wood to the drawer of thy water:"
+    },
+    {
+      "n": 3,
+      "c": 29,
+      "v": 11,
+      "ref": "29:11",
+      "text": "לְעׇבְרְךָ֗ בִּבְרִ֛ית יְהֹוָ֥ה אֱלֹהֶ֖יךָ וּבְאָלָת֑וֹ אֲשֶׁר֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ כֹּרֵ֥ת עִמְּךָ֖ הַיּֽוֹם׃",
+      "en": "that thou shouldst enter into the covenant of the Lord thy God, and into his oath, which the Lord thy God makes with thee this day:"
+    },
+    {
+      "n": 4,
+      "c": 29,
+      "v": 12,
+      "ref": "29:12",
+      "text": "לְמַ֣עַן הָקִֽים־אֹתְךָ֩ הַיּ֨וֹם&thinsp;<small>׀</small>&thinsp;ל֜וֹ לְעָ֗ם וְה֤וּא יִֽהְיֶה־לְּךָ֙ לֵֽאלֹהִ֔ים כַּאֲשֶׁ֖ר דִּבֶּר־לָ֑ךְ וְכַאֲשֶׁ֤ר נִשְׁבַּע֙ לַאֲבֹתֶ֔יךָ לְאַבְרָהָ֥ם לְיִצְחָ֖ק וּֽלְיַעֲקֹֽב׃",
+      "en": "that he may establish thee today for a people to himself, and that he may be to thee a God, as he has said to thee, and as he has sworn to thy fathers, to Avraham, to Yiżĥaq, and to Ya῾aqov."
+    },
+    {
+      "n": 5,
+      "c": 29,
+      "v": 13,
+      "ref": "29:13",
+      "text": "וְלֹ֥א אִתְּכֶ֖ם לְבַדְּכֶ֑ם אָנֹכִ֗י כֹּרֵת֙ אֶת־הַבְּרִ֣ית הַזֹּ֔את וְאֶת־הָאָלָ֖ה הַזֹּֽאת׃",
+      "en": "Neither with you only do I make this covenant and this oath;"
+    },
+    {
+      "n": 6,
+      "c": 29,
+      "v": 14,
+      "ref": "29:14",
+      "text": "כִּי֩ אֶת־אֲשֶׁ֨ר יֶשְׁנ֜וֹ פֹּ֗ה עִמָּ֙נוּ֙ עֹמֵ֣ד הַיּ֔וֹם לִפְנֵ֖י יְהֹוָ֣ה אֱלֹהֵ֑ינוּ וְאֵ֨ת אֲשֶׁ֥ר אֵינֶ֛נּוּ פֹּ֖ה עִמָּ֥נוּ הַיּֽוֹם׃",
+      "en": "but with him that stands here with us this day before the Lord our God, and also with him that is not here with us this day:"
+    },
+    {
+      "n": 7,
+      "c": 29,
+      "v": 15,
+      "ref": "29:15",
+      "text": "כִּֽי־אַתֶּ֣ם יְדַעְתֶּ֔ם אֵ֥ת אֲשֶׁר־יָשַׁ֖בְנוּ בְּאֶ֣רֶץ מִצְרָ֑יִם וְאֵ֧ת אֲשֶׁר־עָבַ֛רְנוּ בְּקֶ֥רֶב הַגּוֹיִ֖ם אֲשֶׁ֥ר עֲבַרְתֶּֽם׃",
+      "en": "(for you know how we have dwelt in the land of Miżrayim; and how we came through the nations which you passed by;"
+    },
+    {
+      "n": 8,
+      "c": 29,
+      "v": 16,
+      "ref": "29:16",
+      "text": "וַתִּרְאוּ֙ אֶת־שִׁקּ֣וּצֵיהֶ֔ם וְאֵ֖ת גִּלֻּלֵיהֶ֑ם עֵ֣ץ וָאֶ֔בֶן כֶּ֥סֶף וְזָהָ֖ב אֲשֶׁ֥ר עִמָּהֶֽם׃",
+      "en": "and you have seen their abominations, and their idols, wood and stone, silver and gold, which were among them:)"
+    },
+    {
+      "n": 9,
+      "c": 29,
+      "v": 17,
+      "ref": "29:17",
+      "text": "פֶּן־יֵ֣שׁ בָּ֠כֶ֠ם אִ֣ישׁ אֽוֹ־אִשָּׁ֞ה א֧וֹ מִשְׁפָּחָ֣ה אוֹ־שֵׁ֗בֶט אֲשֶׁר֩ לְבָב֨וֹ פֹנֶ֤ה הַיּוֹם֙ מֵעִם֙ יְהֹוָ֣ה אֱלֹהֵ֔ינוּ לָלֶ֣כֶת לַעֲבֹ֔ד אֶת־אֱלֹהֵ֖י הַגּוֹיִ֣ם הָהֵ֑ם פֶּן־יֵ֣שׁ בָּכֶ֗ם שֹׁ֛רֶשׁ פֹּרֶ֥ה רֹ֖אשׁ וְלַעֲנָֽה׃",
+      "en": "lest there should be among you man, or woman, or family, or tribe, whose heart turns away this day from the Lord our God, to go and serve the gods of these nations; lest there should be among you a root that bears gall and wormwood;"
+    },
+    {
+      "n": 10,
+      "c": 29,
+      "v": 18,
+      "ref": "29:18",
+      "text": "וְהָיָ֡ה בְּשׇׁמְעוֹ֩ אֶת־דִּבְרֵ֨י הָאָלָ֜ה הַזֹּ֗את וְהִתְבָּרֵ֨ךְ בִּלְבָב֤וֹ לֵאמֹר֙ שָׁל֣וֹם יִֽהְיֶה־לִּ֔י כִּ֛י בִּשְׁרִר֥וּת לִבִּ֖י אֵלֵ֑ךְ לְמַ֛עַן סְפ֥וֹת הָרָוָ֖ה אֶת־הַצְּמֵאָֽה׃",
+      "en": "and it come to pass, when he hears the words of this curse, that he bless himself in his heart, saying, I shall have peace, though I walk in the stubborness of my heart, to add drunkenness to thirst:"
+    },
+    {
+      "n": 11,
+      "c": 29,
+      "v": 19,
+      "ref": "29:19",
+      "text": "לֹא־יֹאבֶ֣ה יְהֹוָה֮ סְלֹ֣חַֽ לוֹ֒ כִּ֣י אָ֠ז יֶעְשַׁ֨ן אַף־יְהֹוָ֤ה וְקִנְאָתוֹ֙ בָּאִ֣ישׁ הַה֔וּא וְרָ֤בְצָה בּוֹ֙ כׇּל־הָ֣אָלָ֔ה הַכְּתוּבָ֖ה בַּסֵּ֣פֶר הַזֶּ֑ה וּמָחָ֤ה יְהֹוָה֙ אֶת־שְׁמ֔וֹ מִתַּ֖חַת הַשָּׁמָֽיִם׃",
+      "en": "the Lord will not spare him, but then the anger of the Lord and his jealousy shall smoke against that man, and all the curses that are written in this book shall lie upon him, and the Lord shall blot out his name from under heaven."
+    },
+    {
+      "n": 12,
+      "c": 29,
+      "v": 20,
+      "ref": "29:20",
+      "text": "וְהִבְדִּיל֤וֹ יְהֹוָה֙ לְרָעָ֔ה מִכֹּ֖ל שִׁבְטֵ֣י יִשְׂרָאֵ֑ל כְּכֹל֙ אָל֣וֹת הַבְּרִ֔ית הַכְּתוּבָ֕ה בְּסֵ֥פֶר הַתּוֹרָ֖ה הַזֶּֽה׃",
+      "en": "And the Lord shall mark him off for evil out of all the tribes of Yisra᾽el, according to all the curses of the covenant that are written in this book of the Tora:"
+    },
+    {
+      "n": 13,
+      "c": 29,
+      "v": 21,
+      "ref": "29:21",
+      "text": "וְאָמַ֞ר הַדּ֣וֹר הָאַחֲר֗וֹן בְּנֵיכֶם֙ אֲשֶׁ֤ר יָק֙וּמוּ֙ מֵאַ֣חֲרֵיכֶ֔ם וְהַ֨נׇּכְרִ֔י אֲשֶׁ֥ר יָבֹ֖א מֵאֶ֣רֶץ רְחוֹקָ֑ה וְ֠רָא֠וּ אֶת־מַכּ֞וֹת הָאָ֤רֶץ הַהִוא֙ וְאֶת־תַּ֣חֲלֻאֶ֔יהָ אֲשֶׁר־חִלָּ֥ה יְהֹוָ֖ה בָּֽהּ׃",
+      "en": "so that the generation to come of your children that shall rise up after you, and the alien that shall come from a far land, shall say, when they see the plagues of that land, and the sicknesses which the Lord has laid upon it;"
+    },
+    {
+      "n": 14,
+      "c": 29,
+      "v": 22,
+      "ref": "29:22",
+      "text": "גׇּפְרִ֣ית וָמֶ֘לַח֮ שְׂרֵפָ֣ה כׇל־אַרְצָהּ֒ לֹ֤א תִזָּרַע֙ וְלֹ֣א תַצְמִ֔חַ וְלֹא־יַעֲלֶ֥ה בָ֖הּ כׇּל־עֵ֑שֶׂב כְּֽמַהְפֵּכַ֞ת סְדֹ֤ם וַעֲמֹרָה֙ אַדְמָ֣ה <span class=\"mam-kq\"><span class=\"mam-kq-k\">(וצביים)</span> <span class=\"mam-kq-q\">[וּצְבוֹיִ֔ם]</span></span> אֲשֶׁר֙ הָפַ֣ךְ יְהֹוָ֔ה בְּאַפּ֖וֹ וּבַחֲמָתֽוֹ׃",
+      "en": "and that the whole land is brimstone, and salt, and burning, that it is not sown, nor bears, nor does any grass grow on it, like the overthrow of Sedom, and ῾Amora, Adma, and Żevoyim, which the Lord overthrew in his anger, and in his wrath:"
+    },
+    {
+      "n": 15,
+      "c": 29,
+      "v": 23,
+      "ref": "29:23",
+      "text": "וְאָֽמְרוּ֙ כׇּל־הַגּוֹיִ֔ם עַל־מֶ֨ה עָשָׂ֧ה יְהֹוָ֛ה כָּ֖כָה לָאָ֣רֶץ הַזֹּ֑את מֶ֥ה חֳרִ֛י הָאַ֥ף הַגָּד֖וֹל הַזֶּֽה׃",
+      "en": "then all the nations shall say, Why has the Lord done thus to this land? what means the heat of this great anger?"
+    },
+    {
+      "n": 16,
+      "c": 29,
+      "v": 24,
+      "ref": "29:24",
+      "text": "וְאָ֣מְר֔וּ עַ֚ל אֲשֶׁ֣ר עָזְב֔וּ אֶת־בְּרִ֥ית יְהֹוָ֖ה אֱלֹהֵ֣י אֲבֹתָ֑ם אֲשֶׁר֙ כָּרַ֣ת עִמָּ֔ם בְּהוֹצִיא֥וֹ אֹתָ֖ם מֵאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "Then men shall say, Because they have forsaken the covenant of the Lord God of their fathers, which he made with them when he brought them out of the land of Miżrayim:"
+    },
+    {
+      "n": 17,
+      "c": 29,
+      "v": 25,
+      "ref": "29:25",
+      "text": "וַיֵּלְכ֗וּ וַיַּֽעַבְדוּ֙ אֱלֹהִ֣ים אֲחֵרִ֔ים וַיִּֽשְׁתַּחֲו֖וּ לָהֶ֑ם אֱלֹהִים֙ אֲשֶׁ֣ר לֹֽא־יְדָע֔וּם וְלֹ֥א חָלַ֖ק לָהֶֽם׃",
+      "en": "for they went and served other gods, and worshipped them, gods whom they knew not, and whom he had not given to them:"
+    },
+    {
+      "n": 18,
+      "c": 29,
+      "v": 26,
+      "ref": "29:26",
+      "text": "וַיִּחַר־אַ֥ף יְהֹוָ֖ה בָּאָ֣רֶץ הַהִ֑וא לְהָבִ֤יא עָלֶ֙יהָ֙ אֶת־כׇּל־הַקְּלָלָ֔ה הַכְּתוּבָ֖ה בַּסֵּ֥פֶר הַזֶּֽה׃",
+      "en": "and the anger of the Lord burned against this land, to bring upon it all the curses that are written in this book:"
+    },
+    {
+      "n": 19,
+      "c": 29,
+      "v": 27,
+      "ref": "29:27",
+      "text": "וַיִּתְּשֵׁ֤ם יְהֹוָה֙ מֵעַ֣ל אַדְמָתָ֔ם בְּאַ֥ף וּבְחֵמָ֖ה וּבְקֶ֣צֶף גָּד֑וֹל וַיַּשְׁ<big>לִ</big>כֵ֛ם אֶל־אֶ֥רֶץ אַחֶ֖רֶת כַּיּ֥וֹם הַזֶּֽה׃",
+      "en": "and the Lord rooted them out of their land in anger, and in wrath, and in great indignation, and cast them into another land, as it is this day."
+    },
+    {
+      "n": 20,
+      "c": 29,
+      "v": 28,
+      "ref": "29:28",
+      "text": "הַנִּ֨סְתָּרֹ֔ת לַיהֹוָ֖ה אֱלֹהֵ֑ינוּ וְהַנִּגְלֹ֞ת לָ֤ׄנׄוּׄ וּׄלְׄבָׄנֵ֙ׄיׄנׄוּ֙ׄ עַׄד־עוֹלָ֔ם לַעֲשׂ֕וֹת אֶת־כׇּל־דִּבְרֵ֖י הַתּוֹרָ֥ה הַזֹּֽאת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The secret things belong to the Lord our God: but those things which are revealed belong to us and to our children for ever, that we may do all the words of this Tora."
+    },
+    {
+      "n": 21,
+      "c": 30,
+      "v": 1,
+      "ref": "30:1",
+      "text": "וְהָיָה֩ כִֽי־יָבֹ֨אוּ עָלֶ֜יךָ כׇּל־הַדְּבָרִ֣ים הָאֵ֗לֶּה הַבְּרָכָה֙ וְהַקְּלָלָ֔ה אֲשֶׁ֥ר נָתַ֖תִּי לְפָנֶ֑יךָ וַהֲשֵׁבֹתָ֙ אֶל־לְבָבֶ֔ךָ בְּכׇ֨ל־הַגּוֹיִ֔ם אֲשֶׁ֧ר הִדִּיחֲךָ֛ יְהֹוָ֥ה אֱלֹהֶ֖יךָ שָֽׁמָּה׃",
+      "en": "And it shall come to pass, when all these things are come upon thee, the blessing and the curse, which I have set before thee, and thou shalt call them to mind among all the nations, into which the Lord thy God has driven thee,"
+    },
+    {
+      "n": 22,
+      "c": 30,
+      "v": 2,
+      "ref": "30:2",
+      "text": "וְשַׁבְתָּ֞ עַד־יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ וְשָׁמַעְתָּ֣ בְקֹל֔וֹ כְּכֹ֛ל אֲשֶׁר־אָנֹכִ֥י מְצַוְּךָ֖ הַיּ֑וֹם אַתָּ֣ה וּבָנֶ֔יךָ בְּכׇל־לְבָבְךָ֖ וּבְכׇל־נַפְשֶֽׁךָ׃",
+      "en": "and shalt return to the Lord thy God, and shalt obey his voice according to all that I command thee this day, thou and thy children, with all thy heart, and with all thy soul;"
+    },
+    {
+      "n": 23,
+      "c": 30,
+      "v": 3,
+      "ref": "30:3",
+      "text": "וְשָׁ֨ב יְהֹוָ֧ה אֱלֹהֶ֛יךָ אֶת־שְׁבוּתְךָ֖ וְרִחֲמֶ֑ךָ וְשָׁ֗ב וְקִבֶּצְךָ֙ מִכׇּל־הָ֣עַמִּ֔ים אֲשֶׁ֧ר הֱפִֽיצְךָ֛ יְהֹוָ֥ה אֱלֹהֶ֖יךָ שָֽׁמָּה׃",
+      "en": "that then the Lord thy God will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, amongst whom the Lord thy God has scattered thee."
+    },
+    {
+      "n": 24,
+      "c": 30,
+      "v": 4,
+      "ref": "30:4",
+      "text": "אִם־יִהְיֶ֥ה נִֽדַּחֲךָ֖ בִּקְצֵ֣ה הַשָּׁמָ֑יִם מִשָּׁ֗ם יְקַבֶּצְךָ֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ וּמִשָּׁ֖ם יִקָּחֶֽךָ׃",
+      "en": "If thy outcasts be at the utmost parts of heaven, from there will the Lord thy God gather thee, and from there will he fetch thee:"
+    },
+    {
+      "n": 25,
+      "c": 30,
+      "v": 5,
+      "ref": "30:5",
+      "text": "וֶהֱבִיאֲךָ֞ יְהֹוָ֣ה אֱלֹהֶ֗יךָ אֶל־הָאָ֛רֶץ אֲשֶׁר־יָרְשׁ֥וּ אֲבֹתֶ֖יךָ וִֽירִשְׁתָּ֑הּ וְהֵיטִֽבְךָ֥ וְהִרְבְּךָ֖ מֵאֲבֹתֶֽיךָ׃",
+      "en": "and the Lord thy God will bring thee into the land which thy fathers possessed, and thou shalt possess it; and he will do thee good, and multiply thee more than thy fathers."
+    },
+    {
+      "n": 26,
+      "c": 30,
+      "v": 6,
+      "ref": "30:6",
+      "text": "וּמָ֨ל יְהֹוָ֧ה אֱלֹהֶ֛יךָ אֶת־לְבָבְךָ֖ וְאֶת־לְבַ֣ב זַרְעֶ֑ךָ לְאַהֲבָ֞ה אֶת־יְהֹוָ֧ה אֱלֹהֶ֛יךָ בְּכׇל־לְבָבְךָ֥ וּבְכׇל־נַפְשְׁךָ֖ לְמַ֥עַן חַיֶּֽיךָ׃",
+      "en": "And the Lord thy God will circumcise thy heart, and the heart of thy seed, to love the Lord thy God with all thy heart, and with all thy soul, that thou mayst live."
+    },
+    {
+      "n": 27,
+      "c": 30,
+      "v": 7,
+      "ref": "30:7",
+      "text": "וְנָתַן֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ אֵ֥ת כׇּל־הָאָל֖וֹת הָאֵ֑לֶּה עַל־אֹיְבֶ֥יךָ וְעַל־שֹׂנְאֶ֖יךָ אֲשֶׁ֥ר רְדָפֽוּךָ׃",
+      "en": "And the Lord thy God will put all these curses upon thy enemies, and on them who hate thee, who persecuted thee."
+    },
+    {
+      "n": 28,
+      "c": 30,
+      "v": 8,
+      "ref": "30:8",
+      "text": "וְאַתָּ֣ה תָשׁ֔וּב וְשָׁמַעְתָּ֖ בְּק֣וֹל יְהֹוָ֑ה וְעָשִׂ֙יתָ֙ אֶת־כׇּל־מִצְוֺתָ֔יו אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖ הַיּֽוֹם׃",
+      "en": "And thou shalt return and obey the voice of the Lord, and do all his commandments which I command thee this day."
+    },
+    {
+      "n": 29,
+      "c": 30,
+      "v": 9,
+      "ref": "30:9",
+      "text": "וְהוֹתִֽירְךָ֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ בְּכֹ֣ל&thinsp;<b>׀</b> מַעֲשֵׂ֣ה יָדֶ֗ךָ בִּפְרִ֨י בִטְנְךָ֜ וּבִפְרִ֧י בְהֶמְתְּךָ֛ וּבִפְרִ֥י אַדְמָתְךָ֖ לְטֹבָ֑ה כִּ֣י&thinsp;<b>׀</b> יָשׁ֣וּב יְהֹוָ֗ה לָשׂ֤וּשׂ עָלֶ֙יךָ֙ לְט֔וֹב כַּאֲשֶׁר־שָׂ֖שׂ עַל־אֲבֹתֶֽיךָ׃",
+      "en": "And the Lord thy God will make thee plenteous in every work of thy hand, in the fruit of thy body, and in the fruit of thy cattle, and in the fruit of thy land, for good: for the Lord will again rejoice over thee for good, as he rejoiced over thy fathers:"
+    },
+    {
+      "n": 30,
+      "c": 30,
+      "v": 10,
+      "ref": "30:10",
+      "text": "כִּ֣י תִשְׁמַ֗ע בְּקוֹל֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ לִשְׁמֹ֤ר מִצְוֺתָיו֙ וְחֻקֹּתָ֔יו הַכְּתוּבָ֕ה בְּסֵ֥פֶר הַתּוֹרָ֖ה הַזֶּ֑ה כִּ֤י תָשׁוּב֙ אֶל־יְהֹוָ֣ה אֱלֹהֶ֔יךָ בְּכׇל־לְבָבְךָ֖ וּבְכׇל־נַפְשֶֽׁךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "if thou shalt hearken to the voice of the Lord thy God, to keep his commandments and his statutes which are written in this book of the Tora, and if thou turn to the Lord thy God with all thy heart, and with all thy soul."
+    },
+    {
+      "n": 31,
+      "c": 30,
+      "v": 11,
+      "ref": "30:11",
+      "text": "כִּ֚י הַמִּצְוָ֣ה הַזֹּ֔את אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖ הַיּ֑וֹם לֹא־נִפְלֵ֥את הִוא֙ מִמְּךָ֔ וְלֹ֥א רְחֹקָ֖ה הִֽוא׃",
+      "en": "For this commandment which I command thee this day, it is not hidden from thee, neither is it far off."
+    },
+    {
+      "n": 32,
+      "c": 30,
+      "v": 12,
+      "ref": "30:12",
+      "text": "לֹ֥א בַשָּׁמַ֖יִם הִ֑וא לֵאמֹ֗ר מִ֣י יַעֲלֶה־לָּ֤נוּ הַשָּׁמַ֙יְמָה֙ וְיִקָּחֶ֣הָ לָּ֔נוּ וְיַשְׁמִעֵ֥נוּ אֹתָ֖הּ וְנַעֲשֶֽׂנָּה׃",
+      "en": "It is not in heaven, that thou shouldst say, Who shall go up for us to heaven, and bring it to us, that we may hear it, and do it?"
+    },
+    {
+      "n": 33,
+      "c": 30,
+      "v": 13,
+      "ref": "30:13",
+      "text": "וְלֹא־מֵעֵ֥בֶר לַיָּ֖ם הִ֑וא לֵאמֹ֗ר מִ֣י יַעֲבׇר־לָ֜נוּ אֶל־עֵ֤בֶר הַיָּם֙ וְיִקָּחֶ֣הָ לָּ֔נוּ וְיַשְׁמִעֵ֥נוּ אֹתָ֖הּ וְנַעֲשֶֽׂנָּה׃",
+      "en": "Nor is it beyond the sea, that thou shouldst say, Who shall go over the sea for us, and bring it to us, that we may hear it, and do it?"
+    },
+    {
+      "n": 34,
+      "c": 30,
+      "v": 14,
+      "ref": "30:14",
+      "text": "כִּֽי־קָר֥וֹב אֵלֶ֛יךָ הַדָּבָ֖ר מְאֹ֑ד בְּפִ֥יךָ וּבִֽלְבָבְךָ֖ לַעֲשֹׂתֽוֹ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "But the word is very near to thee, in thy mouth, and in thy heart, that thou mayst do it."
+    },
+    {
+      "n": 35,
+      "c": 30,
+      "v": 15,
+      "ref": "30:15",
+      "text": "רְאֵ֨ה נָתַ֤תִּי לְפָנֶ֙יךָ֙ הַיּ֔וֹם אֶת־הַֽחַיִּ֖ים וְאֶת־הַטּ֑וֹב וְאֶת־הַמָּ֖וֶת וְאֶת־הָרָֽע׃",
+      "en": "See, I have set before thee this day life and good, and death and evil;"
+    },
+    {
+      "n": 36,
+      "c": 30,
+      "v": 16,
+      "ref": "30:16",
+      "text": "אֲשֶׁ֨ר אָנֹכִ֣י מְצַוְּךָ֮ הַיּוֹם֒ לְאַהֲבָ֞ה אֶת־יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ לָלֶ֣כֶת בִּדְרָכָ֔יו וְלִשְׁמֹ֛ר מִצְוֺתָ֥יו וְחֻקֹּתָ֖יו וּמִשְׁפָּטָ֑יו וְחָיִ֣יתָ וְרָבִ֔יתָ וּבֵֽרַכְךָ֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ בָּאָ֕רֶץ אֲשֶׁר־אַתָּ֥ה בָא־שָׁ֖מָּה לְרִשְׁתָּֽהּ׃",
+      "en": "in that I command thee this day to love the Lord thy God, to walk in his ways, and to keep his commandments and his statutes and his judgments: then thou shalt live and multiply: and the Lord thy God shall bless thee in the land into which thou goest to possess it."
+    },
+    {
+      "n": 37,
+      "c": 30,
+      "v": 17,
+      "ref": "30:17",
+      "text": "וְאִם־יִפְנֶ֥ה לְבָבְךָ֖ וְלֹ֣א תִשְׁמָ֑ע וְנִדַּחְתָּ֗ וְהִֽשְׁתַּחֲוִ֛יתָ לֵאלֹהִ֥ים אֲחֵרִ֖ים וַעֲבַדְתָּֽם׃",
+      "en": "But if thy heart turn away, so that thou wilt not hear, but shalt be drawn away, and worship other gods, and serve them;"
+    },
+    {
+      "n": 38,
+      "c": 30,
+      "v": 18,
+      "ref": "30:18",
+      "text": "הִגַּ֤דְתִּי לָכֶם֙ הַיּ֔וֹם כִּ֥י אָבֹ֖ד תֹּאבֵד֑וּן לֹא־תַאֲרִיכֻ֤ן יָמִים֙ עַל־הָ֣אֲדָמָ֔ה אֲשֶׁ֨ר אַתָּ֤ה עֹבֵר֙ אֶת־הַיַּרְדֵּ֔ן לָב֥וֹא שָׁ֖מָּה לְרִשְׁתָּֽהּ׃",
+      "en": "I announce to you this day, that you shall surely perish, and that you shall not prolong your days upon the land, whither thou passest over the Yarden to go to possess it."
+    },
+    {
+      "n": 39,
+      "c": 30,
+      "v": 19,
+      "ref": "30:19",
+      "text": "הַעִדֹ֨תִי בָכֶ֣ם הַיּוֹם֮ אֶת־הַשָּׁמַ֣יִם וְאֶת־הָאָ֒רֶץ֒ הַחַיִּ֤ים וְהַמָּ֙וֶת֙ נָתַ֣תִּי לְפָנֶ֔יךָ הַבְּרָכָ֖ה וְהַקְּלָלָ֑ה וּבָֽחַרְתָּ֙ בַּחַיִּ֔ים לְמַ֥עַן תִּֽחְיֶ֖ה אַתָּ֥ה וְזַרְעֶֽךָ׃",
+      "en": "I call heaven and earth to witness this day against you, that I have set before thee life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:"
+    },
+    {
+      "n": 40,
+      "c": 30,
+      "v": 20,
+      "ref": "30:20",
+      "text": "לְאַֽהֲבָה֙ אֶת־יְהֹוָ֣ה אֱלֹהֶ֔יךָ לִשְׁמֹ֥עַ בְּקֹל֖וֹ וּלְדׇבְקָה־ב֑וֹ כִּ֣י ה֤וּא חַיֶּ֙יךָ֙ וְאֹ֣רֶךְ יָמֶ֔יךָ לָשֶׁ֣בֶת עַל־הָאֲדָמָ֗ה אֲשֶׁר֩ נִשְׁבַּ֨ע יְהֹוָ֧ה לַאֲבֹתֶ֛יךָ לְאַבְרָהָ֛ם לְיִצְחָ֥ק וּֽלְיַעֲקֹ֖ב לָתֵ֥ת לָהֶֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "that thou mayst love the Lord thy God, and that thou mayst obey his voice, and that thou mayst cleave to him: for he is thy life, and the length of thy days: that thou mayst dwell in the land which the Lord swore to thy fathers, to Avraham, to Yiżĥaq, and to Ya῾aqov, to give them."
+    }
+  ],
+  "parashah": {
+    "en": "Nitzavim",
+    "he": "נִצָּבִים",
+    "translit": "Nitzavim",
+    "ref": "Deuteronomy 29:9–30:20"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 3,
+        "ref": "29:9–29:11"
+      },
+      {
+        "n": 2,
+        "start": 4,
+        "end": 6,
+        "ref": "29:12–29:14"
+      },
+      {
+        "n": 3,
+        "start": 7,
+        "end": 20,
+        "ref": "29:15–29:28"
+      },
+      {
+        "n": 4,
+        "start": 21,
+        "end": 26,
+        "ref": "30:1–30:6"
+      },
+      {
+        "n": 5,
+        "start": 27,
+        "end": 30,
+        "ref": "30:7–30:10"
+      },
+      {
+        "n": 6,
+        "start": 31,
+        "end": 34,
+        "ref": "30:11–30:14"
+      },
+      {
+        "n": 7,
+        "start": 35,
+        "end": 40,
+        "ref": "30:15–30:20"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 2,
+          "ref": "29:9–29:10"
+        },
+        {
+          "n": 2,
+          "start": 3,
+          "end": 4,
+          "ref": "29:11–29:12"
+        },
+        {
+          "n": 3,
+          "start": 5,
+          "end": 6,
+          "ref": "29:13–29:14"
+        },
+        {
+          "n": 4,
+          "start": 7,
+          "end": 8,
+          "ref": "29:15–29:16"
+        },
+        {
+          "n": 5,
+          "start": 9,
+          "end": 10,
+          "ref": "29:17–29:18"
+        },
+        {
+          "n": 6,
+          "start": 11,
+          "end": 12,
+          "ref": "29:19–29:20"
+        },
+        {
+          "n": 7,
+          "start": 13,
+          "end": 14,
+          "ref": "29:21–29:22"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 15,
+          "end": 16,
+          "ref": "29:23–29:24"
+        },
+        {
+          "n": 2,
+          "start": 17,
+          "end": 18,
+          "ref": "29:25–29:26"
+        },
+        {
+          "n": 3,
+          "start": 19,
+          "end": 20,
+          "ref": "29:27–29:28"
+        },
+        {
+          "n": 4,
+          "start": 21,
+          "end": 22,
+          "ref": "30:1–30:2"
+        },
+        {
+          "n": 5,
+          "start": 23,
+          "end": 24,
+          "ref": "30:3–30:4"
+        },
+        {
+          "n": 6,
+          "start": 25,
+          "end": 26,
+          "ref": "30:5–30:6"
+        },
+        {
+          "n": 7,
+          "start": 27,
+          "end": 27,
+          "ref": "30:7–30:7"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 28,
+          "end": 29,
+          "ref": "30:8–30:9"
+        },
+        {
+          "n": 2,
+          "start": 30,
+          "end": 31,
+          "ref": "30:10–30:11"
+        },
+        {
+          "n": 3,
+          "start": 32,
+          "end": 33,
+          "ref": "30:12–30:13"
+        },
+        {
+          "n": 4,
+          "start": 34,
+          "end": 35,
+          "ref": "30:14–30:15"
+        },
+        {
+          "n": 5,
+          "start": 36,
+          "end": 37,
+          "ref": "30:16–30:17"
+        },
+        {
+          "n": 6,
+          "start": 38,
+          "end": 39,
+          "ref": "30:18–30:19"
+        },
+        {
+          "n": 7,
+          "start": 40,
+          "end": 40,
+          "ref": "30:20–30:20"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 35,
+        "end": 40,
+        "ref": "30:15–30:20"
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

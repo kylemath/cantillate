@@ -1,0 +1,1409 @@
+{
+  "slug": "vayera",
+  "book": {
+    "en": "Genesis",
+    "he": "בראשית",
+    "translit": "Bereshit"
+  },
+  "multiChapter": true,
+  "ref": "Genesis 18:1-22:24",
+  "heRef": "בראשית י״ח:א-כ״ב:כ״ד",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 18,
+      "v": 1,
+      "ref": "18:1",
+      "text": "וַיֵּרָ֤א אֵלָיו֙ יְהֹוָ֔ה בְּאֵלֹנֵ֖י מַמְרֵ֑א וְה֛וּא יֹשֵׁ֥ב פֶּֽתַח־הָאֹ֖הֶל כְּחֹ֥ם הַיּֽוֹם׃",
+      "en": "And the Lord appeared to him by the terebinths of Mamre, as he sat in the tent door in the heat of the day;"
+    },
+    {
+      "n": 2,
+      "c": 18,
+      "v": 2,
+      "ref": "18:2",
+      "text": "וַיִּשָּׂ֤א עֵינָיו֙ וַיַּ֔רְא וְהִנֵּה֙ שְׁלֹשָׁ֣ה אֲנָשִׁ֔ים נִצָּבִ֖ים עָלָ֑יו וַיַּ֗רְא וַיָּ֤רׇץ לִקְרָאתָם֙ מִפֶּ֣תַח הָאֹ֔הֶל וַיִּשְׁתַּ֖חוּ אָֽרְצָה׃",
+      "en": "and he raised his eyes and looked, and, lo, three men stood by him; and when he saw them, he ran to meet them from the tent door, and bowed himself to the ground,"
+    },
+    {
+      "n": 3,
+      "c": 18,
+      "v": 3,
+      "ref": "18:3",
+      "text": "וַיֹּאמַ֑ר אֲדֹנָ֗י אִם־נָ֨א מָצָ֤אתִי חֵן֙ בְּעֵינֶ֔יךָ אַל־נָ֥א תַעֲבֹ֖ר מֵעַ֥ל עַבְדֶּֽךָ׃",
+      "en": "and said, My Lord, if now I have found favour in thy sight, pass not away, I pray thee, from thy servant:"
+    },
+    {
+      "n": 4,
+      "c": 18,
+      "v": 4,
+      "ref": "18:4",
+      "text": "יֻקַּֽח־נָ֣א מְעַט־מַ֔יִם וְרַחֲצ֖וּ רַגְלֵיכֶ֑ם וְהִֽשָּׁעֲנ֖וּ תַּ֥חַת הָעֵֽץ׃",
+      "en": "let a little water, I pray you, be fetched, and wash your feet, and rest yourselves under the tree:"
+    },
+    {
+      "n": 5,
+      "c": 18,
+      "v": 5,
+      "ref": "18:5",
+      "text": "וְאֶקְחָ֨ה פַת־לֶ֜חֶם וְסַעֲד֤וּ לִבְּכֶם֙ אַחַ֣ר תַּעֲבֹ֔רוּ כִּֽי־עַל־כֵּ֥ן עֲבַרְתֶּ֖ם עַֽל־עַבְדְּכֶ֑ם וַיֹּ֣אמְר֔וּ כֵּ֥ן תַּעֲשֶׂ֖ה כַּאֲשֶׁ֥ר דִּבַּֽרְתָּ׃",
+      "en": "and I will fetch a morsel of bread, and comfort your hearts; after that you shall pass on: seeing that you are come to your servant. And they said, So do, as thou hast said."
+    },
+    {
+      "n": 6,
+      "c": 18,
+      "v": 6,
+      "ref": "18:6",
+      "text": "וַיְמַהֵ֧ר אַבְרָהָ֛ם הָאֹ֖הֱלָה אֶל־שָׂרָ֑ה וַיֹּ֗אמֶר מַהֲרִ֞י שְׁלֹ֤שׁ סְאִים֙ קֶ֣מַח סֹ֔לֶת ל֖וּשִׁי וַעֲשִׂ֥י עֻגֽוֹת׃",
+      "en": "And Avraham hastened into the tent to Sara, and said, Make ready quickly three measures of fine meal, knead it, and make cakes."
+    },
+    {
+      "n": 7,
+      "c": 18,
+      "v": 7,
+      "ref": "18:7",
+      "text": "וְאֶל־הַבָּקָ֖ר רָ֣ץ אַבְרָהָ֑ם וַיִּקַּ֨ח בֶּן־בָּקָ֜ר רַ֤ךְ וָטוֹב֙ וַיִּתֵּ֣ן אֶל־הַנַּ֔עַר וַיְמַהֵ֖ר לַעֲשׂ֥וֹת אֹתֽוֹ׃",
+      "en": "And Avraham ran to the herd, and fetched a calf tender and good, and gave it to the young man; and he hurried to prepare it."
+    },
+    {
+      "n": 8,
+      "c": 18,
+      "v": 8,
+      "ref": "18:8",
+      "text": "וַיִּקַּ֨ח חֶמְאָ֜ה וְחָלָ֗ב וּבֶן־הַבָּקָר֙ אֲשֶׁ֣ר עָשָׂ֔ה וַיִּתֵּ֖ן לִפְנֵיהֶ֑ם וְהֽוּא־עֹמֵ֧ד עֲלֵיהֶ֛ם תַּ֥חַת הָעֵ֖ץ וַיֹּאכֵֽלוּ׃",
+      "en": "And he took butter, and milk, and the calf which he had dressed, and set it before them; and he stood by them under the tree, and they ate."
+    },
+    {
+      "n": 9,
+      "c": 18,
+      "v": 9,
+      "ref": "18:9",
+      "text": "וַיֹּאמְר֣וּ אֵׄלָ֔יׄוׄ אַיֵּ֖ה שָׂרָ֣ה אִשְׁתֶּ֑ךָ וַיֹּ֖אמֶר הִנֵּ֥ה בָאֹֽהֶל׃",
+      "en": "And they said to him, Where is Sara thy wife? And he said, Behold, in the tent."
+    },
+    {
+      "n": 10,
+      "c": 18,
+      "v": 10,
+      "ref": "18:10",
+      "text": "וַיֹּ֗אמֶר שׁ֣וֹב אָשׁ֤וּב אֵלֶ֙יךָ֙ כָּעֵ֣ת חַיָּ֔ה וְהִנֵּה־בֵ֖ן לְשָׂרָ֣ה אִשְׁתֶּ֑ךָ וְשָׂרָ֥ה שֹׁמַ֛עַת פֶּ֥תַח הָאֹ֖הֶל וְה֥וּא אַחֲרָֽיו׃",
+      "en": "And he said, I will certainly return to thee at this season; and, lo, Sara thy wife shall have a son. And Sara heard it in the tent door, which was behind him."
+    },
+    {
+      "n": 11,
+      "c": 18,
+      "v": 11,
+      "ref": "18:11",
+      "text": "וְאַבְרָהָ֤ם וְשָׂרָה֙ זְקֵנִ֔ים בָּאִ֖ים בַּיָּמִ֑ים חָדַל֙ לִהְי֣וֹת לְשָׂרָ֔ה אֹ֖רַח כַּנָּשִֽׁים׃",
+      "en": "Now Avraham and Sara were old, advanced in age; and it had ceased to be with Sara after the manner of women."
+    },
+    {
+      "n": 12,
+      "c": 18,
+      "v": 12,
+      "ref": "18:12",
+      "text": "וַתִּצְחַ֥ק שָׂרָ֖ה בְּקִרְבָּ֣הּ לֵאמֹ֑ר אַחֲרֵ֤י בְלֹתִי֙ הָֽיְתָה־לִּ֣י עֶדְנָ֔ה וַֽאדֹנִ֖י זָקֵֽן׃",
+      "en": "Therefore Sara laughed within herself, saying, After I am grown old shall I have pleasure, my lord being old also?"
+    },
+    {
+      "n": 13,
+      "c": 18,
+      "v": 13,
+      "ref": "18:13",
+      "text": "וַיֹּ֥אמֶר יְהֹוָ֖ה אֶל־אַבְרָהָ֑ם לָ֣מָּה זֶּה֩ צָחֲקָ֨ה שָׂרָ֜ה לֵאמֹ֗ר הַאַ֥ף אֻמְנָ֛ם אֵלֵ֖ד וַאֲנִ֥י זָקַֽנְתִּי׃",
+      "en": "And the Lord said to Avraham, Why did Sara laugh, saying, Shall I indeed bear a child, who am old?"
+    },
+    {
+      "n": 14,
+      "c": 18,
+      "v": 14,
+      "ref": "18:14",
+      "text": "הֲיִפָּלֵ֥א מֵיְהֹוָ֖ה דָּבָ֑ר לַמּוֹעֵ֞ד אָשׁ֥וּב אֵלֶ֛יךָ כָּעֵ֥ת חַיָּ֖ה וּלְשָׂרָ֥ה בֵֽן׃",
+      "en": "Is anything too hard for the Lord? At the time appointed I will return to thee, at this season, and Sara shall have a son."
+    },
+    {
+      "n": 15,
+      "c": 18,
+      "v": 15,
+      "ref": "18:15",
+      "text": "וַתְּכַחֵ֨שׁ שָׂרָ֧ה&thinsp;<small>׀</small>&thinsp;לֵאמֹ֛ר לֹ֥א צָחַ֖קְתִּי כִּ֣י&thinsp;<small>׀</small>&thinsp;יָרֵ֑אָה וַיֹּ֥אמֶֽר&thinsp;<small>׀</small>&thinsp;לֹ֖א כִּ֥י צָחָֽקְתְּ׃",
+      "en": "Then Sara denied, saying, I laughed not; for she was afraid. And He said, No; but thou didst laugh."
+    },
+    {
+      "n": 16,
+      "c": 18,
+      "v": 16,
+      "ref": "18:16",
+      "text": "וַיָּקֻ֤מוּ מִשָּׁם֙ הָֽאֲנָשִׁ֔ים וַיַּשְׁקִ֖פוּ עַל־פְּנֵ֣י סְדֹ֑ם וְאַ֨בְרָהָ֔ם הֹלֵ֥ךְ עִמָּ֖ם לְשַׁלְּחָֽם׃",
+      "en": "And the men rose up from there, and looked toward Sedom: and Avraham went with them to bring them on the way."
+    },
+    {
+      "n": 17,
+      "c": 18,
+      "v": 17,
+      "ref": "18:17",
+      "text": "וַֽיהֹוָ֖ה אָמָ֑ר הַֽמְכַסֶּ֤ה אֲנִי֙ מֵֽאַבְרָהָ֔ם אֲשֶׁ֖ר אֲנִ֥י עֹשֶֽׂה׃",
+      "en": "And the Lord said, Shall I hide from Avraham that thing which I intend to do;"
+    },
+    {
+      "n": 18,
+      "c": 18,
+      "v": 18,
+      "ref": "18:18",
+      "text": "וְאַ֨בְרָהָ֔ם הָי֧וֹ יִֽהְיֶ֛ה לְג֥וֹי גָּד֖וֹל וְעָצ֑וּם וְנִ֨בְרְכוּ־ב֔וֹ כֹּ֖ל גּוֹיֵ֥י הָאָֽרֶץ׃",
+      "en": "seeing that Avraham shall surely become a great and mighty nation, and all the nations of the earth shall be blessed in him?"
+    },
+    {
+      "n": 19,
+      "c": 18,
+      "v": 19,
+      "ref": "18:19",
+      "text": "כִּ֣י יְדַעְתִּ֗יו לְמַ֩עַן֩ אֲשֶׁ֨ר יְצַוֶּ֜ה אֶת־בָּנָ֤יו וְאֶת־בֵּיתוֹ֙ אַחֲרָ֔יו וְשָֽׁמְרוּ֙ דֶּ֣רֶךְ יְהֹוָ֔ה לַעֲשׂ֥וֹת צְדָקָ֖ה וּמִשְׁפָּ֑ט לְמַ֗עַן הָבִ֤יא יְהֹוָה֙ עַל־אַבְרָהָ֔ם אֵ֥ת אֲשֶׁר־דִּבֶּ֖ר עָלָֽיו׃",
+      "en": "For I know him, that he will command his children and his household after him, and they shall keep the way of the Lord, to do justice and judgment; that the Lord may bring upon Avraham that which He has spoken of him."
+    },
+    {
+      "n": 20,
+      "c": 18,
+      "v": 20,
+      "ref": "18:20",
+      "text": "וַיֹּ֣אמֶר יְהֹוָ֔ה זַעֲקַ֛ת סְדֹ֥ם וַעֲמֹרָ֖ה כִּי־רָ֑בָּה וְחַ֨טָּאתָ֔ם כִּ֥י כָבְדָ֖ה מְאֹֽד׃",
+      "en": "And the Lord said, Because the cry of Sedom and ῾Amora is great, and because their sin is very grievous;"
+    },
+    {
+      "n": 21,
+      "c": 18,
+      "v": 21,
+      "ref": "18:21",
+      "text": "אֵֽרְדָה־נָּ֣א וְאֶרְאֶ֔ה הַכְּצַעֲקָתָ֛הּ הַבָּ֥אָה אֵלַ֖י עָשׂ֣וּ&thinsp;<small>׀</small>&thinsp;כָּלָ֑ה וְאִם־לֹ֖א אֵדָֽעָה׃",
+      "en": "I will go down now, and see whether they have done altogether according to the cry of it, which is come to Me; and if not, I will know."
+    },
+    {
+      "n": 22,
+      "c": 18,
+      "v": 22,
+      "ref": "18:22",
+      "text": "וַיִּפְנ֤וּ מִשָּׁם֙ הָֽאֲנָשִׁ֔ים וַיֵּלְכ֖וּ סְדֹ֑מָה וְאַ֨בְרָהָ֔ם עוֹדֶ֥נּוּ עֹמֵ֖ד לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And the men turned their faces from there and went toward Sedom: but Avraham stood yet before the Lord."
+    },
+    {
+      "n": 23,
+      "c": 18,
+      "v": 23,
+      "ref": "18:23",
+      "text": "וַיִּגַּ֥שׁ אַבְרָהָ֖ם וַיֹּאמַ֑ר הַאַ֣ף תִּסְפֶּ֔ה צַדִּ֖יק עִם־רָשָֽׁע׃",
+      "en": "And Avraham drew near, and said, Wilt Thou also destroy the righteous with the wicked?"
+    },
+    {
+      "n": 24,
+      "c": 18,
+      "v": 24,
+      "ref": "18:24",
+      "text": "אוּלַ֥י יֵ֛שׁ חֲמִשִּׁ֥ים צַדִּיקִ֖ם בְּת֣וֹךְ הָעִ֑יר הַאַ֤ף תִּסְפֶּה֙ וְלֹא־תִשָּׂ֣א לַמָּק֔וֹם לְמַ֛עַן חֲמִשִּׁ֥ים הַצַּדִּיקִ֖ם אֲשֶׁ֥ר בְּקִרְבָּֽהּ׃",
+      "en": "Perhaps there are fifty righteous within the city: wilt Thou also destroy and not spare the place for the fifty righteous that are therein?"
+    },
+    {
+      "n": 25,
+      "c": 18,
+      "v": 25,
+      "ref": "18:25",
+      "text": "חָלִ֨לָה לְּךָ֜ מֵעֲשֹׂ֣ת&thinsp;<b>׀</b> כַּדָּבָ֣ר הַזֶּ֗ה לְהָמִ֤ית צַדִּיק֙ עִם־רָשָׁ֔ע וְהָיָ֥ה כַצַּדִּ֖יק כָּרָשָׁ֑ע חָלִ֣לָה לָּ֔ךְ הֲשֹׁפֵט֙ כׇּל־הָאָ֔רֶץ לֹ֥א יַעֲשֶׂ֖ה מִשְׁפָּֽט׃",
+      "en": "Far be it from Thee to do after this manner, to slay the righteous with the wicked: and that the righteous should be as the wicked, far be it from Thee: Shall not the Judge of all the earth do right?"
+    },
+    {
+      "n": 26,
+      "c": 18,
+      "v": 26,
+      "ref": "18:26",
+      "text": "וַיֹּ֣אמֶר יְהֹוָ֔ה אִם־אֶמְצָ֥א בִסְדֹ֛ם חֲמִשִּׁ֥ים צַדִּיקִ֖ם בְּת֣וֹךְ הָעִ֑יר וְנָשָׂ֥אתִי לְכׇל־הַמָּק֖וֹם בַּעֲבוּרָֽם׃",
+      "en": "And the Lord said, If I find in Sedom fifty just men within the city, then I will spare all the place for their sakes."
+    },
+    {
+      "n": 27,
+      "c": 18,
+      "v": 27,
+      "ref": "18:27",
+      "text": "וַיַּ֥עַן אַבְרָהָ֖ם וַיֹּאמַ֑ר הִנֵּה־נָ֤א הוֹאַ֙לְתִּי֙ לְדַבֵּ֣ר אֶל־אֲדֹנָ֔י וְאָנֹכִ֖י עָפָ֥ר וָאֵֽפֶר׃",
+      "en": "And Avraham answered and said, Behold now, I have taken upon me to speak to the Lord, who am but dust and ashes:"
+    },
+    {
+      "n": 28,
+      "c": 18,
+      "v": 28,
+      "ref": "18:28",
+      "text": "א֠וּלַ֠י יַחְסְר֞וּן חֲמִשִּׁ֤ים הַצַּדִּיקִם֙ חֲמִשָּׁ֔ה הֲתַשְׁחִ֥ית בַּחֲמִשָּׁ֖ה אֶת־כׇּל־הָעִ֑יר וַיֹּ֙אמֶר֙ לֹ֣א אַשְׁחִ֔ית אִם־אֶמְצָ֣א שָׁ֔ם אַרְבָּעִ֖ים וַחֲמִשָּֽׁה׃",
+      "en": "perhaps there shall lack five of the fifty righteous: wilt Thou destroy all the city for lack of five? And He said, If I find there forty five, I will not destroy it."
+    },
+    {
+      "n": 29,
+      "c": 18,
+      "v": 29,
+      "ref": "18:29",
+      "text": "וַיֹּ֨סֶף ע֜וֹד לְדַבֵּ֤ר אֵלָיו֙ וַיֹּאמַ֔ר אוּלַ֛י יִמָּצְא֥וּן שָׁ֖ם אַרְבָּעִ֑ים וַיֹּ֙אמֶר֙ לֹ֣א אֶֽעֱשֶׂ֔ה בַּעֲב֖וּר הָאַרְבָּעִֽים׃",
+      "en": "And he spoke to him yet again, and said, perhaps there shall be forty found there. And He said, I will not do it for the forty’s sake."
+    },
+    {
+      "n": 30,
+      "c": 18,
+      "v": 30,
+      "ref": "18:30",
+      "text": "וַ֠יֹּ֠אמֶר אַל־נָ֞א יִ֤חַר לַֽאדֹנָי֙ וַאֲדַבֵּ֔רָה אוּלַ֛י יִמָּצְא֥וּן שָׁ֖ם שְׁלֹשִׁ֑ים וַיֹּ֙אמֶר֙ לֹ֣א אֶֽעֱשֶׂ֔ה אִם־אֶמְצָ֥א שָׁ֖ם שְׁלֹשִֽׁים׃",
+      "en": "And he said to him, Oh let not the Lord be angry, and I will speak: perhaps there shall thirty be found there. And He said, I will not do it, if I find thirty there."
+    },
+    {
+      "n": 31,
+      "c": 18,
+      "v": 31,
+      "ref": "18:31",
+      "text": "וַיֹּ֗אמֶר הִנֵּֽה־נָ֤א הוֹאַ֙לְתִּי֙ לְדַבֵּ֣ר אֶל־אֲדֹנָ֔י אוּלַ֛י יִמָּצְא֥וּן שָׁ֖ם עֶשְׂרִ֑ים וַיֹּ֙אמֶר֙ לֹ֣א אַשְׁחִ֔ית בַּעֲב֖וּר הָֽעֶשְׂרִֽים׃",
+      "en": "And he said, Behold now, I have taken upon me to speak to the Lord: perhaps there shall be twenty found there. And He said, I will not destroy it for the twenty’s sake."
+    },
+    {
+      "n": 32,
+      "c": 18,
+      "v": 32,
+      "ref": "18:32",
+      "text": "וַ֠יֹּ֠אמֶר אַל־נָ֞א יִ֤חַר לַֽאדֹנָי֙ וַאֲדַבְּרָ֣ה אַךְ־הַפַּ֔עַם אוּלַ֛י יִמָּצְא֥וּן שָׁ֖ם עֲשָׂרָ֑ה וַיֹּ֙אמֶר֙ לֹ֣א אַשְׁחִ֔ית בַּעֲב֖וּר הָעֲשָׂרָֽה׃",
+      "en": "And he said, Oh let not the Lord be angry, and I will speak yet but this once: perhaps ten shall be found there. And He said, I will not destroy it for the sake of the ten."
+    },
+    {
+      "n": 33,
+      "c": 18,
+      "v": 33,
+      "ref": "18:33",
+      "text": "וַיֵּ֣לֶךְ יְהֹוָ֔ה כַּאֲשֶׁ֣ר כִּלָּ֔ה לְדַבֵּ֖ר אֶל־אַבְרָהָ֑ם וְאַבְרָהָ֖ם שָׁ֥ב לִמְקֹמֽוֹ׃",
+      "en": "And the Lord went His way, as soon as He had left speaking to Avraham: and Avraham returned to his place."
+    },
+    {
+      "n": 34,
+      "c": 19,
+      "v": 1,
+      "ref": "19:1",
+      "text": "וַ֠יָּבֹ֠אוּ שְׁנֵ֨י הַמַּלְאָכִ֤ים סְדֹ֙מָה֙ בָּעֶ֔רֶב וְל֖וֹט יֹשֵׁ֣ב בְּשַֽׁעַר־סְדֹ֑ם וַיַּרְא־לוֹט֙ וַיָּ֣קׇם לִקְרָאתָ֔ם וַיִּשְׁתַּ֥חוּ אַפַּ֖יִם אָֽרְצָה׃",
+      "en": "And there came two angels to Sedom at evening, and Lot sat in the gate of Sedom: and Lot seeing them rose up to meet them; and he bowed himself with his face to the ground;"
+    },
+    {
+      "n": 35,
+      "c": 19,
+      "v": 2,
+      "ref": "19:2",
+      "text": "וַיֹּ֜אמֶר הִנֶּ֣ה נָּא־אֲדֹנַ֗י ס֣וּרוּ נָ֠א אֶל־בֵּ֨ית עַבְדְּכֶ֤ם וְלִ֙ינוּ֙ וְרַחֲצ֣וּ רַגְלֵיכֶ֔ם וְהִשְׁכַּמְתֶּ֖ם וַהֲלַכְתֶּ֣ם לְדַרְכְּכֶ֑ם וַיֹּאמְר֣וּ לֹּ֔א כִּ֥י בָרְח֖וֹב נָלִֽין׃",
+      "en": "and he said, Behold now, my lords, turn in, I pray you, into your servant’s house, and tarry all night, and wash your feet, and you may rise up early, and go your ways. And they said, No; but we will abide in the street all night."
+    },
+    {
+      "n": 36,
+      "c": 19,
+      "v": 3,
+      "ref": "19:3",
+      "text": "וַיִּפְצַר־בָּ֣ם מְאֹ֔ד וַיָּסֻ֣רוּ אֵלָ֔יו וַיָּבֹ֖אוּ אֶל־בֵּית֑וֹ וַיַּ֤עַשׂ לָהֶם֙ מִשְׁתֶּ֔ה וּמַצּ֥וֹת אָפָ֖ה וַיֹּאכֵֽלוּ׃",
+      "en": "And he pressed upon them greatly; and they turned in to him, and entered into his house; and he made them a feast, and did bake unleavened bread, and they did eat."
+    },
+    {
+      "n": 37,
+      "c": 19,
+      "v": 4,
+      "ref": "19:4",
+      "text": "טֶ֘רֶם֮ יִשְׁכָּ֒בוּ֒ וְאַנְשֵׁ֨י הָעִ֜יר אַנְשֵׁ֤י סְדֹם֙ נָסַ֣בּוּ עַל־הַבַּ֔יִת מִנַּ֖עַר וְעַד־זָקֵ֑ן כׇּל־הָעָ֖ם מִקָּצֶֽה׃",
+      "en": "But before they lay down, the men of the city, the men of Sedom, compassed the house round, both old and young, all the people from every quarter:"
+    },
+    {
+      "n": 38,
+      "c": 19,
+      "v": 5,
+      "ref": "19:5",
+      "text": "וַיִּקְרְא֤וּ אֶל־לוֹט֙ וַיֹּ֣אמְרוּ ל֔וֹ אַיֵּ֧ה הָאֲנָשִׁ֛ים אֲשֶׁר־בָּ֥אוּ אֵלֶ֖יךָ הַלָּ֑יְלָה הוֹצִיאֵ֣ם אֵלֵ֔ינוּ וְנֵדְעָ֖ה אֹתָֽם׃",
+      "en": "and they called to Lot, and said to him, Where are the men who came in to thee this night? bring them out to us, that we may know them."
+    },
+    {
+      "n": 39,
+      "c": 19,
+      "v": 6,
+      "ref": "19:6",
+      "text": "וַיֵּצֵ֧א אֲלֵהֶ֛ם ל֖וֹט הַפֶּ֑תְחָה וְהַדֶּ֖לֶת סָגַ֥ר אַחֲרָֽיו׃",
+      "en": "And Lot went out at the door to them, and shut the door after him,"
+    },
+    {
+      "n": 40,
+      "c": 19,
+      "v": 7,
+      "ref": "19:7",
+      "text": "וַיֹּאמַ֑ר אַל־נָ֥א אַחַ֖י תָּרֵֽעוּ׃",
+      "en": "And said, I pray you, brethren, do not so wickedly."
+    },
+    {
+      "n": 41,
+      "c": 19,
+      "v": 8,
+      "ref": "19:8",
+      "text": "הִנֵּה־נָ֨א לִ֜י שְׁתֵּ֣י בָנ֗וֹת אֲשֶׁ֤ר לֹֽא־יָדְעוּ֙ אִ֔ישׁ אוֹצִֽיאָה־נָּ֤א אֶתְהֶן֙ אֲלֵיכֶ֔ם וַעֲשׂ֣וּ לָהֶ֔ן כַּטּ֖וֹב בְּעֵינֵיכֶ֑ם רַ֠ק לָֽאֲנָשִׁ֤ים הָאֵל֙ אַל־תַּעֲשׂ֣וּ דָבָ֔ר כִּֽי־עַל־כֵּ֥ן בָּ֖אוּ בְּצֵ֥ל קֹרָתִֽי׃",
+      "en": "Behold now, I have two daughters who have not known man; let me, I pray you, bring them out unto you, and do to them as is good in your eyes: only to these men do nothing; seeing that they have come under the shadow of my roof."
+    },
+    {
+      "n": 42,
+      "c": 19,
+      "v": 9,
+      "ref": "19:9",
+      "text": "וַיֹּאמְר֣וּ&thinsp;<b>׀</b> גֶּשׁ־הָ֗לְאָה וַיֹּֽאמְרוּ֙ הָאֶחָ֤ד בָּֽא־לָגוּר֙ וַיִּשְׁפֹּ֣ט שָׁפ֔וֹט עַתָּ֕ה נָרַ֥ע לְךָ֖ מֵהֶ֑ם וַיִּפְצְר֨וּ בָאִ֤ישׁ בְּלוֹט֙ מְאֹ֔ד וַֽיִּגְּשׁ֖וּ לִשְׁבֹּ֥ר הַדָּֽלֶת׃",
+      "en": "And they said, Stand back. And they said again, This one fellow came in to sojourn, and he will needs be a judge: now will we deal worse with thee than with them. And they strongly urged the man, Lot, and came near to break the door."
+    },
+    {
+      "n": 43,
+      "c": 19,
+      "v": 10,
+      "ref": "19:10",
+      "text": "וַיִּשְׁלְח֤וּ הָֽאֲנָשִׁים֙ אֶת־יָדָ֔ם וַיָּבִ֧יאוּ אֶת־ל֛וֹט אֲלֵיהֶ֖ם הַבָּ֑יְתָה וְאֶת־הַדֶּ֖לֶת סָגָֽרוּ׃",
+      "en": "But the men put out their hand, and pulled Lot into the house to them, and shut the door."
+    },
+    {
+      "n": 44,
+      "c": 19,
+      "v": 11,
+      "ref": "19:11",
+      "text": "וְֽאֶת־הָאֲנָשִׁ֞ים אֲשֶׁר־פֶּ֣תַח הַבַּ֗יִת הִכּוּ֙ בַּסַּנְוֵרִ֔ים מִקָּטֹ֖ן וְעַד־גָּד֑וֹל וַיִּלְא֖וּ לִמְצֹ֥א הַפָּֽתַח׃",
+      "en": "And they smote the men that were at the door of the house with blindness, both small and great: so that they wearied themselves to find the door."
+    },
+    {
+      "n": 45,
+      "c": 19,
+      "v": 12,
+      "ref": "19:12",
+      "text": "וַיֹּאמְר֨וּ הָאֲנָשִׁ֜ים אֶל־ל֗וֹט עֹ֚ד מִֽי־לְךָ֣ פֹ֔ה חָתָן֙ וּבָנֶ֣יךָ וּבְנֹתֶ֔יךָ וְכֹ֥ל אֲשֶׁר־לְךָ֖ בָּעִ֑יר הוֹצֵ֖א מִן־הַמָּקֽוֹם׃",
+      "en": "And the men said to Lot, Hast thou here any besides? son in law, and thy sons, and thy daughters, and whatever thou hast in the city, bring them out of this place:"
+    },
+    {
+      "n": 46,
+      "c": 19,
+      "v": 13,
+      "ref": "19:13",
+      "text": "כִּֽי־מַשְׁחִתִ֣ים אֲנַ֔חְנוּ אֶת־הַמָּק֖וֹם הַזֶּ֑ה כִּֽי־גָדְלָ֤ה צַעֲקָתָם֙ אֶת־פְּנֵ֣י יְהֹוָ֔ה וַיְשַׁלְּחֵ֥נוּ יְהֹוָ֖ה לְשַׁחֲתָֽהּ׃",
+      "en": "for we will destroy this place, because the cry of them has grown great before the face of the Lord; and the Lord has sent us to destroy it."
+    },
+    {
+      "n": 47,
+      "c": 19,
+      "v": 14,
+      "ref": "19:14",
+      "text": "וַיֵּצֵ֨א ל֜וֹט וַיְדַבֵּ֣ר&thinsp;<b>׀</b> אֶל־חֲתָנָ֣יו&thinsp;<b>׀</b> לֹקְחֵ֣י בְנֹתָ֗יו וַיֹּ֙אמֶר֙ ק֤וּמוּ צְּאוּ֙ מִן־הַמָּק֣וֹם הַזֶּ֔ה כִּֽי־מַשְׁחִ֥ית יְהֹוָ֖ה אֶת־הָעִ֑יר וַיְהִ֥י כִמְצַחֵ֖ק בְּעֵינֵ֥י חֲתָנָֽיו׃",
+      "en": "And Lot went out, and spoke to his sons in law, who married his daughters, and said, Up, get you out of this place; for the Lord will destroy the city. But he seemed to his sons in law as one that jested."
+    },
+    {
+      "n": 48,
+      "c": 19,
+      "v": 15,
+      "ref": "19:15",
+      "text": "וּכְמוֹ֙ הַשַּׁ֣חַר עָלָ֔ה וַיָּאִ֥יצוּ הַמַּלְאָכִ֖ים בְּל֣וֹט לֵאמֹ֑ר קוּם֩ קַ֨ח אֶֽת־אִשְׁתְּךָ֜ וְאֶת־שְׁתֵּ֤י בְנֹתֶ֙יךָ֙ הַנִּמְצָאֹ֔ת פֶּן־תִּסָּפֶ֖ה בַּעֲוֺ֥ן הָעִֽיר׃",
+      "en": "And when the morning arose, then the angels hastened Lot, saying, Arise, take thy wife, and thy two daughters, who are here; lest thou be consumed in the iniquity of the city."
+    },
+    {
+      "n": 49,
+      "c": 19,
+      "v": 16,
+      "ref": "19:16",
+      "text": "וַֽיִּתְמַהְמָ֓הּ&thinsp;<b>׀</b> וַיַּחֲזִ֨יקוּ הָאֲנָשִׁ֜ים בְּיָד֣וֹ וּבְיַד־אִשְׁתּ֗וֹ וּבְיַד֙ שְׁתֵּ֣י בְנֹתָ֔יו בְּחֶמְלַ֥ת יְהֹוָ֖ה עָלָ֑יו וַיֹּצִאֻ֥הוּ וַיַּנִּחֻ֖הוּ מִח֥וּץ לָעִֽיר׃",
+      "en": "And while he lingered, the men laid hold upon his hand, and upon the hand of his wife, and upon the hand of his two daughters; the Lord being merciful to him: and they brought him out, and set him outside the city."
+    },
+    {
+      "n": 50,
+      "c": 19,
+      "v": 17,
+      "ref": "19:17",
+      "text": "וַיְהִי֩ כְהוֹצִיאָ֨ם אֹתָ֜ם הַח֗וּצָה וַיֹּ֙אמֶר֙ הִמָּלֵ֣ט עַל־נַפְשֶׁ֔ךָ אַל־תַּבִּ֣יט אַחֲרֶ֔יךָ וְאַֽל־תַּעֲמֹ֖ד בְּכׇל־הַכִּכָּ֑ר הָהָ֥רָה הִמָּלֵ֖ט פֶּן־תִּסָּפֶֽה׃",
+      "en": "And it came to pass, when they had brought them outside, that he said, Escape for thy life; look not behind thee, neither stay thou in all the plain; escape to the mountain, lest thou be consumed."
+    },
+    {
+      "n": 51,
+      "c": 19,
+      "v": 18,
+      "ref": "19:18",
+      "text": "וַיֹּ֥אמֶר ל֖וֹט אֲלֵהֶ֑ם אַל־נָ֖א אֲדֹנָֽי׃",
+      "en": "And Lot said to them, Oh, not so, my Lord:"
+    },
+    {
+      "n": 52,
+      "c": 19,
+      "v": 19,
+      "ref": "19:19",
+      "text": "הִנֵּה־נָ֠א מָצָ֨א עַבְדְּךָ֣ חֵן֮ בְּעֵינֶ֒יךָ֒ וַתַּגְדֵּ֣ל חַסְדְּךָ֗ אֲשֶׁ֤ר עָשִׂ֙יתָ֙ עִמָּדִ֔י לְהַחֲי֖וֹת אֶת־נַפְשִׁ֑י וְאָנֹכִ֗י לֹ֤א אוּכַל֙ לְהִמָּלֵ֣ט הָהָ֔רָה פֶּן־תִּדְבָּקַ֥נִי הָרָעָ֖ה וָמַֽתִּי׃",
+      "en": "behold now, thy servant has found favour in thy sight, and thou hast magnified thy mercy, which thou hast shown to me in saving my life; I cannot escape to the mountain, lest some evil take me, and I die:"
+    },
+    {
+      "n": 53,
+      "c": 19,
+      "v": 20,
+      "ref": "19:20",
+      "text": "הִנֵּה־נָ֠א הָעִ֨יר הַזֹּ֧את קְרֹבָ֛ה לָנ֥וּס שָׁ֖מָּה וְהִ֣וא מִצְעָ֑ר אִמָּלְטָ֨ה נָּ֜א שָׁ֗מָּה הֲלֹ֥א מִצְעָ֛ר הִ֖וא וּתְחִ֥י נַפְשִֽׁי׃",
+      "en": "behold now, this city is near to flee to, and it is a little one: Oh, let me escape there, (is it not a little one?) and my soul shall live."
+    },
+    {
+      "n": 54,
+      "c": 19,
+      "v": 21,
+      "ref": "19:21",
+      "text": "וַיֹּ֣אמֶר אֵלָ֔יו הִנֵּה֙ נָשָׂ֣אתִי פָנֶ֔יךָ גַּ֖ם לַדָּבָ֣ר הַזֶּ֑ה לְבִלְתִּ֛י הׇפְכִּ֥י אֶת־הָעִ֖יר אֲשֶׁ֥ר דִּבַּֽרְתָּ׃",
+      "en": "And he said to him, See, I have accepted thee concerning this thing also, that I will not overthrow this city, for which thou hast spoken."
+    },
+    {
+      "n": 55,
+      "c": 19,
+      "v": 22,
+      "ref": "19:22",
+      "text": "מַהֵר֙ הִמָּלֵ֣ט שָׁ֔מָּה כִּ֣י לֹ֤א אוּכַל֙ לַעֲשׂ֣וֹת דָּבָ֔ר עַד־בֹּאֲךָ֖ שָׁ֑מָּה עַל־כֵּ֛ן קָרָ֥א שֵׁם־הָעִ֖יר צֽוֹעַר׃",
+      "en": "Haste thee, escape there; for I cannot do anything till thou be come there. Therefore the name of the city was called Żo῾ar."
+    },
+    {
+      "n": 56,
+      "c": 19,
+      "v": 23,
+      "ref": "19:23",
+      "text": "הַשֶּׁ֖מֶשׁ יָצָ֣א עַל־הָאָ֑רֶץ וְל֖וֹט בָּ֥א צֹֽעֲרָה׃",
+      "en": "The sun was risen upon the earth when Lot entered into Żo῾ar."
+    },
+    {
+      "n": 57,
+      "c": 19,
+      "v": 24,
+      "ref": "19:24",
+      "text": "וַֽיהֹוָ֗ה הִמְטִ֧יר עַל־סְדֹ֛ם וְעַל־עֲמֹרָ֖ה גׇּפְרִ֣ית וָאֵ֑שׁ מֵאֵ֥ת יְהֹוָ֖ה מִן־הַשָּׁמָֽיִם׃",
+      "en": "Then the Lord rained upon Sedom and upon ῾Amora brimstone and fire from the Lord out of heaven;"
+    },
+    {
+      "n": 58,
+      "c": 19,
+      "v": 25,
+      "ref": "19:25",
+      "text": "וַֽיַּהֲפֹךְ֙ אֶת־הֶעָרִ֣ים הָאֵ֔ל וְאֵ֖ת כׇּל־הַכִּכָּ֑ר וְאֵת֙ כׇּל־יֹשְׁבֵ֣י הֶעָרִ֔ים וְצֶ֖מַח הָאֲדָמָֽה׃",
+      "en": "and He overthrew those cities, and all the plain, and all the inhabitants of the cities, and that which grew upon the ground."
+    },
+    {
+      "n": 59,
+      "c": 19,
+      "v": 26,
+      "ref": "19:26",
+      "text": "וַתַּבֵּ֥ט אִשְׁתּ֖וֹ מֵאַחֲרָ֑יו וַתְּהִ֖י נְצִ֥יב מֶֽלַח׃",
+      "en": "But his wife looked back from behind him, and she became a pillar of salt."
+    },
+    {
+      "n": 60,
+      "c": 19,
+      "v": 27,
+      "ref": "19:27",
+      "text": "וַיַּשְׁכֵּ֥ם אַבְרָהָ֖ם בַּבֹּ֑קֶר אֶ֨ל־הַמָּק֔וֹם אֲשֶׁר־עָ֥מַד שָׁ֖ם אֶת־פְּנֵ֥י יְהֹוָֽה׃",
+      "en": "And Avraham went early in the morning to the place where he had stood before the Lord:"
+    },
+    {
+      "n": 61,
+      "c": 19,
+      "v": 28,
+      "ref": "19:28",
+      "text": "וַיַּשְׁקֵ֗ף עַל־פְּנֵ֤י סְדֹם֙ וַעֲמֹרָ֔ה וְעַֽל־כׇּל־פְּנֵ֖י אֶ֣רֶץ הַכִּכָּ֑ר וַיַּ֗רְא וְהִנֵּ֤ה עָלָה֙ קִיטֹ֣ר הָאָ֔רֶץ כְּקִיטֹ֖ר הַכִּבְשָֽׁן׃",
+      "en": "and he looked toward Sedom and ῾Amora, and toward all the land of the plain, and beheld, and, lo, the smoke of the country went up like the smoke of a furnace."
+    },
+    {
+      "n": 62,
+      "c": 19,
+      "v": 29,
+      "ref": "19:29",
+      "text": "וַיְהִ֗י בְּשַׁחֵ֤ת אֱלֹהִים֙ אֶת־עָרֵ֣י הַכִּכָּ֔ר וַיִּזְכֹּ֥ר אֱלֹהִ֖ים אֶת־אַבְרָהָ֑ם וַיְשַׁלַּ֤ח אֶת־לוֹט֙ מִתּ֣וֹךְ הַהֲפֵכָ֔ה בַּהֲפֹךְ֙ אֶת־הֶ֣עָרִ֔ים אֲשֶׁר־יָשַׁ֥ב בָּהֵ֖ן לֽוֹט׃",
+      "en": "And it came to pass, when God destroyed the cities of the plain, that God remembered Avraham, and sent Lot out of the midst of the overthrow, when He overthrew the cities in which Lot dwelt."
+    },
+    {
+      "n": 63,
+      "c": 19,
+      "v": 30,
+      "ref": "19:30",
+      "text": "וַיַּ֩עַל֩ ל֨וֹט מִצּ֜וֹעַר וַיֵּ֣שֶׁב בָּהָ֗ר וּשְׁתֵּ֤י בְנֹתָיו֙ עִמּ֔וֹ כִּ֥י יָרֵ֖א לָשֶׁ֣בֶת בְּצ֑וֹעַר וַיֵּ֙שֶׁב֙ בַּמְּעָרָ֔ה ה֖וּא וּשְׁתֵּ֥י בְנֹתָֽיו׃",
+      "en": "And Lot went up out of Żo῾ar, and dwelt in the mountain, and his two daughters with him; for he feared to dwell in Żo῾ar: and he dwelt in a cave, he and his two daughters."
+    },
+    {
+      "n": 64,
+      "c": 19,
+      "v": 31,
+      "ref": "19:31",
+      "text": "וַתֹּ֧אמֶר הַבְּכִירָ֛ה אֶל־הַצְּעִירָ֖ה אָבִ֣ינוּ זָקֵ֑ן וְאִ֨ישׁ אֵ֤ין בָּאָ֙רֶץ֙ לָב֣וֹא עָלֵ֔ינוּ כְּדֶ֖רֶךְ כׇּל־הָאָֽרֶץ׃",
+      "en": "And the firstborn said to the younger, Our father is old, and there is not a man in the earth to come in to us after the manner of all the earth:"
+    },
+    {
+      "n": 65,
+      "c": 19,
+      "v": 32,
+      "ref": "19:32",
+      "text": "לְכָ֨ה נַשְׁקֶ֧ה אֶת־אָבִ֛ינוּ יַ֖יִן וְנִשְׁכְּבָ֣ה עִמּ֑וֹ וּנְחַיֶּ֥ה מֵאָבִ֖ינוּ זָֽרַע׃",
+      "en": "come, let us make our father drink wine, and we will lie with him, that we may preserve seed of our father."
+    },
+    {
+      "n": 66,
+      "c": 19,
+      "v": 33,
+      "ref": "19:33",
+      "text": "וַתַּשְׁקֶ֧יןָ אֶת־אֲבִיהֶ֛ן יַ֖יִן בַּלַּ֣יְלָה ה֑וּא וַתָּבֹ֤א הַבְּכִירָה֙ וַתִּשְׁכַּ֣ב אֶת־אָבִ֔יהָ וְלֹֽא־יָדַ֥ע בְּשִׁכְבָ֖הּ וּבְקוּׄמָֽהּ׃",
+      "en": "And they made their father drink wine that night: and the firstborn went in, and lay with her father; and he perceived not when she lay down, nor when she arose."
+    },
+    {
+      "n": 67,
+      "c": 19,
+      "v": 34,
+      "ref": "19:34",
+      "text": "וַֽיְהִי֙ מִֽמׇּחֳרָ֔ת וַתֹּ֤אמֶר הַבְּכִירָה֙ אֶל־הַצְּעִירָ֔ה הֵן־שָׁכַ֥בְתִּי אֶ֖מֶשׁ אֶת־אָבִ֑י נַשְׁקֶ֨נּוּ יַ֜יִן גַּם־הַלַּ֗יְלָה וּבֹ֙אִי֙ שִׁכְבִ֣י עִמּ֔וֹ וּנְחַיֶּ֥ה מֵאָבִ֖ינוּ זָֽרַע׃",
+      "en": "And it came to pass on the morrow, that the firstborn said to the younger, Behold, I lay last night with my father: let us make him drink wine this night also; and go thou in, and lie with him, that we may preserve seed of our father."
+    },
+    {
+      "n": 68,
+      "c": 19,
+      "v": 35,
+      "ref": "19:35",
+      "text": "וַתַּשְׁקֶ֜יןָ גַּ֣ם בַּלַּ֧יְלָה הַה֛וּא אֶת־אֲבִיהֶ֖ן יָ֑יִן וַתָּ֤קׇם הַצְּעִירָה֙ וַתִּשְׁכַּ֣ב עִמּ֔וֹ וְלֹֽא־יָדַ֥ע בְּשִׁכְבָ֖הּ וּבְקֻמָֽהּ׃",
+      "en": "And they made their father drink wine that night also: and the younger arose, and lay with him; and he perceived not when she lay down, nor when she arose."
+    },
+    {
+      "n": 69,
+      "c": 19,
+      "v": 36,
+      "ref": "19:36",
+      "text": "וַֽתַּהֲרֶ֛יןָ שְׁתֵּ֥י בְנֽוֹת־ל֖וֹט מֵאֲבִיהֶֽן׃",
+      "en": "Thus were both the daughters of Lot with child by their father."
+    },
+    {
+      "n": 70,
+      "c": 19,
+      "v": 37,
+      "ref": "19:37",
+      "text": "וַתֵּ֤לֶד הַבְּכִירָה֙ בֵּ֔ן וַתִּקְרָ֥א שְׁמ֖וֹ מוֹאָ֑ב ה֥וּא אֲבִֽי־מוֹאָ֖ב עַד־הַיּֽוֹם׃",
+      "en": "And the firstborn bore a son, and called his name Mo᾽av: he is the father of Mo᾽av to this day."
+    },
+    {
+      "n": 71,
+      "c": 19,
+      "v": 38,
+      "ref": "19:38",
+      "text": "וְהַצְּעִירָ֤ה גַם־הִוא֙ יָ֣לְדָה בֵּ֔ן וַתִּקְרָ֥א שְׁמ֖וֹ בֶּן־עַמִּ֑י ה֛וּא אֲבִ֥י בְנֵֽי־עַמּ֖וֹן עַד־הַיּֽוֹם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the younger, she also bore a son, and called his name Ben-῾ammi: he is the father of the children of ῾Ammon to this day."
+    },
+    {
+      "n": 72,
+      "c": 20,
+      "v": 1,
+      "ref": "20:1",
+      "text": "וַיִּסַּ֨ע מִשָּׁ֤ם אַבְרָהָם֙ אַ֣רְצָה הַנֶּ֔גֶב וַיֵּ֥שֶׁב בֵּין־קָדֵ֖שׁ וּבֵ֣ין שׁ֑וּר וַיָּ֖גׇר בִּגְרָֽר׃",
+      "en": "And Avraham journeyed from there toward the Negev, and dwelt between Qadesh and Shur, and sojourned in Gerar."
+    },
+    {
+      "n": 73,
+      "c": 20,
+      "v": 2,
+      "ref": "20:2",
+      "text": "וַיֹּ֧אמֶר אַבְרָהָ֛ם אֶל־שָׂרָ֥ה אִשְׁתּ֖וֹ אֲחֹ֣תִי הִ֑וא וַיִּשְׁלַ֗ח אֲבִימֶ֙לֶךְ֙ מֶ֣לֶךְ גְּרָ֔ר וַיִּקַּ֖ח אֶת־שָׂרָֽה׃",
+      "en": "And Avraham said of Sara his wife, She is my sister: and Avimelekh king of Gerar sent, and took Sara."
+    },
+    {
+      "n": 74,
+      "c": 20,
+      "v": 3,
+      "ref": "20:3",
+      "text": "וַיָּבֹ֧א אֱלֹהִ֛ים אֶל־אֲבִימֶ֖לֶךְ בַּחֲל֣וֹם הַלָּ֑יְלָה וַיֹּ֣אמֶר ל֗וֹ הִנְּךָ֥ מֵת֙ עַל־הָאִשָּׁ֣ה אֲשֶׁר־לָקַ֔חְתָּ וְהִ֖וא בְּעֻ֥לַת בָּֽעַל׃",
+      "en": "But God came to Avimelekh in a dream by night, and said to him, Behold, thou art a dead man, because of the woman whom thou hast taken, for she is a man’s wife."
+    },
+    {
+      "n": 75,
+      "c": 20,
+      "v": 4,
+      "ref": "20:4",
+      "text": "וַאֲבִימֶ֕לֶךְ לֹ֥א קָרַ֖ב אֵלֶ֑יהָ וַיֹּאמַ֕ר אֲדֹנָ֕י הֲג֥וֹי גַּם־צַדִּ֖יק תַּהֲרֹֽג׃",
+      "en": "But Avimelekh had not come near her: and he said, Lord, wilt Thou slay also a righteous nation?"
+    },
+    {
+      "n": 76,
+      "c": 20,
+      "v": 5,
+      "ref": "20:5",
+      "text": "הֲלֹ֨א ה֤וּא אָֽמַר־לִי֙ אֲחֹ֣תִי הִ֔וא וְהִֽיא־גַם־הִ֥וא אָֽמְרָ֖ה אָחִ֣י ה֑וּא בְּתׇם־לְבָבִ֛י וּבְנִקְיֹ֥ן כַּפַּ֖י עָשִׂ֥יתִי זֹֽאת׃",
+      "en": "Said he not to me, She is my sister? and she, even she herself said, He is my brother: in the integrity of my heart and innocency of my hands have I done this."
+    },
+    {
+      "n": 77,
+      "c": 20,
+      "v": 6,
+      "ref": "20:6",
+      "text": "וַיֹּ֩אמֶר֩ אֵלָ֨יו הָֽאֱלֹהִ֜ים בַּחֲלֹ֗ם גַּ֣ם אָנֹכִ֤י יָדַ֙עְתִּי֙ כִּ֤י בְתׇם־לְבָבְךָ֙ עָשִׂ֣יתָ זֹּ֔את וָאֶחְשֹׂ֧ךְ גַּם־אָנֹכִ֛י אֽוֹתְךָ֖ מֵחֲטוֹ־לִ֑י עַל־כֵּ֥ן לֹא־נְתַתִּ֖יךָ לִנְגֹּ֥עַ אֵלֶֽיהָ׃",
+      "en": "And God said to him in a dream, I too know that thou didst this in the integrity of thy heart; for I also withheld thee from sinning against Me: therefore I did not permit thee to touch her."
+    },
+    {
+      "n": 78,
+      "c": 20,
+      "v": 7,
+      "ref": "20:7",
+      "text": "וְעַתָּ֗ה הָשֵׁ֤ב אֵֽשֶׁת־הָאִישׁ֙ כִּֽי־נָבִ֣יא ה֔וּא וְיִתְפַּלֵּ֥ל בַּֽעַדְךָ֖ וֶֽחְיֵ֑ה וְאִם־אֵֽינְךָ֣ מֵשִׁ֔יב דַּ֚ע כִּי־מ֣וֹת תָּמ֔וּת אַתָּ֖ה וְכׇל־אֲשֶׁר־לָֽךְ׃",
+      "en": "Now therefore restore the man’s wife; for he is a prophet, and he shall pray for thee, and thou shalt live: and if thou restore her not, know thou that thou shalt surely die, thou, and all that are thine."
+    },
+    {
+      "n": 79,
+      "c": 20,
+      "v": 8,
+      "ref": "20:8",
+      "text": "וַיַּשְׁכֵּ֨ם אֲבִימֶ֜לֶךְ בַּבֹּ֗קֶר וַיִּקְרָא֙ לְכׇל־עֲבָדָ֔יו וַיְדַבֵּ֛ר אֶת־כׇּל־הַדְּבָרִ֥ים הָאֵ֖לֶּה בְּאׇזְנֵיהֶ֑ם וַיִּֽירְא֥וּ הָאֲנָשִׁ֖ים מְאֹֽד׃",
+      "en": "Therefore Avimelekh rose early in the morning, and called all his servants, and told all these things in their ears: and the men were sore afraid."
+    },
+    {
+      "n": 80,
+      "c": 20,
+      "v": 9,
+      "ref": "20:9",
+      "text": "וַיִּקְרָ֨א אֲבִימֶ֜לֶךְ לְאַבְרָהָ֗ם וַיֹּ֨אמֶר ל֜וֹ מֶֽה־עָשִׂ֤יתָ לָּ֙נוּ֙ וּמֶֽה־חָטָ֣אתִי לָ֔ךְ כִּֽי־הֵבֵ֧אתָ עָלַ֛י וְעַל־מַמְלַכְתִּ֖י חֲטָאָ֣ה גְדֹלָ֑ה מַעֲשִׂים֙ אֲשֶׁ֣ר לֹא־יֵֽעָשׂ֔וּ עָשִׂ֖יתָ עִמָּדִֽי׃",
+      "en": "Then Avimelekh called Avraham, and said to him, What hast thou done to us? and in what have I offended thee, that thou hast brought on me and on my kingdom a great sin? thou hast done deeds to me that ought not to be done."
+    },
+    {
+      "n": 81,
+      "c": 20,
+      "v": 10,
+      "ref": "20:10",
+      "text": "וַיֹּ֥אמֶר אֲבִימֶ֖לֶךְ אֶל־אַבְרָהָ֑ם מָ֣ה רָאִ֔יתָ כִּ֥י עָשִׂ֖יתָ אֶת־הַדָּבָ֥ר הַזֶּֽה׃",
+      "en": "And Avimelekh said to Avraham, What sawest thou, that thou hast done this thing?"
+    },
+    {
+      "n": 82,
+      "c": 20,
+      "v": 11,
+      "ref": "20:11",
+      "text": "וַיֹּ֙אמֶר֙ אַבְרָהָ֔ם כִּ֣י אָמַ֗רְתִּי רַ֚ק אֵין־יִרְאַ֣ת אֱלֹהִ֔ים בַּמָּק֖וֹם הַזֶּ֑ה וַהֲרָג֖וּנִי עַל־דְּבַ֥ר אִשְׁתִּֽי׃",
+      "en": "And Avraham said, Because I thought, Surely the fear of God is not in this place; and they will slay me for my wife’s sake."
+    },
+    {
+      "n": 83,
+      "c": 20,
+      "v": 12,
+      "ref": "20:12",
+      "text": "וְגַם־אׇמְנָ֗ה אֲחֹתִ֤י בַת־אָבִי֙ הִ֔וא אַ֖ךְ לֹ֣א בַת־אִמִּ֑י וַתְּהִי־לִ֖י לְאִשָּֽׁה׃",
+      "en": "And yet indeed she is my sister; she is the daughter of my father, but not the daughter of my mother; and she became my wife."
+    },
+    {
+      "n": 84,
+      "c": 20,
+      "v": 13,
+      "ref": "20:13",
+      "text": "וַיְהִ֞י כַּאֲשֶׁ֧ר הִתְע֣וּ אֹתִ֗י אֱלֹהִים֮ מִבֵּ֣ית אָבִי֒ וָאֹמַ֣ר לָ֔הּ זֶ֣ה חַסְדֵּ֔ךְ אֲשֶׁ֥ר תַּעֲשִׂ֖י עִמָּדִ֑י אֶ֤ל כׇּל־הַמָּקוֹם֙ אֲשֶׁ֣ר נָב֣וֹא שָׁ֔מָּה אִמְרִי־לִ֖י אָחִ֥י הֽוּא׃",
+      "en": "And it came to pass, when God caused me to wander from my father’s house, that I said to her, This is thy kindness which thou shalt show to me; at every place where we shall come, say of me, He is my brother."
+    },
+    {
+      "n": 85,
+      "c": 20,
+      "v": 14,
+      "ref": "20:14",
+      "text": "וַיִּקַּ֨ח אֲבִימֶ֜לֶךְ צֹ֣אן וּבָקָ֗ר וַעֲבָדִים֙ וּשְׁפָחֹ֔ת וַיִּתֵּ֖ן לְאַבְרָהָ֑ם וַיָּ֣שֶׁב ל֔וֹ אֵ֖ת שָׂרָ֥ה אִשְׁתּֽוֹ׃",
+      "en": "And Avimelekh took sheep, and oxen, and menservants, and womenservants, and gave them to Avraham, and restored him Sara his wife."
+    },
+    {
+      "n": 86,
+      "c": 20,
+      "v": 15,
+      "ref": "20:15",
+      "text": "וַיֹּ֣אמֶר אֲבִימֶ֔לֶךְ הִנֵּ֥ה אַרְצִ֖י לְפָנֶ֑יךָ בַּטּ֥וֹב בְּעֵינֶ֖יךָ שֵֽׁב׃",
+      "en": "And Avimelekh said, Behold, my land is before thee: dwell where it pleases thee."
+    },
+    {
+      "n": 87,
+      "c": 20,
+      "v": 16,
+      "ref": "20:16",
+      "text": "וּלְשָׂרָ֣ה אָמַ֗ר הִנֵּ֨ה נָתַ֜תִּי אֶ֤לֶף כֶּ֙סֶף֙ לְאָחִ֔יךְ הִנֵּ֤ה הוּא־לָךְ֙ כְּס֣וּת עֵינַ֔יִם לְכֹ֖ל אֲשֶׁ֣ר אִתָּ֑ךְ וְאֵ֥ת כֹּ֖ל וְנֹכָֽחַת׃",
+      "en": "And to Sara he said, Behold, I have given thy brother a thousand pieces of silver: behold, it is to thee a covering of the eyes, to all that are with thee, and unto all others: thus she was reproved."
+    },
+    {
+      "n": 88,
+      "c": 20,
+      "v": 17,
+      "ref": "20:17",
+      "text": "וַיִּתְפַּלֵּ֥ל אַבְרָהָ֖ם אֶל־הָאֱלֹהִ֑ים וַיִּרְפָּ֨א אֱלֹהִ֜ים אֶת־אֲבִימֶ֧לֶךְ וְאֶת־אִשְׁתּ֛וֹ וְאַמְהֹתָ֖יו וַיֵּלֵֽדוּ׃",
+      "en": "So Avraham prayed to God: and God healed Avimelekh, and his wife, and his maidservants; and they bore children."
+    },
+    {
+      "n": 89,
+      "c": 20,
+      "v": 18,
+      "ref": "20:18",
+      "text": "כִּֽי־עָצֹ֤ר עָצַר֙ יְהֹוָ֔ה בְּעַ֥ד כׇּל־רֶ֖חֶם לְבֵ֣ית אֲבִימֶ֑לֶךְ עַל־דְּבַ֥ר שָׂרָ֖ה אֵ֥שֶׁת אַבְרָהָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For the Lord had fast closed up all the wombs of the house of Avimelekh, because of Sara Avraham’s wife."
+    },
+    {
+      "n": 90,
+      "c": 21,
+      "v": 1,
+      "ref": "21:1",
+      "text": "וַֽיהֹוָ֛ה פָּקַ֥ד אֶת־שָׂרָ֖ה כַּאֲשֶׁ֣ר אָמָ֑ר וַיַּ֧עַשׂ יְהֹוָ֛ה לְשָׂרָ֖ה כַּאֲשֶׁ֥ר דִּבֵּֽר׃",
+      "en": "And the Lord visited Sara as He had said, and the Lord did to Sara as He had spoken."
+    },
+    {
+      "n": 91,
+      "c": 21,
+      "v": 2,
+      "ref": "21:2",
+      "text": "וַתַּ֩הַר֩ וַתֵּ֨לֶד שָׂרָ֧ה לְאַבְרָהָ֛ם בֵּ֖ן לִזְקֻנָ֑יו לַמּוֹעֵ֕ד אֲשֶׁר־דִּבֶּ֥ר אֹת֖וֹ אֱלֹהִֽים׃",
+      "en": "For Sara conceived, and bore Avraham a son in his old age, at the set time of which God had spoken to him."
+    },
+    {
+      "n": 92,
+      "c": 21,
+      "v": 3,
+      "ref": "21:3",
+      "text": "וַיִּקְרָ֨א אַבְרָהָ֜ם אֶֽת־שֶׁם־בְּנ֧וֹ הַנּֽוֹלַד־ל֛וֹ אֲשֶׁר־יָלְדָה־לּ֥וֹ שָׂרָ֖ה יִצְחָֽק׃",
+      "en": "And Avraham called the name of his son that was born to him, whom Sara bore to him, Yiżĥaq."
+    },
+    {
+      "n": 93,
+      "c": 21,
+      "v": 4,
+      "ref": "21:4",
+      "text": "וַיָּ֤מׇל אַבְרָהָם֙ אֶת־יִצְחָ֣ק בְּנ֔וֹ בֶּן־שְׁמֹנַ֖ת יָמִ֑ים כַּאֲשֶׁ֛ר צִוָּ֥ה אֹת֖וֹ אֱלֹהִֽים׃",
+      "en": "And Avraham circumcised his son Yiżĥaq being eight days old, as God had commanded him."
+    },
+    {
+      "n": 94,
+      "c": 21,
+      "v": 5,
+      "ref": "21:5",
+      "text": "וְאַבְרָהָ֖ם בֶּן־מְאַ֣ת שָׁנָ֑ה בְּהִוָּ֣לֶד ל֔וֹ אֵ֖ת יִצְחָ֥ק בְּנֽוֹ׃",
+      "en": "And Avraham was a hundred years old, when his son Yiżĥaq was born to him."
+    },
+    {
+      "n": 95,
+      "c": 21,
+      "v": 6,
+      "ref": "21:6",
+      "text": "וַתֹּ֣אמֶר שָׂרָ֔ה צְחֹ֕ק עָ֥שָׂה לִ֖י אֱלֹהִ֑ים כׇּל־הַשֹּׁמֵ֖עַ יִֽצְחַק־לִֽי׃",
+      "en": "And Sara said, God has made laughter for me, so that all that hear will laugh with me."
+    },
+    {
+      "n": 96,
+      "c": 21,
+      "v": 7,
+      "ref": "21:7",
+      "text": "וַתֹּ֗אמֶר מִ֤י מִלֵּל֙ לְאַבְרָהָ֔ם הֵינִ֥יקָה בָנִ֖ים שָׂרָ֑ה כִּֽי־יָלַ֥דְתִּי בֵ֖ן לִזְקֻנָֽיו׃",
+      "en": "And she said, Who would have said to Avraham, that Sara should give children suck? for I have born him a son in his old age."
+    },
+    {
+      "n": 97,
+      "c": 21,
+      "v": 8,
+      "ref": "21:8",
+      "text": "וַיִּגְדַּ֥ל הַיֶּ֖לֶד וַיִּגָּמַ֑ל וַיַּ֤עַשׂ אַבְרָהָם֙ מִשְׁתֶּ֣ה גָד֔וֹל בְּי֖וֹם הִגָּמֵ֥ל אֶת־יִצְחָֽק׃",
+      "en": "And the child grew, and was weaned: and Avraham made a great feast on the same day that Yiżĥaq was weaned."
+    },
+    {
+      "n": 98,
+      "c": 21,
+      "v": 9,
+      "ref": "21:9",
+      "text": "וַתֵּ֨רֶא שָׂרָ֜ה אֶֽת־בֶּן־הָגָ֧ר הַמִּצְרִ֛ית אֲשֶׁר־יָלְדָ֥ה לְאַבְרָהָ֖ם מְצַחֵֽק׃",
+      "en": "And Sara saw the son of Hagar the Miżrian, whom she had born to Avraham, mocking."
+    },
+    {
+      "n": 99,
+      "c": 21,
+      "v": 10,
+      "ref": "21:10",
+      "text": "וַתֹּ֙אמֶר֙ לְאַבְרָהָ֔ם גָּרֵ֛שׁ הָאָמָ֥ה הַזֹּ֖את וְאֶת־בְּנָ֑הּ כִּ֣י לֹ֤א יִירַשׁ֙ בֶּן־הָאָמָ֣ה הַזֹּ֔את עִם־בְּנִ֖י עִם־יִצְחָֽק׃",
+      "en": "So she said to Avraham, Cast out this bondwoman and her son: for the son of this bondwoman shall not be heir with my son, with Yiżĥaq."
+    },
+    {
+      "n": 100,
+      "c": 21,
+      "v": 11,
+      "ref": "21:11",
+      "text": "וַיֵּ֧רַע הַדָּבָ֛ר מְאֹ֖ד בְּעֵינֵ֣י אַבְרָהָ֑ם עַ֖ל אוֹדֹ֥ת בְּנֽוֹ׃",
+      "en": "And the thing was very grievous in Avraham’s eyes because of his son."
+    },
+    {
+      "n": 101,
+      "c": 21,
+      "v": 12,
+      "ref": "21:12",
+      "text": "וַיֹּ֨אמֶר אֱלֹהִ֜ים אֶל־אַבְרָהָ֗ם אַל־יֵרַ֤ע בְּעֵינֶ֙יךָ֙ עַל־הַנַּ֣עַר וְעַל־אֲמָתֶ֔ךָ כֹּל֩ אֲשֶׁ֨ר תֹּאמַ֥ר אֵלֶ֛יךָ שָׂרָ֖ה שְׁמַ֣ע בְּקֹלָ֑הּ כִּ֣י בְיִצְחָ֔ק יִקָּרֵ֥א לְךָ֖ זָֽרַע׃",
+      "en": "And God said to Avraham, Let it not be grievous in thy sight because of the lad, and because of thy bondwoman; in all that Sara has said to thee, hearken to her voice; for in Yiżĥaq shall thy seed be called."
+    },
+    {
+      "n": 102,
+      "c": 21,
+      "v": 13,
+      "ref": "21:13",
+      "text": "וְגַ֥ם אֶת־בֶּן־הָאָמָ֖ה לְג֣וֹי אֲשִׂימֶ֑נּוּ כִּ֥י זַרְעֲךָ֖ הֽוּא׃",
+      "en": "And also of the son of the bondwoman will I make a nation, because he is thy seed."
+    },
+    {
+      "n": 103,
+      "c": 21,
+      "v": 14,
+      "ref": "21:14",
+      "text": "וַיַּשְׁכֵּ֣ם אַבְרָהָ֣ם&thinsp;<small>׀</small>&thinsp;בַּבֹּ֡קֶר וַיִּֽקַּֽח־לֶ֩חֶם֩ וְחֵ֨מַת מַ֜יִם וַיִּתֵּ֣ן אֶל־הָ֠גָ֠ר שָׂ֧ם עַל־שִׁכְמָ֛הּ וְאֶת־הַיֶּ֖לֶד וַֽיְשַׁלְּחֶ֑הָ וַתֵּ֣לֶךְ וַתֵּ֔תַע בְּמִדְבַּ֖ר בְּאֵ֥ר שָֽׁבַע׃",
+      "en": "And Avraham rose up early in the morning, and took bread, and a bottle of water, and gave it to Hagar, putting it on her shoulder, and the child, and sent her away: and she departed, and wandered in the wilderness of Be᾽er-sheva."
+    },
+    {
+      "n": 104,
+      "c": 21,
+      "v": 15,
+      "ref": "21:15",
+      "text": "וַיִּכְל֥וּ הַמַּ֖יִם מִן־הַחֵ֑מֶת וַתַּשְׁלֵ֣ךְ אֶת־הַיֶּ֔לֶד תַּ֖חַת אַחַ֥ד הַשִּׂיחִֽם׃",
+      "en": "And the water was spent in the bottle, and she cast the child under one of the shrubs."
+    },
+    {
+      "n": 105,
+      "c": 21,
+      "v": 16,
+      "ref": "21:16",
+      "text": "וַתֵּ֩לֶךְ֩ וַתֵּ֨שֶׁב לָ֜הּ מִנֶּ֗גֶד הַרְחֵק֙ כִּמְטַחֲוֵ֣י קֶ֔שֶׁת כִּ֣י אָֽמְרָ֔ה אַל־אֶרְאֶ֖ה בְּמ֣וֹת הַיָּ֑לֶד וַתֵּ֣שֶׁב מִנֶּ֔גֶד וַתִּשָּׂ֥א אֶת־קֹלָ֖הּ וַתֵּֽבְךְּ׃",
+      "en": "And she went, and sat her down over against him a good way off, as it were a bowshot: for she said, Let me not see the death of the child. And she sat over against him, and lifted up her voice, and wept."
+    },
+    {
+      "n": 106,
+      "c": 21,
+      "v": 17,
+      "ref": "21:17",
+      "text": "וַיִּשְׁמַ֣ע אֱלֹהִים֮ אֶת־ק֣וֹל הַנַּ֒עַר֒ וַיִּקְרָא֩ מַלְאַ֨ךְ אֱלֹהִ֤ים&thinsp;<small>׀</small>&thinsp;אֶל־הָגָר֙ מִן־הַשָּׁמַ֔יִם וַיֹּ֥אמֶר לָ֖הּ מַה־לָּ֣ךְ הָגָ֑ר אַל־תִּ֣ירְאִ֔י כִּֽי־שָׁמַ֧ע אֱלֹהִ֛ים אֶל־ק֥וֹל הַנַּ֖עַר בַּאֲשֶׁ֥ר הוּא־שָֽׁם׃",
+      "en": "And God heard the voice of the lad; and the angel of God called to Hagar out of heaven, and said to her, What ails thee, Hagar? fear not; for God has heard the voice of the lad where he is."
+    },
+    {
+      "n": 107,
+      "c": 21,
+      "v": 18,
+      "ref": "21:18",
+      "text": "ק֚וּמִי שְׂאִ֣י אֶת־הַנַּ֔עַר וְהַחֲזִ֥יקִי אֶת־יָדֵ֖ךְ בּ֑וֹ כִּֽי־לְג֥וֹי גָּד֖וֹל אֲשִׂימֶֽנּוּ׃",
+      "en": "Arise, lift up the lad, and hold him in thy hand; for I will make him a great nation."
+    },
+    {
+      "n": 108,
+      "c": 21,
+      "v": 19,
+      "ref": "21:19",
+      "text": "וַיִּפְקַ֤ח אֱלֹהִים֙ אֶת־עֵינֶ֔יהָ וַתֵּ֖רֶא בְּאֵ֣ר מָ֑יִם וַתֵּ֜לֶךְ וַתְּמַלֵּ֤א אֶת־הַחֵ֙מֶת֙ מַ֔יִם וַתַּ֖שְׁקְ אֶת־הַנָּֽעַר׃",
+      "en": "And God opened her eyes, and she saw a well of water; and she went, and filled the bottle with water, and gave the lad drink."
+    },
+    {
+      "n": 109,
+      "c": 21,
+      "v": 20,
+      "ref": "21:20",
+      "text": "וַיְהִ֧י אֱלֹהִ֛ים אֶת־הַנַּ֖עַר וַיִּגְדָּ֑ל וַיֵּ֙שֶׁב֙ בַּמִּדְבָּ֔ר וַיְהִ֖י רֹבֶ֥ה קַשָּֽׁת׃",
+      "en": "And God was with the lad; and he grew, and dwelt in the wilderness, and became an archer."
+    },
+    {
+      "n": 110,
+      "c": 21,
+      "v": 21,
+      "ref": "21:21",
+      "text": "וַיֵּ֖שֶׁב בְּמִדְבַּ֣ר פָּארָ֑ן וַתִּֽקַּֽח־ל֥וֹ אִמּ֛וֹ אִשָּׁ֖ה מֵאֶ֥רֶץ מִצְרָֽיִם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And he dwelt in the wilderness of Paran: and his mother took him a wife out of the land of Miżrayim."
+    },
+    {
+      "n": 111,
+      "c": 21,
+      "v": 22,
+      "ref": "21:22",
+      "text": "וַֽיְהִי֙ בָּעֵ֣ת הַהִ֔וא וַיֹּ֣אמֶר אֲבִימֶ֗לֶךְ וּפִיכֹל֙ שַׂר־צְבָא֔וֹ אֶל־אַבְרָהָ֖ם לֵאמֹ֑ר אֱלֹהִ֣ים עִמְּךָ֔ בְּכֹ֥ל אֲשֶׁר־אַתָּ֖ה עֹשֶֽׂה׃",
+      "en": "And it came to pass at that time, that Avimelekh and Pikhol captain of his host spoke to Avraham, saying, God is with thee in all that thou doest:"
+    },
+    {
+      "n": 112,
+      "c": 21,
+      "v": 23,
+      "ref": "21:23",
+      "text": "וְעַתָּ֗ה הִשָּׁ֨בְעָה לִּ֤י בֵֽאלֹהִים֙ הֵ֔נָּה אִם־תִּשְׁקֹ֣ר לִ֔י וּלְנִינִ֖י וּלְנֶכְדִּ֑י כַּחֶ֜סֶד אֲשֶׁר־עָשִׂ֤יתִי עִמְּךָ֙ תַּעֲשֶׂ֣ה עִמָּדִ֔י וְעִם־הָאָ֖רֶץ אֲשֶׁר־גַּ֥רְתָּה בָּֽהּ׃",
+      "en": "now therefore swear to me here by God that thou wilt not deal falsely with me, nor with my son, nor with my son’s son: but according to the kindness that I have done to thee, thou shalt do to me, and to the land in which thou hast sojourned."
+    },
+    {
+      "n": 113,
+      "c": 21,
+      "v": 24,
+      "ref": "21:24",
+      "text": "וַיֹּ֙אמֶר֙ אַבְרָהָ֔ם אָנֹכִ֖י אִשָּׁבֵֽעַ׃",
+      "en": "And Avraham said, I will swear."
+    },
+    {
+      "n": 114,
+      "c": 21,
+      "v": 25,
+      "ref": "21:25",
+      "text": "וְהוֹכִ֥חַ אַבְרָהָ֖ם אֶת־אֲבִימֶ֑לֶךְ עַל־אֹדוֹת֙ בְּאֵ֣ר הַמַּ֔יִם אֲשֶׁ֥ר גָּזְל֖וּ עַבְדֵ֥י אֲבִימֶֽלֶךְ׃",
+      "en": "And Avraham reproved Avimelekh because of the well of water, which Avimelekh’s servants had violently taken away."
+    },
+    {
+      "n": 115,
+      "c": 21,
+      "v": 26,
+      "ref": "21:26",
+      "text": "וַיֹּ֣אמֶר אֲבִימֶ֔לֶךְ לֹ֣א יָדַ֔עְתִּי מִ֥י עָשָׂ֖ה אֶת־הַדָּבָ֣ר הַזֶּ֑ה וְגַם־אַתָּ֞ה לֹא־הִגַּ֣דְתָּ לִּ֗י וְגַ֧ם אָנֹכִ֛י לֹ֥א שָׁמַ֖עְתִּי בִּלְתִּ֥י הַיּֽוֹם׃",
+      "en": "And Avimelekh said, I know not who has done this thing: neither didst thou tell me, neither yet heard I of it, but today."
+    },
+    {
+      "n": 116,
+      "c": 21,
+      "v": 27,
+      "ref": "21:27",
+      "text": "וַיִּקַּ֤ח אַבְרָהָם֙ צֹ֣אן וּבָקָ֔ר וַיִּתֵּ֖ן לַאֲבִימֶ֑לֶךְ וַיִּכְרְת֥וּ שְׁנֵיהֶ֖ם בְּרִֽית׃",
+      "en": "And Avraham took sheep and oxen, and gave them to Avimelekh; and both of them made a covenant."
+    },
+    {
+      "n": 117,
+      "c": 21,
+      "v": 28,
+      "ref": "21:28",
+      "text": "וַיַּצֵּ֣ב אַבְרָהָ֗ם אֶת־שֶׁ֛בַע כִּבְשֹׂ֥ת הַצֹּ֖אן לְבַדְּהֶֽן׃",
+      "en": "And Avraham set seven ewe lambs of the flock by themselves."
+    },
+    {
+      "n": 118,
+      "c": 21,
+      "v": 29,
+      "ref": "21:29",
+      "text": "וַיֹּ֥אמֶר אֲבִימֶ֖לֶךְ אֶל־אַבְרָהָ֑ם מָ֣ה הֵ֗נָּה שֶׁ֤בַע כְּבָשֹׂת֙ הָאֵ֔לֶּה אֲשֶׁ֥ר הִצַּ֖בְתָּ לְבַדָּֽנָה׃",
+      "en": "And Avimelekh said to Avraham, What mean these seven ewe lambs which thou hast set by themselves?"
+    },
+    {
+      "n": 119,
+      "c": 21,
+      "v": 30,
+      "ref": "21:30",
+      "text": "וַיֹּ֕אמֶר כִּ֚י אֶת־שֶׁ֣בַע כְּבָשֹׂ֔ת תִּקַּ֖ח מִיָּדִ֑י בַּעֲבוּר֙ תִּֽהְיֶה־לִּ֣י לְעֵדָ֔ה כִּ֥י חָפַ֖רְתִּי אֶת־הַבְּאֵ֥ר הַזֹּֽאת׃",
+      "en": "And he said, For these seven ewe lambs shalt thou take of my hand, that they may be a witness to me, that I have dug this well."
+    },
+    {
+      "n": 120,
+      "c": 21,
+      "v": 31,
+      "ref": "21:31",
+      "text": "עַל־כֵּ֗ן קָרָ֛א לַמָּק֥וֹם הַה֖וּא בְּאֵ֣ר שָׁ֑בַע כִּ֛י שָׁ֥ם נִשְׁבְּע֖וּ שְׁנֵיהֶֽם׃",
+      "en": "Therefore he called that place Be᾽er-sheva; because there they swore both of them."
+    },
+    {
+      "n": 121,
+      "c": 21,
+      "v": 32,
+      "ref": "21:32",
+      "text": "וַיִּכְרְת֥וּ בְרִ֖ית בִּבְאֵ֣ר שָׁ֑בַע וַיָּ֣קׇם אֲבִימֶ֗לֶךְ וּפִיכֹל֙ שַׂר־צְבָא֔וֹ וַיָּשֻׁ֖בוּ אֶל־אֶ֥רֶץ פְּלִשְׁתִּֽים׃",
+      "en": "Thus they made a covenant at Be᾽er-sheva; then Avimelekh rose up, and Pikhol the captain of his host, and they returned to the land of the Pelishtim."
+    },
+    {
+      "n": 122,
+      "c": 21,
+      "v": 33,
+      "ref": "21:33",
+      "text": "וַיִּטַּ֥ע אֶ֖שֶׁל בִּבְאֵ֣ר שָׁ֑בַע וַיִּ֨קְרָא־שָׁ֔ם בְּשֵׁ֥ם יְהֹוָ֖ה אֵ֥ל עוֹלָֽם׃",
+      "en": "And Avraham planted a tamarisk in Be᾽er-sheva, and called there on the name of the Lord, the everlasting God."
+    },
+    {
+      "n": 123,
+      "c": 21,
+      "v": 34,
+      "ref": "21:34",
+      "text": "וַיָּ֧גׇר אַבְרָהָ֛ם בְּאֶ֥רֶץ פְּלִשְׁתִּ֖ים יָמִ֥ים רַבִּֽים׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Avraham sojourned in the land of the Pelishtim many days."
+    },
+    {
+      "n": 124,
+      "c": 22,
+      "v": 1,
+      "ref": "22:1",
+      "text": "וַיְהִ֗י אַחַר֙ הַדְּבָרִ֣ים הָאֵ֔לֶּה וְהָ֣אֱלֹהִ֔ים נִסָּ֖ה אֶת־אַבְרָהָ֑ם וַיֹּ֣אמֶר אֵלָ֔יו אַבְרָהָ֖ם וַיֹּ֥אמֶר הִנֵּֽנִי׃",
+      "en": "And it came to pass after these things, that God did test Avraham, and said to him, Avraham: and he said, Here I am!"
+    },
+    {
+      "n": 125,
+      "c": 22,
+      "v": 2,
+      "ref": "22:2",
+      "text": "וַיֹּ֡אמֶר קַח־נָ֠א אֶת־בִּנְךָ֨ אֶת־יְחִֽידְךָ֤ אֲשֶׁר־אָהַ֙בְתָּ֙ אֶת־יִצְחָ֔ק וְלֶ֨ךְ־לְךָ֔ אֶל־אֶ֖רֶץ הַמֹּרִיָּ֑ה וְהַעֲלֵ֤הוּ שָׁם֙ לְעֹלָ֔ה עַ֚ל אַחַ֣ד הֶֽהָרִ֔ים אֲשֶׁ֖ר אֹמַ֥ר אֵלֶֽיךָ׃",
+      "en": "And He said, Take now thy son, thy only son Yiżĥaq, whom thou lovest, and get thee into the land of Moriyya; and offer him there for a burnt offering upon one of the mountains which I will tell thee of."
+    },
+    {
+      "n": 126,
+      "c": 22,
+      "v": 3,
+      "ref": "22:3",
+      "text": "וַיַּשְׁכֵּ֨ם אַבְרָהָ֜ם בַּבֹּ֗קֶר וַֽיַּחֲבֹשׁ֙ אֶת־חֲמֹר֔וֹ וַיִּקַּ֞ח אֶת־שְׁנֵ֤י נְעָרָיו֙ אִתּ֔וֹ וְאֵ֖ת יִצְחָ֣ק בְּנ֑וֹ וַיְבַקַּע֙ עֲצֵ֣י עֹלָ֔ה וַיָּ֣קׇם וַיֵּ֔לֶךְ אֶל־הַמָּק֖וֹם אֲשֶׁר־אָֽמַר־ל֥וֹ הָאֱלֹהִֽים׃",
+      "en": "And Avraham rose up early in the morning, and saddled his ass, and took two of his young men with him, and Yiżĥaq his son, and broke up the wood for the burnt offering, and rose up, and went to the place of which God had told him."
+    },
+    {
+      "n": 127,
+      "c": 22,
+      "v": 4,
+      "ref": "22:4",
+      "text": "בַּיּ֣וֹם הַשְּׁלִישִׁ֗י וַיִּשָּׂ֨א אַבְרָהָ֧ם אֶת־עֵינָ֛יו וַיַּ֥רְא אֶת־הַמָּק֖וֹם מֵרָחֹֽק׃",
+      "en": "Then on the third day Avraham lifted up his eyes, and saw the place afar off."
+    },
+    {
+      "n": 128,
+      "c": 22,
+      "v": 5,
+      "ref": "22:5",
+      "text": "וַיֹּ֨אמֶר אַבְרָהָ֜ם אֶל־נְעָרָ֗יו שְׁבוּ־לָכֶ֥ם פֹּה֙ עִֽם־הַחֲמ֔וֹר וַאֲנִ֣י וְהַנַּ֔עַר נֵלְכָ֖ה עַד־כֹּ֑ה וְנִֽשְׁתַּחֲוֶ֖ה וְנָשׁ֥וּבָה אֲלֵיכֶֽם׃",
+      "en": "And Avraham said to his young men, stay here with the ass; and I and the lad will go yonder and prostrate ourselves, and come again to you."
+    },
+    {
+      "n": 129,
+      "c": 22,
+      "v": 6,
+      "ref": "22:6",
+      "text": "וַיִּקַּ֨ח אַבְרָהָ֜ם אֶת־עֲצֵ֣י הָעֹלָ֗ה וַיָּ֙שֶׂם֙ עַל־יִצְחָ֣ק בְּנ֔וֹ וַיִּקַּ֣ח בְּיָד֔וֹ אֶת־הָאֵ֖שׁ וְאֶת־הַֽמַּאֲכֶ֑לֶת וַיֵּלְכ֥וּ שְׁנֵיהֶ֖ם יַחְדָּֽו׃",
+      "en": "And Avraham took the wood of the burnt offering, and laid it upon Yiżĥaq his son; and he took the fire in his hand, and the knife; and they went both of them together."
+    },
+    {
+      "n": 130,
+      "c": 22,
+      "v": 7,
+      "ref": "22:7",
+      "text": "וַיֹּ֨אמֶר יִצְחָ֜ק אֶל־אַבְרָהָ֤ם אָבִיו֙ וַיֹּ֣אמֶר אָבִ֔י וַיֹּ֖אמֶר הִנֶּ֣נִּֽי בְנִ֑י וַיֹּ֗אמֶר הִנֵּ֤ה הָאֵשׁ֙ וְהָ֣עֵצִ֔ים וְאַיֵּ֥ה הַשֶּׂ֖ה לְעֹלָֽה׃",
+      "en": "And Yiżĥaq spoke to Avraham his father, and said, My father: and he said, Here I am, my son. And he said, Behold the fire and the wood: but where is the lamb for a burnt offering?"
+    },
+    {
+      "n": 131,
+      "c": 22,
+      "v": 8,
+      "ref": "22:8",
+      "text": "וַיֹּ֙אמֶר֙ אַבְרָהָ֔ם אֱלֹהִ֞ים יִרְאֶה־לּ֥וֹ הַשֶּׂ֛ה לְעֹלָ֖ה בְּנִ֑י וַיֵּלְכ֥וּ שְׁנֵיהֶ֖ם יַחְדָּֽו׃",
+      "en": "And Avraham said, My son, God will provide himself a lamb for a burnt offering: so they went both of them together."
+    },
+    {
+      "n": 132,
+      "c": 22,
+      "v": 9,
+      "ref": "22:9",
+      "text": "וַיָּבֹ֗אוּ אֶֽל־הַמָּקוֹם֮ אֲשֶׁ֣ר אָֽמַר־ל֣וֹ הָאֱלֹהִים֒ וַיִּ֨בֶן שָׁ֤ם אַבְרָהָם֙ אֶת־הַמִּזְבֵּ֔חַ וַֽיַּעֲרֹ֖ךְ אֶת־הָעֵצִ֑ים וַֽיַּעֲקֹד֙ אֶת־יִצְחָ֣ק בְּנ֔וֹ וַיָּ֤שֶׂם אֹתוֹ֙ עַל־הַמִּזְבֵּ֔חַ מִמַּ֖עַל לָעֵצִֽים׃",
+      "en": "And they came to the place which God had told him of; and Avraham built an altar there, and laid the wood in order, and bound Yiżĥaq his son, and laid him on the altar upon the wood."
+    },
+    {
+      "n": 133,
+      "c": 22,
+      "v": 10,
+      "ref": "22:10",
+      "text": "וַיִּשְׁלַ֤ח אַבְרָהָם֙ אֶת־יָד֔וֹ וַיִּקַּ֖ח אֶת־הַֽמַּאֲכֶ֑לֶת לִשְׁחֹ֖ט אֶת־בְּנֽוֹ׃",
+      "en": "And Avraham stretched out his hand, and took the knife to slay his son."
+    },
+    {
+      "n": 134,
+      "c": 22,
+      "v": 11,
+      "ref": "22:11",
+      "text": "וַיִּקְרָ֨א אֵלָ֜יו מַלְאַ֤ךְ יְהֹוָה֙ מִן־הַשָּׁמַ֔יִם וַיֹּ֖אמֶר אַבְרָהָ֣ם&thinsp;<small>׀</small>&thinsp;אַבְרָהָ֑ם וַיֹּ֖אמֶר הִנֵּֽנִי׃",
+      "en": "And an angel of the Lord called to him out of heaven, and said, Avraham, Avraham: and he said, Here I am."
+    },
+    {
+      "n": 135,
+      "c": 22,
+      "v": 12,
+      "ref": "22:12",
+      "text": "וַיֹּ֗אמֶר אַל־תִּשְׁלַ֤ח יָֽדְךָ֙ אֶל־הַנַּ֔עַר וְאַל־תַּ֥עַשׂ ל֖וֹ מְא֑וּמָה כִּ֣י&thinsp;<b>׀</b> עַתָּ֣ה יָדַ֗עְתִּי כִּֽי־יְרֵ֤א אֱלֹהִים֙ אַ֔תָּה וְלֹ֥א חָשַׂ֛כְתָּ אֶת־בִּנְךָ֥ אֶת־יְחִידְךָ֖ מִמֶּֽנִּי׃",
+      "en": "And he said, Lay not thy hand upon the lad, neither do anything to him: for now I know that thou fearest God, seeing thou hast not withheld thy son, thy only son from me."
+    },
+    {
+      "n": 136,
+      "c": 22,
+      "v": 13,
+      "ref": "22:13",
+      "text": "וַיִּשָּׂ֨א אַבְרָהָ֜ם אֶת־עֵינָ֗יו וַיַּרְא֙ וְהִנֵּה־אַ֔יִל אַחַ֕ר נֶאֱחַ֥ז בַּסְּבַ֖ךְ בְּקַרְנָ֑יו וַיֵּ֤לֶךְ אַבְרָהָם֙ וַיִּקַּ֣ח אֶת־הָאַ֔יִל וַיַּעֲלֵ֥הוּ לְעֹלָ֖ה תַּ֥חַת בְּנֽוֹ׃",
+      "en": "And Avraham lifted up his eyes, and looked and behold behind him a ram caught in the thicket by his horns: and Avraham went and took the ram, and offered him up for a burnt offering in place of his son."
+    },
+    {
+      "n": 137,
+      "c": 22,
+      "v": 14,
+      "ref": "22:14",
+      "text": "וַיִּקְרָ֧א אַבְרָהָ֛ם שֵֽׁם־הַמָּק֥וֹם הַה֖וּא יְהֹוָ֣ה&thinsp;<small>׀</small>&thinsp;יִרְאֶ֑ה אֲשֶׁר֙ יֵאָמֵ֣ר הַיּ֔וֹם בְּהַ֥ר יְהֹוָ֖ה יֵרָאֶֽה׃",
+      "en": "And Avraham called the name of that place Adonay-yir᾽e: as it is said to this day, In the mount the Lord will appear."
+    },
+    {
+      "n": 138,
+      "c": 22,
+      "v": 15,
+      "ref": "22:15",
+      "text": "וַיִּקְרָ֛א מַלְאַ֥ךְ יְהֹוָ֖ה אֶל־אַבְרָהָ֑ם שֵׁנִ֖ית מִן־הַשָּׁמָֽיִם׃",
+      "en": "And the angel of the Lord called to Avraham out of heaven the second time,"
+    },
+    {
+      "n": 139,
+      "c": 22,
+      "v": 16,
+      "ref": "22:16",
+      "text": "וַיֹּ֕אמֶר בִּ֥י נִשְׁבַּ֖עְתִּי נְאֻם־יְהֹוָ֑ה כִּ֗י יַ֚עַן אֲשֶׁ֤ר עָשִׂ֙יתָ֙ אֶת־הַדָּבָ֣ר הַזֶּ֔ה וְלֹ֥א חָשַׂ֖כְתָּ אֶת־בִּנְךָ֥ אֶת־יְחִידֶֽךָ׃",
+      "en": "and said, By myself have I sworn, says the Lord, because thou hast done this thing, and hast not withheld thy son, thy only son:"
+    },
+    {
+      "n": 140,
+      "c": 22,
+      "v": 17,
+      "ref": "22:17",
+      "text": "כִּֽי־בָרֵ֣ךְ אֲבָרֶכְךָ֗ וְהַרְבָּ֨ה אַרְבֶּ֤ה אֶֽת־זַרְעֲךָ֙ כְּכוֹכְבֵ֣י הַשָּׁמַ֔יִם וְכַח֕וֹל אֲשֶׁ֖ר עַל־שְׂפַ֣ת הַיָּ֑ם וְיִרַ֣שׁ זַרְעֲךָ֔ אֵ֖ת שַׁ֥עַר אֹיְבָֽיו׃",
+      "en": "that I will exceedingly bless thee, and I will exceedingly multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of its enemies;"
+    },
+    {
+      "n": 141,
+      "c": 22,
+      "v": 18,
+      "ref": "22:18",
+      "text": "וְהִתְבָּרְכ֣וּ בְזַרְעֲךָ֔ כֹּ֖ל גּוֹיֵ֣י הָאָ֑רֶץ עֵ֕קֶב אֲשֶׁ֥ר שָׁמַ֖עְתָּ בְּקֹלִֽי׃",
+      "en": "and in thy seed shall all the nations of the earth be blessed; because thou hast obeyed My voice."
+    },
+    {
+      "n": 142,
+      "c": 22,
+      "v": 19,
+      "ref": "22:19",
+      "text": "וַיָּ֤שׇׁב אַבְרָהָם֙ אֶל־נְעָרָ֔יו וַיָּקֻ֛מוּ וַיֵּלְכ֥וּ יַחְדָּ֖ו אֶל־בְּאֵ֣ר שָׁ֑בַע וַיֵּ֥שֶׁב אַבְרָהָ֖ם בִּבְאֵ֥ר שָֽׁבַע׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "So Avraham returned to his young men, and they rose up and went together to Be᾽er-sheva; and Avraham dwelt at Be᾽er-sheva."
+    },
+    {
+      "n": 143,
+      "c": 22,
+      "v": 20,
+      "ref": "22:20",
+      "text": "וַיְהִ֗י אַחֲרֵי֙ הַדְּבָרִ֣ים הָאֵ֔לֶּה וַיֻּגַּ֥ד לְאַבְרָהָ֖ם לֵאמֹ֑ר הִ֠נֵּ֠ה יָלְדָ֨ה מִלְכָּ֥ה גַם־הִ֛וא בָּנִ֖ים לְנָח֥וֹר אָחִֽיךָ׃",
+      "en": "And it came to pass after these things, that it was told Avraham, saying, Behold Milka, she also has born children to thy brother Naĥor;"
+    },
+    {
+      "n": 144,
+      "c": 22,
+      "v": 21,
+      "ref": "22:21",
+      "text": "אֶת־ע֥וּץ בְּכֹר֖וֹ וְאֶת־בּ֣וּז אָחִ֑יו וְאֶת־קְמוּאֵ֖ל אֲבִ֥י אֲרָֽם׃",
+      "en": "῾Uż his firstborn, and Buz his brother, and Qemu᾽el the father of Aram,"
+    },
+    {
+      "n": 145,
+      "c": 22,
+      "v": 22,
+      "ref": "22:22",
+      "text": "וְאֶת־כֶּ֣שֶׂד וְאֶת־חֲז֔וֹ וְאֶת־פִּלְדָּ֖שׁ וְאֶת־יִדְלָ֑ף וְאֵ֖ת בְּתוּאֵֽל׃",
+      "en": "and Kesed, and Ḥazo, and Pildash, and Yidlaf, and Betu᾽el."
+    },
+    {
+      "n": 146,
+      "c": 22,
+      "v": 23,
+      "ref": "22:23",
+      "text": "וּבְתוּאֵ֖ל יָלַ֣ד אֶת־רִבְקָ֑ה שְׁמֹנָ֥ה אֵ֙לֶּה֙ יָלְדָ֣ה מִלְכָּ֔ה לְנָח֖וֹר אֲחִ֥י אַבְרָהָֽם׃",
+      "en": "And Betu᾽el begot Rivqa: these eight did Milka bear to Naĥor, Avraham’s brother."
+    },
+    {
+      "n": 147,
+      "c": 22,
+      "v": 24,
+      "ref": "22:24",
+      "text": "וּפִֽילַגְשׁ֖וֹ וּשְׁמָ֣הּ רְאוּמָ֑ה וַתֵּ֤לֶד גַּם־הִוא֙ אֶת־טֶ֣בַח וְאֶת־גַּ֔חַם וְאֶת־תַּ֖חַשׁ וְאֶֽת־מַעֲכָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And his concubine, whose name was Re᾽uma, she bore also Tevaĥ, and Gaĥam, and Taĥash, and Ma῾akha."
+    }
+  ],
+  "parashah": {
+    "en": "Vayera",
+    "he": "וַיֵּרָא",
+    "translit": "Vayera",
+    "ref": "Genesis 18:1–22:24"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 14,
+        "ref": "18:1–18:14"
+      },
+      {
+        "n": 2,
+        "start": 15,
+        "end": 33,
+        "ref": "18:15–18:33"
+      },
+      {
+        "n": 3,
+        "start": 34,
+        "end": 53,
+        "ref": "19:1–19:20"
+      },
+      {
+        "n": 4,
+        "start": 54,
+        "end": 93,
+        "ref": "19:21–21:4"
+      },
+      {
+        "n": 5,
+        "start": 94,
+        "end": 110,
+        "ref": "21:5–21:21"
+      },
+      {
+        "n": 6,
+        "start": 111,
+        "end": 123,
+        "ref": "21:22–21:34"
+      },
+      {
+        "n": 7,
+        "start": 124,
+        "end": 147,
+        "ref": "22:1–22:24"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 5,
+          "ref": "18:1–18:5"
+        },
+        {
+          "n": 2,
+          "start": 6,
+          "end": 8,
+          "ref": "18:6–18:8"
+        },
+        {
+          "n": 3,
+          "start": 9,
+          "end": 14,
+          "ref": "18:9–18:14"
+        },
+        {
+          "n": 4,
+          "start": 15,
+          "end": 21,
+          "ref": "18:15–18:21"
+        },
+        {
+          "n": 5,
+          "start": 22,
+          "end": 26,
+          "ref": "18:22–18:26"
+        },
+        {
+          "n": 6,
+          "start": 27,
+          "end": 30,
+          "ref": "18:27–18:30"
+        },
+        {
+          "n": 7,
+          "start": 31,
+          "end": 33,
+          "ref": "18:31–18:33"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 34,
+          "end": 44,
+          "ref": "19:1–19:11"
+        },
+        {
+          "n": 2,
+          "start": 45,
+          "end": 53,
+          "ref": "19:12–19:20"
+        },
+        {
+          "n": 3,
+          "start": 54,
+          "end": 62,
+          "ref": "19:21–19:29"
+        },
+        {
+          "n": 4,
+          "start": 63,
+          "end": 71,
+          "ref": "19:30–19:38"
+        },
+        {
+          "n": 5,
+          "start": 72,
+          "end": 79,
+          "ref": "20:1–20:8"
+        },
+        {
+          "n": 6,
+          "start": 80,
+          "end": 85,
+          "ref": "20:9–20:14"
+        },
+        {
+          "n": 7,
+          "start": 86,
+          "end": 89,
+          "ref": "20:15–20:18"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 90,
+          "end": 93,
+          "ref": "21:1–21:4"
+        },
+        {
+          "n": 2,
+          "start": 94,
+          "end": 102,
+          "ref": "21:5–21:13"
+        },
+        {
+          "n": 3,
+          "start": 103,
+          "end": 110,
+          "ref": "21:14–21:21"
+        },
+        {
+          "n": 4,
+          "start": 111,
+          "end": 123,
+          "ref": "21:22–21:34"
+        },
+        {
+          "n": 5,
+          "start": 124,
+          "end": 131,
+          "ref": "22:1–22:8"
+        },
+        {
+          "n": 6,
+          "start": 132,
+          "end": 142,
+          "ref": "22:9–22:19"
+        },
+        {
+          "n": 7,
+          "start": 143,
+          "end": 147,
+          "ref": "22:20–22:24"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 143,
+        "end": 147,
+        "ref": "22:20–22:24"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 31,
+          "end": 33,
+          "ref": "18:31–18:33"
+        },
+        "2": {
+          "n": "M",
+          "start": 86,
+          "end": 89,
+          "ref": "20:15–20:18"
+        },
+        "3": {
+          "n": "M",
+          "start": 143,
+          "end": 147,
+          "ref": "22:20–22:24"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

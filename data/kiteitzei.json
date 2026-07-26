@@ -1,0 +1,1113 @@
+{
+  "slug": "kiteitzei",
+  "book": {
+    "en": "Deuteronomy",
+    "he": "דברים",
+    "translit": "Devarim"
+  },
+  "multiChapter": true,
+  "ref": "Deuteronomy 21:10-25:19",
+  "heRef": "דברים כ״א:י-כ״ה:י״ט",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 21,
+      "v": 10,
+      "ref": "21:10",
+      "text": "כִּֽי־תֵצֵ֥א לַמִּלְחָמָ֖ה עַל־אֹיְבֶ֑יךָ וּנְתָנ֞וֹ יְהֹוָ֧ה אֱלֹהֶ֛יךָ בְּיָדֶ֖ךָ וְשָׁבִ֥יתָ שִׁבְיֽוֹ׃",
+      "en": "When thou goest forth to war against thy enemies, and the Lord thy God has delivered them into thy hands, and thou hast taken them captive,"
+    },
+    {
+      "n": 2,
+      "c": 21,
+      "v": 11,
+      "ref": "21:11",
+      "text": "וְרָאִ֙יתָ֙ בַּשִּׁבְיָ֔ה אֵ֖שֶׁת יְפַת־תֹּ֑אַר וְחָשַׁקְתָּ֣ בָ֔הּ וְלָקַחְתָּ֥ לְךָ֖ לְאִשָּֽׁה׃",
+      "en": "and thou seest among the captives a beautiful woman, and hast a desire to her, that thou wouldst have her to thy wife;"
+    },
+    {
+      "n": 3,
+      "c": 21,
+      "v": 12,
+      "ref": "21:12",
+      "text": "וַהֲבֵאתָ֖הּ אֶל־תּ֣וֹךְ בֵּיתֶ֑ךָ וְגִלְּחָה֙ אֶת־רֹאשָׁ֔הּ וְעָשְׂתָ֖ה אֶת־צִפׇּרְנֶֽיהָ׃",
+      "en": "then thou shalt bring her home to thy house; and she shall shave her head, and pare her nails;"
+    },
+    {
+      "n": 4,
+      "c": 21,
+      "v": 13,
+      "ref": "21:13",
+      "text": "וְהֵסִ֩ירָה֩ אֶת־שִׂמְלַ֨ת שִׁבְיָ֜הּ מֵעָלֶ֗יהָ וְיָֽשְׁבָה֙ בְּבֵיתֶ֔ךָ וּבָ֥כְתָ֛ה אֶת־אָבִ֥יהָ וְאֶת־אִמָּ֖הּ יֶ֣רַח יָמִ֑ים וְאַ֨חַר כֵּ֜ן תָּב֤וֹא אֵלֶ֙יהָ֙ וּבְעַלְתָּ֔הּ וְהָיְתָ֥ה לְךָ֖ לְאִשָּֽׁה׃",
+      "en": "and she shall put the raiment of her captivity from off her, and shall remain in thy house, and bewail her father and her mother a full month: and after that thou shalt go in to her, and be her husband, and she shall be thy wife."
+    },
+    {
+      "n": 5,
+      "c": 21,
+      "v": 14,
+      "ref": "21:14",
+      "text": "וְהָיָ֞ה אִם־לֹ֧א חָפַ֣צְתָּ בָּ֗הּ וְשִׁלַּחְתָּהּ֙ לְנַפְשָׁ֔הּ וּמָכֹ֥ר לֹא־תִמְכְּרֶ֖נָּה בַּכָּ֑סֶף לֹא־תִתְעַמֵּ֣ר בָּ֔הּ תַּ֖חַת אֲשֶׁ֥ר עִנִּיתָֽהּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And it shall be, if\n\t\t\t\tthou have no delight in her, then thou shalt let her go where she will; but thou shalt not sell her at all for money, thou shalt not treat her as a slave, because thou hast humbled her."
+    },
+    {
+      "n": 6,
+      "c": 21,
+      "v": 15,
+      "ref": "21:15",
+      "text": "כִּֽי־תִהְיֶ֨יןָ לְאִ֜ישׁ שְׁתֵּ֣י נָשִׁ֗ים הָאַחַ֤ת אֲהוּבָה֙ וְהָאַחַ֣ת שְׂנוּאָ֔ה וְיָֽלְדוּ־ל֣וֹ בָנִ֔ים הָאֲהוּבָ֖ה וְהַשְּׂנוּאָ֑ה וְהָיָ֛ה הַבֵּ֥ן הַבְּכֹ֖ר לַשְּׂנִיאָֽה׃",
+      "en": "If a man have two wives, one beloved, and another hated, and they have born him children, both the beloved and the hated; and if the firstborn son be hers that was hated:"
+    },
+    {
+      "n": 7,
+      "c": 21,
+      "v": 16,
+      "ref": "21:16",
+      "text": "וְהָיָ֗ה בְּיוֹם֙ הַנְחִיל֣וֹ אֶת־בָּנָ֔יו אֵ֥ת אֲשֶׁר־יִהְיֶ֖ה ל֑וֹ לֹ֣א יוּכַ֗ל לְבַכֵּר֙ אֶת־בֶּן־הָ֣אֲהוּבָ֔ה עַל־פְּנֵ֥י בֶן־הַשְּׂנוּאָ֖ה הַבְּכֹֽר׃",
+      "en": "then it shall be, when he makes his sons to inherit that which he has, that he may not give the preference to the son of the beloved wife, over the son of the hated wife who is the firstborn:"
+    },
+    {
+      "n": 8,
+      "c": 21,
+      "v": 17,
+      "ref": "21:17",
+      "text": "כִּי֩ אֶת־הַבְּכֹ֨ר בֶּן־הַשְּׂנוּאָ֜ה יַכִּ֗יר לָ֤תֶת לוֹ֙ פִּ֣י שְׁנַ֔יִם בְּכֹ֥ל אֲשֶׁר־יִמָּצֵ֖א ל֑וֹ כִּי־הוּא֙ רֵאשִׁ֣ית אֹנ֔וֹ ל֖וֹ מִשְׁפַּ֥ט הַבְּכֹרָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "but he shall acknowledge the son of the hated for the firstborn, by giving him a double portion of all that he has: for he is the beginning of his strength; the right of the firstborn is his."
+    },
+    {
+      "n": 9,
+      "c": 21,
+      "v": 18,
+      "ref": "21:18",
+      "text": "כִּֽי־יִהְיֶ֣ה לְאִ֗ישׁ בֵּ֚ן סוֹרֵ֣ר וּמוֹרֶ֔ה אֵינֶ֣נּוּ שֹׁמֵ֔עַ בְּק֥וֹל אָבִ֖יו וּבְק֣וֹל אִמּ֑וֹ וְיִסְּר֣וּ אֹת֔וֹ וְלֹ֥א יִשְׁמַ֖ע אֲלֵיהֶֽם׃",
+      "en": "If a man have a stubborn and rebellious son, who will not obey the voice of his father, or the voice of his mother, and that, when they have chastened him, will not hearken to them:"
+    },
+    {
+      "n": 10,
+      "c": 21,
+      "v": 19,
+      "ref": "21:19",
+      "text": "וְתָ֥פְשׂוּ ב֖וֹ אָבִ֣יו וְאִמּ֑וֹ וְהוֹצִ֧יאוּ אֹת֛וֹ אֶל־זִקְנֵ֥י עִיר֖וֹ וְאֶל־שַׁ֥עַר מְקֹמֽוֹ׃",
+      "en": "then shall his father and his mother lay hold of him, and bring him out to the elders of his city, and to the gate of his place;"
+    },
+    {
+      "n": 11,
+      "c": 21,
+      "v": 20,
+      "ref": "21:20",
+      "text": "וְאָמְר֞וּ אֶל־זִקְנֵ֣י עִיר֗וֹ בְּנֵ֤נוּ זֶה֙ סוֹרֵ֣ר וּמֹרֶ֔ה אֵינֶ֥נּוּ שֹׁמֵ֖עַ בְּקֹלֵ֑נוּ זוֹלֵ֖ל וְסֹבֵֽא׃",
+      "en": "and they shall say to the elders of his city, This our son is stubborn and rebellious, he will not obey our voice; he is a glutton, and a drunkard."
+    },
+    {
+      "n": 12,
+      "c": 21,
+      "v": 21,
+      "ref": "21:21",
+      "text": "וּ֠רְגָמֻ֠הוּ כׇּל־אַנְשֵׁ֨י עִיר֤וֹ בָֽאֲבָנִים֙ וָמֵ֔ת וּבִֽעַרְתָּ֥ הָרָ֖ע מִקִּרְבֶּ֑ךָ וְכׇל־יִשְׂרָאֵ֖ל יִשְׁמְע֥וּ וְיִרָֽאוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And all the men of his city shall stone him with stones, that he die: so shalt thou put evil away from among you; and all Yisra᾽el shall hear, and fear."
+    },
+    {
+      "n": 13,
+      "c": 21,
+      "v": 22,
+      "ref": "21:22",
+      "text": "וְכִֽי־יִהְיֶ֣ה בְאִ֗ישׁ חֵ֛טְא מִשְׁפַּט־מָ֖וֶת וְהוּמָ֑ת וְתָלִ֥יתָ אֹת֖וֹ עַל־עֵֽץ׃",
+      "en": "And if a man have committed a sin worthy of death, and he is put to death, and thou hang him on a tree:"
+    },
+    {
+      "n": 14,
+      "c": 21,
+      "v": 23,
+      "ref": "21:23",
+      "text": "לֹא־תָלִ֨ין נִבְלָת֜וֹ עַל־הָעֵ֗ץ כִּֽי־קָב֤וֹר תִּקְבְּרֶ֙נּוּ֙ בַּיּ֣וֹם הַה֔וּא כִּֽי־קִלְלַ֥ת אֱלֹהִ֖ים תָּל֑וּי וְלֹ֤א תְטַמֵּא֙ אֶת־אַדְמָ֣תְךָ֔ אֲשֶׁר֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ נֹתֵ֥ן לְךָ֖ נַחֲלָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "his body shall not remain all night upon the tree, but thou shalt surely bury him that day: (for he that is hanged is accursed of God;) that thy land be not defiled, which the Lord thy God gives thee for an inheritance."
+    },
+    {
+      "n": 15,
+      "c": 22,
+      "v": 1,
+      "ref": "22:1",
+      "text": "לֹֽא־תִרְאֶה֩ אֶת־שׁ֨וֹר אָחִ֜יךָ א֤וֹ אֶת־שֵׂיוֹ֙ נִדָּחִ֔ים וְהִתְעַלַּמְתָּ֖ מֵהֶ֑ם הָשֵׁ֥ב תְּשִׁיבֵ֖ם לְאָחִֽיךָ׃",
+      "en": "Thou shalt not see thy brother’s ox or his sheep go astray, and hide thyself from them: thou shalt surely bring them back to thy brother."
+    },
+    {
+      "n": 16,
+      "c": 22,
+      "v": 2,
+      "ref": "22:2",
+      "text": "וְאִם־לֹ֨א קָר֥וֹב אָחִ֛יךָ אֵלֶ֖יךָ וְלֹ֣א יְדַעְתּ֑וֹ וַאֲסַפְתּוֹ֙ אֶל־תּ֣וֹךְ בֵּיתֶ֔ךָ וְהָיָ֣ה עִמְּךָ֗ עַ֣ד דְּרֹ֤שׁ אָחִ֙יךָ֙ אֹת֔וֹ וַהֲשֵׁבֹת֖וֹ לֽוֹ׃",
+      "en": "And if thy brother be not near to thee, or if thou know him not, then thou shalt bring it to thy own house, and it shall be with thee until thy brother seek after it, and thou shalt restore it to him again."
+    },
+    {
+      "n": 17,
+      "c": 22,
+      "v": 3,
+      "ref": "22:3",
+      "text": "וְכֵ֧ן תַּעֲשֶׂ֣ה לַחֲמֹר֗וֹ וְכֵ֣ן תַּעֲשֶׂה֮ לְשִׂמְלָתוֹ֒ וְכֵ֣ן תַּעֲשֶׂ֗ה לְכׇל־אֲבֵדַ֥ת אָחִ֛יךָ אֲשֶׁר־תֹּאבַ֥ד מִמֶּ֖נּוּ וּמְצָאתָ֑הּ לֹ֥א תוּכַ֖ל לְהִתְעַלֵּֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "In like manner shalt thou do with his ass; and so shalt thou do with his garment; and with every lost thing of thy brother’s, which he has lost, and thou hast found, shalt thou do likewise: thou mayst not hide thyself."
+    },
+    {
+      "n": 18,
+      "c": 22,
+      "v": 4,
+      "ref": "22:4",
+      "text": "לֹא־תִרְאֶה֩ אֶת־חֲמ֨וֹר אָחִ֜יךָ א֤וֹ שׁוֹרוֹ֙ נֹפְלִ֣ים בַּדֶּ֔רֶךְ וְהִתְעַלַּמְתָּ֖ מֵהֶ֑ם הָקֵ֥ם תָּקִ֖ים עִמּֽוֹ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not see thy brother’s ass or his ox fall down by the way, and hide thyself from them: thou shalt surely help him to lift them up again."
+    },
+    {
+      "n": 19,
+      "c": 22,
+      "v": 5,
+      "ref": "22:5",
+      "text": "לֹא־יִהְיֶ֤ה כְלִי־גֶ֙בֶר֙ עַל־אִשָּׁ֔ה וְלֹא־יִלְבַּ֥שׁ גֶּ֖בֶר שִׂמְלַ֣ת אִשָּׁ֑ה כִּ֧י תוֹעֲבַ֛ת יְהֹוָ֥ה אֱלֹהֶ֖יךָ כׇּל־עֹ֥שֵׂה אֵֽלֶּה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "A woman shall not wear that which pertains to a man, neither shall a man put on a woman’s garment: for all that do so are abomination to the Lord thy God."
+    },
+    {
+      "n": 20,
+      "c": 22,
+      "v": 6,
+      "ref": "22:6",
+      "text": "כִּ֣י יִקָּרֵ֣א <sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי תימן <big>קַ</big>ן בקו״ף גדולה)</i>קַן־צִפּ֣וֹר&thinsp;<small>׀</small>&thinsp;לְפָנֶ֡יךָ בַּדֶּ֜רֶךְ בְּכׇל־עֵ֣ץ&thinsp;<b>׀</b> א֣וֹ עַל־הָאָ֗רֶץ אֶפְרֹחִים֙ א֣וֹ בֵיצִ֔ים וְהָאֵ֤ם רֹבֶ֙צֶת֙ עַל־הָֽאֶפְרֹחִ֔ים א֖וֹ עַל־הַבֵּיצִ֑ים לֹא־תִקַּ֥ח הָאֵ֖ם עַל־הַבָּנִֽים׃",
+      "en": "If a bird’s nest chance to be before thee in the way in any tree, or on the ground, whether they be young ones, or eggs, and the mother bird sitting upon the young, or upon the eggs, thou shalt not take the mother bird together with the young:"
+    },
+    {
+      "n": 21,
+      "c": 22,
+      "v": 7,
+      "ref": "22:7",
+      "text": "שַׁלֵּ֤חַ תְּשַׁלַּח֙ אֶת־הָאֵ֔ם וְאֶת־הַבָּנִ֖ים תִּֽקַּֽח־לָ֑ךְ לְמַ֙עַן֙ יִ֣יטַב לָ֔ךְ וְהַאֲרַכְתָּ֖ יָמִֽים׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "but thou shalt surely let the mother go, and take the young to thee; that it may be well with thee, and that thou mayst prolong thy days."
+    },
+    {
+      "n": 22,
+      "c": 22,
+      "v": 8,
+      "ref": "22:8",
+      "text": "כִּ֤י תִבְנֶה֙ בַּ֣יִת חָדָ֔שׁ וְעָשִׂ֥יתָ מַעֲקֶ֖ה לְגַגֶּ֑ךָ וְלֹֽא־תָשִׂ֤ים דָּמִים֙ בְּבֵיתֶ֔ךָ כִּֽי־יִפֹּ֥ל הַנֹּפֵ֖ל מִמֶּֽנּוּ׃",
+      "en": "When thou buildest a new house, then thou shalt make a parapet for thy roof, that thou bring not blood upon thy house, if any man fall from it."
+    },
+    {
+      "n": 23,
+      "c": 22,
+      "v": 9,
+      "ref": "22:9",
+      "text": "לֹא־תִזְרַ֥ע כַּרְמְךָ֖ כִּלְאָ֑יִם פֶּן־תִּקְדַּ֗שׁ הַֽמְלֵאָ֤ה הַזֶּ֙רַע֙ אֲשֶׁ֣ר תִּזְרָ֔ע וּתְבוּאַ֖ת הַכָּֽרֶם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not sow thy vineyard with divers seeds: lest the fruit of the seed which thou hast sown, and the fruit of the vineyard, be forfeited."
+    },
+    {
+      "n": 24,
+      "c": 22,
+      "v": 10,
+      "ref": "22:10",
+      "text": "לֹֽא־תַחֲרֹ֥שׁ בְּשׁוֹר־וּבַחֲמֹ֖ר יַחְדָּֽו׃",
+      "en": "Thou shalt not plough with an ox and an ass together."
+    },
+    {
+      "n": 25,
+      "c": 22,
+      "v": 11,
+      "ref": "22:11",
+      "text": "לֹ֤א תִלְבַּשׁ֙ שַֽׁעַטְנֵ֔ז צֶ֥מֶר וּפִשְׁתִּ֖ים יַחְדָּֽו׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not wear a garment of divers kinds, of woollen and linen together."
+    },
+    {
+      "n": 26,
+      "c": 22,
+      "v": 12,
+      "ref": "22:12",
+      "text": "גְּדִלִ֖ים תַּעֲשֶׂה־לָּ֑ךְ עַל־אַרְבַּ֛ע כַּנְפ֥וֹת כְּסוּתְךָ֖ אֲשֶׁ֥ר תְּכַסֶּה־בָּֽהּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt make thee fringes upon the four corners of thy covering, with which thou coverest thyself."
+    },
+    {
+      "n": 27,
+      "c": 22,
+      "v": 13,
+      "ref": "22:13",
+      "text": "כִּֽי־יִקַּ֥ח אִ֖ישׁ אִשָּׁ֑ה וּבָ֥א אֵלֶ֖יהָ וּשְׂנֵאָֽהּ׃",
+      "en": "If any man take a wife, and go in to her, and hate her,"
+    },
+    {
+      "n": 28,
+      "c": 22,
+      "v": 14,
+      "ref": "22:14",
+      "text": "וְשָׂ֥ם לָהּ֙ עֲלִילֹ֣ת דְּבָרִ֔ים וְהוֹצִ֥א עָלֶ֖יהָ שֵׁ֣ם רָ֑ע וְאָמַ֗ר אֶת־הָאִשָּׁ֤ה הַזֹּאת֙ לָקַ֔חְתִּי וָאֶקְרַ֣ב אֵלֶ֔יהָ וְלֹא־מָצָ֥אתִי לָ֖הּ בְּתוּלִֽים׃",
+      "en": "and lay accusing speeches against her, and bring out an evil name upon her, saying, I took this woman, and when I came to her, I found her not to be a virgin:"
+    },
+    {
+      "n": 29,
+      "c": 22,
+      "v": 15,
+      "ref": "22:15",
+      "text": "וְלָקַ֛ח אֲבִ֥י <span class=\"mam-kq-trivial\">הַֽנַּעֲרָ֖</span> וְאִמָּ֑הּ וְהוֹצִ֜יאוּ אֶת־בְּתוּלֵ֧י <span class=\"mam-kq-trivial\">הַֽנַּעֲרָ֛</span> אֶל־זִקְנֵ֥י הָעִ֖יר הַשָּֽׁעְרָה׃",
+      "en": "then shall the father of the girl, and her mother, take and bring forth the tokens of the girl’s virginity to the elders of the city in the gate:"
+    },
+    {
+      "n": 30,
+      "c": 22,
+      "v": 16,
+      "ref": "22:16",
+      "text": "וְאָמַ֛ר אֲבִ֥י <span class=\"mam-kq-trivial\">הַֽנַּעֲרָ֖</span> אֶל־הַזְּקֵנִ֑ים אֶת־בִּתִּ֗י נָתַ֜תִּי לָאִ֥ישׁ הַזֶּ֛ה לְאִשָּׁ֖ה וַיִּשְׂנָאֶֽהָ׃",
+      "en": "and the girl’s father shall say to the elders, I gave my daughter to this man to wife, and he hated her;"
+    },
+    {
+      "n": 31,
+      "c": 22,
+      "v": 17,
+      "ref": "22:17",
+      "text": "וְהִנֵּה־ה֡וּא שָׂם֩ עֲלִילֹ֨ת דְּבָרִ֜ים לֵאמֹ֗ר לֹֽא־מָצָ֤אתִי לְבִתְּךָ֙ בְּתוּלִ֔ים וְאֵ֖לֶּה בְּתוּלֵ֣י בִתִּ֑י וּפָֽרְשׂוּ֙ הַשִּׂמְלָ֔ה לִפְנֵ֖י זִקְנֵ֥י הָעִֽיר׃",
+      "en": "and, lo, he has laid accusing speeches against her, saying, I found not thy daughter a virgin; and yet these are the tokens of my daughter’s virginity. And they shall spread the cloth before the elders of the city."
+    },
+    {
+      "n": 32,
+      "c": 22,
+      "v": 18,
+      "ref": "22:18",
+      "text": "וְלָ֥קְח֛וּ זִקְנֵ֥י הָֽעִיר־הַהִ֖וא אֶת־הָאִ֑ישׁ וְיִסְּר֖וּ אֹתֽוֹ׃",
+      "en": "And the elders of that city shall take that man and chastise him;"
+    },
+    {
+      "n": 33,
+      "c": 22,
+      "v": 19,
+      "ref": "22:19",
+      "text": "וְעָנְשׁ֨וּ אֹת֜וֹ מֵ֣אָה כֶ֗סֶף וְנָתְנוּ֙ לַאֲבִ֣י הַֽנַּעֲרָ֔ה כִּ֤י הוֹצִיא֙ שֵׁ֣ם רָ֔ע עַ֖ל בְּתוּלַ֣ת יִשְׂרָאֵ֑ל וְלֽוֹ־תִהְיֶ֣ה לְאִשָּׁ֔ה לֹא־יוּכַ֥ל לְשַׁלְּחָ֖הּ כׇּל־יָמָֽיו׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and they shall fine him a hundred shekels of silver, and give them to the father of the girl, because he has brought out an evil name upon a virgin of Yisra᾽el: and she shall be his wife; he may not put her away all his days."
+    },
+    {
+      "n": 34,
+      "c": 22,
+      "v": 20,
+      "ref": "22:20",
+      "text": "וְאִם־אֱמֶ֣ת הָיָ֔ה הַדָּבָ֖ר הַזֶּ֑ה לֹא־נִמְצְא֥וּ בְתוּלִ֖ים <span class=\"mam-kq-trivial\">לַֽנַּעֲרָֽ</span>׃",
+      "en": "But if this thing be true, and tokens of virginity be not found for the girl:"
+    },
+    {
+      "n": 35,
+      "c": 22,
+      "v": 21,
+      "ref": "22:21",
+      "text": "וְהוֹצִ֨יאוּ אֶת־<span class=\"mam-kq-trivial\">הַֽנַּעֲרָ֜</span> אֶל־פֶּ֣תַח בֵּית־אָבִ֗יהָ וּסְקָל֩וּהָ֩ אַנְשֵׁ֨י עִירָ֤הּ בָּאֲבָנִים֙ וָמֵ֔תָה כִּֽי־עָשְׂתָ֤ה נְבָלָה֙ בְּיִשְׂרָאֵ֔ל לִזְנ֖וֹת בֵּ֣ית אָבִ֑יהָ וּבִֽעַרְתָּ֥ הָרָ֖ע מִקִּרְבֶּֽךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "then they shall bring out the girl to the door of her father’s house, and the men of her city shall stone her with stones that she die: because she has perpetrated wantonness in Yisra᾽el, to play the harlot in her father’s house: so shalt thou put evil away from among you."
+    },
+    {
+      "n": 36,
+      "c": 22,
+      "v": 22,
+      "ref": "22:22",
+      "text": "כִּֽי־יִמָּצֵ֨א אִ֜ישׁ שֹׁכֵ֣ב&thinsp;<b>׀</b> עִם־אִשָּׁ֣ה בְעֻֽלַת־בַּ֗עַל וּמֵ֙תוּ֙ גַּם־שְׁנֵיהֶ֔ם הָאִ֛ישׁ הַשֹּׁכֵ֥ב עִם־הָאִשָּׁ֖ה וְהָאִשָּׁ֑ה וּבִֽעַרְתָּ֥ הָרָ֖ע מִיִּשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "If a man be found lying with a woman married to a husband, then they shall both of them die both the man that lay with the woman, and the woman: so shalt thou put away evil from Yisra᾽el."
+    },
+    {
+      "n": 37,
+      "c": 22,
+      "v": 23,
+      "ref": "22:23",
+      "text": "כִּ֤י יִהְיֶה֙ <span class=\"mam-kq-trivial\">נַעֲרָ֣</span> בְתוּלָ֔ה מְאֹרָשָׂ֖ה לְאִ֑ישׁ וּמְצָאָ֥הּ אִ֛ישׁ בָּעִ֖יר וְשָׁכַ֥ב עִמָּֽהּ׃",
+      "en": "If a girl that is a virgin be betrothed to a husband, and a man find her in the city, and lie with her;"
+    },
+    {
+      "n": 38,
+      "c": 22,
+      "v": 24,
+      "ref": "22:24",
+      "text": "וְהוֹצֵאתֶ֨ם אֶת־שְׁנֵיהֶ֜ם אֶל־שַׁ֣עַר&thinsp;<b>׀</b> הָעִ֣יר הַהִ֗וא וּסְקַלְתֶּ֨ם אֹתָ֥ם בָּאֲבָנִים֮ וָמֵ֒תוּ֒ אֶת־<span class=\"mam-kq-trivial\">הַֽנַּעֲרָ֗</span> עַל־דְּבַר֙ אֲשֶׁ֣ר לֹא־צָעֲקָ֣ה בָעִ֔יר וְאֶ֨ת־הָאִ֔ישׁ עַל־דְּבַ֥ר אֲשֶׁר־עִנָּ֖ה אֶת־אֵ֣שֶׁת רֵעֵ֑הוּ וּבִֽעַרְתָּ֥ הָרָ֖ע מִקִּרְבֶּֽךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "then you shall bring them both out to the gate of that city, and you shall stone them with stones that they die; the girl, because she cried not, being in the city; and the man, because he has humbled his neighbour’s wife: so thou shalt put away evil from among you."
+    },
+    {
+      "n": 39,
+      "c": 22,
+      "v": 25,
+      "ref": "22:25",
+      "text": "וְֽאִם־בַּשָּׂדֶ֞ה יִמְצָ֣א הָאִ֗ישׁ אֶת־<span class=\"mam-kq-trivial\">הַֽנַּעֲרָ֙</span> הַמְאֹ֣רָשָׂ֔ה וְהֶחֱזִֽיק־בָּ֥הּ הָאִ֖ישׁ וְשָׁכַ֣ב עִמָּ֑הּ וּמֵ֗ת הָאִ֛ישׁ אֲשֶׁר־שָׁכַ֥ב עִמָּ֖הּ לְבַדּֽוֹ׃",
+      "en": "But if a man find a betrothed girl in the field, and the man force her, and lie with her: then only the man that lay with her shall die:"
+    },
+    {
+      "n": 40,
+      "c": 22,
+      "v": 26,
+      "ref": "22:26",
+      "text": "<span class=\"mam-kq-trivial\">וְלַֽנַּעֲרָ֙</span> לֹא־תַעֲשֶׂ֣ה דָבָ֔ר אֵ֥ין <span class=\"mam-kq-trivial\">לַֽנַּעֲרָ֖</span> חֵ֣טְא מָ֑וֶת כִּ֡י כַּאֲשֶׁר֩ יָק֨וּם אִ֤ישׁ עַל־רֵעֵ֙הוּ֙ וּרְצָח֣וֹ נֶ֔פֶשׁ כֵּ֖ן הַדָּבָ֥ר הַזֶּֽה׃",
+      "en": "but to the girl thou shalt do nothing; there is in the girl no sin worthy of death: for as when a man rises against his neighbour, and slays him, even so is this matter:"
+    },
+    {
+      "n": 41,
+      "c": 22,
+      "v": 27,
+      "ref": "22:27",
+      "text": "כִּ֥י בַשָּׂדֶ֖ה מְצָאָ֑הּ צָעֲקָ֗ה <span class=\"mam-kq-trivial\">הַֽנַּעֲרָ֙</span> הַמְאֹ֣רָשָׂ֔ה וְאֵ֥ין מוֹשִׁ֖יעַ לָֽהּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "for he found her in the field, and the betrothed maiden cried out, but there was none to save her."
+    },
+    {
+      "n": 42,
+      "c": 22,
+      "v": 28,
+      "ref": "22:28",
+      "text": "כִּֽי־יִמְצָ֣א אִ֗ישׁ <span class=\"mam-kq-trivial\">נַעֲרָ֤</span> בְתוּלָה֙ אֲשֶׁ֣ר לֹא־אֹרָ֔שָׂה וּתְפָשָׂ֖הּ וְשָׁכַ֣ב עִמָּ֑הּ וְנִמְצָֽאוּ׃",
+      "en": "If a man find a girl that is a virgin, who is not betrothed, and lay hold of her, and lie with her, and they be found;"
+    },
+    {
+      "n": 43,
+      "c": 22,
+      "v": 29,
+      "ref": "22:29",
+      "text": "וְ֠נָתַ֠ן הָאִ֨ישׁ הַשֹּׁכֵ֥ב עִמָּ֛הּ לַאֲבִ֥י <span class=\"mam-kq-trivial\">הַֽנַּעֲרָ֖</span> חֲמִשִּׁ֣ים כָּ֑סֶף וְלֽוֹ־תִהְיֶ֣ה לְאִשָּׁ֗ה תַּ֚חַת אֲשֶׁ֣ר עִנָּ֔הּ לֹא־יוּכַ֥ל שַׁלְּחָ֖הּ כׇּל־יָמָֽיו׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "then the man that lay with her shall give to the girl’s father fifty shekels of silver, and she shall be his wife; because he has humbled her, he may not put her away all his days."
+    },
+    {
+      "n": 44,
+      "c": 23,
+      "v": 1,
+      "ref": "23:1",
+      "text": "לֹא־יִקַּ֥ח אִ֖ישׁ אֶת־אֵ֣שֶׁת אָבִ֑יו וְלֹ֥א יְגַלֶּ֖ה כְּנַ֥ף אָבִֽיו׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "A man shall not take his father’s wife, nor uncover his father’s skirt."
+    },
+    {
+      "n": 45,
+      "c": 23,
+      "v": 2,
+      "ref": "23:2",
+      "text": "לֹֽא־יָבֹ֧א פְצֽוּעַ־דַּכָּ֛א<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי ספרד ורוב ספרי אשכנז דַּכָּ֛ה)</i> וּכְר֥וּת שׇׁפְכָ֖ה בִּקְהַ֥ל יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "He that is wounded in the stones, or has his privy member cut off, shall not enter into the congregation of the Lord."
+    },
+    {
+      "n": 46,
+      "c": 23,
+      "v": 3,
+      "ref": "23:3",
+      "text": "לֹא־יָבֹ֥א מַמְזֵ֖ר בִּקְהַ֣ל יְהֹוָ֑ה גַּ֚ם דּ֣וֹר עֲשִׂירִ֔י לֹא־יָ֥בֹא ל֖וֹ בִּקְהַ֥ל יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "A bastard shall not enter into the congregation of the Lord; even to his tenth generation shall he not enter into the congregation of the Lord."
+    },
+    {
+      "n": 47,
+      "c": 23,
+      "v": 4,
+      "ref": "23:4",
+      "text": "לֹֽא־יָבֹ֧א עַמּוֹנִ֛י וּמוֹאָבִ֖י בִּקְהַ֣ל יְהֹוָ֑ה גַּ֚ם דּ֣וֹר עֲשִׂירִ֔י לֹא־יָבֹ֥א לָהֶ֛ם בִּקְהַ֥ל יְהֹוָ֖ה עַד־עוֹלָֽם׃",
+      "en": "An ῾Ammonite or a Mo᾽avite shall not enter into the congregation of the Lord; even to their tenth generation shall they not enter into the congregation of the Lord for ever:"
+    },
+    {
+      "n": 48,
+      "c": 23,
+      "v": 5,
+      "ref": "23:5",
+      "text": "עַל־דְּבַ֞ר אֲשֶׁ֨ר לֹא־קִדְּמ֤וּ אֶתְכֶם֙ בַּלֶּ֣חֶם וּבַמַּ֔יִם בַּדֶּ֖רֶךְ בְּצֵאתְכֶ֣ם מִמִּצְרָ֑יִם וַאֲשֶׁר֩ שָׂכַ֨ר עָלֶ֜יךָ אֶת־בִּלְעָ֣ם בֶּן־בְּע֗וֹר מִפְּת֛וֹר אֲרַ֥ם נַהֲרַ֖יִם לְקַֽלְלֶֽךָּ׃",
+      "en": "because they met you not with bread and with water in the way, when you came out of Miżrayim; and because they hired against thee Bil῾am, the son of Be῾or, from Petor of Aram-naharayim to curse thee."
+    },
+    {
+      "n": 49,
+      "c": 23,
+      "v": 6,
+      "ref": "23:6",
+      "text": "וְלֹֽא־אָבָ֞ה יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ לִשְׁמֹ֣עַ אֶל־בִּלְעָ֔ם וַיַּהֲפֹךְ֩ יְהֹוָ֨ה אֱלֹהֶ֧יךָ לְּךָ֛ אֶת־הַקְּלָלָ֖ה לִבְרָכָ֑ה כִּ֥י אֲהֵֽבְךָ֖ יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "But the Lord thy God would not hearken to Bil῾am; but the Lord thy God turned the curse into a blessing unto thee, because the Lord thy God loved thee."
+    },
+    {
+      "n": 50,
+      "c": 23,
+      "v": 7,
+      "ref": "23:7",
+      "text": "לֹא־תִדְרֹ֥שׁ שְׁלֹמָ֖ם וְטֹבָתָ֑ם כׇּל־יָמֶ֖יךָ לְעוֹלָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not seek their peace nor their prosperity all thy days for ever."
+    },
+    {
+      "n": 51,
+      "c": 23,
+      "v": 8,
+      "ref": "23:8",
+      "text": "לֹֽא־תְתַעֵ֣ב אֲדֹמִ֔י כִּ֥י אָחִ֖יךָ ה֑וּא לֹא־תְתַעֵ֣ב מִצְרִ֔י כִּי־גֵ֖ר הָיִ֥יתָ בְאַרְצֽוֹ׃",
+      "en": "Thou shalt not abhor an Edomite; for he is thy brother: thou shalt not abhor a Miżrian; because thou wast a stranger in his land."
+    },
+    {
+      "n": 52,
+      "c": 23,
+      "v": 9,
+      "ref": "23:9",
+      "text": "בָּנִ֛ים אֲשֶׁר־יִוָּלְד֥וּ לָהֶ֖ם דּ֣וֹר שְׁלִישִׁ֑י יָבֹ֥א לָהֶ֖ם בִּקְהַ֥ל יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The children that are begotten of them shall enter into the congregation of the Lord in their third generation."
+    },
+    {
+      "n": 53,
+      "c": 23,
+      "v": 10,
+      "ref": "23:10",
+      "text": "כִּֽי־תֵצֵ֥א מַחֲנֶ֖ה עַל־אֹיְבֶ֑יךָ וְנִ֨שְׁמַרְתָּ֔ מִכֹּ֖ל דָּבָ֥ר רָֽע׃",
+      "en": "When thou goest out to encamp against thy enemies, then keep thee from every evil thing."
+    },
+    {
+      "n": 54,
+      "c": 23,
+      "v": 11,
+      "ref": "23:11",
+      "text": "כִּֽי־יִהְיֶ֤ה בְךָ֙ אִ֔ישׁ אֲשֶׁ֛ר לֹא־יִהְיֶ֥ה טָה֖וֹר מִקְּרֵה־לָ֑יְלָה וְיָצָא֙ אֶל־מִח֣וּץ לַֽמַּחֲנֶ֔ה לֹ֥א יָבֹ֖א אֶל־תּ֥וֹךְ הַֽמַּחֲנֶֽה׃",
+      "en": "If there be among you any man, that is not clean by reason of uncleanness that chances by night, then shall he go abroad out of the camp, he shall not come within the camp:"
+    },
+    {
+      "n": 55,
+      "c": 23,
+      "v": 12,
+      "ref": "23:12",
+      "text": "וְהָיָ֥ה לִפְנֽוֹת־עֶ֖רֶב יִרְחַ֣ץ בַּמָּ֑יִם וּכְבֹ֣א הַשֶּׁ֔מֶשׁ יָבֹ֖א אֶל־תּ֥וֹךְ הַֽמַּחֲנֶֽה׃",
+      "en": "but it shall be, when evening comes on, he shall bathe himself in water: and when the sun is down, he shall come into the camp again."
+    },
+    {
+      "n": 56,
+      "c": 23,
+      "v": 13,
+      "ref": "23:13",
+      "text": "וְיָד֙ תִּהְיֶ֣ה לְךָ֔ מִח֖וּץ לַֽמַּחֲנֶ֑ה וְיָצָ֥אתָ שָּׁ֖מָּה חֽוּץ׃",
+      "en": "Thou shalt have a place also outside the camp, where thou shalt withdraw thyself:"
+    },
+    {
+      "n": 57,
+      "c": 23,
+      "v": 14,
+      "ref": "23:14",
+      "text": "וְיָתֵ֛ד תִּהְיֶ֥ה לְךָ֖ עַל־אֲזֵנֶ֑ךָ וְהָיָה֙ בְּשִׁבְתְּךָ֣ ח֔וּץ וְחָפַרְתָּ֣ה בָ֔הּ וְשַׁבְתָּ֖ וְכִסִּ֥יתָ אֶת־צֵאָתֶֽךָ׃",
+      "en": "and thou shalt have a spade among thy weapons,\n\t\t\t\tand it shall be, when thou wilt ease thyself outside, thou shalt dig with it, and shalt turn back and cover thy excrement:"
+    },
+    {
+      "n": 58,
+      "c": 23,
+      "v": 15,
+      "ref": "23:15",
+      "text": "כִּי֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ מִתְהַלֵּ֣ךְ&thinsp;<b>׀</b> בְּקֶ֣רֶב מַחֲנֶ֗ךָ לְהַצִּֽילְךָ֙ וְלָתֵ֤ת אֹיְבֶ֙יךָ֙ לְפָנֶ֔יךָ וְהָיָ֥ה מַחֲנֶ֖יךָ קָד֑וֹשׁ וְלֹֽא־יִרְאֶ֤ה בְךָ֙ עֶרְוַ֣ת דָּבָ֔ר וְשָׁ֖ב מֵאַחֲרֶֽיךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "for the Lord thy God walks in the midst of thy camp, to deliver thee, and to give up thy enemies before thee; therefore shall thy camp be holy: that he see no unclean thing in thee, and turn away from thee."
+    },
+    {
+      "n": 59,
+      "c": 23,
+      "v": 16,
+      "ref": "23:16",
+      "text": "לֹא־תַסְגִּ֥יר עֶ֖בֶד אֶל־אֲדֹנָ֑יו אֲשֶׁר־יִנָּצֵ֥ל אֵלֶ֖יךָ מֵעִ֥ם אֲדֹנָֽיו׃",
+      "en": "Thou shalt not deliver to his master the servant who is escaped from his master to thee:"
+    },
+    {
+      "n": 60,
+      "c": 23,
+      "v": 17,
+      "ref": "23:17",
+      "text": "עִמְּךָ֞ יֵשֵׁ֣ב בְּקִרְבְּךָ֗ בַּמָּק֧וֹם אֲשֶׁר־יִבְחַ֛ר בְּאַחַ֥ד שְׁעָרֶ֖יךָ בַּטּ֣וֹב ל֑וֹ לֹ֖א תּוֹנֶֽנּוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "he shall dwell with thee, among you, in that place which he shall choose in one of thy gates, where it likes him best: thou shalt not oppress him."
+    },
+    {
+      "n": 61,
+      "c": 23,
+      "v": 18,
+      "ref": "23:18",
+      "text": "לֹא־תִהְיֶ֥ה קְדֵשָׁ֖ה מִבְּנ֣וֹת יִשְׂרָאֵ֑ל וְלֹֽא־יִהְיֶ֥ה קָדֵ֖שׁ מִבְּנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "There shall be no female prostitute of the daughters of Yisra᾽el, nor a male prostitute of the sons of Yisra᾽el."
+    },
+    {
+      "n": 62,
+      "c": 23,
+      "v": 19,
+      "ref": "23:19",
+      "text": "לֹא־תָבִיא֩ אֶתְנַ֨ן זוֹנָ֜ה וּמְחִ֣יר כֶּ֗לֶב בֵּ֛ית יְהֹוָ֥ה אֱלֹהֶ֖יךָ לְכׇל־נֶ֑דֶר כִּ֧י תוֹעֲבַ֛ת יְהֹוָ֥ה אֱלֹהֶ֖יךָ גַּם־שְׁנֵיהֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not bring the hire of a prostitute, or the price of a dog, into the house of the Lord thy God for any vow: for both these are abomination to the Lord thy God."
+    },
+    {
+      "n": 63,
+      "c": 23,
+      "v": 20,
+      "ref": "23:20",
+      "text": "לֹא־תַשִּׁ֣יךְ לְאָחִ֔יךָ נֶ֥שֶׁךְ כֶּ֖סֶף נֶ֣שֶׁךְ אֹ֑כֶל נֶ֕שֶׁךְ כׇּל־דָּבָ֖ר אֲשֶׁ֥ר יִשָּֽׁךְ׃",
+      "en": "Thou shalt not give interest to thy brother; interest of money, interest of foodstuff, interest of anything that is lent upon interest;"
+    },
+    {
+      "n": 64,
+      "c": 23,
+      "v": 21,
+      "ref": "23:21",
+      "text": "לַנׇּכְרִ֣י תַשִּׁ֔יךְ וּלְאָחִ֖יךָ לֹ֣א תַשִּׁ֑יךְ לְמַ֨עַן יְבָרֶכְךָ֜ יְהֹוָ֣ה אֱלֹהֶ֗יךָ בְּכֹל֙ מִשְׁלַ֣ח יָדֶ֔ךָ עַל־הָאָ֕רֶץ אֲשֶׁר־אַתָּ֥ה בָא־שָׁ֖מָּה לְרִשְׁתָּֽהּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "to a stranger thou mayst give interest; but to thy brother thou shalt not give interest: that the Lord thy God may bless thee in all that thou settest thy hand to in the land into which thou goest to possess it."
+    },
+    {
+      "n": 65,
+      "c": 23,
+      "v": 22,
+      "ref": "23:22",
+      "text": "כִּֽי־תִדֹּ֥ר נֶ֙דֶר֙ לַיהֹוָ֣ה אֱלֹהֶ֔יךָ לֹ֥א תְאַחֵ֖ר לְשַׁלְּמ֑וֹ כִּֽי־דָרֹ֨שׁ יִדְרְשֶׁ֜נּוּ יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ מֵֽעִמָּ֔ךְ וְהָיָ֥ה בְךָ֖ חֵֽטְא׃",
+      "en": "When thou shalt vow a vow to the Lord thy God, thou shalt not be slack to pay it: for the Lord thy God will surely require it of thee; and it would be sin in thee."
+    },
+    {
+      "n": 66,
+      "c": 23,
+      "v": 23,
+      "ref": "23:23",
+      "text": "וְכִ֥י תֶחְדַּ֖ל לִנְדֹּ֑ר לֹֽא־יִהְיֶ֥ה בְךָ֖ חֵֽטְא׃",
+      "en": "But if thou shalt forbear to vow, it shall be no sin in thee."
+    },
+    {
+      "n": 67,
+      "c": 23,
+      "v": 24,
+      "ref": "23:24",
+      "text": "מוֹצָ֥א שְׂפָתֶ֖יךָ תִּשְׁמֹ֣ר וְעָשִׂ֑יתָ כַּאֲשֶׁ֨ר נָדַ֜רְתָּ לַיהֹוָ֤ה אֱלֹהֶ֙יךָ֙ נְדָבָ֔ה אֲשֶׁ֥ר דִּבַּ֖רְתָּ בְּפִֽיךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "That which is gone out of thy lips thou shalt keep and perform; according as thou hast vowed of thy freewill to the Lord thy God, which thou hast promised with thy mouth."
+    },
+    {
+      "n": 68,
+      "c": 23,
+      "v": 25,
+      "ref": "23:25",
+      "text": "כִּ֤י תָבֹא֙ בְּכֶ֣רֶם רֵעֶ֔ךָ וְאָכַלְתָּ֧ עֲנָבִ֛ים כְּנַפְשְׁךָ֖ שׇׂבְעֶ֑ךָ וְאֶֽל־כֶּלְיְךָ֖ לֹ֥א תִתֵּֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "When thou comest into thy neighbour’s vineyard, then thou mayst eat thy fill of grapes at thy desire; but thou shalt not put any in thy vessel."
+    },
+    {
+      "n": 69,
+      "c": 23,
+      "v": 26,
+      "ref": "23:26",
+      "text": "כִּ֤י תָבֹא֙ בְּקָמַ֣ת רֵעֶ֔ךָ וְקָטַפְתָּ֥ מְלִילֹ֖ת בְּיָדֶ֑ךָ וְחֶרְמֵשׁ֙ לֹ֣א תָנִ֔יף עַ֖ל קָמַ֥ת רֵעֶֽךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "When thou comest into the standing corn of thy neighbour, then thou mayst pluck the ears with thy hand; but thou shalt not move a sickle to thy neighbour’s standing corn."
+    },
+    {
+      "n": 70,
+      "c": 24,
+      "v": 1,
+      "ref": "24:1",
+      "text": "כִּֽי־יִקַּ֥ח אִ֛ישׁ אִשָּׁ֖ה וּבְעָלָ֑הּ וְהָיָ֞ה אִם־לֹ֧א תִמְצָא־חֵ֣ן בְּעֵינָ֗יו כִּי־מָ֤צָא בָהּ֙ עֶרְוַ֣ת דָּבָ֔ר וְכָ֨תַב לָ֜הּ סֵ֤פֶר כְּרִיתֻת֙ וְנָתַ֣ן בְּיָדָ֔הּ וְשִׁלְּחָ֖הּ מִבֵּיתֽוֹ׃",
+      "en": "When a man has taken a wife, and married her, and it come to pass that she find no favour in his eyes, because he has found some unseemliness in her: then let him write her a bill of divorce, and give it in her hand, and send her out of his house."
+    },
+    {
+      "n": 71,
+      "c": 24,
+      "v": 2,
+      "ref": "24:2",
+      "text": "וְיָצְאָ֖ה מִבֵּית֑וֹ וְהָלְכָ֖ה וְהָיְתָ֥ה לְאִישׁ־אַחֵֽר׃",
+      "en": "And when she is departed out of his house, she may go and be another man’s wife."
+    },
+    {
+      "n": 72,
+      "c": 24,
+      "v": 3,
+      "ref": "24:3",
+      "text": "וּשְׂנֵאָהּ֮ הָאִ֣ישׁ הָאַחֲרוֹן֒ וְכָ֨תַב לָ֜הּ סֵ֤פֶר כְּרִיתֻת֙ וְנָתַ֣ן בְּיָדָ֔הּ וְשִׁלְּחָ֖הּ מִבֵּית֑וֹ א֣וֹ כִ֤י יָמוּת֙ הָאִ֣ישׁ הָאַחֲר֔וֹן אֲשֶׁר־לְקָחָ֥הּ ל֖וֹ לְאִשָּֽׁה׃",
+      "en": "And if the latter husband hate her, and write her a bill of divorce, and give it in her hand, and send her out of his house; or if the latter husband, who took her to be his wife, should die,"
+    },
+    {
+      "n": 73,
+      "c": 24,
+      "v": 4,
+      "ref": "24:4",
+      "text": "לֹא־יוּכַ֣ל בַּעְלָ֣הּ הָרִאשׁ֣וֹן אֲשֶֽׁר־שִׁ֠לְּחָ֠הּ לָשׁ֨וּב לְקַחְתָּ֜הּ לִהְי֧וֹת ל֣וֹ לְאִשָּׁ֗ה אַחֲרֵי֙ אֲשֶׁ֣ר הֻטַּמָּ֔אָה כִּֽי־תוֹעֵבָ֥ה הִ֖וא לִפְנֵ֣י יְהֹוָ֑ה וְלֹ֤א תַחֲטִיא֙ אֶת־הָאָ֔רֶץ אֲשֶׁר֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ נֹתֵ֥ן לְךָ֖ נַחֲלָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "then her former husband, who sent her away, may not take her again to be his wife, after she is defiled; for that is abomination before the Lord: and thou shalt not cause the land to be sinful, which the Lord thy God gives thee for an inheritance."
+    },
+    {
+      "n": 74,
+      "c": 24,
+      "v": 5,
+      "ref": "24:5",
+      "text": "כִּֽי־יִקַּ֥ח אִישׁ֙ אִשָּׁ֣ה חֲדָשָׁ֔ה לֹ֤א יֵצֵא֙ בַּצָּבָ֔א וְלֹא־יַעֲבֹ֥ר עָלָ֖יו לְכׇל־דָּבָ֑ר נָקִ֞י יִהְיֶ֤ה לְבֵיתוֹ֙ שָׁנָ֣ה אֶחָ֔ת וְשִׂמַּ֖ח אֶת־אִשְׁתּ֥וֹ אֲשֶׁר־לָקָֽח׃",
+      "en": "When\n\t\t\t\ta man has taken a new wife, he shall not go out to war, neither shall he be charged with any business: but he shall be free at home one year, and shall cheer his wife whom he has taken."
+    },
+    {
+      "n": 75,
+      "c": 24,
+      "v": 6,
+      "ref": "24:6",
+      "text": "לֹא־יַחֲבֹ֥ל רֵחַ֖יִם וָרָ֑כֶב כִּי־נֶ֖פֶשׁ ה֥וּא חֹבֵֽל׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "No man shall take the nether or the upper millstone for a pledge: for he takes a man’s life for a pledge."
+    },
+    {
+      "n": 76,
+      "c": 24,
+      "v": 7,
+      "ref": "24:7",
+      "text": "כִּי־יִמָּצֵ֣א אִ֗ישׁ גֹּנֵ֨ב נֶ֤פֶשׁ מֵאֶחָיו֙ מִבְּנֵ֣י יִשְׂרָאֵ֔ל וְהִתְעַמֶּר־בּ֖וֹ וּמְכָר֑וֹ וּמֵת֙ הַגַּנָּ֣ב הַה֔וּא וּבִֽעַרְתָּ֥ הָרָ֖ע מִקִּרְבֶּֽךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "If a man be found stealing any of his brethren of the children of Yisra᾽el and deals with him as a slave, or sells him; then that thief shall die; and thou shalt put evil away from among you."
+    },
+    {
+      "n": 77,
+      "c": 24,
+      "v": 8,
+      "ref": "24:8",
+      "text": "הִשָּׁ֧מֶר בְּנֶֽגַע־הַצָּרַ֛עַת לִשְׁמֹ֥ר מְאֹ֖ד וְלַעֲשׂ֑וֹת כְּכֹל֩ אֲשֶׁר־יוֹר֨וּ אֶתְכֶ֜ם הַכֹּהֲנִ֧ים הַלְוִיִּ֛ם כַּאֲשֶׁ֥ר צִוִּיתִ֖ם תִּשְׁמְר֥וּ לַעֲשֽׂוֹת׃",
+      "en": "Take heed in the plague of żara῾at, that thou observe diligently, and do according to all that the priests the Levites shall teach you: as I commanded them, so you shall observe to do."
+    },
+    {
+      "n": 78,
+      "c": 24,
+      "v": 9,
+      "ref": "24:9",
+      "text": "זָכ֕וֹר אֵ֧ת אֲשֶׁר־עָשָׂ֛ה יְהֹוָ֥ה אֱלֹהֶ֖יךָ לְמִרְיָ֑ם בַּדֶּ֖רֶךְ בְּצֵאתְכֶ֥ם מִמִּצְרָֽיִם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Remember what the Lord thy God did to Miryam by the way, after you were come out of Miżrayim."
+    },
+    {
+      "n": 79,
+      "c": 24,
+      "v": 10,
+      "ref": "24:10",
+      "text": "כִּֽי־תַשֶּׁ֥ה בְרֵֽעֲךָ֖ מַשַּׁ֣את מְא֑וּמָה לֹא־תָבֹ֥א אֶל־בֵּית֖וֹ לַעֲבֹ֥ט עֲבֹטֽוֹ׃",
+      "en": "When thou dost lend thy brother anything, thou shalt not go into his house to fetch his pledge."
+    },
+    {
+      "n": 80,
+      "c": 24,
+      "v": 11,
+      "ref": "24:11",
+      "text": "בַּח֖וּץ תַּעֲמֹ֑ד וְהָאִ֗ישׁ אֲשֶׁ֤ר אַתָּה֙ נֹשֶׁ֣ה ב֔וֹ יוֹצִ֥יא אֵלֶ֛יךָ אֶֽת־הַעֲב֖וֹט הַחֽוּצָה׃",
+      "en": "Thou shalt stand outside, and the man to whom thou dost lend shall bring out the pledge to thee."
+    },
+    {
+      "n": 81,
+      "c": 24,
+      "v": 12,
+      "ref": "24:12",
+      "text": "וְאִם־אִ֥ישׁ עָנִ֖י ה֑וּא לֹ֥א תִשְׁכַּ֖ב בַּעֲבֹטֽוֹ׃",
+      "en": "And if the man be poor, thou shalt not sleep with his pledge:"
+    },
+    {
+      "n": 82,
+      "c": 24,
+      "v": 13,
+      "ref": "24:13",
+      "text": "הָשֵׁב֩ תָּשִׁ֨יב ל֤וֹ אֶֽת־הַעֲבוֹט֙ כְּב֣וֹא הַשֶּׁ֔מֶשׁ וְשָׁכַ֥ב בְּשַׂלְמָת֖וֹ וּבֵֽרְכֶ֑ךָּ וּלְךָ֙ תִּהְיֶ֣ה צְדָקָ֔ה לִפְנֵ֖י יְהֹוָ֥ה אֱלֹהֶֽיךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "thou shalt surely deliver him the pledge again when the sun goes down, that he may sleep in his own garment, and bless thee: and it shall be as righteousness to thee before the Lord thy God."
+    },
+    {
+      "n": 83,
+      "c": 24,
+      "v": 14,
+      "ref": "24:14",
+      "text": "לֹא־תַעֲשֹׁ֥ק שָׂכִ֖יר עָנִ֣י וְאֶבְי֑וֹן מֵאַחֶ֕יךָ א֧וֹ מִגֵּרְךָ֛ אֲשֶׁ֥ר בְּאַרְצְךָ֖ בִּשְׁעָרֶֽיךָ׃",
+      "en": "Thou shalt not oppress a hired servant that is poor and needy, whether he be of thy brethren, or of thy strangers that are in thy land within thy gates."
+    },
+    {
+      "n": 84,
+      "c": 24,
+      "v": 15,
+      "ref": "24:15",
+      "text": "בְּיוֹמוֹ֩ תִתֵּ֨ן שְׂכָר֜וֹ וְֽלֹא־תָב֧וֹא עָלָ֣יו הַשֶּׁ֗מֶשׁ כִּ֤י עָנִי֙ ה֔וּא וְאֵלָ֕יו ה֥וּא נֹשֵׂ֖א אֶת־נַפְשׁ֑וֹ וְלֹֽא־יִקְרָ֤א עָלֶ֙יךָ֙ אֶל־יְהֹוָ֔ה וְהָיָ֥ה בְךָ֖ חֵֽטְא׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "At his day thou shalt give him his hire, neither shall the sun go down upon it; for he is poor, and sets his heart upon it: lest he cry against thee to the Lord, and it be sin in thee."
+    },
+    {
+      "n": 85,
+      "c": 24,
+      "v": 16,
+      "ref": "24:16",
+      "text": "לֹֽא־יוּמְת֤וּ אָבוֹת֙ עַל־בָּנִ֔ים וּבָנִ֖ים לֹא־יוּמְת֣וּ עַל־אָב֑וֹת אִ֥ישׁ בְּחֶטְא֖וֹ יוּמָֽתוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Fathers shall not be put to death for children, neither shall children be put to death for fathers: every man shall be put to death for his own sin."
+    },
+    {
+      "n": 86,
+      "c": 24,
+      "v": 17,
+      "ref": "24:17",
+      "text": "לֹ֣א תַטֶּ֔ה מִשְׁפַּ֖ט גֵּ֣ר יָת֑וֹם וְלֹ֣א תַחֲבֹ֔ל בֶּ֖גֶד אַלְמָנָֽה׃",
+      "en": "Thou shalt not pervert the judgment of the stranger, or of the fatherless; nor take a widow’s garment as a pledge:"
+    },
+    {
+      "n": 87,
+      "c": 24,
+      "v": 18,
+      "ref": "24:18",
+      "text": "וְזָכַרְתָּ֗ כִּ֣י עֶ֤בֶד הָיִ֙יתָ֙ בְּמִצְרַ֔יִם וַֽיִּפְדְּךָ֛ יְהֹוָ֥ה אֱלֹהֶ֖יךָ מִשָּׁ֑ם עַל־כֵּ֞ן אָנֹכִ֤י מְצַוְּךָ֙ לַעֲשׂ֔וֹת אֶת־הַדָּבָ֖ר הַזֶּֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "but thou shalt remember that thou wast a bondman in Miżrayim, and the Lord thy God redeemed thee from there: therefore I command thee to do this thing."
+    },
+    {
+      "n": 88,
+      "c": 24,
+      "v": 19,
+      "ref": "24:19",
+      "text": "כִּ֣י תִקְצֹר֩ קְצִֽירְךָ֨ בְשָׂדֶ֜ךָ וְשָֽׁכַחְתָּ֧ עֹ֣מֶר בַּשָּׂדֶ֗ה לֹ֤א תָשׁוּב֙ לְקַחְתּ֔וֹ לַגֵּ֛ר לַיָּת֥וֹם וְלָאַלְמָנָ֖ה יִהְיֶ֑ה לְמַ֤עַן יְבָרֶכְךָ֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ בְּכֹ֖ל מַעֲשֵׂ֥ה יָדֶֽיךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "When thou reapest thy harvest in thy field, and hast forgotten a sheaf in the field, thou shalt not go back to fetch it: it shall be for the stranger, for the fatherless, and for the widow: that the Lord thy God may bless thee in all the work of thy hands."
+    },
+    {
+      "n": 89,
+      "c": 24,
+      "v": 20,
+      "ref": "24:20",
+      "text": "כִּ֤י תַחְבֹּט֙ זֵֽיתְךָ֔ לֹ֥א תְפַאֵ֖ר אַחֲרֶ֑יךָ לַגֵּ֛ר לַיָּת֥וֹם וְלָאַלְמָנָ֖ה יִהְיֶֽה׃",
+      "en": "When thou beatest thy olive tree, thou shalt not go over the boughs again: it shall be for the stranger, for the fatherless, and for the widow."
+    },
+    {
+      "n": 90,
+      "c": 24,
+      "v": 21,
+      "ref": "24:21",
+      "text": "כִּ֤י תִבְצֹר֙ כַּרְמְךָ֔ לֹ֥א תְעוֹלֵ֖ל אַחֲרֶ֑יךָ לַגֵּ֛ר לַיָּת֥וֹם וְלָאַלְמָנָ֖ה יִהְיֶֽה׃",
+      "en": "When thou gatherest the grapes of thy vineyard, thou shalt not glean it afterwards; it shall be for the stranger, for the fatherless, and for the widow."
+    },
+    {
+      "n": 91,
+      "c": 24,
+      "v": 22,
+      "ref": "24:22",
+      "text": "וְזָ֣כַרְתָּ֔ כִּי־עֶ֥בֶד הָיִ֖יתָ בְּאֶ֣רֶץ מִצְרָ֑יִם עַל־כֵּ֞ן אָנֹכִ֤י מְצַוְּךָ֙ לַעֲשׂ֔וֹת אֶת־הַדָּבָ֖ר הַזֶּֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And thou shalt remember that thou wast a slave in the land of Miżrayim: therefore I command thee to do this thing."
+    },
+    {
+      "n": 92,
+      "c": 25,
+      "v": 1,
+      "ref": "25:1",
+      "text": "כִּֽי־יִהְיֶ֥ה רִיב֙ בֵּ֣ין אֲנָשִׁ֔ים וְנִגְּשׁ֥וּ אֶל־הַמִּשְׁפָּ֖ט וּשְׁפָט֑וּם וְהִצְדִּ֙יקוּ֙ אֶת־הַצַּדִּ֔יק וְהִרְשִׁ֖יעוּ אֶת־הָרָשָֽׁע׃",
+      "en": "If there be a controversy between men, and\n\t\t\t\tthey come to judgment, that the judges may judge them; then they shall justify the righteous, and condemn the wicked."
+    },
+    {
+      "n": 93,
+      "c": 25,
+      "v": 2,
+      "ref": "25:2",
+      "text": "וְהָיָ֛ה אִם־בִּ֥ן הַכּ֖וֹת הָרָשָׁ֑ע וְהִפִּיל֤וֹ הַשֹּׁפֵט֙ וְהִכָּ֣הוּ לְפָנָ֔יו כְּדֵ֥י רִשְׁעָת֖וֹ בְּמִסְפָּֽר׃",
+      "en": "And it shall be, if the wicked man be worthy to be beaten, that the judge shall cause him to lie down, and he shall be beaten in his presence, according to his fault, by a certain number."
+    },
+    {
+      "n": 94,
+      "c": 25,
+      "v": 3,
+      "ref": "25:3",
+      "text": "אַרְבָּעִ֥ים יַכֶּ֖נּוּ לֹ֣א יֹסִ֑יף פֶּן־יֹסִ֨יף לְהַכֹּת֤וֹ עַל־אֵ֙לֶּה֙ מַכָּ֣ה רַבָּ֔ה וְנִקְלָ֥ה אָחִ֖יךָ לְעֵינֶֽיךָ׃",
+      "en": "Forty stripes he may give him, and not exceed: lest, if he should exceed, and beat him above these with many stripes, then thy brother shall be thus made vile before thee."
+    },
+    {
+      "n": 95,
+      "c": 25,
+      "v": 4,
+      "ref": "25:4",
+      "text": "לֹא־תַחְסֹ֥ם שׁ֖וֹר בְּדִישֽׁוֹ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not muzzle the ox when he treads out the corn."
+    },
+    {
+      "n": 96,
+      "c": 25,
+      "v": 5,
+      "ref": "25:5",
+      "text": "כִּֽי־יֵשְׁב֨וּ אַחִ֜ים יַחְדָּ֗ו וּמֵ֨ת אַחַ֤ד מֵהֶם֙ וּבֵ֣ן אֵֽין־ל֔וֹ לֹֽא־תִהְיֶ֧ה אֵֽשֶׁת־הַמֵּ֛ת הַח֖וּצָה לְאִ֣ישׁ זָ֑ר יְבָמָהּ֙ יָבֹ֣א עָלֶ֔יהָ וּלְקָחָ֥הּ ל֛וֹ לְאִשָּׁ֖ה וְיִבְּמָֽהּ׃",
+      "en": "If brothers dwell together, and one of them die, and have no child, the wife of the dead shall not marry abroad to a stranger: her husband’s brother shall go in to her, and take her to him to wife, and perform the duty of a husband’s brother to her."
+    },
+    {
+      "n": 97,
+      "c": 25,
+      "v": 6,
+      "ref": "25:6",
+      "text": "וְהָיָ֗ה הַבְּכוֹר֙ אֲשֶׁ֣ר תֵּלֵ֔ד יָק֕וּם עַל־שֵׁ֥ם אָחִ֖יו הַמֵּ֑ת וְלֹֽא־יִמָּחֶ֥ה שְׁמ֖וֹ מִיִּשְׂרָאֵֽל׃",
+      "en": "And it shall be, that the firstborn which she bears shall succeed in the name of his brother who is dead, that his name be not wiped out in Yisra᾽el."
+    },
+    {
+      "n": 98,
+      "c": 25,
+      "v": 7,
+      "ref": "25:7",
+      "text": "וְאִם־לֹ֤א יַחְפֹּץ֙ הָאִ֔ישׁ לָקַ֖חַת אֶת־יְבִמְתּ֑וֹ וְעָלְתָה֩ יְבִמְתּ֨וֹ הַשַּׁ֜עְרָה אֶל־הַזְּקֵנִ֗ים וְאָֽמְרָה֙ מֵאֵ֨ן יְבָמִ֜י לְהָקִ֨ים לְאָחִ֥יו שֵׁם֙ בְּיִשְׂרָאֵ֔ל לֹ֥א אָבָ֖ה יַבְּמִֽי׃",
+      "en": "And if the man like not to take his brother’s wife, then let his brother’s wife go up to the gate to the elders, and say, My husband’s brother refuses to raise up to his brother a name in Yisra᾽el, he will not perform the duty of a husband’s brother."
+    },
+    {
+      "n": 99,
+      "c": 25,
+      "v": 8,
+      "ref": "25:8",
+      "text": "וְקָֽרְאוּ־ל֥וֹ זִקְנֵי־עִיר֖וֹ וְדִבְּר֣וּ אֵלָ֑יו וְעָמַ֣ד וְאָמַ֔ר לֹ֥א חָפַ֖צְתִּי לְקַחְתָּֽהּ׃",
+      "en": "Then the elders of his city shall call him, and speak to him: and he shall stand, and say, I do not wish to take her;"
+    },
+    {
+      "n": 100,
+      "c": 25,
+      "v": 9,
+      "ref": "25:9",
+      "text": "וְנִגְּשָׁ֨ה יְבִמְתּ֣וֹ אֵלָיו֮ לְעֵינֵ֣י הַזְּקֵנִים֒ וְחָלְצָ֤ה נַעֲלוֹ֙ מֵעַ֣ל רַגְל֔וֹ וְיָרְקָ֖ה בְּפָנָ֑יו וְעָֽנְתָה֙ וְאָ֣מְרָ֔ה כָּ֚כָה יֵעָשֶׂ֣ה לָאִ֔ישׁ אֲשֶׁ֥ר לֹא־יִבְנֶ֖ה אֶת־בֵּ֥ית אָחִֽיו׃",
+      "en": "then shall his brother’s wife approach him in the presence of the elders, and loose his shoe from off his foot, and spit in his face, and shall answer and say, Thus shall it be done to that man that will not build up his brother’s house."
+    },
+    {
+      "n": 101,
+      "c": 25,
+      "v": 10,
+      "ref": "25:10",
+      "text": "וְנִקְרָ֥א שְׁמ֖וֹ בְּיִשְׂרָאֵ֑ל בֵּ֖ית חֲל֥וּץ הַנָּֽעַל׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And his name shall be called in Yisra᾽el, The house of him that had his shoe loosed."
+    },
+    {
+      "n": 102,
+      "c": 25,
+      "v": 11,
+      "ref": "25:11",
+      "text": "כִּֽי־יִנָּצ֨וּ אֲנָשִׁ֤ים יַחְדָּו֙ אִ֣ישׁ וְאָחִ֔יו וְקָֽרְבָה֙ אֵ֣שֶׁת הָֽאֶחָ֔ד לְהַצִּ֥יל אֶת־אִישָׁ֖הּ מִיַּ֣ד מַכֵּ֑הוּ וְשָׁלְחָ֣ה יָדָ֔הּ וְהֶחֱזִ֖יקָה בִּמְבֻשָֽׁיו׃",
+      "en": "When men strive together one with another, and the wife of the one draws near to deliver her husband out of the hand of him that smites him, and putting out her hand, she takes hold of his private parts:"
+    },
+    {
+      "n": 103,
+      "c": 25,
+      "v": 12,
+      "ref": "25:12",
+      "text": "וְקַצֹּתָ֖ה אֶת־כַּפָּ֑הּ לֹ֥א תָח֖וֹס עֵינֶֽךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "then thou shalt cut off her hand, thy eye shall not pity her."
+    },
+    {
+      "n": 104,
+      "c": 25,
+      "v": 13,
+      "ref": "25:13",
+      "text": "לֹֽא־יִהְיֶ֥ה לְךָ֛ בְּכִֽיסְךָ֖ אֶ֣בֶן וָאָ֑בֶן גְּדוֹלָ֖ה וּקְטַנָּֽה׃",
+      "en": "Thou shalt not have in thy bag divers weights, a great and a small."
+    },
+    {
+      "n": 105,
+      "c": 25,
+      "v": 14,
+      "ref": "25:14",
+      "text": "לֹא־יִהְיֶ֥ה לְךָ֛ בְּבֵיתְךָ֖ אֵיפָ֣ה וְאֵיפָ֑ה גְּדוֹלָ֖ה וּקְטַנָּֽה׃",
+      "en": "Thou shalt not have in thy house divers measures, a great and a small."
+    },
+    {
+      "n": 106,
+      "c": 25,
+      "v": 15,
+      "ref": "25:15",
+      "text": "אֶ֣בֶן שְׁלֵמָ֤ה וָצֶ֙דֶק֙ יִֽהְיֶה־לָּ֔ךְ אֵיפָ֧ה שְׁלֵמָ֛ה וָצֶ֖דֶק יִֽהְיֶה־לָּ֑ךְ לְמַ֙עַן֙ יַאֲרִ֣יכוּ יָמֶ֔יךָ עַ֚ל הָֽאֲדָמָ֔ה אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֶ֖יךָ נֹתֵ֥ן לָֽךְ׃",
+      "en": "But thou shalt have a perfect and just weight, a perfect and just measure shalt thou have: that thy days may be lengthened in the land which the Lord thy God gives thee."
+    },
+    {
+      "n": 107,
+      "c": 25,
+      "v": 16,
+      "ref": "25:16",
+      "text": "כִּ֧י תוֹעֲבַ֛ת יְהֹוָ֥ה אֱלֹהֶ֖יךָ כׇּל־עֹ֣שֵׂה אֵ֑לֶּה כֹּ֖ל עֹ֥שֵׂה עָֽוֶל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "For all that do such things, and all that do unrighteously, are an abomination to the Lord thy God."
+    },
+    {
+      "n": 108,
+      "c": 25,
+      "v": 17,
+      "ref": "25:17",
+      "text": "זָכ֕וֹר אֵ֛ת אֲשֶׁר־עָשָׂ֥ה לְךָ֖ עֲמָלֵ֑ק בַּדֶּ֖רֶךְ בְּצֵאתְכֶ֥ם מִמִּצְרָֽיִם׃",
+      "en": "Remember what ῾Amaleq did to thee by the way, when you were come out of Miżrayim:"
+    },
+    {
+      "n": 109,
+      "c": 25,
+      "v": 18,
+      "ref": "25:18",
+      "text": "אֲשֶׁ֨ר קָֽרְךָ֜ בַּדֶּ֗רֶךְ וַיְזַנֵּ֤ב בְּךָ֙ כׇּל־הַנֶּחֱשָׁלִ֣ים אַֽחֲרֶ֔יךָ וְאַתָּ֖ה עָיֵ֣ף וְיָגֵ֑עַ וְלֹ֥א יָרֵ֖א אֱלֹהִֽים׃",
+      "en": "how he met thee by the way, and smote the hindmost of thee, all that were feeble in thy rear, when thou wast faint and weary; and he feared not God."
+    },
+    {
+      "n": 110,
+      "c": 25,
+      "v": 19,
+      "ref": "25:19",
+      "text": "וְהָיָ֡ה בְּהָנִ֣יחַ יְהֹוָ֣ה אֱלֹהֶ֣יךָ&thinsp;<small>׀</small>&thinsp;לְ֠ךָ֠ מִכׇּל־אֹ֨יְבֶ֜יךָ מִסָּבִ֗יב בָּאָ֙רֶץ֙ אֲשֶׁ֣ר יְהֹוָה־אֱ֠לֹהֶ֠יךָ נֹתֵ֨ן לְךָ֤ נַחֲלָה֙ לְרִשְׁתָּ֔הּ תִּמְחֶה֙ אֶת־זֵ֣כֶר עֲמָלֵ֔ק מִתַּ֖חַת הַשָּׁמָ֑יִם לֹ֖א תִּשְׁכָּֽח׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Therefore it shall be, when the Lord thy God has given thee rest from all thy enemies round about, in the land which the Lord thy God gives thee for an inheritance to possess it, that thou shalt blot out the remembrance of ῾Amaleq from under heaven; thou shalt not forget."
+    }
+  ],
+  "parashah": {
+    "en": "Ki Teitzei",
+    "he": "כִּי תֵצֵא",
+    "translit": "Ki Teitzei",
+    "ref": "Deuteronomy 21:10–25:19"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 12,
+        "ref": "21:10–21:21"
+      },
+      {
+        "n": 2,
+        "start": 13,
+        "end": 21,
+        "ref": "21:22–22:7"
+      },
+      {
+        "n": 3,
+        "start": 22,
+        "end": 50,
+        "ref": "22:8–23:7"
+      },
+      {
+        "n": 4,
+        "start": 51,
+        "end": 67,
+        "ref": "23:8–23:24"
+      },
+      {
+        "n": 5,
+        "start": 68,
+        "end": 73,
+        "ref": "23:25–24:4"
+      },
+      {
+        "n": 6,
+        "start": 74,
+        "end": 82,
+        "ref": "24:5–24:13"
+      },
+      {
+        "n": 7,
+        "start": 83,
+        "end": 110,
+        "ref": "24:14–25:19"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 5,
+          "ref": "21:10–21:14"
+        },
+        {
+          "n": 2,
+          "start": 6,
+          "end": 8,
+          "ref": "21:15–21:17"
+        },
+        {
+          "n": 3,
+          "start": 9,
+          "end": 12,
+          "ref": "21:18–21:21"
+        },
+        {
+          "n": 4,
+          "start": 13,
+          "end": 21,
+          "ref": "21:22–22:7"
+        },
+        {
+          "n": 5,
+          "start": 22,
+          "end": 26,
+          "ref": "22:8–22:12"
+        },
+        {
+          "n": 6,
+          "start": 27,
+          "end": 43,
+          "ref": "22:13–22:29"
+        },
+        {
+          "n": 7,
+          "start": 44,
+          "end": 50,
+          "ref": "23:1–23:7"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 51,
+          "end": 55,
+          "ref": "23:8–23:12"
+        },
+        {
+          "n": 2,
+          "start": 56,
+          "end": 58,
+          "ref": "23:13–23:15"
+        },
+        {
+          "n": 3,
+          "start": 59,
+          "end": 62,
+          "ref": "23:16–23:19"
+        },
+        {
+          "n": 4,
+          "start": 63,
+          "end": 67,
+          "ref": "23:20–23:24"
+        },
+        {
+          "n": 5,
+          "start": 68,
+          "end": 73,
+          "ref": "23:25–24:4"
+        },
+        {
+          "n": 6,
+          "start": 74,
+          "end": 78,
+          "ref": "24:5–24:9"
+        },
+        {
+          "n": 7,
+          "start": 79,
+          "end": 82,
+          "ref": "24:10–24:13"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 83,
+          "end": 85,
+          "ref": "24:14–24:16"
+        },
+        {
+          "n": 2,
+          "start": 86,
+          "end": 88,
+          "ref": "24:17–24:19"
+        },
+        {
+          "n": 3,
+          "start": 89,
+          "end": 91,
+          "ref": "24:20–24:22"
+        },
+        {
+          "n": 4,
+          "start": 92,
+          "end": 95,
+          "ref": "25:1–25:4"
+        },
+        {
+          "n": 5,
+          "start": 96,
+          "end": 101,
+          "ref": "25:5–25:10"
+        },
+        {
+          "n": 6,
+          "start": 102,
+          "end": 107,
+          "ref": "25:11–25:16"
+        },
+        {
+          "n": 7,
+          "start": 108,
+          "end": 110,
+          "ref": "25:17–25:19"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 108,
+        "end": 110,
+        "ref": "25:17–25:19"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 47,
+          "end": 50,
+          "ref": "23:4–23:7"
+        },
+        "2": {
+          "n": "M",
+          "start": 79,
+          "end": 82,
+          "ref": "24:10–24:13"
+        },
+        "3": {
+          "n": "M",
+          "start": 108,
+          "end": 110,
+          "ref": "25:17–25:19"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

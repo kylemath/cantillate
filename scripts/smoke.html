@@ -185,6 +185,71 @@ try {
   const dsegs = drillSegs[drillSegs.length - 1];
   log(dsegs.every((s) => s.contour && s.contour.length), 'every drill word has a motif to synthesize from');
   log(dsegs.every((s) => s.color), 'every drill word gets a trope colour');
+
+  // A drill has no recording, so its melody has to come from somewhere real:
+  // trope-shapes.json is how each accent is actually sung, merged across every
+  // recorded reading, with the duration the cantor really spends on it.
+  const shapes = (await (await fetch('../data/trope-shapes.json')).json()).shapes;
+  const needed = [...new Set(drillSegs.flat().map((s) =>
+    (s.isSofPasuk || s.taam === 'sof' ? 'sof' : String(s.taam))))];
+  const unmeasured = needed.filter((k) => !(shapes[k] && shapes[k].steps && shapes[k].steps.length));
+  log(unmeasured.length === 0,
+    `every accent in the drills has a measured shape (${needed.length} needed)`
+    + (unmeasured.length ? `, missing ${unmeasured.join(', ')}` : ''));
+  const untimed = needed.filter((k) => !(shapes[k] && shapes[k].dur > 0));
+  log(untimed.length === 0,
+    `every accent in the drills has a measured duration${untimed.length ? `, missing ${untimed.join(', ')}` : ''}`);
+  // A Shalshelet really does take several seconds; a Munach really is quick. If
+  // the drill used one nominal length per word the rhythm would teach nothing.
+  const spread = needed.map((k) => shapes[k].dur).sort((a, b) => a - b);
+  log(spread[spread.length - 1] / spread[0] > 3,
+    `measured durations span the real range (${spread[0]}s \u2013 ${spread[spread.length - 1]}s)`);
+
+  // The splice index: recorded verses reduced to accent sequences, which is what
+  // lets the drills be chanted in a real voice despite having no recording.
+  const idx = await (await fetch('../data/trope-index.json')).json();
+  const words = idx.readings.reduce((n, r) => n + r.verses.reduce((m, v) => m + v.a.length, 0), 0);
+  log(idx.readings.length >= 3 && words > 5000,
+    `splice index: ${idx.readings.length} readings, ${words} recorded words`);
+  const ragged = idx.readings.flatMap((r) => r.verses.filter((v) => v.a.length !== v.onsets.length));
+  log(ragged.length === 0, `every indexed verse has one onset per accent (${ragged.length} ragged)`);
+  log(idx.readings.every((r) => r.verses.every((v) => v.file && v.onsets.length)),
+    'every indexed verse names an mp3 and its onsets');
+  log(idx.readings.every((r) => r.verses.every((v) => v.w && v.w.length === v.a.length)),
+    'every indexed verse carries the words it will show while playing');
+
+  // Greedy longest-match, the same search js/app.js runs. Every drill must come
+  // out of the corpus in real audio, which is the whole point of having built the
+  // readings that carry the four rarest accents.
+  const byAccent = new Map();
+  idx.readings.forEach((r, ri) => r.verses.forEach((v, vi) => v.a.forEach((c, wi) => {
+    if (!byAccent.has(c)) byAccent.set(c, []);
+    byAccent.get(c).push([ri, vi, wi]);
+  })));
+  const plan = (target) => {
+    const out = [];
+    for (let i = 0; i < target.length;) {
+      let best = null;
+      for (const [ri, vi, wi] of byAccent.get(target[i]) || []) {
+        const a = idx.readings[ri].verses[vi].a;
+        let k = 0;
+        while (i + k < target.length && wi + k < a.length && a[wi + k] === target[i + k]) k++;
+        if (!best || k > best.k) best = { ri, vi, wi, k };
+        if (best.k === target.length - i) break;
+      }
+      if (!best || !best.k) { out.push({ synth: true, k: 1 }); i += 1; }
+      else { out.push(best); i += best.k; }
+    }
+    return out;
+  };
+  drillSegs.forEach((segs2, li) => {
+    const target = segs2.map((s) => (s.isSofPasuk || s.taam === 'sof' ? 0 : (s.taam == null ? -1 : s.taam)));
+    const p = plan(target);
+    const real = p.filter((c) => !c.synth).reduce((n, c) => n + c.k, 0);
+    log(real === target.length,
+      `drill ${li + 1}: all ${target.length} words spliceable from real audio in ${p.length} pieces`
+      + (real === target.length ? '' : ` (only ${real} real)`));
+  });
 } catch (e) {
   log(false, `threw: ${e && e.stack ? e.stack : e}`);
 }

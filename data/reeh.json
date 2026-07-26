@@ -1,0 +1,1241 @@
+{
+  "slug": "reeh",
+  "book": {
+    "en": "Deuteronomy",
+    "he": "דברים",
+    "translit": "Devarim"
+  },
+  "multiChapter": true,
+  "ref": "Deuteronomy 11:26-16:17",
+  "heRef": "דברים י״א:כ״ו-ט״ז:י״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 11,
+      "v": 26,
+      "ref": "11:26",
+      "text": "רְאֵ֗ה אָנֹכִ֛י נֹתֵ֥ן לִפְנֵיכֶ֖ם הַיּ֑וֹם בְּרָכָ֖ה וּקְלָלָֽה׃",
+      "en": "Behold, I set before you this day a blessing and a curse;"
+    },
+    {
+      "n": 2,
+      "c": 11,
+      "v": 27,
+      "ref": "11:27",
+      "text": "אֶֽת־הַבְּרָכָ֑ה אֲשֶׁ֣ר תִּשְׁמְע֗וּ אֶל־מִצְוֺת֙ יְהֹוָ֣ה אֱלֹֽהֵיכֶ֔ם אֲשֶׁ֧ר אָנֹכִ֛י מְצַוֶּ֥ה אֶתְכֶ֖ם הַיּֽוֹם׃",
+      "en": "a blessing, if you obey the commandments of the Lord your God, which I command you this day:"
+    },
+    {
+      "n": 3,
+      "c": 11,
+      "v": 28,
+      "ref": "11:28",
+      "text": "וְהַקְּלָלָ֗ה אִם־לֹ֤א תִשְׁמְעוּ֙ אֶל־מִצְוֺת֙ יְהֹוָ֣ה אֱלֹֽהֵיכֶ֔ם וְסַרְתֶּ֣ם מִן־הַדֶּ֔רֶךְ אֲשֶׁ֧ר אָנֹכִ֛י מְצַוֶּ֥ה אֶתְכֶ֖ם הַיּ֑וֹם לָלֶ֗כֶת אַחֲרֵ֛י אֱלֹהִ֥ים אֲחֵרִ֖ים אֲשֶׁ֥ר לֹֽא־יְדַעְתֶּֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and a curse, if you do not obey the commandments of the Lord your God, but turn aside out of the way which I command you this day, to go after other gods, which you have not known."
+    },
+    {
+      "n": 4,
+      "c": 11,
+      "v": 29,
+      "ref": "11:29",
+      "text": "וְהָיָ֗ה כִּ֤י יְבִֽיאֲךָ֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ אֶל־הָאָ֕רֶץ אֲשֶׁר־אַתָּ֥ה בָא־שָׁ֖מָּה לְרִשְׁתָּ֑הּ וְנָתַתָּ֤ה אֶת־הַבְּרָכָה֙ עַל־הַ֣ר גְּרִזִ֔ים וְאֶת־הַקְּלָלָ֖ה עַל־הַ֥ר עֵיבָֽל׃",
+      "en": "And it shall come to pass, when the Lord thy God has brought thee in to the land into which thou dost go to possess it, that thou shalt put the blessing upon mount Gerizzim, and the curse upon mount ῾Eval."
+    },
+    {
+      "n": 5,
+      "c": 11,
+      "v": 30,
+      "ref": "11:30",
+      "text": "הֲלֹא־הֵ֜מָּה בְּעֵ֣בֶר הַיַּרְדֵּ֗ן אַֽחֲרֵי֙ דֶּ֚רֶךְ מְב֣וֹא הַשֶּׁ֔מֶשׁ בְּאֶ֙רֶץ֙ הַֽכְּנַעֲנִ֔י הַיֹּשֵׁ֖ב בָּעֲרָבָ֑ה מ֚וּל הַגִּלְגָּ֔ל אֵ֖צֶל אֵלוֹנֵ֥י מֹרֶֽה׃",
+      "en": "Are they not on the other side of the Yarden, by the way where the sun goes down, in the land of the Kena῾ani, who dwell in the ῾Arava over against Gilgal, beside the terebinths of More?"
+    },
+    {
+      "n": 6,
+      "c": 11,
+      "v": 31,
+      "ref": "11:31",
+      "text": "כִּ֤י אַתֶּם֙ עֹבְרִ֣ים אֶת־הַיַּרְדֵּ֔ן לָבֹא֙ לָרֶ֣שֶׁת אֶת־הָאָ֔רֶץ אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֵיכֶ֖ם נֹתֵ֣ן לָכֶ֑ם וִֽירִשְׁתֶּ֥ם אֹתָ֖הּ וִֽישַׁבְתֶּם־בָּֽהּ׃",
+      "en": "For you shall pass over the Yarden to go in to possess the land which the Lord your God gives you, and you shall possess it, and dwell in it."
+    },
+    {
+      "n": 7,
+      "c": 11,
+      "v": 32,
+      "ref": "11:32",
+      "text": "וּשְׁמַרְתֶּ֣ם לַעֲשׂ֔וֹת אֵ֥ת כׇּל־הַֽחֻקִּ֖ים וְאֶת־הַמִּשְׁפָּטִ֑ים אֲשֶׁ֧ר אָנֹכִ֛י נֹתֵ֥ן לִפְנֵיכֶ֖ם הַיּֽוֹם׃",
+      "en": "And you shall observe to do all the statutes and judgments which I set before you this day."
+    },
+    {
+      "n": 8,
+      "c": 12,
+      "v": 1,
+      "ref": "12:1",
+      "text": "אֵ֠לֶּה הַֽחֻקִּ֣ים וְהַמִּשְׁפָּטִים֮ אֲשֶׁ֣ר תִּשְׁמְר֣וּן לַעֲשׂוֹת֒ בָּאָ֕רֶץ אֲשֶׁר֩ נָתַ֨ן יְהֹוָ֜ה אֱלֹהֵ֧י אֲבֹתֶ֛יךָ לְךָ֖ לְרִשְׁתָּ֑הּ כׇּ֨ל־הַיָּמִ֔ים אֲשֶׁר־אַתֶּ֥ם חַיִּ֖ים עַל־הָאֲדָמָֽה׃",
+      "en": "These are the statutes and judgments, which you shall observe to do in the land, which the Lord God of thy fathers gives thee to possess it, all the days that you live upon the earth."
+    },
+    {
+      "n": 9,
+      "c": 12,
+      "v": 2,
+      "ref": "12:2",
+      "text": "אַבֵּ֣ד תְּ֠אַבְּד֠וּן אֶֽת־כׇּל־הַמְּקֹמ֞וֹת אֲשֶׁ֧ר עָֽבְדוּ־שָׁ֣ם הַגּוֹיִ֗ם אֲשֶׁ֥ר אַתֶּ֛ם יֹרְשִׁ֥ים אֹתָ֖ם אֶת־אֱלֹהֵיהֶ֑ם עַל־הֶהָרִ֤ים הָֽרָמִים֙ וְעַל־הַגְּבָע֔וֹת וְתַ֖חַת כׇּל־עֵ֥ץ רַעֲנָֽן׃",
+      "en": "You shall utterly destroy all the places, in which the nations whom you are to dispossess, served their gods, upon the high mountains, and upon the hills, and under every leafy tree:"
+    },
+    {
+      "n": 10,
+      "c": 12,
+      "v": 3,
+      "ref": "12:3",
+      "text": "וְנִתַּצְתֶּ֣ם אֶת־מִזְבְּחֹתָ֗ם וְשִׁבַּרְתֶּם֙ אֶת־מַצֵּ֣בֹתָ֔ם וַאֲשֵֽׁרֵיהֶם֙ תִּשְׂרְפ֣וּן בָּאֵ֔שׁ וּפְסִילֵ֥י אֱלֹֽהֵיהֶ֖ם תְּגַדֵּע֑וּן וְאִבַּדְתֶּ֣ם אֶת־שְׁמָ֔ם מִן־הַמָּק֖וֹם הַהֽוּא׃",
+      "en": "and you shall overthrow their altars, and break their pillars, and burn their asherim with fire; and you shall hew down the carvings of their gods, and destroy the name of them out of that place."
+    },
+    {
+      "n": 11,
+      "c": 12,
+      "v": 4,
+      "ref": "12:4",
+      "text": "לֹֽא־תַעֲשׂ֣וּן כֵּ֔ן לַיהֹוָ֖ה אֱלֹהֵיכֶֽם׃",
+      "en": "This you shall not do to the Lord your God."
+    },
+    {
+      "n": 12,
+      "c": 12,
+      "v": 5,
+      "ref": "12:5",
+      "text": "כִּ֠י אִֽם־אֶל־הַמָּק֞וֹם אֲשֶׁר־יִבְחַ֨ר יְהֹוָ֤ה אֱלֹֽהֵיכֶם֙ מִכׇּל־שִׁבְטֵיכֶ֔ם לָשׂ֥וּם אֶת־שְׁמ֖וֹ שָׁ֑ם לְשִׁכְנ֥וֹ תִדְרְשׁ֖וּ וּבָ֥אתָ שָּֽׁמָּה׃",
+      "en": "But to the place which the Lord your God shall choose out of all your tribes to put his name there, there shall you seek him, at his dwelling, and there shalt thou come:"
+    },
+    {
+      "n": 13,
+      "c": 12,
+      "v": 6,
+      "ref": "12:6",
+      "text": "וַהֲבֵאתֶ֣ם שָׁ֗מָּה עֹלֹֽתֵיכֶם֙ וְזִבְחֵיכֶ֔ם וְאֵת֙ מַעְשְׂרֹ֣תֵיכֶ֔ם וְאֵ֖ת תְּרוּמַ֣ת יֶדְכֶ֑ם וְנִדְרֵיכֶם֙ וְנִדְבֹ֣תֵיכֶ֔ם וּבְכֹרֹ֥ת בְּקַרְכֶ֖ם וְצֹאנְכֶֽם׃",
+      "en": "and there you shall bring your burnt offerings, and your sacrifices, and your tithes, and the offerings of your hand, and your vows, and your freewill offerings, and the firstlings of your herds and your flocks:"
+    },
+    {
+      "n": 14,
+      "c": 12,
+      "v": 7,
+      "ref": "12:7",
+      "text": "וַאֲכַלְתֶּם־שָׁ֗ם לִפְנֵי֙ יְהֹוָ֣ה אֱלֹֽהֵיכֶ֔ם וּשְׂמַחְתֶּ֗ם בְּכֹל֙ מִשְׁלַ֣ח יֶדְכֶ֔ם אַתֶּ֖ם וּבָתֵּיכֶ֑ם אֲשֶׁ֥ר בֵּֽרַכְךָ֖ יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "and there you shall eat before the Lord your God, and you shall rejoice in all that to which you put your hand, you and your households, wherein the Lord thy God has blessed thee."
+    },
+    {
+      "n": 15,
+      "c": 12,
+      "v": 8,
+      "ref": "12:8",
+      "text": "לֹ֣א תַעֲשׂ֔וּן כְּ֠כֹ֠ל אֲשֶׁ֨ר אֲנַ֧חְנוּ עֹשִׂ֛ים פֹּ֖ה הַיּ֑וֹם אִ֖ישׁ כׇּל־הַיָּשָׁ֥ר בְּעֵינָֽיו׃",
+      "en": "You shall not do after all the things that we do here this day, every man whatever is right in his own eyes."
+    },
+    {
+      "n": 16,
+      "c": 12,
+      "v": 9,
+      "ref": "12:9",
+      "text": "כִּ֥י לֹא־בָאתֶ֖ם עַד־עָ֑תָּה אֶל־הַמְּנוּחָה֙ וְאֶל־הַֽנַּחֲלָ֔ה אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֶ֖יךָ נֹתֵ֥ן לָֽךְ׃",
+      "en": "For you are not as yet come to the rest and to the inheritance, which the Lord your God gives you."
+    },
+    {
+      "n": 17,
+      "c": 12,
+      "v": 10,
+      "ref": "12:10",
+      "text": "וַעֲבַרְתֶּם֮ אֶת־הַיַּרְדֵּן֒ וִֽישַׁבְתֶּ֣ם בָּאָ֔רֶץ אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֵיכֶ֖ם מַנְחִ֣יל אֶתְכֶ֑ם וְהֵנִ֨יחַ לָכֶ֧ם מִכׇּל־אֹיְבֵיכֶ֛ם מִסָּבִ֖יב וִֽישַׁבְתֶּם־בֶּֽטַח׃",
+      "en": "But when you traverse the Yarden, and dwell in the land which the Lord your God gives you to inherit, and when he gives you rest from all your enemies round about, so that you dwell in safety;"
+    },
+    {
+      "n": 18,
+      "c": 12,
+      "v": 11,
+      "ref": "12:11",
+      "text": "וְהָיָ֣ה הַמָּק֗וֹם אֲשֶׁר־יִבְחַר֩ יְהֹוָ֨ה אֱלֹהֵיכֶ֥ם בּוֹ֙ לְשַׁכֵּ֤ן שְׁמוֹ֙ שָׁ֔ם שָׁ֣מָּה תָבִ֔יאוּ אֵ֛ת כׇּל־אֲשֶׁ֥ר אָנֹכִ֖י מְצַוֶּ֣ה אֶתְכֶ֑ם עוֹלֹתֵיכֶ֣ם וְזִבְחֵיכֶ֗ם מַעְשְׂרֹֽתֵיכֶם֙ וּתְרֻמַ֣ת יֶדְכֶ֔ם וְכֹל֙ מִבְחַ֣ר נִדְרֵיכֶ֔ם אֲשֶׁ֥ר תִּדְּר֖וּ לַיהֹוָֽה׃",
+      "en": "then there shall be a place which the Lord your God shall choose to cause his name to dwell there; there shall you bring all that I command you; your burnt offerings, and your sacrifices, your tithes, and the offering of your hand, and all your choice vows which you vow to the Lord:"
+    },
+    {
+      "n": 19,
+      "c": 12,
+      "v": 12,
+      "ref": "12:12",
+      "text": "וּשְׂמַחְתֶּ֗ם לִפְנֵי֮ יְהֹוָ֣ה אֱלֹֽהֵיכֶם֒ אַתֶּ֗ם וּבְנֵיכֶם֙ וּבְנֹ֣תֵיכֶ֔ם וְעַבְדֵיכֶ֖ם וְאַמְהֹתֵיכֶ֑ם וְהַלֵּוִי֙ אֲשֶׁ֣ר בְּשַֽׁעֲרֵיכֶ֔ם כִּ֣י אֵ֥ין ל֛וֹ חֵ֥לֶק וְנַחֲלָ֖ה אִתְּכֶֽם׃",
+      "en": "and you shall rejoice before the Lord your God, you and your sons, and your daughters, and your menservants, and your maidservants, and the Levite who is within your gates; for he has no part or inheritance with you."
+    },
+    {
+      "n": 20,
+      "c": 12,
+      "v": 13,
+      "ref": "12:13",
+      "text": "הִשָּׁ֣מֶר לְךָ֔ פֶּֽן־תַּעֲלֶ֖ה עֹלֹתֶ֑יךָ בְּכׇל־מָק֖וֹם אֲשֶׁ֥ר תִּרְאֶֽה׃",
+      "en": "Take heed to thyself that thou offer not thy burnt offerings in every place that thou seest:"
+    },
+    {
+      "n": 21,
+      "c": 12,
+      "v": 14,
+      "ref": "12:14",
+      "text": "כִּ֣י אִם־בַּמָּק֞וֹם אֲשֶׁר־יִבְחַ֤ר יְהֹוָה֙ בְּאַחַ֣ד שְׁבָטֶ֔יךָ שָׁ֖ם תַּעֲלֶ֣ה עֹלֹתֶ֑יךָ וְשָׁ֣ם תַּעֲשֶׂ֔ה כֹּ֛ל אֲשֶׁ֥ר אָנֹכִ֖י מְצַוֶּֽךָּ׃",
+      "en": "but only in the place which the Lord shall choose in one of thy tribes, there thou shalt offer thy burnt offerings, and there thou shalt do all that I command thee."
+    },
+    {
+      "n": 22,
+      "c": 12,
+      "v": 15,
+      "ref": "12:15",
+      "text": "רַק֩ בְּכׇל־אַוַּ֨ת נַפְשְׁךָ֜ תִּזְבַּ֣ח&thinsp;<b>׀</b> וְאָכַלְתָּ֣ בָשָׂ֗ר כְּבִרְכַּ֨ת יְהֹוָ֧ה אֱלֹהֶ֛יךָ אֲשֶׁ֥ר נָֽתַן־לְךָ֖ בְּכׇל־שְׁעָרֶ֑יךָ הַטָּמֵ֤א וְהַטָּהוֹר֙ יֹאכְלֶ֔נּוּ כַּצְּבִ֖י וְכָאַיָּֽל׃",
+      "en": "Nonetheless, thou mayst slaughter animals and eat their flesh to thy heart’s desire, according to the blessing of the Lord thy God which he has bestowed on thee, throughout all thy gates, the unclean and the clean may eat of it as they do of the gazelle and the deer."
+    },
+    {
+      "n": 23,
+      "c": 12,
+      "v": 16,
+      "ref": "12:16",
+      "text": "רַ֥ק הַדָּ֖ם לֹ֣א תֹאכֵ֑לוּ עַל־הָאָ֥רֶץ תִּשְׁפְּכֶ֖נּוּ כַּמָּֽיִם׃",
+      "en": "Only you shall not eat the blood; you shall pour it upon the earth like water."
+    },
+    {
+      "n": 24,
+      "c": 12,
+      "v": 17,
+      "ref": "12:17",
+      "text": "לֹֽא־תוּכַ֞ל לֶאֱכֹ֣ל בִּשְׁעָרֶ֗יךָ מַעְשַׂ֤ר דְּגָֽנְךָ֙ וְתִירֹשְׁךָ֣ וְיִצְהָרֶ֔ךָ וּבְכֹרֹ֥ת בְּקָרְךָ֖ וְצֹאנֶ֑ךָ וְכׇל־נְדָרֶ֙יךָ֙ אֲשֶׁ֣ר תִּדֹּ֔ר וְנִדְבֹתֶ֖יךָ וּתְרוּמַ֥ת יָדֶֽךָ׃",
+      "en": "Thou mayst not eat within thy gates the tithe of thy corn, or of thy wine, or of thy oil, or the firstlings of thy herds or of thy flock, or any of thy vows which thou vowest, or thy freewill offerings, or offering of thy hand:"
+    },
+    {
+      "n": 25,
+      "c": 12,
+      "v": 18,
+      "ref": "12:18",
+      "text": "כִּ֡י אִם־לִפְנֵי֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ תֹּאכְלֶ֗נּוּ בַּמָּקוֹם֙ אֲשֶׁ֨ר יִבְחַ֜ר יְהֹוָ֣ה אֱלֹהֶ֘יךָ֮ בּוֹ֒ אַתָּ֨ה וּבִנְךָ֤ וּבִתֶּ֙ךָ֙ וְעַבְדְּךָ֣ וַאֲמָתֶ֔ךָ וְהַלֵּוִ֖י אֲשֶׁ֣ר בִּשְׁעָרֶ֑יךָ וְשָׂמַחְתָּ֗ לִפְנֵי֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ בְּכֹ֖ל מִשְׁלַ֥ח יָדֶֽךָ׃",
+      "en": "but thou must eat them before the Lord thy God in the place which the Lord thy God shall choose, thou, and thy son, and thy daughter, and thy manservant, and thy maidservant, and the Levite who is within thy gates: and thou shalt rejoice before the Lord thy God in all that to which thou puttest thy hand."
+    },
+    {
+      "n": 26,
+      "c": 12,
+      "v": 19,
+      "ref": "12:19",
+      "text": "הִשָּׁ֣מֶר לְךָ֔ פֶּֽן־תַּעֲזֹ֖ב אֶת־הַלֵּוִ֑י כׇּל־יָמֶ֖יךָ עַל־אַדְמָתֶֽךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Take heed to thyself that thou forsake not the Levite as long as thou livest upon the earth."
+    },
+    {
+      "n": 27,
+      "c": 12,
+      "v": 20,
+      "ref": "12:20",
+      "text": "כִּֽי־יַרְחִיב֩ יְהֹוָ֨ה אֱלֹהֶ֥יךָ אֶֽת־גְּבֻלְךָ֮ כַּאֲשֶׁ֣ר דִּבֶּר־לָךְ֒ וְאָמַרְתָּ֙ אֹכְלָ֣ה בָשָׂ֔ר כִּֽי־תְאַוֶּ֥ה נַפְשְׁךָ֖ לֶאֱכֹ֣ל בָּשָׂ֑ר בְּכׇל־אַוַּ֥ת נַפְשְׁךָ֖ תֹּאכַ֥ל בָּשָֽׂר׃",
+      "en": "When the Lord thy God shall enlarge thy border, as he has promised thee, and thou shalt say, I will eat meat, because thou longest to eat meat; thou mayst eat meat, to thy heart’s desire."
+    },
+    {
+      "n": 28,
+      "c": 12,
+      "v": 21,
+      "ref": "12:21",
+      "text": "כִּֽי־יִרְחַ֨ק מִמְּךָ֜ הַמָּק֗וֹם אֲשֶׁ֨ר יִבְחַ֜ר יְהֹוָ֣ה אֱלֹהֶ֘יךָ֮ לָשׂ֣וּם שְׁמ֣וֹ שָׁם֒ וְזָבַחְתָּ֞ מִבְּקָרְךָ֣ וּמִצֹּֽאנְךָ֗ אֲשֶׁ֨ר נָתַ֤ן יְהֹוָה֙ לְךָ֔ כַּאֲשֶׁ֖ר צִוִּיתִ֑ךָ וְאָֽכַלְתָּ֙ בִּשְׁעָרֶ֔יךָ בְּכֹ֖ל אַוַּ֥ת נַפְשֶֽׁךָ׃",
+      "en": "If the place which the Lord thy God has chosen to put his name there be too far from thee, then thou shalt kill of thy herd and of thy flock, which the Lord has given thee, as I have commanded thee, and thou shalt eat in thy gates to thy heart’s desire."
+    },
+    {
+      "n": 29,
+      "c": 12,
+      "v": 22,
+      "ref": "12:22",
+      "text": "אַ֗ךְ כַּאֲשֶׁ֨ר יֵאָכֵ֤ל אֶֽת־הַצְּבִי֙ וְאֶת־הָ֣אַיָּ֔ל כֵּ֖ן תֹּאכְלֶ֑נּוּ הַטָּמֵא֙ וְהַטָּה֔וֹר יַחְדָּ֖ו יֹאכְלֶֽנּוּ׃",
+      "en": "Even as the gazelle and the deer is eaten, so thou shalt eat them: the unclean and the clean shall eat of them alike."
+    },
+    {
+      "n": 30,
+      "c": 12,
+      "v": 23,
+      "ref": "12:23",
+      "text": "רַ֣ק חֲזַ֗ק לְבִלְתִּי֙ אֲכֹ֣ל הַדָּ֔ם כִּ֥י הַדָּ֖ם ה֣וּא הַנָּ֑פֶשׁ וְלֹא־תֹאכַ֥ל הַנֶּ֖פֶשׁ עִם־הַבָּשָֽׂר׃",
+      "en": "Only be sure that thou eat not the blood: for the blood is the life; and thou mayst not eat the life with the meat."
+    },
+    {
+      "n": 31,
+      "c": 12,
+      "v": 24,
+      "ref": "12:24",
+      "text": "לֹ֖א תֹּאכְלֶ֑נּוּ עַל־הָאָ֥רֶץ תִּשְׁפְּכֶ֖נּוּ כַּמָּֽיִם׃",
+      "en": "Thou shalt not eat it; thou shalt pour it upon the earth like water."
+    },
+    {
+      "n": 32,
+      "c": 12,
+      "v": 25,
+      "ref": "12:25",
+      "text": "לֹ֖א תֹּאכְלֶ֑נּוּ לְמַ֨עַן יִיטַ֤ב לְךָ֙ וּלְבָנֶ֣יךָ אַחֲרֶ֔יךָ כִּֽי־תַעֲשֶׂ֥ה הַיָּשָׁ֖ר בְּעֵינֵ֥י יְהֹוָֽה׃",
+      "en": "Thou shalt not eat it; that it may go well with thee, and with thy children after thee, when thou shalt do that which is right in the sight of the Lord."
+    },
+    {
+      "n": 33,
+      "c": 12,
+      "v": 26,
+      "ref": "12:26",
+      "text": "רַ֧ק קׇֽדָשֶׁ֛יךָ אֲשֶׁר־יִהְי֥וּ לְךָ֖ וּנְדָרֶ֑יךָ תִּשָּׂ֣א וּבָ֔אתָ אֶל־הַמָּק֖וֹם אֲשֶׁר־יִבְחַ֥ר יְהֹוָֽה׃",
+      "en": "Only thy holy things which thou hast, and thy vows, thou shalt take and go to the place which the Lord shall choose:"
+    },
+    {
+      "n": 34,
+      "c": 12,
+      "v": 27,
+      "ref": "12:27",
+      "text": "וְעָשִׂ֤יתָ עֹלֹתֶ֙יךָ֙ הַבָּשָׂ֣ר וְהַדָּ֔ם עַל־מִזְבַּ֖ח יְהֹוָ֣ה אֱלֹהֶ֑יךָ וְדַם־זְבָחֶ֗יךָ יִשָּׁפֵךְ֙ עַל־מִזְבַּח֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ וְהַבָּשָׂ֖ר תֹּאכֵֽל׃",
+      "en": "and thou shalt offer thy burnt offerings, the meat and the blood, upon the altar of the Lord thy God: and the blood of thy sacrifices shall be poured out upon the altar of the Lord thy God, and thou shalt eat the meat."
+    },
+    {
+      "n": 35,
+      "c": 12,
+      "v": 28,
+      "ref": "12:28",
+      "text": "שְׁמֹ֣ר וְשָׁמַעְתָּ֗ אֵ֚ת כׇּל־הַדְּבָרִ֣ים הָאֵ֔לֶּה אֲשֶׁ֥ר אָנֹכִ֖י מְצַוֶּ֑ךָּ לְמַ֩עַן֩ יִיטַ֨ב לְךָ֜ וּלְבָנֶ֤יךָ אַחֲרֶ֙יךָ֙ עַד־עוֹלָ֔ם כִּ֤י תַעֲשֶׂה֙ הַטּ֣וֹב וְהַיָּשָׁ֔ר בְּעֵינֵ֖י יְהֹוָ֥ה אֱלֹהֶֽיךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Observe and hear all these words which I command thee, that it may go well with thee, and with thy children after thee for ever, when thou doest that which is good and right in the sight of the Lord thy God."
+    },
+    {
+      "n": 36,
+      "c": 12,
+      "v": 29,
+      "ref": "12:29",
+      "text": "כִּֽי־יַכְרִית֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ אֶת־הַגּוֹיִ֗ם אֲשֶׁ֨ר אַתָּ֥ה בָא־שָׁ֛מָּה לָרֶ֥שֶׁת אוֹתָ֖ם מִפָּנֶ֑יךָ וְיָרַשְׁתָּ֣ אֹתָ֔ם וְיָשַׁבְתָּ֖ בְּאַרְצָֽם׃",
+      "en": "When the Lord thy God shall cut off the nations from before thee, whither thou goest to dispossess them, and thou dost succeed them and dost dwell in their land;"
+    },
+    {
+      "n": 37,
+      "c": 12,
+      "v": 30,
+      "ref": "12:30",
+      "text": "הִשָּׁ֣מֶר לְךָ֗ פֶּן־תִּנָּקֵשׁ֙ אַחֲרֵיהֶ֔ם אַחֲרֵ֖י הִשָּׁמְדָ֣ם מִפָּנֶ֑יךָ וּפֶן־תִּדְרֹ֨שׁ לֵאלֹֽהֵיהֶ֜ם לֵאמֹ֗ר אֵיכָ֨ה יַעַבְד֜וּ הַגּוֹיִ֤ם הָאֵ֙לֶּה֙ אֶת־אֱלֹ֣הֵיהֶ֔ם וְאֶעֱשֶׂה־כֵּ֖ן גַּם־אָֽנִי׃",
+      "en": "take heed to thyself that thou be not ensnared into following them, after they are destroyed from before thee; and that thou inquire not after their gods, saying, How did these nations serve their gods? even so will I do likewise."
+    },
+    {
+      "n": 38,
+      "c": 12,
+      "v": 31,
+      "ref": "12:31",
+      "text": "לֹא־תַעֲשֶׂ֣ה כֵ֔ן לַיהֹוָ֖ה אֱלֹהֶ֑יךָ כִּי֩ כׇל־תּוֹעֲבַ֨ת יְהֹוָ֜ה אֲשֶׁ֣ר שָׂנֵ֗א עָשׂוּ֙ לֵאלֹ֣הֵיהֶ֔ם כִּ֣י גַ֤ם אֶת־בְּנֵיהֶם֙ וְאֶת־בְּנֹ֣תֵיהֶ֔ם יִשְׂרְפ֥וּ בָאֵ֖שׁ לֵאלֹֽהֵיהֶֽם׃",
+      "en": "Thou shalt not do so to the Lord thy God: for every abomination to the Lord, which he hates, have they done to their gods; for even their sons and their daughters they have burnt in the fire to their gods."
+    },
+    {
+      "n": 39,
+      "c": 13,
+      "v": 1,
+      "ref": "13:1",
+      "text": "אֵ֣ת כׇּל־הַדָּבָ֗ר אֲשֶׁ֤ר אָנֹכִי֙ מְצַוֶּ֣ה אֶתְכֶ֔ם אֹת֥וֹ תִשְׁמְר֖וּ לַעֲשׂ֑וֹת לֹא־תֹסֵ֣ף עָלָ֔יו וְלֹ֥א תִגְרַ֖ע מִמֶּֽנּוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Every matter which I command you, observe to do it: thou shalt not add thereto, nor diminish from it."
+    },
+    {
+      "n": 40,
+      "c": 13,
+      "v": 2,
+      "ref": "13:2",
+      "text": "כִּֽי־יָק֤וּם בְּקִרְבְּךָ֙ נָבִ֔יא א֖וֹ חֹלֵ֣ם חֲל֑וֹם וְנָתַ֥ן אֵלֶ֛יךָ א֖וֹת א֥וֹ מוֹפֵֽת׃",
+      "en": "If there arise among you a prophet, or a dreamer of dreams, and he give thee a sign or a wonder,"
+    },
+    {
+      "n": 41,
+      "c": 13,
+      "v": 3,
+      "ref": "13:3",
+      "text": "וּבָ֤א הָאוֹת֙ וְהַמּוֹפֵ֔ת אֲשֶׁר־דִּבֶּ֥ר אֵלֶ֖יךָ לֵאמֹ֑ר נֵֽלְכָ֞ה אַחֲרֵ֨י אֱלֹהִ֧ים אֲחֵרִ֛ים אֲשֶׁ֥ר לֹֽא־יְדַעְתָּ֖ם וְנׇֽעׇבְדֵֽם׃",
+      "en": "and the sign or the wonder come to pass, of which he spoke to thee, saying, Let us go after other gods, which thou hast not known, and let us serve them;"
+    },
+    {
+      "n": 42,
+      "c": 13,
+      "v": 4,
+      "ref": "13:4",
+      "text": "לֹ֣א תִשְׁמַ֗ע אֶל־דִּבְרֵי֙ הַנָּבִ֣יא הַה֔וּא א֛וֹ אֶל־חוֹלֵ֥ם הַחֲל֖וֹם הַה֑וּא כִּ֣י מְנַסֶּ֞ה יְהֹוָ֤ה אֱלֹֽהֵיכֶם֙ אֶתְכֶ֔ם לָדַ֗עַת הֲיִשְׁכֶ֤ם אֹֽהֲבִים֙ אֶת־יְהֹוָ֣ה אֱלֹהֵיכֶ֔ם בְּכׇל־לְבַבְכֶ֖ם וּבְכׇל־נַפְשְׁכֶֽם׃",
+      "en": "thou shalt not hearken to the words of that prophet, or that dreamer of dreams: for the Lord your God puts you to the proof, to know whether you love the Lord your God with all your heart and with all your soul."
+    },
+    {
+      "n": 43,
+      "c": 13,
+      "v": 5,
+      "ref": "13:5",
+      "text": "אַחֲרֵ֨י יְהֹוָ֧ה אֱלֹהֵיכֶ֛ם תֵּלֵ֖כוּ וְאֹת֣וֹ תִירָ֑אוּ וְאֶת־מִצְוֺתָ֤יו תִּשְׁמֹ֙רוּ֙ וּבְקֹל֣וֹ תִשְׁמָ֔עוּ וְאֹת֥וֹ תַעֲבֹ֖דוּ וּב֥וֹ תִדְבָּקֽוּן׃",
+      "en": "You shall walk after the Lord your God, and fear him, and keep his commandments, and obey his voice, and you shall serve him, and hold fast to him."
+    },
+    {
+      "n": 44,
+      "c": 13,
+      "v": 6,
+      "ref": "13:6",
+      "text": "וְהַנָּבִ֣יא הַה֡וּא א֣וֹ חֹלֵם֩ הַחֲל֨וֹם הַה֜וּא יוּמָ֗ת כִּ֣י דִבֶּר־סָ֠רָ֠ה עַל־יְהֹוָ֨ה אֱלֹֽהֵיכֶ֜ם הַמּוֹצִ֥יא אֶתְכֶ֣ם&thinsp;<b>׀</b> מֵאֶ֣רֶץ מִצְרַ֗יִם וְהַפֹּֽדְךָ֙ מִבֵּ֣ית עֲבָדִ֔ים לְהַדִּֽיחֲךָ֙ מִן־הַדֶּ֔רֶךְ אֲשֶׁ֧ר צִוְּךָ֛ יְהֹוָ֥ה אֱלֹהֶ֖יךָ לָלֶ֣כֶת בָּ֑הּ וּבִֽעַרְתָּ֥ הָרָ֖ע מִקִּרְבֶּֽךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And that prophet, or that dreamer of dreams, shall be put to death; because he has spoken to turn you away from the Lord your God, who brought you out of the land of Miżrayim and redeemed you out of the house of bondage, to thrust thee out of the way which the Lord thy God commanded thee to walk in. So shalt thou put the evil away from the midst of thee."
+    },
+    {
+      "n": 45,
+      "c": 13,
+      "v": 7,
+      "ref": "13:7",
+      "text": "כִּ֣י יְסִֽיתְךָ֡ אָחִ֣יךָ בֶן־אִ֠מֶּ֠ךָ אֽוֹ־בִנְךָ֨ אֽוֹ־בִתְּךָ֜ א֣וֹ&thinsp;<b>׀</b> אֵ֣שֶׁת חֵיקֶ֗ךָ א֧וֹ רֵֽעֲךָ֛ אֲשֶׁ֥ר כְּנַפְשְׁךָ֖ בַּסֵּ֣תֶר לֵאמֹ֑ר נֵֽלְכָ֗ה וְנַֽעַבְדָה֙ אֱלֹהִ֣ים אֲחֵרִ֔ים אֲשֶׁר֙ לֹ֣א יָדַ֔עְתָּ אַתָּ֖ה וַאֲבֹתֶֽיךָ׃",
+      "en": "If thy brother, the son of thy mother, or thy son, or thy daughter, or the wife of thy bosom, or thy friend, who is as thy own soul, entice thee secretly, saying, Let us go and serve other gods, which thou hast not known, thou, nor thy fathers;"
+    },
+    {
+      "n": 46,
+      "c": 13,
+      "v": 8,
+      "ref": "13:8",
+      "text": "מֵאֱלֹהֵ֣י הָֽעַמִּ֗ים אֲשֶׁר֙ סְבִיבֹ֣תֵיכֶ֔ם הַקְּרֹבִ֣ים אֵלֶ֔יךָ א֖וֹ הָרְחֹקִ֣ים מִמֶּ֑ךָּ מִקְצֵ֥ה הָאָ֖רֶץ וְעַד־קְצֵ֥ה הָאָֽרֶץ׃",
+      "en": "of the gods of the peoples who are round about you, either near to thee, or far off from thee, from the one end of the earth even to the other end of the earth;"
+    },
+    {
+      "n": 47,
+      "c": 13,
+      "v": 9,
+      "ref": "13:9",
+      "text": "לֹא־תֹאבֶ֣ה ל֔וֹ וְלֹ֥א תִשְׁמַ֖ע אֵלָ֑יו וְלֹא־תָח֤וֹס עֵֽינְךָ֙ עָלָ֔יו וְלֹֽא־תַחְמֹ֥ל וְלֹֽא־תְכַסֶּ֖ה עָלָֽיו׃",
+      "en": "thou shalt not consent to him, nor hearken to him; nor shall thy eye pity him, nor shalt thou spare, nor shalt thou conceal him:"
+    },
+    {
+      "n": 48,
+      "c": 13,
+      "v": 10,
+      "ref": "13:10",
+      "text": "כִּ֤י הָרֹג֙ תַּֽהַרְגֶ֔נּוּ יָ֥דְךָ֛ תִּֽהְיֶה־בּ֥וֹ בָרִֽאשׁוֹנָ֖ה לַהֲמִית֑וֹ וְיַ֥ד כׇּל־הָעָ֖ם בָּאַחֲרֹנָֽה׃",
+      "en": "but thou shalt surely kill him; thy hand shall be first upon him to put him to death, and afterwards the hand of all the people."
+    },
+    {
+      "n": 49,
+      "c": 13,
+      "v": 11,
+      "ref": "13:11",
+      "text": "וּסְקַלְתּ֥וֹ בָאֲבָנִ֖ים וָמֵ֑ת כִּ֣י בִקֵּ֗שׁ לְהַדִּֽיחֲךָ֙ מֵעַל֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ הַמּוֹצִיאֲךָ֛ מֵאֶ֥רֶץ מִצְרַ֖יִם מִבֵּ֥ית עֲבָדִֽים׃",
+      "en": "And thou shalt stone him with stones, that he die; because he has sought to draw thee away from the Lord thy God, who brought thee out of the land of Miżrayim, from the house of bondage."
+    },
+    {
+      "n": 50,
+      "c": 13,
+      "v": 12,
+      "ref": "13:12",
+      "text": "וְכׇ֨ל־יִשְׂרָאֵ֔ל יִשְׁמְע֖וּ וְיִֽרָא֑וּן וְלֹֽא־יוֹסִ֣פוּ לַעֲשׂ֗וֹת כַּדָּבָ֥ר הָרָ֛ע הַזֶּ֖ה בְּקִרְבֶּֽךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And all Yisra᾽el shall hear, and fear, and shall do no more any such wickedness as this is among you."
+    },
+    {
+      "n": 51,
+      "c": 13,
+      "v": 13,
+      "ref": "13:13",
+      "text": "כִּֽי־תִשְׁמַ֞ע בְּאַחַ֣ת עָרֶ֗יךָ אֲשֶׁר֩ יְהֹוָ֨ה אֱלֹהֶ֜יךָ נֹתֵ֥ן לְךָ֛ לָשֶׁ֥בֶת שָׁ֖ם לֵאמֹֽר׃",
+      "en": "If thou shalt hear say in one of thy cities, which the Lord thy God has given thee to dwell there, saying,"
+    },
+    {
+      "n": 52,
+      "c": 13,
+      "v": 14,
+      "ref": "13:14",
+      "text": "יָצְא֞וּ אֲנָשִׁ֤ים בְּנֵֽי־בְלִיַּ֙עַל֙ מִקִּרְבֶּ֔ךָ וַיַּדִּ֛יחוּ אֶת־יֹשְׁבֵ֥י עִירָ֖ם לֵאמֹ֑ר נֵלְכָ֗ה וְנַעַבְדָ֛ה אֱלֹהִ֥ים אֲחֵרִ֖ים אֲשֶׁ֥ר לֹא־יְדַעְתֶּֽם׃",
+      "en": "Certain men, wicked persons, are gone out from among you, and have drawn away the inhabitants of their city, saying, Let us go and serve other gods, which you know not;"
+    },
+    {
+      "n": 53,
+      "c": 13,
+      "v": 15,
+      "ref": "13:15",
+      "text": "וְדָרַשְׁתָּ֧ וְחָקַרְתָּ֛ וְשָׁאַלְתָּ֖ הֵיטֵ֑ב וְהִנֵּ֤ה אֱמֶת֙ נָכ֣וֹן הַדָּבָ֔ר נֶעֶשְׂתָ֛ה הַתּוֹעֵבָ֥ה הַזֹּ֖את בְּקִרְבֶּֽךָ׃",
+      "en": "then shalt thou inquire, and make search, and ask diligently; and, behold, if it be truth, and the thing certain, that such abomination was done among you;"
+    },
+    {
+      "n": 54,
+      "c": 13,
+      "v": 16,
+      "ref": "13:16",
+      "text": "הַכֵּ֣ה תַכֶּ֗ה אֶת־יֹ֥שְׁבֵ֛י הָעִ֥יר <span class=\"mam-kq-trivial\">הַהִ֖וא</span> לְפִי־חָ֑רֶב הַחֲרֵ֨ם אֹתָ֧הּ וְאֶת־כׇּל־אֲשֶׁר־בָּ֛הּ וְאֶת־בְּהֶמְתָּ֖הּ לְפִי־חָֽרֶב׃",
+      "en": "thou shalt surely smite the inhabitants of that city with the edge of the sword, destroying it utterly, and all that is in it, and its cattle with the edge of the sword."
+    },
+    {
+      "n": 55,
+      "c": 13,
+      "v": 17,
+      "ref": "13:17",
+      "text": "וְאֶת־כׇּל־שְׁלָלָ֗הּ תִּקְבֹּץ֮ אֶל־תּ֣וֹךְ רְחֹבָהּ֒ וְשָׂרַפְתָּ֨ בָאֵ֜שׁ אֶת־הָעִ֤יר וְאֶת־כׇּל־שְׁלָלָהּ֙ כָּלִ֔יל לַיהֹוָ֖ה אֱלֹהֶ֑יךָ וְהָיְתָה֙ תֵּ֣ל עוֹלָ֔ם לֹ֥א תִבָּנֶ֖ה עֽוֹד׃",
+      "en": "And thou shalt gather all the spoil of it into the midst of the open place of the city, and shalt burn with fire both the city and the entire plunder taken in it, for the Lord thy God: and it shall be a heap for ever; it shall not be built again."
+    },
+    {
+      "n": 56,
+      "c": 13,
+      "v": 18,
+      "ref": "13:18",
+      "text": "וְלֹֽא־יִדְבַּ֧ק בְּיָדְךָ֛ מְא֖וּמָה מִן־הַחֵ֑רֶם לְמַ֩עַן֩ יָשׁ֨וּב יְהֹוָ֜ה מֵחֲר֣וֹן אַפּ֗וֹ וְנָֽתַן־לְךָ֤ רַחֲמִים֙ וְרִֽחַמְךָ֣ וְהִרְבֶּ֔ךָ כַּאֲשֶׁ֥ר נִשְׁבַּ֖ע לַאֲבֹתֶֽיךָ׃",
+      "en": "And nothing of that which was devoted to destruction shall remain in your hand: that the Lord may turn from the fierceness of his anger, and show thee mercy, and have compassion upon thee, and multiply thee, as he has sworn to thy fathers;"
+    },
+    {
+      "n": 57,
+      "c": 13,
+      "v": 19,
+      "ref": "13:19",
+      "text": "כִּ֣י תִשְׁמַ֗ע בְּקוֹל֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ לִשְׁמֹר֙ אֶת־כׇּל־מִצְוֺתָ֔יו אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖ הַיּ֑וֹם לַעֲשׂוֹת֙ הַיָּשָׁ֔ר בְּעֵינֵ֖י יְהֹוָ֥ה אֱלֹהֶֽיךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "when thou shalt hearken to the voice of the Lord thy God, to keep all his commandments which I command thee this day, to do that which is right in the eyes of the Lord thy God."
+    },
+    {
+      "n": 58,
+      "c": 14,
+      "v": 1,
+      "ref": "14:1",
+      "text": "בָּנִ֣ים אַתֶּ֔ם לַיהֹוָ֖ה אֱלֹהֵיכֶ֑ם לֹ֣א תִתְגֹּֽדְד֗וּ וְלֹֽא־תָשִׂ֧ימוּ קׇרְחָ֛ה בֵּ֥ין עֵינֵיכֶ֖ם לָמֵֽת׃",
+      "en": "You are the children of the Lord your God: you shall not gash yourselves, nor make any baldness between your eyes for the dead."
+    },
+    {
+      "n": 59,
+      "c": 14,
+      "v": 2,
+      "ref": "14:2",
+      "text": "כִּ֣י עַ֤ם קָדוֹשׁ֙ אַתָּ֔ה לַיהֹוָ֖ה אֱלֹהֶ֑יךָ וּבְךָ֞ בָּחַ֣ר יְהֹוָ֗ה לִֽהְי֥וֹת לוֹ֙ לְעַ֣ם סְגֻלָּ֔ה מִכֹּל֙ הָֽעַמִּ֔ים אֲשֶׁ֖ר עַל־פְּנֵ֥י הָאֲדָמָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For thou art a holy people to the Lord thy God, and the Lord has chosen thee to be a special possession to himself, out of all the nations that are upon the earth."
+    },
+    {
+      "n": 60,
+      "c": 14,
+      "v": 3,
+      "ref": "14:3",
+      "text": "לֹ֥א תֹאכַ֖ל כׇּל־תּוֹעֵבָֽה׃",
+      "en": "Thou shalt not eat any abominable thing."
+    },
+    {
+      "n": 61,
+      "c": 14,
+      "v": 4,
+      "ref": "14:4",
+      "text": "זֹ֥את הַבְּהֵמָ֖ה אֲשֶׁ֣ר תֹּאכֵ֑לוּ שׁ֕וֹר שֵׂ֥ה כְשָׂבִ֖ים וְשֵׂ֥ה עִזִּֽים׃",
+      "en": "These are the beasts which you may eat: the ox, the sheep, and the goat,"
+    },
+    {
+      "n": 62,
+      "c": 14,
+      "v": 5,
+      "ref": "14:5",
+      "text": "אַיָּ֥ל וּצְבִ֖י וְיַחְמ֑וּר וְאַקּ֥וֹ וְדִישֹׁ֖ן וּתְא֥וֹ וָזָֽמֶר׃",
+      "en": "the deer, and the gazelle, and the fallow deer, and the wild goat, and the adax, and the bison, and the wild sheep."
+    },
+    {
+      "n": 63,
+      "c": 14,
+      "v": 6,
+      "ref": "14:6",
+      "text": "וְכׇל־בְּהֵמָ֞ה מַפְרֶ֣סֶת פַּרְסָ֗ה וְשֹׁסַ֤עַת שֶׁ֙סַע֙ שְׁתֵּ֣י פְרָס֔וֹת מַעֲלַ֥ת גֵּרָ֖ה בַּבְּהֵמָ֑ה אֹתָ֖הּ תֹּאכֵֽלוּ׃",
+      "en": "And every beast that parts the hoof, forming thereby two entirely cloven hoofs, and chews the cud among the beasts, that may you eat."
+    },
+    {
+      "n": 64,
+      "c": 14,
+      "v": 7,
+      "ref": "14:7",
+      "text": "אַ֣ךְ אֶת־זֶ֞ה לֹ֤א תֹֽאכְלוּ֙ מִמַּֽעֲלֵ֣י הַגֵּרָ֔ה וּמִמַּפְרִיסֵ֥י הַפַּרְסָ֖ה הַשְּׁסוּעָ֑ה אֶֽת־הַ֠גָּמָ֠ל וְאֶת־הָאַרְנֶ֨בֶת וְאֶת־הַשָּׁפָ֜ן כִּֽי־מַעֲלֵ֧ה גֵרָ֣ה הֵ֗מָּה וּפַרְסָה֙ לֹ֣א הִפְרִ֔יסוּ טְמֵאִ֥ים הֵ֖ם לָכֶֽם׃",
+      "en": "Nevertheless these you shall not eat of those which chew the cud, or of those which divide the cloven hoof; the camel, and the hare, and the coney: for they chew the cud, but do not divide the hoof; therefore they are unclean to you."
+    },
+    {
+      "n": 65,
+      "c": 14,
+      "v": 8,
+      "ref": "14:8",
+      "text": "וְאֶת־הַ֠חֲזִ֠יר כִּֽי־מַפְרִ֨יס פַּרְסָ֥ה הוּא֙ וְלֹ֣א גֵרָ֔ה טָמֵ֥א ה֖וּא לָכֶ֑ם מִבְּשָׂרָם֙ לֹ֣א תֹאכֵ֔לוּ וּבְנִבְלָתָ֖ם לֹ֥א תִגָּֽעוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the swine, because it divides the hoof, yet chews not the cud, is unclean to you: you shall not eat of their meat, nor touch their carcasses."
+    },
+    {
+      "n": 66,
+      "c": 14,
+      "v": 9,
+      "ref": "14:9",
+      "text": "אֶת־זֶה֙ תֹּֽאכְל֔וּ מִכֹּ֖ל אֲשֶׁ֣ר בַּמָּ֑יִם כֹּ֧ל אֲשֶׁר־ל֛וֹ סְנַפִּ֥יר וְקַשְׂקֶ֖שֶׂת תֹּאכֵֽלוּ׃",
+      "en": "These you may eat of all that are in the waters: all that have fins and scales shall you eat:"
+    },
+    {
+      "n": 67,
+      "c": 14,
+      "v": 10,
+      "ref": "14:10",
+      "text": "וְכֹ֨ל אֲשֶׁ֧ר אֵֽין־ל֛וֹ סְנַפִּ֥יר וְקַשְׂקֶ֖שֶׂת לֹ֣א תֹאכֵ֑לוּ טָמֵ֥א ה֖וּא לָכֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and whatever has no fins and scales you may not eat; it is unclean to you."
+    },
+    {
+      "n": 68,
+      "c": 14,
+      "v": 11,
+      "ref": "14:11",
+      "text": "כׇּל־צִפּ֥וֹר טְהֹרָ֖ה תֹּאכֵֽלוּ׃",
+      "en": "All clean birds you may eat."
+    },
+    {
+      "n": 69,
+      "c": 14,
+      "v": 12,
+      "ref": "14:12",
+      "text": "וְזֶ֕ה אֲשֶׁ֥ר לֹֽא־תֹאכְל֖וּ מֵהֶ֑ם הַנֶּ֥שֶׁר וְהַפֶּ֖רֶס וְהָֽעׇזְנִיָּֽה׃",
+      "en": "But these are they of which you shall not eat: the griffon vulture, and the bearded vulture, and the black vulture,"
+    },
+    {
+      "n": 70,
+      "c": 14,
+      "v": 13,
+      "ref": "14:13",
+      "text": "וְהָרָאָה֙ וְאֶת־הָ֣אַיָּ֔ה וְהַדַּיָּ֖ה לְמִינָֽהּ׃",
+      "en": "and the buzzard, and the kite, and the hawk after its kind,"
+    },
+    {
+      "n": 71,
+      "c": 14,
+      "v": 14,
+      "ref": "14:14",
+      "text": "וְאֵ֥ת כׇּל־עֹרֵ֖ב לְמִינֽוֹ׃",
+      "en": "and every raven after its kind,"
+    },
+    {
+      "n": 72,
+      "c": 14,
+      "v": 15,
+      "ref": "14:15",
+      "text": "וְאֵת֙ בַּ֣ת הַֽיַּעֲנָ֔ה וְאֶת־הַתַּחְמָ֖ס וְאֶת־הַשָּׁ֑חַף וְאֶת־הַנֵּ֖ץ לְמִינֵֽהוּ׃",
+      "en": "and the dark desert owl, and the kestrel, and the gull, and the sparrow hawk after its kind,"
+    },
+    {
+      "n": 73,
+      "c": 14,
+      "v": 16,
+      "ref": "14:16",
+      "text": "אֶת־הַכּ֥וֹס וְאֶת־הַיַּנְשׁ֖וּף וְהַתִּנְשָֽׁמֶת׃",
+      "en": "the little owl, and the long eared owl, and the barn screech owl,"
+    },
+    {
+      "n": 74,
+      "c": 14,
+      "v": 17,
+      "ref": "14:17",
+      "text": "וְהַקָּאָ֥ת וְאֶֽת־הָרָחָ֖מָה וְאֶת־הַשָּׁלָֽךְ׃",
+      "en": "and the night prowler, and the gier eagle, and the fish owl,"
+    },
+    {
+      "n": 75,
+      "c": 14,
+      "v": 18,
+      "ref": "14:18",
+      "text": "וְהַ֣חֲסִידָ֔ה וְהָאֲנָפָ֖ה לְמִינָ֑הּ וְהַדּוּכִיפַ֖ת וְהָעֲטַלֵּֽף׃",
+      "en": "and the stork, and the heron after its kind, and the hoopoe, and the bat."
+    },
+    {
+      "n": 76,
+      "c": 14,
+      "v": 19,
+      "ref": "14:19",
+      "text": "וְכֹל֙ שֶׁ֣רֶץ הָע֔וֹף טָמֵ֥א ה֖וּא לָכֶ֑ם לֹ֖א יֵאָכֵֽלוּ׃",
+      "en": "And every creeping thing that flies is unclean to you: they shall not be eaten."
+    },
+    {
+      "n": 77,
+      "c": 14,
+      "v": 20,
+      "ref": "14:20",
+      "text": "כׇּל־ע֥וֹף טָה֖וֹר תֹּאכֵֽלוּ׃",
+      "en": "But of all clean fowls you may eat."
+    },
+    {
+      "n": 78,
+      "c": 14,
+      "v": 21,
+      "ref": "14:21",
+      "text": "לֹ֣א תֹאכְל֣וּ כׇל־נְ֠בֵלָ֠ה לַגֵּ֨ר אֲשֶׁר־בִּשְׁעָרֶ֜יךָ תִּתְּנֶ֣נָּה וַאֲכָלָ֗הּ א֤וֹ מָכֹר֙ לְנׇכְרִ֔י כִּ֣י עַ֤ם קָדוֹשׁ֙ אַתָּ֔ה לַיהֹוָ֖ה אֱלֹהֶ֑יךָ לֹֽא־תְבַשֵּׁ֥ל גְּדִ֖י בַּחֲלֵ֥ב אִמּֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "You shall not eat of any thing that dies of itself: thou shalt give it to the stranger who is in thy gates, that he may eat it: or thou mayst sell it to an alien: for thou art a holy people to the Lord thy God. Thou shalt not boil a kid in its mother’s milk."
+    },
+    {
+      "n": 79,
+      "c": 14,
+      "v": 22,
+      "ref": "14:22",
+      "text": "עַשֵּׂ֣ר תְּעַשֵּׂ֔ר אֵ֖ת כׇּל־תְּבוּאַ֣ת זַרְעֶ֑ךָ הַיֹּצֵ֥א הַשָּׂדֶ֖ה שָׁנָ֥ה שָׁנָֽה׃",
+      "en": "Thou shalt truly tithe all the increase of thy seed, that the field brings forth year by year."
+    },
+    {
+      "n": 80,
+      "c": 14,
+      "v": 23,
+      "ref": "14:23",
+      "text": "וְאָכַלְתָּ֞ לִפְנֵ֣י&thinsp;<b>׀</b> יְהֹוָ֣ה אֱלֹהֶ֗יךָ בַּמָּק֣וֹם אֲשֶׁר־יִבְחַר֮ לְשַׁכֵּ֣ן שְׁמ֣וֹ שָׁם֒ מַעְשַׂ֤ר דְּגָֽנְךָ֙ תִּירֹשְׁךָ֣ וְיִצְהָרֶ֔ךָ וּבְכֹרֹ֥ת בְּקָרְךָ֖ וְצֹאנֶ֑ךָ לְמַ֣עַן תִּלְמַ֗ד לְיִרְאָ֛ה אֶת־יְהֹוָ֥ה אֱלֹהֶ֖יךָ כׇּל־הַיָּמִֽים׃",
+      "en": "And thou shalt eat before the Lord thy God, in the place which he shall choose to place his name there, the tithe of thy corn, of thy wine, and of thy oil, and the firstlings of thy herds, and of thy flocks; that thou mayst learn to fear the Lord thy God always."
+    },
+    {
+      "n": 81,
+      "c": 14,
+      "v": 24,
+      "ref": "14:24",
+      "text": "וְכִֽי־יִרְבֶּ֨ה מִמְּךָ֜ הַדֶּ֗רֶךְ כִּ֣י לֹ֣א תוּכַל֮ שְׂאֵתוֹ֒ כִּֽי־יִרְחַ֤ק מִמְּךָ֙ הַמָּק֔וֹם אֲשֶׁ֤ר יִבְחַר֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ לָשׂ֥וּם שְׁמ֖וֹ שָׁ֑ם כִּ֥י יְבָרֶכְךָ֖ יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "And if the way be too long for thee, so that thou art not able to carry it; because the place is too far from thee, which the Lord thy God shall choose to set his name there, when the Lord thy God has blessed thee:"
+    },
+    {
+      "n": 82,
+      "c": 14,
+      "v": 25,
+      "ref": "14:25",
+      "text": "וְנָתַתָּ֖ה בַּכָּ֑סֶף וְצַרְתָּ֤ הַכֶּ֙סֶף֙ בְּיָ֣דְךָ֔ וְהָֽלַכְתָּ֙ אֶל־הַמָּק֔וֹם אֲשֶׁ֥ר יִבְחַ֛ר יְהֹוָ֥ה אֱלֹהֶ֖יךָ בּֽוֹ׃",
+      "en": "then shalt thou turn it into money, and bind up the money in thy hand, and shalt go to the place which the Lord thy God shall choose:"
+    },
+    {
+      "n": 83,
+      "c": 14,
+      "v": 26,
+      "ref": "14:26",
+      "text": "וְנָתַתָּ֣ה הַכֶּ֡סֶף בְּכֹל֩ אֲשֶׁר־תְּאַוֶּ֨ה נַפְשְׁךָ֜ בַּבָּקָ֣ר וּבַצֹּ֗אן וּבַיַּ֙יִן֙ וּבַשֵּׁכָ֔ר וּבְכֹ֛ל אֲשֶׁ֥ר תִּֽשְׁאָלְךָ֖ נַפְשֶׁ֑ךָ וְאָכַ֣לְתָּ שָּׁ֗ם לִפְנֵי֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ וְשָׂמַחְתָּ֖ אַתָּ֥ה וּבֵיתֶֽךָ׃",
+      "en": "and thou shalt bestow that money on all that thy heart desires, on oxen, or sheep, or wine, or strong drink, or whatever thy soul requires: and thou shalt eat there before the Lord thy God, and thou shalt rejoice, thou, and thy household,"
+    },
+    {
+      "n": 84,
+      "c": 14,
+      "v": 27,
+      "ref": "14:27",
+      "text": "וְהַלֵּוִ֥י אֲשֶׁר־בִּשְׁעָרֶ֖יךָ לֹ֣א תַֽעַזְבֶ֑נּוּ כִּ֣י אֵ֥ין ל֛וֹ חֵ֥לֶק וְנַחֲלָ֖ה עִמָּֽךְ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and the Levite who is within thy gates; thou shalt not forsake him; for he has no part or inheritance with thee."
+    },
+    {
+      "n": 85,
+      "c": 14,
+      "v": 28,
+      "ref": "14:28",
+      "text": "מִקְצֵ֣ה&thinsp;<b>׀</b> שָׁלֹ֣שׁ שָׁנִ֗ים תּוֹצִיא֙ אֶת־כׇּל־מַעְשַׂר֙ תְּבוּאָ֣תְךָ֔ בַּשָּׁנָ֖ה הַהִ֑וא וְהִנַּחְתָּ֖ בִּשְׁעָרֶֽיךָ׃",
+      "en": "At the end of three years thou shalt bring forth in that year, all the tithe of thy produce, and shalt lay it up within thy gates:"
+    },
+    {
+      "n": 86,
+      "c": 14,
+      "v": 29,
+      "ref": "14:29",
+      "text": "וּבָ֣א הַלֵּוִ֡י כִּ֣י אֵֽין־לוֹ֩ חֵ֨לֶק וְנַחֲלָ֜ה עִמָּ֗ךְ וְ֠הַגֵּ֠ר וְהַיָּת֤וֹם וְהָֽאַלְמָנָה֙ אֲשֶׁ֣ר בִּשְׁעָרֶ֔יךָ וְאָכְל֖וּ וְשָׂבֵ֑עוּ לְמַ֤עַן יְבָרֶכְךָ֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ בְּכׇל־מַעֲשֵׂ֥ה יָדְךָ֖ אֲשֶׁ֥ר תַּעֲשֶֽׂה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and the Levite, (because he has no part or inheritance with thee,) and the stranger, and the fatherless, and the widow, who are within thy gates, shall come, and shall eat and be satisfied; that the Lord thy God may bless thee in all the work of thy hand which thou doest."
+    },
+    {
+      "n": 87,
+      "c": 15,
+      "v": 1,
+      "ref": "15:1",
+      "text": "מִקֵּ֥ץ שֶֽׁבַע־שָׁנִ֖ים תַּעֲשֶׂ֥ה שְׁמִטָּֽה׃",
+      "en": "At the end of every seven years thou shalt make a release."
+    },
+    {
+      "n": 88,
+      "c": 15,
+      "v": 2,
+      "ref": "15:2",
+      "text": "וְזֶה֮ דְּבַ֣ר הַשְּׁמִטָּה֒ שָׁמ֗וֹט כׇּל־בַּ֙עַל֙ מַשֵּׁ֣ה יָד֔וֹ אֲשֶׁ֥ר יַשֶּׁ֖ה בְּרֵעֵ֑הוּ לֹֽא־יִגֹּ֤שׂ אֶת־רֵעֵ֙הוּ֙ וְאֶת־אָחִ֔יו כִּֽי־קָרָ֥א שְׁמִטָּ֖ה לַיהֹוָֽה׃",
+      "en": "And this is the manner of the release: every creditor that lends anything to his neighbour shall release it: he shall not exact it of his neighbour, or of his brother; because he has proclaimed a release to the Lord."
+    },
+    {
+      "n": 89,
+      "c": 15,
+      "v": 3,
+      "ref": "15:3",
+      "text": "אֶת־הַנׇּכְרִ֖י תִּגֹּ֑שׂ וַאֲשֶׁ֨ר יִהְיֶ֥ה לְךָ֛ אֶת־אָחִ֖יךָ תַּשְׁמֵ֥ט יָדֶֽךָ׃",
+      "en": "Of a foreigner thou mayst exact it again: but that which is thine with thy brother thy hand shall release."
+    },
+    {
+      "n": 90,
+      "c": 15,
+      "v": 4,
+      "ref": "15:4",
+      "text": "אֶ֕פֶס כִּ֛י לֹ֥א יִֽהְיֶה־בְּךָ֖ אֶבְי֑וֹן כִּֽי־בָרֵ֤ךְ יְבָֽרֶכְךָ֙ יְהֹוָ֔ה בָּאָ֕רֶץ אֲשֶׁר֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ נֹֽתֵן־לְךָ֥ נַחֲלָ֖ה לְרִשְׁתָּֽהּ׃",
+      "en": "But there shall be practically no poor among you; for the Lord shall greatly bless thee in the land which the Lord thy God gives thee for an inheritance to possess it:"
+    },
+    {
+      "n": 91,
+      "c": 15,
+      "v": 5,
+      "ref": "15:5",
+      "text": "רַ֚ק אִם־שָׁמ֣וֹעַ תִּשְׁמַ֔ע בְּק֖וֹל יְהֹוָ֣ה אֱלֹהֶ֑יךָ לִשְׁמֹ֤ר לַעֲשׂוֹת֙ אֶת־כׇּל־הַמִּצְוָ֣ה הַזֹּ֔את אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖ הַיּֽוֹם׃",
+      "en": "only if thou carefully hearken to the voice of the Lord thy God, to observe to do all these commandments which I command thee this day."
+    },
+    {
+      "n": 92,
+      "c": 15,
+      "v": 6,
+      "ref": "15:6",
+      "text": "כִּֽי־יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ בֵּֽרַכְךָ֔ כַּאֲשֶׁ֖ר דִּבֶּר־לָ֑ךְ וְהַֽעֲבַטְתָּ֞ גּוֹיִ֣ם רַבִּ֗ים וְאַתָּה֙ לֹ֣א תַעֲבֹ֔ט וּמָֽשַׁלְתָּ֙ בְּגוֹיִ֣ם רַבִּ֔ים וּבְךָ֖ לֹ֥א יִמְשֹֽׁלוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For the Lord thy God blesses thee, as he promised thee: and thou shalt lend to many nations, but thou shalt not borrow; and thou shalt reign over many nations, but they shall not reign over thee."
+    },
+    {
+      "n": 93,
+      "c": 15,
+      "v": 7,
+      "ref": "15:7",
+      "text": "כִּֽי־יִהְיֶה֩ בְךָ֨ אֶבְי֜וֹן מֵאַחַ֤ד אַחֶ֙יךָ֙ בְּאַחַ֣ד שְׁעָרֶ֔יךָ בְּאַ֨רְצְךָ֔ אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֶ֖יךָ נֹתֵ֣ן לָ֑ךְ לֹ֧א תְאַמֵּ֣ץ אֶת־לְבָבְךָ֗ וְלֹ֤א תִקְפֹּץ֙ אֶת־יָ֣דְךָ֔ מֵאָחִ֖יךָ הָאֶבְיֽוֹן׃",
+      "en": "If there be among you a poor man, one of thy brethren within any of thy gates in thy land which the Lord thy God gives thee, thou shalt not harden thy heart, nor shut thy hand from thy poor brother:"
+    },
+    {
+      "n": 94,
+      "c": 15,
+      "v": 8,
+      "ref": "15:8",
+      "text": "כִּֽי־פָתֹ֧חַ תִּפְתַּ֛ח אֶת־יָדְךָ֖ ל֑וֹ וְהַעֲבֵט֙ תַּעֲבִיטֶ֔נּוּ דֵּ֚י מַחְסֹר֔וֹ אֲשֶׁ֥ר יֶחְסַ֖ר לֽוֹ׃",
+      "en": "but thou shalt open thy hand wide to\n\t\t\t\thim, and shalt surely lend him sufficient for his need, in that which he lacks."
+    },
+    {
+      "n": 95,
+      "c": 15,
+      "v": 9,
+      "ref": "15:9",
+      "text": "הִשָּׁ֣מֶר לְךָ֡ פֶּן־יִהְיֶ֣ה דָבָר֩ עִם־לְבָבְךָ֨ בְלִיַּ֜עַל לֵאמֹ֗ר קָֽרְבָ֣ה שְׁנַֽת־הַשֶּׁ֘בַע֮ שְׁנַ֣ת הַשְּׁמִטָּה֒ וְרָעָ֣ה עֵֽינְךָ֗ בְּאָחִ֙יךָ֙ הָֽאֶבְי֔וֹן וְלֹ֥א תִתֵּ֖ן ל֑וֹ וְקָרָ֤א עָלֶ֙יךָ֙ אֶל־יְהֹוָ֔ה וְהָיָ֥ה בְךָ֖ חֵֽטְא׃",
+      "en": "Beware that there be not an unworthy thought in thy heart, saying, The seventh year, the year of release, is at hand; and thy eye be evil against thy poor brother, and thou give him nothing; and he cry to the Lord against thee; for it shall be reckoned to you as sin."
+    },
+    {
+      "n": 96,
+      "c": 15,
+      "v": 10,
+      "ref": "15:10",
+      "text": "נָת֤וֹן תִּתֵּן֙ ל֔וֹ וְלֹא־יֵרַ֥ע לְבָבְךָ֖ בְּתִתְּךָ֣ ל֑וֹ כִּ֞י בִּגְלַ֣ל&thinsp;<b>׀</b> הַדָּבָ֣ר הַזֶּ֗ה יְבָרֶכְךָ֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ בְּכׇֽל־מַעֲשֶׂ֔ךָ וּבְכֹ֖ל מִשְׁלַ֥ח יָדֶֽךָ׃",
+      "en": "Thou shalt surely give him, and thy heart shall not be grieved when thou givest to him: because for this thing the Lord thy God shall bless thee in all thy works, and in all that to which thou puttest thy hand."
+    },
+    {
+      "n": 97,
+      "c": 15,
+      "v": 11,
+      "ref": "15:11",
+      "text": "כִּ֛י לֹא־יֶחְדַּ֥ל אֶבְי֖וֹן מִקֶּ֣רֶב הָאָ֑רֶץ עַל־כֵּ֞ן אָנֹכִ֤י מְצַוְּךָ֙ לֵאמֹ֔ר פָּ֠תֹ֠חַ תִּפְתַּ֨ח אֶת־יָדְךָ֜ לְאָחִ֧יךָ לַעֲנִיֶּ֛ךָ וּלְאֶבְיֹנְךָ֖ בְּאַרְצֶֽךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For the poor shall never cease out of the land: therefore I command thee, saying, Thou shalt open thy hand wide to thy brother, to thy poor, and to thy needy, in thy land."
+    },
+    {
+      "n": 98,
+      "c": 15,
+      "v": 12,
+      "ref": "15:12",
+      "text": "כִּֽי־יִמָּכֵ֨ר לְךָ֜ אָחִ֣יךָ הָֽעִבְרִ֗י א֚וֹ הָֽעִבְרִיָּ֔ה וַעֲבָֽדְךָ֖ שֵׁ֣שׁ שָׁנִ֑ים וּבַשָּׁנָה֙ הַשְּׁבִיעִ֔ת תְּשַׁלְּחֶ֥נּוּ חׇפְשִׁ֖י מֵעִמָּֽךְ׃",
+      "en": "And if thy brother, a Hebrew man, or a Hebrew woman, be sold to thee, he shall serve thee six years; and in the seventh year thou shalt let him go free from thee."
+    },
+    {
+      "n": 99,
+      "c": 15,
+      "v": 13,
+      "ref": "15:13",
+      "text": "וְכִֽי־תְשַׁלְּחֶ֥נּוּ חׇפְשִׁ֖י מֵֽעִמָּ֑ךְ לֹ֥א תְשַׁלְּחֶ֖נּוּ רֵיקָֽם׃",
+      "en": "And when thou sendest him out free from thee, thou shalt not let him go away empty:"
+    },
+    {
+      "n": 100,
+      "c": 15,
+      "v": 14,
+      "ref": "15:14",
+      "text": "הַעֲנֵ֤יק תַּעֲנִיק֙ ל֔וֹ מִצֹּ֣אנְךָ֔ וּמִֽגׇּרְנְךָ֖ וּמִיִּקְבֶ֑ךָ אֲשֶׁ֧ר בֵּרַכְךָ֛ יְהֹוָ֥ה אֱלֹהֶ֖יךָ תִּתֶּן־לֽוֹ׃",
+      "en": "thou shalt furnish him liberally out of thy flock, and out of thy threshing floor, and out of thy winepress: of that with which the Lord thy God has blessed thee thou shalt give him."
+    },
+    {
+      "n": 101,
+      "c": 15,
+      "v": 15,
+      "ref": "15:15",
+      "text": "וְזָכַרְתָּ֗ כִּ֣י עֶ֤בֶד הָיִ֙יתָ֙ בְּאֶ֣רֶץ מִצְרַ֔יִם וַֽיִּפְדְּךָ֖ יְהֹוָ֣ה אֱלֹהֶ֑יךָ עַל־כֵּ֞ן אָנֹכִ֧י מְצַוְּךָ֛ אֶת־הַדָּבָ֥ר הַזֶּ֖ה הַיּֽוֹם׃",
+      "en": "And thou shalt remember that thou wast a bondman in the land of Miżrayim and the Lord thy God redeemed thee: therefore I command thee this thing today."
+    },
+    {
+      "n": 102,
+      "c": 15,
+      "v": 16,
+      "ref": "15:16",
+      "text": "וְהָיָה֙ כִּֽי־יֹאמַ֣ר אֵלֶ֔יךָ לֹ֥א אֵצֵ֖א מֵעִמָּ֑ךְ כִּ֤י אֲהֵֽבְךָ֙ וְאֶת־בֵּיתֶ֔ךָ כִּי־ט֥וֹב ל֖וֹ עִמָּֽךְ׃",
+      "en": "And it shall be, if he say to thee, I will not go away from thee; because he loves thee and thy house, because he is happy with thee;"
+    },
+    {
+      "n": 103,
+      "c": 15,
+      "v": 17,
+      "ref": "15:17",
+      "text": "וְלָקַחְתָּ֣ אֶת־הַמַּרְצֵ֗עַ וְנָתַתָּ֤ה בְאׇזְנוֹ֙ וּבַדֶּ֔לֶת וְהָיָ֥ה לְךָ֖ עֶ֣בֶד עוֹלָ֑ם וְאַ֥ף לַאֲמָתְךָ֖ תַּעֲשֶׂה־כֵּֽן׃",
+      "en": "then thou shalt take an awl, and thrust it through his ear to the door, and he shall be thy servant for ever. And also to thy maidservant thou shalt do likewise."
+    },
+    {
+      "n": 104,
+      "c": 15,
+      "v": 18,
+      "ref": "15:18",
+      "text": "לֹא־יִקְשֶׁ֣ה בְעֵינֶ֗ךָ בְּשַׁלֵּֽחֲךָ֨ אֹת֤וֹ חׇפְשִׁי֙ מֵֽעִמָּ֔ךְ כִּ֗י מִשְׁנֶה֙ שְׂכַ֣ר שָׂכִ֔יר עֲבָֽדְךָ֖ שֵׁ֣שׁ שָׁנִ֑ים וּבֵֽרַכְךָ֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ בְּכֹ֖ל אֲשֶׁ֥ר תַּעֲשֶֽׂה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "It shall not seem hard to thee, when thou sendest him away free from thee; for he has been worth double a hired servant to thee, in serving thee six years: and the Lord thy God shall bless thee in all that thou doest."
+    },
+    {
+      "n": 105,
+      "c": 15,
+      "v": 19,
+      "ref": "15:19",
+      "text": "כׇּֽל־הַבְּכ֡וֹר אֲשֶׁר֩ יִוָּלֵ֨ד בִּבְקָרְךָ֤ וּבְצֹֽאנְךָ֙ הַזָּכָ֔ר תַּקְדִּ֖ישׁ לַיהֹוָ֣ה אֱלֹהֶ֑יךָ לֹ֤א תַעֲבֹד֙ בִּבְכֹ֣ר שׁוֹרֶ֔ךָ וְלֹ֥א תָגֹ֖ז בְּכ֥וֹר צֹאנֶֽךָ׃",
+      "en": "All the firstling males that come of thy herd and of thy flock thou shalt sanctify to the Lord thy God: thou shalt do no work with the firstling of thy bullock, nor shear the firstling of thy sheep."
+    },
+    {
+      "n": 106,
+      "c": 15,
+      "v": 20,
+      "ref": "15:20",
+      "text": "לִפְנֵי֩ יְהֹוָ֨ה אֱלֹהֶ֤יךָ תֹאכְלֶ֙נּוּ֙ שָׁנָ֣ה בְשָׁנָ֔ה בַּמָּק֖וֹם אֲשֶׁר־יִבְחַ֣ר יְהֹוָ֑ה אַתָּ֖ה וּבֵיתֶֽךָ׃",
+      "en": "Thou shalt eat it before the Lord thy God year by year in the place which the Lord shall choose, thou and thy household."
+    },
+    {
+      "n": 107,
+      "c": 15,
+      "v": 21,
+      "ref": "15:21",
+      "text": "וְכִֽי־יִהְיֶ֨ה ב֜וֹ מ֗וּם פִּסֵּ֙חַ֙ א֣וֹ עִוֵּ֔ר כֹּ֖ל מ֣וּם רָ֑ע לֹ֣א תִזְבָּחֶ֔נּוּ לַיהֹוָ֖ה אֱלֹהֶֽיךָ׃",
+      "en": "And if there be any blemish in it, as if it be lame, or blind, or have any ill blemish, thou shalt not sacrifice it to the Lord thy God."
+    },
+    {
+      "n": 108,
+      "c": 15,
+      "v": 22,
+      "ref": "15:22",
+      "text": "בִּשְׁעָרֶ֖יךָ תֹּאכְלֶ֑נּוּ הַטָּמֵ֤א וְהַטָּהוֹר֙ יַחְדָּ֔ו כַּצְּבִ֖י וְכָאַיָּֽל׃",
+      "en": "Thou shalt eat it within thy gates: the unclean and the clean person alike shall eat it, as the gazelle and the deer."
+    },
+    {
+      "n": 109,
+      "c": 15,
+      "v": 23,
+      "ref": "15:23",
+      "text": "רַ֥ק אֶת־דָּמ֖וֹ לֹ֣א תֹאכֵ֑ל עַל־הָאָ֥רֶץ תִּשְׁפְּכֶ֖נּוּ כַּמָּֽיִם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Only thou shalt not eat its blood; thou shalt pour it upon the ground like water."
+    },
+    {
+      "n": 110,
+      "c": 16,
+      "v": 1,
+      "ref": "16:1",
+      "text": "שָׁמוֹר֙ אֶת־חֹ֣דֶשׁ הָאָבִ֔יב וְעָשִׂ֣יתָ פֶּ֔סַח לַיהֹוָ֖ה אֱלֹהֶ֑יךָ כִּ֞י בְּחֹ֣דֶשׁ הָֽאָבִ֗יב הוֹצִ֨יאֲךָ֜ יְהֹוָ֧ה אֱלֹהֶ֛יךָ מִמִּצְרַ֖יִם לָֽיְלָה׃",
+      "en": "Observe the month of Aviv, and keep the passover to the Lord thy God: for in the month of Aviv the Lord thy God brought thee forth out of Miżrayim by night."
+    },
+    {
+      "n": 111,
+      "c": 16,
+      "v": 2,
+      "ref": "16:2",
+      "text": "וְזָבַ֥חְתָּ פֶּ֛סַח לַיהֹוָ֥ה אֱלֹהֶ֖יךָ צֹ֣אן וּבָקָ֑ר בַּמָּקוֹם֙ אֲשֶׁר־יִבְחַ֣ר יְהֹוָ֔ה לְשַׁכֵּ֥ן שְׁמ֖וֹ שָֽׁם׃",
+      "en": "Thou shalt therefore sacrifice the passover to the Lord thy God, of the flock and the herd, in the place which\n\t\t\t\tthe Lord shall choose to place his name there."
+    },
+    {
+      "n": 112,
+      "c": 16,
+      "v": 3,
+      "ref": "16:3",
+      "text": "לֹא־תֹאכַ֤ל עָלָיו֙ חָמֵ֔ץ שִׁבְעַ֥ת יָמִ֛ים תֹּֽאכַל־עָלָ֥יו מַצּ֖וֹת לֶ֣חֶם עֹ֑נִי כִּ֣י בְחִפָּז֗וֹן יָצָ֙אתָ֙ מֵאֶ֣רֶץ מִצְרַ֔יִם לְמַ֣עַן תִּזְכֹּ֗ר אֶת־י֤וֹם צֵֽאתְךָ֙ מֵאֶ֣רֶץ מִצְרַ֔יִם כֹּ֖ל יְמֵ֥י חַיֶּֽיךָ׃",
+      "en": "Thou shalt eat no leavened bread with it; seven days shalt thou eat unleavened bread with it, the bread of affliction; for thou camest forth out of the land of Miżrayim in haste: that thou mayst remember the day when thou camest out of the land of Miżrayim all the days of thy life."
+    },
+    {
+      "n": 113,
+      "c": 16,
+      "v": 4,
+      "ref": "16:4",
+      "text": "וְלֹֽא־יֵרָאֶ֨ה לְךָ֥ שְׂאֹ֛ר בְּכׇל־גְּבֻלְךָ֖ שִׁבְעַ֣ת יָמִ֑ים וְלֹא־יָלִ֣ין מִן־הַבָּשָׂ֗ר אֲשֶׁ֨ר תִּזְבַּ֥ח בָּעֶ֛רֶב בַּיּ֥וֹם הָרִאשׁ֖וֹן לַבֹּֽקֶר׃",
+      "en": "And there shall be no leaven seen with thee in all thy border for seven days; nor shall any thing of the meat, which thou dost sacrifice on the first day at evening, remain all night until the morning."
+    },
+    {
+      "n": 114,
+      "c": 16,
+      "v": 5,
+      "ref": "16:5",
+      "text": "לֹ֥א תוּכַ֖ל לִזְבֹּ֣חַ אֶת־הַפָּ֑סַח בְּאַחַ֣ד שְׁעָרֶ֔יךָ אֲשֶׁר־יְהֹוָ֥ה אֱלֹהֶ֖יךָ נֹתֵ֥ן לָֽךְ׃",
+      "en": "Thou mayst not sacrifice the passover within any of thy gates, which the Lord thy God gives thee:"
+    },
+    {
+      "n": 115,
+      "c": 16,
+      "v": 6,
+      "ref": "16:6",
+      "text": "כִּ֠י אִֽם־אֶל־הַמָּק֞וֹם אֲשֶׁר־יִבְחַ֨ר יְהֹוָ֤ה אֱלֹהֶ֙יךָ֙ לְשַׁכֵּ֣ן שְׁמ֔וֹ שָׁ֛ם תִּזְבַּ֥ח אֶת־הַפֶּ֖סַח בָּעָ֑רֶב כְּב֣וֹא הַשֶּׁ֔מֶשׁ מוֹעֵ֖ד צֵֽאתְךָ֥ מִמִּצְרָֽיִם׃",
+      "en": "but only at the place which the Lord thy God shall choose to place his name in, there thou shalt sacrifice the passover at evening, at the going down of the sun, at the season when thou camest out of Miżrayim."
+    },
+    {
+      "n": 116,
+      "c": 16,
+      "v": 7,
+      "ref": "16:7",
+      "text": "וּבִשַּׁלְתָּ֙ וְאָ֣כַלְתָּ֔ בַּמָּק֕וֹם אֲשֶׁ֥ר יִבְחַ֛ר יְהֹוָ֥ה אֱלֹהֶ֖יךָ בּ֑וֹ וּפָנִ֣יתָ בַבֹּ֔קֶר וְהָלַכְתָּ֖ לְאֹהָלֶֽיךָ׃",
+      "en": "And thou shalt roast and eat it in the place which the Lord thy God shall choose: and thou shalt turn in the morning, and go to thy tents."
+    },
+    {
+      "n": 117,
+      "c": 16,
+      "v": 8,
+      "ref": "16:8",
+      "text": "שֵׁ֥שֶׁת יָמִ֖ים תֹּאכַ֣ל מַצּ֑וֹת וּבַיּ֣וֹם הַשְּׁבִיעִ֗י עֲצֶ֙רֶת֙ לַיהֹוָ֣ה אֱלֹהֶ֔יךָ לֹ֥א תַעֲשֶׂ֖ה מְלָאכָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Six days thou shalt eat unleavened bread, and on the seventh day shall be a solemn assembly to the Lord thy God: thou shalt do no work."
+    },
+    {
+      "n": 118,
+      "c": 16,
+      "v": 9,
+      "ref": "16:9",
+      "text": "שִׁבְעָ֥ה שָׁבֻעֹ֖ת תִּסְפׇּר־לָ֑ךְ מֵהָחֵ֤ל חֶרְמֵשׁ֙ בַּקָּמָ֔ה תָּחֵ֣ל לִסְפֹּ֔ר שִׁבְעָ֖ה שָׁבֻעֽוֹת׃",
+      "en": "Seven weeks shalt thou number to thee: from such time as thou beginnest to put the sickle to the corn shalt thou commence to number seven weeks."
+    },
+    {
+      "n": 119,
+      "c": 16,
+      "v": 10,
+      "ref": "16:10",
+      "text": "וְעָשִׂ֜יתָ חַ֤ג שָׁבֻעוֹת֙ לַיהֹוָ֣ה אֱלֹהֶ֔יךָ מִסַּ֛ת נִדְבַ֥ת יָדְךָ֖ אֲשֶׁ֣ר תִּתֵּ֑ן כַּאֲשֶׁ֥ר יְבָרֶכְךָ֖ יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "And thou shalt keep the feast of weeks to the Lord thy God with a tribute of a freewill offering of thy hand, which thou shalt give, according as the Lord thy God has blessed thee:"
+    },
+    {
+      "n": 120,
+      "c": 16,
+      "v": 11,
+      "ref": "16:11",
+      "text": "וְשָׂמַחְתָּ֞ לִפְנֵ֣י&thinsp;<b>׀</b> יְהֹוָ֣ה אֱלֹהֶ֗יךָ אַתָּ֨ה וּבִנְךָ֣ וּבִתֶּ֘ךָ֮ וְעַבְדְּךָ֣ וַאֲמָתֶ֒ךָ֒ וְהַלֵּוִי֙ אֲשֶׁ֣ר בִּשְׁעָרֶ֔יךָ וְהַגֵּ֛ר וְהַיָּת֥וֹם וְהָאַלְמָנָ֖ה אֲשֶׁ֣ר בְּקִרְבֶּ֑ךָ בַּמָּק֗וֹם אֲשֶׁ֤ר יִבְחַר֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ לְשַׁכֵּ֥ן שְׁמ֖וֹ שָֽׁם׃",
+      "en": "and thou shalt rejoice before the Lord thy God, thou, and thy son, and thy daughter, and thy manservant, and thy maidservant, and the Levite who is within thy gates, and the stranger, and the fatherless, and the widow, that are among you, in the place which the Lord thy God has chosen as the residence of his name."
+    },
+    {
+      "n": 121,
+      "c": 16,
+      "v": 12,
+      "ref": "16:12",
+      "text": "וְזָ֣כַרְתָּ֔ כִּי־עֶ֥בֶד הָיִ֖יתָ בְּמִצְרָ֑יִם וְשָׁמַרְתָּ֣ וְעָשִׂ֔יתָ אֶת־הַֽחֻקִּ֖ים הָאֵֽלֶּה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And thou shalt remember that thou wast a bondman in Miżrayim: therefore thou shalt observe and do these statutes."
+    },
+    {
+      "n": 122,
+      "c": 16,
+      "v": 13,
+      "ref": "16:13",
+      "text": "חַ֧ג הַסֻּכֹּ֛ת תַּעֲשֶׂ֥ה לְךָ֖ שִׁבְעַ֣ת יָמִ֑ים בְּאׇ֨סְפְּךָ֔ מִֽגׇּרְנְךָ֖ וּמִיִּקְבֶֽךָ׃",
+      "en": "Thou shalt observe the feast of booths seven days, after thou hast gathered in thy corn and thy wine:"
+    },
+    {
+      "n": 123,
+      "c": 16,
+      "v": 14,
+      "ref": "16:14",
+      "text": "וְשָׂמַחְתָּ֖ בְּחַגֶּ֑ךָ אַתָּ֨ה וּבִנְךָ֤ וּבִתֶּ֙ךָ֙ וְעַבְדְּךָ֣ וַאֲמָתֶ֔ךָ וְהַלֵּוִ֗י וְהַגֵּ֛ר וְהַיָּת֥וֹם וְהָאַלְמָנָ֖ה אֲשֶׁ֥ר בִּשְׁעָרֶֽיךָ׃",
+      "en": "and thou shalt rejoice in thy feast, thou, and thy son, and thy daughter, and thy manservant, and thy maidservant, and the Levite, the stranger, and the fatherless, and the widow, that are within thy gates."
+    },
+    {
+      "n": 124,
+      "c": 16,
+      "v": 15,
+      "ref": "16:15",
+      "text": "שִׁבְעַ֣ת יָמִ֗ים תָּחֹג֙ לַיהֹוָ֣ה אֱלֹהֶ֔יךָ בַּמָּק֖וֹם אֲשֶׁר־יִבְחַ֣ר יְהֹוָ֑ה כִּ֣י יְבָרֶכְךָ֞ יְהֹוָ֣ה אֱלֹהֶ֗יךָ בְּכֹ֤ל תְּבוּאָֽתְךָ֙ וּבְכֹל֙ מַעֲשֵׂ֣ה יָדֶ֔יךָ וְהָיִ֖יתָ אַ֥ךְ שָׂמֵֽחַ׃",
+      "en": "Seven days shalt thou keep a solemn feast to the Lord thy God in the place which the Lord shall choose: because the Lord thy God shall bless thee in all thy produce, and in all the work of thy hands, therefore thou shalt surely rejoice."
+    },
+    {
+      "n": 125,
+      "c": 16,
+      "v": 16,
+      "ref": "16:16",
+      "text": "שָׁל֣וֹשׁ פְּעָמִ֣ים&thinsp;<small>׀</small>&thinsp;בַּשָּׁנָ֡ה יֵרָאֶ֨ה כׇל־זְכוּרְךָ֜ אֶת־פְּנֵ֣י&thinsp;<b>׀</b> יְהֹוָ֣ה אֱלֹהֶ֗יךָ בַּמָּקוֹם֙ אֲשֶׁ֣ר יִבְחָ֔ר בְּחַ֧ג הַמַּצּ֛וֹת וּבְחַ֥ג הַשָּׁבֻע֖וֹת וּבְחַ֣ג הַסֻּכּ֑וֹת וְלֹ֧א יֵרָאֶ֛ה אֶת־פְּנֵ֥י יְהֹוָ֖ה רֵיקָֽם׃",
+      "en": "Three times a year shall all thy males appear before the Lord thy God in the place which he shall choose; in the feast of unleavened bread, and in the feast of weeks, and in the feast of booths: and they shall not appear before the Lord empty:"
+    },
+    {
+      "n": 126,
+      "c": 16,
+      "v": 17,
+      "ref": "16:17",
+      "text": "אִ֖ישׁ כְּמַתְּנַ֣ת יָד֑וֹ כְּבִרְכַּ֛ת יְהֹוָ֥ה אֱלֹהֶ֖יךָ אֲשֶׁ֥ר נָֽתַן־לָֽךְ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "every man shall give as he is able, according to the blessing of\n\t\t\t\tthe Lord thy God which he has given thee."
+    }
+  ],
+  "parashah": {
+    "en": "Re'eh",
+    "he": "רְאֵה",
+    "translit": "Re'eh",
+    "ref": "Deuteronomy 11:26–16:17"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 17,
+        "ref": "11:26–12:10"
+      },
+      {
+        "n": 2,
+        "start": 18,
+        "end": 35,
+        "ref": "12:11–12:28"
+      },
+      {
+        "n": 3,
+        "start": 36,
+        "end": 57,
+        "ref": "12:29–13:19"
+      },
+      {
+        "n": 4,
+        "start": 58,
+        "end": 78,
+        "ref": "14:1–14:21"
+      },
+      {
+        "n": 5,
+        "start": 79,
+        "end": 86,
+        "ref": "14:22–14:29"
+      },
+      {
+        "n": 6,
+        "start": 87,
+        "end": 104,
+        "ref": "15:1–15:18"
+      },
+      {
+        "n": 7,
+        "start": 105,
+        "end": 126,
+        "ref": "15:19–16:17"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 6,
+          "ref": "11:26–11:31"
+        },
+        {
+          "n": 2,
+          "start": 7,
+          "end": 12,
+          "ref": "11:32–12:5"
+        },
+        {
+          "n": 3,
+          "start": 13,
+          "end": 17,
+          "ref": "12:6–12:10"
+        },
+        {
+          "n": 4,
+          "start": 18,
+          "end": 23,
+          "ref": "12:11–12:16"
+        },
+        {
+          "n": 5,
+          "start": 24,
+          "end": 26,
+          "ref": "12:17–12:19"
+        },
+        {
+          "n": 6,
+          "start": 27,
+          "end": 32,
+          "ref": "12:20–12:25"
+        },
+        {
+          "n": 7,
+          "start": 33,
+          "end": 35,
+          "ref": "12:26–12:28"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 36,
+          "end": 39,
+          "ref": "12:29–13:1"
+        },
+        {
+          "n": 2,
+          "start": 40,
+          "end": 44,
+          "ref": "13:2–13:6"
+        },
+        {
+          "n": 3,
+          "start": 45,
+          "end": 50,
+          "ref": "13:7–13:12"
+        },
+        {
+          "n": 4,
+          "start": 51,
+          "end": 57,
+          "ref": "13:13–13:19"
+        },
+        {
+          "n": 5,
+          "start": 58,
+          "end": 65,
+          "ref": "14:1–14:8"
+        },
+        {
+          "n": 6,
+          "start": 66,
+          "end": 78,
+          "ref": "14:9–14:21"
+        },
+        {
+          "n": 7,
+          "start": 79,
+          "end": 86,
+          "ref": "14:22–14:29"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 87,
+          "end": 92,
+          "ref": "15:1–15:6"
+        },
+        {
+          "n": 2,
+          "start": 93,
+          "end": 97,
+          "ref": "15:7–15:11"
+        },
+        {
+          "n": 3,
+          "start": 98,
+          "end": 104,
+          "ref": "15:12–15:18"
+        },
+        {
+          "n": 4,
+          "start": 105,
+          "end": 109,
+          "ref": "15:19–15:23"
+        },
+        {
+          "n": 5,
+          "start": 110,
+          "end": 117,
+          "ref": "16:1–16:8"
+        },
+        {
+          "n": 6,
+          "start": 118,
+          "end": 121,
+          "ref": "16:9–16:12"
+        },
+        {
+          "n": 7,
+          "start": 122,
+          "end": 126,
+          "ref": "16:13–16:17"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 122,
+        "end": 126,
+        "ref": "16:13–16:17"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 33,
+          "end": 35,
+          "ref": "12:26–12:28"
+        },
+        "2": {
+          "n": "M",
+          "start": 79,
+          "end": 86,
+          "ref": "14:22–14:29"
+        },
+        "3": {
+          "n": "M",
+          "start": 122,
+          "end": 126,
+          "ref": "16:13–16:17"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

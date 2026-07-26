@@ -226,7 +226,19 @@ def build_text(cfg):
     return verses, bounds
 
 
-# Load this source's per-file word-onset tracks, ensuring the MP3s are present.
+# PocketTorah's file names are inconsistent — not just between parashiyot but
+# sometimes WITHIN one (Nitzavim ships Nitzavim-1..6.txt alongside nitzavim-7.txt;
+# Vayera ships vayera-1.txt alongside Vayera-2..7.txt). So `pt_label` / `pt_audio`
+# may be either a format string or a dict of per-file overrides keyed by index,
+# with a "*" entry as the default.
+def pt_name(src, key, i):
+    spec = src[key]
+    if isinstance(spec, dict):
+        return (spec.get(i) or spec["*"]).format(i=i)
+    return spec.format(i=i)
+
+
+# Load this source's word-onset tracks, ensuring the MP3s are present.
 # PocketTorah sources fetch labels + audio from GitHub; `local` drop-in sources
 # read comma-separated onsets from data/local_sources/<id>/ and require the MP3s
 # to already exist under audio/<id>/ (e.g. licensed material provided offline).
@@ -238,14 +250,14 @@ def load_source_tracks(src):
         dest = mp3_disk(src, i)
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         if kind == "pockettorah":
-            name = urllib.parse.quote(src["pt_label"].format(i=i))
+            name = urllib.parse.quote(pt_name(src, "pt_label", i))
             raw = get(f"{RAW}/data/torah/labels/{name}").decode("utf-8-sig")
             if not os.path.exists(dest):
-                print(f"  downloading {src['pt_audio'].format(i=i)} ...")
+                print(f"  downloading {pt_name(src, 'pt_audio', i)} ...")
                 with open(dest, "wb") as f:
-                    f.write(get(f"{RAW}/data/audio/{src['pt_audio'].format(i=i)}"))
+                    f.write(get(f"{RAW}/data/audio/{pt_name(src, 'pt_audio', i)}"))
         elif kind == "local":
-            lbl = os.path.join(LOCAL_LABELS_DIR, sid, src["pt_label"].format(i=i))
+            lbl = os.path.join(LOCAL_LABELS_DIR, sid, pt_name(src, "pt_label", i))
             if not os.path.exists(lbl):
                 raise SystemExit(f"local source '{sid}': missing onset labels {lbl}")
             if not os.path.exists(dest):
@@ -444,13 +456,22 @@ def register(cfg, sources):
     try:
         manifest = json.load(open(MANIFEST, encoding="utf-8"))
     except FileNotFoundError:
-        manifest = [{"slug": "devarim1", "file": "data/devarim1.json", "label": "Devarim (Deuteronomy) 1"}]
-    entry = {"slug": cfg["slug"], "file": f"data/{cfg['slug']}.json", "label": cfg["label"],
-             "sources": manifest_sources(sources)}
+        manifest = [{"slug": "devarim1", "file": "data/devarim1.json",
+                     "group": "Parashiyot", "label": "Devarim (Deuteronomy) 1"}]
+    prev = next((m for m in manifest if m["slug"] == cfg["slug"]), {})
+    # `group` is assigned by organize_readings (one group per sefer) right below.
+    entry = {"slug": cfg["slug"], "file": f"data/{cfg['slug']}.json",
+             "label": cfg["label"], "sources": manifest_sources(sources)}
+    note = cfg.get("note") or prev.get("note")
+    if note:
+        entry["note"] = note
     manifest = [m for m in manifest if m["slug"] != cfg["slug"]] + [entry]
     with open(MANIFEST, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
     print(f"  registered '{cfg['slug']}' in data/readings.json ({len(entry['sources'])} source(s))")
+    # Re-file the whole menu by sefer, in chumash order.
+    import organize_readings
+    organize_readings.organize(quiet=True)
 
 
 def main():
@@ -472,6 +493,12 @@ def main():
         extract_pitch(cfg, src, verses, audio_verses)
     print("[3/3] register")
     register(cfg, sources)
+    # The trope drills draw their melody and their spliced recitation from
+    # whatever is recorded, so a new reading immediately improves both.
+    import build_trope_index
+    import build_trope_shapes
+    build_trope_index.build()
+    build_trope_shapes.build()
     print(f"done: {slug} ({len(verses)} verses, {len(sources)} source(s)). "
           f"Reload the app; it's in the Reading menu.")
 

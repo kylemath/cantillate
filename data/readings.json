@@ -1,9 +1,69 @@
 [
   {
+    "slug": "vayera",
+    "file": "data/vayera.json",
+    "group": "Bereshit · Genesis",
+    "label": "Vayera (Genesis 18:1–22:24)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ]
+  },
+  {
+    "slug": "matot",
+    "file": "data/matot.json",
+    "group": "Bamidbar · Numbers",
+    "label": "Matot (Numbers 30:2–32:42)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ]
+  },
+  {
+    "slug": "masei",
+    "file": "data/masei.json",
+    "group": "Bamidbar · Numbers",
+    "label": "Masei (Numbers 33:1–36:13)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ]
+  },
+  {
+    "slug": "devarim",
+    "file": "data/devarim.json",
+    "group": "Devarim · Deuteronomy",
+    "label": "Devarim (Deuteronomy 1:1–3:22)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ]
+  },
+  {
     "slug": "devarim1",
     "file": "data/devarim1.json",
-    "group": "Parashiyot",
-    "label": "Devarim (Deuteronomy) 1",
+    "group": "Devarim · Deuteronomy",
+    "label": "Deuteronomy 1 (chapter only)",
     "sources": [
       {
         "id": "pockettorah",
@@ -15,8 +75,8 @@
   {
     "slug": "vaetchanan",
     "file": "data/vaetchanan.json",
-    "group": "Parashiyot",
-    "label": "Va'etchanan (Deuteronomy 3:23\u20137:11)",
+    "group": "Devarim · Deuteronomy",
+    "label": "Va'etchanan (Deuteronomy 3:23–7:11)",
     "sources": [
       {
         "id": "pockettorah",
@@ -28,8 +88,8 @@
   {
     "slug": "eikev",
     "file": "data/eikev.json",
-    "group": "Parashiyot",
-    "label": "Eikev (Deuteronomy 7:12\u201311:25)",
+    "group": "Devarim · Deuteronomy",
+    "label": "Eikev (Deuteronomy 7:12–11:25)",
     "sources": [
       {
         "id": "pockettorah",
@@ -38,8 +98,129 @@
       },
       {
         "id": "ptaudioonly",
-        "label": "PocketTorah (audio only \u2014 demo)",
+        "label": "PocketTorah (audio only — demo)",
         "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA."
+      }
+    ]
+  },
+  {
+    "slug": "reeh",
+    "file": "data/reeh.json",
+    "group": "Devarim · Deuteronomy",
+    "label": "Re'eh (Deuteronomy 11:26–16:17)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ]
+  },
+  {
+    "slug": "shoftim",
+    "file": "data/shoftim.json",
+    "group": "Devarim · Deuteronomy",
+    "label": "Shoftim (Deuteronomy 16:18–21:9)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ]
+  },
+  {
+    "slug": "kiteitzei",
+    "file": "data/kiteitzei.json",
+    "group": "Devarim · Deuteronomy",
+    "label": "Ki Teitzei (Deuteronomy 21:10–25:19)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ]
+  },
+  {
+    "slug": "kitavo",
+    "file": "data/kitavo.json",
+    "group": "Devarim · Deuteronomy",
+    "label": "Ki Tavo (Deuteronomy 26:1–29:8)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ]
+  },
+  {
+    "slug": "nitzavim",
+    "file": "data/nitzavim.json",
+    "group": "Devarim · Deuteronomy",
+    "label": "Nitzavim (Deuteronomy 29:9–30:20)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ]
+  },
+  {
+    "slug": "vayeilech",
+    "file": "data/vayeilech.json",
+    "label": "Vayeilech (Deuteronomy 31:1–30)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "group": "Devarim · Deuteronomy"
+  },
+  {
+    "slug": "haazinu",
+    "file": "data/haazinu.json",
+    "group": "Devarim · Deuteronomy",
+    "label": "Ha'azinu (Deuteronomy 32:1–52)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "Ha'azinu is written as poetry in two columns, and the text splits its words differently from the recording, so the coach line is approximate through most of the song."
+  },
+  {
+    "slug": "vezothaberakhah",
+    "file": "data/vezothaberakhah.json",
+    "group": "Devarim · Deuteronomy",
+    "label": "V'zot HaBerakhah (Deuteronomy 33:1–34:12)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
       }
     ]
   },
@@ -49,7 +230,7 @@
     "kind": "drill",
     "group": "Trope drills",
     "label": "One word, every accent",
-    "note": "Synthesized practice \u2014 no recorded cantor. Built by scripts/build_drills.py."
+    "note": "Two long practice pesukim built from one Hebrew root each. No recording of their own — the coach line is synthesized from the accents, and \"Hear it chanted for real\" splices the same trope sequence out of the recorded readings. Built by scripts/build_drills.py."
   },
   {
     "slug": "shema",
@@ -57,11 +238,24 @@
     "kind": "excerpt",
     "base": "vaetchanan",
     "group": "Prayers & common passages",
-    "label": "Shema & V'ahavta (Deut 6:4\u20139)",
-    "range": [90, 95],
+    "label": "Shema & V'ahavta (Deut 6:4–9)",
+    "range": [
+      90,
+      95
+    ],
     "groups": [
-      { "title": "Shema Yisrael", "ref": "6:4", "start": 90, "end": 90 },
-      { "title": "V'ahavta", "ref": "6:5\u20139", "start": 91, "end": 95 }
+      {
+        "title": "Shema Yisrael",
+        "ref": "6:4",
+        "start": 90,
+        "end": 90
+      },
+      {
+        "title": "V'ahavta",
+        "ref": "6:5–9",
+        "start": 91,
+        "end": 95
+      }
     ]
   },
   {
@@ -70,10 +264,18 @@
     "kind": "excerpt",
     "base": "eikev",
     "group": "Prayers & common passages",
-    "label": "V'haya im shamo'a (Deut 11:13\u201321)",
-    "range": [99, 107],
+    "label": "V'haya im shamo'a (Deut 11:13–21)",
+    "range": [
+      99,
+      107
+    ],
     "groups": [
-      { "title": "Second paragraph of the Shema", "ref": "11:13\u201321", "start": 99, "end": 107 }
+      {
+        "title": "Second paragraph of the Shema",
+        "ref": "11:13–21",
+        "start": 99,
+        "end": 107
+      }
     ]
   },
   {
@@ -82,11 +284,19 @@
     "kind": "excerpt",
     "base": "vaetchanan",
     "group": "Prayers & common passages",
-    "label": "Aseret haDibrot (Deut 5:6\u201318)",
+    "label": "Aseret haDibrot (Deut 5:6–18)",
     "note": "The Ten Commandments carry a dual cantillation (ta'am elyon / tachton); the recording follows one and the printed text the other, so the coach line is approximate here.",
-    "range": [62, 74],
+    "range": [
+      62,
+      74
+    ],
     "groups": [
-      { "title": "The Ten Commandments", "ref": "5:6\u201318", "start": 62, "end": 74 }
+      {
+        "title": "The Ten Commandments",
+        "ref": "5:6–18",
+        "start": 62,
+        "end": 74
+      }
     ]
   },
   {
@@ -95,10 +305,18 @@
     "kind": "excerpt",
     "base": "vaetchanan",
     "group": "Prayers & common passages",
-    "label": "V'zot haTorah (Deut 4:44\u201345)",
-    "range": [51, 52],
+    "label": "V'zot haTorah (Deut 4:44–45)",
+    "range": [
+      51,
+      52
+    ],
     "groups": [
-      { "title": "Said as the Torah is raised", "ref": "4:44\u201345", "start": 51, "end": 52 }
+      {
+        "title": "Said as the Torah is raised",
+        "ref": "4:44–45",
+        "start": 51,
+        "end": 52
+      }
     ]
   },
   {
@@ -107,10 +325,18 @@
     "kind": "excerpt",
     "base": "vaetchanan",
     "group": "Prayers & common passages",
-    "label": "Ein od milvado (Deut 4:35\u201340)",
-    "range": [42, 47],
+    "label": "Ein od milvado (Deut 4:35–40)",
+    "range": [
+      42,
+      47
+    ],
     "groups": [
-      { "title": "There is none beside Him", "ref": "4:35\u201340", "start": 42, "end": 47 }
+      {
+        "title": "There is none beside Him",
+        "ref": "4:35–40",
+        "start": 42,
+        "end": 47
+      }
     ]
   },
   {
@@ -120,9 +346,17 @@
     "base": "eikev",
     "group": "Prayers & common passages",
     "label": "V'achalta v'savata (Deut 8:10)",
-    "range": [25, 25],
+    "range": [
+      25,
+      25
+    ],
     "groups": [
-      { "title": "The verse behind Birkat haMazon", "ref": "8:10", "start": 25, "end": 25 }
+      {
+        "title": "The verse behind Birkat haMazon",
+        "ref": "8:10",
+        "start": 25,
+        "end": 25
+      }
     ]
   }
 ]
