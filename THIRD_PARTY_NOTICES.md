@@ -14,6 +14,22 @@ notice — which the OFL requires to travel with the font — is in
 non-commercial boilerplate the build tool left in the binary's Windows name
 record.
 
+### WOFF2 conversions
+
+Each of the four faces above is also redistributed as a `.woff2` file next to
+the `.ttf` it came from (`fonts/ShlomoStam.woff2`,
+`fonts/StamAshkenazCLM.woff2`, `fonts/FrankRuehlCLM-Medium.woff2`,
+`fonts/FrankRuehlCLM-Bold.woff2`). These were produced from the original `.ttf`
+files with fontTools, as a container/compression change only: same glyphs, same
+character map, same `GSUB`/`GPOS`/`GDEF` layout tables, same family and style
+names, nothing subsetted or redrawn. The originals are kept alongside them.
+
+The same licences govern the converted files as the originals they derive from —
+the GNU GPL with font exception for the Culmus faces, and the OFL 1.1 for Shlomo
+Stam. The OFL counts a change of format as a Modified Version, but its Reserved
+Font Names here are "SIL" and "Ezra" (see `fonts/ShlomoStam-OFL.txt`), neither of
+which this font or its conversion uses, so the name "Shlomo Stam" is retained.
+
 ## tikkun.io Torah page data
 
 `data/tikkun-torah-245.json` contains Torah page and line layout data derived

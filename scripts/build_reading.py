@@ -499,6 +499,10 @@ def main():
     import build_trope_shapes
     build_trope_index.build()
     build_trope_shapes.build()
+    # Without its scroll pages the reading's Torah column silently reflows
+    # instead of breaking lines where the scroll does, so pull them in now.
+    import build_tikkun
+    build_tikkun.build()
     print(f"done: {slug} ({len(verses)} verses, {len(sources)} source(s)). "
           f"Reload the app; it's in the Reading menu.")
 

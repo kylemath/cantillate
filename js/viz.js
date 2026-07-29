@@ -25,6 +25,15 @@ export class ContourView {
     this.playhead = null;
     this.yMin = -7; this.yMax = 7;
     this.dpr = window.devicePixelRatio || 1;
+    // Layer bookkeeping (see _ensureLayers): `_staticDirty` forces the backdrop
+    // to be re-rendered, `_userDirty` forces the user trail to be re-stroked
+    // from scratch, and `_userDrawn` is how much of `userTrail` the trail layer
+    // already holds — everything past it is appended on the next paint.
+    this._static = null; this._staticCtx = null; this._staticDirty = true;
+    this._user = null; this._userCtx = null; this._userDirty = true;
+    this._userDrawn = 0;
+    this._raf = null;
+    this._destroyed = false;
     this._resize();
     this._onResize = () => { this._resize(); this.draw(); };
     window.addEventListener('resize', this._onResize);
@@ -36,6 +45,73 @@ export class ContourView {
     this.canvas.width = Math.round(this.w * this.dpr);
     this.canvas.height = Math.round(this.h * this.dpr);
     this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+    // Both cached layers are in the old geometry now.
+    this._staticDirty = true; this._userDirty = true;
+  }
+
+  // Off-screen layers. The backdrop (semitone grid, word bounds, the faint raw
+  // trace and the coach note steps) only changes when the coach line, the gem
+  // shading or the canvas box changes, and the user trail only ever grows, so
+  // both are kept on their own surfaces and blitted instead of being rebuilt on
+  // every mic frame. Each layer mirrors the visible canvas exactly — same
+  // backing-store size, same dpr transform — so drawing code can keep working in
+  // CSS pixels and the blit is an untransformed 1:1 pixel copy. They are made
+  // lazily so a torn-down view that is somehow painted again just rebuilds them.
+  _ensureLayers() {
+    const bw = Math.max(1, Math.round(this.w * this.dpr));
+    const bh = Math.max(1, Math.round(this.h * this.dpr));
+    if (!this._static) {
+      this._static = document.createElement('canvas');
+      this._staticCtx = this._static.getContext('2d');
+      this._staticDirty = true;
+    }
+    if (!this._user) {
+      this._user = document.createElement('canvas');
+      this._userCtx = this._user.getContext('2d');
+      this._userDirty = true;
+    }
+    if (this._static.width !== bw || this._static.height !== bh
+        || this._user.width !== bw || this._user.height !== bh) {
+      this._static.width = bw; this._static.height = bh;
+      this._user.width = bw; this._user.height = bh;
+      this._staticDirty = true; this._userDirty = true;
+    }
+    this._staticCtx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+    this._userCtx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+  }
+
+  _blit(layer) {
+    const ctx = this.ctx;
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.drawImage(layer, 0, 0);
+    ctx.restore();
+  }
+
+  // A single mic frame moves the playhead, may light a gem and pushes a trail
+  // point, and painting inside each of those repainted the whole scene two or
+  // three times per frame. The mutators instead mark what changed and ask for
+  // one coalesced repaint on the next animation frame. `draw()` stays available
+  // (and synchronous) for callers that need the canvas correct right now, such
+  // as a re-fit after the pane's layout changed.
+  _schedule() {
+    if (this._raf != null || this._destroyed) return;
+    this._raf = requestAnimationFrame(() => { this._raf = null; this.draw(); });
+  }
+
+  // Practice re-renders (verse, level, zoom, reading size…) rebuild the pane and
+  // with it the canvas element, so the view watching the old one has to let go:
+  // its resize listener otherwise keeps the view — and the whole take it holds —
+  // alive, repainting a canvas nobody can see on every resize. Only the heavy
+  // offscreen surfaces are released; the trails stay readable, so anything still
+  // holding a torn-down view (a scorer mid-flight, say) sees what it always did.
+  destroy() {
+    window.removeEventListener('resize', this._onResize);
+    if (this._raf != null) { cancelAnimationFrame(this._raf); this._raf = null; }
+    this._destroyed = true;
+    this._static = null; this._staticCtx = null;
+    this._user = null; this._userCtx = null;
+    this._staticDirty = true; this._userDirty = true;
   }
 
   setCoach({ steps = [], raw = [], wordBounds = [] } = {}) {
@@ -47,6 +123,7 @@ export class ContourView {
     this.realTrail = [];
     this.playhead = null;
     this._computeRange();
+    this._staticDirty = true; this._userDirty = true;
     this.draw();
   }
 
@@ -71,7 +148,11 @@ export class ContourView {
   // displayed dynamic range; such points are clipped out of the traces.
   _inRange(p) { return p >= this.yMin - 0.5 && p <= this.yMax + 0.5; }
 
-  clearUser() { this.userTrail = []; this.noteStatus = {}; this.draw(); }
+  clearUser() {
+    this.userTrail = []; this.noteStatus = {};
+    this._userDirty = true; this._staticDirty = true;
+    this._schedule();
+  }
   // Roll the take back to `t01`: drop everything sung after that point and un-light
   // the note gems beyond it, so re-singing from there replaces the fumbled stretch
   // instead of layering a second attempt on top of it.
@@ -81,23 +162,28 @@ export class ContourView {
       const step = this.steps[i];
       if (!step || step.t1 > t01) delete this.noteStatus[i];
     }
-    this.draw();
+    // The only mutation that REMOVES trail points: the trail layer holds dots
+    // that no longer exist, so it can't be appended to and has to be re-stroked.
+    this._userDirty = true; this._staticDirty = true;
+    this._schedule();
   }
   // Guitar-Hero "gem lights up": mark a coach note-step (by its index) hit/missed
   // so its bar is shaded green/red once the playhead has passed it.
-  setNoteStatus(idx, status) { this.noteStatus[idx] = status; this.draw(); }
-  clearNoteStatus() { this.noteStatus = {}; this.draw(); }
+  setNoteStatus(idx, status) { this.noteStatus[idx] = status; this._staticDirty = true; this._schedule(); }
+  clearNoteStatus() { this.noteStatus = {}; this._staticDirty = true; this._schedule(); }
   pushUser(t01, semitone, rms, hit, rawT) {
-    // Keep the entire session (reset each new recording via clearUser).
+    // Keep the entire session (reset each new recording via clearUser). The
+    // scorer reads this array straight off the view, so it holds every frame;
+    // only the DRAWING of it is incremental (see _drawUser).
     if (semitone != null) this.userTrail.push({ t: t01, p: semitone, rms: rms || 0, hit, rawT });
-    this.draw();
+    this._schedule();
   }
-  clearReal() { this.realTrail = []; this.draw(); }
+  clearReal() { this.realTrail = []; this._schedule(); }
   pushReal(t01, semitone) {
     if (semitone != null) this.realTrail.push({ t: t01, p: semitone });
-    this.draw();
+    this._schedule();
   }
-  setPlayhead(t01) { this.playhead = t01; this.draw(); }
+  setPlayhead(t01) { this.playhead = t01; this._schedule(); }
 
   _x(t) { const plotW = this.w - LM - RM; return LM + (1 - t) * plotW; }
   _y(p) {
@@ -105,10 +191,14 @@ export class ContourView {
     return this.h - 18 - norm * (this.h - 34);
   }
 
+  // Composite the scene: the cached backdrop, then the live content that moves
+  // every frame. The draw order is exactly what a single-pass repaint produced —
+  // backdrop, real-chant line, user dots, playhead.
   draw() {
+    // A synchronous paint satisfies whatever repaint was already queued.
+    if (this._raf != null) { cancelAnimationFrame(this._raf); this._raf = null; }
     const ctx = this.ctx;
     ctx.clearRect(0, 0, this.w, this.h);
-    const xR = this.w - RM;
     // Pixels per semitone at the current canvas height. On the tall desktop
     // contour this is large, so we size the note "gems" and the user-pitch dots
     // RELATIVE to it: the bars read like piano keys and the trace never grows so
@@ -116,6 +206,42 @@ export class ContourView {
     // short canvas). Slight tone variations stay legible because a semitone now
     // spans many pixels.
     const pxPerSemi = (this.h - 34) / Math.max(1e-3, this.yMax - this.yMin);
+
+    this._ensureLayers();
+    if (this._staticDirty) { this._drawStatic(pxPerSemi); this._staticDirty = false; }
+    if (this._userDirty) {
+      this._userCtx.clearRect(0, 0, this.w, this.h);
+      this._userDrawn = 0;
+      this._userDirty = false;
+    }
+    if (this._userDrawn < this.userTrail.length) {
+      this._drawUser(this._userDrawn, pxPerSemi);
+      this._userDrawn = this.userTrail.length;
+    }
+
+    this._blit(this._static);
+    // The note steps set a round cap on the shared context, which the green line
+    // and the playhead inherited when everything shared one pass; keep it so
+    // their ends look the same now that the steps live on another surface.
+    ctx.lineCap = 'round';
+    this._drawReal(ctx);
+    this._blit(this._user);
+    this._drawPlayhead(ctx);
+  }
+
+  // The backdrop: everything that is fixed for a given coach line and canvas
+  // size. Re-rendered only on setCoach, a resize or a change of gem shading.
+  _drawStatic(pxPerSemi) {
+    const ctx = this._staticCtx;
+    ctx.clearRect(0, 0, this.w, this.h);
+    const xR = this.w - RM;
+
+    // The grid and the word bounds set no pen of their own: on the shared
+    // context they inherited the playhead's 2px round one from the frame before,
+    // which is how the timeline has always looked. Now that the backdrop has its
+    // own surface that pen has to be stated, or they would come out hairline.
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
 
     // Semitone gridlines (labels on the right for the RTL axis).
     ctx.font = '10px system-ui, sans-serif';
@@ -182,8 +308,12 @@ export class ContourView {
       ctx.globalAlpha = 1; ctx.lineWidth = w;
       ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
     }
+  }
 
-    // Live real-chant pitch (green), broken across gaps.
+  // Live real-chant pitch (green), broken across gaps. One stroked path, drawn
+  // straight onto the visible canvas: it is cheap next to the backdrop, and
+  // keeping it off the trail layer preserves the green-under-orange order.
+  _drawReal(ctx) {
     if (this.realTrail.length) {
       ctx.strokeStyle = 'rgba(120,255,180,0.9)';
       ctx.lineWidth = 2;
@@ -202,11 +332,21 @@ export class ContourView {
       }
       ctx.stroke();
     }
+  }
 
-    // User mic pitch dots, colored by how close to the target (guitar-hero).
-    // A bang-on "perfect" note gets a bigger, glowing dot with a bright core so
-    // it's unmistakable that you're nailing the pitch.
-    for (const s of this.userTrail) {
+  // User mic pitch dots, colored by how close to the target (guitar-hero).
+  // A bang-on "perfect" note gets a bigger, glowing dot with a bright core so
+  // it's unmistakable that you're nailing the pitch.
+  //
+  // Only the frames from `from` on are painted: a take is thousands of dots by
+  // the end and several of them carry a shadow blur, so they accumulate on their
+  // own layer instead of being re-stroked from zero every frame. Source-over is
+  // associative, so a dot laid on the layer and blitted composites exactly as it
+  // would have straight onto the scene.
+  _drawUser(from, pxPerSemi) {
+    const ctx = this._userCtx;
+    for (let i = from; i < this.userTrail.length; i++) {
+      const s = this.userTrail[i];
       if (!this._inRange(s.p)) continue;
       const x = this._x(s.t), y = this._y(s.p);
       const alpha = Math.min(0.95, 0.35 + s.rms * 8);
@@ -231,8 +371,10 @@ export class ContourView {
       }
       ctx.shadowBlur = 0;
     }
+  }
 
-    // Playhead.
+  // Playhead.
+  _drawPlayhead(ctx) {
     if (this.playhead != null) {
       const x = this._x(this.playhead);
       ctx.strokeStyle = 'rgba(255,215,0,0.9)';
@@ -466,8 +608,19 @@ export class Spectrogram {
     this.lm = 8;  // small left margin (match ContourView)
     this.rm = 34; // right margin for the Hz scale (RTL axis)
     this._resize();
-    window.addEventListener('resize', () => { this._resize(); this.clearPlot(); });
+    this._onResize = () => { this._resize(); this.clearPlot(); };
+    window.addEventListener('resize', this._onResize);
     this.clearPlot();
+  }
+
+  // Same contract as ContourView.destroy(): a re-rendered practice pane throws
+  // this canvas away, so the listener that would keep the view alive (and
+  // clearing a canvas nobody can see) has to go with it. Nothing is nulled that
+  // a later call would dereference — the caches below are rebuilt on demand.
+  destroy() {
+    window.removeEventListener('resize', this._onResize);
+    this._binMap = null;
+    this._column = null;
   }
 
   _resize() {
@@ -509,11 +662,18 @@ export class Spectrogram {
     });
   }
 
-  _color(v) {
+  // Component form of the ramp, written into `out` so a whole column can go
+  // straight into pixel data without building one CSS colour string per row.
+  _rgb(v, out) {
     const t = v / 255;
-    const r = Math.floor(255 * Math.min(1, Math.max(0, t * 1.9 - 0.25)));
-    const g = Math.floor(255 * Math.min(1, Math.max(0, t * 1.7 - 0.75)));
-    const b = Math.floor(255 * Math.min(1, Math.max(0, t < 0.5 ? t * 1.5 : (1 - t) * 1.4)));
+    out[0] = Math.floor(255 * Math.min(1, Math.max(0, t * 1.9 - 0.25)));
+    out[1] = Math.floor(255 * Math.min(1, Math.max(0, t * 1.7 - 0.75)));
+    out[2] = Math.floor(255 * Math.min(1, Math.max(0, t < 0.5 ? t * 1.5 : (1 - t) * 1.4)));
+    return out;
+  }
+
+  _color(v) {
+    const [r, g, b] = this._rgb(v, [0, 0, 0]);
     return `rgb(${r},${g},${b})`;
   }
 
@@ -529,13 +689,34 @@ export class Spectrogram {
     const width = this.lastX == null ? 3 : Math.max(1, this.lastX - x);
     const binHz = sampleRate / fftSize;
     const nb = freq.length;
-    for (let y = 0; y < h; y++) {
-      const f = this._yToFreq(y);
-      const bin = Math.round(f / binHz);
-      const v = bin >= 0 && bin < nb ? freq[bin] : 0;
-      ctx.fillStyle = this._color(v);
-      ctx.fillRect(x, y, width, 1);
+    // Which analyser bin each pixel row reads. The log-frequency mapping only
+    // depends on the canvas height and the analyser's bin width, both fixed for
+    // a session, so it is solved once instead of a log/pow per row per frame.
+    if (!this._binMap || this._binMapH !== h || this._binMapHz !== binHz) {
+      const m = new Int32Array(h);
+      for (let y = 0; y < h; y++) m[y] = Math.round(this._yToFreq(y) / binHz);
+      this._binMap = m; this._binMapH = h; this._binMapHz = binHz;
     }
+    const map = this._binMap;
+    // One blit per column instead of a fillStyle assignment plus a fillRect per
+    // pixel row: at 200 rows and two live spectrograms in duet mode that was
+    // ~24k canvas calls a second. The column is opaque, so writing it with
+    // putImageData lands the same pixels a run of opaque fillRects did.
+    if (!this._column || this._column.width !== width || this._column.height !== h) {
+      this._column = ctx.createImageData(width, h);
+    }
+    const px = this._column.data;
+    const rgb = this._rgbTmp || (this._rgbTmp = [0, 0, 0]);
+    let o = 0;
+    for (let y = 0; y < h; y++) {
+      const bin = map[y];
+      const v = bin >= 0 && bin < nb ? freq[bin] : 0;
+      this._rgb(v, rgb);
+      for (let k = 0; k < width; k++) {
+        px[o++] = rgb[0]; px[o++] = rgb[1]; px[o++] = rgb[2]; px[o++] = 255;
+      }
+    }
+    ctx.putImageData(this._column, x, 0);
     if (f0 > 0) {
       for (let k = 1; k <= 6; k++) {
         const y = this._freqToY(f0 * k);

@@ -29,81 +29,109 @@
     <button id="mobileVersesBtn" class="mb-verses" aria-label="Choose a verse" title="Pick a verse to practice">📖 Verses</button>
   </div>
 
-  <!-- Settings sheet: on desktop this wrapper is display:contents (invisible to
-       layout, so the header + toolbar render exactly as before). On mobile it
-       becomes a pull-down sheet toggled by the app-bar button, so all the dense
-       controls stop eating the screen and the practice surface gets the room. -->
+  <!-- Settings sheet: on desktop the primary topbar stays in the layout (via
+       display:contents on a thin wrapper) while the dense controls live in a
+       popover panel — same idea as mobile, where this whole block is a pull-down
+       sheet behind the app-bar gear. One set of control IDs; CSS decides where
+       each cluster is visible. -->
   <div class="settings-sheet" id="settingsSheet">
     <button class="drawer-close" id="settingsClose" aria-label="Close settings">✕</button>
-  <header class="topbar">
-    <div class="brand">
-      <h1>Cantillate</h1>
-      <span class="sub">Read · understand · chant the weekly parashah</span>
-    </div>
-    <div class="controls">
-      <label class="label" for="parashah">Reading</label>
-      <select id="parashah"></select>
-      <label class="label" for="portion">Portion</label>
-      <select id="portion" title="Read the whole annual parashah, or one shorter triennial-cycle year (its own third + aliyot)">
-        <option value="annual">Full parashah (annual)</option>
-        <option value="tri1">Triennial · Year 1</option>
-        <option value="tri2">Triennial · Year 2</option>
-        <option value="tri3">Triennial · Year 3</option>
-      </select>
-      <button id="cycToday" class="toggle" title="Jump to the triennial year for today's Hebrew date">📅 Today</button>
-      <button id="btnEditAliyot" class="toggle" title="Adjust the aliyah boundaries to match your teacher's division (saved for you)">✎ Boundaries</button>
-      <label class="label" for="tonic">Tonic</label>
-      <select id="tonic">
-        <option value="196.00">G3</option>
-        <option value="220.00" selected>A3</option>
-        <option value="246.94">B3</option>
-        <option value="261.63">C4</option>
-        <option value="293.66">D4</option>
-      </select>
-      <label class="label" for="audioSource" id="audioSourceLabel" hidden>Voice</label>
-      <select id="audioSource" title="Choose which recorded voice to hear for the example and duet practice" hidden></select>
-      <button id="btnOffline" class="toggle offline-btn" title="Download this reading's audio so it plays with no network (uses minimal data after the first download)" hidden>⬇ Offline</button>
-      <span id="netBadge" class="net-badge" title="Network status" hidden></span>
-      <div id="authBox" class="authbox"></div>
-    </div>
-  </header>
 
-  <div class="toolbar">
-    <span class="label">Show / hide:</span>
-    <button id="tgVowels" class="toggle on">Vowels (niqqud)</button>
-    <button id="tgTaamim" class="toggle on">Cantillation (te'amim)</button>
-    <button id="tgEnglish" class="toggle">English</button>
-    <span class="label" style="margin-inline-start:12px;">Font:</span>
-    <button id="tgFont" class="toggle">Scroll (STA"M)</button>
-    <span class="label" style="margin-inline-start:12px;">Hand:</span>
-    <span class="seg" id="stamHandSeg" title="Which scribal hand the STA&quot;M is drawn in — verse cards, Torah column and tikkun pages all follow this. Shlomo joins the mem's vav-leg to the base (as a sofer writes it); Ashkenaz leaves it detached, which can read as a kaf plus a vav.">
-      <button class="sh on" data-sh="shlomo">Shlomo</button>
-      <button class="sh" data-sh="ashkenaz">Ashkenaz</button>
-    </span>
-    <label class="stamtrack" title="Space between the letters of the STA&quot;M. Opening it up makes the notch inside a mem plainly smaller than a real gap between letters, so the mem stops reading as a kaf plus a vav.">
-      <span class="rs-ico stam-ico">מם</span>
-      <input type="range" id="stamTrack" min="0" max="0.1" step="0.005" aria-label="STA&quot;M letter spacing">
-    </label>
-    <span class="label" style="margin-inline-start:12px;">Score overlay:</span>
-    <span class="seg" id="overlaySeg">
-      <button class="ov on" data-ov="off">Off</button>
-      <button class="ov" data-ov="word">Words</button>
-      <button class="ov" data-ov="phrase">Phrases</button>
-      <button class="ov" data-ov="verse">Verse</button>
-    </span>
-    <span class="label" style="margin-inline-start:12px;">Scoring:</span>
-    <span class="seg" id="scoreModelSeg" title="Which scoring model counts (both are always shown side by side for testing). Melody = pitch-shape match; Note-hit = Guitar-Hero-style per-note hits.">
-      <button class="sm on" data-sm="contour">Melody</button>
-      <button class="sm" data-sm="gh">Note-hit (beta)</button>
-    </span>
-    <span class="label" style="margin-inline-start:12px;">View:</span>
-    <button id="tgScrollView" class="toggle">📜 Torah column</button>
-    <button id="tgGuide" class="toggle" title="Trope guide — colours, melodic shapes &amp; meanings; tap a family or trope to spotlight it in the pesukim">🎨 Trope guide</button>
-    <span class="legend-scale" style="margin-inline-start:12px;">
-      <span>low</span><span class="bar"></span><span>high</span>
-    </span>
-    <button id="btnLeaderboard" class="toggle" style="margin-inline-start:12px;" title="See how your practice compares">🏆 Leaderboard</button>
-  </div>
+    <header class="topbar">
+      <div class="brand">
+        <h1>Cantillate</h1>
+        <span class="sub">Read · understand · chant the weekly parashah</span>
+      </div>
+      <div class="controls controls-primary">
+        <label class="label" for="parashah">Reading</label>
+        <select id="parashah"></select>
+        <label class="label" for="portion">Portion</label>
+        <select id="portion" title="Read the whole annual parashah, or one shorter triennial-cycle year (its own third + aliyot)">
+          <option value="annual">Full parashah (annual)</option>
+          <option value="tri1">Triennial · Year 1</option>
+          <option value="tri2">Triennial · Year 2</option>
+          <option value="tri3">Triennial · Year 3</option>
+        </select>
+      </div>
+      <div class="chrome-end">
+        <div id="authBox" class="authbox"></div>
+        <button id="settingsToggleDesktop" class="toggle settings-btn" aria-label="Settings" aria-expanded="false" title="Display, scoring &amp; tools">⚙ Settings</button>
+      </div>
+    </header>
+
+    <div class="settings-panel" id="settingsPanel">
+      <section class="set-sec">
+        <h3 class="set-h">Reading</h3>
+        <div class="set-row">
+          <label class="label" for="tonic">Tonic</label>
+          <select id="tonic" title="Reference pitch for the coach line and scoring">
+            <option value="196.00">G3</option>
+            <option value="220.00" selected>A3</option>
+            <option value="246.94">B3</option>
+            <option value="261.63">C4</option>
+            <option value="293.66">D4</option>
+          </select>
+          <button id="cycToday" class="toggle" title="Jump to the triennial year for today's Hebrew date">📅 Today</button>
+          <button id="btnEditAliyot" class="toggle" title="Adjust the aliyah boundaries to match your teacher's division (saved for you)">✎ Boundaries</button>
+          <label class="label" for="audioSource" id="audioSourceLabel" hidden>Voice</label>
+          <select id="audioSource" title="Choose which recorded voice to hear for the example and duet practice" hidden></select>
+          <button id="btnOffline" class="toggle offline-btn" title="Download this reading's audio so it plays with no network (uses minimal data after the first download)" hidden>⬇ Offline</button>
+          <span id="netBadge" class="net-badge" title="Network status" hidden></span>
+        </div>
+      </section>
+
+      <section class="set-sec">
+        <h3 class="set-h">Text</h3>
+        <div class="set-row">
+          <button id="tgVowels" class="toggle on">Vowels</button>
+          <button id="tgTaamim" class="toggle on">Cantillation</button>
+          <button id="tgEnglish" class="toggle">English</button>
+          <button id="tgFont" class="toggle">Scroll (STA"M)</button>
+        </div>
+        <div class="set-row">
+          <span class="label">Hand</span>
+          <span class="seg" id="stamHandSeg" title="Which scribal hand the STA&quot;M is drawn in — verse cards, Torah column and tikkun pages all follow this. Shlomo joins the mem's vav-leg to the base (as a sofer writes it); Ashkenaz leaves it detached, which can read as a kaf plus a vav.">
+            <button class="sh on" data-sh="shlomo">Shlomo</button>
+            <button class="sh" data-sh="ashkenaz">Ashkenaz</button>
+          </span>
+          <label class="stamtrack" title="Space between the letters of the STA&quot;M. Opening it up makes the notch inside a mem plainly smaller than a real gap between letters, so the mem stops reading as a kaf plus a vav.">
+            <span class="rs-ico stam-ico">מם</span>
+            <input type="range" id="stamTrack" min="0" max="0.1" step="0.005" aria-label="STA&quot;M letter spacing">
+          </label>
+        </div>
+      </section>
+
+      <section class="set-sec">
+        <h3 class="set-h">Practice</h3>
+        <div class="set-row">
+          <span class="label">Score overlay</span>
+          <span class="seg" id="overlaySeg">
+            <button class="ov on" data-ov="off">Off</button>
+            <button class="ov" data-ov="word">Words</button>
+            <button class="ov" data-ov="phrase">Phrases</button>
+            <button class="ov" data-ov="verse">Verse</button>
+          </span>
+        </div>
+        <div class="set-row">
+          <span class="label">Scoring</span>
+          <span class="seg" id="scoreModelSeg" title="Which scoring model counts (both are always shown side by side for testing). Melody = pitch-shape match; Note-hit = Guitar-Hero-style per-note hits.">
+            <button class="sm on" data-sm="contour">Melody</button>
+            <button class="sm" data-sm="gh">Note-hit (beta)</button>
+          </span>
+          <span class="legend-scale" title="Colour scale used on scored words">
+            <span>low</span><span class="bar"></span><span>high</span>
+          </span>
+        </div>
+      </section>
+
+      <section class="set-sec">
+        <h3 class="set-h">Tools</h3>
+        <div class="set-row">
+          <button id="tgGuide" class="toggle" title="Trope guide — colours, melodic shapes &amp; meanings; tap a family or trope to spotlight it in the pesukim">🎨 Trope guide</button>
+          <button id="btnLeaderboard" class="toggle" title="See how your practice compares">🏆 Leaderboard</button>
+        </div>
+      </section>
+    </div>
   </div><!-- /.settings-sheet -->
 
   <div class="toolbar stagebar" id="stageBar"></div>
@@ -113,31 +141,49 @@
 
   <main>
     <section class="scrollpane" id="scrollpane">
-      <button class="drawer-close" id="drawerCloseScroll" aria-label="Close Torah column">✕</button>
-      <p class="pane-title">Torah column (STA&ldquo;M)</p>
-      <div id="scrollVerses"></div>
+      <button type="button" class="pane-toggle" id="paneToggleScroll" aria-pressed="false"
+        title="Torah column" aria-label="Toggle Torah column">
+        <svg class="pane-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm1 3v12h8V6H8zm2 1h4v2h-4V7zm0 4h4v2h-4v-2zm0 4h3v2h-3v-2z"/></svg>
+      </button>
+      <div class="pane-body">
+        <button class="drawer-close" id="drawerCloseScroll" aria-label="Close Torah column">✕</button>
+        <p class="pane-title">Torah column (STA&ldquo;M)</p>
+        <div id="scrollVerses"></div>
+      </div>
     </section>
 
     <div class="splitter splitter2" id="splitter2" title="Drag to resize · double-click to reset"></div>
 
     <section class="textpane" id="textpane">
-      <button class="drawer-close" id="drawerClose" aria-label="Close pesukim">✕</button>
-      <div class="pane-head">
-        <p class="pane-title" id="textTitle">Text</p>
-        <label class="leftsize" title="Verse text size — smaller fits more, larger reads easier">
-          <span class="rs-ico">א</span>
-          <input type="range" id="leftSize" min="0.6" max="1.8" step="0.05" value="1" aria-label="Verse text size">
-        </label>
+      <button type="button" class="pane-toggle" id="paneToggleText" aria-pressed="true"
+        title="Pesukim &amp; aliyot" aria-label="Toggle pesukim pane">
+        <svg class="pane-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 5h16v2H4V5zm0 6h16v2H4v-2zm0 6h10v2H4v-2z"/></svg>
+      </button>
+      <div class="pane-body">
+        <button class="drawer-close" id="drawerClose" aria-label="Close pesukim">✕</button>
+        <div class="pane-head">
+          <p class="pane-title" id="textTitle">Text</p>
+          <label class="leftsize" title="Verse text size — smaller fits more, larger reads easier">
+            <span class="rs-ico">א</span>
+            <input type="range" id="leftSize" min="0.6" max="1.8" step="0.05" value="1" aria-label="Verse text size">
+          </label>
+        </div>
+        <div id="aliyot" class="aliyot-panel"></div>
+        <div id="verses"></div>
       </div>
-      <div id="aliyot" class="aliyot-panel"></div>
-      <div id="verses"></div>
     </section>
 
     <div class="splitter" id="splitter" title="Drag to resize · double-click to reset"></div>
 
-    <section class="practice">
-      <div id="practice">
-        <p class="empty">Select a verse on the left to begin practicing.</p>
+    <section class="practice" id="practicePane">
+      <button type="button" class="pane-toggle" id="paneTogglePractice" aria-pressed="true"
+        title="Practice coach" aria-label="Toggle practice pane">
+        <svg class="pane-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a3 3 0 0 0-3 3v6a3 3 0 1 0 6 0V6a3 3 0 0 0-3-3zm-1 14.9A7 7 0 0 1 5 11H3a9 9 0 0 0 8 8.9V22h2v-2.1A9 9 0 0 0 21 11h-2a7 7 0 0 1-6 6.9z"/></svg>
+      </button>
+      <div class="pane-body">
+        <div id="practice">
+          <p class="empty">Select a verse on the left to begin practicing.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -231,28 +277,74 @@
     </div>
   </div>
 
+  <!-- A new deploy has activated and this page is still running the old code.
+       Shown only when a refresh would actually interrupt something: an update
+       that lands while the tab is hidden is taken silently instead. -->
+  <div id="swUpdate" class="sw-update" hidden role="status">
+    <span class="swu-text">A new version is ready.</span>
+    <button id="swUpdateNow" class="toggle swu-go">Refresh</button>
+    <button id="swUpdateLater" class="swu-x" aria-label="Not now">✕</button>
+  </div>
+
   <script type="module" src="js/app.js"></script>
   <script>
-    // Register the offline/asset cache (service worker) and auto-refresh to a new
-    // deploy. Because sw.js's VERSION is content-hashed (scripts/stamp_version.py),
-    // any real change ships a new SW; it self-activates (skipWaiting + claim),
-    // which fires `controllerchange`, and we reload once to pick up fresh assets —
-    // but never on the first install, and never mid-recording (see __cantillateBusy).
+    // Register the offline/asset cache (service worker) and pick up a new deploy.
+    // Because sw.js's VERSION is content-hashed (scripts/stamp_version.py), any
+    // real change ships a new SW; it self-activates (skipWaiting + claim), which
+    // fires `controllerchange` — at which point this page is running stale code.
+    //
+    // Refreshing is never worth yanking the page out from under the reader, so it
+    // is only ever taken unprompted while the tab is hidden (where it costs them
+    // nothing). A visible page is offered the refresh and left to accept it.
     if ('serviceWorker' in navigator) {
       const swURL = new URL('sw.js', window.location.href).href;
       const scope = new URL('.', window.location.href).pathname;
       const hadController = !!navigator.serviceWorker.controller;
-      let reloadPending = false;
-      const reloadWhenIdle = () => {
-        if (window.__cantillateBusy) { setTimeout(reloadWhenIdle, 3000); return; }
-        window.location.reload();
+      let pending = false;   // a newer SW has taken over; this page is out of date
+      let declined = false;  // the reader waved the offer away; don't ask again
+      let recheck = 0;
+
+      // Recording, scoring and playback must all finish first; app.js owns that
+      // question because only it knows what is running.
+      const safeToReload = () => {
+        const ask = window.__cantillateReloadSafe;
+        return typeof ask === 'function' ? ask() : !window.__cantillateBusy;
       };
+
+      const offer = () => {
+        const box = document.getElementById('swUpdate');
+        if (box) box.hidden = false;
+      };
+
+      const settle = () => {
+        clearTimeout(recheck);
+        if (!pending) return;
+        // Mid-take: say nothing at all (a toast over the coach line is its own
+        // interruption) and ask again once the take is done.
+        if (!safeToReload()) { recheck = setTimeout(settle, 3000); return; }
+        if (document.hidden) { window.location.reload(); return; }
+        if (!declined) offer();
+      };
+
       navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (!hadController || reloadPending) return; // first install: nothing to refresh
-        reloadPending = true;
-        reloadWhenIdle();
+        if (!hadController || pending) return; // first install: nothing to refresh
+        pending = true;
+        settle();
       });
+
+      // Leaving the tab is the one moment a reload is free, so reconsider then —
+      // and on the way back, in case the offer still needs making.
+      document.addEventListener('visibilitychange', settle);
+
       window.addEventListener('load', () => {
+        const now = document.getElementById('swUpdateNow');
+        const later = document.getElementById('swUpdateLater');
+        if (now) now.addEventListener('click', () => window.location.reload());
+        if (later) later.addEventListener('click', () => {
+          declined = true;
+          const box = document.getElementById('swUpdate');
+          if (box) box.hidden = true;
+        });
         navigator.serviceWorker.register(swURL, { scope })
           .then((reg) => {
             reg.update();                                    // check immediately

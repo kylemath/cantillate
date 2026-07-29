@@ -1,20 +1,40 @@
+/* WOFF2 first, TTF second: browsers take the first format they understand, and
+   every engine that ships a service worker also ships WOFF2, so the .ttf is a
+   fallback for archival/offline use rather than something a real browser
+   fetches. The .woff2 files are lossless conversions of the .ttf beside them
+   (same cmap, same glyphs, same GSUB/GPOS/GDEF) — not subsets.
+
+   font-display: swap, not optional. These faces ARE the lesson: the app teaches
+   te'amim and STA"M letterforms, and a system Hebrew fallback positions niqqud
+   and cantillation marks badly. `optional` would let a slow first load pin the
+   whole session to that wrong face; `swap` costs one reflow and then always
+   ends up correct. After the first visit the service worker precaches these,
+   so the fallback flash is a first-paint-only cost. */
 @font-face {
   font-family: 'FrankRuehl';
-  src: url('../fonts/FrankRuehlCLM-Medium.ttf') format('truetype');
+  src: url('../fonts/FrankRuehlCLM-Medium.woff2') format('woff2'),
+       url('../fonts/FrankRuehlCLM-Medium.ttf') format('truetype');
   font-weight: 400;
+  font-display: swap;
 }
 @font-face {
   font-family: 'FrankRuehl';
-  src: url('../fonts/FrankRuehlCLM-Bold.ttf') format('truetype');
+  src: url('../fonts/FrankRuehlCLM-Bold.woff2') format('woff2'),
+       url('../fonts/FrankRuehlCLM-Bold.ttf') format('truetype');
   font-weight: 700;
+  font-display: swap;
 }
 @font-face {
   font-family: 'StamAshkenaz';
-  src: url('../fonts/StamAshkenazCLM.ttf') format('truetype');
+  src: url('../fonts/StamAshkenazCLM.woff2') format('woff2'),
+       url('../fonts/StamAshkenazCLM.ttf') format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'ShlomoStam';
-  src: url('../fonts/ShlomoStam.ttf') format('truetype');
+  src: url('../fonts/ShlomoStam.woff2') format('woff2'),
+       url('../fonts/ShlomoStam.ttf') format('truetype');
+  font-display: swap;
 }
 
 :root {
@@ -66,15 +86,45 @@ body {
 }
 
 header.topbar {
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-  padding: 14px 20px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding: 10px 20px; border-bottom: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(30,36,64,0.6), transparent);
 }
-.brand { display: flex; flex-direction: column; }
-.brand h1 { margin: 0; font-size: 20px; letter-spacing: 0.5px; }
-.brand .sub { color: var(--muted); font-size: 12px; }
+.brand { display: flex; flex-direction: column; flex: 0 0 auto; }
+.brand h1 { margin: 0; font-size: 18px; letter-spacing: 0.5px; }
+.brand .sub { color: var(--muted); font-size: 11px; }
 
-.controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-left: auto; }
+.controls, .controls-primary, .set-row {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+}
+.controls-primary { flex: 1 1 auto; min-width: 0; }
+.chrome-end {
+  display: flex; align-items: center; gap: 8px; flex: 0 0 auto; margin-inline-start: auto;
+}
+.settings-btn { white-space: nowrap; }
+/* Desktop primary chrome: one unbroken strip. The tagline moves out of the way
+   (it already lives in the footer), labels quiet down to uppercase captions, and
+   the reading selects share the leftover width without wrapping into a second row. */
+@media (min-width: 901px) and (min-height: 601px) {
+  header.topbar {
+    flex-wrap: nowrap; gap: 12px; padding: 8px 18px;
+  }
+  .brand .sub { display: none; }
+  .controls-primary {
+    flex-wrap: nowrap; gap: 6px 10px;
+  }
+  .controls-primary .label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.4px;
+    font-weight: 600; margin: 0;
+  }
+  .controls-primary select { max-width: 280px; }
+  #parashah { max-width: 340px; min-width: 160px; flex: 1 1 auto; }
+  #portion { max-width: 180px; }
+}
+.settings-panel #tonic { max-width: 88px; }
+body.settings-open .settings-btn {
+  background: var(--accent); color: #08101f; border-color: transparent; font-weight: 600;
+}
 select, button {
   background: var(--panel-2); color: var(--text); border: 1px solid var(--line);
   border-radius: 8px; padding: 7px 11px; font-size: 13px; cursor: pointer;
@@ -107,22 +157,112 @@ button.toggle.on { background: var(--accent); color: #08101f; border-color: tran
 .seg button.on { background: var(--accent); color: #08101f; font-weight: 600; }
 
 .toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 10px 20px; border-bottom: 1px solid var(--line); }
-.toolbar .label { color: var(--muted); font-size: 12px; margin-inline-end: 4px; }
+.toolbar .label, .set-row .label { color: var(--muted); font-size: 12px; margin-inline-end: 2px; }
 
-main { display: grid; grid-template-columns: var(--leftw, 360px) 6px 1fr; gap: 0; height: calc(100vh - 118px); }
+/* Settings panel sections — used on both desktop (popover) and mobile (sheet). */
+.set-sec { padding: 0; }
+.set-sec + .set-sec { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.set-h {
+  margin: 0 0 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.6px;
+  text-transform: uppercase; color: var(--muted);
+}
+.set-row { gap: 8px; }
+
+/* The three main windows (STA"M scroll · pesukim · coach). Mobile turns them
+   into drawers (see the compact block); the resizable, collapsible three-column
+   grid is desktop-only and lives in its own block below. */
+main { display: grid; grid-template-columns: 1fr; gap: 0; }
+.splitter, .splitter2, .pane-toggle { display: none; }
 .splitter { cursor: col-resize; background: var(--line); transition: background .12s; }
 .splitter:hover, .splitter.dragging { background: var(--accent); }
+.scrollpane, .textpane, .practice { position: relative; min-width: 0; min-height: 0; }
+.scrollpane { border-inline-end: 1px solid var(--line); }
+.pane-body { padding: 16px 20px; box-sizing: border-box; }
 
-/* Optional STA"M Torah-column pane: a third column to the LEFT of the pointed
-   verses, shown only in scroll view (desktop). Off-screen it is display:none so
-   the two-column grid is unchanged. */
-.scrollpane { display: none; overflow-y: auto; overflow-x: hidden; padding: 16px 20px; border-inline-end: 1px solid var(--line); }
-.splitter2 { display: none; }
-body.scroll-view main { grid-template-columns: var(--scrollw, 300px) 6px var(--leftw, 360px) 6px 1fr; }
-body.scroll-view .scrollpane { display: block; }
-body.scroll-view .splitter2 { display: block; }
+/* Corner collapse control: a small icon button living in each window's inner
+   corner, and the only thing left once that window is collapsed to a rail. */
+.pane-toggle {
+  position: absolute; top: 6px; inset-inline-start: 6px; z-index: 5;
+  width: 28px; height: 28px; padding: 0; margin: 0;
+  align-items: center; justify-content: center;
+  border-radius: 7px; background: var(--panel-2); color: var(--muted);
+  border: 1px solid var(--line); cursor: pointer; line-height: 0;
+}
+.pane-toggle:hover { color: var(--text); border-color: var(--accent); }
+.pane-toggle.on { background: var(--accent); color: #08101f; border-color: transparent; }
+.pane-ico { width: 15px; height: 15px; display: block; }
+
+/* --- Desktop: the resizable three-window grid ---------------------------- */
+/* Each window collapses to a thin rail holding only its toggle, and the freed
+   width always goes to a window that still has content (the rightmost expanded
+   one flexes), so collapsing never leaves dead space. Track vars are overridden
+   by rules that also match `main` — a body-level declaration would lose to
+   main's own. */
+@media (min-width: 901px) and (min-height: 601px) {
+  main {
+    --rail: 40px;
+    --scroll-col: var(--rail);
+    --scroll-gap: 0px;
+    --text-col: var(--leftw, 360px);
+    --text-gap: 6px;
+    --practice-col: minmax(0, 1fr);
+    grid-template-columns:
+      var(--scroll-col) var(--scroll-gap) var(--text-col) var(--text-gap) var(--practice-col);
+    height: calc(100vh - 96px);
+  }
+  body.scroll-view main { --scroll-col: var(--scrollw, 300px); --scroll-gap: 6px; }
+  body.pane-text-collapsed main { --text-col: var(--rail); --text-gap: 0px; }
+  body.pane-practice-collapsed main { --practice-col: var(--rail); }
+  /* Hand the freed width to the next window that still shows something. */
+  body.pane-practice-collapsed:not(.pane-text-collapsed) main {
+    --text-col: minmax(0, 1fr); --text-gap: 0px;
+  }
+  body.scroll-view.pane-text-collapsed.pane-practice-collapsed main {
+    --scroll-col: minmax(0, 1fr);
+  }
+  /* Nothing left to show: the coach column keeps the space and says why. */
+  body.pane-text-collapsed.pane-practice-collapsed:not(.scroll-view) main {
+    --practice-col: minmax(0, 1fr);
+  }
+  body.pane-text-collapsed.pane-practice-collapsed:not(.scroll-view) .practice::after {
+    content: 'Every window is collapsed — reopen one with the buttons on the left.';
+    position: absolute; top: 50%; inset-inline: 56px 20px; transform: translateY(-50%);
+    text-align: center; color: var(--muted); font-size: 13px;
+  }
+
+  /* Pinned tracks, because a hidden splitter leaves the grid entirely: with
+     auto-placement the windows would each slide one column to the left. */
+  .scrollpane { grid-column: 1; }
+  .textpane { grid-column: 3; }
+  .practice { grid-column: 5; }
+  .splitter { grid-column: 4; }
+  .splitter.splitter2 { grid-column: 2; }  /* carries both classes; must win */
+
+  .scrollpane, .textpane, .practice { overflow: hidden; }
+  .pane-toggle { display: inline-flex; }
+  .pane-body { height: 100%; overflow-y: auto; overflow-x: hidden; padding-inline-start: 40px; }
+  /* A collapsed (or unopened) window keeps only its toggle, stretched to the rail. */
+  .scrollpane .pane-body,
+  body.pane-text-collapsed .textpane .pane-body,
+  body.pane-practice-collapsed .practice .pane-body { display: none; }
+  body.scroll-view .scrollpane .pane-body { display: block; }
+  body:not(.scroll-view) .scrollpane .pane-toggle,
+  body.pane-text-collapsed .textpane .pane-toggle,
+  body.pane-practice-collapsed .practice .pane-toggle {
+    position: static; width: 32px; height: 32px; margin: 4px;
+  }
+
+  /* A splitter only shows where a drag would move something: both windows it
+     divides must be expanded, and neither may be the one that flexes. */
+  .splitter { display: block; }
+  body.scroll-view .splitter2 { display: block; }
+  body.scroll-view.pane-text-collapsed.pane-practice-collapsed .splitter2 { display: none; }
+  body.pane-text-collapsed .splitter,
+  body.pane-practice-collapsed .splitter { display: none; }
+}
+
 /* Compact verse cards when the left pane is dragged narrow. */
-main.narrow-left .textpane { padding: 12px 8px; }
+main.narrow-left .textpane .pane-body { padding: 12px 8px 12px 36px; }
 main.narrow-left .textpane .pane-title { font-size: 10px; }
 main.narrow-left .textpane .verse { padding: 8px; margin-bottom: 6px; }
 main.narrow-left .textpane .hebrew { font-size: calc(15px * var(--left-scale, 1)); line-height: 1.5; padding-top: 16px; }
@@ -134,12 +274,25 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
   backdrop-filter: blur(2px); opacity: 0; pointer-events: none; transition: opacity .2s;
 }
 
-/* Mobile app-bar + pull-down settings sheet. On desktop the sheet is
-   display:contents (transparent to layout, so header + toolbar render exactly
-   as before) and the slim app-bar is hidden. The mobile media query below turns
-   the sheet into a pull-down panel and reveals the app-bar. */
+/* Desktop chrome: the settings-sheet wrapper is transparent to layout so the
+   topbar sits in the page flow; the dense controls live in .settings-panel, a
+   popover anchored under the Settings button. Mobile (below) turns the whole
+   wrapper into the pull-down sheet and reveals the slim app-bar. */
 .mobilebar { display: none; }
 .settings-sheet { display: contents; }
+.settings-panel {
+  display: none;
+  position: fixed; top: 56px; inset-inline-end: 16px; z-index: 45;
+  width: min(420px, calc(100vw - 24px)); max-height: min(70vh, 560px);
+  overflow-y: auto; padding: 16px 18px 18px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: 0 18px 48px rgba(0,0,0,0.55);
+}
+body.settings-open .settings-panel { display: block; }
+body.settings-open #settingsBackdrop { opacity: 1; pointer-events: auto; }
+#settingsBackdrop { z-index: 44; }
+/* Close button is for the mobile sheet; desktop dismisses via backdrop / Esc. */
+.settings-sheet > .drawer-close { display: none; }
 
 /* --- Mobile / compact layout ------------------------------------------- */
 /* "Compact" = phone-shaped: NARROW (portrait phones) OR SHORT (landscape phones,
@@ -153,19 +306,19 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
      container, so `position: sticky` on the app-bar/stage bar still works. */
   html { overflow-x: clip; }
 
-  main, body.scroll-view main { grid-template-columns: 1fr; height: auto; }
-  .splitter, .splitter2 { display: none; }
-
   /* On a phone the verse PICKER (left drawer) is ALWAYS the pointed, verse-by-
      verse text — never the STA"M. The STA"M Torah column is a separate, on-demand
      FULL-SCREEN reader (see below), so the two never share the drawer slot. */
   .scrollpane {
     position: fixed; inset: 0; z-index: 47; margin: 0;
-    width: 100vw; max-width: 100vw; height: 100%; padding-top: 48px;
+    width: 100vw; max-width: 100vw; height: 100%;
     background: var(--panel); border: none; box-shadow: none;
-    display: none; overflow-y: auto;
+    display: none; overflow: hidden;
   }
-  /* Torah column view (toggled from settings): the STA"M fills the screen. */
+  .scrollpane .pane-body {
+    height: 100%; padding: 48px 20px 16px; overflow-y: auto;
+  }
+  /* Torah column view: the STA"M fills the screen. */
   body.scroll-view .scrollpane { display: block; }
 
   /* --- App-bar + pull-down settings sheet ------------------------------- */
@@ -204,24 +357,32 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
   body.settings-open .settings-sheet { transform: translateY(0); }
   body.settings-open #settingsBackdrop { opacity: 1; pointer-events: auto; }
   #settingsBackdrop { z-index: 44; }
+  .settings-sheet > .drawer-close {
+    display: flex; align-items: center; justify-content: center;
+  }
 
-  /* Stack the header controls vertically inside the sheet; the brand title is
-     already shown in the app-bar. */
+  /* Inside the mobile sheet the topbar stacks, the brand is already in the
+     app-bar, and the desktop Settings button is redundant. */
   .settings-sheet header.topbar {
     flex-direction: column; align-items: stretch; gap: 12px;
     padding: 0; border: none; background: none;
   }
   .settings-sheet .brand { display: none; }
-  .settings-sheet .controls { margin: 0; gap: 8px 10px; }
-  /* Let selects shrink instead of overflowing the screen (the root cause of the
-     off-screen stage dropdown), and give each a comfortable tap target. */
-  .settings-sheet .controls select { flex: 1 1 46%; min-width: 0; max-width: 100%; padding: 9px 11px; }
-  .settings-sheet .controls .label { flex: 1 1 100%; margin: 2px 0 -2px; }
-  .settings-sheet .controls .authbox { flex: 1 1 100%; margin: 4px 0 0; }
-  .settings-sheet .toolbar {
-    flex-wrap: wrap; padding: 12px 0 0; margin-top: 4px;
-    border: none; border-top: 1px solid var(--line); row-gap: 10px;
+  .settings-sheet .controls-primary { margin: 0; gap: 8px 10px; }
+  .settings-sheet .controls-primary select { flex: 1 1 46%; min-width: 0; max-width: 100%; padding: 9px 11px; }
+  .settings-sheet .controls-primary .label { flex: 1 1 100%; margin: 2px 0 -2px; }
+  .settings-sheet .chrome-end { margin: 4px 0 0; width: 100%; }
+  .settings-sheet .chrome-end .settings-btn { display: none; }
+  .settings-sheet .authbox { flex: 1 1 auto; margin: 0; }
+
+  /* Panel is in-flow content of the sheet on mobile, not a floating popover. */
+  .settings-panel {
+    display: block; position: static; inset: auto; width: auto; max-height: none;
+    overflow: visible; padding: 12px 0 0; margin-top: 4px;
+    background: none; border: none; border-radius: 0; border-top: 1px solid var(--line);
+    box-shadow: none;
   }
+  .settings-panel .set-sec + .set-sec { margin-top: 12px; padding-top: 12px; }
 
   /* Trope-family key adds little on a small screen — hide to save space. */
   .fambar { display: none; }
@@ -230,10 +391,14 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
      instead of consuming horizontal (or vertical) space. */
   .textpane {
     position: fixed; top: 0; inset-inline-start: 0; height: 100%;
-    width: min(86vw, 360px); z-index: 40; margin: 0; padding-top: 48px;
+    width: min(86vw, 360px); z-index: 40; margin: 0;
     background: var(--panel); border-inline-end: 1px solid var(--line);
     box-shadow: 8px 0 34px rgba(0,0,0,0.5);
     transform: translateX(-104%); transition: transform .22s ease;
+    overflow: hidden;
+  }
+  .textpane .pane-body {
+    height: 100%; padding: 48px 20px 16px; overflow-y: auto;
   }
   body.pasuk-open .textpane { transform: translateX(0); }
   /* Scoped to the pasuk backdrop only: a generic `.drawer-backdrop` selector
@@ -285,7 +450,7 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
   #practice .unit-nav,
   #practice .cmp-legend { display: none; }
 
-  .practice { padding: 10px 12px 88px; }
+  .practice .pane-body { padding: 10px 12px 88px; }
 
   /* Transport docked to the bottom edge (corners): Listen bottom-left, Stop
      bottom-right, Record/Duet between. Reuses the existing buttons + all their
@@ -365,7 +530,7 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
   .brand .sub { display: none; }
   .brand h1 { font-size: 16px; }
   footer.src { display: none; }
-  .practice { padding: 8px 14px 76px; }
+  .practice .pane-body { padding: 8px 14px 76px; }
   canvas.contour { height: 150px; }
   canvas.spectro { height: 90px; }
   /* Reclaim vertical space: slim the sticky app-bar + stage bar so the coach
@@ -383,11 +548,18 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
   background: var(--panel-2); border-radius: 6px; }
 .keyshint { font-size: 14px; color: var(--muted); cursor: help; margin-inline-start: auto; }
 
-/* Persistent stage selector (top bar) */
-.stagebar { gap: 6px; }
-/* The dropdown is a mobile-only alternative to the chip row (see media query). */
+/* Persistent stage selector (top bar) — short labels, never wrap; shrink / ellipsize
+   as the row gets tight rather than stacking onto a second line. */
+.stagebar {
+  gap: 4px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin;
+}
 .stage-select { display: none; }
-.stagebtn { font-size: 12px; padding: 6px 10px; border-radius: 8px; }
+.stagebtn {
+  flex: 1 1 0; min-width: 0; max-width: 100%;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-size: clamp(10px, 1.05vw, 12px); padding: 5px 6px; border-radius: 8px;
+  letter-spacing: -0.01em;
+}
 .stagebtn.cur { background: var(--accent); color: #08101f; border-color: transparent; font-weight: 700; }
 .stagebtn.locked { opacity: 0.5; }
 .stagebtn.locked.cur { opacity: 1; background: var(--panel-2); color: var(--text); box-shadow: 0 0 0 2px var(--accent-2) inset; }
@@ -398,7 +570,6 @@ main.narrow-left .textpane .vscore { font-size: 10px; }
 .locked-page h3 { color: var(--text); margin: 10px 0; }
 .locked-page .next { margin: 14px 0 18px; color: var(--text); }
 
-.textpane, .practice { overflow-y: auto; padding: 16px 20px; }
 .textpane { border-inline-end: 1px solid var(--line); }
 .pane-title { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0 0 10px; }
 
@@ -654,6 +825,23 @@ body.guide-open .guidepane { transform: translateX(0); }
 .rotate-card .toggle { margin-top: 16px; }
 @keyframes rotate-hint { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(90deg); } }
 
+/* "A new version is ready" offer. A corner strip rather than a modal: an update
+   is never urgent enough to take the text away from someone mid-reading. */
+.sw-update {
+  position: fixed; z-index: 70; bottom: 16px; inset-inline-start: 50%;
+  transform: translateX(-50%); display: flex; align-items: center; gap: 10px;
+  max-width: calc(100vw - 24px); padding: 7px 8px 7px 14px; font-size: 13px;
+  color: var(--text); background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: 999px;
+}
+.sw-update[hidden] { display: none; }
+.swu-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sw-update .swu-go { font-size: 13px; padding: 5px 12px; font-weight: 600;
+  background: var(--accent); color: #08101f; border-color: transparent; }
+.swu-x { border: none; background: transparent; color: var(--muted);
+  font-size: 13px; line-height: 1; padding: 5px 7px; cursor: pointer; }
+.swu-x:hover { color: var(--text); }
+
 .canvas-wrap { position: relative; background: #0b0e1a; border: 1px solid var(--line); border-radius: 12px; margin: 6px 0; overflow: hidden; }
 canvas.contour { width: 100%; height: 210px; display: block; }
 canvas.spectro { width: 100%; height: 120px; display: block; }
@@ -821,7 +1009,10 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
   body.aliyah-open .scrollpane {
     position: static; transform: none; display: block; z-index: auto;
     width: 100%; max-width: 100%; height: auto; box-shadow: none;
-    margin: 0; padding: 8px 12px; border-inline-end: none; background: #e2cfa5;
+    margin: 0; padding: 0; border-inline-end: none; background: #e2cfa5;
+  }
+  body.aliyah-open .scrollpane .pane-body {
+    padding: 8px 12px; height: auto; overflow-y: auto;
   }
   body.aliyah-open .textpane,
   body.aliyah-open .pasuk-fab { display: none; }
@@ -879,6 +1070,9 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
   /* The pane is the sole mobile aliyah scroller. Keeping overflow off the fixed
      tikkun page avoids nested scrollbars and preserves its scaled page height. */
   body.aliyah-open .scrollpane {
+    max-height: calc(100vh - 220px); overflow: hidden;
+  }
+  body.aliyah-open .scrollpane .pane-body {
     max-height: calc(100vh - 220px); overflow-y: auto;
   }
   body.aliyah-open .scrollpane .tikkun-column {
@@ -940,6 +1134,10 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
    tall) use the compact layout instead of this desktop flex-fill. */
 @media (min-width: 901px) and (min-height: 601px) {
   .practice { display: flex; flex-direction: column; }
+  .practice .pane-body {
+    flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
+    overflow-y: auto;
+  }
   #practice:not(.aliyah-fill) {
     flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
   }

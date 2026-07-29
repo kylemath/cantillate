@@ -8,13 +8,15 @@
  * Caching strategy summary:
  *   - App shell (html/css/js modules): network-first, fall back to cache.
  *   - data/ JSON + data/pitch/ shards + fonts/: cache-first (stale-while-revalidate).
+ *     The WOFF2 fonts are additionally precached at install, so the first paint
+ *     of Hebrew text doesn't wait on the network. See FONT_ASSETS.
  *   - readings.json manifest: network-first (changes when readings are added).
  *   - audio/*.mp3: network passthrough, never cached (Range/206 safe, avoids quota blowups).
  *   - Anything cross-origin or non-GET: bypassed entirely.
  */
 
 // Bump VERSION to invalidate all previously cached content on next activate.
-const VERSION = 'v-104188d652a0';
+const VERSION = 'v-c9bdab9b99a9';
 const SHELL_CACHE = 'cantillate-shell-' + VERSION;
 const DATA_CACHE = 'cantillate-data-' + VERSION;
 
@@ -58,6 +60,33 @@ const SHELL_ASSETS = [
   return new URL(path, SCOPE_BASE).href;
 });
 
+/*
+ * Fonts are precached too, but deliberately NOT into SHELL_ASSETS/SHELL_CACHE.
+ *
+ * The fetch handler tests isShellAsset() before isCacheableData(), so listing a
+ * font in SHELL_ASSETS would route it to networkFirst — making every visit block
+ * on a font round trip, the exact opposite of what precaching them is for. They
+ * are precached into DATA_CACHE instead, which is where isCacheableData() ->
+ * staleWhileRevalidate() already looks them up. Net effect: fonts are in the
+ * cache before first paint rather than only after their first use, and the
+ * routing below is untouched.
+ *
+ * Only the WOFF2s are precached, not the TTF fallbacks. Every engine that ships
+ * service workers shipped WOFF2 earlier (Chrome 36 vs 40, Firefox 39 vs 44,
+ * Safari 10 vs 11.1, Edge 14 vs 17), so in any browser that runs this code the
+ * .ttf is never requested; precaching both would nearly quadruple the font
+ * install payload for bytes nobody fetches. The TTFs stay in the repo and are
+ * still cache-first on demand via isCacheableData() if anything ever asks.
+ */
+const FONT_ASSETS = [
+  './fonts/ShlomoStam.woff2',
+  './fonts/StamAshkenazCLM.woff2',
+  './fonts/FrankRuehlCLM-Medium.woff2',
+  './fonts/FrankRuehlCLM-Bold.woff2',
+].map(function (path) {
+  return new URL(path, SCOPE_BASE).href;
+});
+
 /* -------------------------------------------------------------------------- */
 /* Lifecycle                                                                  */
 /* -------------------------------------------------------------------------- */
@@ -67,24 +96,34 @@ self.addEventListener('install', function (event) {
   self.skipWaiting();
 
   event.waitUntil(
-    caches.open(SHELL_CACHE).then(function (cache) {
-      // Precache each shell asset individually so a single 404 (e.g. a JS
-      // module that doesn't exist yet) does not abort the whole install.
-      return Promise.allSettled(
-        SHELL_ASSETS.map(function (url) {
-          // cache: 'reload' bypasses the HTTP cache so we always precache fresh.
-          return fetch(new Request(url, { cache: 'reload' })).then(function (response) {
-            if (response && response.ok) {
-              return cache.put(url, response);
-            }
-            // Non-OK responses are skipped rather than cached.
-            return undefined;
-          });
-        })
-      );
-    })
+    Promise.all([
+      precache(SHELL_CACHE, SHELL_ASSETS),
+      precache(DATA_CACHE, FONT_ASSETS),
+    ])
   );
 });
+
+/**
+ * Precache a list of URLs into a named cache. Each entry is fetched
+ * individually so a single 404 (e.g. a JS module that doesn't exist yet) does
+ * not abort the whole install.
+ */
+function precache(cacheName, urls) {
+  return caches.open(cacheName).then(function (cache) {
+    return Promise.allSettled(
+      urls.map(function (url) {
+        // cache: 'reload' bypasses the HTTP cache so we always precache fresh.
+        return fetch(new Request(url, { cache: 'reload' })).then(function (response) {
+          if (response && response.ok) {
+            return cache.put(url, response);
+          }
+          // Non-OK responses are skipped rather than cached.
+          return undefined;
+        });
+      })
+    );
+  });
+}
 
 self.addEventListener('activate', function (event) {
   event.waitUntil(

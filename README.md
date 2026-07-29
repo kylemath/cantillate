@@ -88,7 +88,10 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
   consonants only, no verse numbers, no maqaf/sof-pasuk. Page and line boundaries
   follow tikkun.io's modern Davidovich 245-column / 42-line layout; the completed
   page scales as one unit on desktop and mobile, so its lines never re-wrap.
-  Tap any word to jump to it for practice.
+  Tap any word to jump to it for practice. Only the pages a reading needs are
+  bundled — run `scripts/build_tikkun.py` after adding a reading, or it falls
+  back to a reflowed column whose line breaks are the browser's, not the
+  scroll's (`--check` reports the gap and exits non-zero).
 - **Hold and rewind a word at a time** — anything running (the recorded chant, the
   voice guide, a duet, your own take) can be held with **Space** and nudged with
   **,** and **.** — one word back, one word forward. Fumble a word halfway through
@@ -522,6 +525,7 @@ scripts/fetch_text.py fetch/refresh text from Sefaria (legacy single-chapter)
 scripts/fetch_translation.py fetch + merge an English translation
 scripts/fetch_audio.py fetch recorded chant + per-verse/word timings (legacy)
 scripts/extract_pitch.py derive per-word note steps from the recordings (numpy)
+scripts/build_tikkun.py   refresh the scroll page/line layout for every reading
 scripts/build_drills.py   regenerate data/trope-drills.json
 scripts/build_trope_index.py  regenerate the splice index
 scripts/build_trope_shapes.py regenerate the measured per-accent shapes

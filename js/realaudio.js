@@ -5,6 +5,7 @@
 // or a single word) using the mp3 track times.
 
 import { detectPitch } from './pitch.js';
+import { getCtx } from './audio.js';
 import { getObjectUrl } from './offline.js';
 
 let ctx = null;
@@ -14,9 +15,13 @@ const cache = new Map(); // url -> { el, source, analyser }
 // stopVerseAudio or by reaching the end of the segment.
 let active = null;       // { el, raf, start, end, total, cb, paused, previewFrom, previewUntil }
 
+// The page's single AudioContext (see getCtx in audio.js). It matters here twice
+// over: a MediaElementSource is welded to the context that made it and the cache
+// below outlives any one playback, so every entry has to sit on the same one;
+// and scoring a duet means comparing the recording's clock with the mic's, which
+// is only meaningful while they are the same clock.
 function ensureCtx() {
-  if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
-  if (ctx.state === 'suspended') ctx.resume();
+  ctx = getCtx();
   return ctx;
 }
 

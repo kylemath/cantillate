@@ -56,7 +56,9 @@ const state = {
   aliyahCue: 'word',  // yad outline granularity in aliyah mode: 'word' | 'phrase'
   stamHand: 'shlomo', // scribal hand for every STA"M surface: 'shlomo' | 'ashkenaz'
   stamTrack: 0.05,    // STA"M letter-spacing, em (see applyStamTrack)
-  scrollView: false,  // render the text pane as a continuous Torah column
+  scrollView: false,  // Torah-column (STA"M) pane expanded on desktop / full-screen on mobile
+  textCollapsed: false, // desktop: collapse the pesukim / aliyot pane to a rail
+  practiceCollapsed: false, // desktop: collapse the coach pane to a rail
   scrollZoom: false,  // guitar-hero: zoom to ~5 words and auto-scroll the line
   tonicHz: 220,
   division: 'full',  // legacy field; verse range now derives from cycle/triYear (see divisionRange)
@@ -89,6 +91,12 @@ const state = {
   //   'gh'      = Guitar-Hero note-hit scorer (scoreNotes)
   scoreModel: 'contour',
 };
+
+// The service-worker auto-update consults this before it reloads the page (see
+// index.html). A reload mid-take loses the recording and its score, and one
+// mid-playback cuts the chant off; __cantillateBusy alone only covers the former.
+window.__cantillateReloadSafe = () =>
+  !window.__cantillateBusy && !state.recording && !state.playingReal;
 
 // Neutral ink for words/vowels when colour is limited to the trope (or off).
 const INK_GREY = '#aab0c8';
@@ -245,6 +253,12 @@ function renderReadingMenu(sel) {
 }
 
 async function init() {
+  loadPanePrefs();
+  // Apply pane classes before the first paint of loaded content so the rail
+  // layout matches saved prefs without a flash of the expanded panes.
+  document.body.classList.toggle('scroll-view', state.scrollView);
+  document.body.classList.toggle('pane-text-collapsed', state.textCollapsed);
+  document.body.classList.toggle('pane-practice-collapsed', state.practiceCollapsed);
   // Auto-discover readings from the manifest (falls back to the hardcoded list).
   try {
     const rr = await fetch('data/readings.json');
@@ -286,8 +300,7 @@ async function init() {
     b.addEventListener('click', () => setStamHand(b.dataset.sh));
   });
   setupStamTrack();
-  bindToggle('tgScrollView', () => { if (state.aliyah) return; state.scrollView = !state.scrollView; renderVerses(); maybeShowRotate(); });
-
+  setupPaneToggles();
   // A single "Portion" selector is the sole control for how much of the parashah
   // you read: the full annual reading, or one shorter triennial-cycle year. The
   // triennial year drives both the aliyah boundaries AND the range of verses
@@ -410,23 +423,31 @@ function saveAliyotEditor(body) {
   renderAliyot(); renderVerses();
 }
 
-// Mobile pull-down "settings" sheet: on a phone the dense header controls and
-// display toolbar live in a sheet that slides down from the slim app-bar, so
-// they stop eating the screen. On desktop the sheet is display:contents (a
-// no-op wrapper) and the app-bar is hidden, so this is inert there.
+// Settings panel: on a phone the dense header + display controls live in a
+// pull-down sheet behind the slim app-bar gear; on desktop the same panel is a
+// popover opened from the topbar "Settings" button, so the practice surface
+// stays clear either way. Both toggles drive the same body.settings-open flag.
+function setSettingsOpen(open) {
+  document.body.classList.toggle('settings-open', open);
+  const toggle = $('settingsToggle');
+  const toggleDesk = $('settingsToggleDesktop');
+  if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  if (toggleDesk) toggleDesk.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function closeSettingsSheet() { setSettingsOpen(false); }
+
 function setupSettingsSheet() {
   const toggle = $('settingsToggle');
+  const toggleDesk = $('settingsToggleDesktop');
   const backdrop = $('settingsBackdrop');
   const closeBtn = $('settingsClose');
-  const setOpen = (open) => {
-    document.body.classList.toggle('settings-open', open);
-    if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  };
-  if (toggle) toggle.addEventListener('click', () => setOpen(!document.body.classList.contains('settings-open')));
-  if (backdrop) backdrop.addEventListener('click', () => setOpen(false));
-  if (closeBtn) closeBtn.addEventListener('click', () => setOpen(false));
+  const flip = () => setSettingsOpen(!document.body.classList.contains('settings-open'));
+  if (toggle) toggle.addEventListener('click', flip);
+  if (toggleDesk) toggleDesk.addEventListener('click', flip);
+  if (backdrop) backdrop.addEventListener('click', () => closeSettingsSheet());
+  if (closeBtn) closeBtn.addEventListener('click', () => closeSettingsSheet());
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && document.body.classList.contains('settings-open')) setOpen(false);
+    if (e.key === 'Escape' && document.body.classList.contains('settings-open')) closeSettingsSheet();
   });
 }
 
@@ -451,7 +472,7 @@ function setupPasukDrawer() {
   // The STA"M pane is the on-demand full-screen Torah-column reader (mobile), so
   // its close button exits scroll view rather than closing the pointed drawer.
   if (closeBtnScroll) closeBtnScroll.addEventListener('click', () => {
-    state.scrollView = false; syncToggleUI(); renderVerses(); maybeShowRotate();
+    state.scrollView = false; savePanePrefs(); syncToggleUI(); renderVerses(); maybeShowRotate();
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && document.body.classList.contains('pasuk-open')) closePasukDrawer();
@@ -715,7 +736,7 @@ function setupLeaderboard() {
   const btn = $('btnLeaderboard');
   const modal = $('lbModal');
   if (!btn || !modal) return;
-  btn.addEventListener('click', () => openLeaderboard());
+  btn.addEventListener('click', () => { closeSettingsSheet(); openLeaderboard(); });
   modal.querySelectorAll('[data-close]').forEach((el) => {
     el.addEventListener('click', () => { modal.hidden = true; });
   });
@@ -2157,7 +2178,7 @@ function setupOrientation() {
 function setupGuide() {
   renderGuide();
   const tg = $('tgGuide');
-  if (tg) tg.addEventListener('click', () => toggleGuide());
+  if (tg) tg.addEventListener('click', () => { closeSettingsSheet(); toggleGuide(); });
   const gc = $('guideClose');
   if (gc) gc.addEventListener('click', () => toggleGuide(false));
   const clr = $('guideClear');
@@ -2285,6 +2306,33 @@ function renderGuide() {
 function bindToggle(id, fn) {
   $(id).addEventListener('click', () => { fn(); syncToggleUI(); });
 }
+
+const PANE_PREF_KEY = 'cantillate.panes';
+function loadPanePrefs() {
+  try {
+    const raw = localStorage.getItem(PANE_PREF_KEY);
+    if (!raw) return;
+    const p = JSON.parse(raw);
+    if (typeof p.scrollView === 'boolean') state.scrollView = p.scrollView;
+    if (typeof p.textCollapsed === 'boolean') state.textCollapsed = p.textCollapsed;
+    if (typeof p.practiceCollapsed === 'boolean') state.practiceCollapsed = p.practiceCollapsed;
+  } catch (_) { /* ignore corrupt prefs */ }
+}
+function savePanePrefs() {
+  try {
+    localStorage.setItem(PANE_PREF_KEY, JSON.stringify({
+      scrollView: state.scrollView,
+      textCollapsed: state.textCollapsed,
+      practiceCollapsed: state.practiceCollapsed,
+    }));
+  } catch (_) { /* quota / private mode */ }
+}
+function syncPaneToggle(id, open) {
+  const el = $(id);
+  if (!el) return;
+  el.classList.toggle('on', open);
+  el.setAttribute('aria-pressed', open ? 'true' : 'false');
+}
 function syncToggleUI() {
   $('tgVowels').classList.toggle('on', state.showVowels);
   $('tgTaamim').classList.toggle('on', state.showTaamim);
@@ -2297,9 +2345,41 @@ function syncToggleUI() {
   const shs = $('stamHandSeg');
   if (shs) shs.querySelectorAll('.sh').forEach((b) => b.classList.toggle('on', b.dataset.sh === state.stamHand));
   document.body.classList.toggle('hand-ashkenaz', state.stamHand === 'ashkenaz');
-  $('tgScrollView').classList.toggle('on', state.scrollView);
   document.body.classList.toggle('scroll-view', state.scrollView);
+  document.body.classList.toggle('pane-text-collapsed', state.textCollapsed);
+  document.body.classList.toggle('pane-practice-collapsed', state.practiceCollapsed);
+  syncPaneToggle('paneToggleScroll', state.scrollView);
+  syncPaneToggle('paneToggleText', !state.textCollapsed);
+  syncPaneToggle('paneTogglePractice', !state.practiceCollapsed);
   if (state.scrollView) requestAnimationFrame(fitScrollPages);
+}
+function setupPaneToggles() {
+  const scrollBtn = $('paneToggleScroll');
+  if (scrollBtn) scrollBtn.addEventListener('click', () => {
+    if (state.aliyah) return;
+    state.scrollView = !state.scrollView;
+    savePanePrefs();
+    syncToggleUI();
+    renderVerses();
+    maybeShowRotate();
+  });
+  const textBtn = $('paneToggleText');
+  if (textBtn) textBtn.addEventListener('click', () => {
+    state.textCollapsed = !state.textCollapsed;
+    savePanePrefs();
+    syncToggleUI();
+  });
+  const practiceBtn = $('paneTogglePractice');
+  if (practiceBtn) practiceBtn.addEventListener('click', () => {
+    state.practiceCollapsed = !state.practiceCollapsed;
+    savePanePrefs();
+    syncToggleUI();
+    // Coach canvases need a fresh measure after the pane reappears.
+    if (!state.practiceCollapsed && state.selectedVerse != null) {
+      requestAnimationFrame(() => { if (state.selectedVerse != null) renderPractice(); });
+    }
+  });
+  syncToggleUI();
 }
 // Map the unified Portion selector's value onto the underlying cycle/year state
 // (kept separate because scoring, leaderboards and aliyah storage all key off
@@ -2454,6 +2534,22 @@ function rawShardPath(slug, sid, n) {
     : `data/pitch/${slug}/${sid}/${n}.raw.json`;
 }
 
+// Per-verse SLIM shard (one entry of the monolith's `verses` map) and the
+// manifest listing which pesukim have one. Laid out like rawShardPath, so a
+// non-default voice keeps its own directory rather than borrowing the default
+// voice's shards — a source with no shards simply 404s and takes the monolith.
+function pitchShardPath(slug, sid, n) {
+  return isDefaultSource(sid)
+    ? `data/pitch/${slug}/${n}.json`
+    : `data/pitch/${slug}/${sid}/${n}.json`;
+}
+
+function pitchIndexPath(slug, sid) {
+  return isDefaultSource(sid)
+    ? `data/pitch/${slug}/index.json`
+    : `data/pitch/${slug}/${sid}/index.json`;
+}
+
 // The sources a reading advertises (from its manifest entry). Falls back to a
 // single default PocketTorah source so older manifest entries keep working.
 function readingSources(meta) {
@@ -2479,6 +2575,14 @@ function resolveAudioSource(sources) {
   return def ? def.id : DEFAULT_SOURCE;
 }
 
+// Queue work for the first idle moment after the app is interactive, so a
+// prefetch never competes with the render it was moved off the critical path to
+// unblock. Safari has no requestIdleCallback, hence the timer fallback.
+function whenIdle(fn, timeout = 1500) {
+  if (typeof requestIdleCallback === 'function') requestIdleCallback(fn, { timeout });
+  else setTimeout(fn, 250);
+}
+
 // Fetch the recorded-chant / pitch / shapes data for `slug` at source `sid` and
 // populate state. Missing files degrade gracefully (playback without a coach
 // line / spectrogram overlay), exactly as a reading with no recording does.
@@ -2492,17 +2596,30 @@ async function loadAudioSource(slug, sid) {
   // whole-reading monolith when an aliyah (many verses) is opened.
   _rawLoaded = new Set();
   _rawMonolithTried = false;
+  _pitchShards = null;
+  _pitchRequested = new Set();
+  _pitchMonolithPromise = null;
   try {
     const ar = await fetch(srcPath(slug, sid, 'audio.json'));
     if (ar.ok) state.audio = await ar.json();
   } catch (e) { /* no recorded audio available */ }
-  // Prefer the slim pitch payload (no heavy per-frame `raw` arrays ≈ 40% smaller);
-  // fall back to the original monolith if the slim file hasn't been generated yet.
-  try {
-    let pr = await fetch(srcPath(slug, sid, 'pitch.slim.json'));
-    if (!pr.ok) pr = await fetch(srcPath(slug, sid, 'pitch.json'));
-    if (pr.ok) state.pitch = await pr.json();
-  } catch (e) { /* no extracted pitch available */ }
+  // Phase 3: the whole-parashah pitch payload (a quarter of a megabyte on the
+  // longer readings, re-fetched on every reading switch) is no longer on the
+  // critical path. All that is awaited here is the per-verse manifest — a few
+  // hundred bytes naming which pesukim have extracted pitch — and each pasuk's
+  // slim shard is fetched when that pasuk is actually practiced. Multi-verse
+  // views, which would otherwise need dozens of shards at once, still take the
+  // monolith in one request, exactly as the `raw` underlay does.
+  const pitchIndex = await loadPitchIndex(slug, sid);
+  if (pitchIndex) {
+    _pitchShards = new Set(pitchIndex.verses);
+    state.pitch = { slug: pitchIndex.slug || slug, verses: {} };
+  } else {
+    // No shards deployed for this reading (only 15 have them) — the monolith is
+    // the only source there is, so it stays on the critical path as before.
+    const doc = await loadPitchMonolith(slug, sid);
+    if (doc) state.pitch = doc;
+  }
   try {
     const sr = await fetch(srcPath(slug, sid, 'shapes.json'));
     if (sr.ok) state.shapes = (await sr.json()).shapes;
@@ -2569,19 +2686,43 @@ function readingKind(meta) { return (meta && meta.kind) || 'parashah'; }
 // Where a reading's data files live. An excerpt borrows its parent's.
 function dataSlugOf(meta) { return (meta && meta.base) || (meta && meta.slug); }
 
+// The fixed Davidovich page data is the whole Torah in one half-megabyte
+// payload, and the STA"M column it lays out is a view the reader opts into — so
+// it is never on the critical path. Whichever comes first wins: the idle
+// prefetch queued once a reading is interactive, or the reader opening the
+// column. Until it lands renderTikkunPages returns null and the pane draws its
+// reflowed fallback (the browser's line breaks rather than the scroll's), so
+// there is no empty pane and no spinner standing between the reader and the
+// text. `_tikkunData` outlives a reading switch because the payload covers every
+// reading; loadTikkunData memoizes the fetch itself.
+let _tikkunData = null;
+let _tikkunFailed = false;
+
+async function ensureTikkunData() {
+  if (state.tikkun || _tikkunFailed) return;
+  const slug = state.slug;
+  try {
+    _tikkunData = await loadTikkunData();
+  } catch (e) {
+    _tikkunFailed = true;
+    console.warn('[tikkun] fixed page data unavailable; using continuous fallback', e);
+    return;
+  }
+  state.tikkun = _tikkunData;
+  // A reading switch while the payload was in flight doesn't invalidate it, only
+  // this redraw: that reading's own pane will have queued its own upgrade.
+  if (state.slug !== slug) return;
+  if (window.__cantillateBusy || state.playingReal) return;
+  if (state.scrollView || state.aliyah) renderScrollPane();
+}
+
 async function loadData(readingId) {
   const meta = AVAILABLE.find((p) => p.slug === readingId);
   const kind = readingKind(meta);
   const dataSlug = dataSlugOf(meta);
-  const [resp, tikkun] = await Promise.all([
-    fetch(meta.file),
-    loadTikkunData().catch((e) => {
-      console.warn('[tikkun] fixed page data unavailable; using continuous fallback', e);
-      return null;
-    }),
-  ]);
+  const resp = await fetch(meta.file);
   state.data = await resp.json();
-  state.tikkun = tikkun;
+  state.tikkun = _tikkunData;
   state.readingId = readingId;
   // Progress is filed under the DATA slug, so working through the Shema also
   // advances the pesukim of Va'etchanan rather than starting a parallel tally.
@@ -2616,6 +2757,15 @@ async function loadData(readingId) {
   applyHighlight();
   $('practice').classList.remove('aliyah-fill');
   $('practice').innerHTML = '<p class="empty">Select a verse on the left to begin practicing.</p>';
+  // Now that the reading is on screen and interactive, fetch what was kept off
+  // its critical path: the opening pesukim's pitch shards and the tikkun page
+  // data, so the first pasuk tapped and the first opening of the Torah column
+  // usually find their data already in hand.
+  whenIdle(() => {
+    if (state.readingId !== readingId) return; // reading changed meanwhile
+    warmPitchShards(divisionRange()[0]);
+    ensureTikkunData();
+  });
   // Offline: register any already-downloaded audio for this reading so playback
   // uses local blobs, and refresh the "⬇ Offline" button to reflect its state.
   try {
@@ -2748,6 +2898,138 @@ function setupNetBadge() {
   window.addEventListener('online', update);
   window.addEventListener('offline', update);
   update();
+}
+
+// Phase 3, slim pitch. `_pitchShards` is the manifest's verse set while this
+// reading is being served a pasuk at a time, and null once the whole-reading
+// monolith is resident (either because no shards are deployed or because a
+// multi-verse view pulled it in) — so it doubles as "are shards still in play".
+// `_pitchRequested` stops a re-render asking for the same shard twice. All three
+// are reset per source in loadAudioSource.
+let _pitchShards = null;
+let _pitchRequested = new Set();
+let _pitchMonolithPromise = null;
+
+// The per-verse manifest: which pesukim of this reading have extracted pitch.
+// A few hundred bytes, which is why it can be awaited before the first render.
+async function loadPitchIndex(slug, sid) {
+  try {
+    const r = await fetch(pitchIndexPath(slug, sid));
+    if (!r.ok) return null;
+    const doc = await r.json();
+    return doc && Array.isArray(doc.verses) && doc.verses.length ? doc : null;
+  } catch (e) { return null; } // no shards deployed for this reading
+}
+
+// The whole-reading pitch payload. Prefer the slim variant (no heavy per-frame
+// `raw` arrays ≈ 40% smaller); fall back to the original monolith if the slim
+// file hasn't been generated yet.
+async function loadPitchMonolith(slug, sid) {
+  try {
+    let pr = await fetch(srcPath(slug, sid, 'pitch.slim.json'));
+    if (!pr.ok) pr = await fetch(srcPath(slug, sid, 'pitch.json'));
+    if (!pr.ok) return null;
+    return await pr.json();
+  } catch (e) { return null; } // no extracted pitch available
+}
+
+// Fold a whole-reading payload into the resident pitch map WITHOUT clobbering
+// verses that arrived as shards: those may already carry `raw` contours merged
+// in by ensureRawForVerse, which the slim monolith has none of.
+function mergePitchDoc(pitch, doc) {
+  if (!pitch || !pitch.verses || !doc || !doc.verses) return;
+  for (const k of Object.keys(doc)) {
+    if (k !== 'verses' && pitch[k] === undefined) pitch[k] = doc[k];
+  }
+  for (const k of Object.keys(doc.verses)) {
+    if (!pitch.verses[k]) pitch.verses[k] = doc.verses[k];
+  }
+}
+
+// An aliyah or a chain needs every pasuk of its span at once, so it takes the
+// one monolith rather than a shard per verse — the same trade-off, for the same
+// reason, as loadRawContoursDeferred. Memoized as a promise rather than a flag
+// so a second caller waits for the payload instead of running on ahead of it.
+function ensurePitchMonolith(slug) {
+  if (!_pitchShards) return Promise.resolve();
+  if (!_pitchMonolithPromise) {
+    const sid = state.audioSource;
+    _pitchMonolithPromise = (async () => {
+      const doc = await loadPitchMonolith(slug, sid);
+      // Reading OR voice changed meanwhile: this payload is the wrong cantor's.
+      if (!doc || state.slug !== slug || state.audioSource !== sid || !state.pitch) return;
+      mergePitchDoc(state.pitch, doc);
+      _pitchShards = null; // every pasuk is resident; no shard can add anything now
+    })();
+  }
+  return _pitchMonolithPromise;
+}
+
+// Fetch just ONE pasuk's slim shard (a few KB) for single-verse practice, then
+// redraw so its coach line, spectrogram window and word timings appear. The pane
+// is never held back waiting for this: a verse with no extracted pitch already
+// renders a bare timeline (see buildCoach), and that is exactly what the first
+// paint shows for the moment before the shard lands.
+//
+// `warm` means nobody has opened this pasuk (see warmPitchShards), so the shard
+// is banked on its own: no `raw` underlay, which is five times the bytes of the
+// shard itself and shows nothing until the pasuk is on screen. renderPractice
+// fetches it if the reader does open the pasuk.
+async function ensurePitchForVerse(n, warm) {
+  if (n == null || !_pitchShards || !state.pitch) return;
+  if (!_pitchShards.has(n)) return; // this pasuk was never recorded / extracted
+  const key = `${state.slug}:${n}`;
+  if (_pitchRequested.has(key)) return;
+  if (state.pitch.verses[String(n)]) return;
+  _pitchRequested.add(key);
+  const slug = state.slug;
+  const sid = state.audioSource;
+  try {
+    const r = await fetch(pitchShardPath(slug, sid, n));
+    if (r.ok) {
+      const verse = await r.json();
+      // Reading OR voice changed meanwhile: this pasuk is a different cantor's.
+      if (state.slug !== slug || state.audioSource !== sid || !state.pitch) return;
+      state.pitch.verses[String(n)] = verse;
+      if (!warm) ensureRawForVerse(n); // the underlay can only merge into a resident verse
+      // Redraws the pasuk in view and nothing else, so a warm landing behind the
+      // reader's back leaves the screen alone — while a warm they have opened in
+      // the meantime still upgrades the pane it is sitting in.
+      refreshUnderlayFor(n);
+      return;
+    }
+  } catch (e) { /* fall through to the monolith */ }
+  // A background warm that misses stays quiet rather than escalating a whole
+  // monolith nobody asked for; it just leaves the pasuk eligible to be loaded
+  // for real, which is where the monolith fallback belongs.
+  if (warm) { _pitchRequested.delete(key); return; }
+  ensurePitchMonolith(slug); // shard missing → one payload for the whole reading
+}
+
+// Bank the shards for a short run of pesukim the reader has not opened: the top
+// of a section they just expanded, and the reading's opening pesukim at idle. A
+// tap on one of them then already has its coach line in hand, and nothing on
+// screen moves in the meantime. Deliberately bounded — warming a whole aliyah
+// would cost more requests, and more bytes, than the monolith.
+const PITCH_WARM = 3;
+function warmPitchShards(from, count = PITCH_WARM) {
+  for (let n = from; n < from + count; n++) ensurePitchForVerse(n, true);
+}
+
+// Opening a multi-verse view: bring in the whole-reading pitch first and only
+// then its `raw` underlay, because mergeRawContours can fill contours into
+// resident verses only — and it runs once per reading, so a raw monolith that
+// arrived while the verse map was still empty would be silently thrown away.
+async function ensureAliyahPitch(slug) {
+  const wasSharded = !!_pitchShards;
+  if (wasSharded) await ensurePitchMonolith(slug);
+  if (state.slug !== slug) return; // reading changed meanwhile
+  loadRawContoursDeferred(slug);
+  // Redraw only on the one transition from shards to a full map. The redraw
+  // re-enters here, and this is what stops that from looping.
+  if (!wasSharded || _pitchShards) return;
+  if (window.__cantillateBusy || state.playingReal) return;
+  if (state.aliyah) renderAliyahView();
 }
 
 // Verses whose `raw` underlay has been loaded (or attempted), so we never
@@ -3147,6 +3429,10 @@ function buildVerseSection(sec, key, isOpen, maftir, maxV) {
 
   if (!isOpen) return wrap;
 
+  // These pesukim have just been revealed, so the top of the section is the
+  // likeliest next tap: warm its pitch shards while the reader looks at the list.
+  warmPitchShards(sec.start);
+
   const body = document.createElement('div');
   body.className = 'alsec-body';
   if (a && a.note) {
@@ -3327,6 +3613,7 @@ function renderScrollPane() {
   if (state.aliyah) { renderAliyahScroll(box); return; }
   if (title) title.innerHTML = 'Torah column (STA&ldquo;M)';
   if (!state.scrollView) { box.innerHTML = ''; return; }
+  ensureTikkunData(); // the column is about to be drawn: this is where the pages are needed
   const [start, end] = divisionRange();
   const layoutKey = `${state.slug}:${start}-${end}`;
   const previousKey = box.dataset.layoutKey;
@@ -3396,6 +3683,7 @@ function applyScrollWordHits() {
 function renderAliyahScroll(box) {
   box = box || $('scrollVerses');
   if (!box) return;
+  ensureTikkunData(); // reachable without going through renderScrollPane
   const a = state.aliyah;
   if (!a) { box.innerHTML = ''; return; }
   const maxV = state.data.verses.length;
@@ -3644,9 +3932,19 @@ function setAliyahLayout(on) {
   if (on) {
     if (state._scrollViewBeforeAliyah == null) state._scrollViewBeforeAliyah = state.scrollView;
     state.scrollView = true;
-  } else if (state._scrollViewBeforeAliyah != null) {
-    state.scrollView = state._scrollViewBeforeAliyah;
-    state._scrollViewBeforeAliyah = null;
+    if (state._practiceCollapsedBeforeAliyah == null) {
+      state._practiceCollapsedBeforeAliyah = state.practiceCollapsed;
+    }
+    state.practiceCollapsed = false;
+  } else {
+    if (state._scrollViewBeforeAliyah != null) {
+      state.scrollView = state._scrollViewBeforeAliyah;
+      state._scrollViewBeforeAliyah = null;
+    }
+    if (state._practiceCollapsedBeforeAliyah != null) {
+      state.practiceCollapsed = state._practiceCollapsedBeforeAliyah;
+      state._practiceCollapsedBeforeAliyah = null;
+    }
   }
   syncToggleUI();
 }
@@ -3675,7 +3973,7 @@ const ALIYAH_CONTEXT = 8; // verses of surrounding scroll shown before/after
 
 function renderAliyahView() {
   const a = state.aliyah;
-  loadRawContoursDeferred(state.slug); // phase-2: an aliyah spans many verses → load the raw monolith
+  ensureAliyahPitch(state.slug); // an aliyah spans many verses → load the monoliths, not shards
   const par = parashahForReading();
   // The STA"M scroll itself lives in the shared left "Torah column" pane
   // (renderAliyahScroll); this practice pane holds only the aliyah's controls —
@@ -3959,19 +4257,18 @@ async function recordAliyahRun(tl, opts = {}) {
     }
   }
   const leadIn = 500;
-  const t0 = performance.now() + leadIn;
+  // Where the run would begin on a warm mic; the clock is anchored for real once
+  // the device is open (below), so a cold open can't eat the head of the take.
+  const planned = performance.now() + leadIn;
   // Kept on state so the shared transport can hold the run and shift the whole
   // timeline (clock, backstop and duet cues) by however long it was paused.
-  state._aliyaT0 = t0;
+  state._aliyaT0 = Infinity;
   state._aliyaDuet = duet;
   state._aliyaPausedAt = 0;
   resetTransport();
   $('aliyaResult').innerHTML = duet
     ? '<span class="hint">Duet — sing along with the real chant (use headphones + a wired mic) as you follow the yad.</span>'
     : '<span class="hint">Get ready… begin at the glowing first word and follow the yad.</span>';
-  // Duet: play the real chant in time with your take, one segment per verse,
-  // each scheduled at its slot on the shared timeline so the two stay aligned.
-  if (duet) scheduleAliyahDuet(tl, t0);
   await startMic((hz, rms) => {
     if (state._aliyaRunning !== 'rec') return;
     if (state.paused) return; // held mid-take: the clock and the samples both stop
@@ -4004,7 +4301,14 @@ async function recordAliyahRun(tl, opts = {}) {
       highlightAliyah(null);
     }
   }, () => {});
-  state._aliyaTimer = setTimeout(() => finishAliyahRecord(tl), leadIn + tl.total * 1000 + 900);
+  const t0 = Math.max(planned, performance.now() + 250);
+  state._aliyaT0 = t0;
+  // Duet: play the real chant in time with your take, one segment per verse,
+  // each scheduled at its slot on the shared timeline so the two stay aligned —
+  // against the same anchor as the take, or the guide sings ahead of the yad.
+  if (duet) scheduleAliyahDuet(tl, t0);
+  state._aliyaTimer = setTimeout(() => finishAliyahRecord(tl),
+    Math.max(0, t0 - performance.now()) + tl.total * 1000 + 900);
   syncTransportUI();
 }
 
@@ -4155,8 +4459,9 @@ function renderStageBar() {
   const btns = LEVELS.map((l) => {
     const locked = l.id > unlocked;
     const cur = l.id === state.level;
-    return `<button class="stagebtn ${cur ? 'cur' : ''} ${locked ? 'locked' : ''}" data-lvl="${l.id}">`
-      + `${locked ? '🔒 ' : '✓ '}${l.id}. ${l.label}</button>`;
+    const short = l.short || l.label;
+    return `<button class="stagebtn ${cur ? 'cur' : ''} ${locked ? 'locked' : ''}" data-lvl="${l.id}" title="${l.label}">`
+      + `${locked ? '🔒 ' : '✓ '}${l.id}. ${short}</button>`;
   }).join('');
   // Mobile shows this compact <select> instead of the chip row (CSS toggles which
   // is visible); both paths call selectStage so behaviour is identical.
@@ -4278,6 +4583,20 @@ function divideControlHtml(segs) {
   </div>`;
 }
 
+// Hand a canvas view over to the freshly rendered pane. The views hold a window
+// resize listener, so simply constructing new ones — as every re-render used to
+// do, and there are ~15 of them (verse, level, divide, zoom, reading size…) —
+// left the old ones reachable, still holding their trails and still repainting a
+// detached canvas on every resize and rotation. When the element survived the
+// render the instance is kept as-is (nothing to rebuild); otherwise the old one
+// is released first. Always returns a live view, so `state.view` and friends can
+// never be left null for the many call sites that use them unguarded.
+function adoptCanvasView(prev, Ctor, el) {
+  if (prev && prev.canvas === el) return prev;
+  if (prev && prev.destroy) prev.destroy();
+  return new Ctor(el);
+}
+
 function renderPractice() {
   $('practice').classList.remove('aliyah-fill');
   const v = state.data.verses[state.selectedVerse - 1];
@@ -4290,6 +4609,7 @@ function renderPractice() {
   // force-opens the STA"M scroll (that felt jarring, like aliyah mode). Instead
   // it shows the normal note coach with a prominent button to open the scroll on
   // demand (see the .open-stam button + wiring below).
+  ensurePitchForVerse(state.selectedVerse); // phase-3: load this pasuk's pitch shard on demand
   ensureRawForVerse(state.selectedVerse); // phase-2: load this pasuk's underlay on demand
   state.verseSegs = buildLineMelody(tokenize(v.text));
   const units = currentUnits();
@@ -4419,7 +4739,7 @@ function renderPractice() {
   // than forcing it on. The scroll's own ✕ closes it back to this coach.
   const openStam = $('openStam');
   if (openStam) openStam.addEventListener('click', () => {
-    state.scrollView = true; syncToggleUI(); renderVerses(); maybeShowRotate();
+    state.scrollView = true; savePanePrefs(); syncToggleUI(); renderVerses(); maybeShowRotate();
   });
   wirePracticeSwipe();
 
@@ -4458,9 +4778,9 @@ function renderPractice() {
   $('userSpectro').style.height = nh.spectro + 'px';
 
   // Canvas + coach line (note steps derived from the recording).
-  state.view = new ContourView($('contour'));
-  state.spectro = new Spectrogram($('spectro'));
-  state.userSpectro = new Spectrogram($('userSpectro'));
+  state.view = adoptCanvasView(state.view, ContourView, $('contour'));
+  state.spectro = adoptCanvasView(state.spectro, Spectrogram, $('spectro'));
+  state.userSpectro = adoptCanvasView(state.userSpectro, Spectrogram, $('userSpectro'));
   const coach = buildCoach(unitSegs);
   state.coach = coach;
   const closeName = unitCloseName(unitSegs);
@@ -5269,9 +5589,15 @@ async function startRecording(opts = {}) {
   const voiceGuide = singAlong && (level.unit === 'phrase' || level.unit === 'line')
     && !!verseAudio(state.selectedVerse) && !!state.coach;
   const leadIn = singAlong ? (voiceGuide ? 0 : 500) : (level.mode === 'listen' ? dur * 1000 + 250 : 250);
-  // Voice guide holds the window closed (recStart in the future) until the audio
-  // actually begins; every other mode starts after a fixed lead-in.
-  state.recStart = voiceGuide ? Infinity : performance.now() + leadIn;
+  // Where the window would open on a warm mic: the lead-in runs from here (in
+  // listen mode it counts off the target playing above), but the clock itself is
+  // only started once the mic is live (below).
+  const planned = performance.now() + leadIn;
+  // Both the voice guide and every other mode hold the window closed until they
+  // know where t=0 really is — the guide until the audio actually begins, the
+  // rest until the device is open. Timing the take from before that point spends
+  // the head of the window on the mic powering up.
+  state.recStart = Infinity;
 
   await startMic((hz, rms, frame) => {
     if (state.paused) return; // held mid-take: the clock and the trail both stop
@@ -5314,6 +5640,14 @@ async function startRecording(opts = {}) {
       state.view.pushUser(t01, null, rms);
     }
   }, () => {});
+
+  // t=0, now that the mic is genuinely live and the frame loop is already
+  // turning: the first frame the window admits lands at the very start of the
+  // take, so the cue eases in from the edge instead of snapping to wherever the
+  // device open left the clock. A warm mic (every take after the first) opens
+  // inside the lead-in and keeps the cue exactly where it was planned; only an
+  // open that overran it pushes the start out, rather than eating the take.
+  if (!voiceGuide) state.recStart = Math.max(planned, performance.now() + 250);
 
   // Sing-along: launch the guide together with the record window.
   if (singAlong && state.recording) {

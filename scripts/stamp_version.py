@@ -27,11 +27,16 @@ VERSION_JSON = os.path.join(HERE, "version.json")
 # Files whose content should drive the cache version. Audio (huge, never cached)
 # and per-verse shards (many, regenerated) are intentionally excluded; changing
 # any of these below means users get a fresh service worker + purged caches.
+# The fonts belong here because sw.js precaches them: replacing a font binary
+# without touching any HTML/CSS/JS would otherwise leave the old one served from
+# cache indefinitely.
 def cacheable_files():
     files = [os.path.join(HERE, "index.html")]
     files += sorted(glob.glob(os.path.join(HERE, "css", "**", "*.css"), recursive=True))
     files += sorted(glob.glob(os.path.join(HERE, "js", "**", "*.js"), recursive=True))
     files += sorted(glob.glob(os.path.join(HERE, "data", "*.json")))
+    files += sorted(glob.glob(os.path.join(HERE, "fonts", "*.woff2")))
+    files += sorted(glob.glob(os.path.join(HERE, "fonts", "*.ttf")))
     return files
 
 

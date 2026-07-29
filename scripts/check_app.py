@@ -490,7 +490,16 @@ def main():
         run_steps(c, STEPS, failures)
 
         print("--- with every stage unlocked ---")
-        c.eval("__t.unlock('vaetchanan')")
+        # Whichever reading the app opened on, not a fixed one: it defaults to the
+        # upcoming Shabbat's parashah, so a hardcoded slug silently unlocks the
+        # wrong reading (and fails every later step) once the week turns over.
+        opened, err = c.eval(
+            "(()=>{const s=document.getElementById('parashah').value;"
+            " __t.unlock(s); return s;})()")
+        if err or not opened:
+            print(f"FAIL could not unlock the open reading: {err}")
+            return 1
+        print(f"(unlocked {opened})")
         if not c.reload():
             print("FAIL app never re-rendered after unlocking")
             return 1

@@ -1,9 +1,16 @@
 // Web Audio synthesis of a target cantillation melody from a contour.
 import { semitoneToFreq } from './trope.js';
 
+// The page's one AudioContext: this synth, the recorded chant in realaudio.js
+// and the microphone in pitch.js all run on it. Browsers cap a page at a
+// handful of contexts, and separate contexts each keep their own currentTime
+// base and their own output latency — so a duet whose two halves were scored
+// against different clocks could never be made to line up. Nothing may close
+// it: a closed context cannot be reopened, and it would take the other two
+// features down with it for the life of the page.
 let ctx = null;
 export function getCtx() {
-  if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+  if (!ctx || ctx.state === 'closed') ctx = new (window.AudioContext || window.webkitAudioContext)();
   if (ctx.state === 'suspended') ctx.resume();
   return ctx;
 }
