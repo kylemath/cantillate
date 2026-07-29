@@ -8,7 +8,12 @@
 // exercises the segmentation and store logic, and prints PASS/FAIL lines that a
 // scripted browser run can grep. Not part of the app; see README.
 const lines = [];
-const log = (ok, msg) => lines.push(`${ok ? 'PASS' : 'FAIL'} ${msg}`);
+// Written out as they go, so a run that stops early still says where: the DONE
+// marker the runner greps for is added only by flush().
+const log = (ok, msg) => {
+  lines.push(`${ok ? 'PASS' : 'FAIL'} ${msg}`);
+  document.getElementById('out').textContent = lines.join('\n');
+};
 const flush = () => { document.getElementById('out').textContent = lines.join('\n') + '\nDONE'; };
 window.onerror = (m) => { log(false, `uncaught: ${m}`); flush(); };
 
@@ -17,17 +22,20 @@ try {
   const trope = await import('../js/trope.js');
   const levels = await import('../js/levels.js');
   const store = await import('../js/store.js');
+  const corpus = await import('../js/tanakh.js');
   const viz = await import('../js/viz.js');
   const audio = await import('../js/audio.js');
   const realaudio = await import('../js/realaudio.js');
   log(true, 'all modules import');
 
-  for (const fn of ['splitPhrases', 'splitAtRank', 'rankFor', 'rankOfSeg', 'buildLineMelody'])
+  for (const fn of ['splitPhrases', 'splitAtRank', 'rankFor', 'rankOfSeg', 'buildLineMelody',
+    'styleOf', 'sofPasukMotif'])
     log(typeof trope[fn] === 'function', `trope.${fn} exported`);
   for (const fn of ['pauseVerseAudio', 'resumeVerseAudio', 'seekVerseAudio', 'previewVerseAudio',
     'isVerseAudioLoaded', 'isVerseAudioPaused', 'verseAudioProgress'])
     log(typeof realaudio[fn] === 'function', `realaudio.${fn} exported`);
-  for (const fn of ['recordSectionScore', 'getSectionScores', 'recordChainScore', 'getChainScore'])
+  for (const fn of ['recordSectionScore', 'getSectionScores', 'recordChainScore', 'getChainScore',
+    'getSavedPassages', 'setSavedPassages'])
     log(typeof store[fn] === 'function', `store.${fn} exported`);
 
   log(levels.LEVELS.length === 9, `9 stages (got ${levels.LEVELS.length})`);
@@ -87,7 +95,39 @@ try {
   log(store.getSectionScores('x', 1)['0-4'] === 70, 'section keeps its best score');
   store.recordChainScore('x', 3, 5, 61);
   log(store.getChainScore('x', 3, 5) === 61, 'chain score round-trips');
+
+  // Named passages ride along with progress to the reader's other devices, so
+  // what matters is that syncing can't undo an edit: the newer list wins whole,
+  // which is the only way a passage they forgot here stays forgotten.
+  store.setSavedPassages([{ book: 'isaiah', from: [40, 1], to: [40, 26], name: 'Bar mitzvah' }]);
+  log(store.getSavedPassages().length === 1 && store.getSavedPassages()[0].name === 'Bar mitzvah',
+    'a passage saved under a name round-trips');
+  store.mergeRemote({ passages: { list: [
+    { book: 'isaiah', from: [40, 1], to: [40, 26], name: 'Bar mitzvah' },
+    { book: 'jonah', from: [1, 1], to: [1, 10], name: 'Forgotten' }], updatedAt: 1 } });
+  log(store.getSavedPassages().length === 1,
+    `an older list from another device can't resurrect a forgotten name (kept ${store.getSavedPassages().length})`);
+  store.mergeRemote({ passages: { list: [
+    { book: 'psalms', from: [27, 1], to: [27, 14], name: 'Elul' }], updatedAt: Date.now() + 5000 } });
+  const synced = store.getSavedPassages();
+  log(synced.length === 1 && synced[0].name === 'Elul',
+    `a newer list from another device wins (got ${synced.map((p) => p.name).join()})`);
   localStorage.removeItem('cantillate.v1');
+
+  // A name is a label: it changes what a passage is called everywhere it is
+  // listed, and nothing about where its practice is filed.
+  const jonah = { slug: 'jonah', en: 'Jonah', he: 'יונה', translit: 'Yona',
+    section: 'neviim', sectionLabel: "Nevi'im", accents: 'prose', chapters: [16, 11, 10, 11] };
+  const plain = corpus.buildReading(jonah, { chapters: [] }, [1, 1], [1, 3]);
+  const named = corpus.buildReading(jonah, { chapters: [] }, [1, 1], [1, 3], null, 'Bar mitzvah');
+  log(plain.parashah.en === 'Jonah 1:1-3',
+    `an unnamed passage is listed by its reference (got ${plain.parashah.en})`);
+  log(named.parashah.en === 'Bar mitzvah' && named.custom.name === 'Bar mitzvah',
+    `a named one is listed by its name (got ${named.parashah.en})`);
+  log(named.ref === plain.ref && named.heRef === plain.heRef,
+    'the reference it stands for is kept in both languages');
+  log(named.slug === plain.slug && named.slug === 'tanakh:jonah:1.1',
+    `naming a passage doesn't move its progress (${named.slug})`);
 
   log(typeof audio.singSteps === 'function', 'audio.singSteps exported');
 
@@ -96,7 +136,8 @@ try {
   const readings = await (await fetch('../data/readings.json')).json();
   const kinds = {};
   for (const r of readings) kinds[r.kind || 'parashah'] = (kinds[r.kind || 'parashah'] || 0) + 1;
-  log(kinds.excerpt > 0 && kinds.drill > 0, `manifest has all three kinds: ${JSON.stringify(kinds)}`);
+  log(kinds.excerpt > 0 && kinds.drill > 0 && kinds.haftarah > 0,
+    `manifest has every kind: ${JSON.stringify(kinds)}`);
   log(new Set(readings.map((r) => r.slug)).size === readings.length, 'reading slugs are unique');
 
   const files = new Map();
@@ -117,6 +158,66 @@ try {
     }
     if (r.kind === 'excerpt') log(!!files.get(r.file) && !!r.base, `${r.slug}: names a base reading`);
   }
+
+  // The haftarot: each is one continuous reading from Nevi'im in the haftarah
+  // melody, so it carries a single "H" chunk over the whole passage (no aliyot,
+  // no cycle) and knows which parashah, rite and week it belongs to.
+  const haftarot = readings.filter((r) => r.kind === 'haftarah');
+  log(haftarot.length > 0, `${haftarot.length} haftarot in the manifest`);
+  log(haftarot.every((r) => r.tropeStyle === 'haftarah'), 'every haftarah asks for the haftarah melody');
+  log(haftarot.every((r) => r.haftarah && r.haftarah.parashah && r.haftarah.tradition && r.group === 'Haftarot'),
+    'every haftarah names its parashah and rite and sits in the Haftarot group');
+  const cal = haftarot.map((r) => r.calendarNumber);
+  log(cal.every((n) => n >= 1 && n <= 54) && new Set(cal).size === cal.length,
+    `haftarah weeks are unique and inside the year (${Math.min(...cal)}\u2013${Math.max(...cal)})`);
+  const notWhole = haftarot.filter((r) => {
+    const d = files.get(r.file);
+    const ch = (d.aliyot && d.aliyot.annual) || [];
+    return !(ch.length === 1 && ch[0].n === 'H' && ch[0].start === 1 && ch[0].end === d.verses.length);
+  }).map((r) => r.slug);
+  log(notWhole.length === 0,
+    `every haftarah is one chunk over its whole passage${notWhole.length ? `: ${notWhole.join(', ')}` : ''}`);
+  const unlabelled = haftarot.filter((r) => {
+    const d = files.get(r.file);
+    return !(d.ref && d.heRef && d.parashah && d.parashah.he && d.book && d.book.he);
+  }).map((r) => r.slug);
+  log(unlabelled.length === 0,
+    `every haftarah names its passage in both languages${unlabelled.length ? `: ${unlabelled.join(', ')}` : ''}`);
+
+  // Two styles, same accents: the haftarah melody must be its own table and its
+  // own measured corpus, or "haftarah mode" would just be the Torah tune again.
+  log(!!(trope.STYLES.torah && trope.STYLES.haftarah), 'both trope styles are declared');
+  log(trope.styleOf('haftarah').shapes !== trope.styleOf('torah').shapes,
+    'each style points at its own measured corpus');
+  log(JSON.stringify(trope.sofPasukMotif('haftarah')) !== JSON.stringify(trope.sofPasukMotif('torah')),
+    'the Sof Pasuk is sung differently in the two styles');
+  log(trope.styleOf('nonsense').id === trope.DEFAULT_STYLE, 'an unknown style falls back to the default');
+
+  const hAccents = new Set(['sof']);
+  for (const r of haftarot) {
+    for (const v of files.get(r.file).verses) {
+      for (const s of trope.buildLineMelody(hebrew.tokenize(v.text), 'haftarah')) hAccents.add(String(s.taam));
+    }
+  }
+  hAccents.delete('null');
+  const noMotif = [...hAccents].filter((k) => k !== 'sof'
+    && JSON.stringify(trope.motifFor(+k, 'haftarah')) === JSON.stringify(trope.motifFor(-1, 'haftarah')));
+  log(noMotif.length === 0,
+    `the haftarah table sings all ${hAccents.size} accents the haftarot use`
+    + (noMotif.length ? `, missing ${noMotif.map((k) => trope.nameFor(+k).en).join(', ')}` : ''));
+
+  const hShapes = await (await fetch('../data/haftarah-shapes.json')).json();
+  log(hShapes.style === 'haftarah', 'the measured haftarah corpus is labelled as its own style');
+  const hUnmeasured = [...hAccents].filter((k) =>
+    !(hShapes.shapes[k] && hShapes.shapes[k].steps && hShapes.shapes[k].steps.length && hShapes.shapes[k].dur > 0));
+  log(hUnmeasured.length === 0,
+    `every accent in the haftarot has a measured haftarah shape (${hAccents.size} needed)`
+    + (hUnmeasured.length ? `, missing ${hUnmeasured.map((k) => (k === 'sof' ? 'Sof Pasuk' : trope.nameFor(+k).en)).join(', ')}` : ''));
+  const tShapes = (await (await fetch('../data/trope-shapes.json')).json()).shapes;
+  const shared = [...hAccents].filter((k) => tShapes[k] && hShapes.shapes[k]);
+  const differ = shared.filter((k) => JSON.stringify(tShapes[k].steps) !== JSON.stringify(hShapes.shapes[k].steps));
+  log(differ.length > shared.length / 2,
+    `the two corpora really are different tunes (${differ.length} of ${shared.length} shared accents differ)`);
 
   // Drill lines must be chantable: real accents, one per word, ending in Sof Pasuk.
   const drills = files.get(readings.find((r) => r.kind === 'drill').file);

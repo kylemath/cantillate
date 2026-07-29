@@ -1,0 +1,259 @@
+{
+  "slug": "haftarah-devarim",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 1:1-27",
+  "heRef": "ישעיהו א׳:א-כ״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 1,
+      "v": 1,
+      "ref": "1:1",
+      "text": "חֲזוֹן֙ יְשַֽׁעְיָ֣הוּ בֶן־אָמ֔וֹץ אֲשֶׁ֣ר חָזָ֔ה עַל־יְהוּדָ֖ה וִירֽוּשָׁלָ֑͏ִם בִּימֵ֨י עֻזִּיָּ֧הוּ יוֹתָ֛ם אָחָ֥ז יְחִזְקִיָּ֖הוּ מַלְכֵ֥י יְהוּדָֽה׃",
+      "en": "The vision of Yesha῾yahu the son of Amoż, which he saw concerning Yehuda and Yerushalayim in the days of ῾Uzziyyahu, Yotam, Aĥaz, Yeĥizqiyyahu, kings of Yehuda."
+    },
+    {
+      "n": 2,
+      "c": 1,
+      "v": 2,
+      "ref": "1:2",
+      "text": "שִׁמְע֤וּ שָׁמַ֙יִם֙ וְהַאֲזִ֣ינִי אֶ֔רֶץ כִּ֥י יְהֹוָ֖ה דִּבֵּ֑ר בָּנִים֙ גִּדַּ֣לְתִּי וְרוֹמַ֔מְתִּי וְהֵ֖ם פָּ֥שְׁעוּ בִֽי׃",
+      "en": "Hear, O heavens, and give ear, O earth, for the Lord has spoken: I have reared and brought up children, and they have rebelled against me."
+    },
+    {
+      "n": 3,
+      "c": 1,
+      "v": 3,
+      "ref": "1:3",
+      "text": "יָדַ֥ע שׁוֹר֙ קֹנֵ֔הוּ וַחֲמ֖וֹר אֵב֣וּס בְּעָלָ֑יו יִשְׂרָאֵל֙ לֹ֣א יָדַ֔ע עַמִּ֖י לֹ֥א הִתְבּוֹנָֽן׃",
+      "en": "The ox knows his owner, and the ass his master’s crib: but Yisra᾽el does not know, my people does not consider."
+    },
+    {
+      "n": 4,
+      "c": 1,
+      "v": 4,
+      "ref": "1:4",
+      "text": "ה֣וֹי&thinsp;<b>׀</b> גּ֣וֹי חֹטֵ֗א עַ֚ם כֶּ֣בֶד עָוֺ֔ן זֶ֣רַע מְרֵעִ֔ים בָּנִ֖ים מַשְׁחִיתִ֑ים עָזְב֣וּ אֶת־יְהֹוָ֗ה נִֽאֲצ֛וּ אֶת־קְד֥וֹשׁ יִשְׂרָאֵ֖ל נָזֹ֥רוּ אָחֽוֹר׃",
+      "en": "Ah sinful nation, a people laden with iniquity, a seed of evildoers, children that deal corruptly: they have forsaken the Lord, they have provoked the Holy One of Yisra᾽el to anger, they are gone away backward."
+    },
+    {
+      "n": 5,
+      "c": 1,
+      "v": 5,
+      "ref": "1:5",
+      "text": "עַ֣ל מֶ֥ה תֻכּ֛וּ ע֖וֹד תּוֹסִ֣יפוּ סָרָ֑ה כׇּל־רֹ֣אשׁ לׇֽחֳלִ֔י וְכׇל־לֵבָ֖ב דַּוָּֽי׃",
+      "en": "Where could you still be smitten, that you revolt again: every head is sick, and every heart faint."
+    },
+    {
+      "n": 6,
+      "c": 1,
+      "v": 6,
+      "ref": "1:6",
+      "text": "מִכַּף־רֶ֤גֶל וְעַד־רֹאשׁ֙ אֵֽין־בּ֣וֹ מְתֹ֔ם פֶּ֥צַע וְחַבּוּרָ֖ה וּמַכָּ֣ה טְרִיָּ֑ה לֹא־זֹ֙רוּ֙ וְלֹ֣א חֻבָּ֔שׁוּ וְלֹ֥א רֻכְּכָ֖ה בַּשָּֽׁמֶן׃",
+      "en": "From the sole of the foot even to the head there is no soundness in it; but wounds, and bruises, and putrefying sores: they have not been pressed, neither bound up, nor mollified with oil."
+    },
+    {
+      "n": 7,
+      "c": 1,
+      "v": 7,
+      "ref": "1:7",
+      "text": "אַרְצְכֶ֣ם שְׁמָמָ֔ה עָרֵיכֶ֖ם שְׂרֻפ֣וֹת אֵ֑שׁ אַדְמַתְכֶ֗ם לְנֶגְדְּכֶם֙ זָרִים֙ אֹכְלִ֣ים אֹתָ֔הּ וּשְׁמָמָ֖ה כְּמַהְפֵּכַ֥ת זָרִֽים׃",
+      "en": "Your country is desolate, your cities are burned with fire: as for your land, strangers devour it in your presence, and it is desolate, as though overthrown by strangers."
+    },
+    {
+      "n": 8,
+      "c": 1,
+      "v": 8,
+      "ref": "1:8",
+      "text": "וְנוֹתְרָ֥ה בַת־צִיּ֖וֹן כְּסֻכָּ֣ה בְכָ֑רֶם כִּמְלוּנָ֥ה בְמִקְשָׁ֖ה כְּעִ֥יר נְצוּרָֽה׃",
+      "en": "And the daughter of Żiyyon is left like a shelter in a vineyard, like a lodge in a garden of cucumbers, like a besieged city."
+    },
+    {
+      "n": 9,
+      "c": 1,
+      "v": 9,
+      "ref": "1:9",
+      "text": "לוּלֵי֙ יְהֹוָ֣ה צְבָא֔וֹת הוֹתִ֥יר לָ֛נוּ שָׂרִ֖יד כִּמְעָ֑ט כִּסְדֹ֣ם הָיִ֔ינוּ לַעֲמֹרָ֖ה דָּמִֽינוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "If the Lord of hosts had not left us a very small remnant, we should have been like Sedom, and we should have been like ῾Amora."
+    },
+    {
+      "n": 10,
+      "c": 1,
+      "v": 10,
+      "ref": "1:10",
+      "text": "שִׁמְע֥וּ דְבַר־יְהֹוָ֖ה קְצִינֵ֣י סְדֹ֑ם הַאֲזִ֛ינוּ תּוֹרַ֥ת אֱלֹהֵ֖ינוּ עַ֥ם עֲמֹרָֽה׃",
+      "en": "Hear the word of the Lord, rulers of Sedom; give ear to the Tora of our God, you people of ῾Amora."
+    },
+    {
+      "n": 11,
+      "c": 1,
+      "v": 11,
+      "ref": "1:11",
+      "text": "לָמָּה־לִּ֤י רֹב־זִבְחֵיכֶם֙ יֹאמַ֣ר יְהֹוָ֔ה שָׂבַ֛עְתִּי עֹל֥וֹת אֵילִ֖ים וְחֵ֣לֶב מְרִיאִ֑ים וְדַ֨ם פָּרִ֧ים וּכְבָשִׂ֛ים וְעַתּוּדִ֖ים לֹ֥א חָפָֽצְתִּי׃",
+      "en": "To what purpose is the multitude of your sacrifices to me? says the Lord: I am sated with the burnt offerings of rams, and the fat of fed beasts; and I delight not in the blood of bullocks, or of lambs, or of he goats."
+    },
+    {
+      "n": 12,
+      "c": 1,
+      "v": 12,
+      "ref": "1:12",
+      "text": "כִּ֣י תָבֹ֔אוּ לֵֽרָא֖וֹת פָּנָ֑י מִֽי־בִקֵּ֥שׁ זֹ֛את מִיֶּדְכֶ֖ם רְמֹ֥ס חֲצֵרָֽי׃",
+      "en": "When you come to appear before me, who has required this at your hand, to trample my courts?"
+    },
+    {
+      "n": 13,
+      "c": 1,
+      "v": 13,
+      "ref": "1:13",
+      "text": "לֹ֣א תוֹסִ֗יפוּ הָבִיא֙ מִנְחַת־שָׁ֔וְא קְטֹ֧רֶת תּוֹעֵבָ֛ה הִ֖יא לִ֑י חֹ֤דֶשׁ וְשַׁבָּת֙ קְרֹ֣א מִקְרָ֔א לֹא־אוּכַ֥ל אָ֖וֶן וַעֲצָרָֽה׃",
+      "en": "Bring no more vain offerings; incense of abomination they are to me; as for new moons and sabbaths and the calling of assemblies, I cannot bear iniquity along with solemn meeting."
+    },
+    {
+      "n": 14,
+      "c": 1,
+      "v": 14,
+      "ref": "1:14",
+      "text": "חׇדְשֵׁיכֶ֤ם וּמֽוֹעֲדֵיכֶם֙ שָֽׂנְאָ֣ה נַפְשִׁ֔י הָי֥וּ עָלַ֖י לָטֹ֑רַח נִלְאֵ֖יתִי נְשֹֽׂא׃",
+      "en": "Your new moons and your appointed feasts my soul hates: they are a trouble to me; I am weary of enduring them."
+    },
+    {
+      "n": 15,
+      "c": 1,
+      "v": 15,
+      "ref": "1:15",
+      "text": "וּבְפָרִשְׂכֶ֣ם כַּפֵּיכֶ֗ם אַעְלִ֤ים עֵינַי֙ מִכֶּ֔ם גַּ֛ם כִּֽי־תַרְבּ֥וּ תְפִלָּ֖ה אֵינֶ֣נִּי שֹׁמֵ֑עַ יְדֵיכֶ֖ם דָּמִ֥ים מָלֵֽאוּ׃",
+      "en": "And when you spread out your hands, I will hide my eyes from you: even when you make many prayers, I will not hear: your hands are full of blood."
+    },
+    {
+      "n": 16,
+      "c": 1,
+      "v": 16,
+      "ref": "1:16",
+      "text": "רַֽחֲצוּ֙ הִזַּכּ֔וּ הָסִ֛ירוּ רֹ֥עַ מַעַלְלֵיכֶ֖ם מִנֶּ֣גֶד עֵינָ֑י חִדְל֖וּ הָרֵֽעַ׃",
+      "en": "Wash you, make you clean; put away the evil of your doings from before my eyes; cease to do evil;"
+    },
+    {
+      "n": 17,
+      "c": 1,
+      "v": 17,
+      "ref": "1:17",
+      "text": "לִמְד֥וּ הֵיטֵ֛ב דִּרְשׁ֥וּ מִשְׁפָּ֖ט אַשְּׁר֣וּ חָמ֑וֹץ שִׁפְט֣וּ יָת֔וֹם רִ֖יבוּ אַלְמָנָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow."
+    },
+    {
+      "n": 18,
+      "c": 1,
+      "v": 18,
+      "ref": "1:18",
+      "text": "לְכוּ־נָ֛א וְנִוָּכְחָ֖ה יֹאמַ֣ר יְהֹוָ֑ה אִם־יִהְי֨וּ חֲטָאֵיכֶ֤ם כַּשָּׁנִים֙ כַּשֶּׁ֣לֶג יַלְבִּ֔ינוּ אִם־יַאְדִּ֥ימוּ כַתּוֹלָ֖ע כַּצֶּ֥מֶר יִֽהְיֽוּ׃",
+      "en": "Come now, and let us reason together, says the Lord: though your sins be like scarlet, they shall be as white as snow; though they be red like crimson, they shall be white as wool."
+    },
+    {
+      "n": 19,
+      "c": 1,
+      "v": 19,
+      "ref": "1:19",
+      "text": "אִם־תֹּאב֖וּ וּשְׁמַעְתֶּ֑ם ט֥וּב הָאָ֖רֶץ תֹּאכֵֽלוּ׃",
+      "en": "If you are willing and obedient, you shall eat the good of the land:"
+    },
+    {
+      "n": 20,
+      "c": 1,
+      "v": 20,
+      "ref": "1:20",
+      "text": "וְאִם־תְּמָאֲנ֖וּ וּמְרִיתֶ֑ם חֶ֣רֶב תְּאֻכְּל֔וּ כִּ֛י פִּ֥י יְהֹוָ֖ה דִּבֵּֽר׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "but if you refuse and rebel, you shall be devoured with the sword: for the mouth of the Lord has spoken it."
+    },
+    {
+      "n": 21,
+      "c": 1,
+      "v": 21,
+      "ref": "1:21",
+      "text": "אֵיכָה֙ הָיְתָ֣ה לְזוֹנָ֔ה קִרְיָ֖ה נֶאֱמָנָ֑ה מְלֵאֲתִ֣י מִשְׁפָּ֗ט צֶ֛דֶק יָלִ֥ין בָּ֖הּ וְעַתָּ֥ה מְרַצְּחִֽים׃",
+      "en": "How is the faithful city become a harlot! it was full of judgment; righteousness lodged in it; but now murderers."
+    },
+    {
+      "n": 22,
+      "c": 1,
+      "v": 22,
+      "ref": "1:22",
+      "text": "כַּסְפֵּ֖ךְ הָיָ֣ה לְסִיגִ֑ים סׇבְאֵ֖ךְ מָה֥וּל בַּמָּֽיִם׃",
+      "en": "Thy silver is become dross, thy wine is mixed with water:"
+    },
+    {
+      "n": 23,
+      "c": 1,
+      "v": 23,
+      "ref": "1:23",
+      "text": "שָׂרַ֣יִךְ סוֹרְרִ֗ים וְחַבְרֵי֙ גַּנָּבִ֔ים כֻּלּוֹ֙ אֹהֵ֣ב שֹׁ֔חַד וְרֹדֵ֖ף שַׁלְמֹנִ֑ים יָתוֹם֙ לֹ֣א יִשְׁפֹּ֔טוּ וְרִ֥יב אַלְמָנָ֖ה לֹא־יָב֥וֹא אֲלֵיהֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "thy princes are rebellious, and companions of thieves: every one loves bribes, and follows after rewards: they judge not the fatherless neither does the cause of the widow reach them."
+    },
+    {
+      "n": 24,
+      "c": 1,
+      "v": 24,
+      "ref": "1:24",
+      "text": "לָכֵ֗ן נְאֻ֤ם הָאָדוֹן֙ יְהֹוָ֣ה צְבָא֔וֹת אֲבִ֖יר יִשְׂרָאֵ֑ל ה֚וֹי אֶנָּחֵ֣ם מִצָּרַ֔י וְאִנָּקְמָ֖ה מֵאוֹיְבָֽי׃",
+      "en": "Therefore says the Master, the Lord of hosts, the mighty One of Yisra᾽el, Ah, I will ease me of my adversaries, and avenge me of my enemies:"
+    },
+    {
+      "n": 25,
+      "c": 1,
+      "v": 25,
+      "ref": "1:25",
+      "text": "וְאָשִׁ֤יבָה יָדִי֙ עָלַ֔יִךְ וְאֶצְרֹ֥ף כַּבֹּ֖ר סִיגָ֑יִךְ וְאָסִ֖ירָה כׇּל־בְּדִילָֽיִךְ׃",
+      "en": "and I will turn my hand against thee, and purge away thy dross as with lye, and take away all thy base alloy."
+    },
+    {
+      "n": 26,
+      "c": 1,
+      "v": 26,
+      "ref": "1:26",
+      "text": "וְאָשִׁ֤יבָה שֹׁפְטַ֙יִךְ֙ כְּבָרִ֣אשֹׁנָ֔ה וְיֹעֲצַ֖יִךְ כְּבַתְּחִלָּ֑ה אַֽחֲרֵי־כֵ֗ן יִקָּ֤רֵא לָךְ֙ עִ֣יר הַצֶּ֔דֶק קִרְיָ֖ה נֶאֱמָנָֽה׃",
+      "en": "And I will restore thy judges as at the first, and thy counsellors as at the beginning: afterwards thou shalt be called, The city of righteousness, a faithful city."
+    },
+    {
+      "n": 27,
+      "c": 1,
+      "v": 27,
+      "ref": "1:27",
+      "text": "צִיּ֖וֹן בְּמִשְׁפָּ֣ט תִּפָּדֶ֑ה וְשָׁבֶ֖יהָ בִּצְדָקָֽה׃",
+      "en": "Żiyyon shall be redeemed with judgment, and those that return to her with righteousness."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Devarim",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 44
+  },
+  "parashah": {
+    "en": "Haftarat Devarim",
+    "translit": "Haftarat Devarim",
+    "he": "הפטרת דברים"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 27,
+        "ref": "1:1–1:27"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

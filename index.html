@@ -45,7 +45,8 @@
       <div class="controls controls-primary">
         <label class="label" for="parashah">Reading</label>
         <select id="parashah"></select>
-        <label class="label" for="portion">Portion</label>
+        <button id="btnAnyPassage" class="toggle" title="Open any pesukim of any book of the Tanakh, chanted in the haftarah melody">✦ Any passage</button>
+        <label class="label" for="portion" id="portionLabel">Portion</label>
         <select id="portion" title="Read the whole annual parashah, or one shorter triennial-cycle year (its own third + aliyot)">
           <option value="annual">Full parashah (annual)</option>
           <option value="tri1">Triennial · Year 1</option>
@@ -195,7 +196,7 @@
   <aside class="guidepane" id="guidePane" aria-hidden="true">
     <button class="drawer-close" id="guideClose" aria-label="Close trope guide">✕</button>
     <div class="guide-head">
-      <p class="pane-title">Trope guide</p>
+      <p class="pane-title">Trope guide <span class="stylechip" id="guideStyle" hidden></span></p>
       <div class="guide-controls">
         <span class="label">Colour:</span>
         <span class="seg" id="colorSeg" title="How much colour to show in the pointed pesukim">
@@ -243,6 +244,54 @@
         <button id="aliyotSave" class="auth-btn primary">Save for me</button>
       </div>
       <p class="hint modal-foot">Set where each aliyah ends. Starts follow automatically. Your division is saved to your account; leaderboards still combine everyone on the standard division.</p>
+    </div>
+  </div>
+
+  <!-- Any passage: pick a book, then (in the Torah) a parashah or (elsewhere) a
+       chapter, then the first and last pasuk. The text comes from
+       data/tanakh/<book>.json, built by scripts/build_tanakh.py. -->
+  <div id="customModal" class="modal" hidden>
+    <div class="modal-backdrop" data-close="1"></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>✦ Any passage</h2>
+        <button class="modal-close" data-close="1" title="Close">✕</button>
+      </div>
+      <p class="hint cr-intro">Any pesukim of any book of the Tanakh, chanted in the haftarah melody. There is no recording of these, so the guide voice is synthesized — from how each accent is really sung, measured across every recorded haftarah.</p>
+      <div class="modal-body" id="customBody">
+        <div class="cr-row">
+          <label class="label" for="crBook">Book</label>
+          <select id="crBook"></select>
+          <span class="hint" id="crBookNote"></span>
+        </div>
+        <div class="cr-row" id="crScopeRow">
+          <label class="label" for="crScope"><span id="crScopeLabel">Parashah</span></label>
+          <select id="crScope"></select>
+        </div>
+        <div class="cr-row">
+          <label class="label">From</label>
+          <select id="crFromC" aria-label="First chapter"></select>
+          <span class="cr-colon">:</span>
+          <select id="crFromV" aria-label="First pasuk"></select>
+          <label class="label">To</label>
+          <select id="crToC" aria-label="Last chapter"></select>
+          <span class="cr-colon">:</span>
+          <select id="crToV" aria-label="Last pasuk"></select>
+        </div>
+        <p class="cr-preview" id="crPreview"></p>
+        <div class="cr-row cr-name-row">
+          <label class="label" for="crName">Save as</label>
+          <input id="crName" type="text" maxlength="60" autocomplete="off" spellcheck="false"
+                 placeholder="e.g. Bar mitzvah haftarah">
+          <button id="crSave" class="auth-btn">Save</button>
+        </div>
+        <div class="cr-saved" id="crSaved" hidden></div>
+        <div class="cr-recent" id="crRecent" hidden></div>
+      </div>
+      <div class="modal-foot cr-actions">
+        <span class="hint" id="crStatus"></span>
+        <button id="crOpen" class="auth-btn primary">Open passage</button>
+      </div>
     </div>
   </div>
 

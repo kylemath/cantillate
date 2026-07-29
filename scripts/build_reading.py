@@ -36,8 +36,15 @@ import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import fetch_translation as ftr           # noqa: E402  (clean + get_english)
 import extract_pitch as ep                # noqa: E402  (f0_track, tokenize, make_steps, ...)
-from readings import REGISTRY             # noqa: E402
+import tanakh                             # noqa: E402  (book names, Hebrew numerals)
+from readings import REGISTRY as TORAH_REGISTRY   # noqa: E402
+from haftarot import REGISTRY as HAFTARAH_REGISTRY  # noqa: E402
 from aliyot_build import build_aliyot_doc, HEBCAL_ATTRIBUTION  # noqa: E402
+
+# Every buildable reading, by slug. The Torah parashiyot are hand-written in
+# scripts/readings.py; the haftarot are derived from Hebcal's leyning table in
+# scripts/haftarot.py, so all 54 are available without typing any of them out.
+REGISTRY = {**TORAH_REGISTRY, **HAFTARAH_REGISTRY}
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUDIO_DIR = os.path.join(HERE, "audio")
@@ -135,6 +142,10 @@ def reading_sources(cfg):
             d.setdefault("kind", "pockettorah")
             out.append(d)
         return out
+    # A reading with no recording at all (text only). The app teaches it from the
+    # measured trope shapes for its style instead of from a cantor's audio.
+    if not cfg.get("pt_files"):
+        return []
     return [{
         "id": DEFAULT_SOURCE,
         "label": "PocketTorah (Neiss & Schwartz)",
@@ -150,6 +161,34 @@ def reading_sources(cfg):
     }]
 
 
+def chapters_of(cfg):
+    """Chapter numbers a reading touches, from either `range` or `spans`."""
+    if cfg.get("range"):
+        return sorted({c for c, _, _ in cfg["range"]})
+    chs = set()
+    for ((c0, _), (c1, _)) in cfg["spans"]:
+        chs.update(range(c0, c1 + 1))
+    return sorted(chs)
+
+
+def expand_spans(spans, chapter_lengths):
+    """[((c0,v0),(c1,v1))] -> the `range` shape [(c, v0, v1)].
+
+    A reading given as chapter:verse endpoints (the way Hebcal cites a haftarah)
+    can only be turned into per-chapter verse runs once the length of each
+    chapter is known, which is why this happens after the text is fetched.
+    """
+    out = []
+    for ((c0, v0), (c1, v1)) in spans:
+        for c in range(c0, c1 + 1):
+            first = v0 if c == c0 else 1
+            last = v1 if c == c1 else chapter_lengths.get(c)
+            if last is None:
+                raise SystemExit(f"chapter {c} length unknown; cannot expand span")
+            out.append((c, first, last))
+    return out
+
+
 def build_text(cfg):
     """Fetch text + aliyot (source-independent) and write data/<slug>.json.
 
@@ -157,22 +196,40 @@ def build_text(cfg):
     `bounds` gives each verse's cumulative WLC word span for audio alignment.
     """
     book = cfg["sefaria_book"]
-    chapters_needed = sorted({c for c, _, _ in cfg["range"]})
+    chapters_needed = chapters_of(cfg)
 
     he_by_ch, he_version = {}, None
     en_by_ch, en_version = {}, None
     for ch in chapters_needed:
-        data = json.loads(get(SEFARIA.format(book=book, ch=ch)).decode("utf-8"))
+        url = SEFARIA.format(book=urllib.parse.quote(book), ch=ch)
+        data = json.loads(get(url).decode("utf-8"))
         he_by_ch[ch] = data.get("he") or []
         he_version = data.get("heVersionTitle") or "Miqra according to the Masorah"
         en, ver = ftr.get_english(book, ch)
         en_by_ch[ch], en_version = en, ver
         print(f"  {book} {ch}: {len(he_by_ch[ch])} he verses; English '{ver}'")
 
-    wlc = json.loads(get(f"{RAW}/data/torah/json/{book}.json").decode("utf-8-sig"))
-    wlc_ch = wlc["Tanach"]["tanach"]["book"]["c"]
+    # A reading cited as chapter:verse endpoints becomes explicit verse runs now
+    # that the chapter lengths are known.
+    if not cfg.get("range"):
+        cfg["range"] = expand_spans(cfg["spans"],
+                                    {c: len(he_by_ch[c]) for c in chapters_needed})
+        print(f"  range: {cfg['range']}")
+
+    # PocketTorah's WLC word counts are what the recording's onsets were labelled
+    # against. Its file names differ from Sefaria's outside the Torah ("Kings_1"
+    # for "I Kings"), so the registry names the file explicitly.
+    wlc_book = cfg.get("wlc_book") or book
+    wlc_ch = []
+    if wlc_book:
+        wlc = json.loads(get(f"{RAW}/data/torah/json/{wlc_book}.json").decode("utf-8-sig"))
+        # These files end with a trailing null chapter; drop it so the list index
+        # is chapter-1 throughout.
+        wlc_ch = [c for c in wlc["Tanach"]["tanach"]["book"]["c"] if c]
 
     def wc(c, v):
+        if not wlc_ch or c - 1 >= len(wlc_ch):
+            return 0
         vs = wlc_ch[c - 1]["v"]
         return len(vs[v - 1]["w"]) if v - 1 < len(vs) else 0
 
@@ -196,31 +253,67 @@ def build_text(cfg):
         bounds.append((cum, cum + row["_wc"]))
         cum += row["_wc"]
 
-    # aliyot (source-independent): real annual + triennial (+ maftir) boundaries
-    # from Hebcal, mapped onto this reading's verse indices. Falls back to the
-    # registry `annual` tuples + an even split only if Hebcal is unreachable.
-    parashah_name = (cfg.get("parashah") or {}).get("en")
-    aliyot_doc, aliyot_src = build_aliyot_doc(
-        verses, parashah_name=parashah_name, hebcal_key=cfg.get("hebcal"),
-        fallback_annual=cfg.get("annual"))
-    print(f"  aliyot: source={aliyot_src}; annual={len(aliyot_doc['annual'])} aliyot, "
-          f"triennial years={sorted(aliyot_doc['triennial'])}, "
-          f"maftir={'yes' if aliyot_doc.get('maftir') else 'no'}")
+    kind = cfg.get("kind", "parashah")
+
+    if kind == "haftarah":
+        # A haftarah has no aliyot: it is chanted straight through by one reader.
+        # It still gets ONE chunk covering the whole passage, so the app's
+        # continuous-reading mode (guided read, solo record, scoring across many
+        # pesukim) works for it exactly as it does for an aliyah. 'H' marks it,
+        # the way 'M' marks the maftir.
+        N = len(verses)
+        aliyot_doc = {"annual": [{"n": "H", "start": 1, "end": N,
+                                  "ref": f"{verses[0]['ref']}{EN_DASH}{verses[-1]['ref']}"}],
+                      "triennial": {}}
+        aliyot_src = "haftarah"
+        print(f"  haftarah: one chunk of {N} pesukim")
+    else:
+        # aliyot (source-independent): real annual + triennial (+ maftir) boundaries
+        # from Hebcal, mapped onto this reading's verse indices. Falls back to the
+        # registry `annual` tuples + an even split only if Hebcal is unreachable.
+        parashah_name = (cfg.get("parashah") or {}).get("en")
+        aliyot_doc, aliyot_src = build_aliyot_doc(
+            verses, parashah_name=parashah_name, hebcal_key=cfg.get("hebcal"),
+            fallback_annual=cfg.get("annual"))
+        print(f"  aliyot: source={aliyot_src}; annual={len(aliyot_doc['annual'])} aliyot, "
+              f"triennial years={sorted(aliyot_doc['triennial'])}, "
+              f"maftir={'yes' if aliyot_doc.get('maftir') else 'no'}")
 
     for row in verses:
         row.pop("_wc", None)
 
+    # Chapter lengths are needed to cite a range that runs to the end of a chapter.
+    lengths = {c: len(he_by_ch[c]) for c in chapters_needed}
+    ref = cfg.get("ref") or tanakh.en_ref(book, cfg["range"], lengths)
+    he_ref = cfg.get("heRef") or tanakh.he_ref(book, cfg["range"])
+    # A haftarah's menu label can only be written once its range is resolved, so
+    # the registry leaves it out and it is composed here.
+    if not cfg.get("label"):
+        if kind == "haftarah":
+            cfg["label"] = f"Haftarat {cfg['haftarah']['parashah']} ({ref})"
+        else:
+            cfg["label"] = ref
+
     text_doc = {"slug": cfg["slug"], "book": cfg["book"], "multiChapter": cfg.get("multiChapter", False),
-                "ref": cfg.get("ref"), "heRef": cfg.get("heRef"),
+                "ref": ref, "heRef": he_ref,
                 "versionTitle": he_version, "heVersionTitle": he_version, "enVersionTitle": en_version,
                 "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
                 "source": "https://www.sefaria.org", "verses": verses}
+    if kind != "parashah":
+        text_doc["kind"] = kind
+    if cfg.get("tropeStyle"):
+        text_doc["tropeStyle"] = cfg["tropeStyle"]
+    if cfg.get("haftarah"):
+        text_doc["haftarah"] = cfg["haftarah"]
     if cfg.get("parashah"):
-        text_doc["parashah"] = cfg["parashah"]
+        text_doc["parashah"] = dict(cfg["parashah"])
+        text_doc["parashah"].setdefault("ref", ref)
     if aliyot_doc["annual"] or aliyot_doc["triennial"]:
         text_doc["aliyot"] = aliyot_doc
         if aliyot_src == "hebcal":
             text_doc["aliyotAttribution"] = HEBCAL_ATTRIBUTION
+        elif cfg.get("aliyotAttribution"):
+            text_doc["aliyotAttribution"] = cfg["aliyotAttribution"]
 
     _write(f"{cfg['slug']}.json", text_doc)
     return verses, bounds
@@ -341,8 +434,13 @@ def extract_pitch(cfg, src, verses, audio_verses):
         print(f"  analyzing {audio_slug}-{i} ({durations[i]:.0f}s)...")
         tracks[i] = ep.f0_track(sig)
 
+    # The key each track was analysed under. Torah readings number their files
+    # 1..7; a haftarah is one file named "H", so the key stays a string and is
+    # matched back against pt_files rather than parsed as an integer.
+    by_str = {str(i): i for i in src["pt_files"]}
+
     def file_num(path):
-        return int(path.split(f"{audio_slug}-")[1].split(".")[0])
+        return by_str[path.split(f"{audio_slug}-")[1].split(".")[0]]
 
     trope_data, out_verses = {}, {}
     for v in sorted(int(k) for k in audio_verses.keys()):
@@ -459,16 +557,31 @@ def register(cfg, sources):
         manifest = [{"slug": "devarim1", "file": "data/devarim1.json",
                      "group": "Parashiyot", "label": "Devarim (Deuteronomy) 1"}]
     prev = next((m for m in manifest if m["slug"] == cfg["slug"]), {})
-    # `group` is assigned by organize_readings (one group per sefer) right below.
+    # `group` is assigned by organize_readings (one group per sefer, plus one for
+    # the haftarot) right below.
     entry = {"slug": cfg["slug"], "file": f"data/{cfg['slug']}.json",
-             "label": cfg["label"], "sources": manifest_sources(sources)}
+             "label": cfg["label"]}
+    kind = cfg.get("kind", "parashah")
+    if kind != "parashah":
+        entry["kind"] = kind
+    # What the app needs to know about a reading before it opens it: which
+    # cantillation style teaches it, and (for a haftarah) which parashah it goes
+    # with and where in the year it falls, so the menu can be put in order.
+    for key in ("tropeStyle", "tradition", "calendarNumber"):
+        if cfg.get(key) is not None:
+            entry[key] = cfg[key]
+    if cfg.get("haftarah"):
+        entry["haftarah"] = cfg["haftarah"]
+    if sources:
+        entry["sources"] = manifest_sources(sources)
     note = cfg.get("note") or prev.get("note")
     if note:
         entry["note"] = note
     manifest = [m for m in manifest if m["slug"] != cfg["slug"]] + [entry]
     with open(MANIFEST, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    print(f"  registered '{cfg['slug']}' in data/readings.json ({len(entry['sources'])} source(s))")
+    print(f"  registered '{cfg['slug']}' in data/readings.json "
+          f"({len(entry.get('sources') or [])} source(s))")
     # Re-file the whole menu by sefer, in chumash order.
     import organize_readings
     organize_readings.organize(quiet=True)
@@ -487,6 +600,9 @@ def main():
     print("[1/3] text")
     verses, bounds = build_text(cfg)
     print("[2/3] audio + pitch per source")
+    if not sources:
+        print("  none: text-only reading; the coach line comes from the measured "
+              "trope shapes for its style")
     for src in sources:
         print(f"  -- source '{src.get('id', DEFAULT_SOURCE)}' ({src.get('kind', 'pockettorah')}) --")
         audio_verses = build_audio(cfg, src, verses, bounds)
@@ -494,13 +610,16 @@ def main():
     print("[3/3] register")
     register(cfg, sources)
     # The trope drills draw their melody and their spliced recitation from
-    # whatever is recorded, so a new reading immediately improves both.
+    # whatever is recorded, so a new reading immediately improves both. Torah and
+    # haftarah are kept apart: they are different melodies for the same accents,
+    # so mixing them would average one into the other.
     import build_trope_index
     import build_trope_shapes
     build_trope_index.build()
-    build_trope_shapes.build()
+    build_trope_shapes.build_all()
     # Without its scroll pages the reading's Torah column silently reflows
     # instead of breaking lines where the scroll does, so pull them in now.
+    # (Skipped for Nevi'im, which has no tikkun column data.)
     import build_tikkun
     build_tikkun.build()
     print(f"done: {slug} ({len(verses)} verses, {len(sources)} source(s)). "

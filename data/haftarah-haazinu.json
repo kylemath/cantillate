@@ -1,0 +1,451 @@
+{
+  "slug": "haftarah-haazinu",
+  "book": {
+    "en": "II Samuel",
+    "he": "שמואל ב",
+    "translit": "Shmuel B"
+  },
+  "multiChapter": true,
+  "ref": "II Samuel 22:1-51",
+  "heRef": "שמואל ב כ״ב:א-נ״א",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 22,
+      "v": 1,
+      "ref": "22:1",
+      "text": "וַיְדַבֵּ֤ר דָּוִד֙ לַיהֹוָ֔ה אֶת־דִּבְרֵ֖י הַשִּׁירָ֣ה הַזֹּ֑את&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;בְּיוֹם֩ הִצִּ֨יל יְהֹוָ֥ה אֹת֛וֹ מִכַּ֥ף כׇּל־אֹיְבָ֖יו וּמִכַּ֥ף שָׁאֽוּל׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And David spoke to the Lord the words of this song in the day that the Lord delivered him out of the hand of all his enemies, and out of the hand of Sha᾽ul:"
+    },
+    {
+      "n": 2,
+      "c": 22,
+      "v": 2,
+      "ref": "22:2",
+      "text": "וַיֹּאמַ֑ר יְהֹוָ֛ה סַֽלְעִ֥י וּמְצֻדָתִ֖י וּמְפַלְטִי־לִֽי׃",
+      "en": "and he said, The Lord is my rock, and my fortress, and my deliverer;"
+    },
+    {
+      "n": 3,
+      "c": 22,
+      "v": 3,
+      "ref": "22:3",
+      "text": "אֱלֹהֵ֥י צוּרִ֖י אֶחֱסֶה־בּ֑וֹ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;מָגִנִּ֞י וְקֶ֣רֶן יִשְׁעִ֗י מִשְׂגַּבִּי֙ וּמְנוּסִ֔י&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;מֹשִׁעִ֕י מֵחָמָ֖ס תֹּשִׁעֵֽנִי׃",
+      "en": "the God of my rock; in him will I trust: he is my shield, and the horn of my salvation, my high tower, and my refuge, my saviour; Thou savest me from violence."
+    },
+    {
+      "n": 4,
+      "c": 22,
+      "v": 4,
+      "ref": "22:4",
+      "text": "מְהֻלָּ֖ל אֶקְרָ֣א יְהֹוָ֑ה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וּמֵאֹיְבַ֖י אִוָּשֵֽׁעַ׃",
+      "en": "I will call on the Lord, who is worthy to be praised: so shall I be saved from my enemies."
+    },
+    {
+      "n": 5,
+      "c": 22,
+      "v": 5,
+      "ref": "22:5",
+      "text": "כִּ֥י אֲפָפֻ֖נִי מִשְׁבְּרֵי־מָ֑וֶת&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;נַחֲלֵ֥י בְלִיַּ֖עַל יְבַעֲתֻֽנִי׃",
+      "en": "When the waves of death compassed me, the floods of ungodly men made me afraid;"
+    },
+    {
+      "n": 6,
+      "c": 22,
+      "v": 6,
+      "ref": "22:6",
+      "text": "חֶבְלֵ֥י שְׁא֖וֹל סַבֻּ֑נִי&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;קִדְּמֻ֖נִי מֹ֥קְשֵׁי מָֽוֶת׃",
+      "en": "the bonds of She᾽ol encircled me; the snares of death took me by surprise;"
+    },
+    {
+      "n": 7,
+      "c": 22,
+      "v": 7,
+      "ref": "22:7",
+      "text": "בַּצַּר־לִי֙ אֶקְרָ֣א יְהֹוָ֔ה וְאֶל־אֱלֹהַ֖י אֶקְרָ֑א&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַיִּשְׁמַ֤ע מֵהֵֽיכָלוֹ֙ קוֹלִ֔י וְשַׁוְעָתִ֖י בְּאׇזְנָֽיו׃",
+      "en": "in my distress I called upon the Lord, and cried to my God: and he heard my voice out of his temple, and my cry entered into his ears."
+    },
+    {
+      "n": 8,
+      "c": 22,
+      "v": 8,
+      "ref": "22:8",
+      "text": "<span class=\"mam-kq\"><span class=\"mam-kq-k\">(ותגעש)</span> <span class=\"mam-kq-q\">[וַיִּתְגָּעַ֤שׁ]</span></span> וַתִּרְעַשׁ֙ הָאָ֔רֶץ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;מוֹסְד֥וֹת הַשָּׁמַ֖יִם יִרְגָּ֑זוּ וַיִּֽתְגָּעֲשׁ֖וּ כִּי־חָ֥רָה לֽוֹ׃",
+      "en": "Then the earth shook and trembled; the foundations of heaven moved and shook, because of his anger."
+    },
+    {
+      "n": 9,
+      "c": 22,
+      "v": 9,
+      "ref": "22:9",
+      "text": "עָלָ֤ה עָשָׁן֙ בְּאַפּ֔וֹ וְאֵ֥שׁ מִפִּ֖יו תֹּאכֵ֑ל&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;גֶּחָלִ֖ים בָּעֲר֥וּ מִמֶּֽנּוּ׃",
+      "en": "There went up a smoke out of his nostrils, and fire out of his mouth devoured: coals were kindled by it."
+    },
+    {
+      "n": 10,
+      "c": 22,
+      "v": 10,
+      "ref": "22:10",
+      "text": "וַיֵּ֥ט שָׁמַ֖יִם וַיֵּרַ֑ד&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַעֲרָפֶ֖ל תַּ֥חַת רַגְלָֽיו׃",
+      "en": "He bowed the heavens also, and came down; and darkness was under his feet."
+    },
+    {
+      "n": 11,
+      "c": 22,
+      "v": 11,
+      "ref": "22:11",
+      "text": "וַיִּרְכַּ֥ב עַל־כְּר֖וּב וַיָּעֹ֑ף&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַיֵּרָ֖א עַל־כַּנְפֵי־רֽוּחַ׃",
+      "en": "And he rode upon a keruv, and did fly: and he was seen upon the wings of the wind."
+    },
+    {
+      "n": 12,
+      "c": 22,
+      "v": 12,
+      "ref": "22:12",
+      "text": "וַיָּ֥שֶׁת חֹ֛שֶׁךְ סְבִיבֹתָ֖יו סֻכּ֑וֹת&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;חַֽשְׁרַת־מַ֖יִם עָבֵ֥י שְׁחָקִֽים׃",
+      "en": "And he made darkness pavilions round about him, the heavy mass of waters, and thick clouds of the skies."
+    },
+    {
+      "n": 13,
+      "c": 22,
+      "v": 13,
+      "ref": "22:13",
+      "text": "מִנֹּ֖גַהּ נֶגְדּ֑וֹ בָּעֲר֖וּ גַּחֲלֵי־אֵֽשׁ׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Through the brightness before him were coals of fire kindled."
+    },
+    {
+      "n": 14,
+      "c": 22,
+      "v": 14,
+      "ref": "22:14",
+      "text": "יַרְעֵ֥ם מִן־שָׁמַ֖יִם יְהֹוָ֑ה וְעֶלְי֖וֹן יִתֵּ֥ן קוֹלֽוֹ׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The Lord thundered from heaven, and the most High uttered his voice,"
+    },
+    {
+      "n": 15,
+      "c": 22,
+      "v": 15,
+      "ref": "22:15",
+      "text": "וַיִּשְׁלַ֥ח חִצִּ֖ים וַיְפִיצֵ֑ם בָּרָ֖ק <span class=\"mam-kq\"><span class=\"mam-kq-k\">(ויהמם)</span> <span class=\"mam-kq-q\">[וַיָּהֹֽם]</span></span>׃",
+      "en": "And he sent out arrows, and scattered them; lightning, and confounded them."
+    },
+    {
+      "n": 16,
+      "c": 22,
+      "v": 16,
+      "ref": "22:16",
+      "text": "וַיֵּֽרָאוּ֙ אֲפִ֣קֵי יָ֔ם יִגָּל֖וּ מֹסְד֣וֹת תֵּבֵ֑ל&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;בְּגַעֲרַ֣ת יְהֹוָ֔ה מִנִּשְׁמַ֖ת ר֥וּחַ אַפּֽוֹ׃",
+      "en": "And the channels of the sea appeared, the foundations of the world were laid bare, at the rebuking of the Lord, at the blast of the breath of his nostrils."
+    },
+    {
+      "n": 17,
+      "c": 22,
+      "v": 17,
+      "ref": "22:17",
+      "text": "יִשְׁלַ֥ח מִמָּר֖וֹם יִקָּחֵ֑נִי&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;יַֽמְשֵׁ֖נִי מִמַּ֥יִם רַבִּֽים׃",
+      "en": "He sent from above, he took me; he drew me out of many waters;"
+    },
+    {
+      "n": 18,
+      "c": 22,
+      "v": 18,
+      "ref": "22:18",
+      "text": "יַצִּילֵ֕נִי מֵאֹיְבִ֖י עָ֑ז&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;מִשֹּׂ֣נְאַ֔י כִּ֥י אָמְצ֖וּ מִמֶּֽנִּי׃",
+      "en": "he delivered me from my strong enemy, and from them that hated me: for they were too strong for me."
+    },
+    {
+      "n": 19,
+      "c": 22,
+      "v": 19,
+      "ref": "22:19",
+      "text": "יְקַדְּמֻ֖נִי בְּי֣וֹם אֵידִ֑י וַיְהִ֧י יְהֹוָ֛ה מִשְׁעָ֖ן לִֽי׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "They surprised me in the day of my calamity: but the Lord was my stay."
+    },
+    {
+      "n": 20,
+      "c": 22,
+      "v": 20,
+      "ref": "22:20",
+      "text": "וַיֹּצֵ֥א לַמֶּרְחָ֖ב אֹתִ֑י יְחַלְּצֵ֖נִי כִּי־חָ֥פֵֽץ בִּֽי׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "He brought me forth also into a large place: he delivered me, because he delighted in me."
+    },
+    {
+      "n": 21,
+      "c": 22,
+      "v": 21,
+      "ref": "22:21",
+      "text": "יִגְמְלֵ֥נִי יְהֹוָ֖ה כְּצִדְקָתִ֑י כְּבֹ֥ר יָדַ֖י יָשִׁ֥יב לִֽי׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The Lord rewards me according to my righteousness: according to the cleanness of my hands he recompenses me."
+    },
+    {
+      "n": 22,
+      "c": 22,
+      "v": 22,
+      "ref": "22:22",
+      "text": "כִּ֥י שָׁמַ֖רְתִּי דַּרְכֵ֣י יְהֹוָ֑ה וְלֹ֥א רָשַׁ֖עְתִּי מֵאֱלֹהָֽי׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For I have kept the ways of the Lord, and have not wickedly departed from my God."
+    },
+    {
+      "n": 23,
+      "c": 22,
+      "v": 23,
+      "ref": "22:23",
+      "text": "כִּ֥י כׇל־<span class=\"mam-kq-trivial\">מִשְׁפָּטָ֖ו</span> לְנֶגְדִּ֑י וְחֻקֹּתָ֖יו לֹא־אָס֥וּר מִמֶּֽנָּה׃",
+      "en": "For all his judgments were before me: and as for his statutes, I did not depart from them."
+    },
+    {
+      "n": 24,
+      "c": 22,
+      "v": 24,
+      "ref": "22:24",
+      "text": "וָאֶהְיֶ֥ה תָמִ֖ים ל֑וֹ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וָאֶשְׁתַּמְּרָ֖ה מֵעֲוֺנִֽי׃",
+      "en": "I was also upright before him, and have kept myself from my iniquity."
+    },
+    {
+      "n": 25,
+      "c": 22,
+      "v": 25,
+      "ref": "22:25",
+      "text": "וַיָּ֧שֶׁב יְהֹוָ֛ה לִ֖י כְּצִדְקָתִ֑י&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;כְּבֹרִ֖י לְנֶ֥גֶד עֵינָֽיו׃",
+      "en": "Therefore the Lord recompenses me according to my righteousness; according to my cleanness in his eyesight."
+    },
+    {
+      "n": 26,
+      "c": 22,
+      "v": 26,
+      "ref": "22:26",
+      "text": "עִם־חָסִ֖יד תִּתְחַסָּ֑ד&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;עִם־גִּבּ֥וֹר תָּמִ֖ים תִּתַּמָּֽם׃",
+      "en": "With the merciful Thou wilt show Thyself merciful, and with the upright man Thou wilt show Thyself upright."
+    },
+    {
+      "n": 27,
+      "c": 22,
+      "v": 27,
+      "ref": "22:27",
+      "text": "עִם־נָבָ֖ר תִּתָּבָ֑ר&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְעִם־עִקֵּ֖שׁ תִּתַּפָּֽל׃",
+      "en": "With the pure Thou wilt show Thyself pure; and with the perverse Thou wilt show Thyself subtle."
+    },
+    {
+      "n": 28,
+      "c": 22,
+      "v": 28,
+      "ref": "22:28",
+      "text": "וְאֶת־עַ֥ם עָנִ֖י תּוֹשִׁ֑יעַ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְעֵינֶ֥יךָ עַל־רָמִ֖ים תַּשְׁפִּֽיל׃",
+      "en": "And the afflicted people Thou wilt save: but Thy eyes are upon the haughty, that Thou mayst bring them down."
+    },
+    {
+      "n": 29,
+      "c": 22,
+      "v": 29,
+      "ref": "22:29",
+      "text": "כִּֽי־אַתָּ֥ה נֵירִ֖י יְהֹוָ֑ה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַיהֹוָ֖ה יַגִּ֥יהַּ חׇשְׁכִּֽי׃",
+      "en": "For Thou art my lamp, O Lord: and the Lord lightens my darkness."
+    },
+    {
+      "n": 30,
+      "c": 22,
+      "v": 30,
+      "ref": "22:30",
+      "text": "כִּ֥י בְכָ֖ה אָר֣וּץ גְּד֑וּד&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;בֵּאלֹהַ֖י אֲדַלֶּג־שֽׁוּר׃",
+      "en": "For by Thee I run through a troop: by my God I leap over a wall."
+    },
+    {
+      "n": 31,
+      "c": 22,
+      "v": 31,
+      "ref": "22:31",
+      "text": "הָאֵ֖ל תָּמִ֣ים דַּרְכּ֑וֹ אִמְרַ֤ת יְהֹוָה֙ צְרוּפָ֔ה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;מָגֵ֣ן ה֔וּא לְכֹ֖ל הַחֹסִ֥ים בּֽוֹ׃",
+      "en": "As for God, His way is perfect; the word of the Lord is tried: He is a shield to all them that trust in him."
+    },
+    {
+      "n": 32,
+      "c": 22,
+      "v": 32,
+      "ref": "22:32",
+      "text": "כִּ֥י מִי־אֵ֖ל מִבַּלְעֲדֵ֣י יְהֹוָ֑ה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וּמִ֥י צ֖וּר מִֽבַּלְעֲדֵ֥י אֱלֹהֵֽינוּ׃",
+      "en": "For who is God, save the Lord? and who is a rock, save our God?"
+    },
+    {
+      "n": 33,
+      "c": 22,
+      "v": 33,
+      "ref": "22:33",
+      "text": "הָאֵ֥ל מָעוּזִּ֖י חָ֑יִל&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַיַּתֵּ֥ר תָּמִ֖ים <span class=\"mam-kq\"><span class=\"mam-kq-k\">(דרכו)</span> <span class=\"mam-kq-q\">[דַּרְכִּֽי]</span></span>׃",
+      "en": "God is my strength and rampart; and he makes my way smooth."
+    },
+    {
+      "n": 34,
+      "c": 22,
+      "v": 34,
+      "ref": "22:34",
+      "text": "מְשַׁוֶּ֥ה <span class=\"mam-kq\"><span class=\"mam-kq-k\">(רגליו)</span> <span class=\"mam-kq-q\">[רַגְלַ֖י]</span></span> כָּאַיָּל֑וֹת&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְעַ֥ל בָּמֹתַ֖י יַעֲמִדֵֽנִי׃",
+      "en": "He makes my feet like hinds’ feet: and sets me upon my heights."
+    },
+    {
+      "n": 35,
+      "c": 22,
+      "v": 35,
+      "ref": "22:35",
+      "text": "מְלַמֵּ֥ד יָדַ֖י לַמִּלְחָמָ֑ה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְנִחַ֥ת קֶשֶׁת־נְחוּשָׁ֖ה זְרֹעֹתָֽי׃",
+      "en": "He teaches my hands to war, and trains my arms to bend a bow of brass."
+    },
+    {
+      "n": 36,
+      "c": 22,
+      "v": 36,
+      "ref": "22:36",
+      "text": "וַתִּתֶּן־לִ֖י מָגֵ֣ן יִשְׁעֶ֑ךָ וַעֲנֹתְךָ֖ תַּרְבֵּֽנִי׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou hast also given me the shield of Thy salvation: and Thy condescension makes me great."
+    },
+    {
+      "n": 37,
+      "c": 22,
+      "v": 37,
+      "ref": "22:37",
+      "text": "תַּרְחִ֥יב צַעֲדִ֖י תַּחְתֵּ֑נִי וְלֹ֥א מָעֲד֖וּ קַרְסֻלָּֽי׃",
+      "en": "Thou hast enlarged my steps under me; so that my feet did not slip."
+    },
+    {
+      "n": 38,
+      "c": 22,
+      "v": 38,
+      "ref": "22:38",
+      "text": "אֶרְדְּפָ֥ה אֹיְבַ֖י וָאַשְׁמִידֵ֑ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְלֹ֥א אָשׁ֖וּב עַד־כַּלּוֹתָֽם׃",
+      "en": "I have pursued my enemies, and destroyed them; and turned not again until I had consumed them."
+    },
+    {
+      "n": 39,
+      "c": 22,
+      "v": 39,
+      "ref": "22:39",
+      "text": "וָאֲכַלֵּ֥ם וָאֶמְחָצֵ֖ם וְלֹ֣א יְקוּמ֑וּן&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַֽיִּפְּל֖וּ תַּ֥חַת רַגְלָֽי׃",
+      "en": "And I have consumed them, and crushed them, that they could not arise: they are fallen under my feet."
+    },
+    {
+      "n": 40,
+      "c": 22,
+      "v": 40,
+      "ref": "22:40",
+      "text": "וַתַּזְרֵ֥נִי חַ֖יִל לַמִּלְחָמָ֑ה&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;תַּכְרִ֥יעַ קָמַ֖י תַּחְתֵּֽנִי׃",
+      "en": "For Thou hast girded me with strength to battle: them that rose up against me hast Thou subdued under me."
+    },
+    {
+      "n": 41,
+      "c": 22,
+      "v": 41,
+      "ref": "22:41",
+      "text": "וְאֹ֣יְבַ֔י תַּ֥תָּה לִּ֖י עֹ֑רֶף מְשַׂנְאַ֖י וָאַצְמִיתֵֽם׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou hast also made my enemies turn their backs on me, that I might destroy them that hate me."
+    },
+    {
+      "n": 42,
+      "c": 22,
+      "v": 42,
+      "ref": "22:42",
+      "text": "יִשְׁע֖וּ וְאֵ֣ין מֹשִׁ֑יעַ אֶל־יְהֹוָ֖ה וְלֹ֥א עָנָֽם׃",
+      "en": "They looked, but there was none to save, to the Lord, but he answered them not."
+    },
+    {
+      "n": 43,
+      "c": 22,
+      "v": 43,
+      "ref": "22:43",
+      "text": "וְאֶשְׁחָקֵ֖ם כַּעֲפַר־אָ֑רֶץ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;כְּטִיט־חוּצ֥וֹת אֲדִקֵּ֖ם אֶרְקָעֵֽם׃",
+      "en": "Then did I beat them as small as the dust of the earth, I did stamp them as the mire of the street, and did tread them down."
+    },
+    {
+      "n": 44,
+      "c": 22,
+      "v": 44,
+      "ref": "22:44",
+      "text": "וַֽתְּפַלְּטֵ֔נִי מֵרִיבֵ֖י עַמִּ֑י תִּשְׁמְרֵ֙נִי֙ לְרֹ֣אשׁ גּוֹיִ֔ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;עַ֥ם לֹא־יָדַ֖עְתִּי יַעַבְדֻֽנִי׃",
+      "en": "Thou also hast delivered me from the strivings of my people, Thou wilt keep me to be head of many nations: a people whom I knew not shall serve me."
+    },
+    {
+      "n": 45,
+      "c": 22,
+      "v": 45,
+      "ref": "22:45",
+      "text": "בְּנֵ֥י נֵכָ֖ר יִתְכַּחֲשׁוּ־לִ֑י לִשְׁמ֥וֹעַ אֹ֖זֶן יִשָּׁ֥מְעוּ לִֽי׃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Strangers shall submit themselves to me: they shall hear, they shall be obedient to me."
+    },
+    {
+      "n": 46,
+      "c": 22,
+      "v": 46,
+      "ref": "22:46",
+      "text": "בְּנֵ֥י נֵכָ֖ר יִבֹּ֑לוּ וְיַחְגְּר֖וּ מִמִּסְגְּרוֹתָֽם׃",
+      "en": "Strangers shall fade away, and they shall come tottering from out of their close places."
+    },
+    {
+      "n": 47,
+      "c": 22,
+      "v": 47,
+      "ref": "22:47",
+      "text": "חַי־יְהֹוָ֖ה וּבָר֣וּךְ צוּרִ֑י&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְיָרֻ֕ם אֱלֹהֵ֖י צ֥וּר יִשְׁעִֽי׃",
+      "en": "The Lord lives; and blessed is my rock; and exalted is the God of the rock of my salvation."
+    },
+    {
+      "n": 48,
+      "c": 22,
+      "v": 48,
+      "ref": "22:48",
+      "text": "הָאֵ֕ל הַנֹּתֵ֥ן נְקָמֹ֖ת לִ֑י&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וּמֹרִ֥יד עַמִּ֖ים תַּחְתֵּֽנִי׃",
+      "en": "It is God that avenges me, and that brings down the people under me,"
+    },
+    {
+      "n": 49,
+      "c": 22,
+      "v": 49,
+      "ref": "22:49",
+      "text": "וּמוֹצִיאִ֖י מֵאֹֽיְבָ֑י וּמִקָּמַי֙ תְּר֣וֹמְמֵ֔נִי&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;מֵאִ֥ישׁ חֲמָסִ֖ים תַּצִּילֵֽנִי׃",
+      "en": "and that brings me out from my enemies: Thou also hast lifted me on high above them that rose up against me: Thou hast delivered me from the violent man."
+    },
+    {
+      "n": 50,
+      "c": 22,
+      "v": 50,
+      "ref": "22:50",
+      "text": "עַל־כֵּ֛ן אוֹדְךָ֥ יְהֹוָ֖ה בַּגּוֹיִ֑ם&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וּלְשִׁמְךָ֖ אֲזַמֵּֽר׃",
+      "en": "Therefore I will give thanks to Thee, O Lord, among the nations, and I will sing praises to Thy name."
+    },
+    {
+      "n": 51,
+      "c": 22,
+      "v": 51,
+      "ref": "22:51",
+      "text": "<span class=\"mam-kq\"><span class=\"mam-kq-k\">(מגדיל)</span> <span class=\"mam-kq-q\">[מִגְדּ֖וֹל]</span></span> יְשׁוּע֣וֹת מַלְכּ֑וֹ וְעֹֽשֶׂה־חֶ֧סֶד לִמְשִׁיח֛וֹ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;לְדָוִ֥ד וּלְזַרְע֖וֹ עַד־עוֹלָֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "He is the tower of salvation for His king: and shows mercy to His anointed, to David and to his seed for ever."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Ha'azinu",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 53
+  },
+  "parashah": {
+    "en": "Haftarat Ha'azinu",
+    "translit": "Haftarat Ha'azinu",
+    "he": "הפטרת האזינו"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 51,
+        "ref": "22:1–22:51"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

@@ -1,0 +1,235 @@
+{
+  "slug": "haftarah-shoftim",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 51:12-52:12",
+  "heRef": "ישעיהו נ״א:י״ב-כ״ג, נ״ב:א-י״ב",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 51,
+      "v": 12,
+      "ref": "51:12",
+      "text": "אָנֹכִ֧י אָנֹכִ֛י ה֖וּא מְנַחֶמְכֶ֑ם מִי־אַ֤תְּ וַתִּֽירְאִי֙ מֵאֱנ֣וֹשׁ יָמ֔וּת וּמִבֶּן־אָדָ֖ם חָצִ֥יר יִנָּתֵֽן׃",
+      "en": "I, even I, am he that comforts you: who art thou, that thou shouldst be afraid of a mortal man, and of the son of man who shall be made as grass;"
+    },
+    {
+      "n": 2,
+      "c": 51,
+      "v": 13,
+      "ref": "51:13",
+      "text": "וַתִּשְׁכַּ֞ח יְהֹוָ֣ה עֹשֶׂ֗ךָ נוֹטֶ֣ה שָׁמַ֘יִם֮ וְיֹסֵ֣ד אָ֒רֶץ֒ וַתְּפַחֵ֨ד תָּמִ֜יד כׇּל־הַיּ֗וֹם מִפְּנֵי֙ חֲמַ֣ת הַמֵּצִ֔יק כַּאֲשֶׁ֥ר כּוֹנֵ֖ן לְהַשְׁחִ֑ית וְאַיֵּ֖ה חֲמַ֥ת הַמֵּצִֽיק׃",
+      "en": "and hast forgotten the Lord thy maker, that stretched forth the heavens, and laid the foundations of the earth; and hast feared continually every day because of the fury of the oppressor, as he makes ready to destroy? and where is the fury of the oppressor?"
+    },
+    {
+      "n": 3,
+      "c": 51,
+      "v": 14,
+      "ref": "51:14",
+      "text": "מִהַ֥ר צֹעֶ֖ה לְהִפָּתֵ֑חַ וְלֹא־יָמ֣וּת לַשַּׁ֔חַת וְלֹ֥א יֶחְסַ֖ר לַחְמֽוֹ׃",
+      "en": "The crouching one hastens that he may be loosed, and he shall not die in the pit, nor shall his bread fail."
+    },
+    {
+      "n": 4,
+      "c": 51,
+      "v": 15,
+      "ref": "51:15",
+      "text": "וְאָֽנֹכִי֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ רֹגַ֣ע הַיָּ֔ם וַיֶּהֱמ֖וּ גַּלָּ֑יו יְהֹוָ֥ה צְבָא֖וֹת שְׁמֽוֹ׃",
+      "en": "And I am the Lord thy God, who stirs up the sea, that its waves roared: The Lord of hosts is his name."
+    },
+    {
+      "n": 5,
+      "c": 51,
+      "v": 16,
+      "ref": "51:16",
+      "text": "וָאָשִׂ֤ם דְּבָרַי֙ בְּפִ֔יךָ וּבְצֵ֥ל יָדִ֖י כִּסִּיתִ֑יךָ לִנְטֹ֤עַ שָׁמַ֙יִם֙ וְלִיסֹ֣ד אָ֔רֶץ וְלֵאמֹ֥ר לְצִיּ֖וֹן עַמִּי־אָֽתָּה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And I have put my words in thy mouth, and I have covered thee in the shadow of my hand, that I may plant the heavens, and lay the foundations of the earth, and say to Żiyyon, Thou art my people."
+    },
+    {
+      "n": 6,
+      "c": 51,
+      "v": 17,
+      "ref": "51:17",
+      "text": "הִתְעוֹרְרִ֣י הִֽתְעוֹרְרִ֗י ק֚וּמִי יְר֣וּשָׁלַ֔͏ִם אֲשֶׁ֥ר שָׁתִ֛ית מִיַּ֥ד יְהֹוָ֖ה אֶת־כּ֣וֹס חֲמָת֑וֹ אֶת־קֻבַּ֜עַת כּ֧וֹס הַתַּרְעֵלָ֛ה שָׁתִ֖ית מָצִֽית׃",
+      "en": "Awake, awake, stand up, O Yerushalayim, who hast drunk at the hand of the Lord the cup of his fury; thou hast drunk to the dregs, the deep bowl of staggering."
+    },
+    {
+      "n": 7,
+      "c": 51,
+      "v": 18,
+      "ref": "51:18",
+      "text": "אֵין־מְנַהֵ֣ל לָ֔הּ מִכׇּל־בָּנִ֖ים יָלָ֑דָה וְאֵ֤ין מַחֲזִיק֙ בְּיָדָ֔הּ מִכׇּל־בָּנִ֖ים גִּדֵּֽלָה׃",
+      "en": "There is none to guide her among all the sons whom she has brought forth; nor is there any that takes her by the hand among all the sons that she has brought up."
+    },
+    {
+      "n": 8,
+      "c": 51,
+      "v": 19,
+      "ref": "51:19",
+      "text": "שְׁתַּ֤יִם הֵ֙נָּה֙ קֹרְאֹתַ֔יִךְ מִ֖י יָנ֣וּד לָ֑ךְ הַשֹּׁ֧ד וְהַשֶּׁ֛בֶר וְהָרָעָ֥ב וְהַחֶ֖רֶב מִ֥י אֲנַחֲמֵֽךְ׃",
+      "en": "These two things have befallen thee; who shall console thee? desolation, and destruction, and the famine, and the sword: by whom shall I comfort thee?"
+    },
+    {
+      "n": 9,
+      "c": 51,
+      "v": 20,
+      "ref": "51:20",
+      "text": "בָּנַ֜יִךְ עֻלְּפ֥וּ שָׁכְב֛וּ בְּרֹ֥אשׁ כׇּל־חוּצ֖וֹת כְּת֣וֹא מִכְמָ֑ר הַֽמְלֵאִ֥ים חֲמַת־יְהֹוָ֖ה גַּעֲרַ֥ת אֱלֹהָֽיִךְ׃",
+      "en": "Thy sons have fainted, they lie at the head of all the streets, like a bison in a net: they are full of the fury of the Lord, the rebuke of thy God."
+    },
+    {
+      "n": 10,
+      "c": 51,
+      "v": 21,
+      "ref": "51:21",
+      "text": "לָכֵ֛ן שִׁמְעִי־נָ֥א זֹ֖את עֲנִיָּ֑ה וּשְׁכֻרַ֖ת וְלֹ֥א מִיָּֽיִן׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Therefore hear now this, thou afflicted, and drunken, but not with wine:"
+    },
+    {
+      "n": 11,
+      "c": 51,
+      "v": 22,
+      "ref": "51:22",
+      "text": "כֹּה־אָמַ֞ר אֲדֹנַ֣יִךְ יְהֹוָ֗ה וֵאלֹהַ֙יִךְ֙ יָרִ֣יב עַמּ֔וֹ הִנֵּ֥ה לָקַ֛חְתִּי מִיָּדֵ֖ךְ אֶת־כּ֣וֹס הַתַּרְעֵלָ֑ה אֶת־קֻבַּ֙עַת֙ כּ֣וֹס חֲמָתִ֔י לֹא־תוֹסִ֥יפִי לִשְׁתּוֹתָ֖הּ עֽוֹד׃",
+      "en": "Thus says thy Lord the Lord, and thy God that pleads the cause of his people, Behold, I have taken out of thy hand the cup of staggering, the deep bowl of my fury; thou shalt no more drink it again:"
+    },
+    {
+      "n": 12,
+      "c": 51,
+      "v": 23,
+      "ref": "51:23",
+      "text": "וְשַׂמְתִּ֙יהָ֙ בְּיַד־מוֹגַ֔יִךְ אֲשֶׁר־אָמְר֥וּ לְנַפְשֵׁ֖ךְ שְׁחִ֣י וְנַעֲבֹ֑רָה וַתָּשִׂ֤ימִי כָאָ֙רֶץ֙ גֵּוֵ֔ךְ וְכַח֖וּץ לַעֹבְרִֽים׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "but I will put it into the hand of them that afflict thee; who have said to thy soul, Bow down, that we may go over: and thou hast laid thy body like the ground, and like the street, to them that go over."
+    },
+    {
+      "n": 13,
+      "c": 52,
+      "v": 1,
+      "ref": "52:1",
+      "text": "עוּרִ֥י עוּרִ֛י לִבְשִׁ֥י עֻזֵּ֖ךְ צִיּ֑וֹן לִבְשִׁ֣י&thinsp;<b>׀</b> בִּגְדֵ֣י תִפְאַרְתֵּ֗ךְ יְרוּשָׁלַ֙͏ִם֙ עִ֣יר הַקֹּ֔דֶשׁ כִּ֣י לֹ֥א יוֹסִ֛יף יָבֹא־בָ֥ךְ ע֖וֹד עָרֵ֥ל וְטָמֵֽא׃",
+      "en": "Awake, awake; put on thy strength, O Żiyyon; put on thy beautiful garments, O Yerushalayim, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean."
+    },
+    {
+      "n": 14,
+      "c": 52,
+      "v": 2,
+      "ref": "52:2",
+      "text": "הִתְנַעֲרִ֧י מֵעָפָ֛ר ק֥וּמִי שְּׁבִ֖י יְרוּשָׁלָ֑͏ִם <span class=\"mam-kq\"><span class=\"mam-kq-k\">(התפתחו)</span> <span class=\"mam-kq-q\">[הִֽתְפַּתְּחִי֙]</span></span> מוֹסְרֵ֣י צַוָּארֵ֔ךְ שְׁבִיָּ֖ה בַּת־צִיּֽוֹן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Shake thyself from the dust; arise, and sit down, O Yerushalayim: loose thyself from the bands of thy neck, O captive daughter of Żiyyon."
+    },
+    {
+      "n": 15,
+      "c": 52,
+      "v": 3,
+      "ref": "52:3",
+      "text": "כִּי־כֹה֙ אָמַ֣ר יְהֹוָ֔ה חִנָּ֖ם נִמְכַּרְתֶּ֑ם וְלֹ֥א בְכֶ֖סֶף תִּגָּאֵֽלוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For thus says the Lord, You were sold for nought; and you shall be redeemed without money."
+    },
+    {
+      "n": 16,
+      "c": 52,
+      "v": 4,
+      "ref": "52:4",
+      "text": "כִּ֣י כֹ֤ה אָמַר֙ אֲדֹנָ֣י יֱהֹוִ֔ה מִצְרַ֛יִם יָֽרַד־עַמִּ֥י בָרִֽאשֹׁנָ֖ה לָג֣וּר שָׁ֑ם וְאַשּׁ֖וּר בְּאֶ֥פֶס עֲשָׁקֽוֹ׃",
+      "en": "For thus says the Lord God, My people went down aforetime to Miżrayim to sojourn there; and Ashshur oppressed them without cause."
+    },
+    {
+      "n": 17,
+      "c": 52,
+      "v": 5,
+      "ref": "52:5",
+      "text": "וְעַתָּ֤ה מַה־לִּי־פֹה֙ נְאֻם־יְהֹוָ֔ה כִּֽי־לֻקַּ֥ח עַמִּ֖י חִנָּ֑ם מֹשְׁלָ֤ו יְהֵילִ֙ילוּ֙ נְאֻם־יְהֹוָ֔ה וְתָמִ֥יד כׇּל־הַיּ֖וֹם שְׁמִ֥י מִנֹּאָֽץ׃",
+      "en": "Now therefore, what have I here, says the Lord, that my people is taken away for nought? they that rule over them yell, says the Lord; and my name continually every day is blasphemed."
+    },
+    {
+      "n": 18,
+      "c": 52,
+      "v": 6,
+      "ref": "52:6",
+      "text": "לָכֵ֛ן יֵדַ֥ע עַמִּ֖י שְׁמִ֑י לָכֵן֙ בַּיּ֣וֹם הַה֔וּא כִּֽי־אֲנִי־ה֥וּא הַֽמְדַבֵּ֖ר הִנֵּֽנִי׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Therefore my people shall know my name: therefore they shall know in that day that I am he that speaks: Behold, here I am."
+    },
+    {
+      "n": 19,
+      "c": 52,
+      "v": 7,
+      "ref": "52:7",
+      "text": "מַה־נָּאו֨וּ עַל־הֶהָרִ֜ים רַגְלֵ֣י מְבַשֵּׂ֗ר מַשְׁמִ֧יעַ שָׁל֛וֹם מְבַשֵּׂ֥ר ט֖וֹב מַשְׁמִ֣יעַ יְשׁוּעָ֑ה אֹמֵ֥ר לְצִיּ֖וֹן מָלַ֥ךְ אֱלֹהָֽיִךְ׃",
+      "en": "How beautiful upon the mountains are the feet of him that brings good tidings, that announces peace; that brings good tidings of good, that announces salvation; that says to Żiyyon, Thy God reigns!"
+    },
+    {
+      "n": 20,
+      "c": 52,
+      "v": 8,
+      "ref": "52:8",
+      "text": "ק֥וֹל צֹפַ֛יִךְ נָ֥שְׂאוּ ק֖וֹל יַחְדָּ֣ו יְרַנֵּ֑נוּ כִּ֣י עַ֤יִן בְּעַ֙יִן֙ יִרְא֔וּ בְּשׁ֥וּב יְהֹוָ֖ה צִיּֽוֹן׃",
+      "en": "The voice of thy watchmen is heard: they lift up the voice; together shall they sing: for they shall see eye to eye, the Lord returning to Żiyyon."
+    },
+    {
+      "n": 21,
+      "c": 52,
+      "v": 9,
+      "ref": "52:9",
+      "text": "פִּצְח֤וּ רַנְּנוּ֙ יַחְדָּ֔ו חׇרְב֖וֹת יְרוּשָׁלָ֑͏ִם כִּֽי־נִחַ֤ם יְהֹוָה֙ עַמּ֔וֹ גָּאַ֖ל יְרוּשָׁלָֽ͏ִם׃",
+      "en": "Break forth into joy, sing together, O waste places of Yerushalayim: for the Lord has comforted his people, he has redeemed Yerushalayim:"
+    },
+    {
+      "n": 22,
+      "c": 52,
+      "v": 10,
+      "ref": "52:10",
+      "text": "חָשַׂ֤ף יְהֹוָה֙ אֶת־זְר֣וֹעַ קׇדְשׁ֔וֹ לְעֵינֵ֖י כׇּל־הַגּוֹיִ֑ם וְרָאוּ֙ כׇּל־אַפְסֵי־אָ֔רֶץ אֵ֖ת יְשׁוּעַ֥ת אֱלֹהֵֽינוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "the Lord has made bare his holy arm in the eyes of all the nations; and all the ends of the earth shall see the salvation of our God."
+    },
+    {
+      "n": 23,
+      "c": 52,
+      "v": 11,
+      "ref": "52:11",
+      "text": "ס֤וּרוּ ס֙וּרוּ֙ צְא֣וּ מִשָּׁ֔ם טָמֵ֖א אַל־תִּגָּ֑עוּ צְא֣וּ מִתּוֹכָ֔הּ הִבָּ֕רוּ נֹשְׂאֵ֖י כְּלֵ֥י יְהֹוָֽה׃",
+      "en": "Depart, depart, go out from there, touch no unclean thing: go out of the midst of her; be clean, you that bear the vessels of the Lord."
+    },
+    {
+      "n": 24,
+      "c": 52,
+      "v": 12,
+      "ref": "52:12",
+      "text": "כִּ֣י לֹ֤א בְחִפָּזוֹן֙ תֵּצֵ֔אוּ וּבִמְנוּסָ֖ה לֹ֣א תֵלֵכ֑וּן כִּֽי־הֹלֵ֤ךְ לִפְנֵיכֶם֙ יְהֹוָ֔ה וּמְאַסִּפְכֶ֖ם אֱלֹהֵ֥י יִשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For you shall not go out with haste, nor go by flight: for the Lord will go before you; and the God of Yisra᾽el will be your rearguard."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Shoftim",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 48
+  },
+  "parashah": {
+    "en": "Haftarat Shoftim",
+    "translit": "Haftarat Shoftim",
+    "he": "הפטרת שופטים"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 24,
+        "ref": "51:12–52:12"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

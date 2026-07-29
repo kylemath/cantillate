@@ -1,0 +1,259 @@
+{
+  "slug": "haftarah-eikev",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 49:14-51:3",
+  "heRef": "ישעיהו מ״ט:י״ד-כ״ו, נ׳:א-י״א, נ״א:א-ג",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 49,
+      "v": 14,
+      "ref": "49:14",
+      "text": "וַתֹּ֥אמֶר צִיּ֖וֹן עֲזָבַ֣נִי יְהֹוָ֑ה וַאדֹנָ֖י שְׁכֵחָֽנִי׃",
+      "en": "But Żiyyon said, The Lord has forsaken me, and my Lord has forgotten me."
+    },
+    {
+      "n": 2,
+      "c": 49,
+      "v": 15,
+      "ref": "49:15",
+      "text": "הֲתִשְׁכַּ֤ח אִשָּׁה֙ עוּלָ֔הּ מֵרַחֵ֖ם בֶּן־בִּטְנָ֑הּ גַּם־אֵ֣לֶּה תִשְׁכַּ֔חְנָה וְאָנֹכִ֖י לֹ֥א אֶשְׁכָּחֵֽךְ׃",
+      "en": "Can a woman forget her sucking child, that she should not have compassion on the son of her womb? even these may forget, yet I will not forget thee."
+    },
+    {
+      "n": 3,
+      "c": 49,
+      "v": 16,
+      "ref": "49:16",
+      "text": "הֵ֥ן עַל־כַּפַּ֖יִם חַקֹּתִ֑יךְ חוֹמֹתַ֥יִךְ נֶגְדִּ֖י תָּמִֽיד׃",
+      "en": "Behold, I have graven thee upon the palms of my hands; thy walls are continually before me."
+    },
+    {
+      "n": 4,
+      "c": 49,
+      "v": 17,
+      "ref": "49:17",
+      "text": "מִהֲר֖וּ בָּנָ֑יִךְ מְהָֽרְסַ֥יִךְ וּמַחֲרִיבַ֖יִךְ מִמֵּ֥ךְ יֵצֵֽאוּ׃",
+      "en": "Thy children make haste; thy destroyers and they that made thee waste go away from thee."
+    },
+    {
+      "n": 5,
+      "c": 49,
+      "v": 18,
+      "ref": "49:18",
+      "text": "שְׂאִֽי־סָבִ֤יב עֵינַ֙יִךְ֙ וּרְאִ֔י כֻּלָּ֖ם נִקְבְּצ֣וּ בָֽאוּ־לָ֑ךְ חַי־אָ֣נִי נְאֻם־יְהֹוָ֗ה כִּ֤י כֻלָּם֙ כָּעֲדִ֣י תִלְבָּ֔שִׁי וּֽתְקַשְּׁרִ֖ים כַּכַּלָּֽה׃",
+      "en": "Lift up thy eyes round about, and behold: all these gather themselves together, and come to thee. As I live, says the Lord, thou shalt surely clothe thee with them all, as with an ornament, and bind them on, like a bride."
+    },
+    {
+      "n": 6,
+      "c": 49,
+      "v": 19,
+      "ref": "49:19",
+      "text": "כִּ֤י חׇרְבֹתַ֙יִךְ֙ וְשֹׁ֣מְמֹתַ֔יִךְ וְאֶ֖רֶץ הֲרִסֻתֵ֑ךְ כִּ֤י עַתָּה֙ תֵּצְרִ֣י מִיּוֹשֵׁ֔ב וְרָחֲק֖וּ מְבַלְּעָֽיִךְ׃",
+      "en": "For thy waste and thy desolate places, and thy devastated land, shall now be too narrow for the inhabitants, and they that swallowed thee up shall be far away."
+    },
+    {
+      "n": 7,
+      "c": 49,
+      "v": 20,
+      "ref": "49:20",
+      "text": "ע֚וֹד יֹאמְר֣וּ בְאׇזְנַ֔יִךְ בְּנֵ֖י שִׁכֻּלָ֑יִךְ צַר־לִ֥י הַמָּק֖וֹם גְּשָׁה־לִּ֥י וְאֵשֵֽׁבָה׃",
+      "en": "The children that were taken away from thee shall say again in thy ears, The place is too narrow for me: make room for me that I may dwell."
+    },
+    {
+      "n": 8,
+      "c": 49,
+      "v": 21,
+      "ref": "49:21",
+      "text": "וְאָמַ֣רְתְּ בִּלְבָבֵ֗ךְ מִ֤י יָֽלַד־לִי֙ אֶת־אֵ֔לֶּה וַאֲנִ֥י שְׁכוּלָ֖ה וְגַלְמוּדָ֑ה גֹּלָ֣ה&thinsp;<b>׀</b> וְסוּרָ֗ה וְאֵ֙לֶּה֙ מִ֣י גִדֵּ֔ל הֵ֤ן אֲנִי֙ נִשְׁאַ֣רְתִּי לְבַדִּ֔י אֵ֖לֶּה אֵיפֹ֥ה הֵֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Then shalt thou say in thy heart, Who has begotten me these, seeing I have lost my children, a solitary, an exile, and a wanderer to and fro? and who has brought up these? Behold, I was left alone; these, where have they been?"
+    },
+    {
+      "n": 9,
+      "c": 49,
+      "v": 22,
+      "ref": "49:22",
+      "text": "כֹּה־אָמַ֞ר אֲדֹנָ֣י יֱהֹוִ֗ה הִנֵּ֨ה אֶשָּׂ֤א אֶל־גּוֹיִם֙ יָדִ֔י וְאֶל־עַמִּ֖ים אָרִ֣ים נִסִּ֑י וְהֵבִ֤יאוּ בָנַ֙יִךְ֙ בְּחֹ֔צֶן וּבְנֹתַ֖יִךְ עַל־כָּתֵ֥ף תִּנָּשֶֽׂאנָה׃",
+      "en": "Thus says the Lord God, Behold, I will lift up my hand to the nations, and set up my standard to the peoples: and they shall bring thy sons in their arms, and thy daughters shall be carried on their shoulders."
+    },
+    {
+      "n": 10,
+      "c": 49,
+      "v": 23,
+      "ref": "49:23",
+      "text": "וְהָי֨וּ מְלָכִ֜ים אֹמְנַ֗יִךְ וְשָׂרֽוֹתֵיהֶם֙ מֵינִ֣יקֹתַ֔יִךְ אַפַּ֗יִם אֶ֚רֶץ יִשְׁתַּ֣חֲווּ לָ֔ךְ וַעֲפַ֥ר רַגְלַ֖יִךְ יְלַחֵ֑כוּ וְיָדַ֙עַתְּ֙ כִּי־אֲנִ֣י יְהֹוָ֔ה אֲשֶׁ֥ר לֹא־יֵבֹ֖שׁוּ קֹוָֽי׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And kings shall be thy foster fathers, and their queens thy nursing mothers: they shall bow down to thee with their face towards the earth, and lick up the dust of thy feet; and thou shalt know that I am the Lord: for they shall not be ashamed that wait for me."
+    },
+    {
+      "n": 11,
+      "c": 49,
+      "v": 24,
+      "ref": "49:24",
+      "text": "הֲיֻקַּ֥ח מִגִּבּ֖וֹר מַלְק֑וֹחַ וְאִם־שְׁבִ֥י צַדִּ֖יק יִמָּלֵֽט׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Shall the prey be taken from the mighty, or the captive of the victorious delivered?"
+    },
+    {
+      "n": 12,
+      "c": 49,
+      "v": 25,
+      "ref": "49:25",
+      "text": "כִּי־כֹ֣ה&thinsp;<b>׀</b> אָמַ֣ר יְהֹוָ֗ה גַּם־שְׁבִ֤י גִבּוֹר֙ יֻקָּ֔ח וּמַלְק֥וֹחַ עָרִ֖יץ יִמָּלֵ֑ט וְאֶת־יְרִיבֵךְ֙ אָנֹכִ֣י אָרִ֔יב וְאֶת־בָּנַ֖יִךְ אָנֹכִ֥י אוֹשִֽׁיעַ׃",
+      "en": "But thus says the Lord, Even the captives of the mighty shall be taken away, and the prey of the terrible shall be delivered: for I will contend with him that contends with thee, and I will save thy children."
+    },
+    {
+      "n": 13,
+      "c": 49,
+      "v": 26,
+      "ref": "49:26",
+      "text": "וְהַאֲכַלְתִּ֤י אֶת־מוֹנַ֙יִךְ֙ אֶת־בְּשָׂרָ֔ם וְכֶעָסִ֖יס דָּמָ֣ם יִשְׁכָּר֑וּן וְיָדְע֣וּ כׇל־בָּשָׂ֗ר כִּ֣י אֲנִ֤י יְהֹוָה֙ מֽוֹשִׁיעֵ֔ךְ וְגֹאֲלֵ֖ךְ אֲבִ֥יר יַעֲקֹֽב׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And I will feed them that oppress thee with their own flesh; and they shall be drunk with their own blood, as with sweet wine: and all flesh shall know that I, the Lord am thy deliverer and the mighty One of Ya῾aqov is thy redeemer."
+    },
+    {
+      "n": 14,
+      "c": 50,
+      "v": 1,
+      "ref": "50:1",
+      "text": "כֹּ֣ה&thinsp;<b>׀</b> אָמַ֣ר יְהֹוָ֗ה אֵ֣י זֶ֠ה סֵ֣פֶר כְּרִית֤וּת אִמְּכֶם֙ אֲשֶׁ֣ר שִׁלַּחְתִּ֔יהָ א֚וֹ מִ֣י מִנּוֹשַׁ֔י אֲשֶׁר־מָכַ֥רְתִּי אֶתְכֶ֖ם ל֑וֹ הֵ֤ן בַּעֲוֺנֹֽתֵיכֶם֙ נִמְכַּרְתֶּ֔ם וּבְפִשְׁעֵיכֶ֖ם שֻׁלְּחָ֥ה אִמְּכֶֽם׃",
+      "en": "Thus says the Lord, Where is the bill of your mother’s divorcement, with which I have put her away? or which of my creditors is it to whom I have sold you? Behold, for your iniquities have you sold yourselves, and for your transgressions was your mother put away."
+    },
+    {
+      "n": 15,
+      "c": 50,
+      "v": 2,
+      "ref": "50:2",
+      "text": "מַדּ֨וּעַ בָּ֜אתִי וְאֵ֣ין אִ֗ישׁ קָרָ֘אתִי֮ וְאֵ֣ין עוֹנֶה֒ הֲקָצ֨וֹר קָצְרָ֤ה יָדִי֙ מִפְּד֔וּת וְאִם־אֵֽין־בִּ֥י כֹ֖חַ לְהַצִּ֑יל הֵ֣ן בְּגַעֲרָתִ֞י אַחֲרִ֣יב יָ֗ם אָשִׂ֤ים נְהָרוֹת֙ מִדְבָּ֔ר תִּבְאַ֤שׁ דְּגָתָם֙ מֵאֵ֣ין מַ֔יִם וְתָמֹ֖ת בַּצָּמָֽא׃",
+      "en": "Why, when I came, was there no man? when I called, was there none to answer? Is my hand shortened at all, that it cannot redeem? or have I no power to deliver? behold, at my rebuke I dry up the sea, I make the rivers a wilderness: their fish rots, because there is no water, and dies for thirst."
+    },
+    {
+      "n": 16,
+      "c": 50,
+      "v": 3,
+      "ref": "50:3",
+      "text": "אַלְבִּ֥ישׁ שָׁמַ֖יִם קַדְר֑וּת וְשַׂ֖ק אָשִׂ֥ים כְּסוּתָֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "I clothe the heavens with blackness, and I make sackcloth their covering."
+    },
+    {
+      "n": 17,
+      "c": 50,
+      "v": 4,
+      "ref": "50:4",
+      "text": "אֲדֹנָ֣י יֱהֹוִ֗ה נָ֤תַן לִי֙ לְשׁ֣וֹן לִמּוּדִ֔ים לָדַ֛עַת לָע֥וּת אֶת־יָעֵ֖ף דָּבָ֑ר יָעִ֣יר&thinsp;<b>׀</b> בַּבֹּ֣קֶר בַּבֹּ֗קֶר יָעִ֥יר לִי֙ אֹ֔זֶן לִשְׁמֹ֖עַ כַּלִּמּוּדִֽים׃",
+      "en": "The Lord God has given me the tongue of the learned, that I should know how to sustain him that is weary: he wakens morning by morning, he wakens my ear to hear as the learned."
+    },
+    {
+      "n": 18,
+      "c": 50,
+      "v": 5,
+      "ref": "50:5",
+      "text": "אֲדֹנָ֤י יֱהֹוִה֙ פָּתַֽח־לִ֣י אֹ֔זֶן וְאָנֹכִ֖י לֹ֣א מָרִ֑יתִי אָח֖וֹר לֹ֥א נְסוּגֹֽתִי׃",
+      "en": "The Lord God has opened my ear, and I was not rebellious, nor did I turn away."
+    },
+    {
+      "n": 19,
+      "c": 50,
+      "v": 6,
+      "ref": "50:6",
+      "text": "גֵּוִי֙ נָתַ֣תִּי לְמַכִּ֔ים וּלְחָיַ֖י לְמֹֽרְטִ֑ים פָּנַי֙ לֹ֣א הִסְתַּ֔רְתִּי מִכְּלִמּ֖וֹת וָרֹֽק׃",
+      "en": "I gave my back to the smiters, and my cheeks to them that plucked off the hair: I hid not my face from shame and spitting."
+    },
+    {
+      "n": 20,
+      "c": 50,
+      "v": 7,
+      "ref": "50:7",
+      "text": "וַאדֹנָ֤י יֱהֹוִה֙ יַֽעֲזׇר־לִ֔י עַל־כֵּ֖ן לֹ֣א נִכְלָ֑מְתִּי עַל־כֵּ֞ן שַׂ֤מְתִּי פָנַי֙ כַּחַלָּמִ֔ישׁ וָאֵדַ֖ע כִּי־לֹ֥א אֵבֽוֹשׁ׃",
+      "en": "For the Lord God has helped me; therefore have I not been confounded: therefore have I set my face like a flint, and I knew that I should not be ashamed."
+    },
+    {
+      "n": 21,
+      "c": 50,
+      "v": 8,
+      "ref": "50:8",
+      "text": "קָרוֹב֙ מַצְדִּיקִ֔י מִֽי־יָרִ֥יב אִתִּ֖י נַ֣עַמְדָה יָּ֑חַד מִי־בַ֥עַל מִשְׁפָּטִ֖י יִגַּ֥שׁ אֵלָֽי׃",
+      "en": "He is near that justifies me; who will contend with me? let us stand together: who is my adversary? let him come near to me."
+    },
+    {
+      "n": 22,
+      "c": 50,
+      "v": 9,
+      "ref": "50:9",
+      "text": "הֵ֣ן אֲדֹנָ֤י יֱהֹוִה֙ יַעֲזׇר־לִ֔י מִי־ה֖וּא יַרְשִׁיעֵ֑נִי הֵ֤ן כֻּלָּם֙ כַּבֶּ֣גֶד יִבְל֔וּ עָ֖שׁ יֹאכְלֵֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Behold, the Lord God will help me; who is he that shall condemn me? lo, they all shall grow old as a garment; the moth shall eat them up."
+    },
+    {
+      "n": 23,
+      "c": 50,
+      "v": 10,
+      "ref": "50:10",
+      "text": "מִ֤י בָכֶם֙ יְרֵ֣א יְהֹוָ֔ה שֹׁמֵ֖עַ בְּק֣וֹל עַבְדּ֑וֹ אֲשֶׁ֣ר&thinsp;<b>׀</b> הָלַ֣ךְ חֲשֵׁכִ֗ים וְאֵ֥ין נֹ֙גַהּ֙ ל֔וֹ יִבְטַח֙ בְּשֵׁ֣ם יְהֹוָ֔ה וְיִשָּׁעֵ֖ן בֵּאלֹהָֽיו׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Who is there among you that fears the Lord, that obeys the voice of his servant, that walks in darkness, and has no light? let him trust in the name of the Lord, and rely upon his God."
+    },
+    {
+      "n": 24,
+      "c": 50,
+      "v": 11,
+      "ref": "50:11",
+      "text": "הֵ֧ן כֻּלְּכֶ֛ם קֹ֥דְחֵי אֵ֖שׁ מְאַזְּרֵ֣י זִיק֑וֹת לְכ֣וּ&thinsp;<b>׀</b> בְּא֣וּר אֶשְׁכֶ֗ם וּבְזִיקוֹת֙ בִּֽעַרְתֶּ֔ם מִיָּדִי֙ הָיְתָה־זֹּ֣את לָכֶ֔ם לְמַעֲצֵבָ֖ה תִּשְׁכָּבֽוּן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Behold all you that kindle a fire, and that girdle yourselves around with sparks; walk in the light of your fire, and in the sparks that you have kindled. This came to you from my hand; you shall lie down in grief."
+    },
+    {
+      "n": 25,
+      "c": 51,
+      "v": 1,
+      "ref": "51:1",
+      "text": "שִׁמְע֥וּ אֵלַ֛י רֹ֥דְפֵי צֶ֖דֶק מְבַקְשֵׁ֣י יְהֹוָ֑ה הַבִּ֙יטוּ֙ אֶל־צ֣וּר חֻצַּבְתֶּ֔ם וְאֶל־מַקֶּ֥בֶת בּ֖וֹר נֻקַּרְתֶּֽם׃",
+      "en": "Hearken to me, you that follow after righteousness, you that seek the Lord: look to the rock whence you are hewn, and to the hole of the pit from which you were dug out."
+    },
+    {
+      "n": 26,
+      "c": 51,
+      "v": 2,
+      "ref": "51:2",
+      "text": "הַבִּ֙יטוּ֙ אֶל־אַבְרָהָ֣ם אֲבִיכֶ֔ם וְאֶל־שָׂרָ֖ה תְּחוֹלֶלְכֶ֑ם כִּֽי־אֶחָ֣ד קְרָאתִ֔יו וַאֲבָרְכֵ֖הוּ וְאַרְבֵּֽהוּ׃",
+      "en": "Look to Avraham your father, and to Sara that bore you: for he was but one when I called him, and I blessed him, and increased him."
+    },
+    {
+      "n": 27,
+      "c": 51,
+      "v": 3,
+      "ref": "51:3",
+      "text": "כִּי־נִחַ֨ם יְהֹוָ֜ה צִיּ֗וֹן נִחַם֙ כׇּל־חׇרְבֹתֶ֔יהָ וַיָּ֤שֶׂם מִדְבָּרָהּ֙ כְּעֵ֔דֶן וְעַרְבָתָ֖הּ כְּגַן־יְהֹוָ֑ה שָׂשׂ֤וֹן וְשִׂמְחָה֙ יִמָּ֣צֵא בָ֔הּ תּוֹדָ֖ה וְק֥וֹל זִמְרָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For the Lord shall comfort Żiyyon: he will comfort all her waste places; and he will make her wilderness like ῾Eden, and her desert like the garden of the Lord; joy and gladness shall be found in it, thanksgiving, and the voice of melody."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Eikev",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 46
+  },
+  "parashah": {
+    "en": "Haftarat Eikev",
+    "translit": "Haftarat Eikev",
+    "he": "הפטרת עקב"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 27,
+        "ref": "49:14–51:3"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

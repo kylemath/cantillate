@@ -225,6 +225,282 @@
     ]
   },
   {
+    "slug": "haftarah-devarim",
+    "file": "data/haftarah-devarim.json",
+    "label": "Haftarat Devarim (Isaiah 1:1-27)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 44,
+    "haftarah": {
+      "parashah": "Devarim",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 44
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "Shabbat Chazon — the third of the three of rebuke",
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vaetchanan",
+    "file": "data/haftarah-vaetchanan.json",
+    "label": "Haftarat Vaetchanan (Isaiah 40:1-26)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 45,
+    "haftarah": {
+      "parashah": "Vaetchanan",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 45
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "Shabbat Nachamu — the first of the seven of consolation",
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-eikev",
+    "file": "data/haftarah-eikev.json",
+    "label": "Haftarat Eikev (Isaiah 49:14-51:3)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 46,
+    "haftarah": {
+      "parashah": "Eikev",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 46
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "The second of the seven of consolation",
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-reeh",
+    "file": "data/haftarah-reeh.json",
+    "label": "Haftarat Re'eh (Isaiah 54:11-55:5)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 47,
+    "haftarah": {
+      "parashah": "Re'eh",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 47
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "The third of the seven of consolation",
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-shoftim",
+    "file": "data/haftarah-shoftim.json",
+    "label": "Haftarat Shoftim (Isaiah 51:12-52:12)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 48,
+    "haftarah": {
+      "parashah": "Shoftim",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 48
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "The fourth of the seven of consolation",
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-kiteitzei",
+    "file": "data/haftarah-kiteitzei.json",
+    "label": "Haftarat Ki Teitzei (Isaiah 54:1-10)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 49,
+    "haftarah": {
+      "parashah": "Ki Teitzei",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 49
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "The fifth of the seven of consolation",
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-kitavo",
+    "file": "data/haftarah-kitavo.json",
+    "label": "Haftarat Ki Tavo (Isaiah 60:1-22)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 50,
+    "haftarah": {
+      "parashah": "Ki Tavo",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 50
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "The sixth of the seven of consolation",
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-nitzavim",
+    "file": "data/haftarah-nitzavim.json",
+    "label": "Haftarat Nitzavim (Isaiah 61:10-63:9)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 51,
+    "haftarah": {
+      "parashah": "Nitzavim",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 51
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "The seventh of the seven of consolation",
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vayeilech",
+    "file": "data/haftarah-vayeilech.json",
+    "label": "Haftarat Vayeilech (Isaiah 55:6-56:8)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 52,
+    "haftarah": {
+      "parashah": "Vayeilech",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 52
+    },
+    "note": "PocketTorah's word onsets for this one cover 191 words, and no standard haftarah range has that length (the only exact fit in Isaiah 55–56 is 55:5–56:4), so the recording is left out rather than drifting out of step with the text. The coach line uses the measured haftarah trope shapes instead.",
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-haazinu",
+    "file": "data/haftarah-haazinu.json",
+    "label": "Haftarat Ha'azinu (II Samuel 22:1-51)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 53,
+    "haftarah": {
+      "parashah": "Ha'azinu",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 53
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "Chanted as the Song of David (II Samuel 22) The Song of David is laid out as poetry, and the text divides its words differently from the recording, so the coach line is approximate through much of the song.",
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vezothaberakhah",
+    "file": "data/haftarah-vezothaberakhah.json",
+    "label": "Haftarat Vezot Haberakhah (Joshua 1:1-18)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 54,
+    "haftarah": {
+      "parashah": "Vezot Haberakhah",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 54
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "group": "Haftarot"
+  },
+  {
     "slug": "trope-drills",
     "file": "data/trope-drills.json",
     "kind": "drill",

@@ -18,6 +18,7 @@ import websocket
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 PORT = 9222
 URL = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8123/scripts/smoke.html"
+TIMEOUT = int(sys.argv[2]) if len(sys.argv) > 2 else 180
 
 
 def main():
@@ -57,7 +58,9 @@ def main():
         send("Page.navigate", url=URL)
 
         logs, report = [], None
-        deadline = time.time() + 30
+        # The page fetches and re-analyses every shipped reading, so the wait has
+        # to grow with the corpus rather than sit at a round number.
+        deadline = time.time() + TIMEOUT
         while time.time() < deadline:
             ws.settimeout(max(0.2, deadline - time.time()))
             try:
@@ -98,6 +101,11 @@ def main():
             for line in logs:
                 print(line)
         if report is None:
+            # Print whatever the page did manage to write: the last PASS line is
+            # what says where it stopped.
+            if value:
+                print("--- partial report ---")
+                print(value)
             print("FAIL page never finished (no DONE marker)")
             return 1
         print(report)

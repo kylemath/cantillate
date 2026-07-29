@@ -764,6 +764,13 @@ body.guide-open .guidepane { transform: translateX(0); }
 }
 .guide-head { padding: 14px 16px 10px; border-bottom: 1px solid var(--line); }
 .guide-head .pane-title { margin: 0 0 8px; }
+/* Which cantillation style the diagrams below are drawn in (Torah / haftarah). */
+.stylechip {
+  text-transform: none; letter-spacing: 0; font-size: 10px; font-weight: 600;
+  color: #cfe0ff; border: 1px solid rgba(120,170,255,0.45);
+  background: rgba(90,150,255,0.16);
+  border-radius: 999px; padding: 1px 7px; margin-inline-start: 6px; white-space: nowrap;
+}
 .guide-head .hint { margin: 8px 0 0; }
 .guide-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .guide-controls .seg .cm { font-size: 12px; padding: 6px 9px; }
@@ -1463,3 +1470,37 @@ footer.src a { color: var(--accent); }
 .al-edit-end { width: 70px; font-size: 13px; padding: 4px 6px; }
 .al-edit-ref { font-size: 12px; color: var(--muted); }
 .aliyot-edit-actions { display: flex; gap: 10px; justify-content: flex-end; }
+
+/* Any passage: the book / parashah-or-chapter / pasuk-range picker */
+.cr-intro { margin: 0 0 14px; }
+.cr-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.cr-row .label { min-width: 62px; }
+.cr-row select { font-size: 13px; padding: 5px 6px; max-width: 260px; }
+.cr-row #crFromV, .cr-row #crToV, .cr-row #crFromC, .cr-row #crToC { max-width: 92px; }
+.cr-colon { color: var(--muted); margin-inline: -4px; }
+.cr-preview { margin: 14px 0 0; font-size: 15px; }
+.cr-preview .cr-he { font-family: 'FrankRuehl', serif; direction: rtl; unicode-bidi: isolate;
+  color: var(--accent-2); margin-inline-start: 8px; }
+.cr-name-row { margin-top: 14px; }
+.cr-name-row input { flex: 1; min-width: 160px; font-size: 13px; padding: 6px 8px;
+  border-radius: 8px; border: 1px solid var(--line); background: rgba(255,255,255,0.04);
+  color: var(--text); }
+.cr-name-row input:focus { outline: none; border-color: var(--accent); }
+.cr-saved, .cr-recent { display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.cr-chip { font-size: 12px; padding: 4px 9px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: rgba(255,255,255,0.04); color: var(--text); }
+.cr-chip:hover { border-color: var(--accent); color: var(--accent); }
+.cr-chip small { color: var(--muted); margin-inline-start: 5px; }
+.cr-chip:hover small { color: inherit; opacity: 0.8; }
+/* A named passage and the ✕ that drops the name read as one chip. */
+.cr-named { display: inline-flex; align-items: stretch; }
+.cr-named .cr-chip { border-start-end-radius: 0; border-end-end-radius: 0; border-inline-end: none;
+  font-weight: 600; }
+.cr-forget { font-size: 11px; line-height: 1; padding: 0 7px; cursor: pointer; color: var(--muted);
+  border: 1px solid var(--line); background: rgba(255,255,255,0.04);
+  border-start-start-radius: 0; border-end-start-radius: 0;
+  border-start-end-radius: 999px; border-end-end-radius: 999px; }
+.cr-forget:hover { color: var(--bad); border-color: var(--bad); }
+.cr-actions { display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+.cr-actions .hint { flex: 1; margin: 0; }

@@ -1,6 +1,7 @@
 import { tokenize, renderWord, toScroll, stripNikud, stripTaamim } from './hebrew.js';
 import { buildLineMelody, splitPhrases, splitAtRank, RANK, RANK_LABELS, rankFor, FAMILIES,
-  markGlyph, NAMES, motifFor, nameFor, SOF_PASUK_MOTIF, SOF_PASUK_NAME } from './trope.js';
+  markGlyph, NAMES, motifFor, nameFor, SOF_PASUK_NAME, sofPasukMotif,
+  STYLES, DEFAULT_STYLE, styleOf } from './trope.js';
 import { singSteps, playTone, stopPlayback } from './audio.js';
 import { playSegment, stopVerseAudio, pauseVerseAudio, resumeVerseAudio, seekVerseAudio,
   previewVerseAudio, isVerseAudioLoaded, isVerseAudioPaused, verseAudioProgress } from './realaudio.js';
@@ -9,6 +10,7 @@ import { ContourView, Spectrogram, scoreTrail, scoreNotes, stepsToPoints, sample
 import { LEVELS, levelById, VERSE_MODES, skillForLevel, DIVISIONS, divisionByRank,
   FULL_VERSE_LEVEL } from './levels.js';
 import { aliyotFor, parashahOf, currentTriennialYear } from './aliyot.js';
+import * as corpus from './tanakh.js';
 import * as store from './store.js';
 import * as auth from './auth.js';
 import * as scores from './scores.js';
@@ -50,8 +52,14 @@ const state = {
   cycle: 'triennial', // aliyah cycle: 'annual' | 'triennial'
   triYear: 1,         // triennial cycle year (1-3)
   readingId: null,    // the menu entry in use (may differ from slug for excerpts)
+  readingKind: 'parashah', // see readingKind(): parashah|haftarah|excerpt|drill|custom
   excerpt: null,      // manifest entry when the reading is a named passage
   drill: null,        // manifest entry when the reading is a synthetic drill set
+  custom: null,       // {book, from, to, count} when the reader picked the range
+  // Which melody the open reading is taught in: 'torah' or 'haftarah'. The same
+  // accents, a different tune for each of them — so this picks the motif table
+  // (trope.js) AND which measured corpus of shapes the coach line falls back to.
+  tropeStyle: DEFAULT_STYLE,
   aliyah: null,       // currently-open aliyah challenge (null = normal practice)
   aliyahCue: 'word',  // yad outline granularity in aliyah mode: 'word' | 'phrase'
   stamHand: 'shlomo', // scribal hand for every STA"M surface: 'shlomo' | 'ashkenaz'
@@ -280,6 +288,10 @@ async function init() {
   sel.value = startSlug;
   await loadData(startSlug);
 
+  // Passages the reader picked out of a book in earlier sittings go back in the
+  // menu (see openCustomRange); the text itself is only fetched if one is opened.
+  await restoreCustomRanges();
+
   sel.addEventListener('change', () => loadData(sel.value));
   $('tonic').addEventListener('change', (e) => { state.tonicHz = parseFloat(e.target.value); });
   $('audioSource').addEventListener('change', (e) => { switchAudioSource(e.target.value); });
@@ -287,7 +299,11 @@ async function init() {
   bindToggle('tgVowels', () => { state.showVowels = !state.showVowels; refreshText(); });
   bindToggle('tgTaamim', () => { state.showTaamim = !state.showTaamim; refreshText(); });
   bindToggle('tgFont', () => { state.scroll = !state.scroll; refreshText(); });
-  bindToggle('tgEnglish', () => { state.showEnglish = !state.showEnglish; renderVerses(); });
+  bindToggle('tgEnglish', () => {
+    state.showEnglish = !state.showEnglish;
+    renderVerses();
+    if (state.showEnglish) ensureCustomEnglish();
+  });
   $('overlaySeg').querySelectorAll('.ov').forEach((b) => {
     b.addEventListener('click', () => { state.overlay = b.dataset.ov; syncToggleUI(); renderVerses(); });
   });
@@ -330,6 +346,7 @@ async function init() {
   setupAuth();
   setupLeaderboard();
   setupAliyotEditor();
+  setupCustomPicker();
   setupOfflineButton();
   setupNetBadge();
 }
@@ -887,11 +904,14 @@ async function loadAllReadingsMeta() {
   const out = [];
   for (const meta of AVAILABLE) {
     try {
-      let data;
-      if (state.slug === meta.slug && state.data) data = state.data;
-      else { const r = await fetch(meta.file); if (!r.ok) continue; data = await r.json(); }
+      // A picked passage has no data file — it is assembled from the book text,
+      // which is what readingDocFor does for both cases.
+      const data = (state.readingId === meta.slug && state.data)
+        ? state.data
+        : await readingDocFor(meta);
+      if (!data || !data.verses) continue;
       out.push({ slug: meta.slug, label: meta.label, data });
-    } catch (e) { /* skip a reading whose data file is missing */ }
+    } catch (e) { /* skip a reading whose text can't be resolved */ }
   }
   _readingsMetaCache = out;
   return out;
@@ -930,7 +950,7 @@ function enumerateAliyahScopes(metas) {
           type: 'aliyah', slug: m.slug, cycle, year, n: a.n, ref: a.ref,
           refId: scores.aliyahIdFor(parId, cycle, year, a.n),
           parName, cycleLabel,
-          label: `Aliyah ${a.n}${a.ref ? ` · ${a.ref}` : ''}`,
+          label: `${chunkTitle(a)}${a.ref ? ` · ${a.ref}` : ''}`,
           localBest: store.getAliyahScore(m.slug, cycle, year, a.n),
         });
       }
@@ -1111,7 +1131,7 @@ async function renderAliyahList() {
       scopes.push({
         type: 'aliyah', slug: m.slug, cycle, year, n: a.n, ref: a.ref, start: a.start, end: a.end,
         refId: scores.aliyahIdFor(parId, cycle, year, a.n), parName,
-        label: a.n === 'M' ? `Maftir${a.ref ? ` · ${a.ref}` : ''}` : `Aliyah ${a.n}${a.ref ? ` · ${a.ref}` : ''}`,
+        label: `${chunkTitle(a)}${a.ref ? ` · ${a.ref}` : ''}`,
         localDisplay: localAliyahDisplay(m, cycle, year, a),
       });
     }
@@ -1566,7 +1586,7 @@ function computeScopeEntries() {
         });
       }
     };
-    for (const a of defaultAliyot(cycle, year)) scoreUnit(a, `Aliyah ${a.n} · ${a.ref || ''}`);
+    for (const a of defaultAliyot(cycle, year)) scoreUnit(a, `${chunkTitle(a)} · ${a.ref || ''}`);
     const maf = maftirForReading(cycle, year);
     if (maf) scoreUnit(maf, `Maftir · ${maf.ref || ''}`);
   }
@@ -2237,7 +2257,7 @@ function rankBadge(taam) {
 function tropeCardHtml(m, color) {
   const isSof = m === 'sof';
   const taamVal = isSof ? 'sof' : String(m);
-  const name = isSof ? SOF_PASUK_NAME : nameFor(m);
+  const name = isSof ? SOF_PASUK_NAME : nameFor(m, state.tropeStyle);
   const glyph = markGlyph(m);
   const shapeKey = isSof ? 'sof' : String(m);
   const shape = state.shapes && state.shapes[shapeKey];
@@ -2253,18 +2273,30 @@ function tropeCardHtml(m, color) {
 }
 
 // Draw a trope's melodic diagram: the averaged shape from the recording when we
-// have one, else the stylized motif from trope.js.
+// have one, else the stylized motif from trope.js. Both follow the open reading's
+// style, so opening a haftarah shows how each accent is sung in the haftarah.
 function drawTropeDiagram(canvas, member, color) {
   if (!canvas) return;
   const shape = state.shapes && state.shapes[member];
   if (shape && shape.steps && shape.steps.length) { drawMiniSteps(canvas, shape.steps, color); return; }
-  const motif = member === 'sof' ? SOF_PASUK_MOTIF : motifFor(Number(member));
+  const motif = member === 'sof'
+    ? sofPasukMotif(state.tropeStyle)
+    : motifFor(Number(member), state.tropeStyle);
   drawMini(canvas, motif, color);
 }
 
 function renderGuide() {
   const body = $('guideBody');
   if (!body) return;
+  // The diagrams below are the melody of whichever style the open reading is
+  // taught in, so the guide says which one it is showing.
+  const chip = $('guideStyle');
+  if (chip) {
+    const st = styleOf(state.tropeStyle);
+    chip.textContent = `${st.label} melody`;
+    chip.title = st.note;
+    chip.hidden = false;
+  }
   let html = '';
   FAMILIES.forEach((f) => {
     const glyphs = f.members.map((m) => `<span class="mk">${markGlyph(m)}</span>`).join('');
@@ -2395,10 +2427,11 @@ function applyPortion(val) {
 function syncPortionUI() {
   const el = $('portion');
   if (el) el.value = state.cycle === 'triennial' ? `tri${state.triYear}` : 'annual';
-  // A fixed passage or a drill set has no annual/triennial choice to make, so the
-  // portion controls (and the aliyah-boundary editor) come off the bar entirely.
-  const fixed = !!(state.excerpt || state.drill);
-  for (const id of ['portion', 'cycToday', 'btnEditAliyot']) {
+  // A fixed passage, a drill set or a haftarah has no annual/triennial choice to
+  // make, so the portion controls (and the aliyah-boundary editor) come off the
+  // bar entirely.
+  const fixed = !hasAliyotCycle(state.readingKind);
+  for (const id of ['portion', 'portionLabel', 'cycToday', 'btnEditAliyot']) {
     const c = $(id);
     if (c) c.hidden = fixed;
   }
@@ -2553,6 +2586,10 @@ function pitchIndexPath(slug, sid) {
 // The sources a reading advertises (from its manifest entry). Falls back to a
 // single default PocketTorah source so older manifest entries keep working.
 function readingSources(meta) {
+  // An entry that declares an EMPTY sources list has no recording at all (a
+  // passage picked out of a book nobody has recorded); one that omits the key
+  // predates voices and means the single PocketTorah recording.
+  if (meta && Array.isArray(meta.sources) && !meta.sources.length) return [];
   const list = meta && Array.isArray(meta.sources) ? meta.sources.filter((s) => s && s.id) : [];
   if (list.length) return list;
   return [{ id: DEFAULT_SOURCE, label: 'PocketTorah (Neiss & Schwartz)', default: true }];
@@ -2599,6 +2636,13 @@ async function loadAudioSource(slug, sid) {
   _pitchShards = null;
   _pitchRequested = new Set();
   _pitchMonolithPromise = null;
+  // A reading that advertises no voice at all has no per-reading audio, pitch or
+  // shapes files to look for, so it skips straight to the corpus shapes below
+  // rather than asking for four files that were never built.
+  if (!sid || !(state.sources || []).length) {
+    await loadCorpusShapes();
+    return;
+  }
   try {
     const ar = await fetch(srcPath(slug, sid, 'audio.json'));
     if (ar.ok) state.audio = await ar.json();
@@ -2624,15 +2668,20 @@ async function loadAudioSource(slug, sid) {
     const sr = await fetch(srcPath(slug, sid, 'shapes.json'));
     if (sr.ok) state.shapes = (await sr.json()).shapes;
   } catch (e) { /* no averaged trope shapes available */ }
-  // A reading with no recording of its own (a drill set) borrows the corpus-wide
-  // measured shapes, so its coach line and voice guide teach the melody the
-  // cantor actually sings rather than a hand-drawn approximation.
-  if (!state.shapes) {
-    try {
-      const cr = await fetch('data/trope-shapes.json');
-      if (cr.ok) state.shapes = (await cr.json()).shapes;
-    } catch (e) { /* fall back to the stylized motifs in trope.js */ }
-  }
+  await loadCorpusShapes();
+}
+
+// A reading with no recording of its own (a drill set, or a passage picked out of
+// a book nobody has recorded) borrows the corpus-wide measured shapes, so its
+// coach line and voice guide teach the melody a cantor actually sings rather than
+// a hand-drawn approximation. The corpus is per style: the Torah's shapes would
+// teach the wrong tune for a haftarah.
+async function loadCorpusShapes() {
+  if (state.shapes) return;
+  try {
+    const cr = await fetch(styleOf(state.tropeStyle).shapes);
+    if (cr.ok) state.shapes = (await cr.json()).shapes;
+  } catch (e) { /* fall back to the stylized motifs in trope.js */ }
 }
 
 // Populate + show/hide the topbar voice selector for the current reading.
@@ -2673,15 +2722,35 @@ async function switchAudioSource(sid) {
   refreshOfflineButton();
 }
 
-// A reading entry can be one of three kinds:
+// A reading entry can be one of these kinds:
 //   parashah  the default — its own text, recording and extracted pitch
+//   haftarah  the week's passage from the Prophets: its own text and recording
+//             like a parashah, but chanted to the haftarah melody and read
+//             straight through, so it has one chunk instead of seven aliyot
 //   excerpt   a named passage (the Shema, the Ten Commandments) that reuses a
 //             parashah's files and simply narrows the verses on screen, so it
 //             comes with the real recorded chant for free and its practice
 //             counts toward that parashah's progress
 //   drill     a synthetic exercise set with no recording; the coach line is
 //             built from the trope motifs in trope.js (see buildSyntheticCoach)
+//   custom    a range the reader picked out of any book of the Tanakh, assembled
+//             at runtime from data/tanakh/ (see openCustomRange)
 function readingKind(meta) { return (meta && meta.kind) || 'parashah'; }
+
+// A haftarah is chanted straight through, so it has no aliyot to choose between
+// and its verse range is fixed — the same as an excerpt or a drill in that
+// respect, which is what the portion control and the aliyot pane key off.
+function hasAliyotCycle(kind) { return kind === 'parashah'; }
+
+// Which melody a reading is taught in. Carried by the manifest entry and by the
+// data file (either is enough), defaulting to the Torah reading style.
+function tropeStyleOf(meta, data) {
+  return (meta && meta.tropeStyle) || (data && data.tropeStyle) || DEFAULT_STYLE;
+}
+
+// Every melody the app draws or sings is built for the style of the open
+// reading, so this is the only place buildLineMelody is called from.
+function lineMelody(tokens) { return buildLineMelody(tokens, state.tropeStyle); }
 
 // Where a reading's data files live. An excerpt borrows its parent's.
 function dataSlugOf(meta) { return (meta && meta.base) || (meta && meta.slug); }
@@ -2716,25 +2785,64 @@ async function ensureTikkunData() {
   if (state.scrollView || state.aliyah) renderScrollPane();
 }
 
+// What the pesukim pane calls the open reading. A parashah and a haftarah are
+// known by name (with the passage after it); a passage the reader picked is known
+// by its reference in both languages, led by whatever they named it if they did.
+function readingTitle(kind, meta) {
+  const par = state.data.parashah;
+  if (kind === 'custom') {
+    const ref = `${state.data.ref} — ${state.data.heRef}`;
+    return meta && meta.name ? `${meta.name} · ${ref}` : ref;
+  }
+  if (kind === 'haftarah' && par) return `${par.en} — ${par.he} · ${state.data.ref || ''}`.trim();
+  if (kind !== 'parashah') return meta.label;
+  if (par) return `${par.en} — ${par.he}`;
+  return `${state.data.book.en} ${state.data.chapter} — ${state.data.book.he}`;
+}
+
+// The reading's text. Every shipped reading has a built data file; a custom
+// passage has none, so it is assembled from the book's text in data/tanakh/
+// (see js/tanakh.js) — which is also what lets a passage the reader opened last
+// week be restored from a menu entry alone.
+async function readingDocFor(meta) {
+  if (readingKind(meta) === 'custom' && meta.custom) {
+    const { book, from, to } = meta.custom;
+    await corpus.loadIndex();
+    const entry = corpus.bookEntry(book);
+    if (!entry) throw new Error(`unknown book: ${book}`);
+    const heDoc = await corpus.loadBook(book);
+    return corpus.buildReading(entry, heDoc, from, to, corpus.englishIfLoaded(book), meta.name);
+  }
+  const resp = await fetch(meta.file);
+  return resp.json();
+}
+
 async function loadData(readingId) {
   const meta = AVAILABLE.find((p) => p.slug === readingId);
   const kind = readingKind(meta);
   const dataSlug = dataSlugOf(meta);
-  const resp = await fetch(meta.file);
-  state.data = await resp.json();
+  state.data = await readingDocFor(meta);
   state.tikkun = _tikkunData;
   state.readingId = readingId;
   // Progress is filed under the DATA slug, so working through the Shema also
   // advances the pesukim of Va'etchanan rather than starting a parallel tally.
-  state.slug = dataSlug;
+  // A custom passage brings its own slug (the book plus where it starts), so
+  // every range that opens on the same pasuk shares one tally.
+  state.slug = (kind === 'custom' && state.data.slug) || dataSlug;
+  state.readingKind = kind;
   state.excerpt = kind === 'excerpt' ? meta : null;
   state.drill = kind === 'drill' ? meta : null;
+  state.custom = kind === 'custom' ? (state.data.custom || meta.custom) : null;
+  // Set before the audio source loads: it decides which measured trope corpus is
+  // the fallback for the coach line.
+  state.tropeStyle = tropeStyleOf(meta, state.data);
   state.selectedVerse = null;
   if (state.aliyah) setAliyahLayout(false); // leave aliyah layout when the reading changes
   state.aliyah = null;
-  // An excerpt is a fixed passage, so the annual/triennial portion control has
-  // nothing to choose; pin it to annual and hide the picker (see syncPortionUI).
-  if (kind !== 'parashah') { state.cycle = 'annual'; state.triYear = 1; }
+  // An excerpt or a haftarah is a fixed passage, so the annual/triennial portion
+  // control has nothing to choose; pin it to annual and hide the picker (see
+  // syncPortionUI).
+  if (!hasAliyotCycle(kind)) { state.cycle = 'annual'; state.triYear = 1; }
   syncPortionUI();
   // Resolve which recorded voice (audio source) to load for this reading, then
   // fetch its recorded-chant / pitch / shapes data. Honours the user's saved
@@ -2743,12 +2851,7 @@ async function loadData(readingId) {
   const effectiveSource = resolveAudioSource(state.sources);
   await loadAudioSource(dataSlug, effectiveSource);
   renderSourceSelector();
-  const par = state.data.parashah;
-  $('textTitle').textContent = kind !== 'parashah'
-    ? meta.label
-    : par
-      ? `${par.en} — ${par.he}`
-      : `${state.data.book.en} ${state.data.chapter} — ${state.data.book.he}`;
+  $('textTitle').textContent = readingTitle(kind, meta);
   $('srcVersion').textContent = state.data.heVersionTitle || state.data.versionTitle || 'Masoretic text';
   renderVerses();
   renderAliyot();
@@ -2765,6 +2868,9 @@ async function loadData(readingId) {
     if (state.readingId !== readingId) return; // reading changed meanwhile
     warmPitchShards(divisionRange()[0]);
     ensureTikkunData();
+    // The translation of a whole book is a separate download from its text, so a
+    // custom passage only fetches it if the English column is actually open.
+    if (state.showEnglish) ensureCustomEnglish();
   });
   // Offline: register any already-downloaded audio for this reading so playback
   // uses local blobs, and refresh the "⬇ Offline" button to reflect its state.
@@ -2772,6 +2878,514 @@ async function loadData(readingId) {
     await offline.primeReading(readingAudioFiles());
   } catch (e) { /* offline store unavailable */ }
   refreshOfflineButton();
+}
+
+// ---------------------------------------------------------------------------
+// Any passage, any book. The shipped readings are the recorded ones; this opens
+// the rest of the canon — pick a book, then (in the Torah) a parashah or
+// (elsewhere) a chapter, then the first and last pasuk. The text comes from
+// data/tanakh/ (see js/tanakh.js) and is chanted in the haftarah melody, the
+// chant for reading from a book rather than from the scroll. A picked passage
+// becomes an ordinary entry in the Reading menu, so everything else — the
+// pesukim list, the verse stages, the whole-passage challenge, the leaderboard —
+// treats it like any other reading.
+// ---------------------------------------------------------------------------
+
+const CUSTOM_GROUP = 'Any passage';
+const CUSTOM_RECENT_KEY = 'cantillate.customRanges';
+const CUSTOM_RECENT_MAX = 8;
+// Long enough for "Yaakov's bar mitzvah haftarah", short enough to read in the
+// menu without the reference it stands for being pushed off the end.
+const CUSTOM_NAME_MAX = 60;
+// Psalms, Proverbs and Job are pointed with the other Masoretic accent system:
+// the same words and marks are here, but neither melody was ever sung to those
+// accents, so the guide is a reading of the shapes rather than a tradition.
+const POETIC_NOTE = 'Poetic accents (Psalms · Proverbs · Job) — a different accent '
+  + 'system from the one the Torah and haftarah melodies belong to, so the '
+  + 'synthesized guide is an approximation here.';
+
+function loadCustomRecents() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(CUSTOM_RECENT_KEY));
+    return Array.isArray(raw) ? raw.filter((r) => r && r.book && r.from && r.to) : [];
+  } catch (e) { return []; }
+}
+
+function saveCustomRecents(list) {
+  try { localStorage.setItem(CUSTOM_RECENT_KEY, JSON.stringify(list.slice(0, CUSTOM_RECENT_MAX))); }
+  catch (e) { /* private mode: the passage just won't be remembered */ }
+}
+
+// Keep the passage in the menu across reloads, most recent first, so a range
+// worked on over several sittings is one click away (and its progress with it).
+function rememberCustomRange(desc) {
+  const id = corpus.readingId(desc.book, desc.from, desc.to);
+  const list = loadCustomRecents().filter((r) => corpus.readingId(r.book, r.from, r.to) !== id);
+  list.unshift(desc);
+  saveCustomRecents(list);
+}
+
+// A reference is how a passage is found; a name is what the reader calls it.
+// Naming one ("Bar mitzvah haftarah") keeps it in the menu under that name for
+// good, where the recents above age out after CUSTOM_RECENT_MAX. Names are saved
+// with the reader's progress rather than in a key of their own, so they follow a
+// signed-in reader to their other devices (see store.getSavedPassages).
+function loadSavedPassages() {
+  return store.getSavedPassages().filter((p) => p && p.book && p.from && p.to && p.name);
+}
+
+const passageId = (p) => corpus.readingId(p.book, p.from, p.to);
+
+// What the reader called this passage, or '' if they never named it.
+function savedNameFor(bookSlug, from, to) {
+  const id = corpus.readingId(bookSlug, from, to);
+  const hit = loadSavedPassages().find((p) => passageId(p) === id);
+  return hit ? hit.name : '';
+}
+
+// Name a passage, or rename one already named. Most recently named first, so the
+// menu and the picker lead with what the reader is working on now.
+function saveCustomPassage(desc, name) {
+  const clean = String(name || '').trim().replace(/\s+/g, ' ').slice(0, CUSTOM_NAME_MAX);
+  if (!clean) return '';
+  const id = corpus.readingId(desc.book, desc.from, desc.to);
+  const list = loadSavedPassages();
+  // Re-saving the same name is what opening a named passage does; leave the list
+  // (and its order) alone rather than shuffling it on every visit.
+  if (list.some((p) => passageId(p) === id && p.name === clean)) return clean;
+  const rest = list.filter((p) => passageId(p) !== id);
+  store.setSavedPassages([{ book: desc.book, from: desc.from, to: desc.to, name: clean }, ...rest]);
+  return clean;
+}
+
+// Take the name off. The passage itself is untouched: it stays in the menu under
+// its reference for as long as the recents hold it, and everything practiced in
+// it is kept either way, since none of it was ever filed under the name.
+function forgetCustomPassage(id) {
+  store.setSavedPassages(loadSavedPassages().filter((p) => passageId(p) !== id));
+}
+
+// The manifest entry for a custom passage. Built from the book index alone (no
+// text needed), so restoring a remembered passage costs nothing until it is
+// opened. `sources: []` says there is no recording; `custom` is what
+// readingDocFor uses to assemble the text.
+function customEntry(bookEntry, from, to, name = '') {
+  const { from: lo, to: hi, count } = corpus.normalizeRange(bookEntry, from, to);
+  const ref = corpus.refFor(bookEntry.en, lo, hi);
+  const heRef = corpus.heRefFor(bookEntry.he, lo, hi);
+  // A named passage shows its name in the menu, so the reference it stands for
+  // leads the tooltip instead of being lost.
+  const notes = [name ? ref : '', heRef,
+    `${plural(count, 'pasuk', 'pesukim')} · haftarah melody, synthesized guide`].filter(Boolean);
+  if (bookEntry.accents === 'poetic') notes.push(POETIC_NOTE);
+  return {
+    slug: corpus.readingId(bookEntry.slug, lo, hi),
+    kind: 'custom',
+    tropeStyle: corpus.CUSTOM_TROPE_STYLE,
+    group: CUSTOM_GROUP,
+    label: name || ref,
+    name,
+    note: notes.join(' · '),
+    sources: [],
+    custom: { book: bookEntry.slug, from: lo, to: hi, count },
+  };
+}
+
+// Rebuild the Any passage group from what's persisted: the passages the reader
+// named first, then the ones merely opened, each most recent first. Called after
+// anything that changes either list, so naming, renaming, forgetting and opening
+// all reach the menu by one path. `extra` is an entry to include regardless (a
+// passage being opened right now, before it has been remembered).
+function syncCustomMenu(select, extra) {
+  if (!corpus.indexIfLoaded()) return;
+  const keep = [];
+  const seen = new Set();
+  const add = (desc, name) => {
+    const entry = corpus.bookEntry(desc.book);
+    if (!entry || seen.has(corpus.readingId(desc.book, desc.from, desc.to))) return;
+    const meta = customEntry(entry, desc.from, desc.to, name);
+    seen.add(meta.slug);
+    keep.push(meta);
+  };
+  for (const p of loadSavedPassages()) add(p, p.name);
+  for (const r of loadCustomRecents()) add(r, '');
+  // Never take the open reading out from under the reader, listed or not.
+  for (const p of AVAILABLE) {
+    if (p.kind === 'custom' && p.slug === state.readingId && !seen.has(p.slug)) {
+      seen.add(p.slug);
+      keep.push(p);
+    }
+  }
+  if (extra && !seen.has(extra.slug)) keep.push(extra);
+  AVAILABLE = [...AVAILABLE.filter((p) => p.kind !== 'custom'), ...keep];
+  // The leaderboard's snapshot of every reading is built once; a passage added or
+  // renamed since then has to be picked up next time it is browsed.
+  _readingsMetaCache = null;
+  const sel = $('parashah');
+  if (sel) {
+    const value = select || sel.value;
+    renderReadingMenu(sel);
+    if (value) sel.value = value;
+  }
+}
+
+async function openCustomRange(bookSlug, from, to, { remember = true, name = '' } = {}) {
+  await corpus.loadIndex();
+  const entry = corpus.bookEntry(bookSlug);
+  if (!entry) throw new Error(`unknown book: ${bookSlug}`);
+  const norm = corpus.normalizeRange(entry, from, to);
+  if (norm.count > corpus.MAX_VERSES) {
+    throw new Error(`${norm.count} pesukim is more than one passage (max ${corpus.MAX_VERSES})`);
+  }
+  const desc = { book: entry.slug, from: norm.from, to: norm.to, count: norm.count };
+  if (name) saveCustomPassage(desc, name);
+  if (remember) rememberCustomRange(desc);
+  const meta = customEntry(entry, norm.from, norm.to, savedNameFor(entry.slug, norm.from, norm.to));
+  syncCustomMenu(meta.slug, meta);
+  await loadData(meta.slug);
+  return meta;
+}
+
+// Named and remembered passages, back in the menu at startup without fetching
+// any text.
+async function restoreCustomRanges() {
+  if (!loadCustomRecents().length && !loadSavedPassages().length) return;
+  try { await corpus.loadIndex(); } catch (e) { return; } // corpus not deployed
+  syncCustomMenu();
+}
+
+// The translation of a book is a separate file from its text, so a custom passage
+// starts with an empty English column and fills it the first time the column is
+// actually opened.
+async function ensureCustomEnglish() {
+  if (state.readingKind !== 'custom' || !state.custom) return;
+  const book = state.custom.book;
+  if (corpus.englishIfLoaded(book)) return;
+  const readingId = state.readingId;
+  let enDoc = null;
+  try { enDoc = await corpus.loadEnglish(book); } catch (e) { return; }
+  if (!enDoc || state.readingId !== readingId) return;
+  corpus.fillEnglish(state.data, enDoc);
+  $('srcVersion').textContent = state.data.heVersionTitle || state.data.versionTitle || 'Masoretic text';
+  if (state.showEnglish) renderVerses();
+}
+
+// --- The picker -------------------------------------------------------------
+
+function setupCustomPicker() {
+  const btn = $('btnAnyPassage');
+  const modal = $('customModal');
+  if (!btn || !modal) return;
+  btn.addEventListener('click', () => openCustomPicker());
+  modal.querySelectorAll('[data-close]').forEach((el) => {
+    el.addEventListener('click', () => { modal.hidden = true; });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden) modal.hidden = true;
+  });
+  for (const id of ['crBook', 'crScope', 'crFromC', 'crFromV', 'crToC', 'crToV']) {
+    const el = $(id);
+    if (el) el.addEventListener('change', () => onPickerChange(id));
+  }
+  const name = $('crName');
+  // Once the reader has typed something, the box is theirs: stop replacing it as
+  // the range moves (see updateCustomPreview).
+  name.addEventListener('input', () => { _crNameIsSaved = false; });
+  name.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); saveFromPicker(); }
+  });
+  $('crSave').addEventListener('click', () => saveFromPicker());
+  $('crOpen').addEventListener('click', () => submitCustomPicker());
+}
+
+// Whether the name box holds a name we put there (a saved passage's) rather than
+// one the reader is in the middle of typing.
+let _crNameIsSaved = true;
+
+// The book the picker is currently showing, straight from the index.
+function pickerBook() {
+  return corpus.bookEntry($('crBook').value);
+}
+
+async function openCustomPicker() {
+  const modal = $('customModal');
+  const status = $('crStatus');
+  if (!modal) return;
+  modal.hidden = false;
+  status.textContent = '';
+  let index;
+  try {
+    index = await corpus.loadIndex();
+  } catch (e) {
+    status.textContent = 'The Tanakh text isn\u2019t deployed yet — run scripts/build_tanakh.py.';
+    $('crOpen').disabled = true;
+    return;
+  }
+  $('crOpen').disabled = false;
+  const sel = $('crBook');
+  if (!sel.options.length) {
+    for (const sec of index.sections) {
+      const books = index.books.filter((b) => b.section === sec.id);
+      if (!books.length) continue;
+      const group = document.createElement('optgroup');
+      group.label = sec.label;
+      for (const b of books) {
+        const o = document.createElement('option');
+        o.value = b.slug;
+        o.textContent = `${b.en} · ${b.he}`;
+        group.appendChild(o);
+      }
+      sel.appendChild(group);
+    }
+    // Open on the book the reader is already in, so "the next chapter along" is
+    // two clicks rather than a hunt through the list.
+    const here = (state.custom && state.custom.book)
+      || (state.data && state.data.book && bookSlugFor(state.data.book.en));
+    if (here && index.books.some((b) => b.slug === here)) sel.value = here;
+    onPickerChange('crBook');
+  }
+  updateCustomPreview();
+  renderSavedPassages();
+  renderCustomRecents();
+}
+
+function bookSlugFor(en) {
+  const idx = corpus.indexIfLoaded();
+  const hit = idx && idx.books.find((b) => b.en === en);
+  return hit ? hit.slug : null;
+}
+
+function fillNumberSelect(el, count, value) {
+  const want = Math.min(Math.max(1, value || 1), count);
+  if (el.options.length !== count) {
+    el.innerHTML = '';
+    for (let i = 1; i <= count; i++) {
+      const o = document.createElement('option');
+      o.value = String(i);
+      o.textContent = String(i);
+      el.appendChild(o);
+    }
+  }
+  el.value = String(want);
+  return want;
+}
+
+// Keep the four chapter/verse selectors consistent with the chosen book and with
+// each other, and describe what is currently selected. `changed` is the control
+// the reader just touched, which decides what follows what.
+function onPickerChange(changed) {
+  const entry = pickerBook();
+  if (!entry) return;
+  const chapters = entry.chapters;
+  const note = $('crBookNote');
+  note.textContent = entry.accents === 'poetic' ? 'poetic accents' : entry.sectionLabel;
+
+  const scopeRow = $('crScopeRow');
+  const scope = $('crScope');
+  const scopeLabel = $('crScopeLabel');
+  const parashiyot = entry.parashiyot || null;
+  scopeLabel.textContent = parashiyot ? 'Parashah' : 'Chapter';
+  scopeRow.hidden = false;
+
+  if (changed === 'crBook') {
+    // A new book: offer its parashiyot (Torah) or its chapters, and start at the
+    // beginning of the first one.
+    scope.innerHTML = '';
+    if (parashiyot) {
+      parashiyot.forEach((p, i) => {
+        const o = document.createElement('option');
+        o.value = String(i);
+        o.textContent = `${p.en} · ${p.he} (${p.start[0]}:${p.start[1]}\u2013${p.end[0]}:${p.end[1]})`;
+        scope.appendChild(o);
+      });
+    } else {
+      chapters.forEach((n, i) => {
+        const o = document.createElement('option');
+        o.value = String(i + 1);
+        o.textContent = `${i + 1} (${plural(n, 'pasuk', 'pesukim')})`;
+        scope.appendChild(o);
+      });
+    }
+    scope.value = scope.options.length ? scope.options[0].value : '';
+    changed = 'crScope';
+  }
+
+  if (changed === 'crScope') {
+    // Selecting a parashah or a chapter proposes the whole of it, which is the
+    // commonest thing to want and a sane starting point for narrowing.
+    let from, to;
+    if (parashiyot) {
+      const p = parashiyot[+scope.value] || parashiyot[0];
+      from = p.start; to = p.end;
+    } else {
+      const c = +scope.value || 1;
+      from = [c, 1]; to = [c, chapters[c - 1]];
+    }
+    fillNumberSelect($('crFromC'), chapters.length, from[0]);
+    fillNumberSelect($('crFromV'), chapters[from[0] - 1], from[1]);
+    fillNumberSelect($('crToC'), chapters.length, to[0]);
+    fillNumberSelect($('crToV'), chapters[to[0] - 1], to[1]);
+  } else {
+    // The verse lists depend on which chapter each end sits in.
+    const fc = fillNumberSelect($('crFromC'), chapters.length, +$('crFromC').value);
+    fillNumberSelect($('crFromV'), chapters[fc - 1], +$('crFromV').value);
+    const tc = fillNumberSelect($('crToC'), chapters.length, +$('crToC').value);
+    fillNumberSelect($('crToV'), chapters[tc - 1], +$('crToV').value);
+    // Moving the start past the end drags the end along rather than refusing.
+    if (changed === 'crFromC' || changed === 'crFromV') {
+      const a = corpus.absIndex(chapters, fc, +$('crFromV').value);
+      const b = corpus.absIndex(chapters, tc, +$('crToV').value);
+      if (a > b) {
+        fillNumberSelect($('crToC'), chapters.length, fc);
+        fillNumberSelect($('crToV'), chapters[fc - 1], +$('crFromV').value);
+      }
+    }
+    // Keep the scope selector pointing at wherever the start now is.
+    const at = parashiyot
+      ? parashiyot.indexOf(corpus.parashahAt(entry, fc, +$('crFromV').value))
+      : fc - 1;
+    if (at >= 0) scope.value = parashiyot ? String(at) : String(at + 1);
+  }
+  updateCustomPreview();
+}
+
+function pickerRange() {
+  const entry = pickerBook();
+  if (!entry) return null;
+  const from = [+$('crFromC').value, +$('crFromV').value];
+  const to = [+$('crToC').value, +$('crToV').value];
+  return { entry, ...corpus.normalizeRange(entry, from, to) };
+}
+
+function updateCustomPreview() {
+  const r = pickerRange();
+  const box = $('crPreview');
+  const status = $('crStatus');
+  const open = $('crOpen');
+  if (!r) { box.textContent = ''; return; }
+  const ref = corpus.refFor(r.entry.en, r.from, r.to);
+  const heRef = corpus.heRefFor(r.entry.he, r.from, r.to);
+  box.innerHTML = `<b>${escapeHtml(ref)}</b> <span class="cr-he">${escapeHtml(heRef)}</span>`
+    + `<span class="hint"> · ${plural(r.count, 'pasuk', 'pesukim')}</span>`;
+  const tooLong = r.count > corpus.MAX_VERSES;
+  open.disabled = tooLong;
+  status.textContent = tooLong
+    ? `Too long to practice as one passage — ${corpus.MAX_VERSES} pesukim at most.`
+    : (r.entry.accents === 'poetic' ? POETIC_NOTE : '');
+  // A passage that already has a name shows it, so Save doubles as Rename.
+  const saved = savedNameFor(r.entry.slug, r.from, r.to);
+  if (saved || _crNameIsSaved) { $('crName').value = saved; _crNameIsSaved = true; }
+  $('crSave').textContent = saved ? 'Rename' : 'Save';
+}
+
+// Name the selected passage without opening it, so a reader setting themselves up
+// can put several in the menu in one visit.
+function saveFromPicker() {
+  const r = pickerRange();
+  if (!r) return;
+  const status = $('crStatus');
+  const typed = $('crName').value.trim();
+  if (!typed) {
+    status.textContent = 'Give the passage a name and it will keep it in the Reading menu.';
+    $('crName').focus();
+    return;
+  }
+  const name = saveCustomPassage({ book: r.entry.slug, from: r.from, to: r.to }, typed);
+  _crNameIsSaved = true;
+  afterCustomListChange();
+  status.textContent = `Saved as \u201c${name}\u201d \u2014 it\u2019s in the Reading menu under that name.`;
+}
+
+// Both chip rows, the menu and the preview, after the saved or recent list moves.
+// Nothing here loads text: a passage costs nothing until it is opened.
+function afterCustomListChange() {
+  syncCustomMenu();
+  renderSavedPassages();
+  renderCustomRecents();
+  updateCustomPreview();
+}
+
+// The reader's named passages, above the recents: the fast way back to the one
+// they are actually preparing.
+function renderSavedPassages() {
+  const box = $('crSaved');
+  if (!box) return;
+  const list = corpus.indexIfLoaded() ? loadSavedPassages() : [];
+  const chips = list.map((p) => {
+    const entry = corpus.bookEntry(p.book);
+    if (!entry) return '';
+    const ref = corpus.refFor(entry.en, p.from, p.to);
+    return `<span class="cr-named">${chipHtml(p, `${escapeHtml(p.name)} <small>${escapeHtml(ref)}</small>`)}`
+      + `<button class="cr-forget" data-id="${escapeHtml(passageId(p))}"`
+      + ' title="Forget the name. Keeps the passage and everything practiced in it.">\u2715</button></span>';
+  }).filter(Boolean).join('');
+  if (!chips) { box.hidden = true; return; }
+  box.hidden = false;
+  box.innerHTML = `<span class="label">Saved</span>${chips}`;
+  bindChips(box);
+  box.querySelectorAll('.cr-forget').forEach((b) => {
+    b.addEventListener('click', () => {
+      forgetCustomPassage(b.dataset.id);
+      afterCustomListChange();
+      $('crStatus').textContent = 'Forgot the name \u2014 the passage and its progress are still here.';
+    });
+  });
+}
+
+function renderCustomRecents() {
+  const box = $('crRecent');
+  if (!box) return;
+  const idx = corpus.indexIfLoaded();
+  // A named passage is in the Saved row above; don't list it twice.
+  const named = new Set(loadSavedPassages().map(passageId));
+  const list = idx ? loadCustomRecents().filter((r) => !named.has(passageId(r))) : [];
+  const chips = list.map((r) => {
+    const entry = corpus.bookEntry(r.book);
+    return entry ? chipHtml(r, escapeHtml(corpus.refFor(entry.en, r.from, r.to))) : '';
+  }).filter(Boolean).join('');
+  if (!chips) { box.hidden = true; return; }
+  box.hidden = false;
+  box.innerHTML = `<span class="label">Recent</span>${chips}`;
+  bindChips(box);
+}
+
+function chipHtml(desc, inner) {
+  return `<button class="cr-chip" data-book="${escapeHtml(desc.book)}"`
+    + ` data-from="${desc.from.join('.')}" data-to="${desc.to.join('.')}">${inner}</button>`;
+}
+
+function bindChips(box) {
+  box.querySelectorAll('.cr-chip').forEach((b) => {
+    b.addEventListener('click', () => {
+      const from = b.dataset.from.split('.').map(Number);
+      const to = b.dataset.to.split('.').map(Number);
+      openPassageFromPicker(b.dataset.book, from, to);
+    });
+  });
+}
+
+function submitCustomPicker() {
+  const r = pickerRange();
+  if (!r) return;
+  // A name typed and then Open pressed means both, rather than losing the name.
+  openPassageFromPicker(r.entry.slug, r.from, r.to, $('crName').value.trim());
+}
+
+async function openPassageFromPicker(bookSlug, from, to, name = '') {
+  const status = $('crStatus');
+  const open = $('crOpen');
+  open.disabled = true;
+  status.textContent = 'Loading the text\u2026';
+  try {
+    await openCustomRange(bookSlug, from, to, { name });
+    _crNameIsSaved = true;
+    $('customModal').hidden = true;
+    status.textContent = '';
+  } catch (e) {
+    status.textContent = `Couldn\u2019t open that passage: ${e.message}`;
+  } finally {
+    open.disabled = false;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -3411,8 +4025,8 @@ function buildVerseSection(sec, key, isOpen, maftir, maxV) {
     head.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     head.innerHTML = `
       <span class="alsec-caret" aria-hidden="true">▸</span>
-      <span class="al-n">${toHebrewNum(a.n)}</span>
-      <span class="alsec-label">Aliyah ${a.n} <span class="hint">${a.ref} · ${plural(count, 'pasuk', 'pesukim')}</span></span>
+      <span class="al-n">${chunkBadge(a)}</span>
+      <span class="alsec-label">${chunkTitle(a)} <span class="hint">${a.ref} · ${plural(count, 'pasuk', 'pesukim')}</span></span>
       ${score > 0 ? `<span class="al-score" style="background:${scoreColor(score)}">${score}</span>` : ''}
       <span class="alsec-prog" title="${r.ready}/${r.total} pesukim at the whole-verse stage"><span style="width:${pct}%;background:${r.done ? 'var(--good)' : 'var(--accent-2)'}"></span></span>`;
     head.addEventListener('click', () => toggleSection(key));
@@ -3463,7 +4077,7 @@ function buildVerseRow(i) {
   const modeScores = store.getVerseModeScores(state.slug, i);
   const base = modeScores.base || 0;
   const tokens = tokenize(v.text);
-  const segs = buildLineMelody(tokens);
+  const segs = lineMelody(tokens);
   // Per-token overlay score, chosen by the current overlay mode, so the left
   // column can show word / phrase / whole-verse skill on the text itself.
   const ov = overlayScorer(i, segs);
@@ -3531,7 +4145,7 @@ function practiceWord(verseN, wi) {
   state.selectedVerse = verseN;
   const unlocked = store.getVerseLevel(state.slug, verseN);
   state.level = unlocked >= 2 ? 2 : 1; // prefer "sing the word", else "listen & repeat"
-  const segs = buildLineMelody(tokenize(state.data.verses[verseN - 1].text));
+  const segs = lineMelody(tokenize(state.data.verses[verseN - 1].text));
   const groups = groupByMaqaf(segs);
   const idx = groups.findIndex((g) => g.some((s) => s.index === wi));
   gotoPractice(verseN, state.level, idx < 0 ? 0 : idx);
@@ -3637,7 +4251,7 @@ function renderScrollPane() {
 
   let html = '<div class="scroll-column">';
   for (let i = start; i <= end; i++) {
-    const segs = buildLineMelody(tokenize(state.data.verses[i - 1].text));
+    const segs = lineMelody(tokenize(state.data.verses[i - 1].text));
     segs.forEach((s) => {
       const sel = state.selectedVerse === i ? ' sel' : '';
       html += `<span class="sw${sel}" data-verse="${i}" data-widx="${s.index}" data-taam="${s.taam == null ? 'none' : s.taam}" data-fam="${s.familyId}">${escapeHtml(toScroll(s.token))}</span> `;
@@ -3704,7 +4318,7 @@ function renderAliyahScroll(box) {
   } else {
     const scrollHtml = [];
     for (let n = from; n <= to; n++) {
-      const segs = buildLineMelody(tokenize(state.data.verses[n - 1].text));
+      const segs = lineMelody(tokenize(state.data.verses[n - 1].text));
       const inAliyah = n >= first && n <= last;
       const words = segs.map((s, wi) => `<span class="sw${inAliyah ? '' : ' ctx'}" data-verse="${n}" data-widx="${wi}">${escapeHtml(toScroll(s.token))}</span>`).join(' ');
       scrollHtml.push(`<span class="al-verse${inAliyah ? '' : ' ctx'}">${words}</span>`);
@@ -3779,6 +4393,34 @@ function renderAliyot() {
   }
   const par = parashahForReading();
   if (!par) { box.innerHTML = ''; return; }
+  // A haftarah is read straight through by one reader, so there is no cycle and
+  // no aliyot to choose between — say which parashah it belongs to and which
+  // rite's boundaries these are, which is what a reader preparing it needs.
+  if (state.readingKind === 'haftarah') {
+    const h = state.data.haftarah || {};
+    const entry = AVAILABLE.find((p) => p.slug === state.readingId) || {};
+    const rite = h.traditionLabel ? `${h.traditionLabel} rite` : '';
+    const where = [state.data.ref, rite].filter(Boolean).join(' · ');
+    box.innerHTML = `<div class="aliyot-head">${par.he} <span class="hint">${escapeHtml(where)}</span></div>`
+      + (entry.note ? `<p class="hint aliyot-note">${escapeHtml(entry.note)}</p>` : '')
+      + '<p class="hint aliyot-note">Chanted straight through to the haftarah melody \u2014 the same accents as the Torah, a different tune for each of them. Work the pesukim up as usual, then chant the whole haftarah in one go.</p>';
+    return;
+  }
+  // A passage the reader picked: name it, say where in the book it sits, and be
+  // honest that nobody recorded it.
+  if (state.readingKind === 'custom' && state.custom) {
+    const c = state.custom;
+    // Named, the name is the heading and the reference joins what follows it —
+    // which is the reader's own shorthand for where they are, so it leads.
+    const where = [c.name ? state.data.ref : '', c.sectionLabel,
+      c.parashah ? `parashat ${c.parashah.en}` : '',
+      plural(c.count, 'pasuk', 'pesukim')].filter(Boolean).join(' · ');
+    box.innerHTML = `<div class="aliyot-head">${escapeHtml(c.name || state.data.ref)} <span class="hint">${escapeHtml(where)}</span></div>`
+      + `<p class="hint aliyot-note">${escapeHtml(state.data.heRef)}</p>`
+      + '<p class="hint aliyot-note">No cantor recorded these pesukim, so the guide voice is synthesized \u2014 from how each accent is really sung, measured across every recorded haftarah. Work the pesukim up as usual, then chant the whole passage in one go.</p>'
+      + (c.accents === 'poetic' ? `<p class="hint aliyot-note">${escapeHtml(POETIC_NOTE)}</p>` : '');
+    return;
+  }
   const list = aliyotForReading(state.cycle, state.triYear);
   const cycleLabel = state.cycle === 'triennial' ? `Triennial · Year ${state.triYear}` : 'Annual';
   let html = `<div class="aliyot-head">${par.he} <span class="hint">${cycleLabel} · ${par.ref}</span></div>`;
@@ -3865,28 +4507,33 @@ function openChain(startV, endV) {
   });
 }
 
-// A single aliyah (or maftir) card element, inserted inline after its last
-// unlocking pasuk. The maftir (a.n === 'M') repeats the closing pesukim, so it's
-// labelled distinctly but otherwise practised and scored just like an aliyah.
+// A single aliyah card element, inserted inline after its last unlocking pasuk.
+// Two variants share it: the maftir (a.n === 'M'), which repeats the closing
+// pesukim, and a whole haftarah (a.n === 'H'), which is the entire reading in one
+// go because a haftarah is chanted straight through. Both are labelled distinctly
+// but otherwise practised and scored exactly like an aliyah.
 function buildAliyahCard(a) {
-  const isMaftir = a.n === 'M';
+  const kind = chunkKind(a);
+  const isMaftir = kind === 'maftir';
+  const whole = kind === 'haftarah' || kind === 'passage';
   const r = aliyahReadiness(a);
   const score = store.getAliyahScore(state.slug, state.cycle, state.triYear, a.n);
   const pct = r.total ? Math.round((r.ready / r.total) * 100) : 0;
   const open = state.aliyah && state.aliyah.n === a.n && state.aliyah.cycle === state.cycle && state.aliyah.year === state.triYear;
   const badge = score > 0 ? `<span class="al-score" style="background:${scoreColor(score)}">${score}</span>` : '';
-  const unit = isMaftir ? 'maftir' : 'aliyah';
   const action = r.done
-    ? `<button class="al-go">${score > 0 ? '↻ Chant again' : `▶ Chant ${unit}`}</button>`
+    ? `<button class="al-go">${score > 0 ? '↻ Chant again' : `▶ Chant ${chunkNoun(a)}`}</button>`
     : `<span class="al-lock" title="Reach stage ${ALIYAH_READY_LEVEL} on every pasuk first">🔒 ${r.ready}/${r.total} pesukim ready</span>`;
   const el = document.createElement('div');
-  el.className = `aliyah${isMaftir ? ' maftir' : ''}${open ? ' open' : ''}${r.done ? ' ready' : ''}`;
+  el.className = `aliyah${isMaftir ? ' maftir' : ''}${whole ? ` ${kind}` : ''}${open ? ' open' : ''}${r.done ? ' ready' : ''}`;
   const label = isMaftir
     ? `Maftir <span class="hint">${a.ref}</span>`
-    : `Aliyah ${a.n} <span class="hint">ends ${a.ref}</span>`;
+    : whole
+      ? `Whole ${chunkNoun(a)} <span class="hint">${a.ref}</span>`
+      : `Aliyah ${a.n} <span class="hint">ends ${a.ref}</span>`;
   el.innerHTML = `
     <div class="al-main">
-      <span class="al-n">${isMaftir ? 'מפ' : toHebrewNum(a.n)}</span>
+      <span class="al-n">${chunkBadge(a)}</span>
       <span class="al-label">${label}</span>
       ${badge}
     </div>
@@ -3897,20 +4544,52 @@ function buildAliyahCard(a) {
   return el;
 }
 
-// What kind of multi-verse unit is open: a numbered aliyah, the maftir, or a
-// short verse chain. They share the whole reader, so this is only about wording
-// and where the score is filed.
+// What kind of multi-verse unit is open: a numbered aliyah, the maftir, a whole
+// haftarah, or a short verse chain. They share the whole reader, so this is only
+// about wording and where the score is filed.
 function chunkKind(a) {
   if (!a) return 'aliyah';
   if (a.kind) return a.kind;
-  return a.n === 'M' ? 'maftir' : 'aliyah';
+  if (a.n === 'M') return 'maftir';
+  if (a.n === 'H') return 'haftarah';
+  if (a.n === 'C') return 'passage';
+  return 'aliyah';
 }
 
 function chunkTitle(a) {
   const kind = chunkKind(a);
   if (kind === 'maftir') return 'Maftir';
+  if (kind === 'haftarah') return 'Haftarah';
+  if (kind === 'passage') return 'Whole passage';
   if (kind === 'chain') return `Pesukim ${a.ref}`;
   return `Aliyah ${a.n}`;
+}
+
+// The word for the unit in button labels and prompts ("Chant the whole …").
+function chunkNoun(a) {
+  const kind = chunkKind(a);
+  if (kind === 'chain') return 'chain';
+  if (kind === 'haftarah') return 'haftarah';
+  if (kind === 'maftir') return 'maftir';
+  if (kind === 'passage') return 'passage';
+  return 'aliyah';
+}
+
+// The small Hebrew tag on a chunk's row. A numbered aliyah gets its numeral; the
+// units that have no number get an abbreviation of their name.
+function chunkBadge(a) {
+  const kind = chunkKind(a);
+  if (kind === 'maftir') return '\u05de\u05e4';       // מפ, maftir
+  if (kind === 'haftarah') return '\u05d4\u05e4';     // הפ, haftarah
+  if (kind === 'passage') return '\u05e4\u05e1';      // פס, pesukim
+  return toHebrewNum(a.n);
+}
+
+// The cycle prefix on a chunk's header tag. Only a parashah has a cycle to name;
+// a haftarah is read whole every year, so saying "Annual" would be noise.
+function cycleTag(a) {
+  if (!hasAliyotCycle(state.readingKind)) return '';
+  return `${a.cycle === 'triennial' ? `Triennial Yr ${a.year}` : 'Annual'} · `;
 }
 
 function openAliyah(a) {
@@ -3958,7 +4637,7 @@ function aliyahTimeline(a) {
   const segs = [];
   for (const n of aliyahVerses(a)) {
     const info = verseAudio(n);
-    const vsegs = buildLineMelody(tokenize(state.data.verses[n - 1].text));
+    const vsegs = lineMelody(tokenize(state.data.verses[n - 1].text));
     const coach = buildCoach(vsegs, n);
     const aStart = coach ? coach.start : (info ? info.start : 0);
     const aEnd = coach ? coach.end : (info ? info.end : 0);
@@ -3984,12 +4663,14 @@ function renderAliyahView() {
   p.innerHTML = `
     <div class="aliyah-view">
     <div class="phead">
-      <h2>${par.he} · ${chunkTitle(a)} <span class="stagetag">${a.cycle === 'triennial' ? 'Triennial Yr ' + a.year : 'Annual'} · ${a.ref}</span></h2>
+      <h2>${par.he} · ${chunkTitle(a)} <span class="stagetag">${cycleTag(a)}${a.ref}</span></h2>
       <button id="alBack">← Verses</button>
     </div>
     <p class="leveldesc">${chunkKind(a) === 'chain'
       ? 'Chant these pesukim straight through from the bare scroll on the left, without pausing at the verse joins — that seam is what a whole aliyah is built from.'
-      : 'Chant the whole aliyah from the bare scroll on the left. A grey outline marks the current spot and, subtly, where to begin and end — as in a real reading. Faded text is the surrounding scroll for context.'}</p>
+      : chunkKind(a) === 'haftarah' || chunkKind(a) === 'passage'
+        ? `Chant the whole ${chunkNoun(a)} from the bare text on the left, straight through, as it is read. A grey outline marks the current spot and, subtly, where to begin and end.`
+        : 'Chant the whole aliyah from the bare scroll on the left. A grey outline marks the current spot and, subtly, where to begin and end — as in a real reading. Faded text is the surrounding scroll for context.'}</p>
     <div class="al-cuebar">
       <span class="label">Outline:</span>
       <span class="seg" id="aliyaCueSeg">
@@ -3999,8 +4680,8 @@ function renderAliyahView() {
     </div>
     <div class="aliyah-top">
     <div class="transport">
-      <button class="primary" id="alGuide" title="Play the real chant across the whole ${chunkKind(a) === 'chain' ? 'chain' : 'aliyah'} (Space)">▶ Guided read (real chant)</button>
-      <button class="warn" id="alRec" title="Record your solo chant (↓)">● Record my ${chunkKind(a) === 'chain' ? 'chain' : 'aliyah'}</button>
+      <button class="primary" id="alGuide" title="Play the real chant across the whole ${chunkNoun(a)} (Space)">▶ Guided read (real chant)</button>
+      <button class="warn" id="alRec" title="Record your solo chant (↓)">● Record my ${chunkNoun(a)}</button>
       <button id="alDuet" title="Sing along with the real chant while recording (↑)">⇅ Duet (sing along)</button>
       <span class="transport-scrub">
         <button id="alStepBack" disabled title="Back one word — key: ,">⟲ Word <kbd>,</kbd></button>
@@ -4428,7 +5109,9 @@ function finishAliyahRecord(tl) {
       : score >= 80 ? (kind === 'chain' ? 'Those pesukim run together cleanly — try a longer chain.' : 'Beautiful — that\'s reading-ready.')
         : 'Keep polishing the weaker pesukim, then run it again.';
   const scoreLabel = assisted ? 'Duet accuracy'
-    : kind === 'chain' ? 'Chain accuracy' : kind === 'maftir' ? 'Maftir accuracy' : 'Aliyah accuracy';
+    : kind === 'chain' ? 'Chain accuracy' : kind === 'maftir' ? 'Maftir accuracy'
+      : kind === 'haftarah' ? 'Haftarah accuracy'
+        : kind === 'passage' ? 'Passage accuracy' : 'Aliyah accuracy';
   $('aliyaResult').innerHTML = `<span class="scorelabel">${scoreLabel}</span> `
     + `<span class="num">${score}</span><span class="ceil"> / 100</span>`
     + `<br><span class="hint">${msg}</span>`;
@@ -4532,7 +5215,7 @@ function usableDivideRank(segs, wanted) {
 function currentUnits() {
   const v = state.data.verses[state.selectedVerse - 1];
   const tokens = tokenize(v.text);
-  const segs = buildLineMelody(tokens);
+  const segs = lineMelody(tokens);
   const level = levelById(state.level);
   if (level.unit === 'word') return groupByMaqaf(segs);
   if (level.unit === 'phrase') return splitPhrases(segs);
@@ -4611,7 +5294,7 @@ function renderPractice() {
   // demand (see the .open-stam button + wiring below).
   ensurePitchForVerse(state.selectedVerse); // phase-3: load this pasuk's pitch shard on demand
   ensureRawForVerse(state.selectedVerse); // phase-2: load this pasuk's underlay on demand
-  state.verseSegs = buildLineMelody(tokenize(v.text));
+  state.verseSegs = lineMelody(tokenize(v.text));
   const units = currentUnits();
   state.units = units;
   state.unitIndex = Math.max(0, Math.min(state.unitIndex, units.length - 1));
@@ -5135,7 +5818,7 @@ function playRealChant() {
   const info = verseAudio(state.selectedVerse);
   if (!info) return;
   // Ensure we're showing the whole-verse coach window.
-  const verseSegs = buildLineMelody(tokenize(state.data.verses[state.selectedVerse - 1].text));
+  const verseSegs = lineMelody(tokenize(state.data.verses[state.selectedVerse - 1].text));
   state.unitSegs = verseSegs;
   const coach = buildCoach(verseSegs);
   state.coach = coach;

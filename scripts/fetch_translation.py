@@ -38,7 +38,9 @@ def clean(s):
 
 
 def fetch(book, chapter, ven=None):
-    url = BASE.format(book=book, chapter=chapter)
+    # Books outside the Torah have spaces in their names ("I Kings", "Song of
+    # Songs"), which have to be escaped before they reach the URL.
+    url = BASE.format(book=urllib.parse.quote(book), chapter=chapter)
     if ven:
         url += "&ven=" + urllib.parse.quote(ven.replace(" ", "_"))
     req = urllib.request.Request(url, headers={"User-Agent": "cantillate-mvp/0.1"})

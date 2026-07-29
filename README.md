@@ -3,9 +3,11 @@
 🚀 **[Live Demo](https://kylemath.github.io/cantillate)** 🚀
 
 A web MVP for reading, understanding, and **practicing the cantillation
-(te'amim / trope)** of the weekly Torah parashah. It ships **Devarim
-(Deuteronomy) chapter 1** and the full parashah **Va'etchanan (Deut 3:23–7:11)**,
-and runs entirely locally with no build step and no external services at runtime
+(te'amim / trope)** of the weekly Torah parashah — its **haftarah** in the
+haftarah melody, and **any passage of any book of the Tanakh** beside it. It ships
+all of Deuteronomy with the recorded chant, the haftarot from Devarim onward, and
+the text of all 39 books, and runs entirely locally with no build step and no
+external services at runtime
 (an **optional** Google sign-in for cloud-saved progress + leaderboards can be
 turned on — see [Accounts, saved progress & leaderboards](#accounts-saved-progress--leaderboards)).
 Readings are data-driven — see [Adding a reading / parashah](#adding-a-reading--parashah).
@@ -27,7 +29,7 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
 - **Pick a reading & portion** — the Reading menu is grouped **by sefer** in
   chumash order (Bereshit · Genesis, Bamidbar · Numbers, Devarim · Deuteronomy),
   with each sefer's parashiyot in the order the book runs, followed by
-  **Trope drills** and **Prayers & common passages**. For a parashah, a single
+  **Haftarot**, **Trope drills** and **Prayers & common passages**. For a parashah, a single
   **Portion** control sets how much you read: the full annual parashah, or one
   shorter **triennial-cycle year** (which narrows the verses shown *and* switches
   to that year's aliyot). 📅 Today jumps to the current triennial year.
@@ -115,6 +117,10 @@ directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
   how the accent is actually sung, not a hand-drawn guess.
 - **Heatmap** — toggle the score overlay to color each verse by how well you've
   chanted it, so you can target weak spots.
+- **The week's haftarah, in the haftarah melody** — see
+  [Haftarot](#haftarot-the-weeks-reading-from-the-prophets).
+- **Any pesukim of any book**, kept under a name of your own if you like — see
+  [Any passage, any book](#any-passage-any-book).
 
 ## The accent hierarchy: how a pasuk is divided
 
@@ -248,6 +254,110 @@ Adding either is a manifest edit in `data/readings.json` — no JS change:
 `range` and `groups` use the reading's sequential verse index `n` (see
 `data/<slug>.json`), which is also what the audio and pitch files are keyed by.
 
+## Haftarot: the week's reading from the prophets
+
+Each parashah has a **haftarah**, a passage from Nevi'im read after it — the same
+te'amim, but **a different melody for every one of them**. A reader who has only
+ever practiced here would arrive at the haftarah knowing the marks and singing the
+wrong tune, so haftarot are their own reading kind rather than more parashiyot.
+
+They appear in the Reading menu under **Haftarot**, in calendar order, and behave
+like a parashah in every way except the two that matter:
+
+- **One chunk, not seven aliyot.** A haftarah is chanted straight through by one
+  reader, so there is no annual/triennial choice (the Portion control comes off
+  the bar) and one **Whole haftarah** challenge spans the passage. Pesukim, verse
+  chains, stages and scoring are unchanged.
+- **The haftarah melody.** `js/trope.js` now carries **two** motif tables and the
+  app threads the reading's style through everything it draws or sings; the Trope
+  guide shows which melody is in force. The synthesized fallback comes from
+  `data/haftarah-shapes.json` — built by `scripts/build_trope_shapes.py` from the
+  **haftarah recordings only**, so the measured corpus can't average the two
+  traditions into one wrong tune. Every accent that occurs in the shipped
+  haftarot is sung differently in it from the same accent in the Torah corpus —
+  which the tests assert, one accent at a time.
+
+Boundaries are Hebcal's Ashkenazi `haft` refs (the same table the aliyot come
+from); the recordings are PocketTorah's `-H` files. Nothing is typed out by hand:
+`scripts/haftarot.py` derives all 54 configurations from those two sources, and
+`scripts/tanakh.py` holds the book-name mapping the three projects disagree
+about ("I Kings" on Sefaria, `Kings_1` in PocketTorah's WLC files).
+
+```bash
+.venv/bin/python scripts/build_haftarot.py --list          # what's available
+.venv/bin/python scripts/build_haftarot.py --from-this-week 4   # the next four
+.venv/bin/python scripts/build_haftarot.py --rest-of-book       # finish the sefer
+.venv/bin/python scripts/build_haftarot.py haftarah-noach       # one by slug
+```
+
+Where PocketTorah recorded a different span from Hebcal's Ashkenazi one (Achrei
+Mot, Kedoshim — a paired-week or rite difference), `RANGE_OVERRIDE` in
+`scripts/haftarot.py` records the recorded range explicitly. Where nothing lines
+up (Vayeilech), the haftarah ships **text-only** and is taught from the measured
+shapes like a drill, rather than shipping audio that drifts out of sync. Both
+lists are in that file with the reason beside each entry, and
+`python scripts/haftarot.py` re-runs the alignment self-check against the WLC word
+counts for all 54.
+
+## Any passage, any book
+
+The readings above are the *recorded* ones. **✦ Any passage** in the top bar opens
+the rest of the canon: pick a book, then a **parashah** (in the Torah) or a
+**chapter** (everywhere else), then the first and last pasuk. The passage becomes
+an ordinary entry in the Reading menu — pesukim list, verse stages, whole-passage
+challenge, leaderboard — and is chanted in the **haftarah melody**, the chant for
+reading from a book rather than from the scroll.
+
+**Give a passage a name and it keeps it.** A reference is how a passage is found;
+a name is what the reader calls it. Type one in **Save as** and the passage joins
+the menu under that name — "Yaakov's bar mitzvah haftarah" rather than *Isaiah
+40:1-26*, with the reference it stands for moved into the tooltip — and it is
+offered by name in the picker from then on. Saving and opening are separate
+(**Save** leaves the picker open, so a reader setting themselves up can put
+several in the menu in one visit) but a name typed before **Open passage** is
+saved too, rather than lost. The same field renames; the ✕ beside a saved passage
+gives up the name and nothing else. Names are kept with the reader's progress
+rather than in a browser key of their own, so a signed-in reader finds them on
+their other devices, and the newer list wins on sync — a passage forgotten here
+isn't resurrected by a device holding an older one.
+
+The text is a corpus of all 39 books (23,206 pesukim), fetched **one book at a
+time** only when that book is picked:
+
+```bash
+.venv/bin/python scripts/build_tanakh.py --all      # ~8 min, one call per chapter
+.venv/bin/python scripts/build_tanakh.py Isaiah     # or a book at a time
+.venv/bin/python scripts/build_tanakh.py --missing   # only what isn't built yet
+```
+
+It writes `data/tanakh/index.json` (names, per-chapter verse counts, and the
+Torah's parashah boundaries — enough to drive the picker and validate a range
+with no text loaded) plus `data/tanakh/<book>.json` and `<book>.en.json`. A
+chapter is stored as a bare array of verses, so verse *v* of chapter *c* is
+`chapters[c-1][v-1]` and a book is a few hundred KB rather than a few MB. The
+English is a separate file, fetched only if the English column is actually opened.
+
+Notes on how it behaves:
+
+- **No recording, so no example chant.** The guide voice is synthesized from
+  `data/haftarah-shapes.json` — measured off the cantor, not sketched — exactly as
+  a trope drill is.
+- **Progress is filed under the book and where the passage starts**
+  (`tanakh:isaiah:40.1`), so any range that begins at the same pasuk shares one
+  tally however far it runs. On the leaderboard a pasuk is keyed by
+  `book:chapter:verse` (`js/scores.js`), so Isaiah 40:1 practiced here and the
+  same pasuk in Haftarat Va'etchanan are the same pasuk there.
+- **Passages you open are remembered** (the last eight) and come back in the menu
+  after a reload without fetching anything. Named ones don't age out at all, and
+  naming, renaming or forgetting one never touches what has been practiced in it,
+  since none of that was ever filed under the name.
+- **Psalms, Proverbs and Job are flagged.** They are pointed with the *other*
+  Masoretic accent system — accents that no Torah or haftarah melody was ever sung
+  to — so the app says the guide is an approximation there instead of pretending
+  otherwise.
+- A passage is capped at 200 pesukim, which covers any haftarah or the longest
+  chapter in the Tanakh.
+
 ## Tests
 
 Two headless-Chrome harnesses, both driven over the DevTools protocol (the repo
@@ -263,12 +373,17 @@ has no Node toolchain). Start the server first, then:
 `scripts/run_smoke.py` loads `scripts/smoke.html`, which exercises the DOM-free
 modules (accent ranks and every division, the phrase fold-back rule, the progress
 migration, section/chain scores) and validates every entry in
-`data/readings.json`. `scripts/check_app.py` walks the actual app: the reading
-menu, the aliyah accordion, verse chains, all nine stages, the Divide control, the
-drill set and the excerpts — then plays the recorded chant and records a duet with
-a fake microphone to check that Space holds it, `,` and `.` step a word, and
-resuming and stopping behave. `scripts/shot.py` grabs a screenshot for eyeballing
-a change.
+`data/readings.json` — including that each haftarah is one chunk over its whole
+passage and that every accent in the shipped haftarot has a measured *haftarah*
+shape that differs from its Torah one. `scripts/check_app.py` walks the actual app:
+the reading menu, the aliyah accordion, verse chains, all nine stages, the Divide
+control, the drill set, the excerpts, a haftarah, and the **✦ Any passage** picker
+end to end (book → parashah → pasuk range → open it → chant it → reload and find
+it remembered → save one under a name and find it by that name after another
+reload, with its progress untouched when the name is given up) — then plays the
+recorded chant and records a duet with a fake
+microphone to check that Space holds it, `,` and `.` step a word, and resuming and
+stopping behave. `scripts/shot.py` grabs a screenshot for eyeballing a change.
 
 ## Run it
 
@@ -286,6 +401,14 @@ within the shared mp3 tracks.)
 All of **Deuteronomy** — Devarim, Va'etchanan, Eikev, Re'eh, Shoftim, Ki Teitzei,
 Ki Tavo, Nitzavim, Vayeilech, Ha'azinu and V'zot HaBerakhah — plus `devarim1`, the
 original single-chapter reading the app started from (it overlaps Devarim 1).
+
+Their **eleven Ashkenazi haftarot**, from Devarim to V'zot HaBerakhah, which is
+the rest of this year's cycle from the week the feature landed. The remaining 43
+are one command away and need no code (see
+[Haftarot](#haftarot-the-weeks-reading-from-the-prophets)); each adds its
+recording to `audio/`, so they are built as they are wanted rather than all at
+once. **Every** book of the Tanakh is bundled as text for
+[Any passage](#any-passage-any-book).
 
 Three readings from outside Deuteronomy are here for one reason: they are the only
 places the four rarest accents are ever sung, so without them the trope drills had
@@ -444,6 +567,10 @@ show the submit button and stays offline-only for logged-out users.
 - On sign-in, the account's cloud progress is **merged** with whatever is local
   (keeping the *best* of each score/level), so nothing is lost — including
   anything earned while logged out.
+- Not everything is a score: chosen identity, custom aliyah boundaries and the
+  passages you [named](#any-passage-any-book) travel with it. Those are *edits*
+  rather than bests, so the most recent one wins instead of the highest — which is
+  what lets a rename or a deletion survive the trip through another device.
 - After that, every change is pushed to Firestore (debounced), which also
   updates a small public **leaderboard summary** (`XP` = the sum of your best
   whole-verse and aliyah accuracies, plus verse/aliyah counts).
@@ -511,15 +638,22 @@ js/levels.js          stage ladder, aid progression + the division ranks
 js/store.js           localStorage scores + unlocks (+ cloud merge/sync hooks)
 js/auth.js            optional Google sign-in + Firestore progress sync + leaderboard
 js/firebase-config.js Firebase web config (placeholders = offline-only; see above)
+js/tanakh.js          the browsable Tanakh: book index, lazy per-book text, ranges
 js/app.js             UI controller / glue
-data/readings.json    reading manifest: parashiyot, drills + prayer excerpts
+data/readings.json    reading manifest: parashiyot, haftarot, drills + excerpts
 data/devarim1.json    local Hebrew text (Masoretic, with vowels + te'amim)
 data/vaetchanan.json  parashat Va'etchanan text + aliyot (multi-chapter reading)
 data/trope-drills.json  synthetic te'amim exercises (no recording of their own)
 data/trope-index.json   recorded verses as accent sequences (drives the splicer)
 data/trope-shapes.json  how each accent is really sung, measured corpus-wide
+data/haftarah-shapes.json  the same, measured from the haftarah recordings only
+data/tanakh/          every book as text + index.json (drives ✦ Any passage)
 fonts/                modern Frank Ruehl + two STA"M hands (Shlomo, Ashkenaz)
 scripts/readings.py   registry of buildable readings (add an entry here)
+scripts/tanakh.py     the 39 books: names in three projects' spellings, numerals
+scripts/haftarot.py   all 54 haftarot, derived from Hebcal + PocketTorah
+scripts/build_haftarot.py  build haftarot by slug, by book, or from this week on
+scripts/build_tanakh.py    build the browsable text of the Tanakh
 scripts/build_reading.py  ONE command: text+English+audio+pitch+shapes+register
 scripts/fetch_text.py fetch/refresh text from Sefaria (legacy single-chapter)
 scripts/fetch_translation.py fetch + merge an English translation
@@ -551,12 +685,17 @@ modules that port directly.
   the public domain; the MAM digital edition is distributed CC-BY.
 - **Recorded chant:** audio and word-timing metadata from
   [PocketTorah](https://pockettorah.com) (Neiss & Schwartz), released CC-BY-SA.
-  Bundled in `audio/`: Devarim 1–4 (Deut 1) and Va'ethanan 1–7 (Deut 3:23–7:11).
+  Bundled in `audio/`: all of Deuteronomy, Vayera/Matot/Masei, and the haftarot
+  from Devarim onward (their `-H` recordings).
 - **Fonts:** *Frank Ruehl CLM* and *Stam Ashkenaz CLM* from the
   [Culmus project](https://culmus.sourceforge.io) (GPLv2 with a font embedding
   exception); *Shlomo Stam* by Shlomo Orbach, a derivative of Ezra SIL SR, under
   the SIL Open Font License 1.1 (see `fonts/ShlomoStam-OFL.txt`).
-- **Cantillation motifs:** stylized approximations of the Ashkenazi Torah reading
-  tradition, defined in `js/trope.js` and intended to be refined per tradition.
-  They convey the *shape* of each accent; they are not a substitute for a teacher.
+- **Cantillation motifs:** stylized approximations of the Ashkenazi **Torah
+  reading** and **haftarah** traditions — two motif tables in `js/trope.js`, and
+  two measured corpora beside them (`data/trope-shapes.json`,
+  `data/haftarah-shapes.json`) — intended to be refined per tradition. They convey
+  the *shape* of each accent; they are not a substitute for a teacher.
+- **Aliyah + haftarah boundaries:** [Hebcal](https://github.com/hebcal)
+  (`hebcal-leyning`, `hebcal-triennial`), BSD-2-Clause.
 ```

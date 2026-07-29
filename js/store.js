@@ -92,6 +92,9 @@ function mergeProgress(a, b) {
   out.aliyotCustom = mergeCustom(a.aliyotCustom, b.aliyotCustom);
   // Public identity (chosen anon name/avatar): keep the most recently edited.
   out.profile = mergeNewer(a.profile, b.profile);
+  // Named passages: the newer list wins whole, so forgetting one on this device
+  // isn't undone by an older list from another one (see setSavedPassages).
+  out.passages = mergeNewer(a.passages, b.passages);
   // Preserve any unknown buckets a future version might add (prefer local).
   for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) {
     if (!(k in out)) out[k] = a[k] !== undefined ? a[k] : b[k];
@@ -514,6 +517,31 @@ export function setAliyotCustom(slug, cycle, list) {
   else d.aliyotCustom[k] = { list, updatedAt: Date.now() };
   save(d);
   return list;
+}
+
+// --- Named passages ---------------------------------------------------------
+// Passages the reader picked out of the Tanakh and gave a name to ("Bar mitzvah
+// haftarah"), as [{ book, from, to, name }], most recently named first. These
+// live here rather than in a localStorage key of their own — the way the merely
+// recently-opened ranges do — because a name is deliberate work: it belongs with
+// the rest of a reader's progress and should follow them to their other devices.
+//
+// Stored as ONE record with an `updatedAt` (merged by mergeNewer, not per key),
+// so a passage the reader forgot stays forgotten instead of being resurrected by
+// a device holding an older list. The name is a label only: practice is filed
+// under the book and the passage's first pasuk (see progressSlug in tanakh.js),
+// so naming, renaming and forgetting never touch what has been practiced.
+export function getSavedPassages() {
+  const d = load();
+  const list = d.passages && d.passages.list;
+  return Array.isArray(list) ? list : [];
+}
+
+export function setSavedPassages(list) {
+  const d = load();
+  d.passages = { list: Array.isArray(list) ? list : [], updatedAt: Date.now() };
+  save(d);
+  return d.passages.list;
 }
 
 // --- Public identity (optional anonymous name + avatar) --------------------

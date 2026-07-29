@@ -4,11 +4,42 @@
 //   t = normalized time within the word's syllabic span (0..1)
 //   p = pitch offset in semitones relative to the reading tonic (0 = tonic)
 //
-// These are stylized approximations of the Ashkenazi (Lithuanian) Torah reading
-// tradition, meant to convey the LINEAR SHAPE of each accent's tone over time.
-// They are intentionally data-driven and easy to refine per tradition.
+// These are stylized approximations of the Ashkenazi (Lithuanian) tradition,
+// meant to convey the LINEAR SHAPE of each accent's tone over time. They are
+// intentionally data-driven and easy to refine per tradition.
+//
+// TWO STYLES, ONE SET OF ACCENTS. The same te'amim are chanted to a different
+// melody in the Torah than in the haftarah — the marks, their grammar and their
+// hierarchy are identical, only the tunes differ. So everything about DIVISION
+// (rankFor, splitAtRank, splitPhrases, FAMILIES) is shared, and only the motif
+// tables are per style. See STYLES below.
 
 import { TAAM, primaryTaam, countSyllables } from './hebrew.js';
+
+// The cantillation styles the app can teach. `shapes` is the corpus of measured
+// per-accent shapes for that style, built by scripts/build_trope_shapes.py from
+// the readings of that kind; the hand-drawn tables in this file are the fallback
+// for when it is missing an accent (or hasn't loaded).
+export const STYLES = {
+  torah: {
+    id: 'torah',
+    label: 'Torah',
+    shapes: 'data/trope-shapes.json',
+    note: 'The Torah reading melody, as chanted from the scroll.',
+  },
+  haftarah: {
+    id: 'haftarah',
+    label: 'Haftarah',
+    shapes: 'data/haftarah-shapes.json',
+    note: 'The haftarah melody, used for the Prophets. Same accents as the '
+        + 'Torah, a different tune for each of them.',
+  },
+};
+export const DEFAULT_STYLE = 'torah';
+
+export function styleOf(id) {
+  return STYLES[id] || STYLES[DEFAULT_STYLE];
+}
 
 // Trope FAMILIES — one color per *disjunctive* (pause-defining) accent group.
 // Conjunctive "connector" accents have no fixed tune of their own; each one is
@@ -142,7 +173,7 @@ export function familyGlyphs(family) {
   return family.members.map(markGlyph);
 }
 
-const M = {
+const M_TORAH = {
   // Conjunctives (meshartim) — short connectives, mostly rising into the next.
   [TAAM.MUNACH]:        [{ t: 0, p: -2 }, { t: 1, p: 0 }],
   [TAAM.MERCHA]:        [{ t: 0, p: -3 }, { t: 1, p: 0 }],
@@ -177,6 +208,74 @@ const M = {
   [TAAM.ILUY]:          [{ t: 0, p: 0 }, { t: 1, p: 3 }],
   [TAAM.ATNAH_HAFUKH]:  [{ t: 0, p: 1 }, { t: 0.5, p: -1 }, { t: 1, p: -4 }],
 };
+
+// The haftarah melody for the same accents. Sketched from the measured medoid of
+// each accent across the recorded haftarot (data/haftarah-shapes.json), so these
+// follow the recordings rather than guessing: where a shape has been measured the
+// app prefers the measurement, and this table covers the handful of accents too
+// rare to have been recorded yet plus the case where the corpus hasn't loaded.
+//
+// The characteristic differences from the Torah tune, all visible in the
+// measurements: Tipcha dips before it rises instead of rising throughout; the
+// Etnachta falls and then comes back UP rather than settling low; Mahpach rises a
+// little and then drops away steeply; Qadma rises where the Torah's descends; and
+// Sof Pasuk lifts before a long fall well under the tonic, which is the cadence
+// that makes a haftarah recognisable from across the room.
+const M_HAFTARAH = {
+  // Conjunctives (meshartim).
+  [TAAM.MUNACH]:        [{ t: 0, p: 0 }, { t: 0.5, p: 0 }, { t: 1, p: 0.5 }],
+  [TAAM.MERCHA]:        [{ t: 0, p: 0 }, { t: 0.5, p: -1.5 }, { t: 1, p: 0 }],
+  [TAAM.MAHPACH]:       [{ t: 0, p: 0 }, { t: 0.4, p: 1 }, { t: 1, p: -4 }],
+  [TAAM.DARGA]:         [{ t: 0, p: 0 }, { t: 0.2, p: 4.5 }, { t: 0.35, p: 5 },
+                         { t: 0.6, p: 3 }, { t: 1, p: 0 }],
+  [TAAM.QADMA]:         [{ t: 0, p: 0 }, { t: 0.55, p: 0 }, { t: 1, p: 1.5 }],
+  [TAAM.MERCHA_KEFULA]: [{ t: 0, p: 0 }, { t: 0.3, p: -1.5 }, { t: 0.5, p: 0 },
+                         { t: 0.75, p: -1.5 }, { t: 1, p: 0 }],
+  [TAAM.TELISHA_QETANA]:[{ t: 0, p: 0 }, { t: 0.35, p: -3 }, { t: 0.6, p: 0 }, { t: 1, p: -3 }],
+  [TAAM.YERACH]:        [{ t: 0, p: 0 }, { t: 1, p: -1.5 }],
+
+  // Disjunctives (mafsikim).
+  [TAAM.TIPCHA]:        [{ t: 0, p: 0 }, { t: 0.3, p: -1 }, { t: 0.6, p: 1 }, { t: 1, p: 0.5 }],
+  [TAAM.ETNACHTA]:      [{ t: 0, p: 0 }, { t: 0.15, p: -2 }, { t: 0.4, p: -1 }, { t: 1, p: 1 }],
+  [TAAM.ZAQEF_QATAN]:   [{ t: 0, p: 0.5 }, { t: 0.45, p: 2.5 }, { t: 0.7, p: -1 }, { t: 1, p: -1 }],
+  [TAAM.ZAQEF_GADOL]:   [{ t: 0, p: 1.5 }, { t: 0.35, p: 3 }, { t: 0.6, p: -0.5 }, { t: 1, p: -0.5 }],
+  [TAAM.REVIA]:         [{ t: 0, p: 0 }, { t: 0.25, p: 0.5 }, { t: 0.5, p: -1.5 },
+                         { t: 0.7, p: -3 }, { t: 1, p: -4.5 }],
+  [TAAM.PASHTA]:        [{ t: 0, p: 0 }, { t: 0.15, p: -4 }, { t: 0.5, p: 2.5 }, { t: 1, p: 1.5 }],
+  [TAAM.YETIV]:         [{ t: 0, p: 0 }, { t: 0.4, p: 5 }, { t: 0.6, p: 0 }, { t: 1, p: 1 }],
+  [TAAM.TEVIR]:         [{ t: 0, p: 0 }, { t: 0.15, p: -1.5 }, { t: 0.35, p: -4 },
+                         { t: 0.6, p: -6 }, { t: 1, p: -1.5 }],
+  [TAAM.GERESH]:        [{ t: 0, p: 2 }, { t: 0.35, p: 3.5 }, { t: 0.5, p: 0 },
+                         { t: 0.65, p: 4.5 }, { t: 1, p: 1 }],
+  [TAAM.GERESH_MUQDAM]: [{ t: 0, p: 2 }, { t: 0.35, p: 3.5 }, { t: 0.5, p: 0 },
+                         { t: 0.65, p: 4.5 }, { t: 1, p: 1 }],
+  [TAAM.GERSHAYIM]:     [{ t: 0, p: 0 }, { t: 0.35, p: 2 }, { t: 0.5, p: 3 },
+                         { t: 0.65, p: 0.5 }, { t: 0.78, p: 2 }, { t: 1, p: 0 }],
+  [TAAM.ZARQA]:         [{ t: 0, p: 1.5 }, { t: 0.35, p: 2 }, { t: 0.55, p: 0 },
+                         { t: 0.8, p: -2 }, { t: 1, p: -3 }],
+  [TAAM.ZINOR]:         [{ t: 0, p: 1.5 }, { t: 0.35, p: 2 }, { t: 0.55, p: 0 },
+                         { t: 0.8, p: -2 }, { t: 1, p: -3 }],
+  [TAAM.SEGOL]:         [{ t: 0, p: 1 }, { t: 0.4, p: 1 }, { t: 0.65, p: 3 },
+                         { t: 0.75, p: 4 }, { t: 1, p: 1 }],
+  // Not yet found in a recorded haftarah, so these four stay sketches: the chain
+  // climbing away in Shalshelet, the long flourishes, and the low connector.
+  [TAAM.SHALSHELET]:    [{ t: 0, p: 0 }, { t: 0.2, p: 3 }, { t: 0.35, p: 0 }, { t: 0.55, p: 4 },
+                         { t: 0.7, p: 1 }, { t: 0.85, p: 5 }, { t: 1, p: 2 }],
+  [TAAM.PAZER]:         [{ t: 0, p: 0.5 }, { t: 0.35, p: -3.5 }, { t: 0.5, p: -0.5 },
+                         { t: 0.62, p: 3 }, { t: 0.78, p: -1 }, { t: 1, p: 0.5 }],
+  [TAAM.QARNEY_PARA]:   [{ t: 0, p: 0 }, { t: 0.15, p: 3 }, { t: 0.3, p: 0 }, { t: 0.5, p: 4 },
+                         { t: 0.65, p: 1 }, { t: 0.82, p: 5 }, { t: 1, p: 1 }],
+  [TAAM.TELISHA_GEDOLA]:[{ t: 0, p: -3 }, { t: 0.3, p: -1 }, { t: 0.5, p: 1.5 },
+                         { t: 0.72, p: -1 }, { t: 1, p: -3.5 }],
+  // Poetic-book accents; they do not occur in the haftarah, and are carried only
+  // so an arbitrary passage from Psalms, Proverbs or Job still draws something.
+  [TAAM.DEHI]:          [{ t: 0, p: 0 }, { t: 0.3, p: -1 }, { t: 0.6, p: 1 }, { t: 1, p: 0.5 }],
+  [TAAM.OLE]:           [{ t: 0, p: 0 }, { t: 1, p: 2 }],
+  [TAAM.ILUY]:          [{ t: 0, p: 0 }, { t: 1, p: 2 }],
+  [TAAM.ATNAH_HAFUKH]:  [{ t: 0, p: 0 }, { t: 0.15, p: -2 }, { t: 0.4, p: -1 }, { t: 1, p: 1 }],
+};
+
+const MOTIFS = { torah: M_TORAH, haftarah: M_HAFTARAH };
 
 // Human-readable names for teaching / labels. `meaning` is the literal English
 // translation of the Hebrew/Aramaic name; `note` describes the melodic shape.
@@ -213,40 +312,67 @@ export const NAMES = {
   [TAAM.ATNAH_HAFUKH]:  { he: 'אתנח הפוך', en: 'Atnah Hafukh', meaning: 'inverted etnachta (pause)', role: 'disjunctive', note: 'Etnachta-like pause (poetic books).' },
 };
 
-// Special virtual motif for the final word of a verse (silluq / sof pasuk):
-// a descent to rest firmly on the tonic.
-export const SOF_PASUK_MOTIF = [{ t: 0, p: 3 }, { t: 0.4, p: 1 }, { t: 0.7, p: -1 }, { t: 1, p: -3 }];
+// Special virtual motif for the final word of a verse (silluq / sof pasuk): a
+// descent to rest firmly on the tonic. The haftarah's cadence lifts first and
+// then falls further, which is the phrase a listener recognises it by.
+const SOF_PASUK_MOTIFS = {
+  torah: [{ t: 0, p: 3 }, { t: 0.4, p: 1 }, { t: 0.7, p: -1 }, { t: 1, p: -3 }],
+  haftarah: [{ t: 0, p: 0 }, { t: 0.2, p: 1.5 }, { t: 0.4, p: -0.5 },
+             { t: 0.6, p: -3 }, { t: 1, p: -3.5 }],
+};
+export const SOF_PASUK_MOTIF = SOF_PASUK_MOTIFS.torah;
 export const SOF_PASUK_NAME = { he: 'סוֹף פָּסוּק', en: 'Sof Pasuk (Silluq)', meaning: 'end of the verse (Silluq: removal)', role: 'disjunctive', note: 'End of verse; the melody comes to rest on the tonic.' };
+
+// What differs about an accent in the haftarah, for the trope guide. Only the
+// accents whose haftarah tune is genuinely a different gesture are listed; the
+// rest keep the shared description.
+const HAFTARAH_NOTES = {
+  [TAAM.TIPCHA]: 'In the haftarah it dips below the tone before rising, rather than rising throughout.',
+  [TAAM.ETNACHTA]: 'In the haftarah the mid-verse pause falls and then lifts again, instead of settling low.',
+  [TAAM.MAHPACH]: 'In the haftarah it lifts only slightly, then drops away steeply into the next word.',
+  [TAAM.QADMA]: 'In the haftarah it rises where the Torah reading lets it fall.',
+  [TAAM.ZAQEF_QATAN]: 'In the haftarah it peaks higher and then steps down below the tone.',
+  [TAAM.YETIV]: 'In the haftarah it leaps up and comes most of the way back down.',
+};
+
+export function sofPasukMotif(style = DEFAULT_STYLE) {
+  return SOF_PASUK_MOTIFS[style] || SOF_PASUK_MOTIFS[DEFAULT_STYLE];
+}
 
 // Default motif when a word carries no detectable accent (e.g., maqaf-joined).
 const DEFAULT_MOTIF = [{ t: 0, p: 0 }, { t: 1, p: 0 }];
 
-export function motifFor(taamCp) {
-  return M[taamCp] || DEFAULT_MOTIF;
+export function motifFor(taamCp, style = DEFAULT_STYLE) {
+  if (taamCp === 'sof') return sofPasukMotif(style);
+  const table = MOTIFS[style] || MOTIFS[DEFAULT_STYLE];
+  return table[taamCp] || DEFAULT_MOTIF;
 }
 
-export function nameFor(taamCp) {
-  return NAMES[taamCp] || { he: '—', en: 'Unaccented', meaning: '', role: 'none', note: 'No cantillation mark; sustain the tone.' };
+export function nameFor(taamCp, style = DEFAULT_STYLE) {
+  const base = NAMES[taamCp];
+  if (!base) return { he: '—', en: 'Unaccented', meaning: '', role: 'none', note: 'No cantillation mark; sustain the tone.' };
+  const extra = style === 'haftarah' ? HAFTARAH_NOTES[taamCp] : null;
+  return extra ? { ...base, note: `${base.note} ${extra}` } : base;
 }
 
-// Build the melody for a line (array of word tokens). Returns an array of
-// segments: { token, index, taam, name, contour, isSofPasuk }.
-export function buildLineMelody(tokens) {
+// Build the melody for a line (array of word tokens) in a cantillation style.
+// Returns an array of segments: { token, index, taam, name, contour, isSofPasuk }.
+export function buildLineMelody(tokens, style = DEFAULT_STYLE) {
   const segs = [];
   tokens.forEach((token, i) => {
     const isLast = i === tokens.length - 1;
     let taam = primaryTaam(token);
     let contour, name;
     if (isLast) {
-      contour = SOF_PASUK_MOTIF;
+      contour = sofPasukMotif(style);
       name = SOF_PASUK_NAME;
       taam = 'sof';
     } else if (taam != null) {
-      contour = motifFor(taam);
-      name = nameFor(taam);
+      contour = motifFor(taam, style);
+      name = nameFor(taam, style);
     } else {
       contour = DEFAULT_MOTIF;
-      name = nameFor(null);
+      name = nameFor(null, style);
     }
     segs.push({
       token, index: i, taam, name, contour, isSofPasuk: isLast,

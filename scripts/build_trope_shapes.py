@@ -1,21 +1,27 @@
 #!/usr/bin/env python3
-"""Write data/trope-shapes.json — how each accent is really sung, corpus-wide.
+"""How each accent is really sung, corpus-wide — one file per cantillation style.
 
 js/trope.js carries hand-drawn motifs for every accent: honest sketches of the
 shape, but guesses. Every reading also ships a *_shapes.json holding the
 most-representative RECORDED instance of each trope it contains, measured off the
-cantor. This merges those across the whole corpus so the trope drills can be sung
-with the real melody and the real rhythm instead of a sketch — which matters,
-because a drill's coach line is the only thing telling you what the accent sounds
-like.
+cantor. This merges those across the whole corpus so a passage with no recording
+of its own can still be taught with the real melody and the real rhythm instead
+of a sketch — which matters, because for a trope drill or an arbitrary passage the
+coach line is the only thing telling you what the accent sounds like.
 
-Per trope it keeps:
+The same accents are sung to DIFFERENT melodies in the Torah and in the haftarah,
+so the two are measured separately and never merged:
+
+    data/trope-shapes.json      from the parashiyot   (Torah style)
+    data/haftarah-shapes.json   from the haftarot     (haftarah style)
+
+Per trope each file keeps:
   n        how many recorded instances stand behind it, corpus-wide
   steps    the note steps of the most representative instance
   dur      the median duration of that accent in the recordings, in seconds
   from     which reading the representative instance came from
 
-Run:  python3 scripts/build_trope_shapes.py
+Run:  python3 scripts/build_trope_shapes.py        (both styles)
 """
 import json
 import os
@@ -25,6 +31,12 @@ import statistics
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(HERE, "data")
 OUT = os.path.join(DATA, "trope-shapes.json")
+
+# style -> (reading kind that teaches it, output file)
+STYLES = {
+    "torah": ("parashah", "trope-shapes.json"),
+    "haftarah": ("haftarah", "haftarah-shapes.json"),
+}
 
 MAQAF, PASEQ = "\u05be", "\u05c0"
 DISJUNCTIVE = {0x0591, 0x0592, 0x0593, 0x0594, 0x0595, 0x0596, 0x0597, 0x0598,
@@ -71,9 +83,13 @@ def load(path):
         return None
 
 
-def build():
+def build(style="torah"):
+    kind, out_name = STYLES[style]
     manifest = json.load(open(os.path.join(DATA, "readings.json"), encoding="utf-8"))
-    slugs = [m["slug"] for m in manifest if m.get("kind", "parashah") == "parashah"]
+    slugs = [m["slug"] for m in manifest if m.get("kind", "parashah") == kind]
+    if not slugs:
+        print(f"  {style}: no {kind} readings built yet, skipped")
+        return
 
     candidates, durations = {}, {}
     for slug in slugs:
@@ -122,18 +138,21 @@ def build():
         merged[key] = entry
 
     doc = {
-        "note": "How each accent is really sung, merged across every recorded reading. "
-                "Built by scripts/build_trope_shapes.py; used for the trope drills' coach "
-                "line so a drill is taught with the cantor's melody, not a sketch.",
+        "note": f"How each accent is really sung in the {style} style, merged across "
+                "every recorded reading of it. Built by scripts/build_trope_shapes.py; "
+                "used as the coach line wherever there is no recording of the passage "
+                "itself, so it is taught with a cantor's melody rather than a sketch.",
+        "style": style,
         "readings": slugs,
         "shapes": merged,
     }
-    with open(OUT, "w", encoding="utf-8") as f:
+    path = os.path.join(DATA, out_name)
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(doc, f, ensure_ascii=False, separators=(",", ":"))
-    size = os.path.getsize(OUT) / 1024
+    size = os.path.getsize(path) / 1024
     top = sorted(merged.items(), key=lambda kv: -kv[1]["n"])[:5]
-    print(f"  wrote data/trope-shapes.json: {len(merged)} tropes from {len(slugs)} readings "
-          f"({size:.0f} KB)")
+    print(f"  wrote data/{out_name}: {len(merged)} tropes from {len(slugs)} "
+          f"{style} readings ({size:.0f} KB)")
     print("   best-attested: " + ", ".join(
         f"{k}(n={v['n']}, {v.get('dur', '?')}s)" for k, v in top))
     thin = [k for k, v in merged.items() if v["n"] < 5]
@@ -141,5 +160,10 @@ def build():
         print(f"   thin evidence (<5 instances): {', '.join(thin)}")
 
 
+def build_all():
+    for style in STYLES:
+        build(style)
+
+
 if __name__ == "__main__":
-    build()
+    build_all()

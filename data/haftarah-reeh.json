@@ -1,0 +1,139 @@
+{
+  "slug": "haftarah-reeh",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 54:11-55:5",
+  "heRef": "ישעיהו נ״ד:י״א-י״ז, נ״ה:א-ה",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 54,
+      "v": 11,
+      "ref": "54:11",
+      "text": "עֲנִיָּ֥ה סֹעֲרָ֖ה לֹ֣א נֻחָ֑מָה הִנֵּ֨ה אָנֹכִ֜י מַרְבִּ֤יץ בַּפּוּךְ֙ אֲבָנַ֔יִךְ וִֽיסַדְתִּ֖יךְ בַּסַּפִּירִֽים׃",
+      "en": "O thou afflicted, tossed with tempest, and not comforted, behold, I will lay thy stones with fair colours, and lay thy foundations with sapphires."
+    },
+    {
+      "n": 2,
+      "c": 54,
+      "v": 12,
+      "ref": "54:12",
+      "text": "וְשַׂמְתִּ֤י כַּֽדְכֹד֙ שִׁמְשֹׁתַ֔יִךְ וּשְׁעָרַ֖יִךְ לְאַבְנֵ֣י אֶקְדָּ֑ח וְכׇל־גְּבוּלֵ֖ךְ לְאַבְנֵי־חֵֽפֶץ׃",
+      "en": "And I will make thy windows of rubies, and thy gates of beryl, and all thy borders of choicest stones."
+    },
+    {
+      "n": 3,
+      "c": 54,
+      "v": 13,
+      "ref": "54:13",
+      "text": "וְכׇל־בָּנַ֖יִךְ לִמּוּדֵ֣י יְהֹוָ֑ה וְרַ֖ב שְׁל֥וֹם בָּנָֽיִךְ׃",
+      "en": "And all thy children shall be taught of the Lord; and great shall be the peace of thy children."
+    },
+    {
+      "n": 4,
+      "c": 54,
+      "v": 14,
+      "ref": "54:14",
+      "text": "בִּצְדָקָ֖ה תִּכּוֹנָ֑נִי רַחֲקִ֤י מֵעֹ֙שֶׁק֙ כִּי־לֹ֣א תִירָ֔אִי וּמִ֨מְּחִתָּ֔ה כִּ֥י לֹֽא־תִקְרַ֖ב אֵלָֽיִךְ׃",
+      "en": "In righteousness shalt thou be established: keep away from oppression; then thou shalt not fear: and from terror; then it shall not come near thee."
+    },
+    {
+      "n": 5,
+      "c": 54,
+      "v": 15,
+      "ref": "54:15",
+      "text": "הֵ֣ן גּ֥וֹר יָג֛וּר אֶ֖פֶס מֵאוֹתִ֑י מִי־גָ֥ר אִתָּ֖ךְ עָלַ֥יִךְ יִפּֽוֹל׃",
+      "en": "Behold, they may well gather together, but not by me: whoever shall gather together against thee shall fall for thy sake."
+    },
+    {
+      "n": 6,
+      "c": 54,
+      "v": 16,
+      "ref": "54:16",
+      "text": "<span class=\"mam-kq\"><span class=\"mam-kq-k\">(הן)</span> <span class=\"mam-kq-q\">[הִנֵּ֤ה]</span></span> אָנֹכִי֙ בָּרָ֣אתִי חָרָ֔שׁ נֹפֵ֙חַ֙ בְּאֵ֣שׁ פֶּחָ֔ם וּמוֹצִ֥יא כְלִ֖י לְמַעֲשֵׂ֑הוּ וְאָנֹכִ֛י בָּרָ֥אתִי מַשְׁחִ֖ית לְחַבֵּֽל׃",
+      "en": "Behold, I have created the smith that blows upon the fire of the coals, and that brings forth an instrument for his work; and I have created the waster to destroy."
+    },
+    {
+      "n": 7,
+      "c": 54,
+      "v": 17,
+      "ref": "54:17",
+      "text": "כׇּל־כְּלִ֞י יוּצַ֤ר עָלַ֙יִךְ֙ לֹ֣א יִצְלָ֔ח וְכׇל־לָשׁ֛וֹן תָּקוּם־אִתָּ֥ךְ לַמִּשְׁפָּ֖ט תַּרְשִׁ֑יעִי זֹ֡את נַחֲלַת֩ עַבְדֵ֨י יְהֹוָ֧ה וְצִדְקָתָ֛ם מֵאִתִּ֖י נְאֻם־יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "No weapon that is formed against thee shall prosper; and every tongue that shall rise against thee in judgment thou shalt condemn. This is the heritage of the servants of the Lord and the recompense of their righteousness appointed by me, says the Lord."
+    },
+    {
+      "n": 8,
+      "c": 55,
+      "v": 1,
+      "ref": "55:1",
+      "text": "ה֤וֹי כׇּל־צָמֵא֙ לְכ֣וּ לַמַּ֔יִם וַאֲשֶׁ֥ר אֵֽין־ל֖וֹ כָּ֑סֶף לְכ֤וּ שִׁבְרוּ֙ וֶאֱכֹ֔לוּ וּלְכ֣וּ שִׁבְר֗וּ בְּלוֹא־כֶ֛סֶף וּבְל֥וֹא מְחִ֖יר יַ֥יִן וְחָלָֽב׃",
+      "en": "Ho, every one that thirsts, come to the water, and he that has no money; come, buy, and eat; come, buy wine and milk without money and without price."
+    },
+    {
+      "n": 9,
+      "c": 55,
+      "v": 2,
+      "ref": "55:2",
+      "text": "לָ֤מָּה תִשְׁקְלוּ־כֶ֙סֶף֙ בְּלוֹא־לֶ֔חֶם וִיגִיעֲכֶ֖ם בְּל֣וֹא לְשׇׂבְעָ֑ה שִׁמְע֨וּ שָׁמ֤וֹעַ אֵלַי֙ וְאִכְלוּ־ט֔וֹב וְתִתְעַנַּ֥ג בַּדֶּ֖שֶׁן נַפְשְׁכֶֽם׃",
+      "en": "Why do you spend money for that which is not bread? and your labour for that which satisfies not? hearken diligently to me, and eat that which is good, and let your soul delight itself in fatness."
+    },
+    {
+      "n": 10,
+      "c": 55,
+      "v": 3,
+      "ref": "55:3",
+      "text": "הַטּ֤וּ אׇזְנְכֶם֙ וּלְכ֣וּ אֵלַ֔י שִׁמְע֖וּ וּתְחִ֣י נַפְשְׁכֶ֑ם וְאֶכְרְתָ֤ה לָכֶם֙ בְּרִ֣ית עוֹלָ֔ם חַֽסְדֵ֥י דָוִ֖ד הַנֶּאֱמָנִֽים׃",
+      "en": "Incline your ear, and come to me: hear, and your soul shall live; and I will make an everlasting covenant with you, even the sure loving promises of David."
+    },
+    {
+      "n": 11,
+      "c": 55,
+      "v": 4,
+      "ref": "55:4",
+      "text": "הֵ֛ן עֵ֥ד לְאוּמִּ֖ים נְתַתִּ֑יו נָגִ֥יד וּמְצַוֵּ֖ה לְאֻמִּֽים׃",
+      "en": "Behold, I have made him a witness to the peoples, a leader and commander of nations."
+    },
+    {
+      "n": 12,
+      "c": 55,
+      "v": 5,
+      "ref": "55:5",
+      "text": "הֵ֣ן גּ֤וֹי לֹֽא־תֵדַע֙ תִּקְרָ֔א וְג֥וֹי לֹֽא־יְדָע֖וּךָ אֵלֶ֣יךָ יָר֑וּצוּ לְמַ֙עַן֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ וְלִקְד֥וֹשׁ יִשְׂרָאֵ֖ל כִּ֥י פֵאֲרָֽךְ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Behold, thou shalt call a nation that thou knowst not, and nations that knew not thee shall run to thee, because of the Lord thy God, and for the Holy One of Yisra᾽el; for he has glorified thee."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Re'eh",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 47
+  },
+  "parashah": {
+    "en": "Haftarat Re'eh",
+    "translit": "Haftarat Re'eh",
+    "he": "הפטרת ראה"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 12,
+        "ref": "54:11–55:5"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

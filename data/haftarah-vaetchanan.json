@@ -1,0 +1,251 @@
+{
+  "slug": "haftarah-vaetchanan",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 40:1-26",
+  "heRef": "ישעיהו מ׳:א׳-כ״ו",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 40,
+      "v": 1,
+      "ref": "40:1",
+      "text": "נַחֲמ֥וּ נַחֲמ֖וּ עַמִּ֑י יֹאמַ֖ר אֱלֹהֵיכֶֽם׃",
+      "en": "Comfort my people, comfort them, says your God."
+    },
+    {
+      "n": 2,
+      "c": 40,
+      "v": 2,
+      "ref": "40:2",
+      "text": "דַּבְּר֞וּ עַל־לֵ֤ב יְרוּשָׁלַ֙͏ִם֙ וְקִרְא֣וּ אֵלֶ֔יהָ כִּ֤י מָֽלְאָה֙ צְבָאָ֔הּ כִּ֥י נִרְצָ֖ה עֲוֺנָ֑הּ כִּ֤י לָֽקְחָה֙ מִיַּ֣ד יְהֹוָ֔ה כִּפְלַ֖יִם בְּכׇל־חַטֹּאתֶֽיהָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Speak comfortably to Yerushalayim, and cry to her, that her war service is ended, that her iniquity is pardoned: for she has received of the Lord’s hand double for all her sins."
+    },
+    {
+      "n": 3,
+      "c": 40,
+      "v": 3,
+      "ref": "40:3",
+      "text": "ק֣וֹל קוֹרֵ֔א בַּמִּדְבָּ֕ר פַּנּ֖וּ דֶּ֣רֶךְ יְהֹוָ֑ה יַשְּׁרוּ֙ בָּעֲרָבָ֔ה מְסִלָּ֖ה לֵאלֹהֵֽינוּ׃",
+      "en": "A voice cries, Prepare in the wilderness the way of the Lord, make straight in the desert a highway for our God."
+    },
+    {
+      "n": 4,
+      "c": 40,
+      "v": 4,
+      "ref": "40:4",
+      "text": "כׇּל־גֶּיא֙ יִנָּשֵׂ֔א וְכׇל־הַ֥ר וְגִבְעָ֖ה יִשְׁפָּ֑לוּ וְהָיָ֤ה הֶֽעָקֹב֙ לְמִישׁ֔וֹר וְהָרְכָסִ֖ים לְבִקְעָֽה׃",
+      "en": "Every valley shall be exalted, and every mountain and hill shall be made low: and the crooked shall be made straight, and the rough places plain:"
+    },
+    {
+      "n": 5,
+      "c": 40,
+      "v": 5,
+      "ref": "40:5",
+      "text": "וְנִגְלָ֖ה כְּב֣וֹד יְהֹוָ֑ה וְרָא֤וּ כׇל־בָּשָׂר֙ יַחְדָּ֔ו כִּ֛י פִּ֥י יְהֹוָ֖ה דִּבֵּֽר׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and the glory of the Lord shall be revealed, and all flesh shall see it together: for the mouth of the Lord has spoken it."
+    },
+    {
+      "n": 6,
+      "c": 40,
+      "v": 6,
+      "ref": "40:6",
+      "text": "ק֚וֹל אֹמֵ֣ר קְרָ֔א וְאָמַ֖ר מָ֣ה אֶקְרָ֑א כׇּל־הַבָּשָׂ֣ר חָצִ֔יר וְכׇל־חַסְדּ֖וֹ כְּצִ֥יץ הַשָּׂדֶֽה׃",
+      "en": "A voice says, Cry, and he said what should I cry? All flesh is grass, and all its grace is as the flower of the field:"
+    },
+    {
+      "n": 7,
+      "c": 40,
+      "v": 7,
+      "ref": "40:7",
+      "text": "יָבֵ֤שׁ חָצִיר֙ נָ֣בֵֽל־צִ֔יץ כִּ֛י ר֥וּחַ יְהֹוָ֖ה נָ֣שְׁבָה בּ֑וֹ אָכֵ֥ן חָצִ֖יר הָעָֽם׃",
+      "en": "the grass withers, the flower fades: when the breath of the Lord blows upon it: surely the people is like grass."
+    },
+    {
+      "n": 8,
+      "c": 40,
+      "v": 8,
+      "ref": "40:8",
+      "text": "יָבֵ֥שׁ חָצִ֖יר נָ֣בֵֽל צִ֑יץ וּדְבַר־אֱלֹהֵ֖ינוּ יָק֥וּם לְעוֹלָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The grass withers, the flower fades: but the word of our God shall stand for ever."
+    },
+    {
+      "n": 9,
+      "c": 40,
+      "v": 9,
+      "ref": "40:9",
+      "text": "עַ֣ל הַר־גָּבֹ֤הַּ עֲלִי־לָךְ֙ מְבַשֶּׂ֣רֶת צִיּ֔וֹן הָרִ֤ימִי בַכֹּ֙חַ֙ קוֹלֵ֔ךְ מְבַשֶּׂ֖רֶת יְרוּשָׁלָ֑͏ִם הָרִ֙ימִי֙ אַל־תִּירָ֔אִי אִמְרִי֙ לְעָרֵ֣י יְהוּדָ֔ה הִנֵּ֖ה אֱלֹהֵיכֶֽם׃",
+      "en": "Thou that bringest good tidings to Żiyyon, get thee up into the high mountain; Thou that bringest good tidings to Yerushalayim, lift up thy voice with strength; lift it up, be not afraid; say to the cities of Yehuda, Behold your God!"
+    },
+    {
+      "n": 10,
+      "c": 40,
+      "v": 10,
+      "ref": "40:10",
+      "text": "הִנֵּ֨ה אֲדֹנָ֤י יֱהֹוִה֙ בְּחָזָ֣ק יָב֔וֹא וּזְרֹע֖וֹ מֹ֣שְׁלָה ל֑וֹ הִנֵּ֤ה שְׂכָרוֹ֙ אִתּ֔וֹ וּפְעֻלָּת֖וֹ לְפָנָֽיו׃",
+      "en": "Behold, the Lord God will come with might, and his arm shall rule for him: behold, his reward is with him, and his hire before him,"
+    },
+    {
+      "n": 11,
+      "c": 40,
+      "v": 11,
+      "ref": "40:11",
+      "text": "כְּרֹעֶה֙ עֶדְר֣וֹ יִרְעֶ֔ה בִּזְרֹעוֹ֙ יְקַבֵּ֣ץ טְלָאִ֔ים וּבְחֵיק֖וֹ יִשָּׂ֑א עָל֖וֹת יְנַהֵֽל׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "He shall feed his flock like a shepherd: he shall gather the lambs with his arm, and carry them in his bosom, and shall gently lead those that are with young."
+    },
+    {
+      "n": 12,
+      "c": 40,
+      "v": 12,
+      "ref": "40:12",
+      "text": "מִי־מָדַ֨ד בְּשׇׁעֳל֜וֹ מַ֗יִם וְשָׁמַ֙יִם֙ בַּזֶּ֣רֶת תִּכֵּ֔ן וְכָ֥ל בַּשָּׁלִ֖שׁ עֲפַ֣ר הָאָ֑רֶץ וְשָׁקַ֤ל בַּפֶּ֙לֶס֙ הָרִ֔ים וּגְבָע֖וֹת בְּמֹאזְנָֽיִם׃",
+      "en": "Who has measured the waters in the hollow of his hand, and meted out heaven with the span, and comprehended the dust of the earth in a measure, and weighed the mountains in scales, and the hills in a balance?"
+    },
+    {
+      "n": 13,
+      "c": 40,
+      "v": 13,
+      "ref": "40:13",
+      "text": "מִֽי־תִכֵּ֥ן אֶת־ר֖וּחַ יְהֹוָ֑ה וְאִ֖ישׁ עֲצָת֥וֹ יוֹדִיעֶֽנּוּ׃",
+      "en": "Who has directed the spirit of the Lord, or being his counsellor has taught him?"
+    },
+    {
+      "n": 14,
+      "c": 40,
+      "v": 14,
+      "ref": "40:14",
+      "text": "אֶת־מִ֤י נוֹעָץ֙ וַיְבִינֵ֔הוּ וַֽיְלַמְּדֵ֖הוּ בְּאֹ֣רַח מִשְׁפָּ֑ט וַיְלַמְּדֵ֣הוּ דַ֔עַת וְדֶ֥רֶךְ תְּבוּנ֖וֹת יוֹדִיעֶֽנּוּ׃",
+      "en": "With whom took he counsel, and who instructed him, and taught him in the path of judgment, and taught him knowledge, and showed to him the way of understanding?"
+    },
+    {
+      "n": 15,
+      "c": 40,
+      "v": 15,
+      "ref": "40:15",
+      "text": "הֵ֤ן גּוֹיִם֙ כְּמַ֣ר מִדְּלִ֔י וּכְשַׁ֥חַק מֹאזְנַ֖יִם נֶחְשָׁ֑בוּ הֵ֥ן אִיִּ֖ים כַּדַּ֥ק יִטּֽוֹל׃",
+      "en": "Behold, the nations are as a drop of a bucket, and are counted as the small dust of the balance: behold, he takes up the isles like fine dust."
+    },
+    {
+      "n": 16,
+      "c": 40,
+      "v": 16,
+      "ref": "40:16",
+      "text": "וּלְבָנ֕וֹן אֵ֥ין דֵּ֖י בָּעֵ֑ר וְחַ֨יָּת֔וֹ אֵ֥ין דֵּ֖י עוֹלָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Levanon is not sufficient for fuel; nor are its beasts sufficient for a burnt offering."
+    },
+    {
+      "n": 17,
+      "c": 40,
+      "v": 17,
+      "ref": "40:17",
+      "text": "כׇּל־הַגּוֹיִ֖ם כְּאַ֣יִן נֶגְדּ֑וֹ מֵאֶ֥פֶס וָתֹ֖הוּ נֶחְשְׁבוּ־לֽוֹ׃",
+      "en": "All nations before him are as nothing; and they are counted to him less than nothing, and vanity."
+    },
+    {
+      "n": 18,
+      "c": 40,
+      "v": 18,
+      "ref": "40:18",
+      "text": "וְאֶל־מִ֖י תְּדַמְּי֣וּן אֵ֑ל וּמַה־דְּמ֖וּת תַּ֥עַרְכוּ לֽוֹ׃",
+      "en": "To whom then will you liken God? or what likeness will you compare to him?"
+    },
+    {
+      "n": 19,
+      "c": 40,
+      "v": 19,
+      "ref": "40:19",
+      "text": "הַפֶּ֙סֶל֙ נָסַ֣ךְ חָרָ֔שׁ וְצֹרֵ֖ף בַּזָּהָ֣ב יְרַקְּעֶ֑נּוּ וּרְתֻק֥וֹת כֶּ֖סֶף צוֹרֵֽף׃",
+      "en": "As for the image, a craftsman casts it, and a refiner plates it with gold, he forges silver chains."
+    },
+    {
+      "n": 20,
+      "c": 40,
+      "v": 20,
+      "ref": "40:20",
+      "text": "הַֽמְסֻכָּ֣ן תְּרוּמָ֔ה עֵ֥ץ לֹא־יִרְקַ֖ב יִבְחָ֑ר חָרָ֤שׁ חָכָם֙ יְבַקֶּשׁ־ל֔וֹ לְהָכִ֥ין פֶּ֖סֶל לֹ֥א יִמּֽוֹט׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "He that is too impoverished for such a gift, chooses a tree that will not rot; he seeks to him a cunning workman to prepare a carved idol, that shall not be moved."
+    },
+    {
+      "n": 21,
+      "c": 40,
+      "v": 21,
+      "ref": "40:21",
+      "text": "הֲל֤וֹא תֵֽדְעוּ֙ הֲל֣וֹא תִשְׁמָ֔עוּ הֲל֛וֹא הֻגַּ֥ד מֵרֹ֖אשׁ לָכֶ֑ם הֲלוֹא֙ הֲבִ֣ינוֹתֶ֔ם מוֹסְד֖וֹת הָאָֽרֶץ׃",
+      "en": "Do you not know? do you not hear? has it not been told you from the beginning? have you not understood from the foundations of the earth?"
+    },
+    {
+      "n": 22,
+      "c": 40,
+      "v": 22,
+      "ref": "40:22",
+      "text": "הַיֹּשֵׁב֙ עַל־ח֣וּג הָאָ֔רֶץ וְיֹשְׁבֶ֖יהָ כַּחֲגָבִ֑ים הַנּוֹטֶ֤ה כַדֹּק֙ שָׁמַ֔יִם וַיִּמְתָּחֵ֥ם כָּאֹ֖הֶל לָשָֽׁבֶת׃",
+      "en": "It is he that sits upon the circle of the earth, and its inhabitants are as grasshoppers; that stretches out the heavens as a curtain, and spreads them out as a tent to dwell in:"
+    },
+    {
+      "n": 23,
+      "c": 40,
+      "v": 23,
+      "ref": "40:23",
+      "text": "הַנּוֹתֵ֥ן רוֹזְנִ֖ים לְאָ֑יִן שֹׁ֥פְטֵי אֶ֖רֶץ כַּתֹּ֥הוּ עָשָֽׂה׃",
+      "en": "that brings princes to nothing; he makes the judges of the earth as vanity."
+    },
+    {
+      "n": 24,
+      "c": 40,
+      "v": 24,
+      "ref": "40:24",
+      "text": "אַ֣ף בַּל־נִטָּ֗עוּ אַ֚ף בַּל־זֹרָ֔עוּ אַ֛ף בַּל־שֹׁרֵ֥שׁ בָּאָ֖רֶץ גִּזְעָ֑ם וְגַם־נָשַׁ֤ף בָּהֶם֙ וַיִּבָ֔שׁוּ וּסְעָרָ֖ה כַּקַּ֥שׁ תִּשָּׂאֵֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Scarcely are they planted; scarcely are they sown; scarcely has their stock taken root in the earth: he merely blows upon them and they wither; and the storm wind takes them away as stubble."
+    },
+    {
+      "n": 25,
+      "c": 40,
+      "v": 25,
+      "ref": "40:25",
+      "text": "וְאֶל־מִ֥י תְדַמְּי֖וּנִי וְאֶשְׁוֶ֑ה יֹאמַ֖ר קָדֽוֹשׁ׃",
+      "en": "To whom then will you liken me, that I should be his equal, says the Holy One."
+    },
+    {
+      "n": 26,
+      "c": 40,
+      "v": 26,
+      "ref": "40:26",
+      "text": "שְׂאוּ־מָר֨וֹם עֵינֵיכֶ֤ם וּרְאוּ֙ מִֽי־בָרָ֣א אֵ֔לֶּה הַמּוֹצִ֥יא בְמִסְפָּ֖ר צְבָאָ֑ם לְכֻלָּם֙ בְּשֵׁ֣ם יִקְרָ֔א מֵרֹ֤ב אוֹנִים֙ וְאַמִּ֣יץ כֹּ֔חַ אִ֖ישׁ לֹ֥א נֶעְדָּֽר׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Lift up your eyes on high, and behold who has created these things, that brings out their host by number: he calls them all by names; because of the greatness of his might, and because he is strong in power, not one is missing."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Vaetchanan",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 45
+  },
+  "parashah": {
+    "en": "Haftarat Vaetchanan",
+    "translit": "Haftarat Vaetchanan",
+    "he": "הפטרת ואתחנן"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 26,
+        "ref": "40:1–40:26"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

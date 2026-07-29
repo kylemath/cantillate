@@ -1,0 +1,227 @@
+{
+  "slug": "haftarah-nitzavim",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 61:10-63:9",
+  "heRef": "ישעיהו ס״א:י-י״א, ס״ב:א-י״ב, ס״ג:א-ט",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 61,
+      "v": 10,
+      "ref": "61:10",
+      "text": "שׂ֧וֹשׂ אָשִׂ֣ישׂ בַּֽיהֹוָ֗ה תָּגֵ֤ל נַפְשִׁי֙ בֵּֽאלֹהַ֔י כִּ֤י הִלְבִּישַׁ֙נִי֙ בִּגְדֵי־יֶ֔שַׁע מְעִ֥יל צְדָקָ֖ה יְעָטָ֑נִי כֶּֽחָתָן֙ יְכַהֵ֣ן פְּאֵ֔ר וְכַכַּלָּ֖ה תַּעְדֶּ֥ה כֵלֶֽיהָ׃",
+      "en": "I will greatly rejoice in the Lord, my soul shall be joyful in my God; for he has clothed me with the garments of salvation, he has covered me with the robe of righteous­ness, as a bridegroom decks himself with a garland, and as a bride adorns her­self with her jewels."
+    },
+    {
+      "n": 2,
+      "c": 61,
+      "v": 11,
+      "ref": "61:11",
+      "text": "כִּ֤י כָאָ֙רֶץ֙ תּוֹצִ֣יא צִמְחָ֔הּ וּכְגַנָּ֖ה זֵרוּעֶ֣יהָ תַצְמִ֑יחַ כֵּ֣ן&thinsp;<b>׀</b> אֲדֹנָ֣י יֱהֹוִ֗ה יַצְמִ֤יחַ צְדָקָה֙ וּתְהִלָּ֔ה נֶ֖גֶד כׇּל־הַגּוֹיִֽם׃",
+      "en": "For as the earth brings forth her growth, and as the garden causes the things that are sown in it to spring forth; so the Lord God will cause righteousness and praise to spring forth before all the nations."
+    },
+    {
+      "n": 3,
+      "c": 62,
+      "v": 1,
+      "ref": "62:1",
+      "text": "לְמַ֤עַן צִיּוֹן֙ לֹ֣א אֶחֱשֶׁ֔ה וּלְמַ֥עַן יְרוּשָׁלַ֖͏ִם לֹ֣א אֶשְׁק֑וֹט עַד־יֵצֵ֤א כַנֹּ֙גַהּ֙ צִדְקָ֔הּ וִישׁוּעָתָ֖הּ כְּלַפִּ֥יד יִבְעָֽר׃",
+      "en": "For the sake of Żiyyon I will not hold my peace, and for the sake of Yeru­shalayim, I will not be still, until her righteousness goes forth like radiance, and her salvation like a burning torch."
+    },
+    {
+      "n": 4,
+      "c": 62,
+      "v": 2,
+      "ref": "62:2",
+      "text": "וְרָא֤וּ גוֹיִם֙ צִדְקֵ֔ךְ וְכׇל־מְלָכִ֖ים כְּבוֹדֵ֑ךְ וְקֹ֤רָא לָךְ֙ שֵׁ֣ם חָדָ֔שׁ אֲשֶׁ֛ר פִּ֥י יְהֹוָ֖ה יִקֳּבֶֽנּוּ׃",
+      "en": "And the nations shall see thy righteousness, and all kings thy glory: and thou shalt be called by a new name, which the mouth of the Lord shall express."
+    },
+    {
+      "n": 5,
+      "c": 62,
+      "v": 3,
+      "ref": "62:3",
+      "text": "וְהָיִ֛ית עֲטֶ֥רֶת תִּפְאֶ֖רֶת בְּיַד־יְהֹוָ֑ה <span class=\"mam-kq\"><span class=\"mam-kq-k\">(וצנוף)</span> <span class=\"mam-kq-q\">[וּצְנִ֥יף]</span></span> מְלוּכָ֖ה בְּכַף־אֱלֹהָֽיִךְ׃",
+      "en": "Thou shalt also be a crown of glory in the hand of the Lord, and a royal diadem in the hand of thy God."
+    },
+    {
+      "n": 6,
+      "c": 62,
+      "v": 4,
+      "ref": "62:4",
+      "text": "לֹא־יֵאָמֵר֩ לָ֨ךְ ע֜וֹד עֲזוּבָ֗ה וּלְאַרְצֵךְ֙ לֹא־יֵאָמֵ֥ר עוֹד֙ שְׁמָמָ֔ה כִּ֣י לָ֗ךְ יִקָּרֵא֙ חֶפְצִי־בָ֔הּ וּלְאַרְצֵ֖ךְ בְּעוּלָ֑ה כִּֽי־חָפֵ֤ץ יְהֹוָה֙ בָּ֔ךְ וְאַרְצֵ֖ךְ תִּבָּעֵֽל׃",
+      "en": "Thou shalt no more be termed Forsaken; neither shall thy land any more be termed Desolate: but thou shalt be called Ḥefżi-va (My Delight is in Her,) and thy land Be῾ula (Espoused:) for the Lord delights in thee, and thy land shall be espoused."
+    },
+    {
+      "n": 7,
+      "c": 62,
+      "v": 5,
+      "ref": "62:5",
+      "text": "כִּֽי־יִבְעַ֤ל בָּחוּר֙ בְּתוּלָ֔ה יִבְעָל֖וּךְ בָּנָ֑יִךְ וּמְשׂ֤וֹשׂ חָתָן֙ עַל־כַּלָּ֔ה יָשִׂ֥ישׂ עָלַ֖יִךְ אֱלֹהָֽיִךְ׃",
+      "en": "For as a young man takes to himself a virgin, so shall thy sons take thee to themselves, and as the bridegroom rejoices over the bride, so shall thy God rejoice over thee."
+    },
+    {
+      "n": 8,
+      "c": 62,
+      "v": 6,
+      "ref": "62:6",
+      "text": "עַל־חוֹמֹתַ֣יִךְ יְרוּשָׁלַ֗͏ִם הִפְקַ֙דְתִּי֙ שֹֽׁמְרִ֔ים כׇּל־הַיּ֧וֹם וְכׇל־הַלַּ֛יְלָה תָּמִ֖יד לֹ֣א יֶחֱשׁ֑וּ הַמַּזְכִּרִים֙ אֶת־יְהֹוָ֔ה אַל־דֳּמִ֖י לָכֶֽם׃",
+      "en": "I have set watchmen upon thy walls, O Yerushalayim, who shall never hold their peace day or night: you that make mention of the Lord, take no rest,"
+    },
+    {
+      "n": 9,
+      "c": 62,
+      "v": 7,
+      "ref": "62:7",
+      "text": "וְאַֽל־תִּתְּנ֥וּ דֳמִ֖י ל֑וֹ עַד־יְכוֹנֵ֞ן וְעַד־יָשִׂ֧ים אֶת־יְרוּשָׁלַ֛͏ִם תְּהִלָּ֖ה בָּאָֽרֶץ׃",
+      "en": "and give him no rest till he establishes, and till he makes Yerushalayim a praise in the earth."
+    },
+    {
+      "n": 10,
+      "c": 62,
+      "v": 8,
+      "ref": "62:8",
+      "text": "נִשְׁבַּ֧ע יְהֹוָ֛ה בִּימִינ֖וֹ וּבִזְר֣וֹעַ עֻזּ֑וֹ אִם־אֶתֵּן֩ אֶת־דְּגָנֵ֨ךְ ע֤וֹד מַֽאֲכָל֙ לְאֹ֣יְבַ֔יִךְ וְאִם־יִשְׁתּ֤וּ בְנֵֽי־נֵכָר֙ תִּֽירוֹשֵׁ֔ךְ אֲשֶׁ֥ר יָגַ֖עַתְּ בּֽוֹ׃",
+      "en": "The Lord has sworn by his right hand, and by the arm of his strength, Surely I will no more give thy corn to be food for thy enemies; and the sons of the stranger shall not drink thy wine for which thou hast laboured:"
+    },
+    {
+      "n": 11,
+      "c": 62,
+      "v": 9,
+      "ref": "62:9",
+      "text": "כִּ֤י מְאַסְפָיו֙ יֹאכְלֻ֔הוּ וְהִֽלְל֖וּ אֶת־יְהֹוָ֑ה וּמְקַבְּצָ֥יו יִשְׁתֻּ֖הוּ בְּחַצְר֥וֹת קׇדְשִֽׁי׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "but they that have gathered it shall eat it, and praise the Lord; and they that have brought it together shall drink it in the courts of my sanctuary."
+    },
+    {
+      "n": 12,
+      "c": 62,
+      "v": 10,
+      "ref": "62:10",
+      "text": "עִבְר֤וּ עִבְרוּ֙ בַּשְּׁעָרִ֔ים פַּנּ֖וּ דֶּ֣רֶךְ הָעָ֑ם סֹ֣לּוּ סֹ֤לּוּ הַֽמְסִלָּה֙ סַקְּל֣וּ מֵאֶ֔בֶן הָרִ֥ימוּ נֵ֖ס עַל־הָעַמִּֽים׃",
+      "en": "Go through, go through the gates; prepare the way of the people; bank up, build up the highway; clear the stones; lift up a standard for the people."
+    },
+    {
+      "n": 13,
+      "c": 62,
+      "v": 11,
+      "ref": "62:11",
+      "text": "הִנֵּ֣ה יְהֹוָ֗ה הִשְׁמִ֙יעַ֙ אֶל־קְצֵ֣ה הָאָ֔רֶץ אִמְרוּ֙ לְבַת־צִיּ֔וֹן הִנֵּ֥ה יִשְׁעֵ֖ךְ בָּ֑א הִנֵּ֤ה שְׂכָרוֹ֙ אִתּ֔וֹ וּפְעֻלָּת֖וֹ לְפָנָֽיו׃",
+      "en": "Behold, the Lord has proclaimed to the end of the world, Say to the daughter of Żiyyon, Behold, thy salvation comes; behold, his reward is with him, and his wages before him."
+    },
+    {
+      "n": 14,
+      "c": 62,
+      "v": 12,
+      "ref": "62:12",
+      "text": "וְקָרְא֥וּ לָהֶ֛ם עַם־הַקֹּ֖דֶשׁ גְּאוּלֵ֣י יְהֹוָ֑ה וְלָךְ֙ יִקָּרֵ֣א דְרוּשָׁ֔ה עִ֖יר לֹ֥א נֶעֱזָֽבָה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And they shall call them, The holy people, The redeemed of the Lord: and thou shalt be called, Derusha (Sought out,) a city not forsaken."
+    },
+    {
+      "n": 15,
+      "c": 63,
+      "v": 1,
+      "ref": "63:1",
+      "text": "מִי־זֶ֣ה&thinsp;<b>׀</b> בָּ֣א מֵאֱד֗וֹם חֲמ֤וּץ בְּגָדִים֙ מִבׇּצְרָ֔ה זֶ֚ה הָד֣וּר בִּלְבוּשׁ֔וֹ צֹעֶ֖ה בְּרֹ֣ב כֹּח֑וֹ אֲנִ֛י מְדַבֵּ֥ר בִּצְדָקָ֖ה רַ֥ב לְהוֹשִֽׁיעַ׃",
+      "en": "Who is this that comes from Edom, with crimsoned garments from Bożra? this one that is glorious in his apparel, striding in the greatness of his strength? I that speak in righteousness, mighty to save."
+    },
+    {
+      "n": 16,
+      "c": 63,
+      "v": 2,
+      "ref": "63:2",
+      "text": "מַדּ֥וּעַ אָדֹ֖ם לִלְבוּשֶׁ֑ךָ וּבְגָדֶ֖יךָ כְּדֹרֵ֥ךְ בְּגַֽת׃",
+      "en": "Why is thy apparel red, and thy garments like his that treads in the winepress?"
+    },
+    {
+      "n": 17,
+      "c": 63,
+      "v": 3,
+      "ref": "63:3",
+      "text": "פּוּרָ֣ה&thinsp;<b>׀</b> דָּרַ֣כְתִּי לְבַדִּ֗י וּמֵֽעַמִּים֙ אֵֽין־אִ֣ישׁ אִתִּ֔י וְאֶדְרְכֵ֣ם בְּאַפִּ֔י וְאֶרְמְסֵ֖ם בַּחֲמָתִ֑י וְיֵ֤ז נִצְחָם֙ עַל־בְּגָדַ֔י וְכׇל־מַלְבּוּשַׁ֖י אֶגְאָֽלְתִּי׃",
+      "en": "I have trodden the winepress alone; and of the peoples there was none with me: for I have trodden them in my anger, and trampled them in my fury; and their blood was sprinkled upon my garments, and I have stained all my raiment."
+    },
+    {
+      "n": 18,
+      "c": 63,
+      "v": 4,
+      "ref": "63:4",
+      "text": "כִּ֛י י֥וֹם נָקָ֖ם בְּלִבִּ֑י וּשְׁנַ֥ת גְּאוּלַ֖י בָּֽאָה׃",
+      "en": "For the day of vengeance is in my heart, and the year of my redeemed is come."
+    },
+    {
+      "n": 19,
+      "c": 63,
+      "v": 5,
+      "ref": "63:5",
+      "text": "וְאַבִּיט֙ וְאֵ֣ין עֹזֵ֔ר וְאֶשְׁתּוֹמֵ֖ם וְאֵ֣ין סוֹמֵ֑ךְ וַתּ֤וֹשַֽׁע־לִי֙ זְרֹעִ֔י וַחֲמָתִ֖י הִ֥יא סְמָכָֽתְנִי׃",
+      "en": "And I looked and there was none to help; and I gazed astonished but there was none to uphold: therefore has my own arm brought salvation to me; and my fury, it has upheld me."
+    },
+    {
+      "n": 20,
+      "c": 63,
+      "v": 6,
+      "ref": "63:6",
+      "text": "וְאָב֤וּס עַמִּים֙ בְּאַפִּ֔י וַאֲשַׁכְּרֵ֖ם בַּחֲמָתִ֑י וְאוֹרִ֥יד לָאָ֖רֶץ נִצְחָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And I trod down peoples in my anger, and made them drunk with my fury, and I poured out their lifeblood on the earth:"
+    },
+    {
+      "n": 21,
+      "c": 63,
+      "v": 7,
+      "ref": "63:7",
+      "text": "חַֽסְדֵ֨י יְהֹוָ֤ה&thinsp;<small>׀</small>&thinsp;אַזְכִּיר֙ תְּהִלֹּ֣ת יְהֹוָ֔ה כְּעַ֕ל כֹּ֥ל אֲשֶׁר־גְּמָלָ֖נוּ יְהֹוָ֑ה וְרַב־טוּב֙ לְבֵ֣ית יִשְׂרָאֵ֔ל אֲשֶׁר־גְּמָלָ֥ם כְּֽרַחֲמָ֖יו וּכְרֹ֥ב חֲסָדָֽיו׃",
+      "en": "I will mention the acts of the Lord’s faithful love, and the praises of the Lord, according to all that the Lord has bestowed on us, and the great goodness toward the house of Yisra᾽el which he has bestowed on them according to his mercies, and according to the abundance of his faithful love."
+    },
+    {
+      "n": 22,
+      "c": 63,
+      "v": 8,
+      "ref": "63:8",
+      "text": "וַיֹּ֙אמֶר֙ אַךְ־עַמִּ֣י הֵ֔מָּה בָּנִ֖ים לֹ֣א יְשַׁקֵּ֑רוּ וַיְהִ֥י לָהֶ֖ם לְמוֹשִֽׁיעַ׃",
+      "en": "For he said, Surely they are my people, children that will not lie: so he was their deliverer."
+    },
+    {
+      "n": 23,
+      "c": 63,
+      "v": 9,
+      "ref": "63:9",
+      "text": "בְּֽכׇל־צָרָתָ֣ם&thinsp;<b>׀</b> <span class=\"mam-kq\"><span class=\"mam-kq-k\">(לא)</span> <span class=\"mam-kq-q\">[ל֣וֹ]</span></span> צָ֗ר וּמַלְאַ֤ךְ פָּנָיו֙ הוֹשִׁיעָ֔ם בְּאַהֲבָת֥וֹ וּבְחֶמְלָת֖וֹ ה֣וּא גְאָלָ֑ם וַֽיְנַטְּלֵ֥ם וַֽיְנַשְּׂאֵ֖ם כׇּל־יְמֵ֥י עוֹלָֽם׃",
+      "en": "In all their affliction he was afflicted, and the angel of his presence saved them: in his love and in his pity he redeemed them; and he bore them, and carried them all the days of old."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Nitzavim",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 51
+  },
+  "parashah": {
+    "en": "Haftarat Nitzavim",
+    "translit": "Haftarat Nitzavim",
+    "he": "הפטרת נצבים"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 23,
+        "ref": "61:10–63:9"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

@@ -1,0 +1,123 @@
+{
+  "slug": "haftarah-kiteitzei",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 54:1-10",
+  "heRef": "ישעיהו נ״ד:א-י",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 54,
+      "v": 1,
+      "ref": "54:1",
+      "text": "רׇנִּ֥י עֲקָרָ֖ה לֹ֣א יָלָ֑דָה פִּצְחִ֨י רִנָּ֤ה וְצַֽהֲלִי֙ לֹא־חָ֔לָה כִּֽי־רַבִּ֧ים בְּֽנֵי־שׁוֹמֵמָ֛ה מִבְּנֵ֥י בְעוּלָ֖ה אָמַ֥ר יְהֹוָֽה׃",
+      "en": "Sing, O barren one, thou that didst not bear; break forth into singing, and cry aloud, thou that didst not travail with child: for more are the children of the desolate than the children of the married wife, says the Lord."
+    },
+    {
+      "n": 2,
+      "c": 54,
+      "v": 2,
+      "ref": "54:2",
+      "text": "הַרְחִ֣יבִי&thinsp;<b>׀</b> מְק֣וֹם אׇהֳלֵ֗ךְ וִירִיע֧וֹת מִשְׁכְּנוֹתַ֛יִךְ יַטּ֖וּ אַל־תַּחְשֹׂ֑כִי הַאֲרִ֙יכִי֙ מֵיתָרַ֔יִךְ וִיתֵדֹתַ֖יִךְ חַזֵּֽקִי׃",
+      "en": "Enlarge the place of thy tent, and let them stretch forth the curtains of thy habitations: spare not: lengthen thy cords, and strengthen thy stakes;"
+    },
+    {
+      "n": 3,
+      "c": 54,
+      "v": 3,
+      "ref": "54:3",
+      "text": "כִּֽי־יָמִ֥ין וּשְׂמֹ֖אול תִּפְרֹ֑צִי וְזַרְעֵךְ֙ גּוֹיִ֣ם יִירָ֔שׁ וְעָרִ֥ים נְשַׁמּ֖וֹת יוֹשִֽׁיבוּ׃",
+      "en": "for thou shalt break forth on the right hand and on the left; and thy seed shall possess nations, and make desolate cities to be inhabited."
+    },
+    {
+      "n": 4,
+      "c": 54,
+      "v": 4,
+      "ref": "54:4",
+      "text": "אַל־תִּֽירְאִי֙ כִּֽי־לֹ֣א תֵב֔וֹשִׁי וְאַל־תִּכָּלְמִ֖י כִּ֣י לֹ֣א תַחְפִּ֑ירִי כִּ֣י בֹ֤שֶׁת עֲלוּמַ֙יִךְ֙ תִּשְׁכָּ֔חִי וְחֶרְפַּ֥ת אַלְמְנוּתַ֖יִךְ לֹ֥א תִזְכְּרִי־עֽוֹד׃",
+      "en": "Fear not; for thou shall not be ashamed: neither be confounded; for thou shalt not be put to shame: but thou shalt forget the shame of thy youth, and shalt not remember the reproach of thy widowhood any more."
+    },
+    {
+      "n": 5,
+      "c": 54,
+      "v": 5,
+      "ref": "54:5",
+      "text": "כִּ֤י בֹעֲלַ֙יִךְ֙ עֹשַׂ֔יִךְ יְהֹוָ֥ה צְבָא֖וֹת שְׁמ֑וֹ וְגֹֽאֲלֵךְ֙ קְד֣וֹשׁ יִשְׂרָאֵ֔ל אֱלֹהֵ֥י כׇל־הָאָ֖רֶץ יִקָּרֵֽא׃",
+      "en": "For thy Maker is thy husband: the Lord of hosts is his name; and thy redeemer is the Holy One of Yisra᾽el; The God of the whole earth is he called."
+    },
+    {
+      "n": 6,
+      "c": 54,
+      "v": 6,
+      "ref": "54:6",
+      "text": "כִּֽי־כְאִשָּׁ֧ה עֲזוּבָ֛ה וַעֲצ֥וּבַת ר֖וּחַ קְרָאָ֣ךְ יְהֹוָ֑ה וְאֵ֧שֶׁת נְעוּרִ֛ים כִּ֥י תִמָּאֵ֖ס אָמַ֥ר אֱלֹהָֽיִךְ׃",
+      "en": "For the Lord has called thee as a woman forsaken and grieved in spirit; but a wife of youth, can she be cast off? says thy God."
+    },
+    {
+      "n": 7,
+      "c": 54,
+      "v": 7,
+      "ref": "54:7",
+      "text": "בְּרֶ֥גַע קָטֹ֖ן עֲזַבְתִּ֑יךְ וּבְרַחֲמִ֥ים גְּדֹלִ֖ים אֲקַבְּצֵֽךְ׃",
+      "en": "For a small moment have I forsaken thee; but with great mercies will I gather thee."
+    },
+    {
+      "n": 8,
+      "c": 54,
+      "v": 8,
+      "ref": "54:8",
+      "text": "בְּשֶׁ֣צֶף קֶ֗צֶף הִסְתַּ֨רְתִּי פָנַ֥י רֶ֙גַע֙ מִמֵּ֔ךְ וּבְחֶ֥סֶד עוֹלָ֖ם רִחַמְתִּ֑יךְ אָמַ֥ר גֹּאֲלֵ֖ךְ יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "In the overflowing of wrath I hid my face from thee for a moment; but with everlasting faithful love will I have mercy on thee, says thy redeemer, the Lord."
+    },
+    {
+      "n": 9,
+      "c": 54,
+      "v": 9,
+      "ref": "54:9",
+      "text": "כִּֽי־מֵ֥י נֹ֙חַ֙ זֹ֣את לִ֔י אֲשֶׁ֣ר נִשְׁבַּ֗עְתִּי מֵעֲבֹ֥ר מֵי־נֹ֛חַ ע֖וֹד עַל־הָאָ֑רֶץ כֵּ֥ן נִשְׁבַּ֛עְתִּי מִקְּצֹ֥ף עָלַ֖יִךְ וּמִגְּעׇר־בָּֽךְ׃",
+      "en": "For this is as the waters of Noaĥ to me: as I have sworn that the waters of Noaĥ should no more go over the earth; so have I sworn that I would not be furious with thee, nor rebuke thee."
+    },
+    {
+      "n": 10,
+      "c": 54,
+      "v": 10,
+      "ref": "54:10",
+      "text": "כִּ֤י הֶהָרִים֙ יָמ֔וּשׁוּ וְהַגְּבָע֖וֹת תְּמוּטֶ֑ינָה וְחַסְדִּ֞י מֵאִתֵּ֣ךְ לֹא־יָמ֗וּשׁ וּבְרִ֤ית שְׁלוֹמִי֙ לֹ֣א תָמ֔וּט אָמַ֥ר מְרַחֲמֵ֖ךְ יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For the mountains shall depart, and the hills be removed; but my faithful love shall not depart from thee, neither shall the covenant of my peace be removed, says the Lord that has mercy on thee."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Ki Teitzei",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 49
+  },
+  "parashah": {
+    "en": "Haftarat Ki Teitzei",
+    "translit": "Haftarat Ki Teitzei",
+    "he": "הפטרת כי תצא"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 10,
+        "ref": "54:1–54:10"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

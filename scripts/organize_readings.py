@@ -7,6 +7,11 @@ Numbers were in it. This puts each parashah under its own sefer, in the order th
 book runs, and leaves the non-scripture groups (trope drills, prayer excerpts)
 after them in the order they were written.
 
+The haftarot get one group of their own rather than being filed under the book of
+Nevi'im they come from: a reader looks for the haftarah by the week it is chanted,
+not by whether it happens to be in Isaiah or in Judges. So they are ordered by
+their parashah's place in the year, which is the order they will be needed in.
+
 Each reading's sefer and starting verse are read from its own data file rather
 than the build registry, so a reading built by any route still lands in the right
 place. Run automatically at the end of build_reading.py, or by hand:
@@ -24,6 +29,8 @@ BOOK_ORDER = ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy"]
 # Fallback transliterations, for a data file that doesn't carry one.
 TRANSLIT = {"Genesis": "Bereshit", "Exodus": "Shemot", "Leviticus": "Vayikra",
             "Numbers": "Bamidbar", "Deuteronomy": "Devarim"}
+
+HAFTARAH_GROUP = "Haftarot"
 
 
 def reading_place(entry):
@@ -57,10 +64,23 @@ def group_label(book_en, book):
     return f"{translit} \u00b7 {book_en}" if book_en and translit != book_en else (book_en or "Readings")
 
 
+def haftarah_order(entry):
+    """Where in the year a haftarah falls, for ordering the Haftarot group."""
+    n = entry.get("calendarNumber")
+    if n is None:
+        n = ((entry.get("haftarah") or {}).get("calendarNumber"))
+    return (n if n is not None else 999, entry["slug"])
+
+
 def organize(quiet=False):
     manifest = json.load(open(MANIFEST, encoding="utf-8"))
-    parashiyot = [m for m in manifest if m.get("kind", "parashah") == "parashah"]
-    others = [m for m in manifest if m.get("kind", "parashah") != "parashah"]
+
+    def kind_of(m):
+        return m.get("kind", "parashah")
+
+    parashiyot = [m for m in manifest if kind_of(m) == "parashah"]
+    haftarot = [m for m in manifest if kind_of(m) == "haftarah"]
+    others = [m for m in manifest if kind_of(m) not in ("parashah", "haftarah")]
 
     placed = []
     for m in parashiyot:
@@ -72,7 +92,11 @@ def organize(quiet=False):
         placed.append((order, ch, vs, -reading_length(m), m["slug"], m))
     placed.sort(key=lambda x: x[:5])
 
-    ordered = [p[5] for p in placed] + others
+    for m in haftarot:
+        m["group"] = HAFTARAH_GROUP
+    haftarot.sort(key=haftarah_order)
+
+    ordered = [p[5] for p in placed] + haftarot + others
     with open(MANIFEST, "w", encoding="utf-8") as f:
         json.dump(ordered, f, ensure_ascii=False, indent=2)
 

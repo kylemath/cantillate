@@ -347,6 +347,41 @@ READING_STEPS = [
          "       res(seen.size>1 && maxWord>1 ? `OK crossed ${seen.size} source verses, reached word ${maxWord}`"
          "         : `${seen.size} source(s), furthest word ${maxWord}`); } }, 150);});})()"),
     ]),
+    ("haftarah-devarim", [
+        ("a haftarah loads as one reading, read straight through",
+         "(()=>{const secs=__t.all('.alsec').length;"
+         " const label=__t.q('.alsec-label') ? __t.q('.alsec-label').firstChild.textContent.trim() : '';"
+         " return secs===1&&/Haftarah/.test(label) ? `OK one section: ${label}`"
+         "   : `${secs} sections, first is \"${label}\"`;})()"),
+        ("portion controls are hidden for a haftarah (no annual/triennial choice)",
+         "(()=>{const ids=['portion','cycToday','btnEditAliyot'].filter(i=>!document.getElementById(i).hidden);"
+         " return ids.length ? 'still shown: '+ids.join() : 'OK hidden';})()"),
+        ("the header names the parashah it belongs to and its rite",
+         "(()=>{const h=__t.q('.aliyot-head'); if(!h) return 'no header';"
+         " const t=h.textContent.replace(/\\s+/g,' ').trim();"
+         " return /Isaiah 1:1-27/.test(t)&&/Ashkenazi/.test(t) ? 'OK '+t : t;})()"),
+        ("it is taught in the haftarah melody, not the Torah one",
+         "(()=>{const chip=__t.q('#guideStyle');"
+         " return chip&&/Haftarah/.test(chip.textContent) ? 'OK '+chip.textContent.trim()"
+         "   : 'style chip says '+(chip?chip.textContent:'(absent)');})()"),
+        ("the haftarah melody really is a different tune for the same accent",
+         "(()=>Promise.all([fetch('data/trope-shapes.json').then(r=>r.json()),"
+         "   fetch('data/haftarah-shapes.json').then(r=>r.json())]).then(([t,h])=>{"
+         "   const keys=Object.keys(h.shapes).filter(k=>t.shapes[k]);"
+         "   const differ=keys.filter(k=>JSON.stringify(t.shapes[k].steps)!==JSON.stringify(h.shapes[k].steps));"
+         "   return differ.length>keys.length/2 ? `OK ${differ.length}/${keys.length} accents sung differently`"
+         "     : `only ${differ.length}/${keys.length} differ`;}))()"),
+        ("the whole haftarah can be chanted in one go",
+         "(()=>{__t.openFirst(); const card=__t.q('.aliyah.haftarah');"
+         " if(!card) return 'no whole-haftarah card';"
+         " const go=card.querySelector('.al-go'); if(!go) return 'card is locked: '+card.textContent.trim().slice(0,60);"
+         " go.click(); const h=__t.q('.aliyah-view .phead h2');"
+         " return h&&/Haftarah/.test(h.textContent) ? 'OK '+h.textContent.replace(/\\s+/g,' ').trim()"
+         "   : 'reader did not open';})()"),
+        ("leaving it returns to the pesukim",
+         "(()=>{const b=__t.q('#alBack'); if(!b) return 'no back button'; b.click();"
+         " return __t.all('.alsec').length===1 ? 'OK back to the haftarah' : 'lost the section';})()"),
+    ]),
     ("shema", [
         ("the excerpt shows only its own passage",
          "(()=>{const titles=__t.all('.alsec-label').map(e=>e.firstChild.textContent.trim());"
@@ -361,6 +396,188 @@ READING_STEPS = [
          " const t=__t.q('#practice .phead h2').textContent;"
          " return /6:4/.test(t) ? 'OK '+t.trim() : t.trim();})()"),
     ]),
+]
+
+
+# Any passage, any book. This one isn't in the manifest — the reading is assembled
+# at runtime from data/tanakh/ — so the probe drives the picker the way a reader
+# would, then checks the passage behaves like every other reading.
+CUSTOM_STEPS = [
+    ("the picker offers every book of the Tanakh, by section",
+     "(()=>{__t.q('#btnAnyPassage').click();"
+     " return __t.settle(()=>__t.all('#crBook option').length>30, null, null, 10000).then(()=>{"
+     "   const groups=__t.all('#crBook optgroup').map(o=>o.label);"
+     "   const books=__t.all('#crBook option').length;"
+     "   return books>=39&&groups.length===3 ? `OK ${books} books in ${groups.join(' | ')}`"
+     "     : `${books} books, groups: ${groups.join('|')}`;});})()"),
+    ("picking a Torah book offers its parashiyot",
+     "(()=>{const sel=__t.q('#crBook'); sel.value='genesis'; sel.dispatchEvent(new Event('change'));"
+     " const label=__t.q('#crScopeLabel').textContent;"
+     " const first=__t.q('#crScope').options[0].textContent;"
+     " const n=__t.all('#crScope option').length;"
+     " return label==='Parashah'&&n===12&&/Bereshit/.test(first) ? `OK 12 parashiyot, from ${first}`"
+     "   : `${label}: ${n} options, first ${first}`;})()"),
+    ("picking a parashah proposes the whole of it",
+     "(()=>{const s=__t.q('#crScope'); s.value='1'; s.dispatchEvent(new Event('change'));"
+     " const t=__t.q('#crPreview').textContent.replace(/\\s+/g,' ').trim();"
+     " return /Genesis 6:9-11:32/.test(t) ? 'OK '+t : t;})()"),
+    ("outside the Torah the scope is the chapter",
+     "(()=>{const sel=__t.q('#crBook'); sel.value='jonah'; sel.dispatchEvent(new Event('change'));"
+     " const label=__t.q('#crScopeLabel').textContent, n=__t.all('#crScope option').length;"
+     " return label==='Chapter'&&n===4 ? 'OK 4 chapters' : `${label}: ${n} options`;})()"),
+    ("narrowing to a pasuk range restates the reference in both languages",
+     "(()=>{const set=(id,v)=>{const e=__t.q('#'+id); e.value=String(v); e.dispatchEvent(new Event('change'));};"
+     " set('crFromC',1); set('crFromV',1); set('crToC',1); set('crToV',10);"
+     " const t=__t.q('#crPreview').textContent.replace(/\\s+/g,' ').trim();"
+     " return /Jonah 1:1-10/.test(t)&&/\\u05d9\\u05d5\\u05e0\\u05d4/.test(t) ? 'OK '+t : t;})()"),
+    ("opening it puts the passage in the reading menu and on screen",
+     "(()=>{__t.q('#crOpen').click();"
+     " return __t.settle(()=>/^custom:/.test(__t.q('#parashah').value)"
+     "   && __t.q('#customModal').hidden && __t.all('.alsec').length>0, null, null, 15000).then(()=>{"
+     "   const v=__t.q('#parashah').value, title=__t.q('#textTitle').textContent.trim();"
+     "   return v==='custom:jonah:1.1-1.10'&&/Jonah 1:1-10/.test(title)"
+     "     ? `OK ${v} \\u2014 ${title}` : `menu=${v} title=${title}`;});})()"),
+    ("its pesukim are the ones asked for",
+     "(()=>{__t.all('.alsec-head').forEach(h=>{if(!h.closest('.alsec').classList.contains('open')) h.click();});"
+     " const rows=__t.all('.verse .vnum').map(e=>e.textContent.trim());"
+     " return rows.length===10&&/1:1$/.test(rows[0])&&/1:10$/.test(rows[9])"
+     "   ? `OK 10 pesukim, ${rows[0]} \\u2026 ${rows[9]}` : `${rows.length} pesukim: ${rows.join(' ')}`;})()"),
+    ("a picked passage is chanted in the haftarah melody",
+     "(()=>{const chip=__t.q('#guideStyle');"
+     " return chip&&/Haftarah/.test(chip.textContent) ? 'OK '+chip.textContent.trim()"
+     "   : 'style chip says '+(chip?chip.textContent:'(absent)');})()"),
+    ("no recorded chant is offered for words nobody recorded",
+     "(()=>{__t.pickVerse();"
+     " return document.getElementById('btnReal') ? 'offered a chant that does not exist'"
+     "   : 'OK absent \\u2014 the synthesized guide takes its place';})()"),
+    ("a whole pasuk of it still gets a coach line, from the measured shapes",
+     "(()=>{__t.unlock('tanakh:jonah:1.1'); __t.pickVerse(); __t.stage(4);"
+     " if (__t.q('.locked-page')) return 'whole-verse stage locked';"
+     " const w=__t.all('#timelineWords .w').length;"
+     " return w>4 ? `OK ${w} words on the coach timeline` : `${w} word(s) — no coach built`;})()"),
+    ("the English column fills in on demand",
+     "(()=>{const t=__t.q('#tgEnglish'); if(t.classList.contains('on')) t.click();"
+     " t.click();"
+     " return __t.settle(()=>__t.all('.ventext').length>0, null, null, 10000).then(()=>{"
+     "   const n=__t.all('.ventext').length; const first=n?__t.q('.ventext').textContent.trim():'';"
+     "   t.click();"
+     "   return n>0 ? `OK ${n} verses translated: \"${first.slice(0,40)}\u2026\"` : 'no translation arrived';});})()"),
+    ("the whole passage can be chanted in one go",
+     "(()=>{__t.q('#tgVowels').click(); __t.q('#tgVowels').click();"
+     " __t.openFirst(); const card=__t.q('.aliyah.passage');"
+     " if(!card) return 'no whole-passage card';"
+     " const go=card.querySelector('.al-go'); if(!go) return 'card is locked: '+card.textContent.trim().slice(0,60);"
+     " go.click(); const h=__t.q('.aliyah-view .phead h2');"
+     " return h&&/Whole passage/.test(h.textContent) ? 'OK '+h.textContent.replace(/\\s+/g,' ').trim()"
+     "   : 'reader did not open';})()"),
+    ("its progress is filed under the book and where the passage starts",
+     "(()=>{const k=Object.keys(JSON.parse(localStorage.getItem('cantillate.v1')||'{}').levels||{});"
+     " const mine=k.filter(x=>x.startsWith('tanakh:jonah:1.1:'));"
+     " return mine.length ? `OK ${mine.length} keys under tanakh:jonah:1.1` : 'nothing filed under the book';})()"),
+    ("the passage is remembered, so it survives a reload",
+     "(()=>{const raw=JSON.parse(localStorage.getItem('cantillate.customRanges')||'[]');"
+     " return raw.length&&raw[0].book==='jonah' ? `OK ${raw.length} remembered` : 'not remembered: '+JSON.stringify(raw);})()"),
+]
+
+# Naming a passage. A reference is how a passage is found; a name is what the
+# reader calls it — so a named one has to reach the Reading menu under that name,
+# come back under it after a reload, and give the name up without taking the
+# passage or anything practiced in it away.
+NAMED_STEPS = [
+    ("a passage can be given a name",
+     "(()=>{__t.q('#btnAnyPassage').click();"
+     " return __t.settle(()=>__t.all('#crBook option').length>30, null, null, 10000).then(()=>{"
+     "   const set=(id,v)=>{const e=__t.q('#'+id); e.value=String(v); e.dispatchEvent(new Event('change'));};"
+     "   set('crBook','jonah'); set('crFromC',2); set('crFromV',1); set('crToC',2); set('crToV',10);"
+     "   const box=__t.q('#crName'); box.value='Yom Kippur mincha';"
+     "   box.dispatchEvent(new Event('input')); __t.q('#crSave').click();"
+     "   const saved=JSON.parse(localStorage.getItem('cantillate.v1')||'{}').passages;"
+     "   const list=(saved&&saved.list)||[];"
+     "   return list.length===1&&list[0].name==='Yom Kippur mincha'&&list[0].book==='jonah'"
+     "     ? `OK saved \"${list[0].name}\"` : 'saved: '+JSON.stringify(list);});})()"),
+    ("the name, not the reference, is what the reading menu shows",
+     "(()=>{const g=__t.all('#parashah optgroup').find(o=>o.label==='Any passage');"
+     " if(!g) return 'no Any passage group';"
+     " const o=[...g.children].find(x=>x.value==='custom:jonah:2.1-2.10');"
+     " return o&&o.textContent==='Yom Kippur mincha' ? `OK ${o.textContent} (${o.value})`"
+     "   : 'menu says: '+[...g.children].map(x=>x.textContent).join(' | ');})()"),
+    ("the reference it stands for is still there to be seen",
+     "(()=>{const g=__t.all('#parashah optgroup').find(o=>o.label==='Any passage');"
+     " const o=[...g.children].find(x=>x.value==='custom:jonah:2.1-2.10');"
+     " return /Jonah 2:1-10/.test(o.title) ? 'OK '+o.title.split(' · ')[0] : 'title: '+o.title;})()"),
+    ("a saved passage is offered by name in the picker, and Save becomes Rename",
+     "(()=>{const chip=__t.q('#crSaved .cr-chip');"
+     " const label=__t.q('#crSaved .label');"
+     " const btn=__t.q('#crSave').textContent;"
+     " return chip&&/Yom Kippur mincha/.test(chip.textContent)&&/Jonah 2:1-10/.test(chip.textContent)"
+     "   && label.textContent==='Saved' && btn==='Rename'"
+     "   ? `OK ${chip.textContent.replace(/\\s+/g,' ')} · button says ${btn}`"
+     "   : `chip=${chip?chip.textContent:'(none)'} button=${btn}`;})()"),
+    ("opening it by name puts the name on the passage itself",
+     "(()=>{__t.q('#crSaved .cr-chip').click();"
+     " return __t.settle(()=>__t.q('#parashah').value==='custom:jonah:2.1-2.10'"
+     "   && __t.all('.alsec').length>0, null, null, 15000).then(()=>{"
+     "   const title=__t.q('#textTitle').textContent.replace(/\\s+/g,' ').trim();"
+     "   const head=__t.q('.aliyot-head') ? __t.q('.aliyot-head').textContent.replace(/\\s+/g,' ').trim() : '';"
+     "   return /^Yom Kippur mincha/.test(title)&&/Jonah 2:1-10/.test(title)&&/^Yom Kippur mincha/.test(head)"
+     "     ? `OK ${title}` : `title=${title} head=${head}`;});})()"),
+    ("naming it moved nothing: progress is still filed under book and first pasuk",
+     "(()=>{__t.unlock('tanakh:jonah:2.1'); __t.pickVerse(); __t.stage(4);"
+     " if (__t.q('.locked-page')) return 'the stage is locked \\u2014 progress moved with the name';"
+     " const w=__t.all('#timelineWords .w').length;"
+     " return w>2 ? `OK still under tanakh:jonah:2.1 (${w} words on the coach timeline)`"
+     "   : `${w} word(s) — no coach built`;})()"),
+    ("a named passage isn't listed twice, once under each name",
+     "(()=>{__t.q('#btnAnyPassage').click();"
+     " return __t.settle(()=>!!__t.q('#crSaved .cr-chip'), null, null, 10000).then(()=>{"
+     "   const saved=__t.all('#crSaved .cr-chip').map(b=>b.dataset.from+'-'+b.dataset.to);"
+     "   const recent=__t.all('#crRecent .cr-chip').map(b=>b.dataset.from+'-'+b.dataset.to);"
+     "   __t.key('Escape');"
+     "   return saved.includes('2.1-2.10')&&!recent.includes('2.1-2.10')"
+     "     ? `OK in Saved (${saved.join()}), not repeated in Recent (${recent.join()})`"
+     "     : `saved=${saved.join()} recent=${recent.join()}`;});})()"),
+]
+
+# After the second reload: a name is deliberate work, so unlike the recents it
+# must survive on its own, and giving it up must not take the passage with it.
+NAMED_AFTER_RELOAD_STEPS = [
+    ("the name comes back with the passage after a reload",
+     "(()=>{const g=__t.all('#parashah optgroup').find(o=>o.label==='Any passage');"
+     " if(!g) return 'no Any passage group';"
+     " const o=[...g.children].find(x=>x.value==='custom:jonah:2.1-2.10');"
+     " return o&&o.textContent==='Yom Kippur mincha' ? 'OK '+o.textContent"
+     "   : 'menu says: '+[...g.children].map(x=>x.textContent).join(' | ');})()"),
+    ("forgetting the name keeps the passage and its progress",
+     "(()=>{__t.q('#btnAnyPassage').click();"
+     " return __t.settle(()=>!!__t.q('#crSaved .cr-forget'), null, null, 10000).then(()=>{"
+     "   __t.q('#crSaved .cr-forget').click();"
+     "   const saved=JSON.parse(localStorage.getItem('cantillate.v1')||'{}').passages;"
+     "   const levels=Object.keys(JSON.parse(localStorage.getItem('cantillate.v1')||'{}').levels||{})"
+     "     .filter(k=>k.startsWith('tanakh:jonah:2.1:'));"
+     "   const g=__t.all('#parashah optgroup').find(o=>o.label==='Any passage');"
+     "   const o=[...g.children].find(x=>x.value==='custom:jonah:2.1-2.10');"
+     "   const named=((saved&&saved.list)||[]).length;"
+     "   __t.key('Escape');"
+     "   return named===0&&o&&/Jonah 2:1-10/.test(o.textContent)&&levels.length"
+     "     ? `OK back to \"${o.textContent}\", ${levels.length} keys of progress kept`"
+     "     : `named=${named} menu=${o?o.textContent:'(gone)'} progress=${levels.length}`;});})()"),
+]
+
+# After the reload: the remembered passage must come back as a menu entry without
+# the picker being touched, and open from it.
+RESTORED_STEPS = [
+    ("a remembered passage is back in the reading menu",
+     "(()=>{const g=__t.all('#parashah optgroup').find(o=>o.label==='Any passage');"
+     " if(!g) return 'no Any passage group';"
+     " const opts=[...g.children].map(o=>o.value);"
+     " return opts.includes('custom:jonah:1.1-1.10') ? 'OK '+opts.join(', ') : opts.join(', ');})()"),
+    ("choosing it re-opens the passage with its progress",
+     "(()=>{const s=__t.q('#parashah'); s.value='custom:jonah:1.1-1.10';"
+     " s.dispatchEvent(new Event('change'));"
+     " return __t.settle(()=>/Jonah 1:1-10/.test(__t.q('#textTitle').textContent), null, null, 15000).then(()=>{"
+     "   __t.openFirst(); const card=__t.q('.aliyah.passage');"
+     "   const ready=card&&card.classList.contains('ready');"
+     "   return ready ? 'OK re-opened, still unlocked' : 'reopened but progress was lost';});})()"),
 ]
 
 
@@ -529,6 +746,26 @@ def main():
                 if loaded:
                     break
             run_steps(c, steps, failures)
+
+        print("--- any passage, any book ---")
+        run_steps(c, CUSTOM_STEPS, failures)
+
+        print("--- after a reload, the remembered passage ---")
+        if not c.reload():
+            print("FAIL app never re-rendered after the reload")
+            failures.append("reload")
+        else:
+            run_steps(c, RESTORED_STEPS, failures)
+
+        print("--- a passage saved under a name ---")
+        run_steps(c, NAMED_STEPS, failures)
+
+        print("--- after a reload, the named passage ---")
+        if not c.reload():
+            print("FAIL app never re-rendered after the second reload")
+            failures.append("reload")
+        else:
+            run_steps(c, NAMED_AFTER_RELOAD_STEPS, failures)
 
         c.drain(0.5)
         if c.problems:

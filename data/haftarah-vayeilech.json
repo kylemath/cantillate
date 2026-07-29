@@ -1,0 +1,171 @@
+{
+  "slug": "haftarah-vayeilech",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 55:6-56:8",
+  "heRef": "ישעיהו נ״ה:ו-י״ג, נ״ו:א-ח",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 55,
+      "v": 6,
+      "ref": "55:6",
+      "text": "דִּרְשׁ֥וּ יְהֹוָ֖ה בְּהִמָּֽצְא֑וֹ קְרָאֻ֖הוּ בִּֽהְיוֹת֥וֹ קָרֽוֹב׃",
+      "en": "Seek the Lord while he may be found, call upon him while he is near:"
+    },
+    {
+      "n": 2,
+      "c": 55,
+      "v": 7,
+      "ref": "55:7",
+      "text": "יַעֲזֹ֤ב רָשָׁע֙ דַּרְכּ֔וֹ וְאִ֥ישׁ אָ֖וֶן מַחְשְׁבֹתָ֑יו וְיָשֹׁ֤ב אֶל־יְהֹוָה֙ וִֽירַחֲמֵ֔הוּ וְאֶל־אֱלֹהֵ֖ינוּ כִּֽי־יַרְבֶּ֥ה לִסְלֽוֹחַ׃",
+      "en": "let the wicked forsake his way, and the unrighteous man his thoughts: and let him return to the Lord, and he will have mercy upon him; and to our God, for he will abundantly pardon."
+    },
+    {
+      "n": 3,
+      "c": 55,
+      "v": 8,
+      "ref": "55:8",
+      "text": "כִּ֣י לֹ֤א מַחְשְׁבוֹתַי֙ מַחְשְׁב֣וֹתֵיכֶ֔ם וְלֹ֥א דַרְכֵיכֶ֖ם דְּרָכָ֑י נְאֻ֖ם יְהֹוָֽה׃",
+      "en": "For my thoughts are not your thoughts, neither are your ways my ways, says the Lord."
+    },
+    {
+      "n": 4,
+      "c": 55,
+      "v": 9,
+      "ref": "55:9",
+      "text": "כִּֽי־גָבְה֥וּ שָׁמַ֖יִם מֵאָ֑רֶץ כֵּ֣ן גָּבְה֤וּ דְרָכַי֙ מִדַּרְכֵיכֶ֔ם וּמַחְשְׁבֹתַ֖י מִמַּחְשְׁבֹֽתֵיכֶֽם׃",
+      "en": "For as the heavens are higher than the earth, so are my ways higher than your ways, and my thoughts than your thoughts."
+    },
+    {
+      "n": 5,
+      "c": 55,
+      "v": 10,
+      "ref": "55:10",
+      "text": "כִּ֡י כַּאֲשֶׁ֣ר יֵרֵד֩ הַגֶּ֨שֶׁם וְהַשֶּׁ֜לֶג מִן־הַשָּׁמַ֗יִם וְשָׁ֙מָּה֙ לֹ֣א יָשׁ֔וּב כִּ֚י אִם־הִרְוָ֣ה אֶת־הָאָ֔רֶץ וְהוֹלִידָ֖הּ וְהִצְמִיחָ֑הּ וְנָ֤תַן זֶ֙רַע֙ לַזֹּרֵ֔עַ וְלֶ֖חֶם לָאֹכֵֽל׃",
+      "en": "For as the rain comes down, and the snow from heaven, and returns not there, but waters the earth, and makes it bring forth and bud, that it may give seed to the sower, and bread to the eater:"
+    },
+    {
+      "n": 6,
+      "c": 55,
+      "v": 11,
+      "ref": "55:11",
+      "text": "כֵּ֣ן יִהְיֶ֤ה דְבָרִי֙ אֲשֶׁ֣ר יֵצֵ֣א מִפִּ֔י לֹא־יָשׁ֥וּב אֵלַ֖י רֵיקָ֑ם כִּ֤י אִם־עָשָׂה֙ אֶת־אֲשֶׁ֣ר חָפַ֔צְתִּי וְהִצְלִ֖יחַ אֲשֶׁ֥ר שְׁלַחְתִּֽיו׃",
+      "en": "so shall my word be that goes out of my mouth: it shall not return to me void, but it shall accomplish that which I please, and it shall prosper in that for which I sent it."
+    },
+    {
+      "n": 7,
+      "c": 55,
+      "v": 12,
+      "ref": "55:12",
+      "text": "כִּֽי־בְשִׂמְחָ֣ה תֵצֵ֔אוּ וּבְשָׁל֖וֹם תּוּבָל֑וּן הֶהָרִ֣ים וְהַגְּבָע֗וֹת יִפְצְח֤וּ לִפְנֵיכֶם֙ רִנָּ֔ה וְכׇל־עֲצֵ֥י הַשָּׂדֶ֖ה יִמְחֲאוּ־כָֽף׃",
+      "en": "For you shall go out with joy, and be led forth with peace: the mountains and the hills shall break forth before you into singing, and all the trees of the field shall clap their hands."
+    },
+    {
+      "n": 8,
+      "c": 55,
+      "v": 13,
+      "ref": "55:13",
+      "text": "תַּ֤חַת הַֽנַּעֲצוּץ֙ יַעֲלֶ֣ה בְר֔וֹשׁ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(תחת)</span> <span class=\"mam-kq-q\">[וְתַ֥חַת]</span></span> הַסִּרְפַּ֖ד יַעֲלֶ֣ה הֲדַ֑ס וְהָיָ֤ה לַֽיהֹוָה֙ לְשֵׁ֔ם לְא֥וֹת עוֹלָ֖ם לֹ֥א יִכָּרֵֽת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Instead of the thorn shall the cypress come up, and instead of the nettle shall the myrtle tree come up: and it shall be to the Lord for a name, for an everlasting sign that shall not be cut off."
+    },
+    {
+      "n": 9,
+      "c": 56,
+      "v": 1,
+      "ref": "56:1",
+      "text": "כֹּ֚ה אָמַ֣ר יְהֹוָ֔ה שִׁמְר֥וּ מִשְׁפָּ֖ט וַעֲשׂ֣וּ צְדָקָ֑ה כִּֽי־קְרוֹבָ֤ה יְשׁוּעָתִי֙ לָב֔וֹא וְצִדְקָתִ֖י לְהִגָּלֽוֹת׃",
+      "en": "Thus says the Lord, Keep judgment, and do justice: for my salvation is near to come, and my righteousness to be revealed."
+    },
+    {
+      "n": 10,
+      "c": 56,
+      "v": 2,
+      "ref": "56:2",
+      "text": "אַשְׁרֵ֤י אֱנוֹשׁ֙ יַֽעֲשֶׂה־זֹּ֔את וּבֶן־אָדָ֖ם יַחֲזִ֣יק בָּ֑הּ שֹׁמֵ֤ר שַׁבָּת֙ מֵֽחַלְּל֔וֹ וְשֹׁמֵ֥ר יָד֖וֹ מֵעֲשׂ֥וֹת כׇּל־רָֽע׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Happy is the man that does this, and the son of man that lays hold on it; that keeps the Sabbath and does not profane it, and keeps his hand from doing any evil."
+    },
+    {
+      "n": 11,
+      "c": 56,
+      "v": 3,
+      "ref": "56:3",
+      "text": "וְאַל־יֹאמַ֣ר בֶּן־הַנֵּכָ֗ר הַנִּלְוָ֤ה אֶל־יְהֹוָה֙ לֵאמֹ֔ר הַבְדֵּ֧ל יַבְדִּילַ֛נִי יְהֹוָ֖ה מֵעַ֣ל עַמּ֑וֹ וְאַל־יֹאמַר֙ הַסָּרִ֔יס הֵ֥ן אֲנִ֖י עֵ֥ץ יָבֵֽשׁ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Neither let the son of the stranger, that has joined himself to the Lord, speak, saying, The Lord shall surely separate me from his people: neither let the eunuch say, Behold, I am a dry tree."
+    },
+    {
+      "n": 12,
+      "c": 56,
+      "v": 4,
+      "ref": "56:4",
+      "text": "כִּי־כֹ֣ה&thinsp;<b>׀</b> אָמַ֣ר יְהֹוָ֗ה לַסָּֽרִיסִים֙ אֲשֶׁ֤ר יִשְׁמְרוּ֙ אֶת־שַׁבְּתוֹתַ֔י וּבָחֲר֖וּ בַּאֲשֶׁ֣ר חָפָ֑צְתִּי וּמַחֲזִיקִ֖ים בִּבְרִיתִֽי׃",
+      "en": "For thus says the Lord to the eunuchs that keep my sabbaths, and choose the things that please me, and take hold of my covenant;"
+    },
+    {
+      "n": 13,
+      "c": 56,
+      "v": 5,
+      "ref": "56:5",
+      "text": "וְנָתַתִּ֨י לָהֶ֜ם בְּבֵיתִ֤י וּבְחֽוֹמֹתַי֙ יָ֣ד וָשֵׁ֔ם ט֖וֹב מִבָּנִ֣ים וּמִבָּנ֑וֹת שֵׁ֤ם עוֹלָם֙ אֶתֶּן־ל֔וֹ אֲשֶׁ֖ר לֹ֥א יִכָּרֵֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And to them will I give in my house and within my walls a memorial better than sons and daughters: I will give them an everlasting name, that shall not be cut off."
+    },
+    {
+      "n": 14,
+      "c": 56,
+      "v": 6,
+      "ref": "56:6",
+      "text": "וּבְנֵ֣י הַנֵּכָ֗ר הַנִּלְוִ֤ים עַל־יְהֹוָה֙ לְשָׁ֣רְת֔וֹ וּֽלְאַהֲבָה֙ אֶת־שֵׁ֣ם יְהֹוָ֔ה לִֽהְי֥וֹת ל֖וֹ לַעֲבָדִ֑ים כׇּל־שֹׁמֵ֤ר שַׁבָּת֙ מֵֽחַלְּל֔וֹ וּמַחֲזִיקִ֖ים בִּבְרִיתִֽי׃",
+      "en": "Also the sons of the stranger, that join themselves to the Lord, to serve him, and to love the name of the Lord, to be his servants, every one that keeps the sabbath and does not profane it, and all that hold fast to my covenant."
+    },
+    {
+      "n": 15,
+      "c": 56,
+      "v": 7,
+      "ref": "56:7",
+      "text": "וַהֲבִיאוֹתִ֞ים אֶל־הַ֣ר קׇדְשִׁ֗י וְשִׂמַּחְתִּים֙ בְּבֵ֣ית תְּפִלָּתִ֔י עוֹלֹתֵיהֶ֧ם וְזִבְחֵיהֶ֛ם לְרָצ֖וֹן עַֽל־מִזְבְּחִ֑י כִּ֣י בֵיתִ֔י בֵּית־תְּפִלָּ֥ה יִקָּרֵ֖א לְכׇל־הָעַמִּֽים׃",
+      "en": "Even them will I bring to my holy mountain, and make them joyful in my house of prayer: their burnt offerings and their sacrifices shall be accepted on my altar; for my house shall be called a house of prayer for all peoples."
+    },
+    {
+      "n": 16,
+      "c": 56,
+      "v": 8,
+      "ref": "56:8",
+      "text": "נְאֻם֙ אֲדֹנָ֣י יֱהֹוִ֔ה מְקַבֵּ֖ץ נִדְחֵ֣י יִשְׂרָאֵ֑ל ע֛וֹד אֲקַבֵּ֥ץ עָלָ֖יו לְנִקְבָּצָֽיו׃",
+      "en": "The Lord God who gathers the outcasts of Yisra᾽el says, Yet will I gather others to him, beside those of him that are already gathered."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Vayeilech",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 52
+  },
+  "parashah": {
+    "en": "Haftarat Vayeilech",
+    "translit": "Haftarat Vayeilech",
+    "he": "הפטרת וילך"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 16,
+        "ref": "55:6–56:8"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

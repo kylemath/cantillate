@@ -16,7 +16,7 @@
  */
 
 // Bump VERSION to invalidate all previously cached content on next activate.
-const VERSION = 'v-c9bdab9b99a9';
+const VERSION = 'v-5d436a64516b';
 const SHELL_CACHE = 'cantillate-shell-' + VERSION;
 const DATA_CACHE = 'cantillate-data-' + VERSION;
 
@@ -45,6 +45,7 @@ const SHELL_ASSETS = [
   './js/viz.js',
   './js/levels.js',
   './js/aliyot.js',
+  './js/tanakh.js',
   './js/store.js',
   './js/auth.js',
   './js/firebase-config.js',
@@ -219,6 +220,7 @@ function isShellAsset(href) {
 
 function isCacheableData(path) {
   // data/*.json (incl. large *_pitch*.json), data/pitch/<slug>/*.json shards,
+  // data/tanakh/<book>.json (whichever books the reader has actually opened),
   // and any font files under fonts/.
   if (/\/data\/.+\.json$/i.test(path)) {
     return true;
