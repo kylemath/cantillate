@@ -373,13 +373,17 @@ body.guided.aliyah-open #practice .aliyah-view { display: flex; flex-direction: 
 
 .g-top, .g-card, .g-bar, .g-menu, .g-menu-backdrop { display: none; }
 
+/* Both fixed bars are filled rather than frosted. A backdrop-filter makes the
+   browser re-blur everything underneath whenever that region is repainted, and
+   these two sit over the coach contour for the whole of a take on a phone that
+   is already busy listening. At the alpha they were using there was nothing
+   showing through to blur in the first place. */
 body.guided .g-top {
   position: fixed; top: 0; inset-inline: 0; z-index: 60;
   height: var(--g-top-h);
   display: flex; align-items: center; gap: 10px; padding: 0 10px;
-  background: rgba(15, 18, 32, 0.96);
+  background: rgb(15, 18, 32);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(8px);
 }
 .g-menu-btn {
   width: 38px; height: 38px; flex: 0 0 auto;
@@ -480,9 +484,8 @@ body.guided .g-bar {
   display: flex; gap: 8px; align-items: stretch;
   padding: 8px 12px calc(8px + var(--g-safe-b));
   min-height: var(--g-bar-h);
-  background: rgba(15, 18, 32, 0.97);
+  background: rgb(15, 18, 32);
   border-top: 1px solid var(--line);
-  backdrop-filter: blur(8px);
 }
 .g-act {
   flex: 1 1 0; padding: 14px 8px; font: inherit; font-size: 15px; font-weight: 700;
@@ -500,9 +503,14 @@ body.guided .g-bar {
    5. The guided menu (progress, minimal settings, change of plan)
    ======================================================================== */
 
+/* The scrim does the separating on its own. It used to be a light wash plus a
+   blur, which meant blurring the whole screen behind it on every frame of the
+   fade — the one moment the reader is watching the menu move. A darker wash
+   reads the same and costs a fill; it stays short of opaque so the practice
+   screen is still faintly there to come back to. */
 body.guided .g-menu-backdrop {
   display: block; position: fixed; inset: 0; z-index: 90;
-  background: rgba(6, 8, 18, 0.6); backdrop-filter: blur(2px);
+  background: rgba(6, 8, 18, 0.86);
   opacity: 0; pointer-events: none; transition: opacity .2s;
 }
 body.guided.g-menu-open .g-menu-backdrop { opacity: 1; pointer-events: auto; }
