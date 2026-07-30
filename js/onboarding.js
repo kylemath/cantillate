@@ -472,8 +472,8 @@ function accountBody() {
     return `
       <h2 class="ob-h">Save ${whose} progress</h2>
       <p class="ob-sub">Signing in isn\u2019t reachable right now, so practice will be saved in this
-        browser. Nothing is lost \u2014 sign in later from the top of the screen and everything done
-        meanwhile goes up with it.</p>
+        browser. Nothing is lost \u2014 sign in later from the \u2630 menu and everything done meanwhile
+        goes up with it.</p>
       <button class="ob-go" id="obNext">Carry on</button>`;
   }
 
@@ -490,7 +490,7 @@ function accountBody() {
     ${anon ? `<p class="ob-note">You\u2019re posting anonymously at the moment. Signing in keeps that
       nickname and everything already earned under it.</p>` : ''}
     ${signinFailed ? `<p class="ob-warn">That didn\u2019t finish \u2014 the popup may have been closed or
-      blocked. Try again, or carry on and sign in later from the top of the screen.</p>` : ''}
+      blocked. Try again, or carry on and sign in later from the \u2630 menu.</p>` : ''}
     <button class="ob-go" id="obSignIn" ${loading || signinBusy ? 'disabled' : ''}>
       <span class="ob-g" aria-hidden="true">G</span> ${label}</button>
     <button class="ob-go ob-ghost" id="obSkipAccount">Not now \u2014 keep it on this device</button>`;
@@ -535,8 +535,8 @@ function savingNote() {
       ? ` (${escapeHtml(as)})` : ''} \u2014 every take, on every device you sign in on.</p>`;
   }
   if (auth.readyState() === 'unconfigured') return '';
-  return `<p class="ob-note">Saving in this browser only. You can sign in any time from the top of
-    the screen, and everything done so far goes up with it.</p>`;
+  return `<p class="ob-note">Saving in this browser only. You can sign in any time from the \u2630 menu,
+    and everything done so far goes up with it.</p>`;
 }
 
 // --- Wiring -----------------------------------------------------------------

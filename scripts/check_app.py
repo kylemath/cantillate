@@ -906,6 +906,16 @@ GUIDED_STEPS = [
      "(()=>{__t.tap('.g-menu-btn'); const rows=__t.all('.g-row').map(r=>__t.text(r));"
      " return rows.length===2 && /Text size/.test(rows[0]) && /pitch/.test(rows[1])"
      "   ? `OK ${rows.join(' / ')}` : `settings were ${JSON.stringify(rows)}`;})()"),
+    # A reader who said "not now" to the wizard's account screen, or who has since
+    # been handed a different phone, must not have to go to the workshop to sign in:
+    # guided mode owns the whole screen precisely so they never see its topbar.
+    ("signing in is offered here too, for whoever put it off in the wizard",
+     "(()=>{const btn=__t.q('#gSignIn'); if(!btn) return 'no sign-in offered in the menu';"
+     " const heads=__t.all('.g-menu-h').map(h=>__t.text(h));"
+     " const note=__t.text([...__t.all('.g-menu-note')].find(n=>/browser only/.test(n.textContent)));"
+     " return heads.includes('Saving your progress') && /Sign in with Google/.test(__t.text(btn)) && note"
+     "   ? `OK \u201c${__t.text(btn)}\u201d \u2014 ${note.slice(0, 60)}`"
+     "   : `heads=${JSON.stringify(heads)} button=${__t.text(btn)} note=${note}`;})()"),
     ("the workshop is one tap away, and the way back is the chip in its header",
      "(()=>{__t.tap('#gExpert');"
      " return __t.settle(()=>!document.body.classList.contains('guided'), null, null, 6000)"
