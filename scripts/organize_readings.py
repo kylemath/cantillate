@@ -59,6 +59,53 @@ def reading_length(entry):
         return 0
 
 
+def reading_covers(entry):
+    """Which pesukim a reading actually contains: {book, from, to}.
+
+    Stamped into the manifest so the app can answer "is there a recording of these
+    words?" without fetching thirty data files. That question is what stands between
+    a reader who picks an arbitrary passage and the cantor: a range that falls inside
+    a recorded reading can be chanted along with a human voice, and one that doesn't
+    has to be taught from the measured trope shapes — and the app should say which
+    before the reader commits to it, not after.
+
+    An excerpt covers its `range` within the base file rather than the whole of it,
+    which is the difference between the Shema and all of Va'etchanan.
+    """
+    path = os.path.join(HERE, entry.get("file", ""))
+    try:
+        doc = json.load(open(path, encoding="utf-8"))
+    except (FileNotFoundError, ValueError, TypeError):
+        return None
+    verses = doc.get("verses") or []
+    if not verses:
+        return None
+    rng = entry.get("range")
+    if isinstance(rng, list) and len(rng) == 2:
+        lo, hi = max(1, rng[0]), min(len(verses), rng[1])
+        if lo > hi:
+            return None
+        verses = verses[lo - 1:hi]
+    book = (doc.get("book") or {}).get("en")
+    chapter = doc.get("chapter")
+
+    def ref_of(v):
+        c = v.get("c") if v.get("c") is not None else chapter
+        # A single-chapter reading numbers its pesukim only by position in the
+        # reading, which in that one case IS the verse number.
+        n = v.get("v")
+        if n is None and chapter is not None:
+            n = v.get("n")
+        if c is None or n is None:
+            return None
+        return [c, n]
+
+    first, last = ref_of(verses[0]), ref_of(verses[-1])
+    if not book or not first or not last:
+        return None
+    return {"book": book, "from": first, "to": last}
+
+
 def group_label(book_en, book):
     translit = (book or {}).get("translit") or TRANSLIT.get(book_en) or book_en
     return f"{translit} \u00b7 {book_en}" if book_en and translit != book_en else (book_en or "Readings")
@@ -81,6 +128,15 @@ def organize(quiet=False):
     parashiyot = [m for m in manifest if kind_of(m) == "parashah"]
     haftarot = [m for m in manifest if kind_of(m) == "haftarah"]
     others = [m for m in manifest if kind_of(m) not in ("parashah", "haftarah")]
+
+    # Every entry says which pesukim it covers, drills included where they have any
+    # (a drill's invented words have none, and keep the key off).
+    for m in manifest:
+        covers = reading_covers(m)
+        if covers:
+            m["covers"] = covers
+        else:
+            m.pop("covers", None)
 
     placed = []
     for m in parashiyot:

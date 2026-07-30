@@ -30,12 +30,27 @@ function splitRef(ref) {
   return { ref: ref.slice(0, at).trim(), reason: ref.slice(at + 1).trim() };
 }
 
+function bookOf(ref) {
+  const m = /^(.*?)\s+\d+:\d+/.exec(ref || '');
+  return m ? m[1] : '';
+}
+
+// One of the pooled seven-aliyah divisions (see scripts/build_calendar.py), with
+// the book put back: the pool stores "7:12-8:10" because every ref in a reading
+// names the same book, and the reader needs to be told which.
+function division(i, book) {
+  const pool = _doc && _doc.divisions;
+  if (!pool || !Array.isArray(pool[i])) return null;
+  return pool[i].map((s) => (book && /^\d/.test(s) ? `${book} ${s}` : s));
+}
+
 // One stored record as a readable object. `slugs` is always an array (a combined
 // week reads two parshiyot as one long reading, and either may be the one the
 // reader is preparing).
 export function normalize(r) {
   if (!r) return null;
   const torah = splitRef(r.t);
+  const book = bookOf(torah.ref);
   const maftir = splitRef(r.m);
   const haftarah = splitRef(r.h);
   return {
@@ -52,6 +67,14 @@ export function normalize(r) {
     maftirRef: maftir.ref,
     triMaftirRef: splitRef(r.tm).ref,
     haftarahRef: haftarah.ref,
+    // Where the seven aliyot fall, both ways round, so a reader called for one of
+    // them can be told which pesukim are theirs — the parashah's whole range says
+    // nothing about that, and only fifteen readings ship with divisions of their
+    // own. Each is a 7-element array, index 0 being the first aliyah.
+    aliyot: {
+      annual: division(r.aa, book),
+      triennial: division(r.at, book),
+    },
     // The one reason worth surfacing: on a special Shabbat the maftir and
     // haftarah are not the parashah's own, which changes what to prepare.
     special: maftir.reason || haftarah.reason || torah.reason || '',
@@ -174,6 +197,15 @@ export function triennialYearOfHebrewYear(hy) {
 
 // The triennial year in force on a given date, from the table (falling back to
 // the closed form for dates outside it).
+// The ref of a single aliyah (1-7) of a Shabbat's reading, on a cycle.
+export function aliyahRef(rec, n, cycle = 'annual') {
+  const set = rec && rec.aliyot
+    ? (cycle === 'triennial' ? rec.aliyot.triennial : rec.aliyot.annual)
+    : null;
+  const i = Number(n) - 1;
+  return (set && i >= 0 && set[i]) || '';
+}
+
 export function triennialYearOn(iso) {
   const rec = forDate(iso);
   if (rec && rec.triYear) return rec.triYear;

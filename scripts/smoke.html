@@ -395,6 +395,28 @@ try {
     'a date outside the table is reported as outside it');
   log(calendar.triennialYearOn(aWeek.date) === aWeek.triYear,
     'the triennial year of a date matches the table');
+
+  // Where the seven aliyot fall. Only fifteen readings ship with divisions of their
+  // own, so a reader called for one aliyah of any other week depends on these.
+  log(weeks.every((w) => w.aliyot && w.aliyot.annual && w.aliyot.annual.length === 7
+    && w.aliyot.triennial && w.aliyot.triennial.length === 7),
+    `all ${weeks.length} Shabbatot divide into seven aliyot, both cycles`);
+  const third = calendar.aliyahRef(aWeek, 3, 'triennial');
+  log(/^[A-Z].*\d+:\d+-\d+:\d+$/.test(third), `an aliyah names its own pesukim (${third})`);
+  log(calendar.aliyahRef(aWeek, 3, 'annual') !== third,
+    'and the third of the triennial third is not the third of the whole parashah');
+  log(weeks.every((w) => [...w.aliyot.annual, ...w.aliyot.triennial]
+    .every((r) => /^[A-Za-z][A-Za-z ]* \d+:\d+-\d+:\d+$/.test(r))),
+    'every aliyah names a book and a range of pesukim');
+  // On Shabbat Rosh Chodesh the seventh aliyah is the Rosh Chodesh reading, from
+  // another book entirely — which is exactly the sort of thing a reader given it
+  // needs told, so it must survive as its own book and not be read as the parashah's.
+  const rc = weeks.find((w) => w.aliyot.annual.some((r) => !w.torahRef.startsWith(r.split(' ')[0])));
+  log(!!rc && /Numbers/.test(calendar.aliyahRef(rc, 7, 'annual')),
+    `an aliyah from another book keeps it (${rc && rc.parashah} ${rc && rc.date}: `
+    + `${rc && calendar.aliyahRef(rc, 7, 'annual')})`);
+  log(!calendar.aliyahRef(aWeek, 8, 'annual') && !calendar.aliyahRef(aWeek, 0, 'annual'),
+    'there is no eighth aliyah');
   log(schedule.THRESHOLDS.weak < schedule.THRESHOLDS.polish,
     'repair thresholds are ordered (weak < polish)');
 
@@ -418,6 +440,18 @@ try {
     'an id for a part that does not exist resolves to nothing');
   log(bmplan.partLabel(bmplan.aliyahPart(3)) === 'Aliyah 3',
     `an aliyah is labelled "${bmplan.partLabel(bmplan.aliyahPart(3))}"`);
+  // The bug this guards: every aliyah reporting the whole parashah, which told a
+  // reader learning one of the seven nothing about which pesukim were theirs.
+  const a3 = bmplan.partRef(bmplan.aliyahPart(3), built);
+  log(a3 === calendar.aliyahRef(aWeek, 3, 'triennial'),
+    `an aliyah of a triennial plan covers its own pesukim (${a3})`);
+  log(a3 !== built.torahRef && new Set([1, 2, 3, 4, 5, 6, 7]
+    .map((n) => bmplan.partRef(bmplan.aliyahPart(n), built))).size === 7,
+    'and the seven differ from each other and from the whole reading');
+  const annualPlan = bmplan.fromShabbat(aWeek, { occasion: 'aliyah', cycle: 'annual' });
+  log(bmplan.partRef(bmplan.aliyahPart(3), annualPlan)
+    === calendar.aliyahRef(aWeek, 3, 'annual'),
+    'a plan on the annual cycle gets the annual division');
   const own = bmplan.fromShabbat(aWeek, { occasion: 'batmitzvah', role: 'self' });
   log(bmplan.possessive(own) === 'your', 'a reader\u2019s own reading is "your"');
 
@@ -444,6 +478,19 @@ try {
     'and it is what the plan says it needs');
   log(bmplan.partRef(bmplan.maftirPart(), swapped) === bmplan.appointedRef(bmplan.maftirPart(), swapped),
     'the other parts are left alone');
+  // A substituted passage that IS one of the app's recorded readings opens as that
+  // reading, so the reader chants along with the cantor instead of being taught the
+  // same words by the synthesized guide.
+  bmplan.setCustom(haf, {
+    book: 'isaiah', bookEn: 'Isaiah', from: [40, 1], to: [40, 26],
+    ref: 'Isaiah 40:1-26', readingId: 'custom:isaiah:40.1-40.26',
+    progressSlug: 'tanakh:isaiah:40.1', count: 26, recordedAs: 'haftarah-vaetchanan',
+  });
+  const rec = bmplan.partTarget(haf, bmplan.get());
+  log(rec.readingId === 'haftarah-vaetchanan' && rec.kind === 'haftarah',
+    'a substitution the app has recorded is opened as that recording');
+  log(bmplan.partRef(haf, bmplan.get()) === 'Isaiah 40:1-26',
+    'and is still described by the passage the reader chose');
   bmplan.clearCustom(haf);
   log(bmplan.partRef(haf, bmplan.get()) === appointed, 'and the appointed one can be taken back');
 

@@ -109,6 +109,35 @@ because progress is filed under the book and the pasuk a passage starts at, a
 substituted haftarah is measured on its own pesukim and keeps them if it is swapped
 out again.
 
+The picker also says **whose voice it will be**, before the choice is made. The app's
+recordings are PocketTorah's, which cover the readings it was built with and nothing
+else — so a passage picked elsewhere in Tanakh has no human recitation anywhere, and
+is taught from the trope shapes measured across the recordings instead (the same way
+a drill is: the words and every accent are exact, the voice is synthesized). Each
+reading in `data/readings.json` declares the pesukim it `covers`
+([`scripts/organize_readings.py`](scripts/organize_readings.py) stamps it from the
+reading's own data file), so the picker can answer that question as a table lookup
+and say one of three things: *recorded* — and when the range is exactly a recorded
+reading, guided mode opens **that reading**, so the cantor is heard rather than a
+recording of the same words sitting unused; *inside* a recorded reading, naming it,
+so the reader can widen the range if they want the cantor; or *not recorded*, in
+which case guided mode's Listen button reads **Guide voice** and round 1 says why.
+
+**One of the seven.** A reader called for a single aliyah is told which one by
+number — "you have the third" — so every screen that mentions an aliyah names the
+pesukim it covers: the wizard offers the seven with their ranges beside them, and
+the menu lists each part as its own passage rather than as the parashah it sits in.
+This is not cosmetic. Only fifteen parashiyot ship as recorded readings (with
+boundaries in their own data files); for the other thirty-eight guided mode builds
+the text out of `data/tanakh/` from the reference the plan carries, so a plan that
+knew only "Deuteronomy 7:12-11:25" handed a reader with one aliyah the whole
+parashah to learn. Every Shabbat in `data/calendar.json` now points at where its
+seven aliyot fall, annually and in that year's triennial third (as indices into a
+pooled table — 228 distinct divisions for 22 years, 33 KB), taken from what Hebcal
+schedules rather than reasoned about: the triennial division of a parashah that is
+sometimes combined with its neighbour depends on the shape of the year. Where the
+seventh aliyah is the Rosh Chodesh reading from another book, it says so.
+
 ## What it does today
 
 - **Pick a reading & portion** — the Reading menu is grouped **by sefer** in
@@ -462,9 +491,11 @@ migration, section/chain scores) and validates every entry in
 passage and that every accent in the shipped haftarot has a measured *haftarah*
 shape that differs from its Torah one. It also checks the three modules behind
 [guided mode](#guided-mode-learning-one-reading-for-one-date): that
-`data/calendar.json` names a parashah and a triennial year for all 1,074 Shabbatot
-it covers and resolves a mid-week date forward to that week's reading, that a plan
-built from one has the right parts and refs, and that the scheduler **walks a part
+`data/calendar.json` names a parashah, a triennial year and seven aliyot for all
+1,074 Shabbatot it covers and resolves a mid-week date forward to that week's
+reading, that a plan built from one has the right parts and refs — including that
+each of the seven aliyot covers its own pesukim rather than the whole parashah,
+on either cycle — and that the scheduler **walks a part
 to 100% and then stops** — all four rounds in order, every stage of every pasuk
 handed out, the pesukim chained, and weak words coming back before anything is
 polished. That last one matters most: a schedule that quietly never finishes, or
@@ -484,9 +515,15 @@ guided mode itself: the round pips, the mission card, listen → sing → score,
 progress menu, switching parts, and out to the workshop and back via the ★ chip.
 It then trades the appointed haftarah for a passage from another book and back
 again — that the picker opens on what was appointed, clamps a range instead of
-refusing it, stops one that is too long, opens the chosen passage there and then,
-measures it under its own pesukim, and keeps those pesukim when the appointed one
-is taken back.
+refusing it, stops one that is too long, says whether anyone has recorded the
+passage (and doesn't offer a cantor on one nobody has), opens the chosen passage
+there and then, measures it under its own pesukim, keeps those pesukim when the
+appointed one is taken back, and opens a passage the app HAS recorded as that
+recording rather than as synthesized words. Last, a plan for one of the seven
+aliyot: that each of the seven names its own pesukim, that opening the third starts
+on the third's first pasuk, and that a parashah the app has no recording of is
+still divided — the aliyah's own range is what gets assembled out of `data/tanakh/`,
+not the whole reading.
 Because those steps save a plan, they run last; the expert-mode steps pin
 themselves to the workshop with `?guided=0`. `scripts/shot.py` grabs a screenshot
 for eyeballing a change.
@@ -518,10 +555,12 @@ once. **Every** book of the Tanakh is bundled as text for
 
 The **parashah calendar** for 2024–2045 (`data/calendar.json`, 1,074 Shabbatot),
 so guided mode can turn the date of a simcha into a reading with no network and no
-calendar arithmetic. Which parshiyot are read together depends on the length of
-the Hebrew year and where the festivals fall, so it is built from Hebcal rather
-than computed in the browser: `.venv/bin/python scripts/build_calendar.py`
-(`--report` re-checks the triennial years against Hebcal's own schedule). A
+calendar arithmetic. Each Shabbat carries its Torah, maftir and haftarah refs and
+where its **seven aliyot** fall on both cycles. Which parshiyot are read together
+depends on the length of the Hebrew year and where the festivals fall, so it is
+built from Hebcal rather than computed in the browser: `.venv/bin/python
+scripts/build_calendar.py` (`--report` re-checks the triennial years against
+Hebcal's own schedule). A
 reading a reader's date lands on that the app doesn't ship yet still works — the
 passage is assembled from `data/tanakh/` and chanted in the measured melody, the
 same way a trope drill is.

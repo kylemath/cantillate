@@ -172,6 +172,11 @@ export function fromShabbat(rec, {
     torahRef: rec.torahRef,
     maftirRef: cycle === 'triennial' && rec.triMaftirRef ? rec.triMaftirRef : rec.maftirRef,
     haftarahRef: rec.haftarahRef,
+    // Where the seven aliyot fall, both ways round, kept with the plan so a part
+    // can name its own pesukim without the calendar table being loaded again. Both
+    // cycles, because the reader can change their mind about the cycle later.
+    aliyotRefs: rec.aliyot
+      ? { annual: rec.aliyot.annual, triennial: rec.aliyot.triennial } : null,
     special: rec.special,
     cycle,
     parts: chosen,
@@ -228,6 +233,13 @@ export function learnerName(plan = get()) {
 export function occasionLabel(plan = get()) {
   const occ = plan && OCCASIONS[plan.occasion];
   return occ ? occ.label : '';
+}
+
+// The same thing named to go inside a sentence: the label stands alone as an answer
+// to a question ("An aliyah"), which reads as "Noa's an aliyah" anywhere else.
+export function occasionName(plan = get()) {
+  const occ = plan && OCCASIONS[plan.occasion];
+  return occ ? occ.short : '';
 }
 
 // "Parashat Devarim · Shabbat 25 July 2026" — the one line that says what this
@@ -312,6 +324,12 @@ export function partTarget(part, plan = get()) {
   if (!plan || !part) return null;
   const custom = customFor(part, plan);
   if (custom) {
+    // A substituted passage that happens to BE one of the readings the app ships is
+    // opened as that reading, recording and all (see recordedAs in js/guided.js);
+    // anything else is assembled out of the book text.
+    if (custom.recordedAs) {
+      return { readingId: custom.recordedAs, kind: 'haftarah', whole: true, custom };
+    }
     return {
       readingId: custom.readingId, kind: 'passage', whole: true, custom,
     };
@@ -337,9 +355,9 @@ export function partTarget(part, plan = get()) {
 export function availability(part, available, plan = get()) {
   const target = partTarget(part, plan);
   if (!target || !target.readingId) return 'none';
-  // A substituted passage always has its text (that is what the picker guarantees);
-  // whether it inherits a recording depends on where it falls, and only opening it
-  // can say.
+  // A substituted passage always has its text — that is what the picker guarantees —
+  // but no recording of its own: one that had a recording was opened as that reading
+  // instead (see partTarget).
   if (target.kind === 'passage') return 'text';
   const entry = (available || []).find((p) => p.slug === target.readingId);
   if (entry) {
@@ -366,7 +384,38 @@ export function appointedRef(part, plan = get()) {
   if (!plan || !part) return '';
   if (part.kind === 'haftarah') return plan.haftarahRef || '';
   if (part.kind === 'maftir') return plan.maftirRef || '';
-  return plan.torahRef || '';
+  // An aliyah is a section of the parashah, not the parashah: told "Deuteronomy
+  // 7:12-11:25" a reader called for the third aliyah would have no idea which
+  // pesukim are theirs — and guided mode, which builds unbundled readings from
+  // this ref, would hand them all of it to learn.
+  return aliyahRef(part.n, plan) || plan.torahRef || '';
+}
+
+function aliyahRef(n, plan) {
+  const refs = plan.aliyotRefs || liveAliyotRefs(plan);
+  const set = refs && (plan.cycle === 'triennial' ? refs.triennial : refs.annual);
+  const i = Number(n) - 1;
+  return (set && i >= 0 && set[i]) || '';
+}
+
+// A plan saved before the divisions shipped has none of its own; read them from the
+// calendar when it happens to be loaded, and let the caller fall back when it isn't
+// (see upgrade, which fills them in for good).
+function liveAliyotRefs(plan) {
+  if (!calendar.isLoaded() || !plan.date) return null;
+  const rec = calendar.on(plan.date);
+  return (rec && rec.aliyot) || null;
+}
+
+// Fill in what an older version of the app didn't save. Idempotent, and cheap
+// enough to call whenever guided mode opens a plan.
+export function upgrade(plan = get()) {
+  if (!plan || plan.aliyotRefs) return plan;
+  const refs = liveAliyotRefs(plan);
+  if (!refs || !refs.annual) return plan;
+  const next = { ...plan, aliyotRefs: refs };
+  save(next);
+  return next;
 }
 
 // Every reading slug a plan touches, so the app can mark them in the menu and

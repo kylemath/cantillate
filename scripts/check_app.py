@@ -788,6 +788,13 @@ WIZARD_STEPS = [
      " const off=__t.all('.ob-part.on').length; __t.tap('[data-part=\"maftir\"]');"
      " const back=__t.all('.ob-part.on').length;"
      " return off===1 && back===2 ? 'OK toggles' : `went ${off} then ${back}`;})()"),
+    # "You have the third aliyah" is how a reader is told, and a number on its own
+    # gives them no way to check they picked the right one.
+    ("the seven aliyot are offered with the pesukim each one covers",
+     "(()=>{const refs=__t.all('.ob-alnum-ref').map(e=>__t.text(e));"
+     " return refs.length===7 && new Set(refs).size===7"
+     "   && refs.every(r=>/^\\d+:\\d+-\\d+:\\d+$/.test(r))"
+     "   ? `OK ${refs.join(', ')}` : `ranges shown: ${JSON.stringify(refs)}`;})()"),
     ("the last screen says what was decided, in the learner's name",
      "(()=>{__t.tap('#obNext'); const t=__t.text(__t.q('#obBody'));"
      " return /Noa will be chanting/.test(t) && /Eikev/.test(t) && /Maftir/.test(t)"
@@ -935,6 +942,15 @@ SWAP_STEPS = [
      " set('#gPickToC',9); set('#gPickToV',15);"
      " const on=!__t.q('#gPickGo').disabled;"
      " return warn && off && on ? `OK ${warn}` : `warned \u201c${warn}\u201d, disabled=${off}, re-enabled=${on}`;})()"),
+    # Whose voice these words will be in is the thing a reader is most likely to be
+    # surprised by, so it is said before they commit: the app has recordings for the
+    # readings it was built with and nothing else, and most of Tanakh is "nothing
+    # else". Getting this wrong looks like a broken recording rather than an absent one.
+    ("it says whether anyone has recorded the passage",
+     "(()=>{const note=__t.text(__t.q('#gPickInfo .ob-note'));"
+     " const claims=!!__t.q('#gPickInfo .ob-good');"
+     " return /No one has recorded these pesukim/.test(note) && !claims"
+     "   ? `OK ${note.slice(0, 80)}\u2026` : `note=${note.slice(0,90)} claims-a-recording=${claims}`;})()"),
     ("choosing it opens it there and then \u2014 he is learning Amos now",
      "(()=>{__t.tap('#gPickGo');"
      " return __t.settle(()=>__t.q('#parashah').value==='custom:amos:9.8-9.15'"
@@ -943,6 +959,12 @@ SWAP_STEPS = [
      "   const open=!!__t.q('#guidedPick') || document.body.classList.contains('g-menu-open');"
      "   return part==='Haftarah' && /Amos 9:8/.test(where) && !open"
      "     ? `OK ${part}: ${where}` : `${part} / ${where} / sheet-still-open=${open}`;});})()"),
+    ("and it doesn't pretend there is a cantor on it",
+     "(()=>{const bar=__t.all('.g-act').map(b=>__t.text(b));"
+     " const hint=__t.text(__t.q('.g-hint'));"
+     " return /Guide voice/.test(bar[0]) && /synthesized/.test(hint) && /measured/.test(hint)"
+     "   ? `OK the bar offers \u201c${bar[0]}\u201d and says why: ${hint.slice(0, 70)}\u2026`"
+     "   : `bar=${JSON.stringify(bar)} hint=${hint.slice(0,90)}`;})()"),
     ("the plan says what he is chanting, in place of what he was given",
      "(()=>{const p=JSON.parse(localStorage.getItem('cantillate.v1')||'{}').plan;"
      " const c=(p.custom||{}).haftarah||{};"
@@ -987,6 +1009,92 @@ SWAP_STEPS = [
      "       return gone && /Isaiah 49:14/.test(where) && kept.length"
      "         ? `OK back to ${where}, and the Amos take is still on record (${kept[0]})`"
      "         : `custom-cleared=${gone} where=${where} kept=${kept.length}`;});});}))()"),
+    # A custom haftarah is very often another week's, and those the app has built are
+    # recorded. Assembling the same words out of the book text would leave a recording
+    # of exactly this passage sitting unused, so the substitution opens the reading.
+    ("a substituted passage the app has recorded is opened as that recording",
+     "(()=>{__t.tap('.g-menu-btn');"
+     " const haf=__t.all('.g-part').find(r=>/Haftarah/.test(r.textContent));"
+     " haf.querySelector('.g-part-swap').click();"
+     " return __t.settle(()=>!!__t.q('#gPickBook'), null, null, 12000).then(()=>{"
+     "   const set=(id,v)=>{const s=__t.q(id); s.value=String(v);"
+     "     s.dispatchEvent(new Event('change',{bubbles:true}));};"
+     "   set('#gPickBook','isaiah'); set('#gPickFromC',40); set('#gPickFromV',1);"
+     "   set('#gPickToC',40); set('#gPickToV',26);"
+     "   const said=__t.text(__t.q('#gPickInfo .ob-good'));"
+     "   __t.tap('#gPickGo');"
+     "   return __t.settle(()=>__t.q('#parashah').value==='haftarah-vaetchanan', null, null, 20000)"
+     "     .then(()=>{const bar=__t.all('.g-act').map(b=>__t.text(b));"
+     "       const c=JSON.parse(localStorage.getItem('cantillate.v1')).plan.custom.haftarah;"
+     "       return c.recordedAs==='haftarah-vaetchanan' && /Listen/.test(bar[0])"
+     "         ? `OK ${said.slice(0, 80)} \u2014 opened ${c.recordedAs}`"
+     "         : `recordedAs=${c.recordedAs} bar=${JSON.stringify(bar)}`;});});})()"),
+]
+
+
+# One of the seven aliyot, rather than a maftir. A gabbai says "you have the third
+# aliyah", and the reader has to be shown which pesukim those are — and taught only
+# those. The parashah's whole range is the wrong answer twice over: it tells the
+# reader nothing, and for the 38 parashiyot the app has no recording of it would
+# hand them the entire reading to learn.
+SEED_ALIYAH_STEPS = [
+    ("a plan can be made for one of the seven aliyot",
+     "(async()=>{const cal=await import('/js/calendar.js'), pl=await import('/js/plan.js');"
+     " await cal.load();"
+     " const w=cal.all().find(r=>r.parashah==='Eikev' && r.date>cal.today());"
+     " pl.save(pl.fromShabbat(w,{occasion:'aliyah', role:'self', learner:'', cycle:'triennial',"
+     "   parts:[1,2,3,4,5,6,7].map(n=>pl.aliyahPart(n)), enteredDate:w.date}));"
+     " const p=pl.get();"
+     " return p.parts.length===7 && p.aliyotRefs && p.aliyotRefs.triennial.length===7"
+     "   ? `OK ${p.parashah}, year ${p.triYear} of three, all seven aliyot`"
+     "   : `stored ${p.parts.length} parts, refs=${JSON.stringify(p.aliyotRefs)}`;})()"),
+]
+
+ALIYOT_STEPS = [
+    ("each of the seven says which pesukim are its own",
+     "(async()=>{const pl=await import('/js/plan.js');"
+     " await __t.settle(()=>document.body.classList.contains('guided') && !!__t.q('.g-task'),"
+     "   null, null, 20000);"
+     " __t.tap('.g-menu-btn');"
+     " const refs=__t.all('.g-part-ref').map(r=>__t.text(r));"
+     " const p=pl.get(), whole=p.torahRef;"
+     " const uniq=new Set(refs).size;"
+     " return refs.length===7 && uniq===7 && !refs.includes(whole)"
+     "   ? `OK ${refs[0]} \u2026 ${refs[6]} (the parashah itself is ${whole})`"
+     "   : `${refs.length} rows, ${uniq} distinct, whole-parashah rows="
+     "${refs.filter(r=>r===whole).length}`;})()"),
+    ("and the third one opens on the third one's first pasuk",
+     "(async()=>{const pl=await import('/js/plan.js');"
+     " const want=pl.partRef(pl.aliyahPart(3), pl.get());"
+     " const row=__t.all('.g-part').find(r=>/Aliyah 3/.test(r.textContent));"
+     " if(!row) return 'no third aliyah in the menu';"
+     " row.querySelector('.g-part-main').click();"
+     " const first=`${want.split(' ')[0]} ${want.match(/\\d+:\\d+/)[0]}`;"
+     " await __t.settle(()=>__t.text(__t.q('.g-top-part'))==='Aliyah 3'"
+     "   && __t.text(__t.q('.g-where')).startsWith(first), null, null, 20000);"
+     " const where=__t.text(__t.q('.g-where'));"
+     " return where.startsWith(first) ? `OK ${want} \u2014 starting at ${where}`"
+     "   : `wanted ${first}, got ${where}`;})()"),
+    # The case that bites hardest: no recording, so the text is assembled from
+    # data/tanakh/ out of the ref the plan carries. If that ref is the parashah's,
+    # a reader with one aliyah is quietly given all seven.
+    ("a parashah the app has no recording of is still divided into its aliyot",
+     "(async()=>{const cal=await import('/js/calendar.js'), pl=await import('/js/plan.js');"
+     " const g=await import('/js/guided.js');"
+     " await cal.load();"
+     " const w=cal.all().find(r=>r.parashah==='Vayishlach' && r.date>cal.today());"
+     " pl.save(pl.fromShabbat(w,{occasion:'aliyah', role:'self', cycle:'annual',"
+     "   parts:[pl.aliyahPart(3)], enteredDate:w.date}));"
+     " const want=pl.partRef(pl.aliyahPart(3), pl.get());"
+     " const cv=[...want.matchAll(/(\\d+):(\\d+)/g)].map(m=>`${m[1]}.${m[2]}`);"
+     " const wantId=`custom:genesis:${cv[0]}-${cv[1]}`;"
+     " await g.start(pl.get());"
+     " await __t.settle(()=>!!__t.q('.g-where') && __t.q('#parashah').value.startsWith('custom:'),"
+     "   null, null, 25000);"
+     " const got=__t.q('#parashah').value, where=__t.text(__t.q('.g-where'));"
+     " return got===wantId && where.startsWith(`Genesis ${want.match(/\\d+:\\d+/)[0]}`)"
+     "   ? `OK ${w.parashah} aliyah 3 is ${want}, and that is what opened (${got})`"
+     "   : `opened ${got}, wanted ${wantId}; where=${where}`;})()"),
 ]
 
 
@@ -1078,6 +1186,16 @@ def main():
             run_steps(c, GUIDED_STEPS, failures)
             print("--- guided mode: a haftarah of his own ---")
             run_steps(c, SWAP_STEPS, failures)
+
+            print("--- guided mode: one of the seven aliyot ---")
+            run_steps(c, SEED_ALIYAH_STEPS, failures)
+            # Reloaded rather than switched, because what is being checked is what a
+            # reader with an aliyah plan is opened INTO.
+            if not c.reload():
+                print("FAIL app never re-rendered on the aliyah plan")
+                failures.append("aliyot")
+            else:
+                run_steps(c, ALIYOT_STEPS, failures)
 
         c.drain(0.5)
         if c.problems:

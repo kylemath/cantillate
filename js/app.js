@@ -416,6 +416,36 @@ function markFirstVisitDone() {
 // record and score still goes through exactly the code path expert mode uses.
 // ---------------------------------------------------------------------------
 
+// Is there a human recording of these pesukim? Every reading in the manifest says
+// which verses it covers (`covers`, stamped by scripts/organize_readings.py), so
+// this is a table lookup rather than thirty fetches — and the answer is the
+// difference between chanting along with a cantor and being taught by the measured
+// trope shapes. A range that only PART of a reading covers still counts: the app
+// can open that reading and the words are in it.
+//
+// Returns { slug, label, exact } for the tightest recorded reading that contains
+// the range, or null.
+function recordingCovering(bookEn, from, to) {
+  const abs = (r) => r[0] * 1000 + r[1];   // chapters are never 1000 pesukim long
+  const a = abs(from);
+  const b = abs(to);
+  let best = null;
+  for (const meta of AVAILABLE) {
+    const c = meta.covers;
+    if (!c || c.book !== bookEn || !readingSources(meta).length) continue;
+    const lo = abs(c.from);
+    const hi = abs(c.to);
+    if (lo > a || hi < b) continue;
+    const span = hi - lo;
+    if (!best || span < best.span) {
+      best = { slug: meta.slug, label: meta.label, exact: lo === a && hi === b, span };
+    }
+  }
+  if (!best) return null;
+  delete best.span;
+  return best;
+}
+
 function guidedApi() {
   return {
     available: () => AVAILABLE,
@@ -467,6 +497,7 @@ function guidedApi() {
         // Where practice on this passage is filed: the book and the pasuk it starts
         // at, so every range beginning there shares one tally (see progressSlug).
         progressSlug: corpus.progressSlug(bookSlug, r.from),
+        recording: recordingCovering(entry.en, r.from, r.to),
         accents: entry.accents,
         book: { slug: entry.slug, en: entry.en, he: entry.he },
       };
@@ -482,11 +513,43 @@ function guidedApi() {
     },
     aliyot: (cycle, year) => aliyotForReading(cycle, year),
     maftir: (cycle, year) => maftirForReading(cycle, year),
+    // What each chunk of a reading actually covers, keyed as the chunks are ('1'…'7'
+    // for the aliyot, 'M' for the maftir): "Deuteronomy 7:22–7:26", not the whole
+    // parashah it sits in. Guided mode needs this for parts it is NOT currently
+    // showing — the menu lists all seven aliyot while only one is open — so it reads
+    // the reading's own aliyah table, which is where the triennial thirds live. Uses
+    // the resident doc when it is the open reading, so the common case costs nothing.
+    chunkRefs: async (readingId, cycle, triYear) => {
+      const meta = AVAILABLE.find((p) => p.slug === readingId);
+      if (!meta) return null;
+      let doc = (state.readingId === readingId && state.data) ? state.data : null;
+      if (!doc) {
+        try { doc = await readingDocFor(meta); } catch (e) { return null; }
+      }
+      if (!doc || !doc.aliyot) return null;
+      const book = (doc.book && doc.book.en) || '';
+      const named = (ref) => (book && ref ? `${book} ${ref}` : ref || '');
+      const out = {};
+      const list = cycle === 'triennial'
+        ? (doc.aliyot.triennial && doc.aliyot.triennial[triYear]) || []
+        : doc.aliyot.annual || [];
+      for (const a of list) out[String(a.n)] = named(a.ref);
+      const m = doc.aliyot.maftir;
+      const mm = m && (cycle === 'triennial' ? (m.triennial || {})[triYear] : m.annual);
+      if (mm) out.M = named(mm.ref);
+      return out;
+    },
     // Which cycle the OPEN reading is actually on, which is not always the plan's:
     // a haftarah or a picked passage is one fixed text, so loadData pins it to
     // annual. Scores are filed under the cycle, so guided mode has to read them
     // back under the one the app recorded them with.
     cycleNow: () => ({ cycle: state.cycle, triYear: state.triYear }),
+    // Whether a human recording of the open reading exists. False for the whole of
+    // Tanakh outside the readings this app was built with — a passage picked there
+    // is taught from the measured trope shapes, and guided mode says so rather than
+    // promising a cantor who never sang it.
+    hasRecording: () => !!(state.audio && state.audio.verses
+      && Object.keys(state.audio.verses).length),
     // The single chunk of a reading chanted straight through (a haftarah, or a
     // passage picked out of a book). Parashiyot have aliyot instead.
     wholeChunk: () => {

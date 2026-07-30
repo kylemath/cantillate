@@ -84,6 +84,8 @@ body.onboarding { overflow: hidden; }
 .ob-warn {
   margin: 10px 0 0; font-size: 13px; color: var(--accent-2);
 }
+/* The one note that is good news: a passage the cantor actually recorded. */
+.ob-good { color: var(--text); border-inline-start-color: var(--good); }
 
 .ob-steps { margin: 0 0 18px; padding-inline-start: 22px; color: var(--text); font-size: 15px; }
 .ob-steps li { margin: 8px 0; }
@@ -172,11 +174,22 @@ body.onboarding { overflow: hidden; }
 .ob-part-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .ob-part-name { font-size: 16px; font-weight: 600; }
 .ob-part-sub { font-size: 12px; color: var(--muted); }
-.ob-alnums { display: flex; gap: 6px; flex-wrap: wrap; }
+/* Wide enough for the pesukim beside the number: which aliyah is the third is not
+   something a reader can be expected to know by heart. */
+.ob-alnums {
+  display: grid; gap: 6px;
+  grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
+}
 .ob-alnum {
-  width: 44px; height: 44px; font: inherit; font-size: 16px; font-weight: 600;
+  display: flex; align-items: baseline; gap: 8px;
+  min-height: 44px; padding: 8px 10px;
+  font: inherit; font-size: 16px; font-weight: 600; text-align: start;
   color: var(--text); background: var(--panel-2);
   border: 1px solid var(--line); border-radius: 11px; cursor: pointer;
+}
+.ob-alnum-ref {
+  font-size: 13px; font-weight: 400; color: var(--muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .ob-alnum.on { border-color: var(--good); background: rgba(55, 200, 113, 0.18); }
 

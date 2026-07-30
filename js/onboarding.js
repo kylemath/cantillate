@@ -229,7 +229,10 @@ function whoBody() {
 // 3. Whose it is. Decides whether the app says "your haftarah" or "Noa's", and
 // whether it asks for a name at all.
 function whoseBody() {
-  const label = plan.OCCASIONS[draft.occasion] ? plan.OCCASIONS[draft.occasion].label.toLowerCase() : 'reading';
+  // The short name, not the label: the label is written to stand alone as an answer
+  // ("An aliyah"), and reads as "Whose an aliyah is it?" in a sentence.
+  const occ = plan.OCCASIONS[draft.occasion];
+  const label = occ ? occ.short.toLowerCase() : 'reading';
   const role = (id) => `<button class="ob-choice${draft.role === id ? ' on' : ''}" data-role="${id}">
       <span class="ob-choice-main">${plan.ROLES[id].label}</span>
       <span class="ob-choice-sub">${plan.ROLES[id].sub}</span></button>`;
@@ -366,9 +369,17 @@ function partsBody() {
         </span>
       </button>`;
   };
+  // Each aliyah shows the pesukim it covers, on the cycle just chosen: a reader is
+  // told "you have the third aliyah" and has no way to check that against a
+  // parashah-wide range. Bare numbers when the calendar hasn't been reached yet.
   const aliyot = plan.ALIYAH_NUMBERS.map((n) => {
     const id = `aliyah-${n}`;
-    return `<button class="ob-alnum${ids.has(id) ? ' on' : ''}" data-part="${id}">${n}</button>`;
+    const ref = calendar.aliyahRef(draft.rec, n, draft.cycle);
+    const verses = ref.replace(/^.*?(?=\d+:\d)/, '');
+    return `<button class="ob-alnum${ids.has(id) ? ' on' : ''}" data-part="${id}">
+        <span class="ob-alnum-n">${n}</span>
+        ${verses ? `<span class="ob-alnum-ref">${escapeHtml(verses)}</span>` : ''}
+      </button>`;
   }).join('');
   return `
     <h2 class="ob-h">What will ${draft.role === 'self' ? 'you' : (draft.learner || 'they')} be chanting?</h2>

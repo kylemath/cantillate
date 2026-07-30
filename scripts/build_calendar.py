@@ -4,6 +4,7 @@
     .venv/bin/python scripts/build_calendar.py            # 2024-2045
     .venv/bin/python scripts/build_calendar.py 2026 2050
     .venv/bin/python scripts/build_calendar.py --check     # verify without writing
+    .venv/bin/python scripts/build_calendar.py --divisions # only the aliyah table
 
 A reader preparing for a bar/bat mitzvah knows the DATE, not the parashah — so the
 guided onboarding asks for the date and names the reading. Going from one to the
@@ -29,6 +30,12 @@ whole table is one download:
      "m": "Genesis 50:23-50:26",     # the annual maftir
      "tm": "Genesis 48:20-48:22",    # that year's triennial maftir
      "h": "I Kings 2:1-12"}          # the haftarah (Ashkenazi)
+
+Each Shabbat also points at where its seven aliyot fall, annually (`aa`) and in
+that year's triennial third (`at`), as indices into a pooled `divisions` list.
+Only fifteen parashiyot ship as recorded readings with boundaries of their own, so
+without these guided mode could not tell a reader learning the third aliyah of any
+other week which pesukim are theirs.
 
 Two weeks are combined in a short year and read separately in a long one, so a
 combined week carries both slugs:
@@ -196,6 +203,78 @@ def cycle_year(hyear):
     return ((hyear - TRIENNIAL_EPOCH) % 3) + 1 if hyear else None
 
 
+# Which of the seven aliyot covers which pesukim. The app ships only fifteen of the
+# 54 parashiyot as recorded readings, and those carry boundaries of their own; for
+# every other week guided mode assembles the text out of data/tanakh/, and without
+# these it would have nothing to divide by — a reader learning the third aliyah
+# would be handed the whole parashah.
+#
+# Hebcal gives both divisions for each Shabbat, so they are taken as scheduled
+# rather than reasoned about: the triennial division of a parashah that is
+# sometimes combined with its neighbour depends on the shape of the year, and no
+# per-parashah table can say which.
+#
+# The seven refs repeat (every parashah divides the same way most cycles), so the
+# distinct divisions are pooled in one list and each Shabbat holds two indices into
+# it — the whole pool costs less than a single year of spelled-out refs.
+#
+# The maftir is NOT pooled: it moves with the festival calendar (a Shabbat Rosh
+# Chodesh maftir comes from another book entirely), so each Shabbat carries its own
+# in `m`/`tm`.
+ALIYAH_KEYS = ("1", "2", "3", "4", "5", "6", "7")
+
+DIVISIONS_FIELD = ("distinct sets of seven aliyah refs; each Shabbat's aa/at "
+                   "index into this list. Refs omit the book, which is the one "
+                   "named in that Shabbat's `t`.")
+
+
+def _seven(block, book):
+    """A leyning block's seven aliyot as ["7:12-8:10", ...], or None.
+
+    All seven or nothing: a gap would silently mislabel every aliyah after it,
+    which is worse than falling back to the whole reading.
+
+    An aliyah is occasionally from another book altogether — on Shabbat Rosh
+    Chodesh the seventh is the Rosh Chodesh reading from Numbers — so a ref that
+    names its own book keeps it. The reason Hebcal appends ("| Shabbat Shekalim")
+    is dropped: each Shabbat already carries it once, in `special`.
+    """
+    out = []
+    for k in ALIYAH_KEYS:
+        ref = (block or {}).get(k)
+        if not isinstance(ref, str) or not ref.strip():
+            return None
+        out.append(_bookless(ref.split("|")[0].strip(), book))
+    return out
+
+
+def _bookless(ref, book):
+    """"Numbers 30:2-30:9" -> "30:2-30:9", but only for the reading's own book."""
+    if book and ref.startswith(f"{book} "):
+        return ref[len(book) + 1:].strip()
+    return ref
+
+
+def pool_divisions(rows):
+    """Replace each row's spelled-out aliyot with indices into a shared pool."""
+    pool, seen = [], {}
+
+    def index_of(refs):
+        key = "|".join(refs)
+        if key not in seen:
+            seen[key] = len(pool)
+            pool.append(refs)
+        return seen[key]
+
+    for r in rows:
+        annual, tri = r.pop("_a", None), r.pop("_t", None)
+        if annual:
+            r["aa"] = index_of(annual)
+        if tri:
+            r["at"] = index_of(tri)
+    return pool
+
+
 def book_of(ref):
     """"Genesis 47:28-50:26" -> "Genesis" (book names can contain a space)."""
     if not ref:
@@ -231,6 +310,9 @@ def record(item, tri_table):
         rec["c"] = [slug_of(p) for p in combined]
     if torah:
         rec["t"] = torah
+    # Pooled into `divisions` once every row is in (see pool_divisions).
+    rec["_a"] = _seven(leyning, book_of(torah))
+    rec["_t"] = _seven(leyning.get("triennial"), book_of(torah))
     if leyning.get("maftir"):
         rec["m"] = leyning["maftir"]
     tri_maftir = (leyning.get("triennial") or {}).get("maftir")
@@ -258,9 +340,20 @@ def build(year_from, year_to):
     return rows
 
 
-def report(rows):
+def report(rows, div=None):
     """Sanity-check the table and describe what it covers. Returns problem count."""
     bad = 0
+    if div is not None:
+        # Every Shabbat needs both divisions: a reader on the annual cycle and one
+        # on the triennial both have to be told which pesukim are their aliyah.
+        blind = [r for r in rows if "aa" not in r or "at" not in r]
+        if blind:
+            bad += len(blind)
+            print(f"  FAIL {len(blind)} Shabbatot have no aliyah divisions "
+                  f"(first: {blind[0]['d']} {blind[0]['p']})")
+        else:
+            print(f"  aliyah divisions on all {len(rows)} Shabbatot, "
+                  f"{len(div)} distinct")
     missing_slug = [r for r in rows if not r["s"]]
     if missing_slug:
         bad += len(missing_slug)
@@ -310,7 +403,8 @@ def main():
 
     print(f"[calendar] {year_from}-{year_to}, diaspora")
     rows = build(year_from, year_to)
-    bad = report(rows)
+    div = pool_divisions(rows)
+    bad = report(rows, div)
     if args.check:
         return 1 if bad else 0
 
@@ -332,16 +426,28 @@ def main():
             "ty": "triennial year (1-3) read that year",
             "t": "annual Torah reading", "m": "annual maftir",
             "tm": "triennial maftir", "h": "haftarah (Ashkenazi)",
+            "aa": "index into divisions: the seven annual aliyot",
+            "at": "index into divisions: the seven of that year's triennial third",
+            "divisions": DIVISIONS_FIELD,
         },
         "shabbatot": [{k: v for k, v in r.items() if not k.startswith("_")}
                       for r in rows],
     }
+    write(doc, div)
+    return 1 if bad else 0
+
+
+def write(doc, div):
+    # `divisions` sits after the metadata and before the long table, so the file
+    # still reads top-down.
+    out = {k: v for k, v in doc.items() if k != "shabbatot"}
+    out["divisions"] = div
+    out["shabbatot"] = doc["shabbatot"]
     with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(doc, f, ensure_ascii=False, separators=(",", ":"))
+        json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
         f.write("\n")
     size = os.path.getsize(OUT)
     print(f"[calendar] wrote {os.path.relpath(OUT, HERE)} ({size / 1024:.0f} KB)")
-    return 1 if bad else 0
 
 
 if __name__ == "__main__":

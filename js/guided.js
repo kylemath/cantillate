@@ -43,6 +43,7 @@ let result = null;       // the last score report
 let streak = 0;          // consecutive passes, for a little momentum feedback
 let loading = false;
 let problem = '';        // why the current part can't be practised, if it can't
+let chunkRefs = null;    // { key, map } — what each part of the plan's parashah covers
 
 // --- Install ----------------------------------------------------------------
 
@@ -88,6 +89,13 @@ function buildDom() {
 export async function start(p) {
   current = p || plan.get();
   if (!current) return;
+  // A plan made before the aliyah divisions shipped knows only the parashah's whole
+  // range; the calendar can still say where its aliyot fall, so it is asked once
+  // here rather than every time a label is drawn.
+  if (!current.aliyotRefs) {
+    await calendar.load();
+    current = plan.upgrade(current) || current;
+  }
   active = true;
   session = 0;
   streak = 0;
@@ -148,6 +156,10 @@ async function openPart(p) {
   }
   loading = false;
   runNext();
+  // What every OTHER part covers, for the menu. Off the critical path: the reader is
+  // already looking at the first word by the time it lands, and it costs nothing when
+  // the parashah is the reading in hand.
+  loadChunkRefs().then(() => { if (active) render(); });
 }
 
 // Load the reading a part lives in. A part the app ships as a recorded reading is
@@ -374,20 +386,63 @@ function renderCard(round) {
 // in the piece you are.
 function briefHtml(round) {
   const where = taskWhere();
+  // Round 1's blurb promises "the cantor to copy", which is a promise the app can
+  // only keep for the readings someone recorded. On a passage nobody has — most of
+  // Tanakh, including any haftarah picked outside the weekly cycle — say what the
+  // voice actually is, once, rather than letting the reader wonder why the cantor
+  // sounds like that.
+  const hint = round.id === 1 && task.reason === 'advance'
+    ? (recorded() ? round.blurb
+      : 'One word at a time. Nobody has recorded these pesukim, so the voice is '
+        + 'synthesized \u2014 but every accent\u2019s tune and timing is measured from the '
+        + 'cantor\u2019s own chanting, not guessed.')
+    : '';
   return `
     <div class="g-brief">
       <p class="g-task">${escapeHtml(schedule.taskTitle(task))}</p>
       <p class="g-why"><span class="g-why-tag ${task.reason}">${escapeHtml(schedule.taskWhy(task))}</span>${
     where ? `<span class="g-where">${escapeHtml(where)}</span>` : ''}</p>
-      ${round.id === 1 && task.reason === 'advance'
-    ? `<p class="g-hint">${escapeHtml(round.blurb)}</p>` : ''}
+      ${hint ? `<p class="g-hint">${escapeHtml(hint)}</p>` : ''}
     </div>`;
+}
+
+// Whether there is a human recording of what is open. The app ships recordings for
+// the readings it was built with; anything else is taught from the measured trope
+// shapes, which is honest work but a different promise.
+function recorded() {
+  return !!(api.hasRecording && api.hasRecording());
+}
+
+// The pesukim a part actually covers, as the reading itself divides them.
+//
+// The plan alone can't say: it knows the week's Torah reading is Deuteronomy
+// 7:12–11:25, which is true of the parashah and true of none of its aliyot. Told
+// that on all seven rows a reader would reasonably conclude the app had not split
+// the reading at all. The division — and the triennial third — lives in the
+// reading's own aliyah table, so that is what is asked (see api.chunkRefs).
+function refFor(p) {
+  if (!p) return '';
+  const custom = plan.customFor(p, current);
+  if (custom) return custom.ref || '';
+  const key = p.kind === 'maftir' ? 'M' : (p.kind === 'haftarah' ? 'H' : String(p.n));
+  const map = chunkRefs && chunkRefs.map;
+  return (map && map[key]) || plan.partRef(p, current);
+}
+
+// Asked for once per plan/cycle, and only for the parashah: a haftarah is one
+// passage and the plan already names it.
+async function loadChunkRefs() {
+  if (!current || !current.slug || !api.chunkRefs) return;
+  const key = `${current.slug}:${current.cycle}:${current.triYear}`;
+  if (chunkRefs && chunkRefs.key === key) return;
+  const map = await api.chunkRefs(current.slug, current.cycle, current.triYear);
+  if (map) chunkRefs = { key, map };
 }
 
 // "Devarim 3:20 · word 2 of 9" — the position, in the reader's terms.
 function taskWhere() {
   if (!task) return '';
-  if (task.kind === 'whole') return plan.partRef(part, current) || '';
+  if (task.kind === 'whole') return refFor(part) || '';
   if (task.kind === 'chain') return api.verseRange(task.start, task.end);
   const bits = [api.verseRef(task.verse)];
   const n = api.unitsShown();
@@ -524,7 +579,7 @@ function renderBar() {
     // the reader is chanting whole pesukim (round 3) or has just missed.
     const showDuet = round.id >= 3 || (result && !result.passed) || chunky;
     el.bar.innerHTML = `
-      <button class="g-act g-listen" data-click="${listen}">\u266a Listen</button>
+      <button class="g-act g-listen" data-click="${listen}">\u266a ${recorded() ? 'Listen' : 'Guide voice'}</button>
       <button class="g-act g-sing" data-click="${sing}">\u25cf ${chunky ? 'Chant it' : 'Sing it'}</button>
       ${showDuet ? `<button class="g-act g-duet" data-click="${duet}">\u21c5 Sing along</button>` : ''}`;
   }
@@ -562,7 +617,7 @@ function renderMenu() {
   el.menu.innerHTML = `
     <div class="g-menu-head">
       <button class="g-menu-close" id="gClose" aria-label="Close">\u2715</button>
-      <p class="g-menu-title">${escapeHtml(who ? `${who}\u2019s ${plan.occasionLabel(p).toLowerCase()}` : plan.occasionLabel(p))}</p>
+      <p class="g-menu-title">${escapeHtml(who ? `${who}\u2019s ${plan.occasionName(p).toLowerCase()}` : plan.occasionLabel(p))}</p>
       <p class="g-menu-sub">${escapeHtml(p.parashah)} \u00b7 ${escapeHtml(plan.formatDate(p.date))}${days ? ` \u00b7 ${escapeHtml(days)}` : ''}</p>
       <p class="g-menu-he" lang="he" dir="rtl">${escapeHtml(p.hebrew || '')}</p>
     </div>
@@ -614,7 +669,7 @@ function partRowHtml(p) {
         </span>
         <span class="g-bars">${bars}</span>
         <span class="g-part-foot">
-          <span class="g-part-ref">${swapped ? '\u2726 ' : ''}${escapeHtml(plan.partRef(p, current) || '')}</span>
+          <span class="g-part-ref">${swapped ? '\u2726 ' : ''}${escapeHtml(refFor(p) || '')}</span>
           ${whole ? `<span class="g-part-whole">whole: ${whole}</span>` : ''}
         </span>
       </button>
@@ -771,12 +826,35 @@ function refreshPicker() {
         <p class="ob-pmeta">${desc.count} ${desc.count === 1 ? 'pasuk' : 'pesukim'}</p>
       </div>` : ''}
     ${tooLong ? `<p class="ob-warn">${desc.count} pesukim is more than the ${desc.max} the app will prepare at once \u2014 pick a shorter passage.</p>` : ''}
+    ${desc && !tooLong ? voiceNote(desc) : ''}
     ${book.accents === 'poetic' ? `<p class="ob-note">${escapeHtml(book.en)} is written with the poetic accents, which are chanted to a different system. The trope here will be the ordinary one.</p>` : ''}`;
   // Landing on the appointed passage is not a substitution, so the button stops
   // saying "instead" — and pressing it puts the plan back on the calendar's own
   // reading rather than storing a substitution identical to it (see applyPick).
   byId('gPickGo').textContent = isAppointed(desc) ? 'Chant this' : 'Chant this instead';
   byId('gPickGo').disabled = tooLong || !desc;
+}
+
+// Whose voice this passage will be chanted in, said before the reader commits to it.
+// Recordings exist for the readings the app was built with; the rest of Tanakh — any
+// haftarah outside the weekly cycle, for instance — has no recording anywhere, and
+// the app teaches it from the trope shapes measured across the recordings it has.
+// That is a real difference to a reader listening for a cantor, so it belongs on
+// this screen rather than being discovered after the fact.
+function voiceNote(desc) {
+  const rec = desc.recording;
+  if (rec && rec.exact) {
+    return `<p class="ob-note ob-good">\u266a Recorded \u2014 these are the pesukim of
+      ${escapeHtml(rec.label)}, so ${escapeHtml(plan.possessive(current) === 'your' ? 'you' : (current.learner || 'they'))}
+      will be chanting along with the cantor.</p>`;
+  }
+  if (rec) {
+    return `<p class="ob-note">These pesukim sit inside ${escapeHtml(rec.label)}, which is recorded.
+      Choose that whole passage and the cantor sings it; as it stands the guide voice will be synthesized.</p>`;
+  }
+  return `<p class="ob-note">No one has recorded these pesukim, so the guide voice will be
+    synthesized \u2014 the words and the accents are exact, and every accent\u2019s tune and timing is
+    measured from the cantor\u2019s own chanting, but there is no human recitation of this passage to copy.</p>`;
 }
 
 // Whether what is on screen is simply the passage the calendar appointed. Compared
@@ -842,6 +920,11 @@ function wirePicker() {
       readingId: desc.readingId,
       progressSlug: desc.progressSlug,
       count: desc.count,
+      // These pesukim ARE a reading the app ships with a recording (another week's
+      // haftarah, say). Open that rather than assembling the same words out of the
+      // book text, or the reader would be taught by the synthesized guide while a
+      // recording of exactly this passage sat unused.
+      recordedAs: desc.recording && desc.recording.exact ? desc.recording.slug : null,
     });
   });
 }
