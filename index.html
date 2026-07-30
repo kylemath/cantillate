@@ -18,6 +18,11 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
 
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- Guided mode: the onboarding wizard and the narrowed, one-thing-at-a-time
+       practice surface for a reader preparing one reading for one date. Kept in
+       its own sheet because it is a skin OVER the workshop rather than part of
+       it — see js/guided.js. -->
+  <link rel="stylesheet" href="css/guided.css" />
 </head>
 <body>
   <!-- Mobile-only slim app bar: an always-visible top strip with a menu button
@@ -26,6 +31,7 @@
   <div class="mobilebar" id="mobileBar">
     <button id="settingsToggle" class="mb-menu" aria-label="Settings menu" aria-expanded="false" title="Reading &amp; display settings">⚙</button>
     <span class="mb-title">Cantillate</span>
+    <div class="learningchip mb-learn" id="learningChipMobile"></div>
     <button id="mobileVersesBtn" class="mb-verses" aria-label="Choose a verse" title="Pick a verse to practice">📖 Verses</button>
   </div>
 
@@ -55,6 +61,10 @@
         </select>
       </div>
       <div class="chrome-end">
+        <!-- "Currently learning": the one control that always leads back to the
+             reading being prepared for a date, whatever reading is open and
+             whatever this week's parashah happens to be. -->
+        <div class="learningchip" id="learningChip"></div>
         <div id="authBox" class="authbox"></div>
         <button id="settingsToggleDesktop" class="toggle settings-btn" aria-label="Settings" aria-expanded="false" title="Display, scoring &amp; tools">⚙ Settings</button>
       </div>

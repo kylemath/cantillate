@@ -12,6 +12,12 @@ external services at runtime
 turned on — see [Accounts, saved progress & leaderboards](#accounts-saved-progress--leaderboards)).
 Readings are data-driven — see [Adding a reading / parashah](#adding-a-reading--parashah).
 
+It has two faces over one engine: a **workshop** for someone who wants every
+control, and a **[guided mode](#guided-mode-learning-one-reading-for-one-date)**
+for someone preparing one reading for one date — enter the date of the simcha and
+it names the parashah, then runs the whole ladder as four rounds of practice with
+two buttons on screen.
+
 ## Quick start
 
 ```bash
@@ -23,6 +29,85 @@ access. No build step, no install. On a phone it works in the mobile browser:
 tap the ☰ button to open the pesukim list, and rotate to landscape for a
 larger practice view. (Mic + Web Audio require `http://`, so opening the file
 directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
+
+A first-time visitor is met by **[guided mode](#guided-mode-learning-one-reading-for-one-date)**,
+which asks what they are learning for and then runs it as four rounds of
+practice. To go straight to the full workshop instead, open
+`index.html?guided=0`.
+
+## Guided mode: learning one reading for one date
+
+Most people who open this app are not here to explore the te'amim. They have a
+date, a reading, and a few months. Guided mode is the app for them; everything
+described under [What it does today](#what-it-does-today) is the **workshop**
+behind it, one tap away and unchanged.
+
+**The wizard.** One question per screen, each answer a tap that also moves on:
+what the occasion is → whose it is → their name → **the date**. The date is the
+one fact a family reliably has, so it is the load-bearing answer: it resolves to
+the parashah read that Shabbat, which is then shown as a card to *approve* —
+name, Hebrew name, Hebrew date, and the Torah, maftir and haftarah passages. A
+reader who doesn't know the date (or whose parashah isn't the one the date lands
+on) can browse all 53 Shabbat readings by name instead, each with the next
+Shabbat it comes round on. Then: the whole parashah or one triennial third (asked
+as "how much is being read", with the rite named as a hint rather than as the
+question, and the cycle year the date falls in offered as the answer), and which
+parts they will chant — maftir and haftarah by default for a bar/bat mitzvah,
+any of the seven aliyot otherwise.
+
+That becomes the **plan**: a stored record of what is being learned, for whom,
+for when. It is deliberately *not* the same thing as the reading that happens to
+be open or the parashah of the upcoming Shabbat, so a reader preparing for next
+spring is never displaced by this week. In the workshop it shows as a ★ chip in
+the header (and stars the readings it needs in the Reading menu); tapping it
+returns to guided mode.
+
+**The four rounds.** The nine stages of the ladder are grouped into four rounds,
+because "sing the words" and "read it from the scroll" are things a reader can be
+asked to do and "stage 6 of 9" is not:
+
+| Round | Stages | What it is |
+| --- | --- | --- |
+| **1 · Words** | 1–2 | Hear each word, then sing it back |
+| **2 · Phrases** | 3–4 | Join the words into the phrases the accents mark |
+| **3 · Pesukim** | 5–7 | The whole pasuk, then with the aids taken away |
+| **4 · The scroll** | 8–9 | Scroll letters, then the whole part end to end |
+
+The surface narrows to match: a top bar naming the part and the round (with the
+four rounds as four filling pips), a mission card saying what to do, *why this
+piece*, and where in it you are, and **one row of large buttons** — listen, sing,
+stop. The workshop's own controls are hidden rather than removed, and reappear as
+the rounds go up: the accuracy bars in round 2, the live pitch meter in round 3,
+the spectrograms in round 4. Round 1 is a word and two buttons.
+
+**What comes next is chosen, not offered.** `js/schedule.js` rotates between
+three moves — **advance** (the next thing not yet done), **repair** (a word or a
+pasuk whose stored best is weak, worst first, or merely-passed work to polish),
+and **combine** (runs of 2–4 consecutive pesukim, and finally the whole part in
+one go). The rotation is why a reader improves rather than merely accumulating:
+marching forward only leaves verse 24 untouched and week-one's shaky words still
+shaky, and drilling the weakest thing forever means never reaching a new pasuk.
+Every task says why it was chosen ("Back to this — it scored 61"), and the result
+is one number in a dial with one obvious next step.
+
+**The menu** (☰) shows each part's four rounds as four bars plus its whole-part
+score, the two settings worth having at this size (text size, pitch analysis),
+and the ways out: change the date/cycle/parts, learn a different parashah, or
+open the full workshop. Changing the plan never deletes practice — scores are
+filed under the pesukim themselves, so coming back to a reading finds it exactly
+where it was left.
+
+**A haftarah of his own.** Plenty of b'nei mitzvah chant something other than the
+haftarah the calendar appoints: a shul with its own custom, a special Shabbat, a
+passage chosen for the child. Tapping ✎ on a part in the menu opens the workshop's
+[Any passage](#any-passage-any-book) picker with everything but the question taken
+away — book, first pasuk, last pasuk, and a line saying what that comes to in both
+languages. The two ends can't cross (moving one past the other takes the other with
+it) and a passage too long to prepare is refused with the reason. What the calendar
+appointed stays on record, so the substitution can be described and given back; and
+because progress is filed under the book and the pasuk a passage starts at, a
+substituted haftarah is measured on its own pesukim and keeps them if it is swapped
+out again.
 
 ## What it does today
 
@@ -375,7 +460,16 @@ modules (accent ranks and every division, the phrase fold-back rule, the progres
 migration, section/chain scores) and validates every entry in
 `data/readings.json` — including that each haftarah is one chunk over its whole
 passage and that every accent in the shipped haftarot has a measured *haftarah*
-shape that differs from its Torah one. `scripts/check_app.py` walks the actual app:
+shape that differs from its Torah one. It also checks the three modules behind
+[guided mode](#guided-mode-learning-one-reading-for-one-date): that
+`data/calendar.json` names a parashah and a triennial year for all 1,074 Shabbatot
+it covers and resolves a mid-week date forward to that week's reading, that a plan
+built from one has the right parts and refs, and that the scheduler **walks a part
+to 100% and then stops** — all four rounds in order, every stage of every pasuk
+handed out, the pesukim chained, and weak words coming back before anything is
+polished. That last one matters most: a schedule that quietly never finishes, or
+never revisits weak work, is invisible in the UI until months of practice have
+gone into it. `scripts/check_app.py` walks the actual app:
 the reading menu, the aliyah accordion, verse chains, all nine stages, the Divide
 control, the drill set, the excerpts, a haftarah, and the **✦ Any passage** picker
 end to end (book → parashah → pasuk range → open it → chant it → reload and find
@@ -383,7 +477,19 @@ it remembered → save one under a name and find it by that name after another
 reload, with its progress untouched when the name is given up) — then plays the
 recorded chant and records a duet with a fake
 microphone to check that Space holds it, `,` and `.` step a word, and resuming and
-stopping behave. `scripts/shot.py` grabs a screenshot for eyeballing a change.
+stopping behave. Finally it walks the onboarding wizard question by question from
+a clean slate (including that a date names the right parashah in both languages,
+that Back keeps the answers, and that the browse-by-name list filters) and then
+guided mode itself: the round pips, the mission card, listen → sing → score, the
+progress menu, switching parts, and out to the workshop and back via the ★ chip.
+It then trades the appointed haftarah for a passage from another book and back
+again — that the picker opens on what was appointed, clamps a range instead of
+refusing it, stops one that is too long, opens the chosen passage there and then,
+measures it under its own pesukim, and keeps those pesukim when the appointed one
+is taken back.
+Because those steps save a plan, they run last; the expert-mode steps pin
+themselves to the workshop with `?guided=0`. `scripts/shot.py` grabs a screenshot
+for eyeballing a change.
 
 ## Run it
 
@@ -409,6 +515,16 @@ are one command away and need no code (see
 recording to `audio/`, so they are built as they are wanted rather than all at
 once. **Every** book of the Tanakh is bundled as text for
 [Any passage](#any-passage-any-book).
+
+The **parashah calendar** for 2024–2045 (`data/calendar.json`, 1,074 Shabbatot),
+so guided mode can turn the date of a simcha into a reading with no network and no
+calendar arithmetic. Which parshiyot are read together depends on the length of
+the Hebrew year and where the festivals fall, so it is built from Hebcal rather
+than computed in the browser: `.venv/bin/python scripts/build_calendar.py`
+(`--report` re-checks the triennial years against Hebcal's own schedule). A
+reading a reader's date lands on that the app doesn't ship yet still works — the
+passage is assembled from `data/tanakh/` and chanted in the measured melody, the
+same way a trope drill is.
 
 Three readings from outside Deuteronomy are here for one reason: they are the only
 places the four rarest accents are ever sung, so without them the trope drills had
@@ -628,6 +744,7 @@ own best (dashed) and the current record score (dotted) as targets to beat.
 ```
 index.html            app shell
 css/styles.css        styling (RTL-aware, dark theme)
+css/guided.css        the onboarding wizard + guided mode's narrowed surface
 js/hebrew.js          Unicode helpers: strip vowels/te'amim, tokenize, detect accents
 js/trope.js           trope motifs as pitch contours + melody building
 js/audio.js           Web Audio synthesis of the target melody
@@ -635,12 +752,18 @@ js/pitch.js           microphone + shared pitch detection (autocorrelation)
 js/realaudio.js       recorded-chant playback + live spectrogram/pitch analysis
 js/viz.js             canvas: coach contour, real/user overlays, spectrogram, scoring
 js/levels.js          stage ladder, aid progression + the division ranks
+js/calendar.js        date → parashah, triennial year + the week's passages
+js/plan.js            the "currently learning" plan: whose, when, which parts
+js/schedule.js        what to practise next: advance / repair / combine
+js/onboarding.js      the first-run wizard, one question per screen
+js/guided.js          guided mode: four rounds over the same practice engine
 js/store.js           localStorage scores + unlocks (+ cloud merge/sync hooks)
 js/auth.js            optional Google sign-in + Firestore progress sync + leaderboard
 js/firebase-config.js Firebase web config (placeholders = offline-only; see above)
 js/tanakh.js          the browsable Tanakh: book index, lazy per-book text, ranges
 js/app.js             UI controller / glue
 data/readings.json    reading manifest: parashiyot, haftarot, drills + excerpts
+data/calendar.json    which parashah is read on which Shabbat, 2024–2045
 data/devarim1.json    local Hebrew text (Masoretic, with vowels + te'amim)
 data/vaetchanan.json  parashat Va'etchanan text + aliyot (multi-chapter reading)
 data/trope-drills.json  synthetic te'amim exercises (no recording of their own)
@@ -654,6 +777,7 @@ scripts/tanakh.py     the 39 books: names in three projects' spellings, numerals
 scripts/haftarot.py   all 54 haftarot, derived from Hebcal + PocketTorah
 scripts/build_haftarot.py  build haftarot by slug, by book, or from this week on
 scripts/build_tanakh.py    build the browsable text of the Tanakh
+scripts/build_calendar.py  build data/calendar.json from Hebcal (date → parashah)
 scripts/build_reading.py  ONE command: text+English+audio+pitch+shapes+register
 scripts/fetch_text.py fetch/refresh text from Sefaria (legacy single-chapter)
 scripts/fetch_translation.py fetch + merge an English translation

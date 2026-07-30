@@ -1,0 +1,355 @@
+// What to practise next.
+//
+// Expert mode hands the reader nine stages and a verse list and lets them choose.
+// Guided mode has to choose FOR them, one thing at a time, and the choice is most
+// of what makes the difference between a reader who improves and one who merely
+// accumulates. Two failure modes to avoid:
+//
+//   * marching forward only. Verse 1 gets nine stages of attention and verse 24
+//     gets none, and the words that were shaky in week one are still shaky in
+//     week eight because nothing ever came back to them.
+//   * drilling the weakest thing forever. A reader who never reaches a new pasuk
+//     has no sense of progress, and the joins between pesukim — where a long
+//     reading actually falls apart — never get rehearsed at all.
+//
+// So the schedule alternates deliberately between three moves: ADVANCE (the next
+// thing not yet done), REPAIR (something already attempted that scored badly, or
+// scored well enough to pass but not well enough to stand up with), and COMBINE
+// (chain what is known into longer runs, up to the whole part). The pattern is
+// fixed enough to feel like a plan and jittered enough not to feel like a loop.
+
+import * as store from './store.js';
+import { LEVELS, FULL_VERSE_LEVEL, VERSE_MODES } from './levels.js';
+
+// The nine stages, grouped into four rounds. A round is a coherent thing to be
+// told to do ("sing the words", "read it from the scroll"); nine numbered stages
+// are not, and naming them all up front is exactly the complication guided mode
+// exists to remove.
+export const ROUNDS = [
+  {
+    id: 1, key: 'words', label: 'Words', icon: '\u{1f524}',
+    levels: [1, 2],
+    goal: 'Hear each word, then sing it back',
+    blurb: 'One word at a time, with the cantor to copy. Everything is shown.',
+  },
+  {
+    id: 2, key: 'phrases', label: 'Phrases', icon: '\u{1f3b5}',
+    levels: [3, 4],
+    goal: 'Join the words into phrases',
+    blurb: 'The accents group the words into musical phrases. Chant them whole.',
+  },
+  {
+    id: 3, key: 'pesukim', label: 'Pesukim', icon: '\u{1f4d6}',
+    levels: [5, 6, 7],
+    goal: 'Chant each pasuk on your own',
+    blurb: 'The whole pasuk, then again with the helps taken away one at a time.',
+  },
+  {
+    id: 4, key: 'scroll', label: 'The scroll', icon: '\u{1f4dc}',
+    levels: [8, 9],
+    goal: 'Read it from the scroll, end to end',
+    blurb: 'Bare scroll letters, no vowels, no accents \u2014 and then the whole thing in one go.',
+  },
+];
+
+export function roundById(id) { return ROUNDS.find((r) => r.id === id) || ROUNDS[0]; }
+
+export function roundOfLevel(level) {
+  return ROUNDS.find((r) => r.levels.includes(level)) || ROUNDS[ROUNDS.length - 1];
+}
+
+// Has this pasuk finished with this round?
+//
+// Passing a stage unlocks the next one, so for every round but the last "cleared"
+// is simply "unlocked past its final stage". The ninth stage has nothing above it
+// to unlock — the store caps at LEVELS.length — so the top round is judged on the
+// score that stage actually recorded instead. Without that, round 4 could never
+// complete and the reader would be told they were three quarters done forever.
+function clearedRound(ctx, verse, round) {
+  const last = round.levels[round.levels.length - 1];
+  if (levelOf(ctx, verse) > last) return true;
+  if (last < LEVELS.length) return false;
+  const mode = VERSE_MODES.find((m) => m.level === last);
+  const level = LEVELS.find((l) => l.id === last);
+  if (!mode || !level) return false;
+  const best = store.getVerseModeScores(ctx.slug, verse)[mode.key] || 0;
+  return best >= level.threshold;
+}
+
+// Below this, a stored best is a weakness worth going back to before anything
+// else. Above REPAIR_POLISH it is good enough that repeating it teaches little.
+const REPAIR_WEAK = 70;
+const REPAIR_POLISH = 88;
+
+// Chains (runs of consecutive pesukim) become available once this many adjacent
+// pesukim can each be chanted whole, and are worth revisiting below this score.
+const CHAIN_MIN = 2;
+const CHAIN_MAX = 4;
+const CHAIN_GOOD = 80;
+
+// The rotation. Read left to right, wrapping; the first move with something to
+// offer wins, so early on (nothing yet attempted, nothing to chain) it collapses
+// to pure advance, and it fills out on its own as the reader accumulates work.
+const PATTERN = ['advance', 'advance', 'repair', 'advance', 'combine',
+  'advance', 'repair', 'advance', 'combine', 'repair'];
+
+// --- Context ----------------------------------------------------------------
+// Everything the scheduler needs about the part being learned. `chunk` is the
+// whole-part challenge (an aliyah/maftir/haftarah descriptor as app.js builds
+// them); `unitCount(verse, level)` reports how many words/phrases/sections a
+// stage cuts that pasuk into, which only the caller can compute (it needs the
+// text), and may return 1 when unknown.
+
+export function makeContext({ slug, verses, cycle = 'annual', triYear = 1,
+  chunk = null, unitCount = null }) {
+  return {
+    slug,
+    verses: (verses || []).slice(),
+    cycle,
+    triYear,
+    chunk,
+    unitCount: unitCount || (() => 1),
+  };
+}
+
+// --- Reading the state ------------------------------------------------------
+
+export function levelOf(ctx, verse) {
+  return store.getVerseLevel(ctx.slug, verse);
+}
+
+// How far through the whole part each round is: how many of its pesukim have
+// cleared the round, out of all of them. Round 4 additionally wants the whole
+// part chanted in one go, which is the last box on the whole plan.
+export function roundProgress(ctx, round) {
+  const total = ctx.verses.length;
+  const done = ctx.verses.filter((n) => clearedRound(ctx, n, round)).length;
+  const out = { round, done, total, pct: total ? Math.round((done / total) * 100) : 0 };
+  if (round.id === 4) {
+    out.wholeScore = wholeScore(ctx);
+    out.wholeDone = out.wholeScore >= CHAIN_GOOD;
+    // The final round isn't finished until the part has actually been chanted
+    // through, so its percentage holds a little back for that.
+    if (total) {
+      out.pct = Math.round(((done + (out.wholeDone ? 1 : 0)) / (total + 1)) * 100);
+    }
+  }
+  return out;
+}
+
+export function wholeScore(ctx) {
+  if (!ctx.chunk) return 0;
+  return store.getAliyahScore(ctx.slug, ctx.cycle, ctx.triYear, ctx.chunk.n);
+}
+
+// The round the reader is on: the first one not yet finished. Once everything is
+// finished it stays on the last, where the work becomes polishing.
+export function currentRound(ctx) {
+  for (const r of ROUNDS) {
+    const p = roundProgress(ctx, r);
+    if (p.pct < 100) return r;
+  }
+  return ROUNDS[ROUNDS.length - 1];
+}
+
+// Overall completion of the part, evenly across the four rounds so the bar moves
+// early (a reader who has sung every word of every pasuk is genuinely a quarter
+// of the way, and should be shown as such).
+export function overallProgress(ctx) {
+  const rounds = ROUNDS.map((r) => roundProgress(ctx, r));
+  const pct = Math.round(rounds.reduce((a, r) => a + r.pct, 0) / rounds.length);
+  return { rounds, pct, round: currentRound(ctx) };
+}
+
+// --- Candidate moves --------------------------------------------------------
+
+// ADVANCE: the next stage not yet cleared, taken in verse order so the reading is
+// learned front to back. Confined to the current round, which is what keeps the
+// reader from being handed stage 8 on pasuk 1 while pasuk 2 is untouched.
+function advanceCandidates(ctx, round) {
+  const out = [];
+  for (const n of ctx.verses) {
+    if (clearedRound(ctx, n, round)) continue;
+    const lvl = levelOf(ctx, n);
+    // Work at the verse's own frontier, but never below the round's first stage.
+    const level = Math.max(lvl, round.levels[0]);
+    out.push({ kind: 'verse', verse: n, level, reason: 'advance' });
+    if (out.length >= 4) break;
+  }
+  return out;
+}
+
+// REPAIR: something already attempted that isn't solid. Words first (they are the
+// smallest fixable unit and the fastest win), then whole pesukim whose best under
+// the current aids is weak. Weakness is the sort key, so the worst thing the
+// reader owns is what comes back.
+function repairCandidates(ctx, round, threshold) {
+  const out = [];
+  for (const n of ctx.verses) {
+    const lvl = levelOf(ctx, n);
+    if (lvl <= 1) continue; // never attempted; that's advance's job, not repair's
+    const words = store.getWordScores(ctx.slug, n);
+    for (const gi of Object.keys(words)) {
+      const score = words[gi];
+      if (score > 0 && score < threshold) {
+        out.push({
+          kind: 'verse', verse: n, level: 1, word: Number(gi), score,
+          reason: 'repair', what: 'word',
+        });
+      }
+    }
+    // A whole-pasuk score that passed but only just: worth another take at the
+    // hardest aids configuration this verse has reached.
+    const modes = store.getVerseModeScores(ctx.slug, n);
+    for (const md of VERSE_MODES) {
+      const score = modes[md.key];
+      if (score > 0 && score < threshold && md.level <= lvl) {
+        out.push({
+          kind: 'verse', verse: n, level: md.level, score,
+          reason: 'repair', what: 'verse',
+        });
+      }
+    }
+  }
+  out.sort((a, b) => a.score - b.score);
+  return out;
+}
+
+// COMBINE: runs of consecutive pesukim that can each be chanted whole, and
+// finally the whole part. This is the rung a reader most often skips and most
+// often needs — knowing every pasuk cold still leaves the joins unrehearsed.
+function combineCandidates(ctx) {
+  const ready = new Set(ctx.verses.filter((n) => levelOf(ctx, n) >= FULL_VERSE_LEVEL));
+  const runs = [];
+  // Every maximal stretch of consecutive ready pesukim, cut into chains.
+  let block = [];
+  const flush = () => {
+    for (let size = CHAIN_MIN; size <= CHAIN_MAX; size++) {
+      for (let i = 0; i + size <= block.length; i += size) {
+        const start = block[i], end = block[i + size - 1];
+        const score = store.getChainScore(ctx.slug, start, end);
+        if (score >= CHAIN_GOOD) continue;
+        runs.push({ kind: 'chain', start, end, size, score, reason: 'combine' });
+      }
+    }
+    block = [];
+  };
+  for (const n of ctx.verses) {
+    if (ready.has(n) && (!block.length || n === block[block.length - 1] + 1)) block.push(n);
+    else { flush(); if (ready.has(n)) block = [n]; }
+  }
+  flush();
+  // Shortest first, and unpractised before merely weak: pairs before triples
+  // before the whole thing is the order the joins are actually learned in.
+  runs.sort((a, b) => (a.size - b.size) || (a.score - b.score));
+  // The whole part, once every pasuk in it is ready — the same gate the aliyah
+  // challenge uses in expert mode.
+  if (ctx.chunk && ctx.verses.length && ready.size === ctx.verses.length) {
+    const score = wholeScore(ctx);
+    if (score < CHAIN_GOOD) {
+      runs.push({ kind: 'whole', score, reason: 'combine' });
+    }
+  }
+  return runs;
+}
+
+// --- Picking ----------------------------------------------------------------
+
+// One of the worst few, rather than always the very worst, so a stubborn word
+// doesn't become the only thing the app ever asks for.
+function pickWeak(list, rand) {
+  if (!list.length) return null;
+  const pool = list.slice(0, Math.min(3, list.length));
+  return pool[Math.floor(rand() * pool.length)];
+}
+
+// The next thing to practise, or null when the part is finished to the standard
+// the schedule cares about. `session` counts tasks handed out, and is what walks
+// the pattern; pass it back in (see guided.js) so a sitting keeps its rhythm.
+export function nextTask(ctx, { session = 0, rand = Math.random, avoid = null } = {}) {
+  const round = currentRound(ctx);
+  const moves = {
+    advance: () => advanceCandidates(ctx, round),
+    repair: () => {
+      // Genuine weaknesses first; with none, polish what merely passed. This is
+      // the "improve, don't just advance" move, and it is why a reader who has
+      // cleared everything still has something worthwhile offered to them.
+      const weak = repairCandidates(ctx, round, REPAIR_WEAK);
+      return weak.length ? weak : repairCandidates(ctx, round, REPAIR_POLISH);
+    },
+    combine: () => combineCandidates(ctx),
+  };
+
+  // Walk the pattern from wherever this session is, taking the first move with
+  // something to offer.
+  const tried = new Set();
+  for (let i = 0; i < PATTERN.length; i++) {
+    const move = PATTERN[(session + i) % PATTERN.length];
+    if (tried.has(move)) continue;
+    tried.add(move);
+    const list = moves[move]().filter((t) => !sameTask(t, avoid));
+    if (!list.length) continue;
+    const task = move === 'advance' ? list[0] : pickWeak(list, rand);
+    if (task) return { ...task, round: round.id };
+  }
+  // Nothing left under any move: allow the thing we were told to avoid rather
+  // than handing back nothing at all.
+  for (const move of ['advance', 'repair', 'combine']) {
+    const list = moves[move]();
+    if (list.length) {
+      const task = move === 'advance' ? list[0] : pickWeak(list, rand);
+      if (task) return { ...task, round: round.id };
+    }
+  }
+  return null;
+}
+
+// Two tasks are the same piece of work (used to avoid handing back what was just
+// finished, and to spot when a task is already done).
+export function sameTask(a, b) {
+  if (!a || !b || a.kind !== b.kind) return false;
+  if (a.kind === 'whole') return true;
+  if (a.kind === 'chain') return a.start === b.start && a.end === b.end;
+  return a.verse === b.verse && a.level === b.level && (a.word ?? null) === (b.word ?? null);
+}
+
+// --- Describing a task ------------------------------------------------------
+
+// What the reader is told to do. Deliberately about the WORK, not the mechanism:
+// "Sing this phrase" rather than "stage 3 of 9, unit 2 of 5".
+export function taskTitle(task) {
+  if (!task) return '';
+  if (task.kind === 'whole') return 'Chant the whole thing';
+  if (task.kind === 'chain') {
+    return `Chant ${task.size} pesukim without stopping`;
+  }
+  const level = LEVELS.find((l) => l.id === task.level);
+  if (task.what === 'word') return 'Come back to a tricky word';
+  if (!level) return 'Practise';
+  if (level.unit === 'word') return task.level === 1 ? 'Listen, then sing it back' : 'Sing the words';
+  if (level.unit === 'phrase') return 'Sing the phrases';
+  if (level.unit === 'section') return 'Sing the longer sections';
+  if (task.level === 6) return 'Sing it with the accents hidden';
+  if (task.level === 7) return 'Sing it with no vowels';
+  if (task.level === 8) return 'Read it in scroll letters';
+  if (task.level === 9) return 'Read it from a Torah column';
+  return 'Sing the whole pasuk';
+}
+
+// Why this task, in the reader's terms. The honesty matters: being told "this one
+// scored 61 last time" is motivating in a way that an unexplained repeat is not.
+export function taskWhy(task) {
+  if (!task) return '';
+  if (task.reason === 'advance') return 'Something new';
+  if (task.reason === 'combine') {
+    return task.kind === 'whole' ? 'Everything you have learned, in one go' : 'Practise the joins';
+  }
+  if (task.score != null) {
+    return task.score < REPAIR_WEAK
+      ? `Back to this \u2014 it scored ${task.score}`
+      : `Polishing \u2014 your best here is ${task.score}`;
+  }
+  return 'Back to something earlier';
+}
+
+export const THRESHOLDS = { weak: REPAIR_WEAK, polish: REPAIR_POLISH, good: CHAIN_GOOD };

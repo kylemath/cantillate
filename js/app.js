@@ -16,6 +16,9 @@ import * as auth from './auth.js';
 import * as scores from './scores.js';
 import * as offline from './offline.js';
 import { loadTikkunData, renderTikkunPages, TIKKUN_DATA_URL } from './tikkun.js';
+import * as plan from './plan.js';
+import * as guided from './guided.js';
+import * as onboarding from './onboarding.js';
 
 // An aliyah's scroll+yad challenge unlocks once every pasuk in it has reached at
 // least this stage (i.e., the learner has worked it up to whole-verse practice).
@@ -236,7 +239,11 @@ function upcomingParashahSlug(available, today = new Date()) {
 // Group the reading menu into <optgroup>s so the weekly parashiyot, the
 // standalone prayers and the trope drills read as three different kinds of thing
 // rather than one long list.
-function renderReadingMenu(sel) {
+function renderReadingMenu(sel = $('parashah')) {
+  if (!sel) return;
+  // Rebuilt in place, so whatever is open stays open: this runs again whenever the
+  // plan changes (the stars below) or a passage is added, not only at startup.
+  const open = sel.value;
   sel.innerHTML = '';
   const order = [];
   const byGroup = new Map();
@@ -245,6 +252,9 @@ function renderReadingMenu(sel) {
     if (!byGroup.has(g)) { byGroup.set(g, []); order.push(g); }
     byGroup.get(g).push(p);
   }
+  // The readings the reader is actually preparing get a ★, so they are findable
+  // in a menu of 33 entries without having to remember which parashah it was.
+  const learning = new Set(plan.readingSlugs());
   const single = order.length < 2;
   for (const g of order) {
     const parent = single ? sel : document.createElement('optgroup');
@@ -252,12 +262,13 @@ function renderReadingMenu(sel) {
     for (const p of byGroup.get(g)) {
       const o = document.createElement('option');
       o.value = p.slug;
-      o.textContent = p.label;
+      o.textContent = learning.has(p.slug) ? `\u2605 ${p.label}` : p.label;
       if (p.note) o.title = p.note;
       parent.appendChild(o);
     }
     if (!single) sel.appendChild(parent);
   }
+  if (open && [...sel.options].some((o) => o.value === open)) sel.value = open;
 }
 
 async function init() {
@@ -349,6 +360,291 @@ async function init() {
   setupCustomPicker();
   setupOfflineButton();
   setupNetBadge();
+
+  // Guided mode. A reader who has told the app what they are learning gets the
+  // narrowed, one-thing-at-a-time surface by default; one who hasn't gets the
+  // workshop, plus an invitation to say. The wizard is only forced on a genuinely
+  // first-time visitor, so a returning expert user is never interrupted by it.
+  guided.install(guidedApi());
+  renderLearningChip();
+  const wanted = guidedPreference();
+  if (wanted === 'expert') { markFirstVisitDone(); return; }
+  if (plan.has()) await enterGuided();
+  else if (wanted === 'guided' || isFirstVisit()) openWizard();
+  markFirstVisitDone();
+}
+
+// `?guided=0` (or `?mode=expert`) opens straight into the workshop even for a
+// reader with a plan, and `?guided=1` asks for the guided surface. Link-level
+// rather than a setting: it is how a teacher shares the workshop with a student
+// who is otherwise in guided mode, and how the headless UI walkthrough
+// (scripts/check_app.py) reaches expert mode from an empty browser profile.
+function guidedPreference() {
+  try {
+    const q = new URLSearchParams(window.location.search);
+    const g = q.get('guided');
+    const m = q.get('mode');
+    if (g === '0' || g === 'off' || m === 'expert') return 'expert';
+    if (g === '1' || g === 'on' || m === 'guided') return 'guided';
+  } catch (e) { /* no URL API */ }
+  return null;
+}
+
+// Whether anything has ever been practised in this browser. A reader with scores
+// but no plan chose the workshop; don't put a wizard in front of them.
+const SEEN_KEY = 'cantillate.seen';
+
+function isFirstVisit() {
+  try {
+    if (localStorage.getItem(SEEN_KEY)) return false;
+    const all = store.getAll();
+    const touched = ['verses', 'words', 'levels', 'aliyot', 'modes']
+      .some((k) => all[k] && Object.keys(all[k]).length);
+    return !touched;
+  } catch (e) { return false; }
+}
+
+function markFirstVisitDone() {
+  try { localStorage.setItem(SEEN_KEY, String(Date.now())); } catch (e) { /* private mode */ }
+}
+
+// ---------------------------------------------------------------------------
+// Guided mode ("currently learning"). The bridge to js/guided.js, which is the
+// same engine with a much smaller surface for a reader preparing one reading for
+// one date. Guided mode never reaches into the state above; everything it needs
+// is in this one object, so the two halves stay separable — and every play,
+// record and score still goes through exactly the code path expert mode uses.
+// ---------------------------------------------------------------------------
+
+function guidedApi() {
+  return {
+    available: () => AVAILABLE,
+    readingId: () => state.readingId,
+    readingSlug: () => state.slug,
+    verseCount: () => (state.data ? state.data.verses.length : 0),
+    // The reading selector is the workshop's own source of truth for "what is
+    // open", and guided mode changes readings behind its back — so keep it in step,
+    // or crossing into expert mode lands on a menu naming the wrong reading.
+    loadReading: async (readingId) => {
+      const out = await loadData(readingId);
+      const sel = $('parashah');
+      if (sel && [...sel.options].some((o) => o.value === readingId)) sel.value = readingId;
+      return out;
+    },
+    openPassage: (book, from, to, opts) => openCustomRange(book, from, to, opts),
+    // Async, unlike the internal one: guided mode may be the first thing in the
+    // session to want a Tanakh book, and the index is only fetched on demand (the
+    // "Any passage" picker normally triggers it).
+    bookSlugFor: async (en) => {
+      try { await corpus.loadIndex(); } catch (e) { return null; }
+      return bookSlugFor(en);
+    },
+
+    // The Tanakh book list, for guided mode's "a different haftarah" picker. Same
+    // index, same clamping and same reference formatting the ✦ Any passage picker
+    // uses, so a passage chosen in either place is the same passage.
+    books: async () => {
+      try {
+        const idx = await corpus.loadIndex();
+        return (idx.books || []).map((b) => ({
+          slug: b.slug, en: b.en, he: b.he,
+          chapters: b.chapters.slice(), accents: b.accents,
+        }));
+      } catch (e) { return []; }
+    },
+    // A range put in order, clamped to the book, with the count and both refs —
+    // everything the picker needs to show what a choice means before opening it.
+    describeRange: (bookSlug, from, to) => {
+      const entry = corpus.bookEntry(bookSlug);
+      if (!entry) return null;
+      const r = corpus.normalizeRange(entry, from, to);
+      return {
+        ...r,
+        max: corpus.MAX_VERSES,
+        ref: corpus.refFor(entry.en, r.from, r.to),
+        heRef: corpus.heRefFor(entry.he, r.from, r.to),
+        readingId: corpus.readingId(bookSlug, r.from, r.to),
+        // Where practice on this passage is filed: the book and the pasuk it starts
+        // at, so every range beginning there shares one tally (see progressSlug).
+        progressSlug: corpus.progressSlug(bookSlug, r.from),
+        accents: entry.accents,
+        book: { slug: entry.slug, en: entry.en, he: entry.he },
+      };
+    },
+
+    setPortion: (cycle, year) => {
+      if (!hasAliyotCycle(state.readingKind)) return;
+      state.cycle = cycle === 'triennial' ? 'triennial' : 'annual';
+      state.triYear = Number(year) || 1;
+      syncPortionUI();
+      renderAliyot();
+      renderVerses();
+    },
+    aliyot: (cycle, year) => aliyotForReading(cycle, year),
+    maftir: (cycle, year) => maftirForReading(cycle, year),
+    // Which cycle the OPEN reading is actually on, which is not always the plan's:
+    // a haftarah or a picked passage is one fixed text, so loadData pins it to
+    // annual. Scores are filed under the cycle, so guided mode has to read them
+    // back under the one the app recorded them with.
+    cycleNow: () => ({ cycle: state.cycle, triYear: state.triYear }),
+    // The single chunk of a reading chanted straight through (a haftarah, or a
+    // passage picked out of a book). Parashiyot have aliyot instead.
+    wholeChunk: () => {
+      const list = defaultAliyot('annual', 1);
+      const whole = list.find((a) => a.n === 'H' || a.n === 'C' || a.kind === 'passage');
+      if (whole) return { ...whole };
+      if (hasAliyotCycle(state.readingKind)) return null;
+      return { n: 'H', kind: 'haftarah', start: 1, end: state.data.verses.length };
+    },
+
+    selectVerse: (n) => selectVerse(n),
+    selectStage: (id) => selectStage(id),
+    goToUnit: (i) => goToUnit(i),
+    openChain: (s, e) => openChain(s, e),
+    openAliyah: (a) => openAliyah(a),
+
+    unitsShown: () => (state.units ? state.units.length : 1),
+    currentUnitIndex: () => state.unitIndex,
+    currentUnitName: () => levelById(state.level).unit,
+    unitCount: (verse, level) => unitCountFor(verse, level),
+    unitIndexOfWord: (verse, level, gi) => unitIndexOfWord(verse, level, gi),
+    verseRef: (n) => {
+      const v = state.data && state.data.verses[n - 1];
+      return v ? `${state.data.book.en} ${verseRefLabel(v, n)}` : '';
+    },
+    verseRange: (a, b) => rangeRef(a, b),
+
+    // Guided mode's action bar names an intent ("listen") rather than a button,
+    // and which button serves it depends on the stage and whether this reading was
+    // recorded. So it hands over the preferences in order and the first one the
+    // pane is actually offering wins.
+    click: (...ids) => {
+      for (const id of ids.flat()) {
+        const b = $(id);
+        if (b && !b.disabled && !b.hidden) { b.click(); return id; }
+      }
+      return null;
+    },
+    stopAll: () => stopAll(),
+    isBusy: () => !!(state.recording || state.playingReal || state._aliyaRunning),
+    hasRecording: () => !!verseAudio(state.selectedVerse),
+
+    readScale: () => state.readScale,
+    setReadScale: (v) => applyReadScale(v, true),
+    analysisOn: () => state.showAnalysis,
+    setAnalysis: (on) => { if (on !== state.showAnalysis) toggleAnalysis(); },
+    download: () => { const b = $('btnOffline'); if (b && !b.hidden) b.click(); },
+
+    editPlan: () => editPlan(),
+    newPlan: () => newPlan(),
+    toExpert: () => leaveGuided(),
+    // The plan gained or lost a reading (a substituted passage), so the ★ chip and
+    // the stars in the reading menu are out of date.
+    planChanged: () => renderLearningChip(),
+  };
+}
+
+// How many words / phrases / sections a stage cuts a pasuk into. The scheduler
+// needs this to know when a task is finished; it can't compute it itself (the
+// answer is in the text and the accents).
+function unitCountFor(verse, level) {
+  const units = unitsForVerse(verse, level);
+  return units ? units.length : 1;
+}
+
+// Which unit of a stage holds a given word, so a repair task aimed at one weak
+// word opens on the page that actually contains it.
+function unitIndexOfWord(verse, level, gi) {
+  const units = unitsForVerse(verse, level);
+  if (!units) return 0;
+  const at = units.findIndex((u) => u.some((s) => s.index === gi));
+  return at < 0 ? 0 : at;
+}
+
+// The same division renderPractice would use for a verse at a stage, without
+// disturbing the open view (currentUnits reads the SELECTED verse and level).
+function unitsForVerse(verse, levelId) {
+  const v = state.data && state.data.verses[verse - 1];
+  if (!v) return null;
+  const segs = lineMelody(tokenize(v.text));
+  const level = levelById(levelId);
+  if (level.unit === 'word') return groupByMaqaf(segs);
+  if (level.unit === 'phrase') return splitPhrases(segs);
+  if (level.unit === 'section') return splitAtRank(segs, usableDivideRank(segs, level.divide));
+  return [segs];
+}
+
+// Guided mode owns the whole screen, so entering it stops whatever expert mode
+// was doing and puts the panes into the one layout guided mode draws.
+async function enterGuided() {
+  stopAll();
+  closeSettingsSheet();
+  closePasukDrawer();
+  await guided.start(plan.get());
+}
+
+function leaveGuided() {
+  guided.exit();
+  renderVerses();
+  renderAliyot();
+  renderStageBar();
+  if (state.selectedVerse != null && !state.aliyah) renderPractice();
+  renderLearningChip();
+}
+
+// Run the wizard. `editing` pre-fills it from the current plan, so changing the
+// date or the cycle is the same three screens rather than a separate editor.
+function openWizard({ editing = null } = {}) {
+  const wasGuided = guided.isActive();
+  guided.exit();
+  onboarding.open({
+    editing,
+    done: (built) => {
+      renderLearningChip();
+      if (built) enterGuided();
+      else if (wasGuided && plan.has()) enterGuided();
+    },
+  });
+}
+
+function editPlan() { openWizard({ editing: plan.get() }); }
+function newPlan() { openWizard(); }
+
+// The "currently learning" chip in the topbar: the one thing in expert mode that
+// always leads back to the plan, whatever reading happens to be open. It is
+// deliberately independent of the open reading and of today's date — a reader
+// learning for next spring opens the app on thirty parashiyot that are not
+// theirs, and none of them should displace the one that is.
+function renderLearningChip() {
+  // The reading menu stars whatever the plan needs, so it has to be redrawn
+  // whenever the plan changes — which is the same set of moments as the chip.
+  renderReadingMenu();
+  const slots = document.querySelectorAll('.learningchip');
+  if (!slots.length) return;
+  const p = plan.get();
+  const html = p ? chipHtmlFor(p) : startChipHtml();
+  for (const box of slots) {
+    box.innerHTML = html;
+    const btn = box.querySelector('button');
+    if (btn) btn.addEventListener('click', () => (p ? enterGuided() : newPlan()));
+  }
+}
+
+function startChipHtml() {
+  return `<button class="learn-start" title="Set up a reading to prepare for a date \u2014 a bar/bat mitzvah, or an aliyah you have been given">\u2605 Learning for a date?</button>`;
+}
+
+function chipHtmlFor(p) {
+  const who = plan.learnerName(p);
+  const ready = guided.planReadiness(p);
+  return `<button class="learn-chip"
+      title="Go back to what you are learning: ${escapeHtml(plan.summary(p))}">
+      <span class="learn-star">\u2605</span>
+      <span class="learn-text">
+        <b>${escapeHtml(who ? `${who}\u2019s ${p.parashah}` : p.parashah)}</b>
+        <span class="learn-sub">${escapeHtml(plan.countdown(p) || plan.occasionLabel(p))}${ready ? ` \u00b7 ${ready}%` : ''}</span>
+      </span>
+    </button>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -2027,6 +2323,10 @@ function syncTransportUI() {
     const b = $(id);
     if (b) b.disabled = !transportLive();
   }
+  // Guided mode's action bar swaps to a single Stop button while anything is
+  // running, and this is the one place every start and stop already passes
+  // through, so it needs no polling of its own.
+  guided.transportChanged();
 }
 
 // Clear the paused flag whenever a take or playback ends, so a fresh one starts
@@ -2954,7 +3254,9 @@ function saveCustomPassage(desc, name) {
   // (and its order) alone rather than shuffling it on every visit.
   if (list.some((p) => passageId(p) === id && p.name === clean)) return clean;
   const rest = list.filter((p) => passageId(p) !== id);
-  store.setSavedPassages([{ book: desc.book, from: desc.from, to: desc.to, name: clean }, ...rest]);
+  store.setSavedPassages([{
+    book: desc.book, from: desc.from, to: desc.to, name: clean, style: desc.style,
+  }, ...rest]);
   return clean;
 }
 
@@ -2969,25 +3271,32 @@ function forgetCustomPassage(id) {
 // text needed), so restoring a remembered passage costs nothing until it is
 // opened. `sources: []` says there is no recording; `custom` is what
 // readingDocFor uses to assemble the text.
-function customEntry(bookEntry, from, to, name = '') {
+// `style` names which melody the passage is taught in. It defaults to the
+// haftarah — the chant for reading from a book, which is right for the bulk of
+// the canon and for everything the ✦ Any passage picker offers. Guided mode is
+// the exception: when the passage IS the reader's maftir, the words come from the
+// chumash and the Torah melody is the correct one, so it asks for that explicitly
+// rather than being taught the wrong tune (see loadPartReading in guided.js).
+function customEntry(bookEntry, from, to, name = '', style = corpus.CUSTOM_TROPE_STYLE) {
   const { from: lo, to: hi, count } = corpus.normalizeRange(bookEntry, from, to);
   const ref = corpus.refFor(bookEntry.en, lo, hi);
   const heRef = corpus.heRefFor(bookEntry.he, lo, hi);
   // A named passage shows its name in the menu, so the reference it stands for
   // leads the tooltip instead of being lost.
+  const melody = style === 'torah' ? 'Torah melody' : 'haftarah melody';
   const notes = [name ? ref : '', heRef,
-    `${plural(count, 'pasuk', 'pesukim')} · haftarah melody, synthesized guide`].filter(Boolean);
+    `${plural(count, 'pasuk', 'pesukim')} · ${melody}, synthesized guide`].filter(Boolean);
   if (bookEntry.accents === 'poetic') notes.push(POETIC_NOTE);
   return {
     slug: corpus.readingId(bookEntry.slug, lo, hi),
     kind: 'custom',
-    tropeStyle: corpus.CUSTOM_TROPE_STYLE,
+    tropeStyle: style,
     group: CUSTOM_GROUP,
     label: name || ref,
     name,
     note: notes.join(' · '),
     sources: [],
-    custom: { book: bookEntry.slug, from: lo, to: hi, count },
+    custom: { book: bookEntry.slug, from: lo, to: hi, count, style },
   };
 }
 
@@ -3003,7 +3312,10 @@ function syncCustomMenu(select, extra) {
   const add = (desc, name) => {
     const entry = corpus.bookEntry(desc.book);
     if (!entry || seen.has(corpus.readingId(desc.book, desc.from, desc.to))) return;
-    const meta = customEntry(entry, desc.from, desc.to, name);
+    // `style` rides along with the descriptor so a passage opened in the Torah
+    // melody comes back in it after a reload, rather than silently reverting to
+    // the haftarah default (see customEntry).
+    const meta = customEntry(entry, desc.from, desc.to, name, desc.style);
     seen.add(meta.slug);
     keep.push(meta);
   };
@@ -3029,7 +3341,8 @@ function syncCustomMenu(select, extra) {
   }
 }
 
-async function openCustomRange(bookSlug, from, to, { remember = true, name = '' } = {}) {
+async function openCustomRange(bookSlug, from, to,
+  { remember = true, name = '', tropeStyle = corpus.CUSTOM_TROPE_STYLE } = {}) {
   await corpus.loadIndex();
   const entry = corpus.bookEntry(bookSlug);
   if (!entry) throw new Error(`unknown book: ${bookSlug}`);
@@ -3037,10 +3350,13 @@ async function openCustomRange(bookSlug, from, to, { remember = true, name = '' 
   if (norm.count > corpus.MAX_VERSES) {
     throw new Error(`${norm.count} pesukim is more than one passage (max ${corpus.MAX_VERSES})`);
   }
-  const desc = { book: entry.slug, from: norm.from, to: norm.to, count: norm.count };
+  const desc = {
+    book: entry.slug, from: norm.from, to: norm.to, count: norm.count, style: tropeStyle,
+  };
   if (name) saveCustomPassage(desc, name);
   if (remember) rememberCustomRange(desc);
-  const meta = customEntry(entry, norm.from, norm.to, savedNameFor(entry.slug, norm.from, norm.to));
+  const meta = customEntry(entry, norm.from, norm.to,
+    savedNameFor(entry.slug, norm.from, norm.to), tropeStyle);
   syncCustomMenu(meta.slug, meta);
   await loadData(meta.slug);
   return meta;
@@ -5122,7 +5438,22 @@ function finishAliyahRecord(tl) {
   // and remember it so a later pane rebuild (toolbar toggle) can re-apply it.
   state._aliyaWordHits = perVerse;
   applyAliyahWordHits(perVerse);
+  guided.notifyScore({
+    kind: kind === 'chain' ? 'chain' : 'whole',
+    start: a.start,
+    end: a.end,
+    n: a.n,
+    score,
+    threshold: ALIYAH_PASS,
+    passed: score >= ALIYAH_PASS,
+    assisted,
+  });
 }
+
+// What counts as chanting a whole aliyah / chain / haftarah well enough to move
+// on in guided mode. Expert mode has no such gate (it shows the number and lets
+// the reader judge), so this lives here rather than in levels.js.
+const ALIYAH_PASS = 80;
 
 // Persistent top-of-window stage selector. Any stage is navigable; stages not
 // yet unlocked for the current verse are marked, and opening one shows a locked
@@ -6257,6 +6588,7 @@ async function startRecording(opts = {}) {
   }
   $('btnRec').disabled = true;
   $('btnStop').disabled = false;
+  syncTransportUI(); // the take is live now: arm the scrub + guided Stop button
   $('result').innerHTML = singAlong
     ? '<span class="hint">Sing along — the voice guide plays (use headphones + a wired mic) as you match its shape.</span>'
     : '<span class="hint">Recording… start on any comfortable pitch; your first note is matched to the coach, so just follow the shape.</span>';
@@ -6578,6 +6910,19 @@ function finishRecording() {
   renderStageBar();
   maybePushScopes();
   if (level.unit === 'line') maybeOfferLeaderboardSubmit(headline);
+  // Guided mode draws its own verdict from this and decides what comes next.
+  guided.notifyScore({
+    kind: 'verse',
+    verse: state.selectedVerse,
+    level: level.id,
+    unit: level.unit,
+    unitIndex: state.unitIndex,
+    unitCount: state.units ? state.units.length : 1,
+    score: headline,
+    threshold: th,
+    passed: headline >= th,
+    assisted,
+  });
 }
 
 // Greyed page shown when navigating to a stage not yet unlocked for this verse.

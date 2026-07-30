@@ -19,6 +19,12 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 PORT = 9223
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://localhost:8123"
 
+# `guided=0` pins the walkthrough to the expert workshop. Without it a fresh
+# browser profile is a first-time visitor, and the app quite rightly opens the
+# guided onboarding wizard over the top of everything these steps poke at. The
+# guided surface has its own steps at the end of the run.
+APP_URL = f"{BASE}/index.html?guided=0"
+
 # Helpers injected into the page before the app boots, so every probe starts from
 # the same place regardless of what a previous run left in localStorage.
 PRELUDE = r"""
@@ -67,6 +73,20 @@ window.__t = {
     });
   },
   after(ms, fn) { return new Promise((res) => setTimeout(() => res(fn()), ms)); },
+  // Click a control by selector rather than by id: the onboarding wizard and the
+  // guided surface rebuild their buttons on every render, so there is nothing
+  // stable to hold on to but the shape of the thing.
+  tap(sel) {
+    const b = this.q(sel);
+    if (!b) return `no ${sel}`;
+    if (b.disabled) return `${sel} is disabled`;
+    b.click();
+    return this.text(b);
+  },
+  text(el) { return el ? el.textContent.replace(/\s+/g, ' ').trim() : ''; },
+  // The single question the wizard is asking, and the answers it offers.
+  ask() { return this.text(this.q('.ob-h')); },
+  answers() { return this.all('.ob-choice').map((b) => this.text(b)); },
   // Grant every stage on every pasuk of a reading, so the later stages can be
   // exercised without recording a take first. Takes effect on the next load.
   unlock(slug) {
@@ -696,14 +716,288 @@ def run_steps(c, steps, failures):
             failures.append(desc)
 
 
+# The onboarding wizard: a reader who has been sent a link and knows one fact, the
+# date. Each step is one question, and the answer to the date question is the one
+# the whole plan hangs on — so it is checked against the calendar rather than just
+# for "something appeared".
+WIZARD_STEPS = [
+    ("the wizard opens on one question at a time",
+     "(()=>{const n=__t.all('#onboard .ob-h').length;"
+     " return n===1 ? `OK one question: ${__t.ask()}` : `${n} headings on screen`;})()"),
+    ("it offers a way past the install advice",
+     "(()=>{const r=__t.tap('#obSkipInstall');"
+     " return __t.ask()==='What are you learning for?' ? `OK moved on (${r})` : `stuck on ${__t.ask()}`;})()"),
+    ("the occasion is asked in plain words, with no jargon",
+     "(()=>{const a=__t.answers();"
+     " return a.length===4 && /Bar mitzvah/.test(a[0]) && /Learning to chant/.test(a[3])"
+     "   ? `OK ${a.length} answers: ${a.map(s=>s.split(' ')[0]).join(', ')}` : `answers were ${JSON.stringify(a)}`;})()"),
+    ("choosing an answer IS moving on \u2014 no second tap on Next",
+     "(()=>{__t.tap('[data-occ=\"barmitzvah\"]');"
+     " return /Whose bar mitzvah/.test(__t.ask()) ? `OK ${__t.ask()}` : `landed on ${__t.ask()}`;})()"),
+    ("whose it is decides whether a name is asked for",
+     "(()=>{__t.tap('[data-role=\"family\"]');"
+     " return /What shall we call/.test(__t.ask()) ? `OK ${__t.ask()}` : `landed on ${__t.ask()}`;})()"),
+    ("the name is taken and carried forward",
+     "(()=>{const i=__t.q('#obName'); i.value='Noa';"
+     " i.dispatchEvent(new Event('input',{bubbles:true})); __t.tap('#obNext');"
+     " return /When is it/.test(__t.ask()) ? 'OK on to the date' : `landed on ${__t.ask()}`;})()"),
+    ("the date field is bounded by the calendar the app ships",
+     "(()=>{const d=__t.q('#obDate');"
+     " return d && d.min && d.max && d.min < d.max ? `OK ${d.min} to ${d.max}` : 'no bounds on the date';})()"),
+    # The load-bearing step. A wrong parashah here is six months of the wrong
+    # practice, so the app has to name it, in both languages, with its passages.
+    ("a date names the parashah read that week, in both languages",
+     "(async()=>{const cal=await import('/js/calendar.js'); await cal.load();"
+     " const want=cal.all().find(r=>r.parashah==='Eikev' && r.date>cal.today());"
+     " const d=__t.q('#obDate'); d.value=want.date; d.dispatchEvent(new Event('input',{bubbles:true}));"
+     " return __t.settle(()=>!!__t.q('.ob-parashah'), null, null, 4000).then(()=>{"
+     "   const card=__t.q('.ob-parashah'); if(!card) return 'no parashah was named';"
+     "   const name=__t.text(__t.q('.ob-pname')), he=__t.text(__t.q('.ob-phe'));"
+     "   return name===want.parashah && he===want.hebrew"
+     "     ? `OK ${want.date} \u2192 ${name} / ${he}` : `named ${name} / ${he}, wanted ${want.parashah}`;});})()"),
+    ("and the passages that go with it",
+     "(()=>{const t=__t.text(__t.q('.ob-refs'));"
+     " return /Deuteronomy/.test(t) && /Isaiah/.test(t) ? `OK ${t}` : `refs were ${t}`;})()"),
+    ("a reader who doesn't know the date can browse every parashah instead",
+     "(()=>{__t.tap('#obNoDate');"
+     " const n=__t.all('.ob-prow').length;"
+     " return n>=53 ? `OK ${n} parashiyot listed, each with its next Shabbat` : `only ${n} listed`;})()"),
+    ("the list filters as you type",
+     "(()=>{const f=__t.q('#obFilter'); f.value='shof';"
+     " f.dispatchEvent(new Event('input',{bubbles:true}));"
+     " const shown=__t.all('.ob-prow').filter(b=>!b.hidden);"
+     " return shown.length===1 && /Shoftim/.test(__t.text(shown[0]))"
+     "   ? `OK filtered to ${__t.text(shown[0])}` : `${shown.length} rows matched 'shof'`;})()"),
+    ("Back returns to the date, with the date still on it",
+     "(()=>{__t.tap('.ob-back');"
+     " const d=__t.q('#obDate');"
+     " return /When is it/.test(__t.ask()) && d && d.value"
+     "   ? `OK back on the date, still ${d.value}` : `landed on ${__t.ask()}`;})()"),
+    ("the cycle question says which third of the cycle that date falls in",
+     "(()=>{__t.tap('#obNext');"
+     " const a=__t.answers(), note=__t.text(__t.q('.ob-note'));"
+     " return /How much is being read/.test(__t.ask()) && a.length===2 && /year [123]/.test(note)"
+     "   ? `OK ${note}` : `asked ${__t.ask()} / ${JSON.stringify(a)} / ${note}`;})()"),
+    ("a bar mitzvah defaults to the maftir and the haftarah, already chosen",
+     "(()=>{__t.tap('[data-cycle=\"annual\"]'); __t.tap('#obNext');"
+     " const on=__t.all('.ob-part.on').map(b=>__t.text(b.querySelector('.ob-part-name')));"
+     " return on.length===2 && on.includes('Maftir') && on.includes('Haftarah')"
+     "   ? `OK ${on.join(' + ')}` : `chosen: ${JSON.stringify(on)}`;})()"),
+    ("and each one can be turned off and on again",
+     "(()=>{__t.tap('[data-part=\"maftir\"]');"
+     " const off=__t.all('.ob-part.on').length; __t.tap('[data-part=\"maftir\"]');"
+     " const back=__t.all('.ob-part.on').length;"
+     " return off===1 && back===2 ? 'OK toggles' : `went ${off} then ${back}`;})()"),
+    ("the last screen says what was decided, in the learner's name",
+     "(()=>{__t.tap('#obNext'); const t=__t.text(__t.q('#obBody'));"
+     " return /Noa will be chanting/.test(t) && /Eikev/.test(t) && /Maftir/.test(t)"
+     "   ? `OK ${t.slice(0, 90)}` : `said ${t.slice(0, 120)}`;})()"),
+]
+
+# Guided mode proper: the narrowed surface the wizard hands over to.
+GUIDED_STEPS = [
+    ("finishing the wizard starts the reader on their own reading",
+     "(()=>{__t.tap('#obFinish');"
+     " return __t.settle(()=>document.body.classList.contains('guided') && !!__t.q('.g-task'),"
+     "   null, null, 12000).then(()=>document.body.classList.contains('guided')"
+     "     ? `OK guided mode, on ${__t.q('#parashah').value}` : 'never entered guided mode');})()"),
+    ("the plan is remembered, not just acted on",
+     "(()=>{const p=JSON.parse(localStorage.getItem('cantillate.v1')||'{}').plan;"
+     " return p && p.slug==='eikev' && p.learner==='Noa' && p.parts.length===2"
+     "   ? `OK ${p.parashah} for ${p.learner}, ${p.parts.length} parts` : `stored ${JSON.stringify(p)}`;})()"),
+    ("the workshop's chrome is out of the way",
+     "(()=>{const hidden=['.mobilebar','.toolbar.stagebar','footer.src','#practice .transport']"
+     "   .filter(s=>{const e=__t.q(s); return !e || getComputedStyle(e).display==='none';});"
+     " return hidden.length===4 ? 'OK the settings sheet, stage bar, footer and transport are hidden'"
+     "   : `still showing: ${hidden.length}/4 hidden`;})()"),
+    ("the top bar names the part and the round, with the four rounds as pips",
+     "(()=>{const part=__t.text(__t.q('.g-top-part')), round=__t.text(__t.q('.g-top-round'));"
+     " const pips=__t.all('.g-pip').length;"
+     " return part==='Maftir' && /Round 1/.test(round) && pips===4"
+     "   ? `OK ${part} \u00b7 ${round} \u00b7 ${pips} pips` : `${part} / ${round} / ${pips} pips`;})()"),
+    ("the mission says what to do, why this piece, and where in it you are",
+     "(()=>{const task=__t.text(__t.q('.g-task')), why=__t.text(__t.q('.g-why-tag'));"
+     " const where=__t.text(__t.q('.g-where'));"
+     " return task && why && /Deuteronomy \\d+:\\d+/.test(where) && /word 1 of/.test(where)"
+     "   ? `OK ${task} \u2014 ${why} \u2014 ${where}` : `${task} / ${why} / ${where}`;})()"),
+    ("and there are two buttons, not twenty",
+     "(()=>{const b=__t.all('.g-act').map(x=>__t.text(x));"
+     " return b.length===2 && /Listen/.test(b[0]) && /Sing/.test(b[1])"
+     "   ? `OK ${b.join(' / ')}` : `bar was ${JSON.stringify(b)}`;})()"),
+    ("Listen plays the word, and the bar becomes one Stop while it does",
+     "(()=>{__t.tap('.g-listen');"
+     " return __t.settle(()=>__t.all('.g-act').length===1 && /Stop/.test(__t.text(__t.q('.g-act'))),"
+     "   'OK one Stop button while it plays', 'the bar never changed', 6000);})()"),
+    ("and goes back to Listen and Sing when it finishes",
+     "(()=>__t.settle(()=>__t.all('.g-act').length>=2,"
+     "   'OK the bar came back', 'the bar stayed on Stop', 20000))()"),
+    ("singing it records a take and scores it, with one number and one next step",
+     "(()=>{__t.tap('.g-sing');"
+     " return __t.settle(()=>__t.all('.g-act').some(b=>/Stop/.test(__t.text(b))), null, null, 8000)"
+     "  .then(()=>__t.after(1200, ()=>__t.key('Escape')))"
+     "  .then(()=>__t.settle(()=>!!__t.q('.g-score'), null, null, 9000))"
+     "  .then(()=>{const s=__t.q('.g-score'), acts=__t.all('.g-result-actions button');"
+     "    return s && acts.length===2"
+     "      ? `OK scored ${__t.text(s)}, offering ${acts.map(b=>__t.text(b)).join(' / ')}`"
+     "      : `no verdict (${s?__t.text(s):'no score'}, ${acts.length} buttons)`;});})()"),
+    ("the menu shows the plan, its parts and how far each round has got",
+     "(()=>{__t.tap('.g-menu-btn');"
+     " const head=__t.text(__t.q('.g-menu-head'));"
+     " const parts=__t.all('.g-part').length, bars=__t.all('.g-part .g-rbar').length;"
+     " return /Noa/.test(head) && /Eikev/.test(head) && parts===2 && bars===parts*4"
+     "   ? `OK ${parts} parts, four rounds each: ${head.slice(0,60)}` : `${parts} parts / ${bars} bars / ${head.slice(0,60)}`;})()"),
+    ("and lets a reader switch to the other part they have to learn",
+     "(()=>{const rows=__t.all('.g-part');"
+     " const other=rows.find(r=>!r.classList.contains('on')); if(!other) return 'no other part offered';"
+     " other.querySelector('.g-part-main').click();"
+     " return __t.settle(()=>__t.text(__t.q('.g-top-part'))==='Haftarah', null, null, 15000)"
+     "   .then(()=>{const p=__t.text(__t.q('.g-top-part'));"
+     "     return p==='Haftarah' ? `OK now on the ${p}, ${__t.q('#parashah').value}`"
+     "       : `still on ${p}`;});})()"),
+    ("the settings offered are the two that matter at this size",
+     "(()=>{__t.tap('.g-menu-btn'); const rows=__t.all('.g-row').map(r=>__t.text(r));"
+     " return rows.length===2 && /Text size/.test(rows[0]) && /pitch/.test(rows[1])"
+     "   ? `OK ${rows.join(' / ')}` : `settings were ${JSON.stringify(rows)}`;})()"),
+    ("the workshop is one tap away, and the way back is the chip in its header",
+     "(()=>{__t.tap('#gExpert');"
+     " return __t.settle(()=>!document.body.classList.contains('guided'), null, null, 6000)"
+     "  .then(()=>{const chip=__t.q('.learn-chip'); if(!chip) return 'no way back was offered';"
+     "    const label=__t.text(chip); chip.click();"
+     "    return __t.settle(()=>document.body.classList.contains('guided'), null, null, 15000)"
+     "      .then(()=>document.body.classList.contains('guided')"
+     "        ? `OK out to the workshop and back in via \u201c${label}\u201d` : `could not get back in (chip said ${label})`);});})()"),
+    ("the reading being prepared is starred in the workshop's own menu",
+     "(()=>{__t.tap('#gExpert');"
+     " return __t.settle(()=>!document.body.classList.contains('guided'), null, null, 6000).then(()=>{"
+     "   const starred=[...document.querySelectorAll('#parashah option')]"
+     "     .filter(o=>/\u2605/.test(o.textContent)).map(o=>o.value);"
+     "   return starred.includes('eikev') && starred.includes('haftarah-eikev')"
+     "     ? `OK starred: ${starred.join(', ')}` : `starred: ${JSON.stringify(starred)}`;});})()"),
+]
+
+# Chanting something other than the appointed haftarah. Plenty of b'nei mitzvah do
+# — a shul's own custom, a special Shabbat, a passage chosen for the child — so the
+# plan has to bend to the reader rather than to the calendar. The workshop's ✦ Any
+# passage machinery does the work; what these steps check is that the guided reader
+# can reach it in three taps, that a choice is clamped rather than refused, and that
+# the substitution then behaves like the reading he is learning: it opens, it scores
+# under its own pesukim, and it can be given back.
+SWAP_STEPS = [
+    ("the haftarah he was given can be traded for one from another book",
+     "(()=>{const chip=__t.q('.learn-chip'); if(chip) chip.click();"
+     " return __t.settle(()=>document.body.classList.contains('guided'), null, null, 15000).then(()=>{"
+     "   __t.tap('.g-menu-btn');"
+     "   const haf=__t.all('.g-part').find(r=>/Haftarah/.test(r.textContent));"
+     "   if(!haf) return 'no haftarah row in the menu';"
+     "   haf.querySelector('.g-part-swap').click();"
+     "   return __t.settle(()=>!!__t.q('#gPickBook'), null, null, 12000).then(()=>{"
+     "     const q=__t.ask(), sub=__t.text(__t.q('#guidedPick .ob-sub'));"
+     "     const at=__t.q('#gPickBook').value;"
+     "     return /Noa/.test(q) && /Isaiah 49:14-51:3/.test(sub) && at==='isaiah'"
+     "       ? `OK \u201c${q}\u201d, open at the appointed ${at}` : `${q} / ${sub} / ${at}`;});});})()"),
+    ("landing back on the appointed passage is not called a substitution",
+     "(()=>{const go=__t.text(__t.q('#gPickGo'));"
+     " const set=(id,v)=>{const s=__t.q(id); s.value=String(v);"
+     "   s.dispatchEvent(new Event('change',{bubbles:true}));};"
+     " set('#gPickToC',52);"
+     " const moved=__t.text(__t.q('#gPickGo'));"
+     " set('#gPickToC',51); set('#gPickToV',3);"
+     " return go==='Chant this' && moved==='Chant this instead' && __t.text(__t.q('#gPickGo'))==='Chant this'"
+     "   ? `OK \u201c${go}\u201d on the appointed passage, \u201c${moved}\u201d once it moves`"
+     "   : `${go} then ${moved}`;})()"),
+    ("it offers the whole Tanakh, and says what each choice comes to",
+     "(()=>{const set=(id,v)=>{const s=__t.q(id); s.value=String(v);"
+     "   s.dispatchEvent(new Event('change',{bubbles:true}));};"
+     " const books=__t.all('#gPickBook option').length;"
+     " set('#gPickBook','amos'); set('#gPickFromC',9); set('#gPickFromV',8);"
+     " set('#gPickToC',9); set('#gPickToV',15);"
+     " const info=__t.text(__t.q('#gPickInfo'));"
+     " return books>30 && /Amos 9:8-15/.test(info) && /8 pesukim/.test(info)"
+     "   ? `OK ${books} books \u00b7 ${info}` : `${books} books / ${info}`;})()"),
+    ("dragging one end past the other takes the other end with it",
+     "(()=>{const set=(id,v)=>{const s=__t.q(id); s.value=String(v);"
+     "   s.dispatchEvent(new Event('change',{bubbles:true}));};"
+     " set('#gPickToV',4);"
+     " const back=__t.text(__t.q('#gPickInfo .ob-pname'));"
+     " set('#gPickFromV',12);"
+     " const fwd=__t.text(__t.q('#gPickInfo .ob-pname'));"
+     " set('#gPickFromV',8); set('#gPickToV',15);"
+     " return back==='Amos 9:4' && fwd==='Amos 9:12'"
+     "   ? `OK end pulled back to ${back}, then start pushed on to ${fwd}`"
+     "   : `back=${back} forward=${fwd}`;})()"),
+    ("a passage too long to prepare is stopped, with the reason",
+     "(()=>{const set=(id,v)=>{const s=__t.q(id); s.value=String(v);"
+     "   s.dispatchEvent(new Event('change',{bubbles:true}));};"
+     " set('#gPickBook','isaiah'); set('#gPickFromC',1); set('#gPickFromV',1);"
+     " set('#gPickToC',66); set('#gPickToV',24);"
+     " const warn=__t.text(__t.q('#gPickInfo .ob-warn')), off=__t.q('#gPickGo').disabled;"
+     " set('#gPickBook','amos'); set('#gPickFromC',9); set('#gPickFromV',8);"
+     " set('#gPickToC',9); set('#gPickToV',15);"
+     " const on=!__t.q('#gPickGo').disabled;"
+     " return warn && off && on ? `OK ${warn}` : `warned \u201c${warn}\u201d, disabled=${off}, re-enabled=${on}`;})()"),
+    ("choosing it opens it there and then \u2014 he is learning Amos now",
+     "(()=>{__t.tap('#gPickGo');"
+     " return __t.settle(()=>__t.q('#parashah').value==='custom:amos:9.8-9.15'"
+     "   && !!__t.q('.g-where'), null, null, 20000).then(()=>{"
+     "   const part=__t.text(__t.q('.g-top-part')), where=__t.text(__t.q('.g-where'));"
+     "   const open=!!__t.q('#guidedPick') || document.body.classList.contains('g-menu-open');"
+     "   return part==='Haftarah' && /Amos 9:8/.test(where) && !open"
+     "     ? `OK ${part}: ${where}` : `${part} / ${where} / sheet-still-open=${open}`;});})()"),
+    ("the plan says what he is chanting, in place of what he was given",
+     "(()=>{const p=JSON.parse(localStorage.getItem('cantillate.v1')||'{}').plan;"
+     " const c=(p.custom||{}).haftarah||{};"
+     " __t.tap('.g-menu-btn');"
+     " const row=__t.text(__t.all('.g-part').find(r=>/Haftarah/.test(r.textContent)));"
+     " return c.ref==='Amos 9:8-15' && p.haftarahRef==='Isaiah 49:14-51:3' && /Amos 9:8-15/.test(row)"
+     "   ? `OK plan reads ${c.ref} (appointed: ${p.haftarahRef}); menu row: ${row}`"
+     "   : `custom=${JSON.stringify(c)} row=${row}`;})()"),
+    # The passage is filed under the book and the pasuk it starts at, not under the
+    # parashah — so a chant of it has to be read back from there, or the reader's
+    # progress would vanish into a reading he is not preparing. Written straight into
+    # the store rather than sung, because the fake microphone scores nothing.
+    ("what he chants is measured on the passage's own pesukim",
+     "(()=>Promise.all([import('/js/store.js'), import('/js/guided.js')]).then(([st,g])=>{"
+     "   st.recordAliyahScore('tanakh:amos:9.8', 'annual', 1, 'C', 88);"
+     "   const readiness=g.planReadiness();"
+     "   __t.tap('.g-menu-btn');"
+     "   const row=__t.text(__t.all('.g-part').find(r=>/Haftarah/.test(r.textContent)));"
+     "   return /whole: 88/.test(row) && readiness===44"
+     "     ? `OK the menu reads \u201c${row}\u201d and the plan is ${readiness}% ready`"
+     "     : `row=${row} readiness=${readiness}`;}))()"),
+    ("and the workshop now stars the passage he will actually chant",
+     "(()=>{__t.tap('#gExpert');"
+     " return __t.settle(()=>!document.body.classList.contains('guided'), null, null, 6000).then(()=>{"
+     "   const starred=[...document.querySelectorAll('#parashah option')]"
+     "     .filter(o=>/\u2605/.test(o.textContent)).map(o=>o.value);"
+     "   const chip=__t.q('.learn-chip'); if(chip) chip.click();"
+     "   return starred.includes('custom:amos:9.8-9.15') && !starred.includes('haftarah-eikev')"
+     "     ? `OK starred: ${starred.join(', ')}` : `starred: ${JSON.stringify(starred)}`;});})()"),
+    ("the appointed haftarah can be taken back, and nothing practiced is lost",
+     "(()=>__t.settle(()=>document.body.classList.contains('guided'), null, null, 15000).then(()=>{"
+     "   __t.tap('.g-menu-btn');"
+     "   const haf=__t.all('.g-part').find(r=>/Haftarah/.test(r.textContent));"
+     "   haf.querySelector('.g-part-swap').click();"
+     "   return __t.settle(()=>!!__t.q('#gPickReset'), null, null, 12000).then(()=>{"
+     "     __t.tap('#gPickReset');"
+     "     return __t.settle(()=>__t.q('#parashah').value==='haftarah-eikev', null, null, 20000).then(()=>{"
+     "       const d=JSON.parse(localStorage.getItem('cantillate.v1')||'{}');"
+     "       const kept=Object.keys(d.aliyot||{}).filter(k=>k.startsWith('tanakh:amos:9.8'));"
+     "       const gone=!((d.plan.custom||{}).haftarah);"
+     "       const where=__t.text(__t.q('.g-where'));"
+     "       return gone && /Isaiah 49:14/.test(where) && kept.length"
+     "         ? `OK back to ${where}, and the Amos take is still on record (${kept[0]})`"
+     "         : `custom-cleared=${gone} where=${where} kept=${kept.length}`;});});}))()"),
+]
+
+
 def main():
     c = Chrome()
     failures = []
     try:
-        if not c.goto(f"{BASE}/index.html"):
+        if not c.goto(APP_URL):
             print("FAIL app never rendered its verse list")
             return 1
-        print(f"--- {BASE}/index.html ---")
+        print(f"--- {APP_URL} ---")
         run_steps(c, STEPS, failures)
 
         print("--- with every stage unlocked ---")
@@ -766,6 +1060,24 @@ def main():
             failures.append("reload")
         else:
             run_steps(c, NAMED_AFTER_RELOAD_STEPS, failures)
+
+        # Guided mode last: it is the one section that changes what the app opens
+        # into (a plan is saved), so running it earlier would put every step above
+        # behind a wizard.
+        print("--- the onboarding wizard ---")
+        # From a clean slate: this section is about a reader's FIRST run, and the
+        # steps above have unlocked every stage of half the corpus — which would
+        # quite correctly drop the guided reader into round 4 with nothing to learn.
+        c.eval("(()=>{localStorage.clear(); return 'ok';})()")
+        if not c.goto(f"{BASE}/index.html?guided=1"):
+            print("FAIL the app never rendered with the wizard open")
+            failures.append("wizard")
+        else:
+            run_steps(c, WIZARD_STEPS, failures)
+            print("--- guided mode ---")
+            run_steps(c, GUIDED_STEPS, failures)
+            print("--- guided mode: a haftarah of his own ---")
+            run_steps(c, SWAP_STEPS, failures)
 
         c.drain(0.5)
         if c.problems:

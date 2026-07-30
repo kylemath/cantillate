@@ -351,6 +351,184 @@ try {
       `drill ${li + 1}: all ${target.length} words spliceable from real audio in ${p.length} pieces`
       + (real === target.length ? '' : ` (only ${real} real)`));
   });
+  // --- The calendar, the plan and the schedule ------------------------------
+  // Guided mode's three DOM-free modules: which parashah a date lands on, what a
+  // reader is preparing, and what to hand them next. All three are pure enough to
+  // test here, and the last one is where a quiet bug would be most expensive —
+  // a schedule that never finishes, or never comes back to weak work, is invisible
+  // in the UI until months of practice have gone into it.
+  const calendar = await import('../js/calendar.js');
+  const bmplan = await import('../js/plan.js');
+  const schedule = await import('../js/schedule.js');
+  log(true, 'calendar, plan and schedule modules import');
+
+  const calDoc = await calendar.load();
+  log(!!calDoc, 'data/calendar.json loads');
+  const weeks = calendar.all();
+  log(weeks.length > 900, `${weeks.length} Shabbatot in the table`);
+  const cov = calendar.coverage();
+  log(!!cov && cov.from < cov.to, `covers ${cov && cov.from} \u2013 ${cov && cov.to}`);
+  log(weeks.every((w, i) => i === 0 || w.date > weeks[i - 1].date), 'in date order, no repeats');
+  log(weeks.every((w) => /^\d{4}-\d{2}-\d{2}$/.test(w.date)), 'every date is an ISO day');
+  log(weeks.every((w) => w.parashah && w.hebrew && w.slug), 'every week names a parashah, in both languages, with a slug');
+  log(weeks.every((w) => w.triYear >= 1 && w.triYear <= 3), 'every week says which third of the triennial cycle it is');
+  // 53, not 54: Vezot Haberakhah is read on Simchat Torah, which is a festival
+  // rather than a Shabbat, so it never appears in a table of Shabbat readings.
+  const names = new Set(weeks.map((w) => w.slug));
+  log(names.size === 53, `${names.size} distinct readings offered (53 of the 54 fall on a Shabbat)`);
+  log(!names.has('vezot-haberakhah'), 'and the one that does not is Vezot Haberakhah');
+  log(calendar.parashiyot().length === names.size,
+    'the browse-by-name list offers each one exactly once');
+  log(weeks.every((w) => !w.combined || (w.slugs && w.slugs.length === 2)),
+    'a combined week names both parshiyot');
+
+  // The load-bearing lookup: a date that is not a Shabbat still has to resolve to
+  // the reading of that week, because readers type the birthday or the party.
+  const aWeek = weeks.find((w) => w.date > calendar.today()) || weeks[0];
+  const shabbat = new Date(`${aWeek.date}T12:00:00`);
+  const wednesday = new Date(shabbat.getTime() - 3 * 86400000);
+  const resolved = calendar.forDate(calendar.isoOf(wednesday));
+  log(resolved && resolved.date === aWeek.date,
+    `a Wednesday resolves forward to ${aWeek.parashah} on ${aWeek.date}`);
+  log(calendar.on(aWeek.date).parashah === aWeek.parashah, 'an exact Shabbat resolves to itself');
+  log(!calendar.covers('1999-01-02') && calendar.covers(aWeek.date),
+    'a date outside the table is reported as outside it');
+  log(calendar.triennialYearOn(aWeek.date) === aWeek.triYear,
+    'the triennial year of a date matches the table');
+  log(schedule.THRESHOLDS.weak < schedule.THRESHOLDS.polish,
+    'repair thresholds are ordered (weak < polish)');
+
+  // A plan built from that week: the shape the whole of guided mode runs on.
+  const built = bmplan.fromShabbat(aWeek, {
+    occasion: 'barmitzvah', role: 'family', learner: 'Noa',
+    cycle: 'triennial', enteredDate: aWeek.date,
+  });
+  log(!!built && built.slug === aWeek.slug, 'a plan can be built from a Shabbat');
+  log(built.parts.length === 2 && built.parts.some((p) => p.kind === 'maftir')
+    && built.parts.some((p) => p.kind === 'haftarah'),
+    'a bar mitzvah defaults to the maftir and the haftarah');
+  log(built.triYear === aWeek.triYear, 'the plan takes the triennial year from the date');
+  log(bmplan.possessive(built) === 'Noa\u2019s', `the app calls it ${bmplan.possessive(built)}`);
+  log(/Noa/.test(bmplan.learnerName(built)), 'the learner is named');
+  log(bmplan.readingSlugs(built).includes(built.slug), 'the plan names the readings it needs');
+  const partIds = ['maftir', 'haftarah', ...[1, 2, 3, 4, 5, 6, 7].map((n) => `aliyah-${n}`)];
+  log(partIds.every((id) => bmplan.partId(bmplan.partFromId(id)) === id),
+    `all ${partIds.length} parts round-trip through their id`);
+  log(bmplan.partFromId('aliyah-8') === null && bmplan.partFromId('nonsense') === null,
+    'an id for a part that does not exist resolves to nothing');
+  log(bmplan.partLabel(bmplan.aliyahPart(3)) === 'Aliyah 3',
+    `an aliyah is labelled "${bmplan.partLabel(bmplan.aliyahPart(3))}"`);
+  const own = bmplan.fromShabbat(aWeek, { occasion: 'batmitzvah', role: 'self' });
+  log(bmplan.possessive(own) === 'your', 'a reader\u2019s own reading is "your"');
+
+  // A haftarah of the reader's own: what the calendar appointed stays on record, but
+  // everything that decides what to open and what to measure follows the choice.
+  bmplan.save(built);
+  const haf = bmplan.haftarahPart();
+  const appointed = bmplan.partRef(haf);
+  bmplan.setCustom(haf, {
+    book: 'amos', bookEn: 'Amos', from: [9, 8], to: [9, 15],
+    ref: 'Amos 9:8-15', readingId: 'custom:amos:9.8-9.15',
+    progressSlug: 'tanakh:amos:9.8', count: 8,
+  });
+  const swapped = bmplan.get();
+  log(bmplan.partRef(haf, swapped) === 'Amos 9:8-15', 'a part can be pointed at a passage of another book');
+  log(bmplan.appointedRef(haf, swapped) === appointed,
+    `and what was appointed is still known (${appointed})`);
+  log(bmplan.partTarget(haf, swapped).kind === 'passage'
+    && bmplan.partTarget(haf, swapped).readingId === 'custom:amos:9.8-9.15',
+    'the app is told to open the passage, not the appointed reading');
+  log(bmplan.availability(haf, [], swapped) === 'text',
+    'a substituted passage is always practisable, bundled or not');
+  log(bmplan.readingSlugs(swapped).includes('custom:amos:9.8-9.15'),
+    'and it is what the plan says it needs');
+  log(bmplan.partRef(bmplan.maftirPart(), swapped) === bmplan.appointedRef(bmplan.maftirPart(), swapped),
+    'the other parts are left alone');
+  bmplan.clearCustom(haf);
+  log(bmplan.partRef(haf, bmplan.get()) === appointed, 'and the appointed one can be taken back');
+
+  // The scheduler, walked to completion on a synthetic part. Everything is scored
+  // well, so this is the shortest possible path through the four rounds — and the
+  // point of the test is that the path EXISTS and terminates.
+  const SLUG = '\u2202smoke';
+  const verses = [1, 2, 3, 4, 5, 6];
+  const ctx = schedule.makeContext({
+    slug: SLUG, verses, cycle: 'annual', triYear: 1,
+    chunk: { n: 'H', kind: 'haftarah', start: 1, end: 6 },
+    unitCount: (v, l) => (l <= 2 ? 4 : l <= 4 ? 2 : 1),
+  });
+  log(schedule.ROUNDS.length === 4, 'four rounds');
+  log(schedule.ROUNDS.flatMap((r) => r.levels).join() === '1,2,3,4,5,6,7,8,9',
+    'the four rounds cover all nine stages, once each, in order');
+  log(schedule.currentRound(ctx).id === 1 && schedule.overallProgress(ctx).pct === 0,
+    'an untouched part starts at round 1 and 0%');
+  const first = schedule.nextTask(ctx, { session: 0 });
+  log(first && first.reason === 'advance' && first.level === 1 && first.verse === 1,
+    'the first thing offered is the first word of the first pasuk');
+
+  const seen = { advance: 0, repair: 0, combine: 0 };
+  const roundsAt = [];
+  let task = null, guard = 0;
+  for (; guard < 500; guard++) {
+    task = schedule.nextTask(ctx, { session: guard, avoid: task });
+    if (!task) break;
+    seen[task.reason] += 1;
+    const r = schedule.currentRound(ctx);
+    if (!roundsAt.length || roundsAt[roundsAt.length - 1] !== r.id) roundsAt.push(r.id);
+    if (task.kind === 'chain') store.recordChainScore(SLUG, task.start, task.end, 92);
+    else if (task.kind === 'whole') store.recordAliyahScore(SLUG, 'annual', 1, 'H', 91);
+    else if (task.what === 'word') store.recordWordScore(SLUG, task.verse, task.word, 93);
+    else {
+      const md = levels.VERSE_MODES.find((m) => m.level === task.level);
+      if (md) store.recordVerseModeScore(SLUG, task.verse, md.key, 91);
+      store.recordVerseLevel(SLUG, task.verse, Math.min(levels.LEVELS.length, task.level + 1));
+    }
+  }
+  log(guard < 500, `the part finishes in ${guard} tasks, rather than never`);
+  log(roundsAt.join() === '1,2,3,4', `the rounds arrive in order (${roundsAt.join(' \u2192 ')})`);
+  log(seen.advance >= verses.length * levels.LEVELS.length - 4,
+    `every stage of every pasuk was handed out (${seen.advance} advances)`);
+  log(seen.combine >= 2, `the pesukim get chained together (${seen.combine} combining tasks)`);
+  log(schedule.overallProgress(ctx).pct === 100, 'a finished part reads 100%');
+  log(schedule.ROUNDS.every((r) => schedule.roundProgress(ctx, r).pct === 100),
+    'every round reads 100%, including the ninth stage that has nothing above it to unlock');
+  log(schedule.nextTask(ctx, { session: 0 }) === null, 'and nothing more is offered');
+
+  // Every task must describe itself: the mission card has no fallback text, so a
+  // task with no title would be a blank screen.
+  const described = [
+    { kind: 'whole', reason: 'combine' },
+    { kind: 'chain', start: 1, end: 3, size: 3, reason: 'combine' },
+    ...levels.LEVELS.map((l) => ({ kind: 'verse', verse: 1, level: l.id, reason: 'advance' })),
+    { kind: 'verse', verse: 1, level: 1, word: 2, what: 'word', score: 44, reason: 'repair' },
+  ];
+  log(described.every((t) => schedule.taskTitle(t) && schedule.taskWhy(t)),
+    `all ${described.length} kinds of task describe themselves`);
+  log(new Set(described.map(schedule.taskTitle)).size === described.length,
+    'and no two of them are given the same instruction');
+
+  // Weak work comes back, and comes back before anything is polished.
+  const WEAK = '\u2202weak';
+  const wctx = schedule.makeContext({
+    slug: WEAK, verses: [1, 2, 3], chunk: { n: 'H', start: 1, end: 3 }, unitCount: () => 3,
+  });
+  store.recordVerseLevel(WEAK, 1, 5);
+  store.recordVerseLevel(WEAK, 2, 5);
+  store.recordWordScore(WEAK, 1, 2, 41);
+  store.recordWordScore(WEAK, 2, 0, 58);
+  const rotation = [];
+  let t2 = null;
+  for (let i = 0; i < 10; i++) {
+    t2 = schedule.nextTask(wctx, { session: i, avoid: t2 });
+    rotation.push(t2.reason);
+  }
+  log(rotation.includes('advance') && rotation.includes('repair') && rotation.includes('combine'),
+    `the rotation mixes all three moves (${rotation.join(' ')})`);
+  const repaired = rotation.filter((r) => r === 'repair').length;
+  log(repaired >= 2 && repaired <= 5, `repair is a third of the work, not all of it (${repaired}/10)`);
+  const weakest = schedule.nextTask(wctx, { session: 2, rand: () => 0 });
+  log(weakest.what === 'word' && weakest.score === 41,
+    'the worst word is what comes back first');
 } catch (e) {
   log(false, `threw: ${e && e.stack ? e.stack : e}`);
 }

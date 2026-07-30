@@ -49,18 +49,30 @@ export function aliyotFor(slug, cycle, year) {
   return a.annual;
 }
 
-// Approximate current Hebrew year from a Gregorian date. Rosh Hashanah falls in
-// Sept/Oct; we switch at ~Sept 15, which is close enough to pick the triennial
-// year by default (the user can override).
+// The Hebrew year a Gregorian date falls in. Read from the browser's own Hebrew
+// calendar, so Rosh Hashanah lands on the day it actually does; the old ~Sept 15
+// approximation is kept as the fallback for anywhere Intl has no Hebrew calendar.
 export function currentHebrewYear(d = new Date()) {
+  try {
+    const parts = new Intl.DateTimeFormat('en-US-u-ca-hebrew', { year: 'numeric' })
+      .formatToParts(d);
+    const year = parseInt((parts.find((p) => p.type === 'year') || {}).value, 10);
+    if (Number.isFinite(year)) return year;
+  } catch (e) { /* no Hebrew calendar in this engine */ }
   const y = d.getFullYear();
   const m = d.getMonth() + 1;
   const afterRoshHashanah = m > 9 || (m === 9 && d.getDate() >= 15);
   return afterRoshHashanah ? y + 3761 : y + 3760;
 }
 
-// Which year (1–3) of the triennial cycle the given date falls in.
+// Which year (1–3) of the triennial cycle the given date falls in. The CJLS cycle
+// is anchored at 5756, NOT at a multiple of three, so `hebrewYear % 3` — what
+// this used to do — named the wrong third of every parashah.
+// scripts/build_calendar.py checks this formula against the year Hebcal actually
+// schedules for every Shabbat it builds (741 of them agree, none disagree).
+export const TRIENNIAL_EPOCH = 5756;
+
 export function currentTriennialYear(d = new Date()) {
-  const r = currentHebrewYear(d) % 3;
-  return r === 0 ? 3 : r; // 1,2,0 -> 1,2,3
+  const hy = currentHebrewYear(d);
+  return ((((hy - TRIENNIAL_EPOCH) % 3) + 3) % 3) + 1;
 }

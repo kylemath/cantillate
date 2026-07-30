@@ -1,0 +1,602 @@
+/* Guided mode & the onboarding wizard.
+   ---------------------------------------------------------------------------
+   Two surfaces live here, and neither is a variant of the workshop's chrome:
+
+   1. `.onboard*` — the first-run wizard. A single centred card, one question at
+      a time, big touch targets, no app furniture behind it at all.
+
+   2. `body.guided` — the narrowed practice surface. This is a SKIN over the
+      workshop rather than a rebuild of it: the practice pane, the coach canvas,
+      the recording and the scoring are the same DOM expert mode uses, and this
+      sheet hides everything around them and lays three fixed strips over the top
+      (top bar / mission card / action bar). Hiding rather than removing is what
+      lets a reader cross into expert mode and back without losing state.
+
+   The difficulty ramp is expressed here too: body[data-guided-round] reveals more
+   of the workshop as the rounds go up, so round 1 is a word and two buttons and
+   round 4 has the scroll, the live meter and the analysis panels in play. */
+
+:root {
+  --g-top-h: 54px;
+  --g-bar-h: 78px;
+  --g-radius: 16px;
+  --g-safe-b: env(safe-area-inset-bottom, 0px);
+}
+
+/* ===========================================================================
+   1. Onboarding wizard
+   ======================================================================== */
+
+body.onboarding { overflow: hidden; }
+
+.onboard {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+  background: radial-gradient(900px 520px at 70% -10%, #1d2549 0%, #0b0e1a 60%);
+  overflow-y: auto;
+}
+
+.ob-card {
+  width: min(520px, 100%);
+  max-height: calc(100vh - 32px);
+  display: flex; flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.ob-top {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px 0;
+}
+.ob-back, .ob-back-sp {
+  width: 34px; height: 34px; flex: 0 0 auto;
+  display: grid; place-items: center;
+  font-size: 22px; line-height: 1;
+  background: transparent; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 10px; cursor: pointer;
+}
+.ob-back:hover { color: var(--text); border-color: var(--accent); }
+.ob-back-sp { border: 0; }
+.ob-dots { display: flex; gap: 6px; flex: 1 1 auto; justify-content: flex-end; }
+.ob-dot {
+  width: 7px; height: 7px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+}
+.ob-dot.done { background: var(--good); }
+.ob-dot.on { background: var(--accent); transform: scale(1.35); }
+
+.ob-body { padding: 8px 22px 24px; overflow-y: auto; }
+
+.ob-h { margin: 10px 0 6px; font-size: 22px; line-height: 1.25; }
+.ob-sub { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+.ob-label {
+  margin: 20px 0 8px; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted);
+}
+.ob-note {
+  margin: 10px 0 0; font-size: 13px; color: var(--muted);
+  padding-inline-start: 10px; border-inline-start: 2px solid var(--line);
+}
+.ob-warn {
+  margin: 10px 0 0; font-size: 13px; color: var(--accent-2);
+}
+
+.ob-steps { margin: 0 0 18px; padding-inline-start: 22px; color: var(--text); font-size: 15px; }
+.ob-steps li { margin: 8px 0; }
+.ob-ico {
+  display: inline-grid; place-items: center;
+  width: 20px; height: 20px; border-radius: 5px;
+  background: var(--panel-2); font-size: 12px;
+}
+
+/* Choices: one tall tap target per answer, the selected one obviously so. */
+.ob-choices { display: grid; gap: 8px; }
+.ob-choices-row { grid-auto-flow: column; grid-auto-columns: 1fr; }
+.ob-choice {
+  display: flex; flex-direction: column; gap: 2px; text-align: start;
+  padding: 14px 16px; font: inherit; color: var(--text);
+  background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 12px; cursor: pointer;
+}
+.ob-choice:hover { border-color: rgba(90, 160, 255, 0.5); }
+.ob-choice.on { border-color: var(--accent); background: rgba(90, 160, 255, 0.14); }
+.ob-choice-main { font-size: 16px; font-weight: 600; }
+.ob-choice-sub { font-size: 12px; color: var(--muted); }
+.ob-choice-sm { padding: 11px 12px; align-items: center; text-align: center; font-size: 14px; }
+
+.ob-input {
+  width: 100%; padding: 14px 14px; font: inherit; font-size: 17px;
+  color: var(--text); background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: 12px;
+}
+.ob-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+/* Date inputs render tiny on iOS unless the font-size is >= 16px. */
+.ob-date { font-size: 18px; min-height: 52px; }
+
+/* The parashah confirmation card: the answer derived from the date, offered for
+   approval rather than assumed. */
+.ob-resolved { min-height: 8px; }
+.ob-parashah {
+  margin: 16px 0 0; padding: 16px;
+  background: linear-gradient(180deg, rgba(90, 160, 255, 0.12), rgba(90, 160, 255, 0.03));
+  border: 1px solid rgba(90, 160, 255, 0.35); border-radius: 14px;
+}
+.ob-parashah-sm { margin-top: 4px; }
+.ob-pname { margin: 0; font-size: 24px; font-weight: 700; letter-spacing: 0.2px; }
+.ob-phe {
+  margin: 2px 0 0; font-family: 'FrankRuehl', serif; font-size: 30px; line-height: 1.3;
+  color: #cfe0ff;
+}
+.ob-pmeta { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
+.ob-refs { margin: 12px 0 0; display: grid; gap: 4px; font-size: 13px; }
+.ob-refs > div { display: flex; gap: 8px; }
+.ob-refs dt { flex: 0 0 66px; color: var(--muted); }
+.ob-refs dd { margin: 0; }
+
+/* Browse-by-name fallback. */
+.ob-plist {
+  margin: 12px 0 16px; max-height: 46vh; overflow-y: auto;
+  display: grid; gap: 4px;
+  border: 1px solid var(--line); border-radius: 12px; padding: 6px;
+}
+.ob-prow {
+  display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; align-items: baseline;
+  padding: 10px 12px; text-align: start; font: inherit; color: var(--text);
+  background: transparent; border: 1px solid transparent; border-radius: 9px; cursor: pointer;
+}
+.ob-prow:hover { background: var(--panel-2); }
+.ob-prow.on { border-color: var(--accent); background: rgba(90, 160, 255, 0.14); }
+.ob-prow-name { font-size: 15px; font-weight: 600; }
+.ob-prow-he { font-family: 'FrankRuehl', serif; font-size: 19px; color: #cfe0ff; grid-row: 1; }
+.ob-prow-when { grid-column: 1 / -1; font-size: 12px; color: var(--muted); }
+
+/* Which parts they will chant. */
+.ob-parts { display: grid; gap: 8px; }
+.ob-part {
+  display: flex; align-items: flex-start; gap: 12px; text-align: start;
+  padding: 13px 15px; font: inherit; color: var(--text);
+  background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 12px; cursor: pointer;
+}
+.ob-part.on { border-color: var(--good); background: rgba(55, 200, 113, 0.12); }
+.ob-part-check {
+  flex: 0 0 auto; width: 22px; height: 22px; margin-top: 1px;
+  display: grid; place-items: center; border-radius: 6px;
+  border: 1px solid var(--line); color: #06210f; font-size: 14px; font-weight: 700;
+}
+.ob-part.on .ob-part-check { background: var(--good); border-color: transparent; }
+.ob-part-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.ob-part-name { font-size: 16px; font-weight: 600; }
+.ob-part-sub { font-size: 12px; color: var(--muted); }
+.ob-alnums { display: flex; gap: 6px; flex-wrap: wrap; }
+.ob-alnum {
+  width: 44px; height: 44px; font: inherit; font-size: 16px; font-weight: 600;
+  color: var(--text); background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: 11px; cursor: pointer;
+}
+.ob-alnum.on { border-color: var(--good); background: rgba(55, 200, 113, 0.18); }
+
+/* The passage picker (guided mode's "chant something else") borrows this card
+   wholesale — it is another single question about the plan, and it should look and
+   behave like the ones the wizard asks. All it adds is a chapter:verse row. */
+.g-pick-row { display: flex; align-items: center; gap: 8px; }
+.g-pick-num {
+  flex: 1 1 0; min-width: 0; padding: 12px 10px;
+  font: inherit; font-size: 17px; text-align: center;
+  color: var(--text); background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: 12px;
+}
+.g-pick-sep { flex: 0 0 auto; color: var(--muted); font-size: 18px; }
+
+.ob-ready { margin: 16px 0 4px; font-size: 15px; }
+.ob-readylist { margin: 0 0 14px; padding-inline-start: 22px; font-size: 16px; }
+.ob-readylist li { margin: 4px 0; }
+
+.ob-go {
+  display: block; width: 100%; margin-top: 18px;
+  padding: 15px 18px; font: inherit; font-size: 16px; font-weight: 700;
+  color: #08101f; background: var(--accent);
+  border: 0; border-radius: 13px; cursor: pointer;
+}
+.ob-go:disabled { opacity: 0.4; cursor: default; }
+.ob-go.ob-primary { background: var(--good); }
+.ob-go.ob-ghost {
+  margin-top: 8px; color: var(--muted); background: transparent;
+  border: 1px solid var(--line); font-weight: 500;
+}
+.ob-go.ob-ghost:hover { color: var(--text); }
+
+/* ===========================================================================
+   2. The "currently learning" chip (shown in EXPERT mode)
+   ======================================================================== */
+
+.learningchip { display: flex; align-items: center; flex: 0 0 auto; }
+.learn-chip, .learn-start {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 11px; font: inherit; font-size: 12px;
+  color: var(--text); background: rgba(255, 200, 90, 0.12);
+  border: 1px solid rgba(255, 200, 90, 0.4); border-radius: 999px; cursor: pointer;
+}
+.learn-chip:hover, .learn-start:hover { border-color: #ffc85a; }
+.learn-star { color: #ffc85a; font-size: 13px; line-height: 1; }
+.learn-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
+.learn-text b { font-size: 12.5px; }
+.learn-sub { color: var(--muted); font-size: 10.5px; }
+.learn-start { color: var(--muted); }
+
+/* ===========================================================================
+   3. Guided mode: strip the workshop back
+   ======================================================================== */
+
+/* Every piece of expert chrome that isn't the coach line, the words or the
+   result. Hidden, not removed — see the header comment. */
+body.guided > .mobilebar,
+body.guided > .settings-sheet,
+body.guided > .toolbar.stagebar,
+body.guided > footer.src,
+body.guided > .pasuk-fab,
+body.guided > .guidepane,
+body.guided > .drawer-backdrop,
+body.guided .splitter,
+body.guided .splitter2,
+body.guided .pane-toggle,
+body.guided .textpane { display: none !important; }
+
+body.guided { overflow: hidden; }
+
+body.guided main {
+  display: block; height: 100vh; height: 100dvh;
+  padding-top: var(--g-top-h);
+  padding-bottom: calc(var(--g-bar-h) + var(--g-safe-b));
+  grid-template-columns: none !important;
+  overflow: hidden;
+}
+
+body.guided .practice {
+  display: flex; flex-direction: column;
+  height: 100%; width: 100%; border: 0; background: transparent;
+}
+body.guided .practice .pane-body {
+  flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
+  overflow-y: auto; padding: 10px 14px 14px;
+}
+body.guided #practice { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+
+/* The workshop's own controls inside the practice pane. The transport is replaced
+   by the guided action bar; the rest is either noise at this size or a setting
+   guided mode makes on the reader's behalf. */
+body.guided #practice .aidchips,
+body.guided #practice .unit-nav,
+body.guided #practice .divide-nav,
+body.guided #practice .readsize,
+body.guided #practice .keyshint,
+body.guided #practice .mode-indicator,
+body.guided #practice .transport,
+body.guided #practice .cmp-legend,
+body.guided #practice .stagetag,
+body.guided #practice .unit-edge,
+body.guided #practice .pasuk-edge,
+body.guided #practice .open-stam,
+body.guided #practice .al-cuebar,
+body.guided #practice #alBack,
+body.guided #practice .leveldesc { display: none !important; }
+
+/* One verdict on screen, not two: guided mode's result card is the feedback, so
+   the pane's own result line is only kept for screen readers.  */
+body.guided #practice > .topstatus > .result,
+body.guided #practice .aliyah-dock .result {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+/* The pasuk heading is redundant (the mission card says where you are). */
+body.guided #practice .phead { margin: 0; padding: 0; min-height: 0; }
+body.guided #practice .phead h2 { display: none; }
+
+/* The coach line IS the game surface, so it gets the room. */
+body.guided #practice .timeline { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+body.guided #practice .tl-scroll { flex: 1 1 auto; min-height: 0; }
+/* `height`, not `min-height`: the coach canvas is sized from its own box (see
+   viz.js), so leaving this column free to grow makes the canvas resolve its 100%
+   against itself and keep its natural 450px — which is taller than a landscape
+   phone has, and the bottom of the contour ends up behind the action bar. Fixing
+   the column's height is what lets the canvas be told to fit. */
+body.guided #practice .tl-inner { height: 100%; display: flex; flex-direction: column; }
+body.guided #practice .contour-wrap { flex: 1 1 auto; min-height: 84px; }
+body.guided #practice canvas.contour { height: 100% !important; min-height: 84px; }
+body.guided #practice .timeline-words { font-size: 1.05em; }
+
+/* Progressive reveal. Round 1: the words, the coach line, two buttons. The
+   spectrograms, the live meter and the accuracy bars arrive as the reader gets
+   far enough for them to mean something. */
+body.guided #practice .tl-extras,
+body.guided #practice .accuracy-panel,
+body.guided #practice .livemeter { display: none; }
+
+body.guided[data-guided-round="2"] #practice .accuracy-panel { display: block; }
+body.guided[data-guided-round="3"] #practice .accuracy-panel,
+body.guided[data-guided-round="4"] #practice .accuracy-panel { display: block; }
+body.guided[data-guided-round="3"] #practice .livemeter,
+body.guided[data-guided-round="4"] #practice .livemeter { display: flex; }
+/* Never both meters: the second one is a scoring-model comparison for developers. */
+body.guided #practice #liveMeterGh { display: none !important; }
+body.guided[data-guided-round="4"] #practice .tl-extras { display: block; }
+
+/* The STA"M scroll pane is the reading surface for a chain or a whole-part chant,
+   and is out of the way otherwise. */
+body.guided .scrollpane { display: none; }
+body.guided.aliyah-open main {
+  display: grid; grid-template-rows: minmax(0, 1.35fr) minmax(0, 1fr) !important;
+}
+body.guided.aliyah-open .scrollpane {
+  display: block; width: 100%; max-width: 100%; border: 0;
+  overflow-y: auto; min-height: 0;
+}
+body.guided.aliyah-open .scrollpane .pane-title,
+body.guided.aliyah-open .scrollpane .drawer-close { display: none; }
+body.guided.aliyah-open .scrollpane .pane-body { padding: 8px 10px; }
+body.guided.aliyah-open #practice .aliyah-view { display: flex; flex-direction: column; height: 100%; }
+
+/* ===========================================================================
+   4. Guided chrome: top bar, mission card, action bar
+   ======================================================================== */
+
+.g-top, .g-card, .g-bar, .g-menu, .g-menu-backdrop { display: none; }
+
+body.guided .g-top {
+  position: fixed; top: 0; inset-inline: 0; z-index: 60;
+  height: var(--g-top-h);
+  display: flex; align-items: center; gap: 10px; padding: 0 10px;
+  background: rgba(15, 18, 32, 0.96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+.g-menu-btn {
+  width: 38px; height: 38px; flex: 0 0 auto;
+  display: grid; place-items: center; font-size: 19px;
+  color: var(--text); background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: 10px; cursor: pointer;
+}
+.g-top-mid { flex: 1 1 auto; min-width: 0; }
+.g-top-part {
+  margin: 0; font-size: 14px; font-weight: 700; line-height: 1.15;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.g-top-round { margin: 0; font-size: 11px; color: var(--muted); line-height: 1.15; }
+
+/* The four rounds, as four filling pips. The whole plan at a glance, in 90px. */
+.g-pips { display: flex; gap: 4px; flex: 0 0 auto; }
+.g-pip {
+  position: relative; width: 22px; height: 22px; border-radius: 7px;
+  background: var(--panel-2); border: 1px solid var(--line); overflow: hidden;
+}
+.g-pip-fill {
+  position: absolute; inset: 0 auto 0 0; background: rgba(90, 160, 255, 0.55);
+  transition: width .3s;
+}
+.g-pip-n {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-size: 11px; font-weight: 700; color: var(--muted);
+}
+.g-pip.on { border-color: var(--accent); }
+.g-pip.on .g-pip-n { color: var(--text); }
+.g-pip.done .g-pip-fill { background: var(--good); }
+.g-pip.done .g-pip-n { color: #06210f; }
+
+/* The mission card. Sits just under the top bar, in the flow of the fixed strips
+   rather than inside the pane, so a re-render of the practice pane can't wipe it. */
+body.guided .g-card {
+  position: fixed; top: var(--g-top-h); inset-inline: 0; z-index: 55;
+  display: block; padding: 10px 14px 12px;
+  background: linear-gradient(180deg, rgba(31, 37, 64, 0.97), rgba(15, 18, 32, 0.9));
+  border-bottom: 1px solid var(--line);
+}
+body.guided main { padding-top: calc(var(--g-top-h) + var(--g-card-h, 76px)); }
+
+.g-task { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.25; }
+.g-why { margin: 5px 0 0; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.g-why-tag {
+  font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--muted);
+}
+.g-why-tag.advance { color: var(--accent); border-color: rgba(90, 160, 255, 0.5); }
+.g-why-tag.repair { color: var(--accent-2); border-color: rgba(255, 140, 90, 0.5); }
+.g-why-tag.combine { color: var(--good); border-color: rgba(55, 200, 113, 0.5); }
+.g-where { font-size: 12px; color: var(--muted); }
+.g-hint { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
+.g-say { margin: 4px 0 0; font-size: 13.5px; color: #cdd2e6; }
+.g-headline { margin: 0; font-size: 18px; font-weight: 700; }
+
+/* The result: one number, drawn as a dial so it reads before it is understood. */
+.g-result { display: grid; grid-template-columns: auto 1fr; gap: 12px 14px; align-items: center; }
+.g-score {
+  --pct: 0;
+  width: 58px; height: 58px; border-radius: 999px;
+  display: grid; place-items: center; font-size: 19px; font-weight: 800;
+  background:
+    conic-gradient(var(--g-dial, var(--accent)) calc(var(--pct) * 1%), rgba(255, 255, 255, 0.09) 0);
+  position: relative;
+}
+.g-score::after {
+  content: ''; position: absolute; inset: 6px; border-radius: 999px; background: var(--panel);
+}
+.g-score > span { position: relative; z-index: 1; }
+.g-result.great { --g-dial: var(--good); }
+.g-result.good { --g-dial: var(--accent); }
+.g-result.again { --g-dial: var(--accent-2); }
+.g-result-text { min-width: 0; }
+.g-result-actions {
+  grid-column: 1 / -1; display: flex; gap: 8px; margin-top: 4px;
+}
+.g-done .g-result-actions, .g-problem .g-result-actions { margin-top: 10px; }
+.g-go, .g-ghost {
+  flex: 1 1 auto; padding: 11px 14px; font: inherit; font-size: 15px; font-weight: 700;
+  border-radius: 11px; cursor: pointer;
+}
+.g-go { color: #08101f; background: var(--accent); border: 0; }
+.g-ghost {
+  flex: 0 0 auto; color: var(--muted); background: transparent;
+  border: 1px solid var(--line); font-weight: 500;
+}
+.g-ghost:hover { color: var(--text); }
+
+/* The action bar: two big buttons, three at most, docked at the bottom where a
+   thumb is. */
+body.guided .g-bar {
+  position: fixed; bottom: 0; inset-inline: 0; z-index: 60;
+  display: flex; gap: 8px; align-items: stretch;
+  padding: 8px 12px calc(8px + var(--g-safe-b));
+  min-height: var(--g-bar-h);
+  background: rgba(15, 18, 32, 0.97);
+  border-top: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+.g-act {
+  flex: 1 1 0; padding: 14px 8px; font: inherit; font-size: 15px; font-weight: 700;
+  color: var(--text); background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: 13px; cursor: pointer;
+}
+.g-act:hover { border-color: var(--accent); }
+.g-act.g-sing {
+  color: #2a0d06; background: var(--accent-2); border-color: transparent; flex: 1.4 1 0;
+}
+.g-act.g-stop { color: #fff; background: var(--bad); border-color: transparent; }
+.g-act.g-duet { flex: 0.85 1 0; font-size: 13px; color: var(--muted); }
+
+/* ===========================================================================
+   5. The guided menu (progress, minimal settings, change of plan)
+   ======================================================================== */
+
+body.guided .g-menu-backdrop {
+  display: block; position: fixed; inset: 0; z-index: 90;
+  background: rgba(6, 8, 18, 0.6); backdrop-filter: blur(2px);
+  opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+body.guided.g-menu-open .g-menu-backdrop { opacity: 1; pointer-events: auto; }
+
+body.guided .g-menu {
+  display: flex; flex-direction: column;
+  position: fixed; inset-block: 0; inset-inline-start: 0; z-index: 95;
+  width: min(400px, 92vw);
+  background: var(--panel); border-inline-end: 1px solid var(--line);
+  box-shadow: 18px 0 48px rgba(0, 0, 0, 0.5);
+  transform: translateX(-102%); transition: transform .22s ease;
+  overflow: hidden;
+}
+body.guided.g-menu-open .g-menu { transform: none; }
+
+.g-menu-head {
+  position: relative; padding: 18px 18px 14px;
+  background: linear-gradient(180deg, rgba(90, 160, 255, 0.14), transparent);
+  border-bottom: 1px solid var(--line);
+}
+.g-menu-close {
+  position: absolute; top: 12px; inset-inline-end: 12px;
+  width: 32px; height: 32px; display: grid; place-items: center;
+  color: var(--muted); background: transparent;
+  border: 1px solid var(--line); border-radius: 9px; cursor: pointer;
+}
+.g-menu-title { margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.7px; color: var(--muted); }
+.g-menu-sub { margin: 4px 0 0; font-size: 16px; font-weight: 700; }
+.g-menu-he { margin: 2px 0 0; font-family: 'FrankRuehl', serif; font-size: 26px; color: #cfe0ff; }
+
+.g-menu-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 4px 18px 26px; }
+.g-menu-h {
+  margin: 20px 0 8px; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted);
+}
+.g-menu-note { margin: 14px 0 0; font-size: 11.5px; color: var(--muted); }
+
+/* One row per part: the four rounds as four bars, the whole-part score, and a
+   pencil that swaps in a different passage (a shul's own haftarah, say). The row
+   is a flex container rather than one big button, because a button inside a button
+   is not a thing — and both halves need to be tappable. */
+.g-parts { display: grid; gap: 8px; }
+.g-part {
+  display: flex; align-items: stretch; gap: 6px;
+  background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 12px; overflow: hidden;
+}
+.g-part-main {
+  flex: 1 1 auto; min-width: 0;
+  display: grid; gap: 6px; text-align: start;
+  padding: 12px 13px; font: inherit; color: var(--text);
+  background: transparent; border: 0; cursor: pointer;
+}
+.g-part-swap {
+  flex: 0 0 auto; width: 44px;
+  display: grid; place-items: center; font-size: 16px;
+  color: var(--text); background: rgba(255, 255, 255, 0.05); cursor: pointer;
+  border: 0; border-inline-start: 1px solid var(--line);
+}
+.g-part-swap:hover { background: rgba(255, 255, 255, 0.1); }
+.g-part.on { border-color: var(--accent); }
+.g-part-top { display: flex; align-items: baseline; gap: 8px; }
+.g-part-name { flex: 1 1 auto; font-size: 15px; font-weight: 700; }
+.g-part-pct { font-size: 12px; color: var(--muted); }
+/* Named apart from the action bar (.g-bar) on purpose: these are four 6px round
+   progress bars, and inheriting the docked bar's height and background by accident
+   is the kind of collision that only shows up on one viewport. */
+.g-bars { display: flex; gap: 4px; }
+.g-rbar {
+  flex: 1 1 0; height: 6px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09); overflow: hidden;
+}
+.g-rbar > span { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+.g-part-foot { display: flex; gap: 8px; font-size: 11px; color: var(--muted); }
+.g-part-ref { flex: 1 1 auto; }
+.g-part-whole { color: var(--good); }
+
+.g-set { display: grid; gap: 6px; }
+.g-row {
+  display: flex; align-items: center; gap: 12px; justify-content: space-between;
+  padding: 11px 13px; font-size: 14px;
+  background: var(--panel-2); border: 1px solid var(--line); border-radius: 11px;
+}
+.g-row input[type="range"] { flex: 0 0 140px; accent-color: var(--accent); }
+.g-row-check input { width: 20px; height: 20px; accent-color: var(--accent); }
+.g-row-btn {
+  display: block; width: 100%; text-align: start;
+  padding: 12px 13px; font: inherit; font-size: 14px; color: var(--text);
+  background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 11px; cursor: pointer;
+}
+.g-row-btn:hover { border-color: var(--accent); }
+
+/* ===========================================================================
+   6. Desktop: the same surface, centred rather than stretched
+   ======================================================================== */
+
+@media (min-width: 901px) and (min-height: 601px) {
+  :root { --g-top-h: 58px; --g-bar-h: 84px; }
+  body.guided main { padding-inline: max(0px, calc((100vw - 1100px) / 2)); }
+  body.guided .g-card { padding: 14px max(16px, calc((100vw - 1100px) / 2)) 14px; }
+  body.guided .g-bar {
+    padding-inline: max(12px, calc((100vw - 1100px) / 2));
+  }
+  .g-task { font-size: 20px; }
+  .g-act { font-size: 16px; }
+  /* A pointer and a keyboard can hold and step a word, so the scrub controls are
+     worth having here where they are not worth the width on a phone. */
+  body.guided #practice .transport-scrub { display: inline-flex; }
+}
+
+/* A short landscape phone is the practice posture the coach line is designed for:
+   give it everything, and let the mission card shrink to one line. */
+@media (orientation: landscape) and (max-height: 600px) {
+  :root { --g-top-h: 44px; --g-bar-h: 62px; }
+  .g-task { font-size: 15px; }
+  .g-why, .g-hint { display: none; }
+  .g-score { width: 44px; height: 44px; font-size: 16px; }
+  body.guided .g-card { padding: 6px 12px 8px; }
+  body.guided .g-bar { padding-block: 6px; }
+  .g-act { padding: 9px 6px; font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-pip-fill, body.guided .g-menu, body.guided .g-menu-backdrop { transition: none; }
+}

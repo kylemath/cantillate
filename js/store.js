@@ -95,6 +95,10 @@ function mergeProgress(a, b) {
   // Named passages: the newer list wins whole, so forgetting one on this device
   // isn't undone by an older list from another one (see setSavedPassages).
   out.passages = mergeNewer(a.passages, b.passages);
+  // What the reader is currently learning (see getPlan): a deliberate choice, so
+  // the most recent one wins rather than being field-merged into a chimera of two
+  // devices' plans.
+  out.plan = mergeNewer(a.plan, b.plan);
   // Preserve any unknown buckets a future version might add (prefer local).
   for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) {
     if (!(k in out)) out[k] = a[k] !== undefined ? a[k] : b[k];
@@ -542,6 +546,28 @@ export function setSavedPassages(list) {
   d.passages = { list: Array.isArray(list) ? list : [], updatedAt: Date.now() };
   save(d);
   return d.passages.list;
+}
+
+// --- What the reader is currently learning ----------------------------------
+// The one reading a reader is actually preparing — usually for a date: their own
+// bar/bat mitzvah, a family member's, or an aliyah they have been given. See
+// js/plan.js for the shape and why this is deliberately NOT the same thing as
+// the reading that happens to be open, or the parashah of the upcoming Shabbat.
+//
+// Stored as ONE record with an `updatedAt` (merged by mergeNewer), because it is
+// a decision rather than a score: setting a new plan on this device should
+// replace an older one from another, not merge with it.
+export function getPlan() {
+  const d = load();
+  return d.plan && d.plan.slug ? d.plan : null;
+}
+
+export function setPlan(plan) {
+  const d = load();
+  if (!plan) delete d.plan;
+  else d.plan = { ...plan, updatedAt: Date.now() };
+  save(d);
+  return d.plan || null;
 }
 
 // --- Public identity (optional anonymous name + avatar) --------------------
