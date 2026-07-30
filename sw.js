@@ -11,12 +11,13 @@
  *     The WOFF2 fonts are additionally precached at install, so the first paint
  *     of Hebrew text doesn't wait on the network. See FONT_ASSETS.
  *   - readings.json manifest: network-first (changes when readings are added).
- *   - audio/*.mp3: network passthrough, never cached (Range/206 safe, avoids quota blowups).
+ *   - audio/ (mp3, and m4a for a recording made for one reader's own passage):
+ *     network passthrough, never cached (Range/206 safe, avoids quota blowups).
  *   - Anything cross-origin or non-GET: bypassed entirely.
  */
 
 // Bump VERSION to invalidate all previously cached content on next activate.
-const VERSION = 'v-d7beedcf2cf7';
+const VERSION = 'v-e44b0f73113a';
 const SHELL_CACHE = 'cantillate-shell-' + VERSION;
 const DATA_CACHE = 'cantillate-data-' + VERSION;
 
@@ -212,8 +213,10 @@ self.addEventListener('fetch', function (event) {
 /* Matchers                                                                   */
 /* -------------------------------------------------------------------------- */
 
+// Recordings, whatever container they arrived in: PocketTorah publishes mp3,
+// while a recording made on a phone for one reader's own passage is m4a.
 function isAudio(path) {
-  return /\/audio\/.+\.mp3$/i.test(path) || /\.mp3$/i.test(path);
+  return /\/audio\/.+\.(mp3|m4a|aac|wav|ogg)$/i.test(path) || /\.mp3$/i.test(path);
 }
 
 function isReadingsManifest(path) {
@@ -226,8 +229,8 @@ function isShellAsset(href) {
 
 function isCacheableData(path) {
   // data/*.json (incl. large *_pitch*.json), data/pitch/<slug>/*.json shards,
-  // data/tanakh/<book>.json (whichever books the reader has actually opened),
-  // and any font files under fonts/.
+  // data/tanakh/<book>.json and its data/tanakh/<book>/<c>.json chapters
+  // (whichever the reader has actually opened), and any font files under fonts/.
   if (/\/data\/.+\.json$/i.test(path)) {
     return true;
   }

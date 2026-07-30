@@ -264,6 +264,27 @@ TRANSPORT_STEPS = [
      "(()=>{__t.key('Escape');"
      " return __t.settle(()=>!document.body.classList.contains('transport-paused')"
      "   && __t.q('#btnPause').disabled, 'OK transport reset', 'transport left armed after stop');})()"),
+    # A recording made by a person has things in it that are not the reading: a
+    # false start, a cough, a word to the room. Whoever labelled it cut those out
+    # (scripts/label.html), and the promise the app makes is that a child never
+    # hears one played back as though their teacher had chanted it.
+    ("a stretch cut out of a recording is never played",
+     "(async()=>{const ra=await import('/js/realaudio.js');"
+     " const idx=await (await fetch('data/trope-index.json')).json();"
+     " const v=idx.readings[0].verses[0];"
+     " const from=v.onsets[1], to=v.onsets[2], first=v.onsets[0], last=v.onsets[3];"
+     " ra.setAudioCuts(v.file, [[from, to]]);"
+     " const seen=[];"
+     " await new Promise((done)=>{"
+     "   ra.playSegment(v.file, first, last, {onEnd: done, onError: done});"
+     "   const poll=setInterval(()=>{const p=ra.verseAudioProgress(); if(p!=null) seen.push(p);}, 20);"
+     "   setTimeout(()=>{clearInterval(poll); done();}, 8000);});"
+     " ra.stopVerseAudio(); ra.setAudioCuts(v.file, []);"
+     " const at=seen.map((p)=>first + p*(last-first));"
+     " const inside=at.filter((t)=>t>from+0.05 && t<to-0.05);"
+     " return inside.length===0 && at.some((t)=>t>=to)"
+     "   ? `OK jumped ${(to-from).toFixed(2)}s of ${v.ref}, ${at.length} samples, none inside`"
+     "   : `${inside.length} of ${at.length} samples landed in the cut`;})()"),
 ]
 
 # The same transport during a take. A fumbled phrase should be re-singable: hold,
@@ -1048,6 +1069,32 @@ SWAP_STEPS = [
      "       const c=JSON.parse(localStorage.getItem('cantillate.v1')).plan.custom.haftarah;"
      "       return c.recordedAs==='haftarah-vaetchanan' && /Listen/.test(bar[0])"
      "         ? `OK ${said.slice(0, 80)} \u2014 opened ${c.recordedAs}`"
+     "         : `recordedAs=${c.recordedAs} bar=${JSON.stringify(bar)}`;});});})()"),
+    # The passage that is nobody's haftarah. A reader given one of those used to be
+    # told, correctly, that no one had recorded it — until his teacher did, and
+    # scripts/align_recording.py turned that recording into a reading. Nothing here
+    # knows it came from a living room: it is found by the same covers lookup as
+    # PocketTorah's, so the substitution opens the teacher's voice.
+    ("a passage recorded by the reader's own teacher is found the same way",
+     "(()=>{__t.tap('.g-menu-btn');"
+     " const haf=__t.all('.g-part').find(r=>/Haftarah/.test(r.textContent));"
+     " haf.querySelector('.g-part-swap').click();"
+     " return __t.settle(()=>!!__t.q('#gPickBook'), null, null, 12000).then(()=>{"
+     "   const set=(id,v)=>{const s=__t.q(id); s.value=String(v);"
+     "     s.dispatchEvent(new Event('change',{bubbles:true}));};"
+     "   set('#gPickBook','i-samuel'); set('#gPickFromC',28); set('#gPickFromV',8);"
+     "   set('#gPickToC',28); set('#gPickToV',19);"
+     "   const said=__t.text(__t.q('#gPickInfo .ob-good'));"
+     "   __t.tap('#gPickGo');"
+     "   return __t.settle(()=>__t.q('#parashah').value==='i-samuel-28', null, null, 20000)"
+     # Escape first: the step before this one may still be playing Isaiah 40.
+     "     .then(()=>{__t.key('Escape');"
+     "       return __t.settle(()=>/Listen|Guide voice/.test(__t.text(__t.q('.g-act'))),"
+     "         null, null, 8000);})"
+     "     .then(()=>{const bar=__t.all('.g-act').map(b=>__t.text(b));"
+     "       const c=JSON.parse(localStorage.getItem('cantillate.v1')).plan.custom.haftarah;"
+     "       return c.recordedAs==='i-samuel-28' && /Listen/.test(bar[0])"
+     "         ? `OK ${said.slice(0, 90)}`"
      "         : `recordedAs=${c.recordedAs} bar=${JSON.stringify(bar)}`;});});})()"),
 ]
 

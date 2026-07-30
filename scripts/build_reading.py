@@ -36,15 +36,19 @@ import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import fetch_translation as ftr           # noqa: E402  (clean + get_english)
 import extract_pitch as ep                # noqa: E402  (f0_track, tokenize, make_steps, ...)
+import hebtok                             # noqa: E402  (the app's word tokenizer)
+import onsettrack                         # noqa: E402  (the word-onset track format)
 import tanakh                             # noqa: E402  (book names, Hebrew numerals)
 from readings import REGISTRY as TORAH_REGISTRY   # noqa: E402
 from haftarot import REGISTRY as HAFTARAH_REGISTRY  # noqa: E402
+from local_readings import REGISTRY as LOCAL_REGISTRY  # noqa: E402
 from aliyot_build import build_aliyot_doc, HEBCAL_ATTRIBUTION  # noqa: E402
 
 # Every buildable reading, by slug. The Torah parashiyot are hand-written in
 # scripts/readings.py; the haftarot are derived from Hebcal's leyning table in
-# scripts/haftarot.py, so all 54 are available without typing any of them out.
-REGISTRY = {**TORAH_REGISTRY, **HAFTARAH_REGISTRY}
+# scripts/haftarot.py, so all 54 are available without typing any of them out;
+# scripts/local_readings.py holds passages taught by a recording of one's own.
+REGISTRY = {**TORAH_REGISTRY, **HAFTARAH_REGISTRY, **LOCAL_REGISTRY}
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUDIO_DIR = os.path.join(HERE, "audio")
@@ -65,28 +69,9 @@ def get(url):
         return r.read()
 
 
-# App tokenizer replica (js/hebrew.js) for the alignment self-check.
+# App tokenizer (js/hebrew.js) for the alignment self-check.
 def js_tokenize(text):
-    import re
-    text = re.sub(r"<[^>]*>|&[#a-zA-Z0-9]+;", "", text)
-    text = re.sub(r"\{[^}]*\}", " ", text)
-    out = []
-    for w in text.split():
-        cur = ""
-        for s in re.split(r"([\u05be\u05c0])", w):
-            if s == "":
-                continue
-            if s in (MAQAF, PASEQ):
-                if cur:
-                    out.append(cur + s)
-                    cur = ""
-            else:
-                if cur:
-                    out.append(cur)
-                cur = s
-        if cur:
-            out.append(cur)
-    return out
+    return hebtok.tokenize(text)
 
 
 def split_contig(lo, hi, parts):
@@ -116,14 +101,16 @@ def out_name(cfg, src, suffix):
     return f"{cfg['slug']}_{suffix}" if sid == DEFAULT_SOURCE else f"{cfg['slug']}_{sid}_{suffix}"
 
 
-# Web-relative MP3 path stored in the audio doc's "file" field (what the app
+# Web-relative audio path stored in the audio doc's "file" field (what the app
 # fetches). Default source lives at audio/<slug>-<i>.mp3; others are namespaced
-# under audio/<id>/ so voices never collide.
+# under audio/<id>/ so voices never collide. A `local` source may set "ext" to
+# whatever it was recorded as — a phone hands you m4a, and re-encoding it to mp3
+# would only cost a generation of quality.
 def mp3_rel(src, i):
     sid = src.get("id", DEFAULT_SOURCE)
     slug = src["audio_slug"]
     sub = "" if sid == DEFAULT_SOURCE else f"{sid}/"
-    return f"audio/{sub}{slug}-{i}.mp3"
+    return f"audio/{sub}{slug}-{i}.{src.get('ext', 'mp3')}"
 
 
 def mp3_disk(src, i):
@@ -335,6 +322,8 @@ def pt_name(src, key, i):
 # PocketTorah sources fetch labels + audio from GitHub; `local` drop-in sources
 # read comma-separated onsets from data/local_sources/<id>/ and require the MP3s
 # to already exist under audio/<id>/ (e.g. licensed material provided offline).
+# Each track comes back as (starts, ends) — see scripts/onsettrack.py — which
+# differ only where somebody cut a false start out of the recording by ear.
 def load_source_tracks(src):
     kind = src.get("kind", "pockettorah")
     sid = src.get("id", DEFAULT_SOURCE)
@@ -359,7 +348,11 @@ def load_source_tracks(src):
                 raw = f.read()
         else:
             raise SystemExit(f"unknown source kind '{kind}' for '{sid}'")
-        labels[i] = [float(x) for x in raw.strip().split(",") if x.strip()]
+        starts, ends = onsettrack.parse(raw)
+        bad = onsettrack.check(starts, ends)
+        if bad:
+            raise SystemExit(f"source '{sid}' track {i}: {bad}")
+        labels[i] = (starts, ends)
     return labels
 
 
@@ -369,12 +362,12 @@ def build_audio(cfg, src, verses, bounds):
     foff, off = {}, 0
     for i in src["pt_files"]:
         foff[i] = off
-        off += len(labels[i])
+        off += len(labels[i][0])
 
     frange, acc = {}, 0
     for i in src["pt_files"]:
-        frange[i] = (acc, acc + len(labels[i]))
-        acc += len(labels[i])
+        frange[i] = (acc, acc + len(labels[i][0]))
+        acc += len(labels[i][0])
 
     def file_for(gw):
         for i in src["pt_files"]:
@@ -391,17 +384,24 @@ def build_audio(cfg, src, verses, bounds):
         if fi is None:
             mism.append((row["ref"], "no audio file"))
             continue
-        ons = labels[fi]
+        ons, ends = labels[fi]
         ls, le = gs - foff[fi], ge - foff[fi]
         wons = ons[ls:le]
         if len(wons) != wc_expected:
             mism.append((row["ref"], f"onsets {len(wons)} != wc {wc_expected}"))
-        audio_verses[str(row["n"])] = {
+        info = {
             "file": mp3_rel(src, fi),
             "start": round(ons[ls], 3),
-            "end": round(ons[le], 3) if le < len(ons) else None,
+            "end": round(ends[le], 3) if le < len(ends) else None,
             "onsets": [round(x, 3) for x in wons],
         }
+        # Where each word stops. That is the next word's onset unless a cut was
+        # made between them, which is the only case worth writing down.
+        wends = [ends[k + 1] if k + 1 < len(ends) else None for k in range(ls, le)]
+        if any(e is not None and k + 1 < len(ons) and abs(e - ons[k + 1]) > 1e-6
+               for k, e in zip(range(ls, le), wends)):
+            info["ends"] = [round(e, 3) if e is not None else None for e in wends]
+        audio_verses[str(row["n"])] = info
 
     audio_doc = {"slug": cfg["slug"],
                  "source": src.get("source_url", "https://pockettorah.com"),
@@ -449,16 +449,25 @@ def extract_pitch(cfg, src, verses, audio_verses):
         ts, f0 = tracks[fn]
         vstart = info["start"]
         vend = info["end"] if info["end"] is not None else durations[fn]
-        voiced = f0[(ts >= vstart) & (ts <= vend) & (f0 > 0)]
+        sung = (ts >= vstart) & (ts <= vend) & (f0 > 0)
+        # A cut is not the reading — an aside to the room would drag the verse's
+        # tonic towards speech — so leave those stretches out of it entirely.
+        for k, cut_end in enumerate(info.get("ends") or []):
+            if cut_end is not None and k + 1 < len(info["onsets"]):
+                sung &= ~((ts > cut_end) & (ts < info["onsets"][k + 1]))
+        voiced = f0[sung]
         if len(voiced) < 5:
             continue
         tonic = float(np.median(voiced))
         onsets = info["onsets"]
+        cut_ends = info.get("ends") or []
         tokens = ep.tokenize(text_by_n[v]["text"])
         words = []
         for k in range(len(onsets)):
             w_start = onsets[k]
-            if k + 1 < len(onsets):
+            if k < len(cut_ends) and cut_ends[k] is not None:
+                w_end = cut_ends[k]
+            elif k + 1 < len(onsets):
                 w_end = onsets[k + 1]
             elif info["end"] is not None:
                 w_end = info["end"]
