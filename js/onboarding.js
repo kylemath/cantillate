@@ -14,6 +14,7 @@
 
 import * as calendar from './calendar.js';
 import * as plan from './plan.js';
+import * as auth from './auth.js';
 
 // The screens, in order, each paired with what it draws. One table rather than a
 // list plus a switch, so adding a question can't leave a step that renders the
@@ -27,6 +28,7 @@ const BODIES = {
   parashah: parashahBody,
   cycle: cycleBody,
   parts: partsBody,
+  account: accountBody,
   ready: readyBody,
 };
 const STEPS = Object.keys(BODIES);
@@ -36,6 +38,9 @@ let onDone = null;
 let installPrompt = null;   // a captured beforeinstallprompt, where the browser offers one
 let draft = null;
 let step = 0;
+let signinBusy = false;     // a sign-in popup is open
+let signinFailed = false;   // the last attempt didn't complete (popup closed, offline, blocked)
+let unwatchAuth = null;
 
 // Chrome and Edge fire this when the app is installable; capturing it lets the
 // first screen offer a real install button instead of describing the menu item.
@@ -77,6 +82,7 @@ function newDraft() {
     parts: null,
     browseFrom: null,   // set when the reader asked to pick the parashah by name
     custom: null,       // substituted passages carried through an edit (plan.setCustom)
+    needsAccount: null, // null until we can tell; see accountApplies()
   };
 }
 
@@ -89,6 +95,8 @@ export function isOpen() { return !!root; }
 export function open({ done, editing = null } = {}) {
   onDone = done || (() => {});
   draft = newDraft();
+  signinBusy = false;
+  signinFailed = false;
   if (editing) {
     draft.role = editing.role || draft.role;
     draft.occasion = editing.occasion || draft.occasion;
@@ -100,16 +108,27 @@ export function open({ done, editing = null } = {}) {
     // plan.setCustom) is their choice, not the calendar's, so changing the date or
     // the cycle here must not quietly throw it away.
     draft.custom = editing.custom || null;
+    // Nor asked to sign in again: they have practised for a while already and
+    // have had the offer, in this wizard and in the topbar, every day since.
+    draft.needsAccount = false;
   }
   // Someone changing an existing plan doesn't need to be taught how to install
   // the app, and neither does someone who already has.
   step = (editing || isInstalled()) ? 1 : 0;
   mount();
+  // The sign-in screen is the one that changes under the reader without them
+  // touching it — the popup completes, or the SDK finishes loading — so it is
+  // redrawn when the session changes. Only that screen: a redraw anywhere else
+  // would take the name or the date out from under a half-finished answer.
+  unwatchAuth = auth.watchUser(() => {
+    if (root && STEPS[step] === 'account') render();
+  });
   calendar.load().then(() => { if (root) render(); });
   render();
 }
 
 export function close() {
+  if (unwatchAuth) { unwatchAuth(); unwatchAuth = null; }
   if (!root) return;
   root.remove();
   root = null;
@@ -136,7 +155,37 @@ function applies(name) {
   if (name === 'whose' || name === 'date') return draft.occasion !== 'learning';
   if (name === 'name') return draft.occasion !== 'learning' && draft.role !== 'self';
   if (name === 'parashah') return !draft.rec || !!draft.browseFrom;
+  if (name === 'account') return accountApplies();
   return true;
+}
+
+// Signed in to something that will still be there next year: an anonymous
+// session (see auth.signInAnon) syncs, but nobody can ever sign back into it.
+function signedInForKeeps() {
+  return !!auth.getUser() && !auth.isAnon();
+}
+
+// Whether to ask about an account at all — decided ONCE, the first time the
+// answer is knowable, and then held for the rest of the wizard. Held, because
+// signing in on that screen would otherwise remove it from the flow while the
+// reader is standing on it: the progress dots would renumber under them and Back
+// would skip a screen they had just been through.
+//
+// Not knowable for the first moment of a page load: the config is readable
+// immediately but a stored session isn't, so an already-signed-in reader would be
+// asked to sign in again. Until the SDK settles, assume the screen is coming (the
+// honest guess on a first visit, and it keeps the dot count still) without
+// committing to it.
+function accountApplies() {
+  const state = auth.readyState();
+  if (state === 'unconfigured') return false;
+  if (draft.needsAccount == null) {
+    if (state === 'loading') return true;
+    // A sign-in that cannot load is not worth a screen of its own: the reader
+    // can do nothing about it, and the topbar offers it again once it works.
+    draft.needsAccount = state === 'ready' && !signedInForKeeps();
+  }
+  return draft.needsAccount;
 }
 
 function go(delta) {
@@ -393,7 +442,61 @@ function partsBody() {
     <button class="ob-go" id="obNext" ${ids.size ? '' : 'disabled'}>Next</button>`;
 }
 
-// 7. The plan, in one screen, before anything is committed.
+// 7. An account, at the end of the questions and before a single note has been
+// sung. Everything the app knows about a reader lives in one browser's local
+// storage until they say otherwise, so a cleared cache, a new phone, or an
+// evening on the other parent's iPad loses months of work. This is the one moment
+// where asking costs nothing — there is nothing to lose yet — and from here every
+// take is saved to an account rather than to a device.
+function accountBody() {
+  const state = auth.readyState();
+  const user = auth.getUser();
+  const anon = !!user && auth.isAnon();
+  const whose = draft.role === 'self'
+    ? 'your' : (draft.learner ? `${escapeHtml(draft.learner)}\u2019s` : 'their');
+
+  if (user && !anon) {
+    const id = auth.getGoogleIdentity() || {};
+    const as = id.name || id.email || '';
+    return `
+      <h2 class="ob-h">Progress will be saved</h2>
+      <p class="ob-sub">${as ? `Signed in as <b>${escapeHtml(as)}</b>. ` : ''}Every take is kept in that
+        account, so ${whose} practice is there on any phone or computer you sign in on \u2014 and outlives
+        this browser.</p>
+      <button class="ob-go" id="obNext">Next</button>`;
+  }
+
+  // Committed to showing this screen and then sign-in turned out not to work:
+  // say so plainly and let them past, rather than leaving a dead button.
+  if (state === 'failed') {
+    return `
+      <h2 class="ob-h">Save ${whose} progress</h2>
+      <p class="ob-sub">Signing in isn\u2019t reachable right now, so practice will be saved in this
+        browser. Nothing is lost \u2014 sign in later from the \u2630 menu and everything done meanwhile
+        goes up with it.</p>
+      <button class="ob-go" id="obNext">Carry on</button>`;
+  }
+
+  const loading = state !== 'ready';
+  const label = signinBusy ? 'Signing in\u2026' : (loading ? 'Preparing sign-in\u2026' : 'Sign in with Google');
+  return `
+    <h2 class="ob-h">Save ${whose} progress</h2>
+    <p class="ob-sub">${whose === 'your' ? 'You\u2019ll' : 'They\u2019ll'} practise most days between now and the
+      day itself. Signed in, every take is kept in an account: it is there on a new phone, on the
+      computer downstairs, and after this browser is cleared. Otherwise it lives in this browser
+      only, and goes when the browser does.</p>
+    <p class="ob-note">A parent\u2019s Google account is fine. Nothing is published \u2014 you choose the
+      name you appear under, and only scores you deliberately submit are ever shared.</p>
+    ${anon ? `<p class="ob-note">You\u2019re posting anonymously at the moment. Signing in keeps that
+      nickname and everything already earned under it.</p>` : ''}
+    ${signinFailed ? `<p class="ob-warn">That didn\u2019t finish \u2014 the popup may have been closed or
+      blocked. Try again, or carry on and sign in later from the \u2630 menu.</p>` : ''}
+    <button class="ob-go" id="obSignIn" ${loading || signinBusy ? 'disabled' : ''}>
+      <span class="ob-g" aria-hidden="true">G</span> ${label}</button>
+    <button class="ob-go ob-ghost" id="obSkipAccount">Not now \u2014 keep it on this device</button>`;
+}
+
+// 8. The plan, in one screen, before anything is committed.
 function readyBody() {
   const rec = draft.rec || {};
   const chosen = draft.parts || plan.defaultParts(draft.occasion);
@@ -415,7 +518,25 @@ function readyBody() {
     <p class="ob-ready">${who} will be chanting:</p>
     <ul class="ob-readylist">${items}</ul>
     <p class="ob-sub">${plan.CYCLES[draft.cycle].label} \u00b7 ${plan.CYCLES[draft.cycle].sub}</p>
+    ${savingNote()}
     <button class="ob-go ob-primary" id="obFinish">Start learning</button>`;
+}
+
+// Where the practice about to be done will end up. Said on the last screen
+// because it is the answer to the question the account screen just asked, and
+// because a reader who skipped it should know what they chose rather than find
+// out from an empty new phone.
+function savingNote() {
+  const user = auth.getUser();
+  if (user && !auth.isAnon()) {
+    const id = auth.getGoogleIdentity() || {};
+    const as = id.name || id.email;
+    return `<p class="ob-note ob-good">\u2713 Saving to your account${as
+      ? ` (${escapeHtml(as)})` : ''} \u2014 every take, on every device you sign in on.</p>`;
+  }
+  if (auth.readyState() === 'unconfigured') return '';
+  return `<p class="ob-note">Saving in this browser only. You can sign in any time from the \u2630 menu,
+    and everything done so far goes up with it.</p>`;
 }
 
 // --- Wiring -----------------------------------------------------------------
@@ -519,6 +640,31 @@ function wireFor(name) {
         : kept;
       render();
     }));
+  }
+
+  if (name === 'account') {
+    const skip = byId('obSkipAccount');
+    if (skip) skip.addEventListener('click', next);
+    const signIn = byId('obSignIn');
+    if (signIn) signIn.addEventListener('click', async () => {
+      signinBusy = true;
+      signinFailed = false;
+      render();
+      try {
+        await auth.signIn();
+      } catch (e) {
+        // A closed or blocked popup is the common case and is not an error worth
+        // stopping for: the screen says so and offers the way past it.
+        console.warn('[onboarding] sign-in did not complete:', e);
+        signinFailed = true;
+      }
+      signinBusy = false;
+      // Straight on once there is a session — the reader answered the question,
+      // and the last screen confirms where their practice is being saved. A
+      // failure re-renders in place with the explanation.
+      if (signedInForKeeps()) next();
+      else if (root) render();
+    });
   }
 
   if (name === 'ready') byId('obFinish').addEventListener('click', finish);

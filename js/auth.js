@@ -21,6 +21,7 @@ let fb = null;         // resolved Firebase SDK fns (once loaded)
 let auth = null;
 let db = null;
 let currentUser = null;
+let loadFailed = false; // the SDK never arrived (offline, blocked); see readyState
 let synced = false;    // true once this session's cloud progress has merged in
 let pushTimer = null;
 // Extra, corpus-wide summary fields (per-sefer practice aggregates + hours)
@@ -30,6 +31,42 @@ let summaryExtras = null;
 
 export { isConfigured };
 export function getUser() { return currentUser; }
+
+// Whether a sign-in can actually be attempted right now: the config is real AND
+// the SDK has finished loading. "Configured but not ready yet" is the ordinary
+// state for the first moment of a page load, and anything that puts a sign-in
+// button on screen has to tell it apart from "sign-in will never work here".
+export function isReady() { return !!(auth && fb); }
+
+// The same answer with its reasons, for UI that has to choose between offering
+// sign-in, waiting for it, and not mentioning it at all:
+//   'unconfigured' — no Firebase project; this build is local-storage only
+//   'loading'      — configured, SDK still arriving from the CDN
+//   'ready'        — signing in will work
+//   'failed'       — the SDK didn't load (offline, blocked); it won't work now
+export function readyState() {
+  if (!isConfigured()) return 'unconfigured';
+  if (auth && fb) return 'ready';
+  return loadFailed ? 'failed' : 'loading';
+}
+
+// Extra listeners for "the session or the sign-in machinery changed". initAuth's
+// onUserChange is the one long-lived subscriber (the header box); this is for UI
+// that comes and goes within a session — the onboarding wizard, which draws a
+// sign-in screen and has to redraw it when the popup completes, or when the SDK
+// finishes loading underneath it. Returns an unsubscribe function.
+const watchers = new Set();
+export function watchUser(fn) {
+  if (typeof fn !== 'function') return () => {};
+  watchers.add(fn);
+  return () => watchers.delete(fn);
+}
+
+function notifyWatchers() {
+  for (const fn of Array.from(watchers)) {
+    try { fn(currentUser); } catch (e) { /* a watcher's failure is its own */ }
+  }
+}
 
 // True when the current session is a Firebase *anonymous* sign-in — i.e. the
 // user submitted scores without a Google account. Everything they publish is
@@ -87,6 +124,7 @@ export async function initAuth({ onUserChange, onProgressMerged } = {}) {
 
   if (!isConfigured()) {
     stateCb.onUserChange(null, { configured: false });
+    notifyWatchers();
     return { configured: false };
   }
 
@@ -103,10 +141,13 @@ export async function initAuth({ onUserChange, onProgressMerged } = {}) {
     try { await authMod.setPersistence(auth, authMod.browserLocalPersistence); } catch (e) { /* default persistence */ }
 
     authMod.onAuthStateChanged(auth, (user) => { handleUser(user); });
+    notifyWatchers();
     return { configured: true };
   } catch (e) {
     console.error('[auth] Firebase failed to load:', e);
+    loadFailed = true;
     stateCb.onUserChange(null, { configured: true, error: 'load-failed' });
+    notifyWatchers();
     return { configured: true, error: 'load-failed' };
   }
 }
@@ -115,6 +156,7 @@ async function handleUser(user) {
   currentUser = user || null;
   synced = false;
   stateCb.onUserChange(currentUser, { configured: true });
+  notifyWatchers();
   if (!currentUser) return;
   // Pull this account's saved progress and merge it with whatever is local
   // (including anything earned while logged out), keeping the best of each.

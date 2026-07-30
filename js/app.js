@@ -666,6 +666,21 @@ function guidedApi() {
     setAnalysis: (on) => { if (on !== state.showAnalysis) toggleAnalysis(); },
     download: () => { const b = $('btnOffline'); if (b && !b.hidden) b.click(); },
 
+    // The account, for a reader who never sees the workshop's topbar: guided mode
+    // owns the whole screen, so the sign-in button up there may as well not exist.
+    // Someone who answered "not now" in the wizard needs a second door, and it
+    // belongs next to the other settings rather than behind a trip to the workshop.
+    account: () => {
+      const state_ = auth.readyState();
+      const user = auth.getUser();
+      if (!user) return { state: state_, signedIn: false, anon: false, name: '', photo: '' };
+      const id = auth.publicIdentity();
+      return { state: state_, signedIn: true, anon: auth.isAnon(), name: id.name, photo: id.photo };
+    },
+    signIn: () => auth.signIn(),
+    signOut: () => auth.signOutUser(),
+    editIdentity: () => openProfileModal({ firstTime: false }),
+
     editPlan: () => editPlan(),
     newPlan: () => newPlan(),
     toExpert: () => leaveGuided(),
@@ -736,6 +751,9 @@ async function openWizard({ editing = null } = {}) {
       renderLearningChip();
       if (built) enterGuided();
       else if (wasGuided && store.getPlan()) enterGuided();
+      // Someone who signed in on the wizard's account screen still has to be
+      // asked how they want to appear; it was held back while the sheet was up.
+      maybeOfferProfile();
     },
   });
 }
@@ -946,6 +964,9 @@ function setupAuth() {
       authState.user = user;
       authState.busy = false;
       renderAuthBox();
+      // Guided mode has its own account rows (it never shows the topbar), so they
+      // are told too — a sign-in started there has to finish there.
+      if (guided) guided.accountChanged();
     },
     // Cloud progress merged into local on sign-in — refresh everything so the
     // newly-synced scores/levels show up immediately, and (on the very first
@@ -953,9 +974,24 @@ function setupAuth() {
     onProgressMerged: () => {
       refreshProgressViews();
       renderAuthBox();
-      if (auth.getUser() && !auth.hasChosenProfile()) openProfileModal({ firstTime: true });
+      if (guided) guided.accountChanged();
+      maybeOfferProfile();
     },
   });
+}
+
+// The one-time "how would you like to appear?" prompt, on first login. Held back
+// while the onboarding wizard is up: the wizard is a full-screen sheet above every
+// modal (see .onboard in css/guided.css), so a modal opened underneath it would be
+// invisible, and it would be answering a question about leaderboards that the
+// reader hasn't got to yet. The wizard asks for it again when it closes.
+function maybeOfferProfile() {
+  // A wizard on its way up counts as up: its module is fetched on demand, so
+  // between asking for it and having it there is nothing to ask isOpen() of.
+  if (_wizardLoad && !onboarding) return;
+  if (onboarding && onboarding.isOpen()) return;
+  if (!auth.getUser() || auth.hasChosenProfile()) return;
+  openProfileModal({ firstTime: true });
 }
 
 // --- Public identity picker (anonymous nickname + cartoon/solid avatar) -----

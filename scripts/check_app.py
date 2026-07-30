@@ -816,8 +816,28 @@ WIZARD_STEPS = [
      " return refs.length===7 && new Set(refs).size===7"
      "   && refs.every(r=>/^\\d+:\\d+-\\d+:\\d+$/.test(r))"
      "   ? `OK ${refs.join(', ')}` : `ranges shown: ${JSON.stringify(refs)}`;})()"),
+    # Eight months of practice lives in one browser's localStorage until someone
+    # signs in, and this is the only moment where saying so costs the reader
+    # nothing: the questions are answered and the first take hasn't happened. The
+    # way past it matters as much as the offer — a reader who is offline, has
+    # popups blocked, or is on a build with no Firebase project must not be
+    # trapped on a sign-in screen, so this tolerates the screen being absent.
+    ("the questions end by offering an account to save the progress to",
+     "(()=>{__t.tap('#obNext');"
+     " if(/will be chanting/.test(__t.text(__t.q('#obBody'))))"
+     "   return 'OK no account screen \u2014 sign-in is unavailable in this build';"
+     " const ask=__t.ask(), g=__t.q('#obSignIn'), onward=!!(__t.q('#obSkipAccount')||__t.q('#obNext'));"
+     " return /Save Noa\u2019s progress/.test(ask) && onward"
+     "   ? `OK \u201c${ask}\u201d, google=${!!g}, with a way past it`"
+     "   : `asked ${ask} / google=${!!g} / onward=${onward}`;})()"),
+    ("declining it leaves the plan intact and says where practice will be kept",
+     "(()=>{if(!/will be chanting/.test(__t.text(__t.q('#obBody'))))"
+     "   __t.tap(__t.q('#obSkipAccount') ? '#obSkipAccount' : '#obNext');"
+     " const note=__t.text(__t.q('#obBody .ob-note'));"
+     " return /this browser only/.test(note) || /Saving to your account/.test(note)"
+     "   ? `OK ${note.slice(0, 80)}` : `said ${note.slice(0, 120) || '(nothing)'}`;})()"),
     ("the last screen says what was decided, in the learner's name",
-     "(()=>{__t.tap('#obNext'); const t=__t.text(__t.q('#obBody'));"
+     "(()=>{const t=__t.text(__t.q('#obBody'));"
      " return /Noa will be chanting/.test(t) && /Eikev/.test(t) && /Maftir/.test(t)"
      "   ? `OK ${t.slice(0, 90)}` : `said ${t.slice(0, 120)}`;})()"),
 ]
@@ -886,6 +906,16 @@ GUIDED_STEPS = [
      "(()=>{__t.tap('.g-menu-btn'); const rows=__t.all('.g-row').map(r=>__t.text(r));"
      " return rows.length===2 && /Text size/.test(rows[0]) && /pitch/.test(rows[1])"
      "   ? `OK ${rows.join(' / ')}` : `settings were ${JSON.stringify(rows)}`;})()"),
+    # A reader who said "not now" to the wizard's account screen, or who has since
+    # been handed a different phone, must not have to go to the workshop to sign in:
+    # guided mode owns the whole screen precisely so they never see its topbar.
+    ("signing in is offered here too, for whoever put it off in the wizard",
+     "(()=>{const btn=__t.q('#gSignIn'); if(!btn) return 'no sign-in offered in the menu';"
+     " const heads=__t.all('.g-menu-h').map(h=>__t.text(h));"
+     " const note=__t.text([...__t.all('.g-menu-note')].find(n=>/browser only/.test(n.textContent)));"
+     " return heads.includes('Saving your progress') && /Sign in with Google/.test(__t.text(btn)) && note"
+     "   ? `OK \u201c${__t.text(btn)}\u201d \u2014 ${note.slice(0, 60)}`"
+     "   : `heads=${JSON.stringify(heads)} button=${__t.text(btn)} note=${note}`;})()"),
     ("the workshop is one tap away, and the way back is the chip in its header",
      "(()=>{__t.tap('#gExpert');"
      " return __t.settle(()=>!document.body.classList.contains('guided'), null, null, 6000)"
