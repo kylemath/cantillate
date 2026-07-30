@@ -6,13 +6,22 @@ parashah, a haftarah, a named excerpt. This builds the other half of the promise
 — "any pesukim of any book" — as one small file per book that the app fetches
 only when the reader picks that book:
 
-    data/tanakh/index.json      every book: names, chapter lengths, parashiyot
-    data/tanakh/<slug>.json     the Hebrew (MAM, with te'amim), by chapter
-    data/tanakh/<slug>.en.json  the English (Koren), by chapter
+    data/tanakh/index.json          every book: names, chapter lengths, parashiyot
+    data/tanakh/<slug>.json         the Hebrew (MAM, with te'amim), by chapter
+    data/tanakh/<slug>.en.json      the English (Koren), by chapter
+    data/tanakh/<slug>/<c>.json     chapter c on its own, Hebrew
+    data/tanakh/<slug>/<c>.en.json  chapter c on its own, English
 
 Verse numbers are not stored: a chapter is a plain array, so verse v of chapter
 c is chapters[c-1][v-1] and the index's per-chapter counts are enough to build
 any reference. That keeps a book to a few hundred KB instead of a few MB.
+
+A passage spans a chapter or three, so the per-chapter shards are what the app
+actually fetches — a few KB rather than the few hundred a whole book costs on a
+phone. The whole-book files stay for offline precaching and as the fallback for
+a corpus built before the shards existed; `shards` in the index says which books
+have them. Each shard repeats the book's version/licence lines so a reading can
+be assembled and attributed without the monolith.
 
 A custom range has no recording, so the app teaches it from the measured
 haftarah shapes (data/haftarah-shapes.json) — which is also why the three poetic
@@ -24,6 +33,7 @@ Usage (inside the venv):
     .venv/bin/python scripts/build_tanakh.py --section neviim
     .venv/bin/python scripts/build_tanakh.py --missing        # only unbuilt books
     .venv/bin/python scripts/build_tanakh.py --index-only     # re-stitch the index
+    .venv/bin/python scripts/build_tanakh.py --shards         # re-split books on disk
 
 Already-built books are skipped unless --force. The index is rebuilt from
 whatever is on disk every run, so an interrupted build leaves a consistent app.
@@ -173,8 +183,10 @@ def build_book(name, force=False, parashiyot=None):
         doc["parashiyot"] = parashiyot
     os.makedirs(OUT_DIR, exist_ok=True)
     write(he_path, doc)
-    write(en_path, {"slug": slug, "enVersionTitle": en_ver,
-                    "source": SOURCE_URL, "chapters": en_chapters})
+    en_doc = {"slug": slug, "enVersionTitle": en_ver,
+              "source": SOURCE_URL, "chapters": en_chapters}
+    write(en_path, en_doc)
+    write_shards(slug, doc, en_doc)
     return index_entry(name)
 
 
@@ -182,6 +194,56 @@ def write(path, doc):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(doc, f, ensure_ascii=False, separators=(",", ":"))
     print(f"  wrote {os.path.relpath(path, HERE)} ({os.path.getsize(path) / 1024:.0f} KB)")
+
+
+def write_json(path, doc):
+    """Same as write(), without the per-file line — shards come by the hundred."""
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(doc, f, ensure_ascii=False, separators=(",", ":"))
+
+
+# ---- chapter shards --------------------------------------------------------
+# One file per chapter, so opening Isaiah 40:1-26 fetches Isaiah 40 rather than
+# all 66 chapters of Isaiah. Each shard carries the book's attribution so the
+# app can build and cite a reading without ever loading the whole book.
+
+def shard_dir(slug):
+    return os.path.join(OUT_DIR, slug)
+
+
+def write_shards(slug, doc, en_doc=None):
+    """Split an already-built book into per-chapter files. Returns how many."""
+    d = shard_dir(slug)
+    os.makedirs(d, exist_ok=True)
+    meta = {k: doc[k] for k in ("versionTitle", "heVersionTitle", "enVersionTitle",
+                                "license", "source") if doc.get(k)}
+    n = 0
+    for i, verses in enumerate(doc["chapters"], start=1):
+        write_json(os.path.join(d, f"{i}.json"), {"slug": slug, "c": i, **meta,
+                                                  "verses": verses})
+        n += 1
+    if en_doc:
+        en_meta = {k: en_doc[k] for k in ("enVersionTitle", "source") if en_doc.get(k)}
+        for i, verses in enumerate(en_doc["chapters"], start=1):
+            write_json(os.path.join(d, f"{i}.en.json"), {"slug": slug, "c": i,
+                                                         **en_meta, "verses": verses})
+    kb = sum(os.path.getsize(os.path.join(d, f)) for f in os.listdir(d)) / 1024
+    print(f"  wrote {os.path.relpath(d, HERE)}/ ({n} chapters, {kb:.0f} KB)")
+    return n
+
+
+def shard_book(name):
+    """Re-derive one book's shards from the files already on disk."""
+    slug, he_path, en_path = book_paths(name)
+    if not os.path.exists(he_path):
+        return 0
+    with open(he_path, encoding="utf-8") as f:
+        doc = json.load(f)
+    en_doc = None
+    if os.path.exists(en_path):
+        with open(en_path, encoding="utf-8") as f:
+            en_doc = json.load(f)
+    return write_shards(slug, doc, en_doc)
 
 
 def index_entry(name):
@@ -207,6 +269,10 @@ def index_entry(name):
     }
     if os.path.exists(en_path):
         entry["enFile"] = f"data/tanakh/{slug}.en.json"
+    # Says the per-chapter files are there to be fetched, so the app can skip
+    # the monolith without probing for a 404 first.
+    if os.path.isdir(shard_dir(slug)):
+        entry["shards"] = f"data/tanakh/{slug}"
     if doc.get("parashiyot"):
         entry["parashiyot"] = doc["parashiyot"]
     return entry
@@ -244,10 +310,22 @@ def main():
                     help="every book of one section")
     ap.add_argument("--missing", action="store_true", help="only books not yet built")
     ap.add_argument("--index-only", action="store_true", help="just rebuild the index")
+    ap.add_argument("--shards", action="store_true",
+                    help="re-split books already on disk into per-chapter files")
     ap.add_argument("--force", action="store_true", help="refetch books already built")
     args = ap.parse_args()
 
     if args.index_only:
+        build_index()
+        return
+
+    if args.shards:
+        pool = [tanakh.book(n)["en"] for n in args.books] or list(tanakh.ORDER)
+        total = 0
+        for name in pool:
+            print(f"{name}:")
+            total += shard_book(name)
+        print(f"sharded {total} chapters")
         build_index()
         return
 

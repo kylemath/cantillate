@@ -18,11 +18,10 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
 
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- Guided mode: the onboarding wizard and the narrowed, one-thing-at-a-time
-       practice surface for a reader preparing one reading for one date. Kept in
-       its own sheet because it is a skin OVER the workshop rather than part of
-       it — see js/guided.js. -->
-  <link rel="stylesheet" href="css/guided.css" />
+  <!-- css/guided.css (the onboarding wizard and the narrowed, one-thing-at-a-time
+       practice surface) is injected by ensureGuidedCss() alongside the guided
+       modules, so a reader in the workshop never downloads either. It is a skin
+       OVER the workshop rather than part of it — see js/guided.js. -->
 </head>
 <body>
   <!-- Mobile-only slim app bar: an always-visible top strip with a menu button

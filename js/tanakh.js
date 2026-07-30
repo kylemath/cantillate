@@ -7,13 +7,19 @@
 // The corpus is built by scripts/build_tanakh.py into one file per book, fetched
 // only when that book is picked:
 //
-//   data/tanakh/index.json     every book: names, chapter lengths, parashiyot
-//   data/tanakh/<slug>.json    the Hebrew (MAM, with te'amim), by chapter
-//   data/tanakh/<slug>.en.json the English (Koren), by chapter
+//   data/tanakh/index.json         every book: names, chapter lengths, parashiyot
+//   data/tanakh/<slug>.json        the Hebrew (MAM, with te'amim), by chapter
+//   data/tanakh/<slug>.en.json     the English (Koren), by chapter
+//   data/tanakh/<slug>/<c>.json    chapter c on its own
 //
 // A chapter is a bare array of verse strings, so verse v of chapter c is
 // chapters[c-1][v-1]; the index's per-chapter counts are enough to populate a
 // picker and validate a range without loading any text at all.
+//
+// A passage spans a chapter or three, so opening one fetches those chapters and
+// not the book: Isaiah 40:1-26 costs about 10 KB where Isaiah costs 500. The
+// whole-book files remain for offline precaching and as the fallback for a
+// corpus built before the shards existed.
 //
 // A custom range has no recorded chant, so it is taught in the haftarah melody
 // from the measured shapes (data/haftarah-shapes.json) — the same treatment the
@@ -68,6 +74,72 @@ export async function loadBook(slug) {
 }
 
 export function bookIfLoaded(slug) { return _books.get(slug) || null; }
+
+// --- Chapter shards ---------------------------------------------------------
+// The same doc shape as a whole book, but with only the chapters a passage
+// actually spans filled in. `buildReading` reads chapters[c-1] and the version
+// lines, so a partial doc is indistinguishable from a complete one to it.
+
+const _chapters = new Map();   // `${slug}:${c}` / `${slug}:${c}:en` -> verse array
+const _shardMeta = new Map();  // slug -> version/licence lines from a shard
+
+function chapterKey(slug, c, en) { return `${slug}:${c}${en ? ':en' : ''}`; }
+
+async function loadChapter(entry, c, en) {
+  const key = chapterKey(entry.slug, c, en);
+  if (_chapters.has(key)) return _chapters.get(key);
+  const doc = await getJson(`${entry.shards}/${c}${en ? '.en' : ''}.json`);
+  const verses = doc.verses || [];
+  _chapters.set(key, verses);
+  if (!en) {
+    const { verses: _v, slug: _s, c: _c, ...meta } = doc;
+    _shardMeta.set(entry.slug, meta);
+  }
+  return verses;
+}
+
+// A doc holding chapters `fromC`..`toC` and nothing else. Falls back to the
+// whole book when the corpus predates the shards, or when a shard is missing.
+async function loadRange(entry, fromC, toC, en = false) {
+  const whole = en ? _english.get(entry.slug) : _books.get(entry.slug);
+  if (whole) return whole;
+  if (!entry.shards) return en ? loadEnglish(entry.slug) : loadBook(entry.slug);
+  const wanted = [];
+  for (let c = fromC; c <= toC; c++) wanted.push(c);
+  let loaded;
+  try {
+    loaded = await Promise.all(wanted.map((c) => loadChapter(entry, c, en)));
+  } catch (e) {
+    return en ? loadEnglish(entry.slug) : loadBook(entry.slug);
+  }
+  const chapters = [];
+  wanted.forEach((c, i) => { chapters[c - 1] = loaded[i]; });
+  return { slug: entry.slug, ...(_shardMeta.get(entry.slug) || {}), chapters };
+}
+
+// The Hebrew of one passage: its chapters, not its book.
+export function loadBookRange(entry, fromC, toC) {
+  return loadRange(entry, fromC, toC, false);
+}
+
+export function loadEnglishRange(entry, fromC, toC) {
+  if (!entry || !entry.enFile) return Promise.resolve(null);
+  return loadRange(entry, fromC, toC, true);
+}
+
+// Whether the chapters a passage spans are already in hand, so a caller can
+// skip re-fetching a translation it has (the whole-book cache counts too).
+export function rangeIfLoaded(entry, fromC, toC, en = false) {
+  if (!entry) return null;
+  const whole = en ? _english.get(entry.slug) : _books.get(entry.slug);
+  if (whole) return whole;
+  for (let c = fromC; c <= toC; c++) {
+    if (!_chapters.has(chapterKey(entry.slug, c, en))) return null;
+  }
+  const chapters = [];
+  for (let c = fromC; c <= toC; c++) chapters[c - 1] = _chapters.get(chapterKey(entry.slug, c, en));
+  return { slug: entry.slug, ...(_shardMeta.get(entry.slug) || {}), chapters };
+}
 
 export async function loadEnglish(slug) {
   if (_english.has(slug)) return _english.get(slug);

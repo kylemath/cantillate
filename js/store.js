@@ -23,9 +23,29 @@ function migrate(d) {
   return d;
 }
 
+// The parsed progress, held in memory. Every getter below reads through load(),
+// and a screenful of readiness bars asks a hundred questions of it — re-parsing
+// the whole save for each one is what made drawing the guided menu cost more
+// than the drawing does.
+//
+// The cache is keyed on the stored text rather than trusted outright, so anyone
+// writing the key from outside this module (another tab, the check harness, a
+// devtools console) is still seen: comparing a string is a rounding error next
+// to parsing one.
+let cached = null;
+let cachedRaw = null;
+
 function load() {
-  try { return migrate(JSON.parse(localStorage.getItem(KEY)) || {}); }
-  catch (e) { return {}; }
+  let raw;
+  try { raw = localStorage.getItem(KEY); }
+  catch (e) { return cached || (cached = {}); }
+  if (cached !== null && raw === cachedRaw) return cached;
+  try { cached = migrate(JSON.parse(raw) || {}); }
+  catch (e) { cached = {}; }
+  // migrate() rewrites the save when it brings an old one forward, so the text
+  // to compare against next time is whatever is there now.
+  try { cachedRaw = localStorage.getItem(KEY); } catch (e) { cachedRaw = raw; }
+  return cached;
 }
 
 // Listeners notified after every write, so an optional cloud-sync layer can
@@ -35,13 +55,16 @@ const saveListeners = [];
 export function onSave(cb) { if (typeof cb === 'function') saveListeners.push(cb); }
 
 function save(d) {
-  localStorage.setItem(KEY, JSON.stringify(d));
+  cached = d;
+  cachedRaw = JSON.stringify(d);
+  localStorage.setItem(KEY, cachedRaw);
   for (const cb of saveListeners) { try { cb(d); } catch (e) { /* ignore listener errors */ } }
 }
 
 // The entire progress object (verses/words/phrases/modes/profiles/aliyot/levels).
-// Used by the cloud-sync layer to snapshot and push; callers should treat it as
-// read-only.
+// Used by the cloud-sync layer to snapshot and push. This is the live cached
+// object, not a copy: callers must treat it as read-only, and go through the
+// record*/set* helpers (or replaceAll) to change anything.
 export function getAll() { return load(); }
 
 // Overwrite all progress (used after signing in, once the merged cloud+local

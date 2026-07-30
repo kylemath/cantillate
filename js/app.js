@@ -17,9 +17,58 @@ import * as auth from './auth.js';
 import * as scores from './scores.js';
 import * as offline from './offline.js';
 import { loadTikkunData, renderTikkunPages, TIKKUN_DATA_URL } from './tikkun.js';
-import * as plan from './plan.js';
-import * as guided from './guided.js';
-import * as onboarding from './onboarding.js';
+
+// The plan, the guided surface and the wizard are only reachable from a reading
+// plan, so they are fetched when one exists (or is about to) rather than at
+// startup: a reader who opens the workshop never pays for them. Everything
+// outside those three modules treats them as possibly-absent — see
+// ensureGuided/ensureWizard below, and store.getPlan() for "is there a plan"
+// without loading anything.
+let plan = null;
+let guided = null;
+let onboarding = null;
+let _planLoad = null;
+let _guidedLoad = null;
+let _wizardLoad = null;
+let _guidedCssLoad = null;
+
+// guided.css styles the wizard as well as the guided surface, so both entry
+// points wait on it — otherwise the sheet paints unstyled for a frame.
+function ensureGuidedCss() {
+  if (_guidedCssLoad) return _guidedCssLoad;
+  _guidedCssLoad = new Promise((resolve) => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'css/guided.css';
+    link.addEventListener('load', resolve, { once: true });
+    link.addEventListener('error', resolve, { once: true });
+    document.head.appendChild(link);
+  });
+  return _guidedCssLoad;
+}
+
+function ensurePlan() {
+  if (!_planLoad) _planLoad = import('./plan.js').then((m) => { plan = m; return m; });
+  return _planLoad;
+}
+
+// Installing the bridge here rather than in init() is what keeps the whole
+// guided module graph (guided -> schedule -> calendar) off the first paint.
+function ensureGuided() {
+  if (!_guidedLoad) {
+    _guidedLoad = Promise.all([import('./guided.js'), ensurePlan(), ensureGuidedCss()])
+      .then(([m]) => { guided = m; m.install(guidedApi()); return m; });
+  }
+  return _guidedLoad;
+}
+
+function ensureWizard() {
+  if (!_wizardLoad) {
+    _wizardLoad = Promise.all([import('./onboarding.js'), ensurePlan(), ensureGuidedCss()])
+      .then(([m]) => { onboarding = m; return m; });
+  }
+  return _wizardLoad;
+}
 
 // An aliyah's scroll+yad challenge unlocks once every pasuk in it has reached at
 // least this stage (i.e., the learner has worked it up to whole-verse practice).
@@ -255,7 +304,7 @@ function renderReadingMenu(sel = $('parashah')) {
   }
   // The readings the reader is actually preparing get a ★, so they are findable
   // in a menu of 33 entries without having to remember which parashah it was.
-  const learning = new Set(plan.readingSlugs());
+  const learning = new Set(plan ? plan.readingSlugs() : []);
   const single = order.length < 2;
   for (const g of order) {
     const parent = single ? sel : document.createElement('optgroup');
@@ -270,6 +319,19 @@ function renderReadingMenu(sel = $('parashah')) {
     if (!single) sel.appendChild(parent);
   }
   if (open && [...sel.options].some((o) => o.value === open)) sel.value = open;
+}
+
+// The reading the plan's active part lives in, when guided mode is what this
+// visit is going to open into and the app can already name that reading. Null
+// for everyone else, and for a plan pointing at a passage that is not in the
+// menu yet — guided mode opens those itself once it has run.
+async function plannedStartSlug() {
+  const saved = store.getPlan();
+  if (!saved || guidedPreference() === 'expert') return null;
+  await ensureGuided();
+  const target = plan.partTarget(plan.activePart(saved), saved);
+  const id = target && target.readingId;
+  return id && AVAILABLE.some((p) => p.slug === id) ? id : null;
 }
 
 async function init() {
@@ -293,16 +355,22 @@ async function init() {
   // separate in one menu.
   const sel = $('parashah');
   renderReadingMenu(sel);
+  // Passages the reader picked out of a book in earlier sittings go back in the
+  // menu (see openCustomRange); the text itself is only fetched if one is
+  // opened. Restored before the first reading is chosen so that a plan pointing
+  // at one of them can open it directly.
+  await restoreCustomRanges();
+
   // Open the upcoming week's parashah by default (falls back to the first
-  // full parashah, never a drill or an excerpt).
+  // full parashah, never a drill or an excerpt) — unless a plan is about to
+  // take over, in which case open what the plan is preparing instead. Loading
+  // one or the other, rather than one and then the other, is the difference
+  // between one reading fetch at startup and two.
   const firstParashah = AVAILABLE.find((p) => readingKind(p) === 'parashah') || AVAILABLE[0];
-  const startSlug = upcomingParashahSlug(AVAILABLE) || firstParashah.slug;
+  const startSlug = (await plannedStartSlug())
+    || upcomingParashahSlug(AVAILABLE) || firstParashah.slug;
   sel.value = startSlug;
   await loadData(startSlug);
-
-  // Passages the reader picked out of a book in earlier sittings go back in the
-  // menu (see openCustomRange); the text itself is only fetched if one is opened.
-  await restoreCustomRanges();
 
   sel.addEventListener('change', () => loadData(sel.value));
   $('tonic').addEventListener('change', (e) => { state.tonicHz = parseFloat(e.target.value); });
@@ -366,12 +434,11 @@ async function init() {
   // narrowed, one-thing-at-a-time surface by default; one who hasn't gets the
   // workshop, plus an invitation to say. The wizard is only forced on a genuinely
   // first-time visitor, so a returning expert user is never interrupted by it.
-  guided.install(guidedApi());
   renderLearningChip();
   const wanted = guidedPreference();
   if (wanted === 'expert') { markFirstVisitDone(); return; }
-  if (plan.has()) await enterGuided();
-  else if (wanted === 'guided' || isFirstVisit()) openWizard();
+  if (store.getPlan()) await enterGuided();
+  else if (wanted === 'guided' || isFirstVisit()) await openWizard();
   markFirstVisitDone();
 }
 
@@ -630,7 +697,7 @@ function unitIndexOfWord(verse, level, gi) {
 function unitsForVerse(verse, levelId) {
   const v = state.data && state.data.verses[verse - 1];
   if (!v) return null;
-  const segs = lineMelody(tokenize(v.text));
+  const segs = verseSegments(verse);
   const level = levelById(levelId);
   if (level.unit === 'word') return groupByMaqaf(segs);
   if (level.unit === 'phrase') return splitPhrases(segs);
@@ -644,11 +711,12 @@ async function enterGuided() {
   stopAll();
   closeSettingsSheet();
   closePasukDrawer();
+  await ensureGuided();
   await guided.start(plan.get());
 }
 
 function leaveGuided() {
-  guided.exit();
+  if (guided) guided.exit();
   renderVerses();
   renderAliyot();
   renderStageBar();
@@ -658,20 +726,21 @@ function leaveGuided() {
 
 // Run the wizard. `editing` pre-fills it from the current plan, so changing the
 // date or the cycle is the same three screens rather than a separate editor.
-function openWizard({ editing = null } = {}) {
-  const wasGuided = guided.isActive();
-  guided.exit();
+async function openWizard({ editing = null } = {}) {
+  const wasGuided = !!guided && guided.isActive();
+  if (guided) guided.exit();
+  await ensureWizard();
   onboarding.open({
     editing,
     done: (built) => {
       renderLearningChip();
       if (built) enterGuided();
-      else if (wasGuided && plan.has()) enterGuided();
+      else if (wasGuided && store.getPlan()) enterGuided();
     },
   });
 }
 
-function editPlan() { openWizard({ editing: plan.get() }); }
+function editPlan() { openWizard({ editing: store.getPlan() }); }
 function newPlan() { openWizard(); }
 
 // The "currently learning" chip in the topbar: the one thing in expert mode that
@@ -685,7 +754,11 @@ function renderLearningChip() {
   renderReadingMenu();
   const slots = document.querySelectorAll('.learningchip');
   if (!slots.length) return;
-  const p = plan.get();
+  const p = store.getPlan();
+  // The chip's wording and its readiness percentage both come from the guided
+  // modules, so a reader who has a plan gets it filled in once they arrive; one
+  // who hasn't gets the invitation with nothing to wait for.
+  if (p && !guided) { ensureGuided().then(renderLearningChip); return; }
   const html = p ? chipHtmlFor(p) : startChipHtml();
   for (const box of slots) {
     box.innerHTML = html;
@@ -2390,7 +2463,7 @@ function syncTransportUI() {
   // Guided mode's action bar swaps to a single Stop button while anything is
   // running, and this is the one place every start and stop already passes
   // through, so it needs no polling of its own.
-  guided.transportChanged();
+  if (guided) guided.transportChanged();
 }
 
 // Clear the paused flag whenever a take or playback ends, so a fresh one starts
@@ -3117,6 +3190,23 @@ function tropeStyleOf(meta, data) {
 // reading, so this is the only place buildLineMelody is called from.
 function lineMelody(tokens) { return buildLineMelody(tokens, state.tropeStyle); }
 
+// tokenize + lineMelody for one pasuk, remembered. Both are pure functions of
+// the text and the melody, and the pesukim list is rebuilt whole on every tap —
+// so a forty-pasuk haftarah was being re-parsed and re-set to a tune dozens of
+// times a sitting. Cleared when the reading (and with it the melody) changes.
+// The segments are shared, so treat them as read-only.
+const _verseSegs = new Map();
+
+function verseSegments(n) {
+  let segs = _verseSegs.get(n);
+  if (segs) return segs;
+  const v = state.data && state.data.verses[n - 1];
+  if (!v) return [];
+  segs = lineMelody(tokenize(v.text));
+  _verseSegs.set(n, segs);
+  return segs;
+}
+
 // Where a reading's data files live. An excerpt borrows its parent's.
 function dataSlugOf(meta) { return (meta && meta.base) || (meta && meta.slug); }
 
@@ -3175,8 +3265,11 @@ async function readingDocFor(meta) {
     await corpus.loadIndex();
     const entry = corpus.bookEntry(book);
     if (!entry) throw new Error(`unknown book: ${book}`);
-    const heDoc = await corpus.loadBook(book);
-    return corpus.buildReading(entry, heDoc, from, to, corpus.englishIfLoaded(book), meta.name);
+    // Only the chapters the passage runs through: a haftarah out of Isaiah is
+    // three chapters, where the book is five hundred KB.
+    const heDoc = await corpus.loadBookRange(entry, from[0], to[0]);
+    const enDoc = corpus.rangeIfLoaded(entry, from[0], to[0], true);
+    return corpus.buildReading(entry, heDoc, from, to, enDoc, meta.name);
   }
   const resp = await fetch(meta.file);
   return resp.json();
@@ -3187,6 +3280,7 @@ async function loadData(readingId) {
   const kind = readingKind(meta);
   const dataSlug = dataSlugOf(meta);
   state.data = await readingDocFor(meta);
+  _verseSegs.clear();
   state.tikkun = _tikkunData;
   state.readingId = readingId;
   // Progress is filed under the DATA slug, so working through the Shema also
@@ -3441,10 +3535,12 @@ async function restoreCustomRanges() {
 async function ensureCustomEnglish() {
   if (state.readingKind !== 'custom' || !state.custom) return;
   const book = state.custom.book;
-  if (corpus.englishIfLoaded(book)) return;
+  const { from, to } = state.custom;
+  const entry = corpus.bookEntry(book);
+  if (!entry || corpus.rangeIfLoaded(entry, from[0], to[0], true)) return;
   const readingId = state.readingId;
   let enDoc = null;
-  try { enDoc = await corpus.loadEnglish(book); } catch (e) { return; }
+  try { enDoc = await corpus.loadEnglishRange(entry, from[0], to[0]); } catch (e) { return; }
   if (!enDoc || state.readingId !== readingId) return;
   corpus.fillEnglish(state.data, enDoc);
   $('srcVersion').textContent = state.data.heVersionTitle || state.data.versionTitle || 'Masoretic text';
@@ -4481,13 +4577,12 @@ function buildVerseRow(i) {
   // badge, with a pip per earned handicap skill (each its own score).
   const modeScores = store.getVerseModeScores(state.slug, i);
   const base = modeScores.base || 0;
-  const tokens = tokenize(v.text);
-  const segs = lineMelody(tokens);
+  const segs = verseSegments(i);
   // Per-token overlay score, chosen by the current overlay mode, so the left
   // column can show word / phrase / whole-verse skill on the text itself.
   const ov = overlayScorer(i, segs);
-  const heHtml = tokens
-    .map((t, wi) => wordSpan(t, segs[wi], state, wi, ov.score(wi), ov.lo, ov.hi))
+  const heHtml = segs
+    .map((s, wi) => wordSpan(s.token, s, state, wi, ov.score(wi), ov.lo, ov.hi))
     .join(' ');
   const pips = VERSE_MODES.filter((m) => m.key !== 'base').map((m) => {
     const sc = modeScores[m.key] || 0;
@@ -4550,7 +4645,7 @@ function practiceWord(verseN, wi) {
   state.selectedVerse = verseN;
   const unlocked = store.getVerseLevel(state.slug, verseN);
   state.level = unlocked >= 2 ? 2 : 1; // prefer "sing the word", else "listen & repeat"
-  const segs = lineMelody(tokenize(state.data.verses[verseN - 1].text));
+  const segs = verseSegments(verseN);
   const groups = groupByMaqaf(segs);
   const idx = groups.findIndex((g) => g.some((s) => s.index === wi));
   gotoPractice(verseN, state.level, idx < 0 ? 0 : idx);
@@ -4656,7 +4751,7 @@ function renderScrollPane() {
 
   let html = '<div class="scroll-column">';
   for (let i = start; i <= end; i++) {
-    const segs = lineMelody(tokenize(state.data.verses[i - 1].text));
+    const segs = verseSegments(i);
     segs.forEach((s) => {
       const sel = state.selectedVerse === i ? ' sel' : '';
       html += `<span class="sw${sel}" data-verse="${i}" data-widx="${s.index}" data-taam="${s.taam == null ? 'none' : s.taam}" data-fam="${s.familyId}">${escapeHtml(toScroll(s.token))}</span> `;
@@ -4723,7 +4818,7 @@ function renderAliyahScroll(box) {
   } else {
     const scrollHtml = [];
     for (let n = from; n <= to; n++) {
-      const segs = lineMelody(tokenize(state.data.verses[n - 1].text));
+      const segs = verseSegments(n);
       const inAliyah = n >= first && n <= last;
       const words = segs.map((s, wi) => `<span class="sw${inAliyah ? '' : ' ctx'}" data-verse="${n}" data-widx="${wi}">${escapeHtml(toScroll(s.token))}</span>`).join(' ');
       scrollHtml.push(`<span class="al-verse${inAliyah ? '' : ' ctx'}">${words}</span>`);
@@ -5042,7 +5137,7 @@ function aliyahTimeline(a) {
   const segs = [];
   for (const n of aliyahVerses(a)) {
     const info = verseAudio(n);
-    const vsegs = lineMelody(tokenize(state.data.verses[n - 1].text));
+    const vsegs = verseSegments(n);
     const coach = buildCoach(vsegs, n);
     const aStart = coach ? coach.start : (info ? info.start : 0);
     const aEnd = coach ? coach.end : (info ? info.end : 0);
@@ -5527,7 +5622,7 @@ function finishAliyahRecord(tl) {
   // and remember it so a later pane rebuild (toolbar toggle) can re-apply it.
   state._aliyaWordHits = perVerse;
   applyAliyahWordHits(perVerse);
-  guided.notifyScore({
+  if (guided) guided.notifyScore({
     kind: kind === 'chain' ? 'chain' : 'whole',
     start: a.start,
     end: a.end,
@@ -5714,7 +5809,7 @@ function renderPractice() {
   // demand (see the .open-stam button + wiring below).
   ensurePitchForVerse(state.selectedVerse); // phase-3: load this pasuk's pitch shard on demand
   ensureRawForVerse(state.selectedVerse); // phase-2: load this pasuk's underlay on demand
-  state.verseSegs = lineMelody(tokenize(v.text));
+  state.verseSegs = verseSegments(state.selectedVerse);
   const units = currentUnits();
   state.units = units;
   state.unitIndex = Math.max(0, Math.min(state.unitIndex, units.length - 1));
@@ -6249,7 +6344,7 @@ function playRealChant() {
   const info = verseAudio(state.selectedVerse);
   if (!info) return;
   // Ensure we're showing the whole-verse coach window.
-  const verseSegs = lineMelody(tokenize(state.data.verses[state.selectedVerse - 1].text));
+  const verseSegs = verseSegments(state.selectedVerse);
   state.unitSegs = verseSegs;
   const coach = buildCoach(verseSegs);
   state.coach = coach;
@@ -7018,7 +7113,7 @@ function finishRecording() {
   maybePushScopes();
   if (level.unit === 'line') maybeOfferLeaderboardSubmit(headline);
   // Guided mode draws its own verdict from this and decides what comes next.
-  guided.notifyScore({
+  if (guided) guided.notifyScore({
     kind: 'verse',
     verse: state.selectedVerse,
     level: level.id,
