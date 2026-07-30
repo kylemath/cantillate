@@ -45,6 +45,8 @@ let result = null;       // the last score report
 let streak = 0;          // consecutive passes, for a little momentum feedback
 let loading = false;
 let problem = '';        // why the current part can't be practised, if it can't
+let signinBusy = false;  // a sign-in popup opened from the menu is still open
+let signinFailed = false; // ...and it didn't complete (closed, blocked, offline)
 let chunkRefs = null;    // { key, map } — what each part of the plan's parashah covers
 
 // --- Install ----------------------------------------------------------------
@@ -656,6 +658,13 @@ function renderBar() {
 // swap to Stop and back without polling.
 export function transportChanged() { if (active && el.bar) renderBar(); }
 
+// The session changed (a sign-in completed, cloud progress merged, someone signed
+// out). The menu's account rows are the one part of this surface that moves without
+// the reader touching it, so app.js pokes it and it redraws if it is open.
+export function accountChanged() {
+  if (active && el.menu && document.body.classList.contains('g-menu-open')) renderMenu();
+}
+
 // --- The menu ---------------------------------------------------------------
 // "A menu once these games are starting will show the progress on each task
 // visually and allow some minimal settings changes, and to return to main
@@ -698,6 +707,8 @@ function renderMenu() {
         <button class="g-row-btn" id="gOffline">\u2b07 Save the audio for offline</button>
       </div>
 
+      ${accountHtml()}
+
       <h3 class="g-menu-h">This plan</h3>
       <div class="g-set">
         <button class="g-row-btn" id="gEdit">\u270e Change the date, cycle or parts</button>
@@ -707,6 +718,85 @@ function renderMenu() {
       <p class="g-menu-note">Changing the plan never deletes practice \u2014 scores are filed under the pesukim themselves, so coming back to a reading finds it exactly where you left it.</p>
     </div>`;
   wireMenu();
+}
+
+// Where the practice is going, and the way to change the answer. The wizard asks
+// this once, before the first take; a reader who said "not now" then — or who is
+// three weeks in on a borrowed iPad and has thought better of it — would otherwise
+// have to find the workshop's topbar to sign in, and guided mode exists precisely
+// so they never have to go there. Nothing is drawn when there is no project to
+// sign in to (see auth.readyState).
+function accountHtml() {
+  const a = api.account();
+  if (!a || a.state === 'unconfigured') return '';
+  const heading = '<h3 class="g-menu-h">Saving your progress</h3>';
+  const google = (label, disabled) => `<button class="g-row-btn g-row-primary" id="gSignIn"
+      ${disabled ? 'disabled' : ''}><span class="g-g" aria-hidden="true">G</span> ${label}</button>`;
+  const identity = () => `<button class="g-row-btn" id="gIdentity">\u270e Change the name and picture
+    you appear under</button>`;
+
+  if (a.signedIn && !a.anon) {
+    return `${heading}
+      <div class="g-set">
+        ${whoRowHtml(a)}
+        ${identity()}
+        <button class="g-row-btn" id="gSignOut">Sign out</button>
+      </div>
+      <p class="g-menu-note">Every take is saved to this account, so it is on any phone or computer
+        you sign in on \u2014 and outlives this browser.</p>`;
+  }
+
+  // An anonymous session syncs and appears on the leaderboard, but nobody can ever
+  // sign back into it: on a new phone it is simply gone. So it is offered the same
+  // Google button, which links the two and keeps the nickname (see auth.signIn).
+  if (a.signedIn && a.anon) {
+    return `${heading}
+      <div class="g-set">
+        ${whoRowHtml(a)}
+        ${google(signinLabel(a), a.state !== 'ready' || signinBusy)}
+        ${identity()}
+      </div>
+      ${signinFailedNote()}
+      <p class="g-menu-note">You\u2019re posting anonymously. Nobody can sign back into an anonymous
+        score \u2014 signing in keeps this nickname and everything under it, on every device.</p>`;
+  }
+
+  return `${heading}
+    <div class="g-set">
+      ${google(signinLabel(a), a.state !== 'ready' || signinBusy)}
+    </div>
+    ${signinFailedNote()}
+    <p class="g-menu-note">Practice is being saved in this browser only. Signed in, it is kept in an
+      account instead: a new phone, the computer downstairs, or this one after the browser is
+      cleared. A parent\u2019s Google account is fine, and everything done so far goes up with it.</p>`;
+}
+
+function whoRowHtml(a) {
+  const initial = (a.name || '?').trim().charAt(0).toUpperCase();
+  const face = a.photo
+    ? `<img class="g-acct-av" src="${escapeAttr(a.photo)}" alt="" referrerpolicy="no-referrer" />`
+    : `<span class="g-acct-av g-acct-initial">${escapeHtml(initial)}</span>`;
+  return `<div class="g-acct">
+      <span class="g-acct-who">${face}<span class="g-acct-name">${escapeHtml(a.name || 'Signed in')}</span></span>
+      ${a.anon ? '<span class="g-acct-tag">anon</span>' : '<span class="g-acct-tag">saving</span>'}
+    </div>`;
+}
+
+function signinLabel(a) {
+  if (signinBusy) return 'Signing in\u2026';
+  if (a.state === 'loading') return 'Preparing sign-in\u2026';
+  return 'Sign in with Google';
+}
+
+function signinFailedNote() {
+  const a = api.account();
+  if (a && a.state === 'failed') {
+    return `<p class="g-menu-note">Sign-in can\u2019t be reached right now \u2014 try again when you have
+      signal. Nothing is lost meanwhile.</p>`;
+  }
+  return signinFailed
+    ? `<p class="g-menu-note">That didn\u2019t finish \u2014 the popup may have been closed or blocked.</p>`
+    : '';
 }
 
 // One row per part: the four rounds as a stacked bar, the whole-part score, and a
@@ -807,6 +897,30 @@ function wireMenu() {
   if (an) an.addEventListener('change', () => api.setAnalysis(an.checked));
   const off = byId('gOffline');
   if (off) off.addEventListener('click', () => { api.download(); closeMenu(); });
+  const signIn = byId('gSignIn');
+  if (signIn) signIn.addEventListener('click', async () => {
+    signinBusy = true;
+    signinFailed = false;
+    renderMenu();
+    try {
+      await api.signIn();
+    } catch (e) {
+      // A popup the reader closed, or one the browser blocked. Neither is worth
+      // more than a line saying so: the menu is still open behind it.
+      console.warn('[guided] sign-in did not complete:', e);
+      signinFailed = true;
+    }
+    signinBusy = false;
+    // The session change redraws this through accountChanged(); this covers the
+    // failure, where nothing changed and nothing else will redraw it.
+    if (document.body.classList.contains('g-menu-open')) renderMenu();
+  });
+  const out = byId('gSignOut');
+  if (out) out.addEventListener('click', async () => {
+    try { await api.signOut(); } catch (e) { console.warn('[guided] sign-out failed:', e); }
+  });
+  const who = byId('gIdentity');
+  if (who) who.addEventListener('click', () => { closeMenu(); api.editIdentity(); });
   byId('gEdit').addEventListener('click', () => { closeMenu(); api.editPlan(); });
   byId('gNew').addEventListener('click', () => { closeMenu(); api.newPlan(); });
   byId('gExpert').addEventListener('click', () => { closeMenu(); api.toExpert(); });

@@ -222,6 +222,13 @@ body.onboarding { overflow: hidden; }
   border: 1px solid var(--line); font-weight: 500;
 }
 .ob-go.ob-ghost:hover { color: var(--text); }
+/* The Google mark, sized for a wizard button rather than the topbar's small one. */
+.ob-go .ob-g {
+  display: inline-grid; place-items: center; vertical-align: -4px;
+  width: 21px; height: 21px; margin-inline-end: 6px;
+  border-radius: 50%; background: #fff; color: #4285F4;
+  font-weight: 800; font-size: 14px;
+}
 
 /* ===========================================================================
    2. The "currently learning" chip (shown in EXPERT mode)
@@ -260,6 +267,12 @@ body.guided .pane-toggle,
 body.guided .textpane { display: none !important; }
 
 body.guided { overflow: hidden; }
+
+/* Guided mode's own furniture is fixed and sits high (the top bar, the action bar,
+   the menu drawer), so a shared modal at its workshop z-index would open UNDER it
+   — half-covered, with a backdrop that dims nothing. Anything modal outranks the
+   surface it interrupts: the identity picker after signing in, the leaderboard. */
+body.guided .modal { z-index: 100; }
 
 body.guided main {
   display: block; height: 100vh; height: 100dvh;
@@ -609,6 +622,37 @@ body.guided.g-menu-open .g-menu { transform: none; }
   border-radius: 11px; cursor: pointer;
 }
 .g-row-btn:hover { border-color: var(--accent); }
+.g-row-btn:disabled { opacity: 0.5; cursor: default; }
+.g-row-btn:disabled:hover { border-color: var(--line); }
+.g-row-btn.g-row-primary {
+  background: var(--accent); color: #08101f; border-color: transparent; font-weight: 700;
+}
+.g-row-btn .g-g {
+  display: inline-grid; place-items: center; vertical-align: -3px;
+  width: 18px; height: 18px; margin-inline-end: 6px;
+  border-radius: 50%; background: #fff; color: #4285F4;
+  font-weight: 800; font-size: 12px;
+}
+
+/* Who the practice is being saved as. Its own class rather than .g-row: that one is
+   a labelled control, and this is a statement with a badge. */
+.g-acct {
+  display: flex; align-items: center; gap: 10px; justify-content: space-between;
+  padding: 10px 13px; font-size: 14px;
+  background: var(--panel-2); border: 1px solid var(--line); border-radius: 11px;
+}
+.g-acct-who { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.g-acct-av { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%; object-fit: cover; }
+.g-acct-initial {
+  display: grid; place-items: center;
+  background: var(--accent); color: #08101f; font-weight: 700; font-size: 12px;
+}
+.g-acct-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.g-acct-tag {
+  flex: 0 0 auto; font-size: 9px; text-transform: uppercase; letter-spacing: 0.4px;
+  font-weight: 700; color: var(--muted); background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px; padding: 2px 7px;
+}
 
 /* ===========================================================================
    6. Desktop: the same surface, centred rather than stretched
