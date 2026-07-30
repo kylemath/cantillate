@@ -1,0 +1,127 @@
+{
+  "slug": "i-samuel-28",
+  "book": {
+    "en": "I Samuel",
+    "he": "שמואל א",
+    "translit": "Shmuel A"
+  },
+  "multiChapter": true,
+  "ref": "I Samuel 28:8-19",
+  "heRef": "שמואל א כ״ח:ח-י״ט",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 28,
+      "v": 8,
+      "ref": "28:8",
+      "text": "וַיִּתְחַפֵּ֣שׂ שָׁא֗וּל וַיִּלְבַּשׁ֙ בְּגָדִ֣ים אֲחֵרִ֔ים וַיֵּ֣לֶךְ ה֗וּא וּשְׁנֵ֤י אֲנָשִׁים֙ עִמּ֔וֹ וַיָּבֹ֥אוּ אֶל־הָאִשָּׁ֖ה לָ֑יְלָה וַיֹּ֗אמֶר <span class=\"mam-kq\"><span class=\"mam-kq-k\">(קסומי)</span> <span class=\"mam-kq-q\">[קׇסֳמִי־]</span></span>נָ֥א לִי֙ בָּא֔וֹב וְהַ֣עֲלִי לִ֔י אֵ֥ת אֲשֶׁר־אֹמַ֖ר אֵלָֽיִךְ׃",
+      "en": "And Sha᾽ul disguised himself, and put on other clothes, and he went, and two men with him, and they came to the woman by night: and he said, I pray thee, divine for me by means of the familiar spirit, and bring him up for me, whom I shall name to thee."
+    },
+    {
+      "n": 2,
+      "c": 28,
+      "v": 9,
+      "ref": "28:9",
+      "text": "וַתֹּ֨אמֶר הָאִשָּׁ֜ה אֵלָ֗יו הִנֵּ֨ה אַתָּ֤ה יָדַ֙עְתָּ֙ אֵ֣ת אֲשֶׁר־עָשָׂ֣ה שָׁא֔וּל אֲשֶׁ֥ר הִכְרִ֛ית אֶת־הָאֹב֥וֹת וְאֶת־הַיִּדְּעֹנִ֖י מִן־הָאָ֑רֶץ וְלָמָ֥ה אַתָּ֛ה מִתְנַקֵּ֥שׁ בְּנַפְשִׁ֖י לַהֲמִיתֵֽנִי׃",
+      "en": "And the woman said to him, Behold, thou knowst what Sha᾽ul has done, how he has cut off the diviners, and the wizards, out of the land: why then layest thou a snare for my life, to cause me to die?"
+    },
+    {
+      "n": 3,
+      "c": 28,
+      "v": 10,
+      "ref": "28:10",
+      "text": "וַיִּשָּׁ֤בַֽע לָהּ֙ שָׁא֔וּל בַּיהֹוָ֖ה לֵאמֹ֑ר חַי־יְהֹוָ֕ה אִֽם־יִקְּרֵ֥ךְ עָוֺ֖ן בַּדָּבָ֥ר הַזֶּֽה׃",
+      "en": "And Sha᾽ul swore to her by the Lord, saying, As the Lord lives, no punishment shall befall thee for this thing."
+    },
+    {
+      "n": 4,
+      "c": 28,
+      "v": 11,
+      "ref": "28:11",
+      "text": "וַתֹּ֙אמֶר֙ הָאִשָּׁ֔ה אֶת־מִ֖י אַעֲלֶה־לָּ֑ךְ וַיֹּ֕אמֶר אֶת־שְׁמוּאֵ֖ל הַֽעֲלִי־לִֽי׃",
+      "en": "Then said the woman, Whom shall I bring up to thee? And he said, Bring me up Shemu᾽el."
+    },
+    {
+      "n": 5,
+      "c": 28,
+      "v": 12,
+      "ref": "28:12",
+      "text": "וַתֵּ֤רֶא הָאִשָּׁה֙ אֶת־שְׁמוּאֵ֔ל וַתִּזְעַ֖ק בְּק֣וֹל גָּד֑וֹל וַתֹּ֩אמֶר֩ הָאִשָּׁ֨ה אֶל־שָׁא֧וּל&thinsp;<small>׀</small>&thinsp;לֵאמֹ֛ר לָ֥מָּה רִמִּיתָ֖נִי וְאַתָּ֥ה שָׁאֽוּל׃",
+      "en": "And when the woman saw Shemu᾽el, she cried with a loud voice: and the woman spoke to Sha᾽ul, saying, Why hast thou deceived me? for thou art Sha᾽ul."
+    },
+    {
+      "n": 6,
+      "c": 28,
+      "v": 13,
+      "ref": "28:13",
+      "text": "וַיֹּ֨אמֶר לָ֥הּ הַמֶּ֛לֶךְ אַל־תִּֽירְאִ֖י כִּ֣י מָ֣ה רָאִ֑ית וַתֹּ֤אמֶר הָאִשָּׁה֙ אֶל־שָׁא֔וּל אֱלֹהִ֥ים רָאִ֖יתִי עֹלִ֥ים מִן־הָאָֽרֶץ׃",
+      "en": "And the king said to her, Be not afraid: for what sawest thou? And the woman said to Sha᾽ul, I saw a godlike man ascending out of the earth."
+    },
+    {
+      "n": 7,
+      "c": 28,
+      "v": 14,
+      "ref": "28:14",
+      "text": "וַיֹּ֤אמֶר לָהּ֙ מַֽה־תׇּאֳר֔וֹ וַתֹּ֗אמֶר אִ֤ישׁ זָקֵן֙ עֹלֶ֔ה וְה֥וּא עֹטֶ֖ה מְעִ֑יל וַיֵּ֤דַע שָׁאוּל֙ כִּֽי־שְׁמוּאֵ֣ל ה֔וּא וַיִּקֹּ֥ד אַפַּ֛יִם אַ֖רְצָה וַיִּשְׁתָּֽחוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he said to her, What form is he of? And she said, An old man comes up; and he is covered with a mantle. And Sha᾽ul knew that it was Shemu᾽el, and he stooped with his face to the ground, and bowed himself."
+    },
+    {
+      "n": 8,
+      "c": 28,
+      "v": 15,
+      "ref": "28:15",
+      "text": "וַיֹּ֤אמֶר שְׁמוּאֵל֙ אֶל־שָׁא֔וּל לָ֥מָּה הִרְגַּזְתַּ֖נִי לְהַעֲל֣וֹת אֹתִ֑י וַיֹּ֣אמֶר שָׁ֠א֠וּל צַר־לִ֨י מְאֹ֜ד וּפְלִשְׁתִּ֣ים&thinsp;<b>׀</b> נִלְחָמִ֣ים בִּ֗י וֵאלֹהִ֞ים סָ֤ר מֵֽעָלַי֙ וְלֹא־עָנָ֣נִי ע֗וֹד גַּ֤ם בְּיַֽד־הַנְּבִיאִים֙ גַּם־בַּ֣חֲלֹמ֔וֹת וָאֶקְרָאֶ֣ה לְךָ֔ לְהוֹדִיעֵ֖נִי מָ֥ה אֶעֱשֶֽׂה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And Shemu᾽el said to Sha᾽ul, Why hast thou disquieted me, to bring me up? And Sha᾽ul answered, I am greatly distressed; for the Pelishtim make war against me, and God has departed from me, and answers me no more, neither by prophets, nor by dreams: therefore I have called thee, that thou mayst make known to me what I shall do."
+    },
+    {
+      "n": 9,
+      "c": 28,
+      "v": 16,
+      "ref": "28:16",
+      "text": "וַיֹּ֣אמֶר שְׁמוּאֵ֔ל וְלָ֖מָּה תִּשְׁאָלֵ֑נִי וַיהֹוָ֛ה סָ֥ר מֵעָלֶ֖יךָ וַיְהִ֥י עָרֶֽךָ׃",
+      "en": "Then said Shemu᾽el, Why then dost thou ask of me, seeing the Lord has departed from thee, and is become thy enemy?"
+    },
+    {
+      "n": 10,
+      "c": 28,
+      "v": 17,
+      "ref": "28:17",
+      "text": "וַיַּ֤עַשׂ יְהֹוָה֙ ל֔וֹ כַּאֲשֶׁ֖ר דִּבֶּ֣ר בְּיָדִ֑י וַיִּקְרַ֨ע יְהֹוָ֤ה אֶת־הַמַּמְלָכָה֙ מִיָּדֶ֔ךָ וַֽיִּתְּנָ֖הּ לְרֵעֲךָ֥ לְדָוִֽד׃",
+      "en": "And the Lord has done for himself, as he spoke by me: for the Lord has rent the kingdom out of thy hand, and given it to thy neighbour, to David:"
+    },
+    {
+      "n": 11,
+      "c": 28,
+      "v": 18,
+      "ref": "28:18",
+      "text": "כַּאֲשֶׁ֤ר לֹא־שָׁמַ֙עְתָּ֙ בְּק֣וֹל יְהֹוָ֔ה וְלֹֽא־עָשִׂ֥יתָ חֲרוֹן־אַפּ֖וֹ בַּעֲמָלֵ֑ק עַל־כֵּן֙ הַדָּבָ֣ר הַזֶּ֔ה עָשָֽׂה־לְךָ֥ יְהֹוָ֖ה הַיּ֥וֹם הַזֶּֽה׃",
+      "en": "because thou wouldst not obey the voice of the Lord nor wouldst execute his fierce wrath upon ῾Amaleq, therefore has the Lord done this thing to thee this day."
+    },
+    {
+      "n": 12,
+      "c": 28,
+      "v": 19,
+      "ref": "28:19",
+      "text": "וְיִתֵּ֣ן יְ֠הֹוָ֠ה גַּ֣ם אֶת־יִשְׂרָאֵ֤ל עִמְּךָ֙ בְּיַד־פְּלִשְׁתִּ֔ים וּמָחָ֕ר אַתָּ֥ה וּבָנֶ֖יךָ עִמִּ֑י גַּ֚ם אֶת־מַחֲנֵ֣ה יִשְׂרָאֵ֔ל יִתֵּ֥ן יְהֹוָ֖ה בְּיַד־פְּלִשְׁתִּֽים׃",
+      "en": "Moreover the Lord will also deliver Yisra᾽el with thee into the hand of the Pelishtim: and to morrow shalt thou and thy sons be with me: the Lord also shall deliver the camp of Yisra᾽el into the hand of the Pelishtim."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 12,
+        "ref": "28:8–28:19"
+      }
+    ],
+    "triennial": {}
+  }
+}

@@ -45,11 +45,46 @@ def ensure_wav(i):
     return dst
 
 
+def read_riff_pcm(path):
+    """Minimal RIFF reader for the 16-bit PCM shapes the stdlib refuses.
+
+    afconvert writes WAVE_FORMAT_EXTENSIBLE (tag 0xFFFE) whenever the source is
+    mono — which every phone recording is — and the wave module rejects it.
+    """
+    import struct
+    with open(path, "rb") as f:
+        blob = f.read()
+    if blob[:4] != b"RIFF" or blob[8:12] != b"WAVE":
+        raise ValueError(f"not a RIFF/WAVE file: {path}")
+    ch, bits, data = 1, 16, None
+    off = 12
+    while off + 8 <= len(blob):
+        cid = blob[off:off + 4]
+        size = struct.unpack("<I", blob[off + 4:off + 8])[0]
+        body = blob[off + 8:off + 8 + size]
+        if cid == b"fmt ":
+            tag, ch, _rate, _bps, _align, bits = struct.unpack("<HHIIHH", body[:16])
+            if tag == 0xFFFE:
+                tag = struct.unpack("<H", body[24:26])[0]  # extensible subformat
+            if tag != 1:
+                raise ValueError(f"unsupported WAVE format tag {tag} in {path}")
+        elif cid == b"data":
+            data = body
+        off += 8 + size + (size & 1)
+    if data is None:
+        raise ValueError(f"no data chunk in {path}")
+    if bits != 16:
+        raise ValueError(f"expected 16-bit PCM, got {bits}-bit in {path}")
+    return np.frombuffer(data, dtype="<i2").astype(np.float32), ch
+
+
 def read_wav_mono(path):
-    w = wave.open(path, "rb")
-    n, ch = w.getnframes(), w.getnchannels()
-    raw = w.readframes(n)
-    a = np.frombuffer(raw, dtype=np.int16).astype(np.float32)
+    try:
+        w = wave.open(path, "rb")
+        n, ch = w.getnframes(), w.getnchannels()
+        a = np.frombuffer(w.readframes(n), dtype=np.int16).astype(np.float32)
+    except wave.Error:
+        a, ch = read_riff_pcm(path)
     if ch > 1:
         a = a.reshape(-1, ch).mean(axis=1)
     return a / 32768.0

@@ -25,6 +25,33 @@ function ensureCtx() {
   return ctx;
 }
 
+// Stretches of a recording that belong to no word: a false start, a cough, an
+// aside to the room. Somebody chanting live into a phone leaves them behind, and
+// they are cut out by ear in scripts/label.html (see scripts/onsettrack.py).
+// They belong to the recording rather than to any one playback, so they are
+// registered per file and jumped by every kind of playback there is — a verse,
+// a chained aliyah, the duet guide, a spliced drill.
+const cuts = new Map();  // url -> [[from, to], ...] in order
+
+export function setAudioCuts(url, list) {
+  if (!list || !list.length) cuts.delete(url);
+  else cuts.set(url, [...list].sort((a, b) => a[0] - b[0]));
+}
+
+// What has been cut out of a file, for whoever wants to check (the harness does).
+export function audioCutsFor(url) { return cuts.get(url) || []; }
+
+// Where playback should land if `t` fell inside a cut, else null.
+function pastCut(url, t) {
+  const list = cuts.get(url);
+  if (!list) return null;
+  for (const [from, to] of list) {
+    if (t > from && t < to) return to;
+    if (from > t) break;
+  }
+  return null;
+}
+
 function getEntry(url) {
   let e = cache.get(url);
   if (!e) {
@@ -80,6 +107,16 @@ export function playSegment(url, start, end, cb = {}) {
     const tick = () => {
       if (!active || active.paused) return;
       const t = e.el.currentTime;
+      // Jump anything cut out of the reading. The playhead is read back from the
+      // element rather than from elapsed time, so everything on screen follows
+      // the jump by itself.
+      const resume = pastCut(url, t);
+      if (resume != null) {
+        if (end != null && resume >= end) { finish(); return; }
+        try { e.el.currentTime = resume; } catch (err) { /* seek refused; play on */ }
+        active.raf = requestAnimationFrame(tick);
+        return;
+      }
       const t01 = Math.min(1, Math.max(0, (t - start) / (total || 1)));
       analyser.getFloatTimeDomainData(timeBuf);
       analyser.getByteFrequencyData(freqBuf);

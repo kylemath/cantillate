@@ -413,7 +413,6 @@
       }
     ],
     "note": "Shabbat Chazon — the third of the three of rebuke",
-    "group": "Haftarot",
     "covers": {
       "book": "Isaiah",
       "from": [
@@ -424,7 +423,8 @@
         1,
         27
       ]
-    }
+    },
+    "group": "Haftarot"
   },
   {
     "slug": "haftarah-vaetchanan",
@@ -785,6 +785,34 @@
         18
       ]
     }
+  },
+  {
+    "slug": "i-samuel-28",
+    "file": "data/i-samuel-28.json",
+    "label": "I Samuel 28:8–19 · the woman of Ein Dor",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "sources": [
+      {
+        "id": "teacher",
+        "label": "Teacher's recording",
+        "default": true,
+        "attribution": "Chanted by his teacher.",
+        "license": "Recorded for this reader's own study and included with the teacher's permission."
+      }
+    ],
+    "covers": {
+      "book": "I Samuel",
+      "from": [
+        28,
+        8
+      ],
+      "to": [
+        28,
+        19
+      ]
+    },
+    "group": "Haftarot"
   },
   {
     "slug": "trope-drills",

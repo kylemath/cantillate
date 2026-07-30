@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onset labeller — Cantillate</title>
+<!--
+  Check and fix the word onsets scripts/align_recording.py produced for a
+  recording. The alignment is close, not exact, and only ears can tell the
+  difference, so this plays the recording with the words lighting up in time and
+  lets a wrong one be dragged, nudged or re-tapped.
+
+  A recording of a person also has things in it that are not the reading — a
+  false start, a cough, a word to the room — and every moment between two words
+  otherwise belongs to one of them. Double-clicking a transition breaks it in
+  two so that stretch belongs to neither and never plays (scripts/onsettrack.py).
+
+      ./serve.sh 8123
+      open http://localhost:8123/scripts/label.html?review=data/local_sources/teacher/i-samuel-28.txt.review.json
+
+  Save writes the onset track back through the dev server (scripts/serve.py),
+  after which scripts/build_reading.py can rebuild the reading from it.
+-->
+<style>
+  :root {
+    --bg: #14161a; --panel: #1c1f26; --line: #2b303a; --ink: #e8eaf0;
+    --dim: #949cad; --accent: #7aa2f7; --good: #7bd88f; --warn: #f0b072; --bad: #f07178;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  header { padding: 10px 16px; border-bottom: 1px solid var(--line);
+           display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  h1 { font-size: 15px; margin: 0; font-weight: 600; }
+  .meta { color: var(--dim); font-size: 12px; }
+  button { background: var(--panel); color: var(--ink); border: 1px solid var(--line);
+           border-radius: 7px; padding: 6px 11px; font-size: 13px; cursor: pointer; }
+  button:hover { border-color: var(--accent); }
+  button.on { background: var(--accent); color: #10131a; border-color: var(--accent); }
+  button:disabled { opacity: .45; cursor: default; }
+  #save { margin-left: auto; }
+  #status { color: var(--dim); font-size: 12px; min-width: 12ch; }
+  #wave { display: block; width: 100%; height: 150px; background: var(--panel);
+          border-bottom: 1px solid var(--line); cursor: crosshair; touch-action: none; }
+  .bar { padding: 8px 16px; display: flex; gap: 8px; align-items: center;
+         flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+  .verse { padding: 10px 16px; border-bottom: 1px solid var(--line); display: flex; gap: 14px; }
+  .vref { color: var(--dim); font-size: 12px; min-width: 5ch; padding-top: 6px; font-variant-numeric: tabular-nums; }
+  .words { direction: rtl; display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+  .w { font-size: 22px; font-family: "SBL Hebrew", "Times New Roman", serif; padding: 2px 7px;
+       border-radius: 6px; border: 1px solid transparent; cursor: pointer; position: relative; }
+  .w:hover { border-color: var(--line); }
+  .w.sel { border-color: var(--accent); background: #222733; }
+  .w.now { background: var(--accent); color: #10131a; }
+  .w.q2 { box-shadow: inset 0 -3px 0 var(--warn); }
+  .w.q3 { box-shadow: inset 0 -3px 0 var(--bad); }
+  /* Cut short: the text runs right to left, so what follows this word — and the
+     false start cut out of it — lies off its left edge. */
+  .w.cut { border-left: 3px solid var(--bad); }
+  .w.cut .t { color: var(--bad); }
+  .w .t { display: block; direction: ltr; font-family: ui-monospace, monospace;
+          font-size: 10px; color: var(--dim); text-align: center; }
+  .w.now .t { color: #10131a; }
+  kbd { background: var(--panel); border: 1px solid var(--line); border-bottom-width: 2px;
+        border-radius: 4px; padding: 0 5px; font-size: 11px; font-family: ui-monospace, monospace; }
+  .help { padding: 10px 16px 40px; color: var(--dim); font-size: 12px; line-height: 2; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">Onset labeller</h1>
+  <span class="meta" id="meta"></span>
+  <button id="save">Save onsets</button>
+  <span id="status"></span>
+</header>
+<canvas id="wave"></canvas>
+<div class="bar">
+  <button id="play">Play</button>
+  <button id="prev">&larr; word</button>
+  <button id="next">word &rarr;</button>
+  <button id="hear">Hear word</button>
+  <button id="here">Onset = playhead</button>
+  <button id="endhere">End = playhead</button>
+  <button id="skip">Skip cuts</button>
+  <button id="tap">Tap mode</button>
+  <label class="meta">speed
+    <select id="rate">
+      <option value="0.5">0.5x</option><option value="0.75">0.75x</option>
+      <option value="1" selected>1x</option>
+    </select>
+  </label>
+  <span class="meta" id="clock">0:00</span>
+</div>
+<div id="verses"></div>
+<div class="help">
+  <kbd>space</kbd> play/pause (in tap mode: mark the next word) &nbsp;
+  <kbd>&larr;</kbd><kbd>&rarr;</kbd> nudge 10&thinsp;ms (<kbd>shift</kbd> 100&thinsp;ms) &nbsp;
+  <kbd>,</kbd><kbd>.</kbd> previous / next word &nbsp;
+  <kbd>enter</kbd> set onset to playhead &nbsp;
+  <kbd>e</kbd> end the selected word at the playhead &nbsp;
+  <kbd>x</kbd> undo that cut &nbsp;
+  <kbd>h</kbd> hear the selected word &nbsp;
+  <kbd>s</kbd> save
+  <br>Drag a tick in the waveform to move that word. Underlines mark words the
+  aligner was least sure of (orange, then red) — those are worth hearing first.
+  <br><b>Double-click a transition</b> to break it in two: the word before it
+  stops at the left edge, the word after starts at the right, and a false start,
+  a cough or an aside caught in between is played by neither. Drag either edge to
+  fit it to what you hear, <b>Skip cuts</b> to listen to the result, and
+  double-click the cut again to close it back up.
+</div>
+
+<script>
+const qs = new URLSearchParams(location.search);
+const REVIEW = qs.get('review') || 'data/local_sources/teacher/i-samuel-28.txt.review.json';
+const BASE = '../';
+
+const el = id => document.getElementById(id);
+const fmt = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+
+// Two marks per transition, as in scripts/onsettrack.py: `onsets[i]` opens the
+// word at mark i, `ends[i]` closes the word before it. They are equal until a
+// mark is cut, and the stretch between a cut pair — a false start, a cough, an
+// aside to the room — then belongs to no word at all.
+let doc = null, onsets = [], ends = [], words = [], sel = 0, tapMode = false, dirty = false;
+let audio = null, peaks = null, dragging = null, loopUntil = null, skipCuts = false;
+
+const CUT = 0.25;              // how wide a fresh cut opens, in seconds
+
+// ---------------------------------------------------------------- load
+(async function init() {
+  doc = await (await fetch(BASE + REVIEW)).json();
+  words = doc.words;
+  onsets = words.map(w => w.t).concat([doc.end]);
+  ends = onsets.slice();
+  words.forEach((w, i) => { if (w.end != null) ends[i + 1] = w.end; });
+  el('title').textContent = doc.label || `${doc.book} ${doc.range}`;
+  el('meta').textContent = `${words.length} words · ${doc.audio}`;
+  audio = new Audio(BASE + doc.audio);
+  audio.preload = 'auto';
+  audio.hidden = true;
+  document.body.appendChild(audio);   // in the page, so devtools can see it too
+  renderWords();
+  wire();
+  loadPeaks();
+  requestAnimationFrame(tick);
+})();
+
+// Peak envelope for the waveform strip: the silences between phrases are what
+// make a misplaced onset obvious at a glance.
+async function loadPeaks() {
+  try {
+    const buf = await (await fetch(BASE + doc.audio)).arrayBuffer();
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const decoded = await ctx.decodeAudioData(buf);
+    const data = decoded.getChannelData(0);
+    const per = Math.floor(decoded.sampleRate / 200);        // 5 ms buckets
+    const out = new Float32Array(Math.floor(data.length / per));
+    for (let i = 0; i < out.length; i++) {
+      let peak = 0;
+      for (let j = i * per; j < (i + 1) * per; j++) peak = Math.max(peak, Math.abs(data[j]));
+      out[i] = peak;
+    }
+    peaks = { data: out, rate: 200, duration: decoded.duration };
+    ctx.close();
+  } catch (e) {
+    setStatus('waveform unavailable');
+  }
+}
+
+// ---------------------------------------------------------------- words
+function quality(w) {
+  if (w.cost == null) return 0;
+  return w.cost > 0.78 ? 3 : w.cost > 0.66 ? 2 : 0;
+}
+
+function renderWords() {
+  const host = el('verses');
+  host.innerHTML = '';
+  let cur = null, row = null;
+  words.forEach((w, i) => {
+    if (w.ref !== cur) {
+      cur = w.ref;
+      const v = document.createElement('div');
+      v.className = 'verse';
+      v.innerHTML = `<div class="vref">${w.ref}</div>`;
+      row = document.createElement('div');
+      row.className = 'words';
+      v.appendChild(row);
+      host.appendChild(v);
+    }
+    const s = document.createElement('span');
+    s.className = 'w' + (quality(w) ? ' q' + quality(w) : '');
+    s.dataset.i = i;
+    s.innerHTML = `${w.w}<span class="t"></span>`;
+    s.onclick = () => { select(i); seek(onsets[i]); };
+    row.appendChild(s);
+    paintWord(i, s);
+  });
+  paintSel();
+}
+
+function nodes() { return document.querySelectorAll('.w'); }
+
+// A word runs from its own mark to the end carried by the next one.
+function wordEnd(i) { return ends[i + 1]; }
+function isCut(i) { return onsets[i] - ends[i] > 0.001; }
+
+function paintWord(i, node) {
+  const n = node || nodes()[i];
+  if (!n) return;
+  const cut = isCut(i + 1);
+  n.classList.toggle('cut', cut);
+  n.querySelector('.t').textContent = cut
+    ? `${onsets[i].toFixed(2)}→${wordEnd(i).toFixed(2)}`
+    : onsets[i].toFixed(2);
+}
+
+function paintSel() {
+  nodes().forEach(n => n.classList.toggle('sel', +n.dataset.i === sel));
+  const n = nodes()[sel];
+  if (n) n.scrollIntoView({ block: 'nearest' });
+}
+
+// Move where the word at mark i starts. An uncut mark is one instant, so its
+// end comes with it; a cut one only closes up as far as its own end.
+function setOnset(i, t) {
+  const cut = isCut(i);
+  const lo = cut ? ends[i] : Math.max(0, i > 0 ? onsets[i - 1] + 0.01 : 0);
+  const hi = i + 1 < onsets.length ? ends[i + 1] - 0.01 : (peaks ? peaks.duration : 1e9);
+  onsets[i] = Math.min(Math.max(t, lo), Math.max(lo, hi));
+  if (!cut) ends[i] = onsets[i];
+  touched(i);
+}
+
+// Move where the word before mark i stops — the near side of a cut.
+function setEnd(i, t) {
+  if (i <= 0 || i >= onsets.length) return;
+  const lo = onsets[i - 1] + 0.01;
+  ends[i] = Math.min(Math.max(t, lo), Math.max(lo, onsets[i]));
+  touched(i);
+}
+
+// Open a cut at mark i: the word before it keeps its end, the word after it is
+// pushed later, and whatever she did in between stops belonging to either. The
+// default width assumes the usual case — the aligner marked the false start, so
+// the real word begins a moment after the mark.
+function cutAt(i, width) {
+  if (i <= 0 || i >= onsets.length) return;
+  const hi = i + 1 < onsets.length ? ends[i + 1] - 0.05 : (peaks ? peaks.duration : 1e9);
+  onsets[i] = Math.min(Math.max(onsets[i], ends[i] + (width || CUT)), Math.max(ends[i], hi));
+  touched(i);
+  setStatus(isCut(i) ? 'cut — drag either edge to fit it to what you hear' : 'no room for a cut here');
+}
+
+// Close a cut back up: the next word starts again where the last one stopped.
+function joinAt(i) {
+  if (i <= 0 || i >= onsets.length) return;
+  onsets[i] = ends[i];
+  touched(i);
+  setStatus('cut removed');
+}
+
+function touched(i) {
+  paintWord(i - 1);
+  paintWord(i);
+  dirty = true;
+  setStatus('edited');
+}
+
+function select(i) {
+  sel = Math.min(Math.max(i, 0), words.length - 1);
+  paintSel();
+}
+
+// ---------------------------------------------------------------- playback
+function seek(t) { audio.currentTime = Math.max(0, t); }
+
+function play() { loopUntil = null; audio.play(); }
+
+function hearWord(i) {
+  seek(onsets[i]);
+  loopUntil = wordEnd(i) ?? null;
+  audio.play();
+}
+
+function tick() {
+  let t = audio ? audio.currentTime : 0;
+  // Auditioning the cleaned reading: jump the stretches that belong to no word,
+  // which is what the app will do once this track is built.
+  if (skipCuts && !audio.paused && loopUntil == null) {
+    for (let i = 1; i < onsets.length; i++) {
+      if (t > ends[i] && t < onsets[i]) { seek(onsets[i]); t = onsets[i]; break; }
+    }
+  }
+  if (loopUntil != null && t >= loopUntil) { audio.pause(); loopUntil = null; }
+  el('clock').textContent = fmt(t);
+  el('play').textContent = audio && !audio.paused ? 'Pause' : 'Play';
+  const cur = indexAt(t);
+  nodes().forEach(n => n.classList.toggle('now', +n.dataset.i === cur));
+  drawWave(t);
+  requestAnimationFrame(tick);
+}
+
+function indexAt(t) {
+  let lo = 0, hi = words.length - 1, best = -1;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (onsets[mid] <= t) { best = mid; lo = mid + 1; } else { hi = mid - 1; }
+  }
+  // Past the end of the word it belongs to means inside a cut: nobody's word.
+  return best >= 0 && t > wordEnd(best) ? -1 : best;
+}
+
+// ---------------------------------------------------------------- waveform
+const WINDOW = 12;                                   // seconds shown
+
+function timeToX(t, view, w) { return (t - view) / WINDOW * w; }
+function xToTime(x, view, w) { return view + x / w * WINDOW; }
+
+function viewStart(t) { return Math.max(0, t - WINDOW / 2); }
+
+function drawWave(t) {
+  const c = el('wave');
+  const w = c.clientWidth, h = c.clientHeight;
+  if (c.width !== w * devicePixelRatio) {
+    c.width = w * devicePixelRatio;
+    c.height = h * devicePixelRatio;
+  }
+  const g = c.getContext('2d');
+  g.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+  g.clearRect(0, 0, w, h);
+  const view = viewStart(t);
+
+  if (peaks) {
+    g.fillStyle = '#39405060';
+    g.fillRect(0, 0, w, h);
+    g.strokeStyle = '#5c6a86';
+    g.beginPath();
+    for (let x = 0; x < w; x++) {
+      const idx = Math.floor(xToTime(x, view, w) * peaks.rate);
+      const p = idx >= 0 && idx < peaks.data.length ? peaks.data[idx] : 0;
+      const half = p * (h / 2 - 6);
+      g.moveTo(x + 0.5, h / 2 - half);
+      g.lineTo(x + 0.5, h / 2 + half);
+    }
+    g.stroke();
+  }
+
+  // Cut stretches: greyed out, because nothing will ever play them.
+  for (let i = 1; i < onsets.length; i++) {
+    if (!isCut(i)) continue;
+    const x0 = timeToX(ends[i], view, w), x1 = timeToX(onsets[i], view, w);
+    if (x1 < -30 || x0 > w + 30) continue;
+    g.fillStyle = '#f0717822';
+    g.fillRect(x0, 0, x1 - x0, h);
+    g.strokeStyle = '#f0717855';
+    g.setLineDash([4, 4]);
+    g.beginPath();
+    g.moveTo(x0, h / 2);
+    g.lineTo(x1, h / 2);
+    g.stroke();
+    g.setLineDash([]);
+  }
+
+  // Onset ticks. A cut mark has two: where the last word stopped and where the
+  // next one starts, each draggable on its own.
+  for (let i = 0; i < onsets.length; i++) {
+    const isSel = i === sel;
+    const marks = isCut(i) ? [[ends[i], '#f07178'], [onsets[i], null]] : [[onsets[i], null]];
+    for (const [t, colour] of marks) {
+      const x = timeToX(t, view, w);
+      if (x < -30 || x > w + 30) continue;
+      g.strokeStyle = colour || (i === words.length ? '#f07178' : isSel ? '#7aa2f7' : '#8b93a5');
+      g.lineWidth = isSel && !colour ? 2 : 1;
+      g.beginPath();
+      g.moveTo(x, 0);
+      g.lineTo(x, h);
+      g.stroke();
+      if (!colour && (isSel || i === words.length)) {
+        g.fillStyle = g.strokeStyle;
+        g.font = '11px ui-monospace, monospace';
+        g.fillText(i === words.length ? 'end' : String(i), x + 3, 12);
+      }
+    }
+  }
+
+  // playhead
+  const px = timeToX(t, view, w);
+  g.strokeStyle = '#7bd88f';
+  g.lineWidth = 2;
+  g.beginPath();
+  g.moveTo(px, 0);
+  g.lineTo(px, h);
+  g.stroke();
+}
+
+// Which handle is under the pointer: the mark, and whether it grabbed the start
+// of the next word or the end of the last one. Only a cut mark has both.
+function nearestTick(t, tol) {
+  let best = null, bestD = Infinity;
+  for (let i = 0; i < onsets.length; i++) {
+    for (const edge of (isCut(i) ? ['end', 'start'] : ['start'])) {
+      const d = Math.abs((edge === 'end' ? ends[i] : onsets[i]) - t);
+      if (d < bestD) { bestD = d; best = { i, edge }; }
+    }
+  }
+  return bestD <= tol ? best : null;
+}
+
+// ---------------------------------------------------------------- wiring
+function wire() {
+  el('play').onclick = () => (audio.paused ? play() : audio.pause());
+  el('prev').onclick = () => { select(sel - 1); seek(onsets[sel]); };
+  el('next').onclick = () => { select(sel + 1); seek(onsets[sel]); };
+  el('hear').onclick = () => hearWord(sel);
+  el('here').onclick = () => setOnset(sel, audio.currentTime);
+  el('endhere').onclick = () => setEnd(sel + 1, audio.currentTime);
+  el('save').onclick = save;
+  el('rate').onchange = e => { audio.playbackRate = +e.target.value; };
+  el('skip').onclick = () => {
+    skipCuts = !skipCuts;
+    el('skip').classList.toggle('on', skipCuts);
+    setStatus(skipCuts ? 'playing without the cuts' : '');
+  };
+  el('tap').onclick = () => {
+    tapMode = !tapMode;
+    el('tap').classList.toggle('on', tapMode);
+    setStatus(tapMode ? 'tap mode: space marks the next word' : '');
+  };
+
+  const c = el('wave');
+  const at = e => {
+    const r = c.getBoundingClientRect();
+    return xToTime(e.clientX - r.left, viewStart(audio.currentTime), r.width);
+  };
+  const tol = () => WINDOW / c.getBoundingClientRect().width * 8;
+
+  c.addEventListener('pointerdown', e => {
+    if (e.detail > 1) return;                    // second click of a double
+    const hit = nearestTick(at(e), tol());
+    if (hit) {
+      dragging = hit;
+      if (hit.i < words.length) select(hit.i);
+      c.setPointerCapture(e.pointerId);
+    } else {
+      seek(at(e));
+    }
+  });
+  c.addEventListener('pointermove', e => {
+    if (dragging == null) return;
+    if (dragging.edge === 'end') setEnd(dragging.i, at(e));
+    else setOnset(dragging.i, at(e));
+  });
+  c.addEventListener('pointerup', () => { dragging = null; });
+
+  // Double-click a transition to break it in two, so a false start between the
+  // words can be left out of both; double-click a cut to close it back up.
+  c.addEventListener('dblclick', e => {
+    e.preventDefault();
+    dragging = null;
+    const t = at(e);
+    const inCut = onsets.findIndex((s, i) => isCut(i) && t > ends[i] - tol() && t < s + tol());
+    if (inCut > 0) { joinAt(inCut); return; }
+    const hit = nearestTick(t, tol() * 2);
+    if (!hit || hit.i <= 0) { setStatus('double-click on a word transition to cut there'); return; }
+    select(Math.min(hit.i, words.length - 1));
+    cutAt(hit.i);
+  });
+
+  addEventListener('keydown', e => {
+    if (e.target.tagName === 'SELECT') return;
+    const step = e.shiftKey ? 0.1 : 0.01;
+    switch (e.key) {
+      case ' ':
+        e.preventDefault();
+        if (tapMode) {
+          if (audio.paused) play();
+          else { setOnset(sel, audio.currentTime); select(sel + 1); }
+        } else if (audio.paused) play();
+        else audio.pause();
+        break;
+      case 'ArrowLeft': e.preventDefault(); setOnset(sel, onsets[sel] - step); break;
+      case 'ArrowRight': e.preventDefault(); setOnset(sel, onsets[sel] + step); break;
+      case ',': select(sel - 1); seek(onsets[sel]); break;
+      case '.': select(sel + 1); seek(onsets[sel]); break;
+      case 'Enter': setOnset(sel, audio.currentTime); break;
+      case 'e': setEnd(sel + 1, audio.currentTime); break;
+      case 'x': joinAt(sel + 1); break;
+      case 'h': hearWord(sel); break;
+      case 's': e.preventDefault(); save(); break;
+    }
+  });
+
+  addEventListener('beforeunload', e => {
+    if (dirty) { e.preventDefault(); e.returnValue = ''; }
+  });
+}
+
+function setStatus(s) { el('status').textContent = s; }
+
+async function save() {
+  setStatus('saving...');
+  try {
+    const r = await fetch(BASE + '_save_labels', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ labels: doc.labels, onsets, ends }),
+    });
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.error);
+    dirty = false;
+    setStatus(`saved ${j.marks} marks` + (j.cuts ? `, ${j.cuts} cut` : ''));
+  } catch (e) {
+    setStatus('save failed: ' + e.message);
+  }
+}
+</script>
+</body>
+</html>

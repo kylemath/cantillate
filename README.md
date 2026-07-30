@@ -494,7 +494,7 @@ Notes on how it behaves:
 
 ## Tests
 
-Two headless-Chrome harnesses, both driven over the DevTools protocol (the repo
+Three headless-Chrome harnesses, all driven over the DevTools protocol (the repo
 has no Node toolchain). Start the server first, then:
 
 ```bash
@@ -502,6 +502,7 @@ has no Node toolchain). Start the server first, then:
 ./serve.sh 8123 &
 .venv/bin/python scripts/run_smoke.py    # modules: segmentation, ranks, store, manifest
 .venv/bin/python scripts/check_app.py    # the real UI, incl. pause/rewind against live audio
+.venv/bin/python scripts/check_label.py  # the onset labeller, on a scratch copy of a track
 ```
 
 `scripts/run_smoke.py` loads `scripts/smoke.html`, which exercises the DOM-free
@@ -548,8 +549,15 @@ on the third's first pasuk, and that a parashah the app has no recording of is
 still divided — the aliyah's own range is what gets assembled out of `data/tanakh/`,
 not the whole reading.
 Because those steps save a plan, they run last; the expert-mode steps pin
-themselves to the workshop with `?guided=0`. `scripts/shot.py` grabs a screenshot
-for eyeballing a change.
+themselves to the workshop with `?guided=0`.
+
+`scripts/check_label.py` covers the one tool that shapes a recording before the
+app ever sees it: cutting a transition in two by double-click, dragging each edge
+without letting it swallow a neighbour, hearing a word stop where it was cut,
+saving the pair into the track and finding it still there on reopening. It works
+on a scratch copy, so a failed run cannot damage anybody's labels. The transport
+side — that a cut is jumped rather than played — is a step in `check_app.py`.
+`scripts/shot.py` grabs a screenshot for eyeballing a change.
 
 ## Run it
 
@@ -668,10 +676,13 @@ each additional source `<id>` writes `data/<slug>_<id>_audio.json` /
 `_pitch.json` / `_shapes.json` and `audio/<id>/*.mp3`, and is listed under the
 reading's `sources` in `data/readings.json`. Sources come in two kinds:
 `pockettorah` (fetches labels + MP3s from the PocketTorah repo) and `local` (a
-drop-in for audio you host yourself — provide the MP3s under `audio/<id>/` and
+drop-in for audio you host yourself — provide the audio under `audio/<id>/` and
 comma-separated onset tracks under `data/local_sources/<id>/`; nothing is
-downloaded). A source with no pitch/shapes files still plays, just without the
-coach line / spectrogram overlay.
+downloaded, and `"ext"` takes a container other than mp3, since a phone hands you
+m4a and re-encoding would only cost a generation). A source with no pitch/shapes
+files still plays, just without the coach line / spectrogram overlay. See
+[A passage taught by your own recording](#a-passage-taught-by-your-own-recording)
+for where the onsets come from.
 
 > Note: the `eikev` reading ships a demonstration second voice
 > (`ptaudioonly` — the same PocketTorah audio with no coach data) purely to show
@@ -680,6 +691,78 @@ coach line / spectrogram overlay.
 > (readers Chayim B. Alevsky and Michoel Slavin) are **not** bundled: that audio
 > is copyrighted with no redistribution license, so it can only be added as a
 > `local` source once you have written permission.
+
+### A passage taught by your own recording
+
+The shipped corpus can only cover what somebody published: 54 parashiyot and 54
+haftarot, all chanted by PocketTorah. A bar mitzvah passage is quite often
+neither — I Samuel 28:8–19, the woman of Ein Dor, is nobody's week — and for
+those the app teaches the accents from the measured trope shapes rather than
+from a human voice. When a teacher records the actual pesukim, that gap closes.
+
+What the app needs is the recording plus **word onsets**: one timestamp per
+Masoretic word. PocketTorah publishes theirs; a recording made on a phone comes
+with nothing, and tapping out several hundred marks by hand is a bad evening. So
+`scripts/align_recording.py` derives them, using only what macOS already has:
+
+```bash
+.venv/bin/python scripts/align_recording.py \
+    --audio audio/teacher/i-samuel-28-H.m4a \
+    --book i-samuel --range 28:8-28:19 --id teacher --out i-samuel-28.txt
+```
+
+It speaks the passage word by word with `say -v Carmit` — a reference signal
+whose boundaries are known exactly — reduces both signals to MFCCs (which
+describe the sounds being made and ignore pitch, the one thing that separates
+chanting from speech), and dynamic-time-warps the reference onto the recording.
+That is precisely the problem DTW was made for: the same sounds in the same
+order at wildly different speeds, here about 2.7x. Both ends of the path are
+anchored, because a free endpoint makes skipping audio the cheapest thing
+available and the text collapses into a corner; audio with no counterpart in the
+text — a spoken introduction, an outro — is absorbed by a **garbage row** at each
+end that matches anything at a flat price, while real words pay a small surcharge
+for dwelling so they cannot swallow the introduction themselves. On the Ein Dor
+recording it finds the chanting starting at 13.92s (the teacher introduces it
+first) and ending at 268.58s, and reports its confidence per pasuk.
+
+Close is not exact, and only ears can tell the difference, so
+**`scripts/label.html`** plays the recording with the words lighting up in time:
+
+```bash
+./serve.sh 8123
+open "http://localhost:8123/scripts/label.html?review=data/local_sources/teacher/i-samuel-28.txt.review.json"
+```
+
+Words the aligner was least sure of are underlined, a wrong one can be dragged
+in the waveform, nudged with the arrow keys or re-tapped in time with playback,
+and **Save** writes the track back through the dev server.
+
+A person chanting into a phone also does things that are not the reading — a
+false start, a cough, a word to whoever is in the room — and every moment
+between two words otherwise belongs to one of them. **Double-clicking a
+transition** in the waveform breaks it in two: the word before it stops at the
+left edge, the word after begins at the right, and what lies between belongs to
+neither. Drag either edge to fit it to what you hear, hit **Skip cuts** to
+audition the result, and double-click the cut to close it again. Such a mark is
+written as one field with two times, `60.500-61.050`, which is all
+`scripts/onsettrack.py` adds to PocketTorah's format; nothing plays a cut, no
+splice carries one into a drill, and the pitch analysis leaves it out of both the
+word's coach line and the verse's tonic. `scripts/check_label.py` keeps that
+working.
+
+Then declare the passage in `scripts/local_readings.py` and build it like any
+other reading:
+
+```bash
+.venv/bin/python scripts/build_reading.py i-samuel-28
+```
+
+From there nothing knows the recording came from a living room. It gets its text
+and English from Sefaria, its coach line and spectrogram from the teacher's own
+pitch, per-word playback, the trope drills, and a `covers` entry in the manifest
+— which is what lets **guided mode** find it: a reader who swaps their haftarah
+for these pesukim is told "♪ Recorded" and opened into that voice, instead of
+being taught by the synthesized guide.
 
 **Notes:**
 - The build prints an alignment self-check (audio onsets vs. Masoretic word count,
@@ -851,9 +934,14 @@ scripts/build_trope_index.py  regenerate the splice index
 scripts/build_trope_shapes.py regenerate the measured per-accent shapes
 scripts/organize_readings.py  group the Reading menu by sefer, in chumash order
 scripts/serve.py      range-enabled static server (audio seeking)
+scripts/align_recording.py    word onsets for a recording of your own (TTS + DTW)
+scripts/label.html            fix those onsets by ear; cut out false starts
+scripts/onsettrack.py         the onset track format, cuts included
+scripts/local_readings.py     passages taught by a recording of one's own
 scripts/smoke.html    module tests (run via run_smoke.py)
 scripts/run_smoke.py  headless module test runner
 scripts/check_app.py  headless UI walkthrough (see Tests)
+scripts/check_label.py headless walkthrough of the onset labeller
 scripts/shot.py       headless screenshot helper
 audio/                bundled recorded chant (all of Deuteronomy + Vayera/Matot/Masei)
 ```

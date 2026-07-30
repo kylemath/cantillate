@@ -165,11 +165,23 @@ try {
   const haftarot = readings.filter((r) => r.kind === 'haftarah');
   log(haftarot.length > 0, `${haftarot.length} haftarot in the manifest`);
   log(haftarot.every((r) => r.tropeStyle === 'haftarah'), 'every haftarah asks for the haftarah melody');
-  log(haftarot.every((r) => r.haftarah && r.haftarah.parashah && r.haftarah.tradition && r.group === 'Haftarot'),
-    'every haftarah names its parashah and rite and sits in the Haftarot group');
-  const cal = haftarot.map((r) => r.calendarNumber);
+  // Two kinds of them. The APPOINTED ones come from the leyning table and belong
+  // to a parashah, a rite and a week. A haftarah OF ONE'S OWN is a passage that
+  // is nobody's week — read the same way, in the same melody, but with no
+  // parashah to name and no place in the year to claim. That is what a bar
+  // mitzvah passage outside the cycle is, and it can only be in the app at all
+  // because someone recorded it (scripts/local_readings.py).
+  const weekly = haftarot.filter((r) => r.haftarah);
+  const ownHaftarot = haftarot.filter((r) => !r.haftarah);
+  log(weekly.length > 0, `${weekly.length} appointed haftarot, ${ownHaftarot.length} of one's own`);
+  log(weekly.every((r) => r.haftarah.parashah && r.haftarah.tradition && r.group === 'Haftarot'),
+    'every appointed haftarah names its parashah and rite and sits in the Haftarot group');
+  const cal = weekly.map((r) => r.calendarNumber);
   log(cal.every((n) => n >= 1 && n <= 54) && new Set(cal).size === cal.length,
     `haftarah weeks are unique and inside the year (${Math.min(...cal)}\u2013${Math.max(...cal)})`);
+  log(ownHaftarot.every((r) => r.group === 'Haftarot' && r.calendarNumber == null
+    && (r.sources || []).length > 0),
+    'a haftarah of one\u2019s own is listed with them, claims no week, and has the recording it exists for');
   const notWhole = haftarot.filter((r) => {
     const d = files.get(r.file);
     const ch = (d.aliyot && d.aliyot.annual) || [];
@@ -179,7 +191,8 @@ try {
     `every haftarah is one chunk over its whole passage${notWhole.length ? `: ${notWhole.join(', ')}` : ''}`);
   const unlabelled = haftarot.filter((r) => {
     const d = files.get(r.file);
-    return !(d.ref && d.heRef && d.parashah && d.parashah.he && d.book && d.book.he);
+    const named = r.haftarah ? d.parashah && d.parashah.he : true;
+    return !(d.ref && d.heRef && named && d.book && d.book.he);
   }).map((r) => r.slug);
   log(unlabelled.length === 0,
     `every haftarah names its passage in both languages${unlabelled.length ? `: ${unlabelled.join(', ')}` : ''}`);

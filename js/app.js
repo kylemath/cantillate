@@ -4,7 +4,8 @@ import { buildLineMelody, splitPhrases, splitAtRank, RANK, RANK_LABELS, rankFor,
   STYLES, DEFAULT_STYLE, styleOf } from './trope.js';
 import { singSteps, playTone, stopPlayback } from './audio.js';
 import { playSegment, stopVerseAudio, pauseVerseAudio, resumeVerseAudio, seekVerseAudio,
-  previewVerseAudio, isVerseAudioLoaded, isVerseAudioPaused, verseAudioProgress } from './realaudio.js';
+  previewVerseAudio, isVerseAudioLoaded, isVerseAudioPaused, verseAudioProgress,
+  setAudioCuts } from './realaudio.js';
 import { startMic, stopMic } from './pitch.js';
 import { ContourView, Spectrogram, scoreTrail, scoreNotes, stepsToPoints, sampleContour } from './viz.js';
 import { LEVELS, levelById, VERSE_MODES, skillForLevel, DIVISIONS, divisionByRank,
@@ -3010,6 +3011,7 @@ async function loadAudioSource(slug, sid) {
     const ar = await fetch(srcPath(slug, sid, 'audio.json'));
     if (ar.ok) state.audio = await ar.json();
   } catch (e) { /* no recorded audio available */ }
+  registerAudioCuts(state.audio);
   // Phase 3: the whole-parashah pitch payload (a quarter of a megabyte on the
   // longer readings, re-fetched on every reading switch) is no longer on the
   // critical path. All that is awaited here is the per-verse manifest — a few
@@ -4105,6 +4107,30 @@ function mergeRawContours(pitch, raw) {
 
 function verseAudio(verseN) {
   return state.audio && state.audio.verses && state.audio.verses[String(verseN)];
+}
+
+// Tell the transport which stretches of this voice's files are not the reading.
+// A recording made by a person has false starts and asides in it; whoever
+// labelled it cut them out (scripts/label.html), leaving words that stop before
+// the next one begins. Collected per file, because that is what plays.
+function registerAudioCuts(doc) {
+  const byFile = new Map();
+  for (const v of Object.values((doc && doc.verses) || {})) {
+    if (v && v.file) byFile.set(v.file, (byFile.get(v.file) || []).concat([v]));
+  }
+  for (const [file, verses] of byFile) {
+    const list = [];
+    for (const v of verses) {
+      (v.ends || []).forEach((end, k) => {
+        const next = k + 1 < v.onsets.length ? v.onsets[k + 1] : null;
+        if (end != null && next != null && next - end > 0.01) list.push([end, next]);
+      });
+    }
+    // A fumbled first word of a verse needs nothing here: the verse before it
+    // already stops early and this one already starts late, and playback always
+    // begins at a verse or a word, never in the seam between them.
+    setAudioCuts(file, list);
+  }
 }
 
 function pitchVerse(verseN) {
@@ -6111,6 +6137,15 @@ function scorePhrasesInLine(trail, coach, unitSegs) {
   });
 }
 
+// Where a word stops in its recording. Usually the next word's onset — but a
+// reader recorded live sometimes fumbles a word and starts it again, and the
+// labeller (scripts/label.html) cuts those stretches out by ending the word
+// before them early. See scripts/onsettrack.py.
+function wordEndTime(info, k) {
+  const cut = info.ends && info.ends[k];
+  return cut != null ? cut : null;
+}
+
 // Compute the mp3 time range for a single display token within a verse, using
 // the Masoretic word onsets (maqaf-joined tokens span multiple onsets).
 function wordTimeRange(verseN, tokenIndex) {
@@ -6119,8 +6154,10 @@ function wordTimeRange(verseN, tokenIndex) {
   const onsets = info.onsets;
   if (tokenIndex < 0 || tokenIndex >= onsets.length) return null;
   const start = onsets[tokenIndex];
+  const cut = wordEndTime(info, tokenIndex);
   let end;
-  if (tokenIndex + 1 < onsets.length) end = onsets[tokenIndex + 1];
+  if (cut != null) end = cut;
+  else if (tokenIndex + 1 < onsets.length) end = onsets[tokenIndex + 1];
   else if (info.end != null) end = info.end;
   else {
     const gaps = [];
@@ -6278,6 +6315,9 @@ function loadTropeIndex() {
             });
           }));
           doc.byAccent = byAccent;
+          // A splice can come from any reading in the corpus, including one
+          // whose recording was cut, so those files need their cuts too.
+          doc.readings.forEach((rd) => registerAudioCuts({ verses: rd.verses }));
         }
         _tropeIndex = doc;
         return doc;
@@ -6321,8 +6361,10 @@ function recitationSlice(doc, chunk) {
   const v = doc.readings[chunk.ri].verses[chunk.vi];
   const start = v.onsets[chunk.wi];
   const lastIdx = chunk.wi + chunk.count;
-  const end = lastIdx < v.onsets.length ? v.onsets[lastIdx]
-    : (v.end != null ? v.end : start + chunk.count * 0.8);
+  const cut = wordEndTime(v, lastIdx - 1);
+  const end = cut != null ? cut
+    : lastIdx < v.onsets.length ? v.onsets[lastIdx]
+      : (v.end != null ? v.end : start + chunk.count * 0.8);
   return { verse: v, reading: doc.readings[chunk.ri], start, end: Math.max(end, start + 0.2) };
 }
 
@@ -6348,7 +6390,8 @@ function installRecitationView(plan, doc, unitSegs) {
     for (let j = 0; j < chunk.count; j++) {
       const i = chunk.wi + j;
       const from = v.onsets[i];
-      const to = i + 1 < v.onsets.length ? v.onsets[i + 1] : (v.end != null ? v.end : from + 0.9);
+      const to = wordEndTime(v, i)
+        ?? (i + 1 < v.onsets.length ? v.onsets[i + 1] : (v.end != null ? v.end : from + 0.9));
       real.push({ token: (v.w && v.w[i]) || '', dur: Math.max(0.25, to - from) });
     }
   }
@@ -6440,7 +6483,8 @@ async function playRecitation() {
         let j = 0;
         for (let x = 0; x < chunk.count; x++) if (t >= verse.onsets[chunk.wi + x]) j = x;
         const from = verse.onsets[chunk.wi + j];
-        const to = chunk.wi + j + 1 < verse.onsets.length ? verse.onsets[chunk.wi + j + 1] : end;
+        const to = wordEndTime(verse, chunk.wi + j)
+          ?? (chunk.wi + j + 1 < verse.onsets.length ? verse.onsets[chunk.wi + j + 1] : end);
         cue(j, (t - from) / ((to - from) || 1));
       },
       onEnd: next,

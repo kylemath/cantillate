@@ -93,7 +93,7 @@ def build():
                 continue
             accents = [primary_taam(t) for t in toks]
             accents[-1] = SOF
-            verses.append({
+            verse = {
                 "n": v["n"], "ref": v.get("ref") or str(v["n"]),
                 "file": av["file"],
                 "end": av.get("end"),
@@ -103,7 +103,12 @@ def build():
                 # actually being sung instead of leaving the drill's words on
                 # screen while a different verse plays.
                 "w": toks,
-            })
+            }
+            # Only where a word stops before the next one begins (a cut), so a
+            # splice does not carry a false start into the drill.
+            if av.get("ends"):
+                verse["ends"] = av["ends"]
+            verses.append(verse)
             total_words += len(accents)
         total_verses += len(verses)
         readings.append({"slug": slug, "label": entry.get("label", slug),
