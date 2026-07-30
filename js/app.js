@@ -666,6 +666,9 @@ function openWizard({ editing = null } = {}) {
       renderLearningChip();
       if (built) enterGuided();
       else if (wasGuided && plan.has()) enterGuided();
+      // Someone who signed in on the wizard's account screen still has to be
+      // asked how they want to appear; it was held back while the sheet was up.
+      maybeOfferProfile();
     },
   });
 }
@@ -879,9 +882,20 @@ function setupAuth() {
     onProgressMerged: () => {
       refreshProgressViews();
       renderAuthBox();
-      if (auth.getUser() && !auth.hasChosenProfile()) openProfileModal({ firstTime: true });
+      maybeOfferProfile();
     },
   });
+}
+
+// The one-time "how would you like to appear?" prompt, on first login. Held back
+// while the onboarding wizard is up: the wizard is a full-screen sheet above every
+// modal (see .onboard in css/guided.css), so a modal opened underneath it would be
+// invisible, and it would be answering a question about leaderboards that the
+// reader hasn't got to yet. The wizard asks for it again when it closes.
+function maybeOfferProfile() {
+  if (onboarding && onboarding.isOpen()) return;
+  if (!auth.getUser() || auth.hasChosenProfile()) return;
+  openProfileModal({ firstTime: true });
 }
 
 // --- Public identity picker (anonymous nickname + cartoon/solid avatar) -----

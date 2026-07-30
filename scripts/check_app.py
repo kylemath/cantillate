@@ -795,8 +795,28 @@ WIZARD_STEPS = [
      " return refs.length===7 && new Set(refs).size===7"
      "   && refs.every(r=>/^\\d+:\\d+-\\d+:\\d+$/.test(r))"
      "   ? `OK ${refs.join(', ')}` : `ranges shown: ${JSON.stringify(refs)}`;})()"),
+    # Eight months of practice lives in one browser's localStorage until someone
+    # signs in, and this is the only moment where saying so costs the reader
+    # nothing: the questions are answered and the first take hasn't happened. The
+    # way past it matters as much as the offer — a reader who is offline, has
+    # popups blocked, or is on a build with no Firebase project must not be
+    # trapped on a sign-in screen, so this tolerates the screen being absent.
+    ("the questions end by offering an account to save the progress to",
+     "(()=>{__t.tap('#obNext');"
+     " if(/will be chanting/.test(__t.text(__t.q('#obBody'))))"
+     "   return 'OK no account screen \u2014 sign-in is unavailable in this build';"
+     " const ask=__t.ask(), g=__t.q('#obSignIn'), onward=!!(__t.q('#obSkipAccount')||__t.q('#obNext'));"
+     " return /Save Noa\u2019s progress/.test(ask) && onward"
+     "   ? `OK \u201c${ask}\u201d, google=${!!g}, with a way past it`"
+     "   : `asked ${ask} / google=${!!g} / onward=${onward}`;})()"),
+    ("declining it leaves the plan intact and says where practice will be kept",
+     "(()=>{if(!/will be chanting/.test(__t.text(__t.q('#obBody'))))"
+     "   __t.tap(__t.q('#obSkipAccount') ? '#obSkipAccount' : '#obNext');"
+     " const note=__t.text(__t.q('#obBody .ob-note'));"
+     " return /this browser only/.test(note) || /Saving to your account/.test(note)"
+     "   ? `OK ${note.slice(0, 80)}` : `said ${note.slice(0, 120) || '(nothing)'}`;})()"),
     ("the last screen says what was decided, in the learner's name",
-     "(()=>{__t.tap('#obNext'); const t=__t.text(__t.q('#obBody'));"
+     "(()=>{const t=__t.text(__t.q('#obBody'));"
      " return /Noa will be chanting/.test(t) && /Eikev/.test(t) && /Maftir/.test(t)"
      "   ? `OK ${t.slice(0, 90)}` : `said ${t.slice(0, 120)}`;})()"),
 ]

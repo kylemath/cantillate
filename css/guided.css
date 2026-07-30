@@ -222,6 +222,13 @@ body.onboarding { overflow: hidden; }
   border: 1px solid var(--line); font-weight: 500;
 }
 .ob-go.ob-ghost:hover { color: var(--text); }
+/* The Google mark, sized for a wizard button rather than the topbar's small one. */
+.ob-go .ob-g {
+  display: inline-grid; place-items: center; vertical-align: -4px;
+  width: 21px; height: 21px; margin-inline-end: 6px;
+  border-radius: 50%; background: #fff; color: #4285F4;
+  font-weight: 800; font-size: 14px;
+}
 
 /* ===========================================================================
    2. The "currently learning" chip (shown in EXPERT mode)
@@ -260,6 +267,12 @@ body.guided .pane-toggle,
 body.guided .textpane { display: none !important; }
 
 body.guided { overflow: hidden; }
+
+/* Guided mode's own furniture is fixed and sits high (the top bar, the action bar,
+   the menu drawer), so a shared modal at its workshop z-index would open UNDER it
+   — half-covered, with a backdrop that dims nothing. Anything modal outranks the
+   surface it interrupts: the identity picker after signing in, the leaderboard. */
+body.guided .modal { z-index: 100; }
 
 body.guided main {
   display: block; height: 100vh; height: 100dvh;
