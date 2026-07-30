@@ -38,6 +38,8 @@ let part = null;         // the part being worked
 let ctx = null;          // schedule context for that part
 let task = null;         // the task in hand
 let session = 0;         // tasks handed out this sitting (walks the pattern)
+let pickup = '';         // why this task isn't the pasuk the reader left off at
+let explained = false;   // ...said once per part, not every time it happens
 let phase = 'brief';     // 'brief' | 'running' | 'result'
 let result = null;       // the last score report
 let streak = 0;          // consecutive passes, for a little momentum feedback
@@ -129,6 +131,8 @@ async function openPart(p) {
   phase = 'brief';
   problem = '';
   loading = true;
+  pickup = '';
+  explained = false;
   plan.setActivePart(p);
   current = plan.get();
   render();
@@ -155,7 +159,7 @@ async function openPart(p) {
     return;
   }
   loading = false;
-  runNext();
+  openAtTop();
   // What every OTHER part covers, for the menu. Off the critical path: the reader is
   // already looking at the first word by the time it lands, and it costs nothing when
   // the parashah is the reading in hand.
@@ -255,6 +259,18 @@ function parseRef(ref) {
 
 // --- Task loop --------------------------------------------------------------
 
+// Choosing a part means starting it, and starting it means starting at the top of
+// it. Everything after this first task is the schedule's business (see openingTask).
+function openAtTop() {
+  if (!ctx) return;
+  pickup = '';
+  result = null;
+  phase = 'brief';
+  task = schedule.openingTask(ctx);
+  if (task) applyTask(task);
+  render();
+}
+
 // Hand out the next task and point the app at it.
 function runNext() {
   if (!ctx) return;
@@ -263,6 +279,7 @@ function runNext() {
   task = picked;
   result = null;
   phase = 'brief';
+  pickup = picked ? pickupFor(picked) : '';
   if (!picked) { render(); return; }
   applyTask(picked);
   render();
@@ -329,13 +346,22 @@ function onward() {
 
 function render() {
   if (!active || !el.top) return;
-  const round = ctx ? schedule.currentRound(ctx) : schedule.ROUNDS[0];
+  const round = activeRound();
   document.body.dataset.guidedRound = String(round.id);
   renderTop(round);
   renderCard(round);
   renderBar();
   if (document.body.classList.contains('g-menu-open')) renderMenu();
   measureCard();
+}
+
+// The round the chrome is dressed for: the one the task in hand belongs to, which
+// is the part's current round except when the reader has gone back to a pasuk that
+// is further along. Working round-3 material with round-1 chrome would hide the
+// pitch meter the task is asking them to use.
+function activeRound() {
+  if (task && task.round) return schedule.roundById(task.round);
+  return ctx ? schedule.currentRound(ctx) : schedule.ROUNDS[0];
 }
 
 // The mission card is a fixed strip whose height depends on its content (a brief
@@ -391,19 +417,50 @@ function briefHtml(round) {
   // Tanakh, including any haftarah picked outside the weekly cycle — say what the
   // voice actually is, once, rather than letting the reader wonder why the cantor
   // sounds like that.
-  const hint = round.id === 1 && task.reason === 'advance'
+  // A reader moved on past their place has a live question about it, and asks it in a
+  // posture where the card is one line (see css/guided.css) — so the answer is its
+  // own element, kept when the rest of the small print goes.
+  const hint = pickup ? '' : (round.id === 1 && task.reason !== 'repair'
     ? (recorded() ? round.blurb
       : 'One word at a time. Nobody has recorded these pesukim, so the voice is '
         + 'synthesized \u2014 but every accent\u2019s tune and timing is measured from the '
         + 'cantor\u2019s own chanting, not guessed.')
-    : '';
+    : '');
   return `
     <div class="g-brief">
       <p class="g-task">${escapeHtml(schedule.taskTitle(task))}</p>
       <p class="g-why"><span class="g-why-tag ${task.reason}">${escapeHtml(schedule.taskWhy(task))}</span>${
     where ? `<span class="g-where">${escapeHtml(where)}</span>` : ''}</p>
+      ${pickup ? `<p class="g-pickup">${escapeHtml(pickup)}</p>` : ''}
       ${hint ? `<p class="g-hint">${escapeHtml(hint)}</p>` : ''}
     </div>`;
+}
+
+function pasukIndex(verse) {
+  return ctx ? ctx.verses.indexOf(verse) : -1;
+}
+
+// Chapter and pasuk without the book, for the pasuk list: "7:22" reads as a
+// position in a reading whose book is named twice over the top of it already.
+function shortRef(verse) {
+  const ref = api.verseRef(verse) || '';
+  const m = /(\d+:\d+)\s*$/.exec(ref);
+  return m ? m[1] : ref;
+}
+
+// Why the reader has been moved on past pesukim they didn't sing this sitting.
+// ADVANCE walks the part in order and steps over whatever has already cleared the
+// round, which is right — and looks exactly like the app losing their place unless it
+// says so, once, along with where to go to argue with it.
+function pickupFor(t) {
+  if (!ctx || explained) return '';
+  if (t.kind !== 'verse' || t.reason !== 'advance') return '';
+  const at = pasukIndex(t.verse);
+  if (at < 1) return '';
+  explained = true;
+  const before = at === 1 ? 'The first pasuk is' : `Pesukim 1\u2013${at} are`;
+  return `${before} already through this round, so this moves on to pasuk ${at + 1}. `
+    + 'Tap \u2630 for the whole list \u2014 any pasuk can be sung again whenever you like.';
 }
 
 // Whether there is a human recording of what is open. The app ships recordings for
@@ -439,12 +496,17 @@ async function loadChunkRefs() {
   if (map) chunkRefs = { key, map };
 }
 
-// "Devarim 3:20 · word 2 of 9" — the position, in the reader's terms.
+// "Devarim 3:20 · pasuk 2 of 5 · word 2 of 9" — the position, in the reader's
+// terms. Which pasuk of the part this is matters as much as which pasuk of the
+// book: it is the only thing on screen that says how far through the reading the
+// reader has got, and without it being moved past a pasuk looks like losing one.
 function taskWhere() {
   if (!task) return '';
   if (task.kind === 'whole') return refFor(part) || '';
   if (task.kind === 'chain') return api.verseRange(task.start, task.end);
   const bits = [api.verseRef(task.verse)];
+  const at = pasukIndex(task.verse);
+  if (at >= 0 && ctx.verses.length > 1) bits.push(`pasuk ${at + 1} of ${ctx.verses.length}`);
   const n = api.unitsShown();
   if (n > 1) {
     const unit = api.currentUnitName();
@@ -564,7 +626,7 @@ function renderBar() {
   if (problem || loading || !task) { el.bar.innerHTML = ''; return; }
   const chunky = task.kind === 'chain' || task.kind === 'whole';
   const running = api.isBusy();
-  const round = ctx ? schedule.currentRound(ctx) : schedule.ROUNDS[0];
+  const round = activeRound();
   if (running) {
     el.bar.innerHTML = `<button class="g-act g-stop" data-click="${chunky ? 'alStop,btnStop' : 'btnStop,alStop'}">\u25a0 Stop</button>`;
   } else {
@@ -625,6 +687,7 @@ function renderMenu() {
       <h3 class="g-menu-h">What you\u2019re learning</h3>
       <div class="g-parts">${rows}</div>
       <p class="g-menu-note">Chanting something other than what the calendar appoints \u2014 a shul\u2019s own haftarah, or a passage chosen for the day? Tap \u270e on a part to put any pesukim of any book in its place.</p>
+      ${pesukimHtml()}
 
       <h3 class="g-menu-h">Settings</h3>
       <div class="g-set">
@@ -679,9 +742,56 @@ function partRowHtml(p) {
     </div>`;
 }
 
+// Every pasuk of the part in hand, with how far each one has got and a way straight
+// into it. Two things a reader needs that the four round bars can't give them: which
+// pesukim are actually done (the bars are averages, and a reader who has been moved
+// past one wants to see it ticked rather than take it on trust), and the way back to
+// one — the schedule is a good default, not a rail.
+function pesukimHtml() {
+  if (!ctx || !ctx.verses.length) return '';
+  const chips = ctx.verses.map((n, i) => {
+    const p = schedule.verseProgress(ctx, n);
+    const here = task && task.kind === 'verse' && task.verse === n;
+    const segs = p.cleared.map((ok) => `<span class="g-vseg${ok ? ' on' : ''}"></span>`).join('');
+    return `<button class="g-pasuk${here ? ' on' : ''}${p.done >= p.total ? ' done' : ''}"
+        data-verse="${n}"
+        title="Pasuk ${i + 1} \u00b7 ${shortRef(n)} \u2014 ${p.done} of ${p.total} rounds${here ? ' \u00b7 this one' : ''}">
+        <span class="g-pasuk-top">
+          <span class="g-pasuk-n">${i + 1}</span>
+          <span class="g-pasuk-ref">${escapeHtml(shortRef(n))}</span>
+        </span>
+        <span class="g-vsegs" aria-hidden="true">${segs}</span>
+      </button>`;
+  }).join('');
+  // "the maftir", "the haftarah" — but "Aliyah 3", which is a name and not a thing.
+  const label = part.kind === 'aliyah'
+    ? plan.partLabel(part) : `the ${plan.partLabel(part).toLowerCase()}`;
+  return `
+    <h3 class="g-menu-h">Every pasuk of ${escapeHtml(label)}</h3>
+    <div class="g-pesukim">${chips}</div>
+    <p class="g-menu-note">Four ticks is a pasuk through all four rounds. Tap any one
+      to sing it now \u2014 nothing is lost, and the next thing you would have been handed
+      comes back after it.</p>`;
+}
+
+// Go back (or forward) to a pasuk by name, at whatever stage that pasuk itself has
+// reached. The schedule picks up again from the next task.
+function workVerse(n) {
+  if (!ctx || !ctx.verses.includes(n)) return;
+  closeMenu();
+  task = schedule.taskForVerse(ctx, n);
+  pickup = '';
+  result = null;
+  phase = 'brief';
+  applyTask(task);
+  render();
+}
+
 function wireMenu() {
   const byId = (id) => document.getElementById(id);
   byId('gClose').addEventListener('click', closeMenu);
+  el.menu.querySelectorAll('[data-verse]').forEach((b) => b.addEventListener('click',
+    () => workVerse(Number(b.dataset.verse))));
   el.menu.querySelectorAll('[data-part]').forEach((b) => b.addEventListener('click', () => {
     const p = plan.partFromId(b.dataset.part);
     closeMenu();

@@ -90,6 +90,26 @@ shaky, and drilling the weakest thing forever means never reaching a new pasuk.
 Every task says why it was chosen ("Back to this — it scored 61"), and the result
 is one number in a dial with one obvious next step.
 
+**Where you are, and the way back.** Choosing an aliyah is asking to sing *that
+aliyah*, so opening a part always starts on **its first pasuk**, whatever the
+schedule would have picked and however much of the part is already on record. It is
+handed at the round the part is working rather than at the pasuk's own stage, so a
+first pasuk that has run ahead of its neighbours comes back as this round's work
+instead of a Torah column to read cold; a finished part still shows its finished
+card rather than starting over.
+
+After that first task the schedule takes over, and it steps over pesukim that have
+finished the round — which is right, and looks exactly like the app losing your
+place. So the mission line says which pasuk of the part you are on ("Deuteronomy
+7:24 · pasuk 3 of 5 · word 1 of 13"), including on a short landscape phone where the
+rest of the small print is cut; the first task that does move on says which pesukim
+it moved past and why ("Pesukim 1–2 are already through this round"); and the menu
+lists **every pasuk of the part** with four ticks for the four rounds, each one
+tappable to sing it again. A pasuk asked for by name resumes at *its own* stage
+rather than the part's, so going back to the opening pasuk of a reading you have
+half-learned picks up where that pasuk stopped, and the schedule hands out its own
+next choice again afterwards.
+
 **The menu** (☰) shows each part's four rounds as four bars plus its whole-part
 score, the two settings worth having at this size (text size, pitch analysis),
 and the ways out: change the date/cycle/parts, learn a different parashah, or
@@ -513,6 +533,9 @@ a clean slate (including that a date names the right parashah in both languages,
 that Back keeps the answers, and that the browse-by-name list filters) and then
 guided mode itself: the round pips, the mission card, listen → sing → score, the
 progress menu, switching parts, and out to the workshop and back via the ★ chip.
+It also checks that a part opened with its first pesukim already done says so and
+still shows the position, that the menu's pasuk list reports the rounds each pasuk
+has cleared, and that tapping one goes back to it at the stage it had reached.
 It then trades the appointed haftarah for a passage from another book and back
 again — that the picker opens on what was appointed, clamps a range instead of
 refusing it, stops one that is too long, says whether anyone has recorded the

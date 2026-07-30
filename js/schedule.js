@@ -137,6 +137,60 @@ export function roundProgress(ctx, round) {
   return out;
 }
 
+// How far ONE pasuk has got, round by round. The part-level bars answer "how much
+// is done"; a reader whose first pasuk was passed over asks the narrower question —
+// what about that one — and has to be able to see the answer and act on it.
+export function verseProgress(ctx, verse) {
+  const cleared = ROUNDS.map((r) => clearedRound(ctx, verse, r));
+  const done = cleared.filter(Boolean).length;
+  return {
+    verse,
+    cleared,
+    done,
+    total: ROUNDS.length,
+    pct: Math.round((done / ROUNDS.length) * 100),
+    round: ROUNDS[Math.min(done, ROUNDS.length - 1)],
+    started: levelOf(ctx, verse) > 1,
+  };
+}
+
+// The work a pasuk is up to, for a reader who asks for it by name instead of being
+// handed the next thing. At its OWN frontier rather than the part's: a pasuk two
+// rounds ahead of its neighbours should carry on from where it got to, and one left
+// behind should pick up where it stopped.
+export function taskForVerse(ctx, verse) {
+  const level = Math.min(Math.max(levelOf(ctx, verse), 1), LEVELS.length);
+  return { kind: 'verse', verse, level, reason: 'chosen', round: roundOfLevel(level).id };
+}
+
+// The task a part OPENS with: its first pasuk, at the round the part is working.
+//
+// "The next thing not yet done" is the right choice for every task after this one
+// and the wrong one for this one. A reader who has just chosen an aliyah is asking
+// to sing that aliyah; being dropped three pesukim in because the earlier ones are
+// already on record reads as the app having mislaid their place, and it is no answer
+// that the pesukim it skipped were finished ones.
+//
+// Clamped to the current round, so opening a part is never harder than the round the
+// reader is in: a first pasuk that has run ahead of its neighbours comes back at
+// this round's work rather than handing them a Torah column to read cold.
+export function openingTask(ctx) {
+  const verse = (ctx.verses || [])[0];
+  if (verse == null || finished(ctx)) return null;
+  const round = currentRound(ctx);
+  const lo = round.levels[0];
+  const hi = round.levels[round.levels.length - 1];
+  const level = Math.min(Math.max(levelOf(ctx, verse), lo), hi);
+  return { kind: 'verse', verse, level, reason: 'start', round: round.id };
+}
+
+// Whether there is anything left to hand out at all, under any move. Asked before
+// forcing a part open at its first pasuk, so a finished part still says it is
+// finished instead of starting over.
+export function finished(ctx) {
+  return nextTask(ctx, { session: 0 }) === null;
+}
+
 export function wholeScore(ctx) {
   if (!ctx.chunk) return 0;
   return store.getAliyahScore(ctx.slug, ctx.cycle, ctx.triYear, ctx.chunk.n);
@@ -341,6 +395,8 @@ export function taskTitle(task) {
 export function taskWhy(task) {
   if (!task) return '';
   if (task.reason === 'advance') return 'Something new';
+  if (task.reason === 'start') return 'From the beginning';
+  if (task.reason === 'chosen') return 'You asked for this one';
   if (task.reason === 'combine') {
     return task.kind === 'whole' ? 'Everything you have learned, in one go' : 'Practise the joins';
   }

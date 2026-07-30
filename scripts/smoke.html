@@ -513,6 +513,41 @@ try {
   log(first && first.reason === 'advance' && first.level === 1 && first.verse === 1,
     'the first thing offered is the first word of the first pasuk');
 
+  // A pasuk the reader has left behind, and the way back to it. The schedule steps
+  // over pesukim that have cleared the round, which from the reader's side looks
+  // like the app losing one unless they can see it ticked and ask for it anyway.
+  const AHEAD = '\u2202ahead';
+  const actx = schedule.makeContext({
+    slug: AHEAD, verses: [1, 2, 3], cycle: 'annual', triYear: 1,
+    chunk: { n: 'H', kind: 'haftarah', start: 1, end: 3 },
+  });
+  store.recordVerseLevel(AHEAD, 1, 5);
+  log(schedule.verseProgress(actx, 1).done === 2
+    && schedule.verseProgress(actx, 2).done === 0,
+    'a pasuk reports the rounds it has cleared, not the part\u2019s average');
+  log(schedule.nextTask(actx, { session: 0 }).verse === 2,
+    'the schedule steps over a pasuk that is through the round');
+  const back = schedule.taskForVerse(actx, 1);
+  log(back.verse === 1 && back.level === 5 && back.round === 3
+    && !!schedule.taskWhy(back) && !!schedule.taskTitle(back),
+    'and asking for that pasuk by name resumes it at its own stage, round 3');
+  log(schedule.taskForVerse(actx, 2).level === 1,
+    'while an untouched pasuk starts at the first stage');
+
+  // Opening a part. Always the first pasuk, whatever the schedule would have chosen,
+  // and never above the round the part is working: pasuk 1 here is at stage 5, the
+  // part is still in round 1, and round 1 ends at stage 2.
+  const open = schedule.openingTask(actx);
+  log(open && open.verse === 1 && open.reason === 'start',
+    'opening a part starts on its first pasuk, done or not');
+  log(open.level === 2 && open.round === schedule.currentRound(actx).id,
+    'at this round\u2019s work, not the pasuk\u2019s own stage when that runs ahead');
+  log(!!schedule.taskWhy(open), 'and it says why it is where it is');
+  log(schedule.openingTask(schedule.makeContext({
+    slug: AHEAD, verses: [], cycle: 'annual', triYear: 1,
+    chunk: { n: 'H', kind: 'haftarah', start: 1, end: 0 },
+  })) === null, 'a part with nothing in it opens on nothing');
+
   const seen = { advance: 0, repair: 0, combine: 0 };
   const roundsAt = [];
   let task = null, guard = 0;
@@ -540,6 +575,8 @@ try {
   log(schedule.ROUNDS.every((r) => schedule.roundProgress(ctx, r).pct === 100),
     'every round reads 100%, including the ninth stage that has nothing above it to unlock');
   log(schedule.nextTask(ctx, { session: 0 }) === null, 'and nothing more is offered');
+  log(schedule.finished(ctx) && schedule.openingTask(ctx) === null,
+    'a finished part opens on the finished card, not back at the top');
 
   // Every task must describe itself: the mission card has no fallback text, so a
   // task with no title would be a blank screen.

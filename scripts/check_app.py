@@ -1078,6 +1078,55 @@ ALIYOT_STEPS = [
     # The case that bites hardest: no recording, so the text is assembled from
     # data/tanakh/ out of the ref the plan carries. If that ref is the parashah's,
     # a reader with one aliyah is quietly given all seven.
+    # Choosing an aliyah is asking to sing that aliyah, so it opens at the top of
+    # it — even when the pesukim there are done, and even when the schedule would
+    # rather move on. Progress is written into the store rather than sung, because
+    # the fake microphone scores nothing.
+    ("a part opens on its first pasuk however much of it is already done",
+     "(async()=>{const st=await import('/js/store.js'), pl=await import('/js/plan.js');"
+     " const g=await import('/js/guided.js');"
+     " st.recordVerseLevel('eikev', 11, 5); st.recordVerseLevel('eikev', 12, 3);"
+     " await g.start(pl.get());"
+     " await __t.settle(()=>!!__t.q('.g-where') && /pasuk/.test(__t.text(__t.q('.g-where'))),"
+     "   null, null, 20000);"
+     " const where=__t.text(__t.q('.g-where')), why=__t.text(__t.q('.g-why-tag'));"
+     " const round=__t.text(__t.q('.g-top-round'));"
+     " return /Deuteronomy 7:22 \u00b7 pasuk 1 of 5/.test(where) && /From the beginning/.test(why)"
+     "   && /Round 1/.test(round)"
+     "   ? `OK ${where} \u00b7 ${why} \u00b7 ${round}`"
+     "   : `where=${where} why=${why} round=${round}`;})()"),
+    # And when it does move on, it says so: being stepped over reads as the app
+    # losing the reader's place unless it explains itself and offers the way back.
+    ("and moving past the finished ones says which they were",
+     "(async()=>{const g=await import('/js/guided.js');"
+     " g.notifyScore({kind:'verse', passed:true, score:95, threshold:80,"
+     "   unitCount:1, unitIndex:0});"
+     " await __t.settle(()=>!!__t.q('#gNext'), null, null, 10000);"
+     " __t.tap('#gNext');"
+     " await __t.settle(()=>/pasuk 3 of 5/.test(__t.text(__t.q('.g-where'))), null, null, 20000);"
+     " const where=__t.text(__t.q('.g-where')), note=__t.text(__t.q('.g-pickup'));"
+     " const shown=!!__t.q('.g-pickup') && getComputedStyle(__t.q('.g-pickup')).display!=='none';"
+     " return /Pesukim 1\u20132 are already through/.test(note) && shown"
+     "   ? `OK ${where} \u2014 ${note.slice(0, 60)}\u2026`"
+     "   : `where=${where} note=${note.slice(0,90)} shown=${shown}`;})()"),
+    ("the menu lists every pasuk with the rounds it has cleared",
+     "(()=>{__t.tap('.g-menu-btn');"
+     " const chips=__t.all('.g-pasuk').map(b=>({n:__t.text(b.querySelector('.g-pasuk-ref')),"
+     "   ticks:b.querySelectorAll('.g-vseg.on').length, here:b.classList.contains('on')}));"
+     " const ticks=chips.map(c=>c.ticks).join(',');"
+     " return chips.length===5 && ticks==='2,1,0,0,0' && chips[2].here"
+     "   ? `OK ${chips.map(c=>c.n+':'+c.ticks).join(' ')} \u00b7 on pasuk ${chips.findIndex(c=>c.here)+1}`"
+     "   : `${chips.length} chips, ticks=${ticks}, here=${chips.findIndex(c=>c.here)+1}`;})()"),
+    ("and tapping the first one goes back to it, at the stage it had reached",
+     "(()=>{const first=__t.all('.g-pasuk')[0]; first.click();"
+     " return __t.settle(()=>/pasuk 1 of 5/.test(__t.text(__t.q('.g-where'))), null, null, 15000)"
+     "  .then(()=>{const where=__t.text(__t.q('.g-where')), why=__t.text(__t.q('.g-why-tag'));"
+     "    const round=__t.text(__t.q('.g-top-round'));"
+     "    const open=document.body.classList.contains('g-menu-open');"
+     "    return /Deuteronomy 7:22/.test(where) && /asked for this one/.test(why)"
+     "      && /Round 3/.test(round) && !open"
+     "      ? `OK ${where} \u00b7 ${why} \u00b7 ${round}`"
+     "      : `where=${where} why=${why} round=${round} menu-open=${open}`;});})()"),
     ("a parashah the app has no recording of is still divided into its aliyot",
      "(async()=>{const cal=await import('/js/calendar.js'), pl=await import('/js/plan.js');"
      " const g=await import('/js/guided.js');"
