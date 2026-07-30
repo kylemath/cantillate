@@ -2668,6 +2668,24 @@ function setupOrientation() {
 // its words in the pesukim (click again, or "Clear", to reset). Which parts of
 // the text carry colour is chosen by the "Colour" control (full / trope / none).
 // ---------------------------------------------------------------------------
+
+// The panel is long — every accent in the corpus, each with its own canvas
+// diagram — and most readers never slide it open. Built at startup it put
+// thirty-odd canvases on the boot path and then left them in the document for
+// the rest of the session, sized 0x0 behind a closed drawer. It is built the
+// first time it is opened instead; until then renderGuide() keeps the style chip
+// honest and leaves the body alone.
+let guideBuilt = false;
+
+function buildGuideOnce() {
+  if (guideBuilt) return;
+  guideBuilt = true;
+  renderGuide();
+  // A family or trope spotlighted before the panel existed has to be shown as
+  // active on the cards that were just made.
+  applyHighlight();
+}
+
 function setupGuide() {
   renderGuide();
   const tg = $('tgGuide');
@@ -2684,6 +2702,7 @@ function setupGuide() {
 
 function toggleGuide(force) {
   state.guideOpen = force != null ? force : !state.guideOpen;
+  if (state.guideOpen) buildGuideOnce();
   document.body.classList.toggle('guide-open', state.guideOpen);
   const tg = $('tgGuide');
   if (tg) tg.classList.toggle('on', state.guideOpen);
@@ -2770,6 +2789,11 @@ function renderGuide() {
     chip.title = st.note;
     chip.hidden = false;
   }
+  // Before the panel has ever been opened there is nothing to redraw: it will be
+  // built from whatever style is current the first time it is shown. The chip
+  // above is not part of that bargain — it sits in the settings sheet's reach and
+  // names the melody the reading is taught in whether or not the guide is open.
+  if (!guideBuilt) return;
   let html = '';
   FAMILIES.forEach((f) => {
     const glyphs = f.members.map((m) => `<span class="mk">${markGlyph(m)}</span>`).join('');
