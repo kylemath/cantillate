@@ -24,7 +24,14 @@ export class ContourView {
     this.realTrail = [];
     this.playhead = null;
     this.yMin = -7; this.yMax = 7;
-    this.dpr = window.devicePixelRatio || 1;
+    // A phone reports a device pixel ratio of 2.6 or 3, and this canvas is nearly
+    // half the screen: at native scale the visible surface and the two offscreen
+    // layers that mirror it are several megapixels each, all of it filled again
+    // every time the mic loop repaints. Beyond 2x the extra pixels buy nothing a
+    // reader can see in what is a line drawing — flat bars, a thin trace and a
+    // playhead — so the backing store stops there and the browser scales the last
+    // fraction.
+    this.dpr = Math.min(window.devicePixelRatio || 1, 2);
     // Layer bookkeeping (see _ensureLayers): `_staticDirty` forces the backdrop
     // to be re-rendered, `_userDirty` forces the user trail to be re-stroked
     // from scratch, and `_userDrawn` is how much of `userTrail` the trail layer
