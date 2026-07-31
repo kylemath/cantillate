@@ -211,10 +211,19 @@ function schedulePush() {
   pushTimer = setTimeout(pushNow, 1500);
 }
 
+// Firestore rejects `undefined` anywhere in a document. The in-memory progress
+// object can carry keys like `passages: undefined` after a merge (JSON.stringify
+// drops those for localStorage, but getAll() returns the live object). Round-
+// tripping through JSON matches what we already persist locally and is safe for
+// the progress shape (plain data, no Dates / functions).
+function forFirestore(value) {
+  return JSON.parse(JSON.stringify(value ?? null));
+}
+
 async function pushNow() {
   if (!currentUser || !db || !fb) return;
   clearTimeout(pushTimer);
-  const data = store.getAll();
+  const data = forFirestore(store.getAll());
   const summary = computeSummary(data);
   const id = publicIdentity();
   try {
@@ -223,11 +232,13 @@ async function pushNow() {
       updatedAt: fb.serverTimestamp(),
     });
     await fb.setDoc(fb.doc(db, 'leaderboard', currentUser.uid), {
-      ...(summaryExtras || {}),
-      name: id.name,
-      photo: id.photo,
-      anon: anonFlag(),
-      ...summary,
+      ...forFirestore({
+        ...(summaryExtras || {}),
+        name: id.name,
+        photo: id.photo,
+        anon: anonFlag(),
+        ...summary,
+      }),
       updatedAt: fb.serverTimestamp(),
     });
   } catch (e) {

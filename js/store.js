@@ -55,10 +55,14 @@ const saveListeners = [];
 export function onSave(cb) { if (typeof cb === 'function') saveListeners.push(cb); }
 
 function save(d) {
-  cached = d;
+  // Re-parse after stringify so the in-memory cache matches localStorage:
+  // JSON drops keys whose value is `undefined`, but assigning `cached = d`
+  // would keep those keys around — and a later cloud push of getAll() would
+  // hand Firestore illegal undefined field values.
   cachedRaw = JSON.stringify(d);
+  cached = JSON.parse(cachedRaw);
   localStorage.setItem(KEY, cachedRaw);
-  for (const cb of saveListeners) { try { cb(d); } catch (e) { /* ignore listener errors */ } }
+  for (const cb of saveListeners) { try { cb(cached); } catch (e) { /* ignore listener errors */ } }
 }
 
 // The entire progress object (verses/words/phrases/modes/profiles/aliyot/levels).
@@ -113,15 +117,15 @@ function mergeProgress(a, b) {
   out.time = mergeTime(a.time, b.time);
   // Custom aliyah boundaries: prefer the most recently edited per key.
   out.aliyotCustom = mergeCustom(a.aliyotCustom, b.aliyotCustom);
-  // Public identity (chosen anon name/avatar): keep the most recently edited.
-  out.profile = mergeNewer(a.profile, b.profile);
-  // Named passages: the newer list wins whole, so forgetting one on this device
-  // isn't undone by an older list from another one (see setSavedPassages).
-  out.passages = mergeNewer(a.passages, b.passages);
-  // What the reader is currently learning (see getPlan): a deliberate choice, so
-  // the most recent one wins rather than being field-merged into a chimera of two
-  // devices' plans.
-  out.plan = mergeNewer(a.plan, b.plan);
+  // Public identity / named passages / learning plan: keep the most recently
+  // edited. Only assign when present — leaving `undefined` on the object breaks
+  // Firestore pushes (and confuses the in-memory cache vs localStorage).
+  const profile = mergeNewer(a.profile, b.profile);
+  if (profile) out.profile = profile;
+  const passages = mergeNewer(a.passages, b.passages);
+  if (passages) out.passages = passages;
+  const plan = mergeNewer(a.plan, b.plan);
+  if (plan) out.plan = plan;
   // Preserve any unknown buckets a future version might add (prefer local).
   for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) {
     if (!(k in out)) out[k] = a[k] !== undefined ? a[k] : b[k];
@@ -175,7 +179,7 @@ function mergeCustom(a = {}, b = {}) {
 // Keep whichever object carries the newer `updatedAt` (used for single-value
 // records like the public identity profile that shouldn't be field-merged).
 function mergeNewer(a, b) {
-  if (!a) return b || undefined;
+  if (!a) return b || null;
   if (!b) return a;
   return (b.updatedAt || 0) >= (a.updatedAt || 0) ? b : a;
 }
