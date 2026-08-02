@@ -15,7 +15,7 @@ Readings are data-driven — see [Adding a reading / parashah](#adding-a-reading
 It has two faces over one engine: a **workshop** for someone who wants every
 control, and a **[guided mode](#guided-mode-learning-one-reading-for-one-date)**
 for someone preparing one reading for one date — enter the date of the simcha and
-it names the parashah, then runs the whole ladder as four rounds of practice with
+it names the parashah, then runs the whole ladder as five rounds of practice with
 two buttons on screen.
 
 ## Quick start
@@ -31,7 +31,7 @@ larger practice view. (Mic + Web Audio require `http://`, so opening the file
 directly won't work; pass a port to use another, e.g. `./serve.sh 8001`.)
 
 A first-time visitor is met by **[guided mode](#guided-mode-learning-one-reading-for-one-date)**,
-which asks what they are learning for and then runs it as four rounds of
+which asks what they are learning for and then runs it as five rounds of
 practice. To go straight to the full workshop instead, open
 `index.html?guided=0`.
 
@@ -62,29 +62,43 @@ spring is never displaced by this week. In the workshop it shows as a ★ chip i
 the header (and stars the readings it needs in the Reading menu); tapping it
 returns to guided mode.
 
-**The four rounds.** The nine stages of the ladder are grouped into four rounds,
+**The five rounds.** The nine stages of the ladder are grouped into four rounds,
 because "sing the words" and "read it from the scroll" are things a reader can be
-asked to do and "stage 6 of 9" is not:
+asked to do and "stage 6 of 9" is not — and a fifth round carries the work that is
+no stage of any pasuk:
 
 | Round | Stages | What it is |
 | --- | --- | --- |
 | **1 · Words** | 1–2 | Hear each word, then sing it back |
 | **2 · Phrases** | 3–4 | Join the words into the phrases the accents mark |
 | **3 · Pesukim** | 5–7 | The whole pasuk, then with the aids taken away |
-| **4 · The scroll** | 8–9 | Scroll letters, then the whole part end to end |
+| **4 · The scroll** | 8–9 | Scroll letters, a pasuk at a time |
+| **5 · Together** | — | Runs of 2, 3 and 4 pesukim, then the part end to end |
+
+Round 5 is counted in runs of pesukim rather than in pesukim, because that is what
+it is made of: every run of two, three and four consecutive pesukim in the part,
+plus the part chanted through in one go. It used to be folded into round 4, which
+meant a reader could be shown four full bars — the whole plan complete — with most
+of the joins in the reading still unrehearsed.
 
 The surface narrows to match: a top bar naming the part and the round (with the
-four rounds as four filling pips), a mission card saying what to do, *why this
+five rounds as five filling pips), a mission card saying what to do, *why this
 piece*, and where in it you are, and **one row of large buttons** — listen, sing,
 stop. The workshop's own controls are hidden rather than removed, and reappear as
 the rounds go up: the accuracy bars in round 2, the live pitch meter in round 3,
-the spectrograms in round 4. Round 1 is a word and two buttons.
+the spectrograms in round 4, and nothing taken away again in round 5. Round 1 is a
+word and two buttons.
 
 **What comes next is chosen, not offered.** `js/schedule.js` rotates between
 three moves — **advance** (the next thing not yet done), **repair** (a word or a
 pasuk whose stored best is weak, worst first, or merely-passed work to polish),
 and **combine** (runs of 2–4 consecutive pesukim, and finally the whole part in
-one go). The rotation is why a reader improves rather than merely accumulating:
+one go). Combine takes every run at every position, not the part cut into fixed
+runs: the join between two pesukim is a thing to be practised, and cutting the
+reading into 1–2, 3–4, 5–6 would leave the join at 2–3 inside no run at all and
+give the opening of the part a run at every length. Equally short and equally
+unpractised runs are shuffled, so the top of the aliyah is not what comes up every
+time. The rotation is why a reader improves rather than merely accumulating:
 marching forward only leaves verse 24 untouched and week-one's shaky words still
 shaky, and drilling the weakest thing forever means never reaching a new pasuk.
 Every task says why it was chosen ("Back to this — it scored 61"), and the result
@@ -104,13 +118,13 @@ place. So the mission line says which pasuk of the part you are on ("Deuteronomy
 7:24 · pasuk 3 of 5 · word 1 of 13"), including on a short landscape phone where the
 rest of the small print is cut; the first task that does move on says which pesukim
 it moved past and why ("Pesukim 1–2 are already through this round"); and the menu
-lists **every pasuk of the part** with four ticks for the four rounds, each one
-tappable to sing it again. A pasuk asked for by name resumes at *its own* stage
+lists **every pasuk of the part** with four ticks — one per round a pasuk can finish
+by itself, which is every round but the chaining one — each tappable to sing it again. A pasuk asked for by name resumes at *its own* stage
 rather than the part's, so going back to the opening pasuk of a reading you have
 half-learned picks up where that pasuk stopped, and the schedule hands out its own
 next choice again afterwards.
 
-**The menu** (☰) shows each part's four rounds as four bars plus its whole-part
+**The menu** (☰) shows each part's five rounds as five bars plus its whole-part
 score, the two settings worth having at this size (text size, pitch analysis),
 and the ways out: change the date/cycle/parts, learn a different parashah, or
 open the full workshop. Changing the plan never deletes practice — scores are
@@ -297,6 +311,12 @@ pesukim chanted straight through. A chain reuses the aliyah reader (bare STA"M
 scroll, moving yad, guided read / solo / duet) over a shorter span, and keeps its
 own best score. Chains are personal practice, so they aren't gated behind
 readiness and don't post to the leaderboards.
+
+The chips in the verse list are the aliyah cut into runs end to end, which is what
+a menu should be: predictable, and every pasuk in exactly one chip. Guided mode's
+fifth round works the same chains from the other direction — every run at every
+position, so no join is left out — and both read and write the same per-range
+scores, so a chain chanted in one place is chanted in the other.
 
 ## Trope drills & cantillated prayers
 
@@ -517,9 +537,9 @@ shape that differs from its Torah one. It also checks the three modules behind
 reading, that a plan built from one has the right parts and refs — including that
 each of the seven aliyot covers its own pesukim rather than the whole parashah,
 on either cycle — and that the scheduler **walks a part
-to 100% and then stops** — all four rounds in order, every stage of every pasuk
-handed out, the pesukim chained, and weak words coming back before anything is
-polished. That last one matters most: a schedule that quietly never finishes, or
+to 100% and then stops** — all five rounds in order, every stage of every pasuk
+handed out, every run of pesukim chained (and counted where the chaining round can
+see it), and weak words coming back before anything is polished. That last one matters most: a schedule that quietly never finishes, or
 never revisits weak work, is invisible in the UI until months of practice have
 gone into it. `scripts/check_app.py` walks the actual app:
 the reading menu, the aliyah accordion, verse chains, all nine stages, the Divide
@@ -901,7 +921,7 @@ js/calendar.js        date → parashah, triennial year + the week's passages
 js/plan.js            the "currently learning" plan: whose, when, which parts
 js/schedule.js        what to practise next: advance / repair / combine
 js/onboarding.js      the first-run wizard, one question per screen
-js/guided.js          guided mode: four rounds over the same practice engine
+js/guided.js          guided mode: five rounds over the same practice engine
 js/store.js           localStorage scores + unlocks (+ cloud merge/sync hooks)
 js/auth.js            optional Google sign-in + Firestore progress sync + leaderboard
 js/firebase-config.js Firebase web config (placeholders = offline-only; see above)

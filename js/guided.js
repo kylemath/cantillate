@@ -8,7 +8,7 @@
 // expert mode uses; guided mode drives them (which reading, which pasuk, which
 // stage, which unit) and puts a much smaller surface on top:
 //
-//   * a top bar naming the part and the round, with the four rounds as pips
+//   * a top bar naming the part and the round, with the five rounds as pips
 //   * a mission card: what to do, why this, and where you are in it
 //   * ONE row of large buttons — listen, sing, stop — and nothing else
 //   * a result card with the score, what it unlocked, and the next thing
@@ -21,7 +21,8 @@
 // as the rounds go up (body[data-guided-round] in css/guided.css). Round 1 is a
 // word, a coach line and two buttons. By round 4 the scroll, the live meter and
 // the analysis panels are all in play — the same controls the workshop has, but
-// arrived at one at a time instead of all at once.
+// arrived at one at a time instead of all at once. Round 5 takes nothing away
+// again: chaining pesukim together is the last and hardest thing asked for.
 
 import * as plan from './plan.js';
 import * as schedule from './schedule.js';
@@ -395,7 +396,7 @@ function renderTop(round) {
       <p class="g-top-part">${escapeHtml(plan.partLabel(part))}</p>
       <p class="g-top-round">Round ${round.id} \u00b7 ${escapeHtml(round.label)}</p>
     </div>
-    <div class="g-pips" aria-label="Progress through the four rounds">${pips}</div>`;
+    <div class="g-pips" aria-label="Progress through the five rounds">${pips}</div>`;
   document.getElementById('gMenu').addEventListener('click', openMenu);
 }
 
@@ -577,7 +578,7 @@ function finishedHtml(round) {
 function wireFinished() {
   const w = document.getElementById('gWhole');
   if (w) w.addEventListener('click', () => {
-    task = { kind: 'whole', reason: 'combine', round: 4 };
+    task = { kind: 'whole', reason: 'combine', round: 5 };
     phase = 'brief';
     result = null;
     applyTask(task);
@@ -799,8 +800,8 @@ function signinFailedNote() {
     : '';
 }
 
-// One row per part: the four rounds as a stacked bar, the whole-part score, and a
-// tap target to switch to it. This is the "progress on each task, visually".
+// One row per part: the rounds as a bar each, the whole-part score, and a tap
+// target to switch to it. This is the "progress on each task, visually".
 function partRowHtml(p) {
   const id = plan.partId(p);
   const mine = id === plan.partId(part);
@@ -833,7 +834,7 @@ function partRowHtml(p) {
 }
 
 // Every pasuk of the part in hand, with how far each one has got and a way straight
-// into it. Two things a reader needs that the four round bars can't give them: which
+// into it. Two things a reader needs that the round bars can't give them: which
 // pesukim are actually done (the bars are averages, and a reader who has been moved
 // past one wants to see it ticked rather than take it on trust), and the way back to
 // one — the schedule is a good default, not a rail.
@@ -859,9 +860,10 @@ function pesukimHtml() {
   return `
     <h3 class="g-menu-h">Every pasuk of ${escapeHtml(label)}</h3>
     <div class="g-pesukim">${chips}</div>
-    <p class="g-menu-note">Four ticks is a pasuk through all four rounds. Tap any one
-      to sing it now \u2014 nothing is lost, and the next thing you would have been handed
-      comes back after it.</p>`;
+    <p class="g-menu-note">Four ticks is a pasuk you can chant on its own from the
+      scroll. Chanting them in runs is the last round, and belongs to the reading
+      rather than to any one pasuk. Tap any one to sing it now \u2014 nothing is lost, and
+      the next thing you would have been handed comes back after it.</p>`;
 }
 
 // Go back (or forward) to a pasuk by name, at whatever stage that pasuk itself has

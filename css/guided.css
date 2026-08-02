@@ -345,12 +345,17 @@ body.guided #practice .livemeter { display: none; }
 
 body.guided[data-guided-round="2"] #practice .accuracy-panel { display: block; }
 body.guided[data-guided-round="3"] #practice .accuracy-panel,
-body.guided[data-guided-round="4"] #practice .accuracy-panel { display: block; }
+body.guided[data-guided-round="4"] #practice .accuracy-panel,
+body.guided[data-guided-round="5"] #practice .accuracy-panel { display: block; }
 body.guided[data-guided-round="3"] #practice .livemeter,
-body.guided[data-guided-round="4"] #practice .livemeter { display: flex; }
+body.guided[data-guided-round="4"] #practice .livemeter,
+body.guided[data-guided-round="5"] #practice .livemeter { display: flex; }
 /* Never both meters: the second one is a scoring-model comparison for developers. */
 body.guided #practice #liveMeterGh { display: none !important; }
-body.guided[data-guided-round="4"] #practice .tl-extras { display: block; }
+/* Nothing is taken away again in round 5: chaining pesukim is the hardest thing the
+   app asks for, and the reader arrives at it with the whole workshop in play. */
+body.guided[data-guided-round="4"] #practice .tl-extras,
+body.guided[data-guided-round="5"] #practice .tl-extras { display: block; }
 
 /* The STA"M scroll pane is the reading surface for a chain or a whole-part chant,
    and is out of the way otherwise. */
@@ -398,10 +403,11 @@ body.guided .g-top {
 }
 .g-top-round { margin: 0; font-size: 11px; color: var(--muted); line-height: 1.15; }
 
-/* The four rounds, as four filling pips. The whole plan at a glance, in 90px. */
-.g-pips { display: flex; gap: 4px; flex: 0 0 auto; }
+/* The rounds, as filling pips. The whole plan at a glance, in about 100px — the
+   fifth pip is why these are 20px and not 22px. */
+.g-pips { display: flex; gap: 3px; flex: 0 0 auto; }
 .g-pip {
-  position: relative; width: 22px; height: 22px; border-radius: 7px;
+  position: relative; width: 20px; height: 20px; border-radius: 7px;
   background: var(--panel-2); border: 1px solid var(--line); overflow: hidden;
 }
 .g-pip-fill {
@@ -548,7 +554,7 @@ body.guided.g-menu-open .g-menu { transform: none; }
 }
 .g-menu-note { margin: 14px 0 0; font-size: 11.5px; color: var(--muted); }
 
-/* One row per part: the four rounds as four bars, the whole-part score, and a
+/* One row per part: the rounds as a bar each, the whole-part score, and a
    pencil that swaps in a different passage (a shul's own haftarah, say). The row
    is a flex container rather than one big button, because a button inside a button
    is not a thing — and both halves need to be tappable. */
@@ -575,7 +581,7 @@ body.guided.g-menu-open .g-menu { transform: none; }
 .g-part-top { display: flex; align-items: baseline; gap: 8px; }
 .g-part-name { flex: 1 1 auto; font-size: 15px; font-weight: 700; }
 .g-part-pct { font-size: 12px; color: var(--muted); }
-/* Named apart from the action bar (.g-bar) on purpose: these are four 6px round
+/* Named apart from the action bar (.g-bar) on purpose: these are the 6px round
    progress bars, and inheriting the docked bar's height and background by accident
    is the kind of collision that only shows up on one viewport. */
 .g-bars { display: flex; gap: 4px; }
@@ -589,8 +595,10 @@ body.guided.g-menu-open .g-menu { transform: none; }
 .g-part-whole { color: var(--good); }
 
 /* Every pasuk of the part as its own chip: the position in the part, the pasuk, and
-   four ticks for the four rounds. Sized so a five-pasuk aliyah is one glance and a
-   fifty-pasuk haftarah is a wall of ticks that still scrolls and still taps. */
+   four ticks — one per round a single pasuk goes through, which is every round but
+   the chaining one, since that one is about runs of pesukim and not any one of them.
+   Sized so a five-pasuk aliyah is one glance and a fifty-pasuk haftarah is a wall of
+   ticks that still scrolls and still taps. */
 .g-pesukim {
   display: grid; gap: 6px;
   grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));

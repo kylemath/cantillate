@@ -858,10 +858,10 @@ GUIDED_STEPS = [
      "   .filter(s=>{const e=__t.q(s); return !e || getComputedStyle(e).display==='none';});"
      " return hidden.length===4 ? 'OK the settings sheet, stage bar, footer and transport are hidden'"
      "   : `still showing: ${hidden.length}/4 hidden`;})()"),
-    ("the top bar names the part and the round, with the four rounds as pips",
+    ("the top bar names the part and the round, with the five rounds as pips",
      "(()=>{const part=__t.text(__t.q('.g-top-part')), round=__t.text(__t.q('.g-top-round'));"
      " const pips=__t.all('.g-pip').length;"
-     " return part==='Maftir' && /Round 1/.test(round) && pips===4"
+     " return part==='Maftir' && /Round 1/.test(round) && pips===5"
      "   ? `OK ${part} \u00b7 ${round} \u00b7 ${pips} pips` : `${part} / ${round} / ${pips} pips`;})()"),
     ("the mission says what to do, why this piece, and where in it you are",
      "(()=>{const task=__t.text(__t.q('.g-task')), why=__t.text(__t.q('.g-why-tag'));"
@@ -892,8 +892,8 @@ GUIDED_STEPS = [
      "(()=>{__t.tap('.g-menu-btn');"
      " const head=__t.text(__t.q('.g-menu-head'));"
      " const parts=__t.all('.g-part').length, bars=__t.all('.g-part .g-rbar').length;"
-     " return /Noa/.test(head) && /Eikev/.test(head) && parts===2 && bars===parts*4"
-     "   ? `OK ${parts} parts, four rounds each: ${head.slice(0,60)}` : `${parts} parts / ${bars} bars / ${head.slice(0,60)}`;})()"),
+     " return /Noa/.test(head) && /Eikev/.test(head) && parts===2 && bars===parts*5"
+     "   ? `OK ${parts} parts, five rounds each: ${head.slice(0,60)}` : `${parts} parts / ${bars} bars / ${head.slice(0,60)}`;})()"),
     ("and lets a reader switch to the other part they have to learn",
      "(()=>{const rows=__t.all('.g-part');"
      " const other=rows.find(r=>!r.classList.contains('on')); if(!other) return 'no other part offered';"

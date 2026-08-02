@@ -21,10 +21,17 @@
 import * as store from './store.js';
 import { LEVELS, FULL_VERSE_LEVEL, VERSE_MODES } from './levels.js';
 
-// The nine stages, grouped into four rounds. A round is a coherent thing to be
-// told to do ("sing the words", "read it from the scroll"); nine numbered stages
-// are not, and naming them all up front is exactly the complication guided mode
-// exists to remove.
+// The nine stages, grouped into rounds. A round is a coherent thing to be told to
+// do ("sing the words", "read it from the scroll"); nine numbered stages are not,
+// and naming them all up front is exactly the complication guided mode exists to
+// remove.
+//
+// The last round carries no stages, because the work it names is not a stage of a
+// pasuk: it is the pesukim chanted in runs, and then the part end to end. That was
+// once folded into the round above it, which meant a reader could be shown four
+// full bars — the whole plan complete — with most of the joins in the reading still
+// unrehearsed. It is a round of its own so that the work is counted where it is
+// done.
 export const ROUNDS = [
   {
     id: 1, key: 'words', label: 'Words', icon: '\u{1f524}',
@@ -47,15 +54,26 @@ export const ROUNDS = [
   {
     id: 4, key: 'scroll', label: 'The scroll', icon: '\u{1f4dc}',
     levels: [8, 9],
-    goal: 'Read it from the scroll, end to end',
-    blurb: 'Bare scroll letters, no vowels, no accents \u2014 and then the whole thing in one go.',
+    goal: 'Read each pasuk from the scroll',
+    blurb: 'Bare scroll letters, no vowels, no accents \u2014 the real thing, a pasuk at a time.',
+  },
+  {
+    id: 5, key: 'together', label: 'Together', icon: '\u{1f517}',
+    levels: [],
+    goal: 'Chant the pesukim in runs, then the whole thing',
+    blurb: 'Two pesukim without stopping, then three, then four \u2014 and then the part end to end.',
   },
 ];
+
+// The rounds one pasuk goes through. A single pasuk cannot be chanted "in a run",
+// so the per-pasuk views — the ticks on a pasuk, the round a stage belongs to —
+// count the four that name stages rather than all five.
+export const VERSE_ROUNDS = ROUNDS.filter((r) => r.levels.length);
 
 export function roundById(id) { return ROUNDS.find((r) => r.id === id) || ROUNDS[0]; }
 
 export function roundOfLevel(level) {
-  return ROUNDS.find((r) => r.levels.includes(level)) || ROUNDS[ROUNDS.length - 1];
+  return ROUNDS.find((r) => r.levels.includes(level)) || VERSE_ROUNDS[VERSE_ROUNDS.length - 1];
 }
 
 // Has this pasuk finished with this round?
@@ -86,6 +104,31 @@ const REPAIR_POLISH = 88;
 const CHAIN_MIN = 2;
 const CHAIN_MAX = 4;
 const CHAIN_GOOD = 80;
+
+// Every run of consecutive pesukim the chaining round is asking for: each length
+// from CHAIN_MIN to CHAIN_MAX, at every position it will fit. Runs overlap, which
+// is the point — the join between two pesukim is a thing to be practised, and
+// cutting the reading into fixed runs instead would leave most of the joins inside
+// no run at all. `list` is verse numbers in order; a gap in them ends a run,
+// so a caller can pass the pesukim that are ready rather than all of them.
+function chainWindows(list) {
+  const out = [];
+  let block = [];
+  const flush = () => {
+    for (let size = CHAIN_MIN; size <= CHAIN_MAX; size++) {
+      for (let i = 0; i + size <= block.length; i++) {
+        out.push({ start: block[i], end: block[i + size - 1], size });
+      }
+    }
+    block = [];
+  };
+  for (const n of list) {
+    if (!block.length || n === block[block.length - 1] + 1) block.push(n);
+    else { flush(); block = [n]; }
+  }
+  flush();
+  return out;
+}
 
 // The rotation. Read left to right, wrapping; the first move with something to
 // offer wins, so early on (nothing yet attempted, nothing to chain) it collapses
@@ -119,37 +162,47 @@ export function levelOf(ctx, verse) {
 }
 
 // How far through the whole part each round is: how many of its pesukim have
-// cleared the round, out of all of them. Round 4 additionally wants the whole
-// part chanted in one go, which is the last box on the whole plan.
+// cleared the round, out of all of them.
 export function roundProgress(ctx, round) {
+  if (!round.levels.length) return chainProgress(ctx, round);
   const total = ctx.verses.length;
   const done = ctx.verses.filter((n) => clearedRound(ctx, n, round)).length;
-  const out = { round, done, total, pct: total ? Math.round((done / total) * 100) : 0 };
-  if (round.id === 4) {
-    out.wholeScore = wholeScore(ctx);
-    out.wholeDone = out.wholeScore >= CHAIN_GOOD;
-    // The final round isn't finished until the part has actually been chanted
-    // through, so its percentage holds a little back for that.
-    if (total) {
-      out.pct = Math.round(((done + (out.wholeDone ? 1 : 0)) / (total + 1)) * 100);
-    }
-  }
-  return out;
+  return { round, done, total, pct: total ? Math.round((done / total) * 100) : 0 };
+}
+
+// The chaining round, counted in the units it is actually made of: every run of
+// pesukim in the part, plus the part chanted through in one go as the last box on
+// the whole plan. Pesukim not yet chantable whole are counted in the total anyway —
+// their runs are work the reader still has coming, and a denominator that grew as
+// they became ready would make the bar go backwards.
+function chainProgress(ctx, round) {
+  const windows = chainWindows(ctx.verses);
+  const score = wholeScore(ctx);
+  const wholeDone = score >= CHAIN_GOOD;
+  const total = windows.length + (ctx.chunk ? 1 : 0);
+  const done = windows.filter((w) => store.getChainScore(ctx.slug, w.start, w.end) >= CHAIN_GOOD)
+    .length + (ctx.chunk && wholeDone ? 1 : 0);
+  return {
+    round, done, total, wholeScore: score, wholeDone,
+    // A part with nothing to chain (one pasuk, no whole-part challenge) has
+    // nothing outstanding either, and must not hold the plan at 80% forever.
+    pct: total ? Math.round((done / total) * 100) : 100,
+  };
 }
 
 // How far ONE pasuk has got, round by round. The part-level bars answer "how much
 // is done"; a reader whose first pasuk was passed over asks the narrower question —
 // what about that one — and has to be able to see the answer and act on it.
 export function verseProgress(ctx, verse) {
-  const cleared = ROUNDS.map((r) => clearedRound(ctx, verse, r));
+  const cleared = VERSE_ROUNDS.map((r) => clearedRound(ctx, verse, r));
   const done = cleared.filter(Boolean).length;
   return {
     verse,
     cleared,
     done,
-    total: ROUNDS.length,
-    pct: Math.round((done / ROUNDS.length) * 100),
-    round: ROUNDS[Math.min(done, ROUNDS.length - 1)],
+    total: VERSE_ROUNDS.length,
+    pct: Math.round((done / VERSE_ROUNDS.length) * 100),
+    round: VERSE_ROUNDS[Math.min(done, VERSE_ROUNDS.length - 1)],
     started: levelOf(ctx, verse) > 1,
   };
 }
@@ -173,15 +226,18 @@ export function taskForVerse(ctx, verse) {
 //
 // Clamped to the current round, so opening a part is never harder than the round the
 // reader is in: a first pasuk that has run ahead of its neighbours comes back at
-// this round's work rather than handing them a Torah column to read cold.
+// this round's work rather than handing them a Torah column to read cold. In the
+// chaining round there is no stage to clamp to and no need for one — every pasuk has
+// been through all nine by then — so the pasuk opens at its own.
 export function openingTask(ctx) {
   const verse = (ctx.verses || [])[0];
   if (verse == null || finished(ctx)) return null;
   const round = currentRound(ctx);
-  const lo = round.levels[0];
-  const hi = round.levels[round.levels.length - 1];
-  const level = Math.min(Math.max(levelOf(ctx, verse), lo), hi);
-  return { kind: 'verse', verse, level, reason: 'start', round: round.id };
+  const own = Math.min(Math.max(levelOf(ctx, verse), 1), LEVELS.length);
+  const level = round.levels.length
+    ? Math.min(Math.max(own, round.levels[0]), round.levels[round.levels.length - 1])
+    : own;
+  return { kind: 'verse', verse, level, reason: 'start', round: roundOfLevel(level).id };
 }
 
 // Whether there is anything left to hand out at all, under any move. Asked before
@@ -206,7 +262,7 @@ export function currentRound(ctx) {
   return ROUNDS[ROUNDS.length - 1];
 }
 
-// Overall completion of the part, evenly across the four rounds so the bar moves
+// Overall completion of the part, evenly across the rounds so the bar moves
 // early (a reader who has sung every word of every pasuk is genuinely a quarter
 // of the way, and should be shown as such).
 export function overallProgress(ctx) {
@@ -221,6 +277,9 @@ export function overallProgress(ctx) {
 // learned front to back. Confined to the current round, which is what keeps the
 // reader from being handed stage 8 on pasuk 1 while pasuk 2 is untouched.
 function advanceCandidates(ctx, round) {
+  // The chaining round names no stages, so it has no next stage to offer: all of
+  // its work is combine's.
+  if (!round.levels.length) return [];
   const out = [];
   for (const n of ctx.verses) {
     if (clearedRound(ctx, n, round)) continue;
@@ -272,33 +331,28 @@ function repairCandidates(ctx, round, threshold) {
 // COMBINE: runs of consecutive pesukim that can each be chanted whole, and
 // finally the whole part. This is the rung a reader most often skips and most
 // often needs — knowing every pasuk cold still leaves the joins unrehearsed.
-function combineCandidates(ctx) {
-  const ready = new Set(ctx.verses.filter((n) => levelOf(ctx, n) >= FULL_VERSE_LEVEL));
+function combineCandidates(ctx, rand = Math.random) {
+  // Only runs whose every pasuk can already be chanted whole: a run is for
+  // practising the joins, and a pasuk that isn't there yet needs the pasuk.
+  const ready = ctx.verses.filter((n) => levelOf(ctx, n) >= FULL_VERSE_LEVEL);
   const runs = [];
-  // Every maximal stretch of consecutive ready pesukim, cut into chains.
-  let block = [];
-  const flush = () => {
-    for (let size = CHAIN_MIN; size <= CHAIN_MAX; size++) {
-      for (let i = 0; i + size <= block.length; i += size) {
-        const start = block[i], end = block[i + size - 1];
-        const score = store.getChainScore(ctx.slug, start, end);
-        if (score >= CHAIN_GOOD) continue;
-        runs.push({ kind: 'chain', start, end, size, score, reason: 'combine' });
-      }
-    }
-    block = [];
-  };
-  for (const n of ctx.verses) {
-    if (ready.has(n) && (!block.length || n === block[block.length - 1] + 1)) block.push(n);
-    else { flush(); if (ready.has(n)) block = [n]; }
+  for (const w of chainWindows(ready)) {
+    const score = store.getChainScore(ctx.slug, w.start, w.end);
+    if (score >= CHAIN_GOOD) continue;
+    runs.push({ kind: 'chain', ...w, score, reason: 'combine' });
   }
-  flush();
   // Shortest first, and unpractised before merely weak: pairs before triples
   // before the whole thing is the order the joins are actually learned in.
+  // Shuffled first so that runs which are equally short and equally unpractised —
+  // which, before any chaining has been done, is all of them — come out in no
+  // particular order rather than front to back. The sort is stable, so this is
+  // what decides between ties, and it is what keeps the reader from being handed
+  // the top of the aliyah every time a chain comes up.
+  shuffle(runs, rand);
   runs.sort((a, b) => (a.size - b.size) || (a.score - b.score));
   // The whole part, once every pasuk in it is ready — the same gate the aliyah
   // challenge uses in expert mode.
-  if (ctx.chunk && ctx.verses.length && ready.size === ctx.verses.length) {
+  if (ctx.chunk && ctx.verses.length && ready.length === ctx.verses.length) {
     const score = wholeScore(ctx);
     if (score < CHAIN_GOOD) {
       runs.push({ kind: 'whole', score, reason: 'combine' });
@@ -308,6 +362,16 @@ function combineCandidates(ctx) {
 }
 
 // --- Picking ----------------------------------------------------------------
+
+// In place, so that a later stable sort keeps this order between candidates it
+// considers equally worth doing.
+function shuffle(list, rand) {
+  for (let i = list.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [list[i], list[j]] = [list[j], list[i]];
+  }
+  return list;
+}
 
 // One of the worst few, rather than always the very worst, so a stubborn word
 // doesn't become the only thing the app ever asks for.
@@ -331,7 +395,7 @@ export function nextTask(ctx, { session = 0, rand = Math.random, avoid = null } 
       const weak = repairCandidates(ctx, round, REPAIR_WEAK);
       return weak.length ? weak : repairCandidates(ctx, round, REPAIR_POLISH);
     },
-    combine: () => combineCandidates(ctx),
+    combine: () => combineCandidates(ctx, rand),
   };
 
   // Walk the pattern from wherever this session is, taking the first move with
