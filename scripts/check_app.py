@@ -173,6 +173,27 @@ STEPS = [
     ("the stage bar lists all nine stages",
      "(()=>{const n=__t.all('#stageBar .stagebtn').length;"
      " return n===9 ? 'OK 9 stages' : `${n} stages`;})()"),
+    ("the transliteration sits under every word, on the column and the coach line alike",
+     "(()=>{const b=__t.q('#tgTranslit'); if(!b) return 'no transliteration toggle';"
+     " if(!b.classList.contains('on')) b.click();"
+     " const col=__t.all('#verses .verse.active .w').length, colTl=__t.all('#verses .verse.active .wtl').length;"
+     " const coach=__t.all('#timelineWords .w').length, coachTl=__t.all('#timelineWords .wtl').length;"
+     " const sample=__t.text(__t.q('#verses .verse.active .wtl'));"
+     " return col===colTl && coach===coachTl && col>0 && /^[a-zA-Z'-]+$/.test(sample)"
+     "   ? `OK ${col} words in the column, ${coach} on the coach line, e.g. \u201c${sample}\u201d`"
+     "   : `column ${colTl}/${col}, coach ${coachTl}/${coach}, sample=${sample}`;})()"),
+    # It is a stronger crutch than the vowels, which the column shows on the
+    # reader's say-so whatever the practice pane is doing. This one the stage
+    # overrules the reader on, or the bare-text stages could be read off the
+    # column beside them.
+    ("and the stages that strip the text take it away too, reader or no reader",
+     "(()=>{const b=__t.q('#tgTranslit'); __t.stage(6);"
+     " const bare=__t.all('.wtl').length, greyed=b.disabled;"
+     " __t.stage(0); const back=__t.all('.wtl').length;"
+     " if(b.classList.contains('on')) b.click();"
+     " return bare===0 && greyed && back>0"
+     "   ? `OK gone and greyed at stage 7, ${back} back at stage 1`"
+     "   : `stage 7 left ${bare} lines (greyed=${greyed}), stage 1 restored ${back}`;})()"),
     ("the transport exposes pause and word-step, disabled while idle",
      "(()=>{const ids=['btnPause','btnStepBack','btnStepFwd'];"
      " const missing=ids.filter(i=>!document.getElementById(i));"
@@ -752,6 +773,10 @@ WIZARD_STEPS = [
      "(()=>{const a=__t.answers();"
      " return a.length===4 && /Bar mitzvah/.test(a[0]) && /Learning to chant/.test(a[3])"
      "   ? `OK ${a.length} answers: ${a.map(s=>s.split(' ')[0]).join(', ')}` : `answers were ${JSON.stringify(a)}`;})()"),
+    ("and three sample shortcuts sit under it for a quick try",
+     "(()=>{const d=__t.all('[data-demo]').map(b=>b.dataset.demo);"
+     " return d.join(',')==='shema,parasha,drills'"
+     "   ? `OK ${d.join(', ')}` : `demos were ${JSON.stringify(d)}`;})()"),
     ("choosing an answer IS moving on \u2014 no second tap on Next",
      "(()=>{__t.tap('[data-occ=\"barmitzvah\"]');"
      " return /Whose bar mitzvah/.test(__t.ask()) ? `OK ${__t.ask()}` : `landed on ${__t.ask()}`;})()"),
@@ -842,6 +867,30 @@ WIZARD_STEPS = [
      "   ? `OK ${t.slice(0, 90)}` : `said ${t.slice(0, 120)}`;})()"),
 ]
 
+# Quick-start demos on the occasion screen: skip the wizard entirely and land in
+# guided mode on a known reading. Checked on their own clean slate so they don't
+# collide with the full wizard walkthrough that follows.
+DEMO_STEPS = [
+    ("the install screen still offers a way past",
+     "(()=>{const r=__t.tap('#obSkipInstall');"
+     " return __t.ask()==='What are you learning for?' ? `OK moved on (${r})` : `stuck on ${__t.ask()}`;})()"),
+    ("Demo Shema skips the rest of the wizard and opens guided mode",
+     "(async()=>{__t.tap('[data-demo=\"shema\"]');"
+     " return __t.settle(()=>document.body.classList.contains('guided') && !!__t.q('.g-task')"
+     "   && __t.q('#parashah') && __t.q('#parashah').value==='shema', null, null, 15000)"
+     "   .then(()=>{"
+     "     const part=__t.text(__t.q('.g-top-part'));"
+     "     return document.body.classList.contains('guided') && __t.q('#parashah').value==='shema'"
+     "       ? `OK guided on Shema (${part})` : `guided=${document.body.classList.contains('guided')}"
+     " reading=${__t.q('#parashah')&&__t.q('#parashah').value} part=${part}`;"
+     "   });})()"),
+    ("the demo plan is saved so a reload stays in guided mode",
+     "(()=>{const p=JSON.parse(localStorage.getItem('cantillate.v1')||'{}').plan;"
+     " return p && p.demo==='shema' && p.custom && p.custom.haftarah"
+     "   && p.custom.haftarah.recordedAs==='shema'"
+     "   ? `OK demo plan, part labeled ${p.custom.haftarah.label}` : `stored ${JSON.stringify(p)}`;})()"),
+]
+
 # Guided mode proper: the narrowed surface the wizard hands over to.
 GUIDED_STEPS = [
     ("finishing the wizard starts the reader on their own reading",
@@ -902,10 +951,24 @@ GUIDED_STEPS = [
      "   .then(()=>{const p=__t.text(__t.q('.g-top-part'));"
      "     return p==='Haftarah' ? `OK now on the ${p}, ${__t.q('#parashah').value}`"
      "       : `still on ${p}`;});})()"),
-    ("the settings offered are the two that matter at this size",
+    ("the settings offered are the three that matter at this size",
      "(()=>{__t.tap('.g-menu-btn'); const rows=__t.all('.g-row').map(r=>__t.text(r));"
-     " return rows.length===2 && /Text size/.test(rows[0]) && /pitch/.test(rows[1])"
+     " return rows.length===3 && /Text size/.test(rows[0]) && /English letters/.test(rows[1])"
+     "   && /pitch/.test(rows[2])"
      "   ? `OK ${rows.join(' / ')}` : `settings were ${JSON.stringify(rows)}`;})()"),
+    # Guided mode hides the workshop's settings sheet, so this is the only door to
+    # the aid for the reader who most needs it — and it has to shut itself at the
+    # stage the aid stops being allowed, rather than offering a dead switch.
+    ("reading in English letters can be switched on here, and says when it comes off",
+     "(()=>{const box=__t.q('#gTranslit'); if(!box) return 'no transliteration row in the menu';"
+     " box.click(); box.dispatchEvent(new Event('change'));"
+     " const on=__t.all('#timelineWords .wtl').length, words=__t.all('#timelineWords .w').length;"
+     " const note=__t.all('.g-menu-note').map(n=>__t.text(n)).find(t=>/English letters/.test(t));"
+     " box.click(); box.dispatchEvent(new Event('change'));"
+     " const off=__t.all('#timelineWords .wtl').length;"
+     " return on===words && words>0 && off===0 && /Pesukim round/.test(note||'')"
+     "   ? `OK ${on}/${words} words, and it says \u201c${(note||'').slice(0, 70)}\u2026\u201d`"
+     "   : `on=${on}/${words} off=${off} note=${(note||'(none)').slice(0, 90)}`;})()"),
     # A reader who said "not now" to the wizard's account screen, or who has since
     # been handed a different phone, must not have to go to the workshop to sign in:
     # guided mode owns the whole screen precisely so they never see its topbar.
@@ -1298,6 +1361,15 @@ def main():
         # Guided mode last: it is the one section that changes what the app opens
         # into (a plan is saved), so running it earlier would put every step above
         # behind a wizard.
+        print("--- quick-start demos ---")
+        # From a clean slate: this section is about skipping the wizard entirely.
+        c.eval("(()=>{localStorage.clear(); return 'ok';})()")
+        if not c.goto(f"{BASE}/index.html?guided=1"):
+            print("FAIL the app never rendered with the wizard open for demos")
+            failures.append("demos")
+        else:
+            run_steps(c, DEMO_STEPS, failures)
+
         print("--- the onboarding wizard ---")
         # From a clean slate: this section is about a reader's FIRST run, and the
         # steps above have unlocked every stage of half the corpus — which would

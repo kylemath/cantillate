@@ -110,6 +110,22 @@ body.onboarding { overflow: hidden; }
 .ob-choice-sub { font-size: 12px; color: var(--muted); }
 .ob-choice-sm { padding: 11px 12px; align-items: center; text-align: center; font-size: 14px; }
 
+/* Sample shortcuts under the occasion question: a quick way into guided mode
+   without answering the wizard. Small, secondary, and not `.ob-choice` so the
+   occasion answers stay a clean set of four. */
+.ob-demo-label {
+  margin: 22px 0 8px; font-size: 12px; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--muted);
+}
+.ob-demos { display: flex; flex-wrap: wrap; gap: 8px; }
+.ob-demo {
+  flex: 1 1 auto; min-width: 0; padding: 10px 12px; font: inherit; font-size: 13px;
+  color: var(--muted); background: transparent;
+  border: 1px dashed var(--line); border-radius: 10px; cursor: pointer;
+}
+.ob-demo:hover { color: var(--text); border-color: rgba(90, 160, 255, 0.5); }
+.ob-demo:disabled { opacity: 0.5; cursor: default; }
+
 .ob-input {
   width: 100%; padding: 14px 14px; font: inherit; font-size: 17px;
   color: var(--text); background: var(--panel-2);

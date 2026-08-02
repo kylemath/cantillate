@@ -26,6 +26,7 @@ try {
   const viz = await import('../js/viz.js');
   const audio = await import('../js/audio.js');
   const realaudio = await import('../js/realaudio.js');
+  const translit = await import('../js/translit.js');
   log(true, 'all modules import');
 
   for (const fn of ['splitPhrases', 'splitAtRank', 'rankFor', 'rankOfSeg', 'buildLineMelody',
@@ -71,6 +72,49 @@ try {
   // Ordering: coarser divisions never produce more pieces than finer ones.
   const counts = [R.EMPEROR, R.KING, R.DUKE, R.COUNT].map((r) => trope.splitAtRank(segs, r).length);
   log(counts.every((n, i) => i === 0 || n >= counts[i - 1]), `divisions nest: ${counts.join(' <= ')}`);
+
+  // Transliteration. Every rule in js/translit.js is checked on a real word that
+  // depends on it, because the failure mode of a rules engine like this is not a
+  // crash — it is quietly producing something a reader would mispronounce.
+  const TL = [
+    // the plain machinery: consonants, vowels, begadkefat under a dagesh
+    ['דִּבֶּ֤ר', 'diber', 'dagesh hardens the bet'],
+    ['זָהָֽב׃', 'zahav', 'a bare bet stays soft'],
+    ['מֶ֣לֶךְ', 'melekh', 'a bare kaf stays soft'],
+    // silent letters are dropped rather than spelled out
+    ['מֹשֶׁה֙', 'moshe', 'a final heh is not sounded'],
+    ['פָּארָ֧ן', 'paran', 'a quiescent alef is not sounded'],
+    // matres lectionis: a consonant letter spelling a vowel
+    ['מ֨וֹל', 'mol', 'holam male is "o", not "vo"'],
+    ['ס֜וּף', 'suf', 'shuruk is "u", not "vu"'],
+    ['הַדְּבָרִ֗ים', 'hadvarim', 'hiriq male is one "i", not "iy"'],
+    ['וּבֵֽין־', 'uvein-', 'a word-initial shuruk, and the maqaf as a hyphen'],
+    // tsere: "ei" only when a yod spells it out
+    ['בֵּֽין־', 'bein-', 'tsere male is "ei"'],
+    ['יִשְׂרָאֵ֔ל', 'yisra\'el', 'a bare tsere is "e"'],
+    // the two shevas
+    ['בְּעֵ֖בֶר', 'b\'ever', 'a word-initial sheva is vocal'],
+    ['עַבְדְּכֶ֑ם', 'avd\'khem', 'a sheva after a sheva is vocal'],
+    ['בַּמִּדְבָּ֡ר', 'bamidbar', 'a sheva after a short vowel is silent'],
+    // the awkward corners
+    ['כׇּל־', 'kol-', 'qamats qatan is "o"'],
+    ['בַּרְנֵֽעַ׃', 'barnea', 'a furtive patach sounds before its letter'],
+    ['בָּֽעֲרָבָה֩', 'ba\'arava', 'a swallowed ayin leaves an apostrophe'],
+    ['דְּרָכָ֖יו', 'd\'rakhav', 'the "-av" suffix does not sound its yod'],
+    ['אֲדֹנָ֗י', 'adonai', 'a closing yod after an a-vowel is "i"'],
+    // the Name is read as it is said, not as it is written
+    ['יְהֹוָ֛ה', 'Adonai', 'the tetragrammaton is read as Adonai'],
+    ['לַֽיהֹוָ֖ה', 'la\'Adonai', 'and keeps its prefix when it has one'],
+  ];
+  for (const [he, want, why] of TL) {
+    const got = translit.transliterate(he);
+    log(got === want, `translit: ${why} — ${he} => ${got}${got === want ? '' : ` (wanted ${want})`}`);
+  }
+  log(translit.transliterate('') === '' && translit.transliterate('...') === '',
+    'translit: nothing in, nothing out');
+  log(hebrew.tokenize(shema).map(translit.transliterate).join(' ')
+    === 'sh\'ma yisra\'el Adonai eloheinu Adonai echad',
+    `translit: the Shema reads back as "${hebrew.tokenize(shema).map(translit.transliterate).join(' ')}"`);
 
   // Rewinding a take drops what was sung past the point and un-lights its gems.
   const view = Object.create(viz.ContourView.prototype);

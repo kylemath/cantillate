@@ -125,7 +125,8 @@ half-learned picks up where that pasuk stopped, and the schedule hands out its o
 next choice again afterwards.
 
 **The menu** (☰) shows each part's five rounds as five bars plus its whole-part
-score, the two settings worth having at this size (text size, pitch analysis),
+score, the settings worth having at this size (text size, pitch analysis, and —
+through the first three rounds only — reading along in English letters),
 and the ways out: change the date/cycle/parts, learn a different parashah, or
 open the full workshop. Changing the plan never deletes practice — scores are
 filed under the pesukim themselves, so coming back to a reading finds it exactly
@@ -200,6 +201,25 @@ seventh aliyah is the Rosh Chodesh reading from another book, it says so.
   and not a final one — so opening up the space between *real* letters is what
   stops a mem reading as a kaf plus a vav. The fixed tikkun pages opt out: their
   42 lines have no width to spare.
+- **Transliteration** — Latin letters under each Hebrew word, for a reader who
+  has to learn the tune before the alphabet is fluent. It appears on both reading
+  surfaces at once (the pointed verse column and the words above the coach line),
+  in the popular bencher scheme rather than an academic one: *v'ahavta*, not
+  *wĕʾāhabtā*. It is generated at render time from the pointed text by
+  `js/translit.js`, so it works for any passage of the Tanakh the app can open,
+  and the tetragrammaton is read as it is said — **Adonai** — rather than
+  spelled out. Two things are deliberately unlike a strict romanisation, because
+  this is meant to be *read aloud*: a dagesh chazak is not doubled (*hadvarim*,
+  not *haddevarim*), and silent letters are dropped (*Moshe*, not *Mosheh*).
+  Unlike the vowels and the te'amim, this aid is **capped by the stage**: it
+  switches itself off from **stage 6** on, everywhere, and the toggle greys out
+  and says why. Stages 6–9 exist precisely to take the helpers away one at a
+  time, and a Latin line in the column beside them would make every one of those
+  stages a fiction. **Guided mode offers it too** — the reader who can't yet read
+  the letters is exactly the reader that surface is for, and it hides the
+  workshop's settings sheet — as a row in the ☰ menu through the Words, Phrases
+  and Pesukim rounds. There it doesn't grey out but disappears, having said in
+  advance which round it comes off in.
 - **Hear the real chant** — the actual recorded cantor's chanting of the selected
   verse (PocketTorah, CC-BY-SA), with karaoke-style word highlighting. You can
   also **tap any word** (or use "Hear this word") to play just that word, sliced
@@ -911,6 +931,7 @@ index.html            app shell
 css/styles.css        styling (RTL-aware, dark theme)
 css/guided.css        the onboarding wizard + guided mode's narrowed surface
 js/hebrew.js          Unicode helpers: strip vowels/te'amim, tokenize, detect accents
+js/translit.js        pointed Hebrew -> Latin letters, for the transliteration aid
 js/trope.js           trope motifs as pitch contours + melody building
 js/audio.js           Web Audio synthesis of the target melody
 js/pitch.js           microphone + shared pitch detection (autocorrelation)

@@ -17,7 +17,7 @@
  */
 
 // Bump VERSION to invalidate all previously cached content on next activate.
-const VERSION = 'v-e0ad4629d320';
+const VERSION = 'v-7bcfbdd8d856';
 const SHELL_CACHE = 'cantillate-shell-' + VERSION;
 const DATA_CACHE = 'cantillate-data-' + VERSION;
 
@@ -45,6 +45,7 @@ const SHELL_ASSETS = [
   './js/schedule.js',
   './js/calendar.js',
   './js/hebrew.js',
+  './js/translit.js',
   './js/trope.js',
   './js/audio.js',
   './js/realaudio.js',

@@ -85,8 +85,14 @@ export function partFromId(id) {
   return m ? aliyahPart(Number(m[1])) : null;
 }
 
-export function partLabel(part) {
+export function partLabel(part, plan = null) {
   if (!part) return '';
+  // A substituted passage (or a demo shortcut) can name itself — "Shema" rather
+  // than "Haftarah" — so the guided chrome talks about what is actually open.
+  if (plan) {
+    const custom = customFor(part, plan);
+    if (custom && custom.label) return custom.label;
+  }
   if (part.kind === 'maftir') return 'Maftir';
   if (part.kind === 'haftarah') return 'Haftarah';
   return `Aliyah ${part.n}`;
@@ -183,6 +189,46 @@ export function fromShabbat(rec, {
     activePart: partId(chosen[0]),
     createdAt: Date.now(),
   };
+}
+
+// Quick-start plans for the three sample buttons on the wizard's occasion
+// screen. No login, no date, no occasion — just enough of a plan for guided mode
+// to open on something real. Shema and trop drills ride the existing
+// recordedAs substitution (see partTarget); this week's parasha is a normal
+// maftir plan for the upcoming Shabbat.
+export function buildDemo(kind) {
+  const rec = calendar.upcoming();
+  if (!rec) return null;
+  if (kind === 'parasha') {
+    const built = fromShabbat(rec, {
+      role: 'self', occasion: 'learning', cycle: 'annual',
+      parts: [maftirPart()],
+    });
+    if (built) built.demo = 'parasha';
+    return built;
+  }
+  if (kind === 'shema' || kind === 'drills') {
+    const part = haftarahPart();
+    const shema = kind === 'shema';
+    const label = shema ? 'Shema' : 'Trop drills';
+    const recordedAs = shema ? 'shema' : 'trope-drills';
+    const ref = shema ? 'Deuteronomy 6:4\u20139' : 'Cantillation drills';
+    const built = fromShabbat(rec, {
+      role: 'self', occasion: 'learning', cycle: 'annual',
+      parts: [part],
+    });
+    if (!built) return null;
+    // Name the plan after the sample, not the week's parashah — otherwise the
+    // learning chip would say "Parashat X" while the reader is chanting the Shema.
+    built.parashah = label;
+    built.hebrew = shema ? 'שְׁמַע' : 'תַּרְגִּיל';
+    built.custom = {
+      [partId(part)]: { label, ref, recordedAs, readingId: recordedAs },
+    };
+    built.demo = kind;
+    return built;
+  }
+  return null;
 }
 
 // --- Reading + storage ------------------------------------------------------

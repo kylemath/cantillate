@@ -26,6 +26,7 @@
 
 import * as plan from './plan.js';
 import * as schedule from './schedule.js';
+import { FULL_VERSE_LEVEL } from './levels.js';
 import * as calendar from './calendar.js';
 import * as store from './store.js';
 
@@ -178,7 +179,7 @@ async function loadPartReading(p) {
   const target = plan.partTarget(p, current);
   if (!target || !target.readingId) return false;
   const style = p.kind === 'haftarah' ? 'haftarah' : 'torah';
-  const name = `${plan.possessive(current) === 'your' ? 'My' : `${current.learner || 'Their'}\u2019s`} ${plan.partLabel(p).toLowerCase()}`;
+  const name = `${plan.possessive(current) === 'your' ? 'My' : `${current.learner || 'Their'}\u2019s`} ${plan.partLabel(p, current).toLowerCase()}`;
   // A passage the reader chose in place of the appointed one (see plan.setCustom).
   // Opened by book and range rather than by slug, because it is not a reading in
   // the manifest — it is any pesukim of any book, exactly as ✦ Any passage opens
@@ -393,7 +394,7 @@ function renderTop(round) {
   el.top.innerHTML = `
     <button class="g-menu-btn" id="gMenu" aria-label="Progress &amp; settings">\u2630</button>
     <div class="g-top-mid">
-      <p class="g-top-part">${escapeHtml(plan.partLabel(part))}</p>
+      <p class="g-top-part">${escapeHtml(plan.partLabel(part, current))}</p>
       <p class="g-top-round">Round ${round.id} \u00b7 ${escapeHtml(round.label)}</p>
     </div>
     <div class="g-pips" aria-label="Progress through the five rounds">${pips}</div>`;
@@ -402,7 +403,7 @@ function renderTop(round) {
 
 function renderCard(round) {
   if (loading) {
-    el.card.innerHTML = `<div class="g-brief"><p class="g-task">Opening ${escapeHtml(plan.partLabel(part))}\u2026</p></div>`;
+    el.card.innerHTML = `<div class="g-brief"><p class="g-task">Opening ${escapeHtml(plan.partLabel(part, current))}\u2026</p></div>`;
     return;
   }
   if (problem) { el.card.innerHTML = problemHtml(); wireProblem(); return; }
@@ -566,11 +567,11 @@ function finishedHtml(round) {
   const others = (current.parts || []).filter((p) => plan.partId(p) !== plan.partId(part));
   return `
     <div class="g-done">
-      <p class="g-task">\u2728 ${escapeHtml(plan.partLabel(part))} is ready</p>
+      <p class="g-task">\u2728 ${escapeHtml(plan.partLabel(part, current))} is ready</p>
       <p class="g-say">Every pasuk chanted, and the whole thing end to end. Keep it warm by running it again.</p>
       <div class="g-result-actions">
         <button class="g-go" id="gWhole">Chant it through</button>
-        ${others.length ? `<button class="g-ghost" id="gOther">Work on ${escapeHtml(plan.partLabel(others[0]))}</button>` : ''}
+        ${others.length ? `<button class="g-ghost" id="gOther">Work on ${escapeHtml(plan.partLabel(others[0], current))}</button>` : ''}
       </div>
     </div>`;
 }
@@ -594,7 +595,7 @@ function wireFinished() {
 // This part can't be practised here. Say exactly why and offer the way round it,
 // rather than showing an empty coach pane.
 function problemHtml() {
-  const label = plan.partLabel(part);
+  const label = plan.partLabel(part, current);
   const ref = plan.partRef(part, current);
   const others = (current.parts || []).filter((p) => plan.partId(p) !== plan.partId(part));
   const why = problem === 'empty'
@@ -605,7 +606,7 @@ function problemHtml() {
       <p class="g-task">Can\u2019t open ${escapeHtml(label)}</p>
       <p class="g-say">${why}</p>
       <div class="g-result-actions">
-        ${others.map((p) => `<button class="g-go" data-part="${plan.partId(p)}">Work on ${escapeHtml(plan.partLabel(p))}</button>`).join('')}
+        ${others.map((p) => `<button class="g-go" data-part="${plan.partId(p)}">Work on ${escapeHtml(plan.partLabel(p, current))}</button>`).join('')}
         <button class="g-ghost" id="gProblemMenu">Change my plan</button>
       </div>
     </div>`;
@@ -703,10 +704,12 @@ function renderMenu() {
       <div class="g-set">
         <label class="g-row"><span>Text size</span>
           <input type="range" id="gTextSize" min="0.8" max="2.4" step="0.1" value="${api.readScale()}" /></label>
+        ${translitRowHtml()}
         <label class="g-row g-row-check"><span>Show the pitch analysis</span>
           <input type="checkbox" id="gAnalysis" ${api.analysisOn() ? 'checked' : ''} /></label>
         <button class="g-row-btn" id="gOffline">\u2b07 Save the audio for offline</button>
       </div>
+      ${translitNoteHtml()}
 
       ${accountHtml()}
 
@@ -719,6 +722,29 @@ function renderMenu() {
       <p class="g-menu-note">Changing the plan never deletes practice \u2014 scores are filed under the pesukim themselves, so coming back to a reading finds it exactly where you left it.</p>
     </div>`;
   wireMenu();
+}
+
+// Reading along in Latin letters, for a reader whose Hebrew alphabet is still
+// slower than the tune they are learning. The workshop keeps this in its settings
+// sheet, which guided mode hides — and the reader who needs it most is precisely
+// the one on this surface, so it is offered here as well.
+//
+// The row is drawn only while the stage still allows the aid (see translitOn in
+// app.js). Past that it is not shown greyed but simply gone: a dead switch in a
+// four-row menu invites a reader to poke at it, and the note below has already
+// said, before it happened, that this is coming.
+function translitRowHtml() {
+  if (!api.translitAllowed()) return '';
+  return `<label class="g-row g-row-check"><span>Show the words in English letters</span>
+          <input type="checkbox" id="gTranslit" ${api.translitOn() ? 'checked' : ''} /></label>`;
+}
+
+function translitNoteHtml() {
+  if (!api.translitAllowed()) return '';
+  const gone = schedule.roundOfLevel(FULL_VERSE_LEVEL + 1);
+  return `<p class="g-menu-note">English letters are a way in, not the goal \u2014 they come off
+    in the ${escapeHtml(gone.icon)} ${escapeHtml(gone.label)} round, where the helps are taken
+    away one at a time. Until then, read them alongside the Hebrew rather than instead of it.</p>`;
 }
 
 // Where the practice is going, and the way to change the answer. The wizard asks
@@ -818,7 +844,7 @@ function partRowHtml(p) {
     <div class="g-part${mine ? ' on' : ''}">
       <button class="g-part-main" data-part="${id}">
         <span class="g-part-top">
-          <span class="g-part-name">${escapeHtml(plan.partLabel(p))}</span>
+          <span class="g-part-name">${escapeHtml(plan.partLabel(p, current))}</span>
           <span class="g-part-pct">${prog ? `${prog.pct}%` : (mine ? '' : 'tap to open')}</span>
         </span>
         <span class="g-bars">${bars}</span>
@@ -828,8 +854,8 @@ function partRowHtml(p) {
         </span>
       </button>
       <button class="g-part-swap" data-swap="${id}"
-        title="Chant a different passage for the ${escapeAttr(plan.partLabel(p).toLowerCase())}"
-        aria-label="Choose a different passage for the ${escapeAttr(plan.partLabel(p))}">\u270e</button>
+        title="Chant a different passage for the ${escapeAttr(plan.partLabel(p, current).toLowerCase())}"
+        aria-label="Choose a different passage for the ${escapeAttr(plan.partLabel(p, current))}">\u270e</button>
     </div>`;
 }
 
@@ -856,7 +882,7 @@ function pesukimHtml() {
   }).join('');
   // "the maftir", "the haftarah" — but "Aliyah 3", which is a name and not a thing.
   const label = part.kind === 'aliyah'
-    ? plan.partLabel(part) : `the ${plan.partLabel(part).toLowerCase()}`;
+    ? plan.partLabel(part, current) : `the ${plan.partLabel(part, current).toLowerCase()}`;
   return `
     <h3 class="g-menu-h">Every pasuk of ${escapeHtml(label)}</h3>
     <div class="g-pesukim">${chips}</div>
@@ -895,6 +921,8 @@ function wireMenu() {
   }));
   const size = byId('gTextSize');
   if (size) size.addEventListener('input', () => api.setReadScale(parseFloat(size.value)));
+  const tl = byId('gTranslit');
+  if (tl) tl.addEventListener('change', () => api.setTranslit(tl.checked));
   const an = byId('gAnalysis');
   if (an) an.addEventListener('change', () => api.setAnalysis(an.checked));
   const off = byId('gOffline');
@@ -983,7 +1011,7 @@ function renderPicker() {
   // The wizard's card, on purpose: this IS another single question about the plan,
   // and it should look and behave like the ones the wizard asks.
   sheet.className = 'onboard g-pick';
-  const label = plan.partLabel(picking.part).toLowerCase();
+  const label = plan.partLabel(picking.part, current).toLowerCase();
   const who = plan.possessive(current) === 'your' ? 'you' : (current.learner || 'they');
   const appointed = plan.appointedRef(picking.part, current);
   const numRow = (id) => `

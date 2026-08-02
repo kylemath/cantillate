@@ -1,4 +1,5 @@
 import { tokenize, renderWord, toScroll, stripNikud, stripTaamim } from './hebrew.js';
+import { transliterate } from './translit.js';
 import { buildLineMelody, splitPhrases, splitAtRank, RANK, RANK_LABELS, rankFor, FAMILIES,
   markGlyph, NAMES, motifFor, nameFor, SOF_PASUK_NAME, sofPasukMotif,
   STYLES, DEFAULT_STYLE, styleOf } from './trope.js';
@@ -99,6 +100,7 @@ const state = {
   showTaamim: true,
   scroll: false,
   showEnglish: false, // show the English (Koren Jerusalem) translation column
+  showTranslit: false, // Latin letters under each word (stages 1-5 only)
   overlay: 'off',     // left-column score overlay: 'off'|'word'|'phrase'|'verse'
   // The "Portion" selector drives these two: annual = whole parashah;
   // triennial + triYear = one shorter year (its own aliyot AND verse range).
@@ -161,6 +163,11 @@ window.__cantillateReloadSafe = () =>
 
 // Neutral ink for words/vowels when colour is limited to the trope (or off).
 const INK_GREY = '#aab0c8';
+
+// Size of the transliteration line, as a fraction of the Hebrew above it. Kept
+// here (and mirrored by --wtl-em in the CSS) because the coaching pane has to
+// budget the pixels for it before anything is laid out — see wordsBandPx.
+const TRANSLIT_EM = 0.5;
 
 const $ = (id) => document.getElementById(id);
 
@@ -384,6 +391,8 @@ async function init() {
     renderVerses();
     if (state.showEnglish) ensureCustomEnglish();
   });
+  initTranslit();
+  bindToggle('tgTranslit', () => setTranslit(!state.showTranslit));
   $('overlaySeg').querySelectorAll('.ov').forEach((b) => {
     b.addEventListener('click', () => { state.overlay = b.dataset.ov; syncToggleUI(); renderVerses(); });
   });
@@ -625,7 +634,16 @@ function guidedApi() {
       const whole = list.find((a) => a.n === 'H' || a.n === 'C' || a.kind === 'passage');
       if (whole) return { ...whole };
       if (hasAliyotCycle(state.readingKind)) return null;
-      return { n: 'H', kind: 'haftarah', start: 1, end: state.data.verses.length };
+      // An excerpt reuses a parent's text file but only a carved-out verse span
+      // (the Shema inside Va'etchanan). Guided mode must practise that span, not
+      // the whole parent — otherwise a Shema demo would open on pasuk 1 of the
+      // parashah. Drills own their verses, so the full length is correct for them.
+      if (state.excerpt) {
+        const [start, end] = divisionRange();
+        return { n: 'H', kind: 'excerpt', start, end };
+      }
+      return { n: 'H', kind: state.readingKind === 'drill' ? 'drill' : 'haftarah',
+        start: 1, end: state.data.verses.length };
     },
 
     selectVerse: (n) => selectVerse(n),
@@ -664,6 +682,15 @@ function guidedApi() {
     setReadScale: (v) => applyReadScale(v, true),
     analysisOn: () => state.showAnalysis,
     setAnalysis: (on) => { if (on !== state.showAnalysis) toggleAnalysis(); },
+    // The transliteration is the one aid whose control has to be offered twice.
+    // Guided mode hides the workshop's settings sheet, and a reader who cannot
+    // yet read the letters is exactly the reader guided mode is for — so the
+    // switch has to exist on the narrowed surface too. `allowed` is the stage
+    // cap (see translitOn): guided mode uses it to take the row away rather than
+    // offer a switch that does nothing.
+    translitOn: () => translitOn(),
+    translitAllowed: () => state.level <= FULL_VERSE_LEVEL,
+    setTranslit: (on) => { if (on !== state.showTranslit) setTranslit(on); },
     download: () => { const b = $('btnOffline'); if (b && !b.hidden) b.click(); },
 
     // The account, for a reader who never sees the workshop's topbar: guided mode
@@ -2311,7 +2338,7 @@ function applyReadScale(scale, rerender) {
   if (tw && state.coach && state.coach.overlayWords) {
     const n = state.coach.overlayWords.length || 1;
     tw.style.fontSize = readingFontPx(n) + 'px';
-    tw.style.height = Math.round(readingFontPx(n) * 1.35) + 'px';
+    tw.style.height = wordsBandPx(readingFontPx(n)) + 'px';
   }
   if (rerender && state.selectedVerse != null && !state.aliyah
       && !state.recording && !state.playingReal) {
@@ -2867,6 +2894,15 @@ function syncToggleUI() {
   $('tgTaamim').classList.toggle('on', state.showTaamim);
   $('tgFont').classList.toggle('on', state.scroll);
   $('tgEnglish').classList.toggle('on', state.showEnglish);
+  const tl = $('tgTranslit');
+  if (tl) {
+    const capped = state.level > FULL_VERSE_LEVEL;
+    tl.classList.toggle('on', state.showTranslit && !capped);
+    tl.disabled = capped;
+    tl.title = capped
+      ? `Not available from stage ${FULL_VERSE_LEVEL + 1} on — those stages are about reading with fewer aids, not more.`
+      : 'Latin letters under each word, for reading along before the alphabet is fluent';
+  }
   const seg = $('overlaySeg');
   if (seg) seg.querySelectorAll('.ov').forEach((b) => b.classList.toggle('on', b.dataset.ov === state.overlay));
   const sms = $('scoreModelSeg');
@@ -2959,6 +2995,38 @@ function initScoreModel() {
   state.scoreModel = m === 'gh' ? 'gh' : 'contour';
   try { localStorage.setItem(SCORE_MODEL_KEY, state.scoreModel); } catch (e) { /* private mode */ }
   syncToggleUI();
+}
+
+// --- Transliteration -------------------------------------------------------
+// Latin letters under each word, for a reader who has the tune before the
+// alphabet (see js/translit.js for the scheme).
+//
+// It is the strongest aid in the app — stronger than the vowels — so it is
+// capped rather than merely offered. Stages 6-9 exist precisely to take the
+// helpers away one at a time (drop the te'amim, drop the vowels, read the bare
+// scroll), and a Latin line underneath would make every one of them a fiction.
+// So the aid is available up to the first whole-verse stage and switches itself
+// off above it; the toggle stays visible but says why it can't be used, which is
+// how the ladder teaches what it is for. See aidsForLevel.
+const TRANSLIT_KEY = 'cantillate.translit';
+
+function initTranslit() {
+  let v = null;
+  try { v = localStorage.getItem(TRANSLIT_KEY); } catch (e) { v = null; }
+  state.showTranslit = v === '1';
+  syncToggleUI();
+}
+
+function setTranslit(on) {
+  state.showTranslit = !!on;
+  try { localStorage.setItem(TRANSLIT_KEY, on ? '1' : '0'); } catch (e) { /* private mode */ }
+  refreshText();
+}
+
+// Is the aid actually in force right now? Wanted by the reader AND allowed by
+// the stage. Anything that draws a word asks this, not state.showTranslit.
+function translitOn(level = levelById(state.level)) {
+  return state.showTranslit && level.id <= FULL_VERSE_LEVEL;
 }
 
 // --- Scribal hand for the STA"M -------------------------------------------
@@ -5703,10 +5771,16 @@ const ALIYAH_PASS = 80;
 // yet unlocked for the current verse are marked, and opening one shows a locked
 // page (see renderPractice).
 function selectStage(levelId) {
+  const wasTranslit = translitOn();
   state.level = levelId;
   state.unitIndex = 0;
   state.divideRank = null; // each stage opens at its own default division
   renderStageBar();
+  // The stage decides whether the transliteration is allowed at all, so the
+  // toggle has to be re-stated here — and the verse column redrawn when the
+  // answer changed, since it carries the aid too.
+  syncToggleUI();
+  if (translitOn() !== wasTranslit) renderVerses();
   if (state.selectedVerse != null) renderPractice();
 }
 
@@ -5878,7 +5952,7 @@ function renderPractice() {
   state.focusIndex = unitSegs[0] ? unitSegs[0].index : 0;
 
   const aids = level.aids;
-  const renderCtx = { showVowels: aids.showVowels, showTaamim: aids.showTaamim, scroll: aids.scroll };
+  const renderCtx = aidsForLevel();
 
   const hasReal = !!verseAudio(state.selectedVerse);
 
@@ -6009,7 +6083,12 @@ function renderPractice() {
   const tlInner = $('tlInner');
   const visW = tlScroll.clientWidth || 800;
   const fpx = readingFontPx(unitSegs.length);
-  const needW = Math.round(unitSegs.length * fpx * 4.0); // room per word at this size
+  // Room per word at this size. A transliterated word is a good deal wider than
+  // the Hebrew it sits under ("vachatzerot" against וַחֲצֵרֹת), so the aid buys
+  // itself more room and lets the row scroll rather than letting neighbouring
+  // Latin lines run into each other.
+  const perWord = translitOn(level) ? 5.6 : 4.0;
+  const needW = Math.round(unitSegs.length * fpx * perWord);
   const zoomW = (level.unit === 'line' && state.scrollZoom)
     ? Math.round(visW * Math.max(1, unitSegs.length / ZOOM_WORDS)) : 0;
   const useW = Math.max(visW, needW, zoomW);
@@ -6675,7 +6754,25 @@ function wordSpan(token, seg, ctx, wi, score, lo, hi) {
     ? renderWordTropeColored(token, ctx, seg.color)
     : escapeHtml(renderWord(token, ctx));
   return `<span class="w" data-wi="${wi}" data-taam="${taam}" data-fam="${seg.familyId}"${title}`
-    + ` style="color:${textColor}${bg}">${inner}</span>`;
+    + ` style="color:${textColor}${bg}">${stackTranslit(inner, token)}</span>`;
+}
+
+// Put the Latin line under a word, if the aid is on. The Hebrew keeps its own
+// row so the trope colouring, the score heatmap and the karaoke highlight all
+// still address the word as one unit — the transliteration rides along with it
+// rather than being a second, separately-positioned line of text.
+//
+// Gated on translitOn() rather than on the caller's render context: unlike the
+// vowels and the te'amim — which the left column shows on the reader's say-so
+// whatever stage the practice pane is at — this aid is capped by the stage
+// EVERYWHERE, or the bare-text stages could simply be read off the column
+// beside them.
+function stackTranslit(inner, token) {
+  if (!translitOn()) return inner;
+  const latin = transliterate(token);
+  if (!latin) return inner;
+  return `<span class="wtl-stack"><span class="wtl-he">${inner}</span>`
+    + `<span class="wtl" dir="ltr" lang="en">${escapeHtml(latin)}</span></span>`;
 }
 
 // Render a word as HTML where ONLY the cantillation mark(s) carry the trope
@@ -6771,7 +6868,7 @@ function renderStretchedWords(container, coach, aids, unitSegs) {
   const nWords = coach.overlayWords.length;
   const fpx = readingFontPx(nWords);
   container.style.fontSize = fpx + 'px';
-  container.style.height = Math.round(fpx * 1.35) + 'px';
+  container.style.height = wordsBandPx(fpx) + 'px';
   coach.overlayWords.forEach((ow) => {
     const wi = unitSegs.indexOf(ow.seg);
     const span = document.createElement('span');
@@ -6784,10 +6881,20 @@ function renderStretchedWords(container, coach, aids, unitSegs) {
     // Center the whole word over the midpoint of its notes (RTL axis).
     const centerT = (ow.t0 + ow.t1) / 2;
     span.style.left = ((1 - centerT) * 100) + '%';
-    if (mode === 'trope') span.innerHTML = renderWordTropeColored(ow.seg.token, aids, ow.seg.color);
-    else span.textContent = renderWord(ow.seg.token, aids);
+    const inner = mode === 'trope'
+      ? renderWordTropeColored(ow.seg.token, aids, ow.seg.color)
+      : escapeHtml(renderWord(ow.seg.token, aids));
+    span.innerHTML = stackTranslit(inner, ow.seg.token);
     container.appendChild(span);
   });
+}
+
+// Height of the words band above the notes. The transliteration adds a second
+// row, and the band is a fixed-height sibling of the coaching contour (which
+// flex-fills what is left), so the cost of the aid is paid here in pixels the
+// contour would otherwise have had.
+function wordsBandPx(fpx) {
+  return Math.round(fpx * (translitOn() ? 1.35 + TRANSLIT_EM * 1.45 : 1.35));
 }
 
 function unitDuration() {

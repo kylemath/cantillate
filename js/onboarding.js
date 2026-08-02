@@ -38,6 +38,7 @@ let onDone = null;
 let installPrompt = null;   // a captured beforeinstallprompt, where the browser offers one
 let draft = null;
 let step = 0;
+let editingMode = false;    // true when rewriting an existing plan — demos stay hidden
 let signinBusy = false;     // a sign-in popup is open
 let signinFailed = false;   // the last attempt didn't complete (popup closed, offline, blocked)
 let unwatchAuth = null;
@@ -95,6 +96,7 @@ export function isOpen() { return !!root; }
 export function open({ done, editing = null } = {}) {
   onDone = done || (() => {});
   draft = newDraft();
+  editingMode = !!editing;
   signinBusy = false;
   signinFailed = false;
   if (editing) {
@@ -266,13 +268,35 @@ function installBody() {
 // 2. What the occasion is. Tapping an answer IS moving on — a question with four
 // tappable answers and a Next button underneath makes the reader do the work
 // twice, and this wizard has enough screens without doubling the taps.
+//
+// Underneath: three sample shortcuts for someone who just wants to try the app
+// before committing to a date or an occasion. Hidden when rewriting a plan —
+// that reader already knows what they are learning.
 function whoBody() {
   const occ = (id) => `<button class="ob-choice${draft.occasion === id ? ' on' : ''}" data-occ="${id}">
       <span class="ob-choice-main">${plan.OCCASIONS[id].label}</span>
       <span class="ob-choice-sub">${plan.OCCASIONS[id].sub}</span></button>`;
+  const demos = editingMode ? '' : `
+    <p class="ob-demo-label">Or try a sample</p>
+    <div class="ob-demos">
+      <button type="button" class="ob-demo" data-demo="shema">Demo Shema</button>
+      <button type="button" class="ob-demo" data-demo="parasha">Demo this week\u2019s parasha</button>
+      <button type="button" class="ob-demo" data-demo="drills">Demo trop drills</button>
+    </div>`;
   return `
     <h2 class="ob-h">What are you learning for?</h2>
-    <div class="ob-choices">${occ('barmitzvah')}${occ('batmitzvah')}${occ('aliyah')}${occ('learning')}</div>`;
+    <div class="ob-choices">${occ('barmitzvah')}${occ('batmitzvah')}${occ('aliyah')}${occ('learning')}</div>
+    ${demos}`;
+}
+
+// Seed a sample plan and leave the wizard — no date, no account, no occasion.
+async function startDemo(kind) {
+  try { await calendar.load(); } catch (e) { /* upcoming() still works once loaded */ }
+  const built = plan.buildDemo(kind);
+  if (!built) return;
+  plan.save(built);
+  close();
+  onDone(built);
 }
 
 // 3. Whose it is. Decides whether the app says "your haftarah" or "Noa's", and
@@ -563,6 +587,10 @@ function wireFor(name) {
       draft.occasion = b.dataset.occ;
       draft.parts = null; // the default set follows the occasion until they choose
       next();
+    }));
+    root.querySelectorAll('[data-demo]').forEach((b) => b.addEventListener('click', () => {
+      b.disabled = true;
+      startDemo(b.dataset.demo);
     }));
   }
 

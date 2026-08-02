@@ -728,6 +728,36 @@ body.settings-open #settingsBackdrop { opacity: 1; pointer-events: auto; }
 .tc-mark, .tc-base { grid-area: 1 / 1; white-space: nowrap; }
 .tc-base { color: inherit; pointer-events: none; }
 
+/* Transliteration: a Latin line under the word it belongs to (see js/translit.js
+   and stackTranslit). The pair is one inline-grid so the word stays a single
+   target — the score heatmap, the trope highlight and the karaoke cue are all
+   painted on the .w around it and still cover both rows.
+
+   The Latin needs its own direction: it lives inside an RTL line, and without
+   isolation the apostrophes and the maqaf hyphen would be dragged to the wrong
+   end of "b'ever" and "el-". It is also deliberately quiet — muted, half-size,
+   its own plain font — because the coloured Hebrew is what the reader is meant
+   to be looking at. --wtl-em mirrors TRANSLIT_EM in js/app.js, which budgets
+   the vertical room for this row on the coaching line. */
+:root {
+  --wtl-em: 0.5;
+  --wtl-font: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+/* The verse column sets a loose line-height so wrapped lines of pointed Hebrew
+   clear each other's cantillation; inside the stack that would open a gulf
+   between a word and its own transliteration, so the pair is tightened back up
+   and the leading is left to the line box around it. */
+.wtl-stack { display: inline-grid; justify-items: center; line-height: 1.3; }
+.wtl-he { grid-row: 1; }
+.wtl {
+  grid-row: 2; direction: ltr; unicode-bidi: isolate;
+  font-family: var(--wtl-font); font-size: calc(1em * var(--wtl-em));
+  line-height: 1.15; white-space: nowrap; letter-spacing: 0;
+  /* The word's own colour is set inline (trope hue, or the neutral ink), and the
+     Latin must not inherit it or it becomes a second competing colour bar. */
+  color: var(--muted);
+}
+
 /* Trope family key bar */
 .fambar { gap: 6px; }
 .famchip {
