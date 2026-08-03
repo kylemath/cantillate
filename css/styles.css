@@ -252,13 +252,19 @@ main { display: grid; grid-template-columns: 1fr; gap: 0; }
     position: static; width: 32px; height: 32px; margin: 4px;
   }
 
-  /* A splitter only shows where a drag would move something: both windows it
-     divides must be expanded, and neither may be the one that flexes. */
+  /* A splitter only shows where a drag would move something. The pesukim/coach
+     divider needs both of those windows expanded, since it drives --leftw and
+     the coach flexes. The Torah divider drives --scrollw, which resizes the
+     Torah column against whichever window is flexing — so a rail between them
+     doesn't stop it, and it only goes away once the Torah column is the last
+     window with anything in it. `:not(.splitter2)` because that divider carries
+     both classes. */
   .splitter { display: block; }
+  .splitter2 { display: none; }
   body.scroll-view .splitter2 { display: block; }
   body.scroll-view.pane-text-collapsed.pane-practice-collapsed .splitter2 { display: none; }
-  body.pane-text-collapsed .splitter,
-  body.pane-practice-collapsed .splitter { display: none; }
+  body.pane-text-collapsed .splitter:not(.splitter2),
+  body.pane-practice-collapsed .splitter:not(.splitter2) { display: none; }
 }
 
 /* Compact verse cards when the left pane is dragged narrow. */
@@ -1534,3 +1540,76 @@ footer.src a { color: var(--accent); }
 .cr-forget:hover { color: var(--bad); border-color: var(--bad); }
 .cr-actions { display: flex; gap: 10px; align-items: center; justify-content: space-between; }
 .cr-actions .hint { flex: 1; margin: 0; }
+
+/* Paired full-reading surfaces ------------------------------------------------
+   The pointed column uses the same verse/word coordinates as the STA"M tikkun,
+   so one yad, one score tint and one transport can address both. Each column is
+   independently scrollable; the optional JS follower aligns the nearest visible
+   word rather than assuming their very different line wrapping has equal height. */
+body.scroll-dual-view #scrollpane .pane-body {
+  display: flex; flex-direction: column; overflow: hidden;
+}
+body.scroll-dual-view #scrollVerses { flex: 1; min-height: 0; }
+.scroll-dual {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px; height: 100%; min-height: 0; direction: ltr;
+}
+.scroll-track {
+  min-width: 0; min-height: 0; overflow-y: auto; overflow-x: hidden;
+  overscroll-behavior: contain; container-type: inline-size;
+  padding: 0 4px 12px; scrollbar-gutter: stable;
+}
+.scroll-track-label {
+  position: sticky; top: 0; z-index: 4; margin: 0 0 6px; padding: 5px 8px;
+  direction: rtl; text-align: center; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); background: color-mix(in srgb, var(--panel) 94%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+.pointed-scroll {
+  direction: rtl; text-align: justify; text-align-last: right;
+  font-family: 'FrankRuehl', serif; font-size: clamp(18px, 7.4cqi, 40px);
+  line-height: 2.25; letter-spacing: normal; max-width: 46ch;
+}
+.pointed-scroll .al-verse { display: inline; }
+.pointed-scroll .al-verse::after { content: "  "; white-space: pre-wrap; }
+.pointed-scroll .sw { padding: 0 2px; }
+.pointed-scroll .sw.cur,
+.pointed-scroll .sw.yad-cur {
+  background: rgba(255,190,60,0.28); outline-color: rgba(150,155,170,0.95);
+}
+body:not(.scroll-dual-view) .pointed-scroll { margin-block: 10px; }
+
+/* Pointed counterpart of the fixed tikkun page (see .scroll-column.tikkun-column
+   above): the SAME page/line breaks as the STA"M column — produced by the same
+   renderTikkunPages() layout, just with each word's content swapped to its
+   vowelled, accented form (js/app.js pointedTikkunWordRender) — but set in a
+   regular pointed Hebrew face instead of the scribal hand. line-height and
+   .scroll-line's height are deliberately left at the STA"M column's own
+   values (not touched here): the dual view puts both columns in same-sized
+   containers, so any difference in line-height compounds line over line and
+   the two surfaces drift apart. Leaving it alone keeps every line landing at
+   the exact same offset in both columns, at the cost of the same tight
+   headroom the STA"M hand budgets for — acceptable since niqqud/te'amim in
+   FrankRuehl sit within, not beyond, that vertical rhythm. */
+.pointed-tikkun .scroll-page {
+  font-family: 'FrankRuehl', serif;
+  color: #e8e3d8;
+  background: #0b0b0d; background-image: none;
+  border-color: #2c2b28;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.6);
+}
+.pointed-tikkun .scroll-word.w { padding: 0 0.05em; }
+/* A touch bigger than the STA"M hand so the pointed face reads at a matching
+   size despite FrankRuehl's smaller x-height. Bumped only on the word's own
+   font-size (an em relative to the unchanged, inherited page font-size), so
+   nothing that governs layout — page width, padding, line height/spacing —
+   is affected: the lines land exactly where the STA"M column's do. */
+.pointed-tikkun .scroll-word.w { font-size: 1.07em; }
+
+@media (max-width: 700px) {
+  .scroll-dual {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}

@@ -131,6 +131,11 @@ function annotatePages(data, reading) {
   });
 }
 
+// The STA"M column's own glyph content and class list are computed here from
+// the word's mapping to the reading; a caller can override just the glyph
+// content (e.g. to substitute the pointed/coloured form) and add its own
+// classes/attributes via options.renderWord, without having to reimplement
+// the mapping-derived classes (ctx / out-of-range / sel / range-start).
 function wordHtml(word, options) {
   const classes = ['scroll-word'];
   const attrs = [];
@@ -148,7 +153,15 @@ function wordHtml(word, options) {
   if (!inContext) classes.push('out-of-range');
   if (mapped && !word.exact) classes.push('text-variant');
 
-  return `<span class="${classes.join(' ')}" ${attrs.join(' ')}>${escapeHtml(word.text)}</span>`;
+  let content = escapeHtml(word.text);
+  if (options.renderWord) {
+    const custom = options.renderWord(word) || {};
+    if (custom.html != null) content = custom.html;
+    if (custom.classes) classes.push(...custom.classes);
+    if (custom.attrs) attrs.push(...custom.attrs);
+  }
+
+  return `<span class="${classes.join(' ')}" ${attrs.join(' ')}>${content}</span>`;
 }
 
 function lineHtml(line, options) {

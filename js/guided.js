@@ -302,7 +302,13 @@ function again() {
 // chain/whole-part reader.
 function applyTask(t) {
   if (!t) return;
-  if (t.kind === 'chain') { api.openChain(t.start, t.end); return; }
+  // A chain names the text it is to be read from as well as the pesukim: the
+  // fifth round asks for every run twice, with the vowels and then off the bare
+  // scroll (see CHAIN_SURFACES).
+  if (t.kind === 'chain') {
+    api.openChain(t.start, t.end, { surface: schedule.chainSurface(t) });
+    return;
+  }
   if (t.kind === 'whole') { api.openAliyah(ctx.chunk); return; }
   api.selectVerse(t.verse);
   api.selectStage(t.level);
@@ -343,7 +349,26 @@ function onward() {
     render();
     return;
   }
+  // A run just chanted cleanly with the vowels comes straight back off the bare
+  // scroll, which is the promise the result card made (see nextChainTier).
+  const up = followUpTier();
+  if (up) {
+    session += 1;
+    task = up;
+    result = null;
+    phase = 'brief';
+    pickup = '';
+    applyTask(task);
+    render();
+    return;
+  }
   runNext();
+}
+
+// The harder surface of the run in hand, once it has been earned.
+function followUpTier() {
+  if (!ctx || !result || !result.passed || result.more) return null;
+  return schedule.nextChainTier(ctx, task);
 }
 
 // --- Rendering --------------------------------------------------------------
@@ -528,8 +553,14 @@ function resultHtml() {
   const tone = pct >= 90 ? 'great' : pass ? 'good' : 'again';
   const headline = pct >= 95 ? 'Perfect' : pct >= 90 ? 'Beautiful'
     : pct >= 80 ? 'Well sung' : pass ? 'That counts' : 'Not quite yet';
+  // Passing a run with the vowels earns the same run off the bare scroll, and
+  // saying so is what makes the second take read as the next rung rather than as
+  // the app asking for the thing they just did.
+  const nextRung = !!followUpTier();
   const say = pass
-    ? (r.more ? 'On to the next one.' : 'That piece is done.')
+    ? (r.more ? 'On to the next one.'
+      : nextRung ? 'The joins are holding. Now the same run from the bare scroll.'
+        : 'That piece is done.')
     : `Reach ${Math.round(r.threshold)} to move on \u2014 listen once more, then try again.`;
   const bonus = [];
   if (r.assisted) bonus.push('Sung with the guide, so it counts for less \u2014 try it on your own to beat it.');
@@ -544,7 +575,7 @@ function resultHtml() {
         ${bonus.length ? `<p class="g-hint">${escapeHtml(bonus.join(' '))}</p>` : ''}
       </div>
       <div class="g-result-actions">
-        ${pass ? `<button class="g-go" id="gNext">${r.more ? 'Next' : 'Carry on'} \u203a</button>`
+        ${pass ? `<button class="g-go" id="gNext">${r.more ? 'Next' : nextRung ? 'From the scroll' : 'Carry on'} \u203a</button>`
     : `<button class="g-go" id="gAgain">Try again</button>`}
         ${pass ? `<button class="g-ghost" id="gAgain">Again</button>`
     : `<button class="g-ghost" id="gNext">Skip for now</button>`}
@@ -702,6 +733,18 @@ function renderMenu() {
 
       <h3 class="g-menu-h">Settings</h3>
       <div class="g-set">
+        <button class="g-row-btn g-row-primary" id="gWholeAliyah" ${ctx && ctx.chunk ? '' : 'disabled'}>
+          \u25b6 Read / listen / practice the full ${escapeHtml(plan.partLabel(part, current).toLowerCase())}
+        </button>
+        <label class="g-row"><span>Full-reading text</span>
+          <select id="gScrollTextMode">
+            <option value="stam" ${api.scrollTextMode() === 'stam' ? 'selected' : ''}>STA\u201dM scroll</option>
+            <option value="pointed" ${api.scrollTextMode() === 'pointed' ? 'selected' : ''}>Vowels &amp; cantillation</option>
+            <option value="dual" ${api.scrollTextMode() === 'dual' ? 'selected' : ''}>Both side by side</option>
+          </select></label>
+        <label class="g-row g-row-check"><span>Keep both texts aligned</span>
+          <input type="checkbox" id="gScrollSync" ${api.scrollSync() ? 'checked' : ''}
+            ${api.scrollTextMode() === 'dual' ? '' : 'disabled'} /></label>
         <label class="g-row"><span>Text size</span>
           <input type="range" id="gTextSize" min="0.8" max="2.4" step="0.1" value="${api.readScale()}" /></label>
         ${translitRowHtml()}
@@ -887,8 +930,9 @@ function pesukimHtml() {
     <h3 class="g-menu-h">Every pasuk of ${escapeHtml(label)}</h3>
     <div class="g-pesukim">${chips}</div>
     <p class="g-menu-note">Four ticks is a pasuk you can chant on its own from the
-      scroll. Chanting them in runs is the last round, and belongs to the reading
-      rather than to any one pasuk. Tap any one to sing it now \u2014 nothing is lost, and
+      scroll. Chanting them in runs is the last round \u2014 each run with the vowels
+      first and then off the bare scroll \u2014 and it belongs to the reading rather than
+      to any one pasuk. Tap any one to sing it now \u2014 nothing is lost, and
       the next thing you would have been handed comes back after it.</p>`;
 }
 
@@ -898,6 +942,18 @@ function workVerse(n) {
   if (!ctx || !ctx.verses.includes(n)) return;
   closeMenu();
   task = schedule.taskForVerse(ctx, n);
+  pickup = '';
+  result = null;
+  phase = 'brief';
+  applyTask(task);
+  render();
+}
+
+function workWhole() {
+  if (!ctx || !ctx.chunk) return;
+  closeMenu();
+  api.stopAll();
+  task = { kind: 'whole', reason: 'chosen', round: 5 };
   pickup = '';
   result = null;
   phase = 'brief';
@@ -925,6 +981,15 @@ function wireMenu() {
   if (tl) tl.addEventListener('change', () => api.setTranslit(tl.checked));
   const an = byId('gAnalysis');
   if (an) an.addEventListener('change', () => api.setAnalysis(an.checked));
+  const whole = byId('gWholeAliyah');
+  if (whole) whole.addEventListener('click', workWhole);
+  const textMode = byId('gScrollTextMode');
+  if (textMode) textMode.addEventListener('change', () => {
+    api.setScrollTextMode(textMode.value);
+    if (document.body.classList.contains('g-menu-open')) renderMenu();
+  });
+  const scrollSync = byId('gScrollSync');
+  if (scrollSync) scrollSync.addEventListener('change', () => api.setScrollSync(scrollSync.checked));
   const off = byId('gOffline');
   if (off) off.addEventListener('click', () => { api.download(); closeMenu(); });
   const signIn = byId('gSignIn');

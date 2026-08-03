@@ -17,36 +17,70 @@
   "en": "Trope drills",
   "he": "תַרְגִילֵי טְעָמִים",
   "translit": "Targilei Te'amim",
-  "ref": "One root, every accent"
+  "ref": "Two levels, every accent"
  },
  "groups": [
   {
-   "title": "1 · The everyday progression",
-   "note": "One root, ש־ל־ם, in every form: shalom (peace), shalem (whole), shilem (he repaid), Shlomo, meshulam (requited), shilumim (recompense). The accents run in the order you actually meet them: each pause arrives with the connectors that serve it, and the verse divides at the Etnachta like a real one. Long on purpose — use Divide on the sections stage to take it in halves first.",
+   "title": "Level 1A · Two sound families, one poem, every accent",
+   "note": "A pair of playful pesukim built almost entirely from two sound families. Solomon, wearing a salmah (robe), repeats devarim (ideas) that dvorim (bees) spoke in the midbar, then climbs a sulam (ladder) as his davar is fulfilled. Dvorah answers the dvorim: their devarim are dvash (honey), not dever (plague), and the ladder becomes a metaphor for completion. The puns are a reading drill, not false etymology: true ש־ל־ם and ד־ב־ר inflections are interleaved with look- and sound-alikes, especially Shlomo / salmah / sulam and devarim / dvorim / Dvorah / dvash / dever. Tiny changes of consonant, vowel, prefix, tense, or noun pattern must be read rather than guessed, while every pause still falls where the sense pauses. The rare accents are not saved up for a hard pasuk: they are dealt through both sentences the way you meet them in a real reading — a Zarqa–Segol clause opening the first, a Telisha Qetana and a Gershayim inside an ordinary Revia phrase, a Shalshelet opening the second, then Pazer, Yetiv, Zaqef Gadol, Mercha Kefula, and the Yerach ben Yomo with Qarney Para that appear once each in the entire Torah, each sitting inside the everyday phrase it serves. Note the Zarqa: Unicode splits it across two marks, and this is the one the Torah text uses. Both are long on purpose — use Divide on the sections stage to take them in halves first.",
    "start": 1,
-   "end": 1
+   "end": 2
   },
   {
-   "title": "2 · The rare flourishes",
-   "note": "The same idea on ד־ב־ר: davar (a word), diber (he spoke), dever (plague), midbar (wilderness). This one carries everything the first verse leaves out — Shalshelet opening the verse, the Zarqa–Segol pair, both Telishot, Pazer, Gershayim, Yetiv, Zaqef Gadol, Mercha Kefula, and the Yerach ben Yomo with Qarney Para that appear once each in the entire Torah. Note the Zarqa: Unicode splits it across two marks, and this is the one the Torah text uses.",
-   "start": 2,
-   "end": 2
+   "title": "Level 1B · One root at a time, no sentence to lean on",
+   "note": "Every accent again with the meaning taken away: one root per pasuk, inflected every way that keeps the sound recognisable, and nothing carrying you from word to word but the trope itself. Sorted, too — the everyday accents in the first pasuk and the rare ones together in the second, so a mark can be hunted down on its own before you meet it in traffic. Harder than it looks, and worth coming back to once the story above chants easily — a sentence lets you guess where the phrase ends, and these do not. ש־ל־ם: shalom (peace), shalem (whole), shilem (he repaid), Shlomo, shlomam (their peace), meshulam (requited), shilumim (recompense). ד־ב־ר: davar (a word), diber (he spoke), dever (plague), midbar (wilderness), divreihem (their words), kidvarkha (as your word).",
+   "start": 3,
+   "end": 4
+  },
+  {
+   "title": "Level 2 · Hard sounds on the road to harvest",
+   "note": "A harder pair built around ה־ל־ך and ק־צ־ר. Lalekhet belongs to the root ה־ל־ך: lalekhet, halakh, halkhu, holekh, mahalakh, halikhah, and tahalukhah move medial and final khaf through changing vowels and endings, beside the near-rhymes melekh, derekh, and orekh; ruach adds chet to the same hard sound. The second family packs qof, tzadi, and resh into contrasts that the unpointed letters cannot resolve: qatsar (reaped), qatsar (short), qotser (reaper), qotser (shortness or impatience), qitser (shortened), and qetser (short circuit). Both pesukim mix common and rare accents naturally, and both tell one small story: a king and his reapers take a road that grows shorter, while a long procession keeps going after impatience and a short circuit bring everything else to a stop.",
+   "start": 5,
+   "end": 6
   }
  ],
  "verses": [
   {
    "n": 1,
-   "label": "ש־ל־ם",
-   "ref": "shalom",
-   "text": "שָׁלֵ֨ם מְשֻׁלָּ֜ם שִׁלֵּ֣ם שִׁלּוּמִ֗ים שָׁל֤וֹם שָׁלֵם֙ שִׁלֵּ֣ם הַשָּׁל֔וֹם שְׁלֹמֹ֥ה שְׁלוֹמ֖וֹ שָׁלֵ֣ם מְשֻׁלָּ֑ם שִׁלֵּ֣ם שְׁלוֹמָ֔ם שָׁל֧וֹם שָׁלֵ֛ם שְׁלֹמֹ֥ה שְׁלוֹמ֖וֹ שָׁל֥וֹם הַשָּׁלֽוֹם׃",
-   "en": "Trope order — Qadma · Azla (Geresh) · Munach · Revia · Mahpach · Pashta · Munach · Zaqef Qatan · Mercha · Tipcha · Munach · Etnachta · Munach · Zaqef Qatan · Darga · Tevir · Mercha · Tipcha · Mercha · Silluq (Sof Pasuk)"
+   "label": "שָׁלוֹם",
+   "ref": "Solomon, bees, and a ladder",
+   "text": "וַיְדַבֵּ֣ר שְׁלֹמֹה֘ בְּשַׂלְמָה֮ דְּבָרִ֣ים לָעָם֒ אֲשֶׁר֩ דִּבְּר֞וּ דְּבוֹרִ֣ים בַּמִּדְבָּ֗ר דָּבָ֤ר שָׁלוֹם֙ שָׁלֵ֣ם בִּשְׁלֵמ֔וּת וַיְשַׁלֵּ֥ם שְׁלֹמֹ֖ה תַּשְׁל֣וּם לִשְׁלוֹמָ֑ם בַּסֻּלָּ֦ם עָלָ֛ה וְנִשְׁלַ֥ם דְּבָר֖וֹ שָׁל֥וֹם מֻשְׁלָֽם׃",
+   "en": "And Solomon, in a robe, spoke ideas to the people, which bees had spoken in the wilderness: a word of peace, whole in wholeness; and Solomon paid a payment for their welfare. He climbed the ladder, and his word was fulfilled: perfect peace. — Trope order: Munach · Tsinnorit · Zarqa · Munach · Segol · Telisha Qetana · Gershayim · Munach · Revia · Mahpach · Pashta · Munach · Zaqef Qatan · Mercha · Tipcha · Munach · Etnachta · Mercha Kefula · Tevir · Mercha · Tipcha · Mercha · Silluq (Sof Pasuk)"
   },
   {
    "n": 2,
+   "label": "דְּבָרִים",
+   "ref": "Deborah answers the bees",
+   "text": "וְאֵ֓לֶּה דִּ֠בְרֵי דְּבוֹרָ֣ה אֲשֶׁ֡ר דִּבְּרָ֨ה אֶ֜ל דְּבוֹרִ֣ים בַּמִּדְבָּ֗ר דִּבְרֵיהֶ֤ם דְּבַשׁ֙ בְּכָ֣ל דָּבָ֔ר וְ֚לֹא דֶּ֕בֶר כִּדְבָרָ֧הּ הִשְׁלִימָ֛ה סֻלָּ֥ם שָׁלֵ֖ם אֶ֣ל שְׁלֵמ֑וּת וּבַסֻּלָּ֪ם הִשְׁלִ֟ימוּ דְּבוֹרִ֥ים דִּבְרֵיהֶ֖ם שָׁל֥וֹם מֻשְׁלָֽם׃",
+   "en": "And these are Deborah’s words, which she spoke to bees in the wilderness: their words are honey in every matter, and not plague. As she said, she completed a whole ladder toward wholeness. On the ladder the bees made peace; their words were perfect peace. — Trope order: Shalshelet · Telisha Gedola · Munach · Pazer · Qadma · Azla (Geresh) · Munach · Revia · Mahpach · Pashta · Munach · Zaqef Qatan · Yetiv · Zaqef Gadol · Darga · Tevir · Mercha · Tipcha · Munach · Etnachta · Yerach ben Yomo · Qarney Para · Mercha · Tipcha · Mercha · Silluq (Sof Pasuk)"
+  },
+  {
+   "n": 3,
+   "label": "ש־ל־ם",
+   "ref": "shalom",
+   "text": "שָׁלֵ֨ם מְשֻׁלָּ֜ם שִׁלֵּ֣ם שִׁלּוּמִ֗ים שָׁל֤וֹם שָׁלֵם֙ שִׁלֵּ֣ם הַשָּׁל֔וֹם שְׁלֹמֹ֥ה שְׁלוֹמ֖וֹ שָׁלֵ֣ם מְשֻׁלָּ֑ם שִׁלֵּ֣ם שְׁלוֹמָ֔ם שָׁל֧וֹם שָׁלֵ֛ם שְׁלֹמֹ֥ה שְׁלוֹמ֖וֹ שָׁל֥וֹם הַשָּׁלֽוֹם׃",
+   "en": "Trope order: Qadma · Azla (Geresh) · Munach · Revia · Mahpach · Pashta · Munach · Zaqef Qatan · Mercha · Tipcha · Munach · Etnachta · Munach · Zaqef Qatan · Darga · Tevir · Mercha · Tipcha · Mercha · Silluq (Sof Pasuk)"
+  },
+  {
+   "n": 4,
    "label": "ד־ב־ר",
    "ref": "davar",
-   "text": "הַדְּבָרִ֓ים דָּבָ֣ר דְּבָרִים֘ דִּבְרֵיהֶם֮ דִּבֵּ֣ר וּבַמִּדְבָּר֒ מְ֠דַבְּרִים דָּבָ֣ר הַדְּבָרִ֡ים דְּבָרִים֩ דִּבְרֵיהֶ֞ם דֶּ֣בֶר וַיְדַבֵּ֗ר מִ֚דְבָּר כִּדְבָרְ֕ךָ דְּבָרִ֦ים דִּבֵּ֛ר דָּבָ֥ר מִדְבָּ֖ר דִּבֵּ֣ר הַדְּבָרִ֑ים מְדַבְּרִ֪ים וּבַמִּדְבָּ֟ר דָּבָ֥ר מִדְבָּ֖ר דִּבֵּ֥ר הַדְּבָרִֽים׃",
-   "en": "Trope order — Shalshelet · Munach · Tsinnorit · Zarqa · Munach · Segol · Telisha Gedola · Munach · Pazer · Telisha Qetana · Gershayim · Munach · Revia · Yetiv · Zaqef Gadol · Mercha Kefula · Tevir · Mercha · Tipcha · Munach · Etnachta · Yerach ben Yomo · Qarney Para · Mercha · Tipcha · Mercha · Silluq (Sof Pasuk)"
+   "text": "הַדְּבָרִ֓ים דָּבָ֣ר דְּבָרִים֘ דִּבְרֵיהֶם֮ דִּבֵּ֣ר וּבַמִּדְבָּר֒ מְ֠דַבְּרִים דָּבָ֣ר הַדְּבָרִ֡ים דְּבָרִים֩ דִּבְרֵיהֶ֞ם דֶּ֣בֶר וַיְדַבֵּ֗ר מִ֚דְבָּר כִּדְבָרְךָ֕ דְּבָרִ֦ים דִּבֵּ֛ר דָּבָ֥ר מִדְבָּ֖ר דִּבֵּ֣ר הַדְּבָרִ֑ים מְדַבְּרִ֪ים וּבַמִּדְבָּ֟ר דָּבָ֥ר מִדְבָּ֖ר דִּבֵּ֥ר הַדְּבָרִֽים׃",
+   "en": "Trope order: Shalshelet · Munach · Tsinnorit · Zarqa · Munach · Segol · Telisha Gedola · Munach · Pazer · Telisha Qetana · Gershayim · Munach · Revia · Yetiv · Zaqef Gadol · Mercha Kefula · Tevir · Mercha · Tipcha · Munach · Etnachta · Yerach ben Yomo · Qarney Para · Mercha · Tipcha · Mercha · Silluq (Sof Pasuk)"
+  },
+  {
+   "n": 5,
+   "label": "לָלֶכֶת",
+   "ref": "The road that grows short",
+   "text": "לָלֶ֣כֶת לַקָּצִיר֘ הָלַךְ֮ מֶ֣לֶךְ בְּדֶרֶךְ֒ וְקָצַר֩ קוֹצֵ֞ר קָצִ֣יר בְּלֶכְתּ֗וֹ מַהֲלָ֤ךְ קָצָר֙ קִצֵּ֣ר דַּרְכּ֔וֹ הוֹ֥לִיךְ הַמֶּ֖לֶךְ קוֹצְרִ֣ים לַקָּצִ֑יר בְּאֹ֦רֶךְ הָלַ֛ךְ וְנִקְצְרָ֥ה דַּרְכּ֖וֹ כַּאֲשֶׁ֥ר קָצַֽר׃",
+   "en": "To go to harvest, a king walked on a road, and a reaper reaped a harvest as he walked. A short course shortened his road; the king led reapers to the harvest. At length he walked, and his road grew short when he reaped. — Trope order: Munach · Tsinnorit · Zarqa · Munach · Segol · Telisha Qetana · Gershayim · Munach · Revia · Mahpach · Pashta · Munach · Zaqef Qatan · Mercha · Tipcha · Munach · Etnachta · Mercha Kefula · Tevir · Mercha · Tipcha · Mercha · Silluq (Sof Pasuk)"
+  },
+  {
+   "n": 6,
+   "label": "ק־צ־ר",
+   "ref": "The procession keeps walking",
+   "text": "וְאֵ֓לֶּה הַ֠הֲלִיכוֹת אֲשֶׁ֣ר הָלְכ֡וּ הַהוֹלְכִ֨ים בַּדֶּ֜רֶךְ קְצָרָ֣ה לַקָּצִ֗יר קוֹצֵ֤ר קָצַר֙ בְּקֹ֣צֶר ר֔וּחַ וְ֚קֶצֶר עָצַ֕ר אַ֧ךְ הָלְכָ֛ה תַּהֲלוּכָ֥ה בְּמַהֲלָ֖ךְ אָרֹ֣ךְ לַקָּצִ֑יר כַּאֲשֶׁ֪ר יֵלֵ֟ךְ יִקְצֹ֥ר קוֹצֵ֖ר קָצִ֥יר קָצָֽר׃",
+   "en": "And these are the walks which the walkers walked on a short road to the harvest: a reaper reaped in impatience, and a short circuit brought things to a stop. But a procession went along a long course to the harvest; when he walks, a reaper will reap a short harvest. — Trope order: Shalshelet · Telisha Gedola · Munach · Pazer · Qadma · Azla (Geresh) · Munach · Revia · Mahpach · Pashta · Munach · Zaqef Qatan · Yetiv · Zaqef Gadol · Darga · Tevir · Mercha · Tipcha · Munach · Etnachta · Yerach ben Yomo · Qarney Para · Mercha · Tipcha · Mercha · Silluq (Sof Pasuk)"
   }
  ]
 }

@@ -77,9 +77,16 @@ no stage of any pasuk:
 
 Round 5 is counted in runs of pesukim rather than in pesukim, because that is what
 it is made of: every run of two, three and four consecutive pesukim in the part,
-plus the part chanted through in one go. It used to be folded into round 4, which
-meant a reader could be shown four full bars — the whole plan complete — with most
-of the joins in the reading still unrehearsed.
+each of them twice, plus the part chanted through in one go. It used to be folded
+into round 4, which meant a reader could be shown four full bars — the whole plan
+complete — with most of the joins in the reading still unrehearsed.
+
+Twice, because a run is a ramp rather than a single attempt: first from the
+pointed text, where the vowels and the accents are in front of the reader and the
+joins are the only hard part, and then — once that holds — the same pesukim off
+the bare scroll. Passing the pointed take hands the scroll take over immediately,
+while the run is still in the ear. See
+[Verse chains](#verse-chains-the-rung-between-pasuk-and-aliyah).
 
 The surface narrows to match: a top bar naming the part and the round (with the
 five rounds as five filling pips), a mission card saying what to do, *why this
@@ -96,7 +103,8 @@ and **combine** (runs of 2–4 consecutive pesukim, and finally the whole part i
 one go). Combine takes every run at every position, not the part cut into fixed
 runs: the join between two pesukim is a thing to be practised, and cutting the
 reading into 1–2, 3–4, 5–6 would leave the join at 2–3 inside no run at all and
-give the opening of the part a run at every length. Equally short and equally
+give the opening of the part a run at every length. Runs come shortest first and,
+at each length, with the vowels before the scroll. Equally short and equally
 unpractised runs are shuffled, so the top of the aliyah is not what comes up every
 time. The rotation is why a reader improves rather than merely accumulating:
 marching forward only leaves verse 24 untouched and week-one's shaky words still
@@ -125,12 +133,15 @@ half-learned picks up where that pasuk stopped, and the schedule hands out its o
 next choice again afterwards.
 
 **The menu** (☰) shows each part's five rounds as five bars plus its whole-part
-score, the settings worth having at this size (text size, pitch analysis, and —
-through the first three rounds only — reading along in English letters),
-and the ways out: change the date/cycle/parts, learn a different parashah, or
-open the full workshop. Changing the plan never deletes practice — scores are
-filed under the pesukim themselves, so coming back to a reading finds it exactly
-where it was left.
+score, plus a direct **Read / listen / practice the full aliyah** action at any
+point in the schedule. That full reader can be STA"M, regular pointed text, or
+both side by side; when both are shown an optional follower keeps the same word
+aligned as either column is scrolled. The menu also keeps the settings worth
+having at this size (text size, pitch analysis, and — through the first three
+rounds only — reading along in English letters), and the ways out: change the
+date/cycle/parts, learn a different parashah, or open the full workshop. Changing
+the plan never deletes practice — scores are filed under the pesukim themselves,
+so coming back to a reading finds it exactly where it was left.
 
 **A haftarah of his own.** Plenty of b'nei mitzvah chant something other than the
 haftarah the calendar appoints: a shul with its own custom, a special Shabbat, a
@@ -261,7 +272,12 @@ seventh aliyah is the Rosh Chodesh reading from another book, it says so.
   Tap any word to jump to it for practice. Only the pages a reading needs are
   bundled — run `scripts/build_tikkun.py` after adding a reading, or it falls
   back to a reflowed column whose line breaks are the browser's, not the
-  scroll's (`--check` reports the gap and exits non-zero).
+  scroll's (`--check` reports the gap and exits non-zero). The **Full-reading
+  text** setting generalizes that pane and the aliyah reader: choose STA"M,
+  colored regular text with vowels and accents, or both side by side. Both
+  surfaces carry the same verse/word coordinates, so the yad and post-take
+  accuracy tint appear in both. **Follow together** aligns the nearest visible
+  word when either column is scrolled; turn it off to move them independently.
 - **Hold and rewind a word at a time** — anything running (the recorded chant, the
   voice guide, a duet, your own take) can be held with **Space** and nudged with
   **,** and **.** — one word back, one word forward. Fumble a word halfway through
@@ -327,16 +343,27 @@ the tiers you read are the same thing.
 Knowing every pasuk of an aliyah cold still leaves the *joins* between them
 unrehearsed, which is usually where a long aliyah falls apart. Open an aliyah in
 the verse list and it offers **verse chains**: back-to-back runs of 2, 3 or 4
-pesukim chanted straight through. A chain reuses the aliyah reader (bare STA"M
-scroll, moving yad, guided read / solo / duet) over a shorter span, and keeps its
-own best score. Chains are personal practice, so they aren't gated behind
+pesukim chanted straight through. A chain reuses the aliyah reader (STA"M,
+pointed, or paired scroll; moving yad; guided read / solo / duet) over a shorter span.
+Chains are personal practice, so they aren't gated behind
 readiness and don't post to the leaderboards.
+
+A run keeps a **best per surface** — one for the pointed text, one for the bare
+scroll — because they are not the same feat. Chaining brings two hard things at
+once: the joins, which is the work of this rung, and reading unpointed letters at
+speed across a verse boundary, which is the work of the rung below. Asked for
+both in one take, a reader loses the joins to the letters. So a run is first
+chanted with the vowels and the accents in front of them and only then off the
+scroll, and the chip shows the best for whichever text the Torah column is
+currently showing. A scroll run counts for the pointed rung too: it is the same
+pesukim, read harder.
 
 The chips in the verse list are the aliyah cut into runs end to end, which is what
 a menu should be: predictable, and every pasuk in exactly one chip. Guided mode's
 fifth round works the same chains from the other direction — every run at every
-position, so no join is left out — and both read and write the same per-range
-scores, so a chain chanted in one place is chanted in the other.
+position, so no join is left out, each of them pointed and then from the scroll —
+and both read and write the same per-range scores, so a chain chanted in one place
+is chanted in the other.
 
 ## Trope drills & cantillated prayers
 
@@ -346,21 +373,56 @@ him, so the melody always arrives before the mark does and you never learn to
 Reading menu alongside the parashiyot:
 
 - **Trope drills** (`data/trope-drills.json`, built by `scripts/build_drills.py`)
-  — two long practice pesukim, each built from **one Hebrew root**, so the
-  syllables stay familiar and the only thing changing from word to word is the
-  trope, the way a language course drills a new alphabet one letter at a time.
-  *The everyday progression* (ש־ל־ם: shalom, shalem, shilem, Shlomo, meshulam,
-  shilumim) carries the accents in almost every verse; *the rare flourishes*
-  (ד־ב־ר: davar, diber, dever, midbar) carries everything else, down to the
-  Yerach ben Yomo and Qarney Para that occur once each in the whole Torah.
+  — **two levels, presented as three lessons of two long pesukim each**. Every
+  pair reaches every accent, down to the Yerach ben Yomo and Qarney Para that
+  occur once each in the whole Torah.
+
+  **Level 1** has two presentations of the same **Hebrew sound families**. The
+  true ש־ל־ם forms (shalom, shalem,
+  shilem, vayishalem, venishlam, hishlimah, shlemut, tashlum, meshulam) are set
+  beside Shlomo, salmah (שַׂלְמָה, a robe), and sulam (סֻלָּם, a ladder). The
+  ד־ב־ר forms (davar, diber/dibrah, devarim, divreihem, dever, midbar) are set
+  beside dvorim (דְּבוֹרִים, bees), Dvorah, and dvash (דְּבַשׁ, honey). These
+  are deliberate reading puns, not claims that all the words share an etymology:
+  the syllables stay close while a vowel, prefix, tense, shin/sin/samekh, or
+  nearby consonant changes under the trope.
+
+  Its two lessons cover the **same accents** and are different exercises:
+
+  1. **As sentences, mixed.** The pair reads as a playful poem. Solomon, wearing
+     a *salmah*, repeats *devarim* (ideas) spoken by *dvorim* (bees) in the
+     *midbar*, pays a *tashlum*, and climbs a *sulam* until his *davar* is
+     *nishlam*. Dvorah then answers the bees: their words are *dvash*, not
+     *dever*, and the ladder becomes a metaphor for completion and peace. The
+     root forms and look-alikes carry almost the whole poem; ordinary joining
+     words are kept to a minimum. The rare accents are dealt through both
+     pesukim rather than saved for a hard one: a Zarqa–Segol clause opens the
+     first, a Shalshelet opens the second, and a Pazer or a Qarney Para turns up
+     inside an ordinary phrase without warning, which is how a reader actually
+     meets one. A phrase that makes sense is a phrase you can hear going wrong.
+  2. **As word lists, sorted.** One root per pasuk and no sentence to lean on:
+     nothing carries you from word to word but the accent itself, and the rare
+     marks are gathered into a pasuk of their own so you can hunt one down in
+     isolation. Harder, and worth coming back to once the story chants easily,
+     because a sentence lets you guess where a phrase ends and a list does not.
+
+  **Level 2: hard consonants.** A second poem pairs ה־ל־ך with ק־צ־ר. *Lalekhet*
+  belongs to ה־ל־ך, so *lalekhet, halakh, halkhu, holekh, mahalakh, halikhah,* and
+  *tahalukhah* move medial and final khaf through changing vowels and endings;
+  *melekh, derekh,* and *orekh* keep the same hard ending moving, while *ruach*
+  adds chet. ק־צ־ר supplies qof, tzadi, and resh with unusually dense
+  vowel-dependent contrasts: קָצַר (*qatsar*, reaped), קָצָר (*qatsar*, short),
+  קוֹצֵר (*qotser*, reaper), קֹצֶר (*qotser*, shortness or impatience), קִצֵּר
+  (*qitser*, shortened), and קֶצֶר (*qetser*, short circuit). A king and his
+  reapers take a road that grows short while a long procession keeps walking.
 
   They are **not** grouped tier by tier. The accents run in the orders you
   actually meet them — each pause approached by the connectors that serve it
   (Qadma→Azla, Mahpach→Pashta→Munach→Zaqef, Darga→Tevir,
-  Mercha→Tipcha→Munach→Etnachta) — and each drill divides at an Etnachta like a
-  real pasuk, so the Divide control can take it in halves before you chant it end
-  to end. Everything else — record, duet, hold-and-rewind, the spectrogram — works
-  as it does for a real pasuk.
+  Mercha→Tipcha→Munach→Etnachta), and falling where the sense pauses — and each
+  drill divides at an Etnachta like a real pasuk, so the Divide control can take
+  it in halves before you chant it end to end. Everything else — record, duet,
+  hold-and-rewind, the spectrogram — works as it does for a real pasuk.
 
   **The melody is measured, not sketched.** `js/trope.js` carries hand-drawn
   motifs for each accent; they convey the shape but they are guesses, and for a
@@ -391,9 +453,10 @@ The tune belongs to the accent, not the word, and the bundled readings hold
 ~19,000 recorded, word-aligned instances of those accents, so this searches the
 corpus for the drill's accent *sequence* and splices the cantor's own voice
 together, greedily taking the longest runs it can so the seams fall between
-phrases rather than between every word. Both drills currently come out **entirely
-from real audio** — the everyday progression in 3 splices, the rare flourishes in
-12 — which is only true because of the three non-Deuteronomy readings below.
+phrases rather than between every word. All six pesukim currently come out
+**entirely from real audio** — the Level 1 poem in 6 and 9 splices, its word lists
+in 3 and 12, and the Level 2 poem in 6 and 9 — which is only true because of the
+three non-Deuteronomy readings below.
 
 While it plays, the pane shows **the words being sung, not the drill's**, laid out
 on their real durations. That matters: the first version left the drill's words on
@@ -558,8 +621,9 @@ reading, that a plan built from one has the right parts and refs — including t
 each of the seven aliyot covers its own pesukim rather than the whole parashah,
 on either cycle — and that the scheduler **walks a part
 to 100% and then stops** — all five rounds in order, every stage of every pasuk
-handed out, every run of pesukim chained (and counted where the chaining round can
-see it), and weak words coming back before anything is polished. That last one matters most: a schedule that quietly never finishes, or
+handed out, every run of pesukim chained with the vowels and then off the scroll
+(and counted where the chaining round can see it), and weak words coming back
+before anything is polished. That last one matters most: a schedule that quietly never finishes, or
 never revisits weak work, is invisible in the UI until months of practice have
 gone into it. `scripts/check_app.py` walks the actual app:
 the reading menu, the aliyah accordion, verse chains, all nine stages, the Divide

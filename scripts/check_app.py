@@ -160,6 +160,20 @@ STEPS = [
      " set('0.05'); __t.q('#tgFont').click();"
      " return wide>before&&saved===0.1 ? `OK ${before}px -> ${wide}px`"
      "   : `${before}px -> ${wide}px, saved=${saved}`;})()"),
+    ("the workshop can place a pointed full-reading scroll beside the STA\"M",
+     "(()=>{const mode=__t.q('[data-scroll-text=\"dual\"]'), pane=__t.q('#paneToggleScroll');"
+     " if(!mode||!pane) return 'full-reading controls missing';"
+     " mode.click(); if(!document.body.classList.contains('scroll-view')) pane.click();"
+     " return __t.settle(()=>!!__t.q('#scrollStamTrack .sw')&&!!__t.q('#scrollPointedTrack .sw'),"
+     "   null,null,12000).then(()=>{"
+     "     const a=__t.q('#scrollStamTrack .sw'), b=__t.q('#scrollPointedTrack .sw');"
+     "     const same=a.dataset.verse===b.dataset.verse&&a.dataset.widx===b.dataset.widx;"
+     "     const pointed=/[\\u0591-\\u05c7]/.test(b.textContent), bare=!/[\\u0591-\\u05c7]/.test(a.textContent);"
+     "     __t.q('[data-scroll-text=\"stam\"]').click();"
+     "     if(document.body.classList.contains('scroll-view')) pane.click();"
+     "     return same&&pointed&&bare ? `OK both map verse ${a.dataset.verse}, word ${a.dataset.widx}`"
+     "       : `same=${same} pointed=${pointed} bare=${bare}`;"
+     "   });})()"),
     ("chain chips are offered inside an aliyah",
      "(()=>{__t.openFirst(); const c=__t.all('.alsec.open .chain').length;"
      " return c>0 ? `OK ${c} chain(s)` : 'no chains offered';})()"),
@@ -209,6 +223,30 @@ STEPS = [
     ("every stage renders",
      "(()=>{for(let i=0;i<9;i++) if(!__t.stage(i)) return 'stage '+(i+1)+' missing';"
      " __t.stage(0); return 'OK walked all nine';})()"),
+    # The rung below reading a run off the bare scroll: the same pesukim with the
+    # vowels and the accents in front of you, so the joins are the only hard part.
+    # Guided mode's fifth round asks for every run this way first, and each surface
+    # keeps its own best — so the chip has to follow the text on screen rather than
+    # look as though a run's score had vanished.
+    ("a run can be chanted from the pointed text, and keeps its own best there",
+     "(()=>{__t.q('#alBack')&&__t.q('#alBack').click();"
+     " return Promise.all([import('/js/store.js'), import('/js/app.js')]).then(([st])=>{"
+     "   __t.openFirst(); const chip=__t.q('.alsec.open .chain');"
+     "   if(!chip) return 'no chain to open';"
+     "   const [s,e]=[chip.dataset.start,chip.dataset.end].map(Number);"
+     "   const slug=__t.q('#parashah').value;"
+     "   st.recordChainScore(slug, s, e, 84, 'pointed');"
+     "   __t.q('[data-scroll-text=\"pointed\"]').click(); __t.openFirst();"
+     "   const badge=__t.text(__t.q(`.chain[data-start=\"${s}\"] .chain-score`));"
+     "   __t.q(`.alsec.open .chain[data-start=\"${s}\"]`).click();"
+     "   const desc=__t.text(__t.q('.aliyah-view .leveldesc'));"
+     "   const pointed=!!__t.q('#aliyahPointed'), bare=!!__t.q('#aliyahScroll');"
+     "   __t.q('#alBack').click(); __t.q('[data-scroll-text=\"stam\"]').click(); __t.openFirst();"
+     "   const after=__t.q(`.chain[data-start=\"${s}\"] .chain-score`);"
+     "   return pointed && !bare && badge==='84' && !after && /pointed text/.test(desc)"
+     "     ? `OK pesukim ${s}-${e} read pointed, 84 with the vowels and nothing yet from the scroll`"
+     "     : `pointed=${pointed} bare=${bare} badge=${badge} after=${__t.text(after)} desc=${desc.slice(0,70)}`;"
+     " });})()"),
     ("a verse chain opens the multi-verse reader",
      "(()=>{__t.q('#alBack')&&__t.q('#alBack').click(); __t.openFirst();"
      " const chip=__t.q('.alsec.open .chain'); if(!chip) return 'no chain to open';"
@@ -343,9 +381,11 @@ RECORD_STEPS = [
 # After the walk above, switch readings and re-probe.
 READING_STEPS = [
     ("trope-drills", [
-        ("the drill set loads as lessons, not aliyot",
+        ("the drill set loads as three lessons of a pair each, not aliyot",
          "(()=>{const n=__t.all('.alsec').length, chains=__t.all('.chain').length;"
-         " return n>=2&&chains===0 ? `OK ${n} lessons, no aliyah machinery` : `${n} lessons, ${chains} chains`;})()"),
+         " __t.openFirst(); const v=__t.all('.alsec.open .verse').length;"
+         " return n===3&&v===2&&chains===0 ? `OK ${n} lessons, ${v} pesukim each, no aliyah machinery`"
+         "   : `${n} lessons, ${v} pesukim, ${chains} chains`;})()"),
         ("each drill is a long verse the Divide control can cut up",
          "(()=>{__t.pickVerse(); __t.stage(3);"
          " if (__t.q('.locked-page')) return 'sections stage locked';"
@@ -951,10 +991,10 @@ GUIDED_STEPS = [
      "   .then(()=>{const p=__t.text(__t.q('.g-top-part'));"
      "     return p==='Haftarah' ? `OK now on the ${p}, ${__t.q('#parashah').value}`"
      "       : `still on ${p}`;});})()"),
-    ("the settings offered are the three that matter at this size",
+    ("the settings include full-reading text and the core guided aids",
      "(()=>{__t.tap('.g-menu-btn'); const rows=__t.all('.g-row').map(r=>__t.text(r));"
-     " return rows.length===3 && /Text size/.test(rows[0]) && /English letters/.test(rows[1])"
-     "   && /pitch/.test(rows[2])"
+     " return rows.length===5 && /Full-reading text/.test(rows[0]) && /aligned/.test(rows[1])"
+     "   && /Text size/.test(rows[2]) && /English letters/.test(rows[3]) && /pitch/.test(rows[4])"
      "   ? `OK ${rows.join(' / ')}` : `settings were ${JSON.stringify(rows)}`;})()"),
     # Guided mode hides the workshop's settings sheet, so this is the only door to
     # the aid for the reader who most needs it — and it has to shut itself at the
@@ -979,6 +1019,30 @@ GUIDED_STEPS = [
      " return heads.includes('Saving your progress') && /Sign in with Google/.test(__t.text(btn)) && note"
      "   ? `OK \u201c${__t.text(btn)}\u201d \u2014 ${note.slice(0, 60)}`"
      "   : `heads=${JSON.stringify(heads)} button=${__t.text(btn)} note=${note}`;})()"),
+    ("the guided menu opens the full part in synchronized STA\"M and pointed text",
+     "(()=>{const mode=__t.q('#gScrollTextMode'); if(!mode) return 'no full-reading mode setting';"
+     " mode.value='dual'; mode.dispatchEvent(new Event('change',{bubbles:true}));"
+     " return __t.after(100, ()=>{__t.tap('#gWholeAliyah');"
+     "   return __t.settle(()=>document.body.classList.contains('aliyah-open')"
+     "     && !!__t.q('#scrollStamTrack') && !!__t.q('#scrollPointedTrack')"
+     "     && __t.all('#scrollStamTrack .sw.yad-start').length===1"
+     "     && __t.all('#scrollPointedTrack .sw.yad-start').length===1,"
+     "     null, null, 12000).then(()=>{"
+     "       const a=__t.q('#scrollStamTrack .sw.yad-start');"
+     "       const b=__t.q('#scrollPointedTrack .sw.yad-start');"
+     "       return a&&b&&a.dataset.verse===b.dataset.verse&&a.dataset.widx===b.dataset.widx"
+     "         ? `OK both start at verse ${a.dataset.verse}, word ${a.dataset.widx}`"
+     "         : `start mismatch: ${a&&a.dataset.verse}:${a&&a.dataset.widx} / ${b&&b.dataset.verse}:${b&&b.dataset.widx}`;"
+     "     });});})()"),
+    ("the same guided-read pointer moves through both full-reading texts",
+     "(()=>{__t.tap('.g-listen');"
+     " return __t.settle(()=>__t.all('#scrollStamTrack .sw.yad-cur').length>0"
+     "   && __t.all('#scrollPointedTrack .sw.yad-cur').length>0, null, null, 12000)"
+     "   .then(()=>{const a=__t.q('#scrollStamTrack .sw.yad-cur');"
+     "     const b=__t.q('#scrollPointedTrack .sw.yad-cur'); __t.key('Escape');"
+     "     return a&&b&&a.dataset.verse===b.dataset.verse&&a.dataset.widx===b.dataset.widx"
+     "       ? `OK pointer at verse ${a.dataset.verse}, word ${a.dataset.widx}`"
+     "       : 'the two pointers did not agree';});})()"),
     ("the workshop is one tap away, and the way back is the chip in its header",
      "(()=>{__t.tap('#gExpert');"
      " return __t.settle(()=>!document.body.classList.contains('guided'), null, null, 6000)"
@@ -1222,19 +1286,29 @@ ALIYOT_STEPS = [
     # it — even when the pesukim there are done, and even when the schedule would
     # rather move on. Progress is written into the store rather than sung, because
     # the fake microphone scores nothing.
+    #
+    # Which pesukim those are depends on the triennial year the plan's date falls
+    # in, and the date is "the next Eikev from today" — so the aliyah is read out
+    # of the reading's own table and the pesukim to seed are taken from it. Hard-
+    # coding them held only for the year that happened to be upcoming when this was
+    # written, and left the case silently unexercised for two years in every three.
     ("a part opens on its first pasuk however much of it is already done",
      "(async()=>{const st=await import('/js/store.js'), pl=await import('/js/plan.js');"
      " const g=await import('/js/guided.js');"
-     " st.recordVerseLevel('eikev', 11, 5); st.recordVerseLevel('eikev', 12, 3);"
-     " await g.start(pl.get());"
+     " const p=pl.get(), doc=await (await fetch('data/eikev.json')).json();"
+     " const a=doc.aliyot.triennial[p.triYear].find(x=>Number(x.n)===3);"
+     " __t.part={first:`${doc.book.en} ${a.ref.match(/\\d+:\\d+/)[0]}`, count:a.end-a.start+1};"
+     " st.recordVerseLevel('eikev', a.start, 5); st.recordVerseLevel('eikev', a.start+1, 3);"
+     " await g.start(p);"
      " await __t.settle(()=>!!__t.q('.g-where') && /pasuk/.test(__t.text(__t.q('.g-where'))),"
      "   null, null, 20000);"
      " const where=__t.text(__t.q('.g-where')), why=__t.text(__t.q('.g-why-tag'));"
      " const round=__t.text(__t.q('.g-top-round'));"
-     " return /Deuteronomy 7:22 \u00b7 pasuk 1 of 5/.test(where) && /From the beginning/.test(why)"
+     " const want=`${__t.part.first} \u00b7 pasuk 1 of ${__t.part.count}`;"
+     " return where.startsWith(want) && /From the beginning/.test(why)"
      "   && /Round 1/.test(round)"
      "   ? `OK ${where} \u00b7 ${why} \u00b7 ${round}`"
-     "   : `where=${where} why=${why} round=${round}`;})()"),
+     "   : `wanted ${want} \u2014 where=${where} why=${why} round=${round}`;})()"),
     # And when it does move on, it says so: being stepped over reads as the app
     # losing the reader's place unless it explains itself and offers the way back.
     ("and moving past the finished ones says which they were",
@@ -1243,30 +1317,37 @@ ALIYOT_STEPS = [
      "   unitCount:1, unitIndex:0});"
      " await __t.settle(()=>!!__t.q('#gNext'), null, null, 10000);"
      " __t.tap('#gNext');"
-     " await __t.settle(()=>/pasuk 3 of 5/.test(__t.text(__t.q('.g-where'))), null, null, 20000);"
+     " const want=`pasuk 3 of ${__t.part.count}`;"
+     " await __t.settle(()=>__t.text(__t.q('.g-where')).includes(want), null, null, 20000);"
      " const where=__t.text(__t.q('.g-where')), note=__t.text(__t.q('.g-pickup'));"
      " const shown=!!__t.q('.g-pickup') && getComputedStyle(__t.q('.g-pickup')).display!=='none';"
-     " return /Pesukim 1\u20132 are already through/.test(note) && shown"
+     " return /Pesukim 1\u20132 are already through/.test(note) && shown && where.includes(want)"
      "   ? `OK ${where} \u2014 ${note.slice(0, 60)}\u2026`"
-     "   : `where=${where} note=${note.slice(0,90)} shown=${shown}`;})()"),
+     "   : `wanted ${want} \u2014 where=${where} note=${note.slice(0,90)} shown=${shown}`;})()"),
     ("the menu lists every pasuk with the rounds it has cleared",
      "(()=>{__t.tap('.g-menu-btn');"
      " const chips=__t.all('.g-pasuk').map(b=>({n:__t.text(b.querySelector('.g-pasuk-ref')),"
      "   ticks:b.querySelectorAll('.g-vseg.on').length, here:b.classList.contains('on')}));"
      " const ticks=chips.map(c=>c.ticks).join(',');"
-     " return chips.length===5 && ticks==='2,1,0,0,0' && chips[2].here"
+     # The two seeded pesukim have cleared two rounds and one; the rest of the
+     # aliyah, however long it is, has cleared none.
+     " const want=['2','1'].concat(Array(Math.max(0, __t.part.count-2)).fill('0')).join(',');"
+     " return chips.length===__t.part.count && ticks===want && chips[2].here"
      "   ? `OK ${chips.map(c=>c.n+':'+c.ticks).join(' ')} \u00b7 on pasuk ${chips.findIndex(c=>c.here)+1}`"
-     "   : `${chips.length} chips, ticks=${ticks}, here=${chips.findIndex(c=>c.here)+1}`;})()"),
+     "   : `${chips.length} chips, ticks=${ticks}, wanted ${want},"
+     " here=${chips.findIndex(c=>c.here)+1}`;})()"),
     ("and tapping the first one goes back to it, at the stage it had reached",
      "(()=>{const first=__t.all('.g-pasuk')[0]; first.click();"
-     " return __t.settle(()=>/pasuk 1 of 5/.test(__t.text(__t.q('.g-where'))), null, null, 15000)"
+     " return __t.settle(()=>__t.text(__t.q('.g-where')).includes(`pasuk 1 of ${__t.part.count}`),"
+     "   null, null, 15000)"
      "  .then(()=>{const where=__t.text(__t.q('.g-where')), why=__t.text(__t.q('.g-why-tag'));"
      "    const round=__t.text(__t.q('.g-top-round'));"
      "    const open=document.body.classList.contains('g-menu-open');"
-     "    return /Deuteronomy 7:22/.test(where) && /asked for this one/.test(why)"
+     "    return where.startsWith(__t.part.first) && /asked for this one/.test(why)"
      "      && /Round 3/.test(round) && !open"
      "      ? `OK ${where} \u00b7 ${why} \u00b7 ${round}`"
-     "      : `where=${where} why=${why} round=${round} menu-open=${open}`;});})()"),
+     "      : `wanted ${__t.part.first} \u2014 where=${where} why=${why}"
+     " round=${round} menu-open=${open}`;});})()"),
     ("a parashah the app has no recording of is still divided into its aliyot",
      "(async()=>{const cal=await import('/js/calendar.js'), pl=await import('/js/plan.js');"
      " const g=await import('/js/guided.js');"

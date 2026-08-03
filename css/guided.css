@@ -297,6 +297,18 @@ body.guided main {
   grid-template-columns: none !important;
   overflow: hidden;
 }
+/* The desktop three-window grid (styles.css) pins .scrollpane/.textpane/.practice
+   to fixed column LINES (1/3/5) regardless of guided mode, since that rule matches
+   on viewport size alone. An explicit `grid-column` on a child forces the browser
+   to synthesize implicit column tracks to reach it even when this element's own
+   grid-template-columns is `none` — so on a wide-enough screen the aliyah/chain
+   scroll was still being squeezed into the workshop's ~40-300px rail column
+   instead of the full width, and the Torah-column page (whose font-size scales to
+   the container's width) rendered near-illegibly small until the window narrowed
+   past that media query and the pinning stopped applying. Guided mode never wants
+   the pinned three-column layout, so its children go back to auto placement. */
+body.guided .scrollpane, body.guided .textpane, body.guided .practice,
+body.guided .splitter, body.guided .splitter2 { grid-column: auto !important; }
 
 body.guided .practice {
   display: flex; flex-direction: column;
@@ -386,6 +398,7 @@ body.guided.aliyah-open .scrollpane {
 body.guided.aliyah-open .scrollpane .pane-title,
 body.guided.aliyah-open .scrollpane .drawer-close { display: none; }
 body.guided.aliyah-open .scrollpane .pane-body { padding: 8px 10px; }
+body.guided.aliyah-open.scroll-dual-view .scrollpane { overflow: hidden; }
 body.guided.aliyah-open #practice .aliyah-view { display: flex; flex-direction: column; height: 100%; }
 
 /* ===========================================================================
@@ -647,6 +660,10 @@ body.guided.g-menu-open .g-menu { transform: none; }
 }
 .g-row input[type="range"] { flex: 0 0 140px; accent-color: var(--accent); }
 .g-row-check input { width: 20px; height: 20px; accent-color: var(--accent); }
+.g-row select {
+  max-width: 190px; padding: 6px 8px; color: var(--text);
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+}
 .g-row-btn {
   display: block; width: 100%; text-align: start;
   padding: 12px 13px; font: inherit; font-size: 14px; color: var(--text);

@@ -139,6 +139,9 @@ try {
   log(store.getSectionScores('x', 1)['0-4'] === 70, 'section keeps its best score');
   store.recordChainScore('x', 3, 5, 61);
   log(store.getChainScore('x', 3, 5) === 61, 'chain score round-trips');
+  store.recordChainScore('x', 3, 5, 88, 'pointed');
+  log(store.getChainScore('x', 3, 5) === 61 && store.getChainScore('x', 3, 5, 'pointed') === 88,
+    'and a run keeps a separate best for the pointed text and the bare scroll');
 
   // Named passages ride along with progress to the reader's other devices, so
   // what matters is that syncing can't undo an edit: the newer list wins whole,
@@ -616,7 +619,7 @@ try {
     seen[task.reason] += 1;
     const r = schedule.currentRound(ctx);
     if (!roundsAt.length || roundsAt[roundsAt.length - 1] !== r.id) roundsAt.push(r.id);
-    if (task.kind === 'chain') store.recordChainScore(SLUG, task.start, task.end, 92);
+    if (task.kind === 'chain') store.recordChainScore(SLUG, task.start, task.end, 92, task.surface);
     else if (task.kind === 'whole') store.recordAliyahScore(SLUG, 'annual', 1, 'H', 91);
     else if (task.what === 'word') store.recordWordScore(SLUG, task.verse, task.word, 93);
     else {
@@ -641,7 +644,8 @@ try {
   // task with no title would be a blank screen.
   const described = [
     { kind: 'whole', reason: 'combine' },
-    { kind: 'chain', start: 1, end: 3, size: 3, reason: 'combine' },
+    { kind: 'chain', start: 1, end: 3, size: 3, surface: 'pointed', reason: 'combine' },
+    { kind: 'chain', start: 1, end: 3, size: 3, surface: 'stam', reason: 'combine' },
     ...levels.LEVELS.map((l) => ({ kind: 'verse', verse: 1, level: l.id, reason: 'advance' })),
     { kind: 'verse', verse: 1, level: 1, word: 2, what: 'word', score: 44, reason: 'repair' },
   ];
@@ -675,7 +679,8 @@ try {
 
   // The chaining round. Its work is not a stage of any pasuk, so it is counted in
   // runs of pesukim — every length, at every position, which is what stops the top
-  // of the part being the only thing ever chained — and finally the part end to end.
+  // of the part being the only thing ever chained, and each run twice: with the
+  // vowels and accents, then off the bare scroll — and finally the part end to end.
   const CH = '\u2202chain';
   const cverses = [1, 2, 3, 4];
   const cctx = schedule.makeContext({
@@ -684,16 +689,23 @@ try {
   });
   const chainRound = schedule.ROUNDS[schedule.ROUNDS.length - 1];
   const cp0 = schedule.roundProgress(cctx, chainRound);
-  log(cp0.total === 7 && cp0.done === 0,
-    `four pesukim make six runs to chain, plus the part end to end (${cp0.total})`);
+  log(cp0.total === 13 && cp0.done === 0,
+    `four pesukim make six runs, each chanted twice, plus the part end to end (${cp0.total})`);
   log(schedule.verseProgress(cctx, 1).total === 4,
     'while one pasuk is still measured in the four rounds it can finish by itself');
-  store.recordChainScore(CH, 1, 2, 95);
-  log(schedule.roundProgress(cctx, chainRound).done === 1, 'chanting one run moves it');
-  for (const [a, b] of [[2, 3], [3, 4], [1, 3], [2, 4], [1, 4]]) store.recordChainScore(CH, a, b, 95);
+  store.recordChainScore(CH, 1, 2, 95, 'pointed');
+  log(schedule.roundProgress(cctx, chainRound).done === 1, 'chanting one run with the vowels moves it');
+  const cup = schedule.nextChainTier(cctx, { kind: 'chain', start: 1, end: 2, size: 2, surface: 'pointed' });
+  log(cup && cup.surface === 'stam' && cup.start === 1 && cup.end === 2,
+    'and what it earns is the same pesukim off the bare scroll');
+  store.recordChainScore(CH, 1, 2, 95, 'stam');
+  log(schedule.roundProgress(cctx, chainRound).done === 2 && !schedule.nextChainTier(cctx, cup),
+    'which finishes that run \u2014 there is no rung above the scroll');
+  for (const [a, b] of [[2, 3], [3, 4], [1, 3], [2, 4], [1, 4]]) store.recordChainScore(CH, a, b, 95, 'stam');
   const cp1 = schedule.roundProgress(cctx, chainRound);
-  log(cp1.pct === 86 && !cp1.wholeDone,
-    `every run chanted is not yet the whole thing (${cp1.pct}%)`);
+  log(cp1.pct === 92 && !cp1.wholeDone,
+    `a run read off the scroll counts for the easier rung too, so every run chanted `
+    + `is all but the whole thing (${cp1.pct}%)`);
   store.recordAliyahScore(CH, 'annual', 1, 'H', 90);
   const cp2 = schedule.roundProgress(cctx, chainRound);
   log(cp2.pct === 100 && cp2.wholeDone, 'and the part end to end is the last box on the plan');
@@ -719,6 +731,12 @@ try {
   const c5 = schedule.nextTask(octx, { session: 4 });
   log(c5 && c5.kind === 'chain' && c5.round === 5,
     'the work it hands out is chaining, credited to the chaining round');
+  log(c5 && c5.surface === 'pointed',
+    'and it starts with the vowels and accents in front of the reader, not the bare scroll');
+  for (const [a, b] of [[1, 2], [2, 3], [1, 3]]) store.recordChainScore(CH5, a, b, 95, 'pointed');
+  const c5up = schedule.nextTask(octx, { session: 4 });
+  log(c5up && c5up.kind === 'chain' && c5up.surface === 'stam',
+    'once the runs hold with the vowels, the same runs come back off the scroll');
 } catch (e) {
   log(false, `threw: ${e && e.stack ? e.stack : e}`);
 }

@@ -110,6 +110,16 @@
             <input type="range" id="stamTrack" min="0" max="0.1" step="0.005" aria-label="STA&quot;M letter spacing">
           </label>
         </div>
+        <div class="set-row">
+          <span class="label">Full-reading text</span>
+          <span class="seg" id="scrollTextModeSeg" title="Choose the surface used for a full aliyah or the Torah-column pane">
+            <button class="on" data-scroll-text="stam">STA&ldquo;M</button>
+            <button data-scroll-text="pointed">Voweled</button>
+            <button data-scroll-text="dual">Both</button>
+          </span>
+          <button id="scrollSync" class="toggle on" aria-pressed="true"
+            title="When both columns are visible, moving either one keeps the same word aligned in the other">↕ Follow together</button>
+        </div>
       </section>
 
       <section class="set-sec">

@@ -356,20 +356,29 @@ export function getVerseProfiles(slug, verseN) {
 // The tier between a single pasuk and a whole aliyah: a short run of consecutive
 // pesukim chanted without stopping, so the joins between verses get practiced.
 // Keyed by the verse range, e.g. "vaetchanan:90-92".
-function chainKey(slug, startV, endV) { return `${slug}:${startV}-${endV}`; }
+//
+// A run is chanted from one of two surfaces, and they are not the same feat:
+// reading it with the vowels and the accents in front of you is the rung below
+// reading it off the bare scroll. So each keeps its own best. The scroll keeps
+// the bare key it has always had, so every chain recorded before the pointed
+// surface existed still counts as what it was — a run read from the scroll.
+const CHAIN_SURFACE_KEYS = { stam: '', pointed: '@pointed' };
+function chainKey(slug, startV, endV, surface) {
+  return `${slug}:${startV}-${endV}${CHAIN_SURFACE_KEYS[surface] || ''}`;
+}
 
-export function recordChainScore(slug, startV, endV, score) {
+export function recordChainScore(slug, startV, endV, score, surface = 'stam') {
   const d = load();
   d.chains = d.chains || {};
-  const k = chainKey(slug, startV, endV);
+  const k = chainKey(slug, startV, endV, surface);
   d.chains[k] = Math.max(d.chains[k] || 0, Number(score) || 0);
   save(d);
   return d.chains[k];
 }
 
-export function getChainScore(slug, startV, endV) {
+export function getChainScore(slug, startV, endV, surface = 'stam') {
   const d = load();
-  return (d.chains && d.chains[chainKey(slug, startV, endV)]) || 0;
+  return (d.chains && d.chains[chainKey(slug, startV, endV, surface)]) || 0;
 }
 
 // Per-aliyah best chant score, keyed by slug:cycle:year:aliyahNumber. Year is

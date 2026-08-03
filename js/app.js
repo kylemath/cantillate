@@ -120,6 +120,8 @@ const state = {
   stamHand: 'shlomo', // scribal hand for every STA"M surface: 'shlomo' | 'ashkenaz'
   stamTrack: 0.05,    // STA"M letter-spacing, em (see applyStamTrack)
   scrollView: false,  // Torah-column (STA"M) pane expanded on desktop / full-screen on mobile
+  scrollTextMode: 'stam', // full-reading surface: 'stam' | 'pointed' | 'dual'
+  scrollSync: true,   // in dual mode, keep both columns on the same visible word
   textCollapsed: false, // desktop: collapse the pesukim / aliyot pane to a rail
   practiceCollapsed: false, // desktop: collapse the coach pane to a rail
   scrollZoom: false,  // guitar-hero: zoom to ~5 words and auto-scroll the line
@@ -406,6 +408,12 @@ async function init() {
   });
   setupStamTrack();
   setupPaneToggles();
+  const textMode = $('scrollTextModeSeg');
+  if (textMode) textMode.querySelectorAll('[data-scroll-text]').forEach((b) => {
+    b.addEventListener('click', () => setScrollTextMode(b.dataset.scrollText));
+  });
+  const scrollSync = $('scrollSync');
+  if (scrollSync) scrollSync.addEventListener('click', () => setScrollSync(!state.scrollSync));
   // A single "Portion" selector is the sole control for how much of the parashah
   // you read: the full annual reading, or one shorter triennial-cycle year. The
   // triennial year drives both the aliyah boundaries AND the range of verses
@@ -649,7 +657,7 @@ function guidedApi() {
     selectVerse: (n) => selectVerse(n),
     selectStage: (id) => selectStage(id),
     goToUnit: (i) => goToUnit(i),
-    openChain: (s, e) => openChain(s, e),
+    openChain: (s, e, opts) => openChain(s, e, opts),
     openAliyah: (a) => openAliyah(a),
 
     unitsShown: () => (state.units ? state.units.length : 1),
@@ -682,6 +690,10 @@ function guidedApi() {
     setReadScale: (v) => applyReadScale(v, true),
     analysisOn: () => state.showAnalysis,
     setAnalysis: (on) => { if (on !== state.showAnalysis) toggleAnalysis(); },
+    scrollTextMode: () => state.scrollTextMode,
+    setScrollTextMode: (mode) => setScrollTextMode(mode),
+    scrollSync: () => state.scrollSync,
+    setScrollSync: (on) => setScrollSync(on),
     // The transliteration is the one aid whose control has to be offered twice.
     // Guided mode hides the workshop's settings sheet, and a reader who cannot
     // yet read the letters is exactly the reader guided mode is for — so the
@@ -2863,6 +2875,45 @@ function bindToggle(id, fn) {
   $(id).addEventListener('click', () => { fn(); syncToggleUI(); });
 }
 
+function setScrollTextMode(mode) {
+  // The reader saying which text they want: that is a preference, and it outranks
+  // any surface a chain put them on, so the chain stops planning to put it back.
+  state._scrollTextModeBeforeChain = null;
+  applyScrollTextMode(mode, true);
+}
+
+// `persist` is false when the app is choosing the surface rather than the reader
+// (see openChain): the text on screen changes, but what the reader last asked for
+// is what comes back next time.
+function applyScrollTextMode(mode, persist) {
+  if (!['stam', 'pointed', 'dual'].includes(mode)) mode = 'stam';
+  if (state.scrollTextMode === mode) return;
+  state.scrollTextMode = mode;
+  if (persist) savePanePrefs();
+  syncToggleUI();
+  if (!state.data) return;
+  // The verse list is redrawn too, not just the scroll: its chain chips carry a
+  // best per surface, and the one to show has just changed.
+  if (state.aliyah) renderScrollPane();
+  else renderVerses();
+}
+
+// Which of the chaining round's two surfaces the reader is actually reading from.
+// Dual counts as the pointed one: the vowels and the accents are on screen, which
+// is the help that tier is defined by, whichever column the eye is on.
+function chainSurfaceNow() {
+  return state.scrollTextMode === 'stam' ? 'stam' : 'pointed';
+}
+
+function setScrollSync(on) {
+  state.scrollSync = !!on;
+  savePanePrefs();
+  syncToggleUI();
+  if (state.data && state.scrollTextMode === 'dual' && (state.scrollView || state.aliyah)) {
+    renderScrollPane();
+  }
+}
+
 const PANE_PREF_KEY = 'cantillate.panes';
 function loadPanePrefs() {
   try {
@@ -2870,6 +2921,8 @@ function loadPanePrefs() {
     if (!raw) return;
     const p = JSON.parse(raw);
     if (typeof p.scrollView === 'boolean') state.scrollView = p.scrollView;
+    if (['stam', 'pointed', 'dual'].includes(p.scrollTextMode)) state.scrollTextMode = p.scrollTextMode;
+    if (typeof p.scrollSync === 'boolean') state.scrollSync = p.scrollSync;
     if (typeof p.textCollapsed === 'boolean') state.textCollapsed = p.textCollapsed;
     if (typeof p.practiceCollapsed === 'boolean') state.practiceCollapsed = p.practiceCollapsed;
   } catch (_) { /* ignore corrupt prefs */ }
@@ -2878,6 +2931,8 @@ function savePanePrefs() {
   try {
     localStorage.setItem(PANE_PREF_KEY, JSON.stringify({
       scrollView: state.scrollView,
+      scrollTextMode: state.scrollTextMode,
+      scrollSync: state.scrollSync,
       textCollapsed: state.textCollapsed,
       practiceCollapsed: state.practiceCollapsed,
     }));
@@ -2909,8 +2964,21 @@ function syncToggleUI() {
   if (sms) sms.querySelectorAll('.sm').forEach((b) => b.classList.toggle('on', b.dataset.sm === state.scoreModel));
   const shs = $('stamHandSeg');
   if (shs) shs.querySelectorAll('.sh').forEach((b) => b.classList.toggle('on', b.dataset.sh === state.stamHand));
+  const stm = $('scrollTextModeSeg');
+  if (stm) stm.querySelectorAll('[data-scroll-text]').forEach((b) => {
+    b.classList.toggle('on', b.dataset.scrollText === state.scrollTextMode);
+  });
+  const ssy = $('scrollSync');
+  if (ssy) {
+    ssy.classList.toggle('on', state.scrollSync);
+    ssy.disabled = state.scrollTextMode !== 'dual';
+    ssy.setAttribute('aria-pressed', state.scrollSync ? 'true' : 'false');
+  }
   document.body.classList.toggle('hand-ashkenaz', state.stamHand === 'ashkenaz');
   document.body.classList.toggle('scroll-view', state.scrollView);
+  document.body.classList.toggle('scroll-dual-view', state.scrollTextMode === 'dual');
+  document.body.classList.toggle('scroll-pointed-view', state.scrollTextMode === 'pointed');
+  document.body.classList.toggle('scroll-sync-view', state.scrollTextMode === 'dual' && state.scrollSync);
   document.body.classList.toggle('pane-text-collapsed', state.textCollapsed);
   document.body.classList.toggle('pane-practice-collapsed', state.practiceCollapsed);
   syncPaneToggle('paneToggleScroll', state.scrollView);
@@ -4835,11 +4903,150 @@ function bindScrollWordSelection(box) {
 function scrollTikkunStartIntoView() {
   const pane = $('scrollpane');
   const box = $('scrollVerses');
-  const start = box && box.querySelector('.range-start');
-  if (!pane || !start || !pane.clientHeight) return;
-  const delta = start.getBoundingClientRect().top - pane.getBoundingClientRect().top;
-  pane.scrollTop = Math.max(0, pane.scrollTop + delta - 48);
+  if (!pane || !box) return;
+  const tracks = [...box.querySelectorAll('.scroll-track')];
+  if (tracks.length) {
+    tracks.forEach((track) => {
+      const start = track.querySelector('.range-start');
+      if (!start || !track.clientHeight) return;
+      const delta = start.getBoundingClientRect().top - track.getBoundingClientRect().top;
+      track.scrollTop = Math.max(0, track.scrollTop + delta - 34);
+    });
+  } else {
+    const scroller = pane.querySelector('.pane-body') || pane;
+    const start = box.querySelector('.range-start');
+    if (!start || !scroller.clientHeight) return;
+    const delta = start.getBoundingClientRect().top - scroller.getBoundingClientRect().top;
+    scroller.scrollTop = Math.max(0, scroller.scrollTop + delta - 48);
+  }
   delete box.dataset.scrollToStart;
+}
+
+function pointedScrollWordHtml(seg, verseN, inFocus, selected, rangeStart) {
+  const ctx = { showVowels: true, showTaamim: true, scroll: false };
+  const mode = state.colorMode;
+  const inner = mode === 'trope'
+    ? renderWordTropeColored(seg.token, ctx, seg.color)
+    : escapeHtml(renderWord(seg.token, ctx));
+  const color = mode === 'full' ? seg.color : INK_GREY;
+  const classes = ['sw', 'w'];
+  if (!inFocus) classes.push('ctx');
+  if (selected) classes.push('sel');
+  if (rangeStart) classes.push('range-start');
+  return `<span class="${classes.join(' ')}" data-verse="${verseN}" data-widx="${seg.index}"`
+    + ` data-wi="${seg.index}" data-taam="${seg.taam == null ? 'none' : seg.taam}"`
+    + ` data-fam="${seg.familyId}" style="color:${color}">${inner}</span>`;
+}
+
+// Word-content override for renderTikkunPages(): builds the pointed (vowels +
+// cantillation, trope-coloured) counterpart of a STA"M word in place of its
+// bare letters, so the pointed surface can reuse the exact same page/line
+// breaks as the STA"M column instead of reflowing on its own. A context word
+// that falls outside the loaded reading (unmapped verse/widx) has no pointed
+// source to draw from, so it keeps the default STA"M glyph.
+function pointedTikkunWordRender(word) {
+  if (word.verse == null || word.widx == null) return null;
+  const seg = verseSegments(word.verse)[word.widx];
+  if (!seg) return null;
+  const ctx = { showVowels: true, showTaamim: true, scroll: false };
+  const mode = state.colorMode;
+  const html = mode === 'trope'
+    ? renderWordTropeColored(seg.token, ctx, seg.color)
+    : escapeHtml(renderWord(seg.token, ctx));
+  const color = mode === 'full' ? seg.color : INK_GREY;
+  return {
+    html,
+    classes: ['w'],
+    attrs: [
+      `data-taam="${seg.taam == null ? 'none' : seg.taam}"`,
+      `data-fam="${seg.familyId}"`,
+      `style="color:${color}"`,
+    ],
+  };
+}
+
+// Paginated pointed counterpart of renderTikkunPages(): identical page and
+// line breaks (a real column doesn't reflow to make room for niqqud), but with
+// each word's vowelled/accented form in place of the bare STA"M letters. Falls
+// back to null exactly when renderTikkunPages does (fixed page data not yet
+// loaded, or the range isn't covered by it), so callers can chain their own
+// naturally-wrapping fallback.
+function renderPointedTikkunHtml({ focusStart, focusEnd, contextStart, contextEnd, selectedVerse, columnClass, columnId }) {
+  const tikkun = renderTikkunPages(state.tikkun, state.data, {
+    focusStart, focusEnd, contextStart, contextEnd, selectedVerse,
+    columnClass: `pointed-tikkun${columnClass ? ` ${columnClass}` : ''}`,
+    columnId,
+    renderWord: pointedTikkunWordRender,
+  });
+  return tikkun ? tikkun.html : null;
+}
+
+// A full-reading counterpart to the STA"M column: the same verse/word mapping,
+// but in the regular font with vowels, accents and trope colour. Used only as
+// a fallback when the fixed tikkun page data can't lay out a paginated match
+// (not loaded yet, or the range falls outside it) — it wraps naturally rather
+// than trying to fake a sofer's fixed 42-line layout on its own.
+function renderPointedScrollColumn({ from, to, focusStart, focusEnd, selectedVerse, id }) {
+  const verses = [];
+  for (let n = from; n <= to; n++) {
+    const inFocus = n >= focusStart && n <= focusEnd;
+    const words = verseSegments(n).map((seg) => pointedScrollWordHtml(
+      seg, n, inFocus, selectedVerse === n, n === focusStart && seg.index === 0,
+    )).join(' ');
+    verses.push(`<span class="al-verse${inFocus ? '' : ' ctx'}" data-pointed-verse="${n}">${words}</span>`);
+  }
+  return `<div class="scroll-column pointed-scroll aliyah-scroll" id="${id}">${verses.join(' ')}</div>`;
+}
+
+function scrollSurfaceHtml(stamHtml, pointedHtml) {
+  if (state.scrollTextMode === 'pointed') return pointedHtml;
+  if (state.scrollTextMode !== 'dual') return stamHtml;
+  return `<div class="scroll-dual" id="scrollDual">
+    <div class="scroll-track scroll-track-stam" id="scrollStamTrack">
+      <div class="scroll-track-label">STA&ldquo;M</div>${stamHtml}
+    </div>
+    <div class="scroll-track scroll-track-pointed" id="scrollPointedTrack">
+      <div class="scroll-track-label">Vowels &amp; cantillation</div>${pointedHtml}
+    </div>
+  </div>`;
+}
+
+let dualScrollSyncing = false;
+function nearestScrollWord(track) {
+  const top = track.getBoundingClientRect().top + 30;
+  let best = null;
+  let distance = Infinity;
+  track.querySelectorAll('.sw[data-verse][data-widx]').forEach((word) => {
+    const r = word.getBoundingClientRect();
+    if (r.bottom < top) return;
+    const d = Math.abs(r.top - top);
+    if (d < distance) { best = word; distance = d; }
+  });
+  return best;
+}
+
+function alignScrollTrack(source, target) {
+  const anchor = nearestScrollWord(source);
+  if (!anchor) return;
+  const twin = target.querySelector(`.sw[data-verse="${anchor.dataset.verse}"][data-widx="${anchor.dataset.widx}"]`);
+  if (!twin) return;
+  const sourceOffset = anchor.getBoundingClientRect().top - source.getBoundingClientRect().top;
+  const targetOffset = twin.getBoundingClientRect().top - target.getBoundingClientRect().top;
+  target.scrollTop = Math.max(0, target.scrollTop + targetOffset - sourceOffset);
+}
+
+function wireDualScrollSync(box) {
+  const stam = box.querySelector('#scrollStamTrack');
+  const pointed = box.querySelector('#scrollPointedTrack');
+  if (!stam || !pointed) return;
+  const mirror = (source, target) => {
+    if (!state.scrollSync || dualScrollSyncing) return;
+    dualScrollSyncing = true;
+    alignScrollTrack(source, target);
+    requestAnimationFrame(() => { dualScrollSyncing = false; });
+  };
+  stam.addEventListener('scroll', () => mirror(stam, pointed), { passive: true });
+  pointed.addEventListener('scroll', () => mirror(pointed, stam), { passive: true });
 }
 
 // Render explicit Davidovich tikkun pages and line boundaries. Every line is a
@@ -4853,44 +5060,61 @@ function renderScrollPane() {
   // context) instead of the whole reading, so the scroll stays put in the same
   // window whether you're referencing a verse or chanting an aliyah.
   if (state.aliyah) { renderAliyahScroll(box); return; }
-  if (title) title.innerHTML = 'Torah column (STA&ldquo;M)';
+  if (title) {
+    title.innerHTML = state.scrollTextMode === 'pointed'
+      ? 'Full reading (vowels &amp; cantillation)'
+      : state.scrollTextMode === 'dual'
+        ? 'Full reading (STA&ldquo;M + pointed)'
+        : 'Torah column (STA&ldquo;M)';
+  }
   if (!state.scrollView) { box.innerHTML = ''; return; }
-  ensureTikkunData(); // the column is about to be drawn: this is where the pages are needed
   const [start, end] = divisionRange();
-  const layoutKey = `${state.slug}:${start}-${end}`;
+  const layoutKey = `${state.slug}:${start}-${end}:${state.scrollTextMode}`;
   const previousKey = box.dataset.layoutKey;
-  const tikkun = renderTikkunPages(state.tikkun, state.data, {
-    focusStart: start,
-    focusEnd: end,
-    contextStart: start,
-    contextEnd: end,
-    selectedVerse: state.selectedVerse,
-  });
-  if (tikkun) {
-    box.innerHTML = tikkun.html;
-    box.dataset.layoutKey = layoutKey;
-    if (previousKey !== layoutKey) box.dataset.scrollToStart = '1';
-    bindScrollWordSelection(box);
-    fitScrollPages();
-    if (box.dataset.scrollToStart === '1') requestAnimationFrame(scrollTikkunStartIntoView);
-    applyScrollWordHits();
-    return;
-  }
-
-  let html = '<div class="scroll-column">';
-  for (let i = start; i <= end; i++) {
-    const segs = verseSegments(i);
-    segs.forEach((s) => {
-      const sel = state.selectedVerse === i ? ' sel' : '';
-      html += `<span class="sw${sel}" data-verse="${i}" data-widx="${s.index}" data-taam="${s.taam == null ? 'none' : s.taam}" data-fam="${s.familyId}">${escapeHtml(toScroll(s.token))}</span> `;
+  ensureTikkunData(); // both surfaces below want the fixed page layout
+  let stamHtml = '';
+  if (state.scrollTextMode !== 'pointed') {
+    const tikkun = renderTikkunPages(state.tikkun, state.data, {
+      focusStart: start,
+      focusEnd: end,
+      contextStart: start,
+      contextEnd: end,
+      selectedVerse: state.selectedVerse,
     });
+    if (tikkun) {
+      stamHtml = tikkun.html;
+    } else {
+      let fallback = '<div class="scroll-column">';
+      for (let i = start; i <= end; i++) {
+        verseSegments(i).forEach((s) => {
+          const sel = state.selectedVerse === i ? ' sel' : '';
+          const first = i === start && s.index === 0 ? ' range-start' : '';
+          fallback += `<span class="sw${sel}${first}" data-verse="${i}" data-widx="${s.index}"`
+            + ` data-taam="${s.taam == null ? 'none' : s.taam}" data-fam="${s.familyId}">`
+            + `${escapeHtml(toScroll(s.token))}</span> `;
+        });
+      }
+      stamHtml = fallback + '</div>';
+    }
   }
-  html += '</div>';
-  box.innerHTML = html;
+  const pointedHtml = state.scrollTextMode === 'stam' ? '' : (renderPointedTikkunHtml({
+    focusStart: start, focusEnd: end, contextStart: start, contextEnd: end,
+    selectedVerse: state.selectedVerse, columnId: 'pointedScroll',
+  }) || renderPointedScrollColumn({
+    from: start, to: end, focusStart: start, focusEnd: end,
+    selectedVerse: state.selectedVerse, id: 'pointedScroll',
+  }));
+  box.innerHTML = scrollSurfaceHtml(stamHtml, pointedHtml);
+  box.dataset.layoutKey = layoutKey;
+  if (previousKey !== layoutKey) box.dataset.scrollToStart = '1';
   bindScrollWordSelection(box);
+  wireDualScrollSync(box);
+  fitScrollPages();
+  if (box.dataset.scrollToStart === '1') requestAnimationFrame(scrollTikkunStartIntoView);
   // Re-apply the per-word accuracy shading after any rebuild (a toolbar toggle,
   // pasuk change, etc.), so the STA"M column keeps its last take's clue.
   applyScrollWordHits();
+  applyScrollOverlay();
 }
 
 // Mirror the aliyah reader's per-word "notes hit" clue onto the single-verse
@@ -4916,6 +5140,39 @@ function applyScrollWordHits() {
   for (const gi in wh.scores) paintWordTint(box, wh.verse, parseInt(gi, 10), wh.scores[gi] / 100);
 }
 
+// Mirror the pesukim pane's word/phrase/whole-verse score heatmap (wordSpan(),
+// gated on state.overlay) onto the selected verse's words in the full-reading
+// scroll surface(s), so switching to the STA"M/pointed/dual view to keep
+// reading doesn't lose the "where did I struggle" clue you had in verse mode.
+// Painted as an inline background on every matching .sw (STA"M and pointed
+// both carry data-verse/data-widx, so in dual view both tracks pick it up).
+function clearScrollOverlay(box) {
+  box = box || $('scrollVerses');
+  if (!box) return;
+  box.querySelectorAll('.sw[data-ov]').forEach((el) => {
+    el.style.removeProperty('background');
+    el.removeAttribute('data-ov');
+  });
+}
+function applyScrollOverlay() {
+  const box = $('scrollVerses');
+  if (!box || state.aliyah) return; // aliyah practice has its own live clue
+  clearScrollOverlay(box);
+  const verseN = state.selectedVerse;
+  if (state.overlay === 'off' || verseN == null) return;
+  const segs = verseSegments(verseN);
+  const ov = overlayScorer(verseN, segs);
+  segs.forEach((s, wi) => {
+    const score = ov.score(wi);
+    if (score == null || score <= 0) return;
+    const col = ov.lo != null && ov.hi != null ? rampColor(score, ov.lo, ov.hi) : scoreColor(score);
+    box.querySelectorAll(`.sw[data-verse="${verseN}"][data-widx="${wi}"]`).forEach((el) => {
+      el.style.background = col;
+      el.setAttribute('data-ov', '1');
+    });
+  });
+}
+
 // Populate the shared STA"M scroll pane (#scrollVerses) with the open aliyah:
 // the aliyah's verses plus surrounding context (dimmed), each word tagged so the
 // yad cues (start / end / current spot) can highlight it. Reuses the same
@@ -4925,39 +5182,59 @@ function applyScrollWordHits() {
 function renderAliyahScroll(box) {
   box = box || $('scrollVerses');
   if (!box) return;
-  ensureTikkunData(); // reachable without going through renderScrollPane
   const a = state.aliyah;
   if (!a) { box.innerHTML = ''; return; }
   const maxV = state.data.verses.length;
   const first = a.start, last = Math.min(a.end, maxV);
   const from = Math.max(1, first - ALIYAH_CONTEXT);
   const to = Math.min(maxV, last + ALIYAH_CONTEXT);
-  const tikkun = renderTikkunPages(state.tikkun, state.data, {
-    focusStart: first,
-    focusEnd: last,
-    contextStart: from,
-    contextEnd: to,
-    selectedVerse: state.selectedVerse,
-    columnClass: 'aliyah-scroll',
-    columnId: 'aliyahScroll',
-  });
-  if (tikkun) {
-    box.innerHTML = tikkun.html;
-  } else {
-    const scrollHtml = [];
-    for (let n = from; n <= to; n++) {
-      const segs = verseSegments(n);
-      const inAliyah = n >= first && n <= last;
-      const words = segs.map((s, wi) => `<span class="sw${inAliyah ? '' : ' ctx'}" data-verse="${n}" data-widx="${wi}">${escapeHtml(toScroll(s.token))}</span>`).join(' ');
-      scrollHtml.push(`<span class="al-verse${inAliyah ? '' : ' ctx'}">${words}</span>`);
+  ensureTikkunData(); // reachable without going through renderScrollPane
+  let stamHtml = '';
+  if (state.scrollTextMode !== 'pointed') {
+    const tikkun = renderTikkunPages(state.tikkun, state.data, {
+      focusStart: first,
+      focusEnd: last,
+      contextStart: from,
+      contextEnd: to,
+      selectedVerse: state.selectedVerse,
+      columnClass: 'aliyah-scroll',
+      columnId: 'aliyahScroll',
+    });
+    if (tikkun) {
+      stamHtml = tikkun.html;
+    } else {
+      const scrollHtml = [];
+      for (let n = from; n <= to; n++) {
+        const segs = verseSegments(n);
+        const inAliyah = n >= first && n <= last;
+        const words = segs.map((s, wi) => {
+          const rangeStart = n === first && wi === 0 ? ' range-start' : '';
+          return `<span class="sw${inAliyah ? '' : ' ctx'}${rangeStart}" data-verse="${n}" data-widx="${wi}">${escapeHtml(toScroll(s.token))}</span>`;
+        }).join(' ');
+        scrollHtml.push(`<span class="al-verse${inAliyah ? '' : ' ctx'}">${words}</span>`);
+      }
+      stamHtml = `<div class="scroll-column aliyah-scroll" id="aliyahScroll">${scrollHtml.join(' ')}</div>`;
     }
-    box.innerHTML = `<div class="scroll-column aliyah-scroll" id="aliyahScroll">${scrollHtml.join(' ')}</div>`;
   }
+  const pointedHtml = state.scrollTextMode === 'stam' ? '' : (renderPointedTikkunHtml({
+    focusStart: first, focusEnd: last, contextStart: from, contextEnd: to,
+    selectedVerse: state.selectedVerse, columnClass: 'aliyah-scroll', columnId: 'aliyahPointed',
+  }) || renderPointedScrollColumn({
+    from, to, focusStart: first, focusEnd: last,
+    selectedVerse: state.selectedVerse, id: 'aliyahPointed',
+  }));
+  box.innerHTML = scrollSurfaceHtml(stamHtml, pointedHtml);
+  wireDualScrollSync(box);
   const title = document.querySelector('#scrollpane .pane-title');
-  if (title) title.innerHTML = `${chunkTitle(a)} <span class="hint" style="text-transform:none;letter-spacing:0">STA&ldquo;M</span>`;
+  if (title) {
+    const surface = state.scrollTextMode === 'pointed'
+      ? 'Vowels &amp; cantillation'
+      : state.scrollTextMode === 'dual' ? 'STA&ldquo;M + pointed' : 'STA&ldquo;M';
+    title.innerHTML = `${chunkTitle(a)} <span class="hint" style="text-transform:none;letter-spacing:0">${surface}</span>`;
+  }
   fitScrollPages();
   // Re-apply the start/end cues after any rebuild (e.g. a toolbar toggle) so the
-  // yad markers survive re-renders of the pane.
+  // yad markers survive re-renders of either full-reading surface.
   if (state._aliyaTl) markAliyahEnds(state._aliyaTl, !!state._aliyaEnded);
   // Re-apply the per-word "notes hit" tint too, so a toolbar toggle / rebuild
   // after a finished run doesn't wipe the clue.
@@ -5090,11 +5367,18 @@ function buildChainStrip(a) {
   const runs = chainRuns(a, state.chainSize);
   if (!runs.length) { el.hidden = true; return el; }
   const sizes = CHAIN_SIZES.map((n) => `<button class="cs${n === state.chainSize ? ' on' : ''}" data-size="${n}">${n}</button>`).join('');
+  // A run keeps a best per surface, so the chip shows the one for the text on
+  // screen and names both in its tooltip — otherwise switching the Torah column
+  // to the pointed text would look like the run's score had vanished.
+  const surface = chainSurfaceNow();
   const chips = runs.map((r) => {
-    const score = store.getChainScore(state.slug, r.start, r.end);
+    const score = store.getChainScore(state.slug, r.start, r.end, surface);
+    const pointed = store.getChainScore(state.slug, r.start, r.end, 'pointed');
+    const stam = store.getChainScore(state.slug, r.start, r.end, 'stam');
     const ready = chainReadiness(r);
+    const bests = `${pointed ? `\nWith the vowels: ${pointed}` : ''}${stam ? `\nFrom the scroll: ${stam}` : ''}`;
     return `<button class="chain${ready ? ' ready' : ''}" data-start="${r.start}" data-end="${r.end}"`
-      + ` title="Chant pesukim ${rangeRef(r.start, r.end)} straight through">`
+      + ` title="Chant pesukim ${rangeRef(r.start, r.end)} straight through${bests}">`
       + `${rangeRef(r.start, r.end)}`
       + `${score > 0 ? `<span class="chain-score" style="background:${scoreColor(score)}">${score}</span>` : ''}`
       + `</button>`;
@@ -5104,7 +5388,7 @@ function buildChainStrip(a) {
       <span class="seg chain-sizes">${sizes}</span>
     </div>
     <div class="chain-list">${chips}</div>
-    <p class="hint chains-note">Chant a run of pesukim without stopping, so the joins between them get practiced before the whole aliyah.</p>`;
+    <p class="hint chains-note">Chant a run of pesukim without stopping, so the joins between them get practiced before the whole aliyah. Each run keeps a separate best for the pointed text and for the bare scroll — the joins are easier to hear when the letters aren't also work.</p>`;
   el.querySelectorAll('.cs').forEach((b) => b.addEventListener('click', () => {
     state.chainSize = parseInt(b.dataset.size, 10);
     renderVerses();
@@ -5125,7 +5409,18 @@ function chainReadiness(r) {
   return true;
 }
 
-function openChain(startV, endV) {
+// `surface` asks for the run to be read from a particular text — 'pointed' for
+// the vowels-and-accents tier of guided mode's chaining round, 'stam' for the
+// bare scroll above it. Expert mode passes nothing and the run opens in whatever
+// text the reader has chosen, as it always has.
+function openChain(startV, endV, opts = {}) {
+  const surface = opts.surface;
+  if (surface === 'pointed' || surface === 'stam') {
+    if (state._scrollTextModeBeforeChain == null) {
+      state._scrollTextModeBeforeChain = state.scrollTextMode;
+    }
+    applyScrollTextMode(surface, false);
+  }
   openAliyah({
     n: `C${startV}-${endV}`,
     kind: 'chain',
@@ -5133,6 +5428,16 @@ function openChain(startV, endV) {
     end: endV,
     ref: rangeRef(startV, endV),
   });
+}
+
+// Put the reader's own choice of text back once they leave a run that was opened
+// on a surface of the app's choosing. Only the state: this runs while the reader
+// is on their way somewhere else (a pasuk, another reading), and every caller
+// draws what they asked for straight afterwards.
+function restoreScrollTextMode() {
+  if (state._scrollTextModeBeforeChain == null) return;
+  state.scrollTextMode = state._scrollTextModeBeforeChain;
+  state._scrollTextModeBeforeChain = null;
 }
 
 // A single aliyah card element, inserted inline after its last unlocking pasuk.
@@ -5244,6 +5549,7 @@ function setAliyahLayout(on) {
     }
     state.practiceCollapsed = false;
   } else {
+    restoreScrollTextMode();
     if (state._scrollViewBeforeAliyah != null) {
       state.scrollView = state._scrollViewBeforeAliyah;
       state._scrollViewBeforeAliyah = null;
@@ -5295,7 +5601,9 @@ function renderAliyahView() {
       <button id="alBack">← Verses</button>
     </div>
     <p class="leveldesc">${chunkKind(a) === 'chain'
-      ? 'Chant these pesukim straight through from the bare scroll on the left, without pausing at the verse joins — that seam is what a whole aliyah is built from.'
+      ? (chainSurfaceNow() === 'pointed'
+        ? 'Chant these pesukim straight through from the pointed text on the left, without pausing at the verse joins — that seam is what a whole aliyah is built from. The vowels and accents are there so the joins are the only hard part; the same run comes back off the bare scroll.'
+        : 'Chant these pesukim straight through from the bare scroll on the left, without pausing at the verse joins — that seam is what a whole aliyah is built from.')
       : chunkKind(a) === 'haftarah' || chunkKind(a) === 'passage'
         ? `Chant the whole ${chunkNoun(a)} from the bare text on the left, straight through, as it is read. A grey outline marks the current spot and, subtly, where to begin and end.`
         : 'Chant the whole aliyah from the bare scroll on the left. A grey outline marks the current spot and, subtly, where to begin and end — as in a real reading. Faded text is the surrounding scroll for context.'}</p>
@@ -5333,10 +5641,9 @@ function renderAliyahView() {
   state._aliyaTl = tl;
   // Build the scroll in the shared pane (this also applies the start cue).
   renderAliyahScroll();
-  // One-time: bring the aliyah's start into view (with context above it).
-  const box = $('aliyahScroll');
-  const startEl = box && box.querySelector('.sw.yad-start');
-  if (startEl) startEl.scrollIntoView({ block: 'center' });
+  // One-time: bring the aliyah's start into view in every visible reading
+  // surface. Dual mode gives each column its own scroll container.
+  requestAnimationFrame(scrollTikkunStartIntoView);
   $('aliyaCueSeg').querySelectorAll('.cue').forEach((b) => {
     b.classList.toggle('on', b.dataset.cue === state.aliyahCue);
     b.addEventListener('click', () => {
@@ -5375,19 +5682,19 @@ function setAliyahButtons(running) {
 // Subtle start/end cueing: glow the aliyah's first word (where to begin) always,
 // and its last word (where to end) once the read/recording completes.
 function markAliyahEnds(tl, atEnd) {
-  const box = $('aliyahScroll');
+  const box = $('scrollVerses');
   if (!box) return;
   box.querySelectorAll('.yad-start,.yad-end').forEach((e) => e.classList.remove('yad-start', 'yad-end'));
   const first = tl.segs[0];
   if (first) {
-    const el = box.querySelector(`.sw[data-verse="${first.n}"][data-widx="0"]`);
-    if (el) el.classList.add('yad-start');
+    box.querySelectorAll(`.sw[data-verse="${first.n}"][data-widx="0"]`)
+      .forEach((el) => el.classList.add('yad-start'));
   }
   if (atEnd) {
     const last = tl.segs[tl.segs.length - 1];
     if (last && last.vsegs.length) {
-      const el = box.querySelector(`.sw[data-verse="${last.n}"][data-widx="${last.vsegs.length - 1}"]`);
-      if (el) el.classList.add('yad-end');
+      box.querySelectorAll(`.sw[data-verse="${last.n}"][data-widx="${last.vsegs.length - 1}"]`)
+        .forEach((el) => el.classList.add('yad-end'));
     }
   }
 }
@@ -5408,7 +5715,7 @@ function aliyahPhraseMembers(seg, widx) {
 // Outline the current spot with a grey box (no layout shift, no auto-scroll).
 // Granularity follows state.aliyahCue: a single word or its whole phrase.
 function highlightAliyah(verseN, widx) {
-  const box = $('aliyahScroll');
+  const box = $('scrollVerses');
   if (!box) return;
   box.querySelectorAll('.yad-cur').forEach((e) => e.classList.remove('yad-cur'));
   if (verseN == null) return;
@@ -5418,8 +5725,8 @@ function highlightAliyah(verseN, widx) {
     if (seg) members = aliyahPhraseMembers(seg, widx);
   }
   members.forEach((wi) => {
-    const el = box.querySelector(`.sw[data-verse="${verseN}"][data-widx="${wi}"]`);
-    if (el) el.classList.add('yad-cur');
+    box.querySelectorAll(`.sw[data-verse="${verseN}"][data-widx="${wi}"]`)
+      .forEach((el) => el.classList.add('yad-cur'));
   });
 }
 
@@ -5438,7 +5745,7 @@ function trackLiveWordHit(verseN, widx, inBand) {
   const w = state._aliyaLiveWord;
   w.total++;
   if (inBand) w.inband++;
-  paintWordTint($('aliyahScroll'), verseN, widx, w.inband / w.total);
+  paintWordTint($('scrollVerses'), verseN, widx, w.inband / w.total);
 }
 // Single-verse (non-aliyah) twin of trackLiveWordHit: while recording one pasuk,
 // tint the yad-pointed word in the STA"M column (#scrollVerses) live by its
@@ -5478,10 +5785,10 @@ function wordContourScore(trail, wSteps) {
 
 function paintWordTint(box, verseN, widx, frac) {
   if (!box) return;
-  const el = box.querySelector(`.sw[data-verse="${verseN}"][data-widx="${widx}"]`);
-  if (!el) return;
-  el.classList.remove('word-hit', 'word-partial', 'word-miss');
-  el.classList.add(frac >= 0.66 ? 'word-hit' : frac >= 0.33 ? 'word-partial' : 'word-miss');
+  box.querySelectorAll(`.sw[data-verse="${verseN}"][data-widx="${widx}"]`).forEach((el) => {
+    el.classList.remove('word-hit', 'word-partial', 'word-miss');
+    el.classList.add(frac >= 0.66 ? 'word-hit' : frac >= 0.33 ? 'word-partial' : 'word-miss');
+  });
 }
 
 function stopAliyah() {
@@ -5678,14 +5985,14 @@ function scoreAliyahVerse(seg, samples) {
 // Paint a subtle per-word "notes hit" clue onto the aliyah STA"M scroll: green
 // tint where the word's notes were mostly hit, amber partial, red mostly missed.
 function clearAliyahWordHits() {
-  const box = $('aliyahScroll');
+  const box = $('scrollVerses');
   if (!box) return;
   box.querySelectorAll('.sw.word-hit, .sw.word-partial, .sw.word-miss')
     .forEach((e) => e.classList.remove('word-hit', 'word-partial', 'word-miss'));
 }
 
 function applyAliyahWordHits(perVerse) {
-  const box = $('aliyahScroll');
+  const box = $('scrollVerses');
   if (!box) return;
   clearAliyahWordHits();
   for (const { seg, wordHits } of perVerse) {
@@ -5717,10 +6024,13 @@ function finishAliyahRecord(tl) {
   const score = assisted ? scores.assistedScore(raw) : raw;
   const a = state.aliyah;
   const kind = chunkKind(a);
+  const surface = chainSurfaceNow();
   if (kind === 'chain') {
     // A chain is a practice run between pasuk and aliyah, so it keeps its own
-    // best and stays off the aliyah boards.
-    store.recordChainScore(state.slug, a.start, a.end, score);
+    // best and stays off the aliyah boards. Filed under the text it was read
+    // from, because the same run off the bare scroll is the harder feat and the
+    // two bests are what the chaining round steps between.
+    store.recordChainScore(state.slug, a.start, a.end, score, surface);
   } else {
     store.recordAliyahScore(state.slug, a.cycle, a.year, a.n, score);
     // Log this continuous take (with the duet flag) for the score-over-runs
@@ -5734,7 +6044,11 @@ function finishAliyahRecord(tl) {
   setAliyahButtons(false);
   const msg = score <= 0 ? 'No clear pitch captured — check your mic and follow the yad.'
     : assisted ? 'Nice duet. Now try it solo — a solo take can score higher.'
-      : score >= 80 ? (kind === 'chain' ? 'Those pesukim run together cleanly — try a longer chain.' : 'Beautiful — that\'s reading-ready.')
+      : score >= 80 ? (kind === 'chain'
+        ? (surface === 'pointed'
+          ? 'Those pesukim run together cleanly — now run them again off the bare scroll.'
+          : 'Those pesukim run together cleanly from the scroll — try a longer chain.')
+        : 'Beautiful — that\'s reading-ready.')
         : 'Keep polishing the weaker pesukim, then run it again.';
   const scoreLabel = assisted ? 'Duet accuracy'
     : kind === 'chain' ? 'Chain accuracy' : kind === 'maftir' ? 'Maftir accuracy'
@@ -5755,6 +6069,7 @@ function finishAliyahRecord(tl) {
     start: a.start,
     end: a.end,
     n: a.n,
+    surface: kind === 'chain' ? surface : null,
     score,
     threshold: ALIYAH_PASS,
     passed: score >= ALIYAH_PASS,
@@ -6811,7 +7126,7 @@ function applyHighlight() {
   });
 
   const hl = state.highlight;
-  const words = document.querySelectorAll('.hebrew .w');
+  const words = document.querySelectorAll('.hebrew .w, .pointed-scroll .w, .pointed-tikkun .w');
   words.forEach((n) => {
     if (!hl) { n.classList.remove('hl', 'dim'); return; }
     const match = hl.kind === 'family'
@@ -6841,8 +7156,8 @@ function highlightReadingWord(gi) {
   const v = state.selectedVerse;
   const wEl = document.querySelector(`#verses .verse[data-v="${v}"] .hebrew .w[data-wi="${gi}"]`);
   if (wEl) wEl.classList.add('cur');
-  const swEl = document.querySelector(`#scrollVerses .sw[data-verse="${v}"][data-widx="${gi}"]`);
-  if (swEl) swEl.classList.add('cur');
+  document.querySelectorAll(`#scrollVerses .sw[data-verse="${v}"][data-widx="${gi}"]`)
+    .forEach((swEl) => swEl.classList.add('cur'));
 }
 
 // Tapping a word (timeline or reading line) focuses & plays it from the recording.

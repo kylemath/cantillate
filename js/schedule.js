@@ -61,7 +61,8 @@ export const ROUNDS = [
     id: 5, key: 'together', label: 'Together', icon: '\u{1f517}',
     levels: [],
     goal: 'Chant the pesukim in runs, then the whole thing',
-    blurb: 'Two pesukim without stopping, then three, then four \u2014 and then the part end to end.',
+    blurb: 'Two pesukim without stopping, then three, then four \u2014 each run with the '
+      + 'vowels first and then off the bare scroll \u2014 and then the part end to end.',
   },
 ];
 
@@ -105,6 +106,24 @@ const CHAIN_MIN = 2;
 const CHAIN_MAX = 4;
 const CHAIN_GOOD = 80;
 
+// Every run is asked for twice, from an easier surface and then from the real
+// one. Chaining is where two hard things arrive at once: the joins between
+// pesukim, which is the work of this round, and reading unpointed letters at
+// speed across a verse boundary, which is the work of the round below. Asked to
+// do both in the same take a reader loses the joins to the letters. So the run
+// is first chanted from the pointed text — vowels and accents in front of them,
+// nothing to decode, all the attention on not stopping at the seam — and only
+// once that run is solid is the same run asked for again off the bare scroll.
+//
+// A scroll run implies the pointed one (it is the same pesukim, read harder),
+// so passing the scroll tier never sends the reader back down to the pointed
+// one — which is also what keeps a reader who chained before this ramp existed
+// from watching their fifth round go backwards.
+export const CHAIN_SURFACES = [
+  { key: 'pointed', label: 'with the vowels', text: 'pointed' },
+  { key: 'stam', label: 'from the scroll', text: 'stam' },
+];
+
 // Every run of consecutive pesukim the chaining round is asking for: each length
 // from CHAIN_MIN to CHAIN_MAX, at every position it will fit. Runs overlap, which
 // is the point — the join between two pesukim is a thing to be practised, and
@@ -128,6 +147,15 @@ function chainWindows(list) {
   }
   flush();
   return out;
+}
+
+// The best score that counts towards one tier of one run. The scroll tier counts
+// only scroll takes; the pointed tier counts either, since a run read off the
+// scroll is the pointed run and more.
+function chainBest(ctx, start, end, surface) {
+  const stam = store.getChainScore(ctx.slug, start, end, 'stam');
+  if (surface === 'stam') return stam;
+  return Math.max(stam, store.getChainScore(ctx.slug, start, end, surface));
 }
 
 // The rotation. Read left to right, wrapping; the first move with something to
@@ -171,17 +199,21 @@ export function roundProgress(ctx, round) {
 }
 
 // The chaining round, counted in the units it is actually made of: every run of
-// pesukim in the part, plus the part chanted through in one go as the last box on
-// the whole plan. Pesukim not yet chantable whole are counted in the total anyway —
-// their runs are work the reader still has coming, and a denominator that grew as
-// they became ready would make the bar go backwards.
+// pesukim in the part at both surfaces, plus the part chanted through in one go
+// as the last box on the whole plan. Pesukim not yet chantable whole are counted
+// in the total anyway — their runs are work the reader still has coming, and a
+// denominator that grew as they became ready would make the bar go backwards.
 function chainProgress(ctx, round) {
   const windows = chainWindows(ctx.verses);
   const score = wholeScore(ctx);
   const wholeDone = score >= CHAIN_GOOD;
-  const total = windows.length + (ctx.chunk ? 1 : 0);
-  const done = windows.filter((w) => store.getChainScore(ctx.slug, w.start, w.end) >= CHAIN_GOOD)
-    .length + (ctx.chunk && wholeDone ? 1 : 0);
+  const total = windows.length * CHAIN_SURFACES.length + (ctx.chunk ? 1 : 0);
+  let done = ctx.chunk && wholeDone ? 1 : 0;
+  for (const w of windows) {
+    for (const s of CHAIN_SURFACES) {
+      if (chainBest(ctx, w.start, w.end, s.key) >= CHAIN_GOOD) done += 1;
+    }
+  }
   return {
     round, done, total, wholeScore: score, wholeDone,
     // A part with nothing to chain (one pasuk, no whole-part challenge) has
@@ -328,6 +360,26 @@ function repairCandidates(ctx, round, threshold) {
   return out;
 }
 
+// The rung directly above a run that has just been passed: the same pesukim, read
+// from the next surface up. Null when there isn't one — the run was already the
+// scroll take, or the scroll take is on record too. Handed out the moment the
+// pointed take passes rather than left for the rotation to come back to, because
+// the pesukim are in the reader's ear right then and that is when reading them
+// off the bare scroll is worth most.
+export function nextChainTier(ctx, task) {
+  if (!ctx || !task || task.kind !== 'chain') return null;
+  const at = CHAIN_SURFACES.findIndex((s) => s.key === chainSurface(task));
+  const up = CHAIN_SURFACES[at + 1];
+  if (!up) return null;
+  const score = chainBest(ctx, task.start, task.end, up.key);
+  if (score >= CHAIN_GOOD) return null;
+  return {
+    kind: 'chain', start: task.start, end: task.end, size: task.size,
+    surface: up.key, tier: at + 1, score, reason: 'combine',
+    round: task.round || currentRound(ctx).id,
+  };
+}
+
 // COMBINE: runs of consecutive pesukim that can each be chanted whole, and
 // finally the whole part. This is the rung a reader most often skips and most
 // often needs — knowing every pasuk cold still leaves the joins unrehearsed.
@@ -337,19 +389,27 @@ function combineCandidates(ctx, rand = Math.random) {
   const ready = ctx.verses.filter((n) => levelOf(ctx, n) >= FULL_VERSE_LEVEL);
   const runs = [];
   for (const w of chainWindows(ready)) {
-    const score = store.getChainScore(ctx.slug, w.start, w.end);
-    if (score >= CHAIN_GOOD) continue;
-    runs.push({ kind: 'chain', ...w, score, reason: 'combine' });
+    // The lowest tier this run has not passed, and only that one: the scroll take
+    // is not offered until the pointed take is solid, which is the whole point of
+    // there being two of them.
+    const tier = CHAIN_SURFACES.findIndex((s) => chainBest(ctx, w.start, w.end, s.key) < CHAIN_GOOD);
+    if (tier < 0) continue;
+    const surface = CHAIN_SURFACES[tier].key;
+    runs.push({
+      kind: 'chain', ...w, surface, tier,
+      score: chainBest(ctx, w.start, w.end, surface), reason: 'combine',
+    });
   }
-  // Shortest first, and unpractised before merely weak: pairs before triples
-  // before the whole thing is the order the joins are actually learned in.
+  // Shortest first, then the pointed take before the scroll one, then unpractised
+  // before merely weak: pairs with the vowels, pairs from the scroll, then triples
+  // the same way is the order the joins are actually learned in.
   // Shuffled first so that runs which are equally short and equally unpractised —
   // which, before any chaining has been done, is all of them — come out in no
   // particular order rather than front to back. The sort is stable, so this is
   // what decides between ties, and it is what keeps the reader from being handed
   // the top of the aliyah every time a chain comes up.
   shuffle(runs, rand);
-  runs.sort((a, b) => (a.size - b.size) || (a.score - b.score));
+  runs.sort((a, b) => (a.size - b.size) || (a.tier - b.tier) || (a.score - b.score));
   // The whole part, once every pasuk in it is ready — the same gate the aliyah
   // challenge uses in expert mode.
   if (ctx.chunk && ctx.verses.length && ready.length === ctx.verses.length) {
@@ -427,7 +487,9 @@ export function nextTask(ctx, { session = 0, rand = Math.random, avoid = null } 
 export function sameTask(a, b) {
   if (!a || !b || a.kind !== b.kind) return false;
   if (a.kind === 'whole') return true;
-  if (a.kind === 'chain') return a.start === b.start && a.end === b.end;
+  if (a.kind === 'chain') {
+    return a.start === b.start && a.end === b.end && chainSurface(a) === chainSurface(b);
+  }
   return a.verse === b.verse && a.level === b.level && (a.word ?? null) === (b.word ?? null);
 }
 
@@ -435,11 +497,21 @@ export function sameTask(a, b) {
 
 // What the reader is told to do. Deliberately about the WORK, not the mechanism:
 // "Sing this phrase" rather than "stage 3 of 9, unit 2 of 5".
+// Which surface a chain task is to be chanted from. A task from before the two
+// tiers existed (or one restored from an older session) means the scroll, which
+// is what a chain used to be.
+export function chainSurface(task) {
+  const key = task && task.surface;
+  return CHAIN_SURFACES.some((s) => s.key === key) ? key : 'stam';
+}
+
 export function taskTitle(task) {
   if (!task) return '';
   if (task.kind === 'whole') return 'Chant the whole thing';
   if (task.kind === 'chain') {
-    return `Chant ${task.size} pesukim without stopping`;
+    return chainSurface(task) === 'pointed'
+      ? `Chant ${task.size} pesukim without stopping`
+      : `Chant ${task.size} pesukim from the scroll`;
   }
   const level = LEVELS.find((l) => l.id === task.level);
   if (task.what === 'word') return 'Come back to a tricky word';
@@ -462,7 +534,10 @@ export function taskWhy(task) {
   if (task.reason === 'start') return 'From the beginning';
   if (task.reason === 'chosen') return 'You asked for this one';
   if (task.reason === 'combine') {
-    return task.kind === 'whole' ? 'Everything you have learned, in one go' : 'Practise the joins';
+    if (task.kind === 'whole') return 'Everything you have learned, in one go';
+    return chainSurface(task) === 'pointed'
+      ? 'Practise the joins'
+      : 'The same run, now off the bare scroll';
   }
   if (task.score != null) {
     return task.score < REPAIR_WEAK

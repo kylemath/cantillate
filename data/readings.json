@@ -820,7 +820,7 @@
     "kind": "drill",
     "group": "Trope drills",
     "label": "One word, every accent",
-    "note": "Two long practice pesukim built from one Hebrew root each. No recording of their own — the coach line is synthesized from the accents, and \"Hear it chanted for real\" splices the same trope sequence out of the recorded readings. Built by scripts/build_drills.py."
+    "note": "Two levels in three pairs of long practice pesukim, each pair carrying every accent. Level 1 runs the ש־ל־ם / ס־ל־ם and ד־ב־ר sound families first as a playful poem of Solomon, a robe, a ladder, Deborah, bees, honey, words, wilderness, completion, and peace, then as bare root-word lists with nothing but the trope to hold on to. Level 2 adds harder consonants through ה־ל־ך (lalekhet, halakh, mahalakh, halikhah) and the vowel-dependent ק־צ־ר family (reaped, short, reaper, shortness, shortened, short circuit). The puns are a reading exercise, not false etymology. No recording of their own — the coach line is synthesized from the accents, and \"Hear it chanted for real\" splices the same trope sequence out of the recorded readings. Built by scripts/build_drills.py."
   },
   {
     "slug": "shema",
