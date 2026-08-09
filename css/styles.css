@@ -36,6 +36,16 @@
        url('../fonts/ShlomoStam.ttf') format('truetype');
   font-display: swap;
 }
+/* De-crowned sibling of Shlomo Stam: same scribal letterforms and the same
+   niqqud/te'amim mark positioning, but without the tagin on שעטנז גץ. Used for
+   the pointed tikkun column so it trains the STA"M shapes while leaving the
+   roof clear for cantillation marks — the printed tikkun korim convention. */
+@font-face {
+  font-family: 'ShlomoSemiStam';
+  src: url('../fonts/ShlomoSemiStam.woff2') format('woff2'),
+       url('../fonts/ShlomoSemiStam.ttf') format('truetype');
+  font-display: swap;
+}
 
 :root {
   /* Which scribal hand the STA"M surfaces are drawn in. Every scroll surface
@@ -988,12 +998,11 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
   font-family: var(--stam); line-height: 1.62;
   /* Deliberately NOT tracked by --stam-track. This page is a fixed 25em replica
      of a Davidovich column whose 42 lines must land exactly where the scroll
-     puts them, and there is no room to open it up: in the Shlomo hand the
-     tightest line in data/tikkun-torah-245.json already spends 21.45em of its
-     21.90em usable width (19.77em of glyphs plus the 0.28em minimum word gaps),
-     so anything past ~0.013em per letter pushes words out of the column. The
-     tracking slider works on the surfaces that can flex — the verse cards and
-     the aliyah scroll; here the scroll's own spacing stands. */
+     puts them. Word gaps stay tight (one letter-ish); leftover width is taken
+     by elongating .stretch letters after layout (js/justify.js), so opening the
+     tracking here would fight the justifier and push dense lines out of the
+     column. The tracking slider still works on the surfaces that can flex —
+     the verse cards and the continuous aliyah scroll. */
   letter-spacing: normal;
   background: #e9d7b0;
   background-image: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0) 8%),
@@ -1013,13 +1022,16 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
   flex: 1; display: flex; justify-content: space-between; min-width: 0;
 }
 .scroll-line-column:nth-child(2) { margin-inline-start: 5em; width: 12em; flex: 0 0 auto; }
-/* Full justification to BOTH margins, like a scribal column: the words of a line
-   spread edge to edge. `gap` is the MINIMUM inter-word space; space-between then
-   distributes the remaining width evenly between the words so the line fills the
-   column from the right margin to the left. */
+/* Scribal justification: fixed inter-word gap (roughly a yod-width), not
+   space-between. After paint, js/justify.js measures leftover width and
+   elongates .stretch letters (ה ח ל ר ת ד ם) so the line still meets both
+   margins — the way a sofer fills a column. */
 .scroll-line-fragment {
-  flex: 1; display: flex; justify-content: space-between; align-items: baseline;
-  gap: 0.28em;
+  flex: 1; display: flex; justify-content: flex-start; align-items: baseline;
+  gap: 0.18em; min-width: 0;
+}
+.tikkun-column .stretch {
+  display: inline; white-space: nowrap;
 }
 /* Paragraph-closing lines stay ragged — a scroll never stretches the final line
    of a parashah (petucha) or a short setuma run across the full width. */
@@ -1568,7 +1580,7 @@ body.scroll-dual-view #scrollVerses { flex: 1; min-height: 0; }
 }
 .pointed-scroll {
   direction: rtl; text-align: justify; text-align-last: right;
-  font-family: 'FrankRuehl', serif; font-size: clamp(18px, 7.4cqi, 40px);
+  font-family: 'ShlomoSemiStam', var(--stam), serif; font-size: clamp(18px, 7.4cqi, 40px);
   line-height: 2.25; letter-spacing: normal; max-width: 46ch;
 }
 .pointed-scroll .al-verse { display: inline; }
@@ -1583,29 +1595,26 @@ body:not(.scroll-dual-view) .pointed-scroll { margin-block: 10px; }
 /* Pointed counterpart of the fixed tikkun page (see .scroll-column.tikkun-column
    above): the SAME page/line breaks as the STA"M column — produced by the same
    renderTikkunPages() layout, just with each word's content swapped to its
-   vowelled, accented form (js/app.js pointedTikkunWordRender) — but set in a
-   regular pointed Hebrew face instead of the scribal hand. line-height and
-   .scroll-line's height are deliberately left at the STA"M column's own
-   values (not touched here): the dual view puts both columns in same-sized
-   containers, so any difference in line-height compounds line over line and
-   the two surfaces drift apart. Leaving it alone keeps every line landing at
-   the exact same offset in both columns, at the cost of the same tight
-   headroom the STA"M hand budgets for — acceptable since niqqud/te'amim in
-   FrankRuehl sit within, not beyond, that vertical rhythm. */
+   vowelled, accented form (js/app.js pointedTikkunWordRender) — but set in
+   Shlomo SemiStam: the same scribal hand without the tagin, so the letterforms
+   match the STA"M column while the roof stays clear for niqqud and te'amim
+   (the printed tikkun korim convention). line-height and .scroll-line's height
+   are deliberately left at the STA"M column's own values: the dual view puts
+   both columns in same-sized containers, so any difference in line-height
+   compounds line over line and the two surfaces drift apart. Leaving it alone
+   keeps every line landing at the exact same offset in both columns. */
 .pointed-tikkun .scroll-page {
-  font-family: 'FrankRuehl', serif;
+  font-family: 'ShlomoSemiStam', var(--stam), serif;
   color: #e8e3d8;
   background: #0b0b0d; background-image: none;
   border-color: #2c2b28;
   box-shadow: inset 0 0 40px rgba(0,0,0,0.6);
 }
 .pointed-tikkun .scroll-word.w { padding: 0 0.05em; }
-/* A touch bigger than the STA"M hand so the pointed face reads at a matching
-   size despite FrankRuehl's smaller x-height. Bumped only on the word's own
-   font-size (an em relative to the unchanged, inherited page font-size), so
-   nothing that governs layout — page width, padding, line height/spacing —
-   is affected: the lines land exactly where the STA"M column's do. */
-.pointed-tikkun .scroll-word.w { font-size: 1.07em; }
+/* SemiStam shares Shlomo Stam's metrics, so no size bump is needed to match
+   the STA"M column (the old FrankRuehl bump was compensating for a smaller
+   x-height). Keeping font-size at 1em also keeps page width / padding / line
+   height untouched, so the lines land exactly where the STA"M column's do. */
 
 @media (max-width: 700px) {
   .scroll-dual {

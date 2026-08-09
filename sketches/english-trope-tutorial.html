@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>English Cantillation Tutorial — the grammar of the trope</title>
+<style>
+  @font-face {
+    font-family: 'StamAshkenaz';
+    src: url('../fonts/StamAshkenazCLM.woff2') format('woff2'),
+         url('../fonts/StamAshkenazCLM.ttf') format('truetype');
+    font-display: swap;
+  }
+  :root {
+    --bg: #0f1220; --panel: #171b2e; --panel-2: #1f2540; --text: #e7e9f3;
+    --muted: #9aa0bd; --accent: #5aa0ff; --accent-2: #ff8c5a;
+    --good: #37c871; --bad: #e0555b; --line: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.5 -apple-system, system-ui, "Segoe UI", sans-serif; }
+  body { padding-bottom: 60px; }
+  a { color: var(--accent); }
+
+  header { position: sticky; top: 0; z-index: 5; background: rgba(15,18,32,.92);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); padding: 14px 20px; }
+  header h1 { margin: 0 0 2px; font-size: 18px; letter-spacing: .2px; }
+  header p.sub { margin: 0; color: var(--muted); font-size: 12.5px; }
+
+  main { max-width: 900px; margin: 0 auto; padding: 24px 20px 0; }
+  section { margin-bottom: 34px; }
+  h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--accent); margin: 0 0 12px; }
+  p.lead { color: var(--muted); margin: 0 0 14px; max-width: 68ch; }
+
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 20px; }
+
+  /* --- sentence builder --- */
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+  input[type="text"] { flex: 1 1 320px; background: var(--panel-2); color: var(--text);
+    border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; font: inherit; }
+  select, button { background: var(--panel-2); color: var(--text); border: 1px solid var(--line);
+    border-radius: 8px; padding: 9px 12px; font: inherit; cursor: pointer; }
+  button:hover, select:hover { border-color: var(--accent); }
+  button.primary { background: var(--accent); color: #0b1220; font-weight: 600; border-color: var(--accent); }
+  button.primary:hover { background: #78b3ff; }
+  button:disabled { opacity: .45; cursor: default; }
+  label.mini { color: var(--muted); font-size: 12.5px; display: inline-flex; align-items: center; gap: 6px; }
+  input[type="range"] { accent-color: var(--accent); }
+
+  /* --- the verse / word cards --- */
+  #verse { display: flex; flex-wrap: wrap; gap: 6px 4px; align-items: flex-end;
+    padding: 20px 4px 10px; min-height: 66px; }
+  .word { position: relative; display: flex; flex-direction: column; align-items: center;
+    cursor: pointer; padding: 24px 8px 8px; border-radius: 10px; transition: background .15s; }
+  .word:hover { background: rgba(255,255,255,.05); }
+  .word.active { background: rgba(90,160,255,.18); }
+  .word .glyph { position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    font-family: 'StamAshkenaz', serif; font-size: 22px; line-height: 1; }
+  .word .txt { font-size: 18px; font-weight: 500; white-space: nowrap; }
+  .word .mark { font-size: 10px; letter-spacing: .05em; text-transform: uppercase;
+    margin-top: 3px; opacity: .85; }
+
+  /* --- the note canvas (same component the main app uses) --- */
+  .canvas-wrap { position: relative; background: #0b0e1a; border: 1px solid var(--line);
+    border-radius: 12px; margin: 6px 0 4px; overflow: hidden; }
+  canvas.contour { width: 100%; height: 190px; display: block; }
+
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 4px; }
+  .legend .item { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12.5px; }
+  .legend .sw { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+
+  .hint { color: var(--muted); font-size: 12.5px; margin-top: 10px; }
+
+  /* --- grammar table --- */
+  table.grammar { width: 100%; border-collapse: collapse; }
+  table.grammar th, table.grammar td { text-align: left; padding: 10px 10px; border-bottom: 1px solid var(--line);
+    vertical-align: top; }
+  table.grammar th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+  table.grammar .sym { font-family: 'StamAshkenaz', serif; font-size: 22px; }
+  table.grammar td.name { white-space: nowrap; font-weight: 600; }
+  table.grammar tr:last-child td { border-bottom: none; }
+  table.grammar .playrow { background: none; border: 1px solid var(--line); border-radius: 6px;
+    padding: 4px 9px; font-size: 12px; }
+
+  ol.steps { color: var(--muted); padding-left: 22px; margin: 0; }
+  ol.steps li { margin-bottom: 6px; }
+  ol.steps strong { color: var(--text); }
+
+  footer { max-width: 900px; margin: 0 auto; padding: 10px 20px 40px; color: var(--muted); font-size: 11.5px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>English Cantillation Tutorial</h1>
+  <p class="sub">Map the Torah's musical grammar (te'amim) onto English sentences — hear the real Ashkenazi motifs on any words you type.</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>1 · Build a sentence</h2>
+    <div class="card">
+      <div class="row">
+        <select id="preset"></select>
+        <input type="text" id="sentence" spellcheck="false" />
+        <button id="setBtn">Set sentence</button>
+        <button id="autoBtn" title="Guess Mercha / Tipcha / Etnachta / Sof Pasuk from punctuation and sentence length">Auto-mark</button>
+      </div>
+      <div class="row">
+        <button class="primary" id="coachBtn">🎓 Trope Coach (speak + chant)</button>
+        <button id="chantBtn">♪ Chant melody only</button>
+        <button id="speakBtn">🗣 Speak sentence</button>
+        <button id="stopBtn" disabled>■ Stop</button>
+        <span class="sep"></span>
+        <label class="mini">Tonic <input type="range" id="tonic" min="147" max="330" value="220"></label>
+        <label class="mini">Tempo <input type="range" id="tempo" min="60" max="160" value="100"></label>
+      </div>
+
+      <div id="verse"></div>
+
+      <div class="canvas-wrap"><canvas class="contour" id="contour"></canvas></div>
+
+      <div class="legend" id="legend"></div>
+      <p class="hint">Click any word to cycle its cantillation mark (Mercha → Tipcha → Etnachta → Sof Pasuk). The
+      notation below is the same note-line view used elsewhere in this app: each bar is a held pitch (in semitones
+      from the tonic, 0 = home note), word boundaries are dashed, and the gold playhead tracks exactly what's
+      playing — so what you see is always what you hear.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>2 · The grammar of the music</h2>
+    <p class="lead">These four marks are the load-bearing "punctuation" of a Torah verse. In the Ashkenazi tradition they don't just say how to sing — they tell you how the sentence is built. Press ▶ to hear each motif on its own (sung on a neutral "ah", the actual measured shape from recorded Torah readings).</p>
+    <div class="card">
+      <table class="grammar" id="grammarTable"></table>
+    </div>
+  </section>
+
+  <section>
+    <h2>3 · Practice the method</h2>
+    <div class="card">
+      <ol class="steps">
+        <li><strong>Find the halfway point</strong> of your sentence and place an <strong>Etnachta</strong> there — the semicolon, where the melody drops to rest on the tonic.</li>
+        <li><strong>Find the comma</strong> (or natural breath) before that halfway point and mark it <strong>Tipcha</strong> — the comma, a gentle dip that leads into the rest.</li>
+        <li><strong>Mark everything else Mercha</strong> — the connectors that glue each word to the next, always leaning forward.</li>
+        <li>The <strong>last word</strong> of the sentence always gets <strong>Sof Pasuk</strong> — the period, a full melodic cadence down to close the thought.</li>
+      </ol>
+      <p class="hint">Type your own sentence above, click <em>Auto-mark</em> to see this method applied automatically, then click individual words to correct it by ear.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Melodic motifs, colors and note names are the real per-accent data from this project's Torah trope engine
+  (<code>js/trope.js</code>, measured from recorded Ashkenazi Torah readings in <code>js/audio.js</code>) — reused here
+  unmodified, just aimed at English words instead of Hebrew ones. Spoken words use your browser's built-in speech
+  synthesis; the chant is synthesized live with the Web Audio API, no recordings involved. AI-assisted teaching tool —
+  the trope-to-grammar mapping is a simplified teaching model, not a substitute for a Tikkun or a teacher.
+</footer>
+
+<script type="module">
+import {
+  motifFor, sofPasukMotif, colorFor, DEFAULT_STYLE,
+} from '../js/trope.js';
+import { TAAM } from '../js/hebrew.js';
+import { singSteps, stopPlayback, getCtx } from '../js/audio.js';
+import { ContourView } from '../js/viz.js';
+
+// ---- the four marks this tutorial teaches, in teaching order -------------
+const MARKS = [
+  { id: 'mercha',   taam: TAAM.MERCHA,   label: 'Mercha',   role: 'The Connector',  punct: '',  desc: 'Musically it rises, leaving the ear expecting more — glue between words.' },
+  { id: 'tipcha',   taam: TAAM.TIPCHA,   label: 'Tipcha',    role: 'The Comma',      punct: ',', desc: 'A gentle descent; a minor pause that separates a clause from what follows.' },
+  { id: 'etnachta', taam: TAAM.ETNACHTA, label: 'Etnachta',  role: 'The Semicolon',  punct: ';', desc: 'The "at rest" point. Every verse is halved here; the melody settles on the tonic.' },
+  { id: 'sofpasuk', taam: 'sof',         label: 'Sof Pasuk', role: 'The Period',     punct: '.', desc: 'The final cadence — drops low, finalizing the statement at the end of the verse.' },
+];
+const MARK_BY_ID = Object.fromEntries(MARKS.map(m => [m.id, m]));
+const CYCLE = ['mercha', 'tipcha', 'etnachta', 'sofpasuk'];
+
+function contourFor(markId) {
+  const m = MARK_BY_ID[markId];
+  return m.taam === 'sof' ? sofPasukMotif(DEFAULT_STYLE) : motifFor(m.taam, DEFAULT_STYLE);
+}
+function colorForMark(markId) {
+  const m = MARK_BY_ID[markId];
+  return m.taam === 'sof' ? colorFor(TAAM.ETNACHTA) : colorFor(m.taam);
+}
+
+// ---- presets ---------------------------------------------------------------
+const PRESETS = [
+  { label: 'Genesis 1:1 (the classic example)',
+    text: 'In the beginning, God created the heavens and the earth.',
+    marks: ['mercha','mercha','tipcha','mercha','etnachta','mercha','mercha','mercha','mercha','sofpasuk'] },
+  { label: 'A short teaching sentence',
+    text: 'The teacher spoke slowly, and the students listened carefully.' },
+  { label: 'Custom — type your own', text: 'Custom', custom: true },
+];
+
+// ---- turning a motif into the same "note steps" the app draws & plays -----
+// A motif is a handful of { t, p } control points (a continuous target curve).
+// The app never sings that curve directly: it turns it into a staircase of
+// HELD steps (each control point held until the next one) and both the canvas
+// and the oscillator read that same staircase — so what you see is guaranteed
+// to be what you hear. Copied from js/app.js's motifSteps/buildSyntheticCoach.
+function motifSteps(contour) {
+  const pts = contour && contour.length ? contour : [{ t: 0, p: 0 }];
+  const widths = pts.map((pt, i) => (i + 1 < pts.length ? pts[i + 1].t - pt.t : Math.max(1 - pt.t, 1 / pts.length)));
+  const total = widths.reduce((a, b) => a + b, 0) || 1;
+  let acc = 0;
+  return pts.map((pt, i) => {
+    const t0 = acc / total;
+    acc += widths[i];
+    return { t0, t1: acc / total, p: pt.p };
+  });
+}
+
+// Lay a set of word-segments out on one shared 0..1 timeline: each word gets a
+// slice sized by its estimated syllable count (scaled by tempo), and its motif
+// becomes a run of held steps inside that slice.
+function buildCoach(segs, secPerSyllable) {
+  if (!segs.length) return { steps: [], wordBounds: [], dur: 1, words: [] };
+  const durs = segs.map((s) => Math.max(0.4, (s.syllables || 1) * secPerSyllable));
+  const dur = durs.reduce((a, b) => a + b, 0) || 1;
+  const steps = [], wordBounds = [], perWord = [];
+  let acc = 0;
+  segs.forEach((seg, wi) => {
+    const w0 = acc / dur, wdur = durs[wi] / dur;
+    acc += durs[wi];
+    wordBounds.push(w0);
+    const local = motifSteps(seg.contour);
+    const ws = local.map((s) => ({
+      t0: w0 + s.t0 * wdur, t1: w0 + s.t1 * wdur, p: s.p,
+      color: seg.color, connector: seg.isConnector, w: wi,
+    }));
+    ws.forEach((s) => steps.push(s));
+    perWord.push({ t0: w0, t1: w0 + wdur, durSec: durs[wi], localSteps: local });
+  });
+  return { steps, wordBounds, dur, words: perWord };
+}
+
+// Rough English syllable count (vowel-group heuristic), just for pacing.
+function estimateSyllables(word) {
+  const w = word.toLowerCase().replace(/[^a-z]/g, '');
+  if (!w) return 1;
+  const groups = w.match(/[aeiouy]+/g);
+  let n = groups ? groups.length : 1;
+  if (w.length > 2 && w.endsWith('e') && !w.endsWith('le')) n--;
+  return Math.max(1, n);
+}
+
+// ---- state ------------------------------------------------------------------
+let words = [];   // [{ text, mark }]
+let coach = null; // current buildCoach() result, kept in sync with `words`
+let playToken = 0; // bumped to cancel an in-flight sequence
+let view = null;   // ContourView over #contour
+
+function tokenize(sentence) {
+  return sentence.trim().split(/\s+/).filter(Boolean).map(raw => ({
+    raw,
+    text: raw.replace(/[^\w'-]+$/g, ''),
+    mark: 'mercha',
+  }));
+}
+
+function autoMark(list) {
+  const n = list.length;
+  if (!n) return list;
+  list.forEach(w => w.mark = 'mercha');
+  list[n - 1].mark = 'sofpasuk';
+  const halfway = Math.max(0, Math.floor((n - 1) / 2));
+  let etnachtaIdx = halfway;
+  for (let i = halfway; i < n - 1; i++) {
+    if (/[;:]$/.test(list[i].raw)) { etnachtaIdx = i; break; }
+  }
+  if (etnachtaIdx < n - 1) list[etnachtaIdx].mark = 'etnachta';
+  let tipchaIdx = -1;
+  for (let i = etnachtaIdx; i >= 0; i--) {
+    if (/,$/.test(list[i].raw)) { tipchaIdx = i; break; }
+  }
+  if (tipchaIdx >= 0) list[tipchaIdx].mark = 'tipcha';
+  return list;
+}
+
+function setSentence(text, presetMarks) {
+  words = tokenize(text);
+  if (presetMarks && presetMarks.length === words.length) {
+    words.forEach((w, i) => w.mark = presetMarks[i]);
+  } else {
+    autoMark(words);
+  }
+  renderVerse();
+}
+
+// ---- rendering --------------------------------------------------------------
+const verseEl = document.getElementById('verse');
+const legendEl = document.getElementById('legend');
+
+function glyphFor(markId) {
+  const m = MARK_BY_ID[markId];
+  if (m.taam === 'sof') return '\u05D0\u05C3';
+  return '\u05D0' + String.fromCodePoint(m.taam);
+}
+
+function secPerSyllable() {
+  const tempo = +document.getElementById('tempo').value; // ~beats/min feel
+  return 0.5 * (100 / tempo);
+}
+
+// Rebuild the shared coach (steps + word bounds) from the current words/marks
+// and hand it to the canvas — the SAME object singSteps() will play from, so
+// the notation and the audio can never drift apart.
+function rebuildCoach() {
+  const segs = words.map((w) => ({
+    contour: contourFor(w.mark),
+    color: colorForMark(w.mark),
+    isConnector: w.mark === 'mercha',
+    syllables: estimateSyllables(w.text),
+  }));
+  coach = buildCoach(segs, secPerSyllable());
+  if (view) view.setCoach({ steps: coach.steps, raw: [], wordBounds: coach.wordBounds });
+}
+
+function renderVerse() {
+  verseEl.innerHTML = '';
+  words.forEach((w, i) => {
+    const mark = MARK_BY_ID[w.mark];
+    const color = colorForMark(w.mark);
+    const div = document.createElement('div');
+    div.className = 'word';
+    div.dataset.i = i;
+    div.innerHTML = `
+      <div class="glyph" style="color:${color}">${glyphFor(w.mark)}</div>
+      <div class="txt">${w.text}</div>
+      <div class="mark" style="color:${color}">${mark.label}</div>`;
+    div.addEventListener('click', () => {
+      const idx = CYCLE.indexOf(w.mark);
+      w.mark = CYCLE[(idx + 1) % CYCLE.length];
+      renderVerse();
+    });
+    verseEl.appendChild(div);
+  });
+  legendEl.innerHTML = MARKS.map(m =>
+    `<span class="item"><span class="sw" style="background:${colorForMark(m.id)}"></span>${m.label} — ${m.role}</span>`
+  ).join('');
+  rebuildCoach();
+}
+
+// ---- audio / speech sequencing ----------------------------------------------
+function speak(text, { rate = 0.95, pitch = 1 } = {}) {
+  return new Promise((resolve) => {
+    if (!('speechSynthesis' in window)) { resolve(); return; }
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = rate; u.pitch = pitch;
+    u.onend = resolve; u.onerror = resolve;
+    speechSynthesis.speak(u);
+  });
+}
+
+// Play one word's held-note steps (already normalized to 0..1 within the word)
+// on its own little timeline, moving the shared playhead across that word's
+// slice of the whole-sentence canvas as it goes.
+function chantWord(wi, tonicHz) {
+  const pw = coach.words[wi];
+  return new Promise((resolve) => {
+    singSteps(pw.localSteps, {
+      tonicHz, durationSec: pw.durSec,
+      onProgress: (t01) => { if (view) view.setPlayhead(pw.t0 + t01 * (pw.t1 - pw.t0)); },
+      onEnd: resolve,
+    });
+  });
+}
+
+function chantAll(tonicHz) {
+  return new Promise((resolve) => {
+    singSteps(coach.steps, {
+      tonicHz, durationSec: coach.dur,
+      onProgress: (t01) => { if (view) view.setPlayhead(t01); },
+      onEnd: resolve,
+    });
+  });
+}
+
+async function runSequence(mode) {
+  const token = ++playToken;
+  const tonicHz = +document.getElementById('tonic').value;
+  setPlaying(true);
+  if (mode === 'chant') {
+    await chantAll(tonicHz);
+  } else {
+    for (let i = 0; i < words.length; i++) {
+      if (token !== playToken) break;
+      const w = words[i];
+      const el = verseEl.children[i];
+      el.classList.add('active');
+      if (mode === 'coach') {
+        await speak(w.text, { rate: 0.95 });
+        if (token !== playToken) { el.classList.remove('active'); break; }
+        await chantWord(i, tonicHz);
+      } else if (mode === 'speak') {
+        await speak(w.text, { rate: 0.95 });
+      }
+      el.classList.remove('active');
+    }
+  }
+  if (token === playToken) { setPlaying(false); if (view) view.setPlayhead(null); }
+}
+
+function setPlaying(on) {
+  document.getElementById('stopBtn').disabled = !on;
+  ['coachBtn', 'chantBtn', 'speakBtn'].forEach(id => document.getElementById(id).disabled = on);
+}
+
+function stopAll() {
+  playToken++;
+  stopPlayback();
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+  [...verseEl.children].forEach(c => c.classList.remove('active'));
+  if (view) view.setPlayhead(null);
+  setPlaying(false);
+}
+
+// ---- grammar table ------------------------------------------------------------
+function renderGrammarTable() {
+  const tbl = document.getElementById('grammarTable');
+  tbl.innerHTML = `<tr><th>Symbol</th><th>Name</th><th>Musical function</th><th>What it teaches</th><th></th></tr>` +
+    MARKS.map((m, i) => {
+      const color = colorForMark(m.id);
+      return `<tr>
+        <td class="sym" style="color:${color}">${glyphFor(m.id)}</td>
+        <td class="name" style="color:${color}">${m.label}</td>
+        <td>${m.role}</td>
+        <td>${m.desc}</td>
+        <td><button class="playrow" data-mark="${m.id}">▶</button></td>
+      </tr>`;
+    }).join('');
+  tbl.querySelectorAll('.playrow').forEach(btn => {
+    btn.addEventListener('click', () => {
+      getCtx();
+      const tonicHz = +document.getElementById('tonic').value;
+      singSteps(motifSteps(contourFor(btn.dataset.mark)), { tonicHz, durationSec: 1.6 });
+    });
+  });
+}
+
+// ---- wiring ---------------------------------------------------------------
+const presetSel = document.getElementById('preset');
+const sentenceInput = document.getElementById('sentence');
+PRESETS.forEach((p, i) => {
+  const opt = document.createElement('option');
+  opt.value = i; opt.textContent = p.label;
+  presetSel.appendChild(opt);
+});
+presetSel.addEventListener('change', () => {
+  const p = PRESETS[+presetSel.value];
+  sentenceInput.value = p.custom ? sentenceInput.value : p.text;
+  if (!p.custom) setSentence(p.text, p.marks);
+});
+document.getElementById('setBtn').addEventListener('click', () => {
+  presetSel.value = PRESETS.length - 1;
+  setSentence(sentenceInput.value || 'Custom');
+});
+sentenceInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') document.getElementById('setBtn').click();
+});
+document.getElementById('autoBtn').addEventListener('click', () => {
+  autoMark(words); renderVerse();
+});
+document.getElementById('coachBtn').addEventListener('click', () => { getCtx(); runSequence('coach'); });
+document.getElementById('chantBtn').addEventListener('click', () => { getCtx(); runSequence('chant'); });
+document.getElementById('speakBtn').addEventListener('click', () => { runSequence('speak'); });
+document.getElementById('stopBtn').addEventListener('click', stopAll);
+document.getElementById('tempo').addEventListener('input', rebuildCoach);
+
+// ---- boot -------------------------------------------------------------------
+view = new ContourView(document.getElementById('contour'));
+renderGrammarTable();
+sentenceInput.value = PRESETS[0].text;
+setSentence(PRESETS[0].text, PRESETS[0].marks);
+</script>
+</body>
+</html>

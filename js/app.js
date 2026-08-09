@@ -1,4 +1,4 @@
-import { tokenize, renderWord, toScroll, stripNikud, stripTaamim } from './hebrew.js';
+import { tokenize, renderWord, toScroll, stripNikud, stripTaamim, splitClusters } from './hebrew.js';
 import { transliterate } from './translit.js';
 import { buildLineMelody, splitPhrases, splitAtRank, RANK, RANK_LABELS, rankFor, FAMILIES,
   markGlyph, NAMES, motifFor, nameFor, SOF_PASUK_NAME, sofPasukMotif,
@@ -18,6 +18,7 @@ import * as auth from './auth.js';
 import * as scores from './scores.js';
 import * as offline from './offline.js';
 import { loadTikkunData, renderTikkunPages, TIKKUN_DATA_URL } from './tikkun.js';
+import { justifyTikkun, wrapStretchHtml, STRETCHABLE } from './justify.js';
 
 // The plan, the guided surface and the wizard are only reachable from a reading
 // plan, so they are fetched when one exists (or is about to) rather than at
@@ -2187,13 +2188,25 @@ function applyScrollW(px) {
 // The whole tikkun page scales from its own font-size via a container query
 // (see .scroll-page in styles.css: 4cqw makes the 25em page fill the pane, capped
 // at the native size). That is pure CSS and reflow-free, so resizing needs no JS
-// re-layout here — we only (re)assert the one-time scroll to the reading's start
-// once the pane has a measurable width.
+// re-layout of the page itself — but the scribal justifier measures leftover
+// width in px and writes stretch widths, so it must re-run whenever the pane's
+// width (and thus the page's em) changes. We also (re)assert the one-time scroll
+// to the reading's start once the pane has a measurable width.
 function fitScrollPages() {
   const box = $('scrollVerses');
   if (!box) return;
   if (!box.clientWidth) return;
-  if (box.dataset.scrollToStart === '1') requestAnimationFrame(scrollTikkunStartIntoView);
+  const run = () => {
+    justifyTikkun(box);
+    if (box.dataset.scrollToStart === '1') scrollTikkunStartIntoView();
+  };
+  // Wait for the STA"M / SemiStam faces so measurements match what the reader
+  // sees; without this a first paint against a fallback face mis-sizes stretches.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(run).catch(run);
+  } else {
+    requestAnimationFrame(run);
+  }
 }
 // Re-assert the start position whenever the pane's viewport changes (splitter
 // drag, mobile reflow, drawer open, orientation change, etc.).
@@ -4944,6 +4957,8 @@ function pointedScrollWordHtml(seg, verseN, inFocus, selected, rangeStart) {
 // breaks as the STA"M column instead of reflowing on its own. A context word
 // that falls outside the loaded reading (unmapped verse/widx) has no pointed
 // source to draw from, so it keeps the default STA"M glyph.
+// Stretchable letters are wrapped here too, so the scribal justifier can
+// elongate them on this surface the same way it does on the STA"M column.
 function pointedTikkunWordRender(word) {
   if (word.verse == null || word.widx == null) return null;
   const seg = verseSegments(word.verse)[word.widx];
@@ -4951,8 +4966,8 @@ function pointedTikkunWordRender(word) {
   const ctx = { showVowels: true, showTaamim: true, scroll: false };
   const mode = state.colorMode;
   const html = mode === 'trope'
-    ? renderWordTropeColored(seg.token, ctx, seg.color)
-    : escapeHtml(renderWord(seg.token, ctx));
+    ? renderWordTropeColoredStretch(seg.token, ctx, seg.color)
+    : wrapStretchHtml(renderWord(seg.token, ctx));
   const color = mode === 'full' ? seg.color : INK_GREY;
   return {
     html,
@@ -5110,7 +5125,6 @@ function renderScrollPane() {
   bindScrollWordSelection(box);
   wireDualScrollSync(box);
   fitScrollPages();
-  if (box.dataset.scrollToStart === '1') requestAnimationFrame(scrollTikkunStartIntoView);
   // Re-apply the per-word accuracy shading after any rebuild (a toolbar toggle,
   // pasuk change, etc.), so the STA"M column keeps its last take's clue.
   applyScrollWordHits();
@@ -7113,6 +7127,31 @@ function renderWordTropeColored(raw, ctx, color) {
     + `<span class="tc-mark" style="color:${color}">${escapeHtml(pointed)}</span>`
     + `<span class="tc-base" aria-hidden="true">${escapeHtml(noTaam)}</span>`
     + `</span>`;
+}
+
+// Trope-coloured word for the fixed tikkun column: same dual-layer trick as
+// renderWordTropeColored, but built per letter-cluster so a .stretch wrapper
+// can sit OUTSIDE the .tc stack. That way the justifier widens one box and
+// both the coloured mark layer and the grey base layer scale together.
+function renderWordTropeColoredStretch(raw, ctx, color) {
+  if (ctx.scroll || !ctx.showTaamim) return wrapStretchHtml(renderWord(raw, ctx));
+  const pointed = ctx.showVowels ? raw : stripNikud(raw);
+  const noTaam = stripTaamim(pointed);
+  if (noTaam === pointed) return wrapStretchHtml(pointed);
+  const marked = splitClusters(pointed);
+  const plain = splitClusters(noTaam);
+  if (marked.length !== plain.length) return renderWordTropeColored(raw, ctx, color);
+  return marked.map((cluster, i) => {
+    const inner = `<span class="tc">`
+      + `<span class="tc-mark" style="color:${color}">${escapeHtml(cluster)}</span>`
+      + `<span class="tc-base" aria-hidden="true">${escapeHtml(plain[i])}</span>`
+      + `</span>`;
+    const base = cluster.codePointAt(0);
+    if (base != null && STRETCHABLE.has(String.fromCodePoint(base))) {
+      return `<span class="stretch">${inner}</span>`;
+    }
+    return inner;
+  }).join('');
 }
 
 // Apply the current family/trope highlight across both panes (matches pop,

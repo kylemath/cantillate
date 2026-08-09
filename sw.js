@@ -17,7 +17,7 @@
  */
 
 // Bump VERSION to invalidate all previously cached content on next activate.
-const VERSION = 'v-15ccc1a96c81';
+const VERSION = 'v-adf89a1f9fa2';
 const SHELL_CACHE = 'cantillate-shell-' + VERSION;
 const DATA_CACHE = 'cantillate-data-' + VERSION;
 
@@ -60,6 +60,7 @@ const SHELL_ASSETS = [
   './js/scores.js',
   './js/offline.js',
   './js/tikkun.js',
+  './js/justify.js',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
@@ -89,6 +90,7 @@ const SHELL_ASSETS = [
  */
 const FONT_ASSETS = [
   './fonts/ShlomoStam.woff2',
+  './fonts/ShlomoSemiStam.woff2',
   './fonts/StamAshkenazCLM.woff2',
   './fonts/FrankRuehlCLM-Medium.woff2',
   './fonts/FrankRuehlCLM-Bold.woff2',

@@ -1,4 +1,5 @@
 import { tokenize, toScroll } from './hebrew.js';
+import { wrapStretchHtml } from './justify.js';
 
 export const TIKKUN_DATA_URL = 'data/tikkun-torah-245.json';
 export const TIKKUN_PAGE_WIDTH = 550;
@@ -153,7 +154,10 @@ function wordHtml(word, options) {
   if (!inContext) classes.push('out-of-range');
   if (mapped && !word.exact) classes.push('text-variant');
 
-  let content = escapeHtml(word.text);
+  // Default STA"M content wraps stretchable letters so the post-layout
+  // justifier can elongate them. A custom renderWord (pointed column) is
+  // responsible for doing the same inside its own HTML.
+  let content = wrapStretchHtml(word.text);
   if (options.renderWord) {
     const custom = options.renderWord(word) || {};
     if (custom.html != null) content = custom.html;
@@ -168,9 +172,9 @@ function lineHtml(line, options) {
   const columns = line.text.map((column) => {
     const fragments = column.map((fragment) => {
       // No literal spaces between the word spans: the line is a flex row and the
-      // inter-word spacing is produced entirely by the fragment's gap +
-      // space-between (see .scroll-line-fragment), which is what fully justifies
-      // each line to both margins.
+      // inter-word spacing is the fragment's fixed gap (see .scroll-line-fragment).
+      // Leftover width is absorbed after layout by elongating .stretch letters
+      // (js/justify.js), the way a sofer fills a column — not by space-between.
       const words = fragment.words.map((word) => wordHtml(word, options)).join('');
       return `<span class="scroll-line-fragment${fragment.setuma ? ' setuma' : ''}">${words}</span>`;
     }).join('');
