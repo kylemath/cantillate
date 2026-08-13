@@ -132,6 +132,28 @@ function annotatePages(data, reading) {
   });
 }
 
+// Dual-column render calls annotatePages twice per click (bare STA"M, then
+// pointed with renderWord). Walking every page of the corpus is the expensive
+// part and does not depend on selectedVerse or renderWord, so remember the
+// result by the identity of the tikkun payload and the reading doc. loadData
+// assigns a new reading object; the tikkun JSON is reused across readings,
+// which is why both keys are needed.
+const _annotatedPages = new WeakMap(); // data → WeakMap(reading → pages)
+
+function annotatedPages(data, reading) {
+  let byReading = _annotatedPages.get(data);
+  if (!byReading) {
+    byReading = new WeakMap();
+    _annotatedPages.set(data, byReading);
+  }
+  let pages = byReading.get(reading);
+  if (!pages) {
+    pages = annotatePages(data, reading);
+    byReading.set(reading, pages);
+  }
+  return pages;
+}
+
 // The STA"M column's own glyph content and class list are computed here from
 // the word's mapping to the reading; a caller can override just the glyph
 // content (e.g. to substitute the pointed/coloured form) and add its own
@@ -185,7 +207,7 @@ function lineHtml(line, options) {
 
 export function renderTikkunPages(data, reading, options) {
   if (!data || !reading) return null;
-  const pages = annotatePages(data, reading);
+  const pages = annotatedPages(data, reading);
   const visiblePages = pages.filter((page) => page.words.some((word) =>
     word.verse != null &&
     word.verse >= options.contextStart &&

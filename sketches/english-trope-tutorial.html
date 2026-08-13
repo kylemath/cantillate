@@ -11,6 +11,12 @@
          url('../fonts/StamAshkenazCLM.ttf') format('truetype');
     font-display: swap;
   }
+  @font-face {
+    font-family: 'FrankRuehl';
+    src: url('../fonts/FrankRuehlCLM-Medium.woff2') format('woff2'),
+         url('../fonts/FrankRuehlCLM-Medium.ttf') format('truetype');
+    font-display: swap;
+  }
   :root {
     --bg: #0f1220; --panel: #171b2e; --panel-2: #1f2540; --text: #e7e9f3;
     --muted: #9aa0bd; --accent: #5aa0ff; --accent-2: #ff8c5a;
@@ -27,7 +33,7 @@
   header h1 { margin: 0 0 2px; font-size: 18px; letter-spacing: .2px; }
   header p.sub { margin: 0; color: var(--muted); font-size: 12.5px; }
 
-  main { max-width: 900px; margin: 0 auto; padding: 24px 20px 0; }
+  main { max-width: 960px; margin: 0 auto; padding: 24px 20px 0; }
   section { margin-bottom: 34px; }
   h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .08em;
     color: var(--accent); margin: 0 0 12px; }
@@ -36,7 +42,6 @@
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
     padding: 18px 20px; }
 
-  /* --- sentence builder --- */
   .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
   input[type="text"] { flex: 1 1 320px; background: var(--panel-2); color: var(--text);
     border: 1px solid var(--line); border-radius: 8px; padding: 9px 12px; font: inherit; }
@@ -49,36 +54,93 @@
   label.mini { color: var(--muted); font-size: 12.5px; display: inline-flex; align-items: center; gap: 6px; }
   input[type="range"] { accent-color: var(--accent); }
 
-  /* --- the verse / word cards --- */
-  #verse { display: flex; flex-wrap: wrap; gap: 6px 4px; align-items: flex-end;
-    padding: 20px 4px 10px; min-height: 66px; }
-  .word { position: relative; display: flex; flex-direction: column; align-items: center;
-    cursor: pointer; padding: 24px 8px 8px; border-radius: 10px; transition: background .15s; }
-  .word:hover { background: rgba(255,255,255,.05); }
-  .word.active { background: rgba(90,160,255,.18); }
-  .word .glyph { position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-    font-family: 'StamAshkenaz', serif; font-size: 22px; line-height: 1; }
-  .word .txt { font-size: 18px; font-weight: 500; white-space: nowrap; }
+  /* Word cards: te'amim sit on the English letters themselves (combining marks) */
+  #verse { display: flex; flex-wrap: wrap; gap: 8px 6px; align-items: flex-end;
+    padding: 12px 2px 6px; }
+  .word { position: relative; display: flex; flex-direction: column; align-items: stretch;
+    cursor: pointer; padding: 10px 10px 10px; border-radius: 12px; min-width: 72px;
+    border: 1px solid transparent; transition: background .15s, border-color .15s; }
+  .word:hover { background: rgba(255,255,255,.04); border-color: var(--line); }
+  .word.active { background: rgba(90,160,255,.14); border-color: rgba(90,160,255,.35); }
+  /* English word with te'am on a host letter (like Hebrew) */
+  .word .txt { display: block; text-align: center; line-height: 1.35;
+    margin-bottom: 0; padding-bottom: 0.35em; }
+  .word .txt .eng {
+    font-family: "Times New Roman", Times, "Noto Serif", serif;
+    font-size: 22px; font-weight: 600; white-space: nowrap; line-height: 1.35;
+  }
+  .word .txt .host { position: relative; display: inline-block; padding-bottom: 0.38em; }
+  .word .txt .taam {
+    position: absolute; left: 50%; top: 0.95em; transform: translate(-50%, -0.08em);
+    width: 1.05em; height: 0.6em; pointer-events: none; z-index: 2;
+    display: block; overflow: visible;
+  }
+  .word .txt .taam svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .legend .item .mk {
+    width: 18px; height: 14px; display: inline-flex; color: inherit;
+  }
+  .legend .item .mk svg { width: 18px; height: 14px; }
+  .word .txt .sof {
+    font-family: "Times New Roman", Times, 'FrankRuehl', 'StamAshkenaz', serif;
+    font-size: 1em; line-height: 1; margin-inline-start: 1px; font-weight: 700;
+  }
   .word .mark { font-size: 10px; letter-spacing: .05em; text-transform: uppercase;
-    margin-top: 3px; opacity: .85; }
+    text-align: center; opacity: .9; margin: 2px 0 6px; }
 
-  /* --- the note canvas (same component the main app uses) --- */
-  .canvas-wrap { position: relative; background: #0b0e1a; border: 1px solid var(--line);
-    border-radius: 12px; margin: 6px 0 4px; overflow: hidden; }
-  canvas.contour { width: 100%; height: 190px; display: block; }
+  /* Per-word note strip: each held pitch is a bar; active step lights up while singing */
+  .notestrip { display: flex; gap: 3px; align-items: flex-end; justify-content: center;
+    height: 36px; padding: 0 2px; }
+  .notestrip .step { flex: 1 1 0; min-width: 14px; max-width: 36px; display: flex;
+    flex-direction: column; align-items: center; gap: 2px; }
+  .notestrip .bar { width: 100%; border-radius: 3px; min-height: 4px; opacity: .85;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset; transition: opacity .1s, box-shadow .1s; }
+  .notestrip .step.on .bar { opacity: 1; box-shadow: 0 0 0 2px #ffd700, 0 0 10px rgba(255,215,0,.45); }
+  .notestrip .pitch { font-size: 9px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .notestrip .step.on .pitch { color: #ffd700; font-weight: 700; }
+  .word .syls { display: flex; gap: 3px; justify-content: center; margin-top: 4px;
+    font-size: 10px; color: var(--muted); letter-spacing: .02em; }
+  .word .syls span { flex: 1 1 0; text-align: center; min-width: 14px; max-width: 36px; }
+  .word .syls span.on { color: #ffd700; font-weight: 700; }
 
-  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 4px; }
+  /* LTR timeline: English words sit above their note groups */
+  .timeline {
+    background: #0b0e1a; border: 1px solid var(--line); border-radius: 12px;
+    margin: 10px 0 4px; overflow: hidden; position: relative;
+  }
+  .tl-words { position: relative; height: 44px; margin: 10px 34px 0 12px; }
+  .tl-words .tlw { position: absolute; transform: translateX(var(--anchor-shift, -50%)); white-space: nowrap;
+    line-height: 1.3; padding-bottom: 0.3em;
+    color: var(--muted); pointer-events: none; transition: color .12s; }
+  .tl-words .tlw .eng {
+    font-family: "Times New Roman", Times, "Noto Serif", serif;
+    font-size: 14px; font-weight: 600; line-height: 1.3;
+  }
+  .tl-words .tlw .host { position: relative; display: inline-block; padding-bottom: 0.28em; }
+  .tl-words .tlw .taam {
+    position: absolute; left: 50%; top: 0.9em; transform: translateX(-50%);
+    width: 0.85em; height: 0.46em; pointer-events: none; z-index: 2; display: block;
+  }
+  .tl-words .tlw .taam svg { width: 100%; height: 100%; display: block; }
+  .tl-words .tlw .sof { font-family: "Times New Roman", Times, 'StamAshkenaz', serif; font-size: 1em; }
+  .tl-words .tlw.active { color: #ffd700; }
+  .canvas-wrap { position: relative; }
+  canvas.contour { width: 100%; height: 200px; display: block; }
+
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px; }
   .legend .item { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12.5px; }
   .legend .sw { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
 
   .hint { color: var(--muted); font-size: 12.5px; margin-top: 10px; }
 
-  /* --- grammar table --- */
   table.grammar { width: 100%; border-collapse: collapse; }
   table.grammar th, table.grammar td { text-align: left; padding: 10px 10px; border-bottom: 1px solid var(--line);
     vertical-align: top; }
   table.grammar th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
-  table.grammar .sym { font-family: 'StamAshkenaz', serif; font-size: 22px; }
+  table.grammar .sym { display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 28px; }
+  table.grammar .sym svg { width: 28px; height: 22px; }
+  table.grammar .sym.sof-sym { font-family: "Times New Roman", Times, 'StamAshkenaz', serif;
+    font-size: 22px; width: auto; height: auto; }
   table.grammar td.name { white-space: nowrap; font-weight: 600; }
   table.grammar tr:last-child td { border-bottom: none; }
   table.grammar .playrow { background: none; border: 1px solid var(--line); border-radius: 6px;
@@ -88,7 +150,7 @@
   ol.steps li { margin-bottom: 6px; }
   ol.steps strong { color: var(--text); }
 
-  footer { max-width: 900px; margin: 0 auto; padding: 10px 20px 40px; color: var(--muted); font-size: 11.5px; }
+  footer { max-width: 960px; margin: 0 auto; padding: 10px 20px 40px; color: var(--muted); font-size: 11.5px; }
 </style>
 </head>
 <body>
@@ -114,26 +176,27 @@
         <button id="chantBtn">♪ Chant melody only</button>
         <button id="speakBtn">🗣 Speak sentence</button>
         <button id="stopBtn" disabled>■ Stop</button>
-        <span class="sep"></span>
         <label class="mini">Tonic <input type="range" id="tonic" min="147" max="330" value="220"></label>
         <label class="mini">Tempo <input type="range" id="tempo" min="60" max="160" value="100"></label>
       </div>
 
       <div id="verse"></div>
 
-      <div class="canvas-wrap"><canvas class="contour" id="contour"></canvas></div>
+      <div class="timeline">
+        <div class="tl-words" id="tlWords"></div>
+        <div class="canvas-wrap"><canvas class="contour" id="contour"></canvas></div>
+      </div>
 
       <div class="legend" id="legend"></div>
-      <p class="hint">Click any word to cycle its cantillation mark (Mercha → Tipcha → Etnachta → Sof Pasuk). The
-      notation below is the same note-line view used elsewhere in this app: each bar is a held pitch (in semitones
-      from the tonic, 0 = home note), word boundaries are dashed, and the gold playhead tracks exactly what's
-      playing — so what you see is always what you hear.</p>
+      <p class="hint">Each English word shows its held pitches underneath (height = pitch, left→right = time).
+      Click a word to cycle its mark; Shift-click cycles backward. While chanting, the gold highlight marks the note you should be on —
+      that is where you change pitch. The timeline below lines the same notes up under the words.</p>
     </div>
   </section>
 
   <section>
     <h2>2 · The grammar of the music</h2>
-    <p class="lead">These four marks are the load-bearing "punctuation" of a Torah verse. In the Ashkenazi tradition they don't just say how to sing — they tell you how the sentence is built. Press ▶ to hear each motif on its own (sung on a neutral "ah", the actual measured shape from recorded Torah readings).</p>
+    <p class="lead">These four marks are the load-bearing "punctuation" of a Torah verse. In the Ashkenazi tradition they don't just say how to sing — they tell you how the sentence is built. Press ▶ to hear each motif on its own.</p>
     <div class="card">
       <table class="grammar" id="grammarTable"></table>
     </div>
@@ -155,11 +218,9 @@
 </main>
 
 <footer>
-  Melodic motifs, colors and note names are the real per-accent data from this project's Torah trope engine
-  (<code>js/trope.js</code>, measured from recorded Ashkenazi Torah readings in <code>js/audio.js</code>) — reused here
-  unmodified, just aimed at English words instead of Hebrew ones. Spoken words use your browser's built-in speech
-  synthesis; the chant is synthesized live with the Web Audio API, no recordings involved. AI-assisted teaching tool —
-  the trope-to-grammar mapping is a simplified teaching model, not a substitute for a Tikkun or a teacher.
+  Melodic motifs and colors come from this project's Torah trope engine (<code>js/trope.js</code> /
+  <code>js/audio.js</code>). Spoken words use the browser's speech synthesis; the chant is synthesized live.
+  A simplified teaching model — not a substitute for a Tikkun or a teacher.
 </footer>
 
 <script type="module">
@@ -168,17 +229,43 @@ import {
 } from '../js/trope.js';
 import { TAAM } from '../js/hebrew.js';
 import { singSteps, stopPlayback, getCtx } from '../js/audio.js';
-import { ContourView } from '../js/viz.js';
 
-// ---- the four marks this tutorial teaches, in teaching order -------------
 const MARKS = [
-  { id: 'mercha',   taam: TAAM.MERCHA,   label: 'Mercha',   role: 'The Connector',  punct: '',  desc: 'Musically it rises, leaving the ear expecting more — glue between words.' },
-  { id: 'tipcha',   taam: TAAM.TIPCHA,   label: 'Tipcha',    role: 'The Comma',      punct: ',', desc: 'A gentle descent; a minor pause that separates a clause from what follows.' },
-  { id: 'etnachta', taam: TAAM.ETNACHTA, label: 'Etnachta',  role: 'The Semicolon',  punct: ';', desc: 'The "at rest" point. Every verse is halved here; the melody settles on the tonic.' },
-  { id: 'sofpasuk', taam: 'sof',         label: 'Sof Pasuk', role: 'The Period',     punct: '.', desc: 'The final cadence — drops low, finalizing the statement at the end of the verse.' },
+  { id: 'mercha',   taam: TAAM.MERCHA,   label: 'Mercha',   role: 'The Connector',
+    desc: 'Musically it rises, leaving the ear expecting more — glue between words.' },
+  { id: 'munach',   taam: TAAM.MUNACH,   label: 'Munach',   role: 'The Resting Connector',
+    desc: 'A level connector that prepares the ear for the following accent.' },
+  { id: 'mahpach',  taam: TAAM.MAHPACH,  label: 'Mahpach',  role: 'The Turning Connector',
+    desc: 'A small turn in the line, often leaning into Pashta or a stronger pause.' },
+  { id: 'kadma',    taam: TAAM.QADMA,    label: 'Kadma',    role: 'The Pickup',
+    desc: 'A forward-moving pickup, used to launch into a following accent.' },
+  { id: 'darga',    taam: TAAM.DARGA,    label: 'Darga',    role: 'The Stepwise Connector',
+    desc: 'A stepped connector with a more decorated approach into the next word.' },
+  { id: 'tipcha',   taam: TAAM.TIPCHA,   label: 'Tipcha',    role: 'The Comma',
+    desc: 'A gentle descent; a minor pause that separates a clause from what follows.' },
+  { id: 'tevir',    taam: TAAM.TEVIR,    label: 'Tevir',    role: 'The Broken Pause',
+    desc: 'A sharper dip that breaks the phrase before moving onward.' },
+  { id: 'pashta',   taam: TAAM.PASHTA,   label: 'Pashta',   role: 'The Lift',
+    desc: 'A rising disjunctive that pushes the phrase upward before it releases.' },
+  { id: 'zaqefQatan', taam: TAAM.ZAQEF_QATAN, label: 'Zaqef Qatan', role: 'The Small Stop',
+    desc: 'A common phrase stop, lighter than Etnachta but stronger than a connector.' },
+  { id: 'zaqefGadol', taam: TAAM.ZAQEF_GADOL, label: 'Zaqef Gadol', role: 'The Big Stop',
+    desc: 'A larger version of the Zaqef stop, with a broader melodic gesture.' },
+  { id: 'revia',    taam: TAAM.REVIA,    label: 'Revia',    role: 'The Noble Pause',
+    desc: 'A rounded pause that gives a phrase its own local weight.' },
+  { id: 'geresh',   taam: TAAM.GERESH,   label: 'Geresh',   role: 'The Toss',
+    desc: 'A quick upward gesture, often heard as a small melodic toss.' },
+  { id: 'gershayim', taam: TAAM.GERSHAYIM, label: 'Gershayim', role: 'The Double Toss',
+    desc: 'A more decorated double version of the Geresh family gesture.' },
+  { id: 'segol',    taam: TAAM.SEGOL,    label: 'Segol',    role: 'The High Pause',
+    desc: 'A strong disjunctive with a distinctive lifted contour.' },
+  { id: 'etnachta', taam: TAAM.ETNACHTA, label: 'Etnachta',  role: 'The Semicolon',
+    desc: 'The "at rest" point. Every verse is halved here; the melody settles on the tonic.' },
+  { id: 'sofpasuk', taam: 'sof',         label: 'Sof Pasuk', role: 'The Period',
+    desc: 'The final cadence — drops low, finalizing the statement at the end of the verse.' },
 ];
 const MARK_BY_ID = Object.fromEntries(MARKS.map(m => [m.id, m]));
-const CYCLE = ['mercha', 'tipcha', 'etnachta', 'sofpasuk'];
+const CYCLE = MARKS.map(m => m.id);
 
 function contourFor(markId) {
   const m = MARK_BY_ID[markId];
@@ -189,7 +276,6 @@ function colorForMark(markId) {
   return m.taam === 'sof' ? colorFor(TAAM.ETNACHTA) : colorFor(m.taam);
 }
 
-// ---- presets ---------------------------------------------------------------
 const PRESETS = [
   { label: 'Genesis 1:1 (the classic example)',
     text: 'In the beginning, God created the heavens and the earth.',
@@ -199,12 +285,6 @@ const PRESETS = [
   { label: 'Custom — type your own', text: 'Custom', custom: true },
 ];
 
-// ---- turning a motif into the same "note steps" the app draws & plays -----
-// A motif is a handful of { t, p } control points (a continuous target curve).
-// The app never sings that curve directly: it turns it into a staircase of
-// HELD steps (each control point held until the next one) and both the canvas
-// and the oscillator read that same staircase — so what you see is guaranteed
-// to be what you hear. Copied from js/app.js's motifSteps/buildSyntheticCoach.
 function motifSteps(contour) {
   const pts = contour && contour.length ? contour : [{ t: 0, p: 0 }];
   const widths = pts.map((pt, i) => (i + 1 < pts.length ? pts[i + 1].t - pt.t : Math.max(1 - pt.t, 1 / pts.length)));
@@ -217,9 +297,6 @@ function motifSteps(contour) {
   });
 }
 
-// Lay a set of word-segments out on one shared 0..1 timeline: each word gets a
-// slice sized by its estimated syllable count (scaled by tempo), and its motif
-// becomes a run of held steps inside that slice.
 function buildCoach(segs, secPerSyllable) {
   if (!segs.length) return { steps: [], wordBounds: [], dur: 1, words: [] };
   const durs = segs.map((s) => Math.max(0.4, (s.syllables || 1) * secPerSyllable));
@@ -236,14 +313,13 @@ function buildCoach(segs, secPerSyllable) {
       color: seg.color, connector: seg.isConnector, w: wi,
     }));
     ws.forEach((s) => steps.push(s));
-    perWord.push({ t0: w0, t1: w0 + wdur, durSec: durs[wi], localSteps: local });
+    perWord.push({ t0: w0, t1: w0 + wdur, durSec: durs[wi], localSteps: local, color: seg.color });
   });
   return { steps, wordBounds, dur, words: perWord };
 }
 
-// Rough English syllable count (vowel-group heuristic), just for pacing.
 function estimateSyllables(word) {
-  const w = word.toLowerCase().replace(/[^a-z]/g, '');
+  const w = word.toLowerCase().replace(/[^a-z']/g, '');
   if (!w) return 1;
   const groups = w.match(/[aeiouy]+/g);
   let n = groups ? groups.length : 1;
@@ -251,11 +327,153 @@ function estimateSyllables(word) {
   return Math.max(1, n);
 }
 
+// Split an English word into roughly even chunks for labeling under note steps.
+function syllableChunks(word, n) {
+  const clean = word.replace(/[^\w'-]/g, '');
+  if (n <= 1) return [clean];
+  // Prefer vowel-group breaks when they match the step count.
+  const parts = [];
+  const re = /[^aeiouy]*[aeiouy]+(?:[^aeiouy]+$)?|[^aeiouy]+$/gi;
+  let m; const found = [];
+  while ((m = re.exec(clean)) && found.length < 12) found.push(m[0]);
+  if (found.length === n) return found;
+  // Fallback: even character slices.
+  const len = clean.length;
+  for (let i = 0; i < n; i++) {
+    const a = Math.round((i * len) / n);
+    const b = Math.round(((i + 1) * len) / n);
+    parts.push(clean.slice(a, b) || '·');
+  }
+  return parts;
+}
+
+function pitchLabel(p) {
+  const r = Math.round(p);
+  if (r === 0) return '0';
+  return (r > 0 ? '+' : '') + r;
+}
+
+// ---- LTR note timeline (English reads left→right; the main app's ContourView is RTL) ----
+class EnglishTimeline {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext('2d');
+    this.steps = [];
+    this.wordBounds = [];
+    this.playhead = null;
+    this.activeStep = -1;
+    this.yMin = -7; this.yMax = 7;
+    this.lm = 12; this.rm = 34;
+    this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this._onResize = () => { this._resize(); this.draw(); };
+    window.addEventListener('resize', this._onResize);
+    this._resize();
+  }
+  destroy() { window.removeEventListener('resize', this._onResize); }
+  _resize() {
+    const rect = this.canvas.getBoundingClientRect();
+    this.w = rect.width; this.h = rect.height;
+    this.canvas.width = Math.round(this.w * this.dpr);
+    this.canvas.height = Math.round(this.h * this.dpr);
+    this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+  }
+  setCoach({ steps = [], wordBounds = [] } = {}) {
+    this.steps = steps;
+    this.wordBounds = wordBounds;
+    this.playhead = null;
+    this.activeStep = -1;
+    if (steps.length) {
+      let lo = Math.min(...steps.map(s => s.p));
+      let hi = Math.max(...steps.map(s => s.p));
+      lo = Math.floor(lo - 1.5); hi = Math.ceil(hi + 1.5);
+      if (hi - lo < 6) { const mid = (hi + lo) / 2; lo = mid - 3; hi = mid + 3; }
+      this.yMin = lo; this.yMax = hi;
+    }
+    this.draw();
+  }
+  setPlayhead(t01) {
+    this.playhead = t01;
+    this.activeStep = -1;
+    if (t01 != null) {
+      for (let i = 0; i < this.steps.length; i++) {
+        const s = this.steps[i];
+        if (t01 >= s.t0 && t01 < s.t1) { this.activeStep = i; break; }
+      }
+      if (this.activeStep < 0 && this.steps.length && t01 >= this.steps[this.steps.length - 1].t1) {
+        this.activeStep = this.steps.length - 1;
+      }
+    }
+    this.draw();
+  }
+  _x(t) { return this.lm + t * (this.w - this.lm - this.rm); }
+  _y(p) {
+    const norm = (p - this.yMin) / (this.yMax - this.yMin);
+    return this.h - 18 - norm * (this.h - 34);
+  }
+  draw() {
+    const ctx = this.ctx;
+    ctx.clearRect(0, 0, this.w, this.h);
+    const xR = this.w - this.rm;
+    const pxPerSemi = (this.h - 34) / Math.max(1e-3, this.yMax - this.yMin);
+    const barW = Math.max(4, Math.min(pxPerSemi * 0.5, 16));
+
+    ctx.lineWidth = 2; ctx.lineCap = 'round';
+    ctx.font = '10px system-ui, sans-serif';
+    for (let s = this.yMin; s <= this.yMax; s++) {
+      const y = this._y(s);
+      ctx.strokeStyle = s === 0 ? 'rgba(140,140,160,0.5)' : 'rgba(120,120,140,0.12)';
+      ctx.beginPath(); ctx.moveTo(this.lm, y); ctx.lineTo(xR + 2, y); ctx.stroke();
+      if (s % 2 === 0) {
+        ctx.fillStyle = 'rgba(150,150,170,0.8)';
+        ctx.fillText(s > 0 ? '+' + s : '' + s, xR + 5, y + 3);
+      }
+    }
+
+    ctx.strokeStyle = 'rgba(255,255,255,0.10)';
+    ctx.setLineDash([2, 4]);
+    for (const t of this.wordBounds) {
+      const x = this._x(t);
+      ctx.beginPath(); ctx.moveTo(x, 6); ctx.lineTo(x, this.h - 16); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+
+    for (let i = 0; i < this.steps.length; i++) {
+      const s = this.steps[i];
+      const left = this._x(s.t0), right = Math.max(this._x(s.t1), left + 3);
+      const y = this._y(s.p);
+      const on = i === this.activeStep;
+      if (on) {
+        ctx.strokeStyle = 'rgba(255,215,0,0.55)';
+        ctx.lineWidth = barW + 10;
+        ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
+      }
+      ctx.strokeStyle = s.color || '#5aa0ff';
+      ctx.globalAlpha = 0.25; ctx.lineWidth = barW + 4;
+      ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
+      ctx.globalAlpha = 1; ctx.lineWidth = barW;
+      ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
+    }
+
+    if (this.playhead != null) {
+      const x = this._x(this.playhead);
+      ctx.strokeStyle = 'rgba(255,215,0,0.9)';
+      ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(x, 4); ctx.lineTo(x, this.h - 14); ctx.stroke();
+    }
+  }
+}
+
 // ---- state ------------------------------------------------------------------
-let words = [];   // [{ text, mark }]
-let coach = null; // current buildCoach() result, kept in sync with `words`
-let playToken = 0; // bumped to cancel an in-flight sequence
-let view = null;   // ContourView over #contour
+let words = [];
+let coach = null;
+let playToken = 0;
+let view = null;
+let activeWord = -1;
+let activeLocalStep = -1;
+
+const verseEl = document.getElementById('verse');
+const legendEl = document.getElementById('legend');
+const tlWordsEl = document.getElementById('tlWords');
 
 function tokenize(sentence) {
   return sentence.trim().split(/\s+/).filter(Boolean).map(raw => ({
@@ -294,24 +512,168 @@ function setSentence(text, presetMarks) {
   renderVerse();
 }
 
-// ---- rendering --------------------------------------------------------------
-const verseEl = document.getElementById('verse');
-const legendEl = document.getElementById('legend');
-
 function glyphFor(markId) {
+  // Grammar-table / icon: the mark stroke alone (no aleph).
+  return markSvg(markId);
+}
+
+// Te'am shapes as strokes — what a reader looks for (not an aleph).
+function markSvg(markId) {
+  const common = 'fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"';
+  if (markId === 'sofpasuk') {
+    return `<span class="sof-sym" aria-label="Sof Pasuk">׃</span>`;
+  }
+  let body = '';
+  if (markId === 'mercha') {
+    // Backtick-like rising curve
+    body = `<path d="M16 7 Q9 11 8 20" ${common}/>`;
+  } else if (markId === 'munach') {
+    body = `<path d="M7 16 H17" ${common}/>`;
+  } else if (markId === 'mahpach') {
+    body = `<path d="M7 17 Q12 8 18 8" ${common}/>`;
+  } else if (markId === 'kadma') {
+    body = `<path d="M8 19 Q12 8 18 6" ${common}/>`;
+  } else if (markId === 'darga') {
+    body = `<path d="M6 17 L10 13 L14 17 L18 9" ${common}/>`;
+  } else if (markId === 'tipcha') {
+    // Comma-like diagonal with a curled foot (not a checkmark)
+    body = `<path d="M15 5 L9 17" ${common}/><path d="M9 17 Q7 21 11 20" ${common}/>`;
+  } else if (markId === 'tevir') {
+    body = `<path d="M8 6 L14 18 L18 12" ${common}/>`;
+  } else if (markId === 'pashta') {
+    body = `<path d="M8 18 Q14 12 16 6" ${common}/>`;
+  } else if (markId === 'zaqefQatan') {
+    body = `<circle cx="10" cy="9" r="2.1" fill="currentColor"/><circle cx="14" cy="16" r="2.1" fill="currentColor"/>`;
+  } else if (markId === 'zaqefGadol') {
+    body = `<circle cx="10" cy="8" r="1.9" fill="currentColor"/><circle cx="14" cy="14" r="1.9" fill="currentColor"/><path d="M17 7 V18" ${common}/>`;
+  } else if (markId === 'revia') {
+    body = `<path d="M12 6 L17 12 L12 18 L7 12 Z" fill="currentColor"/>`;
+  } else if (markId === 'geresh') {
+    body = `<path d="M15 6 L9 18" ${common}/>`;
+  } else if (markId === 'gershayim') {
+    body = `<path d="M10 6 L6 18" ${common}/><path d="M18 6 L14 18" ${common}/>`;
+  } else if (markId === 'segol') {
+    body = `<circle cx="12" cy="7.5" r="1.9" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.9" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.9" fill="currentColor"/>`;
+  } else if (markId === 'etnachta') {
+    // Wishbone (open top, point down)
+    body = `<path d="M5 9 L12 21 L19 9" ${common}/>`;
+  } else {
+    body = `<path d="M16 7 Q9 11 8 20" ${common}/>`;
+  }
+  return `<svg viewBox="0 0 24 24" aria-hidden="true">${body}</svg>`;
+}
+
+function isEnglishLetter(ch) {
+  return /[A-Za-z]/.test(ch);
+}
+
+function vowelGroups(chars) {
+  const groups = [];
+  let cur = null;
+  chars.forEach((ch, i) => {
+    if (!/[A-Za-z]/.test(ch)) return;
+    const lower = ch.toLowerCase();
+    const isVowel = /[aeiouy]/.test(lower);
+    const isSilentFinalE = lower === 'e' && i === chars.length - 1 && groups.length > 0;
+    if (isVowel && !isSilentFinalE) {
+      if (cur && cur.end === i - 1) cur.end = i;
+      else { cur = { start: i, end: i }; groups.push(cur); }
+    } else {
+      cur = null;
+    }
+  });
+  return groups;
+}
+
+function pickStressGroup(text, groups) {
+  if (!groups.length) return null;
+  const lower = text.toLowerCase().replace(/[^a-z']/g, '');
+  const beforeSuffix = (suffix) => {
+    const suffixAt = lower.endsWith(suffix) ? lower.length - suffix.length : -1;
+    if (suffixAt <= 0) return null;
+    return [...groups].reverse().find(g => g.end < suffixAt) || null;
+  };
+  const suffixGroup =
+    beforeSuffix('ing') ||
+    beforeSuffix('ed') ||
+    beforeSuffix('er') ||
+    beforeSuffix('est') ||
+    beforeSuffix('ly');
+  if (suffixGroup) return suffixGroup;
+  if (/(?:tion|sion|cian|tial|cial)$/.test(lower) && groups.length > 1) {
+    return groups[groups.length - 2];
+  }
+  if (/(?:ic|ity|ical|ify)$/.test(lower) && groups.length > 1) {
+    return groups[groups.length - 2];
+  }
+  if (groups.length >= 3) return groups[groups.length - 2];
+  return groups[0];
+}
+
+function markHostIndex(text, markId) {
+  const chars = [...text];
+  const groups = vowelGroups(chars);
+  const stress = pickStressGroup(text, groups);
+  if (stress) return Math.round((stress.start + stress.end) / 2);
+
+  const letters = chars.map((ch, i) => ({ ch, i })).filter(({ ch }) => isEnglishLetter(ch));
+  if (!letters.length) return -1;
+  const fallback = markId === 'mercha' ? 0.35 : 0.65;
+  return letters[Math.min(letters.length - 1, Math.max(0, Math.round((letters.length - 1) * fallback)))].i;
+}
+
+function markAnchorPercent(text, markId) {
+  if (markId === 'sofpasuk') return 100;
+  const chars = [...text];
+  const host = markHostIndex(text, markId);
+  if (host < 0 || !chars.length) return 50;
+  return ((host + 0.5) / chars.length) * 100;
+}
+
+// Put the mark stroke on the likely sung syllable of the English word (no aleph).
+// Sof Pasuk remains punctuation after the word, as it is in Hebrew.
+function markedEnglishHtml(text, markId) {
   const m = MARK_BY_ID[markId];
-  if (m.taam === 'sof') return '\u05D0\u05C3';
-  return '\u05D0' + String.fromCodePoint(m.taam);
+  if (!text) return '';
+  if (m.taam === 'sof') {
+    return `<span class="eng">${escapeHtml(text)}<span class="sof">׃</span></span>`;
+  }
+  const chars = [...text];
+  const host = markHostIndex(text, markId);
+  if (host < 0) {
+    return `<span class="eng">${escapeHtml(text)}</span><span class="taam">${markSvg(markId)}</span>`;
+  }
+  const before = escapeHtml(chars.slice(0, host).join(''));
+  const letter = escapeHtml(chars[host]);
+  const after = escapeHtml(chars.slice(host + 1).join(''));
+  return `<span class="eng">${before}<span class="host">${letter}<span class="taam" aria-hidden="true">${markSvg(markId)}</span></span>${after}</span>`;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 function secPerSyllable() {
-  const tempo = +document.getElementById('tempo').value; // ~beats/min feel
+  const tempo = +document.getElementById('tempo').value;
   return 0.5 * (100 / tempo);
 }
 
-// Rebuild the shared coach (steps + word bounds) from the current words/marks
-// and hand it to the canvas — the SAME object singSteps() will play from, so
-// the notation and the audio can never drift apart.
+function noteStripHtml(localSteps, color, chunks) {
+  // Map pitch to bar height within this word's own range.
+  const ps = localSteps.map(s => s.p);
+  const lo = Math.min(...ps), hi = Math.max(...ps);
+  const span = Math.max(2, hi - lo);
+  return `<div class="notestrip">${localSteps.map((s, i) => {
+    const h = 8 + ((s.p - lo) / span) * 22;
+    const chunk = chunks[i] || '';
+    return `<div class="step" data-si="${i}">
+      <div class="bar" style="height:${h.toFixed(0)}px;background:${color}"></div>
+      <div class="pitch">${pitchLabel(s.p)}</div>
+    </div>`;
+  }).join('')}</div>
+  <div class="syls">${chunks.map((c, i) => `<span data-si="${i}">${c}</span>`).join('')}</div>`;
+}
+
 function rebuildCoach() {
   const segs = words.map((w) => ({
     contour: contourFor(w.mark),
@@ -320,7 +682,32 @@ function rebuildCoach() {
     syllables: estimateSyllables(w.text),
   }));
   coach = buildCoach(segs, secPerSyllable());
-  if (view) view.setCoach({ steps: coach.steps, raw: [], wordBounds: coach.wordBounds });
+  if (view) {
+    // Re-measure after layout so the note bars aren't drawn into a 0-height canvas.
+    requestAnimationFrame(() => {
+      view._resize();
+      view.setCoach({ steps: coach.steps, wordBounds: coach.wordBounds });
+    });
+  }
+  renderTimelineWords();
+}
+
+function renderTimelineWords() {
+  tlWordsEl.innerHTML = '';
+  if (!coach) return;
+  words.forEach((w, i) => {
+    const pw = coach.words[i];
+    const span = document.createElement('span');
+    span.className = 'tlw';
+    span.dataset.i = i;
+    span.innerHTML = markedEnglishHtml(w.text, w.mark);
+    const anchor = markAnchorPercent(w.text, w.mark);
+    const wordT = w.mark === 'sofpasuk' ? pw.t1 : pw.t0 + (anchor / 100) * (pw.t1 - pw.t0);
+    span.style.left = (wordT * 100) + '%';
+    span.style.setProperty('--anchor-shift', `-${anchor}%`);
+    span.style.color = colorForMark(w.mark);
+    tlWordsEl.appendChild(span);
+  });
 }
 
 function renderVerse() {
@@ -328,27 +715,73 @@ function renderVerse() {
   words.forEach((w, i) => {
     const mark = MARK_BY_ID[w.mark];
     const color = colorForMark(w.mark);
+    const local = motifSteps(contourFor(w.mark));
+    const chunks = syllableChunks(w.text, local.length);
     const div = document.createElement('div');
     div.className = 'word';
     div.dataset.i = i;
     div.innerHTML = `
-      <div class="glyph" style="color:${color}">${glyphFor(w.mark)}</div>
-      <div class="txt">${w.text}</div>
-      <div class="mark" style="color:${color}">${mark.label}</div>`;
-    div.addEventListener('click', () => {
+      <div class="txt" style="color:${color}">${markedEnglishHtml(w.text, w.mark)}</div>
+      <div class="mark" style="color:${color}">${mark.label}</div>
+      ${noteStripHtml(local, color, chunks)}`;
+    div.addEventListener('click', (e) => {
       const idx = CYCLE.indexOf(w.mark);
-      w.mark = CYCLE[(idx + 1) % CYCLE.length];
+      const dir = e.shiftKey ? -1 : 1;
+      w.mark = CYCLE[(idx + dir + CYCLE.length) % CYCLE.length];
       renderVerse();
     });
     verseEl.appendChild(div);
   });
   legendEl.innerHTML = MARKS.map(m =>
-    `<span class="item"><span class="sw" style="background:${colorForMark(m.id)}"></span>${m.label} — ${m.role}</span>`
+    `<span class="item" style="color:${colorForMark(m.id)}"><span class="mk">${markSvg(m.id)}</span>${m.label} — ${m.role}</span>`
   ).join('');
   rebuildCoach();
+  setActiveHighlight(-1, -1);
 }
 
-// ---- audio / speech sequencing ----------------------------------------------
+function setActiveHighlight(wi, localSi) {
+  activeWord = wi;
+  activeLocalStep = localSi;
+  [...verseEl.children].forEach((el, i) => {
+    el.classList.toggle('active', i === wi);
+    el.querySelectorAll('.step').forEach((s) => {
+      s.classList.toggle('on', i === wi && +s.dataset.si === localSi);
+    });
+    el.querySelectorAll('.syls span').forEach((s) => {
+      s.classList.toggle('on', i === wi && +s.dataset.si === localSi);
+    });
+  });
+  [...tlWordsEl.children].forEach((el) => {
+    el.classList.toggle('active', +el.dataset.i === wi);
+  });
+}
+
+function wordAt(t01) {
+  if (!coach) return -1;
+  let idx = 0;
+  for (let i = 0; i < coach.wordBounds.length; i++) {
+    if (t01 >= coach.wordBounds[i]) idx = i;
+  }
+  return idx;
+}
+
+function localStepAt(wi, t01) {
+  if (!coach || wi < 0) return -1;
+  const pw = coach.words[wi];
+  const localT = (t01 - pw.t0) / Math.max(1e-6, pw.t1 - pw.t0);
+  for (let i = 0; i < pw.localSteps.length; i++) {
+    const s = pw.localSteps[i];
+    if (localT >= s.t0 && localT < s.t1) return i;
+  }
+  return pw.localSteps.length - 1;
+}
+
+function onPlayProgress(t01) {
+  if (view) view.setPlayhead(t01);
+  const wi = wordAt(t01);
+  setActiveHighlight(wi, localStepAt(wi, t01));
+}
+
 function speak(text, { rate = 0.95, pitch = 1 } = {}) {
   return new Promise((resolve) => {
     if (!('speechSynthesis' in window)) { resolve(); return; }
@@ -359,15 +792,20 @@ function speak(text, { rate = 0.95, pitch = 1 } = {}) {
   });
 }
 
-// Play one word's held-note steps (already normalized to 0..1 within the word)
-// on its own little timeline, moving the shared playhead across that word's
-// slice of the whole-sentence canvas as it goes.
 function chantWord(wi, tonicHz) {
   const pw = coach.words[wi];
   return new Promise((resolve) => {
     singSteps(pw.localSteps, {
       tonicHz, durationSec: pw.durSec,
-      onProgress: (t01) => { if (view) view.setPlayhead(pw.t0 + t01 * (pw.t1 - pw.t0)); },
+      onProgress: (t01) => {
+        const globalT = pw.t0 + t01 * (pw.t1 - pw.t0);
+        if (view) view.setPlayhead(globalT);
+        let si = 0;
+        for (let i = 0; i < pw.localSteps.length; i++) {
+          if (t01 >= pw.localSteps[i].t0) si = i;
+        }
+        setActiveHighlight(wi, si);
+      },
       onEnd: resolve,
     });
   });
@@ -377,7 +815,7 @@ function chantAll(tonicHz) {
   return new Promise((resolve) => {
     singSteps(coach.steps, {
       tonicHz, durationSec: coach.dur,
-      onProgress: (t01) => { if (view) view.setPlayhead(t01); },
+      onProgress: onPlayProgress,
       onEnd: resolve,
     });
   });
@@ -392,20 +830,21 @@ async function runSequence(mode) {
   } else {
     for (let i = 0; i < words.length; i++) {
       if (token !== playToken) break;
-      const w = words[i];
-      const el = verseEl.children[i];
-      el.classList.add('active');
+      setActiveHighlight(i, -1);
       if (mode === 'coach') {
-        await speak(w.text, { rate: 0.95 });
-        if (token !== playToken) { el.classList.remove('active'); break; }
+        await speak(words[i].text, { rate: 0.95 });
+        if (token !== playToken) break;
         await chantWord(i, tonicHz);
       } else if (mode === 'speak') {
-        await speak(w.text, { rate: 0.95 });
+        await speak(words[i].text, { rate: 0.95 });
       }
-      el.classList.remove('active');
     }
   }
-  if (token === playToken) { setPlaying(false); if (view) view.setPlayhead(null); }
+  if (token === playToken) {
+    setPlaying(false);
+    if (view) view.setPlayhead(null);
+    setActiveHighlight(-1, -1);
+  }
 }
 
 function setPlaying(on) {
@@ -417,16 +856,15 @@ function stopAll() {
   playToken++;
   stopPlayback();
   if ('speechSynthesis' in window) speechSynthesis.cancel();
-  [...verseEl.children].forEach(c => c.classList.remove('active'));
   if (view) view.setPlayhead(null);
+  setActiveHighlight(-1, -1);
   setPlaying(false);
 }
 
-// ---- grammar table ------------------------------------------------------------
 function renderGrammarTable() {
   const tbl = document.getElementById('grammarTable');
   tbl.innerHTML = `<tr><th>Symbol</th><th>Name</th><th>Musical function</th><th>What it teaches</th><th></th></tr>` +
-    MARKS.map((m, i) => {
+    MARKS.map((m) => {
       const color = colorForMark(m.id);
       return `<tr>
         <td class="sym" style="color:${color}">${glyphFor(m.id)}</td>
@@ -445,7 +883,6 @@ function renderGrammarTable() {
   });
 }
 
-// ---- wiring ---------------------------------------------------------------
 const presetSel = document.getElementById('preset');
 const sentenceInput = document.getElementById('sentence');
 PRESETS.forEach((p, i) => {
@@ -474,8 +911,7 @@ document.getElementById('speakBtn').addEventListener('click', () => { runSequenc
 document.getElementById('stopBtn').addEventListener('click', stopAll);
 document.getElementById('tempo').addEventListener('input', rebuildCoach);
 
-// ---- boot -------------------------------------------------------------------
-view = new ContourView(document.getElementById('contour'));
+view = new EnglishTimeline(document.getElementById('contour'));
 renderGrammarTable();
 sentenceInput.value = PRESETS[0].text;
 setSentence(PRESETS[0].text, PRESETS[0].marks);

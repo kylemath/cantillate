@@ -27,6 +27,8 @@ try {
   const audio = await import('../js/audio.js');
   const realaudio = await import('../js/realaudio.js');
   const translit = await import('../js/translit.js');
+  const tikkun = await import('../js/tikkun.js');
+  const justify = await import('../js/justify.js');
   log(true, 'all modules import');
 
   for (const fn of ['splitPhrases', 'splitAtRank', 'rankFor', 'rankOfSeg', 'buildLineMelody',
@@ -177,6 +179,57 @@ try {
     `naming a passage doesn't move its progress (${named.slug})`);
 
   log(typeof audio.singSteps === 'function', 'audio.singSteps exported');
+
+  // Dual-column tikkun used to re-tokenize the whole Torah corpus on every
+  // click (STA"M, then pointed). A one-page fixture is enough to check the
+  // public surface: a mapped verse renders, and a second call with the same
+  // payload and reading — different selectedVerse, columnId, renderWord —
+  // still succeeds. selectedVerse belongs in the HTML, not the annotation.
+  const tikkunData = {
+    source: { layout: 'smoke' },
+    pages: [{
+      number: 1,
+      lines: [{
+        text: [['בראשית']],
+        verses: [{ book: 1, chapter: 1, verse: 1 }],
+      }],
+    }],
+  };
+  const tikkunReading = {
+    book: { en: 'Genesis' },
+    chapter: 1,
+    verses: [{ n: 1, c: 1, v: 1, text: 'בראשית' }],
+  };
+  const stam = tikkun.renderTikkunPages(tikkunData, tikkunReading, {
+    focusStart: 1, focusEnd: 1, contextStart: 1, contextEnd: 1,
+    selectedVerse: 1, columnId: 'stamCol',
+  });
+  log(!!(stam && stam.html && stam.html.includes('data-verse="1"')),
+    'tikkun: a mapped verse renders to HTML');
+  log(!!stam.html.includes('sel') && stam.html.includes('id="stamCol"'),
+    'tikkun: selectedVerse and columnId land in the HTML');
+  const pointed = tikkun.renderTikkunPages(tikkunData, tikkunReading, {
+    focusStart: 1, focusEnd: 1, contextStart: 1, contextEnd: 1,
+    selectedVerse: null, columnId: 'pointedCol',
+    renderWord: () => ({ html: 'א', classes: ['w'] }),
+  });
+  log(!!(pointed && pointed.html && pointed.html.includes('id="pointedCol"')
+      && pointed.html.includes('range-start w"')),
+    'tikkun: a second call with the same payload and reading still renders');
+  log(!pointed.html.includes(' sel') && pointed.html.includes('>א</span>'),
+    'tikkun: selectedVerse and renderWord are not frozen into the annotation');
+
+  // Stretchable letters (ה ח ל ר ת ד ם) are what the justifier elongates;
+  // everything else stays a bare character.
+  log(justify.wrapStretchHtml('ה') === '<span class="stretch">ה</span>',
+    'wrapStretchHtml wraps a stretchable letter');
+  log(justify.wrapStretchHtml('א') === 'א',
+    'wrapStretchHtml leaves a non-stretchable letter unwrapped');
+  log(typeof justify.justifyTikkun === 'function', 'justify.justifyTikkun is a function');
+  let justifyThrew = false;
+  try { justify.justifyTikkun(null); justify.justifyTikkun(); }
+  catch (err) { justifyThrew = true; }
+  log(!justifyThrew, 'justify.justifyTikkun is a no-op on null/missing root');
 
   // The reading manifest: every entry resolvable, every excerpt range and drill
   // group inside its data file.

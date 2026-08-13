@@ -174,6 +174,28 @@ STEPS = [
      "     return same&&pointed&&bare ? `OK both map verse ${a.dataset.verse}, word ${a.dataset.widx}`"
      "       : `same=${same} pointed=${pointed} bare=${bare}`;"
      "   });})()"),
+    ("clicking a pasuk keeps the dual columns instead of rebuilding them",
+     "(()=>{const mode=__t.q('[data-scroll-text=\"dual\"]'), pane=__t.q('#paneToggleScroll');"
+     " if(!mode||!pane) return 'full-reading controls missing';"
+     " mode.click(); if(!document.body.classList.contains('scroll-view')) pane.click();"
+     " return __t.settle(()=>!!__t.q('#scrollStamTrack .sw')&&!!__t.q('#scrollPointedTrack .sw'),"
+     "   null,null,12000).then(()=>{"
+     "     const box=__t.q('#scrollVerses');"
+     "     const first=__t.q('#scrollStamTrack .sw');"
+     "     const key=box.dataset.layoutKey;"
+     "     const v=__t.all('#scrollStamTrack .sw[data-verse]').map(w=>w.dataset.verse)"
+     "       .find(n=>n && n!==first.dataset.verse) || first.dataset.verse;"
+     "     const target=__t.q(`#scrollStamTrack .sw[data-verse=\"${v}\"]`);"
+     "     if(target) target.click();"
+     "     const kept=first.isConnected && box.dataset.layoutKey===key;"
+     "     const sel=__t.all(`#scrollStamTrack .sw.sel[data-verse=\"${v}\"]`).length;"
+     "     const pointedSel=__t.all(`#scrollPointedTrack .sw.sel[data-verse=\"${v}\"]`).length;"
+     "     __t.q('[data-scroll-text=\"stam\"]').click();"
+     "     if(document.body.classList.contains('scroll-view')) pane.click();"
+     "     return kept&&sel>0&&pointedSel>0"
+     "       ? `OK same nodes, ${sel}+${pointedSel} selected on verse ${v}`"
+     "       : `kept=${kept} sel=${sel} pointedSel=${pointedSel} key=${box.dataset.layoutKey}`;"
+     "   });})()"),
     ("chain chips are offered inside an aliyah",
      "(()=>{__t.openFirst(); const c=__t.all('.alsec.open .chain').length;"
      " return c>0 ? `OK ${c} chain(s)` : 'no chains offered';})()"),

@@ -2196,13 +2196,27 @@ function fitScrollPages() {
   const box = $('scrollVerses');
   if (!box) return;
   if (!box.clientWidth) return;
+  const keyOf = () => Math.round(box.clientWidth) + ':' + (box.dataset.layoutKey || '');
   const run = () => {
-    justifyTikkun(box);
+    const widthKey = keyOf();
+    if (box.dataset.justifiedFor !== widthKey) {
+      justifyTikkun(box);
+      box.dataset.justifiedFor = widthKey;
+    }
     if (box.dataset.scrollToStart === '1') scrollTikkunStartIntoView();
   };
+  // Same width and same glyph HTML: the stretch spans are already the right
+  // size. Still honour a pending scroll-to-start (the pane may have just
+  // become measurable) without walking every word again.
+  if (box.dataset.justifiedFor === keyOf()) {
+    run();
+    return;
+  }
   // Wait for the STA"M / SemiStam faces so measurements match what the reader
   // sees; without this a first paint against a fallback face mis-sizes stretches.
-  if (document.fonts && document.fonts.ready) {
+  // Once the faces are in, skip fonts.ready — it is already resolved and would
+  // still queue a full measure on every pasuk click via a microtask.
+  if (document.fonts && document.fonts.status !== 'loaded') {
     document.fonts.ready.then(run).catch(run);
   } else {
     requestAnimationFrame(run);
@@ -2922,9 +2936,7 @@ function setScrollSync(on) {
   state.scrollSync = !!on;
   savePanePrefs();
   syncToggleUI();
-  if (state.data && state.scrollTextMode === 'dual' && (state.scrollView || state.aliyah)) {
-    renderScrollPane();
-  }
+  // mirror() already reads state.scrollSync on the next scroll; no rebuild.
 }
 
 const PANE_PREF_KEY = 'cantillate.panes';
@@ -4907,9 +4919,24 @@ function wireAccPanel() {
   });
 }
 
+// Pasuk clicks only change .sel (and the overlay/hits re-painted after). Dual
+// tikkun is thousands of word nodes; toggling the class is enough.
+function updateScrollSelection(box, verseN) {
+  box.querySelectorAll('.sw.sel').forEach((el) => el.classList.remove('sel'));
+  if (verseN == null) return;
+  box.querySelectorAll(`.sw[data-verse="${verseN}"]`).forEach((el) => el.classList.add('sel'));
+}
+
+// One listener on the pane, not one per word. Nested .stretch / .tc clicks
+// still select the pasuk via closest. Bound once; aliyah shares the same box
+// (selectVerse leaves aliyah mode, as before).
 function bindScrollWordSelection(box) {
-  box.querySelectorAll('.sw').forEach((el) => {
-    el.addEventListener('click', () => selectVerse(parseInt(el.dataset.verse, 10)));
+  if (box.dataset.swClickBound) return;
+  box.dataset.swClickBound = '1';
+  box.addEventListener('click', (e) => {
+    const el = e.target.closest('.sw[data-verse]');
+    if (!el || !box.contains(el)) return;
+    selectVerse(parseInt(el.dataset.verse, 10));
   });
 }
 
@@ -5041,6 +5068,14 @@ function nearestScrollWord(track) {
 }
 
 function alignScrollTrack(source, target) {
+  // Paginated tikkun columns share page/line breaks and line-height (see
+  // .pointed-tikkun in styles.css), so the same scrollTop lands on the same
+  // line. Naturally-wrapping fallback columns do not share metrics — those
+  // still need the per-word getBoundingClientRect walk.
+  if (source.querySelector('.tikkun-column') && target.querySelector('.tikkun-column')) {
+    target.scrollTop = source.scrollTop;
+    return;
+  }
   const anchor = nearestScrollWord(source);
   if (!anchor) return;
   const twin = target.querySelector(`.sw[data-verse="${anchor.dataset.verse}"][data-widx="${anchor.dataset.widx}"]`);
@@ -5060,8 +5095,16 @@ function wireDualScrollSync(box) {
     alignScrollTrack(source, target);
     requestAnimationFrame(() => { dualScrollSyncing = false; });
   };
-  stam.addEventListener('scroll', () => mirror(stam, pointed), { passive: true });
-  pointed.addEventListener('scroll', () => mirror(pointed, stam), { passive: true });
+  // innerHTML replace yields new track nodes, so a rebuild re-binds; the flag
+  // makes a second wire on the same nodes a no-op.
+  if (!stam.dataset.syncBound) {
+    stam.dataset.syncBound = '1';
+    stam.addEventListener('scroll', () => mirror(stam, pointed), { passive: true });
+  }
+  if (!pointed.dataset.syncBound) {
+    pointed.dataset.syncBound = '1';
+    pointed.addEventListener('scroll', () => mirror(pointed, stam), { passive: true });
+  }
 }
 
 // Render explicit Davidovich tikkun pages and line boundaries. Every line is a
@@ -5070,6 +5113,7 @@ function wireDualScrollSync(box) {
 function renderScrollPane() {
   const box = $('scrollVerses');
   if (!box) return;
+  bindScrollWordSelection(box);
   const title = document.querySelector('#scrollpane .pane-title');
   // In aliyah mode the shared STA"M pane shows the open aliyah (with surrounding
   // context) instead of the whole reading, so the scroll stays put in the same
@@ -5082,11 +5126,26 @@ function renderScrollPane() {
         ? 'Full reading (STA&ldquo;M + pointed)'
         : 'Torah column (STA&ldquo;M)';
   }
-  if (!state.scrollView) { box.innerHTML = ''; return; }
+  if (!state.scrollView) {
+    box.innerHTML = '';
+    delete box.dataset.layoutKey;
+    delete box.dataset.justifiedFor;
+    return;
+  }
   const [start, end] = divisionRange();
-  const layoutKey = `${state.slug}:${start}-${end}:${state.scrollTextMode}`;
-  const previousKey = box.dataset.layoutKey;
+  // Glyph HTML is keyed on wrapping-vs-paginated, reading, range, surface and
+  // colour — not selectedVerse (that's a .sel class) or overlay (re-painted
+  // below). tikkun-vs-flow must be in the key or the wrapping fallback would
+  // freeze after the JSON arrives with the same slug/range.
+  const layoutKey = `verse:${state.tikkun ? 'tikkun' : 'flow'}:${state.slug}:${start}-${end}:${state.scrollTextMode}:${state.colorMode}`;
   ensureTikkunData(); // both surfaces below want the fixed page layout
+  if (box.dataset.layoutKey === layoutKey && box.firstElementChild) {
+    updateScrollSelection(box, state.selectedVerse);
+    applyScrollWordHits();
+    applyScrollOverlay();
+    return;
+  }
+  const previousKey = box.dataset.layoutKey;
   let stamHtml = '';
   if (state.scrollTextMode !== 'pointed') {
     const tikkun = renderTikkunPages(state.tikkun, state.data, {
@@ -5121,8 +5180,8 @@ function renderScrollPane() {
   }));
   box.innerHTML = scrollSurfaceHtml(stamHtml, pointedHtml);
   box.dataset.layoutKey = layoutKey;
+  delete box.dataset.justifiedFor;
   if (previousKey !== layoutKey) box.dataset.scrollToStart = '1';
-  bindScrollWordSelection(box);
   wireDualScrollSync(box);
   fitScrollPages();
   // Re-apply the per-word accuracy shading after any rebuild (a toolbar toggle,
@@ -5196,13 +5255,33 @@ function applyScrollOverlay() {
 function renderAliyahScroll(box) {
   box = box || $('scrollVerses');
   if (!box) return;
+  bindScrollWordSelection(box);
   const a = state.aliyah;
-  if (!a) { box.innerHTML = ''; return; }
+  if (!a) {
+    box.innerHTML = '';
+    delete box.dataset.layoutKey;
+    delete box.dataset.justifiedFor;
+    return;
+  }
   const maxV = state.data.verses.length;
   const first = a.start, last = Math.min(a.end, maxV);
   const from = Math.max(1, first - ALIYAH_CONTEXT);
   const to = Math.min(maxV, last + ALIYAH_CONTEXT);
+  const title = document.querySelector('#scrollpane .pane-title');
+  if (title) {
+    const surface = state.scrollTextMode === 'pointed'
+      ? 'Vowels &amp; cantillation'
+      : state.scrollTextMode === 'dual' ? 'STA&ldquo;M + pointed' : 'STA&ldquo;M';
+    title.innerHTML = `${chunkTitle(a)} <span class="hint" style="text-transform:none;letter-spacing:0">${surface}</span>`;
+  }
+  const layoutKey = `aliyah:${state.tikkun ? 'tikkun' : 'flow'}:${state.slug}:${first}-${last}:${from}-${to}:${state.scrollTextMode}:${state.colorMode}`;
   ensureTikkunData(); // reachable without going through renderScrollPane
+  if (box.dataset.layoutKey === layoutKey && box.firstElementChild) {
+    updateScrollSelection(box, state.selectedVerse);
+    if (state._aliyaTl) markAliyahEnds(state._aliyaTl, !!state._aliyaEnded);
+    if (state._aliyaWordHits) applyAliyahWordHits(state._aliyaWordHits);
+    return;
+  }
   let stamHtml = '';
   if (state.scrollTextMode !== 'pointed') {
     const tikkun = renderTikkunPages(state.tikkun, state.data, {
@@ -5238,14 +5317,9 @@ function renderAliyahScroll(box) {
     selectedVerse: state.selectedVerse, id: 'aliyahPointed',
   }));
   box.innerHTML = scrollSurfaceHtml(stamHtml, pointedHtml);
+  box.dataset.layoutKey = layoutKey;
+  delete box.dataset.justifiedFor;
   wireDualScrollSync(box);
-  const title = document.querySelector('#scrollpane .pane-title');
-  if (title) {
-    const surface = state.scrollTextMode === 'pointed'
-      ? 'Vowels &amp; cantillation'
-      : state.scrollTextMode === 'dual' ? 'STA&ldquo;M + pointed' : 'STA&ldquo;M';
-    title.innerHTML = `${chunkTitle(a)} <span class="hint" style="text-transform:none;letter-spacing:0">${surface}</span>`;
-  }
   fitScrollPages();
   // Re-apply the start/end cues after any rebuild (e.g. a toolbar toggle) so the
   // yad markers survive re-renders of either full-reading surface.
