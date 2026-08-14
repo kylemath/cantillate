@@ -2387,14 +2387,15 @@ function applyReadScale(scale, rerender) {
 
 // Keyboard shortcuts (RTL): ← next page/word, → previous, Space/P play — or,
 // once something is running, hold it; "," and "." step back and forward one word
-// so you can retry the bit you fumbled without restarting the pasuk; ↓ record
-// (press again to restart), ↑ sing along (voice guide + record in sync), Escape
-// stop. Modifier combos (e.g. Ctrl/Cmd+R to refresh) and typing in a control are
-// left to the browser. In aliyah mode the same keys drive the aliyah transport
-// (Space guided read, ↓ record, ↑ duet, Esc stop).
+// so you can retry the bit you fumbled without restarting the pasuk; Z / X
+// previous / next pasuk (same order as "," / "."); ↓ record (press again to
+// restart), ↑ sing along (voice guide + record in sync), Escape stop. Modifier
+// combos (e.g. Ctrl/Cmd+R to refresh) and typing in a control are left to the
+// browser. In aliyah mode the same keys drive the aliyah transport (Space
+// guided read, ↓ record, ↑ duet, Esc stop).
 function onKey(e) {
   if (e.ctrlKey || e.metaKey || e.altKey) return;
-  if (/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(e.target.tagName)) return;
+  if (/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;
   // Step keys work the same everywhere something is running.
   if (e.key === ',' || e.key === '.') {
     if (!transportLive()) return;
@@ -2403,6 +2404,7 @@ function onKey(e) {
     return;
   }
   if (state.aliyah) {
+    if (e.target.tagName === 'BUTTON') return;
     const tl = state._aliyaTl;
     if (!tl) return;
     if (e.key === ' ' || e.key === 'p') {
@@ -2415,6 +2417,10 @@ function onKey(e) {
     return;
   }
   if (state.selectedVerse == null) return;
+  // Z/X still work after clicking the pasuk buttons (those keep focus).
+  if (e.key === 'z' || e.key === 'Z') { e.preventDefault(); goToVerse(-1); return; }
+  if (e.key === 'x' || e.key === 'X') { e.preventDefault(); goToVerse(1); return; }
+  if (e.target.tagName === 'BUTTON') return;
   const units = state.units;
   if (!units || !units.length) return;
   if (e.key === 'ArrowLeft') { e.preventDefault(); goToUnit(state.unitIndex + 1, true); }
@@ -2624,9 +2630,8 @@ function resumeAliyahTimers(heldMs) {
   }
 }
 
-// Advance whole-pasuk in STA"M reading (level 8 / Torah-column view). Jumps to
-// the next/previous verse in the current portion and — via selectVerse — opens
-// it at that verse's highest UNLOCKED stage (so a fully-learned pasuk stays in
+// Jump to the next/previous verse in the current portion. selectVerse opens it
+// at that verse's highest UNLOCKED stage (so a fully-learned pasuk stays in
 // the scroll, while one that still needs work drops to its word/phrase coach).
 function goToVerse(delta) {
   if (state.selectedVerse == null || state.aliyah) return;
@@ -4898,6 +4903,7 @@ function gotoPractice(verseN, levelId, unitIndex) {
   renderVerses();
   renderStageBar();
   renderPractice();
+  requestAnimationFrame(scrollSelectedIntoView);
 }
 
 // Delegated click handling for the accuracy panel: text words and bar segments
@@ -4960,6 +4966,45 @@ function scrollTikkunStartIntoView() {
     scroller.scrollTop = Math.max(0, scroller.scrollTop + delta - 48);
   }
   delete box.dataset.scrollToStart;
+}
+
+// Nudge a scroller so `el` sits `pad` px from its top, but only when the
+// element is off-screen — a nearby click should not jump the column.
+function scrollScrollerToEl(scroller, el, pad) {
+  if (!el || !scroller || !scroller.clientHeight) return;
+  const sRect = scroller.getBoundingClientRect();
+  const eRect = el.getBoundingClientRect();
+  if (eRect.top >= sRect.top + 4 && eRect.bottom <= sRect.bottom - 4) return;
+  const delta = eRect.top - sRect.top;
+  scroller.scrollTop = Math.max(0, scroller.scrollTop + delta - pad);
+}
+
+// After a pasuk is chosen, bring its highlight into view in the Torah column
+// and the pesukim list (so Z/X and the practice-pane buttons don't leave the
+// new selection off-screen).
+function scrollSelectedIntoView() {
+  const verseN = state.selectedVerse;
+  if (verseN == null) return;
+  const pane = $('scrollpane');
+  const box = $('scrollVerses');
+  if (pane && box && state.scrollView) {
+    const tracks = [...box.querySelectorAll('.scroll-track')];
+    if (tracks.length) {
+      const targets = state.scrollSync ? tracks.slice(0, 1) : tracks;
+      targets.forEach((track) => {
+        scrollScrollerToEl(track, track.querySelector(`.sw[data-verse="${verseN}"]`), 34);
+      });
+    } else {
+      const scroller = pane.querySelector('.pane-body') || pane;
+      scrollScrollerToEl(scroller, box.querySelector(`.sw[data-verse="${verseN}"]`), 48);
+    }
+  }
+  const active = document.querySelector('#verses .verse.active');
+  const textpane = $('textpane');
+  if (active && textpane) {
+    const scroller = textpane.querySelector('.pane-body') || textpane;
+    scrollScrollerToEl(scroller, active, 24);
+  }
 }
 
 function pointedScrollWordHtml(seg, verseN, inFocus, selected, rangeStart) {
@@ -5344,6 +5389,7 @@ function selectVerse(n) {
   renderAliyot();
   renderStageBar();
   renderPractice();
+  requestAnimationFrame(scrollSelectedIntoView);
 }
 
 // ---------------------------------------------------------------------------
@@ -6318,6 +6364,25 @@ function divideControlHtml(segs) {
   </div>`;
 }
 
+// Prev / next pasuk in the practice header. Z and X do the same (same order as
+// "," / "." for words). Disabled at the ends of the current portion.
+function verseNavHtml() {
+  const [start, end] = divisionRange();
+  const n = state.selectedVerse;
+  const atStart = n == null || n <= start;
+  const atEnd = n == null || n >= end;
+  return `<div class="verse-nav">
+    <button id="vPrev" ${atStart ? 'disabled' : ''} title="Previous pasuk — key: Z">◀ <kbd>Z</kbd></button>
+    <button id="vNext" ${atEnd ? 'disabled' : ''} title="Next pasuk — key: X"><kbd>X</kbd> ▶</button>
+  </div>`;
+}
+
+function wireVerseNav() {
+  const prev = $('vPrev'), next = $('vNext');
+  if (prev) prev.addEventListener('click', () => goToVerse(-1));
+  if (next) next.addEventListener('click', () => goToVerse(1));
+}
+
 // Hand a canvas view over to the freshly rendered pane. The views hold a window
 // resize listener, so simply constructing new ones — as every re-render used to
 // do, and there are ~15 of them (verse, level, divide, zoom, reading size…) —
@@ -6369,6 +6434,7 @@ function renderPractice() {
   p.innerHTML = `
     <div class="phead">
       <h2>${state.data.book.he} ${verseRefLabel(v, state.selectedVerse)}${verseIndexSuffix(v, state.selectedVerse)}<span class="stagetag">${level.id}. ${level.label}</span></h2>
+      ${verseNavHtml()}
       <div class="aidchips">${chips}</div>
       ${units.length > 1 ? `<div class="unit-nav">
         <button id="uPrev">◀</button>
@@ -6381,7 +6447,7 @@ function renderPractice() {
         <span class="rs-ico">א</span>
         <input type="range" id="readSize" min="${READ_MIN}" max="${READ_MAX}" step="0.1" value="${state.readScale}" aria-label="Reading size">
       </label>
-      ${hasReal ? '<span class="keyshint" title="Tap a word, or keys: ← → next/prev unit · Space play, then hold · , and . step back/forward one word · ↓ record · ↑ sing along · Esc stop">⌨</span>' : ''}
+      ${hasReal ? '<span class="keyshint" title="Tap a word, or keys: ← → next/prev unit · Z / X prev/next pasuk · Space play, then hold · , and . step back/forward one word · ↓ record · ↑ sing along · Esc stop">⌨</span>' : ''}
     </div>
     ${units.length > 1 ? `
     <button class="unit-edge unit-edge-next" id="uEdgeNext" aria-label="Next ${level.unit}" title="Next ${level.unit} (swipe left)">‹</button>
@@ -6458,6 +6524,7 @@ function renderPractice() {
     if (eNext) eNext.addEventListener('click', () => goToUnit(state.unitIndex + 1, true));
     if (ePrev) ePrev.addEventListener('click', () => goToUnit(state.unitIndex - 1, true));
   }
+  wireVerseNav();
   const divideSeg = $('divideSeg');
   if (divideSeg) divideSeg.querySelectorAll('.dv').forEach((b) => {
     b.addEventListener('click', () => {
@@ -7730,6 +7797,7 @@ function renderLockedPage(level, unlocked) {
   p.innerHTML = `
     <div class="phead">
       <h2>${state.data.book.he} ${verseRefLabel(v, state.selectedVerse)}${verseIndexSuffix(v, state.selectedVerse, 'verse ')} <span class="stagetag">Stage ${level.id}: ${level.label}</span></h2>
+      ${verseNavHtml()}
     </div>
     <div class="locked-page">
       <div class="lock-icon">🔒</div>
@@ -7744,6 +7812,7 @@ function renderLockedPage(level, unlocked) {
     renderStageBar();
     renderPractice();
   });
+  wireVerseNav();
 }
 
 // Legacy per-unit legend (kept for reference / potential reuse). The unified
