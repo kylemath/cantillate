@@ -1,0 +1,289 @@
+{
+  "slug": "yk-mincha-torah",
+  "book": {
+    "en": "Leviticus",
+    "he": "ויקרא",
+    "translit": "Vayikra"
+  },
+  "multiChapter": true,
+  "ref": "Leviticus 18:1-18:30",
+  "heRef": "ויקרא י״ח:א-ל",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 18,
+      "v": 1,
+      "ref": "18:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 2,
+      "c": 18,
+      "v": 2,
+      "ref": "18:2",
+      "text": "דַּבֵּר֙ אֶל־בְּנֵ֣י יִשְׂרָאֵ֔ל וְאָמַרְתָּ֖ אֲלֵהֶ֑ם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "Speak to the children of Yisra᾽el, and say to them, I am the Lord your God."
+    },
+    {
+      "n": 3,
+      "c": 18,
+      "v": 3,
+      "ref": "18:3",
+      "text": "כְּמַעֲשֵׂ֧ה אֶֽרֶץ־מִצְרַ֛יִם אֲשֶׁ֥ר יְשַׁבְתֶּם־בָּ֖הּ לֹ֣א תַעֲשׂ֑וּ וּכְמַעֲשֵׂ֣ה אֶֽרֶץ־כְּנַ֡עַן אֲשֶׁ֣ר אֲנִי֩ מֵבִ֨יא אֶתְכֶ֥ם שָׁ֙מָּה֙ לֹ֣א תַעֲשׂ֔וּ וּבְחֻקֹּתֵיהֶ֖ם לֹ֥א תֵלֵֽכוּ׃",
+      "en": "After the doings of the land of Miżrayim, in which you dwelt, shall you not do: and after the doings of the land of Kena῾an, into which I bring you, shall you not do: neither shall you walk in their practices."
+    },
+    {
+      "n": 4,
+      "c": 18,
+      "v": 4,
+      "ref": "18:4",
+      "text": "אֶת־מִשְׁפָּטַ֧י תַּעֲשׂ֛וּ וְאֶת־חֻקֹּתַ֥י תִּשְׁמְר֖וּ לָלֶ֣כֶת בָּהֶ֑ם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "You shall do my judgments, and keep my ordinances, to walk in them, I am the Lord your God."
+    },
+    {
+      "n": 5,
+      "c": 18,
+      "v": 5,
+      "ref": "18:5",
+      "text": "וּשְׁמַרְתֶּ֤ם אֶת־חֻקֹּתַי֙ וְאֶת־מִשְׁפָּטַ֔י אֲשֶׁ֨ר יַעֲשֶׂ֥ה אֹתָ֛ם הָאָדָ֖ם וָחַ֣י בָּהֶ֑ם אֲנִ֖י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "You shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am the Lord."
+    },
+    {
+      "n": 6,
+      "c": 18,
+      "v": 6,
+      "ref": "18:6",
+      "text": "אִ֥ישׁ אִישׁ֙ אֶל־כׇּל־שְׁאֵ֣ר בְּשָׂר֔וֹ לֹ֥א תִקְרְב֖וּ לְגַלּ֣וֹת עֶרְוָ֑ה אֲנִ֖י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "None of you shall approach to any that is near of kin to him, to uncover her nakedness: I am the Lord."
+    },
+    {
+      "n": 7,
+      "c": 18,
+      "v": 7,
+      "ref": "18:7",
+      "text": "עֶרְוַ֥ת אָבִ֛יךָ וְעֶרְוַ֥ת אִמְּךָ֖ לֹ֣א תְגַלֵּ֑ה אִמְּךָ֣ הִ֔וא לֹ֥א תְגַלֶּ֖ה עֶרְוָתָֽהּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The nakedness of thy father, or the nakedness of thy mother, shalt thou not uncover: she is thy mother; thou shalt not uncover her nakedness."
+    },
+    {
+      "n": 8,
+      "c": 18,
+      "v": 8,
+      "ref": "18:8",
+      "text": "עֶרְוַ֥ת אֵֽשֶׁת־אָבִ֖יךָ לֹ֣א תְגַלֵּ֑ה עֶרְוַ֥ת אָבִ֖יךָ הִֽוא׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The nakedness of thy father’s wife shalt thou not uncover: it is thy father’s nakedness."
+    },
+    {
+      "n": 9,
+      "c": 18,
+      "v": 9,
+      "ref": "18:9",
+      "text": "עֶרְוַ֨ת אֲחֽוֹתְךָ֤ בַת־אָבִ֙יךָ֙ א֣וֹ בַת־אִמֶּ֔ךָ מוֹלֶ֣דֶת בַּ֔יִת א֖וֹ מוֹלֶ֣דֶת ח֑וּץ לֹ֥א תְגַלֶּ֖ה עֶרְוָתָֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The nakedness of thy sister, the daughter of thy father, or daughter of thy mother, whether she be born at home, or born abroad, their nakedness thou shalt not uncover."
+    },
+    {
+      "n": 10,
+      "c": 18,
+      "v": 10,
+      "ref": "18:10",
+      "text": "עֶרְוַ֤ת בַּת־בִּנְךָ֙ א֣וֹ בַֽת־בִּתְּךָ֔ לֹ֥א תְגַלֶּ֖ה עֶרְוָתָ֑ן כִּ֥י עֶרְוָתְךָ֖ הֵֽנָּה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The nakedness of thy son’s daughter, or of thy daughter’s daughter, their nakedness thou shalt not uncover: for theirs is thy own nakedness."
+    },
+    {
+      "n": 11,
+      "c": 18,
+      "v": 11,
+      "ref": "18:11",
+      "text": "עֶרְוַ֨ת בַּת־אֵ֤שֶׁת אָבִ֙יךָ֙ מוֹלֶ֣דֶת אָבִ֔יךָ אֲחוֹתְךָ֖ הִ֑וא לֹ֥א תְגַלֶּ֖ה עֶרְוָתָֽהּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The nakedness of thy father’s wife’s daughter, begotten of thy father, she is thy sister, thou shalt not uncover her nakedness."
+    },
+    {
+      "n": 12,
+      "c": 18,
+      "v": 12,
+      "ref": "18:12",
+      "text": "עֶרְוַ֥ת אֲחוֹת־אָבִ֖יךָ לֹ֣א תְגַלֵּ֑ה שְׁאֵ֥ר אָבִ֖יךָ הִֽוא׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not uncover the nakedness of thy father’s sister: she is thy father’s near kinswoman."
+    },
+    {
+      "n": 13,
+      "c": 18,
+      "v": 13,
+      "ref": "18:13",
+      "text": "עֶרְוַ֥ת אֲחֽוֹת־אִמְּךָ֖ לֹ֣א תְגַלֵּ֑ה כִּֽי־שְׁאֵ֥ר אִמְּךָ֖ הִֽוא׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not uncover the nakedness of thy mother’s sister: for she is thy mother’s near kinswoman."
+    },
+    {
+      "n": 14,
+      "c": 18,
+      "v": 14,
+      "ref": "18:14",
+      "text": "עֶרְוַ֥ת אֲחִֽי־אָבִ֖יךָ לֹ֣א תְגַלֵּ֑ה אֶל־אִשְׁתּוֹ֙ לֹ֣א תִקְרָ֔ב דֹּדָֽתְךָ֖ הִֽוא׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not uncover the nakedness of thy father’s brother, thou shalt not approach to his wife: she is thy aunt."
+    },
+    {
+      "n": 15,
+      "c": 18,
+      "v": 15,
+      "ref": "18:15",
+      "text": "עֶרְוַ֥ת כַּלָּֽתְךָ֖ לֹ֣א תְגַלֵּ֑ה אֵ֤שֶׁת בִּנְךָ֙ הִ֔וא לֹ֥א תְגַלֶּ֖ה עֶרְוָתָֽהּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not uncover the nakedness of thy daughter in law: she is thy son’s wife; thou shalt not uncover her nakedness."
+    },
+    {
+      "n": 16,
+      "c": 18,
+      "v": 16,
+      "ref": "18:16",
+      "text": "עֶרְוַ֥ת אֵֽשֶׁת־אָחִ֖יךָ לֹ֣א תְגַלֵּ֑ה עֶרְוַ֥ת אָחִ֖יךָ הִֽוא׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt not uncover the nakedness of thy brother’s wife: it is thy brother’s nakedness."
+    },
+    {
+      "n": 17,
+      "c": 18,
+      "v": 17,
+      "ref": "18:17",
+      "text": "עֶרְוַ֥ת אִשָּׁ֛ה וּבִתָּ֖הּ לֹ֣א תְגַלֵּ֑ה אֶֽת־בַּת־בְּנָ֞הּ וְאֶת־בַּת־בִּתָּ֗הּ לֹ֤א תִקַּח֙ לְגַלּ֣וֹת עֶרְוָתָ֔הּ שַׁאֲרָ֥ה הֵ֖נָּה זִמָּ֥ה הִֽוא׃",
+      "en": "Thou shalt not uncover the nakedness of a woman and her daughter, neither shalt thou take her son’s daughter, or her daughter’s daughter, to uncover her nakedness; for they are her near kinswomen: it is foulness."
+    },
+    {
+      "n": 18,
+      "c": 18,
+      "v": 18,
+      "ref": "18:18",
+      "text": "וְאִשָּׁ֥ה אֶל־אֲחֹתָ֖הּ לֹ֣א תִקָּ֑ח לִצְרֹ֗ר לְגַלּ֧וֹת עֶרְוָתָ֛הּ עָלֶ֖יהָ בְּחַיֶּֽיהָ׃",
+      "en": "Neither shalt thou take a wife to her sister, as her rival, and uncover her nakedness, beside the other in her life time."
+    },
+    {
+      "n": 19,
+      "c": 18,
+      "v": 19,
+      "ref": "18:19",
+      "text": "וְאֶל־אִשָּׁ֖ה בְּנִדַּ֣ת טֻמְאָתָ֑הּ לֹ֣א תִקְרַ֔ב לְגַלּ֖וֹת עֶרְוָתָֽהּ׃",
+      "en": "Also thou shalt not approach to a woman in the impurity of her menstrual flow, to uncover her nakedness."
+    },
+    {
+      "n": 20,
+      "c": 18,
+      "v": 20,
+      "ref": "18:20",
+      "text": "וְאֶל־אֵ֙שֶׁת֙ עֲמִֽיתְךָ֔ לֹא־תִתֵּ֥ן שְׁכׇבְתְּךָ֖ לְזָ֑רַע לְטׇמְאָה־בָֽהּ׃",
+      "en": "Moreover thou shalt not lie carnally with thy neighbour’s wife, to defile thyself with her."
+    },
+    {
+      "n": 21,
+      "c": 18,
+      "v": 21,
+      "ref": "18:21",
+      "text": "וּמִֽזַּרְעֲךָ֥ לֹא־תִתֵּ֖ן לְהַעֲבִ֣יר לַמֹּ֑לֶךְ וְלֹ֧א תְחַלֵּ֛ל אֶת־שֵׁ֥ם אֱלֹהֶ֖יךָ אֲנִ֥י יְהֹוָֽה׃",
+      "en": "And thou shalt not let any of thy seed pass through (the fire) to Molekh, neither shalt thou profane the name of thy God: I am the Lord."
+    },
+    {
+      "n": 22,
+      "c": 18,
+      "v": 22,
+      "ref": "18:22",
+      "text": "וְאֶ֨ת־זָכָ֔ר לֹ֥א תִשְׁכַּ֖ב מִשְׁכְּבֵ֣י אִשָּׁ֑ה תּוֹעֵבָ֖ה הִֽוא׃",
+      "en": "Thou shalt not lie with a man after the manner of a woman: it is abomination."
+    },
+    {
+      "n": 23,
+      "c": 18,
+      "v": 23,
+      "ref": "18:23",
+      "text": "וּבְכׇל־בְּהֵמָ֛ה לֹא־תִתֵּ֥ן שְׁכׇבְתְּךָ֖ לְטׇמְאָה־בָ֑הּ וְאִשָּׁ֗ה לֹֽא־תַעֲמֹ֞ד לִפְנֵ֧י בְהֵמָ֛ה לְרִבְעָ֖הּ תֶּ֥בֶל הֽוּא׃",
+      "en": "Neither shalt thou lie with any beast to defile thyself with it: neither shall any woman stand before a beast to lie down before it: it is perversion."
+    },
+    {
+      "n": 24,
+      "c": 18,
+      "v": 24,
+      "ref": "18:24",
+      "text": "אַל־תִּֽטַּמְּא֖וּ בְּכׇל־אֵ֑לֶּה כִּ֤י בְכׇל־אֵ֙לֶּה֙ נִטְמְא֣וּ הַגּוֹיִ֔ם אֲשֶׁר־אֲנִ֥י מְשַׁלֵּ֖חַ מִפְּנֵיכֶֽם׃",
+      "en": "Defile not yourselves in any of these things: for in all these the nations were defiled which I cast out before you:"
+    },
+    {
+      "n": 25,
+      "c": 18,
+      "v": 25,
+      "ref": "18:25",
+      "text": "וַתִּטְמָ֣א הָאָ֔רֶץ וָאֶפְקֹ֥ד עֲוֺנָ֖הּ עָלֶ֑יהָ וַתָּקִ֥א הָאָ֖רֶץ אֶת־יֹשְׁבֶֽיהָ׃",
+      "en": "and the land was defiled: therefore I do punish its iniquity upon it, and the land vomits out her inhabitants."
+    },
+    {
+      "n": 26,
+      "c": 18,
+      "v": 26,
+      "ref": "18:26",
+      "text": "וּשְׁמַרְתֶּ֣ם אַתֶּ֗ם אֶת־חֻקֹּתַי֙ וְאֶת־מִשְׁפָּטַ֔י וְלֹ֣א תַעֲשׂ֔וּ מִכֹּ֥ל הַתּוֹעֵבֹ֖ת הָאֵ֑לֶּה הָֽאֶזְרָ֔ח וְהַגֵּ֖ר הַגָּ֥ר בְּתוֹכְכֶֽם׃",
+      "en": "You shall therefore keep my statutes and my judgments, and shall not commit any of these abominations; neither any of your own nation, nor any stranger that sojourns among you:"
+    },
+    {
+      "n": 27,
+      "c": 18,
+      "v": 27,
+      "ref": "18:27",
+      "text": "כִּ֚י אֶת־כׇּל־הַתּוֹעֵבֹ֣ת הָאֵ֔ל עָשׂ֥וּ אַנְשֵֽׁי־הָאָ֖רֶץ אֲשֶׁ֣ר לִפְנֵיכֶ֑ם וַתִּטְמָ֖א הָאָֽרֶץ׃",
+      "en": "for all these abominations have the men of the land done, who were before you, and the land is defiled;"
+    },
+    {
+      "n": 28,
+      "c": 18,
+      "v": 28,
+      "ref": "18:28",
+      "text": "וְלֹֽא־תָקִ֤יא הָאָ֙רֶץ֙ אֶתְכֶ֔ם בְּטַֽמַּאֲכֶ֖ם אֹתָ֑הּ כַּאֲשֶׁ֥ר קָאָ֛ה אֶת־הַגּ֖וֹי אֲשֶׁ֥ר לִפְנֵיכֶֽם׃",
+      "en": "that the land vomit not you out also, when you defile it, as it has vomited out the nations that were before you."
+    },
+    {
+      "n": 29,
+      "c": 18,
+      "v": 29,
+      "ref": "18:29",
+      "text": "כִּ֚י כׇּל־אֲשֶׁ֣ר יַעֲשֶׂ֔ה מִכֹּ֥ל הַתּוֹעֵבֹ֖ת הָאֵ֑לֶּה וְנִכְרְת֛וּ הַנְּפָשׁ֥וֹת הָעֹשֹׂ֖ת מִקֶּ֥רֶב עַמָּֽם׃",
+      "en": "For whoever shall commit any of these abominations, even the persons that commit them shall be cut off from among their people."
+    },
+    {
+      "n": 30,
+      "c": 18,
+      "v": 30,
+      "ref": "18:30",
+      "text": "וּשְׁמַרְתֶּ֣ם אֶת־מִשְׁמַרְתִּ֗י לְבִלְתִּ֨י עֲשׂ֜וֹת מֵחֻקּ֤וֹת הַתּֽוֹעֵבֹת֙ אֲשֶׁ֣ר נַעֲשׂ֣וּ לִפְנֵיכֶ֔ם וְלֹ֥א תִֽטַּמְּא֖וּ בָּהֶ֑ם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Therefore shall you keep my ordinance, that you commit not any one of these abominable customs, which were practised before you, and that you defile not yourselves in them: I am the Lord your God."
+    }
+  ],
+  "kind": "holiday",
+  "parashah": {
+    "en": "Yom Kippur Mincha",
+    "he": "יום כיפור מנחה",
+    "translit": "Yom Kippur Mincha",
+    "ref": "Leviticus 18:1-18:30"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 5,
+        "ref": "18:1–18:5"
+      },
+      {
+        "n": 2,
+        "start": 6,
+        "end": 21,
+        "ref": "18:6–18:21"
+      },
+      {
+        "n": 3,
+        "start": 22,
+        "end": 30,
+        "ref": "18:22–18:30"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Holiday aliyah boundaries from the MJC public leyning page (mjcnj.com/hhrecordings) and its PDFs."
+}

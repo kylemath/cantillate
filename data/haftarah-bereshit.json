@@ -1,0 +1,292 @@
+{
+  "slug": "haftarah-bereshit",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 42:5-43:10",
+  "heRef": "ישעיהו מ״ב:ה-כ״ה, מ״ג:א-י",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 42,
+      "v": 5,
+      "ref": "42:5",
+      "text": "כֹּה־אָמַ֞ר הָאֵ֣ל&thinsp;<small>׀</small>&thinsp;יְהֹוָ֗ה בּוֹרֵ֤א הַשָּׁמַ֙יִם֙ וְנ֣וֹטֵיהֶ֔ם רֹקַ֥ע הָאָ֖רֶץ וְצֶאֱצָאֶ֑יהָ נֹתֵ֤ן נְשָׁמָה֙ לָעָ֣ם עָלֶ֔יהָ וְר֖וּחַ לַהֹלְכִ֥ים בָּֽהּ׃",
+      "en": "Thus says God the Lord, he that created the heavens, and stretched them out; he that spread forth the earth, and that which comes out of it; he that gives breath to the people upon it, and spirit to them that walk therein:"
+    },
+    {
+      "n": 2,
+      "c": 42,
+      "v": 6,
+      "ref": "42:6",
+      "text": "אֲנִ֧י יְהֹוָ֛ה קְרָאתִ֥יךָֽ בְצֶ֖דֶק וְאַחְזֵ֣ק בְּיָדֶ֑ךָ וְאֶצׇּרְךָ֗ וְאֶתֶּנְךָ֛ לִבְרִ֥ית עָ֖ם לְא֥וֹר גּוֹיִֽם׃",
+      "en": "I the Lord have called thee in righteousness, and will hold thy hand, and will keep thee, and give thee for a covenant of the people, for a light of the nations;"
+    },
+    {
+      "n": 3,
+      "c": 42,
+      "v": 7,
+      "ref": "42:7",
+      "text": "לִפְקֹ֖חַ עֵינַ֣יִם עִוְר֑וֹת לְהוֹצִ֤יא מִמַּסְגֵּר֙ אַסִּ֔יר מִבֵּ֥ית כֶּ֖לֶא יֹ֥שְׁבֵי חֹֽשֶׁךְ׃",
+      "en": "to open the blind eyes, to bring out the prisoners from the prison, and them that sit in darkness out of the prison house."
+    },
+    {
+      "n": 4,
+      "c": 42,
+      "v": 8,
+      "ref": "42:8",
+      "text": "אֲנִ֥י יְהֹוָ֖ה ה֣וּא שְׁמִ֑י וּכְבוֹדִי֙ לְאַחֵ֣ר לֹֽא־אֶתֵּ֔ן וּתְהִלָּתִ֖י לַפְּסִילִֽים׃",
+      "en": "I am the Lord: that is my name: and my glory will I not give to another, neither my praise to carved idols."
+    },
+    {
+      "n": 5,
+      "c": 42,
+      "v": 9,
+      "ref": "42:9",
+      "text": "הָרִאשֹׁנ֖וֹת הִנֵּה־בָ֑אוּ וַֽחֲדָשׁוֹת֙ אֲנִ֣י מַגִּ֔יד בְּטֶ֥רֶם תִּצְמַ֖חְנָה אַשְׁמִ֥יעַ אֶתְכֶֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Behold, the former things are come to pass, and new things do I declare: before they spring forth I tell you of them."
+    },
+    {
+      "n": 6,
+      "c": 42,
+      "v": 10,
+      "ref": "42:10",
+      "text": "שִׁ֤ירוּ לַֽיהֹוָה֙ שִׁ֣יר חָדָ֔שׁ תְּהִלָּת֖וֹ מִקְצֵ֣ה הָאָ֑רֶץ יוֹרְדֵ֤י הַיָּם֙ וּמְלֹא֔וֹ אִיִּ֖ים וְיֹשְׁבֵיהֶֽם׃",
+      "en": "Sing to the Lord a new song, and his praise from the end of the earth, you that go down to the sea, and all that is therein; the isles, and their inhabitants."
+    },
+    {
+      "n": 7,
+      "c": 42,
+      "v": 11,
+      "ref": "42:11",
+      "text": "יִשְׂא֤וּ מִדְבָּר֙ וְעָרָ֔יו חֲצֵרִ֖ים תֵּשֵׁ֣ב קֵדָ֑ר יָרֹ֙נּוּ֙ יֹ֣שְׁבֵי סֶ֔לַע מֵרֹ֥אשׁ הָרִ֖ים יִצְוָֽחוּ׃",
+      "en": "Let the wilderness and its cities lift up their voice, the villages that Qedar inhabits: let the inhabitants of Sela sing, let them shout from the top of the mountains."
+    },
+    {
+      "n": 8,
+      "c": 42,
+      "v": 12,
+      "ref": "42:12",
+      "text": "יָשִׂ֥ימוּ לַיהֹוָ֖ה כָּב֑וֹד וּתְהִלָּת֖וֹ בָּאִיִּ֥ים יַגִּֽידוּ׃",
+      "en": "Let them give glory to the Lord, and declare his praise in the islands."
+    },
+    {
+      "n": 9,
+      "c": 42,
+      "v": 13,
+      "ref": "42:13",
+      "text": "יְהֹוָה֙ כַּגִּבּ֣וֹר יֵצֵ֔א כְּאִ֥ישׁ מִלְחָמ֖וֹת יָעִ֣יר קִנְאָ֑ה יָרִ֙יעַ֙ אַף־יַצְרִ֔יחַ עַל־אֹיְבָ֖יו יִתְגַּבָּֽר׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The Lord shall go forth as a mighty man, he shall stir up ardour like a man of war: he shall cry, indeed, roar; he shall show himself mighty against his foes."
+    },
+    {
+      "n": 10,
+      "c": 42,
+      "v": 14,
+      "ref": "42:14",
+      "text": "הֶחֱשֵׁ֙יתִי֙ מֵֽעוֹלָ֔ם אַחֲרִ֖ישׁ אֶתְאַפָּ֑ק כַּיּוֹלֵדָ֣ה אֶפְעֶ֔ה אֶשֹּׁ֥ם וְאֶשְׁאַ֖ף יָֽחַד׃",
+      "en": "I have a long time held my peace; I have been still, and refrained myself: now will I cry like a woman in travail; I will gasp and pant together."
+    },
+    {
+      "n": 11,
+      "c": 42,
+      "v": 15,
+      "ref": "42:15",
+      "text": "אַחֲרִ֤יב הָרִים֙ וּגְבָע֔וֹת וְכׇל־עֶשְׂבָּ֖ם אוֹבִ֑ישׁ וְשַׂמְתִּ֤י נְהָרוֹת֙ לָאִיִּ֔ים וַאֲגַמִּ֖ים אוֹבִֽישׁ׃",
+      "en": "I will make waste mountains and hills, and dry up all their herbs; and I will make the rivers islands, and I will dry up the pools."
+    },
+    {
+      "n": 12,
+      "c": 42,
+      "v": 16,
+      "ref": "42:16",
+      "text": "וְהוֹלַכְתִּ֣י עִוְרִ֗ים בְּדֶ֙רֶךְ֙ לֹ֣א יָדָ֔עוּ בִּנְתִיב֥וֹת לֹא־יָדְע֖וּ אַדְרִיכֵ֑ם אָשִׂים֩ מַחְשָׁ֨ךְ לִפְנֵיהֶ֜ם לָא֗וֹר וּמַֽעֲקַשִּׁים֙ לְמִישׁ֔וֹר אֵ֚לֶּה הַדְּבָרִ֔ים עֲשִׂיתִ֖ם וְלֹ֥א עֲזַבְתִּֽים׃",
+      "en": "And I will bring the blind by a way that they knew not; I will lead them in paths that they have not known: I will make darkness light before them, and crooked things straight. These are the things which I have done, and I have not forsaken them."
+    },
+    {
+      "n": 13,
+      "c": 42,
+      "v": 17,
+      "ref": "42:17",
+      "text": "נָסֹ֤גוּ אָחוֹר֙ יֵבֹ֣שׁוּ בֹ֔שֶׁת הַבֹּטְחִ֖ים בַּפָּ֑סֶל הָאֹמְרִ֥ים לְמַסֵּכָ֖ה אַתֶּ֥ם אֱלֹהֵֽינוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "They shall be turned back, they shall be greatly ashamed, that trust in carved idols, that say to the molten images, You are our gods."
+    },
+    {
+      "n": 14,
+      "c": 42,
+      "v": 18,
+      "ref": "42:18",
+      "text": "הַחֵרְשִׁ֖ים שְׁמָ֑עוּ וְהַעִוְרִ֖ים הַבִּ֥יטוּ לִרְאֽוֹת׃",
+      "en": "Hear, O deaf; and look, O blind, that you may see."
+    },
+    {
+      "n": 15,
+      "c": 42,
+      "v": 19,
+      "ref": "42:19",
+      "text": "מִ֤י עִוֵּר֙ כִּ֣י אִם־עַבְדִּ֔י וְחֵרֵ֖שׁ כְּמַלְאָכִ֣י אֶשְׁלָ֑ח מִ֤י עִוֵּר֙ כִּמְשֻׁלָּ֔ם וְעִוֵּ֖ר כְּעֶ֥בֶד יְהֹוָֽה׃",
+      "en": "Who is blind, but my servant? or deaf, as my messenger that I sent? who is blind as he that is perfect, and blind as the Lord’s servant?"
+    },
+    {
+      "n": 16,
+      "c": 42,
+      "v": 20,
+      "ref": "42:20",
+      "text": "<span class=\"mam-kq\"><span class=\"mam-kq-k\">(ראית)</span> <span class=\"mam-kq-q\">[רָא֥וֹת]</span></span> רַבּ֖וֹת וְלֹ֣א תִשְׁמֹ֑ר פָּק֥וֹחַ אׇזְנַ֖יִם וְלֹ֥א יִשְׁמָֽע׃",
+      "en": "Seeing many things, but thou observest not; opening the ears, but he hears not."
+    },
+    {
+      "n": 17,
+      "c": 42,
+      "v": 21,
+      "ref": "42:21",
+      "text": "יְהֹוָ֥ה חָפֵ֖ץ לְמַ֣עַן צִדְק֑וֹ יַגְדִּ֥יל תּוֹרָ֖ה וְיַאְדִּֽיר׃",
+      "en": "The Lord was well pleased for his righteousness’ sake, to magnify Tora, and to make it glorious."
+    },
+    {
+      "n": 18,
+      "c": 42,
+      "v": 22,
+      "ref": "42:22",
+      "text": "וְהוּא֮ עַם־בָּז֣וּז וְשָׁסוּי֒ הָפֵ֤חַ בַּחוּרִים֙ כֻּלָּ֔ם וּבְבָתֵּ֥י כְלָאִ֖ים הׇחְבָּ֑אוּ הָי֤וּ לָבַז֙ וְאֵ֣ין מַצִּ֔יל מְשִׁסָּ֖ה וְאֵין־אֹמֵ֥ר הָשַֽׁב׃",
+      "en": "Therefore this is a people robbed and spoiled; they are all of them snared in holes, and they are hid in prison houses: they are for a prey, and none delivers; for a spoil, and none says, Restore."
+    },
+    {
+      "n": 19,
+      "c": 42,
+      "v": 23,
+      "ref": "42:23",
+      "text": "מִ֥י בָכֶ֖ם יַאֲזִ֣ין זֹ֑את יַקְשִׁ֥ב וְיִשְׁמַ֖ע לְאָחֽוֹר׃",
+      "en": "Who among you will give ear to this? who will hearken and hear for the time to come?"
+    },
+    {
+      "n": 20,
+      "c": 42,
+      "v": 24,
+      "ref": "42:24",
+      "text": "מִֽי־נָתַ֨ן <span class=\"mam-kq\"><span class=\"mam-kq-k\">(למשוסה)</span> <span class=\"mam-kq-q\">[לִמְשִׁסָּ֧ה]</span></span> יַעֲקֹ֛ב וְיִשְׂרָאֵ֥ל לְבֹזְזִ֖ים הֲל֣וֹא יְהֹוָ֑ה ז֚וּ חָטָ֣אנוּ ל֔וֹ וְלֹֽא־אָב֤וּ בִדְרָכָיו֙ הָל֔וֹךְ וְלֹ֥א שָׁמְע֖וּ בְּתוֹרָתֽוֹ׃",
+      "en": "Who gave Ya῾aqov for a spoil, and Yisra᾽el to the robbers? did not the Lord, he against whom we have sinned, and in whose ways they would not walk, and unto whose Tora they were not obedient?"
+    },
+    {
+      "n": 21,
+      "c": 42,
+      "v": 25,
+      "ref": "42:25",
+      "text": "וַיִּשְׁפֹּ֤ךְ עָלָיו֙ חֵמָ֣ה אַפּ֔וֹ וֶעֱז֖וּז מִלְחָמָ֑ה וַתְּלַהֲטֵ֤הוּ מִסָּבִיב֙ וְלֹ֣א יָדָ֔ע וַתִּבְעַר־בּ֖וֹ וְלֹא־יָשִׂ֥ים עַל־לֵֽב׃",
+      "en": "Therefore he has poured upon him the fury of his anger, and the strength of battle: and it has set him on fire round about, yet he knew not; and it burned him, yet he laid it not to heart."
+    },
+    {
+      "n": 22,
+      "c": 43,
+      "v": 1,
+      "ref": "43:1",
+      "text": "וְעַתָּ֞ה כֹּֽה־אָמַ֤ר יְהֹוָה֙ בֹּרַאֲךָ֣ יַעֲקֹ֔ב וְיֹצֶרְךָ֖ יִשְׂרָאֵ֑ל אַל־תִּירָא֙ כִּ֣י גְאַלְתִּ֔יךָ קָרָ֥אתִי בְשִׁמְךָ֖ לִי־אָֽתָּה׃",
+      "en": "But now thus says the Lord that created thee, O Ya῾aqov, and he that formed thee, O Yisra᾽el, Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine."
+    },
+    {
+      "n": 23,
+      "c": 43,
+      "v": 2,
+      "ref": "43:2",
+      "text": "כִּֽי־תַעֲבֹ֤ר בַּמַּ֙יִם֙ אִתְּךָ־אָ֔נִי וּבַנְּהָר֖וֹת לֹ֣א יִשְׁטְפ֑וּךָ כִּֽי־תֵלֵ֤ךְ בְּמוֹ־אֵשׁ֙ לֹ֣א תִכָּוֶ֔ה וְלֶהָבָ֖ה לֹ֥א תִבְעַר־בָּֽךְ׃",
+      "en": "When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee."
+    },
+    {
+      "n": 24,
+      "c": 43,
+      "v": 3,
+      "ref": "43:3",
+      "text": "כִּ֗י אֲנִי֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ קְד֥וֹשׁ יִשְׂרָאֵ֖ל מוֹשִׁיעֶ֑ךָ נָתַ֤תִּי כׇפְרְךָ֙ מִצְרַ֔יִם כּ֥וּשׁ וּסְבָ֖א תַּחְתֶּֽיךָ׃",
+      "en": "For I am the Lord thy God, the Holy One of Yisra᾽el, thy deliverer: I gave Miżrayim for thy ransom, Kush and Seva instead of thee."
+    },
+    {
+      "n": 25,
+      "c": 43,
+      "v": 4,
+      "ref": "43:4",
+      "text": "מֵאֲשֶׁ֨ר יָקַ֧רְתָּ בְעֵינַ֛י נִכְבַּ֖דְתָּ וַאֲנִ֣י אֲהַבְתִּ֑יךָ וְאֶתֵּ֤ן אָדָם֙ תַּחְתֶּ֔יךָ וּלְאֻמִּ֖ים תַּ֥חַת נַפְשֶֽׁךָ׃",
+      "en": "Since thou wast precious in my sight, thou wast honoured, and I have loved thee: therefore will I give men for thee, and people for thy life."
+    },
+    {
+      "n": 26,
+      "c": 43,
+      "v": 5,
+      "ref": "43:5",
+      "text": "אַל־תִּירָ֖א כִּ֣י אִתְּךָ־אָ֑נִי מִמִּזְרָח֙ אָבִ֣יא זַרְעֶ֔ךָ וּמִֽמַּעֲרָ֖ב אֲקַבְּצֶֽךָּ׃",
+      "en": "Fear not: for I am with thee: I will bring thy seed from the east, and gather thee from the west;"
+    },
+    {
+      "n": 27,
+      "c": 43,
+      "v": 6,
+      "ref": "43:6",
+      "text": "אֹמַ֤ר לַצָּפוֹן֙ תֵּ֔נִי וּלְתֵימָ֖ן אַל־תִּכְלָ֑אִי הָבִ֤יאִי בָנַי֙ מֵרָח֔וֹק וּבְנוֹתַ֖י מִקְצֵ֥ה הָאָֽרֶץ׃",
+      "en": "I will say to the north, Give up; and to the south, Keep not back: bring my sons from far, and my daughters from the ends of the earth;"
+    },
+    {
+      "n": 28,
+      "c": 43,
+      "v": 7,
+      "ref": "43:7",
+      "text": "כֹּ֚ל הַנִּקְרָ֣א בִשְׁמִ֔י וְלִכְבוֹדִ֖י בְּרָאתִ֑יו יְצַרְתִּ֖יו אַף־עֲשִׂיתִֽיו׃",
+      "en": "every one that is called by my name: for I have created him for my glory; I have formed him; yea, I have made him."
+    },
+    {
+      "n": 29,
+      "c": 43,
+      "v": 8,
+      "ref": "43:8",
+      "text": "הוֹצִ֥יא עַם־עִוֵּ֖ר וְעֵינַ֣יִם יֵ֑שׁ וְחֵרְשִׁ֖ים וְאׇזְנַ֥יִם לָֽמוֹ׃",
+      "en": "Bring forth the blind people that have eyes, and the deaf that have ears."
+    },
+    {
+      "n": 30,
+      "c": 43,
+      "v": 9,
+      "ref": "43:9",
+      "text": "כׇּֽל־הַגּוֹיִ֞ם נִקְבְּצ֣וּ יַחְדָּ֗ו וְיֵאָֽסְפוּ֙ לְאֻמִּ֔ים מִ֤י בָהֶם֙ יַגִּ֣יד זֹ֔את וְרִאשֹׁנ֖וֹת יַשְׁמִיעֻ֑נוּ יִתְּנ֤וּ עֵֽדֵיהֶם֙ וְיִצְדָּ֔קוּ וְיִשְׁמְע֖וּ וְיֹאמְר֥וּ אֱמֶֽת׃",
+      "en": "Let all the nations be gathered together, and let the peoples be assembled: who among them can declare this, and announce to us former things? let them bring forth their witnesses, that they may be justified: or let them hear, and say, It is truth."
+    },
+    {
+      "n": 31,
+      "c": 43,
+      "v": 10,
+      "ref": "43:10",
+      "text": "אַתֶּ֤ם עֵדַי֙ נְאֻם־יְהֹוָ֔ה וְעַבְדִּ֖י אֲשֶׁ֣ר בָּחָ֑רְתִּי לְמַ֣עַן תֵּ֠דְע֠וּ וְתַאֲמִ֨ינוּ לִ֤י וְתָבִ֙ינוּ֙ כִּֽי־אֲנִ֣י ה֔וּא לְפָנַי֙ לֹא־נ֣וֹצַר אֵ֔ל וְאַחֲרַ֖י לֹ֥א יִהְיֶֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "You are my witnesses, says the Lord, and my servant whom I have chosen: that you may know and believe me, and understand that I am he: before me there was no God formed, neither shall there be after me."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Bereshit",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 1
+  },
+  "parashah": {
+    "en": "Haftarat Bereshit",
+    "translit": "Haftarat Bereshit",
+    "he": "הפטרת בראשית",
+    "ref": "Isaiah 42:5-43:10"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 31,
+        "ref": "42:5–43:10"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

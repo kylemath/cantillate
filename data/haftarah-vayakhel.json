@@ -1,0 +1,132 @@
+{
+  "slug": "haftarah-vayakhel",
+  "book": {
+    "en": "I Kings",
+    "he": "מלכים א",
+    "translit": "Melachim A"
+  },
+  "multiChapter": true,
+  "ref": "I Kings 7:40-50",
+  "heRef": "מלכים א ז׳:מ-נ",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 7,
+      "v": 40,
+      "ref": "7:40",
+      "text": "וַיַּ֣עַשׂ חִיר֔וֹם אֶ֨ת־הַכִּיֹּר֔וֹת וְאֶת־הַיָּעִ֖ים וְאֶת־הַמִּזְרָק֑וֹת וַיְכַ֣ל חִירָ֗ם לַֽעֲשׂוֹת֙ אֶת־כׇּל־הַמְּלָאכָ֔ה אֲשֶׁ֥ר עָשָׂ֛ה לַמֶּ֥לֶךְ שְׁלֹמֹ֖ה בֵּ֥ית יְהֹוָֽה׃",
+      "en": "And Ḥiram made the lavers, and the shovels, and the basins. So Ḥiram made an end of doing all the work that he did for king Shelomo, in the house of the Lord:"
+    },
+    {
+      "n": 2,
+      "c": 7,
+      "v": 41,
+      "ref": "7:41",
+      "text": "עַמֻּדִ֣ים שְׁנַ֔יִם וְגֻלֹּ֧ת הַכֹּתָרֹ֛ת אֲשֶׁר־עַל־רֹ֥אשׁ הָעַמּוּדִ֖ים שְׁתָּ֑יִם וְהַשְּׂבָכ֣וֹת שְׁתַּ֔יִם לְכַסּ֗וֹת אֶת־שְׁתֵּי֙ גֻּלּ֣וֹת הַכֹּתָרֹ֔ת אֲשֶׁ֖ר עַל־רֹ֥אשׁ הָעַמּוּדִֽים׃",
+      "en": "the two pillars, and the two bowls of the capitals that were on the top of the two pillars; and the two networks, to cover the two bowls of the capitals which were upon the top of the pillars;"
+    },
+    {
+      "n": 3,
+      "c": 7,
+      "v": 42,
+      "ref": "7:42",
+      "text": "וְאֶת־הָרִמֹּנִ֛ים אַרְבַּ֥ע מֵא֖וֹת לִשְׁתֵּ֣י הַשְּׂבָכ֑וֹת שְׁנֵֽי־טוּרִ֤ים רִמֹּנִים֙ לַשְּׂבָכָ֣ה הָאֶחָ֔ת לְכַסּ֗וֹת אֶת־שְׁתֵּי֙ גֻּלּ֣וֹת הַכֹּתָרֹ֔ת אֲשֶׁ֖ר עַל־פְּנֵ֥י הָעַמּוּדִֽים׃",
+      "en": "and four hundred pome­granates for the two networks, two rows of pomegranates for each network, to cover the two bowls of the capitals that were upon the pillars;"
+    },
+    {
+      "n": 4,
+      "c": 7,
+      "v": 43,
+      "ref": "7:43",
+      "text": "וְאֶת־הַמְּכֹנ֖וֹת עָ֑שֶׂר וְאֶת־הַכִּיֹּרֹ֥ת עֲשָׂרָ֖ה עַל־הַמְּכֹנֽוֹת׃",
+      "en": "and the ten bases, and ten lavers on the bases;"
+    },
+    {
+      "n": 5,
+      "c": 7,
+      "v": 44,
+      "ref": "7:44",
+      "text": "וְאֶת־הַיָּ֖ם הָאֶחָ֑ד וְאֶת־הַבָּקָ֥ר שְׁנֵים־עָשָׂ֖ר תַּ֥חַת הַיָּֽם׃",
+      "en": "and one sea, and twelve oxen under the sea;"
+    },
+    {
+      "n": 6,
+      "c": 7,
+      "v": 45,
+      "ref": "7:45",
+      "text": "וְאֶת־הַסִּיר֨וֹת וְאֶת־הַיָּעִ֜ים וְאֶת־הַמִּזְרָק֗וֹת וְאֵת֙ כׇּל־הַכֵּלִ֣ים <span class=\"mam-kq\"><span class=\"mam-kq-k\">(האהל)</span> <span class=\"mam-kq-q\">[הָאֵ֔לֶּה]</span></span> אֲשֶׁ֨ר עָשָׂ֥ה חִירָ֛ם לַמֶּ֥לֶךְ שְׁלֹמֹ֖ה בֵּ֣ית יְהֹוָ֑ה נְחֹ֖שֶׁת מְמֹרָֽט׃",
+      "en": "and the pans, and the shovels, and the basins: and all these vessels, which Ḥiram made for king Shelomo for the house of the Lord, were of burnished brass."
+    },
+    {
+      "n": 7,
+      "c": 7,
+      "v": 46,
+      "ref": "7:46",
+      "text": "בְּכִכַּ֤ר הַיַּרְדֵּן֙ יְצָקָ֣ם הַמֶּ֔לֶךְ בְּמַעֲבֵ֖ה הָאֲדָמָ֑ה בֵּ֥ין סֻכּ֖וֹת וּבֵ֥ין צָרְתָֽן׃",
+      "en": "In the plain of the Yarden did the king cast them, in the clay ground between Sukkot and Żaretan."
+    },
+    {
+      "n": 8,
+      "c": 7,
+      "v": 47,
+      "ref": "7:47",
+      "text": "וַיַּנַּ֤ח שְׁלֹמֹה֙ אֶת־כׇּל־הַכֵּלִ֔ים מֵרֹ֖ב מְאֹ֣ד מְאֹ֑ד לֹ֥א נֶחְקַ֖ר מִשְׁקַ֥ל הַנְּחֹֽשֶׁת׃",
+      "en": "And Shelomo left all the vessels unweighed, because they were very very many: the weight of the brass was not found out."
+    },
+    {
+      "n": 9,
+      "c": 7,
+      "v": 48,
+      "ref": "7:48",
+      "text": "וַיַּ֣עַשׂ שְׁלֹמֹ֔ה אֵ֚ת כׇּל־הַכֵּלִ֔ים אֲשֶׁ֖ר בֵּ֣ית יְהֹוָ֑ה אֵ֚ת מִזְבַּ֣ח הַזָּהָ֔ב וְאֶת־הַשֻּׁלְחָ֗ן אֲשֶׁ֥ר עָלָ֛יו לֶ֥חֶם הַפָּנִ֖ים זָהָֽב׃",
+      "en": "And Shelomo made all the vessels that belonged to the house of the Lord: the altar of gold, and the table of gold, upon which the showbread was,"
+    },
+    {
+      "n": 10,
+      "c": 7,
+      "v": 49,
+      "ref": "7:49",
+      "text": "וְאֶת־הַ֠מְּנֹר֠וֹת חָמֵ֨שׁ מִיָּמִ֜ין וְחָמֵ֧שׁ מִשְּׂמֹ֛אול לִפְנֵ֥י הַדְּבִ֖יר זָהָ֣ב סָג֑וּר וְהַפֶּ֧רַח וְהַנֵּרֹ֛ת וְהַמֶּלְקַחַ֖יִם זָהָֽב׃",
+      "en": "and the candlesticks of pure gold, five on the right side, and five on the left, before the inner sanctuary, with the flowers, and the lamps, and the tongs of gold,"
+    },
+    {
+      "n": 11,
+      "c": 7,
+      "v": 50,
+      "ref": "7:50",
+      "text": "וְ֠הַסִּפּ֠וֹת וְהַֽמְזַמְּר֧וֹת וְהַמִּזְרָק֛וֹת וְהַכַּפּ֥וֹת וְהַמַּחְתּ֖וֹת זָהָ֣ב סָג֑וּר וְהַפֹּת֡וֹת לְדַלְתוֹת֩ הַבַּ֨יִת הַפְּנִימִ֜י לְקֹ֣דֶשׁ הַקֳּדָשִׁ֗ים לְדַלְתֵ֥י הַבַּ֛יִת לַהֵיכָ֖ל זָהָֽב׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and the bowls, and the snuffers, and the basins, and the spoons, and the firepans of pure gold; and the hinges of gold, both for the doors of the inner house, the most holy place, and for the doors of the outer house, namely, the temple."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Vayakhel",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 22
+  },
+  "parashah": {
+    "en": "Haftarat Vayakhel",
+    "translit": "Haftarat Vayakhel",
+    "he": "הפטרת ויקהל",
+    "ref": "I Kings 7:40-50"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 11,
+        "ref": "7:40–7:50"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

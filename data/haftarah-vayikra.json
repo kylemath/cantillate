@@ -1,0 +1,292 @@
+{
+  "slug": "haftarah-vayikra",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 43:21-44:23",
+  "heRef": "ישעיהו מ״ג:כ״א-כ״ח, מ״ד:א-כ״ג",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 43,
+      "v": 21,
+      "ref": "43:21",
+      "text": "עַם־זוּ֙ יָצַ֣רְתִּי לִ֔י תְּהִלָּתִ֖י יְסַפֵּֽרוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "This people have I formed for myself; they shall relate my praise."
+    },
+    {
+      "n": 2,
+      "c": 43,
+      "v": 22,
+      "ref": "43:22",
+      "text": "וְלֹא־אֹתִ֥י קָרָ֖אתָ יַעֲקֹ֑ב כִּֽי־יָגַ֥עְתָּ בִּ֖י יִשְׂרָאֵֽל׃",
+      "en": "But thou hast not called upon me, O Ya῾aqov; but thou hast been weary of me, O Yisra᾽el."
+    },
+    {
+      "n": 3,
+      "c": 43,
+      "v": 23,
+      "ref": "43:23",
+      "text": "לֹֽא־הֵבֵ֤יאתָ לִּי֙ שֵׂ֣ה עֹלֹתֶ֔יךָ וּזְבָחֶ֖יךָ לֹ֣א כִבַּדְתָּ֑נִי לֹ֤א הֶעֱבַדְתִּ֙יךָ֙ בְּמִנְחָ֔ה וְלֹ֥א הוֹגַעְתִּ֖יךָ בִּלְבוֹנָֽה׃",
+      "en": "Thou hast not brought me the small cattle of thy burnt offerings: nor hast thou honoured me with thy sacrifices. I have not burdened thee with a meal offering, nor wearied thee with incense."
+    },
+    {
+      "n": 4,
+      "c": 43,
+      "v": 24,
+      "ref": "43:24",
+      "text": "לֹא־קָנִ֨יתָ לִּ֤י בַכֶּ֙סֶף֙ קָנֶ֔ה וְחֵ֥לֶב זְבָחֶ֖יךָ לֹ֣א הִרְוִיתָ֑נִי אַ֗ךְ הֶעֱבַדְתַּ֙נִי֙ בְּחַטֹּאותֶ֔יךָ הוֹגַעְתַּ֖נִי בַּעֲוֺנֹתֶֽיךָ׃",
+      "en": "Thou hast bought me no sweet cane with money, nor hast thou sated me with the fat of thy sacrifices: but thou hast burdened me with thy sins, thou hast wearied me with thy iniquities."
+    },
+    {
+      "n": 5,
+      "c": 43,
+      "v": 25,
+      "ref": "43:25",
+      "text": "אָנֹכִ֨י אָנֹכִ֥י ה֛וּא מֹחֶ֥ה פְשָׁעֶ֖יךָ לְמַעֲנִ֑י וְחַטֹּאתֶ֖יךָ לֹ֥א אֶזְכֹּֽר׃",
+      "en": "I, even I, am he that blots out thy transgressions for my own sake, and will not remember thy sins."
+    },
+    {
+      "n": 6,
+      "c": 43,
+      "v": 26,
+      "ref": "43:26",
+      "text": "הַזְכִּירֵ֕נִי נִשָּׁפְטָ֖ה יָ֑חַד סַפֵּ֥ר אַתָּ֖ה לְמַ֥עַן תִּצְדָּֽק׃",
+      "en": "Put me in remembrance: let us plead together: declare thou, that thou mayst be justified."
+    },
+    {
+      "n": 7,
+      "c": 43,
+      "v": 27,
+      "ref": "43:27",
+      "text": "אָבִ֥יךָ הָרִאשׁ֖וֹן חָטָ֑א וּמְלִיצֶ֖יךָ פָּ֥שְׁעוּ בִֽי׃",
+      "en": "Thy first father has sinned, and thy teachers have transgressed against me."
+    },
+    {
+      "n": 8,
+      "c": 43,
+      "v": 28,
+      "ref": "43:28",
+      "text": "וַאֲחַלֵּ֖ל שָׂ֣רֵי קֹ֑דֶשׁ וְאֶתְּנָ֤ה לַחֵ֙רֶם֙ יַֽעֲקֹ֔ב וְיִשְׂרָאֵ֖ל לְגִדּוּפִֽים׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Therefore I have profaned the princes of the sanctuary, and have given Ya῾aqov to destruction, and Yisra᾽el to reviling."
+    },
+    {
+      "n": 9,
+      "c": 44,
+      "v": 1,
+      "ref": "44:1",
+      "text": "וְעַתָּ֥ה שְׁמַ֖ע יַעֲקֹ֣ב עַבְדִּ֑י וְיִשְׂרָאֵ֖ל בָּחַ֥רְתִּי בֽוֹ׃",
+      "en": "Yet now hear, O Ya῾aqov my servant; and Yisra᾽el whom I have chosen:"
+    },
+    {
+      "n": 10,
+      "c": 44,
+      "v": 2,
+      "ref": "44:2",
+      "text": "כֹּה־אָמַ֨ר יְהֹוָ֥ה עֹשֶׂ֛ךָ וְיֹצֶרְךָ֥ מִבֶּ֖טֶן יַעְזְרֶ֑ךָּ אַל־תִּירָא֙ עַבְדִּ֣י יַעֲקֹ֔ב וִישֻׁר֖וּן בָּחַ֥רְתִּי בֽוֹ׃",
+      "en": "thus says the Lord that made thee, and formed thee from the womb, who will help thee; Fear not, O Ya῾aqov, my servant; and thou, Yeshurun, whom I have chosen."
+    },
+    {
+      "n": 11,
+      "c": 44,
+      "v": 3,
+      "ref": "44:3",
+      "text": "כִּ֤י אֶצׇּק־מַ֙יִם֙ עַל־צָמֵ֔א וְנֹזְלִ֖ים עַל־יַבָּשָׁ֑ה אֶצֹּ֤ק רוּחִי֙ עַל־זַרְעֶ֔ךָ וּבִרְכָתִ֖י עַל־צֶאֱצָאֶֽיךָ׃",
+      "en": "For I will pour water upon the thirsty land, and floods upon the dry ground: I will pour my spirit upon thy seed, and my blessing upon thy offspring:"
+    },
+    {
+      "n": 12,
+      "c": 44,
+      "v": 4,
+      "ref": "44:4",
+      "text": "וְצָמְח֖וּ בְּבֵ֣ין חָצִ֑יר כַּעֲרָבִ֖ים עַל־יִבְלֵי־מָֽיִם׃",
+      "en": "and they shall spring up as among the grass, as willows by the water courses."
+    },
+    {
+      "n": 13,
+      "c": 44,
+      "v": 5,
+      "ref": "44:5",
+      "text": "זֶ֤ה יֹאמַר֙ לַיהֹוָ֣ה אָ֔נִי וְזֶ֖ה יִקְרָ֣א בְשֵֽׁם־יַעֲקֹ֑ב וְזֶ֗ה יִכְתֹּ֤ב יָדוֹ֙ לַֽיהֹוָ֔ה וּבְשֵׁ֥ם יִשְׂרָאֵ֖ל יְכַנֶּֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "One shall say, I am the Lord’s; and another shall call himself by the name of Ya῾aqov; and another shall subscribe with his hand to the Lord, and surname himself by the name of Yisra᾽el."
+    },
+    {
+      "n": 14,
+      "c": 44,
+      "v": 6,
+      "ref": "44:6",
+      "text": "כֹּה־אָמַ֨ר יְהֹוָ֧ה מֶלֶךְ־יִשְׂרָאֵ֛ל וְגֹאֲל֖וֹ יְהֹוָ֣ה צְבָא֑וֹת אֲנִ֤י רִאשׁוֹן֙ וַאֲנִ֣י אַחֲר֔וֹן וּמִבַּלְעָדַ֖י אֵ֥ין אֱלֹהִֽים׃",
+      "en": "Thus says the Lord the King of Yisra᾽el, and his redeemer the Lord of hosts; I am the first, and I am the last; and beside me there is no God."
+    },
+    {
+      "n": 15,
+      "c": 44,
+      "v": 7,
+      "ref": "44:7",
+      "text": "וּמִי־כָמ֣וֹנִי יִקְרָ֗א וְיַגִּידֶ֤הָ וְיַעְרְכֶ֙הָ֙ לִ֔י מִשּׂוּמִ֖י עַם־עוֹלָ֑ם וְאֹתִיּ֛וֹת וַאֲשֶׁ֥ר תָּבֹ֖אנָה יַגִּ֥ידוּ לָֽמוֹ׃",
+      "en": "And who is like me? let him proclaim it, let him declare it, and set it in order for me, from when I appointed the eternal people; let them relate for themselves the things that will come, and are to be."
+    },
+    {
+      "n": 16,
+      "c": 44,
+      "v": 8,
+      "ref": "44:8",
+      "text": "אַֽל־תִּפְחֲדוּ֙ וְאַל־תִּרְה֔וּ הֲלֹ֥א מֵאָ֛ז הִשְׁמַעְתִּ֥יךָ וְהִגַּ֖דְתִּי וְאַתֶּ֣ם עֵדָ֑י הֲיֵ֤שׁ אֱל֙וֹהַּ֙ מִבַּלְעָדַ֔י וְאֵ֥ין צ֖וּר בַּל־יָדָֽעְתִּי׃",
+      "en": "Fear not, neither be afraid: have not I told thee from that time, and have declared it? for you are my witnesses. Is there a God beside me? indeed there is no Rock; I know not any."
+    },
+    {
+      "n": 17,
+      "c": 44,
+      "v": 9,
+      "ref": "44:9",
+      "text": "יֹצְרֵי־פֶ֤סֶל כֻּלָּם֙ תֹּ֔הוּ וַחֲמוּדֵיהֶ֖ם בַּל־יוֹעִ֑ילוּ וְעֵדֵיהֶ֣ם הֵ֗ׄמָּׄהׄ בַּל־יִרְא֛וּ וּבַל־יֵדְע֖וּ לְמַ֥עַן יֵבֹֽשׁוּ׃",
+      "en": "They that make a carved idol are all of them vanity; and the things they delight in, do not profit; and their witnesses see not, nor know; that they may be ashamed."
+    },
+    {
+      "n": 18,
+      "c": 44,
+      "v": 10,
+      "ref": "44:10",
+      "text": "מִֽי־יָצַ֥ר אֵ֖ל וּפֶ֣סֶל נָסָ֑ךְ לְבִלְתִּ֖י הוֹעִֽיל׃",
+      "en": "Who has fashioned a god, or cast an idol? it is profitable for nothing."
+    },
+    {
+      "n": 19,
+      "c": 44,
+      "v": 11,
+      "ref": "44:11",
+      "text": "הֵ֤ן כׇּל־חֲבֵרָיו֙ יֵבֹ֔שׁוּ וְחָרָשִׁ֥ים הֵ֖מָּה מֵאָדָ֑ם יִֽתְקַבְּצ֤וּ כֻלָּם֙ יַעֲמֹ֔דוּ יִפְחֲד֖וּ יֵבֹ֥שׁוּ יָֽחַד׃",
+      "en": "Behold, all his fellows shall be ashamed: and the workmen, they are but men: let them all be gathered together, let them stand up; they shall fear, they shall be ashamed together."
+    },
+    {
+      "n": 20,
+      "c": 44,
+      "v": 12,
+      "ref": "44:12",
+      "text": "חָרַ֤שׁ בַּרְזֶל֙ מַֽעֲצָ֔ד וּפָעַל֙ בַּפֶּחָ֔ם וּבַמַּקָּב֖וֹת יִצְּרֵ֑הוּ וַיִּפְעָלֵ֙הוּ֙ בִּזְר֣וֹעַ כֹּח֔וֹ גַּם־רָעֵב֙ וְאֵ֣ין כֹּ֔חַ לֹא־שָׁ֥תָה מַ֖יִם וַיִּיעָֽף׃",
+      "en": "The ironsmith makes an axe, and works in the coals, and fashions it with hammers, works it with the strength of his arms: if he is hungry, his strength fails: if he drinks no water, he is faint."
+    },
+    {
+      "n": 21,
+      "c": 44,
+      "v": 13,
+      "ref": "44:13",
+      "text": "חָרַ֣שׁ עֵצִים֮ נָ֣טָה קָו֒ יְתָאֲרֵ֣הוּ בַשֶּׂ֔רֶד יַעֲשֵׂ֙הוּ֙ בַּמַּקְצֻע֔וֹת וּבַמְּחוּגָ֖ה יְתׇאֳרֵ֑הוּ וַֽיַּעֲשֵׂ֙הוּ֙ כְּתַבְנִ֣ית אִ֔ישׁ כְּתִפְאֶ֥רֶת אָדָ֖ם לָשֶׁ֥בֶת בָּֽיִת׃",
+      "en": "The carpenter stretches out his rule; he marks it out with a pencil; he fits it with chisels, and he marks it out with the compass, and makes it after the figure of a man, according to the beauty of a man; that it may remain in the house."
+    },
+    {
+      "n": 22,
+      "c": 44,
+      "v": 14,
+      "ref": "44:14",
+      "text": "לִכְרׇת־ל֣וֹ אֲרָזִ֔ים וַיִּקַּ֤ח תִּרְזָה֙ וְאַלּ֔וֹן וַיְאַמֶּץ־ל֖וֹ בַּעֲצֵי־יָ֑עַר נָטַ֥ע אֹ֖רֶ<small>ן</small> וְגֶ֥שֶׁם יְגַדֵּֽל׃",
+      "en": "He hews him down cedars, and takes the pine and the oak, which he strengthens for himself among the trees of the forest: he plants a forest tree and the rain nourishes it."
+    },
+    {
+      "n": 23,
+      "c": 44,
+      "v": 15,
+      "ref": "44:15",
+      "text": "וְהָיָ֤ה לְאָדָם֙ לְבָעֵ֔ר וַיִּקַּ֤ח מֵהֶם֙ וַיָּ֔חׇם אַף־יַשִּׂ֖יק וְאָ֣פָה לָ֑חֶם אַף־יִפְעַל־אֵל֙ וַיִּשְׁתָּ֔חוּ עָשָׂ֥הוּ פֶ֖סֶל וַיִּסְגׇּד־לָֽמוֹ׃",
+      "en": "Then shall it be for a man for fuel: for he will take of it to warm himself; indeed, he kindles it, and bakes bread! or else he makes a god, and prostrates himself to it; he makes of it a carved idol, and bows himself down before it."
+    },
+    {
+      "n": 24,
+      "c": 44,
+      "v": 16,
+      "ref": "44:16",
+      "text": "חֶצְיוֹ֙ שָׂרַ֣ף בְּמוֹ־אֵ֔שׁ עַל־חֶצְיוֹ֙ בָּשָׂ֣ר יֹאכֵ֔ל יִצְלֶ֥ה צָלִ֖י וְיִשְׂבָּ֑ע אַף־יָחֹם֙ וְיֹאמַ֣ר הֶאָ֔ח חַמּוֹתִ֖י רָאִ֥יתִי אֽוּר׃",
+      "en": "Half of it he burns in the fire; with this half of it he eats meat; he roasts the roast, and is satisfied: indeed, he warms himself, and says, Aha, I am warm, I have seen the fire:"
+    },
+    {
+      "n": 25,
+      "c": 44,
+      "v": 17,
+      "ref": "44:17",
+      "text": "וּשְׁאֵ֣רִית֔וֹ לְאֵ֥ל עָשָׂ֖ה לְפִסְל֑וֹ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(יסגוד)</span> <span class=\"mam-kq-q\">[יִסְגׇּד־]</span></span>ל֤וֹ וְיִשְׁתַּ֙חוּ֙ וְיִתְפַּלֵּ֣ל אֵלָ֔יו וְיֹאמַר֙ הַצִּילֵ֔נִי כִּ֥י אֵלִ֖י אָֽתָּה׃",
+      "en": "and of the rest of it he makes a god, his carved idol: he falls down to it, and worships it, and prays to it, and says, Deliver me; for thou art my god."
+    },
+    {
+      "n": 26,
+      "c": 44,
+      "v": 18,
+      "ref": "44:18",
+      "text": "לֹ֥א יָדְע֖וּ וְלֹ֣א יָבִ֑ינוּ כִּ֣י טַ֤ח מֵֽרְאוֹת֙ עֵינֵיהֶ֔ם מֵהַשְׂכִּ֖יל לִבֹּתָֽם׃",
+      "en": "They have not known nor understood: for he has shut their eyes, that they cannot see; and their hearts, that they cannot understand."
+    },
+    {
+      "n": 27,
+      "c": 44,
+      "v": 19,
+      "ref": "44:19",
+      "text": "וְלֹֽא־יָשִׁ֣יב אֶל־לִבּ֗וֹ וְלֹ֨א דַ֥עַת וְלֹֽא־תְבוּנָה֮ לֵאמֹר֒ חֶצְי֞וֹ שָׂרַ֣פְתִּי בְמוֹ־אֵ֗שׁ וְ֠אַ֠ף אָפִ֤יתִי עַל־גֶּחָלָיו֙ לֶ֔חֶם אֶצְלֶ֥ה בָשָׂ֖ר וְאֹכֵ֑ל וְיִתְרוֹ֙ לְתוֹעֵבָ֣ה אֶעֱשֶׂ֔ה לְב֥וּל עֵ֖ץ אֶסְגּֽוֹד׃",
+      "en": "And none considers in his heart, neither is there knowledge nor understanding to say, I have burned half of it in the fire; I have even baked bread upon its embers; I have roasted meat, and eaten it: and shall I make the rest of it an abomination? shall I fall down to worship the stock of a tree?"
+    },
+    {
+      "n": 28,
+      "c": 44,
+      "v": 20,
+      "ref": "44:20",
+      "text": "רֹעֶ֣ה אֵ֔פֶר לֵ֥ב הוּתַ֖ל הִטָּ֑הוּ וְלֹא־יַצִּ֤יל אֶת־נַפְשׁוֹ֙ וְלֹ֣א יֹאמַ֔ר הֲל֥וֹא שֶׁ֖קֶר בִּימִינִֽי׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "He feeds on ashes: a deceived heart has turned him aside, that he cannot deliver his soul, nor say, Is there not a lie in my right hand?"
+    },
+    {
+      "n": 29,
+      "c": 44,
+      "v": 21,
+      "ref": "44:21",
+      "text": "זְכׇר־אֵ֣לֶּה יַֽעֲקֹ֔ב וְיִשְׂרָאֵ֖ל כִּ֣י עַבְדִּי־אָ֑תָּה יְצַרְתִּ֤יךָ עֶֽבֶד־לִי֙ אַ֔תָּה יִשְׂרָאֵ֖ל לֹ֥א תִנָּשֵֽׁנִי׃",
+      "en": "Remember these, O Ya῾aqov and Yisra᾽el; thou art my servant: I have formed thee; thou art my own servant: O Yisra᾽el thou shalt not be forgotten by me."
+    },
+    {
+      "n": 30,
+      "c": 44,
+      "v": 22,
+      "ref": "44:22",
+      "text": "מָחִ֤יתִי כָעָב֙ פְּשָׁעֶ֔יךָ וְכֶעָנָ֖ן חַטֹּאותֶ֑יךָ שׁוּבָ֥ה אֵלַ֖י כִּ֥י גְאַלְתִּֽיךָ׃",
+      "en": "I have blotted out, as a thick cloud, thy transgressions, and, as a cloud, thy sins: return to me; for I have redeemed thee."
+    },
+    {
+      "n": 31,
+      "c": 44,
+      "v": 23,
+      "ref": "44:23",
+      "text": "רׇנּ֨וּ שָׁמַ֜יִם כִּֽי־עָשָׂ֣ה יְהֹוָ֗ה הָרִ֙יעוּ֙ תַּחְתִּיּ֣וֹת אָ֔רֶץ פִּצְח֤וּ הָרִים֙ רִנָּ֔ה יַ֖עַר וְכׇל־עֵ֣ץ בּ֑וֹ כִּֽי־גָאַ֤ל יְהֹוָה֙ יַעֲקֹ֔ב וּבְיִשְׂרָאֵ֖ל יִתְפָּאָֽר׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Sing, O heavens; for the Lord has done it: shout, you lower parts of the earth: break forth into singing, you mountains, O forest, and every tree in it: for the Lord has redeemed Ya῾aqov, and glorified himself in Yisra᾽el."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Vayikra",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 24
+  },
+  "parashah": {
+    "en": "Haftarat Vayikra",
+    "translit": "Haftarat Vayikra",
+    "he": "הפטרת ויקרא",
+    "ref": "Isaiah 43:21-44:23"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 31,
+        "ref": "43:21–44:23"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

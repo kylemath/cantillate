@@ -1,0 +1,268 @@
+{
+  "slug": "haftarah-vayetzei",
+  "book": {
+    "en": "Hosea",
+    "he": "הושע",
+    "translit": "Hoshea"
+  },
+  "multiChapter": true,
+  "ref": "Hosea 12:13-14:10",
+  "heRef": "הושע י״ב:י״ג-ט״ו, י״ג:א-ט״ו, י״ד:א-י",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 12,
+      "v": 13,
+      "ref": "12:13",
+      "text": "וַיִּבְרַ֥ח יַעֲקֹ֖ב שְׂדֵ֣ה אֲרָ֑ם וַיַּעֲבֹ֤ד יִשְׂרָאֵל֙ בְּאִשָּׁ֔ה וּבְאִשָּׁ֖ה שָׁמָֽר׃",
+      "en": "And Ya῾aqov fled into the country of Aram, and Yisra᾽el served for a wife, and for a wife he kept sheep."
+    },
+    {
+      "n": 2,
+      "c": 12,
+      "v": 14,
+      "ref": "12:14",
+      "text": "וּבְנָבִ֕יא הֶעֱלָ֧ה יְהֹוָ֛ה אֶת־יִשְׂרָאֵ֖ל מִמִּצְרָ֑יִם וּבְנָבִ֖יא נִשְׁמָֽר׃",
+      "en": "And by a prophet the Lord brought Yisra᾽el out of Miżrayim, and by a prophet was he preserved."
+    },
+    {
+      "n": 3,
+      "c": 12,
+      "v": 15,
+      "ref": "12:15",
+      "text": "הִכְעִ֥יס אֶפְרַ֖יִם תַּמְרוּרִ֑ים וְדָמָיו֙ עָלָ֣יו יִטּ֔וֹשׁ וְחֶ֨רְפָּת֔וֹ יָשִׁ֥יב ל֖וֹ אֲדֹנָֽיו׃",
+      "en": "Efrayim provoked him to anger most bitterly: therefore shall he leave his blood guilt upon him, and his Lord shall requite his reproach on him."
+    },
+    {
+      "n": 4,
+      "c": 13,
+      "v": 1,
+      "ref": "13:1",
+      "text": "כְּדַבֵּ֤ר אֶפְרַ֙יִם֙ רְתֵ֔ת נָשָׂ֥א ה֖וּא בְּיִשְׂרָאֵ֑ל וַיֶּאְשַׁ֥ם בַּבַּ֖עַל וַיָּמֹֽת׃",
+      "en": "When Efrayim spoke, there was trembling; he exalted himself in Yisra᾽el; but when he became guilty through the Ba῾al, he died."
+    },
+    {
+      "n": 5,
+      "c": 13,
+      "v": 2,
+      "ref": "13:2",
+      "text": "וְעַתָּ֣ה&thinsp;<b>׀</b> יוֹסִ֣פוּ לַחֲטֹ֗א וַיַּעֲשׂ֣וּ לָהֶם֩ מַסֵּכָ֨ה מִכַּסְפָּ֤ם כִּתְבוּנָם֙ עֲצַבִּ֔ים מַעֲשֵׂ֥ה חָרָשִׁ֖ים כֻּלֹּ֑ה לָהֶם֙ הֵ֣ם אֹמְרִ֔ים זֹבְחֵ֣י אָדָ֔ם עֲגָלִ֖ים יִשָּׁקֽוּן׃",
+      "en": "And now they sin more and more, and have made for themselves molten images of their silver, and idols according to their own understanding, all of it the work of the craftsmen: they say of them, Let the men who sacrifice kiss calves."
+    },
+    {
+      "n": 6,
+      "c": 13,
+      "v": 3,
+      "ref": "13:3",
+      "text": "לָכֵ֗ן יִֽהְיוּ֙ כַּעֲנַן־בֹּ֔קֶר וְכַטַּ֖ל מַשְׁכִּ֣ים הֹלֵ֑ךְ כְּמֹץ֙ יְסֹעֵ֣ר מִגֹּ֔רֶן וּכְעָשָׁ֖ן מֵאֲרֻבָּֽה׃",
+      "en": "Therefore they shall be as the morning cloud, and as the dew that passes early away, as the chaff that is driven with the wind out of the floor, and as the smoke out of the window."
+    },
+    {
+      "n": 7,
+      "c": 13,
+      "v": 4,
+      "ref": "13:4",
+      "text": "וְאָנֹכִ֛י יְהֹוָ֥ה אֱלֹהֶ֖יךָ מֵאֶ֣רֶץ מִצְרָ֑יִם וֵאלֹהִ֤ים זוּלָתִי֙ לֹ֣א תֵדָ֔ע וּמוֹשִׁ֥יעַ אַ֖יִן בִּלְתִּֽי׃",
+      "en": "Yet I am the Lord thy God from the land of Miżrayim, and thou knowst no god but me: for there is no saviour besides me."
+    },
+    {
+      "n": 8,
+      "c": 13,
+      "v": 5,
+      "ref": "13:5",
+      "text": "אֲנִ֥י יְדַעְתִּ֖יךָ בַּמִּדְבָּ֑ר בְּאֶ֖רֶץ תַּלְאֻבֽוֹת׃",
+      "en": "I did know thee in the wilderness, in the land of great drought."
+    },
+    {
+      "n": 9,
+      "c": 13,
+      "v": 6,
+      "ref": "13:6",
+      "text": "כְּמַרְעִיתָם֙ וַיִּשְׂבָּ֔עוּ שָׂבְע֖וּ וַיָּ֣רׇם לִבָּ֑ם עַל־כֵּ֖ן שְׁכֵחֽוּנִי׃",
+      "en": "When they were fed, they became full; they were filled, and their heart was exalted; therefore they have forgotten me."
+    },
+    {
+      "n": 10,
+      "c": 13,
+      "v": 7,
+      "ref": "13:7",
+      "text": "וָאֱהִ֥י לָהֶ֖ם כְּמוֹ־שָׁ֑חַל כְּנָמֵ֖ר עַל־דֶּ֥רֶךְ אָשֽׁוּר׃",
+      "en": "Therefore I will be to them as a lion: as a leop­ard by the way I will observe them:"
+    },
+    {
+      "n": 11,
+      "c": 13,
+      "v": 8,
+      "ref": "13:8",
+      "text": "אֶפְגְּשֵׁם֙ כְּדֹ֣ב שַׁכּ֔וּל וְאֶקְרַ֖ע סְג֣וֹר לִבָּ֑ם וְאֹכְלֵ֥ם שָׁם֙ כְּלָבִ֔יא חַיַּ֥ת הַשָּׂדֶ֖ה תְּבַקְּעֵֽם׃",
+      "en": "I will meet them like a bear that is bereaved of her whelps, and I will rend their closed up heart, and there will I devour them like a lion: the wild beast shall tear them."
+    },
+    {
+      "n": 12,
+      "c": 13,
+      "v": 9,
+      "ref": "13:9",
+      "text": "שִׁחֶתְךָ֥ יִשְׂרָאֵ֖ל כִּי־בִ֥י בְעֶזְרֶֽךָ׃",
+      "en": "O Yisra᾽el thou hast destroyed thyself; for thou art against me, against thy help."
+    },
+    {
+      "n": 13,
+      "c": 13,
+      "v": 10,
+      "ref": "13:10",
+      "text": "אֱהִ֤י מַלְכְּךָ֙ אֵפ֔וֹא וְיוֹשִׁיעֲךָ֖ בְּכׇל־עָרֶ֑יךָ וְשֹׁ֣פְטֶ֔יךָ אֲשֶׁ֣ר אָמַ֔רְתָּ תְּנָה־לִּ֖י מֶ֥לֶךְ וְשָׂרִֽים׃",
+      "en": "Where is thy king, that he may save thee in all thy cities? and thy judges of whom thou didst say, Give me a king and princes?"
+    },
+    {
+      "n": 14,
+      "c": 13,
+      "v": 11,
+      "ref": "13:11",
+      "text": "אֶֽתֶּן־לְךָ֥ מֶ֙לֶךְ֙ בְּאַפִּ֔י וְאֶקַּ֖ח בְּעֶבְרָתִֽי׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "I give thee a king in my anger, and take him away in my wrath."
+    },
+    {
+      "n": 15,
+      "c": 13,
+      "v": 12,
+      "ref": "13:12",
+      "text": "צָרוּר֙ עֲוֺ֣ן אֶפְרָ֔יִם צְפוּנָ֖ה חַטָּאתֽוֹ׃",
+      "en": "The iniquity of Efrayim is bound up; his sin is laid in store."
+    },
+    {
+      "n": 16,
+      "c": 13,
+      "v": 13,
+      "ref": "13:13",
+      "text": "חֶבְלֵ֥י יוֹלֵדָ֖ה יָבֹ֣אוּ ל֑וֹ הוּא־בֵן֙ לֹ֣א חָכָ֔ם כִּי־עֵ֥ת לֹֽא־יַעֲמֹ֖ד בְּמִשְׁבַּ֥ר בָּנִֽים׃",
+      "en": "The pangs of a travailing woman shall come upon him: he is an unwise son; for this is no time to tarry, at the moment of childbirth."
+    },
+    {
+      "n": 17,
+      "c": 13,
+      "v": 14,
+      "ref": "13:14",
+      "text": "מִיַּ֤ד שְׁאוֹל֙ אֶפְדֵּ֔ם מִמָּ֖וֶת אֶגְאָלֵ֑ם אֱהִ֨י דְבָרֶ֜יךָ מָ֗וֶת אֱהִ֤י קׇֽטׇבְךָ֙ שְׁא֔וֹל נֹ֖חַם יִסָּתֵ֥ר מֵעֵינָֽי׃",
+      "en": "I would ransom them from the power of She᾽ol; I would redeem them from death: O death where are thy plagues? O She᾽ol, where is thy destruction? compassion shall be hidden from my eyes."
+    },
+    {
+      "n": 18,
+      "c": 13,
+      "v": 15,
+      "ref": "13:15",
+      "text": "כִּ֣י ה֔וּא בֵּ֥ין אַחִ֖ים יַפְרִ֑יא יָב֣וֹא קָדִים֩ ר֨וּחַ יְהֹוָ֜ה מִמִּדְבָּ֣ר עֹלֶ֗ה וְיֵב֤וֹשׁ מְקוֹרוֹ֙ וְיֶחֱרַ֣ב מַעְיָנ֔וֹ ה֣וּא יִשְׁסֶ֔ה אוֹצַ֖ר כׇּל־כְּלִ֥י חֶמְדָּֽה׃",
+      "en": "Though he be fertile among the reed grass, an east wind shall come, the wind of the Lord shall come up from the wilderness, and his spring shall become dry, and his fountain shall be dried up: he shall spoil the treasure of all precious vessels."
+    },
+    {
+      "n": 19,
+      "c": 14,
+      "v": 1,
+      "ref": "14:1",
+      "text": "תֶּאְשַׁם֙ שֹׁמְר֔וֹן כִּ֥י מָרְתָ֖ה בֵּאלֹהֶ֑יהָ בַּחֶ֣רֶב יִפֹּ֔לוּ עֹלְלֵיהֶ֣ם יְרֻטָּ֔שׁוּ וְהָרִיּוֹתָ֖יו יְבֻקָּֽעוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Shomeron shall be found guilty, for she has rebelled against her God: they shall fall by the sword: their infants shall be dashed in pieces, and their women with child shall be ripped up."
+    },
+    {
+      "n": 20,
+      "c": 14,
+      "v": 2,
+      "ref": "14:2",
+      "text": "שׁ֚וּבָה יִשְׂרָאֵ֔ל עַ֖ד יְהֹוָ֣ה אֱלֹהֶ֑יךָ כִּ֥י כָשַׁ֖לְתָּ בַּעֲוֺנֶֽךָ׃",
+      "en": "O Yisra᾽el, return to the Lord thy God; for thou hast stumbled in thy iniquity."
+    },
+    {
+      "n": 21,
+      "c": 14,
+      "v": 3,
+      "ref": "14:3",
+      "text": "קְח֤וּ עִמָּכֶם֙ דְּבָרִ֔ים וְשׁ֖וּבוּ אֶל־יְהֹוָ֑ה אִמְר֣וּ אֵלָ֗יו כׇּל־תִּשָּׂ֤א עָוֺן֙ וְקַח־ט֔וֹב וּֽנְשַׁלְּמָ֥ה פָרִ֖ים שְׂפָתֵֽינוּ׃",
+      "en": "Take with you words, and turn to the Lord: say to him, Forgive all iniquity, and receive us graciously: so we will offer the words of our lips instead of calves."
+    },
+    {
+      "n": 22,
+      "c": 14,
+      "v": 4,
+      "ref": "14:4",
+      "text": "אַשּׁ֣וּר&thinsp;<b>׀</b> לֹ֣א יוֹשִׁיעֵ֗נוּ עַל־סוּס֙ לֹ֣א נִרְכָּ֔ב וְלֹא־נֹ֥אמַר ע֛וֹד אֱלֹהֵ֖ינוּ לְמַעֲשֵׂ֣ה יָדֵ֑ינוּ אֲשֶׁר־בְּךָ֖ יְרֻחַ֥ם יָתֽוֹם׃",
+      "en": "Ashshur shall not save us; we will not ride upon horses: nor shall we say any more to the work of our hands, You are our gods: for in Thee the fatherless finds mercy."
+    },
+    {
+      "n": 23,
+      "c": 14,
+      "v": 5,
+      "ref": "14:5",
+      "text": "אֶרְפָּא֙ מְשׁ֣וּבָתָ֔ם אֹהֲבֵ֖ם נְדָבָ֑ה כִּ֛י שָׁ֥ב אַפִּ֖י מִמֶּֽנּוּ׃",
+      "en": "I will heal their backsliding, I will love them freely: for my anger is turned away from him."
+    },
+    {
+      "n": 24,
+      "c": 14,
+      "v": 6,
+      "ref": "14:6",
+      "text": "אֶהְיֶ֤ה כַטַּל֙ לְיִשְׂרָאֵ֔ל יִפְרַ֖ח כַּשּׁוֹשַׁנָּ֑ה וְיַ֥ךְ שׇׁרָשָׁ֖יו כַּלְּבָנֽוֹן׃",
+      "en": "I will be as the dew to Yisra᾽el: he shall flower like the lily, and cast forth his roots like the Levanon."
+    },
+    {
+      "n": 25,
+      "c": 14,
+      "v": 7,
+      "ref": "14:7",
+      "text": "יֵֽלְכוּ֙ יֹֽנְקוֹתָ֔יו וִיהִ֥י כַזַּ֖יִת הוֹד֑וֹ וְרֵ֥יחַֽ ל֖וֹ כַּלְּבָנֽוֹן׃",
+      "en": "His branches shall spread, and his beauty shall be like the olive tree, and his fragrance like the Levanon."
+    },
+    {
+      "n": 26,
+      "c": 14,
+      "v": 8,
+      "ref": "14:8",
+      "text": "יָשֻׁ֙בוּ֙ יֹשְׁבֵ֣י בְצִלּ֔וֹ יְחַיּ֥וּ דָגָ֖ן וְיִפְרְח֣וּ כַגָּ֑פֶן זִכְר֖וֹ כְּיֵ֥ין לְבָנֽוֹן׃",
+      "en": "They who dwell in his shadow, shall return; they shall revive like corn, and blossom like the vine: their fragrance shall be like the wine of Levanon."
+    },
+    {
+      "n": 27,
+      "c": 14,
+      "v": 9,
+      "ref": "14:9",
+      "text": "אֶפְרַ֕יִם מַה־לִּ֥י ע֖וֹד לָעֲצַבִּ֑ים אֲנִ֧י עָנִ֣יתִי וַאֲשׁוּרֶ֗נּוּ אֲנִי֙ כִּבְר֣וֹשׁ רַעֲנָ֔ן מִמֶּ֖נִּי פֶּרְיְךָ֥ נִמְצָֽא׃",
+      "en": "Efrayim shall say, What have I to do any more with idols? I answer him and look on him: I am like a leafy cypress tree; from me is thy fruit found."
+    },
+    {
+      "n": 28,
+      "c": 14,
+      "v": 10,
+      "ref": "14:10",
+      "text": "מִ֤י חָכָם֙ וְיָ֣בֵֽן אֵ֔לֶּה נָב֖וֹן וְיֵדָעֵ֑ם כִּֽי־יְשָׁרִ֞ים דַּרְכֵ֣י יְהֹוָ֗ה וְצַדִּקִים֙ יֵ֣לְכוּ בָ֔ם וּפֹשְׁעִ֖ים יִכָּ֥שְׁלוּ בָֽם׃",
+      "en": "Whoever is wise, let him understand these things: whoever is prudent let him know them; for the ways of the Lord are right, and the just do walk in them: but the transgressors shall stumble in them."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Vayetzei",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 7
+  },
+  "parashah": {
+    "en": "Haftarat Vayetzei",
+    "translit": "Haftarat Vayetzei",
+    "he": "הפטרת ויצא",
+    "ref": "Hosea 12:13-14:10"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 28,
+        "ref": "12:13–14:10"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

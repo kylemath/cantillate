@@ -1,0 +1,1129 @@
+{
+  "slug": "vayeshev",
+  "book": {
+    "en": "Genesis",
+    "he": "בראשית",
+    "translit": "Bereshit"
+  },
+  "multiChapter": true,
+  "ref": "Genesis 37:1-40:23",
+  "heRef": "בראשית ל״ז:א-מ׳:כ״ג",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 37,
+      "v": 1,
+      "ref": "37:1",
+      "text": "וַיֵּ֣שֶׁב יַעֲקֹ֔ב בְּאֶ֖רֶץ מְגוּרֵ֣י אָבִ֑יו בְּאֶ֖רֶץ כְּנָֽעַן׃",
+      "en": "And Ya῾aqov dwelt in the land in which his father had sojourned, in the land of Kena῾an."
+    },
+    {
+      "n": 2,
+      "c": 37,
+      "v": 2,
+      "ref": "37:2",
+      "text": "אֵ֣לֶּה&thinsp;<b>׀</b> תֹּלְד֣וֹת יַעֲקֹ֗ב יוֹסֵ֞ף בֶּן־שְׁבַֽע־עֶשְׂרֵ֤ה שָׁנָה֙ הָיָ֨ה רֹעֶ֤ה אֶת־אֶחָיו֙ בַּצֹּ֔אן וְה֣וּא נַ֗עַר אֶת־בְּנֵ֥י בִלְהָ֛ה וְאֶת־בְּנֵ֥י זִלְפָּ֖ה נְשֵׁ֣י אָבִ֑יו וַיָּבֵ֥א יוֹסֵ֛ף אֶת־דִּבָּתָ֥ם רָעָ֖ה אֶל־אֲבִיהֶֽם׃",
+      "en": "These are the generations of Ya῾aqov. Yosef being seventeen years old, was feeding the flock with his brethren; and the lad was with the sons of Bilha, and with the sons of Zilpa, his father’s wives: and Yosef brought to his father their evil report."
+    },
+    {
+      "n": 3,
+      "c": 37,
+      "v": 3,
+      "ref": "37:3",
+      "text": "וְיִשְׂרָאֵ֗ל אָהַ֤ב אֶת־יוֹסֵף֙ מִכׇּל־בָּנָ֔יו כִּֽי־בֶן־זְקֻנִ֥ים ה֖וּא ל֑וֹ וְעָ֥שָׂה ל֖וֹ כְּתֹ֥נֶת פַּסִּֽים׃",
+      "en": "Now Yisra᾽el loved Yosef more than all his children, because he was the son of his old age: and he made him a coat with long sleeves."
+    },
+    {
+      "n": 4,
+      "c": 37,
+      "v": 4,
+      "ref": "37:4",
+      "text": "וַיִּרְא֣וּ אֶחָ֗יו כִּֽי־אֹת֞וֹ אָהַ֤ב אֲבִיהֶם֙ מִכׇּל־אֶחָ֔יו וַֽיִּשְׂנְא֖וּ אֹת֑וֹ וְלֹ֥א יָכְל֖וּ דַּבְּר֥וֹ לְשָׁלֹֽם׃",
+      "en": "And when his brethren saw that their father loved him more than all his brothers, they hated him, and could not speak peaceably to him."
+    },
+    {
+      "n": 5,
+      "c": 37,
+      "v": 5,
+      "ref": "37:5",
+      "text": "וַיַּחֲלֹ֤ם יוֹסֵף֙ חֲל֔וֹם וַיַּגֵּ֖ד לְאֶחָ֑יו וַיּוֹסִ֥פוּ ע֖וֹד שְׂנֹ֥א אֹתֽוֹ׃",
+      "en": "And Yosef dreamed a dream, and he told it his brethren: and they hated him yet the more."
+    },
+    {
+      "n": 6,
+      "c": 37,
+      "v": 6,
+      "ref": "37:6",
+      "text": "וַיֹּ֖אמֶר אֲלֵיהֶ֑ם שִׁמְעוּ־נָ֕א הַחֲל֥וֹם הַזֶּ֖ה אֲשֶׁ֥ר חָלָֽמְתִּי׃",
+      "en": "And he said to them, Hear, I pray you, this dream which I have dreamed:"
+    },
+    {
+      "n": 7,
+      "c": 37,
+      "v": 7,
+      "ref": "37:7",
+      "text": "וְ֠הִנֵּ֠ה אֲנַ֜חְנוּ מְאַלְּמִ֤ים אֲלֻמִּים֙ בְּת֣וֹךְ הַשָּׂדֶ֔ה וְהִנֵּ֛ה קָ֥מָה אֲלֻמָּתִ֖י וְגַם־נִצָּ֑בָה וְהִנֵּ֤ה תְסֻבֶּ֙ינָה֙ אֲלֻמֹּ֣תֵיכֶ֔ם וַתִּֽשְׁתַּחֲוֶ֖יןָ לַאֲלֻמָּתִֽי׃",
+      "en": "for, behold, we were binding sheaves in the field, and, lo, my sheaf arose, and also stood upright; and, behold, your sheaves stood round about, and bowed down to my sheaf."
+    },
+    {
+      "n": 8,
+      "c": 37,
+      "v": 8,
+      "ref": "37:8",
+      "text": "וַיֹּ֤אמְרוּ לוֹ֙ אֶחָ֔יו הֲמָלֹ֤ךְ תִּמְלֹךְ֙ עָלֵ֔ינוּ אִם־מָשׁ֥וֹל תִּמְשֹׁ֖ל בָּ֑נוּ וַיּוֹסִ֤פוּ עוֹד֙ שְׂנֹ֣א אֹת֔וֹ עַל־חֲלֹמֹתָ֖יו וְעַל־דְּבָרָֽיו׃",
+      "en": "And his brethren said to him, Shalt thou indeed reign over us? or shalt thou indeed have dominion over us? And they hated him yet the more for his dreams, and for his words."
+    },
+    {
+      "n": 9,
+      "c": 37,
+      "v": 9,
+      "ref": "37:9",
+      "text": "וַיַּחֲלֹ֥ם עוֹד֙ חֲל֣וֹם אַחֵ֔ר וַיְסַפֵּ֥ר אֹת֖וֹ לְאֶחָ֑יו וַיֹּ֗אמֶר הִנֵּ֨ה חָלַ֤מְתִּֽי חֲלוֹם֙ ע֔וֹד וְהִנֵּ֧ה הַשֶּׁ֣מֶשׁ וְהַיָּרֵ֗חַ וְאַחַ֤ד עָשָׂר֙ כּֽוֹכָבִ֔ים מִֽשְׁתַּחֲוִ֖ים לִֽי׃",
+      "en": "And he dreamed yet another dream, and told it his brethren, and said, Behold, I have again dreamed a dream; and, behold, the sun and the moon and the eleven stars bowed down to me."
+    },
+    {
+      "n": 10,
+      "c": 37,
+      "v": 10,
+      "ref": "37:10",
+      "text": "וַיְסַפֵּ֣ר אֶל־אָבִיו֮ וְאֶל־אֶחָיו֒ וַיִּגְעַר־בּ֣וֹ אָבִ֔יו וַיֹּ֣אמֶר ל֔וֹ מָ֛ה הַחֲל֥וֹם הַזֶּ֖ה אֲשֶׁ֣ר חָלָ֑מְתָּ הֲב֣וֹא נָב֗וֹא אֲנִי֙ וְאִמְּךָ֣ וְאַחֶ֔יךָ לְהִשְׁתַּחֲוֺ֥ת לְךָ֖ אָֽרְצָה׃",
+      "en": "And he told it to his father, and to his brothers: and his father rebuked him, and said to him, What is this dream that thou hast dreamed? Shall I and thy mother and thy brothers indeed come to bow down ourselves to thee to the earth?"
+    },
+    {
+      "n": 11,
+      "c": 37,
+      "v": 11,
+      "ref": "37:11",
+      "text": "וַיְקַנְאוּ־ב֖וֹ אֶחָ֑יו וְאָבִ֖יו שָׁמַ֥ר אֶת־הַדָּבָֽר׃",
+      "en": "And his brothers envied him; but his father kept the matter in mind."
+    },
+    {
+      "n": 12,
+      "c": 37,
+      "v": 12,
+      "ref": "37:12",
+      "text": "וַיֵּלְכ֖וּ אֶחָ֑יו לִרְע֛וֹת אֶׄתׄ־צֹ֥אן אֲבִיהֶ֖ם בִּשְׁכֶֽם׃",
+      "en": "And his brothers went to feed their father’s flock in Shekhem."
+    },
+    {
+      "n": 13,
+      "c": 37,
+      "v": 13,
+      "ref": "37:13",
+      "text": "וַיֹּ֨אמֶר יִשְׂרָאֵ֜ל אֶל־יוֹסֵ֗ף הֲל֤וֹא אַחֶ֙יךָ֙ רֹעִ֣ים בִּשְׁכֶ֔ם לְכָ֖ה וְאֶשְׁלָחֲךָ֣ אֲלֵיהֶ֑ם וַיֹּ֥אמֶר ל֖וֹ הִנֵּֽנִי׃",
+      "en": "And Yisra᾽el said to Yosef, Do not thy brothers feed the flock in Shekhem? come, and I will send thee to them. And he said to him, Here I am."
+    },
+    {
+      "n": 14,
+      "c": 37,
+      "v": 14,
+      "ref": "37:14",
+      "text": "וַיֹּ֣אמֶר ל֗וֹ לֶךְ־נָ֨א רְאֵ֜ה אֶת־שְׁל֤וֹם אַחֶ֙יךָ֙ וְאֶת־שְׁל֣וֹם הַצֹּ֔אן וַהֲשִׁבֵ֖נִי דָּבָ֑ר וַיִּשְׁלָחֵ֙הוּ֙ מֵעֵ֣מֶק חֶבְר֔וֹן וַיָּבֹ֖א שְׁכֶֽמָה׃",
+      "en": "And he said to him, Go, I pray thee, see whether it be well with thy brothers, and well with the flocks; and bring me word again. So he sent him out of the vale of Ḥevron, and he came to Shekhem."
+    },
+    {
+      "n": 15,
+      "c": 37,
+      "v": 15,
+      "ref": "37:15",
+      "text": "וַיִּמְצָאֵ֣הוּ אִ֔ישׁ וְהִנֵּ֥ה תֹעֶ֖ה בַּשָּׂדֶ֑ה וַיִּשְׁאָלֵ֧הוּ הָאִ֛ישׁ לֵאמֹ֖ר מַה־תְּבַקֵּֽשׁ׃",
+      "en": "And a certain man found him, and, behold, he was wandering in the field: and the man asked him, saying, What seekest thou?"
+    },
+    {
+      "n": 16,
+      "c": 37,
+      "v": 16,
+      "ref": "37:16",
+      "text": "וַיֹּ֕אמֶר אֶת־אַחַ֖י אָנֹכִ֣י מְבַקֵּ֑שׁ הַגִּֽידָה־נָּ֣א לִ֔י אֵיפֹ֖ה הֵ֥ם רֹעִֽים׃",
+      "en": "And he said, I seek my brothers: tell me, I pray thee, where they feed their flocks."
+    },
+    {
+      "n": 17,
+      "c": 37,
+      "v": 17,
+      "ref": "37:17",
+      "text": "וַיֹּ֤אמֶר הָאִישׁ֙ נָסְע֣וּ מִזֶּ֔ה כִּ֤י שָׁמַ֙עְתִּי֙ אֹֽמְרִ֔ים נֵלְכָ֖ה דֹּתָ֑יְנָה וַיֵּ֤לֶךְ יוֹסֵף֙ אַחַ֣ר אֶחָ֔יו וַיִּמְצָאֵ֖ם בְּדֹתָֽן׃",
+      "en": "And the man said, They are departed from here; for I heard them say, Let us go to Dotan. And Yosef went after his brothers, and found them in Dotan."
+    },
+    {
+      "n": 18,
+      "c": 37,
+      "v": 18,
+      "ref": "37:18",
+      "text": "וַיִּרְא֥וּ אֹת֖וֹ מֵרָחֹ֑ק וּבְטֶ֙רֶם֙ יִקְרַ֣ב אֲלֵיהֶ֔ם וַיִּֽתְנַכְּל֥וּ אֹת֖וֹ לַהֲמִיתֽוֹ׃",
+      "en": "And when they saw him afar off, even before he came near to them, they conspired against him to slay him."
+    },
+    {
+      "n": 19,
+      "c": 37,
+      "v": 19,
+      "ref": "37:19",
+      "text": "וַיֹּאמְר֖וּ אִ֣ישׁ אֶל־אָחִ֑יו הִנֵּ֗ה בַּ֛עַל הַחֲלֹמ֥וֹת הַלָּזֶ֖ה בָּֽא׃",
+      "en": "And they said one to another, Behold, this dreamer comes."
+    },
+    {
+      "n": 20,
+      "c": 37,
+      "v": 20,
+      "ref": "37:20",
+      "text": "וְעַתָּ֣ה&thinsp;<b>׀</b> לְכ֣וּ וְנַֽהַרְגֵ֗הוּ וְנַשְׁלִכֵ֙הוּ֙ בְּאַחַ֣ד הַבֹּר֔וֹת וְאָמַ֕רְנוּ חַיָּ֥ה רָעָ֖ה אֲכָלָ֑תְהוּ וְנִרְאֶ֕ה מַה־יִּהְי֖וּ חֲלֹמֹתָֽיו׃",
+      "en": "Come now therefore, and let us slay him, and cast him into some pit, and we will say, An evil beast has devoured him: and we shall see what will become of his dreams."
+    },
+    {
+      "n": 21,
+      "c": 37,
+      "v": 21,
+      "ref": "37:21",
+      "text": "וַיִּשְׁמַ֣ע רְאוּבֵ֔ן וַיַּצִּלֵ֖הוּ מִיָּדָ֑ם וַיֹּ֕אמֶר לֹ֥א נַכֶּ֖נּוּ נָֽפֶשׁ׃",
+      "en": "And Re᾽uven heard it, and he delivered him out of their hands; and said, Let us not kill him."
+    },
+    {
+      "n": 22,
+      "c": 37,
+      "v": 22,
+      "ref": "37:22",
+      "text": "וַיֹּ֨אמֶר אֲלֵהֶ֣ם&thinsp;<small>׀</small>&thinsp;רְאוּבֵן֮ אַל־תִּשְׁפְּכוּ־דָם֒ הַשְׁלִ֣יכוּ אֹת֗וֹ אֶל־הַבּ֤וֹר הַזֶּה֙ אֲשֶׁ֣ר בַּמִּדְבָּ֔ר וְיָ֖ד אַל־תִּשְׁלְחוּ־ב֑וֹ לְמַ֗עַן הַצִּ֤יל אֹתוֹ֙ מִיָּדָ֔ם לַהֲשִׁיב֖וֹ אֶל־אָבִֽיו׃",
+      "en": "And Re᾽uven said to them, Shed no blood, but cast him into this pit that is in the wilderness, and lay no hand upon him; that he might save him out of their hands, to deliver him back to his father."
+    },
+    {
+      "n": 23,
+      "c": 37,
+      "v": 23,
+      "ref": "37:23",
+      "text": "וַיְהִ֕י כַּֽאֲשֶׁר־בָּ֥א יוֹסֵ֖ף אֶל־אֶחָ֑יו וַיַּפְשִׁ֤יטוּ אֶת־יוֹסֵף֙ אֶת־כֻּתׇּנְתּ֔וֹ אֶת־כְּתֹ֥נֶת הַפַּסִּ֖ים אֲשֶׁ֥ר עָלָֽיו׃",
+      "en": "And it came to pass, when Yosef was come to his brethren, that they stripped Yosef of his coat, the long sleeved coat that was on him."
+    },
+    {
+      "n": 24,
+      "c": 37,
+      "v": 24,
+      "ref": "37:24",
+      "text": "וַיִּ֨קָּחֻ֔הוּ וַיַּשְׁלִ֥כוּ אֹת֖וֹ הַבֹּ֑רָה וְהַבּ֣וֹר רֵ֔ק אֵ֥ין בּ֖וֹ מָֽיִם׃",
+      "en": "And they took him, and cast him into a pit: and the pit was empty; there was no water in it."
+    },
+    {
+      "n": 25,
+      "c": 37,
+      "v": 25,
+      "ref": "37:25",
+      "text": "וַיֵּשְׁבוּ֮ לֶֽאֱכׇל־לֶ֒חֶם֒ וַיִּשְׂא֤וּ עֵֽינֵיהֶם֙ וַיִּרְא֔וּ וְהִנֵּה֙ אֹרְחַ֣ת יִשְׁמְעֵאלִ֔ים בָּאָ֖ה מִגִּלְעָ֑ד וּגְמַלֵּיהֶ֣ם נֹֽשְׂאִ֗ים נְכֹאת֙ וּצְרִ֣י וָלֹ֔ט הוֹלְכִ֖ים לְהוֹרִ֥יד מִצְרָֽיְמָה׃",
+      "en": "And they sat down to eat bread: and they lifted up their eyes and looked, and, behold, a company of Yishme᾽elim came from Gil῾ad with their camels bearing gum balm and ladanum, going to carry it down to Miżrayim."
+    },
+    {
+      "n": 26,
+      "c": 37,
+      "v": 26,
+      "ref": "37:26",
+      "text": "וַיֹּ֥אמֶר יְהוּדָ֖ה אֶל־אֶחָ֑יו מַה־בֶּ֗צַע כִּ֤י נַהֲרֹג֙ אֶת־אָחִ֔ינוּ וְכִסִּ֖ינוּ אֶת־דָּמֽוֹ׃",
+      "en": "And Yehuda said to his brothers, What profit is it if we slay our brother, and conceal his blood?"
+    },
+    {
+      "n": 27,
+      "c": 37,
+      "v": 27,
+      "ref": "37:27",
+      "text": "לְכ֞וּ וְנִמְכְּרֶ֣נּוּ לַיִּשְׁמְעֵאלִ֗ים וְיָדֵ֙נוּ֙ אַל־תְּהִי־ב֔וֹ כִּֽי־אָחִ֥ינוּ בְשָׂרֵ֖נוּ ה֑וּא וַֽיִּשְׁמְע֖וּ אֶחָֽיו׃",
+      "en": "Come, and let us sell him to the Yishme᾽elim, and let not our hand be upon him; for he is our brother and our flesh."
+    },
+    {
+      "n": 28,
+      "c": 37,
+      "v": 28,
+      "ref": "37:28",
+      "text": "וַיַּֽעַבְרוּ֩ אֲנָשִׁ֨ים מִדְיָנִ֜ים סֹֽחֲרִ֗ים וַֽיִּמְשְׁכוּ֙ וַיַּֽעֲל֤וּ אֶת־יוֹסֵף֙ מִן־הַבּ֔וֹר וַיִּמְכְּר֧וּ אֶת־יוֹסֵ֛ף לַיִּשְׁמְעֵאלִ֖ים בְּעֶשְׂרִ֣ים כָּ֑סֶף וַיָּבִ֥יאוּ אֶת־יוֹסֵ֖ף מִצְרָֽיְמָה׃",
+      "en": "And his brothers hearkened to him. Then there passed by Midyanim, merchants; and they drew and lifted up Yosef out of the pit, and sold Yosef to the Yishme᾽elim for twenty pieces of silver: and they brought Yosef into Miżrayim."
+    },
+    {
+      "n": 29,
+      "c": 37,
+      "v": 29,
+      "ref": "37:29",
+      "text": "וַיָּ֤שׇׁב רְאוּבֵן֙ אֶל־הַבּ֔וֹר וְהִנֵּ֥ה אֵין־יוֹסֵ֖ף בַּבּ֑וֹר וַיִּקְרַ֖ע אֶת־בְּגָדָֽיו׃",
+      "en": "And Re᾽uven returned to the pit; and, behold, Yosef was not in the pit; and he rent his clothes."
+    },
+    {
+      "n": 30,
+      "c": 37,
+      "v": 30,
+      "ref": "37:30",
+      "text": "וַיָּ֥שׇׁב אֶל־אֶחָ֖יו וַיֹּאמַ֑ר הַיֶּ֣לֶד אֵינֶ֔נּוּ וַאֲנִ֖י אָ֥נָה אֲנִי־בָֽא׃",
+      "en": "And he returned to his brothers, and said, The child is not; and I, where shall I go?"
+    },
+    {
+      "n": 31,
+      "c": 37,
+      "v": 31,
+      "ref": "37:31",
+      "text": "וַיִּקְח֖וּ אֶת־כְּתֹ֣נֶת יוֹסֵ֑ף וַֽיִּשְׁחֲטוּ֙ שְׂעִ֣יר עִזִּ֔ים וַיִּטְבְּל֥וּ אֶת־הַכֻּתֹּ֖נֶת בַּדָּֽם׃",
+      "en": "And they took Yosef’s coat, and killed a kid of the goats, and dipped the coat in the blood;"
+    },
+    {
+      "n": 32,
+      "c": 37,
+      "v": 32,
+      "ref": "37:32",
+      "text": "וַֽיְשַׁלְּח֞וּ אֶת־כְּתֹ֣נֶת הַפַּסִּ֗ים וַיָּבִ֙יאוּ֙ אֶל־אֲבִיהֶ֔ם וַיֹּאמְר֖וּ זֹ֣את מָצָ֑אנוּ הַכֶּר־נָ֗א הַכְּתֹ֧נֶת בִּנְךָ֛ הִ֖וא אִם־לֹֽא׃",
+      "en": "and they sent the coat with long sleeves, and they brought it to their father; and said, This we have found: know now whether it be thy son’s coat or no."
+    },
+    {
+      "n": 33,
+      "c": 37,
+      "v": 33,
+      "ref": "37:33",
+      "text": "וַיַּכִּירָ֤הּ וַיֹּ֙אמֶר֙ כְּתֹ֣נֶת בְּנִ֔י חַיָּ֥ה רָעָ֖ה אֲכָלָ֑תְהוּ טָרֹ֥ף טֹרַ֖ף יוֹסֵֽף׃",
+      "en": "And he knew it, and said, It is my son’s coat; an evil beast has devoured him; Yosef is without doubt torn in pieces."
+    },
+    {
+      "n": 34,
+      "c": 37,
+      "v": 34,
+      "ref": "37:34",
+      "text": "וַיִּקְרַ֤ע יַעֲקֹב֙ שִׂמְלֹתָ֔יו וַיָּ֥שֶׂם שַׂ֖ק בְּמׇתְנָ֑יו וַיִּתְאַבֵּ֥ל עַל־בְּנ֖וֹ יָמִ֥ים רַבִּֽים׃",
+      "en": "And Ya῾aqov rent his clothes, and put sackcloth on his loins, and mourned for his son many days."
+    },
+    {
+      "n": 35,
+      "c": 37,
+      "v": 35,
+      "ref": "37:35",
+      "text": "וַיָּקֻ֩מוּ֩ כׇל־בָּנָ֨יו וְכׇל־בְּנֹתָ֜יו לְנַחֲמ֗וֹ וַיְמָאֵן֙ לְהִתְנַחֵ֔ם וַיֹּ֕אמֶר כִּֽי־אֵרֵ֧ד אֶל־בְּנִ֛י אָבֵ֖ל שְׁאֹ֑לָה וַיֵּ֥בְךְּ אֹת֖וֹ אָבִֽיו׃",
+      "en": "And all his sons and all his daughters rose up to comfort him; but he refused to be comforted; and he said, For I will go down to my son mourning into She᾽ol. Thus his father wept for him."
+    },
+    {
+      "n": 36,
+      "c": 37,
+      "v": 36,
+      "ref": "37:36",
+      "text": "וְהַ֨מְּדָנִ֔ים מָכְר֥וּ אֹת֖וֹ אֶל־מִצְרָ֑יִם לְפֽוֹטִיפַר֙ סְרִ֣יס פַּרְעֹ֔ה שַׂ֖ר הַטַּבָּחִֽים׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And the Midyanim sold him to Miżrayim to Potifar, Par῾o’s chamberlain, a captain of the guard."
+    },
+    {
+      "n": 37,
+      "c": 38,
+      "v": 1,
+      "ref": "38:1",
+      "text": "וַֽיְהִי֙ בָּעֵ֣ת הַהִ֔וא וַיֵּ֥רֶד יְהוּדָ֖ה מֵאֵ֣ת אֶחָ֑יו וַיֵּ֛ט עַד־אִ֥ישׁ עֲדֻלָּמִ֖י וּשְׁמ֥וֹ חִירָֽה׃",
+      "en": "And it came to pass at that time, that Yehuda went down from his brothers, and turned in to a certain ῾Adullamite, whose name was Ḥira."
+    },
+    {
+      "n": 38,
+      "c": 38,
+      "v": 2,
+      "ref": "38:2",
+      "text": "וַיַּרְא־שָׁ֧ם יְהוּדָ֛ה בַּת־אִ֥ישׁ כְּנַעֲנִ֖י וּשְׁמ֣וֹ שׁ֑וּעַ וַיִּקָּחֶ֖הָ וַיָּבֹ֥א אֵלֶֽיהָ׃",
+      "en": "And Yehuda saw there a daughter of a certain Kena῾anite, whose name was Shu῾a; and he took her, and went in to her."
+    },
+    {
+      "n": 39,
+      "c": 38,
+      "v": 3,
+      "ref": "38:3",
+      "text": "וַתַּ֖הַר וַתֵּ֣לֶד בֵּ֑ן וַיִּקְרָ֥א אֶת־שְׁמ֖וֹ עֵֽר׃",
+      "en": "And she conceived, and bore a son; and he called his name ῾Er."
+    },
+    {
+      "n": 40,
+      "c": 38,
+      "v": 4,
+      "ref": "38:4",
+      "text": "וַתַּ֥הַר ע֖וֹד וַתֵּ֣לֶד בֵּ֑ן וַתִּקְרָ֥א אֶת־שְׁמ֖וֹ אוֹנָֽן׃",
+      "en": "And she conceived again, and bore a son; and she called his name Onan."
+    },
+    {
+      "n": 41,
+      "c": 38,
+      "v": 5,
+      "ref": "38:5",
+      "text": "וַתֹּ֤סֶף עוֹד֙ וַתֵּ֣לֶד בֵּ֔ן וַתִּקְרָ֥א אֶת־שְׁמ֖וֹ שֵׁלָ֑ה וְהָיָ֥ה בִכְזִ֖יב בְּלִדְתָּ֥הּ אֹתֽוֹ׃",
+      "en": "And she yet again conceived, and bore a son; and called his name Shela: and he was at Keziv, when she bore him."
+    },
+    {
+      "n": 42,
+      "c": 38,
+      "v": 6,
+      "ref": "38:6",
+      "text": "וַיִּקַּ֧ח יְהוּדָ֛ה אִשָּׁ֖ה לְעֵ֣ר בְּכוֹר֑וֹ וּשְׁמָ֖הּ תָּמָֽר׃",
+      "en": "And Yehuda took a wife for ῾Er his firstborn, whose name was Tamar."
+    },
+    {
+      "n": 43,
+      "c": 38,
+      "v": 7,
+      "ref": "38:7",
+      "text": "וַיְהִ֗י עֵ֚ר בְּכ֣וֹר יְהוּדָ֔ה רַ֖ע בְּעֵינֵ֣י יְהֹוָ֑ה וַיְמִתֵ֖הוּ יְהֹוָֽה׃",
+      "en": "And ῾Er, Yehuda’s firstborn, was wicked in the sight of the Lord; and the Lord slew him."
+    },
+    {
+      "n": 44,
+      "c": 38,
+      "v": 8,
+      "ref": "38:8",
+      "text": "וַיֹּ֤אמֶר יְהוּדָה֙ לְאוֹנָ֔ן בֹּ֛א אֶל־אֵ֥שֶׁת אָחִ֖יךָ וְיַבֵּ֣ם אֹתָ֑הּ וְהָקֵ֥ם זֶ֖רַע לְאָחִֽיךָ׃",
+      "en": "And Yehuda said to Onan, Go in to thy brother’s wife, and perform the duty of a brother in law, and raise up seed to thy brother."
+    },
+    {
+      "n": 45,
+      "c": 38,
+      "v": 9,
+      "ref": "38:9",
+      "text": "וַיֵּ֣דַע אוֹנָ֔ן כִּ֛י לֹּ֥א ל֖וֹ יִהְיֶ֣ה הַזָּ֑רַע וְהָיָ֞ה אִם־בָּ֨א אֶל־אֵ֤שֶׁת אָחִיו֙ וְשִׁחֵ֣ת אַ֔רְצָה לְבִלְתִּ֥י נְתׇן־זֶ֖רַע לְאָחִֽיו׃",
+      "en": "And Onan knew that the seed would not be his; and it came to pass, when he went in to his brother’s wife, that he spilled it on the ground, lest he should give seed to his brother."
+    },
+    {
+      "n": 46,
+      "c": 38,
+      "v": 10,
+      "ref": "38:10",
+      "text": "וַיֵּ֛רַע בְּעֵינֵ֥י יְהֹוָ֖ה אֲשֶׁ֣ר עָשָׂ֑ה וַיָּ֖מֶת גַּם־אֹתֽוֹ׃",
+      "en": "And the thing which he did displeased the Lord: So He slew him also."
+    },
+    {
+      "n": 47,
+      "c": 38,
+      "v": 11,
+      "ref": "38:11",
+      "text": "וַיֹּ֣אמֶר יְהוּדָה֩ לְתָמָ֨ר כַּלָּת֜וֹ שְׁבִ֧י אַלְמָנָ֣ה בֵית־אָבִ֗יךְ עַד־יִגְדַּל֙ שֵׁלָ֣ה בְנִ֔י כִּ֣י אָמַ֔ר פֶּן־יָמ֥וּת גַּם־ה֖וּא כְּאֶחָ֑יו וַתֵּ֣לֶךְ תָּמָ֔ר וַתֵּ֖שֶׁב בֵּ֥ית אָבִֽיהָ׃",
+      "en": "Then said Yehuda to Tamar his daughter in law, Remain a widow at thy father’s home, till Shela my son be grown: for he said, Lest perchance he die also, as his brothers did. And Tamar went and dwelt in her father’s house."
+    },
+    {
+      "n": 48,
+      "c": 38,
+      "v": 12,
+      "ref": "38:12",
+      "text": "וַיִּרְבּוּ֙ הַיָּמִ֔ים וַתָּ֖מׇת בַּת־שׁ֣וּעַ אֵֽשֶׁת־יְהוּדָ֑ה וַיִּנָּ֣חֶם יְהוּדָ֗ה וַיַּ֜עַל עַל־גֹּֽזְזֵ֤י צֹאנוֹ֙ ה֗וּא וְחִירָ֛ה רֵעֵ֥הוּ הָעֲדֻלָּמִ֖י תִּמְנָֽתָה׃",
+      "en": "And in process of time the daughter of Shu῾a Yehuda’s wife died; and when Yehuda was comforted, he went up to his sheep shearers to Timna, he and his friend Ḥira the ῾Adullamite."
+    },
+    {
+      "n": 49,
+      "c": 38,
+      "v": 13,
+      "ref": "38:13",
+      "text": "וַיֻּגַּ֥ד לְתָמָ֖ר לֵאמֹ֑ר הִנֵּ֥ה חָמִ֛יךְ עֹלֶ֥ה תִמְנָ֖תָה לָגֹ֥ז צֹאנֽוֹ׃",
+      "en": "And it was told Tamar, saying, Behold thy father in law goes up to Timna to shear his sheep."
+    },
+    {
+      "n": 50,
+      "c": 38,
+      "v": 14,
+      "ref": "38:14",
+      "text": "וַתָּ֩סַר֩ בִּגְדֵ֨י אַלְמְנוּתָ֜הּ מֵֽעָלֶ֗יהָ וַתְּכַ֤ס בַּצָּעִיף֙ וַתִּתְעַלָּ֔ף וַתֵּ֙שֶׁב֙ בְּפֶ֣תַח עֵינַ֔יִם אֲשֶׁ֖ר עַל־דֶּ֣רֶךְ תִּמְנָ֑תָה כִּ֤י רָאֲתָה֙ כִּֽי־גָדַ֣ל שֵׁלָ֔ה וְהִ֕וא לֹֽא־נִתְּנָ֥ה ל֖וֹ לְאִשָּֽׁה׃",
+      "en": "And she put off her widow’s garments, and covered herself with a veil, and wrapped herself, and sat by the entrance to ῾Enayim, which is by the way to Timna; for she saw that Shela was grown, and she was not given to him to wife."
+    },
+    {
+      "n": 51,
+      "c": 38,
+      "v": 15,
+      "ref": "38:15",
+      "text": "וַיִּרְאֶ֣הָ יְהוּדָ֔ה וַֽיַּחְשְׁבֶ֖הָ לְזוֹנָ֑ה כִּ֥י כִסְּתָ֖ה פָּנֶֽיהָ׃",
+      "en": "When Yehuda saw her, he thought her to be a harlot; because she had covered her face."
+    },
+    {
+      "n": 52,
+      "c": 38,
+      "v": 16,
+      "ref": "38:16",
+      "text": "וַיֵּ֨ט אֵלֶ֜יהָ אֶל־הַדֶּ֗רֶךְ וַיֹּ֙אמֶר֙ הָֽבָה־נָּא֙ אָב֣וֹא אֵלַ֔יִךְ כִּ֚י לֹ֣א יָדַ֔ע כִּ֥י כַלָּת֖וֹ הִ֑וא וַתֹּ֙אמֶר֙ מַה־תִּתֶּן־לִ֔י כִּ֥י תָב֖וֹא אֵלָֽי׃",
+      "en": "And he turned to her by the way, and said, Come now, I pray thee, let me come in to thee (for he knew not that she was his daughter in law.) And she said, What wilt thou give me, that thou mayst come in to me?"
+    },
+    {
+      "n": 53,
+      "c": 38,
+      "v": 17,
+      "ref": "38:17",
+      "text": "וַיֹּ֕אמֶר אָנֹכִ֛י אֲשַׁלַּ֥ח גְּדִֽי־עִזִּ֖ים מִן־הַצֹּ֑אן וַתֹּ֕אמֶר אִם־תִּתֵּ֥ן עֵרָב֖וֹן עַ֥ד שׇׁלְחֶֽךָ׃",
+      "en": "And he said, I will send thee a kid from the flock. And she said, Wilt thou give me a pledge, till thou send it?"
+    },
+    {
+      "n": 54,
+      "c": 38,
+      "v": 18,
+      "ref": "38:18",
+      "text": "וַיֹּ֗אמֶר מָ֣ה הָעֵֽרָבוֹן֮ אֲשֶׁ֣ר אֶתֶּן־לָךְ֒ וַתֹּ֗אמֶר חֹתָֽמְךָ֙ וּפְתִילֶ֔ךָ וּמַטְּךָ֖ אֲשֶׁ֣ר בְּיָדֶ֑ךָ וַיִּתֶּן־לָ֛הּ וַיָּבֹ֥א אֵלֶ֖יהָ וַתַּ֥הַר לֽוֹ׃",
+      "en": "And he said, What pledge shall I give thee? And she said, Thy signet, and thy cord, and thy staff that is in thy hand."
+    },
+    {
+      "n": 55,
+      "c": 38,
+      "v": 19,
+      "ref": "38:19",
+      "text": "וַתָּ֣קׇם וַתֵּ֔לֶךְ וַתָּ֥סַר צְעִיפָ֖הּ מֵעָלֶ֑יהָ וַתִּלְבַּ֖שׁ בִּגְדֵ֥י אַלְמְנוּתָֽהּ׃",
+      "en": "And he gave it her, and came in to her, and she conceived by him. And she arose, and went away, and laid by her veil from her, and put on the garments of her widowhood."
+    },
+    {
+      "n": 56,
+      "c": 38,
+      "v": 20,
+      "ref": "38:20",
+      "text": "וַיִּשְׁלַ֨ח יְהוּדָ֜ה אֶת־גְּדִ֣י הָֽעִזִּ֗ים בְּיַד֙ רֵעֵ֣הוּ הָֽעֲדֻלָּמִ֔י לָקַ֥חַת הָעֵרָב֖וֹן מִיַּ֣ד הָאִשָּׁ֑ה וְלֹ֖א מְצָאָֽהּ׃",
+      "en": "And Yehuda sent the kid by the hand of his friend the ῾Adullamite, to receive his pledge from the woman’s hand: but he found her not."
+    },
+    {
+      "n": 57,
+      "c": 38,
+      "v": 21,
+      "ref": "38:21",
+      "text": "וַיִּשְׁאַ֞ל אֶת־אַנְשֵׁ֤י מְקֹמָהּ֙ לֵאמֹ֔ר אַיֵּ֧ה הַקְּדֵשָׁ֛ה הִ֥וא בָעֵינַ֖יִם עַל־הַדָּ֑רֶךְ וַיֹּ֣אמְר֔וּ לֹא־הָיְתָ֥ה בָזֶ֖ה קְדֵשָֽׁה׃",
+      "en": "Then he asked the men of that place, saying, Where is the harlot, that was at ῾Enayim by the wayside? And they said, There was no harlot in this place."
+    },
+    {
+      "n": 58,
+      "c": 38,
+      "v": 22,
+      "ref": "38:22",
+      "text": "וַיָּ֙שׇׁב֙ אֶל־יְהוּדָ֔ה וַיֹּ֖אמֶר לֹ֣א מְצָאתִ֑יהָ וְגַ֨ם אַנְשֵׁ֤י הַמָּקוֹם֙ אָֽמְר֔וּ לֹא־הָיְתָ֥ה בָזֶ֖ה קְדֵשָֽׁה׃",
+      "en": "And he returned to Yehuda, and said, I cannot find her; and also the men of the place said, There was no harlot in this place."
+    },
+    {
+      "n": 59,
+      "c": 38,
+      "v": 23,
+      "ref": "38:23",
+      "text": "וַיֹּ֤אמֶר יְהוּדָה֙ תִּֽקַּֽח־לָ֔הּ פֶּ֖ן נִהְיֶ֣ה לָב֑וּז הִנֵּ֤ה שָׁלַ֙חְתִּי֙ הַגְּדִ֣י הַזֶּ֔ה וְאַתָּ֖ה לֹ֥א מְצָאתָֽהּ׃",
+      "en": "And Yehuda said, Let her take it to her, lest we be shamed: behold, I sent this kid, and thou hast not found her."
+    },
+    {
+      "n": 60,
+      "c": 38,
+      "v": 24,
+      "ref": "38:24",
+      "text": "וַיְהִ֣י&thinsp;<b>׀</b> כְּמִשְׁלֹ֣שׁ חֳדָשִׁ֗ים וַיֻּגַּ֨ד לִֽיהוּדָ֤ה לֵאמֹר֙ זָֽנְתָה֙ תָּמָ֣ר כַּלָּתֶ֔ךָ וְגַ֛ם הִנֵּ֥ה הָרָ֖ה לִזְנוּנִ֑ים וַיֹּ֣אמֶר יְהוּדָ֔ה הוֹצִיא֖וּהָ וְתִשָּׂרֵֽף׃",
+      "en": "And it came to pass about three months after, that it was told Yehuda, saying, Tamar thy daughter in law has played the harlot; and also, behold, she is with child by harlotry. And Yehuda said, Bring her out and let her be burnt."
+    },
+    {
+      "n": 61,
+      "c": 38,
+      "v": 25,
+      "ref": "38:25",
+      "text": "הִ֣וא מוּצֵ֗את וְהִ֨יא שָׁלְחָ֤ה אֶל־חָמִ֙יהָ֙ לֵאמֹ֔ר לְאִישׁ֙ אֲשֶׁר־אֵ֣לֶּה לּ֔וֹ אָנֹכִ֖י הָרָ֑ה וַתֹּ֙אמֶר֙ הַכֶּר־נָ֔א לְמִ֞י הַחֹתֶ֧מֶת וְהַפְּתִילִ֛ים וְהַמַּטֶּ֖ה הָאֵֽלֶּה׃",
+      "en": "When she was brought forth, she sent to her father in law, saying, By the man, whose these are, am I with child: and she said, Discern, I pray thee, whose are these, the signet, and the cord, and the staff."
+    },
+    {
+      "n": 62,
+      "c": 38,
+      "v": 26,
+      "ref": "38:26",
+      "text": "וַיַּכֵּ֣ר יְהוּדָ֗ה וַיֹּ֙אמֶר֙ צָֽדְקָ֣ה מִמֶּ֔נִּי כִּֽי־עַל־כֵּ֥ן לֹא־נְתַתִּ֖יהָ לְשֵׁלָ֣ה בְנִ֑י וְלֹֽא־יָסַ֥ף ע֖וֹד לְדַעְתָּֽהּ׃",
+      "en": "And Yehuda acknowledged them, and said, She has been more righteous than I; because I gave her not to Shela my son. And he knew her again no more."
+    },
+    {
+      "n": 63,
+      "c": 38,
+      "v": 27,
+      "ref": "38:27",
+      "text": "וַיְהִ֖י בְּעֵ֣ת לִדְתָּ֑הּ וְהִנֵּ֥ה תְאוֹמִ֖ים בְּבִטְנָֽהּ׃",
+      "en": "And it came to pass in the time of her travail, that, behold, twins were in her womb."
+    },
+    {
+      "n": 64,
+      "c": 38,
+      "v": 28,
+      "ref": "38:28",
+      "text": "וַיְהִ֥י בְלִדְתָּ֖הּ וַיִּתֶּן־יָ֑ד וַתִּקַּ֣ח הַמְיַלֶּ֗דֶת וַתִּקְשֹׁ֨ר עַל־יָד֤וֹ שָׁנִי֙ לֵאמֹ֔ר זֶ֖ה יָצָ֥א רִאשֹׁנָֽה׃",
+      "en": "And it came to pass, when she travailed, that the one put out his hand: and the midwife took and bound upon his hand a scarlet thread, saying, This came out first."
+    },
+    {
+      "n": 65,
+      "c": 38,
+      "v": 29,
+      "ref": "38:29",
+      "text": "וַיְהִ֣י&thinsp;<b>׀</b> כְּמֵשִׁ֣יב יָד֗וֹ וְהִנֵּה֙ יָצָ֣א אָחִ֔יו וַתֹּ֕אמֶר מַה־פָּרַ֖צְתָּ עָלֶ֣יךָ פָּ֑רֶץ וַיִּקְרָ֥א שְׁמ֖וֹ פָּֽרֶץ׃",
+      "en": "And it came to pass, as he drew back his hand, that, behold, his brother came out: and she said, Why hast thou made such a breach for thyself? Therefore his name was called Pereż."
+    },
+    {
+      "n": 66,
+      "c": 38,
+      "v": 30,
+      "ref": "38:30",
+      "text": "וְאַחַר֙ יָצָ֣א אָחִ֔יו אֲשֶׁ֥ר עַל־יָד֖וֹ הַשָּׁנִ֑י וַיִּקְרָ֥א שְׁמ֖וֹ זָֽרַח׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And afterward his brother came out, that had the scarlet thread upon his hand: and his name was called Zeraĥ."
+    },
+    {
+      "n": 67,
+      "c": 39,
+      "v": 1,
+      "ref": "39:1",
+      "text": "וְיוֹסֵ֖ף הוּרַ֣ד מִצְרָ֑יְמָה וַיִּקְנֵ֡הוּ פּוֹטִיפַר֩ סְרִ֨יס פַּרְעֹ֜ה שַׂ֤ר הַטַּבָּחִים֙ אִ֣ישׁ מִצְרִ֔י מִיַּד֙ הַיִּשְׁמְעֵאלִ֔ים אֲשֶׁ֥ר הוֹרִדֻ֖הוּ שָֽׁמָּה׃",
+      "en": "And Yosef was brought down to Miżrayim; and Potifar, the chamberlain of Par῾o, captain of the guard, a Miżrian, bought him of the hands of the Yishme᾽elim, who had brought him down there."
+    },
+    {
+      "n": 68,
+      "c": 39,
+      "v": 2,
+      "ref": "39:2",
+      "text": "וַיְהִ֤י יְהֹוָה֙ אֶת־יוֹסֵ֔ף וַיְהִ֖י אִ֣ישׁ מַצְלִ֑יחַ וַיְהִ֕י בְּבֵ֖ית אֲדֹנָ֥יו הַמִּצְרִֽי׃",
+      "en": "And the Lord was with Yosef, and he was a successful man; and he was in the house of his master the Miżrian."
+    },
+    {
+      "n": 69,
+      "c": 39,
+      "v": 3,
+      "ref": "39:3",
+      "text": "וַיַּ֣רְא אֲדֹנָ֔יו כִּ֥י יְהֹוָ֖ה אִתּ֑וֹ וְכֹל֙ אֲשֶׁר־ה֣וּא עֹשֶׂ֔ה יְהֹוָ֖ה מַצְלִ֥יחַ בְּיָדֽוֹ׃",
+      "en": "And his master saw that the Lord was with him, and that the Lord made all that he did to prosper in his hand."
+    },
+    {
+      "n": 70,
+      "c": 39,
+      "v": 4,
+      "ref": "39:4",
+      "text": "וַיִּמְצָ֨א יוֹסֵ֥ף חֵ֛ן בְּעֵינָ֖יו וַיְשָׁ֣רֶת אֹת֑וֹ וַיַּפְקִדֵ֙הוּ֙ עַל־בֵּית֔וֹ וְכׇל־יֶשׁ־ל֖וֹ נָתַ֥ן בְּיָדֽוֹ׃",
+      "en": "And Yosef found favour in his sight, and served him: and he made him overseer over his house, and all that he had he put into his hand."
+    },
+    {
+      "n": 71,
+      "c": 39,
+      "v": 5,
+      "ref": "39:5",
+      "text": "וַיְהִ֡י מֵאָז֩ הִפְקִ֨יד אֹת֜וֹ בְּבֵית֗וֹ וְעַל֙ כׇּל־אֲשֶׁ֣ר יֶשׁ־ל֔וֹ וַיְבָ֧רֶךְ יְהֹוָ֛ה אֶת־בֵּ֥ית הַמִּצְרִ֖י בִּגְלַ֣ל יוֹסֵ֑ף וַיְהִ֞י בִּרְכַּ֤ת יְהֹוָה֙ בְּכׇל־אֲשֶׁ֣ר יֶשׁ־ל֔וֹ בַּבַּ֖יִת וּבַשָּׂדֶֽה׃",
+      "en": "And it came to pass from the time that he had made him overseer in his house, and over all that he had, that the Lord blessed the Miżrian’s house for Yosef’s sake; and the blessing of the Lord was upon all that he had in the house, and in the field."
+    },
+    {
+      "n": 72,
+      "c": 39,
+      "v": 6,
+      "ref": "39:6",
+      "text": "וַיַּעֲזֹ֣ב כׇּל־אֲשֶׁר־לוֹ֮ בְּיַד־יוֹסֵף֒ וְלֹא־יָדַ֤ע אִתּוֹ֙ מְא֔וּמָה כִּ֥י אִם־הַלֶּ֖חֶם אֲשֶׁר־ה֣וּא אוֹכֵ֑ל וַיְהִ֣י יוֹסֵ֔ף יְפֵה־תֹ֖אַר וִיפֵ֥ה מַרְאֶֽה׃",
+      "en": "And he left all that he had in Yosef’s hand; and he knew not ought he had, save the bread which he did eat. And Yosef was a good-looking person, and well favoured."
+    },
+    {
+      "n": 73,
+      "c": 39,
+      "v": 7,
+      "ref": "39:7",
+      "text": "וַיְהִ֗י אַחַר֙ הַדְּבָרִ֣ים הָאֵ֔לֶּה וַתִּשָּׂ֧א אֵֽשֶׁת־אֲדֹנָ֛יו אֶת־עֵינֶ֖יהָ אֶל־יוֹסֵ֑ף וַתֹּ֖אמֶר שִׁכְבָ֥ה עִמִּֽי׃",
+      "en": "And it came to pass after these things, that his master’s wife cast her eyes upon Yosef; and she said, Lie with me."
+    },
+    {
+      "n": 74,
+      "c": 39,
+      "v": 8,
+      "ref": "39:8",
+      "text": "וַיְמָאֵ֓ן&thinsp;<b>׀</b> וַיֹּ֙אמֶר֙ אֶל־אֵ֣שֶׁת אֲדֹנָ֔יו הֵ֣ן אֲדֹנִ֔י לֹא־יָדַ֥ע אִתִּ֖י מַה־בַּבָּ֑יִת וְכֹ֥ל אֲשֶׁר־יֶשׁ־ל֖וֹ נָתַ֥ן בְּיָדִֽי׃",
+      "en": "But he refused, and said to his master’s wife, Behold, my master knows not what is with me in the house, and he has committed all that he has to my hand;"
+    },
+    {
+      "n": 75,
+      "c": 39,
+      "v": 9,
+      "ref": "39:9",
+      "text": "אֵינֶ֨נּוּ גָד֜וֹל בַּבַּ֣יִת הַזֶּה֮ מִמֶּ֒נִּי֒ וְלֹֽא־חָשַׂ֤ךְ מִמֶּ֙נִּי֙ מְא֔וּמָה כִּ֥י אִם־אוֹתָ֖ךְ בַּאֲשֶׁ֣ר אַתְּ־אִשְׁתּ֑וֹ וְאֵ֨יךְ אֶֽעֱשֶׂ֜ה הָרָעָ֤ה הַגְּדֹלָה֙ הַזֹּ֔את וְחָטָ֖אתִי לֵֽאלֹהִֽים׃",
+      "en": "there is none greater in this house than I; neither has he kept back anything from me but thee, because thou art his wife: how then can I do this great wickedness, and sin against God?"
+    },
+    {
+      "n": 76,
+      "c": 39,
+      "v": 10,
+      "ref": "39:10",
+      "text": "וַיְהִ֕י כְּדַבְּרָ֥הּ אֶל־יוֹסֵ֖ף י֣וֹם&thinsp;<small>׀</small>&thinsp;י֑וֹם וְלֹא־שָׁמַ֥ע אֵלֶ֛יהָ לִשְׁכַּ֥ב אֶצְלָ֖הּ לִהְי֥וֹת עִמָּֽהּ׃",
+      "en": "And it came to pass, as she spoke to Yosef day by day, that he hearkened not to her, to lie by her, or to be with her."
+    },
+    {
+      "n": 77,
+      "c": 39,
+      "v": 11,
+      "ref": "39:11",
+      "text": "וַֽיְהִי֙ כְּהַיּ֣וֹם הַזֶּ֔ה וַיָּבֹ֥א הַבַּ֖יְתָה לַעֲשׂ֣וֹת מְלַאכְתּ֑וֹ וְאֵ֨ין אִ֜ישׁ מֵאַנְשֵׁ֥י הַבַּ֛יִת שָׁ֖ם בַּבָּֽיִת׃",
+      "en": "And it came to pass about this time, that Yosef went into the house to do his work; and there was none of the men of the house there within."
+    },
+    {
+      "n": 78,
+      "c": 39,
+      "v": 12,
+      "ref": "39:12",
+      "text": "וַתִּתְפְּשֵׂ֧הוּ בְּבִגְד֛וֹ לֵאמֹ֖ר שִׁכְבָ֣ה עִמִּ֑י וַיַּעֲזֹ֤ב בִּגְדוֹ֙ בְּיָדָ֔הּ וַיָּ֖נׇס וַיֵּצֵ֥א הַחֽוּצָה׃",
+      "en": "And she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and went outside."
+    },
+    {
+      "n": 79,
+      "c": 39,
+      "v": 13,
+      "ref": "39:13",
+      "text": "וַֽיְהִי֙ כִּרְאוֹתָ֔הּ כִּֽי־עָזַ֥ב בִּגְד֖וֹ בְּיָדָ֑הּ וַיָּ֖נׇס הַחֽוּצָה׃",
+      "en": "And it came to pass, when she saw that he had left his garment in her hand, and was fled outside,"
+    },
+    {
+      "n": 80,
+      "c": 39,
+      "v": 14,
+      "ref": "39:14",
+      "text": "וַתִּקְרָ֞א לְאַנְשֵׁ֣י בֵיתָ֗הּ וַתֹּ֤אמֶר לָהֶם֙ לֵאמֹ֔ר רְא֗וּ הֵ֥בִיא לָ֛נוּ אִ֥ישׁ עִבְרִ֖י לְצַ֣חֶק בָּ֑נוּ בָּ֤א אֵלַי֙ לִשְׁכַּ֣ב עִמִּ֔י וָאֶקְרָ֖א בְּק֥וֹל גָּדֽוֹל׃",
+      "en": "that she called to the men of her house, and spoke to them, saying, See, he has brought in a Hebrew to us to mock us; he came in to me to lie with me, and I cried with a loud voice:"
+    },
+    {
+      "n": 81,
+      "c": 39,
+      "v": 15,
+      "ref": "39:15",
+      "text": "וַיְהִ֣י כְשׇׁמְע֔וֹ כִּֽי־הֲרִימֹ֥תִי קוֹלִ֖י וָאֶקְרָ֑א וַיַּעֲזֹ֤ב בִּגְדוֹ֙ אֶצְלִ֔י וַיָּ֖נׇס וַיֵּצֵ֥א הַחֽוּצָה׃",
+      "en": "and it came to pass, when he heard that I lifted up my voice and cried, that he left his garment with me, and fled, and went outside."
+    },
+    {
+      "n": 82,
+      "c": 39,
+      "v": 16,
+      "ref": "39:16",
+      "text": "וַתַּנַּ֥ח בִּגְד֖וֹ אֶצְלָ֑הּ עַד־בּ֥וֹא אֲדֹנָ֖יו אֶל־בֵּיתֽוֹ׃",
+      "en": "And she laid up his garment by her, until his lord came home."
+    },
+    {
+      "n": 83,
+      "c": 39,
+      "v": 17,
+      "ref": "39:17",
+      "text": "וַתְּדַבֵּ֣ר אֵלָ֔יו כַּדְּבָרִ֥ים הָאֵ֖לֶּה לֵאמֹ֑ר בָּֽא־אֵלַ֞י הָעֶ֧בֶד הָֽעִבְרִ֛י אֲשֶׁר־הֵבֵ֥אתָ לָּ֖נוּ לְצַ֥חֶק בִּֽי׃",
+      "en": "And she spoke to him according to these words, saying, The Hebrew servant, whom thou hast brought to us, came in to me to have his sport with me."
+    },
+    {
+      "n": 84,
+      "c": 39,
+      "v": 18,
+      "ref": "39:18",
+      "text": "וַיְהִ֕י כַּהֲרִימִ֥י קוֹלִ֖י וָאֶקְרָ֑א וַיַּעֲזֹ֥ב בִּגְד֛וֹ אֶצְלִ֖י וַיָּ֥נׇס הַחֽוּצָה׃",
+      "en": "And it came to pass, as I lifted up my voice and cried, that he left his garment with me, and fled outside."
+    },
+    {
+      "n": 85,
+      "c": 39,
+      "v": 19,
+      "ref": "39:19",
+      "text": "וַיְהִי֩ כִשְׁמֹ֨עַ אֲדֹנָ֜יו אֶת־דִּבְרֵ֣י אִשְׁתּ֗וֹ אֲשֶׁ֨ר דִּבְּרָ֤ה אֵלָיו֙ לֵאמֹ֔ר כַּדְּבָרִ֣ים הָאֵ֔לֶּה עָ֥שָׂה לִ֖י עַבְדֶּ֑ךָ וַיִּ֖חַר אַפּֽוֹ׃",
+      "en": "And it came to pass, when his master heard the words of his wife, which she spoke to him, saying, After this manner did thy servant to me; that his anger burned."
+    },
+    {
+      "n": 86,
+      "c": 39,
+      "v": 20,
+      "ref": "39:20",
+      "text": "וַיִּקַּח֩ אֲדֹנֵ֨י יוֹסֵ֜ף אֹת֗וֹ וַֽיִּתְּנֵ֙הוּ֙ אֶל־בֵּ֣ית הַסֹּ֔הַר מְק֕וֹם אֲשֶׁר־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[אֲסִירֵ֥י]</span> <span class=\"mam-kq-k\">(אסורי)</span></span> הַמֶּ֖לֶךְ אֲסוּרִ֑ים וַֽיְהִי־שָׁ֖ם בְּבֵ֥ית הַסֹּֽהַר׃",
+      "en": "And Yosef’s master took him, and put him into the prison, a place where the king’s prisoners were bound: and he was there in the prison."
+    },
+    {
+      "n": 87,
+      "c": 39,
+      "v": 21,
+      "ref": "39:21",
+      "text": "וַיְהִ֤י יְהֹוָה֙ אֶת־יוֹסֵ֔ף וַיֵּ֥ט אֵלָ֖יו חָ֑סֶד וַיִּתֵּ֣ן חִנּ֔וֹ בְּעֵינֵ֖י שַׂ֥ר בֵּית־הַסֹּֽהַר׃",
+      "en": "But the Lord was with Yosef, and showed him mercy, and gave him favour in the sight of the officer of the prison."
+    },
+    {
+      "n": 88,
+      "c": 39,
+      "v": 22,
+      "ref": "39:22",
+      "text": "וַיִּתֵּ֞ן שַׂ֤ר בֵּית־הַסֹּ֙הַר֙ בְּיַד־יוֹסֵ֔ף אֵ֚ת כׇּל־הָ֣אֲסִירִ֔ם אֲשֶׁ֖ר בְּבֵ֣ית הַסֹּ֑הַר וְאֵ֨ת כׇּל־אֲשֶׁ֤ר עֹשִׂים֙ שָׁ֔ם ה֖וּא הָיָ֥ה עֹשֶֽׂה׃",
+      "en": "And the officer of the prison committed to Yosef’s hand all the prisoners that were in the prison; and whatever they did there, he was the doer of it."
+    },
+    {
+      "n": 89,
+      "c": 39,
+      "v": 23,
+      "ref": "39:23",
+      "text": "אֵ֣ין&thinsp;<b>׀</b> שַׂ֣ר בֵּית־הַסֹּ֗הַר רֹאֶ֤ה אֶֽת־כׇּל־מְא֙וּמָה֙ בְּיָד֔וֹ בַּאֲשֶׁ֥ר יְהֹוָ֖ה אִתּ֑וֹ וַֽאֲשֶׁר־ה֥וּא עֹשֶׂ֖ה יְהֹוָ֥ה מַצְלִֽיחַ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "The keeper of the prison looked not to anything that was under his hand; because the Lord was with him, and that which he did, the Lord made it prosper."
+    },
+    {
+      "n": 90,
+      "c": 40,
+      "v": 1,
+      "ref": "40:1",
+      "text": "וַיְהִ֗י אַחַר֙ הַדְּבָרִ֣ים הָאֵ֔לֶּה חָ֥טְא֛וּ מַשְׁקֵ֥ה מֶֽלֶךְ־מִצְרַ֖יִם וְהָאֹפֶ֑ה לַאֲדֹנֵיהֶ֖ם לְמֶ֥לֶךְ מִצְרָֽיִם׃",
+      "en": "And it came to pass after these things, that the butler of the king of Miżrayim, and his baker, offended their lord the king of Miżrayim."
+    },
+    {
+      "n": 91,
+      "c": 40,
+      "v": 2,
+      "ref": "40:2",
+      "text": "וַיִּקְצֹ֣ף פַּרְעֹ֔ה עַ֖ל שְׁנֵ֣י סָרִיסָ֑יו עַ֚ל שַׂ֣ר הַמַּשְׁקִ֔ים וְעַ֖ל שַׂ֥ר הָאוֹפִֽים׃",
+      "en": "And Par῾o was angry against two of his officers, against the chief of the butlers, and against the chief of the bakers."
+    },
+    {
+      "n": 92,
+      "c": 40,
+      "v": 3,
+      "ref": "40:3",
+      "text": "וַיִּתֵּ֨ן אֹתָ֜ם בְּמִשְׁמַ֗ר בֵּ֛ית שַׂ֥ר הַטַּבָּחִ֖ים אֶל־בֵּ֣ית הַסֹּ֑הַר מְק֕וֹם אֲשֶׁ֥ר יוֹסֵ֖ף אָס֥וּר שָֽׁם׃",
+      "en": "And he put them in custody in the house of the captain of the guard, into the prison, the place where Yosef was bound."
+    },
+    {
+      "n": 93,
+      "c": 40,
+      "v": 4,
+      "ref": "40:4",
+      "text": "וַ֠יִּפְקֹ֠ד שַׂ֣ר הַטַּבָּחִ֧ים אֶת־יוֹסֵ֛ף אִתָּ֖ם וַיְשָׁ֣רֶת אֹתָ֑ם וַיִּהְי֥וּ יָמִ֖ים בְּמִשְׁמָֽר׃",
+      "en": "And the captain of the guard charged Yosef with them, and he served them: and they continued a season in custody."
+    },
+    {
+      "n": 94,
+      "c": 40,
+      "v": 5,
+      "ref": "40:5",
+      "text": "וַיַּֽחַלְמוּ֩ חֲל֨וֹם שְׁנֵיהֶ֜ם אִ֤ישׁ חֲלֹמוֹ֙ בְּלַ֣יְלָה אֶחָ֔ד אִ֖ישׁ כְּפִתְר֣וֹן חֲלֹמ֑וֹ הַמַּשְׁקֶ֣ה וְהָאֹפֶ֗ה אֲשֶׁר֙ לְמֶ֣לֶךְ מִצְרַ֔יִם אֲשֶׁ֥ר אֲסוּרִ֖ים בְּבֵ֥ית הַסֹּֽהַר׃",
+      "en": "And they dreamed a dream both of them, each man his dream on the same night, each man according to the interpretation of his dream, the butler and the baker of the king of Miżrayim, who were bound in the prison."
+    },
+    {
+      "n": 95,
+      "c": 40,
+      "v": 6,
+      "ref": "40:6",
+      "text": "וַיָּבֹ֧א אֲלֵיהֶ֛ם יוֹסֵ֖ף בַּבֹּ֑קֶר וַיַּ֣רְא אֹתָ֔ם וְהִנָּ֖ם זֹעֲפִֽים׃",
+      "en": "And Yosef came in to them in the morning, and looked upon them, and, behold, they were sad."
+    },
+    {
+      "n": 96,
+      "c": 40,
+      "v": 7,
+      "ref": "40:7",
+      "text": "וַיִּשְׁאַ֞ל אֶת־סְרִיסֵ֣י פַרְעֹ֗ה אֲשֶׁ֨ר אִתּ֧וֹ בְמִשְׁמַ֛ר בֵּ֥ית אֲדֹנָ֖יו לֵאמֹ֑ר מַדּ֛וּעַ פְּנֵיכֶ֥ם רָעִ֖ים הַיּֽוֹם׃",
+      "en": "And he asked Par῾o’s officers that were with him in custody in his lord’s house, saying, Why do you look so sadly today?"
+    },
+    {
+      "n": 97,
+      "c": 40,
+      "v": 8,
+      "ref": "40:8",
+      "text": "וַיֹּאמְר֣וּ אֵלָ֔יו חֲל֣וֹם חָלַ֔מְנוּ וּפֹתֵ֖ר אֵ֣ין אֹת֑וֹ וַיֹּ֨אמֶר אֲלֵהֶ֜ם יוֹסֵ֗ף הֲל֤וֹא לֵֽאלֹהִים֙ פִּתְרֹנִ֔ים סַפְּרוּ־נָ֖א לִֽי׃",
+      "en": "And they said to him, We have dreamed a dream, and there is no interpreter of it. And Yosef said to them, Do not interpretations belong to God? tell me them, I pray you."
+    },
+    {
+      "n": 98,
+      "c": 40,
+      "v": 9,
+      "ref": "40:9",
+      "text": "וַיְסַפֵּ֧ר שַֽׂר־הַמַּשְׁקִ֛ים אֶת־חֲלֹמ֖וֹ לְיוֹסֵ֑ף וַיֹּ֣אמֶר ל֔וֹ בַּחֲלוֹמִ֕י וְהִנֵּה־גֶ֖פֶן לְפָנָֽי׃",
+      "en": "And the chief butler told his dream to Yosef, and said to him, In my dream, behold, a vine was before me;"
+    },
+    {
+      "n": 99,
+      "c": 40,
+      "v": 10,
+      "ref": "40:10",
+      "text": "וּבַגֶּ֖פֶן שְׁלֹשָׁ֣ה שָׂרִיגִ֑ם וְהִ֤וא כְפֹרַ֙חַת֙ עָלְתָ֣ה נִצָּ֔הּ הִבְשִׁ֥ילוּ אַשְׁכְּלֹתֶ֖יהָ עֲנָבִֽים׃",
+      "en": "and on the vine were three tendrils: and it was as though it budded, and its blossoms shot forth; and its clusters brought forth ripe grapes:"
+    },
+    {
+      "n": 100,
+      "c": 40,
+      "v": 11,
+      "ref": "40:11",
+      "text": "וְכ֥וֹס פַּרְעֹ֖ה בְּיָדִ֑י וָאֶקַּ֣ח אֶת־הָֽעֲנָבִ֗ים וָֽאֶשְׂחַ֤ט אֹתָם֙ אֶל־כּ֣וֹס פַּרְעֹ֔ה וָאֶתֵּ֥ן אֶת־הַכּ֖וֹס עַל־כַּ֥ף פַּרְעֹֽה׃",
+      "en": "and Par῾o’s cup was in my hand: and I took the grapes, and pressed them into Par῾o’s cup, and I gave the cup into Par῾o’s hand."
+    },
+    {
+      "n": 101,
+      "c": 40,
+      "v": 12,
+      "ref": "40:12",
+      "text": "וַיֹּ֤אמֶר לוֹ֙ יוֹסֵ֔ף זֶ֖ה פִּתְרֹנ֑וֹ שְׁלֹ֙שֶׁת֙ הַשָּׂ֣רִגִ֔ים שְׁלֹ֥שֶׁת יָמִ֖ים הֵֽם׃",
+      "en": "And Yosef said to him, This is the interpretation of it: The three tendrils are three days:"
+    },
+    {
+      "n": 102,
+      "c": 40,
+      "v": 13,
+      "ref": "40:13",
+      "text": "בְּע֣וֹד&thinsp;<b>׀</b> שְׁלֹ֣שֶׁת יָמִ֗ים יִשָּׂ֤א פַרְעֹה֙ אֶת־רֹאשֶׁ֔ךָ וַהֲשִֽׁיבְךָ֖ עַל־כַּנֶּ֑ךָ וְנָתַתָּ֤ כוֹס־פַּרְעֹה֙ בְּיָד֔וֹ כַּמִּשְׁפָּט֙ הָֽרִאשׁ֔וֹן אֲשֶׁ֥ר הָיִ֖יתָ מַשְׁקֵֽהוּ׃",
+      "en": "within another three days shall Par῾o lift up thy head, and restore thee to thy place: and thou shalt deliver Par῾o’s cup into his hand, after the former manner when thou wast his butler."
+    },
+    {
+      "n": 103,
+      "c": 40,
+      "v": 14,
+      "ref": "40:14",
+      "text": "כִּ֧י אִם־זְכַרְתַּ֣נִי אִתְּךָ֗ כַּאֲשֶׁר֙ יִ֣יטַב לָ֔ךְ וְעָשִֽׂיתָ־נָּ֥א עִמָּדִ֖י חָ֑סֶד וְהִזְכַּרְתַּ֙נִי֙ אֶל־פַּרְעֹ֔ה וְהוֹצֵאתַ֖נִי מִן־הַבַּ֥יִת הַזֶּֽה׃",
+      "en": "But think of me when it shall be well with thee, and show kindness, I pray thee, to me, and make mention of me to Par῾o, and bring me out of this house:"
+    },
+    {
+      "n": 104,
+      "c": 40,
+      "v": 15,
+      "ref": "40:15",
+      "text": "כִּֽי־גֻנֹּ֣ב גֻּנַּ֔בְתִּי מֵאֶ֖רֶץ הָעִבְרִ֑ים וְגַם־פֹּה֙ לֹא־עָשִׂ֣יתִֽי מְא֔וּמָה כִּֽי־שָׂמ֥וּ אֹתִ֖י בַּבּֽוֹר׃",
+      "en": "for I was stolen away out of the land of the Hebrews: and here also have I done nothing that they should put me into the dungeon."
+    },
+    {
+      "n": 105,
+      "c": 40,
+      "v": 16,
+      "ref": "40:16",
+      "text": "וַיַּ֥רְא שַׂר־הָאֹפִ֖ים כִּ֣י ט֣וֹב פָּתָ֑ר וַיֹּ֙אמֶר֙ אֶל־יוֹסֵ֔ף אַף־אֲנִי֙ בַּחֲלוֹמִ֔י וְהִנֵּ֗ה שְׁלֹשָׁ֛ה סַלֵּ֥י חֹרִ֖י עַל־רֹאשִֽׁי׃",
+      "en": "When the chief  baker saw that the interpretation was good, he said to Yosef, I also in my dream, behold, I had three baskets of white bread on my head."
+    },
+    {
+      "n": 106,
+      "c": 40,
+      "v": 17,
+      "ref": "40:17",
+      "text": "וּבַסַּ֣ל הָֽעֶלְי֗וֹן מִכֹּ֛ל מַאֲכַ֥ל פַּרְעֹ֖ה מַעֲשֵׂ֣ה אֹפֶ֑ה וְהָע֗וֹף אֹכֵ֥ל אֹתָ֛ם מִן־הַסַּ֖ל מֵעַ֥ל רֹאשִֽׁי׃",
+      "en": "And in the uppermost basket there was of all manner of baked food for Par῾o; and the birds did eat them out of the basket upon my head."
+    },
+    {
+      "n": 107,
+      "c": 40,
+      "v": 18,
+      "ref": "40:18",
+      "text": "וַיַּ֤עַן יוֹסֵף֙ וַיֹּ֔אמֶר זֶ֖ה פִּתְרֹנ֑וֹ שְׁלֹ֙שֶׁת֙ הַסַּלִּ֔ים שְׁלֹ֥שֶׁת יָמִ֖ים הֵֽם׃",
+      "en": "And Yosef answered and said, This is its interpretation: The three baskets are three days:"
+    },
+    {
+      "n": 108,
+      "c": 40,
+      "v": 19,
+      "ref": "40:19",
+      "text": "בְּע֣וֹד&thinsp;<b>׀</b> שְׁלֹ֣שֶׁת יָמִ֗ים יִשָּׂ֨א פַרְעֹ֤ה אֶת־רֹֽאשְׁךָ֙ מֵֽעָלֶ֔יךָ וְתָלָ֥ה אוֹתְךָ֖ עַל־עֵ֑ץ וְאָכַ֥ל הָע֛וֹף אֶת־בְּשָׂרְךָ֖ מֵעָלֶֽיךָ׃",
+      "en": "within another three days shall Par῾o lift up thy head from off thee, and shall hang thee on a tree; and the birds shall eat thy flesh from off thee."
+    },
+    {
+      "n": 109,
+      "c": 40,
+      "v": 20,
+      "ref": "40:20",
+      "text": "וַיְהִ֣י&thinsp;<b>׀</b> בַּיּ֣וֹם הַשְּׁלִישִׁ֗י י֚וֹם הֻלֶּ֣דֶת אֶת־פַּרְעֹ֔ה וַיַּ֥עַשׂ מִשְׁתֶּ֖ה לְכׇל־עֲבָדָ֑יו וַיִּשָּׂ֞א אֶת־רֹ֣אשׁ&thinsp;<b>׀</b> שַׂ֣ר הַמַּשְׁקִ֗ים וְאֶת־רֹ֛אשׁ שַׂ֥ר הָאֹפִ֖ים בְּת֥וֹךְ עֲבָדָֽיו׃",
+      "en": "And it came to pass on the third day, which was Par῾o’s birthday, that he made a feast for all his servants: and he lifted up the head of the chief butler and of the chief baker among his servants."
+    },
+    {
+      "n": 110,
+      "c": 40,
+      "v": 21,
+      "ref": "40:21",
+      "text": "וַיָּ֛שֶׁב אֶת־שַׂ֥ר הַמַּשְׁקִ֖ים עַל־מַשְׁקֵ֑הוּ וַיִּתֵּ֥ן הַכּ֖וֹס עַל־כַּ֥ף פַּרְעֹֽה׃",
+      "en": "And he restored the chief butler to his butlership again; and he gave the cup into Par῾o’s hand;"
+    },
+    {
+      "n": 111,
+      "c": 40,
+      "v": 22,
+      "ref": "40:22",
+      "text": "וְאֵ֛ת שַׂ֥ר הָאֹפִ֖ים תָּלָ֑ה כַּאֲשֶׁ֥ר פָּתַ֛ר לָהֶ֖ם יוֹסֵֽף׃",
+      "en": "but he hanged the chief baker: as Yosef had interpreted to them."
+    },
+    {
+      "n": 112,
+      "c": 40,
+      "v": 23,
+      "ref": "40:23",
+      "text": "וְלֹֽא־זָכַ֧ר שַֽׂר־הַמַּשְׁקִ֛ים אֶת־יוֹסֵ֖ף וַיִּשְׁכָּחֵֽהוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Nevertheless the chief butler did not remember Yosef, but forgot him."
+    }
+  ],
+  "parashah": {
+    "en": "Vayeshev",
+    "he": "וַיֵּשֶׁב",
+    "translit": "Vayeshev",
+    "ref": "Genesis 37:1–40:23"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 11,
+        "ref": "37:1–37:11"
+      },
+      {
+        "n": 2,
+        "start": 12,
+        "end": 22,
+        "ref": "37:12–37:22"
+      },
+      {
+        "n": 3,
+        "start": 23,
+        "end": 36,
+        "ref": "37:23–37:36"
+      },
+      {
+        "n": 4,
+        "start": 37,
+        "end": 66,
+        "ref": "38:1–38:30"
+      },
+      {
+        "n": 5,
+        "start": 67,
+        "end": 72,
+        "ref": "39:1–39:6"
+      },
+      {
+        "n": 6,
+        "start": 73,
+        "end": 89,
+        "ref": "39:7–39:23"
+      },
+      {
+        "n": 7,
+        "start": 90,
+        "end": 112,
+        "ref": "40:1–40:23"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "37:1–37:3"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 7,
+          "ref": "37:4–37:7"
+        },
+        {
+          "n": 3,
+          "start": 8,
+          "end": 11,
+          "ref": "37:8–37:11"
+        },
+        {
+          "n": 4,
+          "start": 12,
+          "end": 17,
+          "ref": "37:12–37:17"
+        },
+        {
+          "n": 5,
+          "start": 18,
+          "end": 22,
+          "ref": "37:18–37:22"
+        },
+        {
+          "n": 6,
+          "start": 23,
+          "end": 28,
+          "ref": "37:23–37:28"
+        },
+        {
+          "n": 7,
+          "start": 29,
+          "end": 36,
+          "ref": "37:29–37:36"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 37,
+          "end": 41,
+          "ref": "38:1–38:5"
+        },
+        {
+          "n": 2,
+          "start": 42,
+          "end": 47,
+          "ref": "38:6–38:11"
+        },
+        {
+          "n": 3,
+          "start": 48,
+          "end": 50,
+          "ref": "38:12–38:14"
+        },
+        {
+          "n": 4,
+          "start": 51,
+          "end": 55,
+          "ref": "38:15–38:19"
+        },
+        {
+          "n": 5,
+          "start": 56,
+          "end": 59,
+          "ref": "38:20–38:23"
+        },
+        {
+          "n": 6,
+          "start": 60,
+          "end": 62,
+          "ref": "38:24–38:26"
+        },
+        {
+          "n": 7,
+          "start": 63,
+          "end": 66,
+          "ref": "38:27–38:30"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 67,
+          "end": 72,
+          "ref": "39:1–39:6"
+        },
+        {
+          "n": 2,
+          "start": 73,
+          "end": 76,
+          "ref": "39:7–39:10"
+        },
+        {
+          "n": 3,
+          "start": 77,
+          "end": 84,
+          "ref": "39:11–39:18"
+        },
+        {
+          "n": 4,
+          "start": 85,
+          "end": 89,
+          "ref": "39:19–39:23"
+        },
+        {
+          "n": 5,
+          "start": 90,
+          "end": 97,
+          "ref": "40:1–40:8"
+        },
+        {
+          "n": 6,
+          "start": 98,
+          "end": 104,
+          "ref": "40:9–40:15"
+        },
+        {
+          "n": 7,
+          "start": 105,
+          "end": 112,
+          "ref": "40:16–40:23"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 109,
+        "end": 112,
+        "ref": "40:20–40:23"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 34,
+          "end": 36,
+          "ref": "37:34–37:36"
+        },
+        "2": {
+          "n": "M",
+          "start": 63,
+          "end": 66,
+          "ref": "38:27–38:30"
+        },
+        "3": {
+          "n": "M",
+          "start": 109,
+          "end": 112,
+          "ref": "40:20–40:23"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

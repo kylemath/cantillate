@@ -1,0 +1,220 @@
+{
+  "slug": "haftarah-tazria",
+  "book": {
+    "en": "II Kings",
+    "he": "מלכים ב",
+    "translit": "Melachim B"
+  },
+  "multiChapter": true,
+  "ref": "II Kings 4:42-5:19",
+  "heRef": "מלכים ב ד׳:מ״ב-מ״ד, ה׳:א-י״ט",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 4,
+      "v": 42,
+      "ref": "4:42",
+      "text": "וְאִ֨ישׁ בָּ֜א מִבַּ֣עַל שָׁלִ֗שָׁה וַיָּבֵא֩ לְאִ֨ישׁ הָאֱלֹהִ֜ים לֶ֤חֶם בִּכּוּרִים֙ עֶשְׂרִֽים־לֶ֣חֶם שְׂעֹרִ֔ים וְכַרְמֶ֖ל בְּצִקְלֹנ֑וֹ וַיֹּ֕אמֶר תֵּ֥ן לָעָ֖ם וְיֹאכֵֽלוּ׃",
+      "en": "And there came a man from Ba῾al-shalisha, and brought the man of God bread of the first fruits, twenty loaves of barley, and full ears of corn in his sack. And he said, Give to the people, that they may eat."
+    },
+    {
+      "n": 2,
+      "c": 4,
+      "v": 43,
+      "ref": "4:43",
+      "text": "וַיֹּ֙אמֶר֙ מְשָׁ֣רְת֔וֹ מָ֚ה אֶתֵּ֣ן זֶ֔ה לִפְנֵ֖י מֵ֣אָה אִ֑ישׁ וַיֹּ֗אמֶר תֵּ֤ן לָעָם֙ וְיֹאכֵ֔לוּ כִּ֣י כֹ֥ה אָמַ֛ר יְהֹוָ֖ה אָכֹ֥ל וְהוֹתֵֽר׃",
+      "en": "And his attendant said, What, should I set this before a hundred men? He said again, Give the people, that they may eat: for thus says the Lord, They shall eat, and shall leave over."
+    },
+    {
+      "n": 3,
+      "c": 4,
+      "v": 44,
+      "ref": "4:44",
+      "text": "וַיִּתֵּ֧ן לִפְנֵיהֶ֛ם וַיֹּאכְל֥וּ וַיּוֹתִ֖רוּ כִּדְבַ֥ר יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "So he set it before them, and they did eat, and left some of it over, according to the word of the Lord."
+    },
+    {
+      "n": 4,
+      "c": 5,
+      "v": 1,
+      "ref": "5:1",
+      "text": "וְ֠נַעֲמָ֠ן שַׂר־צְבָ֨א מֶלֶךְ־אֲרָ֜ם הָיָ֣ה אִישׁ֩ גָּד֨וֹל לִפְנֵ֤י אֲדֹנָיו֙ וּנְשֻׂ֣א פָנִ֔ים כִּי־ב֛וֹ נָתַן־יְהֹוָ֥ה תְּשׁוּעָ֖ה לַאֲרָ֑ם וְהָאִ֗ישׁ הָיָ֛ה גִּבּ֥וֹר חַ֖יִל מְצֹרָֽע׃",
+      "en": "Now Na῾aman, captain of the host of the king of Aram, was a man of great note with his master and highly esteemed, because by him the Lord had given deliverance to Aram; he was also a mighty warrior, but stricken with żara῾at."
+    },
+    {
+      "n": 5,
+      "c": 5,
+      "v": 2,
+      "ref": "5:2",
+      "text": "וַֽאֲרָם֙ יָצְא֣וּ גְדוּדִ֔ים וַיִּשְׁבּ֛וּ מֵאֶ֥רֶץ יִשְׂרָאֵ֖ל נַעֲרָ֣ה קְטַנָּ֑ה וַתְּהִ֕י לִפְנֵ֖י אֵ֥שֶׁת נַעֲמָֽן׃",
+      "en": "And Aram had gone out in raiding parties, and had brought away captive out of the land of Yisra᾽el a little girl, and she attended the wife of Na῾aman."
+    },
+    {
+      "n": 6,
+      "c": 5,
+      "v": 3,
+      "ref": "5:3",
+      "text": "וַתֹּ֙אמֶר֙ אֶל־גְּבִרְתָּ֔הּ אַחֲלֵ֣י אֲדֹנִ֔י לִפְנֵ֥י הַנָּבִ֖יא אֲשֶׁ֣ר בְּשֹׁמְר֑וֹן אָ֛ז יֶאֱסֹ֥ף אֹת֖וֹ מִצָּרַעְתּֽוֹ׃",
+      "en": "And she said to her mistress, Would my lord were with the prophet that is in Shomeron! for he would heal him of his disease."
+    },
+    {
+      "n": 7,
+      "c": 5,
+      "v": 4,
+      "ref": "5:4",
+      "text": "וַיָּבֹ֕א וַיַּגֵּ֥ד לַאדֹנָ֖יו לֵאמֹ֑ר כָּזֹ֤את וְכָזֹאת֙ דִּבְּרָ֣ה הַֽנַּעֲרָ֔ה אֲשֶׁ֖ר מֵאֶ֥רֶץ יִשְׂרָאֵֽל׃",
+      "en": "And one went in, and told his lord, saying, Thus and thus said the girl who is of the land of Yisra᾽el."
+    },
+    {
+      "n": 8,
+      "c": 5,
+      "v": 5,
+      "ref": "5:5",
+      "text": "וַיֹּ֤אמֶר מֶֽלֶךְ־אֲרָם֙ לֶךְ־בֹּ֔א וְאֶשְׁלְחָ֥ה סֵ֖פֶר אֶל־מֶ֣לֶךְ יִשְׂרָאֵ֑ל וַיֵּ֩לֶךְ֩ וַיִּקַּ֨ח בְּיָד֜וֹ עֶ֣שֶׂר כִּכְּרֵי־כֶ֗סֶף וְשֵׁ֤שֶׁת אֲלָפִים֙ זָהָ֔ב וְעֶ֖שֶׂר חֲלִיפ֥וֹת בְּגָדִֽים׃",
+      "en": "And the king of Aram said, Go to, go, and I will send a letter to the king of Yisra᾽el. And he departed, and took with him ten talents of silver, and six thousand pieces of gold, and ten changes of clothing."
+    },
+    {
+      "n": 9,
+      "c": 5,
+      "v": 6,
+      "ref": "5:6",
+      "text": "וַיָּבֵ֣א הַסֵּ֔פֶר אֶל־מֶ֥לֶךְ יִשְׂרָאֵ֖ל לֵאמֹ֑ר וְעַתָּ֗ה כְּב֨וֹא הַסֵּ֤פֶר הַזֶּה֙ אֵלֶ֔יךָ הִנֵּ֨ה שָׁלַ֤חְתִּי אֵלֶ֙יךָ֙ אֶת־נַעֲמָ֣ן עַבְדִּ֔י וַאֲסַפְתּ֖וֹ מִצָּרַעְתּֽוֹ׃",
+      "en": "And he brought the letter to the king of Yisra᾽el, saying, Now when this letter is come to thee, behold, I have sent Na῾aman my servant to thee, that thou mayst heal him of his infection."
+    },
+    {
+      "n": 10,
+      "c": 5,
+      "v": 7,
+      "ref": "5:7",
+      "text": "וַיְהִ֡י כִּקְרֹא֩ מֶלֶךְ־יִשְׂרָאֵ֨ל אֶת־הַסֵּ֜פֶר וַיִּקְרַ֣ע בְּגָדָ֗יו וַיֹּ֙אמֶר֙ הַאֱלֹהִ֥ים אָ֙נִי֙ לְהָמִ֣ית וּֽלְהַחֲי֔וֹת כִּי־זֶה֙ שֹׁלֵ֣חַ אֵלַ֔י לֶאֱסֹ֥ף אִ֖ישׁ מִצָּרַעְתּ֑וֹ כִּ֤י אַךְ־דְּעוּ־נָא֙ וּרְא֔וּ כִּֽי־מִתְאַנֶּ֥ה ה֖וּא לִֽי׃",
+      "en": "And it came to pass, when the king of Yisra᾽el had read the letter, that he rent his clothes, and said, Am I God, to kill and to make alive, that this man sends to me to cure a man of his infection? only consider, I pray you, and see how he seeks a quarrel against me."
+    },
+    {
+      "n": 11,
+      "c": 5,
+      "v": 8,
+      "ref": "5:8",
+      "text": "וַיְהִ֞י כִּשְׁמֹ֣עַ&thinsp;<b>׀</b> אֱלִישָׁ֣ע אִישׁ־הָאֱלֹהִ֗ים כִּֽי־קָרַ֤ע מֶֽלֶךְ־יִשְׂרָאֵל֙ אֶת־בְּגָדָ֔יו וַיִּשְׁלַח֙ אֶל־הַמֶּ֣לֶךְ לֵאמֹ֔ר לָ֥מָּה קָרַ֖עְתָּ בְּגָדֶ֑יךָ יָבֹא־נָ֣א אֵלַ֔י וְיֵדַ֕ע כִּ֛י יֵ֥שׁ נָבִ֖יא בְּיִשְׂרָאֵֽל׃",
+      "en": "And when Elisha the man of God had heard that the king of Yisra᾽el had rent his clothes, he sent to the king, saying, Why hast thou rent thy clothes? let him come now to me, and he shall know that there is a prophet in Yisra᾽el."
+    },
+    {
+      "n": 12,
+      "c": 5,
+      "v": 9,
+      "ref": "5:9",
+      "text": "וַיָּבֹ֥א נַעֲמָ֖ן <span class=\"mam-kq-trivial\">בְּסוּסָ֣ו</span> וּבְרִכְבּ֑וֹ וַיַּעֲמֹ֥ד פֶּֽתַח־הַבַּ֖יִת לֶאֱלִישָֽׁע׃",
+      "en": "So Na῾aman came with his horses and with his chariot, and stood at the door of the house of Elisha."
+    },
+    {
+      "n": 13,
+      "c": 5,
+      "v": 10,
+      "ref": "5:10",
+      "text": "וַיִּשְׁלַ֥ח אֵלָ֛יו אֱלִישָׁ֖ע מַלְאָ֣ךְ לֵאמֹ֑ר הָל֗וֹךְ וְרָחַצְתָּ֤ שֶֽׁבַע־פְּעָמִים֙ בַּיַּרְדֵּ֔ן וְיָשֹׁ֧ב בְּשָׂרְךָ֛ לְךָ֖ וּטְהָֽר׃",
+      "en": "And Elisha sent a messenger to him, saying, Go and wash in the Yarden seven times, and thy flesh shall be restored to thee, and thou shalt be clean."
+    },
+    {
+      "n": 14,
+      "c": 5,
+      "v": 11,
+      "ref": "5:11",
+      "text": "וַיִּקְצֹ֥ף נַעֲמָ֖ן וַיֵּלַ֑ךְ וַיֹּ֩אמֶר֩ הִנֵּ֨ה אָמַ֜רְתִּי אֵלַ֣י&thinsp;<b>׀</b> יֵצֵ֣א יָצ֗וֹא וְעָמַד֙ וְקָרָא֙ בְּשֵׁם־יְהֹוָ֣ה אֱלֹהָ֔יו וְהֵנִ֥יף יָד֛וֹ אֶל־הַמָּק֖וֹם וְאָסַ֥ף הַמְּצֹרָֽע׃",
+      "en": "But Na῾aman was angry, and went away, and said, Behold, I thought, He will surely come out to me, and stand, and call on the name of the Lord his God, and wave his hand over the place, and so heal the infected person."
+    },
+    {
+      "n": 15,
+      "c": 5,
+      "v": 12,
+      "ref": "5:12",
+      "text": "הֲלֹ֡א טוֹב֩ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(אבנה)</span> <span class=\"mam-kq-q\">[אֲמָנָ֨ה]</span></span> וּפַרְפַּ֜ר נַהֲר֣וֹת דַּמֶּ֗שֶׂק מִכֹּל֙ מֵימֵ֣י יִשְׂרָאֵ֔ל הֲלֹֽא־אֶרְחַ֥ץ בָּהֶ֖ם וְטָהָ֑רְתִּי וַיִּ֖פֶן וַיֵּ֥לֶךְ בְּחֵמָֽה׃",
+      "en": "Are not Amana and Parpar, rivers of Dammeseq, better than all the waters of Yisra᾽el? may I not wash in them, and be clean? So he turned and went away in a rage."
+    },
+    {
+      "n": 16,
+      "c": 5,
+      "v": 13,
+      "ref": "5:13",
+      "text": "וַיִּגְּשׁ֣וּ עֲבָדָיו֮ וַיְדַבְּר֣וּ אֵלָיו֒ וַיֹּאמְר֗וּ אָבִי֙ דָּבָ֣ר גָּד֗וֹל הַנָּבִ֛יא דִּבֶּ֥ר אֵלֶ֖יךָ הֲל֣וֹא תַעֲשֶׂ֑ה וְאַ֛ף כִּי־אָמַ֥ר אֵלֶ֖יךָ רְחַ֥ץ וּטְהָֽר׃",
+      "en": "And his servants came near, and spoke to him, and said, My father, if the prophet had bid thee do some great thing, wouldst thou not have done it? how much rather then, when he says to thee, Wash, and be clean?"
+    },
+    {
+      "n": 17,
+      "c": 5,
+      "v": 14,
+      "ref": "5:14",
+      "text": "וַיֵּ֗רֶד וַיִּטְבֹּ֤ל בַּיַּרְדֵּן֙ שֶׁ֣בַע פְּעָמִ֔ים כִּדְבַ֖ר אִ֣ישׁ הָאֱלֹהִ֑ים וַיָּ֣שׇׁב בְּשָׂר֗וֹ כִּבְשַׂ֛ר נַ֥עַר קָטֹ֖ן וַיִּטְהָֽר׃",
+      "en": "Then he went down, and dipped himself seven times in the Yarden, according to the saying of the man of God: and his flesh was restored like the flesh of a little child, and he was clean."
+    },
+    {
+      "n": 18,
+      "c": 5,
+      "v": 15,
+      "ref": "5:15",
+      "text": "וַיָּ֩שׇׁב֩ אֶל־אִ֨ישׁ הָאֱלֹהִ֜ים ה֣וּא וְכׇֽל־מַחֲנֵ֗הוּ וַיָּבֹא֮ וַיַּעֲמֹ֣ד לְפָנָיו֒ וַיֹּ֗אמֶר הִנֵּה־נָ֤א יָדַ֙עְתִּי֙ כִּ֣י אֵ֤ין אֱלֹהִים֙ בְּכׇל־הָאָ֔רֶץ כִּ֖י אִם־בְּיִשְׂרָאֵ֑ל וְעַתָּ֛ה קַח־נָ֥א בְרָכָ֖ה מֵאֵ֥ת עַבְדֶּֽךָ׃",
+      "en": "And he returned to the man of God, he and all his company, and came, and stood before him: and he said, Behold, now I know that there is no God in all the earth, but in Yisra᾽el: now therefore, I pray thee, take a blessing of thy servant."
+    },
+    {
+      "n": 19,
+      "c": 5,
+      "v": 16,
+      "ref": "5:16",
+      "text": "וַיֹּ֕אמֶר חַי־יְהֹוָ֛ה אֲשֶׁר־עָמַ֥דְתִּי לְפָנָ֖יו אִם־אֶקָּ֑ח וַיִּפְצַר־בּ֥וֹ לָקַ֖חַת וַיְמָאֵֽן׃",
+      "en": "But he said, As the Lord lives, before whom I stand, I will receive none. And he urged him to take it; but he refused."
+    },
+    {
+      "n": 20,
+      "c": 5,
+      "v": 17,
+      "ref": "5:17",
+      "text": "וַיֹּ֘אמֶר֮ נַעֲמָן֒ וָלֹ֕א יֻתַּן־נָ֣א לְעַבְדְּךָ֔ מַשָּׂ֥א צֶמֶד־פְּרָדִ֖ים אֲדָמָ֑ה כִּ֡י לֽוֹא־יַעֲשֶׂה֩ ע֨וֹד עַבְדְּךָ֜ עֹלָ֤ה וָזֶ֙בַח֙ לֵאלֹהִ֣ים אֲחֵרִ֔ים כִּ֖י אִם־לַיהֹוָֽה׃",
+      "en": "And Na῾aman said, If not, let then, I pray thee, be given to thy servant two mules’ burden of earth; for thy servant will henceforth offer neither burnt offering nor sacrifice to other gods, but to the Lord."
+    },
+    {
+      "n": 21,
+      "c": 5,
+      "v": 18,
+      "ref": "5:18",
+      "text": "לַדָּבָ֣ר הַזֶּ֔ה יִסְלַ֥ח יְהֹוָ֖ה לְעַבְדֶּ֑ךָ בְּב֣וֹא אֲדֹנִ֣י בֵית־רִמּוֹן֩ לְהִשְׁתַּחֲוֺ֨ת שָׁ֜מָּה וְה֣וּא&thinsp;<b>׀</b> נִשְׁעָ֣ן עַל־יָדִ֗י וְהִֽשְׁתַּחֲוֵ֙יתִי֙ בֵּ֣ית רִמֹּ֔ן בְּהִשְׁתַּחֲוָיָ֙תִי֙ בֵּ֣ית רִמֹּ֔ן יִסְלַח־<span class=\"mam-kq-k\">(נא)־</span>יְהֹוָ֥ה לְעַבְדְּךָ֖ בַּדָּבָ֥ר הַזֶּֽה׃",
+      "en": "In this thing the Lord pardon thy servant, that when my master goes into the house of Rimmon to bow down there, and he leans on my hand, and I bow myself in the house of Rimmon: when I bow myself down in the house of Rimmon, the Lord pardon thy servant in this thing."
+    },
+    {
+      "n": 22,
+      "c": 5,
+      "v": 19,
+      "ref": "5:19",
+      "text": "וַיֹּ֥אמֶר ל֖וֹ לֵ֣ךְ לְשָׁל֑וֹם וַיֵּ֥לֶךְ מֵאִתּ֖וֹ כִּבְרַת־אָֽרֶץ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he said to him, Go in peace. So he departed from him a little way."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Tazria",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 27
+  },
+  "parashah": {
+    "en": "Haftarat Tazria",
+    "translit": "Haftarat Tazria",
+    "he": "הפטרת תזריע",
+    "ref": "II Kings 4:42-5:19"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 22,
+        "ref": "4:42–5:19"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

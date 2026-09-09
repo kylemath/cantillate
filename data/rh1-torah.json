@@ -1,0 +1,333 @@
+{
+  "slug": "rh1-torah",
+  "book": {
+    "en": "Genesis",
+    "he": "בראשית",
+    "translit": "Bereshit"
+  },
+  "multiChapter": true,
+  "ref": "Genesis 21:1-21:34",
+  "heRef": "בראשית כ״א:א-ל״ד",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 21,
+      "v": 1,
+      "ref": "21:1",
+      "text": "וַֽיהֹוָ֛ה פָּקַ֥ד אֶת־שָׂרָ֖ה כַּאֲשֶׁ֣ר אָמָ֑ר וַיַּ֧עַשׂ יְהֹוָ֛ה לְשָׂרָ֖ה כַּאֲשֶׁ֥ר דִּבֵּֽר׃",
+      "en": "And the Lord visited Sara as He had said, and the Lord did to Sara as He had spoken."
+    },
+    {
+      "n": 2,
+      "c": 21,
+      "v": 2,
+      "ref": "21:2",
+      "text": "וַתַּ֩הַר֩ וַתֵּ֨לֶד שָׂרָ֧ה לְאַבְרָהָ֛ם בֵּ֖ן לִזְקֻנָ֑יו לַמּוֹעֵ֕ד אֲשֶׁר־דִּבֶּ֥ר אֹת֖וֹ אֱלֹהִֽים׃",
+      "en": "For Sara conceived, and bore Avraham a son in his old age, at the set time of which God had spoken to him."
+    },
+    {
+      "n": 3,
+      "c": 21,
+      "v": 3,
+      "ref": "21:3",
+      "text": "וַיִּקְרָ֨א אַבְרָהָ֜ם אֶֽת־שֶׁם־בְּנ֧וֹ הַנּֽוֹלַד־ל֛וֹ אֲשֶׁר־יָלְדָה־לּ֥וֹ שָׂרָ֖ה יִצְחָֽק׃",
+      "en": "And Avraham called the name of his son that was born to him, whom Sara bore to him, Yiżĥaq."
+    },
+    {
+      "n": 4,
+      "c": 21,
+      "v": 4,
+      "ref": "21:4",
+      "text": "וַיָּ֤מׇל אַבְרָהָם֙ אֶת־יִצְחָ֣ק בְּנ֔וֹ בֶּן־שְׁמֹנַ֖ת יָמִ֑ים כַּאֲשֶׁ֛ר צִוָּ֥ה אֹת֖וֹ אֱלֹהִֽים׃",
+      "en": "And Avraham circumcised his son Yiżĥaq being eight days old, as God had commanded him."
+    },
+    {
+      "n": 5,
+      "c": 21,
+      "v": 5,
+      "ref": "21:5",
+      "text": "וְאַבְרָהָ֖ם בֶּן־מְאַ֣ת שָׁנָ֑ה בְּהִוָּ֣לֶד ל֔וֹ אֵ֖ת יִצְחָ֥ק בְּנֽוֹ׃",
+      "en": "And Avraham was a hundred years old, when his son Yiżĥaq was born to him."
+    },
+    {
+      "n": 6,
+      "c": 21,
+      "v": 6,
+      "ref": "21:6",
+      "text": "וַתֹּ֣אמֶר שָׂרָ֔ה צְחֹ֕ק עָ֥שָׂה לִ֖י אֱלֹהִ֑ים כׇּל־הַשֹּׁמֵ֖עַ יִֽצְחַק־לִֽי׃",
+      "en": "And Sara said, God has made laughter for me, so that all that hear will laugh with me."
+    },
+    {
+      "n": 7,
+      "c": 21,
+      "v": 7,
+      "ref": "21:7",
+      "text": "וַתֹּ֗אמֶר מִ֤י מִלֵּל֙ לְאַבְרָהָ֔ם הֵינִ֥יקָה בָנִ֖ים שָׂרָ֑ה כִּֽי־יָלַ֥דְתִּי בֵ֖ן לִזְקֻנָֽיו׃",
+      "en": "And she said, Who would have said to Avraham, that Sara should give children suck? for I have born him a son in his old age."
+    },
+    {
+      "n": 8,
+      "c": 21,
+      "v": 8,
+      "ref": "21:8",
+      "text": "וַיִּגְדַּ֥ל הַיֶּ֖לֶד וַיִּגָּמַ֑ל וַיַּ֤עַשׂ אַבְרָהָם֙ מִשְׁתֶּ֣ה גָד֔וֹל בְּי֖וֹם הִגָּמֵ֥ל אֶת־יִצְחָֽק׃",
+      "en": "And the child grew, and was weaned: and Avraham made a great feast on the same day that Yiżĥaq was weaned."
+    },
+    {
+      "n": 9,
+      "c": 21,
+      "v": 9,
+      "ref": "21:9",
+      "text": "וַתֵּ֨רֶא שָׂרָ֜ה אֶֽת־בֶּן־הָגָ֧ר הַמִּצְרִ֛ית אֲשֶׁר־יָלְדָ֥ה לְאַבְרָהָ֖ם מְצַחֵֽק׃",
+      "en": "And Sara saw the son of Hagar the Miżrian, whom she had born to Avraham, mocking."
+    },
+    {
+      "n": 10,
+      "c": 21,
+      "v": 10,
+      "ref": "21:10",
+      "text": "וַתֹּ֙אמֶר֙ לְאַבְרָהָ֔ם גָּרֵ֛שׁ הָאָמָ֥ה הַזֹּ֖את וְאֶת־בְּנָ֑הּ כִּ֣י לֹ֤א יִירַשׁ֙ בֶּן־הָאָמָ֣ה הַזֹּ֔את עִם־בְּנִ֖י עִם־יִצְחָֽק׃",
+      "en": "So she said to Avraham, Cast out this bondwoman and her son: for the son of this bondwoman shall not be heir with my son, with Yiżĥaq."
+    },
+    {
+      "n": 11,
+      "c": 21,
+      "v": 11,
+      "ref": "21:11",
+      "text": "וַיֵּ֧רַע הַדָּבָ֛ר מְאֹ֖ד בְּעֵינֵ֣י אַבְרָהָ֑ם עַ֖ל אוֹדֹ֥ת בְּנֽוֹ׃",
+      "en": "And the thing was very grievous in Avraham’s eyes because of his son."
+    },
+    {
+      "n": 12,
+      "c": 21,
+      "v": 12,
+      "ref": "21:12",
+      "text": "וַיֹּ֨אמֶר אֱלֹהִ֜ים אֶל־אַבְרָהָ֗ם אַל־יֵרַ֤ע בְּעֵינֶ֙יךָ֙ עַל־הַנַּ֣עַר וְעַל־אֲמָתֶ֔ךָ כֹּל֩ אֲשֶׁ֨ר תֹּאמַ֥ר אֵלֶ֛יךָ שָׂרָ֖ה שְׁמַ֣ע בְּקֹלָ֑הּ כִּ֣י בְיִצְחָ֔ק יִקָּרֵ֥א לְךָ֖ זָֽרַע׃",
+      "en": "And God said to Avraham, Let it not be grievous in thy sight because of the lad, and because of thy bondwoman; in all that Sara has said to thee, hearken to her voice; for in Yiżĥaq shall thy seed be called."
+    },
+    {
+      "n": 13,
+      "c": 21,
+      "v": 13,
+      "ref": "21:13",
+      "text": "וְגַ֥ם אֶת־בֶּן־הָאָמָ֖ה לְג֣וֹי אֲשִׂימֶ֑נּוּ כִּ֥י זַרְעֲךָ֖ הֽוּא׃",
+      "en": "And also of the son of the bondwoman will I make a nation, because he is thy seed."
+    },
+    {
+      "n": 14,
+      "c": 21,
+      "v": 14,
+      "ref": "21:14",
+      "text": "וַיַּשְׁכֵּ֣ם אַבְרָהָ֣ם&thinsp;<small>׀</small>&thinsp;בַּבֹּ֡קֶר וַיִּֽקַּֽח־לֶ֩חֶם֩ וְחֵ֨מַת מַ֜יִם וַיִּתֵּ֣ן אֶל־הָ֠גָ֠ר שָׂ֧ם עַל־שִׁכְמָ֛הּ וְאֶת־הַיֶּ֖לֶד וַֽיְשַׁלְּחֶ֑הָ וַתֵּ֣לֶךְ וַתֵּ֔תַע בְּמִדְבַּ֖ר בְּאֵ֥ר שָֽׁבַע׃",
+      "en": "And Avraham rose up early in the morning, and took bread, and a bottle of water, and gave it to Hagar, putting it on her shoulder, and the child, and sent her away: and she departed, and wandered in the wilderness of Be᾽er-sheva."
+    },
+    {
+      "n": 15,
+      "c": 21,
+      "v": 15,
+      "ref": "21:15",
+      "text": "וַיִּכְל֥וּ הַמַּ֖יִם מִן־הַחֵ֑מֶת וַתַּשְׁלֵ֣ךְ אֶת־הַיֶּ֔לֶד תַּ֖חַת אַחַ֥ד הַשִּׂיחִֽם׃",
+      "en": "And the water was spent in the bottle, and she cast the child under one of the shrubs."
+    },
+    {
+      "n": 16,
+      "c": 21,
+      "v": 16,
+      "ref": "21:16",
+      "text": "וַתֵּ֩לֶךְ֩ וַתֵּ֨שֶׁב לָ֜הּ מִנֶּ֗גֶד הַרְחֵק֙ כִּמְטַחֲוֵ֣י קֶ֔שֶׁת כִּ֣י אָֽמְרָ֔ה אַל־אֶרְאֶ֖ה בְּמ֣וֹת הַיָּ֑לֶד וַתֵּ֣שֶׁב מִנֶּ֔גֶד וַתִּשָּׂ֥א אֶת־קֹלָ֖הּ וַתֵּֽבְךְּ׃",
+      "en": "And she went, and sat her down over against him a good way off, as it were a bowshot: for she said, Let me not see the death of the child. And she sat over against him, and lifted up her voice, and wept."
+    },
+    {
+      "n": 17,
+      "c": 21,
+      "v": 17,
+      "ref": "21:17",
+      "text": "וַיִּשְׁמַ֣ע אֱלֹהִים֮ אֶת־ק֣וֹל הַנַּ֒עַר֒ וַיִּקְרָא֩ מַלְאַ֨ךְ אֱלֹהִ֤ים&thinsp;<small>׀</small>&thinsp;אֶל־הָגָר֙ מִן־הַשָּׁמַ֔יִם וַיֹּ֥אמֶר לָ֖הּ מַה־לָּ֣ךְ הָגָ֑ר אַל־תִּ֣ירְאִ֔י כִּֽי־שָׁמַ֧ע אֱלֹהִ֛ים אֶל־ק֥וֹל הַנַּ֖עַר בַּאֲשֶׁ֥ר הוּא־שָֽׁם׃",
+      "en": "And God heard the voice of the lad; and the angel of God called to Hagar out of heaven, and said to her, What ails thee, Hagar? fear not; for God has heard the voice of the lad where he is."
+    },
+    {
+      "n": 18,
+      "c": 21,
+      "v": 18,
+      "ref": "21:18",
+      "text": "ק֚וּמִי שְׂאִ֣י אֶת־הַנַּ֔עַר וְהַחֲזִ֥יקִי אֶת־יָדֵ֖ךְ בּ֑וֹ כִּֽי־לְג֥וֹי גָּד֖וֹל אֲשִׂימֶֽנּוּ׃",
+      "en": "Arise, lift up the lad, and hold him in thy hand; for I will make him a great nation."
+    },
+    {
+      "n": 19,
+      "c": 21,
+      "v": 19,
+      "ref": "21:19",
+      "text": "וַיִּפְקַ֤ח אֱלֹהִים֙ אֶת־עֵינֶ֔יהָ וַתֵּ֖רֶא בְּאֵ֣ר מָ֑יִם וַתֵּ֜לֶךְ וַתְּמַלֵּ֤א אֶת־הַחֵ֙מֶת֙ מַ֔יִם וַתַּ֖שְׁקְ אֶת־הַנָּֽעַר׃",
+      "en": "And God opened her eyes, and she saw a well of water; and she went, and filled the bottle with water, and gave the lad drink."
+    },
+    {
+      "n": 20,
+      "c": 21,
+      "v": 20,
+      "ref": "21:20",
+      "text": "וַיְהִ֧י אֱלֹהִ֛ים אֶת־הַנַּ֖עַר וַיִּגְדָּ֑ל וַיֵּ֙שֶׁב֙ בַּמִּדְבָּ֔ר וַיְהִ֖י רֹבֶ֥ה קַשָּֽׁת׃",
+      "en": "And God was with the lad; and he grew, and dwelt in the wilderness, and became an archer."
+    },
+    {
+      "n": 21,
+      "c": 21,
+      "v": 21,
+      "ref": "21:21",
+      "text": "וַיֵּ֖שֶׁב בְּמִדְבַּ֣ר פָּארָ֑ן וַתִּֽקַּֽח־ל֥וֹ אִמּ֛וֹ אִשָּׁ֖ה מֵאֶ֥רֶץ מִצְרָֽיִם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And he dwelt in the wilderness of Paran: and his mother took him a wife out of the land of Miżrayim."
+    },
+    {
+      "n": 22,
+      "c": 21,
+      "v": 22,
+      "ref": "21:22",
+      "text": "וַֽיְהִי֙ בָּעֵ֣ת הַהִ֔וא וַיֹּ֣אמֶר אֲבִימֶ֗לֶךְ וּפִיכֹל֙ שַׂר־צְבָא֔וֹ אֶל־אַבְרָהָ֖ם לֵאמֹ֑ר אֱלֹהִ֣ים עִמְּךָ֔ בְּכֹ֥ל אֲשֶׁר־אַתָּ֖ה עֹשֶֽׂה׃",
+      "en": "And it came to pass at that time, that Avimelekh and Pikhol captain of his host spoke to Avraham, saying, God is with thee in all that thou doest:"
+    },
+    {
+      "n": 23,
+      "c": 21,
+      "v": 23,
+      "ref": "21:23",
+      "text": "וְעַתָּ֗ה הִשָּׁ֨בְעָה לִּ֤י בֵֽאלֹהִים֙ הֵ֔נָּה אִם־תִּשְׁקֹ֣ר לִ֔י וּלְנִינִ֖י וּלְנֶכְדִּ֑י כַּחֶ֜סֶד אֲשֶׁר־עָשִׂ֤יתִי עִמְּךָ֙ תַּעֲשֶׂ֣ה עִמָּדִ֔י וְעִם־הָאָ֖רֶץ אֲשֶׁר־גַּ֥רְתָּה בָּֽהּ׃",
+      "en": "now therefore swear to me here by God that thou wilt not deal falsely with me, nor with my son, nor with my son’s son: but according to the kindness that I have done to thee, thou shalt do to me, and to the land in which thou hast sojourned."
+    },
+    {
+      "n": 24,
+      "c": 21,
+      "v": 24,
+      "ref": "21:24",
+      "text": "וַיֹּ֙אמֶר֙ אַבְרָהָ֔ם אָנֹכִ֖י אִשָּׁבֵֽעַ׃",
+      "en": "And Avraham said, I will swear."
+    },
+    {
+      "n": 25,
+      "c": 21,
+      "v": 25,
+      "ref": "21:25",
+      "text": "וְהוֹכִ֥חַ אַבְרָהָ֖ם אֶת־אֲבִימֶ֑לֶךְ עַל־אֹדוֹת֙ בְּאֵ֣ר הַמַּ֔יִם אֲשֶׁ֥ר גָּזְל֖וּ עַבְדֵ֥י אֲבִימֶֽלֶךְ׃",
+      "en": "And Avraham reproved Avimelekh because of the well of water, which Avimelekh’s servants had violently taken away."
+    },
+    {
+      "n": 26,
+      "c": 21,
+      "v": 26,
+      "ref": "21:26",
+      "text": "וַיֹּ֣אמֶר אֲבִימֶ֔לֶךְ לֹ֣א יָדַ֔עְתִּי מִ֥י עָשָׂ֖ה אֶת־הַדָּבָ֣ר הַזֶּ֑ה וְגַם־אַתָּ֞ה לֹא־הִגַּ֣דְתָּ לִּ֗י וְגַ֧ם אָנֹכִ֛י לֹ֥א שָׁמַ֖עְתִּי בִּלְתִּ֥י הַיּֽוֹם׃",
+      "en": "And Avimelekh said, I know not who has done this thing: neither didst thou tell me, neither yet heard I of it, but today."
+    },
+    {
+      "n": 27,
+      "c": 21,
+      "v": 27,
+      "ref": "21:27",
+      "text": "וַיִּקַּ֤ח אַבְרָהָם֙ צֹ֣אן וּבָקָ֔ר וַיִּתֵּ֖ן לַאֲבִימֶ֑לֶךְ וַיִּכְרְת֥וּ שְׁנֵיהֶ֖ם בְּרִֽית׃",
+      "en": "And Avraham took sheep and oxen, and gave them to Avimelekh; and both of them made a covenant."
+    },
+    {
+      "n": 28,
+      "c": 21,
+      "v": 28,
+      "ref": "21:28",
+      "text": "וַיַּצֵּ֣ב אַבְרָהָ֗ם אֶת־שֶׁ֛בַע כִּבְשֹׂ֥ת הַצֹּ֖אן לְבַדְּהֶֽן׃",
+      "en": "And Avraham set seven ewe lambs of the flock by themselves."
+    },
+    {
+      "n": 29,
+      "c": 21,
+      "v": 29,
+      "ref": "21:29",
+      "text": "וַיֹּ֥אמֶר אֲבִימֶ֖לֶךְ אֶל־אַבְרָהָ֑ם מָ֣ה הֵ֗נָּה שֶׁ֤בַע כְּבָשֹׂת֙ הָאֵ֔לֶּה אֲשֶׁ֥ר הִצַּ֖בְתָּ לְבַדָּֽנָה׃",
+      "en": "And Avimelekh said to Avraham, What mean these seven ewe lambs which thou hast set by themselves?"
+    },
+    {
+      "n": 30,
+      "c": 21,
+      "v": 30,
+      "ref": "21:30",
+      "text": "וַיֹּ֕אמֶר כִּ֚י אֶת־שֶׁ֣בַע כְּבָשֹׂ֔ת תִּקַּ֖ח מִיָּדִ֑י בַּעֲבוּר֙ תִּֽהְיֶה־לִּ֣י לְעֵדָ֔ה כִּ֥י חָפַ֖רְתִּי אֶת־הַבְּאֵ֥ר הַזֹּֽאת׃",
+      "en": "And he said, For these seven ewe lambs shalt thou take of my hand, that they may be a witness to me, that I have dug this well."
+    },
+    {
+      "n": 31,
+      "c": 21,
+      "v": 31,
+      "ref": "21:31",
+      "text": "עַל־כֵּ֗ן קָרָ֛א לַמָּק֥וֹם הַה֖וּא בְּאֵ֣ר שָׁ֑בַע כִּ֛י שָׁ֥ם נִשְׁבְּע֖וּ שְׁנֵיהֶֽם׃",
+      "en": "Therefore he called that place Be᾽er-sheva; because there they swore both of them."
+    },
+    {
+      "n": 32,
+      "c": 21,
+      "v": 32,
+      "ref": "21:32",
+      "text": "וַיִּכְרְת֥וּ בְרִ֖ית בִּבְאֵ֣ר שָׁ֑בַע וַיָּ֣קׇם אֲבִימֶ֗לֶךְ וּפִיכֹל֙ שַׂר־צְבָא֔וֹ וַיָּשֻׁ֖בוּ אֶל־אֶ֥רֶץ פְּלִשְׁתִּֽים׃",
+      "en": "Thus they made a covenant at Be᾽er-sheva; then Avimelekh rose up, and Pikhol the captain of his host, and they returned to the land of the Pelishtim."
+    },
+    {
+      "n": 33,
+      "c": 21,
+      "v": 33,
+      "ref": "21:33",
+      "text": "וַיִּטַּ֥ע אֶ֖שֶׁל בִּבְאֵ֣ר שָׁ֑בַע וַיִּ֨קְרָא־שָׁ֔ם בְּשֵׁ֥ם יְהֹוָ֖ה אֵ֥ל עוֹלָֽם׃",
+      "en": "And Avraham planted a tamarisk in Be᾽er-sheva, and called there on the name of the Lord, the everlasting God."
+    },
+    {
+      "n": 34,
+      "c": 21,
+      "v": 34,
+      "ref": "21:34",
+      "text": "וַיָּ֧גׇר אַבְרָהָ֛ם בְּאֶ֥רֶץ פְּלִשְׁתִּ֖ים יָמִ֥ים רַבִּֽים׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Avraham sojourned in the land of the Pelishtim many days."
+    }
+  ],
+  "kind": "holiday",
+  "parashah": {
+    "en": "Rosh Hashanah Day 1",
+    "he": "ראש השנה יום א׳",
+    "translit": "Rosh Hashanah Day 1",
+    "ref": "Genesis 21:1-21:34"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 4,
+        "ref": "21:1–21:4"
+      },
+      {
+        "n": 2,
+        "start": 5,
+        "end": 12,
+        "ref": "21:5–21:12"
+      },
+      {
+        "n": 3,
+        "start": 13,
+        "end": 21,
+        "ref": "21:13–21:21"
+      },
+      {
+        "n": 4,
+        "start": 22,
+        "end": 27,
+        "ref": "21:22–21:27"
+      },
+      {
+        "n": 5,
+        "start": 28,
+        "end": 34,
+        "ref": "21:28–21:34"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Holiday aliyah boundaries from the MJC public leyning page (mjcnj.com/hhrecordings) and its PDFs."
+}

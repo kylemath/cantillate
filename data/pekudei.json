@@ -1,0 +1,949 @@
+{
+  "slug": "pekudei",
+  "book": {
+    "en": "Exodus",
+    "he": "שמות",
+    "translit": "Shemot"
+  },
+  "multiChapter": true,
+  "ref": "Exodus 38:21-40:38",
+  "heRef": "שמות ל״ח:כ״א-מ׳:ל״ח",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 38,
+      "v": 21,
+      "ref": "38:21",
+      "text": "אֵ֣לֶּה פְקוּדֵ֤י הַמִּשְׁכָּן֙ מִשְׁכַּ֣ן הָעֵדֻ֔ת אֲשֶׁ֥ר פֻּקַּ֖ד עַל־פִּ֣י מֹשֶׁ֑ה עֲבֹדַת֙ הַלְוִיִּ֔ם בְּיַד֙ אִֽיתָמָ֔ר בֶּֽן־אַהֲרֹ֖ן הַכֹּהֵֽן׃",
+      "en": "These are the accounts of the tabernacle, the tabernacle of the Testimony, as they were counted, according to the commandment of Moshe, for the work of the Levites by the hand of Itamar the son of Aharon the priest."
+    },
+    {
+      "n": 2,
+      "c": 38,
+      "v": 22,
+      "ref": "38:22",
+      "text": "וּבְצַלְאֵ֛ל בֶּן־אוּרִ֥י בֶן־ח֖וּר לְמַטֵּ֣ה יְהוּדָ֑ה עָשָׂ֕ה אֵ֛ת כׇּל־אֲשֶׁר־צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "And Beżal᾽el the son of Uri, the son of Ḥur, of the tribe of Yehuda, made all that the Lord commanded Moshe."
+    },
+    {
+      "n": 3,
+      "c": 38,
+      "v": 23,
+      "ref": "38:23",
+      "text": "וְאִתּ֗וֹ אׇהֳלִיאָ֞ב בֶּן־אֲחִיסָמָ֛ךְ לְמַטֵּה־דָ֖ן חָרָ֣שׁ וְחֹשֵׁ֑ב וְרֹקֵ֗ם בַּתְּכֵ֙לֶת֙ וּבָֽאַרְגָּמָ֔ן וּבְתוֹלַ֥עַת הַשָּׁנִ֖י וּבַשֵּֽׁשׁ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And with him was Oholi᾽av, son of Aĥisamakh, of the tribe of Dan, an engraver, and an artist, and an embroiderer in blue, and in purple, and in scarlet, and fine linen."
+    },
+    {
+      "n": 4,
+      "c": 38,
+      "v": 24,
+      "ref": "38:24",
+      "text": "כׇּל־הַזָּהָ֗ב הֶֽעָשׂוּי֙ לַמְּלָאכָ֔ה בְּכֹ֖ל מְלֶ֣אכֶת הַקֹּ֑דֶשׁ וַיְהִ֣י&thinsp;<b>׀</b> זְהַ֣ב הַתְּנוּפָ֗ה תֵּ֤שַׁע וְעֶשְׂרִים֙ כִּכָּ֔ר וּשְׁבַ֨ע מֵא֧וֹת וּשְׁלֹשִׁ֛ים שֶׁ֖קֶל בְּשֶׁ֥קֶל הַקֹּֽדֶשׁ׃",
+      "en": "All the gold that was applied for the work in all the work of the holy place, even the gold of the offering, was twenty nine talents, and seven hundred and thirty shekels, after the shekel of the sanctuary."
+    },
+    {
+      "n": 5,
+      "c": 38,
+      "v": 25,
+      "ref": "38:25",
+      "text": "וְכֶ֛סֶף פְּקוּדֵ֥י הָעֵדָ֖ה מְאַ֣ת כִּכָּ֑ר וְאֶ֩לֶף֩ וּשְׁבַ֨ע מֵא֜וֹת וַחֲמִשָּׁ֧ה וְשִׁבְעִ֛ים שֶׁ֖קֶל בְּשֶׁ֥קֶל הַקֹּֽדֶשׁ׃",
+      "en": "And the silver of them that were numbered of the congregation was a hundred talents, and a thousand seven hundred and seventy five shekels, after the shekel of the sanctuary:"
+    },
+    {
+      "n": 6,
+      "c": 38,
+      "v": 26,
+      "ref": "38:26",
+      "text": "בֶּ֚קַע לַגֻּלְגֹּ֔לֶת מַחֲצִ֥ית הַשֶּׁ֖קֶל בְּשֶׁ֣קֶל הַקֹּ֑דֶשׁ לְכֹ֨ל הָעֹבֵ֜ר עַל־הַפְּקֻדִ֗ים מִבֶּ֨ן עֶשְׂרִ֤ים שָׁנָה֙ וָמַ֔עְלָה לְשֵׁשׁ־מֵא֥וֹת אֶ֙לֶף֙ וּשְׁלֹ֣שֶׁת אֲלָפִ֔ים וַחֲמֵ֥שׁ מֵא֖וֹת וַחֲמִשִּֽׁים׃",
+      "en": "a beqa for every man, that is, half a shekel, after the shekel of the sanctuary, for everyone that went to be numbered, from twenty years old and upward, for six hundred and three thousand, five hundred and fifty men."
+    },
+    {
+      "n": 7,
+      "c": 38,
+      "v": 27,
+      "ref": "38:27",
+      "text": "וַיְהִ֗י מְאַת֙ כִּכַּ֣ר הַכֶּ֔סֶף לָצֶ֗קֶת אֵ֚ת אַדְנֵ֣י הַקֹּ֔דֶשׁ וְאֵ֖ת אַדְנֵ֣י הַפָּרֹ֑כֶת מְאַ֧ת אֲדָנִ֛ים לִמְאַ֥ת הַכִּכָּ֖ר כִּכָּ֥ר לָאָֽדֶן׃",
+      "en": "And of the hundred talents of silver were cast the sockets of the sanctuary, and the sockets of the veil; a hundred sockets of the hundred talents, a talent for a socket."
+    },
+    {
+      "n": 8,
+      "c": 38,
+      "v": 28,
+      "ref": "38:28",
+      "text": "וְאֶת־הָאֶ֜לֶף וּשְׁבַ֤ע הַמֵּאוֹת֙ וַחֲמִשָּׁ֣ה וְשִׁבְעִ֔ים עָשָׂ֥ה וָוִ֖ים לָעַמּוּדִ֑ים וְצִפָּ֥ה רָאשֵׁיהֶ֖ם וְחִשַּׁ֥ק אֹתָֽם׃",
+      "en": "And of the thousand seven hundred and seventy five shekels he made hooks for the pillars, and overlaid their capitals, and bound them."
+    },
+    {
+      "n": 9,
+      "c": 38,
+      "v": 29,
+      "ref": "38:29",
+      "text": "וּנְחֹ֥שֶׁת הַתְּנוּפָ֖ה שִׁבְעִ֣ים כִּכָּ֑ר וְאַלְפַּ֥יִם וְאַרְבַּע־מֵא֖וֹת שָֽׁקֶל׃",
+      "en": "And the brass of the offering was seventy talents, and two thousand four hundred shekels."
+    },
+    {
+      "n": 10,
+      "c": 38,
+      "v": 30,
+      "ref": "38:30",
+      "text": "וַיַּ֣עַשׂ בָּ֗הּ אֶת־אַדְנֵי֙ פֶּ֚תַח אֹ֣הֶל מוֹעֵ֔ד וְאֵת֙ מִזְבַּ֣ח הַנְּחֹ֔שֶׁת וְאֶת־מִכְבַּ֥ר הַנְּחֹ֖שֶׁת אֲשֶׁר־ל֑וֹ וְאֵ֖ת כׇּל־כְּלֵ֥י הַמִּזְבֵּֽחַ׃",
+      "en": "And with that he made the sockets to the door of the Tent of Meeting, and the brazen altar, and the brazen grate for it, and all the vessels of the altar,"
+    },
+    {
+      "n": 11,
+      "c": 38,
+      "v": 31,
+      "ref": "38:31",
+      "text": "וְאֶת־אַדְנֵ֤י הֶֽחָצֵר֙ סָבִ֔יב וְאֶת־אַדְנֵ֖י שַׁ֣עַר הֶחָצֵ֑ר וְאֵ֨ת כׇּל־יִתְדֹ֧ת הַמִּשְׁכָּ֛ן וְאֶת־כׇּל־יִתְדֹ֥ת הֶחָצֵ֖ר סָבִֽיב׃",
+      "en": "and the sockets of the court round about, and the sockets of the court gate, and all the pegs of the tabernacle, and all the pegs of the court round about."
+    },
+    {
+      "n": 12,
+      "c": 39,
+      "v": 1,
+      "ref": "39:1",
+      "text": "וּמִן־הַתְּכֵ֤לֶת וְהָֽאַרְגָּמָן֙ וְתוֹלַ֣עַת הַשָּׁנִ֔י עָשׂ֥וּ בִגְדֵי־שְׂרָ֖ד לְשָׁרֵ֣ת בַּקֹּ֑דֶשׁ וַֽיַּעֲשׂ֞וּ אֶת־בִּגְדֵ֤י הַקֹּ֙דֶשׁ֙ אֲשֶׁ֣ר לְאַהֲרֹ֔ן כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And of the blue, and purple, and scarlet, they made uniforms, with which to do service in the holy place, and they made the holy garments for Aharon; as the Lord commanded Moshe."
+    },
+    {
+      "n": 13,
+      "c": 39,
+      "v": 2,
+      "ref": "39:2",
+      "text": "וַיַּ֖עַשׂ אֶת־הָאֵפֹ֑ד זָהָ֗ב תְּכֵ֧לֶת וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת שָׁנִ֖י וְשֵׁ֥שׁ מׇשְׁזָֽר׃",
+      "en": "And he made the efod of gold, blue, and purple, and scarlet, and fine twined linen."
+    },
+    {
+      "n": 14,
+      "c": 39,
+      "v": 3,
+      "ref": "39:3",
+      "text": "וַֽיְרַקְּע֞וּ אֶת־פַּחֵ֣י הַזָּהָב֮ וְקִצֵּ֣ץ פְּתִילִם֒ לַעֲשׂ֗וֹת בְּת֤וֹךְ הַתְּכֵ֙לֶת֙ וּבְת֣וֹךְ הָֽאַרְגָּמָ֔ן וּבְת֛וֹךְ תּוֹלַ֥עַת הַשָּׁנִ֖י וּבְת֣וֹךְ הַשֵּׁ֑שׁ מַעֲשֵׂ֖ה חֹשֵֽׁב׃",
+      "en": "And they did beat the gold into thin plates, and cut it into wires, to work it in the blue, and in the purple, and in the scarlet, and in the fine linen, the work of an artist."
+    },
+    {
+      "n": 15,
+      "c": 39,
+      "v": 4,
+      "ref": "39:4",
+      "text": "כְּתֵפֹ֥ת עָֽשׂוּ־ל֖וֹ חֹבְרֹ֑ת עַל־שְׁנֵ֥י <span class=\"mam-kq\"><span class=\"mam-kq-k\">(קצוותו)</span> <span class=\"mam-kq-q\">[קְצוֹתָ֖יו]</span></span> חֻבָּֽר׃",
+      "en": "They made shoulderpieces for it, joined on: by the two edges was it joined on."
+    },
+    {
+      "n": 16,
+      "c": 39,
+      "v": 5,
+      "ref": "39:5",
+      "text": "וְחֵ֨שֶׁב אֲפֻדָּת֜וֹ אֲשֶׁ֣ר עָלָ֗יו מִמֶּ֣נּוּ הוּא֮ כְּמַעֲשֵׂ֒הוּ֒ זָהָ֗ב תְּכֵ֧לֶת וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת שָׁנִ֖י וְשֵׁ֣שׁ מׇשְׁזָ֑ר כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the finely wrought girdle of the efod, that was upon it, was of the same, according to its work; of gold, blue, and purple, and scarlet, and fine twined linen; as the Lord commanded Moshe."
+    },
+    {
+      "n": 17,
+      "c": 39,
+      "v": 6,
+      "ref": "39:6",
+      "text": "וַֽיַּעֲשׂוּ֙ אֶת־אַבְנֵ֣י הַשֹּׁ֔הַם מֻֽסַבֹּ֖ת מִשְׁבְּצֹ֣ת זָהָ֑ב מְפֻתָּחֹת֙ פִּתּוּחֵ֣י חוֹתָ֔ם עַל־שְׁמ֖וֹת בְּנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "And they arranged the shoham stones enclosed in fixtures of gold, graven, as signets are graven, with the names of the children of Yisra᾽el."
+    },
+    {
+      "n": 18,
+      "c": 39,
+      "v": 7,
+      "ref": "39:7",
+      "text": "וַיָּ֣שֶׂם אֹתָ֗ם עַ֚ל כִּתְפֹ֣ת הָאֵפֹ֔ד אַבְנֵ֥י זִכָּר֖וֹן לִבְנֵ֣י יִשְׂרָאֵ֑ל כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And he put them on the shoulders of the efod, that they should be stones of memorial to the children of Yisra᾽el; as the Lord commanded Moshe."
+    },
+    {
+      "n": 19,
+      "c": 39,
+      "v": 8,
+      "ref": "39:8",
+      "text": "וַיַּ֧עַשׂ אֶת־הַחֹ֛שֶׁן מַעֲשֵׂ֥ה חֹשֵׁ֖ב כְּמַעֲשֵׂ֣ה אֵפֹ֑ד זָהָ֗ב תְּכֵ֧לֶת וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת שָׁנִ֖י וְשֵׁ֥שׁ מׇשְׁזָֽר׃",
+      "en": "And he made the breastplate of artistic work, like the work of the efod; of gold, blue, and purple, and scarlet, and fine twined linen."
+    },
+    {
+      "n": 20,
+      "c": 39,
+      "v": 9,
+      "ref": "39:9",
+      "text": "רָב֧וּעַ הָיָ֛ה כָּפ֖וּל עָשׂ֣וּ אֶת־הַחֹ֑שֶׁן זֶ֧רֶת אׇרְכּ֛וֹ וְזֶ֥רֶת רׇחְבּ֖וֹ כָּפֽוּל׃",
+      "en": "It was foursquare; they made the breastplate double: a span was its length, and a span its breadth, being doubled."
+    },
+    {
+      "n": 21,
+      "c": 39,
+      "v": 10,
+      "ref": "39:10",
+      "text": "וַיְמַ֨לְאוּ־ב֔וֹ אַרְבָּעָ֖ה ט֣וּרֵי אָ֑בֶן ט֗וּר אֹ֤דֶם פִּטְדָה֙ וּבָרֶ֔קֶת הַטּ֖וּר הָאֶחָֽד׃",
+      "en": "And they set in it four rows of stones: the first row was a ruby, a chrysolithe, and a beryl: this was the first row."
+    },
+    {
+      "n": 22,
+      "c": 39,
+      "v": 11,
+      "ref": "39:11",
+      "text": "וְהַטּ֖וּר הַשֵּׁנִ֑י נֹ֥פֶךְ סַפִּ֖יר וְיָהֲלֹֽם׃",
+      "en": "And the second row, a turquoise, a sapphire, and a diamond."
+    },
+    {
+      "n": 23,
+      "c": 39,
+      "v": 12,
+      "ref": "39:12",
+      "text": "וְהַטּ֖וּר הַשְּׁלִישִׁ֑י לֶ֥שֶׁם שְׁב֖וֹ וְאַחְלָֽמָה׃",
+      "en": "And the third row, a ligure, and an agate, and a jasper."
+    },
+    {
+      "n": 24,
+      "c": 39,
+      "v": 13,
+      "ref": "39:13",
+      "text": "וְהַטּוּר֙ הָֽרְבִיעִ֔י תַּרְשִׁ֥ישׁ שֹׁ֖הַם וְיָשְׁפֵ֑ה מֽוּסַבֹּ֛ת מִשְׁבְּצֹ֥ת זָהָ֖ב בְּמִלֻּאֹתָֽם׃",
+      "en": "And the fourth row, an emerald, a shoham, and a jade: they were inclosed in fixtures of gold in their settings."
+    },
+    {
+      "n": 25,
+      "c": 39,
+      "v": 14,
+      "ref": "39:14",
+      "text": "וְ֠הָאֲבָנִ֠ים עַל־שְׁמֹ֨ת בְּנֵי־יִשְׂרָאֵ֥ל הֵ֛נָּה שְׁתֵּ֥ים עֶשְׂרֵ֖ה עַל־שְׁמֹתָ֑ם פִּתּוּחֵ֤י חֹתָם֙ אִ֣ישׁ עַל־שְׁמ֔וֹ לִשְׁנֵ֥ים עָשָׂ֖ר שָֽׁבֶט׃",
+      "en": "And the stones were according to the names of the children of Yisra᾽el, twelve, according to their names, like the engravings of a signet, everyone with its name, according to the twelve tribes."
+    },
+    {
+      "n": 26,
+      "c": 39,
+      "v": 15,
+      "ref": "39:15",
+      "text": "וַיַּעֲשׂ֧וּ עַל־הַחֹ֛שֶׁן שַׁרְשְׁרֹ֥ת גַּבְלֻ֖ת מַעֲשֵׂ֣ה עֲבֹ֑ת זָהָ֖ב טָהֽוֹר׃",
+      "en": "And they made upon the breastplate plaited chains, of wreathen work of pure gold."
+    },
+    {
+      "n": 27,
+      "c": 39,
+      "v": 16,
+      "ref": "39:16",
+      "text": "וַֽיַּעֲשׂ֗וּ שְׁתֵּי֙ מִשְׁבְּצֹ֣ת זָהָ֔ב וּשְׁתֵּ֖י טַבְּעֹ֣ת זָהָ֑ב וַֽיִּתְּנ֗וּ אֶת־שְׁתֵּי֙ הַטַּבָּעֹ֔ת עַל־שְׁנֵ֖י קְצ֥וֹת הַחֹֽשֶׁן׃",
+      "en": "And they made two fixtures of gold, and two gold rings; and put the two rings in the two ends of the breastplate."
+    },
+    {
+      "n": 28,
+      "c": 39,
+      "v": 17,
+      "ref": "39:17",
+      "text": "וַֽיִּתְּנ֗וּ שְׁתֵּי֙ הָעֲבֹתֹ֣ת הַזָּהָ֔ב עַל־שְׁתֵּ֖י הַטַּבָּעֹ֑ת עַל־קְצ֖וֹת הַחֹֽשֶׁן׃",
+      "en": "And they put the two wreathen chains of gold in the two rings on the ends of the breastplate."
+    },
+    {
+      "n": 29,
+      "c": 39,
+      "v": 18,
+      "ref": "39:18",
+      "text": "וְאֵ֨ת שְׁתֵּ֤י קְצוֹת֙ שְׁתֵּ֣י הָֽעֲבֹתֹ֔ת נָתְנ֖וּ עַל־שְׁתֵּ֣י הַֽמִּשְׁבְּצֹ֑ת וַֽיִּתְּנֻ֛ם עַל־כִּתְפֹ֥ת הָאֵפֹ֖ד אֶל־מ֥וּל פָּנָֽיו׃",
+      "en": "And the two ends of the two wreathen chains they fastened in the two fixtures, and put them on the shoulderpieces of the efod, toward the forepart of it."
+    },
+    {
+      "n": 30,
+      "c": 39,
+      "v": 19,
+      "ref": "39:19",
+      "text": "וַֽיַּעֲשׂ֗וּ שְׁתֵּי֙ טַבְּעֹ֣ת זָהָ֔ב וַיָּשִׂ֕ימוּ עַל־שְׁנֵ֖י קְצ֣וֹת הַחֹ֑שֶׁן עַל־שְׂפָת֕וֹ אֲשֶׁ֛ר אֶל־עֵ֥בֶר הָאֵפֹ֖ד בָּֽיְתָה׃",
+      "en": "And they made two rings of gold, and put them on the two ends of the breastplate, upon the border of it, which was on the side of the efod inwards."
+    },
+    {
+      "n": 31,
+      "c": 39,
+      "v": 20,
+      "ref": "39:20",
+      "text": "וַֽיַּעֲשׂוּ֮ שְׁתֵּ֣י טַבְּעֹ֣ת זָהָב֒ וַֽיִּתְּנֻ֡ם עַל־שְׁתֵּי֩ כִתְפֹ֨ת הָאֵפֹ֤ד מִלְּמַ֙טָּה֙ מִמּ֣וּל פָּנָ֔יו לְעֻמַּ֖ת מַחְבַּרְתּ֑וֹ מִמַּ֕עַל לְחֵ֖שֶׁב הָאֵפֹֽד׃",
+      "en": "And they made two other golden rings, and put them on the two sides of the efod underneath, toward the forepart of it, over against its coupling, above the finely wrought girdle of the efod."
+    },
+    {
+      "n": 32,
+      "c": 39,
+      "v": 21,
+      "ref": "39:21",
+      "text": "וַיִּרְכְּס֣וּ אֶת־הַחֹ֡שֶׁן מִטַּבְּעֹתָיו֩ אֶל־טַבְּעֹ֨ת הָאֵפֹ֜ד בִּפְתִ֣יל תְּכֵ֗לֶת לִֽהְיֹת֙ עַל־חֵ֣שֶׁב הָאֵפֹ֔ד וְלֹֽא־יִזַּ֣ח הַחֹ֔שֶׁן מֵעַ֖ל הָאֵפֹ֑ד כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And they did bind the breastplate by its rings to the rings of the efod with a lace of blue, that it might be above the finely wrought girdle of the efod, and that the breastplate might not be loosed from the efod; as the Lord commanded Moshe."
+    },
+    {
+      "n": 33,
+      "c": 39,
+      "v": 22,
+      "ref": "39:22",
+      "text": "וַיַּ֛עַשׂ אֶת־מְעִ֥יל הָאֵפֹ֖ד מַעֲשֵׂ֣ה אֹרֵ֑ג כְּלִ֖יל תְּכֵֽלֶת׃",
+      "en": "And he made the robe of the efod of woven work, all of blue."
+    },
+    {
+      "n": 34,
+      "c": 39,
+      "v": 23,
+      "ref": "39:23",
+      "text": "וּפִֽי־הַמְּעִ֥יל בְּתוֹכ֖וֹ כְּפִ֣י תַחְרָ֑א שָׂפָ֥ה לְפִ֛יו סָבִ֖יב לֹ֥א יִקָּרֵֽעַ׃",
+      "en": "And there was a hole in the midst of the robe, like the hole of a suit of armour, with a band round about the hole, that it should not tear."
+    },
+    {
+      "n": 35,
+      "c": 39,
+      "v": 24,
+      "ref": "39:24",
+      "text": "וַֽיַּעֲשׂוּ֙ עַל־שׁוּלֵ֣י הַמְּעִ֔יל רִמּוֹנֵ֕י תְּכֵ֥לֶת וְאַרְגָּמָ֖ן וְתוֹלַ֣עַת שָׁנִ֑י מׇשְׁזָֽר׃",
+      "en": "And they made upon the hems of the robe pomegranates of blue, and purple, and scarlet, and twined linen."
+    },
+    {
+      "n": 36,
+      "c": 39,
+      "v": 25,
+      "ref": "39:25",
+      "text": "וַיַּעֲשׂ֥וּ פַעֲמֹנֵ֖י זָהָ֣ב טָה֑וֹר וַיִּתְּנ֨וּ אֶת־הַפַּֽעֲמֹנִ֜ים בְּת֣וֹךְ הָרִמֹּנִ֗ים עַל־שׁוּלֵ֤י הַמְּעִיל֙ סָבִ֔יב בְּת֖וֹךְ הָרִמֹּנִֽים׃",
+      "en": "And they made bells of pure gold, and put the bells between the pomegranates upon the hem of the robe, round about between the pomegranates;"
+    },
+    {
+      "n": 37,
+      "c": 39,
+      "v": 26,
+      "ref": "39:26",
+      "text": "פַּעֲמֹ֤ן וְרִמֹּן֙ פַּעֲמֹ֣ן וְרִמֹּ֔ן עַל־שׁוּלֵ֥י הַמְּעִ֖יל סָבִ֑יב לְשָׁרֵ֕ת כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "a bell and a pomegranate, a bell and a pomegranate, round about the hem of the robe to minister in; as the Lord commanded Moshe."
+    },
+    {
+      "n": 38,
+      "c": 39,
+      "v": 27,
+      "ref": "39:27",
+      "text": "וַֽיַּעֲשׂ֛וּ אֶת־הַכׇּתְנֹ֥ת שֵׁ֖שׁ מַעֲשֵׂ֣ה אֹרֵ֑ג לְאַהֲרֹ֖ן וּלְבָנָֽיו׃",
+      "en": "And they made coats of fine linen of woven work for Aharon, and for his sons,"
+    },
+    {
+      "n": 39,
+      "c": 39,
+      "v": 28,
+      "ref": "39:28",
+      "text": "וְאֵת֙ הַמִּצְנֶ֣פֶת שֵׁ֔שׁ וְאֶת־פַּאֲרֵ֥י הַמִּגְבָּעֹ֖ת שֵׁ֑שׁ וְאֶת־מִכְנְסֵ֥י הַבָּ֖ד שֵׁ֥שׁ מׇשְׁזָֽר׃",
+      "en": "and the mitre of fine linen, and goodly turbans of fine linen and linen breeches of fine twined linen,"
+    },
+    {
+      "n": 40,
+      "c": 39,
+      "v": 29,
+      "ref": "39:29",
+      "text": "וְֽאֶת־הָאַבְנֵ֞ט שֵׁ֣שׁ מׇשְׁזָ֗ר וּתְכֵ֧לֶת וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת שָׁנִ֖י מַעֲשֵׂ֣ה רֹקֵ֑ם כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and a girdle of fine twined linen, and blue, and purple, and scarlet, the work of an embroiderer; as the Lord commanded Moshe."
+    },
+    {
+      "n": 41,
+      "c": 39,
+      "v": 30,
+      "ref": "39:30",
+      "text": "וַֽיַּעֲשׂ֛וּ אֶת־צִ֥יץ נֵֽזֶר־הַקֹּ֖דֶשׁ זָהָ֣ב טָה֑וֹר וַיִּכְתְּב֣וּ עָלָ֗יו מִכְתַּב֙ פִּתּוּחֵ֣י חוֹתָ֔ם קֹ֖דֶשׁ לַיהֹוָֽה׃",
+      "en": "And they made the plate of the holy crown of pure gold, and wrote upon it a writing, like the engravings of a signet, Holiness to the Lord."
+    },
+    {
+      "n": 42,
+      "c": 39,
+      "v": 31,
+      "ref": "39:31",
+      "text": "וַיִּתְּנ֤וּ עָלָיו֙ פְּתִ֣יל תְּכֵ֔לֶת לָתֵ֥ת עַל־הַמִּצְנֶ֖פֶת מִלְמָ֑עְלָה כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And they tied to it a lace of blue, to fasten it on the mitre above; as the Lord commanded Moshe."
+    },
+    {
+      "n": 43,
+      "c": 39,
+      "v": 32,
+      "ref": "39:32",
+      "text": "וַתֵּ֕כֶל כׇּל־עֲבֹדַ֕ת מִשְׁכַּ֖ן אֹ֣הֶל מוֹעֵ֑ד וַֽיַּעֲשׂוּ֙ בְּנֵ֣י יִשְׂרָאֵ֔ל כְּ֠כֹ֠ל אֲשֶׁ֨ר צִוָּ֧ה יְהֹוָ֛ה אֶת־מֹשֶׁ֖ה כֵּ֥ן עָשֽׂוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Thus was all the work of the tabernacle of the Tent of Meeting finished: and the children of Yisra᾽el did according to all that the Lord commanded Moshe, so they did."
+    },
+    {
+      "n": 44,
+      "c": 39,
+      "v": 33,
+      "ref": "39:33",
+      "text": "וַיָּבִ֤יאוּ אֶת־הַמִּשְׁכָּן֙ אֶל־מֹשֶׁ֔ה אֶת־הָאֹ֖הֶל וְאֶת־כׇּל־כֵּלָ֑יו קְרָסָ֣יו קְרָשָׁ֔יו <span class=\"mam-kq-trivial\">בְּרִיחָ֖ו</span> וְעַמֻּדָ֥יו וַאֲדָנָֽיו׃",
+      "en": "And they brought the tabernacle to Moshe, the Tent, and all its furniture, its clasps, its boards, its bars, and its pillars, and its sockets,"
+    },
+    {
+      "n": 45,
+      "c": 39,
+      "v": 34,
+      "ref": "39:34",
+      "text": "וְאֶת־מִכְסֵ֞ה עוֹרֹ֤ת הָֽאֵילִם֙ הַמְאׇדָּמִ֔ים וְאֶת־מִכְסֵ֖ה עֹרֹ֣ת הַתְּחָשִׁ֑ים וְאֵ֖ת פָּרֹ֥כֶת הַמָּסָֽךְ׃",
+      "en": "and the covering of rams’ skins dyed red, and the covering of taĥash skins, and the veil of the screen,"
+    },
+    {
+      "n": 46,
+      "c": 39,
+      "v": 35,
+      "ref": "39:35",
+      "text": "אֶת־אֲר֥וֹן הָעֵדֻ֖ת וְאֶת־בַּדָּ֑יו וְאֵ֖ת הַכַּפֹּֽרֶת׃",
+      "en": "the ark of the Testimony, and its poles, and the covering,"
+    },
+    {
+      "n": 47,
+      "c": 39,
+      "v": 36,
+      "ref": "39:36",
+      "text": "אֶת־הַשֻּׁלְחָן֙ אֶת־כׇּל־כֵּלָ֔יו וְאֵ֖ת לֶ֥חֶם הַפָּנִֽים׃",
+      "en": "the table, and all its vessels, and the showbread,"
+    },
+    {
+      "n": 48,
+      "c": 39,
+      "v": 37,
+      "ref": "39:37",
+      "text": "אֶת־הַמְּנֹרָ֨ה הַטְּהֹרָ֜ה אֶת־נֵרֹתֶ֗יהָ נֵרֹ֛ת הַמַּֽעֲרָכָ֖ה וְאֶת־כׇּל־כֵּלֶ֑יהָ וְאֵ֖ת שֶׁ֥מֶן הַמָּאֽוֹר׃",
+      "en": "the pure candlestick, with its lamps, the lamps to be set in order, and all its vessels, and the oil for light,"
+    },
+    {
+      "n": 49,
+      "c": 39,
+      "v": 38,
+      "ref": "39:38",
+      "text": "וְאֵת֙ מִזְבַּ֣ח הַזָּהָ֔ב וְאֵת֙ שֶׁ֣מֶן הַמִּשְׁחָ֔ה וְאֵ֖ת קְטֹ֣רֶת הַסַּמִּ֑ים וְאֵ֕ת מָסַ֖ךְ פֶּ֥תַח הָאֹֽהֶל׃",
+      "en": "and the golden altar, and the anointing oil, and the incense of spices, and the screen for the tabernacle door,"
+    },
+    {
+      "n": 50,
+      "c": 39,
+      "v": 39,
+      "ref": "39:39",
+      "text": "אֵ֣ת&thinsp;<b>׀</b> מִזְבַּ֣ח הַנְּחֹ֗שֶׁת וְאֶת־מִכְבַּ֤ר הַנְּחֹ֙שֶׁת֙ אֲשֶׁר־ל֔וֹ אֶת־בַּדָּ֖יו וְאֶת־כׇּל־כֵּלָ֑יו אֶת־הַכִּיֹּ֖ר וְאֶת־כַּנּֽוֹ׃",
+      "en": "the brass altar, and its grate of brass, its poles, and all its vessels, the laver and its pedestal,"
+    },
+    {
+      "n": 51,
+      "c": 39,
+      "v": 40,
+      "ref": "39:40",
+      "text": "אֵת֩ קַלְעֵ֨י הֶחָצֵ֜ר אֶת־עַמֻּדֶ֣יהָ וְאֶת־אֲדָנֶ֗יהָ וְאֶת־הַמָּסָךְ֙ לְשַׁ֣עַר הֶֽחָצֵ֔ר אֶת־מֵיתָרָ֖יו וִיתֵדֹתֶ֑יהָ וְאֵ֗ת כׇּל־כְּלֵ֛י עֲבֹדַ֥ת הַמִּשְׁכָּ֖ן לְאֹ֥הֶל מוֹעֵֽד׃",
+      "en": "the hangings of the court, its pillars, and its sockets, and the screen for the court gate, its cords, and its pegs, and all the vessels of the service of the tabernacle, for the Tent of Meeting,"
+    },
+    {
+      "n": 52,
+      "c": 39,
+      "v": 41,
+      "ref": "39:41",
+      "text": "אֶת־בִּגְדֵ֥י הַשְּׂרָ֖ד לְשָׁרֵ֣ת בַּקֹּ֑דֶשׁ אֶת־בִּגְדֵ֤י הַקֹּ֙דֶשׁ֙ לְאַהֲרֹ֣ן הַכֹּהֵ֔ן וְאֶת־בִּגְדֵ֥י בָנָ֖יו לְכַהֵֽן׃",
+      "en": "the uniforms for service in the holy place, and the holy garments for Aharon the priest, and his sons’ garments, to minister in the priest’s office."
+    },
+    {
+      "n": 53,
+      "c": 39,
+      "v": 42,
+      "ref": "39:42",
+      "text": "כְּכֹ֛ל אֲשֶׁר־צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶׁ֑ה כֵּ֤ן עָשׂוּ֙ בְּנֵ֣י יִשְׂרָאֵ֔ל אֵ֖ת כׇּל־הָעֲבֹדָֽה׃",
+      "en": "According to all that the Lord commanded Moshe, so the children of Yisra᾽el did all the work."
+    },
+    {
+      "n": 54,
+      "c": 39,
+      "v": 43,
+      "ref": "39:43",
+      "text": "וַיַּ֨רְא מֹשֶׁ֜ה אֶת־כׇּל־הַמְּלָאכָ֗ה וְהִנֵּה֙ עָשׂ֣וּ אֹתָ֔הּ כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה כֵּ֣ן עָשׂ֑וּ וַיְבָ֥רֶךְ אֹתָ֖ם מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Moshe saw all the work, and, behold, they had done it as the Lord had commanded, even so had they done it: and Moshe blessed them."
+    },
+    {
+      "n": 55,
+      "c": 40,
+      "v": 1,
+      "ref": "40:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 56,
+      "c": 40,
+      "v": 2,
+      "ref": "40:2",
+      "text": "בְּיוֹם־הַחֹ֥דֶשׁ הָרִאשׁ֖וֹן בְּאֶחָ֣ד לַחֹ֑דֶשׁ תָּקִ֕ים אֶת־מִשְׁכַּ֖ן אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "On the first day of the first month shalt thou set up the tabernacle of the Tent of Meeting."
+    },
+    {
+      "n": 57,
+      "c": 40,
+      "v": 3,
+      "ref": "40:3",
+      "text": "וְשַׂמְתָּ֣ שָׁ֔ם אֵ֖ת אֲר֣וֹן הָעֵד֑וּת וְסַכֹּתָ֥ עַל־הָאָרֹ֖ן אֶת־הַפָּרֹֽכֶת׃",
+      "en": "And thou shalt put in it the ark of the Testimony, and hang the veil before the ark."
+    },
+    {
+      "n": 58,
+      "c": 40,
+      "v": 4,
+      "ref": "40:4",
+      "text": "וְהֵבֵאתָ֙ אֶת־הַשֻּׁלְחָ֔ן וְעָרַכְתָּ֖ אֶת־עֶרְכּ֑וֹ וְהֵבֵאתָ֙ אֶת־הַמְּנֹרָ֔ה וְהַעֲלֵיתָ֖ אֶת־נֵרֹתֶֽיהָ׃",
+      "en": "And thou shalt bring in the table, and set in order the things that are to be set in order upon it; and thou shalt bring in the candlestick, and light its lamps."
+    },
+    {
+      "n": 59,
+      "c": 40,
+      "v": 5,
+      "ref": "40:5",
+      "text": "וְנָתַתָּ֞ה אֶת־מִזְבַּ֤ח הַזָּהָב֙ לִקְטֹ֔רֶת לִפְנֵ֖י אֲר֣וֹן הָעֵדֻ֑ת וְשַׂמְתָּ֛ אֶת־מָסַ֥ךְ הַפֶּ֖תַח לַמִּשְׁכָּֽן׃",
+      "en": "And thou shalt set the altar of gold for incense before the ark of the Testimony, and put the screen of the door to the tabernacle."
+    },
+    {
+      "n": 60,
+      "c": 40,
+      "v": 6,
+      "ref": "40:6",
+      "text": "וְנָ֣תַתָּ֔ה אֵ֖ת מִזְבַּ֣ח הָעֹלָ֑ה לִפְנֵ֕י פֶּ֖תַח מִשְׁכַּ֥ן אֹֽהֶל־מוֹעֵֽד׃",
+      "en": "And thou shalt set the altar of the burnt offering before the door of the tabernacle of the Tent of Meeting."
+    },
+    {
+      "n": 61,
+      "c": 40,
+      "v": 7,
+      "ref": "40:7",
+      "text": "וְנָֽתַתָּ֙ אֶת־הַכִּיֹּ֔ר בֵּֽין־אֹ֥הֶל מוֹעֵ֖ד וּבֵ֣ין הַמִּזְבֵּ֑חַ וְנָתַתָּ֥ שָׁ֖ם מָֽיִם׃",
+      "en": "And thou shalt set the laver between the Tent of Meeting and the altar, and shalt put water in it."
+    },
+    {
+      "n": 62,
+      "c": 40,
+      "v": 8,
+      "ref": "40:8",
+      "text": "וְשַׂמְתָּ֥ אֶת־הֶחָצֵ֖ר סָבִ֑יב וְנָ֣תַתָּ֔ אֶת־מָסַ֖ךְ שַׁ֥עַר הֶחָצֵֽר׃",
+      "en": "And thou shalt set up the court round about, and hang up the screen at the court gate,"
+    },
+    {
+      "n": 63,
+      "c": 40,
+      "v": 9,
+      "ref": "40:9",
+      "text": "וְלָקַחְתָּ֙ אֶת־שֶׁ֣מֶן הַמִּשְׁחָ֔ה וּמָשַׁחְתָּ֥ אֶת־הַמִּשְׁכָּ֖ן וְאֶת־כׇּל־אֲשֶׁר־בּ֑וֹ וְקִדַּשְׁתָּ֥ אֹת֛וֹ וְאֶת־כׇּל־כֵּלָ֖יו וְהָ֥יָה קֹֽדֶשׁ׃",
+      "en": "and thou shalt take the anointing oil, and anoint the tabernacle, and all that is in it, and shalt hallow it, and all its vessels: and it shall be holy."
+    },
+    {
+      "n": 64,
+      "c": 40,
+      "v": 10,
+      "ref": "40:10",
+      "text": "וּמָשַׁחְתָּ֛ אֶת־מִזְבַּ֥ח הָעֹלָ֖ה וְאֶת־כׇּל־כֵּלָ֑יו וְקִדַּשְׁתָּ֙ אֶת־הַמִּזְבֵּ֔חַ וְהָיָ֥ה הַמִּזְבֵּ֖חַ קֹ֥דֶשׁ קׇֽדָשִֽׁים׃",
+      "en": "And thou shalt anoint the altar of the burnt offering, and all its vessels, and sanctify the altar: and it shall be an altar most holy."
+    },
+    {
+      "n": 65,
+      "c": 40,
+      "v": 11,
+      "ref": "40:11",
+      "text": "וּמָשַׁחְתָּ֥ אֶת־הַכִּיֹּ֖ר וְאֶת־כַּנּ֑וֹ וְקִדַּשְׁתָּ֖ אֹתֽוֹ׃",
+      "en": "And thou shalt anoint the laver and its pedestal, and sanctify it."
+    },
+    {
+      "n": 66,
+      "c": 40,
+      "v": 12,
+      "ref": "40:12",
+      "text": "וְהִקְרַבְתָּ֤ אֶֽת־אַהֲרֹן֙ וְאֶת־בָּנָ֔יו אֶל־פֶּ֖תַח אֹ֣הֶל מוֹעֵ֑ד וְרָחַצְתָּ֥ אֹתָ֖ם בַּמָּֽיִם׃",
+      "en": "And thou shalt bring Aharon and his sons to the door of the Tent of Meeting, and wash them with water."
+    },
+    {
+      "n": 67,
+      "c": 40,
+      "v": 13,
+      "ref": "40:13",
+      "text": "וְהִלְבַּשְׁתָּ֙ אֶֽת־אַהֲרֹ֔ן אֵ֖ת בִּגְדֵ֣י הַקֹּ֑דֶשׁ וּמָשַׁחְתָּ֥ אֹת֛וֹ וְקִדַּשְׁתָּ֥ אֹת֖וֹ וְכִהֵ֥ן לִֽי׃",
+      "en": "And thou shalt put upon Aharon the holy garments, and anoint him, and sanctify him; that he may minister to me in the priest’s office."
+    },
+    {
+      "n": 68,
+      "c": 40,
+      "v": 14,
+      "ref": "40:14",
+      "text": "וְאֶת־בָּנָ֖יו תַּקְרִ֑יב וְהִלְבַּשְׁתָּ֥ אֹתָ֖ם כֻּתֳּנֹֽת׃",
+      "en": "And thou shalt bring his sons, and clothe them with coats:"
+    },
+    {
+      "n": 69,
+      "c": 40,
+      "v": 15,
+      "ref": "40:15",
+      "text": "וּמָשַׁחְתָּ֣ אֹתָ֗ם כַּאֲשֶׁ֤ר מָשַׁ֙חְתָּ֙ אֶת־אֲבִיהֶ֔ם וְכִהֲנ֖וּ לִ֑י וְ֠הָיְתָ֠ה לִהְיֹ֨ת לָהֶ֧ם מׇשְׁחָתָ֛ם לִכְהֻנַּ֥ת עוֹלָ֖ם לְדֹרֹתָֽם׃",
+      "en": "and thou shalt anoint them, as thou didst anoint their father, that they may minister to me in the priest’s office: for their anointing shall be an everlasting priesthood throughout their generations."
+    },
+    {
+      "n": 70,
+      "c": 40,
+      "v": 16,
+      "ref": "40:16",
+      "text": "וַיַּ֖עַשׂ מֹשֶׁ֑ה כְּ֠כֹ֠ל אֲשֶׁ֨ר צִוָּ֧ה יְהֹוָ֛ה אֹת֖וֹ כֵּ֥ן עָשָֽׂה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thus did Moshe: according to all that the Lord commanded him, so he did."
+    },
+    {
+      "n": 71,
+      "c": 40,
+      "v": 17,
+      "ref": "40:17",
+      "text": "וַיְהִ֞י בַּחֹ֧דֶשׁ הָרִאשׁ֛וֹן בַּשָּׁנָ֥ה הַשֵּׁנִ֖ית בְּאֶחָ֣ד לַחֹ֑דֶשׁ הוּקַ֖ם הַמִּשְׁכָּֽן׃",
+      "en": "And it came to pass in the first month in the second year, on the first day of the month, that the tabernacle was erected."
+    },
+    {
+      "n": 72,
+      "c": 40,
+      "v": 18,
+      "ref": "40:18",
+      "text": "וַיָּ֨קֶם מֹשֶׁ֜ה אֶת־הַמִּשְׁכָּ֗ן וַיִּתֵּן֙ אֶת־אֲדָנָ֔יו וַיָּ֙שֶׂם֙ אֶת־קְרָשָׁ֔יו וַיִּתֵּ֖ן אֶת־בְּרִיחָ֑יו וַיָּ֖קֶם אֶת־עַמּוּדָֽיו׃",
+      "en": "And Moshe erected the tabernacle, and fastened its sockets, and set up its boards, and put in its bars, and reared up its pillars."
+    },
+    {
+      "n": 73,
+      "c": 40,
+      "v": 19,
+      "ref": "40:19",
+      "text": "וַיִּפְרֹ֤שׂ אֶת־הָאֹ֙הֶל֙ עַל־הַמִּשְׁכָּ֔ן וַיָּ֜שֶׂם אֶת־מִכְסֵ֥ה הָאֹ֛הֶל עָלָ֖יו מִלְמָ֑עְלָה כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he spread the tent over the tabernacle, and put the covering of the tent above upon it; as the Lord commanded Moshe."
+    },
+    {
+      "n": 74,
+      "c": 40,
+      "v": 20,
+      "ref": "40:20",
+      "text": "וַיִּקַּ֞ח וַיִּתֵּ֤ן אֶת־הָעֵדֻת֙ אֶל־הָ֣אָרֹ֔ן וַיָּ֥שֶׂם אֶת־הַבַּדִּ֖ים עַל־הָאָרֹ֑ן וַיִּתֵּ֧ן אֶת־הַכַּפֹּ֛רֶת עַל־הָאָרֹ֖ן מִלְמָֽעְלָה׃",
+      "en": "And he took and put the Testimony into the ark, and set the poles on the ark, and put the covering above upon the ark:"
+    },
+    {
+      "n": 75,
+      "c": 40,
+      "v": 21,
+      "ref": "40:21",
+      "text": "וַיָּבֵ֣א אֶת־הָאָרֹן֮ אֶל־הַמִּשְׁכָּן֒ וַיָּ֗שֶׂם אֵ֚ת פָּרֹ֣כֶת הַמָּסָ֔ךְ וַיָּ֕סֶךְ עַ֖ל אֲר֣וֹן הָעֵד֑וּת כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and he brought the ark into the tabernacle, and set up the veil of the screen, and screened the ark of the Testimony; as the Lord commanded Moshe."
+    },
+    {
+      "n": 76,
+      "c": 40,
+      "v": 22,
+      "ref": "40:22",
+      "text": "וַיִּתֵּ֤ן אֶת־הַשֻּׁלְחָן֙ בְּאֹ֣הֶל מוֹעֵ֔ד עַ֛ל יֶ֥רֶךְ הַמִּשְׁכָּ֖ן צָפֹ֑נָה מִח֖וּץ לַפָּרֹֽכֶת׃",
+      "en": "And he put the table in the Tent of Meeting, upon the side of the tabernacle northward, outside the veil."
+    },
+    {
+      "n": 77,
+      "c": 40,
+      "v": 23,
+      "ref": "40:23",
+      "text": "וַיַּעֲרֹ֥ךְ עָלָ֛יו עֵ֥רֶךְ לֶ֖חֶם לִפְנֵ֣י יְהֹוָ֑ה כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he set the bread in order upon it before the Lord; as the Lord had commanded Moshe."
+    },
+    {
+      "n": 78,
+      "c": 40,
+      "v": 24,
+      "ref": "40:24",
+      "text": "וַיָּ֤שֶׂם אֶת־הַמְּנֹרָה֙ בְּאֹ֣הֶל מוֹעֵ֔ד נֹ֖כַח הַשֻּׁלְחָ֑ן עַ֛ל יֶ֥רֶךְ הַמִּשְׁכָּ֖ן נֶֽגְבָּה׃",
+      "en": "And he put the candlestick in the Tent of Meeting, over against the table, on the side of the tabernacle southward."
+    },
+    {
+      "n": 79,
+      "c": 40,
+      "v": 25,
+      "ref": "40:25",
+      "text": "וַיַּ֥עַל הַנֵּרֹ֖ת לִפְנֵ֣י יְהֹוָ֑ה כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he lighted the lamps before the Lord; as the Lord commanded Moshe."
+    },
+    {
+      "n": 80,
+      "c": 40,
+      "v": 26,
+      "ref": "40:26",
+      "text": "וַיָּ֛שֶׂם אֶת־מִזְבַּ֥ח הַזָּהָ֖ב בְּאֹ֣הֶל מוֹעֵ֑ד לִפְנֵ֖י הַפָּרֹֽכֶת׃",
+      "en": "And he put the golden altar in the Tent of Meeting before the veil:"
+    },
+    {
+      "n": 81,
+      "c": 40,
+      "v": 27,
+      "ref": "40:27",
+      "text": "וַיַּקְטֵ֥ר עָלָ֖יו קְטֹ֣רֶת סַמִּ֑ים כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and he burnt sweet incense upon it as the Lord commanded Moshe."
+    },
+    {
+      "n": 82,
+      "c": 40,
+      "v": 28,
+      "ref": "40:28",
+      "text": "וַיָּ֛שֶׂם אֶת־מָסַ֥ךְ הַפֶּ֖תַח לַמִּשְׁכָּֽן׃",
+      "en": "And he set up the screen at the door of the tabernacle."
+    },
+    {
+      "n": 83,
+      "c": 40,
+      "v": 29,
+      "ref": "40:29",
+      "text": "וְאֵת֙ מִזְבַּ֣ח הָעֹלָ֔ה שָׂ֕ם פֶּ֖תַח מִשְׁכַּ֣ן אֹֽהֶל־מוֹעֵ֑ד וַיַּ֣עַל עָלָ֗יו אֶת־הָעֹלָה֙ וְאֶת־הַמִּנְחָ֔ה כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he put the altar of burnt offering by the door of the tabernacle of the Tent of Meeting, and offered upon it the burnt offering and the meal offering; as the Lord commanded Moshe."
+    },
+    {
+      "n": 84,
+      "c": 40,
+      "v": 30,
+      "ref": "40:30",
+      "text": "וַיָּ֙שֶׂם֙ אֶת־הַכִּיֹּ֔ר בֵּֽין־אֹ֥הֶל מוֹעֵ֖ד וּבֵ֣ין הַמִּזְבֵּ֑חַ וַיִּתֵּ֥ן שָׁ֛מָּה מַ֖יִם לְרׇחְצָֽה׃",
+      "en": "And he set the laver between the Tent of Meeting and the altar, and put water there, for washing."
+    },
+    {
+      "n": 85,
+      "c": 40,
+      "v": 31,
+      "ref": "40:31",
+      "text": "וְרָחֲצ֣וּ מִמֶּ֔נּוּ מֹשֶׁ֖ה וְאַהֲרֹ֣ן וּבָנָ֑יו אֶת־יְדֵיהֶ֖ם וְאֶת־רַגְלֵיהֶֽם׃",
+      "en": "And Moshe and Aharon and his sons washed their hands and their feet thereat:"
+    },
+    {
+      "n": 86,
+      "c": 40,
+      "v": 32,
+      "ref": "40:32",
+      "text": "בְּבֹאָ֞ם אֶל־אֹ֣הֶל מוֹעֵ֗ד וּבְקׇרְבָתָ֛ם אֶל־הַמִּזְבֵּ֖חַ יִרְחָ֑צוּ כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "when they went into the Tent of Meeting, and when they came near to the altar, they washed; as the Lord commanded Moshe."
+    },
+    {
+      "n": 87,
+      "c": 40,
+      "v": 33,
+      "ref": "40:33",
+      "text": "וַיָּ֣קֶם אֶת־הֶחָצֵ֗ר סָבִיב֙ לַמִּשְׁכָּ֣ן וְלַמִּזְבֵּ֔חַ וַיִּתֵּ֕ן אֶת־מָסַ֖ךְ שַׁ֣עַר הֶחָצֵ֑ר וַיְכַ֥ל מֹשֶׁ֖ה אֶת־הַמְּלָאכָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And he erected the court round about the tabernacle and the altar, and set up the screen of the court gate. So Moshe finished the work."
+    },
+    {
+      "n": 88,
+      "c": 40,
+      "v": 34,
+      "ref": "40:34",
+      "text": "וַיְכַ֥ס הֶעָנָ֖ן אֶת־אֹ֣הֶל מוֹעֵ֑ד וּכְב֣וֹד יְהֹוָ֔ה מָלֵ֖א אֶת־הַמִּשְׁכָּֽן׃",
+      "en": "Then a cloud covered the Tent of Meeting, and the glory of the Lord filled the tabernacle."
+    },
+    {
+      "n": 89,
+      "c": 40,
+      "v": 35,
+      "ref": "40:35",
+      "text": "וְלֹא־יָכֹ֣ל מֹשֶׁ֗ה לָבוֹא֙ אֶל־אֹ֣הֶל מוֹעֵ֔ד כִּֽי־שָׁכַ֥ן עָלָ֖יו הֶעָנָ֑ן וּכְב֣וֹד יְהֹוָ֔ה מָלֵ֖א אֶת־הַמִּשְׁכָּֽן׃",
+      "en": "And Moshe was not able to enter the Tent of Meeting, because the cloud rested on it, and the glory of the Lord filled the tabernacle."
+    },
+    {
+      "n": 90,
+      "c": 40,
+      "v": 36,
+      "ref": "40:36",
+      "text": "וּבְהֵעָל֤וֹת הֶֽעָנָן֙ מֵעַ֣ל הַמִּשְׁכָּ֔ן יִסְע֖וּ בְּנֵ֣י יִשְׂרָאֵ֑ל בְּכֹ֖ל מַסְעֵיהֶֽם׃",
+      "en": "And when the cloud was taken up from over the tabernacle, the children of Yisra᾽el went onward in all their journeys:"
+    },
+    {
+      "n": 91,
+      "c": 40,
+      "v": 37,
+      "ref": "40:37",
+      "text": "וְאִם־לֹ֥א יֵעָלֶ֖ה הֶעָנָ֑ן וְלֹ֣א יִסְע֔וּ עַד־י֖וֹם הֵעָלֹתֽוֹ׃",
+      "en": "but if the cloud were not taken up, then they journeyed not till the day that it was taken up."
+    },
+    {
+      "n": 92,
+      "c": 40,
+      "v": 38,
+      "ref": "40:38",
+      "text": "כִּי֩ עֲנַ֨ן יְהֹוָ֤ה עַֽל־הַמִּשְׁכָּן֙ יוֹמָ֔ם וְאֵ֕שׁ תִּהְיֶ֥ה לַ֖יְלָה בּ֑וֹ לְעֵינֵ֥י כׇל־בֵּֽית־יִשְׂרָאֵ֖ל בְּכׇל־מַסְעֵיהֶֽם׃",
+      "en": "For the cloud of the Lord was upon the tabernacle by day, and fire was on it by night, in the sight of all the house of Yisra᾽el, throughout all their journeys."
+    }
+  ],
+  "parashah": {
+    "en": "Pekudei",
+    "he": "פְקוּדֵי",
+    "translit": "Pekudei",
+    "ref": "Exodus 38:21–40:38"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 12,
+        "ref": "38:21–39:1"
+      },
+      {
+        "n": 2,
+        "start": 13,
+        "end": 32,
+        "ref": "39:2–39:21"
+      },
+      {
+        "n": 3,
+        "start": 33,
+        "end": 43,
+        "ref": "39:22–39:32"
+      },
+      {
+        "n": 4,
+        "start": 44,
+        "end": 54,
+        "ref": "39:33–39:43"
+      },
+      {
+        "n": 5,
+        "start": 55,
+        "end": 70,
+        "ref": "40:1–40:16"
+      },
+      {
+        "n": 6,
+        "start": 71,
+        "end": 81,
+        "ref": "40:17–40:27"
+      },
+      {
+        "n": 7,
+        "start": 82,
+        "end": 92,
+        "ref": "40:28–40:38"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 5,
+          "ref": "38:21–38:25"
+        },
+        {
+          "n": 2,
+          "start": 6,
+          "end": 10,
+          "ref": "38:26–38:30"
+        },
+        {
+          "n": 3,
+          "start": 11,
+          "end": 15,
+          "ref": "38:31–39:4"
+        },
+        {
+          "n": 4,
+          "start": 16,
+          "end": 19,
+          "ref": "39:5–39:8"
+        },
+        {
+          "n": 5,
+          "start": 20,
+          "end": 23,
+          "ref": "39:9–39:12"
+        },
+        {
+          "n": 6,
+          "start": 24,
+          "end": 27,
+          "ref": "39:13–39:16"
+        },
+        {
+          "n": 7,
+          "start": 28,
+          "end": 31,
+          "ref": "39:17–39:20"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 32,
+          "end": 36,
+          "ref": "39:21–39:25"
+        },
+        {
+          "n": 2,
+          "start": 37,
+          "end": 41,
+          "ref": "39:26–39:30"
+        },
+        {
+          "n": 3,
+          "start": 42,
+          "end": 46,
+          "ref": "39:31–39:35"
+        },
+        {
+          "n": 4,
+          "start": 47,
+          "end": 50,
+          "ref": "39:36–39:39"
+        },
+        {
+          "n": 5,
+          "start": 51,
+          "end": 54,
+          "ref": "39:40–39:43"
+        },
+        {
+          "n": 6,
+          "start": 55,
+          "end": 58,
+          "ref": "40:1–40:4"
+        },
+        {
+          "n": 7,
+          "start": 59,
+          "end": 62,
+          "ref": "40:5–40:8"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 63,
+          "end": 67,
+          "ref": "40:9–40:13"
+        },
+        {
+          "n": 2,
+          "start": 68,
+          "end": 72,
+          "ref": "40:14–40:18"
+        },
+        {
+          "n": 3,
+          "start": 73,
+          "end": 76,
+          "ref": "40:19–40:22"
+        },
+        {
+          "n": 4,
+          "start": 77,
+          "end": 80,
+          "ref": "40:23–40:26"
+        },
+        {
+          "n": 5,
+          "start": 81,
+          "end": 84,
+          "ref": "40:27–40:30"
+        },
+        {
+          "n": 6,
+          "start": 85,
+          "end": 88,
+          "ref": "40:31–40:34"
+        },
+        {
+          "n": 7,
+          "start": 89,
+          "end": 92,
+          "ref": "40:35–40:38"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 88,
+        "end": 92,
+        "ref": "40:34–40:38"
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

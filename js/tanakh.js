@@ -21,8 +21,9 @@
 // whole-book files remain for offline precaching and as the fallback for a
 // corpus built before the shards existed.
 //
-// A custom range has no recorded chant, so it is taught in the haftarah melody
-// from the measured shapes (data/haftarah-shapes.json) — the same treatment the
+// A custom range that sits inside a recorded reading borrows that cantor (see
+// customEntry / excerptRangeInCover in js/app.js). One that does not is taught
+// in the haftarah melody from the measured shapes — the same treatment the
 // trope drills get. The three poetic books (Psalms, Proverbs, Job) use the other
 // Masoretic accent system, which neither melody describes; `accents` says so and
 // the app passes the warning on rather than teaching a tune that doesn't exist.

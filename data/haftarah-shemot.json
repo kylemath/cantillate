@@ -1,0 +1,228 @@
+{
+  "slug": "haftarah-shemot",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 27:6-28:13, 29:22-23",
+  "heRef": "ישעיהו כ״ז:ו-י״ג, כ״ח:א-י״ג, כ״ט:כ״ב-כ״ג",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 27,
+      "v": 6,
+      "ref": "27:6",
+      "text": "הַבָּאִים֙ יַשְׁרֵ֣שׁ יַֽעֲקֹ֔ב יָצִ֥יץ וּפָרַ֖ח יִשְׂרָאֵ֑ל וּמָלְא֥וּ פְנֵי־תֵבֵ֖ל תְּנוּבָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "In days to come Ya῾aqov shall take root: Yisra᾽el shall blossom and bud, and the face of the world shall be filled with fruit."
+    },
+    {
+      "n": 2,
+      "c": 27,
+      "v": 7,
+      "ref": "27:7",
+      "text": "הַכְּמַכַּ֥ת מַכֵּ֖הוּ הִכָּ֑הוּ אִם־כְּהֶ֥רֶג הֲרֻגָ֖יו הֹרָֽג׃",
+      "en": "Has he smitten him, as he smote those that smote him? or is he slain according to the slaughter of them that are slain by him?"
+    },
+    {
+      "n": 3,
+      "c": 27,
+      "v": 8,
+      "ref": "27:8",
+      "text": "בְּסַאסְּאָ֖ה בְּשַׁלְחָ֣הּ תְּרִיבֶ֑נָּה הָגָ֛ה בְּרוּח֥וֹ הַקָּשָׁ֖ה בְּי֥וֹם קָדִֽים׃",
+      "en": "By measure, by exile, thou didst contend with them; he removed her by his rough blast in the day of the east wind."
+    },
+    {
+      "n": 4,
+      "c": 27,
+      "v": 9,
+      "ref": "27:9",
+      "text": "לָכֵ֗ן בְּזֹאת֙ יְכֻפַּ֣ר עֲוֺֽן־יַעֲקֹ֔ב וְזֶ֕ה כׇּל־פְּרִ֖י הָסִ֣ר חַטָּאת֑וֹ בְּשׂוּמ֣וֹ&thinsp;<b>׀</b> כׇּל־אַבְנֵ֣י מִזְבֵּ֗חַ כְּאַבְנֵי־גִר֙ מְנֻפָּצ֔וֹת לֹא־יָקֻ֥מוּ אֲשֵׁרִ֖ים וְחַמָּנִֽים׃",
+      "en": "By this therefore shall the iniquity of Ya῾aqov be atoned; and this is all the fruit to take away his sin; when he makes all the stones of the altar as chalkstones that are beaten in sunder, the asherim and sun images shall not remain standing."
+    },
+    {
+      "n": 5,
+      "c": 27,
+      "v": 10,
+      "ref": "27:10",
+      "text": "כִּ֣י עִ֤יר בְּצוּרָה֙ בָּדָ֔ד נָוֶ֕ה מְשֻׁלָּ֥ח וְנֶעֱזָ֖ב כַּמִּדְבָּ֑ר שָׁ֣ם יִרְעֶ֥ה עֵ֛גֶל וְשָׁ֥ם יִרְבָּ֖ץ וְכִלָּ֥ה סְעִפֶֽיהָ׃",
+      "en": "Yet the fortified city shall be solitary, and the habitation forsaken, and left like a wilderness: there shall the calf feed, and there shall he lie down, and consume its branches."
+    },
+    {
+      "n": 6,
+      "c": 27,
+      "v": 11,
+      "ref": "27:11",
+      "text": "בִּיבֹ֤שׁ קְצִירָהּ֙ תִּשָּׁבַ֔רְנָה נָשִׁ֕ים בָּא֖וֹת מְאִיר֣וֹת אוֹתָ֑הּ כִּ֣י לֹ֤א עַם־בִּינוֹת֙ ה֔וּא עַל־כֵּן֙ לֹא־יְרַחֲמֶ֣נּוּ עֹשֵׂ֔הוּ וְיֹצְר֖וֹ לֹ֥א יְחֻנֶּֽנּוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "When its boughs are withered, they shall be broken off: the women shall come, and set them on fire: for it is a people of no understanding: therefore he that made them will not have mercy on them, and he that formed them will show them no favour."
+    },
+    {
+      "n": 7,
+      "c": 27,
+      "v": 12,
+      "ref": "27:12",
+      "text": "וְהָיָה֙ בַּיּ֣וֹם הַה֔וּא יַחְבֹּ֧ט יְהֹוָ֛ה מִשִּׁבֹּ֥לֶת הַנָּהָ֖ר עַד־נַ֣חַל מִצְרָ֑יִם וְאַתֶּ֧ם תְּלֻקְּט֛וּ לְאַחַ֥ד אֶחָ֖ד בְּנֵ֥י יִשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And it shall come to pass in that day, that the Lord shall beat out his harvest from the strongly flowing river as far as the wadi of Miżrayim, and you shall be gathered up one by one, O children of Yisra᾽el."
+    },
+    {
+      "n": 8,
+      "c": 27,
+      "v": 13,
+      "ref": "27:13",
+      "text": "וְהָיָ֣ה&thinsp;<b>׀</b> בַּיּ֣וֹם הַה֗וּא יִתָּקַע֮ בְּשׁוֹפָ֣ר גָּדוֹל֒ וּבָ֗אוּ הָאֹֽבְדִים֙ בְּאֶ֣רֶץ אַשּׁ֔וּר וְהַנִּדָּחִ֖ים בְּאֶ֣רֶץ מִצְרָ֑יִם וְהִשְׁתַּחֲו֧וּ לַיהֹוָ֛ה בְּהַ֥ר הַקֹּ֖דֶשׁ בִּירוּשָׁלָֽ͏ִם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And it shall come to pass on that day, that a great shofar shall be blown, and they shall come who were lost in the land of Ashshur, and the outcasts in the land of Miżrayim, and shall worship the Lord in the holy mountain at Yerushalayim."
+    },
+    {
+      "n": 9,
+      "c": 28,
+      "v": 1,
+      "ref": "28:1",
+      "text": "ה֗וֹי עֲטֶ֤רֶת גֵּאוּת֙ שִׁכֹּרֵ֣י אֶפְרַ֔יִם וְצִ֥יץ נֹבֵ֖ל צְבִ֣י תִפְאַרְתּ֑וֹ אֲשֶׁ֛ר עַל־רֹ֥אשׁ גֵּֽיא־שְׁמָנִ֖ים הֲל֥וּמֵי יָֽיִן׃",
+      "en": "Woe to the crown of pride of the drunkards Efrayim, and to the fading flower of his glorious beauty which is at the head of the rich valley of those who are overcome with wine!"
+    },
+    {
+      "n": 10,
+      "c": 28,
+      "v": 2,
+      "ref": "28:2",
+      "text": "הִנֵּ֨ה חָזָ֤ק וְאַמִּץ֙ לַֽאדֹנָ֔י כְּזֶ֥רֶם בָּרָ֖ד שַׂ֣עַר קָ֑טֶב כְּ֠זֶ֠רֶם מַ֣יִם כַּבִּירִ֥ים שֹׁטְפִ֛ים הִנִּ֥יחַ לָאָ֖רֶץ בְּיָֽד׃",
+      "en": "Behold, the Lord has one who is mighty and strong, as a tempest of hail and a destroying storm, as a flood of mighty waters overflowing; he will cast down to the earth with might."
+    },
+    {
+      "n": 11,
+      "c": 28,
+      "v": 3,
+      "ref": "28:3",
+      "text": "בְּרַגְלַ֖יִם תֵּרָמַ֑סְנָה עֲטֶ֥רֶת גֵּא֖וּת שִׁכּוֹרֵ֥י אֶפְרָֽיִם׃",
+      "en": "The crown of pride of the drunkards of Efrayim shall be trodden under feet:"
+    },
+    {
+      "n": 12,
+      "c": 28,
+      "v": 4,
+      "ref": "28:4",
+      "text": "וְֽהָ֨יְתָ֜ה צִיצַ֤ת נֹבֵל֙ צְבִ֣י תִפְאַרְתּ֔וֹ אֲשֶׁ֥ר עַל־רֹ֖אשׁ גֵּ֣יא שְׁמָנִ֑ים כְּבִכּוּרָהּ֙ בְּטֶ֣רֶם קַ֔יִץ אֲשֶׁ֨ר יִרְאֶ֤ה הָרֹאֶה֙ אוֹתָ֔הּ בְּעוֹדָ֥הּ בְּכַפּ֖וֹ יִבְלָעֶֽנָּה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and the fading flower of the glorious beauty, which is at the head of the rich valley, shall be as the first ripe fig before the summer; which when one sees, while it is yet in his hand he swallows it up."
+    },
+    {
+      "n": 13,
+      "c": 28,
+      "v": 5,
+      "ref": "28:5",
+      "text": "בַּיּ֣וֹם הַה֗וּא יִֽהְיֶה֙ יְהֹוָ֣ה צְבָא֔וֹת לַעֲטֶ֣רֶת צְבִ֔י וְלִצְפִירַ֖ת תִּפְאָרָ֑ה לִשְׁאָ֖ר עַמּֽוֹ׃",
+      "en": "In that day shall the Lord of hosts be for a crown of glory, and for a diadem of beauty, to the residue of his people,"
+    },
+    {
+      "n": 14,
+      "c": 28,
+      "v": 6,
+      "ref": "28:6",
+      "text": "וּלְר֖וּחַ מִשְׁפָּ֑ט לַיּוֹשֵׁב֙ עַל־הַמִּשְׁפָּ֔ט וְלִ֨גְבוּרָ֔ה מְשִׁיבֵ֥י מִלְחָמָ֖ה שָֽׁעְרָה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and for a spirit of judgment to him that sits in judgment, and for strength to them that turn back the battle to the gate."
+    },
+    {
+      "n": 15,
+      "c": 28,
+      "v": 7,
+      "ref": "28:7",
+      "text": "וְגַם־אֵ֙לֶּה֙ בַּיַּ֣יִן שָׁג֔וּ וּבַשֵּׁכָ֖ר תָּע֑וּ כֹּהֵ֣ן וְנָבִיא֩ שָׁג֨וּ בַשֵּׁכָ֜ר נִבְלְע֣וּ מִן־הַיַּ֗יִן תָּעוּ֙ מִן־הַשֵּׁכָ֔ר שָׁגוּ֙ בָּרֹאֶ֔ה פָּק֖וּ פְּלִילִיָּֽה׃",
+      "en": "But they also reel through wine, and stagger through strong drink; the priest and the prophet reel through strong drink, they are confused by wine, they stagger through strong drink; they err in vision, they stumble in judgment."
+    },
+    {
+      "n": 16,
+      "c": 28,
+      "v": 8,
+      "ref": "28:8",
+      "text": "כִּ֚י כׇּל־שֻׁלְחָנ֔וֹת מָלְא֖וּ קִ֣יא צֹאָ֑ה בְּלִ֖י מָקֽוֹם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "For all tables are full of vomit and filth, so that there is no place clean."
+    },
+    {
+      "n": 17,
+      "c": 28,
+      "v": 9,
+      "ref": "28:9",
+      "text": "אֶת־מִי֙ יוֹרֶ֣ה דֵעָ֔ה וְאֶת־מִ֖י יָבִ֣ין שְׁמוּעָ֑ה גְּמוּלֵי֙ מֵחָלָ֔ב עַתִּיקֵ֖י מִשָּׁדָֽיִם׃",
+      "en": "Whom shall one teach knowledge? and whom shall one make to understand doctrine? those that are weaned from the milk, and removed from the breasts?"
+    },
+    {
+      "n": 18,
+      "c": 28,
+      "v": 10,
+      "ref": "28:10",
+      "text": "כִּ֣י צַ֤ו לָצָו֙ צַ֣ו לָצָ֔ו קַ֥ו לָקָ֖ו קַ֣ו לָקָ֑ו זְעֵ֥יר שָׁ֖ם זְעֵ֥יר שָֽׁם׃",
+      "en": "For it is precept upon precept, precept upon precept; line upon line, line upon line; here a little, and there a little:"
+    },
+    {
+      "n": 19,
+      "c": 28,
+      "v": 11,
+      "ref": "28:11",
+      "text": "כִּ֚י בְּלַעֲגֵ֣י שָׂפָ֔ה וּבְלָשׁ֖וֹן אַחֶ֑רֶת יְדַבֵּ֖ר אֶל־הָעָ֥ם הַזֶּֽה׃",
+      "en": "for with stammering lips and another tongue shall one speak to this people."
+    },
+    {
+      "n": 20,
+      "c": 28,
+      "v": 12,
+      "ref": "28:12",
+      "text": "אֲשֶׁ֣ר&thinsp;<b>׀</b> אָמַ֣ר אֲלֵיהֶ֗ם זֹ֤את הַמְּנוּחָה֙ הָנִ֣יחוּ לֶעָיֵ֔ף וְזֹ֖את הַמַּרְגֵּעָ֑ה וְלֹ֥א אָב֖וּא שְׁמֽוֹעַ׃",
+      "en": "When he said to them, This is the rest; cause the weary to rest and this is the refreshing: they would not hear."
+    },
+    {
+      "n": 21,
+      "c": 28,
+      "v": 13,
+      "ref": "28:13",
+      "text": "וְהָיָ֨ה לָהֶ֜ם דְּבַר־יְהֹוָ֗ה צַ֣ו לָצָ֞ו צַ֤ו לָצָו֙ קַ֤ו לָקָו֙ קַ֣ו לָקָ֔ו זְעֵ֥יר שָׁ֖ם זְעֵ֣יר שָׁ֑ם לְמַ֨עַן יֵלְכ֜וּ וְכָשְׁל֤וּ אָחוֹר֙ וְנִשְׁבָּ֔רוּ וְנוֹקְשׁ֖וּ וְנִלְכָּֽדוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Therefore the word of the Lord was to them precept upon precept, precept upon precept; line upon line, line upon line; here a little, and there a little; that they might go, and fall backward, and be broken, and snared, and taken."
+    },
+    {
+      "n": 22,
+      "c": 29,
+      "v": 22,
+      "ref": "29:22",
+      "text": "לָכֵ֗ן כֹּֽה־אָמַ֤ר יְהֹוָה֙ אֶל־בֵּ֣ית יַעֲקֹ֔ב אֲשֶׁ֥ר פָּדָ֖ה אֶת־אַבְרָהָ֑ם לֹֽא־עַתָּ֤ה יֵבוֹשׁ֙ יַעֲקֹ֔ב וְלֹ֥א עַתָּ֖ה פָּנָ֥יו יֶחֱוָֽרוּ׃",
+      "en": "Therefore thus says the Lord, who redeemed Avraham, concerning the house of Ya῾aqov, Ya῾aqov shall not now be ashamed, neither shall his face now grow pale;"
+    },
+    {
+      "n": 23,
+      "c": 29,
+      "v": 23,
+      "ref": "29:23",
+      "text": "כִּ֣י בִ֠רְאֹת֠וֹ יְלָדָ֞יו מַעֲשֵׂ֥ה יָדַ֛י בְּקִרְבּ֖וֹ יַקְדִּ֣ישֽׁוּ שְׁמִ֑י וְהִקְדִּ֙ישׁוּ֙ אֶת־קְד֣וֹשׁ יַֽעֲקֹ֔ב וְאֶת־אֱלֹהֵ֥י יִשְׂרָאֵ֖ל יַעֲרִֽיצוּ׃",
+      "en": "when he sees his children, the work of my hands, in the midst of him, sanctifying my name; for they shall sanctify the Holy One of Ya῾aqov, and shall reverence the God of Yisra᾽el."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Shemot",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 13
+  },
+  "parashah": {
+    "en": "Haftarat Shemot",
+    "translit": "Haftarat Shemot",
+    "he": "הפטרת שמות",
+    "ref": "Isaiah 27:6-28:13, 29:22-23"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 23,
+        "ref": "27:6–29:23"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

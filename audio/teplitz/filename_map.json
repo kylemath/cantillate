@@ -1,0 +1,367 @@
+{
+  "source": "https://www.mjcnj.com/hhrecordings",
+  "ext": "m4a",
+  "id": "teplitz",
+  "files": [
+    {
+      "slug": "rh1-torah",
+      "i": 1,
+      "pipeline": "rh1-torah-1.m4a",
+      "original": "RH1-121_1-4.m4a",
+      "book": "genesis",
+      "range": "21:1-21:4",
+      "label": "rh1-torah-1.txt"
+    },
+    {
+      "slug": "rh1-torah",
+      "i": 2,
+      "pipeline": "rh1-torah-2.m4a",
+      "original": "RH1-221_5-8.m4a",
+      "book": "genesis",
+      "range": "21:5-21:8",
+      "label": "rh1-torah-2.txt"
+    },
+    {
+      "slug": "rh1-torah",
+      "i": 3,
+      "pipeline": "rh1-torah-3.m4a",
+      "original": "RH1-221_9-12.m4a",
+      "book": "genesis",
+      "range": "21:9-21:12",
+      "label": "rh1-torah-3.txt"
+    },
+    {
+      "slug": "rh1-torah",
+      "i": 4,
+      "pipeline": "rh1-torah-4.m4a",
+      "original": "RH1-321_13-17.m4a",
+      "book": "genesis",
+      "range": "21:13-21:17",
+      "label": "rh1-torah-4.txt"
+    },
+    {
+      "slug": "rh1-torah",
+      "i": 5,
+      "pipeline": "rh1-torah-5.m4a",
+      "original": "RH1-321_18-21.m4a",
+      "book": "genesis",
+      "range": "21:18-21:21",
+      "label": "rh1-torah-5.txt"
+    },
+    {
+      "slug": "rh1-torah",
+      "i": 6,
+      "pipeline": "rh1-torah-6.m4a",
+      "original": "RH1-421_22-27.m4a",
+      "book": "genesis",
+      "range": "21:22-21:27",
+      "label": "rh1-torah-6.txt"
+    },
+    {
+      "slug": "rh1-torah",
+      "i": 7,
+      "pipeline": "rh1-torah-7.m4a",
+      "original": "RH1-521_28-30.m4a",
+      "book": "genesis",
+      "range": "21:28-21:30",
+      "label": "rh1-torah-7.txt"
+    },
+    {
+      "slug": "rh1-torah",
+      "i": 8,
+      "pipeline": "rh1-torah-8.m4a",
+      "original": "RH1-521_31-34.m4a",
+      "book": "genesis",
+      "range": "21:31-21:34",
+      "label": "rh1-torah-8.txt"
+    },
+    {
+      "slug": "rh1-maftir",
+      "i": 1,
+      "pipeline": "rh1-maftir-1.m4a",
+      "original": "RHM-1.m4a",
+      "book": "numbers",
+      "range": "29:1-29:3",
+      "label": "rh1-maftir-1.txt"
+    },
+    {
+      "slug": "rh1-maftir",
+      "i": 2,
+      "pipeline": "rh1-maftir-2.m4a",
+      "original": "RHM-2.m4a",
+      "book": "numbers",
+      "range": "29:4-29:6",
+      "label": "rh1-maftir-2.txt"
+    },
+    {
+      "slug": "rh2-torah",
+      "i": 1,
+      "pipeline": "rh2-torah-1.m4a",
+      "original": "RH2-122_1-3.m4a",
+      "book": "genesis",
+      "range": "22:1-22:3",
+      "label": "rh2-torah-1.txt"
+    },
+    {
+      "slug": "rh2-torah",
+      "i": 2,
+      "pipeline": "rh2-torah-2.m4a",
+      "original": "RH2-222_4-8.m4a",
+      "book": "genesis",
+      "range": "22:4-22:8",
+      "label": "rh2-torah-2.txt"
+    },
+    {
+      "slug": "rh2-torah",
+      "i": 3,
+      "pipeline": "rh2-torah-3.m4a",
+      "original": "RH2-322_9-14.m4a",
+      "book": "genesis",
+      "range": "22:9-22:14",
+      "label": "rh2-torah-3.txt"
+    },
+    {
+      "slug": "rh2-torah",
+      "i": 4,
+      "pipeline": "rh2-torah-4.m4a",
+      "original": "RH2-422_15-19.m4a",
+      "book": "genesis",
+      "range": "22:15-22:19",
+      "label": "rh2-torah-4.txt"
+    },
+    {
+      "slug": "rh2-torah",
+      "i": 5,
+      "pipeline": "rh2-torah-5.m4a",
+      "original": "RH2-522_20-24.m4a",
+      "book": "genesis",
+      "range": "22:20-22:24",
+      "label": "rh2-torah-5.txt"
+    },
+    {
+      "slug": "rh2-maftir",
+      "i": 1,
+      "pipeline": "rh2-maftir-1.m4a",
+      "original": "RH2-M29_1-6.m4a",
+      "book": "numbers",
+      "range": "29:1-29:6",
+      "label": "rh2-maftir-1.txt"
+    },
+    {
+      "slug": "rh2-haftarah",
+      "i": "H",
+      "pipeline": "rh2-haftarah-H.m4a",
+      "original": "RH2H.m4a",
+      "book": "jeremiah",
+      "range": "31:1-31:19",
+      "label": "rh2-haftarah-H.txt"
+    },
+    {
+      "slug": "yk-torah",
+      "i": 1,
+      "pipeline": "yk-torah-1.m4a",
+      "original": "YK-116_1-3.m4a",
+      "book": "leviticus",
+      "range": "16:1-16:3",
+      "label": "yk-torah-1.txt"
+    },
+    {
+      "slug": "yk-torah",
+      "i": 2,
+      "pipeline": "yk-torah-2.m4a",
+      "original": "YK-116_4-6.m4a",
+      "book": "leviticus",
+      "range": "16:4-16:6",
+      "label": "yk-torah-2.txt"
+    },
+    {
+      "slug": "yk-torah",
+      "i": 3,
+      "pipeline": "yk-torah-3.m4a",
+      "original": "YK-216_7-9.m4a",
+      "book": "leviticus",
+      "range": "16:7-16:9",
+      "label": "yk-torah-3.txt"
+    },
+    {
+      "slug": "yk-torah",
+      "i": 4,
+      "pipeline": "yk-torah-4.m4a",
+      "original": "YK-216_10-11.m4a",
+      "book": "leviticus",
+      "range": "16:10-16:11",
+      "label": "yk-torah-4.txt"
+    },
+    {
+      "slug": "yk-torah",
+      "i": 5,
+      "pipeline": "yk-torah-5.m4a",
+      "original": "Yk3.m4a",
+      "book": "leviticus",
+      "range": "16:12-16:15",
+      "label": "yk-torah-5.txt"
+    },
+    {
+      "slug": "yk-torah",
+      "i": 6,
+      "pipeline": "yk-torah-6.m4a",
+      "original": "YK-316_16-17.m4a",
+      "book": "leviticus",
+      "range": "16:16-16:17",
+      "label": "yk-torah-6.txt"
+    },
+    {
+      "slug": "yk-torah",
+      "i": 7,
+      "pipeline": "yk-torah-7.m4a",
+      "original": "YK-416_18-24.m4a",
+      "book": "leviticus",
+      "range": "16:18-16:24",
+      "label": "yk-torah-7.txt"
+    },
+    {
+      "slug": "yk-torah",
+      "i": 8,
+      "pipeline": "yk-torah-8.m4a",
+      "original": "YK-516_25-30.m4a",
+      "book": "leviticus",
+      "range": "16:25-16:30",
+      "label": "yk-torah-8.txt"
+    },
+    {
+      "slug": "yk-torah",
+      "i": 9,
+      "pipeline": "yk-torah-9.m4a",
+      "original": "YK-616_31-34.m4a",
+      "book": "leviticus",
+      "range": "16:31-16:34",
+      "label": "yk-torah-9.txt"
+    },
+    {
+      "slug": "yk-maftir",
+      "i": 1,
+      "pipeline": "yk-maftir-1.m4a",
+      "original": "YK-M29_7-11.m4a",
+      "book": "numbers",
+      "range": "29:7-29:11",
+      "label": "yk-maftir-1.txt"
+    },
+    {
+      "slug": "yk-haftarah",
+      "i": "H",
+      "pipeline": "yk-haftarah-H.m4a",
+      "original": "YomKippurHaftarah.m4a",
+      "book": "isaiah",
+      "range": "57:14-58:14",
+      "label": "yk-haftarah-H.txt"
+    },
+    {
+      "slug": "yk-mincha-torah",
+      "i": 1,
+      "pipeline": "yk-mincha-torah-1.m4a",
+      "original": "TP1.m4a",
+      "book": "leviticus",
+      "range": "18:1-18:5",
+      "label": "yk-mincha-torah-1.txt"
+    },
+    {
+      "slug": "yk-mincha-torah",
+      "i": 2,
+      "pipeline": "yk-mincha-torah-2.m4a",
+      "original": "Mincha2.m4a",
+      "book": "leviticus",
+      "range": "18:6-18:21",
+      "label": "yk-mincha-torah-2.txt"
+    },
+    {
+      "slug": "yk-mincha-torah",
+      "i": 3,
+      "pipeline": "yk-mincha-torah-3.m4a",
+      "original": "Mincha3.1.m4a",
+      "book": "leviticus",
+      "range": "18:22-18:26",
+      "label": "yk-mincha-torah-3.txt"
+    },
+    {
+      "slug": "yk-mincha-torah",
+      "i": 4,
+      "pipeline": "yk-mincha-torah-4.m4a",
+      "original": "Mincha3.2.m4a",
+      "book": "leviticus",
+      "range": "18:27-18:30",
+      "label": "yk-mincha-torah-4.txt"
+    },
+    {
+      "slug": null,
+      "i": null,
+      "pipeline": null,
+      "original": "Haftorah-before-blessing.m4a",
+      "label": "Haftarah blessing \u00b7 before",
+      "kind": "blessing"
+    },
+    {
+      "slug": null,
+      "i": null,
+      "pipeline": null,
+      "original": "After-H-blessing-1.m4a",
+      "label": "Haftarah blessing \u00b7 after 1",
+      "kind": "blessing"
+    },
+    {
+      "slug": null,
+      "i": null,
+      "pipeline": null,
+      "original": "After-H-blessing-2-2.m4a",
+      "label": "Haftarah blessing \u00b7 after 2",
+      "kind": "blessing"
+    },
+    {
+      "slug": null,
+      "i": null,
+      "pipeline": null,
+      "original": "After-H-blessing-3.m4a",
+      "label": "Haftarah blessing \u00b7 after 3",
+      "kind": "blessing"
+    },
+    {
+      "slug": null,
+      "i": null,
+      "pipeline": null,
+      "original": "After-H-blessing-4.m4a",
+      "label": "Haftarah blessing \u00b7 after 4",
+      "kind": "blessing"
+    },
+    {
+      "slug": null,
+      "i": null,
+      "pipeline": null,
+      "original": "RH5.m4a",
+      "label": "Haftarah blessing \u00b7 after 5 (RH)",
+      "kind": "blessing"
+    },
+    {
+      "slug": null,
+      "i": null,
+      "pipeline": null,
+      "original": "YK5.m4a",
+      "label": "Haftarah blessing \u00b7 after 5 (YK)",
+      "kind": "blessing"
+    },
+    {
+      "slug": null,
+      "i": null,
+      "pipeline": null,
+      "original": "RH6.m4a",
+      "label": "Haftarah blessing \u00b7 after 6 (RH)",
+      "kind": "blessing"
+    },
+    {
+      "slug": null,
+      "i": null,
+      "pipeline": null,
+      "original": "YK6.m4a",
+      "label": "Haftarah blessing \u00b7 after 6 (YK)",
+      "kind": "blessing"
+    }
+  ]
+}

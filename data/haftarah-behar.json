@@ -1,0 +1,220 @@
+{
+  "slug": "haftarah-behar",
+  "book": {
+    "en": "Jeremiah",
+    "he": "ירמיהו",
+    "translit": "Yirmiyahu"
+  },
+  "multiChapter": true,
+  "ref": "Jeremiah 32:6-27",
+  "heRef": "ירמיהו ל״ב:ו-כ״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 32,
+      "v": 6,
+      "ref": "32:6",
+      "text": "וַיֹּ֖אמֶר יִרְמְיָ֑הוּ הָיָ֥ה דְבַר־יְהֹוָ֖ה אֵלַ֥י לֵאמֹֽר׃",
+      "en": "And Yirmeyahu said, The word of the Lord has come to me, saying,"
+    },
+    {
+      "n": 2,
+      "c": 32,
+      "v": 7,
+      "ref": "32:7",
+      "text": "הִנֵּ֣ה חֲנַמְאֵ֗ל בֶּן־שַׁלֻּם֙ דֹּֽדְךָ֔ בָּ֥א אֵלֶ֖יךָ לֵאמֹ֑ר קְנֵ֣ה לְךָ֗ אֶת־שָׂדִי֙ אֲשֶׁ֣ר בַּעֲנָת֔וֹת כִּ֥י לְךָ֛ מִשְׁפַּ֥ט הַגְּאֻלָּ֖ה לִקְנֽוֹת׃",
+      "en": "Behold, Ḥanam᾽el the son of Shallum thy uncle shall come to thee, saying, Buy my field that is in ῾Anatot: for the right of redemption is thine to buy it."
+    },
+    {
+      "n": 3,
+      "c": 32,
+      "v": 8,
+      "ref": "32:8",
+      "text": "וַיָּבֹ֣א אֵ֠לַ֠י חֲנַמְאֵ֨ל בֶּן־דֹּדִ֜י כִּדְבַ֣ר יְהֹוָה֮ אֶל־חֲצַ֣ר הַמַּטָּרָה֒ וַיֹּ֣אמֶר אֵלַ֡י קְנֵ֣ה נָ֠א אֶת־שָׂדִ֨י אֲשֶׁר־בַּעֲנָת֜וֹת אֲשֶׁ֣ר&thinsp;<b>׀</b> בְּאֶ֣רֶץ בִּנְיָמִ֗ין כִּֽי־לְךָ֞ מִשְׁפַּ֧ט הַיְרֻשָּׁ֛ה וּלְךָ֥ הַגְּאֻלָּ֖ה קְנֵה־לָ֑ךְ וָאֵדַ֕ע כִּ֥י דְבַר־יְהֹוָ֖ה הֽוּא׃",
+      "en": "So Ḥanam᾽el my uncle’s son came to me in the court of the guard according to the word of the Lord, and said to me, Buy my field, I pray thee, that is in ῾Anatot, which is in the country of Binyamin: for the right of inheritance is thine, and the redemption is thine; buy it for thyself. Then I knew that this was the word of the Lord."
+    },
+    {
+      "n": 4,
+      "c": 32,
+      "v": 9,
+      "ref": "32:9",
+      "text": "וָֽאֶקְנֶה֙ אֶת־הַשָּׂדֶ֔ה מֵאֵ֛ת חֲנַמְאֵ֥ל בֶּן־דֹּדִ֖י אֲשֶׁ֣ר בַּעֲנָת֑וֹת וָֽאֶשְׁקְלָה־לּוֹ֙ אֶת־הַכֶּ֔סֶף שִׁבְעָ֥ה שְׁקָלִ֖ים וַעֲשָׂרָ֥ה הַכָּֽסֶף׃",
+      "en": "And I bought the field from Ḥanam᾽el my uncle’s son, that was in ῾Anatot, and weighed him the money, seventeen shekels of silver."
+    },
+    {
+      "n": 5,
+      "c": 32,
+      "v": 10,
+      "ref": "32:10",
+      "text": "וָאֶכְתֹּ֤ב בַּסֵּ֙פֶר֙ וָֽאֶחְתֹּ֔ם וָאָעֵ֖ד עֵדִ֑ים וָאֶשְׁקֹ֥ל הַכֶּ֖סֶף בְּמֹאזְנָֽיִם׃",
+      "en": "And I subscribed the deed, and sealed it, and took witnesses, and weighed the money in the balances."
+    },
+    {
+      "n": 6,
+      "c": 32,
+      "v": 11,
+      "ref": "32:11",
+      "text": "וָאֶקַּ֖ח אֶת־סֵ֣פֶר הַמִּקְנָ֑ה אֶת־הֶֽחָת֛וּם הַמִּצְוָ֥ה וְהַחֻקִּ֖ים וְאֶת־הַגָּלֽוּי׃",
+      "en": "So I took the deed of the purchase, both that which was sealed, containing the terms and conditions, and which was open:"
+    },
+    {
+      "n": 7,
+      "c": 32,
+      "v": 12,
+      "ref": "32:12",
+      "text": "וָאֶתֵּ֞ן אֶת־הַסֵּ֣פֶר הַמִּקְנָ֗ה אֶל־בָּר֣וּךְ בֶּן־נֵרִיָּה֮ בֶּן־מַחְסֵיָה֒ לְעֵינֵי֙ חֲנַמְאֵ֣ל דֹּדִ֔י וּלְעֵינֵי֙ הָֽעֵדִ֔ים הַכֹּתְבִ֖ים בְּסֵ֣פֶר הַמִּקְנָ֑ה לְעֵינֵי֙ כׇּל־הַיְּהוּדִ֔ים הַיֹּשְׁבִ֖ים בַּחֲצַ֥ר הַמַּטָּרָֽה׃",
+      "en": "and I gave the deed of the purchase to Barukh the son of Neriyya, the son of Meĥaseya, in the sight of Ḥanam᾽el my uncle’s son, and in the presence of the witnesses that subscribed the deed of the purchase, before all the men of Yehuda that sat in the court of the guard."
+    },
+    {
+      "n": 8,
+      "c": 32,
+      "v": 13,
+      "ref": "32:13",
+      "text": "וָאֲצַוֶּה֙ אֶת־בָּר֔וּךְ לְעֵינֵיהֶ֖ם לֵאמֹֽר׃",
+      "en": "And I charged Barukh before them, saying,"
+    },
+    {
+      "n": 9,
+      "c": 32,
+      "v": 14,
+      "ref": "32:14",
+      "text": "כֹּה־אָמַר֩ יְהֹוָ֨ה צְבָא֜וֹת אֱלֹהֵ֣י יִשְׂרָאֵ֗ל לָק֣וֹחַ אֶת־הַסְּפָרִ֣ים הָאֵ֡לֶּה אֵ֣ת סֵ֩פֶר֩ הַמִּקְנָ֨ה הַזֶּ֜ה וְאֵ֣ת הֶחָת֗וּם וְאֵ֨ת סֵ֤פֶר הַגָּלוּי֙ הַזֶּ֔ה וּנְתַתָּ֖ם בִּכְלִי־חָ֑רֶשׂ לְמַ֥עַן יַעַמְד֖וּ יָמִ֥ים רַבִּֽים׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thus says the Lord of hosts, the God of Yisra᾽el; Take these documents, this deed of the purchase, both that which is sealed, and this open deed; and put them in an earthen vessel, that they may last for many days."
+    },
+    {
+      "n": 10,
+      "c": 32,
+      "v": 15,
+      "ref": "32:15",
+      "text": "כִּ֣י כֹ֥ה אָמַ֛ר יְהֹוָ֥ה צְבָא֖וֹת אֱלֹהֵ֣י יִשְׂרָאֵ֑ל ע֣וֹד יִקָּנ֥וּ בָתִּ֛ים וְשָׂד֥וֹת וּכְרָמִ֖ים בָּאָ֥רֶץ הַזֹּֽאת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "For thus says the Lord of hosts, the God of Yisra᾽el; Houses and fields and vineyards shall be bought again in this land."
+    },
+    {
+      "n": 11,
+      "c": 32,
+      "v": 16,
+      "ref": "32:16",
+      "text": "וָאֶתְפַּלֵּ֖ל אֶל־יְהֹוָ֑ה אַחֲרֵ֤י תִתִּי֙ אֶת־סֵ֣פֶר הַמִּקְנָ֔ה אֶל־בָּר֥וּךְ בֶּן־נֵרִיָּ֖ה לֵאמֹֽר׃",
+      "en": "Now when I had delivered the deed of the purchase to Barukh the son of Neriyya, I prayed to the Lord, saying,"
+    },
+    {
+      "n": 12,
+      "c": 32,
+      "v": 17,
+      "ref": "32:17",
+      "text": "אֲהָהּ֮ אֲדֹנָ֣י יֱהֹוִה֒ הִנֵּ֣ה&thinsp;<b>׀</b> אַתָּ֣ה עָשִׂ֗יתָ אֶת־הַשָּׁמַ֙יִם֙ וְאֶת־הָאָ֔רֶץ בְּכֹֽחֲךָ֙ הַגָּד֔וֹל וּבִֽזְרֹעֲךָ֖ הַנְּטוּיָ֑ה לֹֽא־יִפָּלֵ֥א מִמְּךָ֖ כׇּל־דָּבָֽר׃",
+      "en": "Ah Lord God! behold, Thou hast made the heaven and the earth by Thy great power and stretched out arm, and there is nothing too hard for Thee:"
+    },
+    {
+      "n": 13,
+      "c": 32,
+      "v": 18,
+      "ref": "32:18",
+      "text": "עֹ֤שֶׂה חֶ֙סֶד֙ לַֽאֲלָפִ֔ים וּמְשַׁלֵּם֙ עֲוֺ֣ן אָב֔וֹת אֶל־חֵ֥יק בְּנֵיהֶ֖ם אַחֲרֵיהֶ֑ם הָאֵ֤ל הַגָּדוֹל֙ הַגִּבּ֔וֹר יְהֹוָ֥ה צְבָא֖וֹת שְׁמֽוֹ׃",
+      "en": "Thou showst loyal love to thousands, and dost recompense the iniquity of the fathers into the bosom of their children after them: O great and mighty God! the Lord of hosts is his name,"
+    },
+    {
+      "n": 14,
+      "c": 32,
+      "v": 19,
+      "ref": "32:19",
+      "text": "גְּדֹל֙ הָֽעֵצָ֔ה וְרַ֖ב הָעֲלִֽילִיָּ֑ה אֲשֶׁר־עֵינֶ֣יךָ פְקֻח֗וֹת עַל־כׇּל־דַּרְכֵי֙ בְּנֵ֣י אָדָ֔ם לָתֵ֤ת לְאִישׁ֙ כִּדְרָכָ֔יו וְכִפְרִ֖י מַעֲלָלָֽיו׃",
+      "en": "Great in counsel, and mighty in performance: Thy eyes are open upon all the ways of the sons of men: to give every one according to his ways, and according to the fruit of his doings:"
+    },
+    {
+      "n": 15,
+      "c": 32,
+      "v": 20,
+      "ref": "32:20",
+      "text": "אֲשֶׁר־שַׂ֠מְתָּ אֹת֨וֹת וּמֹפְתִ֤ים בְּאֶֽרֶץ־מִצְרַ֙יִם֙ עַד־הַיּ֣וֹם הַזֶּ֔ה וּבְיִשְׂרָאֵ֖ל וּבָאָדָ֑ם וַתַּעֲשֶׂה־לְּךָ֥ שֵׁ֖ם כַּיּ֥וֹם הַזֶּֽה׃",
+      "en": "who has set signs and wonders in the land of Miżrayim, to this day, and in Yisra᾽el, and among mankind: and hast made Thee a name, as at this day;"
+    },
+    {
+      "n": 16,
+      "c": 32,
+      "v": 21,
+      "ref": "32:21",
+      "text": "וַתֹּצֵ֛א אֶת־עַמְּךָ֥ אֶת־יִשְׂרָאֵ֖ל מֵאֶ֣רֶץ מִצְרָ֑יִם בְּאֹת֣וֹת וּבְמוֹפְתִ֗ים וּבְיָ֤ד חֲזָקָה֙ וּבְאֶזְר֣וֹעַ נְטוּיָ֔ה וּבְמוֹרָ֖א גָּדֽוֹל׃",
+      "en": "and hast brought Thy people Yisra᾽el out of the land of Miżrayim with signs, and with wonders, and with a strong hand, and with a stretched out arm, and with great terror;"
+    },
+    {
+      "n": 17,
+      "c": 32,
+      "v": 22,
+      "ref": "32:22",
+      "text": "וַתִּתֵּ֤ן לָהֶם֙ אֶת־הָאָ֣רֶץ הַזֹּ֔את אֲשֶׁר־נִשְׁבַּ֥עְתָּ לַאֲבוֹתָ֖ם לָתֵ֣ת לָהֶ֑ם אֶ֛רֶץ זָבַ֥ת חָלָ֖ב וּדְבָֽשׁ׃",
+      "en": "and hast given them this land, which Thou didst swear to their fathers to give them, a land flowing with milk and honey;"
+    },
+    {
+      "n": 18,
+      "c": 32,
+      "v": 23,
+      "ref": "32:23",
+      "text": "וַיָּבֹ֜אוּ וַיִּֽרְשׁ֣וּ אֹתָ֗הּ וְלֹֽא־שָׁמְע֤וּ בְקוֹלֶ֙ךָ֙ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(ובתרותך)</span> <span class=\"mam-kq-q\">[וּבְתוֹרָתְךָ֣]</span></span> לֹא־הָלָ֔כוּ אֵת֩ כׇּל־אֲשֶׁ֨ר צִוִּ֧יתָה לָהֶ֛ם לַעֲשׂ֖וֹת לֹ֣א עָשׂ֑וּ וַתַּקְרֵ֣א אֹתָ֔ם אֵ֥ת כׇּל־הָרָעָ֖ה הַזֹּֽאת׃",
+      "en": "and they came in, and possessed it; but they obeyed not Thy voice, neither followed Thy Tora; they have done nothing of all that Thou didst command them to do: therefore Thou hast caused all this evil to come upon them:"
+    },
+    {
+      "n": 19,
+      "c": 32,
+      "v": 24,
+      "ref": "32:24",
+      "text": "הִנֵּ֣ה הַסֹּלְל֗וֹת בָּ֣אוּ הָעִיר֮ לְלׇכְדָהּ֒ וְהָעִ֣יר נִתְּנָ֗ה בְּיַ֤ד הַכַּשְׂדִּים֙ הַנִּלְחָמִ֣ים עָלֶ֔יהָ מִפְּנֵ֛י הַחֶ֥רֶב וְהָרָעָ֖ב וְהַדָּ֑בֶר וַאֲשֶׁ֥ר דִּבַּ֛רְתָּ הָיָ֖ה וְהִנְּךָ֥ רֹאֶֽה׃",
+      "en": "behold the siege works are come to the city to take it; and the city is given into the hand of the Kasdim that fight against it, because of the sword, and of the famine, and of the pestilence: and what Thou hast spoken is come to pass; and, behold, Thou seest it."
+    },
+    {
+      "n": 20,
+      "c": 32,
+      "v": 25,
+      "ref": "32:25",
+      "text": "וְאַתָּ֞ה אָמַ֤רְתָּ אֵלַי֙ אֲדֹנָ֣י יֱהֹוִ֔ה קְנֵֽה־לְךָ֧ הַשָּׂדֶ֛ה בַּכֶּ֖סֶף וְהָעֵ֣ד עֵדִ֑ים וְהָעִ֥יר נִתְּנָ֖ה בְּיַ֥ד הַכַּשְׂדִּֽים׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And Thou hast said to me, O Lord God, Buy the field for money and take witnesses; though the city is given into the hand of the Kasdim."
+    },
+    {
+      "n": 21,
+      "c": 32,
+      "v": 26,
+      "ref": "32:26",
+      "text": "וַֽיְהִי֙ דְּבַר־יְהֹוָ֔ה אֶֽל־יִרְמְיָ֖הוּ לֵאמֹֽר׃",
+      "en": "Then came the word of the Lord to Yirmeyahu, saying,"
+    },
+    {
+      "n": 22,
+      "c": 32,
+      "v": 27,
+      "ref": "32:27",
+      "text": "הִנֵּה֙ אֲנִ֣י יְהֹוָ֔ה אֱלֹהֵ֖י כׇּל־בָּשָׂ֑ר הֲֽמִמֶּ֔נִּי יִפָּלֵ֖א כׇּל־דָּבָֽר׃",
+      "en": "Behold, I am the Lord, the God of all flesh: is there anything too hard for me?"
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Behar",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 32
+  },
+  "parashah": {
+    "en": "Haftarat Behar",
+    "translit": "Haftarat Behar",
+    "he": "הפטרת בהר",
+    "ref": "Jeremiah 32:6-27"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 22,
+        "ref": "32:6–32:27"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

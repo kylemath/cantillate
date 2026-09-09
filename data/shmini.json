@@ -1,0 +1,961 @@
+{
+  "slug": "shmini",
+  "book": {
+    "en": "Leviticus",
+    "he": "ויקרא",
+    "translit": "Vayikra"
+  },
+  "multiChapter": true,
+  "ref": "Leviticus 9:1-11:47",
+  "heRef": "ויקרא ט׳:א-י״א:מ״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 9,
+      "v": 1,
+      "ref": "9:1",
+      "text": "וַֽיְהִי֙ בַּיּ֣וֹם הַשְּׁמִינִ֔י קָרָ֣א מֹשֶׁ֔ה לְאַהֲרֹ֖ן וּלְבָנָ֑יו וּלְזִקְנֵ֖י יִשְׂרָאֵֽל׃",
+      "en": "And it came to pass on the eighth day, that Moshe called Aharon and his sons, and the elders of Yisra᾽el:"
+    },
+    {
+      "n": 2,
+      "c": 9,
+      "v": 2,
+      "ref": "9:2",
+      "text": "וַיֹּ֣אמֶר אֶֽל־אַהֲרֹ֗ן קַח־לְ֠ךָ֠ עֵ֣גֶל בֶּן־בָּקָ֧ר לְחַטָּ֛את וְאַ֥יִל לְעֹלָ֖ה תְּמִימִ֑ם וְהַקְרֵ֖ב לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "and he said to Aharon, Take thee a young calf for a sin offering, and a ram for a burnt offering, without blemish, and offer them before the Lord."
+    },
+    {
+      "n": 3,
+      "c": 9,
+      "v": 3,
+      "ref": "9:3",
+      "text": "וְאֶל־בְּנֵ֥י יִשְׂרָאֵ֖ל תְּדַבֵּ֣ר לֵאמֹ֑ר קְח֤וּ שְׂעִיר־עִזִּים֙ לְחַטָּ֔את וְעֵ֨גֶל וָכֶ֧בֶשׂ בְּנֵי־שָׁנָ֛ה תְּמִימִ֖ם לְעֹלָֽה׃",
+      "en": "And to the children of Yisra᾽el thou shalt speak, saying, Take a kid of the goats for a sin offering; and a calf and a lamb, both of the first year, without blemish, for a burnt offering;"
+    },
+    {
+      "n": 4,
+      "c": 9,
+      "v": 4,
+      "ref": "9:4",
+      "text": "וְשׁ֨וֹר וָאַ֜יִל לִשְׁלָמִ֗ים לִזְבֹּ֙חַ֙ לִפְנֵ֣י יְהֹוָ֔ה וּמִנְחָ֖ה בְּלוּלָ֣ה בַשָּׁ֑מֶן כִּ֣י הַיּ֔וֹם יְהֹוָ֖ה נִרְאָ֥ה אֲלֵיכֶֽם׃",
+      "en": "also a bullock and a ram for peace offerings, to sacrifice before the Lord; and a meal offering mingled with oil: for today the Lord will appear to you."
+    },
+    {
+      "n": 5,
+      "c": 9,
+      "v": 5,
+      "ref": "9:5",
+      "text": "וַיִּקְח֗וּ אֵ֚ת אֲשֶׁ֣ר צִוָּ֣ה מֹשֶׁ֔ה אֶל־פְּנֵ֖י אֹ֣הֶל מוֹעֵ֑ד וַֽיִּקְרְבוּ֙ כׇּל־הָ֣עֵדָ֔ה וַיַּֽעַמְד֖וּ לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And they brought that which Moshe commanded before the Tent of Meeting: and all the congregation drew near and stood before the Lord."
+    },
+    {
+      "n": 6,
+      "c": 9,
+      "v": 6,
+      "ref": "9:6",
+      "text": "וַיֹּ֣אמֶר מֹשֶׁ֔ה זֶ֧ה הַדָּבָ֛ר אֲשֶׁר־צִוָּ֥ה יְהֹוָ֖ה תַּעֲשׂ֑וּ וְיֵרָ֥א אֲלֵיכֶ֖ם כְּב֥וֹד יְהֹוָֽה׃",
+      "en": "And Moshe said, This is the thing which the Lord commanded you to do: and the glory of the Lord shall appear to you."
+    },
+    {
+      "n": 7,
+      "c": 9,
+      "v": 7,
+      "ref": "9:7",
+      "text": "וַיֹּ֨אמֶר מֹשֶׁ֜ה אֶֽל־אַהֲרֹ֗ן קְרַ֤ב אֶל־הַמִּזְבֵּ֙חַ֙ וַעֲשֵׂ֞ה אֶת־חַטָּֽאתְךָ֙ וְאֶת־עֹ֣לָתֶ֔ךָ וְכַפֵּ֥ר בַּֽעַדְךָ֖ וּבְעַ֣ד הָעָ֑ם וַעֲשֵׂ֞ה אֶת־קׇרְבַּ֤ן הָעָם֙ וְכַפֵּ֣ר בַּֽעֲדָ֔ם כַּאֲשֶׁ֖ר צִוָּ֥ה יְהֹוָֽה׃",
+      "en": "And Moshe said to Aharon, Go to the altar, and offer thy sin offering, and thy burnt offering, and make atonement for thyself, and for the people: and offer the offering of the people, and make atonement for them; as the Lord commanded."
+    },
+    {
+      "n": 8,
+      "c": 9,
+      "v": 8,
+      "ref": "9:8",
+      "text": "וַיִּקְרַ֥ב אַהֲרֹ֖ן אֶל־הַמִּזְבֵּ֑חַ וַיִּשְׁחַ֛ט אֶת־עֵ֥גֶל הַחַטָּ֖את אֲשֶׁר־לֽוֹ׃",
+      "en": "Aharon therefore went to the altar, and slaughtered the calf of the sin offering, which was for himself."
+    },
+    {
+      "n": 9,
+      "c": 9,
+      "v": 9,
+      "ref": "9:9",
+      "text": "וַ֠יַּקְרִ֠בוּ בְּנֵ֨י אַהֲרֹ֣ן אֶת־הַדָּם֮ אֵלָיו֒ וַיִּטְבֹּ֤ל אֶצְבָּעוֹ֙ בַּדָּ֔ם וַיִּתֵּ֖ן עַל־קַרְנ֣וֹת הַמִּזְבֵּ֑חַ וְאֶת־הַדָּ֣ם יָצַ֔ק אֶל־יְס֖וֹד הַמִּזְבֵּֽחַ׃",
+      "en": "And the sons of Aharon brought the blood to him: and he dipped his finger in the blood, and put it upon the horns of the altar, and poured out the blood at the bottom of the altar:"
+    },
+    {
+      "n": 10,
+      "c": 9,
+      "v": 10,
+      "ref": "9:10",
+      "text": "וְאֶת־הַחֵ֨לֶב וְאֶת־הַכְּלָיֹ֜ת וְאֶת־הַיֹּתֶ֤רֶת מִן־הַכָּבֵד֙ מִן־הַ֣חַטָּ֔את הִקְטִ֖יר הַמִּזְבֵּ֑חָה כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "but the fat, and the kidneys, and the appendage above the liver of the sin offering, he burnt upon the altar; as the Lord commanded Moshe."
+    },
+    {
+      "n": 11,
+      "c": 9,
+      "v": 11,
+      "ref": "9:11",
+      "text": "וְאֶת־הַבָּשָׂ֖ר וְאֶת־הָע֑וֹר שָׂרַ֣ף בָּאֵ֔שׁ מִח֖וּץ לַֽמַּחֲנֶֽה׃",
+      "en": "And the flesh and the hide he burnt with fire outside the camp."
+    },
+    {
+      "n": 12,
+      "c": 9,
+      "v": 12,
+      "ref": "9:12",
+      "text": "וַיִּשְׁחַ֖ט אֶת־הָעֹלָ֑ה וַ֠יַּמְצִ֠אוּ בְּנֵ֨י אַהֲרֹ֤ן אֵלָיו֙ אֶת־הַדָּ֔ם וַיִּזְרְקֵ֥הוּ עַל־הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "And he slaughtered the burnt offering; and Aharon’s sons presented to him the blood, which he sprinkled round about upon the altar."
+    },
+    {
+      "n": 13,
+      "c": 9,
+      "v": 13,
+      "ref": "9:13",
+      "text": "וְאֶת־הָעֹלָ֗ה הִמְצִ֧יאוּ אֵלָ֛יו לִנְתָחֶ֖יהָ וְאֶת־הָרֹ֑אשׁ וַיַּקְטֵ֖ר עַל־הַמִּזְבֵּֽחַ׃",
+      "en": "And they presented the burnt offering to him, with its pieces, and the head: and he burnt them upon the altar."
+    },
+    {
+      "n": 14,
+      "c": 9,
+      "v": 14,
+      "ref": "9:14",
+      "text": "וַיִּרְחַ֥ץ אֶת־הַקֶּ֖רֶב וְאֶת־הַכְּרָעָ֑יִם וַיַּקְטֵ֥ר עַל־הָעֹלָ֖ה הַמִּזְבֵּֽחָה׃",
+      "en": "And he did wash the inwards and the legs, and burnt them upon the burnt offering on the altar."
+    },
+    {
+      "n": 15,
+      "c": 9,
+      "v": 15,
+      "ref": "9:15",
+      "text": "וַיַּקְרֵ֕ב אֵ֖ת קׇרְבַּ֣ן הָעָ֑ם וַיִּקַּ֞ח אֶת־שְׂעִ֤יר הַֽחַטָּאת֙ אֲשֶׁ֣ר לָעָ֔ם וַיִּשְׁחָטֵ֥הוּ וַֽיְחַטְּאֵ֖הוּ כָּרִאשֽׁוֹן׃",
+      "en": "And he brought the people’s offering, and took the goat which was the sin offering for the people, and slaughtered it, and offered it for sin, as the first."
+    },
+    {
+      "n": 16,
+      "c": 9,
+      "v": 16,
+      "ref": "9:16",
+      "text": "וַיַּקְרֵ֖ב אֶת־הָעֹלָ֑ה וַֽיַּעֲשֶׂ֖הָ כַּמִּשְׁפָּֽט׃",
+      "en": "And he brought the burnt offering, and offered it according to the prescribed manner."
+    },
+    {
+      "n": 17,
+      "c": 9,
+      "v": 17,
+      "ref": "9:17",
+      "text": "וַיַּקְרֵב֮ אֶת־הַמִּנְחָה֒ וַיְמַלֵּ֤א כַפּוֹ֙ מִמֶּ֔נָּה וַיַּקְטֵ֖ר עַל־הַמִּזְבֵּ֑חַ מִלְּבַ֖ד עֹלַ֥ת הַבֹּֽקֶר׃",
+      "en": "And he brought the meal offering, and took a handful of it, and burnt it upon the altar, beside the burnt sacrifice of the morning."
+    },
+    {
+      "n": 18,
+      "c": 9,
+      "v": 18,
+      "ref": "9:18",
+      "text": "וַיִּשְׁחַ֤ט אֶת־הַשּׁוֹר֙ וְאֶת־הָאַ֔יִל זֶ֥בַח הַשְּׁלָמִ֖ים אֲשֶׁ֣ר לָעָ֑ם וַ֠יַּמְצִ֠אוּ בְּנֵ֨י אַהֲרֹ֤ן אֶת־הַדָּם֙ אֵלָ֔יו וַיִּזְרְקֵ֥הוּ עַל־הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "He also slaughtered the bullock and the ram for a sacrifice of peace offering, which was for the people: and Aharon’s sons presented to him the blood, which he sprinkled on the altar round about."
+    },
+    {
+      "n": 19,
+      "c": 9,
+      "v": 19,
+      "ref": "9:19",
+      "text": "וְאֶת־הַחֲלָבִ֖ים מִן־הַשּׁ֑וֹר וּמִ֨ן־הָאַ֔יִל הָֽאַלְיָ֤ה וְהַֽמְכַסֶּה֙ וְהַכְּלָיֹ֔ת וְיֹתֶ֖רֶת הַכָּבֵֽד׃",
+      "en": "And the fat of the bullock and of the ram, the fat tail, and that which covers the inwards, and the kidneys, and the appendage of the liver:"
+    },
+    {
+      "n": 20,
+      "c": 9,
+      "v": 20,
+      "ref": "9:20",
+      "text": "וַיָּשִׂ֥ימוּ אֶת־הַחֲלָבִ֖ים עַל־הֶחָז֑וֹת וַיַּקְטֵ֥ר הַחֲלָבִ֖ים הַמִּזְבֵּֽחָה׃",
+      "en": "and they put the fat upon the breasts, and he burnt the fat upon the altar:"
+    },
+    {
+      "n": 21,
+      "c": 9,
+      "v": 21,
+      "ref": "9:21",
+      "text": "וְאֵ֣ת הֶחָז֗וֹת וְאֵת֙ שׁ֣וֹק הַיָּמִ֔ין הֵנִ֧יף אַהֲרֹ֛ן תְּנוּפָ֖ה לִפְנֵ֣י יְהֹוָ֑ה כַּאֲשֶׁ֖ר צִוָּ֥ה מֹשֶֽׁה׃",
+      "en": "and the breasts and the right shoulder Aharon waved for a wave offering before the Lord; as Moshe commanded."
+    },
+    {
+      "n": 22,
+      "c": 9,
+      "v": 22,
+      "ref": "9:22",
+      "text": "וַיִּשָּׂ֨א אַהֲרֹ֧ן אֶת־<span class=\"mam-kq-trivial\">יָדָ֛ו</span> אֶל־הָעָ֖ם וַֽיְבָרְכֵ֑ם וַיֵּ֗רֶד מֵעֲשֹׂ֧ת הַֽחַטָּ֛את וְהָעֹלָ֖ה וְהַשְּׁלָמִֽים׃",
+      "en": "And Aharon lifted up his hand towards the people, and blessed them, and came down from offering the sin offering, and the burnt offering, and the peace offerings."
+    },
+    {
+      "n": 23,
+      "c": 9,
+      "v": 23,
+      "ref": "9:23",
+      "text": "וַיָּבֹ֨א מֹשֶׁ֤ה וְאַהֲרֹן֙ אֶל־אֹ֣הֶל מוֹעֵ֔ד וַיֵּ֣צְא֔וּ וַֽיְבָרְכ֖וּ אֶת־הָעָ֑ם וַיֵּרָ֥א כְבוֹד־יְהֹוָ֖ה אֶל־כׇּל־הָעָֽם׃",
+      "en": "And Moshe and Aharon went into the Tent of Meeting, and came out, and blessed the people: and the glory of the Lord appeared to all the people."
+    },
+    {
+      "n": 24,
+      "c": 9,
+      "v": 24,
+      "ref": "9:24",
+      "text": "וַתֵּ֤צֵא אֵשׁ֙ מִלִּפְנֵ֣י יְהֹוָ֔ה וַתֹּ֙אכַל֙ עַל־הַמִּזְבֵּ֔חַ אֶת־הָעֹלָ֖ה וְאֶת־הַחֲלָבִ֑ים וַיַּ֤רְא כׇּל־הָעָם֙ וַיָּרֹ֔נּוּ וַֽיִּפְּל֖וּ עַל־פְּנֵיהֶֽם׃",
+      "en": "And there came a fire out from before the Lord, and consumed upon the altar the burnt offering and the fat: which, when all the people saw, they shouted, and fell on their faces."
+    },
+    {
+      "n": 25,
+      "c": 10,
+      "v": 1,
+      "ref": "10:1",
+      "text": "וַיִּקְח֣וּ בְנֵֽי־אַ֠הֲרֹ֠ן נָדָ֨ב וַאֲבִיה֜וּא אִ֣ישׁ מַחְתָּת֗וֹ וַיִּתְּנ֤וּ בָהֵן֙ אֵ֔שׁ וַיָּשִׂ֥ימוּ עָלֶ֖יהָ קְטֹ֑רֶת וַיַּקְרִ֜יבוּ לִפְנֵ֤י יְהֹוָה֙ אֵ֣שׁ זָרָ֔ה אֲשֶׁ֧ר לֹ֦א צִוָּ֖ה אֹתָֽם׃",
+      "en": "And Nadav and Avihu, the sons of Aharon, took each of them his censer, and put fire in it, and put incense on it, and offered strange fire before the Lord, which He commanded them not."
+    },
+    {
+      "n": 26,
+      "c": 10,
+      "v": 2,
+      "ref": "10:2",
+      "text": "וַתֵּ֥צֵא אֵ֛שׁ מִלִּפְנֵ֥י יְהֹוָ֖ה וַתֹּ֣אכַל אוֹתָ֑ם וַיָּמֻ֖תוּ לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And a fire went out from the Lord, and devoured them, and they died before the Lord."
+    },
+    {
+      "n": 27,
+      "c": 10,
+      "v": 3,
+      "ref": "10:3",
+      "text": "וַיֹּ֨אמֶר מֹשֶׁ֜ה אֶֽל־אַהֲרֹ֗ן הוּא֩ אֲשֶׁר־דִּבֶּ֨ר יְהֹוָ֤ה&thinsp;<small>׀</small>&thinsp;לֵאמֹר֙ בִּקְרֹבַ֣י אֶקָּדֵ֔שׁ וְעַל־פְּנֵ֥י כׇל־הָעָ֖ם אֶכָּבֵ֑ד וַיִּדֹּ֖ם אַהֲרֹֽן׃",
+      "en": "Then Moshe said to Aharon, This is it that which the Lord spoke, saying, I will be sanctified in them that come near me, and before all the people I will be glorified. And Aharon held his peace."
+    },
+    {
+      "n": 28,
+      "c": 10,
+      "v": 4,
+      "ref": "10:4",
+      "text": "וַיִּקְרָ֣א מֹשֶׁ֗ה אֶל־מִֽישָׁאֵל֙ וְאֶ֣ל אֶלְצָפָ֔ן בְּנֵ֥י עֻזִּיאֵ֖ל דֹּ֣ד אַהֲרֹ֑ן וַיֹּ֣אמֶר אֲלֵהֶ֗ם קִ֞֠רְב֞֠וּ שְׂא֤וּ אֶת־אֲחֵיכֶם֙ מֵאֵ֣ת פְּנֵי־הַקֹּ֔דֶשׁ אֶל־מִח֖וּץ לַֽמַּחֲנֶֽה׃",
+      "en": "And Moshe called Misha᾽el and Elżafan, the sons of ῾Uzzi᾽el the uncle of Aharon, and said to them, Come near, carry your brethren from before the sanctuary out of the camp."
+    },
+    {
+      "n": 29,
+      "c": 10,
+      "v": 5,
+      "ref": "10:5",
+      "text": "וַֽיִּקְרְב֗וּ וַיִּשָּׂאֻם֙ בְּכֻתֳּנֹתָ֔ם אֶל־מִח֖וּץ לַֽמַּחֲנֶ֑ה כַּאֲשֶׁ֖ר דִּבֶּ֥ר מֹשֶֽׁה׃",
+      "en": "So they went near, and carried them in their coats out of the camp; as Moshe had said."
+    },
+    {
+      "n": 30,
+      "c": 10,
+      "v": 6,
+      "ref": "10:6",
+      "text": "וַיֹּ֣אמֶר מֹשֶׁ֣ה אֶֽל־אַהֲרֹ֡ן וּלְאֶלְעָזָר֩ וּלְאִֽיתָמָ֨ר&thinsp;<small>׀</small>&thinsp;בָּנָ֜יו רָֽאשֵׁיכֶ֥ם אַל־תִּפְרָ֣עוּ&thinsp;<b>׀</b> וּבִגְדֵיכֶ֤ם לֹֽא־תִפְרֹ֙מוּ֙ וְלֹ֣א תָמֻ֔תוּ וְעַ֥ל כׇּל־הָעֵדָ֖ה יִקְצֹ֑ף וַאֲחֵיכֶם֙ כׇּל־בֵּ֣ית יִשְׂרָאֵ֔ל יִבְכּוּ֙ אֶת־הַשְּׂרֵפָ֔ה אֲשֶׁ֖ר שָׂרַ֥ף יְהֹוָֽה׃",
+      "en": "And Moshe said to Aharon, and to El῾azar and to Itamar, his sons, Let the hair of your heads not grow long, neither rend your clothes; lest you die, and lest anger come upon all the people: but let your brethren, the whole house of Yisra᾽el bewail the burning which the Lord has kindled."
+    },
+    {
+      "n": 31,
+      "c": 10,
+      "v": 7,
+      "ref": "10:7",
+      "text": "וּמִפֶּ֩תַח֩ אֹ֨הֶל מוֹעֵ֜ד לֹ֤א תֵֽצְאוּ֙ פֶּן־תָּמֻ֔תוּ כִּי־שֶׁ֛מֶן מִשְׁחַ֥ת יְהֹוָ֖ה עֲלֵיכֶ֑ם וַֽיַּעֲשׂ֖וּ כִּדְבַ֥ר מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And you shall not go out from the door of the Tent of Meeting lest you die: for the anointing oil of the Lord is upon you. And they did according to the word of Moshe."
+    },
+    {
+      "n": 32,
+      "c": 10,
+      "v": 8,
+      "ref": "10:8",
+      "text": "וַיְדַבֵּ֣ר יְהֹוָ֔ה אֶֽל־אַהֲרֹ֖ן לֵאמֹֽר׃",
+      "en": "And the Lord spoke to Aharon, saying,"
+    },
+    {
+      "n": 33,
+      "c": 10,
+      "v": 9,
+      "ref": "10:9",
+      "text": "יַ֣יִן וְשֵׁכָ֞ר אַל־תֵּ֣שְׁתְּ&thinsp;<b>׀</b> אַתָּ֣ה&thinsp;<b>׀</b> וּבָנֶ֣יךָ אִתָּ֗ךְ בְּבֹאֲכֶ֛ם אֶל־אֹ֥הֶל מוֹעֵ֖ד וְלֹ֣א תָמֻ֑תוּ חֻקַּ֥ת עוֹלָ֖ם לְדֹרֹתֵיכֶֽם׃",
+      "en": "Do not drink wine or strong drink, thou, nor thy sons with thee, when you enter the Tent of Meeting, lest you die: it shall be a statute for ever throughout your generations:"
+    },
+    {
+      "n": 34,
+      "c": 10,
+      "v": 10,
+      "ref": "10:10",
+      "text": "וּֽלְהַבְדִּ֔יל בֵּ֥ין הַקֹּ֖דֶשׁ וּבֵ֣ין הַחֹ֑ל וּבֵ֥ין הַטָּמֵ֖א וּבֵ֥ין הַטָּהֽוֹר׃",
+      "en": "and that you may differentiate between holy and unholy, and between unclean and clean;"
+    },
+    {
+      "n": 35,
+      "c": 10,
+      "v": 11,
+      "ref": "10:11",
+      "text": "וּלְהוֹרֹ֖ת אֶת־בְּנֵ֣י יִשְׂרָאֵ֑ל אֵ֚ת כׇּל־הַ֣חֻקִּ֔ים אֲשֶׁ֨ר דִּבֶּ֧ר יְהֹוָ֛ה אֲלֵיהֶ֖ם בְּיַד־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and that you may teach the children of Yisra᾽el all the statutes which the Lord has spoken to them by the hand of Moshe."
+    },
+    {
+      "n": 36,
+      "c": 10,
+      "v": 12,
+      "ref": "10:12",
+      "text": "וַיְדַבֵּ֨ר מֹשֶׁ֜ה אֶֽל־אַהֲרֹ֗ן וְאֶ֣ל אֶ֠לְעָזָ֠ר וְאֶל־אִ֨יתָמָ֥ר&thinsp;<small>׀</small>&thinsp;בָּנָיו֮ הַנּֽוֹתָרִים֒ קְח֣וּ אֶת־הַמִּנְחָ֗ה הַנּוֹתֶ֙רֶת֙ מֵאִשֵּׁ֣י יְהֹוָ֔ה וְאִכְל֥וּהָ מַצּ֖וֹת אֵ֣צֶל הַמִּזְבֵּ֑חַ כִּ֛י קֹ֥דֶשׁ קׇֽדָשִׁ֖ים הִֽוא׃",
+      "en": "And Moshe spoke to Aharon, and to El῾azar and to Itamar, his sons that were left, Take the meal offering that remains of the offerings of the Lord made by fire, and eat it without leaven beside the altar: for it is most holy:"
+    },
+    {
+      "n": 37,
+      "c": 10,
+      "v": 13,
+      "ref": "10:13",
+      "text": "וַאֲכַלְתֶּ֤ם אֹתָהּ֙ בְּמָק֣וֹם קָד֔וֹשׁ כִּ֣י חׇקְךָ֤ וְחׇק־בָּנֶ֙יךָ֙ הִ֔וא מֵאִשֵּׁ֖י יְהֹוָ֑ה כִּי־כֵ֖ן צֻוֵּֽיתִי׃",
+      "en": "and you shall eat it in the holy place, because it is thy due, and thy sons’ due, of the sacrifices of the Lord made by fire: for so I am commanded."
+    },
+    {
+      "n": 38,
+      "c": 10,
+      "v": 14,
+      "ref": "10:14",
+      "text": "וְאֵת֩ חֲזֵ֨ה הַתְּנוּפָ֜ה וְאֵ֣ת&thinsp;<b>׀</b> שׁ֣וֹק הַתְּרוּמָ֗ה תֹּֽאכְלוּ֙ בְּמָק֣וֹם טָה֔וֹר אַתָּ֕ה וּבָנֶ֥יךָ וּבְנֹתֶ֖יךָ אִתָּ֑ךְ כִּֽי־חׇקְךָ֤ וְחׇק־בָּנֶ֙יךָ֙ נִתְּנ֔וּ מִזִּבְחֵ֥י שַׁלְמֵ֖י בְּנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "And the wave breast and heave shoulder shall you eat in a clean place; thou, and thy sons, and thy daughters with thee: for they are thy due, and thy sons’ due, which are given out of the sacrifices of peace offerings of the children of Yisra᾽el."
+    },
+    {
+      "n": 39,
+      "c": 10,
+      "v": 15,
+      "ref": "10:15",
+      "text": "שׁ֣וֹק הַתְּרוּמָ֞ה וַחֲזֵ֣ה הַתְּנוּפָ֗ה עַ֣ל אִשֵּׁ֤י הַחֲלָבִים֙ יָבִ֔יאוּ לְהָנִ֥יף תְּנוּפָ֖ה לִפְנֵ֣י יְהֹוָ֑ה וְהָיָ֨ה לְךָ֜ וּלְבָנֶ֤יךָ אִתְּךָ֙ לְחׇק־עוֹלָ֔ם כַּאֲשֶׁ֖ר צִוָּ֥ה יְהֹוָֽה׃",
+      "en": "The heave shoulder and the wave breast shall they bring with the offerings made by fire of the fat, to wave it for a wave offering before the Lord; and it shall be thine, and thy sons’ with thee, as a portion for ever; as the Lord commanded."
+    },
+    {
+      "n": 40,
+      "c": 10,
+      "v": 16,
+      "ref": "10:16",
+      "text": "וְאֵ֣ת&thinsp;<b>׀</b> שְׂעִ֣יר הַֽחַטָּ֗את דָּרֹ֥שׁ דָּרַ֛שׁ מֹשֶׁ֖ה וְהִנֵּ֣ה שֹׂרָ֑ף וַ֠יִּקְצֹ֠ף עַל־אֶלְעָזָ֤ר וְעַל־אִֽיתָמָר֙ בְּנֵ֣י אַהֲרֹ֔ן הַנּוֹתָרִ֖ם לֵאמֹֽר׃",
+      "en": "And Moshe diligently sought the goat of the sin offering, and, behold, it was burnt: and he was angry with El῾azar and Itamar, the sons of Aharon that were left alive, saying."
+    },
+    {
+      "n": 41,
+      "c": 10,
+      "v": 17,
+      "ref": "10:17",
+      "text": "מַדּ֗וּעַ לֹֽא־אֲכַלְתֶּ֤ם אֶת־הַחַטָּאת֙ בִּמְק֣וֹם הַקֹּ֔דֶשׁ כִּ֛י קֹ֥דֶשׁ קׇֽדָשִׁ֖ים הִ֑וא וְאֹתָ֣הּ&thinsp;<b>׀</b> נָתַ֣ן לָכֶ֗ם לָשֵׂאת֙ אֶת־עֲוֺ֣ן הָעֵדָ֔ה לְכַפֵּ֥ר עֲלֵיהֶ֖ם לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "Why have you not eaten the sin offering in the holy place, seeing it is most holy, and God has given it you to bear the iniquity of the congregation, to make atonement for them before the Lord?"
+    },
+    {
+      "n": 42,
+      "c": 10,
+      "v": 18,
+      "ref": "10:18",
+      "text": "הֵ֚ן לֹא־הוּבָ֣א אֶת־דָּמָ֔הּ אֶל־הַקֹּ֖דֶשׁ פְּנִ֑ימָה אָכ֨וֹל תֹּאכְל֥וּ אֹתָ֛הּ בַּקֹּ֖דֶשׁ כַּאֲשֶׁ֥ר צִוֵּֽיתִי׃",
+      "en": "Behold, the blood of it was not brought in within the holy place: you should indeed have eaten it in the holy place, as I commanded."
+    },
+    {
+      "n": 43,
+      "c": 10,
+      "v": 19,
+      "ref": "10:19",
+      "text": "וַיְדַבֵּ֨ר אַהֲרֹ֜ן אֶל־מֹשֶׁ֗ה הֵ֣ן הַ֠יּ֠וֹם הִקְרִ֨יבוּ אֶת־חַטָּאתָ֤ם וְאֶת־עֹֽלָתָם֙ לִפְנֵ֣י יְהֹוָ֔ה וַתִּקְרֶ֥אנָה אֹתִ֖י כָּאֵ֑לֶּה וְאָכַ֤לְתִּי חַטָּאת֙ הַיּ֔וֹם הַיִּיטַ֖ב בְּעֵינֵ֥י יְהֹוָֽה׃",
+      "en": "And Aharon said to Moshe, Behold, this day have they offered their sin offering and their burnt offering before the Lord; and such things have befallen me that if I had eaten the sin offering today, should it have been accepted in the sight of the Lord?"
+    },
+    {
+      "n": 44,
+      "c": 10,
+      "v": 20,
+      "ref": "10:20",
+      "text": "וַיִּשְׁמַ֣ע מֹשֶׁ֔ה וַיִּיטַ֖ב בְּעֵינָֽיו׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And when Moshe heard that, he was content."
+    },
+    {
+      "n": 45,
+      "c": 11,
+      "v": 1,
+      "ref": "11:1",
+      "text": "וַיְדַבֵּ֧ר יְהֹוָ֛ה אֶל־מֹשֶׁ֥ה וְאֶֽל־אַהֲרֹ֖ן לֵאמֹ֥ר אֲלֵהֶֽם׃",
+      "en": "And the Lord spoke to Moshe and to Aharon, saying to them,"
+    },
+    {
+      "n": 46,
+      "c": 11,
+      "v": 2,
+      "ref": "11:2",
+      "text": "דַּבְּר֛וּ אֶל־בְּנֵ֥י יִשְׂרָאֵ֖ל לֵאמֹ֑ר זֹ֤את הַֽחַיָּה֙ אֲשֶׁ֣ר תֹּאכְל֔וּ מִכׇּל־הַבְּהֵמָ֖ה אֲשֶׁ֥ר עַל־הָאָֽרֶץ׃",
+      "en": "Speak to the children of Yisra᾽el, saying, These are the beasts which you shall eat among all the beasts that are on the earth."
+    },
+    {
+      "n": 47,
+      "c": 11,
+      "v": 3,
+      "ref": "11:3",
+      "text": "כֹּ֣ל&thinsp;<b>׀</b> מַפְרֶ֣סֶת פַּרְסָ֗ה וְשֹׁסַ֤עַת שֶׁ֙סַע֙ פְּרָסֹ֔ת מַעֲלַ֥ת גֵּרָ֖ה בַּבְּהֵמָ֑ה אֹתָ֖הּ תֹּאכֵֽלוּ׃",
+      "en": "Whatever parts the hoof, and is clovenfooted, and chews the cud, among the beasts, that shall you eat."
+    },
+    {
+      "n": 48,
+      "c": 11,
+      "v": 4,
+      "ref": "11:4",
+      "text": "אַ֤ךְ אֶת־זֶה֙ לֹ֣א תֹֽאכְל֔וּ מִֽמַּעֲלֵי֙ הַגֵּרָ֔ה וּמִמַּפְרִסֵ֖י הַפַּרְסָ֑ה אֶֽת־הַ֠גָּמָ֠ל כִּֽי־מַעֲלֵ֨ה גֵרָ֜ה ה֗וּא וּפַרְסָה֙ אֵינֶ֣נּוּ מַפְרִ֔יס טָמֵ֥א ה֖וּא לָכֶֽם׃",
+      "en": "Nevertheless these shall you not eat of them that chew the cud, or of them that divide the hoof: the camel, because he chews the cud, but does not part the hoof: he is unclean to you."
+    },
+    {
+      "n": 49,
+      "c": 11,
+      "v": 5,
+      "ref": "11:5",
+      "text": "וְאֶת־הַשָּׁפָ֗ן כִּֽי־מַעֲלֵ֤ה גֵרָה֙ ה֔וּא וּפַרְסָ֖ה לֹ֣א יַפְרִ֑יס טָמֵ֥א ה֖וּא לָכֶֽם׃",
+      "en": "And the coney, because he chews the cud, but does not part the hoof; he is unclean to you."
+    },
+    {
+      "n": 50,
+      "c": 11,
+      "v": 6,
+      "ref": "11:6",
+      "text": "וְאֶת־הָאַרְנֶ֗בֶת כִּֽי־מַעֲלַ֤ת גֵּרָה֙ הִ֔וא וּפַרְסָ֖ה לֹ֣א הִפְרִ֑יסָה טְמֵאָ֥ה הִ֖וא לָכֶֽם׃",
+      "en": "And the hare, because he chews the cud, but does not part the hoof; he is unclean to you."
+    },
+    {
+      "n": 51,
+      "c": 11,
+      "v": 7,
+      "ref": "11:7",
+      "text": "וְאֶת־הַ֠חֲזִ֠יר כִּֽי־מַפְרִ֨יס פַּרְסָ֜ה ה֗וּא וְשֹׁסַ֥ע שֶׁ֙סַע֙ פַּרְסָ֔ה וְה֖וּא גֵּרָ֣ה לֹֽא־יִגָּ֑ר טָמֵ֥א ה֖וּא לָכֶֽם׃",
+      "en": "And the swine, though he divide the hoof, and be clovenfooted, yet he chews not the cud; he is unclean to you."
+    },
+    {
+      "n": 52,
+      "c": 11,
+      "v": 8,
+      "ref": "11:8",
+      "text": "מִבְּשָׂרָם֙ לֹ֣א תֹאכֵ֔לוּ וּבְנִבְלָתָ֖ם לֹ֣א תִגָּ֑עוּ טְמֵאִ֥ים הֵ֖ם לָכֶֽם׃",
+      "en": "Of their flesh shall you not eat, and their carcass shall you not touch; they are unclean to you."
+    },
+    {
+      "n": 53,
+      "c": 11,
+      "v": 9,
+      "ref": "11:9",
+      "text": "אֶת־זֶה֙ תֹּֽאכְל֔וּ מִכֹּ֖ל אֲשֶׁ֣ר בַּמָּ֑יִם כֹּ֣ל אֲשֶׁר־לוֹ֩ סְנַפִּ֨יר וְקַשְׂקֶ֜שֶׂת בַּמַּ֗יִם בַּיַּמִּ֛ים וּבַנְּחָלִ֖ים אֹתָ֥ם תֹּאכֵֽלוּ׃",
+      "en": "These shall you eat of all that are in the waters: whatever has fins and scales in the waters, in the seas, and in the rivers, them shall you eat."
+    },
+    {
+      "n": 54,
+      "c": 11,
+      "v": 10,
+      "ref": "11:10",
+      "text": "וְכֹל֩ אֲשֶׁ֨ר אֵֽין־ל֜וֹ סְנַפִּ֣יר וְקַשְׂקֶ֗שֶׂת בַּיַּמִּים֙ וּבַנְּחָלִ֔ים מִכֹּל֙ שֶׁ֣רֶץ הַמַּ֔יִם וּמִכֹּ֛ל נֶ֥פֶשׁ הַחַיָּ֖ה אֲשֶׁ֣ר בַּמָּ֑יִם שֶׁ֥קֶץ הֵ֖ם לָכֶֽם׃",
+      "en": "And all that have not fins and scales in the seas, and in the rivers, of all that move in the waters, and of any living thing which is in the waters, they are abominable to you:"
+    },
+    {
+      "n": 55,
+      "c": 11,
+      "v": 11,
+      "ref": "11:11",
+      "text": "וְשֶׁ֖קֶץ יִהְי֣וּ לָכֶ֑ם מִבְּשָׂרָם֙ לֹ֣א תֹאכֵ֔לוּ וְאֶת־נִבְלָתָ֖ם תְּשַׁקֵּֽצוּ׃",
+      "en": "and they shall be abominable to you; you shall not eat of their flesh, but their carcasses you shall abominate."
+    },
+    {
+      "n": 56,
+      "c": 11,
+      "v": 12,
+      "ref": "11:12",
+      "text": "כֹּ֣ל אֲשֶׁ֥ר אֵֽין־ל֛וֹ סְנַפִּ֥יר וְקַשְׂקֶ֖שֶׂת בַּמָּ֑יִם שֶׁ֥קֶץ ה֖וּא לָכֶֽם׃",
+      "en": "Whatever has no fins or scales in the waters, that shall be an abomination to you."
+    },
+    {
+      "n": 57,
+      "c": 11,
+      "v": 13,
+      "ref": "11:13",
+      "text": "וְאֶת־אֵ֙לֶּה֙ תְּשַׁקְּצ֣וּ מִן־הָע֔וֹף לֹ֥א יֵאָכְל֖וּ שֶׁ֣קֶץ הֵ֑ם אֶת־הַנֶּ֙שֶׁר֙ וְאֶת־הַפֶּ֔רֶס וְאֵ֖ת הָעׇזְנִיָּֽה׃",
+      "en": "And these are they which you shall have in abomination among the birds; they shall not be eaten, they are abominable: the eagle, and the bearded vulture and the black vulture."
+    },
+    {
+      "n": 58,
+      "c": 11,
+      "v": 14,
+      "ref": "11:14",
+      "text": "וְאֶ֨ת־הַדָּאָ֔ה וְאֶת־הָאַיָּ֖ה לְמִינָֽהּ׃",
+      "en": "And the kite, and the buzzard after its kind;"
+    },
+    {
+      "n": 59,
+      "c": 11,
+      "v": 15,
+      "ref": "11:15",
+      "text": "אֵ֥ת כׇּל־עֹרֵ֖ב לְמִינֽוֹ׃",
+      "en": "every raven after its kind;"
+    },
+    {
+      "n": 60,
+      "c": 11,
+      "v": 16,
+      "ref": "11:16",
+      "text": "וְאֵת֙ בַּ֣ת הַֽיַּעֲנָ֔ה וְאֶת־הַתַּחְמָ֖ס וְאֶת־הַשָּׁ֑חַף וְאֶת־הַנֵּ֖ץ לְמִינֵֽהוּ׃",
+      "en": "and the owl, and the kestrel, and the gull, and the sparrow hawk after its kind."
+    },
+    {
+      "n": 61,
+      "c": 11,
+      "v": 17,
+      "ref": "11:17",
+      "text": "וְאֶת־הַכּ֥וֹס וְאֶת־הַשָּׁלָ֖ךְ וְאֶת־הַיַּנְשֽׁוּף׃",
+      "en": "And the little owl, and the fish fowl, and the great owl,"
+    },
+    {
+      "n": 62,
+      "c": 11,
+      "v": 18,
+      "ref": "11:18",
+      "text": "וְאֶת־הַתִּנְשֶׁ֥מֶת וְאֶת־הַקָּאָ֖ת וְאֶת־הָרָחָֽם׃",
+      "en": "and the barn owl, and the jackdaw, and the gier eagle."
+    },
+    {
+      "n": 63,
+      "c": 11,
+      "v": 19,
+      "ref": "11:19",
+      "text": "וְאֵת֙ הַחֲסִידָ֔ה הָאֲנָפָ֖ה לְמִינָ֑הּ וְאֶת־הַדּוּכִיפַ֖ת וְאֶת־הָעֲטַלֵּֽף׃",
+      "en": "And the stork, the heron after her kind, and the hoopoe, and the bat."
+    },
+    {
+      "n": 64,
+      "c": 11,
+      "v": 20,
+      "ref": "11:20",
+      "text": "כֹּ֚ל שֶׁ֣רֶץ הָע֔וֹף הַהֹלֵ֖ךְ עַל־אַרְבַּ֑ע שֶׁ֥קֶץ ה֖וּא לָכֶֽם׃",
+      "en": "All swarming things that fly, going upon four, shall be an abomination to you."
+    },
+    {
+      "n": 65,
+      "c": 11,
+      "v": 21,
+      "ref": "11:21",
+      "text": "אַ֤ךְ אֶת־זֶה֙ תֹּֽאכְל֔וּ מִכֹּל֙ שֶׁ֣רֶץ הָע֔וֹף הַהֹלֵ֖ךְ עַל־אַרְבַּ֑ע אֲשֶׁר־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[ל֤וֹ]</span> <span class=\"mam-kq-k\">(לא)</span></span> כְרָעַ֙יִם֙ מִמַּ֣עַל לְרַגְלָ֔יו לְנַתֵּ֥ר בָּהֵ֖ן עַל־הָאָֽרֶץ׃",
+      "en": "Yet these may you eat of every flying creeping thing that goes upon four, which have legs above their feet, to leap with upon the earth;"
+    },
+    {
+      "n": 66,
+      "c": 11,
+      "v": 22,
+      "ref": "11:22",
+      "text": "אֶת־אֵ֤לֶּה מֵהֶם֙ תֹּאכֵ֔לוּ אֶת־הָֽאַרְבֶּ֣ה לְמִינ֔וֹ וְאֶת־הַסׇּלְעָ֖ם לְמִינֵ֑הוּ וְאֶת־הַחַרְגֹּ֣ל לְמִינֵ֔הוּ וְאֶת־הֶחָגָ֖ב לְמִינֵֽהוּ׃",
+      "en": "these of them you may eat; the locust after its kind, and the grasshopper after its kind, and the ĥargol after its kind, and the ĥagav after its kind."
+    },
+    {
+      "n": 67,
+      "c": 11,
+      "v": 23,
+      "ref": "11:23",
+      "text": "וְכֹל֙ שֶׁ֣רֶץ הָע֔וֹף אֲשֶׁר־ל֖וֹ אַרְבַּ֣ע רַגְלָ֑יִם שֶׁ֥קֶץ ה֖וּא לָכֶֽם׃",
+      "en": "But all other flying creeping things, which have four feet, shall be an abomination to you."
+    },
+    {
+      "n": 68,
+      "c": 11,
+      "v": 24,
+      "ref": "11:24",
+      "text": "וּלְאֵ֖לֶּה תִּטַּמָּ֑אוּ כׇּל־הַנֹּגֵ֥עַ בְּנִבְלָתָ֖ם יִטְמָ֥א עַד־הָעָֽרֶב׃",
+      "en": "And for these you shall be unclean: whoever touches the carcass of them shall be unclean until evening."
+    },
+    {
+      "n": 69,
+      "c": 11,
+      "v": 25,
+      "ref": "11:25",
+      "text": "וְכׇל־הַנֹּשֵׂ֖א מִנִּבְלָתָ֑ם יְכַבֵּ֥ס בְּגָדָ֖יו וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And whoever bears aught of the carcass of them shall wash his clothes, and be unclean until evening."
+    },
+    {
+      "n": 70,
+      "c": 11,
+      "v": 26,
+      "ref": "11:26",
+      "text": "לְֽכׇל־הַבְּהֵמָ֡ה אֲשֶׁ֣ר הִוא֩ מַפְרֶ֨סֶת פַּרְסָ֜ה וְשֶׁ֣סַע&thinsp;<b>׀</b> אֵינֶ֣נָּה שֹׁסַ֗עַת וְגֵרָה֙ אֵינֶ֣נָּה מַעֲלָ֔ה טְמֵאִ֥ים הֵ֖ם לָכֶ֑ם כׇּל־הַנֹּגֵ֥עַ בָּהֶ֖ם יִטְמָֽא׃",
+      "en": "The carcasses of every beast which parts the hoof, and is not clovenfooted, nor chews the cud, are unclean to you: everyone that touches them shall be unclean."
+    },
+    {
+      "n": 71,
+      "c": 11,
+      "v": 27,
+      "ref": "11:27",
+      "text": "וְכֹ֣ל&thinsp;<b>׀</b> הוֹלֵ֣ךְ עַל־כַּפָּ֗יו בְּכׇל־הַֽחַיָּה֙ הַהֹלֶ֣כֶת עַל־אַרְבַּ֔ע טְמֵאִ֥ים הֵ֖ם לָכֶ֑ם כׇּל־הַנֹּגֵ֥עַ בְּנִבְלָתָ֖ם יִטְמָ֥א עַד־הָעָֽרֶב׃",
+      "en": "And whatever goes upon its paws, among all manner of beasts that go on all four, those are unclean to you: whoever touches their carcass shall be unclean until evening."
+    },
+    {
+      "n": 72,
+      "c": 11,
+      "v": 28,
+      "ref": "11:28",
+      "text": "וְהַנֹּשֵׂא֙ אֶת־נִבְלָתָ֔ם יְכַבֵּ֥ס בְּגָדָ֖יו וְטָמֵ֣א עַד־הָעָ֑רֶב טְמֵאִ֥ים הֵ֖מָּה לָכֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he that bears the carcass of them shall wash his clothes, and be unclean until evening: they are unclean to you."
+    },
+    {
+      "n": 73,
+      "c": 11,
+      "v": 29,
+      "ref": "11:29",
+      "text": "וְזֶ֤ה לָכֶם֙ הַטָּמֵ֔א בַּשֶּׁ֖רֶץ הַשֹּׁרֵ֣ץ עַל־הָאָ֑רֶץ הַחֹ֥לֶד וְהָעַכְבָּ֖ר וְהַצָּ֥ב לְמִינֵֽהוּ׃",
+      "en": "These also shall be unclean to you among the creeping things that creep upon the earth; the rat, and the mouse, and the tortoise after its kind."
+    },
+    {
+      "n": 74,
+      "c": 11,
+      "v": 30,
+      "ref": "11:30",
+      "text": "וְהָאֲנָקָ֥ה וְהַכֹּ֖חַ וְהַלְּטָאָ֑ה וְהַחֹ֖מֶט וְהַתִּנְשָֽׁמֶת׃",
+      "en": "And the gecko, and the monitor, and the lizard, and the skink, and the chameleon."
+    },
+    {
+      "n": 75,
+      "c": 11,
+      "v": 31,
+      "ref": "11:31",
+      "text": "אֵ֛לֶּה הַטְּמֵאִ֥ים לָכֶ֖ם בְּכׇל־הַשָּׁ֑רֶץ כׇּל־הַנֹּגֵ֧עַ בָּהֶ֛ם בְּמֹתָ֖ם יִטְמָ֥א עַד־הָעָֽרֶב׃",
+      "en": "These are unclean to you among all that creep: whoever touches them, when they are dead, shall be unclean until evening."
+    },
+    {
+      "n": 76,
+      "c": 11,
+      "v": 32,
+      "ref": "11:32",
+      "text": "וְכֹ֣ל אֲשֶׁר־יִפֹּל־עָלָיו֩ מֵהֶ֨ם&thinsp;<small>׀</small>&thinsp;בְּמֹתָ֜ם יִטְמָ֗א מִכׇּל־כְּלִי־עֵץ֙ א֣וֹ בֶ֤גֶד אוֹ־עוֹר֙ א֣וֹ שָׂ֔ק כׇּל־כְּלִ֕י אֲשֶׁר־יֵעָשֶׂ֥ה מְלָאכָ֖ה בָּהֶ֑ם בַּמַּ֧יִם יוּבָ֛א וְטָמֵ֥א עַד־הָעֶ֖רֶב וְטָהֵֽר׃",
+      "en": "And whatever any of them falls upon, when they are dead, shall be unclean; whether it be any vessel of wood, or clothing, or skin, or sack, whatever vessel it be, in which any work is done, it must be put into water, and it shall be unclean until evening, then it shall be clean."
+    },
+    {
+      "n": 77,
+      "c": 11,
+      "v": 33,
+      "ref": "11:33",
+      "text": "וְכׇ֨ל־כְּלִי־חֶ֔רֶשׂ אֲשֶׁר־יִפֹּ֥ל מֵהֶ֖ם אֶל־תּוֹכ֑וֹ כֹּ֣ל אֲשֶׁ֧ר בְּתוֹכ֛וֹ יִטְמָ֖א וְאֹת֥וֹ תִשְׁבֹּֽרוּ׃",
+      "en": "And every earthen vessel, into which any of them fall, whatever is in it shall be unclean; and you shall break it."
+    },
+    {
+      "n": 78,
+      "c": 11,
+      "v": 34,
+      "ref": "11:34",
+      "text": "מִכׇּל־הָאֹ֜כֶל אֲשֶׁ֣ר יֵאָכֵ֗ל אֲשֶׁ֨ר יָב֥וֹא עָלָ֛יו מַ֖יִם יִטְמָ֑א וְכׇל־מַשְׁקֶה֙ אֲשֶׁ֣ר יִשָּׁתֶ֔ה בְּכׇל־כְּלִ֖י יִטְמָֽא׃",
+      "en": "Of all food which may be eaten, that on which water comes shall be unclean: and all drink that may be drunk in every vessel shall be unclean."
+    },
+    {
+      "n": 79,
+      "c": 11,
+      "v": 35,
+      "ref": "11:35",
+      "text": "וְ֠כֹ֠ל אֲשֶׁר־יִפֹּ֨ל מִנִּבְלָתָ֥ם&thinsp;<small>׀</small>&thinsp;עָלָיו֮ יִטְמָא֒ תַּנּ֧וּר וְכִירַ֛יִם יֻתָּ֖ץ טְמֵאִ֣ים הֵ֑ם וּטְמֵאִ֖ים יִהְי֥וּ לָכֶֽם׃",
+      "en": "And everything upon which any part of their carcass falls shall be unclean; whether it be oven, or ranges, they shall be broken down: for they are unclean, and shall be unclean to you."
+    },
+    {
+      "n": 80,
+      "c": 11,
+      "v": 36,
+      "ref": "11:36",
+      "text": "אַ֣ךְ מַעְיָ֥ן וּב֛וֹר מִקְוֵה־מַ֖יִם יִהְיֶ֣ה טָה֑וֹר וְנֹגֵ֥עַ בְּנִבְלָתָ֖ם יִטְמָֽא׃",
+      "en": "Nevertheless a fountain or pit, wherein there is a collection of water, shall be clean: but that which touches their carcass shall be unclean."
+    },
+    {
+      "n": 81,
+      "c": 11,
+      "v": 37,
+      "ref": "11:37",
+      "text": "וְכִ֤י יִפֹּל֙ מִנִּבְלָתָ֔ם עַל־כׇּל־זֶ֥רַע זֵר֖וּעַ אֲשֶׁ֣ר יִזָּרֵ֑עַ טָה֖וֹר הֽוּא׃",
+      "en": "And if any part of their carcass fall upon any sowing seed which is to be sown, it shall be clean."
+    },
+    {
+      "n": 82,
+      "c": 11,
+      "v": 38,
+      "ref": "11:38",
+      "text": "וְכִ֤י יֻתַּן־מַ֙יִם֙ עַל־זֶ֔רַע וְנָפַ֥ל מִנִּבְלָתָ֖ם עָלָ֑יו טָמֵ֥א ה֖וּא לָכֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "But if any water be put upon the seed, and any part of their carcass fall on it, it shall be unclean to you."
+    },
+    {
+      "n": 83,
+      "c": 11,
+      "v": 39,
+      "ref": "11:39",
+      "text": "וְכִ֤י יָמוּת֙ מִן־הַבְּהֵמָ֔ה אֲשֶׁר־הִ֥יא לָכֶ֖ם לְאׇכְלָ֑ה הַנֹּגֵ֥עַ בְּנִבְלָתָ֖הּ יִטְמָ֥א עַד־הָעָֽרֶב׃",
+      "en": "And if any beast, of which you may eat, die; he that touches its carcass shall be unclean until evening."
+    },
+    {
+      "n": 84,
+      "c": 11,
+      "v": 40,
+      "ref": "11:40",
+      "text": "וְהָֽאֹכֵל֙ מִנִּבְלָתָ֔הּ יְכַבֵּ֥ס בְּגָדָ֖יו וְטָמֵ֣א עַד־הָעָ֑רֶב וְהַנֹּשֵׂא֙ אֶת־נִבְלָתָ֔הּ יְכַבֵּ֥ס בְּגָדָ֖יו וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And he that eats of the carcass of it shall wash his clothes, and be unclean until evening: he also that bears the carcass of it shall wash his clothes, and be unclean until evening."
+    },
+    {
+      "n": 85,
+      "c": 11,
+      "v": 41,
+      "ref": "11:41",
+      "text": "וְכׇל־הַשֶּׁ֖רֶץ הַשֹּׁרֵ֣ץ עַל־הָאָ֑רֶץ שֶׁ֥קֶץ ה֖וּא לֹ֥א יֵאָכֵֽל׃",
+      "en": "And every creeping thing that creeps upon the earth shall be held abominable; it shall not be eaten."
+    },
+    {
+      "n": 86,
+      "c": 11,
+      "v": 42,
+      "ref": "11:42",
+      "text": "כֹּל֩ הוֹלֵ֨ךְ עַל־גָּח֜<big>וֹ</big>ן וְכֹ֣ל&thinsp;<b>׀</b> הוֹלֵ֣ךְ עַל־אַרְבַּ֗ע עַ֚ד כׇּל־מַרְבֵּ֣ה רַגְלַ֔יִם לְכׇל־הַשֶּׁ֖רֶץ הַשֹּׁרֵ֣ץ עַל־הָאָ֑רֶץ לֹ֥א תֹאכְל֖וּם כִּי־שֶׁ֥קֶץ הֵֽם׃",
+      "en": "Whatever goes on its belly, and whatever goes upon four, or whatever has many feet among all creeping things that creep on the earth, them you shall not eat; for they are an abomination."
+    },
+    {
+      "n": 87,
+      "c": 11,
+      "v": 43,
+      "ref": "11:43",
+      "text": "אַל־תְּשַׁקְּצוּ֙ אֶת־נַפְשֹׁ֣תֵיכֶ֔ם בְּכׇל־הַשֶּׁ֖רֶץ הַשֹּׁרֵ֑ץ וְלֹ֤א תִֽטַּמְּאוּ֙ בָּהֶ֔ם וְנִטְמֵתֶ֖ם בָּֽם׃",
+      "en": "You shall not make yourselves abominable with any creeping thing that creeps, neither shall you make yourselves unclean with them, that you should be defiled by them."
+    },
+    {
+      "n": 88,
+      "c": 11,
+      "v": 44,
+      "ref": "11:44",
+      "text": "כִּ֣י אֲנִ֣י יְהֹוָה֮ אֱלֹֽהֵיכֶם֒ וְהִתְקַדִּשְׁתֶּם֙ וִהְיִיתֶ֣ם קְדֹשִׁ֔ים כִּ֥י קָד֖וֹשׁ אָ֑נִי וְלֹ֤א תְטַמְּאוּ֙ אֶת־נַפְשֹׁ֣תֵיכֶ֔ם בְּכׇל־הַשֶּׁ֖רֶץ הָרֹמֵ֥שׂ עַל־הָאָֽרֶץ׃",
+      "en": "For I am the Lord your God: you shall therefore sanctify yourselves, and you shall be holy; for I am holy: neither shall you defile yourselves with any manner of creeping thing that creeps on the earth."
+    },
+    {
+      "n": 89,
+      "c": 11,
+      "v": 45,
+      "ref": "11:45",
+      "text": "כִּ֣י&thinsp;<b>׀</b> אֲנִ֣י יְהֹוָ֗ה הַֽמַּעֲלֶ֤ה אֶתְכֶם֙ מֵאֶ֣רֶץ מִצְרַ֔יִם לִהְיֹ֥ת לָכֶ֖ם לֵאלֹהִ֑ים וִהְיִיתֶ֣ם קְדֹשִׁ֔ים כִּ֥י קָד֖וֹשׁ אָֽנִי׃",
+      "en": "For I am the Lord that brings you up out of the land of Miżrayim, to be your God: you shall therefore be holy, for I am holy."
+    },
+    {
+      "n": 90,
+      "c": 11,
+      "v": 46,
+      "ref": "11:46",
+      "text": "זֹ֣את תּוֹרַ֤ת הַבְּהֵמָה֙ וְהָע֔וֹף וְכֹל֙ נֶ֣פֶשׁ הַֽחַיָּ֔ה הָרֹמֶ֖שֶׂת בַּמָּ֑יִם וּלְכׇל־נֶ֖פֶשׁ הַשֹּׁרֶ֥צֶת עַל־הָאָֽרֶץ׃",
+      "en": "This is the Tora of the beasts, and of the birds, and of every living creature that moves in the waters, and of every creature that creeps on the earth:"
+    },
+    {
+      "n": 91,
+      "c": 11,
+      "v": 47,
+      "ref": "11:47",
+      "text": "לְהַבְדִּ֕יל בֵּ֥ין הַטָּמֵ֖א וּבֵ֣ין הַטָּהֹ֑ר וּבֵ֤ין הַֽחַיָּה֙ הַֽנֶּאֱכֶ֔לֶת וּבֵין֙ הַֽחַיָּ֔ה אֲשֶׁ֖ר לֹ֥א תֵאָכֵֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "to make a distinction between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten."
+    }
+  ],
+  "parashah": {
+    "en": "Shmini",
+    "he": "שְּׁמִינִי",
+    "translit": "Shmini",
+    "ref": "Leviticus 9:1–11:47"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 16,
+        "ref": "9:1–9:16"
+      },
+      {
+        "n": 2,
+        "start": 17,
+        "end": 23,
+        "ref": "9:17–9:23"
+      },
+      {
+        "n": 3,
+        "start": 24,
+        "end": 35,
+        "ref": "9:24–10:11"
+      },
+      {
+        "n": 4,
+        "start": 36,
+        "end": 39,
+        "ref": "10:12–10:15"
+      },
+      {
+        "n": 5,
+        "start": 40,
+        "end": 44,
+        "ref": "10:16–10:20"
+      },
+      {
+        "n": 6,
+        "start": 45,
+        "end": 76,
+        "ref": "11:1–11:32"
+      },
+      {
+        "n": 7,
+        "start": 77,
+        "end": 91,
+        "ref": "11:33–11:47"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 6,
+          "ref": "9:1–9:6"
+        },
+        {
+          "n": 2,
+          "start": 7,
+          "end": 10,
+          "ref": "9:7–9:10"
+        },
+        {
+          "n": 3,
+          "start": 11,
+          "end": 16,
+          "ref": "9:11–9:16"
+        },
+        {
+          "n": 4,
+          "start": 17,
+          "end": 23,
+          "ref": "9:17–9:23"
+        },
+        {
+          "n": 5,
+          "start": 24,
+          "end": 27,
+          "ref": "9:24–10:3"
+        },
+        {
+          "n": 6,
+          "start": 28,
+          "end": 31,
+          "ref": "10:4–10:7"
+        },
+        {
+          "n": 7,
+          "start": 32,
+          "end": 35,
+          "ref": "10:8–10:11"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 36,
+          "end": 39,
+          "ref": "10:12–10:15"
+        },
+        {
+          "n": 2,
+          "start": 40,
+          "end": 44,
+          "ref": "10:16–10:20"
+        },
+        {
+          "n": 3,
+          "start": 45,
+          "end": 52,
+          "ref": "11:1–11:8"
+        },
+        {
+          "n": 4,
+          "start": 53,
+          "end": 56,
+          "ref": "11:9–11:12"
+        },
+        {
+          "n": 5,
+          "start": 57,
+          "end": 63,
+          "ref": "11:13–11:19"
+        },
+        {
+          "n": 6,
+          "start": 64,
+          "end": 72,
+          "ref": "11:20–11:28"
+        },
+        {
+          "n": 7,
+          "start": 73,
+          "end": 76,
+          "ref": "11:29–11:32"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 45,
+          "end": 52,
+          "ref": "11:1–11:8"
+        },
+        {
+          "n": 2,
+          "start": 53,
+          "end": 56,
+          "ref": "11:9–11:12"
+        },
+        {
+          "n": 3,
+          "start": 57,
+          "end": 63,
+          "ref": "11:13–11:19"
+        },
+        {
+          "n": 4,
+          "start": 64,
+          "end": 72,
+          "ref": "11:20–11:28"
+        },
+        {
+          "n": 5,
+          "start": 73,
+          "end": 76,
+          "ref": "11:29–11:32"
+        },
+        {
+          "n": 6,
+          "start": 77,
+          "end": 82,
+          "ref": "11:33–11:38"
+        },
+        {
+          "n": 7,
+          "start": 83,
+          "end": 91,
+          "ref": "11:39–11:47"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 89,
+        "end": 91,
+        "ref": "11:45–11:47"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 32,
+          "end": 35,
+          "ref": "10:8–10:11"
+        },
+        "2": {
+          "n": "M",
+          "start": 73,
+          "end": 76,
+          "ref": "11:29–11:32"
+        },
+        "3": {
+          "n": "M",
+          "start": 89,
+          "end": 91,
+          "ref": "11:45–11:47"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

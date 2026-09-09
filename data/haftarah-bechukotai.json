@@ -1,0 +1,180 @@
+{
+  "slug": "haftarah-bechukotai",
+  "book": {
+    "en": "Jeremiah",
+    "he": "ירמיהו",
+    "translit": "Yirmiyahu"
+  },
+  "multiChapter": true,
+  "ref": "Jeremiah 16:19-17:14",
+  "heRef": "ירמיהו ט״ז:י״ט-כ״א, י״ז:א-י״ד",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 16,
+      "v": 19,
+      "ref": "16:19",
+      "text": "יְהֹוָ֞ה עֻזִּ֧י וּמָעֻזִּ֛י וּמְנוּסִ֖י בְּי֣וֹם צָרָ֑ה אֵלֶ֗יךָ גּוֹיִ֤ם יָבֹ֙אוּ֙ מֵֽאַפְסֵי־אָ֔רֶץ וְיֹאמְר֗וּ אַךְ־שֶׁ֙קֶר֙ נָחֲל֣וּ אֲבוֹתֵ֔ינוּ הֶ֖בֶל וְאֵֽין־בָּ֥ם מוֹעִֽיל׃",
+      "en": "O Lord, my strength, and my stronghold, and my refuge in the day of affliction, nations shall come to Thee from the ends of the earth, and shall say, Surely our fathers have inherited lies, vain idols, and things in which there is no profit."
+    },
+    {
+      "n": 2,
+      "c": 16,
+      "v": 20,
+      "ref": "16:20",
+      "text": "הֲיַעֲשֶׂה־לּ֥וֹ אָדָ֖ם אֱלֹהִ֑ים וְהֵ֖מָּה לֹ֥א אֱלֹהִֽים׃",
+      "en": "Shall a man make gods to himself, and they are no gods?"
+    },
+    {
+      "n": 3,
+      "c": 16,
+      "v": 21,
+      "ref": "16:21",
+      "text": "לָכֵן֙ הִנְנִ֣י מֽוֹדִיעָ֔ם בַּפַּ֣עַם הַזֹּ֔את אוֹדִיעֵ֥ם אֶת־יָדִ֖י וְאֶת־גְּבוּרָתִ֑י וְיָדְע֖וּ כִּֽי־שְׁמִ֥י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Therefore, behold, I will make known to them this once, I will cause them to know my hand and my might; and they shall know that my name is The Lord."
+    },
+    {
+      "n": 4,
+      "c": 17,
+      "v": 1,
+      "ref": "17:1",
+      "text": "חַטַּ֣את יְהוּדָ֗ה כְּתוּבָ֛ה בְּעֵ֥ט בַּרְזֶ֖ל בְּצִפֹּ֣רֶן שָׁמִ֑יר חֲרוּשָׁה֙ עַל־ל֣וּחַ לִבָּ֔ם וּלְקַרְנ֖וֹת מִזְבְּחוֹתֵיכֶֽם׃",
+      "en": "The sin of Yehuda is written with a pen of iron, and with the point of a diamond: it is graven upon the tablet of their heart, and upon the horns of your altars."
+    },
+    {
+      "n": 5,
+      "c": 17,
+      "v": 2,
+      "ref": "17:2",
+      "text": "כִּזְכֹּ֤ר בְּנֵיהֶם֙ מִזְבְּחוֹתָ֔ם וַאֲשֵׁרֵיהֶ֖ם עַל־עֵ֣ץ רַעֲנָ֑ן עַ֖ל גְּבָע֥וֹת הַגְּבֹהֽוֹת׃",
+      "en": "As they remember their children so they remember their altars and their asherim by the green trees upon the high hills."
+    },
+    {
+      "n": 6,
+      "c": 17,
+      "v": 3,
+      "ref": "17:3",
+      "text": "הֲרָרִי֙ בַּשָּׂדֶ֔ה חֵילְךָ֥ כׇל־אוֹצְרוֹתֶ֖יךָ לָבַ֣ז אֶתֵּ֑ן בָּמֹתֶ֕יךָ בְּחַטָּ֖את בְּכׇל־גְּבוּלֶֽיךָ׃",
+      "en": "O mountain dweller in the fields, I will give thy substance and all thy treasures to the spoil; thy high places, because of sin, throughout all thy borders."
+    },
+    {
+      "n": 7,
+      "c": 17,
+      "v": 4,
+      "ref": "17:4",
+      "text": "וְשָׁמַטְתָּ֗ה וּבְךָ֙ מִנַּחֲלָֽתְךָ֙ אֲשֶׁ֣ר נָתַ֣תִּי לָ֔ךְ וְהַעֲבַדְתִּ֙יךָ֙ אֶת־אֹ֣יְבֶ֔יךָ בָּאָ֖רֶץ אֲשֶׁ֣ר לֹא־יָדָ֑עְתָּ כִּֽי־אֵ֛שׁ קְדַחְתֶּ֥ם בְּאַפִּ֖י עַד־עוֹלָ֥ם תּוּקָֽד׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And thou, even thyself, shalt discontinue from thy heritage that I gave thee; and I will cause thee to serve thy enemies in the land which thou knowst not: for you have kindled a fire in my anger, which shall burn for ever."
+    },
+    {
+      "n": 8,
+      "c": 17,
+      "v": 5,
+      "ref": "17:5",
+      "text": "כֹּ֣ה&thinsp;<b>׀</b> אָמַ֣ר יְהֹוָ֗ה אָר֤וּר הַגֶּ֙בֶר֙ אֲשֶׁ֣ר יִבְטַ֣ח בָּאָדָ֔ם וְשָׂ֥ם בָּשָׂ֖ר זְרֹע֑וֹ וּמִן־יְהֹוָ֖ה יָס֥וּר לִבּֽוֹ׃",
+      "en": "Thus says the Lord; Cursed be the man who trusts in man, and makes flesh his arm, and whose heart departs from the Lord."
+    },
+    {
+      "n": 9,
+      "c": 17,
+      "v": 6,
+      "ref": "17:6",
+      "text": "וְהָיָה֙ כְּעַרְעָ֣ר בָּעֲרָבָ֔ה וְלֹ֥א יִרְאֶ֖ה כִּֽי־יָ֣בוֹא ט֑וֹב וְשָׁכַ֤ן חֲרֵרִים֙ בַּמִּדְבָּ֔ר אֶ֥רֶץ מְלֵחָ֖ה וְלֹ֥א תֵשֵֽׁב׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For he shall be like the juniper tree in the desert, and shall not see when good comes; but shall inhabit the parched places in the wilderness, a salt land and not inhabited."
+    },
+    {
+      "n": 10,
+      "c": 17,
+      "v": 7,
+      "ref": "17:7",
+      "text": "בָּר֣וּךְ הַגֶּ֔בֶר אֲשֶׁ֥ר יִבְטַ֖ח בַּיהֹוָ֑ה וְהָיָ֥ה יְהֹוָ֖ה מִבְטַחֽוֹ׃",
+      "en": "Blessed is the man who trusts in the Lord, and whose hope the Lord is."
+    },
+    {
+      "n": 11,
+      "c": 17,
+      "v": 8,
+      "ref": "17:8",
+      "text": "וְהָיָ֞ה כְּעֵ֣ץ&thinsp;<b>׀</b> שָׁת֣וּל עַל־מַ֗יִם וְעַל־יוּבַל֙ יְשַׁלַּ֣ח שׇׁרָשָׁ֔יו וְלֹ֤א <span class=\"mam-kq\"><span class=\"mam-kq-k\">(ירא)</span> <span class=\"mam-kq-q\">[יִרְאֶה֙]</span></span> כִּי־יָ֣בֹא חֹ֔ם וְהָיָ֥ה עָלֵ֖הוּ רַעֲנָ֑ן וּבִשְׁנַ֤ת בַּצֹּ֙רֶת֙ לֹ֣א יִדְאָ֔ג וְלֹ֥א יָמִ֖ישׁ מֵעֲשׂ֥וֹת פֶּֽרִי׃",
+      "en": "For he shall be like a tree planted by the waters, and that spreads out its roots by the river, and shall not see when the heat comes, but its leaf shall be green; and shall not be anxious in the year of drought, nor shall it cease from yielding fruit."
+    },
+    {
+      "n": 12,
+      "c": 17,
+      "v": 9,
+      "ref": "17:9",
+      "text": "עָקֹ֥ב הַלֵּ֛ב מִכֹּ֖ל וְאָנֻ֣שׁ ה֑וּא מִ֖י יֵדָעֶֽנּוּ׃",
+      "en": "The heart is deceitful above all things, and grievously weak: who can know it?"
+    },
+    {
+      "n": 13,
+      "c": 17,
+      "v": 10,
+      "ref": "17:10",
+      "text": "אֲנִ֧י יְהֹוָ֛ה חֹקֵ֥ר לֵ֖ב בֹּחֵ֣ן כְּלָי֑וֹת וְלָתֵ֤ת לְאִישׁ֙ כִּדְרָכָ֔ו כִּפְרִ֖י מַעֲלָלָֽיו׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "I, the Lord, search the heart, I try the inward parts, even to give every man according to his ways, and according to the fruit of his doings."
+    },
+    {
+      "n": 14,
+      "c": 17,
+      "v": 11,
+      "ref": "17:11",
+      "text": "קֹרֵ֤א דָגַר֙ וְלֹ֣א יָלָ֔ד עֹ֥שֶׂה עֹ֖שֶׁר וְלֹ֣א בְמִשְׁפָּ֑ט בַּחֲצִ֤י יָמָו֙ יַעַזְבֶ֔נּוּ וּבְאַחֲרִית֖וֹ יִהְיֶ֥ה נָבָֽל׃",
+      "en": "As the partridge sits on eggs, but hatches them not; so is he that gets riches, and not by right; he shall leave them in the midst of his days, and at his end shall be a fool."
+    },
+    {
+      "n": 15,
+      "c": 17,
+      "v": 12,
+      "ref": "17:12",
+      "text": "כִּסֵּ֣א כָב֔וֹד מָר֖וֹם מֵרִאשׁ֑וֹן מְק֖וֹם מִקְדָּשֵֽׁנוּ׃",
+      "en": "A glorious throne exalted from the beginning is the place of our sanctuary."
+    },
+    {
+      "n": 16,
+      "c": 17,
+      "v": 13,
+      "ref": "17:13",
+      "text": "מִקְוֵ֤ה יִשְׂרָאֵל֙ יְהֹוָ֔ה כׇּל־עֹזְבֶ֖יךָ יֵבֹ֑שׁוּ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(יסורי)</span> <span class=\"mam-kq-q\">[וְסוּרַי֙]</span></span> בָּאָ֣רֶץ יִכָּתֵ֔בוּ כִּ֥י עָזְב֛וּ מְק֥וֹר מַֽיִם־חַיִּ֖ים אֶת־יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "O Lord, the hope of Yisra᾽el, all that forsake Thee shall be ashamed, and they who depart from me shall be written in the earth, because they have forsaken the Lord, the fountain of living waters."
+    },
+    {
+      "n": 17,
+      "c": 17,
+      "v": 14,
+      "ref": "17:14",
+      "text": "רְפָאֵ֤נִי יְהֹוָה֙ וְאֵ֣רָפֵ֔א הוֹשִׁיעֵ֖נִי וְאִוָּשֵׁ֑עָה כִּ֥י תְהִלָּתִ֖י אָֽתָּה׃",
+      "en": "Heal me, O Lord, and I shall be healed; save me, and I shall be saved: for Thou art my praise."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Bechukotai",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 33
+  },
+  "parashah": {
+    "en": "Haftarat Bechukotai",
+    "translit": "Haftarat Bechukotai",
+    "he": "הפטרת בחקתי",
+    "ref": "Jeremiah 16:19-17:14"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 17,
+        "ref": "16:19–17:14"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

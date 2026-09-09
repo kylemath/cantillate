@@ -1,0 +1,196 @@
+{
+  "slug": "haftarah-vayeshev",
+  "book": {
+    "en": "Amos",
+    "he": "עמוס",
+    "translit": "Amos"
+  },
+  "multiChapter": true,
+  "ref": "Amos 2:6-3:8",
+  "heRef": "עמוס ב׳:ו-ט״ז, ג׳:א-ח",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 2,
+      "v": 6,
+      "ref": "2:6",
+      "text": "כֹּ֚ה אָמַ֣ר יְהֹוָ֔ה עַל־שְׁלֹשָׁה֙ פִּשְׁעֵ֣י יִשְׂרָאֵ֔ל וְעַל־אַרְבָּעָ֖ה לֹ֣א אֲשִׁיבֶ֑נּוּ עַל־מִכְרָ֤ם בַּכֶּ֙סֶף֙ צַדִּ֔יק וְאֶבְי֖וֹן בַּעֲב֥וּר נַעֲלָֽיִם׃",
+      "en": "Thus says the Lord; For three transgressions of Yisra᾽el, I will turn away his punishment, but for the fourth I will not turn away his punishment; because they sold the righteous for silver, and the poor for a pair of shoes;"
+    },
+    {
+      "n": 2,
+      "c": 2,
+      "v": 7,
+      "ref": "2:7",
+      "text": "הַשֹּׁאֲפִ֤ים עַל־עֲפַר־אֶ֙רֶץ֙ בְּרֹ֣אשׁ דַּלִּ֔ים וְדֶ֥רֶךְ עֲנָוִ֖ים יַטּ֑וּ וְאִ֣ישׁ וְאָבִ֗יו יֵֽלְכוּ֙ אֶל־הַֽנַּעֲרָ֔ה לְמַ֥עַן חַלֵּ֖ל אֶת־שֵׁ֥ם קׇדְשִֽׁי׃",
+      "en": "that pant after the dust of the earth on the head of the poor, and turn aside the way of the humble: and a man and his father will go in to the same girl, to profane my holy name:"
+    },
+    {
+      "n": 3,
+      "c": 2,
+      "v": 8,
+      "ref": "2:8",
+      "text": "וְעַל־בְּגָדִ֤ים חֲבֻלִים֙ יַטּ֔וּ אֵ֖צֶל כׇּל־מִזְבֵּ֑חַ וְיֵ֤ין עֲנוּשִׁים֙ יִשְׁתּ֔וּ בֵּ֖ית אֱלֹהֵיהֶֽם׃",
+      "en": "and they lay themselves down beside every altar upon clothes taken in pledge, and they drink the wine of the condemned in the house of their god."
+    },
+    {
+      "n": 4,
+      "c": 2,
+      "v": 9,
+      "ref": "2:9",
+      "text": "וְאָ֨נֹכִ֜י הִשְׁמַ֤דְתִּי אֶת־הָאֱמֹרִי֙ מִפְּנֵיהֶ֔ם אֲשֶׁ֨ר כְּגֹ֤בַהּ אֲרָזִים֙ גׇּבְה֔וֹ וְחָסֹ֥ן ה֖וּא כָּאַלּוֹנִ֑ים וָאַשְׁמִ֤יד פִּרְיוֹ֙ מִמַּ֔עַל וְשׇׁרָשָׁ֖יו מִתָּֽחַת׃",
+      "en": "Yet I destroyed the Emori before them, whose height was like the height of the cedars, and he was strong as the oaks; yet I destroyed his fruit from above, and his roots from beneath."
+    },
+    {
+      "n": 5,
+      "c": 2,
+      "v": 10,
+      "ref": "2:10",
+      "text": "וְאָנֹכִ֛י הֶעֱלֵ֥יתִי אֶתְכֶ֖ם מֵאֶ֣רֶץ מִצְרָ֑יִם וָאוֹלֵ֨ךְ אֶתְכֶ֤ם בַּמִּדְבָּר֙ אַרְבָּעִ֣ים שָׁנָ֔ה לָרֶ֖שֶׁת אֶת־אֶ֥רֶץ הָאֱמֹרִֽי׃",
+      "en": "Also I brought you up out of the land of Miżrayim, and led you forty years through the wilderness, to possess the land of the Emori."
+    },
+    {
+      "n": 6,
+      "c": 2,
+      "v": 11,
+      "ref": "2:11",
+      "text": "וָאָקִ֤ים מִבְּנֵיכֶם֙ לִנְבִיאִ֔ים וּמִבַּחוּרֵיכֶ֖ם לִנְזִרִ֑ים הַאַ֥ף אֵֽין־זֹ֛את בְּנֵ֥י יִשְׂרָאֵ֖ל נְאֻם־יְהֹוָֽה׃",
+      "en": "And I raised up of your sons for prophets, and of your young men for Nezirim. Is it not even thus, O you children of Yisra᾽el? says the Lord."
+    },
+    {
+      "n": 7,
+      "c": 2,
+      "v": 12,
+      "ref": "2:12",
+      "text": "וַתַּשְׁק֥וּ אֶת־הַנְּזִרִ֖ים יָ֑יִן וְעַל־הַנְּבִיאִים֙ צִוִּיתֶ֣ם לֵאמֹ֔ר לֹ֖א תִּנָּבְאֽוּ׃",
+      "en": "But you gave the Nezirim wine to drink; and commanded the prophets, saying, Prophesy not."
+    },
+    {
+      "n": 8,
+      "c": 2,
+      "v": 13,
+      "ref": "2:13",
+      "text": "הִנֵּ֛ה אָנֹכִ֥י מֵעִ֖יק תַּחְתֵּיכֶ֑ם כַּאֲשֶׁ֤ר תָּעִיק֙ הָֽעֲגָלָ֔ה הַֽמְלֵאָ֥ה לָ֖הּ עָמִֽיר׃",
+      "en": "Behold, I will press you down in your place, as a cart presses down that is full of sheaves."
+    },
+    {
+      "n": 9,
+      "c": 2,
+      "v": 14,
+      "ref": "2:14",
+      "text": "וְאָבַ֤ד מָנוֹס֙ מִקָּ֔ל וְחָזָ֖ק לֹא־יְאַמֵּ֣ץ כֹּח֑וֹ וְגִבּ֖וֹר לֹא־יְמַלֵּ֥ט נַפְשֽׁוֹ׃",
+      "en": "So the flight shall perish from the swift, and the strong shall not retain his force, nor shall the mighty man deliver himself:"
+    },
+    {
+      "n": 10,
+      "c": 2,
+      "v": 15,
+      "ref": "2:15",
+      "text": "וְתֹפֵ֤שׂ הַקֶּ֙שֶׁת֙ לֹ֣א יַעֲמֹ֔ד וְקַ֥ל בְּרַגְלָ֖יו לֹ֣א יְמַלֵּ֑ט וְרֹכֵ֣ב הַסּ֔וּס לֹ֥א יְמַלֵּ֖ט נַפְשֽׁוֹ׃",
+      "en": "nor shall he who handles the bow stand; and he who is swift of foot shall not deliver himself: nor shall he who rides the horse deliver himself."
+    },
+    {
+      "n": 11,
+      "c": 2,
+      "v": 16,
+      "ref": "2:16",
+      "text": "וְאַמִּ֥יץ לִבּ֖וֹ בַּגִּבּוֹרִ֑ים עָר֛וֹם יָנ֥וּס בַּיּוֹם־הַה֖וּא נְאֻם־יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And he who is courageous among the mighty shall flee away naked on that day, says the Lord."
+    },
+    {
+      "n": 12,
+      "c": 3,
+      "v": 1,
+      "ref": "3:1",
+      "text": "שִׁמְע֞וּ אֶת־הַדָּבָ֣ר הַזֶּ֗ה אֲשֶׁ֨ר דִּבֶּ֧ר יְהֹוָ֛ה עֲלֵיכֶ֖ם בְּנֵ֣י יִשְׂרָאֵ֑ל עַ֚ל כׇּל־הַמִּשְׁפָּחָ֔ה אֲשֶׁ֧ר הֶעֱלֵ֛יתִי מֵאֶ֥רֶץ מִצְרַ֖יִם לֵאמֹֽר׃",
+      "en": "Hear this word that the Lord has spoken against you, O children of Yisra᾽el, against the whole family which I brought up from the land of Miżrayim, saying,"
+    },
+    {
+      "n": 13,
+      "c": 3,
+      "v": 2,
+      "ref": "3:2",
+      "text": "רַ֚ק אֶתְכֶ֣ם יָדַ֔עְתִּי מִכֹּ֖ל מִשְׁפְּח֣וֹת הָאֲדָמָ֑ה עַל־כֵּן֙ אֶפְקֹ֣ד עֲלֵיכֶ֔ם אֵ֖ת כׇּל־עֲוֺנֹתֵיכֶֽם׃",
+      "en": "You only have I known of all the families of the earth: therefore I will punish you for all your iniquities."
+    },
+    {
+      "n": 14,
+      "c": 3,
+      "v": 3,
+      "ref": "3:3",
+      "text": "הֲיֵלְכ֥וּ שְׁנַ֖יִם יַחְדָּ֑ו בִּלְתִּ֖י אִם־נוֹעָֽדוּ׃",
+      "en": "Can two walk together, unless they be agreed?"
+    },
+    {
+      "n": 15,
+      "c": 3,
+      "v": 4,
+      "ref": "3:4",
+      "text": "הֲיִשְׁאַ֤ג אַרְיֵה֙ בַּיַּ֔עַר וְטֶ֖רֶף אֵ֣ין ל֑וֹ הֲיִתֵּ֨ן כְּפִ֤יר קוֹלוֹ֙ מִמְּעֹ֣נָת֔וֹ בִּלְתִּ֖י אִם־לָכָֽד׃",
+      "en": "will a lion roar in the forest, when he has no prey? will a young lion cry out of his den, if he has taken nothing?"
+    },
+    {
+      "n": 16,
+      "c": 3,
+      "v": 5,
+      "ref": "3:5",
+      "text": "הֲתִפֹּ֤ל צִפּוֹר֙ עַל־פַּ֣ח הָאָ֔רֶץ וּמוֹקֵ֖שׁ אֵ֣ין לָ֑הּ הֲיַֽעֲלֶה־פַּח֙ מִן־הָ֣אֲדָמָ֔ה וְלָכ֖וֹד לֹ֥א יִלְכּֽוֹד׃",
+      "en": "Can a bird fall in a snare upon the earth, where there is no lure for it? does a snare spring up from the earth, and have taken nothing at all?"
+    },
+    {
+      "n": 17,
+      "c": 3,
+      "v": 6,
+      "ref": "3:6",
+      "text": "אִם־יִתָּקַ֤ע שׁוֹפָר֙ בְּעִ֔יר וְעָ֖ם לֹ֣א יֶחֱרָ֑דוּ אִם־תִּֽהְיֶ֤ה רָעָה֙ בְּעִ֔יר וַיהֹוָ֖ה לֹ֥א עָשָֽׂה׃",
+      "en": "Shall a shofar be sounded in the city, and the people not be afraid? shall evil befall a city, and the Lord has not done it?"
+    },
+    {
+      "n": 18,
+      "c": 3,
+      "v": 7,
+      "ref": "3:7",
+      "text": "כִּ֣י לֹ֧א יַעֲשֶׂ֛ה אֲדֹנָ֥י יֱהֹוִ֖ה דָּבָ֑ר כִּ֚י אִם־גָּלָ֣ה סוֹד֔וֹ אֶל־עֲבָדָ֖יו הַנְּבִיאִֽים׃",
+      "en": "Surely the Lord God will do nothing, without revealing his secret to his servants the prophets."
+    },
+    {
+      "n": 19,
+      "c": 3,
+      "v": 8,
+      "ref": "3:8",
+      "text": "אַרְיֵ֥ה שָׁאָ֖ג מִ֣י לֹ֣א יִירָ֑א אֲדֹנָ֤י יֱהֹוִה֙ דִּבֶּ֔ר מִ֖י לֹ֥א יִנָּבֵֽא׃",
+      "en": "The lion has roared, who will not fear? the Lord God has spoken, who can but prophesy?"
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Vayeshev",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 9
+  },
+  "parashah": {
+    "en": "Haftarat Vayeshev",
+    "translit": "Haftarat Vayeshev",
+    "he": "הפטרת וישב",
+    "ref": "Amos 2:6-3:8"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 19,
+        "ref": "2:6–3:8"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

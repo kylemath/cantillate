@@ -1,0 +1,1081 @@
+{
+  "slug": "vayigash",
+  "book": {
+    "en": "Genesis",
+    "he": "בראשית",
+    "translit": "Bereshit"
+  },
+  "multiChapter": true,
+  "ref": "Genesis 44:18-47:27",
+  "heRef": "בראשית מ״ד:י״ח-מ״ז:כ״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 44,
+      "v": 18,
+      "ref": "44:18",
+      "text": "וַיִּגַּ֨שׁ אֵלָ֜יו יְהוּדָ֗ה וַיֹּ֘אמֶר֮ בִּ֣י אֲדֹנִי֒ יְדַבֶּר־נָ֨א עַבְדְּךָ֤ דָבָר֙ בְּאׇזְנֵ֣י אֲדֹנִ֔י וְאַל־יִ֥חַר אַפְּךָ֖ בְּעַבְדֶּ֑ךָ כִּ֥י כָמ֖וֹךָ כְּפַרְעֹֽה׃",
+      "en": "Then Yehuda came near to him, and said, Oh my lord, let thy servant, I pray thee, speak a word in my lord’s ears, and let not thy anger burn against thy servant: for thou art even as Par῾o."
+    },
+    {
+      "n": 2,
+      "c": 44,
+      "v": 19,
+      "ref": "44:19",
+      "text": "אֲדֹנִ֣י שָׁאַ֔ל אֶת־עֲבָדָ֖יו לֵאמֹ֑ר הֲיֵשׁ־לָכֶ֥ם אָ֖ב אוֹ־אָֽח׃",
+      "en": "My lord asked his servants, saying, Have you a father, or a brother?"
+    },
+    {
+      "n": 3,
+      "c": 44,
+      "v": 20,
+      "ref": "44:20",
+      "text": "וַנֹּ֙אמֶר֙ אֶל־אֲדֹנִ֔י יֶשׁ־לָ֙נוּ֙ אָ֣ב זָקֵ֔ן וְיֶ֥לֶד זְקֻנִ֖ים קָטָ֑ן וְאָחִ֣יו מֵ֔ת וַיִּוָּתֵ֨ר ה֧וּא לְבַדּ֛וֹ לְאִמּ֖וֹ וְאָבִ֥יו אֲהֵבֽוֹ׃",
+      "en": "And we said to my lord, We have a father, an old man, and a child of his old age, a little one; and his brother is dead, and he alone is left of his mother, and his father loves him."
+    },
+    {
+      "n": 4,
+      "c": 44,
+      "v": 21,
+      "ref": "44:21",
+      "text": "וַתֹּ֙אמֶר֙ אֶל־עֲבָדֶ֔יךָ הוֹרִדֻ֖הוּ אֵלָ֑י וְאָשִׂ֥ימָה עֵינִ֖י עָלָֽיו׃",
+      "en": "And thou didst say to thy servants, Bring him down to me, that I may set my eyes upon him."
+    },
+    {
+      "n": 5,
+      "c": 44,
+      "v": 22,
+      "ref": "44:22",
+      "text": "וַנֹּ֙אמֶר֙ אֶל־אֲדֹנִ֔י לֹא־יוּכַ֥ל הַנַּ֖עַר לַעֲזֹ֣ב אֶת־אָבִ֑יו וְעָזַ֥ב אֶת־אָבִ֖יו וָמֵֽת׃",
+      "en": "And we said to my lord, The lad cannot leave his father: for if he should leave his father, his father would die."
+    },
+    {
+      "n": 6,
+      "c": 44,
+      "v": 23,
+      "ref": "44:23",
+      "text": "וַתֹּ֙אמֶר֙ אֶל־עֲבָדֶ֔יךָ אִם־לֹ֥א יֵרֵ֛ד אֲחִיכֶ֥ם הַקָּטֹ֖ן אִתְּכֶ֑ם לֹ֥א תֹסִפ֖וּן לִרְא֥וֹת פָּנָֽי׃",
+      "en": "And thou didst say to thy servants, Unless your youngest brother comes down with you, you shall see my face no more."
+    },
+    {
+      "n": 7,
+      "c": 44,
+      "v": 24,
+      "ref": "44:24",
+      "text": "וַֽיְהִי֙ כִּ֣י עָלִ֔ינוּ אֶֽל־עַבְדְּךָ֖ אָבִ֑י וַנַּ֨גֶּד־ל֔וֹ אֵ֖ת דִּבְרֵ֥י אֲדֹנִֽי׃",
+      "en": "And it came to pass when we came up to thy servant my father, we told him the words of my lord."
+    },
+    {
+      "n": 8,
+      "c": 44,
+      "v": 25,
+      "ref": "44:25",
+      "text": "וַיֹּ֖אמֶר אָבִ֑ינוּ שֻׁ֖בוּ שִׁבְרוּ־לָ֥נוּ מְעַט־אֹֽכֶל׃",
+      "en": "And our father said, Go back, and buy us a little food."
+    },
+    {
+      "n": 9,
+      "c": 44,
+      "v": 26,
+      "ref": "44:26",
+      "text": "וַנֹּ֕אמֶר לֹ֥א נוּכַ֖ל לָרֶ֑דֶת אִם־יֵשׁ֩ אָחִ֨ינוּ הַקָּטֹ֤ן אִתָּ֙נוּ֙ וְיָרַ֔דְנוּ כִּי־לֹ֣א נוּכַ֗ל לִרְאוֹת֙ פְּנֵ֣י הָאִ֔ישׁ וְאָחִ֥ינוּ הַקָּטֹ֖ן אֵינֶ֥נּוּ אִתָּֽנוּ׃",
+      "en": "And we said, We cannot go down: if our youngest brother be with us, then will we go down: for we may not see the man’s face, unless our youngest brother is with us."
+    },
+    {
+      "n": 10,
+      "c": 44,
+      "v": 27,
+      "ref": "44:27",
+      "text": "וַיֹּ֛אמֶר עַבְדְּךָ֥ אָבִ֖י אֵלֵ֑ינוּ אַתֶּ֣ם יְדַעְתֶּ֔ם כִּ֥י שְׁנַ֖יִם יָֽלְדָה־לִּ֥י אִשְׁתִּֽי׃",
+      "en": "And thy servant my father said to us, You know that my wife bore me two sons:"
+    },
+    {
+      "n": 11,
+      "c": 44,
+      "v": 28,
+      "ref": "44:28",
+      "text": "וַיֵּצֵ֤א הָֽאֶחָד֙ מֵֽאִתִּ֔י וָאֹמַ֕ר אַ֖ךְ טָרֹ֣ף טֹרָ֑ף וְלֹ֥א רְאִיתִ֖יו עַד־הֵֽנָּה׃",
+      "en": "and the one went out from me, and I said, Surely he is torn in pieces; and I saw him not since:"
+    },
+    {
+      "n": 12,
+      "c": 44,
+      "v": 29,
+      "ref": "44:29",
+      "text": "וּלְקַחְתֶּ֧ם גַּם־אֶת־זֶ֛ה מֵעִ֥ם פָּנַ֖י וְקָרָ֣הוּ אָס֑וֹן וְהֽוֹרַדְתֶּ֧ם אֶת־שֵׂיבָתִ֛י בְּרָעָ֖ה שְׁאֹֽלָה׃",
+      "en": "and if you take this also from me, and mischief befall him, you shall bring down my grey hairs with sorrow to She᾽ol."
+    },
+    {
+      "n": 13,
+      "c": 44,
+      "v": 30,
+      "ref": "44:30",
+      "text": "וְעַתָּ֗ה כְּבֹאִי֙ אֶל־עַבְדְּךָ֣ אָבִ֔י וְהַנַּ֖עַר אֵינֶ֣נּוּ אִתָּ֑נוּ וְנַפְשׁ֖וֹ קְשׁוּרָ֥ה בְנַפְשֽׁוֹ׃",
+      "en": "Now therefore when I come to thy servant my father, and the lad is not with us; seeing that his life is bound up in the lad’s life;"
+    },
+    {
+      "n": 14,
+      "c": 44,
+      "v": 31,
+      "ref": "44:31",
+      "text": "וְהָיָ֗ה כִּרְאוֹת֛וֹ כִּי־אֵ֥ין הַנַּ֖עַר וָמֵ֑ת וְהוֹרִ֨ידוּ עֲבָדֶ֜יךָ אֶת־שֵׂיבַ֨ת עַבְדְּךָ֥ אָבִ֛ינוּ בְּיָג֖וֹן שְׁאֹֽלָה׃",
+      "en": "it shall come to pass, when he sees that the lad is not with us, that he will die: and thy servants shall bring down the grey hairs of thy servant our father with sorrow to She᾽ol."
+    },
+    {
+      "n": 15,
+      "c": 44,
+      "v": 32,
+      "ref": "44:32",
+      "text": "כִּ֤י עַבְדְּךָ֙ עָרַ֣ב אֶת־הַנַּ֔עַר מֵעִ֥ם אָבִ֖י לֵאמֹ֑ר אִם־לֹ֤א אֲבִיאֶ֙נּוּ֙ אֵלֶ֔יךָ וְחָטָ֥אתִי לְאָבִ֖י כׇּל־הַיָּמִֽים׃",
+      "en": "For thy servant became surety for the lad to my father, saying, If I bring him not to thee, then I shall have sinned to my father for ever."
+    },
+    {
+      "n": 16,
+      "c": 44,
+      "v": 33,
+      "ref": "44:33",
+      "text": "וְעַתָּ֗ה יֵֽשֶׁב־נָ֤א עַבְדְּךָ֙ תַּ֣חַת הַנַּ֔עַר עֶ֖בֶד לַֽאדֹנִ֑י וְהַנַּ֖עַר יַ֥עַל עִם־אֶחָֽיו׃",
+      "en": "Now therefore, I pray thee, let thy servant remain instead of the lad a bondman to my lord; and let the lad go up with his brothers."
+    },
+    {
+      "n": 17,
+      "c": 44,
+      "v": 34,
+      "ref": "44:34",
+      "text": "כִּי־אֵיךְ֙ אֶֽעֱלֶ֣ה אֶל־אָבִ֔י וְהַנַּ֖עַר אֵינֶ֣נּוּ אִתִּ֑י פֶּ֚ן אֶרְאֶ֣ה בָרָ֔ע אֲשֶׁ֥ר יִמְצָ֖א אֶת־אָבִֽי׃",
+      "en": "For how shall I go up to my father, and the lad be not with me? lest I see the evil that shall come on my father."
+    },
+    {
+      "n": 18,
+      "c": 45,
+      "v": 1,
+      "ref": "45:1",
+      "text": "וְלֹֽא־יָכֹ֨ל יוֹסֵ֜ף לְהִתְאַפֵּ֗ק לְכֹ֤ל הַנִּצָּבִים֙ עָלָ֔יו וַיִּקְרָ֕א הוֹצִ֥יאוּ כׇל־אִ֖ישׁ מֵעָלָ֑י וְלֹא־עָ֤מַד אִישׁ֙ אִתּ֔וֹ בְּהִתְוַדַּ֥ע יוֹסֵ֖ף אֶל־אֶחָֽיו׃",
+      "en": "Then Yosef could not restrain himself before all them that stood by him; and he cried, Cause every man to go out from me. And no man stood with him, while Yosef made himself known to his brethren."
+    },
+    {
+      "n": 19,
+      "c": 45,
+      "v": 2,
+      "ref": "45:2",
+      "text": "וַיִּתֵּ֥ן אֶת־קֹל֖וֹ בִּבְכִ֑י וַיִּשְׁמְע֣וּ מִצְרַ֔יִם וַיִּשְׁמַ֖ע בֵּ֥ית פַּרְעֹֽה׃",
+      "en": "And he wept aloud: and Miżrayim and the house of Par῾o heard."
+    },
+    {
+      "n": 20,
+      "c": 45,
+      "v": 3,
+      "ref": "45:3",
+      "text": "וַיֹּ֨אמֶר יוֹסֵ֤ף אֶל־אֶחָיו֙ אֲנִ֣י יוֹסֵ֔ף הַע֥וֹד אָבִ֖י חָ֑י וְלֹֽא־יָכְל֤וּ אֶחָיו֙ לַעֲנ֣וֹת אֹת֔וֹ כִּ֥י נִבְהֲל֖וּ מִפָּנָֽיו׃",
+      "en": "And Yosef said to his brethren, I am Yosef: does my father yet live? And his brothers could not answer him; for they were terrified at his presence."
+    },
+    {
+      "n": 21,
+      "c": 45,
+      "v": 4,
+      "ref": "45:4",
+      "text": "וַיֹּ֨אמֶר יוֹסֵ֧ף אֶל־אֶחָ֛יו גְּשׁוּ־נָ֥א אֵלַ֖י וַיִּגָּ֑שׁוּ וַיֹּ֗אמֶר אֲנִי֙ יוֹסֵ֣ף אֲחִיכֶ֔ם אֲשֶׁר־מְכַרְתֶּ֥ם אֹתִ֖י מִצְרָֽיְמָה׃",
+      "en": "And Yosef said to his brothers, Come near to me, I pray you. And they came near. And he said, I am Yosef your brother, whom you sold into Miżrayim."
+    },
+    {
+      "n": 22,
+      "c": 45,
+      "v": 5,
+      "ref": "45:5",
+      "text": "וְעַתָּ֣ה&thinsp;<b>׀</b> אַל־תֵּעָ֣צְב֗וּ וְאַל־יִ֙חַר֙ בְּעֵ֣ינֵיכֶ֔ם כִּֽי־מְכַרְתֶּ֥ם אֹתִ֖י הֵ֑נָּה כִּ֣י לְמִֽחְיָ֔ה שְׁלָחַ֥נִי אֱלֹהִ֖ים לִפְנֵיכֶֽם׃",
+      "en": "Now therefore be not grieved, nor angry with yourselves, that you sold me here: for God did send me before you to preserve life."
+    },
+    {
+      "n": 23,
+      "c": 45,
+      "v": 6,
+      "ref": "45:6",
+      "text": "כִּי־זֶ֛ה שְׁנָתַ֥יִם הָרָעָ֖ב בְּקֶ֣רֶב הָאָ֑רֶץ וְעוֹד֙ חָמֵ֣שׁ שָׁנִ֔ים אֲשֶׁ֥ר אֵין־חָרִ֖ישׁ וְקָצִֽיר׃",
+      "en": "For these two years has the famine been in the land: and there are five more years, in which there shall neither be ploughing nor harvest."
+    },
+    {
+      "n": 24,
+      "c": 45,
+      "v": 7,
+      "ref": "45:7",
+      "text": "וַיִּשְׁלָחֵ֤נִי אֱלֹהִים֙ לִפְנֵיכֶ֔ם לָשׂ֥וּם לָכֶ֛ם שְׁאֵרִ֖ית בָּאָ֑רֶץ וּלְהַחֲי֣וֹת לָכֶ֔ם לִפְלֵיטָ֖ה גְּדֹלָֽה׃",
+      "en": "And God sent me before you to preserve you a remnant in the earth, and to save your lives by a great deliverance."
+    },
+    {
+      "n": 25,
+      "c": 45,
+      "v": 8,
+      "ref": "45:8",
+      "text": "וְעַתָּ֗ה לֹֽא־אַתֶּ֞ם שְׁלַחְתֶּ֤ם אֹתִי֙ הֵ֔נָּה כִּ֖י הָאֱלֹהִ֑ים וַיְשִׂימֵ֨נִֽי לְאָ֜ב לְפַרְעֹ֗ה וּלְאָדוֹן֙ לְכׇל־בֵּית֔וֹ וּמֹשֵׁ֖ל בְּכׇל־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "So now it was not you that sent me here, but God: and He has made me a father to Par῾o, and lord of all his house, and a ruler throughout all the land of Miżrayim."
+    },
+    {
+      "n": 26,
+      "c": 45,
+      "v": 9,
+      "ref": "45:9",
+      "text": "מַהֲרוּ֮ וַעֲל֣וּ אֶל־אָבִי֒ וַאֲמַרְתֶּ֣ם אֵלָ֗יו כֹּ֤ה אָמַר֙ בִּנְךָ֣ יוֹסֵ֔ף שָׂמַ֧נִי אֱלֹהִ֛ים לְאָד֖וֹן לְכׇל־מִצְרָ֑יִם רְדָ֥ה אֵלַ֖י אַֽל־תַּעֲמֹֽד׃",
+      "en": "Hasten, and go up to my father, and say to him, Thus says thy son Yosef, God has made me lord of all Miżrayim: come down to me, do not delay:"
+    },
+    {
+      "n": 27,
+      "c": 45,
+      "v": 10,
+      "ref": "45:10",
+      "text": "וְיָשַׁבְתָּ֣ בְאֶֽרֶץ־גֹּ֗שֶׁן וְהָיִ֤יתָ קָרוֹב֙ אֵלַ֔י אַתָּ֕ה וּבָנֶ֖יךָ וּבְנֵ֣י בָנֶ֑יךָ וְצֹאנְךָ֥ וּבְקָרְךָ֖ וְכׇל־אֲשֶׁר־לָֽךְ׃",
+      "en": "and thou shalt dwell in the land of Goshen, and thou shalt be near me, thou, and thy children, and thy children’s children, and thy flocks, and thy herds, and all that thou hast:"
+    },
+    {
+      "n": 28,
+      "c": 45,
+      "v": 11,
+      "ref": "45:11",
+      "text": "וְכִלְכַּלְתִּ֤י אֹֽתְךָ֙ שָׁ֔ם כִּי־ע֛וֹד חָמֵ֥שׁ שָׁנִ֖ים רָעָ֑ב פֶּן־תִּוָּרֵ֛שׁ אַתָּ֥ה וּבֵֽיתְךָ֖ וְכׇל־אֲשֶׁר־לָֽךְ׃",
+      "en": "and there will I nourish thee; for there are still five years of famine; lest thou, and thy household, and all that thou hast, come to poverty."
+    },
+    {
+      "n": 29,
+      "c": 45,
+      "v": 12,
+      "ref": "45:12",
+      "text": "וְהִנֵּ֤ה עֵֽינֵיכֶם֙ רֹא֔וֹת וְעֵינֵ֖י אָחִ֣י בִנְיָמִ֑ין כִּי־פִ֖י הַֽמְדַבֵּ֥ר אֲלֵיכֶֽם׃",
+      "en": "And, behold, your eyes see, and the eyes of my brother Binyamin, that it is my mouth that speaks to you."
+    },
+    {
+      "n": 30,
+      "c": 45,
+      "v": 13,
+      "ref": "45:13",
+      "text": "וְהִגַּדְתֶּ֣ם לְאָבִ֗י אֶת־כׇּל־כְּבוֹדִי֙ בְּמִצְרַ֔יִם וְאֵ֖ת כׇּל־אֲשֶׁ֣ר רְאִיתֶ֑ם וּמִֽהַרְתֶּ֛ם וְהוֹרַדְתֶּ֥ם אֶת־אָבִ֖י הֵֽנָּה׃",
+      "en": "And you shall tell my father of all my glory in Miżrayim, and of all that you have seen: and you shall hasten and bring down my father here."
+    },
+    {
+      "n": 31,
+      "c": 45,
+      "v": 14,
+      "ref": "45:14",
+      "text": "וַיִּפֹּ֛ל עַל־צַוְּארֵ֥י בִנְיָֽמִן־אָחִ֖יו וַיֵּ֑בְךְּ וּבִ֨נְיָמִ֔ן בָּכָ֖ה עַל־צַוָּארָֽיו׃",
+      "en": "And he fell on his brother Binyamin’s neck, and wept; and Binyamin wept on his neck."
+    },
+    {
+      "n": 32,
+      "c": 45,
+      "v": 15,
+      "ref": "45:15",
+      "text": "וַיְנַשֵּׁ֥ק לְכׇל־אֶחָ֖יו וַיֵּ֣בְךְּ עֲלֵהֶ֑ם וְאַ֣חֲרֵי כֵ֔ן דִּבְּר֥וּ אֶחָ֖יו אִתּֽוֹ׃",
+      "en": "And he kissed all his brethren, and wept on them: and after that his brethren talked with him."
+    },
+    {
+      "n": 33,
+      "c": 45,
+      "v": 16,
+      "ref": "45:16",
+      "text": "וְהַקֹּ֣ל נִשְׁמַ֗ע בֵּ֤ית פַּרְעֹה֙ לֵאמֹ֔ר בָּ֖אוּ אֲחֵ֣י יוֹסֵ֑ף וַיִּיטַב֙ בְּעֵינֵ֣י פַרְעֹ֔ה וּבְעֵינֵ֖י עֲבָדָֽיו׃",
+      "en": "And the report was heard in Par῾o’s house, saying, Yosef’s brethren are come: and it pleased Par῾o well, and his servants."
+    },
+    {
+      "n": 34,
+      "c": 45,
+      "v": 17,
+      "ref": "45:17",
+      "text": "וַיֹּ֤אמֶר פַּרְעֹה֙ אֶל־יוֹסֵ֔ף אֱמֹ֥ר אֶל־אַחֶ֖יךָ זֹ֣את עֲשׂ֑וּ טַֽעֲנוּ֙ אֶת־בְּעִ֣ירְכֶ֔ם וּלְכוּ־בֹ֖אוּ אַ֥רְצָה כְּנָֽעַן׃",
+      "en": "And Par῾o said to Yosef, Say to thy brethren, Do this: load your beasts, and go, get you to the land of Kena῾an;"
+    },
+    {
+      "n": 35,
+      "c": 45,
+      "v": 18,
+      "ref": "45:18",
+      "text": "וּקְח֧וּ אֶת־אֲבִיכֶ֛ם וְאֶת־בָּתֵּיכֶ֖ם וּבֹ֣אוּ אֵלָ֑י וְאֶתְּנָ֣ה לָכֶ֗ם אֶת־טוּב֙ אֶ֣רֶץ מִצְרַ֔יִם וְאִכְל֖וּ אֶת־חֵ֥לֶב הָאָֽרֶץ׃",
+      "en": "and take your father and your households, and come to me: and I will give you the good of the land of Miżrayim, and you shall eat the fat of the land."
+    },
+    {
+      "n": 36,
+      "c": 45,
+      "v": 19,
+      "ref": "45:19",
+      "text": "וְאַתָּ֥ה צֻוֵּ֖יתָה זֹ֣את עֲשׂ֑וּ קְחוּ־לָכֶם֩ מֵאֶ֨רֶץ מִצְרַ֜יִם עֲגָל֗וֹת לְטַפְּכֶם֙ וְלִנְשֵׁיכֶ֔ם וּנְשָׂאתֶ֥ם אֶת־אֲבִיכֶ֖ם וּבָאתֶֽם׃",
+      "en": "Now thou art commanded, do this; take wagons out of the land of Miżrayim for your little ones, and for your wives, and bring your father, and come."
+    },
+    {
+      "n": 37,
+      "c": 45,
+      "v": 20,
+      "ref": "45:20",
+      "text": "וְעֵ֣ינְכֶ֔ם אַל־תָּחֹ֖ס עַל־כְּלֵיכֶ֑ם כִּי־ט֛וּב כׇּל־אֶ֥רֶץ מִצְרַ֖יִם לָכֶ֥ם הֽוּא׃",
+      "en": "Also give no thought to your goods; for the good of all the land of Miżrayim is yours."
+    },
+    {
+      "n": 38,
+      "c": 45,
+      "v": 21,
+      "ref": "45:21",
+      "text": "וַיַּֽעֲשׂוּ־כֵן֙ בְּנֵ֣י יִשְׂרָאֵ֔ל וַיִּתֵּ֨ן לָהֶ֥ם יוֹסֵ֛ף עֲגָל֖וֹת עַל־פִּ֣י פַרְעֹ֑ה וַיִּתֵּ֥ן לָהֶ֛ם צֵדָ֖ה לַדָּֽרֶךְ׃",
+      "en": "And the children of Yisra᾽el did so: and Yosef gave them wagons, according to the commandment of Par῾o, and gave them provision for the way."
+    },
+    {
+      "n": 39,
+      "c": 45,
+      "v": 22,
+      "ref": "45:22",
+      "text": "לְכֻלָּ֥ם נָתַ֛ן לָאִ֖ישׁ חֲלִפ֣וֹת שְׂמָלֹ֑ת וּלְבִנְיָמִ֤ן נָתַן֙ שְׁלֹ֣שׁ מֵא֣וֹת כֶּ֔סֶף וְחָמֵ֖שׁ חֲלִפֹ֥ת שְׂמָלֹֽת׃",
+      "en": "To all of them he gave each man changes of clothing; but to Binyamin he gave three hundred pieces of silver, and five changes of clothing."
+    },
+    {
+      "n": 40,
+      "c": 45,
+      "v": 23,
+      "ref": "45:23",
+      "text": "וּלְאָבִ֞יו שָׁלַ֤ח כְּזֹאת֙ עֲשָׂרָ֣ה חֲמֹרִ֔ים נֹשְׂאִ֖ים מִטּ֣וּב מִצְרָ֑יִם וְעֶ֣שֶׂר אֲתֹנֹ֡ת נֹֽ֠שְׂאֹ֠ת בָּ֣ר וָלֶ֧חֶם וּמָז֛וֹן לְאָבִ֖יו לַדָּֽרֶךְ׃",
+      "en": "And to his father he sent after this manner; ten asses laden with the good things of Miżrayim and ten she asses laden with corn and bread and food for his father by the way."
+    },
+    {
+      "n": 41,
+      "c": 45,
+      "v": 24,
+      "ref": "45:24",
+      "text": "וַיְשַׁלַּ֥ח אֶת־אֶחָ֖יו וַיֵּלֵ֑כוּ וַיֹּ֣אמֶר אֲלֵהֶ֔ם אַֽל־תִּרְגְּז֖וּ בַּדָּֽרֶךְ׃",
+      "en": "So he sent his brethren away, and they departed: and he said to them, See that you do not fall out by the way."
+    },
+    {
+      "n": 42,
+      "c": 45,
+      "v": 25,
+      "ref": "45:25",
+      "text": "וַֽיַּעֲל֖וּ מִמִּצְרָ֑יִם וַיָּבֹ֙אוּ֙ אֶ֣רֶץ כְּנַ֔עַן אֶֽל־יַעֲקֹ֖ב אֲבִיהֶֽם׃",
+      "en": "And they went up out of Miżrayim, and came to the land of Kena῾an to Ya῾aqov their father,"
+    },
+    {
+      "n": 43,
+      "c": 45,
+      "v": 26,
+      "ref": "45:26",
+      "text": "וַיַּגִּ֨דוּ ל֜וֹ לֵאמֹ֗ר ע֚וֹד יוֹסֵ֣ף חַ֔י וְכִֽי־ה֥וּא מֹשֵׁ֖ל בְּכׇל־אֶ֣רֶץ מִצְרָ֑יִם וַיָּ֣פׇג לִבּ֔וֹ כִּ֥י לֹא־הֶאֱמִ֖ין לָהֶֽם׃",
+      "en": "and told him, saying, Yosef is still alive, and he is governor over all the land of Miżrayim. And his heart fainted, for he believed them not."
+    },
+    {
+      "n": 44,
+      "c": 45,
+      "v": 27,
+      "ref": "45:27",
+      "text": "וַיְדַבְּר֣וּ אֵלָ֗יו אֵ֣ת כׇּל־דִּבְרֵ֤י יוֹסֵף֙ אֲשֶׁ֣ר דִּבֶּ֣ר אֲלֵהֶ֔ם וַיַּרְא֙ אֶת־הָ֣עֲגָל֔וֹת אֲשֶׁר־שָׁלַ֥ח יוֹסֵ֖ף לָשֵׂ֣את אֹת֑וֹ וַתְּחִ֕י ר֖וּחַ יַעֲקֹ֥ב אֲבִיהֶֽם׃",
+      "en": "And they told him all the words of Yosef, which he had said to them: and when he saw the wagons which Yosef had sent to carry him, the spirit of Ya῾aqov their father revived:"
+    },
+    {
+      "n": 45,
+      "c": 45,
+      "v": 28,
+      "ref": "45:28",
+      "text": "וַיֹּ֙אמֶר֙ יִשְׂרָאֵ֔ל רַ֛ב עוֹד־יוֹסֵ֥ף בְּנִ֖י חָ֑י אֵֽלְכָ֥ה וְאֶרְאֶ֖נּוּ בְּטֶ֥רֶם אָמֽוּת׃",
+      "en": "and Yisra᾽el said, It is enough; Yosef my son is still alive: I will go and see him before I die."
+    },
+    {
+      "n": 46,
+      "c": 46,
+      "v": 1,
+      "ref": "46:1",
+      "text": "וַיִּסַּ֤ע יִשְׂרָאֵל֙ וְכׇל־אֲשֶׁר־ל֔וֹ וַיָּבֹ֖א בְּאֵ֣רָה שָּׁ֑בַע וַיִּזְבַּ֣ח זְבָחִ֔ים לֵאלֹהֵ֖י אָבִ֥יו יִצְחָֽק׃",
+      "en": "And Yisra᾽el took his journey with all that he had, and came to Be᾽er-sheva, and offered sacrifices to the God of his father Yiżĥaq."
+    },
+    {
+      "n": 47,
+      "c": 46,
+      "v": 2,
+      "ref": "46:2",
+      "text": "וַיֹּ֨אמֶר אֱלֹהִ֤ים&thinsp;<small>׀</small>&thinsp;לְיִשְׂרָאֵל֙ בְּמַרְאֹ֣ת הַלַּ֔יְלָה וַיֹּ֖אמֶר יַעֲקֹ֣ב&thinsp;<small>׀</small>&thinsp;יַעֲקֹ֑ב וַיֹּ֖אמֶר הִנֵּֽנִי׃",
+      "en": "And God spoke to Yisra᾽el in the visions of the night, and said, Ya῾aqov, Ya῾aqov. And he said, Here I am."
+    },
+    {
+      "n": 48,
+      "c": 46,
+      "v": 3,
+      "ref": "46:3",
+      "text": "וַיֹּ֕אמֶר אָנֹכִ֥י הָאֵ֖ל אֱלֹהֵ֣י אָבִ֑יךָ אַל־תִּירָא֙ מֵרְדָ֣ה מִצְרַ֔יְמָה כִּֽי־לְג֥וֹי גָּד֖וֹל אֲשִֽׂימְךָ֥ שָֽׁם׃",
+      "en": "And He said, I am God, the God of thy father: fear not to go down to Miżrayim; for I will there make of thee a great nation:"
+    },
+    {
+      "n": 49,
+      "c": 46,
+      "v": 4,
+      "ref": "46:4",
+      "text": "אָנֹכִ֗י אֵרֵ֤ד עִמְּךָ֙ מִצְרַ֔יְמָה וְאָנֹכִ֖י אַֽעַלְךָ֣ גַם־עָלֹ֑ה וְיוֹסֵ֕ף יָשִׁ֥ית יָד֖וֹ עַל־עֵינֶֽיךָ׃",
+      "en": "I will go down with thee into Miżrayim; and I will also surely bring thee up again: and Yosef shall put his hand on thy eyes."
+    },
+    {
+      "n": 50,
+      "c": 46,
+      "v": 5,
+      "ref": "46:5",
+      "text": "וַיָּ֥קׇם יַעֲקֹ֖ב מִבְּאֵ֣ר שָׁ֑בַע וַיִּשְׂא֨וּ בְנֵֽי־יִשְׂרָאֵ֜ל אֶת־יַעֲקֹ֣ב אֲבִיהֶ֗ם וְאֶת־טַפָּם֙ וְאֶת־נְשֵׁיהֶ֔ם בָּעֲגָל֕וֹת אֲשֶׁר־שָׁלַ֥ח פַּרְעֹ֖ה לָשֵׂ֥את אֹתֽוֹ׃",
+      "en": "And Ya῾aqov rose up from Be᾽er-sheva, and the sons of Yisra᾽el carried Ya῾aqov their father, and their little ones, and their wives, in the wagons which Par῾o had sent to carry him."
+    },
+    {
+      "n": 51,
+      "c": 46,
+      "v": 6,
+      "ref": "46:6",
+      "text": "וַיִּקְח֣וּ אֶת־מִקְנֵיהֶ֗ם וְאֶת־רְכוּשָׁם֙ אֲשֶׁ֤ר רָֽכְשׁוּ֙ בְּאֶ֣רֶץ כְּנַ֔עַן וַיָּבֹ֖אוּ מִצְרָ֑יְמָה יַעֲקֹ֖ב וְכׇל־זַרְע֥וֹ אִתּֽוֹ׃",
+      "en": "And they took their cattle, and their goods, which they had acquired in the land of Kena῾an; and came to Miżrayim, Ya῾aqov, and all his seed with him:"
+    },
+    {
+      "n": 52,
+      "c": 46,
+      "v": 7,
+      "ref": "46:7",
+      "text": "בָּנָ֞יו וּבְנֵ֤י בָנָיו֙ אִתּ֔וֹ בְּנֹתָ֛יו וּבְנ֥וֹת בָּנָ֖יו וְכׇל־זַרְע֑וֹ הֵבִ֥יא אִתּ֖וֹ מִצְרָֽיְמָה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "his sons, and his sons’ sons with him, his daughters, and his sons’ daughters, and all his seed brought he with him to Miżrayim."
+    },
+    {
+      "n": 53,
+      "c": 46,
+      "v": 8,
+      "ref": "46:8",
+      "text": "וְאֵ֨לֶּה שְׁמ֧וֹת בְּנֵֽי־יִשְׂרָאֵ֛ל הַבָּאִ֥ים מִצְרַ֖יְמָה יַעֲקֹ֣ב וּבָנָ֑יו בְּכֹ֥ר יַעֲקֹ֖ב רְאוּבֵֽן׃",
+      "en": "And these are the names of the children of Yisra᾽el, who came into Miżrayim, Ya῾aqov and his sons: Re᾽uven, Ya῾aqov’s firstborn."
+    },
+    {
+      "n": 54,
+      "c": 46,
+      "v": 9,
+      "ref": "46:9",
+      "text": "וּבְנֵ֖י רְאוּבֵ֑ן חֲנ֥וֹךְ וּפַלּ֖וּא וְחֶצְרֹ֥ן וְכַרְמִֽי׃",
+      "en": "And the sons of Re᾽uven; Ḥanokh, and Pallu, and Ḥeżron, and Karmi."
+    },
+    {
+      "n": 55,
+      "c": 46,
+      "v": 10,
+      "ref": "46:10",
+      "text": "וּבְנֵ֣י שִׁמְע֗וֹן יְמוּאֵ֧ל וְיָמִ֛ין וְאֹ֖הַד וְיָכִ֣ין וְצֹ֑חַר וְשָׁא֖וּל בֶּן־הַֽכְּנַעֲנִֽית׃",
+      "en": "And the sons of Shim῾on; Yemu᾽el, and Yamin, and Ohad, and Yakhin, and Żoĥar, and Sha᾽ul the son of the Kena῾anite woman."
+    },
+    {
+      "n": 56,
+      "c": 46,
+      "v": 11,
+      "ref": "46:11",
+      "text": "וּבְנֵ֖י לֵוִ֑י גֵּרְשׁ֕וֹן קְהָ֖ת וּמְרָרִֽי׃",
+      "en": "And the sons of Levi; Gershon, Qehat, and Merari."
+    },
+    {
+      "n": 57,
+      "c": 46,
+      "v": 12,
+      "ref": "46:12",
+      "text": "וּבְנֵ֣י יְהוּדָ֗ה עֵ֧ר וְאוֹנָ֛ן וְשֵׁלָ֖ה וָפֶ֣רֶץ וָזָ֑רַח וַיָּ֨מׇת עֵ֤ר וְאוֹנָן֙ בְּאֶ֣רֶץ כְּנַ֔עַן וַיִּהְי֥וּ בְנֵי־פֶ֖רֶץ חֶצְרֹ֥ן וְחָמֽוּל׃",
+      "en": "And the sons of Yehuda; ῾Er, and Onan, and Shela, and Pereż, and Zeraĥ: but ῾Er and Onan died in the land of Kena῾an. And the sons of Pereż were Ḥeżron and Ḥamul."
+    },
+    {
+      "n": 58,
+      "c": 46,
+      "v": 13,
+      "ref": "46:13",
+      "text": "וּבְנֵ֖י יִשָּׂשכָ֑ר תּוֹלָ֥ע וּפֻוָ֖ה וְי֥וֹב וְשִׁמְרֹֽן׃",
+      "en": "And the sons of Yissakhar; Tola, and Puvva, and Yov, and Shimron."
+    },
+    {
+      "n": 59,
+      "c": 46,
+      "v": 14,
+      "ref": "46:14",
+      "text": "וּבְנֵ֖י זְבֻל֑וּן סֶ֥רֶד וְאֵל֖וֹן וְיַחְלְאֵֽל׃",
+      "en": "And the sons of Zevulun; Sered, and Elon, and Yaĥle᾽el."
+    },
+    {
+      "n": 60,
+      "c": 46,
+      "v": 15,
+      "ref": "46:15",
+      "text": "אֵ֣לֶּה&thinsp;<b>׀</b> בְּנֵ֣י לֵאָ֗ה אֲשֶׁ֨ר יָֽלְדָ֤ה לְיַעֲקֹב֙ בְּפַדַּ֣ן אֲרָ֔ם וְאֵ֖ת דִּינָ֣ה בִתּ֑וֹ כׇּל־נֶ֧פֶשׁ בָּנָ֛יו וּבְנוֹתָ֖יו שְׁלֹשִׁ֥ים וְשָׁלֹֽשׁ׃",
+      "en": "These are the sons of Le᾽a, whom she bore to Ya῾aqov in Paddan-aram, with his daughter Dina: all the souls of his sons and his daughters were thirty three."
+    },
+    {
+      "n": 61,
+      "c": 46,
+      "v": 16,
+      "ref": "46:16",
+      "text": "וּבְנֵ֣י גָ֔ד צִפְי֥וֹן וְחַגִּ֖י שׁוּנִ֣י וְאֶצְבֹּ֑ן עֵרִ֥י וַֽאֲרוֹדִ֖י וְאַרְאֵלִֽי׃",
+      "en": "And the sons of Gad; Żifyon, and Ḥaggi, Shuni, and Eżbon, ῾Eri, and Arodi, and Ar᾽eli."
+    },
+    {
+      "n": 62,
+      "c": 46,
+      "v": 17,
+      "ref": "46:17",
+      "text": "וּבְנֵ֣י אָשֵׁ֗ר יִמְנָ֧ה וְיִשְׁוָ֛ה וְיִשְׁוִ֥י וּבְרִיעָ֖ה וְשֶׂ֣רַח אֲחֹתָ֑ם וּבְנֵ֣י בְרִיעָ֔ה חֶ֖בֶר וּמַלְכִּיאֵֽל׃",
+      "en": "And the sons of Asher; Yimna, and Yishva, and Yishvi, and Beri῾a, and Seraĥ their sister: and the sons of Beri῾a were Ḥever and Malki᾽el."
+    },
+    {
+      "n": 63,
+      "c": 46,
+      "v": 18,
+      "ref": "46:18",
+      "text": "אֵ֚לֶּה בְּנֵ֣י זִלְפָּ֔ה אֲשֶׁר־נָתַ֥ן לָבָ֖ן לְלֵאָ֣ה בִתּ֑וֹ וַתֵּ֤לֶד אֶת־אֵ֙לֶּה֙ לְיַעֲקֹ֔ב שֵׁ֥שׁ עֶשְׂרֵ֖ה נָֽפֶשׁ׃",
+      "en": "These are the sons of Zilpa, whom Lavan gave to Le᾽a his daughter, and these she bore to Ya῾aqov, sixteen souls."
+    },
+    {
+      "n": 64,
+      "c": 46,
+      "v": 19,
+      "ref": "46:19",
+      "text": "בְּנֵ֤י רָחֵל֙ אֵ֣שֶׁת יַעֲקֹ֔ב יוֹסֵ֖ף וּבִנְיָמִֽן׃",
+      "en": "The sons of Raĥel, Ya῾aqov’s wife; Yosef and Binyamin."
+    },
+    {
+      "n": 65,
+      "c": 46,
+      "v": 20,
+      "ref": "46:20",
+      "text": "וַיִּוָּלֵ֣ד לְיוֹסֵף֮ בְּאֶ֣רֶץ מִצְרַ֒יִם֒ אֲשֶׁ֤ר יָֽלְדָה־לּוֹ֙ אָֽסְנַ֔ת בַּת־פּ֥וֹטִי פֶ֖רַע<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי תימן פּֽוֹטִיפֶ֖רַע בתיבה אחת)</i> כֹּהֵ֣ן אֹ֑ן אֶת־מְנַשֶּׁ֖ה וְאֶת־אֶפְרָֽיִם׃",
+      "en": "And to Yosef in the land of Miżrayim were born Menashshe and Efrayim, whom Asenat, daughter of Poti-fera; the priest of On bore to him."
+    },
+    {
+      "n": 66,
+      "c": 46,
+      "v": 21,
+      "ref": "46:21",
+      "text": "וּבְנֵ֣י בִנְיָמִ֗ן בֶּ֤לַע וָבֶ֙כֶר֙ וְאַשְׁבֵּ֔ל גֵּרָ֥א וְנַעֲמָ֖ן אֵחִ֣י וָרֹ֑אשׁ מֻפִּ֥ים וְחֻפִּ֖ים וָאָֽרְדְּ׃",
+      "en": "And the sons of Binyamin were Bela, and Bekher, and Ashbel, Gera, and Na῾aman, Eĥi, and Rosh, Muppim, and Ḥuppim, and Ard."
+    },
+    {
+      "n": 67,
+      "c": 46,
+      "v": 22,
+      "ref": "46:22",
+      "text": "אֵ֚לֶּה בְּנֵ֣י רָחֵ֔ל אֲשֶׁ֥ר יֻלַּ֖ד לְיַעֲקֹ֑ב כׇּל־נֶ֖פֶשׁ אַרְבָּעָ֥ה עָשָֽׂר׃",
+      "en": "These are the sons of Raĥel, who were born to Ya῾aqov: all the souls were fourteen."
+    },
+    {
+      "n": 68,
+      "c": 46,
+      "v": 23,
+      "ref": "46:23",
+      "text": "וּבְנֵי־דָ֖ן חֻשִֽׁים׃",
+      "en": "And the sons of Dan; Ḥushim."
+    },
+    {
+      "n": 69,
+      "c": 46,
+      "v": 24,
+      "ref": "46:24",
+      "text": "וּבְנֵ֖י נַפְתָּלִ֑י יַחְצְאֵ֥ל וְגוּנִ֖י וְיֵ֥צֶר וְשִׁלֵּֽם׃",
+      "en": "And the sons of Naftali; Yaĥże᾽el, and Guni, and Yeżer, and Shillem."
+    },
+    {
+      "n": 70,
+      "c": 46,
+      "v": 25,
+      "ref": "46:25",
+      "text": "אֵ֚לֶּה בְּנֵ֣י בִלְהָ֔ה אֲשֶׁר־נָתַ֥ן לָבָ֖ן לְרָחֵ֣ל בִּתּ֑וֹ וַתֵּ֧לֶד אֶת־אֵ֛לֶּה לְיַעֲקֹ֖ב כׇּל־נֶ֥פֶשׁ שִׁבְעָֽה׃",
+      "en": "These are the sons of Bilha, whom Lavan gave to Raĥel his daughter, and she bore these to Ya῾aqov: all the souls were seven."
+    },
+    {
+      "n": 71,
+      "c": 46,
+      "v": 26,
+      "ref": "46:26",
+      "text": "כׇּל־הַ֠נֶּ֠פֶשׁ הַבָּאָ֨ה לְיַעֲקֹ֤ב מִצְרַ֙יְמָה֙ יֹצְאֵ֣י יְרֵכ֔וֹ מִלְּבַ֖ד נְשֵׁ֣י בְנֵי־יַעֲקֹ֑ב כׇּל־נֶ֖פֶשׁ שִׁשִּׁ֥ים וָשֵֽׁשׁ׃",
+      "en": "All the souls that came with Ya῾aqov into Miżrayim, who came out of his loins, besides Ya῾aqov’s sons’ wives, all the souls were sixty six."
+    },
+    {
+      "n": 72,
+      "c": 46,
+      "v": 27,
+      "ref": "46:27",
+      "text": "וּבְנֵ֥י יוֹסֵ֛ף אֲשֶׁר־יֻלַּד־ל֥וֹ בְמִצְרַ֖יִם נֶ֣פֶשׁ שְׁנָ֑יִם כׇּל־הַנֶּ֧פֶשׁ לְבֵֽית־יַעֲקֹ֛ב הַבָּ֥אָה מִצְרַ֖יְמָה שִׁבְעִֽים׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the sons of Yosef, who were born him in Miżrayim, were two souls: all the souls of the house of Ya῾aqov who came into Miżrayim were seventy."
+    },
+    {
+      "n": 73,
+      "c": 46,
+      "v": 28,
+      "ref": "46:28",
+      "text": "וְאֶת־יְהוּדָ֞ה שָׁלַ֤ח לְפָנָיו֙ אֶל־יוֹסֵ֔ף לְהוֹרֹ֥ת לְפָנָ֖יו גֹּ֑שְׁנָה וַיָּבֹ֖אוּ אַ֥רְצָה גֹּֽשֶׁן׃",
+      "en": "And he sent Yehuda before him to Yosef, to show the way before him to Goshen; and they came into the land of Goshen."
+    },
+    {
+      "n": 74,
+      "c": 46,
+      "v": 29,
+      "ref": "46:29",
+      "text": "וַיֶּאְסֹ֤ר יוֹסֵף֙ מֶרְכַּבְתּ֔וֹ וַיַּ֛עַל לִקְרַֽאת־יִשְׂרָאֵ֥ל אָבִ֖יו גֹּ֑שְׁנָה וַיֵּרָ֣א אֵלָ֗יו וַיִּפֹּל֙ עַל־צַוָּארָ֔יו וַיֵּ֥בְךְּ עַל־צַוָּארָ֖יו עֽוֹד׃",
+      "en": "And Yosef made ready his chariot, and went up to meet Yisra᾽el his father, to Goshen, and presented himself to him; and he fell on his neck, and wept on his neck a good while."
+    },
+    {
+      "n": 75,
+      "c": 46,
+      "v": 30,
+      "ref": "46:30",
+      "text": "וַיֹּ֧אמֶר יִשְׂרָאֵ֛ל אֶל־יוֹסֵ֖ף אָמ֣וּתָה הַפָּ֑עַם אַחֲרֵי֙ רְאוֹתִ֣י אֶת־פָּנֶ֔יךָ כִּ֥י עוֹדְךָ֖ חָֽי׃",
+      "en": "And Yisra᾽el said to Yosef, Now let me die, since I have seen thy face, because thou art still alive."
+    },
+    {
+      "n": 76,
+      "c": 46,
+      "v": 31,
+      "ref": "46:31",
+      "text": "וַיֹּ֨אמֶר יוֹסֵ֤ף אֶל־אֶחָיו֙ וְאֶל־בֵּ֣ית אָבִ֔יו אֶעֱלֶ֖ה וְאַגִּ֣ידָה לְפַרְעֹ֑ה וְאֹֽמְרָ֣ה אֵלָ֔יו אַחַ֧י וּבֵית־אָבִ֛י אֲשֶׁ֥ר בְּאֶֽרֶץ־כְּנַ֖עַן בָּ֥אוּ אֵלָֽי׃",
+      "en": "And Yosef said to his brethren, and to his father’s house, I will go up, and tell Par῾o, and say to him, My brethren, and my father’s house, who were in the land of Kena῾an, are come to me;"
+    },
+    {
+      "n": 77,
+      "c": 46,
+      "v": 32,
+      "ref": "46:32",
+      "text": "וְהָאֲנָשִׁים֙ רֹ֣עֵי צֹ֔אן כִּֽי־אַנְשֵׁ֥י מִקְנֶ֖ה הָי֑וּ וְצֹאנָ֧ם וּבְקָרָ֛ם וְכׇל־אֲשֶׁ֥ר לָהֶ֖ם הֵבִֽיאוּ׃",
+      "en": "and the men are shepherds, for they have ever been owners of cattle; and they have brought their flocks, and their herds, and all that they have."
+    },
+    {
+      "n": 78,
+      "c": 46,
+      "v": 33,
+      "ref": "46:33",
+      "text": "וְהָיָ֕ה כִּֽי־יִקְרָ֥א לָכֶ֖ם פַּרְעֹ֑ה וְאָמַ֖ר מַה־מַּעֲשֵׂיכֶֽם׃",
+      "en": "And it shall come to pass, when Par῾o shall call you, and shall say, What is your occupation?"
+    },
+    {
+      "n": 79,
+      "c": 46,
+      "v": 34,
+      "ref": "46:34",
+      "text": "וַאֲמַרְתֶּ֗ם אַנְשֵׁ֨י מִקְנֶ֜ה הָי֤וּ עֲבָדֶ֙יךָ֙ מִנְּעוּרֵ֣ינוּ וְעַד־עַ֔תָּה גַּם־אֲנַ֖חְנוּ גַּם־אֲבֹתֵ֑ינוּ בַּעֲב֗וּר תֵּשְׁבוּ֙ בְּאֶ֣רֶץ גֹּ֔שֶׁן כִּֽי־תוֹעֲבַ֥ת מִצְרַ֖יִם כׇּל־רֹ֥עֵה צֹֽאן׃",
+      "en": "that you shall say, Thy servants’ trade has been about cattle from our youth even until now, both we, and also our fathers: that you may dwell in the land of Goshen; for every shepherd is an abomination to Miżrayim."
+    },
+    {
+      "n": 80,
+      "c": 47,
+      "v": 1,
+      "ref": "47:1",
+      "text": "וַיָּבֹ֣א יוֹסֵף֮ וַיַּגֵּ֣ד לְפַרְעֹה֒ וַיֹּ֗אמֶר אָבִ֨י וְאַחַ֜י וְצֹאנָ֤ם וּבְקָרָם֙ וְכׇל־אֲשֶׁ֣ר לָהֶ֔ם בָּ֖אוּ מֵאֶ֣רֶץ כְּנָ֑עַן וְהִנָּ֖ם בְּאֶ֥רֶץ גֹּֽשֶׁן׃",
+      "en": "Then Yosef came and told Par῾o, and said, My father and my brethren, and their flocks, and their herds, and all that they have, are come out of the land of Kena῾an; and, behold, they are in the land of Goshen."
+    },
+    {
+      "n": 81,
+      "c": 47,
+      "v": 2,
+      "ref": "47:2",
+      "text": "וּמִקְצֵ֣ה אֶחָ֔יו לָקַ֖ח חֲמִשָּׁ֣ה אֲנָשִׁ֑ים וַיַּצִּגֵ֖ם לִפְנֵ֥י פַרְעֹֽה׃",
+      "en": "And he took some of his brothers, five men, and presented them to Par῾o."
+    },
+    {
+      "n": 82,
+      "c": 47,
+      "v": 3,
+      "ref": "47:3",
+      "text": "וַיֹּ֧אמֶר פַּרְעֹ֛ה אֶל־אֶחָ֖יו מַה־מַּעֲשֵׂיכֶ֑ם וַיֹּאמְר֣וּ אֶל־פַּרְעֹ֗ה רֹעֵ֥ה צֹאן֙ עֲבָדֶ֔יךָ גַּם־אֲנַ֖חְנוּ גַּם־אֲבוֹתֵֽינוּ׃",
+      "en": "And Par῾o said to his brothers, What is your occupation? And they said to Par῾o, Thy servants are shepherds, both we, and also our fathers."
+    },
+    {
+      "n": 83,
+      "c": 47,
+      "v": 4,
+      "ref": "47:4",
+      "text": "וַיֹּאמְר֣וּ אֶל־פַּרְעֹ֗ה לָג֣וּר בָּאָ֘רֶץ֮ בָּ֒אנוּ֒ כִּי־אֵ֣ין מִרְעֶ֗ה לַצֹּאן֙ אֲשֶׁ֣ר לַעֲבָדֶ֔יךָ כִּֽי־כָבֵ֥ד הָרָעָ֖ב בְּאֶ֣רֶץ כְּנָ֑עַן וְעַתָּ֛ה יֵֽשְׁבוּ־נָ֥א עֲבָדֶ֖יךָ בְּאֶ֥רֶץ גֹּֽשֶׁן׃",
+      "en": "They said moreover to Par῾o, To sojourn in the land are we come; for thy servants have no pasture for their flocks; for the famine is severe in the land of Kena῾an: now therefore, we pray thee, let thy servants dwell in the land of Goshen."
+    },
+    {
+      "n": 84,
+      "c": 47,
+      "v": 5,
+      "ref": "47:5",
+      "text": "וַיֹּ֣אמֶר פַּרְעֹ֔ה אֶל־יוֹסֵ֖ף לֵאמֹ֑ר אָבִ֥יךָ וְאַחֶ֖יךָ בָּ֥אוּ אֵלֶֽיךָ׃",
+      "en": "And Par῾o spoke to Yosef, saying, Thy father and thy brethren are come to thee:"
+    },
+    {
+      "n": 85,
+      "c": 47,
+      "v": 6,
+      "ref": "47:6",
+      "text": "אֶ֤רֶץ מִצְרַ֙יִם֙ לְפָנֶ֣יךָ הִ֔וא בְּמֵיטַ֣ב הָאָ֔רֶץ הוֹשֵׁ֥ב אֶת־אָבִ֖יךָ וְאֶת־אַחֶ֑יךָ יֵשְׁבוּ֙ בְּאֶ֣רֶץ גֹּ֔שֶׁן וְאִם־יָדַ֗עְתָּ וְיֶשׁ־בָּם֙ אַנְשֵׁי־חַ֔יִל וְשַׂמְתָּ֛ם שָׂרֵ֥י מִקְנֶ֖ה עַל־אֲשֶׁר־לִֽי׃",
+      "en": "the land of Miżrayim is before thee; in the best of the land make thy father and brethren to dwell; in the land of Goshen let them dwell: and if thou knowst any able men among them, then make them rulers over my cattle."
+    },
+    {
+      "n": 86,
+      "c": 47,
+      "v": 7,
+      "ref": "47:7",
+      "text": "וַיָּבֵ֤א יוֹסֵף֙ אֶת־יַֽעֲקֹ֣ב אָבִ֔יו וַיַּֽעֲמִדֵ֖הוּ לִפְנֵ֣י פַרְעֹ֑ה וַיְבָ֥רֶךְ יַעֲקֹ֖ב אֶת־פַּרְעֹֽה׃",
+      "en": "And Yosef brought in Ya῾aqov his father, and set him before Par῾o: and Ya῾aqov blessed Par῾o."
+    },
+    {
+      "n": 87,
+      "c": 47,
+      "v": 8,
+      "ref": "47:8",
+      "text": "וַיֹּ֥אמֶר פַּרְעֹ֖ה אֶֽל־יַעֲקֹ֑ב כַּמָּ֕ה יְמֵ֖י שְׁנֵ֥י חַיֶּֽיךָ׃",
+      "en": "And Par῾o said to Ya῾aqov, How old art thou?"
+    },
+    {
+      "n": 88,
+      "c": 47,
+      "v": 9,
+      "ref": "47:9",
+      "text": "וַיֹּ֤אמֶר יַעֲקֹב֙ אֶל־פַּרְעֹ֔ה יְמֵי֙ שְׁנֵ֣י מְגוּרַ֔י שְׁלֹשִׁ֥ים וּמְאַ֖ת שָׁנָ֑ה מְעַ֣ט וְרָעִ֗ים הָיוּ֙ יְמֵי֙ שְׁנֵ֣י חַיַּ֔י וְלֹ֣א הִשִּׂ֗יגוּ אֶת־יְמֵי֙ שְׁנֵי֙ חַיֵּ֣י אֲבֹתַ֔י בִּימֵ֖י מְגוּרֵיהֶֽם׃",
+      "en": "And Ya῾aqov said to Par῾o, The days of the years of my sojournings are a hundred and thirty years: few and evil have the days of the years of my life been, and they have not attained to the days of the years of the life of my fathers in the days of their sojournings."
+    },
+    {
+      "n": 89,
+      "c": 47,
+      "v": 10,
+      "ref": "47:10",
+      "text": "וַיְבָ֥רֶךְ יַעֲקֹ֖ב אֶת־פַּרְעֹ֑ה וַיֵּצֵ֖א מִלִּפְנֵ֥י פַרְעֹֽה׃",
+      "en": "And Ya῾aqov blessed Par῾o, and went out from before Par῾o."
+    },
+    {
+      "n": 90,
+      "c": 47,
+      "v": 11,
+      "ref": "47:11",
+      "text": "וַיּוֹשֵׁ֣ב יוֹסֵף֮ אֶת־אָבִ֣יו וְאֶת־אֶחָיו֒ וַיִּתֵּ֨ן לָהֶ֤ם אֲחֻזָּה֙ בְּאֶ֣רֶץ מִצְרַ֔יִם בְּמֵיטַ֥ב הָאָ֖רֶץ בְּאֶ֣רֶץ רַעְמְסֵ֑ס כַּאֲשֶׁ֖ר צִוָּ֥ה פַרְעֹֽה׃",
+      "en": "And Yosef provided abodes for his father and his brethren, and gave them a possession in the land of Miżrayim, in the best of the land, in the land of Ra῾meses, as Par῾o had commanded."
+    },
+    {
+      "n": 91,
+      "c": 47,
+      "v": 12,
+      "ref": "47:12",
+      "text": "וַיְכַלְכֵּ֤ל יוֹסֵף֙ אֶת־אָבִ֣יו וְאֶת־אֶחָ֔יו וְאֵ֖ת כׇּל־בֵּ֣ית אָבִ֑יו לֶ֖חֶם לְפִ֥י הַטָּֽף׃",
+      "en": "And Yosef nourished his father, and his brethren, and all his father’s household, with bread, according to their little ones."
+    },
+    {
+      "n": 92,
+      "c": 47,
+      "v": 13,
+      "ref": "47:13",
+      "text": "וְלֶ֤חֶם אֵין֙ בְּכׇל־הָאָ֔רֶץ כִּֽי־כָבֵ֥ד הָרָעָ֖ב מְאֹ֑ד וַתֵּ֜לַהּ אֶ֤רֶץ מִצְרַ֙יִם֙ וְאֶ֣רֶץ כְּנַ֔עַן מִפְּנֵ֖י הָרָעָֽב׃",
+      "en": "And there was no bread in all the land; for the famine was very severe, so that the land of Miżrayim and all the land of Kena῾an languished by reason of the famine."
+    },
+    {
+      "n": 93,
+      "c": 47,
+      "v": 14,
+      "ref": "47:14",
+      "text": "וַיְלַקֵּ֣ט יוֹסֵ֗ף אֶת־כׇּל־הַכֶּ֙סֶף֙ הַנִּמְצָ֤א בְאֶֽרֶץ־מִצְרַ֙יִם֙ וּבְאֶ֣רֶץ כְּנַ֔עַן בַּשֶּׁ֖בֶר אֲשֶׁר־הֵ֣ם שֹׁבְרִ֑ים וַיָּבֵ֥א יוֹסֵ֛ף אֶת־הַכֶּ֖סֶף בֵּ֥יתָה פַרְעֹֽה׃",
+      "en": "And Yosef gathered up all the money that was found in the land of Miżrayim, and in the land of Kena῾an, for the corn which they bought: and Yosef brought the money to Par῾o’s house."
+    },
+    {
+      "n": 94,
+      "c": 47,
+      "v": 15,
+      "ref": "47:15",
+      "text": "וַיִּתֹּ֣ם הַכֶּ֗סֶף מֵאֶ֣רֶץ מִצְרַ֘יִם֮ וּמֵאֶ֣רֶץ כְּנַ֒עַן֒ וַיָּבֹ֩אוּ֩ כׇל־מִצְרַ֨יִם אֶל־יוֹסֵ֤ף לֵאמֹר֙ הָֽבָה־לָּ֣נוּ לֶ֔חֶם וְלָ֥מָּה נָמ֖וּת נֶגְדֶּ֑ךָ כִּ֥י אָפֵ֖ס כָּֽסֶף׃",
+      "en": "And when money failed in the land of Miżrayim, and in the land of Kena῾an, all Miżrayim came to Yosef, and said, Give us bread: for why should we die in thy presence? for the money fails."
+    },
+    {
+      "n": 95,
+      "c": 47,
+      "v": 16,
+      "ref": "47:16",
+      "text": "וַיֹּ֤אמֶר יוֹסֵף֙ הָב֣וּ מִקְנֵיכֶ֔ם וְאֶתְּנָ֥ה לָכֶ֖ם בְּמִקְנֵיכֶ֑ם אִם־אָפֵ֖ס כָּֽסֶף׃",
+      "en": "And Yosef said, Give your cattle; and I will give you for your cattle, if money fail."
+    },
+    {
+      "n": 96,
+      "c": 47,
+      "v": 17,
+      "ref": "47:17",
+      "text": "וַיָּבִ֣יאוּ אֶת־מִקְנֵיהֶם֮ אֶל־יוֹסֵף֒ וַיִּתֵּ֣ן לָהֶם֩ יוֹסֵ֨ף לֶ֜חֶם בַּסּוּסִ֗ים וּבְמִקְנֵ֥ה הַצֹּ֛אן וּבְמִקְנֵ֥ה הַבָּקָ֖ר וּבַחֲמֹרִ֑ים וַיְנַהֲלֵ֤ם בַּלֶּ֙חֶם֙ בְּכׇל־מִקְנֵהֶ֔ם בַּשָּׁנָ֖ה הַהִֽוא׃",
+      "en": "And they brought their cattle to Yosef; and Yosef gave them bread in exchange for horses, and for the flocks, and for the herds, and for the asses: and he fed them with bread in exchange for all their cattle for that year."
+    },
+    {
+      "n": 97,
+      "c": 47,
+      "v": 18,
+      "ref": "47:18",
+      "text": "וַתִּתֹּם֮ הַשָּׁנָ֣ה הַהִוא֒ וַיָּבֹ֨אוּ אֵלָ֜יו בַּשָּׁנָ֣ה הַשֵּׁנִ֗ית וַיֹּ֤אמְרוּ לוֹ֙ לֹֽא־נְכַחֵ֣ד מֵֽאֲדֹנִ֔י כִּ֚י אִם־תַּ֣ם הַכֶּ֔סֶף וּמִקְנֵ֥ה הַבְּהֵמָ֖ה אֶל־אֲדֹנִ֑י לֹ֤א נִשְׁאַר֙ לִפְנֵ֣י אֲדֹנִ֔י בִּלְתִּ֥י אִם־גְּוִיָּתֵ֖נוּ וְאַדְמָתֵֽנוּ׃",
+      "en": "When that year was ended, they came to him in the second year, and said to him, We will not hide from my lord, how that our money is spent; my lord also has our herds of cattle; there is nothing left in the sight of my lord, but our bodies, and our lands:"
+    },
+    {
+      "n": 98,
+      "c": 47,
+      "v": 19,
+      "ref": "47:19",
+      "text": "לָ֧מָּה נָמ֣וּת לְעֵינֶ֗יךָ גַּם־אֲנַ֙חְנוּ֙ גַּ֣ם אַדְמָתֵ֔נוּ קְנֵֽה־אֹתָ֥נוּ וְאֶת־אַדְמָתֵ֖נוּ בַּלָּ֑חֶם וְנִֽהְיֶ֞ה אֲנַ֤חְנוּ וְאַדְמָתֵ֙נוּ֙ עֲבָדִ֣ים לְפַרְעֹ֔ה וְתֶן־זֶ֗רַע וְנִֽחְיֶה֙ וְלֹ֣א נָמ֔וּת וְהָאֲדָמָ֖ה לֹ֥א תֵשָֽׁם׃",
+      "en": "why shall we die before thy eyes, both we and our land? buy us and our land for bread, and we and our land will be servants to Par῾o: and give us grain, that we may live, and not die, that the land be not desolate."
+    },
+    {
+      "n": 99,
+      "c": 47,
+      "v": 20,
+      "ref": "47:20",
+      "text": "וַיִּ֨קֶן יוֹסֵ֜ף אֶת־כׇּל־אַדְמַ֤ת מִצְרַ֙יִם֙ לְפַרְעֹ֔ה כִּֽי־מָכְר֤וּ מִצְרַ֙יִם֙ אִ֣ישׁ שָׂדֵ֔הוּ כִּֽי־חָזַ֥ק עֲלֵהֶ֖ם הָרָעָ֑ב וַתְּהִ֥י הָאָ֖רֶץ לְפַרְעֹֽה׃",
+      "en": "And Yosef bought all the land of Miżrayim for Par῾o; for Miżrayim sold every man his field, because the famine prevailed over them: so the land became Par῾o’s."
+    },
+    {
+      "n": 100,
+      "c": 47,
+      "v": 21,
+      "ref": "47:21",
+      "text": "וְאֶ֨ת־הָעָ֔ם הֶעֱבִ֥יר אֹת֖וֹ לֶעָרִ֑ים מִקְצֵ֥ה גְבוּל־מִצְרַ֖יִם וְעַד־קָצֵֽהוּ׃",
+      "en": "And as for the people, he removed them to the cities from one end of the borders of Miżrayim, to the other end."
+    },
+    {
+      "n": 101,
+      "c": 47,
+      "v": 22,
+      "ref": "47:22",
+      "text": "רַ֛ק אַדְמַ֥ת הַכֹּהֲנִ֖ים לֹ֣א קָנָ֑ה כִּי֩ חֹ֨ק לַכֹּהֲנִ֜ים מֵאֵ֣ת פַּרְעֹ֗ה וְאָֽכְל֤וּ אֶת־חֻקָּם֙ אֲשֶׁ֨ר נָתַ֤ן לָהֶם֙ פַּרְעֹ֔ה עַל־כֵּ֕ן לֹ֥א מָכְר֖וּ אֶת־אַדְמָתָֽם׃",
+      "en": "Only the land of the priests he bought not; for the priests had a portion assigned them by Par῾o, and did eat their portion which Par῾o gave them: therefore they sold not their lands."
+    },
+    {
+      "n": 102,
+      "c": 47,
+      "v": 23,
+      "ref": "47:23",
+      "text": "וַיֹּ֤אמֶר יוֹסֵף֙ אֶל־הָעָ֔ם הֵן֩ קָנִ֨יתִי אֶתְכֶ֥ם הַיּ֛וֹם וְאֶת־אַדְמַתְכֶ֖ם לְפַרְעֹ֑ה הֵֽא־לָכֶ֣ם זֶ֔רַע וּזְרַעְתֶּ֖ם אֶת־הָאֲדָמָֽה׃",
+      "en": "Then Yosef said to the people, Behold, I have bought you this day and your land for Par῾o: lo, here is grain for you, and you shall sow the land."
+    },
+    {
+      "n": 103,
+      "c": 47,
+      "v": 24,
+      "ref": "47:24",
+      "text": "וְהָיָה֙ בַּתְּבוּאֹ֔ת וּנְתַתֶּ֥ם חֲמִישִׁ֖ית לְפַרְעֹ֑ה וְאַרְבַּ֣ע הַיָּדֹ֡ת יִהְיֶ֣ה לָכֶם֩ לְזֶ֨רַע הַשָּׂדֶ֧ה וּֽלְאׇכְלְכֶ֛ם וְלַאֲשֶׁ֥ר בְּבָתֵּיכֶ֖ם וְלֶאֱכֹ֥ל לְטַפְּכֶֽם׃",
+      "en": "And it shall come to pass at harvest times, that you shall give the fifth part to Par῾o, and four parts shall be your own, for seed of the field, and for your food, and for them of your households, and for food for your little ones."
+    },
+    {
+      "n": 104,
+      "c": 47,
+      "v": 25,
+      "ref": "47:25",
+      "text": "וַיֹּאמְר֖וּ הֶחֱיִתָ֑נוּ נִמְצָא־חֵן֙ בְּעֵינֵ֣י אֲדֹנִ֔י וְהָיִ֥ינוּ עֲבָדִ֖ים לְפַרְעֹֽה׃",
+      "en": "And they said, Thou hast saved our lives: let us find favour in the sight of my lord, and we will be Par῾o’s servants."
+    },
+    {
+      "n": 105,
+      "c": 47,
+      "v": 26,
+      "ref": "47:26",
+      "text": "וַיָּ֣שֶׂם אֹתָ֣הּ יוֹסֵ֡ף לְחֹק֩ עַד־הַיּ֨וֹם הַזֶּ֜ה עַל־אַדְמַ֥ת מִצְרַ֛יִם לְפַרְעֹ֖ה לַחֹ֑מֶשׁ רַ֞ק אַדְמַ֤ת הַכֹּֽהֲנִים֙ לְבַדָּ֔ם לֹ֥א הָיְתָ֖ה לְפַרְעֹֽה׃",
+      "en": "And Yosef made it a law over the land of Miżrayim to this day, that Par῾o should have the fifth part; except the land of the priests only, which became not Par῾o’s."
+    },
+    {
+      "n": 106,
+      "c": 47,
+      "v": 27,
+      "ref": "47:27",
+      "text": "וַיֵּ֧שֶׁב יִשְׂרָאֵ֛ל בְּאֶ֥רֶץ מִצְרַ֖יִם בְּאֶ֣רֶץ גֹּ֑שֶׁן וַיֵּאָחֲז֣וּ בָ֔הּ וַיִּפְר֥וּ וַיִּרְבּ֖וּ מְאֹֽד׃",
+      "en": "And Yisra᾽el dwelt in the land of Miżrayim in the country of Goshen; and they took possession of it, and grew, and multiplied exceedingly."
+    }
+  ],
+  "parashah": {
+    "en": "Vayigash",
+    "he": "וַיִּגַּשׁ",
+    "translit": "Vayigash",
+    "ref": "Genesis 44:18–47:27"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 13,
+        "ref": "44:18–44:30"
+      },
+      {
+        "n": 2,
+        "start": 14,
+        "end": 24,
+        "ref": "44:31–45:7"
+      },
+      {
+        "n": 3,
+        "start": 25,
+        "end": 35,
+        "ref": "45:8–45:18"
+      },
+      {
+        "n": 4,
+        "start": 36,
+        "end": 44,
+        "ref": "45:19–45:27"
+      },
+      {
+        "n": 5,
+        "start": 45,
+        "end": 72,
+        "ref": "45:28–46:27"
+      },
+      {
+        "n": 6,
+        "start": 73,
+        "end": 89,
+        "ref": "46:28–47:10"
+      },
+      {
+        "n": 7,
+        "start": 90,
+        "end": 106,
+        "ref": "47:11–47:27"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "44:18–44:20"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 7,
+          "ref": "44:21–44:24"
+        },
+        {
+          "n": 3,
+          "start": 8,
+          "end": 13,
+          "ref": "44:25–44:30"
+        },
+        {
+          "n": 4,
+          "start": 14,
+          "end": 17,
+          "ref": "44:31–44:34"
+        },
+        {
+          "n": 5,
+          "start": 18,
+          "end": 24,
+          "ref": "45:1–45:7"
+        },
+        {
+          "n": 6,
+          "start": 25,
+          "end": 35,
+          "ref": "45:8–45:18"
+        },
+        {
+          "n": 7,
+          "start": 36,
+          "end": 44,
+          "ref": "45:19–45:27"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 45,
+          "end": 49,
+          "ref": "45:28–46:4"
+        },
+        {
+          "n": 2,
+          "start": 50,
+          "end": 52,
+          "ref": "46:5–46:7"
+        },
+        {
+          "n": 3,
+          "start": 53,
+          "end": 56,
+          "ref": "46:8–46:11"
+        },
+        {
+          "n": 4,
+          "start": 57,
+          "end": 60,
+          "ref": "46:12–46:15"
+        },
+        {
+          "n": 5,
+          "start": 61,
+          "end": 63,
+          "ref": "46:16–46:18"
+        },
+        {
+          "n": 6,
+          "start": 64,
+          "end": 67,
+          "ref": "46:19–46:22"
+        },
+        {
+          "n": 7,
+          "start": 68,
+          "end": 72,
+          "ref": "46:23–46:27"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 73,
+          "end": 75,
+          "ref": "46:28–46:30"
+        },
+        {
+          "n": 2,
+          "start": 76,
+          "end": 79,
+          "ref": "46:31–46:34"
+        },
+        {
+          "n": 3,
+          "start": 80,
+          "end": 85,
+          "ref": "47:1–47:6"
+        },
+        {
+          "n": 4,
+          "start": 86,
+          "end": 89,
+          "ref": "47:7–47:10"
+        },
+        {
+          "n": 5,
+          "start": 90,
+          "end": 98,
+          "ref": "47:11–47:19"
+        },
+        {
+          "n": 6,
+          "start": 99,
+          "end": 101,
+          "ref": "47:20–47:22"
+        },
+        {
+          "n": 7,
+          "start": 102,
+          "end": 106,
+          "ref": "47:23–47:27"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 104,
+        "end": 106,
+        "ref": "47:25–47:27"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 42,
+          "end": 44,
+          "ref": "45:25–45:27"
+        },
+        "2": {
+          "n": "M",
+          "start": 68,
+          "end": 72,
+          "ref": "46:23–46:27"
+        },
+        "3": {
+          "n": "M",
+          "start": 104,
+          "end": 106,
+          "ref": "47:25–47:27"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

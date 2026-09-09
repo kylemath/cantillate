@@ -1,0 +1,339 @@
+{
+  "slug": "yk-torah",
+  "book": {
+    "en": "Leviticus",
+    "he": "ויקרא",
+    "translit": "Vayikra"
+  },
+  "multiChapter": true,
+  "ref": "Leviticus 16:1-16:34",
+  "heRef": "ויקרא ט״ז:א-ל״ד",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 16,
+      "v": 1,
+      "ref": "16:1",
+      "text": "וַיְדַבֵּ֤ר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה אַחֲרֵ֣י מ֔וֹת שְׁנֵ֖י בְּנֵ֣י אַהֲרֹ֑ן בְּקׇרְבָתָ֥ם לִפְנֵי־יְהֹוָ֖ה וַיָּמֻֽתוּ׃",
+      "en": "And the Lord spoke to Moshe after the death of the two sons of Aharon, when they came near before the Lord, and died;"
+    },
+    {
+      "n": 2,
+      "c": 16,
+      "v": 2,
+      "ref": "16:2",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֶל־מֹשֶׁ֗ה דַּבֵּר֮ אֶל־אַהֲרֹ֣ן אָחִ֒יךָ֒ וְאַל־יָבֹ֤א בְכׇל־עֵת֙ אֶל־הַקֹּ֔דֶשׁ מִבֵּ֖ית לַפָּרֹ֑כֶת אֶל־פְּנֵ֨י הַכַּפֹּ֜רֶת אֲשֶׁ֤ר עַל־הָאָרֹן֙ וְלֹ֣א יָמ֔וּת כִּ֚י בֶּֽעָנָ֔ן אֵרָאֶ֖ה עַל־הַכַּפֹּֽרֶת׃",
+      "en": "and the Lord said to Moshe, Speak to Aharon thy brother, that he come not at all times into the holy place within the veil before the covering, which is upon the ark; that he die not: for I appear in the cloud upon the ark cover."
+    },
+    {
+      "n": 3,
+      "c": 16,
+      "v": 3,
+      "ref": "16:3",
+      "text": "בְּזֹ֛את יָבֹ֥א אַהֲרֹ֖ן אֶל־הַקֹּ֑דֶשׁ בְּפַ֧ר בֶּן־בָּקָ֛ר לְחַטָּ֖את וְאַ֥יִל לְעֹלָֽה׃",
+      "en": "Thus shall Aharon come into the holy place: with a young bullock for a sin offering, and a ram for a burnt offering."
+    },
+    {
+      "n": 4,
+      "c": 16,
+      "v": 4,
+      "ref": "16:4",
+      "text": "כְּתֹֽנֶת־בַּ֨ד קֹ֜דֶשׁ יִלְבָּ֗שׁ וּמִֽכְנְסֵי־בַד֮ יִהְי֣וּ עַל־בְּשָׂרוֹ֒ וּבְאַבְנֵ֥ט בַּד֙ יַחְגֹּ֔ר וּבְמִצְנֶ֥פֶת בַּ֖ד יִצְנֹ֑ף בִּגְדֵי־קֹ֣דֶשׁ הֵ֔ם וְרָחַ֥ץ בַּמַּ֛יִם אֶת־בְּשָׂר֖וֹ וּלְבֵשָֽׁם׃",
+      "en": "He shall put on the holy linen coat, and he shall have the linen breeches upon his flesh, and shall be girded with a linen girdle, and with the linen mitre shall he be attired: these are holy garments; therefore shall he bathe his flesh in water, and so put them on."
+    },
+    {
+      "n": 5,
+      "c": 16,
+      "v": 5,
+      "ref": "16:5",
+      "text": "וּמֵאֵ֗ת עֲדַת֙ בְּנֵ֣י יִשְׂרָאֵ֔ל יִקַּ֛ח שְׁנֵֽי־שְׂעִירֵ֥י עִזִּ֖ים לְחַטָּ֑את וְאַ֥יִל אֶחָ֖ד לְעֹלָֽה׃",
+      "en": "And he shall take from the congregation of the children of Yisra᾽el two kids of the goats for a sin offering, and one ram for a burnt offering."
+    },
+    {
+      "n": 6,
+      "c": 16,
+      "v": 6,
+      "ref": "16:6",
+      "text": "וְהִקְרִ֧יב אַהֲרֹ֛ן אֶת־פַּ֥ר הַחַטָּ֖את אֲשֶׁר־ל֑וֹ וְכִפֶּ֥ר בַּעֲד֖וֹ וּבְעַ֥ד בֵּיתֽוֹ׃",
+      "en": "And Aharon shall offer the bullock of the sin offering, which is for himself, and make atonement for himself, and for his house."
+    },
+    {
+      "n": 7,
+      "c": 16,
+      "v": 7,
+      "ref": "16:7",
+      "text": "וְלָקַ֖ח אֶת־שְׁנֵ֣י הַשְּׂעִירִ֑ם וְהֶעֱמִ֤יד אֹתָם֙ לִפְנֵ֣י יְהֹוָ֔ה פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "And he shall take the two goats, and present them before the Lord at the door of the Tent of Meeting."
+    },
+    {
+      "n": 8,
+      "c": 16,
+      "v": 8,
+      "ref": "16:8",
+      "text": "וְנָתַ֧ן אַהֲרֹ֛ן עַל־שְׁנֵ֥י הַשְּׂעִירִ֖ם גֹּרָל֑וֹת גּוֹרָ֤ל אֶחָד֙ לַיהֹוָ֔ה וְגוֹרָ֥ל אֶחָ֖ד לַעֲזָאזֵֽל׃",
+      "en": "And Aharon shall cast lots upon the two goats; one lot for the Lord, and the other lot for ῾Azazel."
+    },
+    {
+      "n": 9,
+      "c": 16,
+      "v": 9,
+      "ref": "16:9",
+      "text": "וְהִקְרִ֤יב אַהֲרֹן֙ אֶת־הַשָּׂעִ֔יר אֲשֶׁ֨ר עָלָ֥ה עָלָ֛יו הַגּוֹרָ֖ל לַיהֹוָ֑ה וְעָשָׂ֖הוּ חַטָּֽאת׃",
+      "en": "And Aharon shall bring the goat upon which the Lord’s lot fell, and offer it for a sin offering."
+    },
+    {
+      "n": 10,
+      "c": 16,
+      "v": 10,
+      "ref": "16:10",
+      "text": "וְהַשָּׂעִ֗יר אֲשֶׁר֩ עָלָ֨ה עָלָ֤יו הַגּוֹרָל֙ לַעֲזָאזֵ֔ל יׇֽעֳמַד־חַ֛י לִפְנֵ֥י יְהֹוָ֖ה לְכַפֵּ֣ר עָלָ֑יו לְשַׁלַּ֥ח אֹת֛וֹ לַעֲזָאזֵ֖ל הַמִּדְבָּֽרָה׃",
+      "en": "But the goat, on which the lot fell for ῾Azazel, shall be presented alive before the Lord, to make atonement over him, and to let him go to ῾Azazel into the wilderness."
+    },
+    {
+      "n": 11,
+      "c": 16,
+      "v": 11,
+      "ref": "16:11",
+      "text": "וְהִקְרִ֨יב אַהֲרֹ֜ן אֶת־פַּ֤ר הַֽחַטָּאת֙ אֲשֶׁר־ל֔וֹ וְכִפֶּ֥ר בַּֽעֲד֖וֹ וּבְעַ֣ד בֵּית֑וֹ וְשָׁחַ֛ט אֶת־פַּ֥ר הַֽחַטָּ֖את אֲשֶׁר־לֽוֹ׃",
+      "en": "And Aharon shall bring the bullock of the sin offering, which is for himself, and shall make atonement for himself, and for his house, and shall kill the bullock of the sin offering which is for himself:"
+    },
+    {
+      "n": 12,
+      "c": 16,
+      "v": 12,
+      "ref": "16:12",
+      "text": "וְלָקַ֣ח מְלֹֽא־הַ֠מַּחְתָּ֠ה גַּֽחֲלֵי־אֵ֞שׁ מֵעַ֤ל הַמִּזְבֵּ֙חַ֙ מִלִּפְנֵ֣י יְהֹוָ֔ה וּמְלֹ֣א חׇפְנָ֔יו קְטֹ֥רֶת סַמִּ֖ים דַּקָּ֑ה וְהֵבִ֖יא מִבֵּ֥ית לַפָּרֹֽכֶת׃",
+      "en": "and he shall take a censer full of burning coals of fire from off the altar before the Lord, and his hands full of sweet incense beaten small, and bring it inside the veil:"
+    },
+    {
+      "n": 13,
+      "c": 16,
+      "v": 13,
+      "ref": "16:13",
+      "text": "וְנָתַ֧ן אֶֽת־הַקְּטֹ֛רֶת עַל־הָאֵ֖שׁ לִפְנֵ֣י יְהֹוָ֑ה וְכִסָּ֣ה&thinsp;<b>׀</b> עֲנַ֣ן הַקְּטֹ֗רֶת אֶת־הַכַּפֹּ֛רֶת אֲשֶׁ֥ר עַל־הָעֵד֖וּת וְלֹ֥א יָמֽוּת׃",
+      "en": "and he shall put the incense upon the fire before the Lord, that the cloud of the incense may cover the covering that is upon the Testimony, that he die not:"
+    },
+    {
+      "n": 14,
+      "c": 16,
+      "v": 14,
+      "ref": "16:14",
+      "text": "וְלָקַח֙ מִדַּ֣ם הַפָּ֔ר וְהִזָּ֧ה בְאֶצְבָּע֛וֹ עַל־פְּנֵ֥י הַכַּפֹּ֖רֶת קֵ֑דְמָה וְלִפְנֵ֣י הַכַּפֹּ֗רֶת יַזֶּ֧ה שֶֽׁבַע־פְּעָמִ֛ים מִן־הַדָּ֖ם בְּאֶצְבָּעֽוֹ׃",
+      "en": "and he shall take of the blood of the bullock, and sprinkle it with his finger upon the covering eastward; and before the covering shall he sprinkle of the blood with his finger seven times."
+    },
+    {
+      "n": 15,
+      "c": 16,
+      "v": 15,
+      "ref": "16:15",
+      "text": "וְשָׁחַ֞ט אֶת־שְׂעִ֤יר הַֽחַטָּאת֙ אֲשֶׁ֣ר לָעָ֔ם וְהֵבִיא֙ אֶת־דָּמ֔וֹ אֶל־מִבֵּ֖ית לַפָּרֹ֑כֶת וְעָשָׂ֣ה אֶת־דָּמ֗וֹ כַּאֲשֶׁ֤ר עָשָׂה֙ לְדַ֣ם הַפָּ֔ר וְהִזָּ֥ה אֹת֛וֹ עַל־הַכַּפֹּ֖רֶת וְלִפְנֵ֥י הַכַּפֹּֽרֶת׃",
+      "en": "Then shall he kill the goat of the sin offering, that is for the people, and bring its blood within the veil, and do with that blood as he did with the blood of the bullock, and sprinkle it upon the covering, and before the covering:"
+    },
+    {
+      "n": 16,
+      "c": 16,
+      "v": 16,
+      "ref": "16:16",
+      "text": "וְכִפֶּ֣ר עַל־הַקֹּ֗דֶשׁ מִטֻּמְאֹת֙ בְּנֵ֣י יִשְׂרָאֵ֔ל וּמִפִּשְׁעֵיהֶ֖ם לְכׇל־חַטֹּאתָ֑ם וְכֵ֤ן יַעֲשֶׂה֙ לְאֹ֣הֶל מוֹעֵ֔ד הַשֹּׁכֵ֣ן אִתָּ֔ם בְּת֖וֹךְ טֻמְאֹתָֽם׃",
+      "en": "and he shall make atonement for the holy place, because of the uncleanness of the children of Yisra᾽el, and because of their transgressions in all their sins: and so shall he do for the Tent of Meeting, that remains among them in the midst of their uncleanness."
+    },
+    {
+      "n": 17,
+      "c": 16,
+      "v": 17,
+      "ref": "16:17",
+      "text": "וְכׇל־אָדָ֞ם לֹא־יִהְיֶ֣ה&thinsp;<b>׀</b> בְּאֹ֣הֶל מוֹעֵ֗ד בְּבֹא֛וֹ לְכַפֵּ֥ר בַּקֹּ֖דֶשׁ עַד־צֵאת֑וֹ וְכִפֶּ֤ר בַּעֲדוֹ֙ וּבְעַ֣ד בֵּית֔וֹ וּבְעַ֖ד כׇּל־קְהַ֥ל יִשְׂרָאֵֽל׃",
+      "en": "And there shall be no man in the Tent of Meeting when he goes in to make atonement in the holy place, until he comes out, and have made atonement for himself, and for his household, and for all the congregation of Yisra᾽el."
+    },
+    {
+      "n": 18,
+      "c": 16,
+      "v": 18,
+      "ref": "16:18",
+      "text": "וְיָצָ֗א אֶל־הַמִּזְבֵּ֛חַ אֲשֶׁ֥ר לִפְנֵֽי־יְהֹוָ֖ה וְכִפֶּ֣ר עָלָ֑יו וְלָקַ֞ח מִדַּ֤ם הַפָּר֙ וּמִדַּ֣ם הַשָּׂעִ֔יר וְנָתַ֛ן עַל־קַרְנ֥וֹת הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "And he shall go out to the altar that is before the Lord, and make atonement for it; and shall take of the blood of the bullock, and of the blood of the goat, and put it upon the horns of the altar round about."
+    },
+    {
+      "n": 19,
+      "c": 16,
+      "v": 19,
+      "ref": "16:19",
+      "text": "וְהִזָּ֨ה עָלָ֧יו מִן־הַדָּ֛ם בְּאֶצְבָּע֖וֹ שֶׁ֣בַע פְּעָמִ֑ים וְטִהֲר֣וֹ וְקִדְּשׁ֔וֹ מִטֻּמְאֹ֖ת בְּנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "And he shall sprinkle of the blood upon it with his finger seven times, and cleanse it, and hallow it from the uncleanness of the children of Yisra᾽el."
+    },
+    {
+      "n": 20,
+      "c": 16,
+      "v": 20,
+      "ref": "16:20",
+      "text": "וְכִלָּה֙ מִכַּפֵּ֣ר אֶת־הַקֹּ֔דֶשׁ וְאֶת־אֹ֥הֶל מוֹעֵ֖ד וְאֶת־הַמִּזְבֵּ֑חַ וְהִקְרִ֖יב אֶת־הַשָּׂעִ֥יר הֶחָֽי׃",
+      "en": "And when he has made an end of atoning for the holy place, and the Tent of Meeting, and the altar, he shall present the live goat:"
+    },
+    {
+      "n": 21,
+      "c": 16,
+      "v": 21,
+      "ref": "16:21",
+      "text": "וְסָמַ֨ךְ אַהֲרֹ֜ן אֶת־שְׁתֵּ֣י <span class=\"mam-kq-trivial\">יָדָ֗ו</span> עַ֣ל רֹ֣אשׁ הַשָּׂעִיר֮ הַחַי֒ וְהִתְוַדָּ֣ה עָלָ֗יו אֶת־כׇּל־עֲוֺנֹת֙ בְּנֵ֣י יִשְׂרָאֵ֔ל וְאֶת־כׇּל־פִּשְׁעֵיהֶ֖ם לְכׇל־חַטֹּאתָ֑ם וְנָתַ֤ן אֹתָם֙ עַל־רֹ֣אשׁ הַשָּׂעִ֔יר וְשִׁלַּ֛ח בְּיַד־אִ֥ישׁ עִתִּ֖י הַמִּדְבָּֽרָה׃",
+      "en": "and Aharon shall lay both his hands upon the head of the live goat, and confess over him all the iniquities of the children of Yisra᾽el, and all their transgressions in all their sins, putting them upon the head of the goat, and shall send him away by the hand of an appointed man into the wilderness:"
+    },
+    {
+      "n": 22,
+      "c": 16,
+      "v": 22,
+      "ref": "16:22",
+      "text": "וְנָשָׂ֨א הַשָּׂעִ֥יר עָלָ֛יו אֶת־כׇּל־עֲוֺנֹתָ֖ם אֶל־אֶ֣רֶץ גְּזֵרָ֑ה וְשִׁלַּ֥ח אֶת־הַשָּׂעִ֖יר בַּמִּדְבָּֽר׃",
+      "en": "and the goat shall bear upon it all their iniquities to a barren land: and he shall let go the goat in the wilderness."
+    },
+    {
+      "n": 23,
+      "c": 16,
+      "v": 23,
+      "ref": "16:23",
+      "text": "וּבָ֤א אַהֲרֹן֙ אֶל־אֹ֣הֶל מוֹעֵ֔ד וּפָשַׁט֙ אֶת־בִּגְדֵ֣י הַבָּ֔ד אֲשֶׁ֥ר לָבַ֖שׁ בְּבֹא֣וֹ אֶל־הַקֹּ֑דֶשׁ וְהִנִּיחָ֖ם שָֽׁם׃",
+      "en": "And Aharon shall come into the Tent of Meeting, and shall put off the linen garments, which he put on when he went into the holy place, and shall leave them there:"
+    },
+    {
+      "n": 24,
+      "c": 16,
+      "v": 24,
+      "ref": "16:24",
+      "text": "וְרָחַ֨ץ אֶת־בְּשָׂר֤וֹ בַמַּ֙יִם֙ בְּמָק֣וֹם קָד֔וֹשׁ וְלָבַ֖שׁ אֶת־בְּגָדָ֑יו וְיָצָ֗א וְעָשָׂ֤ה אֶת־עֹֽלָתוֹ֙ וְאֶת־עֹלַ֣ת הָעָ֔ם וְכִפֶּ֥ר בַּעֲד֖וֹ וּבְעַ֥ד הָעָֽם׃",
+      "en": "and he shall wash his flesh with water in the holy place, and put on his garments, and come forth, and offer his burnt offering, and the burnt offering of the people, and make atonement for himself, and for the people."
+    },
+    {
+      "n": 25,
+      "c": 16,
+      "v": 25,
+      "ref": "16:25",
+      "text": "וְאֵ֛ת חֵ֥לֶב הַֽחַטָּ֖את יַקְטִ֥יר הַמִּזְבֵּֽחָה׃",
+      "en": "And the fat of the sin offering shall he burn upon the altar."
+    },
+    {
+      "n": 26,
+      "c": 16,
+      "v": 26,
+      "ref": "16:26",
+      "text": "וְהַֽמְשַׁלֵּ֤חַ אֶת־הַשָּׂעִיר֙ לַֽעֲזָאזֵ֔ל יְכַבֵּ֣ס בְּגָדָ֔יו וְרָחַ֥ץ אֶת־בְּשָׂר֖וֹ בַּמָּ֑יִם וְאַחֲרֵי־כֵ֖ן יָב֥וֹא אֶל־הַֽמַּחֲנֶֽה׃",
+      "en": "And he that let go the goat for ῾Azazel shall wash his clothes, and bathe his flesh in water, and afterwards come into the camp."
+    },
+    {
+      "n": 27,
+      "c": 16,
+      "v": 27,
+      "ref": "16:27",
+      "text": "וְאֵת֩ פַּ֨ר הַֽחַטָּ֜את וְאֵ֣ת&thinsp;<b>׀</b> שְׂעִ֣יר הַֽחַטָּ֗את אֲשֶׁ֨ר הוּבָ֤א אֶת־דָּמָם֙ לְכַפֵּ֣ר בַּקֹּ֔דֶשׁ יוֹצִ֖יא אֶל־מִח֣וּץ לַֽמַּחֲנֶ֑ה וְשָׂרְפ֣וּ בָאֵ֔שׁ אֶת־עֹרֹתָ֥ם וְאֶת־בְּשָׂרָ֖ם וְאֶת־פִּרְשָֽׁם׃",
+      "en": "And the bullock for the sin offering, and the goat for the sin offering, whose blood was brought in to make atonement in the holy place, shall be taken outside the camp; and they shall burn in the fire their skins, and their flesh, and their dung."
+    },
+    {
+      "n": 28,
+      "c": 16,
+      "v": 28,
+      "ref": "16:28",
+      "text": "וְהַשֹּׂרֵ֣ף אֹתָ֔ם יְכַבֵּ֣ס בְּגָדָ֔יו וְרָחַ֥ץ אֶת־בְּשָׂר֖וֹ בַּמָּ֑יִם וְאַחֲרֵי־כֵ֖ן יָב֥וֹא אֶל־הַֽמַּחֲנֶֽה׃",
+      "en": "And he that burns them shall wash his clothes, and bathe his flesh in water, and afterwards he shall come into the camp."
+    },
+    {
+      "n": 29,
+      "c": 16,
+      "v": 29,
+      "ref": "16:29",
+      "text": "וְהָיְתָ֥ה לָכֶ֖ם לְחֻקַּ֣ת עוֹלָ֑ם בַּחֹ֣דֶשׁ הַ֠שְּׁבִיעִ֠י בֶּֽעָשׂ֨וֹר לַחֹ֜דֶשׁ תְּעַנּ֣וּ אֶת־נַפְשֹֽׁתֵיכֶ֗ם וְכׇל־מְלָאכָה֙ לֹ֣א תַעֲשׂ֔וּ הָֽאֶזְרָ֔ח וְהַגֵּ֖ר הַגָּ֥ר בְּתוֹכְכֶֽם׃",
+      "en": "And this shall be a statute for ever to you: that in the seventh month, on the tenth day of the month, you shall afflict your souls, and do no work at all, the home born or the stranger that sojourns among you:"
+    },
+    {
+      "n": 30,
+      "c": 16,
+      "v": 30,
+      "ref": "16:30",
+      "text": "כִּֽי־בַיּ֥וֹם הַזֶּ֛ה יְכַפֵּ֥ר עֲלֵיכֶ֖ם לְטַהֵ֣ר אֶתְכֶ֑ם מִכֹּל֙ חַטֹּ֣אתֵיכֶ֔ם לִפְנֵ֥י יְהֹוָ֖ה תִּטְהָֽרוּ׃",
+      "en": "for on that day will he forgive you, to cleanse you, that you may be clean from all your sins before the Lord."
+    },
+    {
+      "n": 31,
+      "c": 16,
+      "v": 31,
+      "ref": "16:31",
+      "text": "שַׁבַּ֨ת שַׁבָּת֥וֹן הִיא֙ לָכֶ֔ם וְעִנִּיתֶ֖ם אֶת־נַפְשֹׁתֵיכֶ֑ם חֻקַּ֖ת עוֹלָֽם׃",
+      "en": "It shall be a sabbath of solemn rest to you, and you shall afflict your souls, by a statute forever."
+    },
+    {
+      "n": 32,
+      "c": 16,
+      "v": 32,
+      "ref": "16:32",
+      "text": "וְכִפֶּ֨ר הַכֹּהֵ֜ן אֲשֶׁר־יִמְשַׁ֣ח אֹת֗וֹ וַאֲשֶׁ֤ר יְמַלֵּא֙ אֶת־יָד֔וֹ לְכַהֵ֖ן תַּ֣חַת אָבִ֑יו וְלָבַ֛שׁ אֶת־בִּגְדֵ֥י הַבָּ֖ד בִּגְדֵ֥י הַקֹּֽדֶשׁ׃",
+      "en": "And the priest, who shall be anointed, and who shall be consecrated to minister in the priest’s office in his father’s stead, shall make the atonement, and shall put on the linen clothes, the holy garments:"
+    },
+    {
+      "n": 33,
+      "c": 16,
+      "v": 33,
+      "ref": "16:33",
+      "text": "וְכִפֶּר֙ אֶת־מִקְדַּ֣שׁ הַקֹּ֔דֶשׁ וְאֶת־אֹ֧הֶל מוֹעֵ֛ד וְאֶת־הַמִּזְבֵּ֖חַ יְכַפֵּ֑ר וְעַ֧ל הַכֹּהֲנִ֛ים וְעַל־כׇּל־עַ֥ם הַקָּהָ֖ל יְכַפֵּֽר׃",
+      "en": "and he shall make atonement for the holy sanctuary, and he shall make atonement for the Tent of Meeting, and for the altar, and he shall make atonement for the priests, and for all the people of the congregation."
+    },
+    {
+      "n": 34,
+      "c": 16,
+      "v": 34,
+      "ref": "16:34",
+      "text": "וְהָֽיְתָה־זֹּ֨את לָכֶ֜ם לְחֻקַּ֣ת עוֹלָ֗ם לְכַפֵּ֞ר עַל־בְּנֵ֤י יִשְׂרָאֵל֙ מִכׇּל־חַטֹּאתָ֔ם אַחַ֖ת בַּשָּׁנָ֑ה וַיַּ֕עַשׂ כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And this shall be an everlasting statute to you, to make atonement for the children of  Yisra᾽el for all their sins once a year. And he did as the Lord commanded Moshe."
+    }
+  ],
+  "kind": "holiday",
+  "parashah": {
+    "en": "Yom Kippur",
+    "he": "יום כיפור",
+    "translit": "Yom Kippur",
+    "ref": "Leviticus 16:1-16:34"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 6,
+        "ref": "16:1–16:6"
+      },
+      {
+        "n": 2,
+        "start": 7,
+        "end": 11,
+        "ref": "16:7–16:11"
+      },
+      {
+        "n": 3,
+        "start": 12,
+        "end": 17,
+        "ref": "16:12–16:17"
+      },
+      {
+        "n": 4,
+        "start": 18,
+        "end": 24,
+        "ref": "16:18–16:24"
+      },
+      {
+        "n": 5,
+        "start": 25,
+        "end": 30,
+        "ref": "16:25–16:30"
+      },
+      {
+        "n": 6,
+        "start": 31,
+        "end": 34,
+        "ref": "16:31–16:34"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Holiday aliyah boundaries from the MJC public leyning page (mjcnj.com/hhrecordings) and its PDFs."
+}

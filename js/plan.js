@@ -34,6 +34,10 @@ export const OCCASIONS = {
     label: 'Learning to chant', article: 'their', short: 'Learning',
     sub: 'No date yet \u2014 just want to learn',
   },
+  highholiday: {
+    label: 'High Holidays', article: 'their', short: 'High Holiday reading',
+    sub: 'Rosh Hashanah or Yom Kippur \u2014 not a weekly Shabbat',
+  },
 };
 
 // Whose simcha it is. Drives the second person ("your maftir") vs the third
@@ -99,13 +103,19 @@ export function partLabel(part, plan = null) {
 }
 
 // One line saying what this part IS, for a reader who has never been told.
-export function partBlurb(part) {
+export function partBlurb(part, rec = null) {
   if (!part) return '';
   if (part.kind === 'maftir') {
-    return 'The closing pesukim of the parashah, read again \u2014 traditionally by whoever chants the haftarah.';
+    return rec && rec.holiday
+      ? 'The extra Torah reading after the aliyot \u2014 Numbers for the day\u2019s offering.'
+      : 'The closing pesukim of the parashah, read again \u2014 traditionally by whoever chants the haftarah.';
   }
   if (part.kind === 'haftarah') {
     return 'The reading from the Prophets that follows the Torah. Same accents, its own melody.';
+  }
+  const n = aliyahCountOf(rec);
+  if (n && n !== 7) {
+    return `The ${ordinal(part.n)} of the ${n} sections this holiday reading is divided into.`;
   }
   return `The ${ordinal(part.n)} of the seven sections the parashah is divided into.`;
 }
@@ -117,11 +127,28 @@ function ordinal(n) {
 // The parts a plan starts with, before the reader adjusts them. A simcha means
 // the maftir and the haftarah; anything else is a single aliyah until they say
 // otherwise, because offering seven at once is how a plan stops being a plan.
-export function defaultParts(occasion) {
+function aliyahCountOf(rec) {
+  if (!rec) return 7;
+  if (rec.aliyahCount) return Number(rec.aliyahCount);
+  const annual = rec.aliyot && rec.aliyot.annual;
+  return (annual && annual.length) || 7;
+}
+
+export function aliyahNumbers(rec = null) {
+  const n = aliyahCountOf(rec);
+  if (n >= 1 && n <= 7) return Array.from({ length: n }, (_, i) => i + 1);
+  return ALIYAH_NUMBERS;
+}
+
+export function defaultParts(occasion, rec = null) {
   if (occasion === 'barmitzvah' || occasion === 'batmitzvah') {
     return [maftirPart(), haftarahPart()];
   }
   if (occasion === 'aliyah') return [aliyahPart(3)];
+  if (occasion === 'highholiday') {
+    if (rec && rec.holiday && !rec.maftirRef) return [haftarahPart()];
+    return [maftirPart(), haftarahPart()];
+  }
   return [haftarahPart()];
 }
 
@@ -152,12 +179,53 @@ export function haftarahSlugFor(slug) {
 // Build a plan from a Shabbat (a normalized calendar record) plus the reader's
 // answers. Everything the guided UI shows about the reading is captured here, so
 // the plan reads correctly even before data/calendar.json has been re-fetched.
+export function fromHoliday(rec, {
+  role = 'self', occasion = 'highholiday', learner = '',
+  parts = null, enteredDate = '',
+} = {}) {
+  if (!rec || !rec.slug) return null;
+  const chosen = sortParts(parts && parts.length ? parts : defaultParts(occasion, rec));
+  return {
+    role,
+    occasion,
+    learner: (learner || '').trim().slice(0, 40),
+    enteredDate: enteredDate || rec.date,
+    date: rec.date,
+    parashah: rec.parashah,
+    hebrew: rec.hebrew,
+    slug: rec.slug,
+    slugs: rec.slugs ? rec.slugs.slice() : [rec.slug],
+    combined: false,
+    haftarahSlug: rec.haftarahSlug || null,
+    maftirSlug: rec.maftirSlug || null,
+    hebrewDate: rec.hebrewDate,
+    hebrewYear: rec.hebrewYear,
+    triYear: null,
+    torahRef: rec.torahRef,
+    maftirRef: rec.maftirRef,
+    haftarahRef: rec.haftarahRef,
+    aliyotRefs: rec.aliyot
+      ? { annual: rec.aliyot.annual, triennial: null } : null,
+    special: rec.special,
+    cycle: 'annual',
+    holiday: true,
+    holidayId: rec.holidayId || null,
+    aliyahCount: rec.aliyahCount || aliyahCountOf(rec),
+    parts: chosen,
+    activePart: partId(chosen[0]),
+    createdAt: Date.now(),
+  };
+}
+
 export function fromShabbat(rec, {
   role = 'self', occasion = 'barmitzvah', learner = '',
   cycle = 'annual', parts = null, enteredDate = '',
 } = {}) {
+  if (rec && rec.holiday) {
+    return fromHoliday(rec, { role, occasion, learner, parts, enteredDate });
+  }
   if (!rec || !rec.slug) return null;
-  const chosen = sortParts(parts && parts.length ? parts : defaultParts(occasion));
+  const chosen = sortParts(parts && parts.length ? parts : defaultParts(occasion, rec));
   return {
     role,
     occasion,
@@ -383,6 +451,10 @@ export function partTarget(part, plan = get()) {
   if (part.kind === 'haftarah') {
     return { readingId: plan.haftarahSlug, kind: 'haftarah', whole: true };
   }
+  // A holiday maftir is its own reading (rh1-maftir), not aliyah M of the Torah slug.
+  if (part.kind === 'maftir' && plan.maftirSlug) {
+    return { readingId: plan.maftirSlug, kind: 'haftarah', whole: true };
+  }
   return {
     readingId: plan.slug,
     kind: 'parashah',
@@ -401,10 +473,12 @@ export function partTarget(part, plan = get()) {
 export function availability(part, available, plan = get()) {
   const target = partTarget(part, plan);
   if (!target || !target.readingId) return 'none';
-  // A substituted passage always has its text — that is what the picker guarantees —
-  // but no recording of its own: one that had a recording was opened as that reading
-  // instead (see partTarget).
-  if (target.kind === 'passage') return 'text';
+  // A substituted passage always has its text. If it is exactly a shipped
+  // reading, or a slice of one, the cantor who sang that reading is used.
+  if (target.kind === 'passage') {
+    const c = target.custom || {};
+    return (c.recordedAs || c.recordedFrom) ? 'recorded' : 'text';
+  }
   const entry = (available || []).find((p) => p.slug === target.readingId);
   if (entry) {
     // A haftarah/parashah entry with no audio source is text-only (see Vayeilech).
@@ -449,6 +523,10 @@ function aliyahRef(n, plan) {
 // (see upgrade, which fills them in for good).
 function liveAliyotRefs(plan) {
   if (!calendar.isLoaded() || !plan.date) return null;
+  if (plan.holiday) {
+    const rec = calendar.holidayOn(plan.date);
+    return (rec && rec.aliyot) || null;
+  }
   const rec = calendar.on(plan.date);
   return (rec && rec.aliyot) || null;
 }

@@ -1,5 +1,83 @@
 [
   {
+    "slug": "bereshit",
+    "file": "data/bereshit.json",
+    "label": "Bereshit (Genesis 1:1–6:8)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        6,
+        8
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
+    "slug": "noach",
+    "file": "data/noach.json",
+    "label": "Noach (Genesis 6:9–11:32)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        6,
+        9
+      ],
+      "to": [
+        11,
+        32
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
+    "slug": "lechlecha",
+    "file": "data/lechlecha.json",
+    "label": "Lech-Lecha (Genesis 12:1–17:27)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        12,
+        1
+      ],
+      "to": [
+        17,
+        27
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
     "slug": "vayera",
     "file": "data/vayera.json",
     "group": "Bereshit · Genesis",
@@ -24,6 +102,760 @@
         24
       ]
     }
+  },
+  {
+    "slug": "chayeisara",
+    "file": "data/chayeisara.json",
+    "label": "Chayei Sara (Genesis 23:1–25:18)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        23,
+        1
+      ],
+      "to": [
+        25,
+        18
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
+    "slug": "toldot",
+    "file": "data/toldot.json",
+    "label": "Toldot (Genesis 25:19–28:9)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        25,
+        19
+      ],
+      "to": [
+        28,
+        9
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
+    "slug": "vayetzei",
+    "file": "data/vayetzei.json",
+    "label": "Vayetzei (Genesis 28:10–32:3)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        28,
+        10
+      ],
+      "to": [
+        32,
+        3
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
+    "slug": "vayishlach",
+    "file": "data/vayishlach.json",
+    "label": "Vayishlach (Genesis 32:4–36:43)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        32,
+        4
+      ],
+      "to": [
+        36,
+        43
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
+    "slug": "vayeshev",
+    "file": "data/vayeshev.json",
+    "label": "Vayeshev (Genesis 37:1–40:23)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        37,
+        1
+      ],
+      "to": [
+        40,
+        23
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
+    "slug": "miketz",
+    "file": "data/miketz.json",
+    "label": "Miketz (Genesis 41:1–44:17)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        41,
+        1
+      ],
+      "to": [
+        44,
+        17
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
+    "slug": "vayigash",
+    "file": "data/vayigash.json",
+    "label": "Vayigash (Genesis 44:18–47:27)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        44,
+        18
+      ],
+      "to": [
+        47,
+        27
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
+    "slug": "vayechi",
+    "file": "data/vayechi.json",
+    "label": "Vayechi (Genesis 47:28–50:26)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        47,
+        28
+      ],
+      "to": [
+        50,
+        26
+      ]
+    },
+    "group": "Bereshit · Genesis"
+  },
+  {
+    "slug": "shemot",
+    "file": "data/shemot.json",
+    "label": "Shemot (Exodus 1:1–6:1)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        6,
+        1
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "vaera",
+    "file": "data/vaera.json",
+    "label": "Vaera (Exodus 6:2–9:35)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        6,
+        2
+      ],
+      "to": [
+        9,
+        35
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "bo",
+    "file": "data/bo.json",
+    "label": "Bo (Exodus 10:1–13:16)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        10,
+        1
+      ],
+      "to": [
+        13,
+        16
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "beshalach",
+    "file": "data/beshalach.json",
+    "label": "Beshalach (Exodus 13:17–17:16)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        13,
+        17
+      ],
+      "to": [
+        17,
+        16
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "yitro",
+    "file": "data/yitro.json",
+    "label": "Yitro (Exodus 18:1–20:23)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        18,
+        1
+      ],
+      "to": [
+        20,
+        23
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "mishpatim",
+    "file": "data/mishpatim.json",
+    "label": "Mishpatim (Exodus 21:1–24:18)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        21,
+        1
+      ],
+      "to": [
+        24,
+        18
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "terumah",
+    "file": "data/terumah.json",
+    "label": "Terumah (Exodus 25:1–27:19)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        25,
+        1
+      ],
+      "to": [
+        27,
+        19
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "tetzaveh",
+    "file": "data/tetzaveh.json",
+    "label": "Tetzaveh (Exodus 27:20–30:10)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        27,
+        20
+      ],
+      "to": [
+        30,
+        10
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "kitisa",
+    "file": "data/kitisa.json",
+    "label": "Ki Tisa (Exodus 30:11–34:35)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        30,
+        11
+      ],
+      "to": [
+        34,
+        35
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "vayakhel",
+    "file": "data/vayakhel.json",
+    "label": "Vayakhel (Exodus 35:1–38:20)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        35,
+        1
+      ],
+      "to": [
+        38,
+        20
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "pekudei",
+    "file": "data/pekudei.json",
+    "label": "Pekudei (Exodus 38:21–40:38)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Exodus",
+      "from": [
+        38,
+        21
+      ],
+      "to": [
+        40,
+        38
+      ]
+    },
+    "group": "Shemot · Exodus"
+  },
+  {
+    "slug": "vayikra",
+    "file": "data/vayikra.json",
+    "label": "Vayikra (Leviticus 1:1–5:26)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        5,
+        26
+      ]
+    },
+    "group": "Vayikra · Leviticus"
+  },
+  {
+    "slug": "tzav",
+    "file": "data/tzav.json",
+    "label": "Tzav (Leviticus 6:1–8:36)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        6,
+        1
+      ],
+      "to": [
+        8,
+        36
+      ]
+    },
+    "group": "Vayikra · Leviticus"
+  },
+  {
+    "slug": "shmini",
+    "file": "data/shmini.json",
+    "label": "Shmini (Leviticus 9:1–11:47)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        9,
+        1
+      ],
+      "to": [
+        11,
+        47
+      ]
+    },
+    "group": "Vayikra · Leviticus"
+  },
+  {
+    "slug": "tazria",
+    "file": "data/tazria.json",
+    "label": "Tazria (Leviticus 12:1–13:59)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        12,
+        1
+      ],
+      "to": [
+        13,
+        59
+      ]
+    },
+    "group": "Vayikra · Leviticus"
+  },
+  {
+    "slug": "metzora",
+    "file": "data/metzora.json",
+    "label": "Metzora (Leviticus 14:1–15:33)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        14,
+        1
+      ],
+      "to": [
+        15,
+        33
+      ]
+    },
+    "group": "Vayikra · Leviticus"
+  },
+  {
+    "slug": "achreimot",
+    "file": "data/achreimot.json",
+    "label": "Achrei Mot (Leviticus 16:1–18:30)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        16,
+        1
+      ],
+      "to": [
+        18,
+        30
+      ]
+    },
+    "group": "Vayikra · Leviticus"
+  },
+  {
+    "slug": "kedoshim",
+    "file": "data/kedoshim.json",
+    "label": "Kedoshim (Leviticus 19:1–20:27)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        19,
+        1
+      ],
+      "to": [
+        20,
+        27
+      ]
+    },
+    "group": "Vayikra · Leviticus"
+  },
+  {
+    "slug": "emor",
+    "file": "data/emor.json",
+    "label": "Emor (Leviticus 21:1–24:23)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        21,
+        1
+      ],
+      "to": [
+        24,
+        23
+      ]
+    },
+    "group": "Vayikra · Leviticus"
+  },
+  {
+    "slug": "behar",
+    "file": "data/behar.json",
+    "label": "Behar (Leviticus 25:1–26:2)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        25,
+        1
+      ],
+      "to": [
+        26,
+        2
+      ]
+    },
+    "group": "Vayikra · Leviticus"
+  },
+  {
+    "slug": "bechukotai",
+    "file": "data/bechukotai.json",
+    "label": "Bechukotai (Leviticus 26:3–27:34)",
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        26,
+        3
+      ],
+      "to": [
+        27,
+        34
+      ]
+    },
+    "group": "Vayikra · Leviticus"
   },
   {
     "slug": "matot",
@@ -388,6 +1220,1503 @@
         12
       ]
     }
+  },
+  {
+    "slug": "rh1-torah",
+    "file": "data/rh1-torah.json",
+    "label": "Rosh Hashanah Day 1 · Torah (Genesis 21:1–34)",
+    "kind": "holiday",
+    "holidayPart": "torah",
+    "occasion": "rh1",
+    "sources": [
+      {
+        "id": "teplitz",
+        "label": "Cantor Teplitz (MJC · High Holiday)",
+        "default": true,
+        "attribution": "Chanted by Cantor Teplitz (MJC). Local source from mjcnj.com/hhrecordings; not CC-licensed.",
+        "license": "Cantor Teplitz / MJC High Holiday recording. Not Creative Commons. Included as a local study source; redistribution rights remain with the cantor and congregation."
+      }
+    ],
+    "note": "Five aliyot; aliyot 2, 3 and 5 are split across two recordings.",
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        21,
+        1
+      ],
+      "to": [
+        21,
+        34
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "rh1-maftir",
+    "file": "data/rh1-maftir.json",
+    "label": "Rosh Hashanah Day 1 · Maftir (Numbers 29:1–6)",
+    "kind": "holiday",
+    "holidayPart": "maftir",
+    "occasion": "rh1",
+    "sources": [
+      {
+        "id": "teplitz",
+        "label": "Cantor Teplitz (MJC · High Holiday)",
+        "default": true,
+        "attribution": "Chanted by Cantor Teplitz (MJC). Local source from mjcnj.com/hhrecordings; not CC-licensed.",
+        "license": "Cantor Teplitz / MJC High Holiday recording. Not Creative Commons. Included as a local study source; redistribution rights remain with the cantor and congregation."
+      }
+    ],
+    "note": "Maftir split as RHM-1 (29:1–3) + RHM-2 (29:4–6).",
+    "covers": {
+      "book": "Numbers",
+      "from": [
+        29,
+        1
+      ],
+      "to": [
+        29,
+        6
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "rh1-haftarah",
+    "file": "data/rh1-haftarah.json",
+    "label": "Rosh Hashanah Day 1 · Haftarah (I Samuel 1:1–2:10)",
+    "kind": "holiday",
+    "tropeStyle": "haftarah",
+    "holidayPart": "haftarah",
+    "occasion": "rh1",
+    "sources": [],
+    "note": "MJC published HforRH1.pdf but no dedicated m4a. Text-only until audio exists.",
+    "covers": {
+      "book": "I Samuel",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        2,
+        10
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "rh2-torah",
+    "file": "data/rh2-torah.json",
+    "label": "Rosh Hashanah Day 2 · Torah (Genesis 22:1–24)",
+    "kind": "holiday",
+    "holidayPart": "torah",
+    "occasion": "rh2",
+    "sources": [
+      {
+        "id": "teplitz",
+        "label": "Cantor Teplitz (MJC · High Holiday)",
+        "default": true,
+        "attribution": "Chanted by Cantor Teplitz (MJC). Local source from mjcnj.com/hhrecordings; not CC-licensed.",
+        "license": "Cantor Teplitz / MJC High Holiday recording. Not Creative Commons. Included as a local study source; redistribution rights remain with the cantor and congregation."
+      }
+    ],
+    "covers": {
+      "book": "Genesis",
+      "from": [
+        22,
+        1
+      ],
+      "to": [
+        22,
+        24
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "rh2-maftir",
+    "file": "data/rh2-maftir.json",
+    "label": "Rosh Hashanah Day 2 · Maftir (Numbers 29:1–6)",
+    "kind": "holiday",
+    "holidayPart": "maftir",
+    "occasion": "rh2",
+    "sources": [
+      {
+        "id": "teplitz",
+        "label": "Cantor Teplitz (MJC · High Holiday)",
+        "default": true,
+        "attribution": "Chanted by Cantor Teplitz (MJC). Local source from mjcnj.com/hhrecordings; not CC-licensed.",
+        "license": "Cantor Teplitz / MJC High Holiday recording. Not Creative Commons. Included as a local study source; redistribution rights remain with the cantor and congregation."
+      }
+    ],
+    "covers": {
+      "book": "Numbers",
+      "from": [
+        29,
+        1
+      ],
+      "to": [
+        29,
+        6
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "rh2-haftarah",
+    "file": "data/rh2-haftarah.json",
+    "label": "Rosh Hashanah Day 2 · Haftarah (Jeremiah 31:1–19)",
+    "kind": "holiday",
+    "tropeStyle": "haftarah",
+    "holidayPart": "haftarah",
+    "occasion": "rh2",
+    "sources": [
+      {
+        "id": "teplitz",
+        "label": "Cantor Teplitz (MJC · High Holiday)",
+        "default": true,
+        "attribution": "Chanted by Cantor Teplitz (MJC). Local source from mjcnj.com/hhrecordings; not CC-licensed.",
+        "license": "Cantor Teplitz / MJC High Holiday recording. Not Creative Commons. Included as a local study source; redistribution rights remain with the cantor and congregation."
+      }
+    ],
+    "note": "Public MJC page/PDF: Jeremiah 31:1–19 (standard Conservative often 31:2–20).",
+    "covers": {
+      "book": "Jeremiah",
+      "from": [
+        31,
+        1
+      ],
+      "to": [
+        31,
+        19
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "yk-torah",
+    "file": "data/yk-torah.json",
+    "label": "Yom Kippur · Torah (Leviticus 16:1–34)",
+    "kind": "holiday",
+    "holidayPart": "torah",
+    "occasion": "yk",
+    "sources": [
+      {
+        "id": "teplitz",
+        "label": "Cantor Teplitz (MJC · High Holiday)",
+        "default": true,
+        "attribution": "Chanted by Cantor Teplitz (MJC). Local source from mjcnj.com/hhrecordings; not CC-licensed.",
+        "license": "Cantor Teplitz / MJC High Holiday recording. Not Creative Commons. Included as a local study source; redistribution rights remain with the cantor and congregation."
+      }
+    ],
+    "note": "Six aliyot; aliyot 1–3 are split across two recordings each.",
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        16,
+        1
+      ],
+      "to": [
+        16,
+        34
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "yk-maftir",
+    "file": "data/yk-maftir.json",
+    "label": "Yom Kippur · Maftir (Numbers 29:7–11)",
+    "kind": "holiday",
+    "holidayPart": "maftir",
+    "occasion": "yk",
+    "sources": [
+      {
+        "id": "teplitz",
+        "label": "Cantor Teplitz (MJC · High Holiday)",
+        "default": true,
+        "attribution": "Chanted by Cantor Teplitz (MJC). Local source from mjcnj.com/hhrecordings; not CC-licensed.",
+        "license": "Cantor Teplitz / MJC High Holiday recording. Not Creative Commons. Included as a local study source; redistribution rights remain with the cantor and congregation."
+      }
+    ],
+    "covers": {
+      "book": "Numbers",
+      "from": [
+        29,
+        7
+      ],
+      "to": [
+        29,
+        11
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "yk-haftarah",
+    "file": "data/yk-haftarah.json",
+    "label": "Yom Kippur · Haftarah (Isaiah 57:14–58:14)",
+    "kind": "holiday",
+    "tropeStyle": "haftarah",
+    "holidayPart": "haftarah",
+    "occasion": "yk",
+    "sources": [
+      {
+        "id": "teplitz",
+        "label": "Cantor Teplitz (MJC · High Holiday)",
+        "default": true,
+        "attribution": "Chanted by Cantor Teplitz (MJC). Local source from mjcnj.com/hhrecordings; not CC-licensed.",
+        "license": "Cantor Teplitz / MJC High Holiday recording. Not Creative Commons. Included as a local study source; redistribution rights remain with the cantor and congregation."
+      }
+    ],
+    "covers": {
+      "book": "Isaiah",
+      "from": [
+        57,
+        14
+      ],
+      "to": [
+        58,
+        14
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "yk-mincha-torah",
+    "file": "data/yk-mincha-torah.json",
+    "label": "Yom Kippur Mincha · Torah (Leviticus 18:1–30)",
+    "kind": "holiday",
+    "holidayPart": "torah",
+    "occasion": "yk-mincha",
+    "sources": [
+      {
+        "id": "teplitz",
+        "label": "Cantor Teplitz (MJC · High Holiday)",
+        "default": true,
+        "attribution": "Chanted by Cantor Teplitz (MJC). Local source from mjcnj.com/hhrecordings; not CC-licensed.",
+        "license": "Cantor Teplitz / MJC High Holiday recording. Not Creative Commons. Included as a local study source; redistribution rights remain with the cantor and congregation."
+      }
+    ],
+    "note": "Three aliyot; aliyah 3 is split (18:22–26 + 18:27–30).",
+    "covers": {
+      "book": "Leviticus",
+      "from": [
+        18,
+        1
+      ],
+      "to": [
+        18,
+        30
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "yk-mincha-haftarah",
+    "file": "data/yk-mincha-haftarah.json",
+    "label": "Yom Kippur Mincha · Haftarah (Jonah)",
+    "kind": "holiday",
+    "tropeStyle": "haftarah",
+    "holidayPart": "haftarah",
+    "occasion": "yk-mincha",
+    "sources": [],
+    "note": "No m4a in the MJC catalog. Text-only. Many communities append Micah 7:18–20; that is not in this reading (single-book build).",
+    "covers": {
+      "book": "Jonah",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        4,
+        11
+      ]
+    },
+    "group": "High Holidays"
+  },
+  {
+    "slug": "haftarah-bereshit",
+    "file": "data/haftarah-bereshit.json",
+    "label": "Haftarat Bereshit (Isaiah 42:5-43:10)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 1,
+    "haftarah": {
+      "parashah": "Bereshit",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 1
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Isaiah",
+      "from": [
+        42,
+        5
+      ],
+      "to": [
+        43,
+        10
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-noach",
+    "file": "data/haftarah-noach.json",
+    "label": "Haftarat Noach (Isaiah 54:1-55:5)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 2,
+    "haftarah": {
+      "parashah": "Noach",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 2
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Isaiah",
+      "from": [
+        54,
+        1
+      ],
+      "to": [
+        55,
+        5
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-lechlecha",
+    "file": "data/haftarah-lechlecha.json",
+    "label": "Haftarat Lech-Lecha (Isaiah 40:27-41:16)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 3,
+    "haftarah": {
+      "parashah": "Lech-Lecha",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 3
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Isaiah",
+      "from": [
+        40,
+        27
+      ],
+      "to": [
+        41,
+        16
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vayera",
+    "file": "data/haftarah-vayera.json",
+    "label": "Haftarat Vayera (II Kings 4:1-37)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 4,
+    "haftarah": {
+      "parashah": "Vayera",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 4
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "The recording has one word onset fewer than the text has words (556 vs 557), so the audio may sit a word off in the later verses.",
+    "covers": {
+      "book": "II Kings",
+      "from": [
+        4,
+        1
+      ],
+      "to": [
+        4,
+        37
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-chayeisara",
+    "file": "data/haftarah-chayeisara.json",
+    "label": "Haftarat Chayei Sara (I Kings 1:1-31)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 5,
+    "haftarah": {
+      "parashah": "Chayei Sara",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 5
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "I Kings",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        1,
+        31
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-toldot",
+    "file": "data/haftarah-toldot.json",
+    "label": "Haftarat Toldot (Malachi 1:1-2:7)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 6,
+    "haftarah": {
+      "parashah": "Toldot",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 6
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Malachi",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        2,
+        7
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vayetzei",
+    "file": "data/haftarah-vayetzei.json",
+    "label": "Haftarat Vayetzei (Hosea 12:13-14:10)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 7,
+    "haftarah": {
+      "parashah": "Vayetzei",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 7
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Hosea",
+      "from": [
+        12,
+        13
+      ],
+      "to": [
+        14,
+        10
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vayishlach",
+    "file": "data/haftarah-vayishlach.json",
+    "label": "Haftarat Vayishlach (Obadiah 1:1-21)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 8,
+    "haftarah": {
+      "parashah": "Vayishlach",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 8
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Obadiah",
+      "from": [
+        1,
+        1
+      ],
+      "to": [
+        1,
+        21
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vayeshev",
+    "file": "data/haftarah-vayeshev.json",
+    "label": "Haftarat Vayeshev (Amos 2:6-3:8)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 9,
+    "haftarah": {
+      "parashah": "Vayeshev",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 9
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Amos",
+      "from": [
+        2,
+        6
+      ],
+      "to": [
+        3,
+        8
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-miketz",
+    "file": "data/haftarah-miketz.json",
+    "label": "Haftarat Miketz (I Kings 3:15-4:1)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 10,
+    "haftarah": {
+      "parashah": "Miketz",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 10
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "I Kings",
+      "from": [
+        3,
+        15
+      ],
+      "to": [
+        4,
+        1
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vayigash",
+    "file": "data/haftarah-vayigash.json",
+    "label": "Haftarat Vayigash (Ezekiel 37:15-28)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 11,
+    "haftarah": {
+      "parashah": "Vayigash",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 11
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Ezekiel",
+      "from": [
+        37,
+        15
+      ],
+      "to": [
+        37,
+        28
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vayechi",
+    "file": "data/haftarah-vayechi.json",
+    "label": "Haftarat Vayechi (I Kings 2:1-12)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 12,
+    "haftarah": {
+      "parashah": "Vayechi",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 12
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "I Kings",
+      "from": [
+        2,
+        1
+      ],
+      "to": [
+        2,
+        12
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-shemot",
+    "file": "data/haftarah-shemot.json",
+    "label": "Haftarat Shemot (Isaiah 27:6-28:13, 29:22-23)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 13,
+    "haftarah": {
+      "parashah": "Shemot",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 13
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Isaiah",
+      "from": [
+        27,
+        6
+      ],
+      "to": [
+        29,
+        23
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vaera",
+    "file": "data/haftarah-vaera.json",
+    "label": "Haftarat Vaera (Ezekiel 28:25-29:21)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 14,
+    "haftarah": {
+      "parashah": "Vaera",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 14
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Ezekiel",
+      "from": [
+        28,
+        25
+      ],
+      "to": [
+        29,
+        21
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-bo",
+    "file": "data/haftarah-bo.json",
+    "label": "Haftarat Bo (Jeremiah 46:13-28)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 15,
+    "haftarah": {
+      "parashah": "Bo",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 15
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Jeremiah",
+      "from": [
+        46,
+        13
+      ],
+      "to": [
+        46,
+        28
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-beshalach",
+    "file": "data/haftarah-beshalach.json",
+    "label": "Haftarat Beshalach (Judges 4:4-5:31)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 16,
+    "haftarah": {
+      "parashah": "Beshalach",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 16
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Judges",
+      "from": [
+        4,
+        4
+      ],
+      "to": [
+        5,
+        31
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-yitro",
+    "file": "data/haftarah-yitro.json",
+    "label": "Haftarat Yitro (Isaiah 6:1-7:6, 9:5-6)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 17,
+    "haftarah": {
+      "parashah": "Yitro",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 17
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Isaiah",
+      "from": [
+        6,
+        1
+      ],
+      "to": [
+        9,
+        6
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-mishpatim",
+    "file": "data/haftarah-mishpatim.json",
+    "label": "Haftarat Mishpatim (Jeremiah 34:8-22, 33:25-26)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 18,
+    "haftarah": {
+      "parashah": "Mishpatim",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 18
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Jeremiah",
+      "from": [
+        34,
+        8
+      ],
+      "to": [
+        33,
+        26
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-terumah",
+    "file": "data/haftarah-terumah.json",
+    "label": "Haftarat Terumah (I Kings 5:26-6:13)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 19,
+    "haftarah": {
+      "parashah": "Terumah",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 19
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "I Kings",
+      "from": [
+        5,
+        26
+      ],
+      "to": [
+        6,
+        13
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-tetzaveh",
+    "file": "data/haftarah-tetzaveh.json",
+    "label": "Haftarat Tetzaveh (Ezekiel 43:10-27)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 20,
+    "haftarah": {
+      "parashah": "Tetzaveh",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 20
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Ezekiel",
+      "from": [
+        43,
+        10
+      ],
+      "to": [
+        43,
+        27
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-kitisa",
+    "file": "data/haftarah-kitisa.json",
+    "label": "Haftarat Ki Tisa (I Kings 18:1-39)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 21,
+    "haftarah": {
+      "parashah": "Ki Tisa",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 21
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "I Kings",
+      "from": [
+        18,
+        1
+      ],
+      "to": [
+        18,
+        39
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vayakhel",
+    "file": "data/haftarah-vayakhel.json",
+    "label": "Haftarat Vayakhel (I Kings 7:40-50)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 22,
+    "haftarah": {
+      "parashah": "Vayakhel",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 22
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "I Kings",
+      "from": [
+        7,
+        40
+      ],
+      "to": [
+        7,
+        50
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-pekudei",
+    "file": "data/haftarah-pekudei.json",
+    "label": "Haftarat Pekudei (I Kings 7:51-8:21)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 23,
+    "haftarah": {
+      "parashah": "Pekudei",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 23
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "I Kings",
+      "from": [
+        7,
+        51
+      ],
+      "to": [
+        8,
+        21
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-vayikra",
+    "file": "data/haftarah-vayikra.json",
+    "label": "Haftarat Vayikra (Isaiah 43:21-44:23)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 24,
+    "haftarah": {
+      "parashah": "Vayikra",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 24
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Isaiah",
+      "from": [
+        43,
+        21
+      ],
+      "to": [
+        44,
+        23
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-tzav",
+    "file": "data/haftarah-tzav.json",
+    "label": "Haftarat Tzav (Jeremiah 7:21-8:3, 9:22-23)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 25,
+    "haftarah": {
+      "parashah": "Tzav",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 25
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Jeremiah",
+      "from": [
+        7,
+        21
+      ],
+      "to": [
+        9,
+        23
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-shmini",
+    "file": "data/haftarah-shmini.json",
+    "label": "Haftarat Shmini (II Samuel 6:1-7:17)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 26,
+    "haftarah": {
+      "parashah": "Shmini",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 26
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "II Samuel",
+      "from": [
+        6,
+        1
+      ],
+      "to": [
+        7,
+        17
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-tazria",
+    "file": "data/haftarah-tazria.json",
+    "label": "Haftarat Tazria (II Kings 4:42-5:19)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 27,
+    "haftarah": {
+      "parashah": "Tazria",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 27
+    },
+    "note": "PocketTorah's tazria-h.txt onset track is not monotonic (mark 165 is 177.400s after a previous start at 177.646s), so the recording is left out rather than forcing a broken word timeline. The coach line uses the measured haftarah trope shapes instead.",
+    "covers": {
+      "book": "II Kings",
+      "from": [
+        4,
+        42
+      ],
+      "to": [
+        5,
+        19
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-metzora",
+    "file": "data/haftarah-metzora.json",
+    "label": "Haftarat Metzora (II Kings 7:3-20)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 28,
+    "haftarah": {
+      "parashah": "Metzora",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 28
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "II Kings",
+      "from": [
+        7,
+        3
+      ],
+      "to": [
+        7,
+        20
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-achreimot",
+    "file": "data/haftarah-achreimot.json",
+    "label": "Haftarat Achrei Mot (Ezekiel 22:1-16)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 29,
+    "haftarah": {
+      "parashah": "Achrei Mot",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 29
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "Ashkenazi practice is divided here. This is Ezekiel 22:1–16, the range PocketTorah recorded; Hebcal pairs Achrei Mot with Amos 9:7–15 instead (chanted here as Haftarat Kedoshim).",
+    "covers": {
+      "book": "Ezekiel",
+      "from": [
+        22,
+        1
+      ],
+      "to": [
+        22,
+        16
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-kedoshim",
+    "file": "data/haftarah-kedoshim.json",
+    "label": "Haftarat Kedoshim (Amos 9:7-15)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 30,
+    "haftarah": {
+      "parashah": "Kedoshim",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 30
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "note": "Ashkenazi practice is divided here. This is Amos 9:7–15, the range PocketTorah recorded; Hebcal pairs it with Achrei Mot and gives Kedoshim Ezekiel 22:1–19.",
+    "covers": {
+      "book": "Amos",
+      "from": [
+        9,
+        7
+      ],
+      "to": [
+        9,
+        15
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-emor",
+    "file": "data/haftarah-emor.json",
+    "label": "Haftarat Emor (Ezekiel 44:15-31)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 31,
+    "haftarah": {
+      "parashah": "Emor",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 31
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Ezekiel",
+      "from": [
+        44,
+        15
+      ],
+      "to": [
+        44,
+        31
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-behar",
+    "file": "data/haftarah-behar.json",
+    "label": "Haftarat Behar (Jeremiah 32:6-27)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 32,
+    "haftarah": {
+      "parashah": "Behar",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 32
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Jeremiah",
+      "from": [
+        32,
+        6
+      ],
+      "to": [
+        32,
+        27
+      ]
+    },
+    "group": "Haftarot"
+  },
+  {
+    "slug": "haftarah-bechukotai",
+    "file": "data/haftarah-bechukotai.json",
+    "label": "Haftarat Bechukotai (Jeremiah 16:19-17:14)",
+    "kind": "haftarah",
+    "tropeStyle": "haftarah",
+    "tradition": "ashkenaz",
+    "calendarNumber": 33,
+    "haftarah": {
+      "parashah": "Bechukotai",
+      "tradition": "ashkenaz",
+      "traditionLabel": "Ashkenazi",
+      "calendarNumber": 33
+    },
+    "sources": [
+      {
+        "id": "pockettorah",
+        "label": "PocketTorah (Neiss & Schwartz)",
+        "default": true,
+        "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      }
+    ],
+    "covers": {
+      "book": "Jeremiah",
+      "from": [
+        16,
+        19
+      ],
+      "to": [
+        17,
+        14
+      ]
+    },
+    "group": "Haftarot"
   },
   {
     "slug": "haftarah-devarim",

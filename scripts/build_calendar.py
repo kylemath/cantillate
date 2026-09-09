@@ -56,6 +56,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -65,6 +66,7 @@ import haftarot                                                  # noqa: E402
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(HERE, "data")
 OUT = os.path.join(DATA, "calendar.json")
+HOLIDAYS_OUT = os.path.join(DATA, "holidays.json")
 
 # Wide enough to cover anyone planning a simcha today (a child born this year
 # reaches bar mitzvah inside it) and to look back at one already past.
@@ -386,6 +388,158 @@ def report(rows, div=None):
     return bad
 
 
+# High Holiday leyning (Conservative / MJC catalog). Aliyah counts are not 7:
+# RH days have 5, YK morning has 6, YK Mincha has 3.
+HOLIDAY_SERVICES = {
+    "rh1": {
+        "id": "rh1",
+        "label": "Rosh Hashanah Day 1",
+        "hebrew": "רֹאשׁ הַשָּׁנָה",
+        "slug": "rh1-torah",
+        "maftirSlug": "rh1-maftir",
+        "haftarahSlug": "rh1-haftarah",
+        "aliyahCount": 5,
+        "torahRef": "Genesis 21:1-34",
+        "maftirRef": "Numbers 29:1-6",
+        "haftarahRef": "I Samuel 1:1-2:10",
+        "aliyot": [
+            "Genesis 21:1-4",
+            "Genesis 21:5-12",
+            "Genesis 21:13-21",
+            "Genesis 21:22-27",
+            "Genesis 21:28-34",
+        ],
+    },
+    "rh2": {
+        "id": "rh2",
+        "label": "Rosh Hashanah Day 2",
+        "hebrew": "רֹאשׁ הַשָּׁנָה",
+        "slug": "rh2-torah",
+        "maftirSlug": "rh2-maftir",
+        "haftarahSlug": "rh2-haftarah",
+        "aliyahCount": 5,
+        "torahRef": "Genesis 22:1-24",
+        "maftirRef": "Numbers 29:1-6",
+        "haftarahRef": "Jeremiah 31:1-19",
+        "aliyot": [
+            "Genesis 22:1-3",
+            "Genesis 22:4-8",
+            "Genesis 22:9-14",
+            "Genesis 22:15-19",
+            "Genesis 22:20-24",
+        ],
+    },
+    "yk": {
+        "id": "yk",
+        "label": "Yom Kippur",
+        "hebrew": "יוֹם כִּפּוּר",
+        "slug": "yk-torah",
+        "maftirSlug": "yk-maftir",
+        "haftarahSlug": "yk-haftarah",
+        "aliyahCount": 6,
+        "torahRef": "Leviticus 16:1-34",
+        "maftirRef": "Numbers 29:7-11",
+        "haftarahRef": "Isaiah 57:14-58:14",
+        "aliyot": [
+            "Leviticus 16:1-6",
+            "Leviticus 16:7-11",
+            "Leviticus 16:12-17",
+            "Leviticus 16:18-24",
+            "Leviticus 16:25-30",
+            "Leviticus 16:31-34",
+        ],
+    },
+    "yk-mincha": {
+        "id": "yk-mincha",
+        "label": "Yom Kippur Mincha",
+        "hebrew": "יוֹם כִּפּוּר מִנְחָה",
+        "slug": "yk-mincha-torah",
+        "maftirSlug": None,
+        "haftarahSlug": "yk-mincha-haftarah",
+        "aliyahCount": 3,
+        "torahRef": "Leviticus 18:1-30",
+        "maftirRef": "",
+        "haftarahRef": "Jonah 1:1-4:11",
+        "aliyot": [
+            "Leviticus 18:1-5",
+            "Leviticus 18:6-21",
+            "Leviticus 18:22-30",
+        ],
+    },
+}
+
+
+def _hebcal_year(year):
+    q = urllib.parse.urlencode({
+        "v": "1", "cfg": "json", "maj": "on", "year": year, "yt": "G", "i": "off",
+    })
+    url = f"{API}?{q}"
+    with urllib.request.urlopen(url, timeout=60) as r:
+        return json.loads(r.read().decode("utf-8"))
+
+
+def _classify_holiday(title):
+    t = (title or "").lower()
+    if "rosh hashana ii" in t or "rosh hashanah ii" in t:
+        return "rh2"
+    if t.startswith("rosh hashana") or t.startswith("rosh hashanah"):
+        return "rh1"
+    if t.startswith("yom kippur"):
+        return "yk"
+    return None
+
+
+def build_holidays(year_from, year_to):
+    """RH Day 1/2 and YK dates from Hebcal; Mincha shares the YK civil date."""
+    days = []
+    for year in range(year_from, year_to + 1):
+        doc = _hebcal_year(year)
+        for item in doc.get("items") or []:
+            svc = _classify_holiday(item.get("title") or "")
+            if not svc:
+                continue
+            date = item.get("date")
+            if not date:
+                continue
+            days.append({
+                "d": date[:10],
+                "svc": svc,
+                "hd": item.get("hdate") or "",
+                "hy": item.get("hy"),
+                "he": item.get("hebrew") or HOLIDAY_SERVICES[svc]["hebrew"],
+            })
+            if svc == "yk":
+                days.append({
+                    "d": date[:10],
+                    "svc": "yk-mincha",
+                    "hd": item.get("hdate") or "",
+                    "hy": item.get("hy"),
+                    "he": HOLIDAY_SERVICES["yk-mincha"]["hebrew"],
+                })
+    days.sort(key=lambda r: (r["d"], 0 if r["svc"] != "yk-mincha" else 1))
+    return days
+
+
+def write_holidays(year_from, year_to, days):
+    doc = {
+        "note": ("Rosh Hashanah and Yom Kippur civil dates for guided onboarding. "
+                 "Built by scripts/build_calendar.py --holidays from Hebcal so a "
+                 "typed RH/YK date cues High Holiday readings instead of that week's "
+                 "Shabbat. YK Mincha shares Yom Kippur's civil date."),
+        "source": ATTRIBUTION,
+        "builtAt": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "from": f"{year_from}-01-01",
+        "to": f"{year_to}-12-31",
+        "services": HOLIDAY_SERVICES,
+        "days": days,
+    }
+    with open(HOLIDAYS_OUT, "w", encoding="utf-8") as f:
+        json.dump(doc, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    print(f"[holidays] wrote {os.path.relpath(HOLIDAYS_OUT, HERE)} "
+          f"({len(days)} days, {year_from}-{year_to})")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -393,6 +547,8 @@ def main():
                     help=f"first and last civil year (default {DEFAULT_FROM} {DEFAULT_TO})")
     ap.add_argument("--check", action="store_true",
                     help="fetch and verify, but don't write data/calendar.json")
+    ap.add_argument("--holidays", action="store_true",
+                    help="write data/holidays.json (RH/YK dates) without rewriting calendar.json")
     args = ap.parse_args()
     if len(args.years) == 2:
         year_from, year_to = args.years
@@ -400,6 +556,15 @@ def main():
         year_from = year_to = args.years[0]
     else:
         year_from, year_to = DEFAULT_FROM, DEFAULT_TO
+
+    if args.holidays:
+        print(f"[holidays] {year_from}-{year_to}, diaspora")
+        days = build_holidays(year_from, year_to)
+        if not args.check:
+            write_holidays(year_from, year_to, days)
+        else:
+            print(f"[holidays] {len(days)} days (check only)")
+        return 0 if days else 1
 
     print(f"[calendar] {year_from}-{year_to}, diaspora")
     rows = build(year_from, year_to)

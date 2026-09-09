@@ -1,0 +1,204 @@
+{
+  "slug": "haftarah-terumah",
+  "book": {
+    "en": "I Kings",
+    "he": "מלכים א",
+    "translit": "Melachim A"
+  },
+  "multiChapter": true,
+  "ref": "I Kings 5:26-6:13",
+  "heRef": "מלכים א ה׳:כ״ו-ל״ב, ו׳:א-י״ג",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 5,
+      "v": 26,
+      "ref": "5:26",
+      "text": "וַֽיהֹוָ֗ה נָתַ֤ן חׇכְמָה֙ לִשְׁלֹמֹ֔ה כַּאֲשֶׁ֖ר דִּבֶּר־ל֑וֹ וַיְהִ֣י שָׁלֹ֗ם בֵּ֤ין חִירָם֙ וּבֵ֣ין שְׁלֹמֹ֔ה וַיִּכְרְת֥וּ בְרִ֖ית שְׁנֵיהֶֽם׃",
+      "en": "And the Lord gave Shelomo wisdom, as he promised him: and there was peace between Ḥiram and Shelomo; and they two made a league together."
+    },
+    {
+      "n": 2,
+      "c": 5,
+      "v": 27,
+      "ref": "5:27",
+      "text": "וַיַּ֨עַל הַמֶּ֧לֶךְ שְׁלֹמֹ֛ה מַ֖ס מִכׇּל־יִשְׂרָאֵ֑ל וַיְהִ֣י הַמַּ֔ס שְׁלֹשִׁ֥ים אֶ֖לֶף אִֽישׁ׃",
+      "en": "And king Shelomo raised a levy out of all Yisra᾽el; and the levy was thirty thousand men."
+    },
+    {
+      "n": 3,
+      "c": 5,
+      "v": 28,
+      "ref": "5:28",
+      "text": "וַיִּשְׁלָחֵ֣ם לְבָנ֗וֹנָה עֲשֶׂ֨רֶת אֲלָפִ֤ים בַּחֹ֙דֶשׁ֙ חֲלִיפ֔וֹת חֹ֚דֶשׁ יִהְי֣וּ בַלְּבָנ֔וֹן שְׁנַ֥יִם חֳדָשִׁ֖ים בְּבֵית֑וֹ וַאֲדֹנִירָ֖ם עַל־הַמַּֽס׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he sent them to Levanon, ten thousand a month by turns: a month they were in the Levanon, and two months at home: and Adoniram was over the levy."
+    },
+    {
+      "n": 4,
+      "c": 5,
+      "v": 29,
+      "ref": "5:29",
+      "text": "וַיְהִ֧י לִשְׁלֹמֹ֛ה שִׁבְעִ֥ים אֶ֖לֶף נֹשֵׂ֣א סַבָּ֑ל וּשְׁמֹנִ֥ים אֶ֖לֶף חֹצֵ֥ב בָּהָֽר׃",
+      "en": "And Shelomo had seventy thousand porters, and eighty thousand stone cutters in the mountains;"
+    },
+    {
+      "n": 5,
+      "c": 5,
+      "v": 30,
+      "ref": "5:30",
+      "text": "לְ֠בַ֠ד מִשָּׂרֵ֨י הַנִּצָּבִ֤ים לִשְׁלֹמֹה֙ אֲשֶׁ֣ר עַל־הַמְּלָאכָ֔ה שְׁלֹ֥שֶׁת אֲלָפִ֖ים וּשְׁלֹ֣שׁ מֵא֑וֹת הָרֹדִ֣ים בָּעָ֔ם הָעֹשִׂ֖ים בַּמְּלָאכָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "besides Shelomo’s chief officers who were over the work, three thousand three hundred, who ruled over the people that were employed in the work."
+    },
+    {
+      "n": 6,
+      "c": 5,
+      "v": 31,
+      "ref": "5:31",
+      "text": "וַיְצַ֣ו הַמֶּ֡לֶךְ וַיַּסִּ֩עוּ֩ אֲבָנִ֨ים גְּדֹל֜וֹת אֲבָנִ֧ים יְקָר֛וֹת לְיַסֵּ֥ד הַבָּ֖יִת אַבְנֵ֥י גָזִֽית׃",
+      "en": "And the king commanded, and they brought great stones, costly stones to lay the foundation of the house with dressed stones."
+    },
+    {
+      "n": 7,
+      "c": 5,
+      "v": 32,
+      "ref": "5:32",
+      "text": "וַֽיִּפְסְל֞וּ בֹּנֵ֧י שְׁלֹמֹ֛ה וּבֹנֵ֥י חִיר֖וֹם וְהַגִּבְלִ֑ים וַיָּכִ֛ינוּ הָעֵצִ֥ים וְהָאֲבָנִ֖ים לִבְנ֥וֹת הַבָּֽיִת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Shelomo’s builders, and Ḥiram’s builders, and the Givlim did hew them: so they prepared timber and stones to build the house."
+    },
+    {
+      "n": 8,
+      "c": 6,
+      "v": 1,
+      "ref": "6:1",
+      "text": "וַיְהִ֣י בִשְׁמוֹנִ֣ים שָׁנָ֣ה וְאַרְבַּ֣ע מֵא֣וֹת שָׁנָ֡ה לְצֵ֣את בְּנֵֽי־יִשְׂרָאֵ֣ל מֵאֶֽרֶץ־מִצְרַ֩יִם֩ בַּשָּׁנָ֨ה הָרְבִיעִ֜ית בְּחֹ֣דֶשׁ זִ֗ו ה֚וּא הַחֹ֣דֶשׁ הַשֵּׁנִ֔י לִמְלֹ֥ךְ שְׁלֹמֹ֖ה עַל־יִשְׂרָאֵ֑ל וַיִּ֥בֶן הַבַּ֖יִת לַיהֹוָֽה׃",
+      "en": "And it came to pass in the four hundred and eightieth year after the children of Yisra᾽el were come out of the land of Miżrayim, in the fourth year of Shelomo’s reign over Yisra᾽el, in the month Ziv, which is the second month, that he began to build the house of the Lord."
+    },
+    {
+      "n": 9,
+      "c": 6,
+      "v": 2,
+      "ref": "6:2",
+      "text": "וְהַבַּ֗יִת אֲשֶׁ֨ר בָּנָ֜ה הַמֶּ֤לֶךְ שְׁלֹמֹה֙ לַיהֹוָ֔ה שִׁשִּׁים־אַמָּ֥ה אׇרְכּ֖וֹ וְעֶשְׂרִ֣ים רׇחְבּ֑וֹ וּשְׁלֹשִׁ֥ים אַמָּ֖ה קוֹמָתֽוֹ׃",
+      "en": "And the house which king Shelomo built for the Lord, its length was sixty cubits, and its breadth was twenty cubits, and its height was thirty cubits."
+    },
+    {
+      "n": 10,
+      "c": 6,
+      "v": 3,
+      "ref": "6:3",
+      "text": "וְהָאוּלָ֗ם עַל־פְּנֵי֙ הֵיכַ֣ל הַבַּ֔יִת עֶשְׂרִ֤ים אַמָּה֙ אׇרְכּ֔וֹ עַל־פְּנֵ֖י רֹ֣חַב הַבָּ֑יִת עֶ֧שֶׂר בָּאַמָּ֛ה רׇחְבּ֖וֹ עַל־פְּנֵ֥י הַבָּֽיִת׃",
+      "en": "And the porch before the temple of the house, twenty cubits was its length, according to the breadth of the house; and ten cubits was its breadth before the house."
+    },
+    {
+      "n": 11,
+      "c": 6,
+      "v": 4,
+      "ref": "6:4",
+      "text": "וַיַּ֣עַשׂ לַבָּ֔יִת חַלּוֹנֵ֖י שְׁקֻפִ֥ים אֲטוּמִֽים׃",
+      "en": "And for the house he made windows wide without, and narrow within."
+    },
+    {
+      "n": 12,
+      "c": 6,
+      "v": 5,
+      "ref": "6:5",
+      "text": "וַיִּ֩בֶן֩ עַל־קִ֨יר הַבַּ֤יִת <span class=\"mam-kq\"><span class=\"mam-kq-k\">(יצוע)</span> <span class=\"mam-kq-q\">[יָצִ֙יעַ֙]</span></span> סָבִ֔יב אֶת־קִיר֤וֹת הַבַּ֙יִת֙ סָבִ֔יב לַהֵיכָ֖ל וְלַדְּבִ֑יר וַיַּ֥עַשׂ צְלָע֖וֹת סָבִֽיב׃",
+      "en": "And against the wall of the house he built a side structure round about, against the walls of the house round about, both of the temple and of the sanctuary: and he made chambers round about:"
+    },
+    {
+      "n": 13,
+      "c": 6,
+      "v": 6,
+      "ref": "6:6",
+      "text": "<span class=\"mam-kq\"><span class=\"mam-kq-k\">(היצוע)</span> <span class=\"mam-kq-q\">[הַיָּצִ֨יעַ]</span></span> הַתַּחְתֹּנָ֜ה חָמֵ֧שׁ בָּאַמָּ֣ה רׇחְבָּ֗הּ וְהַתִּֽיכֹנָה֙ שֵׁ֤שׁ בָּאַמָּה֙ רׇחְבָּ֔הּ וְהַ֨שְּׁלִישִׁ֔ית שֶׁ֥בַע בָּאַמָּ֖ה רׇחְבָּ֑הּ כִּ֡י מִגְרָעוֹת֩ נָתַ֨ן לַבַּ֤יִת סָבִיב֙ ח֔וּצָה לְבִלְתִּ֖י אֲחֹ֥ז בְּקִירוֹת־הַבָּֽיִת׃",
+      "en": "the lowest chamber was five cubits broad, and the middle was six cubits broad, and the third was seven cubits broad: for outside in the wall of the house he made narrowed rests round about, that the beams should not be fastened into the walls of the house."
+    },
+    {
+      "n": 14,
+      "c": 6,
+      "v": 7,
+      "ref": "6:7",
+      "text": "וְהַבַּ֙יִת֙ בְּהִבָּ֣נֹת֔וֹ אֶבֶן־שְׁלֵמָ֥ה מַסָּ֖ע נִבְנָ֑ה וּמַקָּב֤וֹת וְהַגַּרְזֶן֙ כׇּל־כְּלִ֣י בַרְזֶ֔ל לֹֽא־נִשְׁמַ֥ע בַּבַּ֖יִת בְּהִבָּנֹתֽוֹ׃",
+      "en": "And the house, when it was in building, was built of stone made ready before it was brought there: so that there was neither hammer nor axe nor any tool of iron heard in the house, while it was being built."
+    },
+    {
+      "n": 15,
+      "c": 6,
+      "v": 8,
+      "ref": "6:8",
+      "text": "פֶּ֗תַח הַצֵּלָע֙ הַתִּ֣יכֹנָ֔ה אֶל־כֶּ֥תֶף הַבַּ֖יִת הַיְמָנִ֑ית וּבְלוּלִּ֗ים יַֽעֲלוּ֙ עַל־הַתִּ֣יכֹנָ֔ה וּמִן־הַתִּיכֹנָ֖ה אֶל־הַשְּׁלִשִֽׁים׃",
+      "en": "The door for the middle chamber was in the right side of the house: and they went up with winding stairs into the middle chamber, and out of the middle into the third."
+    },
+    {
+      "n": 16,
+      "c": 6,
+      "v": 9,
+      "ref": "6:9",
+      "text": "וַיִּ֥בֶן אֶת־הַבַּ֖יִת וַיְכַלֵּ֑הוּ וַיִּסְפֹּ֤ן אֶת־הַבַּ֙יִת֙ גֵּבִ֔ים וּשְׂדֵרֹ֖ת בָּאֲרָזִֽים׃",
+      "en": "So he built the house, and finished it; and covered the house with beams and boards of cedar."
+    },
+    {
+      "n": 17,
+      "c": 6,
+      "v": 10,
+      "ref": "6:10",
+      "text": "וַיִּ֤בֶן אֶת־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[הַיָּצִ֙יעַ֙]</span> <span class=\"mam-kq-k\">(היצוע)</span></span> עַל־כׇּל־הַבַּ֔יִת חָמֵ֥שׁ אַמּ֖וֹת קוֹמָת֑וֹ וַיֶּאֱחֹ֥ז אֶת־הַבַּ֖יִת בַּעֲצֵ֥י אֲרָזִֽים׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And then he built the side structure against all the house, five cubits high: and it rested on the house with timber of cedar."
+    },
+    {
+      "n": 18,
+      "c": 6,
+      "v": 11,
+      "ref": "6:11",
+      "text": "וַֽיְהִי֙ דְּבַר־יְהֹוָ֔ה אֶל־שְׁלֹמֹ֖ה לֵאמֹֽר׃",
+      "en": "And the word of the Lord came to Shelomo, saying,"
+    },
+    {
+      "n": 19,
+      "c": 6,
+      "v": 12,
+      "ref": "6:12",
+      "text": "הַבַּ֨יִת הַזֶּ֜ה אֲשֶׁר־אַתָּ֣ה בֹנֶ֗ה אִם־תֵּלֵ֤ךְ בְּחֻקֹּתַי֙ וְאֶת־מִשְׁפָּטַ֣י תַּֽעֲשֶׂ֔ה וְשָׁמַרְתָּ֥ אֶת־כׇּל־מִצְוֺתַ֖י לָלֶ֣כֶת בָּהֶ֑ם וַהֲקִמֹתִ֤י אֶת־דְּבָרִי֙ אִתָּ֔ךְ אֲשֶׁ֥ר דִּבַּ֖רְתִּי אֶל־דָּוִ֥ד אָבִֽיךָ׃",
+      "en": "Concerning this house, which thou art building, if thou wilt follow my statutes, and execute my judgments, and keep all my commandments to walk in them; then will I perform my word with thee, which I spoke to David thy father:"
+    },
+    {
+      "n": 20,
+      "c": 6,
+      "v": 13,
+      "ref": "6:13",
+      "text": "וְשָׁ֣כַנְתִּ֔י בְּת֖וֹךְ בְּנֵ֣י יִשְׂרָאֵ֑ל וְלֹ֥א אֶעֱזֹ֖ב אֶת־עַמִּ֥י יִשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and I will dwell among the children of Yisra᾽el, and will not forsake my people Yisra᾽el."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Terumah",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 19
+  },
+  "parashah": {
+    "en": "Haftarat Terumah",
+    "translit": "Haftarat Terumah",
+    "he": "הפטרת תרומה",
+    "ref": "I Kings 5:26-6:13"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 20,
+        "ref": "5:26–6:13"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

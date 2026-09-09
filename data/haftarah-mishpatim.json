@@ -1,0 +1,180 @@
+{
+  "slug": "haftarah-mishpatim",
+  "book": {
+    "en": "Jeremiah",
+    "he": "ירמיהו",
+    "translit": "Yirmiyahu"
+  },
+  "multiChapter": true,
+  "ref": "Jeremiah 34:8-22, 33:25-26",
+  "heRef": "ירמיהו ל״ד:ח-כ״ב, ל״ג:כ״ה-כ״ו",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 34,
+      "v": 8,
+      "ref": "34:8",
+      "text": "הַדָּבָ֛ר אֲשֶׁר־הָיָ֥ה אֶֽל־יִרְמְיָ֖הוּ מֵאֵ֣ת יְהֹוָ֑ה אַחֲרֵ֡י כְּרֹת֩ הַמֶּ֨לֶךְ צִדְקִיָּ֜הוּ בְּרִ֗ית אֶת־כׇּל־הָעָם֙ אֲשֶׁ֣ר בִּירוּשָׁלַ֔͏ִם לִקְרֹ֥א לָהֶ֖ם דְּרֽוֹר׃",
+      "en": "This is the word that came to Yirmeyahu from the Lord, after the king Żidqiyyahu had made a covenant with all the people which were at Yerushalayim, proclaim liberty to them;"
+    },
+    {
+      "n": 2,
+      "c": 34,
+      "v": 9,
+      "ref": "34:9",
+      "text": "לְ֠שַׁלַּ֠ח אִ֣ישׁ אֶת־עַבְדּ֞וֹ וְאִ֧ישׁ אֶת־שִׁפְחָת֛וֹ הָעִבְרִ֥י וְהָעִבְרִיָּ֖ה חׇפְשִׁ֑ים לְבִלְתִּ֧י עֲבׇד־בָּ֛ם בִּיהוּדִ֥י אָחִ֖יהוּ אִֽישׁ׃",
+      "en": "that every man should let his Hebrew manservant, and every man his Hebrew maidservant, go free; that none should enslave any of them, namely a man of Yehuda, being his brother."
+    },
+    {
+      "n": 3,
+      "c": 34,
+      "v": 10,
+      "ref": "34:10",
+      "text": "וַיִּשְׁמְעוּ֩ כׇל־הַשָּׂרִ֨ים וְכׇל־הָעָ֜ם אֲשֶׁר־בָּ֣אוּ בַבְּרִ֗ית לְ֠שַׁלַּ֠ח אִ֣ישׁ אֶת־עַבְדּ֞וֹ וְאִ֤ישׁ אֶת־שִׁפְחָתוֹ֙ חׇפְשִׁ֔ים לְבִלְתִּ֥י עֲבׇד־בָּ֖ם ע֑וֹד וַֽיִּשְׁמְע֖וּ וַיְשַׁלֵּֽחוּ׃",
+      "en": "Now when all the princes, and all the people, who had entered into the covenant, heard that every one should let his manservant, and every one his maidservant, go free, that none should enslave them any more, then they obeyed, and let them go."
+    },
+    {
+      "n": 4,
+      "c": 34,
+      "v": 11,
+      "ref": "34:11",
+      "text": "וַיָּשׁ֙וּבוּ֙ אַחֲרֵי־כֵ֔ן וַיָּשִׁ֗בוּ אֶת־הָֽעֲבָדִים֙ וְאֶת־הַשְּׁפָח֔וֹת אֲשֶׁ֥ר שִׁלְּח֖וּ חׇפְשִׁ֑ים <span class=\"mam-kq\"><span class=\"mam-kq-k\">(ויכבישום)</span> <span class=\"mam-kq-q\">[וַֽיִּכְבְּשׁ֔וּם]</span></span> לַעֲבָדִ֖ים וְלִשְׁפָחֽוֹת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "But afterwards they relapsed, and caused the servants and the handmaids, whom they had let go free, to return, and brought them into subjection for servants and for handmaids."
+    },
+    {
+      "n": 5,
+      "c": 34,
+      "v": 12,
+      "ref": "34:12",
+      "text": "וַיְהִ֤י דְבַר־יְהֹוָה֙ אֶֽל־יִרְמְיָ֔הוּ מֵאֵ֥ת יְהֹוָ֖ה לֵאמֹֽר׃",
+      "en": "Therefore the word of the Lord came to Yirmeyahu from the Lord saying,"
+    },
+    {
+      "n": 6,
+      "c": 34,
+      "v": 13,
+      "ref": "34:13",
+      "text": "כֹּה־אָמַ֥ר יְהֹוָ֖ה אֱלֹהֵ֣י יִשְׂרָאֵ֑ל אָנֹכִ֗י כָּרַ֤תִּֽי בְרִית֙ אֶת־אֲב֣וֹתֵיכֶ֔ם בְּי֨וֹם הוֹצִאִ֤י אוֹתָם֙ מֵאֶ֣רֶץ מִצְרַ֔יִם מִבֵּ֥ית עֲבָדִ֖ים לֵאמֹֽר׃",
+      "en": "Thus says the Lord, the God of Yisra᾽el; I made a covenant with your fathers in the day that I brought them forth out of the land of Miżrayim, out of the house of slavery, saying,"
+    },
+    {
+      "n": 7,
+      "c": 34,
+      "v": 14,
+      "ref": "34:14",
+      "text": "מִקֵּ֣ץ שֶׁ֣בַע שָׁנִ֡ים תְּֽשַׁלְּח֡וּ אִישׁ֩ אֶת־אָחִ֨יו הָעִבְרִ֜י אֲשֶֽׁר־יִמָּכֵ֣ר לְךָ֗ וַעֲבָֽדְךָ֙ שֵׁ֣שׁ שָׁנִ֔ים וְשִׁלַּחְתּ֥וֹ חׇפְשִׁ֖י מֵעִמָּ֑ךְ וְלֹֽא־שָׁמְע֤וּ אֲבֽוֹתֵיכֶם֙ אֵלַ֔י וְלֹ֥א הִטּ֖וּ אֶת־אׇזְנָֽם׃",
+      "en": "At the end of seven years, shall you release every man his brother being a Hebrew, who has been sold to thee; and when he has served thee six years, thou shalt let him go free from thee: but your fathers hearkened not to Me, neither inclined their ear."
+    },
+    {
+      "n": 8,
+      "c": 34,
+      "v": 15,
+      "ref": "34:15",
+      "text": "וַתָּשֻׁ֨בוּ אַתֶּ֜ם הַיּ֗וֹם וַתַּעֲשׂ֤וּ אֶת־הַיָּשָׁר֙ בְּעֵינַ֔י לִקְרֹ֥א דְר֖וֹר אִ֣ישׁ לְרֵעֵ֑הוּ וַתִּכְרְת֤וּ בְרִית֙ לְפָנַ֔י בַּבַּ֕יִת אֲשֶׁר־נִקְרָ֥א שְׁמִ֖י עָלָֽיו׃",
+      "en": "And you now turned, and had done right in My sight, in proclaiming liberty every man to his neighbour; and you had made a covenant before Me in the house which is called by My name:"
+    },
+    {
+      "n": 9,
+      "c": 34,
+      "v": 16,
+      "ref": "34:16",
+      "text": "וַתָּשֻׁ֙בוּ֙ וַתְּחַלְּל֣וּ אֶת־שְׁמִ֔י וַתָּשִׁ֗בוּ אִ֤ישׁ אֶת־עַבְדּוֹ֙ וְאִ֣ישׁ אֶת־שִׁפְחָת֔וֹ אֲשֶׁר־שִׁלַּחְתֶּ֥ם חׇפְשִׁ֖ים לְנַפְשָׁ֑ם וַתִּכְבְּשׁ֣וּ אֹתָ֔ם לִֽהְי֣וֹת לָכֶ֔ם לַעֲבָדִ֖ים וְלִשְׁפָחֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "nevertheless you relapsed and have profaned My name, and everyone of you has caused his servant, and his handmaid, (whom he had set at liberty at their pleasure,) to return, and has brought them into subjection, to be to you for servants and for handmaids."
+    },
+    {
+      "n": 10,
+      "c": 34,
+      "v": 17,
+      "ref": "34:17",
+      "text": "לָכֵן֮ כֹּה־אָמַ֣ר יְהֹוָה֒ אַתֶּם֙ לֹא־שְׁמַעְתֶּ֣ם אֵלַ֔י לִקְרֹ֣א דְר֔וֹר אִ֥ישׁ לְאָחִ֖יו וְאִ֣ישׁ לְרֵעֵ֑הוּ הִנְנִ֣י קֹרֵא֩ לָכֶ֨ם דְּר֜וֹר נְאֻם־יְהֹוָ֗ה אֶל־הַחֶ֙רֶב֙ אֶל־הַדֶּ֣בֶר וְאֶל־הָרָעָ֔ב וְנָתַתִּ֤י אֶתְכֶם֙ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(לזועה)</span> <span class=\"mam-kq-q\">[לְזַעֲוָ֔ה]</span></span> לְכֹ֖ל מַמְלְכ֥וֹת הָאָֽרֶץ׃",
+      "en": "Therefore thus says the Lord; since you have not hearkened to Me, in proclaiming liberty, everyone to his brother, and everyone to his neighbour: behold, I proclaim a liberty for you, says the Lord, to the sword, to the pestilence, and to the famine; and I will make you to be removed into all the kingdoms of the earth."
+    },
+    {
+      "n": 11,
+      "c": 34,
+      "v": 18,
+      "ref": "34:18",
+      "text": "וְנָתַתִּ֣י אֶת־הָאֲנָשִׁ֗ים הָעֹֽבְרִים֙ אֶת־בְּרִתִ֔י אֲשֶׁ֤ר לֹא־הֵקִ֙ימוּ֙ אֶת־דִּבְרֵ֣י הַבְּרִ֔ית אֲשֶׁ֥ר כָּרְת֖וּ לְפָנָ֑י הָעֵ֙גֶל֙ אֲשֶׁ֣ר כָּרְת֣וּ לִשְׁנַ֔יִם וַיַּעַבְר֖וּ בֵּ֥ין בְּתָרָֽיו׃",
+      "en": "And I will give the men that have transgressed My covenant, who have not performed the words of the covenant which they made before Me, when they cut the calf in two, and passed between its sections,"
+    },
+    {
+      "n": 12,
+      "c": 34,
+      "v": 19,
+      "ref": "34:19",
+      "text": "שָׂרֵ֨י יְהוּדָ֜ה וְשָׂרֵ֣י יְרוּשָׁלַ֗͏ִם הַסָּֽרִסִים֙ וְהַכֹּ֣הֲנִ֔ים וְכֹ֖ל עַ֣ם הָאָ֑רֶץ הָעֹ֣בְרִ֔ים בֵּ֖ין בִּתְרֵ֥י הָעֵֽגֶל׃",
+      "en": "the princes of Yehuda, and the princes of Yerushalayim, the eunuchs, the priests, and all the people of the land, who passed between the sections of the calf;"
+    },
+    {
+      "n": 13,
+      "c": 34,
+      "v": 20,
+      "ref": "34:20",
+      "text": "וְנָתַתִּ֤י אוֹתָם֙ בְּיַ֣ד אֹֽיְבֵיהֶ֔ם וּבְיַ֖ד מְבַקְשֵׁ֣י נַפְשָׁ֑ם וְהָיְתָ֤ה נִבְלָתָם֙ לְמַֽאֲכָ֔ל לְע֥וֹף הַשָּׁמַ֖יִם וּלְבֶהֱמַ֥ת הָאָֽרֶץ׃",
+      "en": "I will give them into the hand of their enemies, and into the hand of them that seek their life: and their dead bodies shall be for food to the birds of the heaven, and to the beasts of the earth."
+    },
+    {
+      "n": 14,
+      "c": 34,
+      "v": 21,
+      "ref": "34:21",
+      "text": "וְאֶת־צִדְקִיָּ֨הוּ מֶלֶךְ־יְהוּדָ֜ה וְאֶת־שָׂרָ֗יו אֶתֵּן֙ בְּיַ֣ד אֹֽיְבֵיהֶ֔ם וּבְיַ֖ד מְבַקְשֵׁ֣י נַפְשָׁ֑ם וּבְיַ֗ד חֵ֚יל מֶ֣לֶךְ בָּבֶ֔ל הָעֹלִ֖ים מֵעֲלֵיכֶֽם׃",
+      "en": "And Żidqiyyahu king of Yehuda and his princes will I give into the hand of their enemies, and into the hand of them that seek their life, and into the hand of the king of Bavel’s army, who are gone up from you."
+    },
+    {
+      "n": 15,
+      "c": 34,
+      "v": 22,
+      "ref": "34:22",
+      "text": "הִנְנִ֨י מְצַוֶּ֜ה נְאֻם־יְהֹוָ֗ה וַהֲשִׁ֨בֹתִ֜ים אֶל־הָעִ֤יר הַזֹּאת֙ וְנִלְחֲמ֣וּ עָלֶ֔יהָ וּלְכָד֖וּהָ וּשְׂרָפֻ֣הָ בָאֵ֑שׁ וְאֶת־עָרֵ֧י יְהוּדָ֛ה אֶתֵּ֥ן שְׁמָמָ֖ה מֵאֵ֥ין יֹשֵֽׁב׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Behold, I will command, says the Lord, and cause them to return to this city; and they shall fight against it, and burn it with fire: and I will make the cities of Yehuda a desolation without inhabitant."
+    },
+    {
+      "n": 16,
+      "c": 33,
+      "v": 25,
+      "ref": "33:25",
+      "text": "כֹּ֚ה אָמַ֣ר יְהֹוָ֔ה אִם־לֹ֥א בְרִיתִ֖י יוֹמָ֣ם וָלָ֑יְלָה חֻקּ֛וֹת שָׁמַ֥יִם וָאָ֖רֶץ לֹא־שָֽׂמְתִּי׃",
+      "en": "Thus says the Lord; If I have not appointed my covenant with day and night, the ordinances of heaven and earth;"
+    },
+    {
+      "n": 17,
+      "c": 33,
+      "v": 26,
+      "ref": "33:26",
+      "text": "גַּם־זֶ֣רַע יַעֲקוֹב֩ וְדָוִ֨ד עַבְדִּ֜י אֶמְאַ֗ס מִקַּ֤חַת מִזַּרְעוֹ֙ מֹֽשְׁלִ֔ים אֶל־זֶ֥רַע אַבְרָהָ֖ם יִשְׂחָ֣ק וְיַעֲקֹ֑ב כִּי־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[אָשִׁ֥יב]</span> <span class=\"mam-kq-k\">(אשוב)</span></span> אֶת־שְׁבוּתָ֖ם וְרִחַמְתִּֽים׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "then will I cast away the seed of Ya῾aqov and David my servant, and not take any of his seed to be rulers over the seed of Avraham, Yiżĥaq, and Ya῾aqov. No, for I will cause their captivity to return, and have mercy on them."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Mishpatim",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 18
+  },
+  "parashah": {
+    "en": "Haftarat Mishpatim",
+    "translit": "Haftarat Mishpatim",
+    "he": "הפטרת משפטים",
+    "ref": "Jeremiah 34:8-22, 33:25-26"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 17,
+        "ref": "34:8–33:26"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

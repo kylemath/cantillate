@@ -1,0 +1,669 @@
+{
+  "slug": "behar",
+  "book": {
+    "en": "Leviticus",
+    "he": "ויקרא",
+    "translit": "Vayikra"
+  },
+  "multiChapter": true,
+  "ref": "Leviticus 25:1-26:2",
+  "heRef": "ויקרא כ״ה:א-כ״ו:ב",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 25,
+      "v": 1,
+      "ref": "25:1",
+      "text": "וַיְדַבֵּ֤ר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה בְּהַ֥ר סִינַ֖י לֵאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe in mount Sinay, saying,"
+    },
+    {
+      "n": 2,
+      "c": 25,
+      "v": 2,
+      "ref": "25:2",
+      "text": "דַּבֵּ֞ר אֶל־בְּנֵ֤י יִשְׂרָאֵל֙ וְאָמַרְתָּ֣ אֲלֵהֶ֔ם כִּ֤י תָבֹ֙אוּ֙ אֶל־הָאָ֔רֶץ אֲשֶׁ֥ר אֲנִ֖י נֹתֵ֣ן לָכֶ֑ם וְשָׁבְתָ֣ה הָאָ֔רֶץ שַׁבָּ֖ת לַיהֹוָֽה׃",
+      "en": "Speak to the children of Yisra᾽el, and say to them, When you come to the land which I give you, then shall the land keep a sabbath to the Lord."
+    },
+    {
+      "n": 3,
+      "c": 25,
+      "v": 3,
+      "ref": "25:3",
+      "text": "שֵׁ֤שׁ שָׁנִים֙ תִּזְרַ֣ע שָׂדֶ֔ךָ וְשֵׁ֥שׁ שָׁנִ֖ים תִּזְמֹ֣ר כַּרְמֶ֑ךָ וְאָסַפְתָּ֖ אֶת־תְּבוּאָתָֽהּ׃",
+      "en": "Six years thou shalt sow thy field, and six years thou shalt prune thy vineyard, and gather in its fruit;"
+    },
+    {
+      "n": 4,
+      "c": 25,
+      "v": 4,
+      "ref": "25:4",
+      "text": "וּבַשָּׁנָ֣ה הַשְּׁבִיעִ֗ת שַׁבַּ֤ת שַׁבָּתוֹן֙ יִהְיֶ֣ה לָאָ֔רֶץ שַׁבָּ֖ת לַיהֹוָ֑ה שָֽׂדְךָ֙ לֹ֣א תִזְרָ֔ע וְכַרְמְךָ֖ לֹ֥א תִזְמֹֽר׃",
+      "en": "but in the seventh year shall be a sabbath of solemn rest for the land, a sabbath for the Lord: thou shalt neither sow thy field, nor prune thy vineyard."
+    },
+    {
+      "n": 5,
+      "c": 25,
+      "v": 5,
+      "ref": "25:5",
+      "text": "אֵ֣ת סְפִ֤יחַ קְצִֽירְךָ֙ לֹ֣א תִקְצ֔וֹר וְאֶת־עִנְּבֵ֥י נְזִירֶ֖ךָ לֹ֣א תִבְצֹ֑ר שְׁנַ֥ת שַׁבָּת֖וֹן יִהְיֶ֥ה לָאָֽרֶץ׃",
+      "en": "That which grows of its own accord of thy harvest thou shalt not reap, nor gather the grapes of thy undressed vine: for it shall be a year of rest for the land."
+    },
+    {
+      "n": 6,
+      "c": 25,
+      "v": 6,
+      "ref": "25:6",
+      "text": "וְ֠הָיְתָ֠ה שַׁבַּ֨ת הָאָ֤רֶץ לָכֶם֙ לְאׇכְלָ֔ה לְךָ֖ וּלְעַבְדְּךָ֣ וְלַאֲמָתֶ֑ךָ וְלִשְׂכִֽירְךָ֙ וּלְתוֹשָׁ֣בְךָ֔ הַגָּרִ֖ים עִמָּֽךְ׃",
+      "en": "And the sabbath produce of the land shall be food for you; for thee, and for thy servant, and for thy maid, and for thy hired servant, and for thy stranger that sojourns with thee,"
+    },
+    {
+      "n": 7,
+      "c": 25,
+      "v": 7,
+      "ref": "25:7",
+      "text": "וְלִ֨בְהֶמְתְּךָ֔ וְלַֽחַיָּ֖ה אֲשֶׁ֣ר בְּאַרְצֶ֑ךָ תִּהְיֶ֥ה כׇל־תְּבוּאָתָ֖הּ לֶאֱכֹֽל׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and for thy cattle, and for the beast in thy land, shall all its increase be food."
+    },
+    {
+      "n": 8,
+      "c": 25,
+      "v": 8,
+      "ref": "25:8",
+      "text": "וְסָפַרְתָּ֣ לְךָ֗ שֶׁ֚בַע שַׁבְּתֹ֣ת שָׁנִ֔ים שֶׁ֥בַע שָׁנִ֖ים שֶׁ֣בַע פְּעָמִ֑ים וְהָי֣וּ לְךָ֗ יְמֵי֙ שֶׁ֚בַע שַׁבְּתֹ֣ת הַשָּׁנִ֔ים תֵּ֥שַׁע וְאַרְבָּעִ֖ים שָׁנָֽה׃",
+      "en": "And thou shalt number seven sabbaths of years to thee, seven times seven years; and the space of the seven sabbaths of years shall be to thee forty nine years."
+    },
+    {
+      "n": 9,
+      "c": 25,
+      "v": 9,
+      "ref": "25:9",
+      "text": "וְהַֽעֲבַרְתָּ֞ שׁוֹפַ֤ר תְּרוּעָה֙ בַּחֹ֣דֶשׁ הַשְּׁבִעִ֔י בֶּעָשׂ֖וֹר לַחֹ֑דֶשׁ בְּיוֹם֙ הַכִּפֻּרִ֔ים תַּעֲבִ֥ירוּ שׁוֹפָ֖ר בְּכׇל־אַרְצְכֶֽם׃",
+      "en": "Then shalt thou cause the shofar to sound on the tenth day of the seventh month, on the day of atonement shall you sound the shofar throughout all your land."
+    },
+    {
+      "n": 10,
+      "c": 25,
+      "v": 10,
+      "ref": "25:10",
+      "text": "וְקִדַּשְׁתֶּ֗ם אֵ֣ת שְׁנַ֤ת הַחֲמִשִּׁים֙ שָׁנָ֔ה וּקְרָאתֶ֥ם דְּר֛וֹר בָּאָ֖רֶץ לְכׇל־יֹשְׁבֶ֑יהָ יוֹבֵ֥ל הִוא֙ תִּהְיֶ֣ה לָכֶ֔ם וְשַׁבְתֶּ֗ם אִ֚ישׁ אֶל־אֲחֻזָּת֔וֹ וְאִ֥ישׁ אֶל־מִשְׁפַּחְתּ֖וֹ תָּשֻֽׁבוּ׃",
+      "en": "And you shall hallow the fiftieth year, and proclaim liberty throughout all the land to all its inhabitants: it shall be a jubilee for you; and you shall return every man to his possession, and you shall return every man to his family."
+    },
+    {
+      "n": 11,
+      "c": 25,
+      "v": 11,
+      "ref": "25:11",
+      "text": "יוֹבֵ֣ל הִ֗וא שְׁנַ֛ת הַחֲמִשִּׁ֥ים שָׁנָ֖ה תִּהְיֶ֣ה לָכֶ֑ם לֹ֣א תִזְרָ֔עוּ וְלֹ֤א תִקְצְרוּ֙ אֶת־סְפִיחֶ֔יהָ וְלֹ֥א תִבְצְר֖וּ אֶת־נְזִרֶֽיהָ׃",
+      "en": "A jubilee shall that fiftieth year be to you: you shall not sow, neither reap that which grows of itself in it, nor gather in it the grapes of thy undressed vine."
+    },
+    {
+      "n": 12,
+      "c": 25,
+      "v": 12,
+      "ref": "25:12",
+      "text": "כִּ֚י יוֹבֵ֣ל הִ֔וא קֹ֖דֶשׁ תִּהְיֶ֣ה לָכֶ֑ם מִ֨ן־הַשָּׂדֶ֔ה תֹּאכְל֖וּ אֶת־תְּבוּאָתָֽהּ׃",
+      "en": "For it is the jubilee; it shall be holy to you: you shall eat its increase out of the field."
+    },
+    {
+      "n": 13,
+      "c": 25,
+      "v": 13,
+      "ref": "25:13",
+      "text": "בִּשְׁנַ֥ת הַיּוֹבֵ֖ל הַזֹּ֑את תָּשֻׁ֕בוּ אִ֖ישׁ אֶל־אֲחֻזָּתֽוֹ׃",
+      "en": "In the year of this jubilee you shall return every man to his possession."
+    },
+    {
+      "n": 14,
+      "c": 25,
+      "v": 14,
+      "ref": "25:14",
+      "text": "וְכִֽי־תִמְכְּר֤וּ מִמְכָּר֙ לַעֲמִיתֶ֔ךָ א֥וֹ קָנֹ֖ה מִיַּ֣ד עֲמִיתֶ֑ךָ אַל־תּוֹנ֖וּ אִ֥ישׁ אֶת־אָחִֽיו׃",
+      "en": "And if thou sell aught to thy neighbour, or buy aught of thy neighbour’s hand, you shall not defraud one another:"
+    },
+    {
+      "n": 15,
+      "c": 25,
+      "v": 15,
+      "ref": "25:15",
+      "text": "בְּמִסְפַּ֤ר שָׁנִים֙ אַחַ֣ר הַיּוֹבֵ֔ל תִּקְנֶ֖ה מֵאֵ֣ת עֲמִיתֶ֑ךָ בְּמִסְפַּ֥ר שְׁנֵֽי־תְבוּאֹ֖ת יִמְכׇּר־לָֽךְ׃",
+      "en": "according to the number of years after the jubilee thou shalt buy of thy neighbour, and according to the number of years of the fruits he shall sell to thee:"
+    },
+    {
+      "n": 16,
+      "c": 25,
+      "v": 16,
+      "ref": "25:16",
+      "text": "לְפִ֣י&thinsp;<b>׀</b> רֹ֣ב הַשָּׁנִ֗ים תַּרְבֶּה֙ מִקְנָת֔וֹ וּלְפִי֙ מְעֹ֣ט הַשָּׁנִ֔ים תַּמְעִ֖יט מִקְנָת֑וֹ כִּ֚י מִסְפַּ֣ר תְּבוּאֹ֔ת ה֥וּא מֹכֵ֖ר לָֽךְ׃",
+      "en": "according to the multitude of years thou shalt increase its price, and according to the fewness of years thou shalt diminish the price of it: for what he sells thee is a number of years of produce."
+    },
+    {
+      "n": 17,
+      "c": 25,
+      "v": 17,
+      "ref": "25:17",
+      "text": "וְלֹ֤א תוֹנוּ֙ אִ֣ישׁ אֶת־עֲמִית֔וֹ וְיָרֵ֖אתָ מֵֽאֱלֹהֶ֑יךָ כִּ֛י אֲנִ֥י יְהֹוָ֖ה אֱלֹהֵיכֶֽם׃",
+      "en": "You shall not therefore defraud one another; but thou shalt fear thy God: for I am the Lord your God."
+    },
+    {
+      "n": 18,
+      "c": 25,
+      "v": 18,
+      "ref": "25:18",
+      "text": "וַעֲשִׂיתֶם֙ אֶת־חֻקֹּתַ֔י וְאֶת־מִשְׁפָּטַ֥י תִּשְׁמְר֖וּ וַעֲשִׂיתֶ֣ם אֹתָ֑ם וִֽישַׁבְתֶּ֥ם עַל־הָאָ֖רֶץ לָבֶֽטַח׃",
+      "en": "And you shall do my statutes, and keep my judgments, and do them; and you shall dwell in the land in safety."
+    },
+    {
+      "n": 19,
+      "c": 25,
+      "v": 19,
+      "ref": "25:19",
+      "text": "וְנָתְנָ֤ה הָאָ֙רֶץ֙ פִּרְיָ֔הּ וַאֲכַלְתֶּ֖ם לָשֹׂ֑בַע וִֽישַׁבְתֶּ֥ם לָבֶ֖טַח עָלֶֽיהָ׃",
+      "en": "And the land shall yield her fruit, and you shall eat your fill, and dwell therein in safety."
+    },
+    {
+      "n": 20,
+      "c": 25,
+      "v": 20,
+      "ref": "25:20",
+      "text": "וְכִ֣י תֹאמְר֔וּ מַה־נֹּאכַ֖ל בַּשָּׁנָ֣ה הַשְּׁבִיעִ֑ת הֵ֚ן לֹ֣א נִזְרָ֔ע וְלֹ֥א נֶאֱסֹ֖ף אֶת־תְּבוּאָתֵֽנוּ׃",
+      "en": "And if you shall say, What shall we eat in the seventh year? behold, we shall not sow, nor gather in our increase:"
+    },
+    {
+      "n": 21,
+      "c": 25,
+      "v": 21,
+      "ref": "25:21",
+      "text": "וְצִוִּ֤יתִי אֶת־בִּרְכָתִי֙ לָכֶ֔ם בַּשָּׁנָ֖ה הַשִּׁשִּׁ֑ית וְעָשָׂת֙ אֶת־הַתְּבוּאָ֔ה לִשְׁלֹ֖שׁ הַשָּׁנִֽים׃",
+      "en": "then I will command my blessing upon you in the sixth year, and it shall bring forth fruit for three years."
+    },
+    {
+      "n": 22,
+      "c": 25,
+      "v": 22,
+      "ref": "25:22",
+      "text": "וּזְרַעְתֶּ֗ם אֵ֚ת הַשָּׁנָ֣ה הַשְּׁמִינִ֔ת וַאֲכַלְתֶּ֖ם מִן־הַתְּבוּאָ֣ה יָשָׁ֑ן עַ֣ד&thinsp;<b>׀</b> הַשָּׁנָ֣ה הַתְּשִׁיעִ֗ת עַד־בּוֹא֙ תְּב֣וּאָתָ֔הּ תֹּאכְל֖וּ יָשָֽׁן׃",
+      "en": "And you shall sow the eighth year, and eat yet of old fruit until the ninth year; until her fruits come in, you shall eat of the old store."
+    },
+    {
+      "n": 23,
+      "c": 25,
+      "v": 23,
+      "ref": "25:23",
+      "text": "וְהָאָ֗רֶץ לֹ֤א תִמָּכֵר֙ לִצְמִתֻ֔ת כִּי־לִ֖י הָאָ֑רֶץ כִּֽי־גֵרִ֧ים וְתוֹשָׁבִ֛ים אַתֶּ֖ם עִמָּדִֽי׃",
+      "en": "The land shall not be sold for ever: for the land is mine; for you are strangers and sojourners with me."
+    },
+    {
+      "n": 24,
+      "c": 25,
+      "v": 24,
+      "ref": "25:24",
+      "text": "וּבְכֹ֖ל אֶ֣רֶץ אֲחֻזַּתְכֶ֑ם גְּאֻלָּ֖ה תִּתְּנ֥וּ לָאָֽרֶץ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And in all the land of your possession you shall grant a redemption for the land."
+    },
+    {
+      "n": 25,
+      "c": 25,
+      "v": 25,
+      "ref": "25:25",
+      "text": "כִּֽי־יָמ֣וּךְ אָחִ֔יךָ וּמָכַ֖ר מֵאֲחֻזָּת֑וֹ וּבָ֤א גֹֽאֲלוֹ֙ הַקָּרֹ֣ב אֵלָ֔יו וְגָאַ֕ל אֵ֖ת מִמְכַּ֥ר אָחִֽיו׃",
+      "en": "If thy brother become poor, and has sold away some of his possession, then shall his near kinsman come to redeem it, and shall redeem that which his brother sold."
+    },
+    {
+      "n": 26,
+      "c": 25,
+      "v": 26,
+      "ref": "25:26",
+      "text": "וְאִ֕ישׁ כִּ֛י לֹ֥א יִֽהְיֶה־לּ֖וֹ גֹּאֵ֑ל וְהִשִּׂ֣יגָה יָד֔וֹ וּמָצָ֖א כְּדֵ֥י גְאֻלָּתֽוֹ׃",
+      "en": "And if the man have none to redeem it, and himself be able to redeem it;"
+    },
+    {
+      "n": 27,
+      "c": 25,
+      "v": 27,
+      "ref": "25:27",
+      "text": "וְחִשַּׁב֙ אֶת־שְׁנֵ֣י מִמְכָּר֔וֹ וְהֵשִׁיב֙ אֶת־הָ֣עֹדֵ֔ף לָאִ֖ישׁ אֲשֶׁ֣ר מָֽכַר־ל֑וֹ וְשָׁ֖ב לַאֲחֻזָּתֽוֹ׃",
+      "en": "then let him count the years of the sale of it, and restore the overplus to the man to whom he sold it; that he may return to his possession."
+    },
+    {
+      "n": 28,
+      "c": 25,
+      "v": 28,
+      "ref": "25:28",
+      "text": "וְאִ֨ם לֹֽא־מָצְאָ֜ה יָד֗וֹ דֵּי֮ הָשִׁ֣יב לוֹ֒ וְהָיָ֣ה מִמְכָּר֗וֹ בְּיַד֙ הַקֹּנֶ֣ה אֹת֔וֹ עַ֖ד שְׁנַ֣ת הַיּוֹבֵ֑ל וְיָצָא֙ בַּיֹּבֵ֔ל וְשָׁ֖ב לַאֲחֻזָּתֽוֹ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "But if his means do not suffice to regain it, then that which is sold shall remain in the hand of him who has bought it until the year of jubilee: and in the jubilee it shall go out, and he shall return to his possession."
+    },
+    {
+      "n": 29,
+      "c": 25,
+      "v": 29,
+      "ref": "25:29",
+      "text": "וְאִ֗ישׁ כִּֽי־יִמְכֹּ֤ר בֵּית־מוֹשַׁב֙ עִ֣יר חוֹמָ֔ה וְהָיְתָה֙ גְּאֻלָּת֔וֹ עַד־תֹּ֖ם שְׁנַ֣ת מִמְכָּר֑וֹ יָמִ֖ים תִּהְיֶ֥ה גְאֻלָּתֽוֹ׃",
+      "en": "And if a man sell a dwelling house in a walled city, then he may redeem it within a whole year after it is sold; within a full year may he redeem it."
+    },
+    {
+      "n": 30,
+      "c": 25,
+      "v": 30,
+      "ref": "25:30",
+      "text": "וְאִ֣ם לֹֽא־יִגָּאֵ֗ל עַד־מְלֹ֣את לוֹ֮ שָׁנָ֣ה תְמִימָה֒ וְ֠קָ֠ם הַבַּ֨יִת אֲשֶׁר־בָּעִ֜יר אֲשֶׁר־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[ל֣וֹ]</span> <span class=\"mam-kq-k\">(לא)</span></span> חֹמָ֗ה לַצְּמִיתֻ֛ת לַקֹּנֶ֥ה אֹת֖וֹ לְדֹרֹתָ֑יו לֹ֥א יֵצֵ֖א בַּיֹּבֵֽל׃",
+      "en": "And if it be not redeemed within the space of a full year, then the house that is in the walled city shall become the permanent property of him that bought it throughout his generations: it shall not go out in the jubilee."
+    },
+    {
+      "n": 31,
+      "c": 25,
+      "v": 31,
+      "ref": "25:31",
+      "text": "וּבָתֵּ֣י הַחֲצֵרִ֗ים אֲשֶׁ֨ר אֵין־לָהֶ֤ם חֹמָה֙ סָבִ֔יב עַל־שְׂדֵ֥ה הָאָ֖רֶץ יֵחָשֵׁ֑ב גְּאֻלָּה֙ תִּהְיֶה־לּ֔וֹ וּבַיֹּבֵ֖ל יֵצֵֽא׃",
+      "en": "But the houses of the villages which have no wall round about them shall be counted as the fields of the country: they may be redeemed, and they shall go out in the jubilee."
+    },
+    {
+      "n": 32,
+      "c": 25,
+      "v": 32,
+      "ref": "25:32",
+      "text": "וְעָרֵי֙ הַלְוִיִּ֔ם בָּתֵּ֖י עָרֵ֣י אֲחֻזָּתָ֑ם גְּאֻלַּ֥ת עוֹלָ֖ם תִּהְיֶ֥ה לַלְוִיִּֽם׃",
+      "en": "But the cities of the Levites, and the houses of the cities of their possession, may the Levites redeem at any time."
+    },
+    {
+      "n": 33,
+      "c": 25,
+      "v": 33,
+      "ref": "25:33",
+      "text": "וַאֲשֶׁ֤ר יִגְאַל֙ מִן־הַלְוִיִּ֔ם וְיָצָ֧א מִמְכַּר־בַּ֛יִת וְעִ֥יר אֲחֻזָּת֖וֹ בַּיֹּבֵ֑ל כִּ֣י בָתֵּ֞י עָרֵ֣י הַלְוִיִּ֗ם הִ֚וא אֲחֻזָּתָ֔ם בְּת֖וֹךְ בְּנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "And if a man purchase of the Levites, then the house that was sold, and the city of his possession, shall go out in the year of jubilee: for the houses of the cities of the Levites are their possession among the children of Yisra᾽el."
+    },
+    {
+      "n": 34,
+      "c": 25,
+      "v": 34,
+      "ref": "25:34",
+      "text": "וּֽשְׂדֵ֛ה מִגְרַ֥שׁ עָרֵיהֶ֖ם לֹ֣א יִמָּכֵ֑ר כִּֽי־אֲחֻזַּ֥ת עוֹלָ֛ם ה֖וּא לָהֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "But the field of the pasture lands of their cities may not be sold; for it is their perpetual possession."
+    },
+    {
+      "n": 35,
+      "c": 25,
+      "v": 35,
+      "ref": "25:35",
+      "text": "וְכִֽי־יָמ֣וּךְ אָחִ֔יךָ וּמָ֥טָה יָד֖וֹ עִמָּ֑ךְ וְהֶֽחֱזַ֣קְתָּ בּ֔וֹ גֵּ֧ר וְתוֹשָׁ֛ב וָחַ֖י עִמָּֽךְ׃",
+      "en": "And if thy brother grow poor, and his means fail with thee; then thou shalt relieve him: though he be a stranger, or a sojourner; that he may live with thee."
+    },
+    {
+      "n": 36,
+      "c": 25,
+      "v": 36,
+      "ref": "25:36",
+      "text": "אַל־תִּקַּ֤ח מֵֽאִתּוֹ֙ נֶ֣שֶׁךְ וְתַרְבִּ֔ית וְיָרֵ֖אתָ מֵֽאֱלֹהֶ֑יךָ וְחֵ֥י אָחִ֖יךָ עִמָּֽךְ׃",
+      "en": "Take thou no usury of him, or increase: but fear thy God; that thy brother may live with thee."
+    },
+    {
+      "n": 37,
+      "c": 25,
+      "v": 37,
+      "ref": "25:37",
+      "text": "אֶ֨ת־כַּסְפְּךָ֔ לֹֽא־תִתֵּ֥ן ל֖וֹ בְּנֶ֑שֶׁךְ וּבְמַרְבִּ֖ית לֹא־תִתֵּ֥ן אׇכְלֶֽךָ׃",
+      "en": "Thou shalt not give him thy money upon usury, nor lend him thy foodstuffs for increase."
+    },
+    {
+      "n": 38,
+      "c": 25,
+      "v": 38,
+      "ref": "25:38",
+      "text": "אֲנִ֗י יְהֹוָה֙ אֱלֹ֣הֵיכֶ֔ם אֲשֶׁר־הוֹצֵ֥אתִי אֶתְכֶ֖ם מֵאֶ֣רֶץ מִצְרָ֑יִם לָתֵ֤ת לָכֶם֙ אֶת־אֶ֣רֶץ כְּנַ֔עַן לִהְי֥וֹת לָכֶ֖ם לֵאלֹהִֽים׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "I am the Lord your God, who brought you out of the land of Miżrayim, to give you the land of Kena῾an, and to be your God."
+    },
+    {
+      "n": 39,
+      "c": 25,
+      "v": 39,
+      "ref": "25:39",
+      "text": "וְכִֽי־יָמ֥וּךְ אָחִ֛יךָ עִמָּ֖ךְ וְנִמְכַּר־לָ֑ךְ לֹא־תַעֲבֹ֥ד בּ֖וֹ עֲבֹ֥דַת עָֽבֶד׃",
+      "en": "And if thy brother who dwells by thee be grown poor, and be sold to thee; thou shalt not compel him to serve as a bondservant:"
+    },
+    {
+      "n": 40,
+      "c": 25,
+      "v": 40,
+      "ref": "25:40",
+      "text": "כְּשָׂכִ֥יר כְּתוֹשָׁ֖ב יִהְיֶ֣ה עִמָּ֑ךְ עַד־שְׁנַ֥ת הַיֹּבֵ֖ל יַעֲבֹ֥ד עִמָּֽךְ׃",
+      "en": "but as a hired servant, and as a sojourner, he shall be with thee, and shall serve thee until the year of jubilee:"
+    },
+    {
+      "n": 41,
+      "c": 25,
+      "v": 41,
+      "ref": "25:41",
+      "text": "וְיָצָא֙ מֵֽעִמָּ֔ךְ ה֖וּא וּבָנָ֣יו עִמּ֑וֹ וְשָׁב֙ אֶל־מִשְׁפַּחְתּ֔וֹ וְאֶל־אֲחֻזַּ֥ת אֲבֹתָ֖יו יָשֽׁוּב׃",
+      "en": "and then shall he depart from thee, both he and his children with him, and shall return to his own family, and to the possession of his fathers shall he return."
+    },
+    {
+      "n": 42,
+      "c": 25,
+      "v": 42,
+      "ref": "25:42",
+      "text": "כִּֽי־עֲבָדַ֣י הֵ֔ם אֲשֶׁר־הוֹצֵ֥אתִי אֹתָ֖ם מֵאֶ֣רֶץ מִצְרָ֑יִם לֹ֥א יִמָּכְר֖וּ מִמְכֶּ֥רֶת עָֽבֶד׃",
+      "en": "For they are my servants, whom I brought out of the land of Miżrayim: they shall not be sold as bondmen."
+    },
+    {
+      "n": 43,
+      "c": 25,
+      "v": 43,
+      "ref": "25:43",
+      "text": "לֹא־תִרְדֶּ֥ה ב֖וֹ בְּפָ֑רֶךְ וְיָרֵ֖אתָ מֵאֱלֹהֶֽיךָ׃",
+      "en": "Thou shalt not rule over him with rigour; but shalt fear thy God."
+    },
+    {
+      "n": 44,
+      "c": 25,
+      "v": 44,
+      "ref": "25:44",
+      "text": "וְעַבְדְּךָ֥ וַאֲמָתְךָ֖ אֲשֶׁ֣ר יִהְיוּ־לָ֑ךְ מֵאֵ֣ת הַגּוֹיִ֗ם אֲשֶׁר֙ סְבִיבֹ֣תֵיכֶ֔ם מֵהֶ֥ם תִּקְנ֖וּ עֶ֥בֶד וְאָמָֽה׃",
+      "en": "Both thy bondmen, and thy bondmaids, whom thou shalt have, shall be of the nations that are round about you; of them may you buy bondmen and bondmaids."
+    },
+    {
+      "n": 45,
+      "c": 25,
+      "v": 45,
+      "ref": "25:45",
+      "text": "וְ֠גַ֠ם מִבְּנֵ֨י הַתּוֹשָׁבִ֜ים הַגָּרִ֤ים עִמָּכֶם֙ מֵהֶ֣ם תִּקְנ֔וּ וּמִמִּשְׁפַּחְתָּם֙ אֲשֶׁ֣ר עִמָּכֶ֔ם אֲשֶׁ֥ר הוֹלִ֖ידוּ בְּאַרְצְכֶ֑ם וְהָי֥וּ לָכֶ֖ם לַֽאֲחֻזָּֽה׃",
+      "en": "Moreover of the children of the strangers that do sojourn among you, of them shall you buy, and of their families that are with you, whom they have begotten in your land: and they shall be your possession."
+    },
+    {
+      "n": 46,
+      "c": 25,
+      "v": 46,
+      "ref": "25:46",
+      "text": "וְהִתְנַחַלְתֶּ֨ם אֹתָ֜ם לִבְנֵיכֶ֤ם אַחֲרֵיכֶם֙ לָרֶ֣שֶׁת אֲחֻזָּ֔ה לְעֹלָ֖ם בָּהֶ֣ם תַּעֲבֹ֑דוּ וּבְאַ֨חֵיכֶ֤ם בְּנֵֽי־יִשְׂרָאֵל֙ אִ֣ישׁ בְּאָחִ֔יו לֹא־תִרְדֶּ֥ה ב֖וֹ בְּפָֽרֶךְ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And you shall take them as an inheritance for your children after you, to inherit them for a possession; they shall be your bondmen for ever: but over your brethren the children of Yisra᾽el, you shall not rule one over another with rigour."
+    },
+    {
+      "n": 47,
+      "c": 25,
+      "v": 47,
+      "ref": "25:47",
+      "text": "וְכִ֣י תַשִּׂ֗יג יַ֣ד גֵּ֤ר וְתוֹשָׁב֙ עִמָּ֔ךְ וּמָ֥ךְ אָחִ֖יךָ עִמּ֑וֹ וְנִמְכַּ֗ר לְגֵ֤ר תּוֹשָׁב֙ עִמָּ֔ךְ א֥וֹ לְעֵ֖קֶר מִשְׁפַּ֥חַת גֵּֽר׃",
+      "en": "And if a sojourner or stranger grow rich by thee, and thy brother that dwells by him grows poor, and sell himself to the stranger or sojourner by thee, or to the offspring of a stranger’s family:"
+    },
+    {
+      "n": 48,
+      "c": 25,
+      "v": 48,
+      "ref": "25:48",
+      "text": "אַחֲרֵ֣י נִמְכַּ֔ר גְּאֻלָּ֖ה תִּהְיֶה־לּ֑וֹ אֶחָ֥ד מֵאֶחָ֖יו יִגְאָלֶֽנּוּ׃",
+      "en": "after he is sold he may be redeemed again; one of his brethren may redeem him:"
+    },
+    {
+      "n": 49,
+      "c": 25,
+      "v": 49,
+      "ref": "25:49",
+      "text": "אוֹ־דֹד֞וֹ א֤וֹ בֶן־דֹּדוֹ֙ יִגְאָלֶ֔נּוּ אֽוֹ־מִשְּׁאֵ֧ר בְּשָׂר֛וֹ מִמִּשְׁפַּחְתּ֖וֹ יִגְאָלֶ֑נּוּ אֽוֹ־הִשִּׂ֥יגָה יָד֖וֹ וְנִגְאָֽל׃",
+      "en": "either his uncle, or his uncle’s son, may redeem him, or any that is near of kin to him of his family may redeem him; or if his means suffice, he may redeem himself."
+    },
+    {
+      "n": 50,
+      "c": 25,
+      "v": 50,
+      "ref": "25:50",
+      "text": "וְחִשַּׁב֙ עִם־קֹנֵ֔הוּ מִשְּׁנַת֙ הִמָּ֣כְרוֹ ל֔וֹ עַ֖ד שְׁנַ֣ת הַיֹּבֵ֑ל וְהָיָ֞ה כֶּ֤סֶף מִמְכָּרוֹ֙ בְּמִסְפַּ֣ר שָׁנִ֔ים כִּימֵ֥י שָׂכִ֖יר יִהְיֶ֥ה עִמּֽוֹ׃",
+      "en": "And he shall reckon with him who bought him from the year that he was sold to him to the year of jubilee: and the price of his sale shall be according to the number of years, according to the time of a hired servant shall it be with him."
+    },
+    {
+      "n": 51,
+      "c": 25,
+      "v": 51,
+      "ref": "25:51",
+      "text": "אִם־ע֥וֹד רַבּ֖וֹת בַּשָּׁנִ֑ים לְפִיהֶן֙ יָשִׁ֣יב גְּאֻלָּת֔וֹ מִכֶּ֖סֶף מִקְנָתֽוֹ׃",
+      "en": "If there are yet many years, according to them he shall restore the price of his redemption out of the money that he was bought for."
+    },
+    {
+      "n": 52,
+      "c": 25,
+      "v": 52,
+      "ref": "25:52",
+      "text": "וְאִם־מְעַ֞ט נִשְׁאַ֧ר בַּשָּׁנִ֛ים עַד־שְׁנַ֥ת הַיֹּבֵ֖ל וְחִשַּׁב־ל֑וֹ כְּפִ֣י שָׁנָ֔יו יָשִׁ֖יב אֶת־גְּאֻלָּתֽוֹ׃",
+      "en": "And if there remain but few years until the year of jubilee, then he shall count with him, and according to his years shall he restore the price of his redemption."
+    },
+    {
+      "n": 53,
+      "c": 25,
+      "v": 53,
+      "ref": "25:53",
+      "text": "כִּשְׂכִ֥יר שָׁנָ֛ה בְּשָׁנָ֖ה יִהְיֶ֣ה עִמּ֑וֹ לֹֽא־יִרְדֶּ֥נּֽוּ בְּפֶ֖רֶךְ לְעֵינֶֽיךָ׃",
+      "en": "As a yearly hired servant shall he be with him: and the other shall not rule with rigour over him in thy sight."
+    },
+    {
+      "n": 54,
+      "c": 25,
+      "v": 54,
+      "ref": "25:54",
+      "text": "וְאִם־לֹ֥א יִגָּאֵ֖ל בְּאֵ֑לֶּה וְיָצָא֙ בִּשְׁנַ֣ת הַיֹּבֵ֔ל ה֖וּא וּבָנָ֥יו עִמּֽוֹ׃",
+      "en": "And if he be not redeemed in these years, then he shall go out in the year of jubilee, both he, and his children with him."
+    },
+    {
+      "n": 55,
+      "c": 25,
+      "v": 55,
+      "ref": "25:55",
+      "text": "כִּֽי־לִ֤י בְנֵֽי־יִשְׂרָאֵל֙ עֲבָדִ֔ים עֲבָדַ֣י הֵ֔ם אֲשֶׁר־הוֹצֵ֥אתִי אוֹתָ֖ם מֵאֶ֣רֶץ מִצְרָ֑יִם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "For to me the children of Yisra᾽el are servants; they are my servants whom I brought forth out of the land of Miżrayim: I am the Lord your God."
+    },
+    {
+      "n": 56,
+      "c": 26,
+      "v": 1,
+      "ref": "26:1",
+      "text": "לֹֽא־תַעֲשׂ֨וּ לָכֶ֜ם אֱלִילִ֗ם וּפֶ֤סֶל וּמַצֵּבָה֙ לֹֽא־תָקִ֣ימוּ לָכֶ֔ם וְאֶ֣בֶן מַשְׂכִּ֗ית לֹ֤א תִתְּנוּ֙ בְּאַרְצְכֶ֔ם לְהִֽשְׁתַּחֲוֺ֖ת עָלֶ֑יהָ כִּ֛י אֲנִ֥י יְהֹוָ֖ה אֱלֹהֵיכֶֽם׃",
+      "en": "You shall make no idols, nor shall you erect a carved idol, or a pillar, nor shall you install a figured stone in your land, to bow down upon it: for I am the Lord your God."
+    },
+    {
+      "n": 57,
+      "c": 26,
+      "v": 2,
+      "ref": "26:2",
+      "text": "אֶת־שַׁבְּתֹתַ֣י תִּשְׁמֹ֔רוּ וּמִקְדָּשִׁ֖י תִּירָ֑אוּ אֲנִ֖י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "You shall keep my sabbaths, and reverence my sanctuary, I am the Lord."
+    }
+  ],
+  "parashah": {
+    "en": "Behar",
+    "he": "בְּהַר",
+    "translit": "Behar",
+    "ref": "Leviticus 25:1–26:2"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 13,
+        "ref": "25:1–25:13"
+      },
+      {
+        "n": 2,
+        "start": 14,
+        "end": 18,
+        "ref": "25:14–25:18"
+      },
+      {
+        "n": 3,
+        "start": 19,
+        "end": 24,
+        "ref": "25:19–25:24"
+      },
+      {
+        "n": 4,
+        "start": 25,
+        "end": 28,
+        "ref": "25:25–25:28"
+      },
+      {
+        "n": 5,
+        "start": 29,
+        "end": 38,
+        "ref": "25:29–25:38"
+      },
+      {
+        "n": 6,
+        "start": 39,
+        "end": 46,
+        "ref": "25:39–25:46"
+      },
+      {
+        "n": 7,
+        "start": 47,
+        "end": 57,
+        "ref": "25:47–26:2"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "25:1–25:3"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 6,
+          "ref": "25:4–25:6"
+        },
+        {
+          "n": 3,
+          "start": 7,
+          "end": 9,
+          "ref": "25:7–25:9"
+        },
+        {
+          "n": 4,
+          "start": 10,
+          "end": 12,
+          "ref": "25:10–25:12"
+        },
+        {
+          "n": 5,
+          "start": 13,
+          "end": 15,
+          "ref": "25:13–25:15"
+        },
+        {
+          "n": 6,
+          "start": 16,
+          "end": 17,
+          "ref": "25:16–25:17"
+        },
+        {
+          "n": 7,
+          "start": 18,
+          "end": 19,
+          "ref": "25:18–25:19"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 20,
+          "end": 22,
+          "ref": "25:20–25:22"
+        },
+        {
+          "n": 2,
+          "start": 23,
+          "end": 25,
+          "ref": "25:23–25:25"
+        },
+        {
+          "n": 3,
+          "start": 26,
+          "end": 28,
+          "ref": "25:26–25:28"
+        },
+        {
+          "n": 4,
+          "start": 29,
+          "end": 31,
+          "ref": "25:29–25:31"
+        },
+        {
+          "n": 5,
+          "start": 32,
+          "end": 34,
+          "ref": "25:32–25:34"
+        },
+        {
+          "n": 6,
+          "start": 35,
+          "end": 36,
+          "ref": "25:35–25:36"
+        },
+        {
+          "n": 7,
+          "start": 37,
+          "end": 38,
+          "ref": "25:37–25:38"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 39,
+          "end": 41,
+          "ref": "25:39–25:41"
+        },
+        {
+          "n": 2,
+          "start": 42,
+          "end": 44,
+          "ref": "25:42–25:44"
+        },
+        {
+          "n": 3,
+          "start": 45,
+          "end": 47,
+          "ref": "25:45–25:47"
+        },
+        {
+          "n": 4,
+          "start": 48,
+          "end": 50,
+          "ref": "25:48–25:50"
+        },
+        {
+          "n": 5,
+          "start": 51,
+          "end": 53,
+          "ref": "25:51–25:53"
+        },
+        {
+          "n": 6,
+          "start": 54,
+          "end": 55,
+          "ref": "25:54–25:55"
+        },
+        {
+          "n": 7,
+          "start": 56,
+          "end": 57,
+          "ref": "26:1–26:2"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 55,
+        "end": 57,
+        "ref": "25:55–26:2"
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

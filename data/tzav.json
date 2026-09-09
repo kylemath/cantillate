@@ -1,0 +1,1009 @@
+{
+  "slug": "tzav",
+  "book": {
+    "en": "Leviticus",
+    "he": "ויקרא",
+    "translit": "Vayikra"
+  },
+  "multiChapter": true,
+  "ref": "Leviticus 6:1-8:36",
+  "heRef": "ויקרא ו׳:א-ח׳:ל״ו",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 6,
+      "v": 1,
+      "ref": "6:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 2,
+      "c": 6,
+      "v": 2,
+      "ref": "6:2",
+      "text": "צַ֤ו אֶֽת־אַהֲרֹן֙ וְאֶת־בָּנָ֣יו לֵאמֹ֔ר זֹ֥את תּוֹרַ֖ת הָעֹלָ֑ה הִ֣וא הָעֹלָ֡ה עַל֩ <small>מ</small>וֹקְדָ֨הֿ<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי תימן מוֹקְדָ֨הֿ במ״ם רגילה)</i> עַל־הַמִּזְבֵּ֤חַ כׇּל־הַלַּ֙יְלָה֙ עַד־הַבֹּ֔קֶר וְאֵ֥שׁ הַמִּזְבֵּ֖חַ תּ֥וּקַד בּֽוֹ׃",
+      "en": "Command Aharon and his sons, saying, This is the Tora of the burnt offering: It is the burnt offering, which shall be burning upon the altar all night until the morning, and the fire of the altar shall be kept burning in it."
+    },
+    {
+      "n": 3,
+      "c": 6,
+      "v": 3,
+      "ref": "6:3",
+      "text": "וְלָבַ֨שׁ הַכֹּהֵ֜ן מִדּ֣וֹ בַ֗ד וּמִֽכְנְסֵי־בַד֮ יִלְבַּ֣שׁ עַל־בְּשָׂרוֹ֒ וְהֵרִ֣ים אֶת־הַדֶּ֗שֶׁן אֲשֶׁ֨ר תֹּאכַ֥ל הָאֵ֛שׁ אֶת־הָעֹלָ֖ה עַל־הַמִּזְבֵּ֑חַ וְשָׂמ֕וֹ אֵ֖צֶל הַמִּזְבֵּֽחַ׃",
+      "en": "And the priest shall put on his linen garment, and his linen breeches shall he put on his flesh, and take up the ashes which the fire has consumed with the burnt offering on the altar, and he shall put them beside the altar."
+    },
+    {
+      "n": 4,
+      "c": 6,
+      "v": 4,
+      "ref": "6:4",
+      "text": "וּפָשַׁט֙ אֶת־בְּגָדָ֔יו וְלָבַ֖שׁ בְּגָדִ֣ים אֲחֵרִ֑ים וְהוֹצִ֤יא אֶת־הַדֶּ֙שֶׁן֙ אֶל־מִח֣וּץ לַֽמַּחֲנֶ֔ה אֶל־מָק֖וֹם טָהֽוֹר׃",
+      "en": "And he shall put off his garments, and put on other garments, and carry the ashes outside the camp to a clean place."
+    },
+    {
+      "n": 5,
+      "c": 6,
+      "v": 5,
+      "ref": "6:5",
+      "text": "וְהָאֵ֨שׁ עַל־הַמִּזְבֵּ֤חַ תּֽוּקַד־בּוֹ֙ לֹ֣א תִכְבֶּ֔ה וּבִעֵ֨ר עָלֶ֧יהָ הַכֹּהֵ֛ן עֵצִ֖ים בַּבֹּ֣קֶר בַּבֹּ֑קֶר וְעָרַ֤ךְ עָלֶ֙יהָ֙ הָֽעֹלָ֔ה וְהִקְטִ֥יר עָלֶ֖יהָ חֶלְבֵ֥י הַשְּׁלָמִֽים׃",
+      "en": "And the fire upon the altar shall be kept burning in it; it shall not be put out: and the priest shall burn wood on it every morning, and lay the burnt offering in order upon it; and he shall burn on it the fat of the peace offerings."
+    },
+    {
+      "n": 6,
+      "c": 6,
+      "v": 6,
+      "ref": "6:6",
+      "text": "אֵ֗שׁ תָּמִ֛יד תּוּקַ֥ד עַל־הַמִּזְבֵּ֖חַ לֹ֥א תִכְבֶּֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "The fire shall ever be burning upon the altar; it shall never go out."
+    },
+    {
+      "n": 7,
+      "c": 6,
+      "v": 7,
+      "ref": "6:7",
+      "text": "וְזֹ֥את תּוֹרַ֖ת הַמִּנְחָ֑ה הַקְרֵ֨ב אֹתָ֤הּ בְּנֵֽי־אַהֲרֹן֙ לִפְנֵ֣י יְהֹוָ֔ה אֶל־פְּנֵ֖י הַמִּזְבֵּֽחַ׃",
+      "en": "And this is the Tora of the meal offering: the sons of Aharon shall offer it before the Lord, before the altar."
+    },
+    {
+      "n": 8,
+      "c": 6,
+      "v": 8,
+      "ref": "6:8",
+      "text": "וְהֵרִ֨ים מִמֶּ֜נּוּ בְּקֻמְצ֗וֹ מִסֹּ֤לֶת הַמִּנְחָה֙ וּמִשַּׁמְנָ֔הּ וְאֵת֙ כׇּל־הַלְּבֹנָ֔ה אֲשֶׁ֖ר עַל־הַמִּנְחָ֑ה וְהִקְטִ֣יר הַמִּזְבֵּ֗חַ רֵ֧יחַ נִיחֹ֛חַ אַזְכָּרָתָ֖הּ לַיהֹוָֽה׃",
+      "en": "And he shall lift from it his handful, of the flour of the meal offering, and of its oil, and all the frankincense which is upon the meal offering, and shall burn it upon the altar for a sweet savour, even the memorial part of it, to the Lord."
+    },
+    {
+      "n": 9,
+      "c": 6,
+      "v": 9,
+      "ref": "6:9",
+      "text": "וְהַנּוֹתֶ֣רֶת מִמֶּ֔נָּה יֹאכְל֖וּ אַהֲרֹ֣ן וּבָנָ֑יו מַצּ֤וֹת תֵּֽאָכֵל֙ בְּמָק֣וֹם קָדֹ֔שׁ בַּחֲצַ֥ר אֹֽהֶל־מוֹעֵ֖ד יֹאכְלֽוּהָ׃",
+      "en": "And the remainder of it shall Aharon and his sons eat: with unleavened bread shall it be eaten in the holy place; in the court of the Tent of Meeting they shall eat it."
+    },
+    {
+      "n": 10,
+      "c": 6,
+      "v": 10,
+      "ref": "6:10",
+      "text": "לֹ֤א תֵאָפֶה֙ חָמֵ֔ץ חֶלְקָ֛ם נָתַ֥תִּי אֹתָ֖הּ מֵאִשָּׁ֑י קֹ֤דֶשׁ קׇֽדָשִׁים֙ הִ֔וא כַּחַטָּ֖את וְכָאָשָֽׁם׃",
+      "en": "It shall not be baked with leaven. I have given it to them for their portion of my offerings made by fire; it is most holy, as is the sin offering, and the guilt offering."
+    },
+    {
+      "n": 11,
+      "c": 6,
+      "v": 11,
+      "ref": "6:11",
+      "text": "כׇּל־זָכָ֞ר בִּבְנֵ֤י אַהֲרֹן֙ יֹֽאכְלֶ֔נָּה חׇק־עוֹלָם֙ לְדֹרֹ֣תֵיכֶ֔ם מֵאִשֵּׁ֖י יְהֹוָ֑ה כֹּ֛ל אֲשֶׁר־יִגַּ֥ע בָּהֶ֖ם יִקְדָּֽשׁ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "All the males among the children of Aharon shall eat of it. It shall be a fixed portion throughout your generations of the offerings of the Lord made by fire: everyone that touches them shall be holy."
+    },
+    {
+      "n": 12,
+      "c": 6,
+      "v": 12,
+      "ref": "6:12",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 13,
+      "c": 6,
+      "v": 13,
+      "ref": "6:13",
+      "text": "זֶ֡ה קׇרְבַּן֩ אַהֲרֹ֨ן וּבָנָ֜יו אֲשֶׁר־יַקְרִ֣יבוּ לַֽיהֹוָ֗ה בְּיוֹם֙ הִמָּשַׁ֣ח אֹת֔וֹ עֲשִׂירִ֨ת הָאֵפָ֥ה סֹ֛לֶת מִנְחָ֖ה תָּמִ֑יד מַחֲצִיתָ֣הּ בַּבֹּ֔קֶר וּמַחֲצִיתָ֖הּ בָּעָֽרֶב׃",
+      "en": "This is the offering of Aharon and of his sons, which they shall offer to the Lord on the day when he is anointed; the tenth part of an efa of fine flour for a meal offering perpetual, half of it in the morning, and half of it at night."
+    },
+    {
+      "n": 14,
+      "c": 6,
+      "v": 14,
+      "ref": "6:14",
+      "text": "עַֽל־מַחֲבַ֗ת בַּשֶּׁ֛מֶן תֵּעָשֶׂ֖ה מֻרְבֶּ֣כֶת תְּבִיאֶ֑נָּה תֻּפִינֵי֙ מִנְחַ֣ת פִּתִּ֔ים תַּקְרִ֥יב רֵֽיחַ־נִיחֹ֖חַ לַיהֹוָֽה׃",
+      "en": "In a pan it shall be made with oil; and when it is well soaked, thou shalt bring it in: and the baked pieces of the meal offering shalt thou offer for a sweet savour to the Lord."
+    },
+    {
+      "n": 15,
+      "c": 6,
+      "v": 15,
+      "ref": "6:15",
+      "text": "וְהַכֹּהֵ֨ן הַמָּשִׁ֧יחַ תַּחְתָּ֛יו מִבָּנָ֖יו יַעֲשֶׂ֣ה אֹתָ֑הּ חׇק־עוֹלָ֕ם לַיהֹוָ֖ה כָּלִ֥יל תׇּקְטָֽר׃",
+      "en": "And the priest of his sons that is anointed in his place shall offer it: it is a statute for ever to the Lord; it shall be wholly burnt."
+    },
+    {
+      "n": 16,
+      "c": 6,
+      "v": 16,
+      "ref": "6:16",
+      "text": "וְכׇל־מִנְחַ֥ת כֹּהֵ֛ן כָּלִ֥יל תִּהְיֶ֖ה לֹ֥א תֵאָכֵֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "For every meal offering of the priest shall be wholly burnt: it shall not be eaten."
+    },
+    {
+      "n": 17,
+      "c": 6,
+      "v": 17,
+      "ref": "6:17",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 18,
+      "c": 6,
+      "v": 18,
+      "ref": "6:18",
+      "text": "דַּבֵּ֤ר אֶֽל־אַהֲרֹן֙ וְאֶל־בָּנָ֣יו לֵאמֹ֔ר זֹ֥את תּוֹרַ֖ת הַֽחַטָּ֑את בִּמְק֡וֹם אֲשֶׁר֩ תִּשָּׁחֵ֨ט הָעֹלָ֜ה תִּשָּׁחֵ֤ט הַֽחַטָּאת֙ לִפְנֵ֣י יְהֹוָ֔ה קֹ֥דֶשׁ קׇֽדָשִׁ֖ים הִֽוא׃",
+      "en": "Speak to Aharon and to his sons, saying, This is the Tora of the sin offering: In the place where the burnt offering is killed shall the sin offering be killed before the Lord: it is most holy."
+    },
+    {
+      "n": 19,
+      "c": 6,
+      "v": 19,
+      "ref": "6:19",
+      "text": "הַכֹּהֵ֛ן הַֽמְחַטֵּ֥א אֹתָ֖הּ יֹאכְלֶ֑נָּה בְּמָק֤וֹם קָדֹשׁ֙ תֵּֽאָכֵ֔ל בַּחֲצַ֖ר אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "The priest that offers it for sin shall eat it: in the holy place shall it be eaten, in the court of the Tent of Meeting."
+    },
+    {
+      "n": 20,
+      "c": 6,
+      "v": 20,
+      "ref": "6:20",
+      "text": "כֹּ֛ל אֲשֶׁר־יִגַּ֥ע בִּבְשָׂרָ֖הּ יִקְדָּ֑שׁ וַאֲשֶׁ֨ר יִזֶּ֤ה מִדָּמָהּ֙ עַל־הַבֶּ֔גֶד אֲשֶׁר֙ יִזֶּ֣ה עָלֶ֔יהָ תְּכַבֵּ֖ס בְּמָק֥וֹם קָדֹֽשׁ׃",
+      "en": "Whatever shall touch its flesh shall be holy: and when there is sprinkled of its blood upon any garment, thou shalt wash that on which it was sprinkled in the holy place."
+    },
+    {
+      "n": 21,
+      "c": 6,
+      "v": 21,
+      "ref": "6:21",
+      "text": "וּכְלִי־חֶ֛רֶשׂ אֲשֶׁ֥ר תְּבֻשַּׁל־בּ֖וֹ יִשָּׁבֵ֑ר וְאִם־בִּכְלִ֤י נְחֹ֙שֶׁת֙ בֻּשָּׁ֔לָה וּמֹרַ֥ק וְשֻׁטַּ֖ף בַּמָּֽיִם׃",
+      "en": "But the earthen vessel in which it is boiled shall be broken: and if it be boiled in a brass pot, it shall be both scoured, and rinsed in water."
+    },
+    {
+      "n": 22,
+      "c": 6,
+      "v": 22,
+      "ref": "6:22",
+      "text": "כׇּל־זָכָ֥ר בַּכֹּהֲנִ֖ים יֹאכַ֣ל אֹתָ֑הּ קֹ֥דֶשׁ קׇֽדָשִׁ֖ים הִֽוא׃",
+      "en": "All the males among the priests shall eat of it: it is most holy."
+    },
+    {
+      "n": 23,
+      "c": 6,
+      "v": 23,
+      "ref": "6:23",
+      "text": "וְכׇל־חַטָּ֡את אֲשֶׁר֩ יוּבָ֨א מִדָּמָ֜הּ אֶל־אֹ֧הֶל מוֹעֵ֛ד לְכַפֵּ֥ר בַּקֹּ֖דֶשׁ לֹ֣א תֵאָכֵ֑ל בָּאֵ֖שׁ תִּשָּׂרֵֽף׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And no sin offering, of which any of the blood is brought into the Tent of Meeting to be sprinkled in the holy place, shall be eaten: it shall be burnt in the fire."
+    },
+    {
+      "n": 24,
+      "c": 7,
+      "v": 1,
+      "ref": "7:1",
+      "text": "וְזֹ֥את תּוֹרַ֖ת הָאָשָׁ֑ם קֹ֥דֶשׁ קׇֽדָשִׁ֖ים הֽוּא׃",
+      "en": "And this is the Tora of the guilt offering: it is most holy."
+    },
+    {
+      "n": 25,
+      "c": 7,
+      "v": 2,
+      "ref": "7:2",
+      "text": "בִּמְק֗וֹם אֲשֶׁ֤ר יִשְׁחֲטוּ֙ אֶת־הָ֣עֹלָ֔ה יִשְׁחֲט֖וּ אֶת־הָאָשָׁ֑ם וְאֶת־דָּמ֛וֹ יִזְרֹ֥ק עַל־הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "In the place where they kill the burnt offering shall they kill the guilt offering: and its blood shall be sprinkled round about upon the altar."
+    },
+    {
+      "n": 26,
+      "c": 7,
+      "v": 3,
+      "ref": "7:3",
+      "text": "וְאֵ֥ת כׇּל־חֶלְבּ֖וֹ יַקְרִ֣יב מִמֶּ֑נּוּ אֵ֚ת הָֽאַלְיָ֔ה וְאֶת־הַחֵ֖לֶב הַֽמְכַסֶּ֥ה אֶת־הַקֶּֽרֶב׃",
+      "en": "And he shall offer of it all the fat; the fat tail, and the fat that covers the inwards,"
+    },
+    {
+      "n": 27,
+      "c": 7,
+      "v": 4,
+      "ref": "7:4",
+      "text": "וְאֵת֙ שְׁתֵּ֣י הַכְּלָיֹ֔ת וְאֶת־הַחֵ֙לֶב֙ אֲשֶׁ֣ר עֲלֵיהֶ֔ן אֲשֶׁ֖ר עַל־הַכְּסָלִ֑ים וְאֶת־הַיֹּתֶ֙רֶת֙ עַל־הַכָּבֵ֔ד עַל־הַכְּלָיֹ֖ת יְסִירֶֽנָּה׃",
+      "en": "and the two kidneys, and the fat that is on them, which is by the flanks, and the appendage above the liver, with the kidneys, it shall he take away:"
+    },
+    {
+      "n": 28,
+      "c": 7,
+      "v": 5,
+      "ref": "7:5",
+      "text": "וְהִקְטִ֨יר אֹתָ֤ם הַכֹּהֵן֙ הַמִּזְבֵּ֔חָה אִשֶּׁ֖ה לַיהֹוָ֑ה אָשָׁ֖ם הֽוּא׃",
+      "en": "and the priest shall burn them upon the altar for an offering made by fire to the Lord: it is a guilt offering."
+    },
+    {
+      "n": 29,
+      "c": 7,
+      "v": 6,
+      "ref": "7:6",
+      "text": "כׇּל־זָכָ֥ר בַּכֹּהֲנִ֖ים יֹאכְלֶ֑נּוּ בְּמָק֤וֹם קָדוֹשׁ֙ יֵאָכֵ֔ל קֹ֥דֶשׁ קׇֽדָשִׁ֖ים הֽוּא׃",
+      "en": "Every male among the priests shall eat of it: it shall be eaten in the holy place: it is most holy."
+    },
+    {
+      "n": 30,
+      "c": 7,
+      "v": 7,
+      "ref": "7:7",
+      "text": "כַּֽחַטָּאת֙ כָּֽאָשָׁ֔ם תּוֹרָ֥ה אַחַ֖ת לָהֶ֑ם הַכֹּהֵ֛ן אֲשֶׁ֥ר יְכַפֶּר־בּ֖וֹ ל֥וֹ יִהְיֶֽה׃",
+      "en": "As the sin offering is, so is the guilt offering: there is one Tora for them: the priest that makes atonement therewith shall have it."
+    },
+    {
+      "n": 31,
+      "c": 7,
+      "v": 8,
+      "ref": "7:8",
+      "text": "וְהַ֨כֹּהֵ֔ן הַמַּקְרִ֖יב אֶת־עֹ֣לַת אִ֑ישׁ ע֤וֹר הָֽעֹלָה֙ אֲשֶׁ֣ר הִקְרִ֔יב לַכֹּהֵ֖ן ל֥וֹ יִהְיֶֽה׃",
+      "en": "And the priest that offers any man’s burnt offering, the priest shall have for himself the skin of the burnt offering which he has offered."
+    },
+    {
+      "n": 32,
+      "c": 7,
+      "v": 9,
+      "ref": "7:9",
+      "text": "וְכׇל־מִנְחָ֗ה אֲשֶׁ֤ר תֵּֽאָפֶה֙ בַּתַּנּ֔וּר וְכׇל־נַעֲשָׂ֥ה בַמַּרְחֶ֖שֶׁת וְעַֽל־מַחֲבַ֑ת לַכֹּהֵ֛ן הַמַּקְרִ֥יב אֹתָ֖הּ ל֥וֹ תִֽהְיֶֽה׃",
+      "en": "And all the meal offering that is baked in the oven, and all that is dressed in the frying pan, and in the pan, shall be the priest’s that offers it."
+    },
+    {
+      "n": 33,
+      "c": 7,
+      "v": 10,
+      "ref": "7:10",
+      "text": "וְכׇל־מִנְחָ֥ה בְלוּלָֽה־בַשֶּׁ֖מֶן וַחֲרֵבָ֑ה לְכׇל־בְּנֵ֧י אַהֲרֹ֛ן תִּהְיֶ֖ה אִ֥ישׁ כְּאָחִֽיו׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And every meal offering, mingled with oil, and dry, shall all the sons of Aharon have, one as well as another."
+    },
+    {
+      "n": 34,
+      "c": 7,
+      "v": 11,
+      "ref": "7:11",
+      "text": "וְזֹ֥את תּוֹרַ֖ת זֶ֣בַח הַשְּׁלָמִ֑ים אֲשֶׁ֥ר יַקְרִ֖יב לַיהֹוָֽה׃",
+      "en": "And this is the Tora of the peace offerings, which he shall offer to the Lord."
+    },
+    {
+      "n": 35,
+      "c": 7,
+      "v": 12,
+      "ref": "7:12",
+      "text": "אִ֣ם עַל־תּוֹדָה֮ יַקְרִיבֶ֒נּוּ֒ וְהִקְרִ֣יב&thinsp;<b>׀</b> עַל־זֶ֣בַח הַתּוֹדָ֗ה חַלּ֤וֹת מַצּוֹת֙ בְּלוּלֹ֣ת בַּשֶּׁ֔מֶן וּרְקִיקֵ֥י מַצּ֖וֹת מְשֻׁחִ֣ים בַּשָּׁ֑מֶן וְסֹ֣לֶת מֻרְבֶּ֔כֶת חַלֹּ֖ת בְּלוּלֹ֥ת בַּשָּֽׁמֶן׃",
+      "en": "If he offer it for a thanksgiving, then he shall offer with the sacrifice of thanksgiving unleavened cakes mingled with oil, and unleavened wafers anointed with oil, and cakes mingled with oil, of fine flour, well soaked."
+    },
+    {
+      "n": 36,
+      "c": 7,
+      "v": 13,
+      "ref": "7:13",
+      "text": "עַל־חַלֹּת֙ לֶ֣חֶם חָמֵ֔ץ יַקְרִ֖יב קׇרְבָּנ֑וֹ עַל־זֶ֖בַח תּוֹדַ֥ת שְׁלָמָֽיו׃",
+      "en": "Together with loaves of leavened bread shall he make his offering, these to be added to his peace offering of thanksgiving."
+    },
+    {
+      "n": 37,
+      "c": 7,
+      "v": 14,
+      "ref": "7:14",
+      "text": "וְהִקְרִ֨יב מִמֶּ֤נּוּ אֶחָד֙ מִכׇּל־קׇרְבָּ֔ן תְּרוּמָ֖ה לַיהֹוָ֑ה לַכֹּהֵ֗ן הַזֹּרֵ֛ק אֶת־דַּ֥ם הַשְּׁלָמִ֖ים ל֥וֹ יִהְיֶֽה׃",
+      "en": "And of it he shall offer one out of each offering for a heave offering to the Lord, and it shall be the priest’s that sprinkles the blood of the peace offering."
+    },
+    {
+      "n": 38,
+      "c": 7,
+      "v": 15,
+      "ref": "7:15",
+      "text": "וּבְשַׂ֗ר זֶ֚בַח תּוֹדַ֣ת שְׁלָמָ֔יו בְּי֥וֹם קׇרְבָּנ֖וֹ יֵאָכֵ֑ל לֹֽא־יַנִּ֥יחַ מִמֶּ֖נּוּ עַד־בֹּֽקֶר׃",
+      "en": "And the flesh of the sacrifice of his peace offering for thanksgiving shall be eaten the same day that it is offered; he shall not leave any of it until the morning."
+    },
+    {
+      "n": 39,
+      "c": 7,
+      "v": 16,
+      "ref": "7:16",
+      "text": "וְאִם־נֶ֣דֶר&thinsp;<b>׀</b> א֣וֹ נְדָבָ֗ה זֶ֚בַח קׇרְבָּנ֔וֹ בְּי֛וֹם הַקְרִיב֥וֹ אֶת־זִבְח֖וֹ יֵאָכֵ֑ל וּמִֽמׇּחֳרָ֔ת וְהַנּוֹתָ֥ר מִמֶּ֖נּוּ יֵאָכֵֽל׃",
+      "en": "But if the sacrifice of his offering be a vow, or a voluntary offering, it shall be eaten on the same day that he offers his sacrifice: and on the morrow also the remainder of it shall be eaten:"
+    },
+    {
+      "n": 40,
+      "c": 7,
+      "v": 17,
+      "ref": "7:17",
+      "text": "וְהַנּוֹתָ֖ר מִבְּשַׂ֣ר הַזָּ֑בַח בַּיּוֹם֙ הַשְּׁלִישִׁ֔י בָּאֵ֖שׁ יִשָּׂרֵֽף׃",
+      "en": "but that which remains of the flesh of the sacrifice on the third day shall be burnt with fire."
+    },
+    {
+      "n": 41,
+      "c": 7,
+      "v": 18,
+      "ref": "7:18",
+      "text": "וְאִ֣ם הֵאָכֹ֣ל יֵ֠אָכֵ֠ל מִבְּשַׂר־זֶ֨בַח שְׁלָמָ֜יו בַּיּ֣וֹם הַשְּׁלִישִׁי֮ לֹ֣א יֵרָצֶה֒ הַמַּקְרִ֣יב אֹת֗וֹ לֹ֧א יֵחָשֵׁ֛ב ל֖וֹ פִּגּ֣וּל יִהְיֶ֑ה וְהַנֶּ֛פֶשׁ הָאֹכֶ֥לֶת מִמֶּ֖נּוּ עֲוֺנָ֥הּ תִּשָּֽׂא׃",
+      "en": "And if any of the flesh of the sacrifice of his peace offering be eaten at all on the third day, it shall not be accepted, neither shall it be imputed to him who offers it: it shall be an abomination, and the person that eats of it shall bear his iniquity."
+    },
+    {
+      "n": 42,
+      "c": 7,
+      "v": 19,
+      "ref": "7:19",
+      "text": "וְהַבָּשָׂ֞ר אֲשֶׁר־יִגַּ֤ע בְּכׇל־טָמֵא֙ לֹ֣א יֵֽאָכֵ֔ל בָּאֵ֖שׁ יִשָּׂרֵ֑ף וְהַ֨בָּשָׂ֔ר כׇּל־טָה֖וֹר יֹאכַ֥ל בָּשָֽׂר׃",
+      "en": "And the flesh that touches any unclean thing shall not be eaten; it shall be burnt with fire: and as for the flesh, all that are clean shall eat of it."
+    },
+    {
+      "n": 43,
+      "c": 7,
+      "v": 20,
+      "ref": "7:20",
+      "text": "וְהַנֶּ֜פֶשׁ אֲשֶׁר־תֹּאכַ֣ל בָּשָׂ֗ר מִזֶּ֤בַח הַשְּׁלָמִים֙ אֲשֶׁ֣ר לַיהֹוָ֔ה וְטֻמְאָת֖וֹ עָלָ֑יו וְנִכְרְתָ֛ה הַנֶּ֥פֶשׁ הַהִ֖וא מֵעַמֶּֽיהָ׃",
+      "en": "But the person that eats of the flesh of the sacrifice of peace offerings, that pertain to the Lord, having his uncleanness upon him, that soul shall be cut off from his people."
+    },
+    {
+      "n": 44,
+      "c": 7,
+      "v": 21,
+      "ref": "7:21",
+      "text": "וְנֶ֜פֶשׁ כִּֽי־תִגַּ֣ע בְּכׇל־טָמֵ֗א בְּטֻמְאַ֤ת אָדָם֙ א֣וֹ&thinsp;<b>׀</b> בִּבְהֵמָ֣ה טְמֵאָ֗ה א֚וֹ בְּכׇל־שֶׁ֣קֶץ טָמֵ֔א וְאָכַ֛ל מִבְּשַׂר־זֶ֥בַח הַשְּׁלָמִ֖ים אֲשֶׁ֣ר לַיהֹוָ֑ה וְנִכְרְתָ֛ה הַנֶּ֥פֶשׁ הַהִ֖וא מֵעַמֶּֽיהָ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br><sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(אין פרשה בספרי ספרד ואשכנז)</i>",
+      "en": "Moreover the person that shall touch any unclean thing, such as the uncleanness of man, of any unclean beast, or any abominable unclean thing, and eat of the flesh of the sacrifice of peace offerings, which pertain to the Lord, that soul shall be cut off from his people."
+    },
+    {
+      "n": 45,
+      "c": 7,
+      "v": 22,
+      "ref": "7:22",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 46,
+      "c": 7,
+      "v": 23,
+      "ref": "7:23",
+      "text": "דַּבֵּ֛ר אֶל־בְּנֵ֥י יִשְׂרָאֵ֖ל לֵאמֹ֑ר כׇּל־חֵ֜לֶב שׁ֥וֹר וְכֶ֛שֶׂב וָעֵ֖ז לֹ֥א תֹאכֵֽלוּ׃",
+      "en": "Speak to the children of Yisra᾽el, saying, You shall eat no manner of fat, of ox, or of sheep, or of goat."
+    },
+    {
+      "n": 47,
+      "c": 7,
+      "v": 24,
+      "ref": "7:24",
+      "text": "וְחֵ֤לֶב נְבֵלָה֙ וְחֵ֣לֶב טְרֵפָ֔ה יֵעָשֶׂ֖ה לְכׇל־מְלָאכָ֑ה וְאָכֹ֖ל לֹ֥א תֹאכְלֻֽהוּ׃",
+      "en": "And the fat of the beast that dies of itself, and the fat of that which is torn with beasts, may be used in any other use: but you shall by no means eat of it."
+    },
+    {
+      "n": 48,
+      "c": 7,
+      "v": 25,
+      "ref": "7:25",
+      "text": "כִּ֚י כׇּל־אֹכֵ֣ל חֵ֔לֶב מִ֨ן־הַבְּהֵמָ֔ה אֲשֶׁ֨ר יַקְרִ֥יב מִמֶּ֛נָּה אִשֶּׁ֖ה לַיהֹוָ֑ה וְנִכְרְתָ֛ה הַנֶּ֥פֶשׁ הָאֹכֶ֖לֶת מֵֽעַמֶּֽיהָ׃",
+      "en": "For whoever eats the fat of the beast, of which men offer an offering made by fire to the Lord, the soul that eats it shall be cut off from his people."
+    },
+    {
+      "n": 49,
+      "c": 7,
+      "v": 26,
+      "ref": "7:26",
+      "text": "וְכׇל־דָּם֙ לֹ֣א תֹאכְל֔וּ בְּכֹ֖ל מוֹשְׁבֹתֵיכֶ֑ם לָע֖וֹף וְלַבְּהֵמָֽה׃",
+      "en": "Moreover you shall eat no manner of blood, whether it be of bird or of beast, in any of your dwellings."
+    },
+    {
+      "n": 50,
+      "c": 7,
+      "v": 27,
+      "ref": "7:27",
+      "text": "כׇּל־נֶ֖פֶשׁ אֲשֶׁר־תֹּאכַ֣ל כׇּל־דָּ֑ם וְנִכְרְתָ֛ה הַנֶּ֥פֶשׁ הַהִ֖וא מֵֽעַמֶּֽיהָ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br><sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(אין פרשה בספרי תימן)</i>",
+      "en": "Whoever it be that eats any manner of blood, that soul shall be cut off from his people."
+    },
+    {
+      "n": 51,
+      "c": 7,
+      "v": 28,
+      "ref": "7:28",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 52,
+      "c": 7,
+      "v": 29,
+      "ref": "7:29",
+      "text": "דַּבֵּ֛ר אֶל־בְּנֵ֥י יִשְׂרָאֵ֖ל לֵאמֹ֑ר הַמַּקְרִ֞יב אֶת־זֶ֤בַח שְׁלָמָיו֙ לַיהֹוָ֔ה יָבִ֧יא אֶת־קׇרְבָּנ֛וֹ לַיהֹוָ֖ה מִזֶּ֥בַח שְׁלָמָֽיו׃",
+      "en": "Speak to the children of Yisra᾽el, saying, He that offers his peace offering to the Lord shall bring his offering to the Lord of the sacrifice of his peace offering."
+    },
+    {
+      "n": 53,
+      "c": 7,
+      "v": 30,
+      "ref": "7:30",
+      "text": "יָדָ֣יו תְּבִיאֶ֔ינָה אֵ֖ת אִשֵּׁ֣י יְהֹוָ֑ה אֶת־הַחֵ֤לֶב עַל־הֶֽחָזֶה֙ יְבִיאֶ֔נּוּ אֵ֣ת הֶחָזֶ֗ה לְהָנִ֥יף אֹת֛וֹ תְּנוּפָ֖ה לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "His own hands shall bring the offerings of the Lord made by fire, the fat with the breast, it shall he bring, that the breast may be waved for a wave offering before the Lord."
+    },
+    {
+      "n": 54,
+      "c": 7,
+      "v": 31,
+      "ref": "7:31",
+      "text": "וְהִקְטִ֧יר הַכֹּהֵ֛ן אֶת־הַחֵ֖לֶב הַמִּזְבֵּ֑חָה וְהָיָה֙ הֶֽחָזֶ֔ה לְאַהֲרֹ֖ן וּלְבָנָֽיו׃",
+      "en": "And the priest shall burn the fat upon the altar: but the breast shall be Aharon’s and his sons’."
+    },
+    {
+      "n": 55,
+      "c": 7,
+      "v": 32,
+      "ref": "7:32",
+      "text": "וְאֵת֙ שׁ֣וֹק הַיָּמִ֔ין תִּתְּנ֥וּ תְרוּמָ֖ה לַכֹּהֵ֑ן מִזִּבְחֵ֖י שַׁלְמֵיכֶֽם׃",
+      "en": "And the right shoulder shall you give to the priest for a heave offering from the sacrifices of your peace offerings."
+    },
+    {
+      "n": 56,
+      "c": 7,
+      "v": 33,
+      "ref": "7:33",
+      "text": "הַמַּקְרִ֞יב אֶת־דַּ֧ם הַשְּׁלָמִ֛ים וְאֶת־הַחֵ֖לֶב מִבְּנֵ֣י אַהֲרֹ֑ן ל֧וֹ תִהְיֶ֛ה שׁ֥וֹק הַיָּמִ֖ין לְמָנָֽה׃",
+      "en": "He among the sons of Aharon, that offers the blood of the peace offering, and the fat, shall have the right shoulder for his part."
+    },
+    {
+      "n": 57,
+      "c": 7,
+      "v": 34,
+      "ref": "7:34",
+      "text": "כִּי֩ אֶת־חֲזֵ֨ה הַתְּנוּפָ֜ה וְאֵ֣ת&thinsp;<b>׀</b> שׁ֣וֹק הַתְּרוּמָ֗ה לָקַ֙חְתִּי֙ מֵאֵ֣ת בְּנֵֽי־יִשְׂרָאֵ֔ל מִזִּבְחֵ֖י שַׁלְמֵיהֶ֑ם וָאֶתֵּ֣ן אֹ֠תָ֠ם לְאַהֲרֹ֨ן הַכֹּהֵ֤ן וּלְבָנָיו֙ לְחׇק־עוֹלָ֔ם מֵאֵ֖ת בְּנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "For the wave breast and the heave shoulder have I taken of the children of Yisra᾽el from off the sacrifices of their peace offerings, and have given them to Aharon the priest and to his sons their fixed portion for ever from among the children of Yisra᾽el."
+    },
+    {
+      "n": 58,
+      "c": 7,
+      "v": 35,
+      "ref": "7:35",
+      "text": "זֹ֣את מִשְׁחַ֤ת אַהֲרֹן֙ וּמִשְׁחַ֣ת בָּנָ֔יו מֵאִשֵּׁ֖י יְהֹוָ֑ה בְּיוֹם֙ הִקְרִ֣יב אֹתָ֔ם לְכַהֵ֖ן לַיהֹוָֽה׃",
+      "en": "This is the portion of the anointing of Aharon, and of the anointing of his sons, out of the offerings of the Lord made by fire, on the day when he presented them to minister to the Lord in the priest’s office;"
+    },
+    {
+      "n": 59,
+      "c": 7,
+      "v": 36,
+      "ref": "7:36",
+      "text": "אֲשֶׁר֩ צִוָּ֨ה יְהֹוָ֜ה לָתֵ֣ת לָהֶ֗ם בְּיוֹם֙ מׇשְׁח֣וֹ אֹתָ֔ם מֵאֵ֖ת בְּנֵ֣י יִשְׂרָאֵ֑ל חֻקַּ֥ת עוֹלָ֖ם לְדֹרֹתָֽם׃",
+      "en": "which the Lord commanded to be given them of the children of Yisra᾽el, on the day that he anointed them, as a fixed portion for ever throughout their generations."
+    },
+    {
+      "n": 60,
+      "c": 7,
+      "v": 37,
+      "ref": "7:37",
+      "text": "זֹ֣את הַתּוֹרָ֗ה לָֽעֹלָה֙ לַמִּנְחָ֔ה וְלַֽחַטָּ֖את וְלָאָשָׁ֑ם וְלַ֨מִּלּוּאִ֔ים וּלְזֶ֖בַח הַשְּׁלָמִֽים׃",
+      "en": "This is the Tora of the burnt offering, of the meal offering, and of the sin offering, and of the guilt offering, and of the consecration offering, and of the sacrifice of the peace offering;"
+    },
+    {
+      "n": 61,
+      "c": 7,
+      "v": 38,
+      "ref": "7:38",
+      "text": "אֲשֶׁ֨ר צִוָּ֧ה יְהֹוָ֛ה אֶת־מֹשֶׁ֖ה בְּהַ֣ר סִינָ֑י בְּי֨וֹם צַוֺּת֜וֹ אֶת־בְּנֵ֣י יִשְׂרָאֵ֗ל לְהַקְרִ֧יב אֶת־קׇרְבְּנֵיהֶ֛ם לַיהֹוָ֖ה בְּמִדְבַּ֥ר סִינָֽי׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "which the Lord commanded Moshe in Mount Sinay, on the day that he commanded the children of  Yisra᾽el to present their offerings to the Lord, in the wilderness of Sinay."
+    },
+    {
+      "n": 62,
+      "c": 8,
+      "v": 1,
+      "ref": "8:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 63,
+      "c": 8,
+      "v": 2,
+      "ref": "8:2",
+      "text": "קַ֤ח אֶֽת־אַהֲרֹן֙ וְאֶת־בָּנָ֣יו אִתּ֔וֹ וְאֵת֙ הַבְּגָדִ֔ים וְאֵ֖ת שֶׁ֣מֶן הַמִּשְׁחָ֑ה וְאֵ֣ת&thinsp;<b>׀</b> פַּ֣ר הַֽחַטָּ֗את וְאֵת֙ שְׁנֵ֣י הָֽאֵילִ֔ים וְאֵ֖ת סַ֥ל הַמַּצּֽוֹת׃",
+      "en": "Take Aharon and his sons with him, and the garments, and the anointing oil, and a bullock for the sin offering, and two rams, and a basket of unleavened bread;"
+    },
+    {
+      "n": 64,
+      "c": 8,
+      "v": 3,
+      "ref": "8:3",
+      "text": "וְאֵ֥ת כׇּל־הָעֵדָ֖ה הַקְהֵ֑ל אֶל־פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "and gather all the congregation together to the door of the Tent of Meeting."
+    },
+    {
+      "n": 65,
+      "c": 8,
+      "v": 4,
+      "ref": "8:4",
+      "text": "וַיַּ֣עַשׂ מֹשֶׁ֔ה כַּֽאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֹת֑וֹ וַתִּקָּהֵל֙ הָֽעֵדָ֔ה אֶל־פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "And Moshe did as the Lord commanded him; and the assembly was gathered together at the door of the Tent of Meeting."
+    },
+    {
+      "n": 66,
+      "c": 8,
+      "v": 5,
+      "ref": "8:5",
+      "text": "וַיֹּ֥אמֶר מֹשֶׁ֖ה אֶל־הָעֵדָ֑ה זֶ֣ה הַדָּבָ֔ר אֲשֶׁר־צִוָּ֥ה יְהֹוָ֖ה לַעֲשֽׂוֹת׃",
+      "en": "And Moshe said to the congregation, This is the thing which the Lord commanded to be done."
+    },
+    {
+      "n": 67,
+      "c": 8,
+      "v": 6,
+      "ref": "8:6",
+      "text": "וַיַּקְרֵ֣ב מֹשֶׁ֔ה אֶֽת־אַהֲרֹ֖ן וְאֶת־בָּנָ֑יו וַיִּרְחַ֥ץ אֹתָ֖ם בַּמָּֽיִם׃",
+      "en": "And Moshe brought Aharon and his sons, and washed them with water."
+    },
+    {
+      "n": 68,
+      "c": 8,
+      "v": 7,
+      "ref": "8:7",
+      "text": "וַיִּתֵּ֨ן עָלָ֜יו אֶת־הַכֻּתֹּ֗נֶת וַיַּחְגֹּ֤ר אֹתוֹ֙ בָּֽאַבְנֵ֔ט וַיַּלְבֵּ֤שׁ אֹתוֹ֙ אֶֽת־הַמְּעִ֔יל וַיִּתֵּ֥ן עָלָ֖יו אֶת־הָאֵפֹ֑ד וַיַּחְגֹּ֣ר אֹת֗וֹ בְּחֵ֙שֶׁב֙ הָֽאֵפֹ֔ד וַיֶּאְפֹּ֥ד ל֖וֹ בּֽוֹ׃",
+      "en": "And he put upon him the coat, and girded him with the girdle, and clothed him with the robe, and put the efod upon him, and he girded him with the artistically wrought girdle of the efod, and with it he bound it to him."
+    },
+    {
+      "n": 69,
+      "c": 8,
+      "v": 8,
+      "ref": "8:8",
+      "text": "וַיָּ֥שֶׂם עָלָ֖יו אֶת־הַחֹ֑שֶׁן וַיִּתֵּן֙ אֶל־הַחֹ֔שֶׁן אֶת־הָאוּרִ֖ים וְאֶת־הַתֻּמִּֽים׃",
+      "en": "And he put the breastplate upon him: also he put in the breastplate the Urim and the Tummim."
+    },
+    {
+      "n": 70,
+      "c": 8,
+      "v": 9,
+      "ref": "8:9",
+      "text": "וַיָּ֥שֶׂם אֶת־הַמִּצְנֶ֖פֶת עַל־רֹאשׁ֑וֹ וַיָּ֨שֶׂם עַֽל־הַמִּצְנֶ֜פֶת אֶל־מ֣וּל פָּנָ֗יו אֵ֣ת צִ֤יץ הַזָּהָב֙ נֵ֣זֶר הַקֹּ֔דֶשׁ כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "And he put the mitre upon his head; also upon the mitre, upon its forepart, did he put the golden plate, the holy crown; as the Lord commanded Moshe."
+    },
+    {
+      "n": 71,
+      "c": 8,
+      "v": 10,
+      "ref": "8:10",
+      "text": "וַיִּקַּ֤ח מֹשֶׁה֙ אֶת־שֶׁ֣מֶן הַמִּשְׁחָ֔ה וַיִּמְשַׁ֥ח אֶת־הַמִּשְׁכָּ֖ן וְאֶת־כׇּל־אֲשֶׁר־בּ֑וֹ וַיְקַדֵּ֖שׁ אֹתָֽם׃",
+      "en": "And Moshe took the anointing oil, and anointed the tabernacle and all that was in it, and sanctified them."
+    },
+    {
+      "n": 72,
+      "c": 8,
+      "v": 11,
+      "ref": "8:11",
+      "text": "וַיַּ֥ז מִמֶּ֛נּוּ עַל־הַמִּזְבֵּ֖חַ שֶׁ֣בַע פְּעָמִ֑ים וַיִּמְשַׁ֨ח אֶת־הַמִּזְבֵּ֜חַ וְאֶת־כׇּל־כֵּלָ֗יו וְאֶת־הַכִּיֹּ֛ר וְאֶת־כַּנּ֖וֹ לְקַדְּשָֽׁם׃",
+      "en": "And he sprinkled of it upon the altar seven times, and anointed the altar and all its vessels, both the laver and its pedestal, to sanctify them."
+    },
+    {
+      "n": 73,
+      "c": 8,
+      "v": 12,
+      "ref": "8:12",
+      "text": "וַיִּצֹק֙ מִשֶּׁ֣מֶן הַמִּשְׁחָ֔ה עַ֖ל רֹ֣אשׁ אַהֲרֹ֑ן וַיִּמְשַׁ֥ח אֹת֖וֹ לְקַדְּשֽׁוֹ׃",
+      "en": "And he poured of the anointing oil upon Aharon’s head, and anointed him, to sanctify him."
+    },
+    {
+      "n": 74,
+      "c": 8,
+      "v": 13,
+      "ref": "8:13",
+      "text": "וַיַּקְרֵ֨ב מֹשֶׁ֜ה אֶת־בְּנֵ֣י אַהֲרֹ֗ן וַיַּלְבִּשֵׁ֤ם כֻּתֳּנֹת֙ וַיַּחְגֹּ֤ר אֹתָם֙ אַבְנֵ֔ט וַיַּחֲבֹ֥שׁ לָהֶ֖ם מִגְבָּע֑וֹת כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "And Moshe brought Aharon’s sons, and put coats upon them, and girded them with girdles, and put turbans upon them; as the Lord commanded Moshe."
+    },
+    {
+      "n": 75,
+      "c": 8,
+      "v": 14,
+      "ref": "8:14",
+      "text": "וַיַּגֵּ֕שׁ אֵ֖ת פַּ֣ר הַֽחַטָּ֑את וַיִּסְמֹ֨ךְ אַהֲרֹ֤ן וּבָנָיו֙ אֶת־יְדֵיהֶ֔ם עַל־רֹ֖אשׁ פַּ֥ר הַֽחַטָּֽאת׃",
+      "en": "And he brought the bullock for the sin offering: and Aharon and his sons laid their hands upon the head of the bullock for the sin offering."
+    },
+    {
+      "n": 76,
+      "c": 8,
+      "v": 15,
+      "ref": "8:15",
+      "text": "וַיִּשְׁחָ֗ט וַיִּקַּ֨ח מֹשֶׁ֤ה אֶת־הַדָּם֙ וַ֠יִּתֵּ֠ן עַל־קַרְנ֨וֹת הַמִּזְבֵּ֤חַ סָבִיב֙ בְּאֶצְבָּע֔וֹ וַיְחַטֵּ֖א אֶת־הַמִּזְבֵּ֑חַ וְאֶת־הַדָּ֗ם יָצַק֙ אֶל־יְס֣וֹד הַמִּזְבֵּ֔חַ וַֽיְקַדְּשֵׁ֖הוּ לְכַפֵּ֥ר עָלָֽיו׃",
+      "en": "And he slaughtered it; and Moshe took the blood, and put it upon the horns of the altar round about with his finger, and purified the altar, and poured the blood at the bottom of the altar, and sanctified it, to make atonement upon it."
+    },
+    {
+      "n": 77,
+      "c": 8,
+      "v": 16,
+      "ref": "8:16",
+      "text": "וַיִּקַּ֗ח אֶֽת־כׇּל־הַחֵ֘לֶב֮ אֲשֶׁ֣ר עַל־הַקֶּ֒רֶב֒ וְאֵת֙ יֹתֶ֣רֶת הַכָּבֵ֔ד וְאֶת־שְׁתֵּ֥י הַכְּלָיֹ֖ת וְאֶֽת־חֶלְבְּהֶ֑ן וַיַּקְטֵ֥ר מֹשֶׁ֖ה הַמִּזְבֵּֽחָה׃",
+      "en": "And he took all the fat that was upon the inwards, and the appendage of the liver, and the two kidneys, and their fat, and Moshe burned it on the altar."
+    },
+    {
+      "n": 78,
+      "c": 8,
+      "v": 17,
+      "ref": "8:17",
+      "text": "וְאֶת־הַפָּ֤ר וְאֶת־עֹרוֹ֙ וְאֶת־בְּשָׂר֣וֹ וְאֶת־פִּרְשׁ֔וֹ שָׂרַ֣ף בָּאֵ֔שׁ מִח֖וּץ לַֽמַּחֲנֶ֑ה כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "But the bullock, and its hide, its flesh, and its dung, he burnt with fire outside the camp; as the Lord commanded Moshe."
+    },
+    {
+      "n": 79,
+      "c": 8,
+      "v": 18,
+      "ref": "8:18",
+      "text": "וַיַּקְרֵ֕ב אֵ֖ת אֵ֣יל הָעֹלָ֑ה וַֽיִּסְמְכ֞וּ אַהֲרֹ֧ן וּבָנָ֛יו אֶת־יְדֵיהֶ֖ם עַל־רֹ֥אשׁ הָאָֽיִל׃",
+      "en": "And he brought the ram for the burnt offering: and Aharon and his sons laid their hands upon the head of the ram."
+    },
+    {
+      "n": 80,
+      "c": 8,
+      "v": 19,
+      "ref": "8:19",
+      "text": "וַיִּשְׁחָ֑ט וַיִּזְרֹ֨ק מֹשֶׁ֧ה אֶת־הַדָּ֛ם עַל־הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "And he killed it; and Moshe sprinkled the blood upon the altar round about."
+    },
+    {
+      "n": 81,
+      "c": 8,
+      "v": 20,
+      "ref": "8:20",
+      "text": "וְאֶ֨ת־הָאַ֔יִל נִתַּ֖ח לִנְתָחָ֑יו וַיַּקְטֵ֤ר מֹשֶׁה֙ אֶת־הָרֹ֔אשׁ וְאֶת־הַנְּתָחִ֖ים וְאֶת־הַפָּֽדֶר׃",
+      "en": "And he cut the ram into pieces; and Moshe burnt the head, and the pieces, and the fat."
+    },
+    {
+      "n": 82,
+      "c": 8,
+      "v": 21,
+      "ref": "8:21",
+      "text": "וְאֶת־הַקֶּ֥רֶב וְאֶת־הַכְּרָעַ֖יִם רָחַ֣ץ בַּמָּ֑יִם וַיַּקְטֵר֩ מֹשֶׁ֨ה אֶת־כׇּל־הָאַ֜יִל הַמִּזְבֵּ֗חָה עֹלָ֨ה ה֤וּא לְרֵֽיחַ־נִיחֹ֙חַ֙ אִשֶּׁ֥ה הוּא֙ לַיהֹוָ֔ה כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "And he washed the inwards and the legs in water; and Moshe burnt the whole ram upon the altar: it was a burnt sacrifice for a sweet savour, an offering made by fire to the Lord; as the Lord commanded Moshe."
+    },
+    {
+      "n": 83,
+      "c": 8,
+      "v": 22,
+      "ref": "8:22",
+      "text": "וַיַּקְרֵב֙ אֶת־הָאַ֣יִל הַשֵּׁנִ֔י אֵ֖יל הַמִּלֻּאִ֑ים וַֽיִּסְמְכ֞וּ אַהֲרֹ֧ן וּבָנָ֛יו אֶת־יְדֵיהֶ֖ם עַל־רֹ֥אשׁ הָאָֽיִל׃",
+      "en": "And he brought the other ram, the ram of consecration: and Aharon and his sons laid their hands upon the head of the ram."
+    },
+    {
+      "n": 84,
+      "c": 8,
+      "v": 23,
+      "ref": "8:23",
+      "text": "וַיִּשְׁחָ֓ט&thinsp;<b>׀</b> וַיִּקַּ֤ח מֹשֶׁה֙ מִדָּמ֔וֹ וַיִּתֵּ֛ן עַל־תְּנ֥וּךְ אֹֽזֶן־אַהֲרֹ֖ן הַיְמָנִ֑ית וְעַל־בֹּ֤הֶן יָדוֹ֙ הַיְמָנִ֔ית וְעַל־בֹּ֥הֶן רַגְל֖וֹ הַיְמָנִֽית׃",
+      "en": "And he slaughtered it; and Moshe took of its blood, and put it upon the tip of Aharon’s right ear, and upon the thumb of his right hand, and upon the great toe of his right foot."
+    },
+    {
+      "n": 85,
+      "c": 8,
+      "v": 24,
+      "ref": "8:24",
+      "text": "וַיַּקְרֵ֞ב אֶת־בְּנֵ֣י אַהֲרֹ֗ן וַיִּתֵּ֨ן מֹשֶׁ֤ה מִן־הַדָּם֙ עַל־תְּנ֤וּךְ אׇזְנָם֙ הַיְמָנִ֔ית וְעַל־בֹּ֤הֶן יָדָם֙ הַיְמָנִ֔ית וְעַל־בֹּ֥הֶן רַגְלָ֖ם הַיְמָנִ֑ית וַיִּזְרֹ֨ק מֹשֶׁ֧ה אֶת־הַדָּ֛ם עַל־הַֽמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "And he brought Aharon’s sons, and Moshe put of the blood upon the tip of their right ear, and upon the thumbs of their right hands, and upon the great toes of their right feet: and Moshe sprinkled the blood upon the altar round about."
+    },
+    {
+      "n": 86,
+      "c": 8,
+      "v": 25,
+      "ref": "8:25",
+      "text": "וַיִּקַּ֞ח אֶת־הַחֵ֣לֶב וְאֶת־הָֽאַלְיָ֗ה וְאֶֽת־כׇּל־הַחֵ֘לֶב֮ אֲשֶׁ֣ר עַל־הַקֶּ֒רֶב֒ וְאֵת֙ יֹתֶ֣רֶת הַכָּבֵ֔ד וְאֶת־שְׁתֵּ֥י הַכְּלָיֹ֖ת וְאֶֽת־חֶלְבְּהֶ֑ן וְאֵ֖ת שׁ֥וֹק הַיָּמִֽין׃",
+      "en": "And he took the fat, and the fat tail, and all the fat that was upon the inwards, and the appendage of the liver, and the two kidneys, and their fat, and the right shoulder:"
+    },
+    {
+      "n": 87,
+      "c": 8,
+      "v": 26,
+      "ref": "8:26",
+      "text": "וּמִסַּ֨ל הַמַּצּ֜וֹת אֲשֶׁ֣ר&thinsp;<b>׀</b> לִפְנֵ֣י יְהֹוָ֗ה לָ֠קַ֠ח חַלַּ֨ת מַצָּ֤ה אַחַת֙ וְֽחַלַּ֨ת לֶ֥חֶם שֶׁ֛מֶן אַחַ֖ת וְרָקִ֣יק אֶחָ֑ד וַיָּ֙שֶׂם֙ עַל־הַ֣חֲלָבִ֔ים וְעַ֖ל שׁ֥וֹק הַיָּמִֽין׃",
+      "en": "and out of the basket of unleavened bread, that was before the Lord, he took one unleavened cake, and a cake of oiled bread, and one wafer, and put them on the fat, and upon the right shoulder:"
+    },
+    {
+      "n": 88,
+      "c": 8,
+      "v": 27,
+      "ref": "8:27",
+      "text": "וַיִּתֵּ֣ן אֶת־הַכֹּ֔ל עַ֚ל כַּפֵּ֣י אַהֲרֹ֔ן וְעַ֖ל כַּפֵּ֣י בָנָ֑יו וַיָּ֧נֶף אֹתָ֛ם תְּנוּפָ֖ה לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "and he put all upon Aharon’s hands, and upon his sons’ hands, and waved them for a wave offering before the Lord."
+    },
+    {
+      "n": 89,
+      "c": 8,
+      "v": 28,
+      "ref": "8:28",
+      "text": "וַיִּקַּ֨ח מֹשֶׁ֤ה אֹתָם֙ מֵעַ֣ל כַּפֵּיהֶ֔ם וַיַּקְטֵ֥ר הַמִּזְבֵּ֖חָה עַל־הָעֹלָ֑ה מִלֻּאִ֥ים הֵם֙ לְרֵ֣יחַ נִיחֹ֔חַ אִשֶּׁ֥ה ה֖וּא לַיהֹוָֽה׃",
+      "en": "And Moshe took them from off their hands, and burnt them on the altar upon the burnt offering; they were a consecration offering for a sweet savour: it was an offering made by fire to the Lord."
+    },
+    {
+      "n": 90,
+      "c": 8,
+      "v": 29,
+      "ref": "8:29",
+      "text": "וַיִּקַּ֤ח מֹשֶׁה֙ אֶת־הֶ֣חָזֶ֔ה וַיְנִיפֵ֥הוּ תְנוּפָ֖ה לִפְנֵ֣י יְהֹוָ֑ה מֵאֵ֣יל הַמִּלֻּאִ֗ים לְמֹשֶׁ֤ה הָיָה֙ לְמָנָ֔ה כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃",
+      "en": "And Moshe took the breast, and waved it for a wave offering before the Lord: for of the ram of consecration it was Moshe’s part; as the Lord commanded Moshe."
+    },
+    {
+      "n": 91,
+      "c": 8,
+      "v": 30,
+      "ref": "8:30",
+      "text": "וַיִּקַּ֨ח מֹשֶׁ֜ה מִשֶּׁ֣מֶן הַמִּשְׁחָ֗ה וּמִן־הַדָּם֮ אֲשֶׁ֣ר עַל־הַמִּזְבֵּ֒חַ֒ וַיַּ֤ז עַֽל־אַהֲרֹן֙ עַל־בְּגָדָ֔יו וְעַל־בָּנָ֛יו וְעַל־בִּגְדֵ֥י בָנָ֖יו אִתּ֑וֹ וַיְקַדֵּ֤שׁ אֶֽת־אַהֲרֹן֙ אֶת־בְּגָדָ֔יו וְאֶת־בָּנָ֛יו וְאֶת־בִּגְדֵ֥י בָנָ֖יו אִתּֽוֹ׃",
+      "en": "And Moshe took of the anointing oil, and of the blood which was upon the altar, and sprinkled it upon Aharon, and upon his garments, and upon his sons, and upon his sons’ garments with him; and sanctified Aharon, and his garments, and his sons, and his sons’ garments with him."
+    },
+    {
+      "n": 92,
+      "c": 8,
+      "v": 31,
+      "ref": "8:31",
+      "text": "וַיֹּ֨אמֶר מֹשֶׁ֜ה אֶל־אַהֲרֹ֣ן וְאֶל־בָּנָ֗יו בַּשְּׁל֣וּ אֶת־הַבָּשָׂר֮ פֶּ֣תַח אֹ֣הֶל מוֹעֵד֒ וְשָׁם֙ תֹּאכְל֣וּ אֹת֔וֹ וְאֶ֨ת־הַלֶּ֔חֶם אֲשֶׁ֖ר בְּסַ֣ל הַמִּלֻּאִ֑ים כַּאֲשֶׁ֤ר צִוֵּ֙יתִי֙ לֵאמֹ֔ר אַהֲרֹ֥ן וּבָנָ֖יו יֹאכְלֻֽהוּ׃",
+      "en": "And Moshe said to Aharon and to his sons, Boil the flesh at the door of the Tent of Meeting: and there eat it with the bread that is in the basket of the bread of consecration, as I commanded, saying, Aharon and his sons shall eat it."
+    },
+    {
+      "n": 93,
+      "c": 8,
+      "v": 32,
+      "ref": "8:32",
+      "text": "וְהַנּוֹתָ֥ר בַּבָּשָׂ֖ר וּבַלָּ֑חֶם בָּאֵ֖שׁ תִּשְׂרֹֽפוּ׃",
+      "en": "And that which remains of the flesh and of the bread shall you burn with fire."
+    },
+    {
+      "n": 94,
+      "c": 8,
+      "v": 33,
+      "ref": "8:33",
+      "text": "וּמִפֶּ֩תַח֩ אֹ֨הֶל מוֹעֵ֜ד לֹ֤א תֵֽצְאוּ֙ שִׁבְעַ֣ת יָמִ֔ים עַ֚ד י֣וֹם מְלֹ֔את יְמֵ֖י מִלֻּאֵיכֶ֑ם כִּ֚י שִׁבְעַ֣ת יָמִ֔ים יְמַלֵּ֖א אֶת־יֶדְכֶֽם׃",
+      "en": "And you shall not go out of the door of the Tent of Meeting for seven days, until the days of your consecration be at an end: for seven days shall he consecrate you."
+    },
+    {
+      "n": 95,
+      "c": 8,
+      "v": 34,
+      "ref": "8:34",
+      "text": "כַּאֲשֶׁ֥ר עָשָׂ֖ה בַּיּ֣וֹם הַזֶּ֑ה צִוָּ֧ה יְהֹוָ֛ה לַעֲשֹׂ֖ת לְכַפֵּ֥ר עֲלֵיכֶֽם׃",
+      "en": "As he has done this day, so the Lord has commanded to do, to make atonement for you."
+    },
+    {
+      "n": 96,
+      "c": 8,
+      "v": 35,
+      "ref": "8:35",
+      "text": "וּפֶ֩תַח֩ אֹ֨הֶל מוֹעֵ֜ד תֵּשְׁב֨וּ יוֹמָ֤ם וָלַ֙יְלָה֙ שִׁבְעַ֣ת יָמִ֔ים וּשְׁמַרְתֶּ֛ם אֶת־מִשְׁמֶ֥רֶת יְהֹוָ֖ה וְלֹ֣א תָמ֑וּתוּ כִּי־כֵ֖ן צֻוֵּֽיתִי׃",
+      "en": "And you shall abide at the door of the Tent of Meeting day and night for seven days, and keep the charge of the Lord, that you die not: for so I am commanded."
+    },
+    {
+      "n": 97,
+      "c": 8,
+      "v": 36,
+      "ref": "8:36",
+      "text": "וַיַּ֥עַשׂ אַהֲרֹ֖ן וּבָנָ֑יו אֵ֚ת כׇּל־הַדְּבָרִ֔ים אֲשֶׁר־צִוָּ֥ה יְהֹוָ֖ה בְּיַד־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "So Aharon and his sons did all the things which the Lord had commanded by the hand of Moshe."
+    }
+  ],
+  "parashah": {
+    "en": "Tzav",
+    "he": "צַו",
+    "translit": "Tzav",
+    "ref": "Leviticus 6:1–8:36"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 11,
+        "ref": "6:1–6:11"
+      },
+      {
+        "n": 2,
+        "start": 12,
+        "end": 33,
+        "ref": "6:12–7:10"
+      },
+      {
+        "n": 3,
+        "start": 34,
+        "end": 61,
+        "ref": "7:11–7:38"
+      },
+      {
+        "n": 4,
+        "start": 62,
+        "end": 74,
+        "ref": "8:1–8:13"
+      },
+      {
+        "n": 5,
+        "start": 75,
+        "end": 82,
+        "ref": "8:14–8:21"
+      },
+      {
+        "n": 6,
+        "start": 83,
+        "end": 90,
+        "ref": "8:22–8:29"
+      },
+      {
+        "n": 7,
+        "start": 91,
+        "end": 97,
+        "ref": "8:30–8:36"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "6:1–6:3"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 6,
+          "ref": "6:4–6:6"
+        },
+        {
+          "n": 3,
+          "start": 7,
+          "end": 11,
+          "ref": "6:7–6:11"
+        },
+        {
+          "n": 4,
+          "start": 12,
+          "end": 16,
+          "ref": "6:12–6:16"
+        },
+        {
+          "n": 5,
+          "start": 17,
+          "end": 23,
+          "ref": "6:17–6:23"
+        },
+        {
+          "n": 6,
+          "start": 24,
+          "end": 29,
+          "ref": "7:1–7:6"
+        },
+        {
+          "n": 7,
+          "start": 30,
+          "end": 33,
+          "ref": "7:7–7:10"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 34,
+          "end": 38,
+          "ref": "7:11–7:15"
+        },
+        {
+          "n": 2,
+          "start": 39,
+          "end": 41,
+          "ref": "7:16–7:18"
+        },
+        {
+          "n": 3,
+          "start": 42,
+          "end": 44,
+          "ref": "7:19–7:21"
+        },
+        {
+          "n": 4,
+          "start": 45,
+          "end": 50,
+          "ref": "7:22–7:27"
+        },
+        {
+          "n": 5,
+          "start": 51,
+          "end": 54,
+          "ref": "7:28–7:31"
+        },
+        {
+          "n": 6,
+          "start": 55,
+          "end": 57,
+          "ref": "7:32–7:34"
+        },
+        {
+          "n": 7,
+          "start": 58,
+          "end": 61,
+          "ref": "7:35–7:38"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 62,
+          "end": 66,
+          "ref": "8:1–8:5"
+        },
+        {
+          "n": 2,
+          "start": 67,
+          "end": 70,
+          "ref": "8:6–8:9"
+        },
+        {
+          "n": 3,
+          "start": 71,
+          "end": 74,
+          "ref": "8:10–8:13"
+        },
+        {
+          "n": 4,
+          "start": 75,
+          "end": 78,
+          "ref": "8:14–8:17"
+        },
+        {
+          "n": 5,
+          "start": 79,
+          "end": 82,
+          "ref": "8:18–8:21"
+        },
+        {
+          "n": 6,
+          "start": 83,
+          "end": 90,
+          "ref": "8:22–8:29"
+        },
+        {
+          "n": 7,
+          "start": 91,
+          "end": 97,
+          "ref": "8:30–8:36"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 94,
+        "end": 97,
+        "ref": "8:33–8:36"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 30,
+          "end": 33,
+          "ref": "7:7–7:10"
+        },
+        "2": {
+          "n": "M",
+          "start": 58,
+          "end": 61,
+          "ref": "7:35–7:38"
+        },
+        "3": {
+          "n": "M",
+          "start": 94,
+          "end": 97,
+          "ref": "8:33–8:36"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

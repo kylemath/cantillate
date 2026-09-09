@@ -685,6 +685,21 @@ NAMED_AFTER_RELOAD_STEPS = [
      "   return named===0&&o&&/Jonah 2:1-10/.test(o.textContent)&&levels.length"
      "     ? `OK back to \"${o.textContent}\", ${levels.length} keys of progress kept`"
      "     : `named=${named} menu=${o?o.textContent:'(gone)'} progress=${levels.length}`;});})()"),
+    ("a slice inside a recorded Torah reading keeps the cantor",
+     "(()=>{__t.q('#btnAnyPassage').click();"
+     " return __t.settle(()=>__t.all('#crBook option').length>1, null, null, 10000).then(()=>{"
+     "   const set=(id,v)=>{const e=__t.q('#'+id); e.value=String(v); e.dispatchEvent(new Event('change'));};"
+     "   set('crBook','genesis');"
+     "   set('crFromC',21); set('crFromV',1); set('crToC',21); set('crToV',4);"
+     "   const t=__t.q('#crPreview').textContent.replace(/\\s+/g,' ');"
+     "   if(!/recorded/.test(t)) return 'preview did not promise a recording: '+t;"
+     "   __t.q('#crOpen').click();"
+     "   return __t.settle(()=>__t.q('#parashah').value==='custom:genesis:21.1-21.4'"
+     "     && __t.q('#customModal').hidden, null, null, 20000).then(()=>{"
+     "     __t.pickVerse();"
+     "     return document.getElementById('btnReal')"
+     "       ? 'OK '+__t.q('#parashah').value+' still has the recorded chant'"
+     "       : 'opened the slice but lost the recording';});});})()"),
 ]
 
 # After the reload: the remembered passage must come back as a menu entry without
@@ -828,6 +843,12 @@ WIZARD_STEPS = [
     ("the wizard opens on one question at a time",
      "(()=>{const n=__t.all('#onboard .ob-h').length;"
      " return n===1 ? `OK one question: ${__t.ask()}` : `${n} headings on screen`;})()"),
+    ("the intro also offers sign-in so a new device can pick up existing progress",
+     "(()=>{const t=__t.text(__t.q('#obBody')), g=__t.q('#obSignIn');"
+     " if(!g && !/new device|progress back/i.test(t))"
+     "   return 'OK no sign-in on this build';"
+     " return g && /new device|progress back/i.test(t)"
+     "   ? 'OK sign-in offered on the intro' : `google=${!!g} / ${t.slice(0,100)}`;})()"),
     ("it offers a way past the install advice",
      "(()=>{const r=__t.tap('#obSkipInstall');"
      " return __t.ask()==='What are you learning for?' ? `OK moved on (${r})` : `stuck on ${__t.ask()}`;})()"),
@@ -1374,19 +1395,20 @@ ALIYOT_STEPS = [
      "(async()=>{const cal=await import('/js/calendar.js'), pl=await import('/js/plan.js');"
      " const g=await import('/js/guided.js');"
      " await cal.load();"
-     " const w=cal.all().find(r=>r.parashah==='Vayishlach' && r.date>cal.today());"
+     " const shipped=new Set([...document.querySelectorAll('#parashah option')].map(o=>o.value));"
+     " const w=cal.all().find(r=>r.slug && !shipped.has(r.slug) && r.date>cal.today());"
+     " if(!w) return 'SKIP every upcoming Shabbat is now a shipped reading';"
      " pl.save(pl.fromShabbat(w,{occasion:'aliyah', role:'self', cycle:'annual',"
      "   parts:[pl.aliyahPart(3)], enteredDate:w.date}));"
      " const want=pl.partRef(pl.aliyahPart(3), pl.get());"
-     " const cv=[...want.matchAll(/(\\d+):(\\d+)/g)].map(m=>`${m[1]}.${m[2]}`);"
-     " const wantId=`custom:genesis:${cv[0]}-${cv[1]}`;"
      " await g.start(pl.get());"
      " await __t.settle(()=>!!__t.q('.g-where') && __t.q('#parashah').value.startsWith('custom:'),"
      "   null, null, 25000);"
      " const got=__t.q('#parashah').value, where=__t.text(__t.q('.g-where'));"
-     " return got===wantId && where.startsWith(`Genesis ${want.match(/\\d+:\\d+/)[0]}`)"
-     "   ? `OK ${w.parashah} aliyah 3 is ${want}, and that is what opened (${got})`"
-     "   : `opened ${got}, wanted ${wantId}; where=${where}`;})()"),
+     " const verse=want && (want.match(/\\d+:\\d+/)||[])[0];"
+     " return got.startsWith('custom:') && verse && where.includes(verse)"
+     "   ? `OK ${w.parashah} aliyah 3 is ${want}, opened as ${got}`"
+     "   : `opened ${got}; where=${where}; want=${want}`;})()"),
 ]
 
 

@@ -1,0 +1,1081 @@
+{
+  "slug": "toldot",
+  "book": {
+    "en": "Genesis",
+    "he": "בראשית",
+    "translit": "Bereshit"
+  },
+  "multiChapter": true,
+  "ref": "Genesis 25:19-28:9",
+  "heRef": "בראשית כ״ה:י״ט-כ״ח:ט",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 25,
+      "v": 19,
+      "ref": "25:19",
+      "text": "וְאֵ֛לֶּה תּוֹלְדֹ֥ת יִצְחָ֖ק בֶּן־אַבְרָהָ֑ם אַבְרָהָ֖ם הוֹלִ֥יד אֶת־יִצְחָֽק׃",
+      "en": "And these are the generations of Yiżĥaq, Avraham’s son: Avraham begot Yiżĥaq:"
+    },
+    {
+      "n": 2,
+      "c": 25,
+      "v": 20,
+      "ref": "25:20",
+      "text": "וַיְהִ֤י יִצְחָק֙ בֶּן־אַרְבָּעִ֣ים שָׁנָ֔ה בְּקַחְתּ֣וֹ אֶת־רִבְקָ֗ה בַּת־בְּתוּאֵל֙ הָֽאֲרַמִּ֔י מִפַּדַּ֖ן אֲרָ֑ם אֲח֛וֹת לָבָ֥ן הָאֲרַמִּ֖י ל֥וֹ לְאִשָּֽׁה׃",
+      "en": "and Yiżĥaq was forty years old when he took Rivqa to wife, the daughter of Betu᾽el the Arammian of Paddan-aram, the sister to Lavan the Arammian."
+    },
+    {
+      "n": 3,
+      "c": 25,
+      "v": 21,
+      "ref": "25:21",
+      "text": "וַיֶּעְתַּ֨ר יִצְחָ֤ק לַֽיהֹוָה֙ לְנֹ֣כַח אִשְׁתּ֔וֹ כִּ֥י עֲקָרָ֖ה הִ֑וא וַיֵּעָ֤תֶר לוֹ֙ יְהֹוָ֔ה וַתַּ֖הַר רִבְקָ֥ה אִשְׁתּֽוֹ׃",
+      "en": "And Yiżĥaq entreated the Lord for his wife, because she was barren: and the Lord was entreated of him, and Rivqa his wife conceived."
+    },
+    {
+      "n": 4,
+      "c": 25,
+      "v": 22,
+      "ref": "25:22",
+      "text": "וַיִּתְרֹֽצְצ֤וּ הַבָּנִים֙ בְּקִרְבָּ֔הּ וַתֹּ֣אמֶר אִם־כֵּ֔ן לָ֥מָּה זֶּ֖ה אָנֹ֑כִי וַתֵּ֖לֶךְ לִדְרֹ֥שׁ אֶת־יְהֹוָֽה׃",
+      "en": "And the children struggled together within her; and she said, If it be so, why am I thus? And she went to inquire of the Lord."
+    },
+    {
+      "n": 5,
+      "c": 25,
+      "v": 23,
+      "ref": "25:23",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה לָ֗הּ שְׁנֵ֤י <span class=\"mam-kq\"><span class=\"mam-kq-k\">(גיים)</span> <span class=\"mam-kq-q\">[גוֹיִם֙]</span></span> בְּבִטְנֵ֔ךְ וּשְׁנֵ֣י לְאֻמִּ֔ים מִמֵּעַ֖יִךְ יִפָּרֵ֑דוּ וּלְאֹם֙ מִלְאֹ֣ם יֶֽאֱמָ֔ץ וְרַ֖ב יַעֲבֹ֥ד צָעִֽיר׃",
+      "en": "And the Lord said to her, Two nations are in thy womb, and two peoples shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger."
+    },
+    {
+      "n": 6,
+      "c": 25,
+      "v": 24,
+      "ref": "25:24",
+      "text": "וַיִּמְלְא֥וּ יָמֶ֖יהָ לָלֶ֑דֶת וְהִנֵּ֥ה תוֹמִ֖ם בְּבִטְנָֽהּ׃",
+      "en": "And when her days to be delivered were fulfilled, behold, there were twins in her womb."
+    },
+    {
+      "n": 7,
+      "c": 25,
+      "v": 25,
+      "ref": "25:25",
+      "text": "וַיֵּצֵ֤א הָרִאשׁוֹן֙ אַדְמוֹנִ֔י כֻּלּ֖וֹ כְּאַדֶּ֣רֶת שֵׂעָ֑ר וַיִּקְרְא֥וּ שְׁמ֖וֹ עֵשָֽׂו׃",
+      "en": "And the first came out red, all over like a hairy garment; and they called his name ῾Esav."
+    },
+    {
+      "n": 8,
+      "c": 25,
+      "v": 26,
+      "ref": "25:26",
+      "text": "וְאַֽחֲרֵי־כֵ֞ן יָצָ֣א אָחִ֗יו וְיָד֤וֹ אֹחֶ֙זֶת֙ בַּעֲקֵ֣ב עֵשָׂ֔ו וַיִּקְרָ֥א שְׁמ֖וֹ יַעֲקֹ֑ב וְיִצְחָ֛ק בֶּן־שִׁשִּׁ֥ים שָׁנָ֖ה בְּלֶ֥דֶת אֹתָֽם׃",
+      "en": "And after that came out his brother, and his hand took hold on ῾Esav’s heel; and his name was called Ya῾aqov: and Yiżĥaq was sixty years old when she bore them."
+    },
+    {
+      "n": 9,
+      "c": 25,
+      "v": 27,
+      "ref": "25:27",
+      "text": "וַֽיִּגְדְּלוּ֙ הַנְּעָרִ֔ים וַיְהִ֣י עֵשָׂ֗ו אִ֛ישׁ יֹדֵ֥עַ צַ֖יִד אִ֣ישׁ שָׂדֶ֑ה וְיַעֲקֹב֙ אִ֣ישׁ תָּ֔ם יֹשֵׁ֖ב אֹהָלִֽים׃",
+      "en": "And the boys grew: and ῾Esav was a cunning hunter, a man of the field; and Ya῾aqov was a plain man, dwelling in tents."
+    },
+    {
+      "n": 10,
+      "c": 25,
+      "v": 28,
+      "ref": "25:28",
+      "text": "וַיֶּאֱהַ֥ב יִצְחָ֛ק אֶת־עֵשָׂ֖ו כִּי־צַ֣יִד בְּפִ֑יו וְרִבְקָ֖ה אֹהֶ֥בֶת אֶֽת־יַעֲקֹֽב׃",
+      "en": "And Yiżĥaq loved ῾Esav, for he relished his venison: but Rivqa loved Ya῾aqov."
+    },
+    {
+      "n": 11,
+      "c": 25,
+      "v": 29,
+      "ref": "25:29",
+      "text": "וַיָּ֥זֶד יַעֲקֹ֖ב נָזִ֑יד וַיָּבֹ֥א עֵשָׂ֛ו מִן־הַשָּׂדֶ֖ה וְה֥וּא עָיֵֽף׃",
+      "en": "And Ya῾aqov cooked pottage: and ῾Esav came from the field, and he was faint:"
+    },
+    {
+      "n": 12,
+      "c": 25,
+      "v": 30,
+      "ref": "25:30",
+      "text": "וַיֹּ֨אמֶר עֵשָׂ֜ו אֶֽל־יַעֲקֹ֗ב הַלְעִיטֵ֤נִי נָא֙ מִן־הָאָדֹ֤ם הָאָדֹם֙ הַזֶּ֔ה כִּ֥י עָיֵ֖ף אָנֹ֑כִי עַל־כֵּ֥ן קָרָֽא־שְׁמ֖וֹ אֱדֽוֹם׃",
+      "en": "and ῾Esav said to Ya῾aqov, Give me to swallow, I pray thee, of that red pottage; for I am faint: therefore was his name called Edom (red)."
+    },
+    {
+      "n": 13,
+      "c": 25,
+      "v": 31,
+      "ref": "25:31",
+      "text": "וַיֹּ֖אמֶר יַעֲקֹ֑ב מִכְרָ֥ה כַיּ֛וֹם אֶת־בְּכֹרָתְךָ֖ לִֽי׃",
+      "en": "And Ya῾aqov said, Sell me this day thy birthright."
+    },
+    {
+      "n": 14,
+      "c": 25,
+      "v": 32,
+      "ref": "25:32",
+      "text": "וַיֹּ֣אמֶר עֵשָׂ֔ו הִנֵּ֛ה אָנֹכִ֥י הוֹלֵ֖ךְ לָמ֑וּת וְלָמָּה־זֶּ֥ה לִ֖י בְּכֹרָֽה׃",
+      "en": "And ῾Esav said, Behold, I am at the point of death, and what profit shall this birthright do to me?"
+    },
+    {
+      "n": 15,
+      "c": 25,
+      "v": 33,
+      "ref": "25:33",
+      "text": "וַיֹּ֣אמֶר יַעֲקֹ֗ב הִשָּׁ֤בְעָה לִּי֙ כַּיּ֔וֹם וַיִּשָּׁבַ֖ע ל֑וֹ וַיִּמְכֹּ֥ר אֶת־בְּכֹרָת֖וֹ לְיַעֲקֹֽב׃",
+      "en": "And Ya῾aqov said, Swear to me this day; and he swore to him: and he sold his birthright to Ya῾aqov."
+    },
+    {
+      "n": 16,
+      "c": 25,
+      "v": 34,
+      "ref": "25:34",
+      "text": "וְיַעֲקֹ֞ב נָתַ֣ן לְעֵשָׂ֗ו לֶ֚חֶם וּנְזִ֣יד עֲדָשִׁ֔ים וַיֹּ֣אכַל וַיֵּ֔שְׁתְּ וַיָּ֖קׇם וַיֵּלַ֑ךְ וַיִּ֥בֶז עֵשָׂ֖ו אֶת־הַבְּכֹרָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Then Ya῾aqov gave ῾Esav bread and pottage of lentils; and he did eat and drink, and rose up, and went his way: thus ῾Esav despised the birthright."
+    },
+    {
+      "n": 17,
+      "c": 26,
+      "v": 1,
+      "ref": "26:1",
+      "text": "וַיְהִ֤י רָעָב֙ בָּאָ֔רֶץ מִלְּבַד֙ הָרָעָ֣ב הָרִאשׁ֔וֹן אֲשֶׁ֥ר הָיָ֖ה בִּימֵ֣י אַבְרָהָ֑ם וַיֵּ֧לֶךְ יִצְחָ֛ק אֶל־אֲבִימֶ֥לֶךְ מֶֽלֶךְ־פְּלִשְׁתִּ֖ים גְּרָֽרָה׃",
+      "en": "And there was a famine in the land, beside the first famine that was in the days of Avraham. And Yiżĥaq went to Avimelekh, king of the Pelishtim to Gerar."
+    },
+    {
+      "n": 18,
+      "c": 26,
+      "v": 2,
+      "ref": "26:2",
+      "text": "וַיֵּרָ֤א אֵלָיו֙ יְהֹוָ֔ה וַיֹּ֖אמֶר אַל־תֵּרֵ֣ד מִצְרָ֑יְמָה שְׁכֹ֣ן בָּאָ֔רֶץ אֲשֶׁ֖ר אֹמַ֥ר אֵלֶֽיךָ׃",
+      "en": "And the Lord appeared to him, and said, Go not down into Miżrayim; dwell in the land which I shall tell thee of:"
+    },
+    {
+      "n": 19,
+      "c": 26,
+      "v": 3,
+      "ref": "26:3",
+      "text": "גּ֚וּר בָּאָ֣רֶץ הַזֹּ֔את וְאֶֽהְיֶ֥ה עִמְּךָ֖ וַאֲבָרְכֶ֑ךָּ כִּֽי־לְךָ֣ וּֽלְזַרְעֲךָ֗ אֶתֵּן֙ אֶת־כׇּל־הָֽאֲרָצֹ֣ת הָאֵ֔ל וַהֲקִֽמֹתִי֙ אֶת־הַשְּׁבֻעָ֔ה אֲשֶׁ֥ר נִשְׁבַּ֖עְתִּי לְאַבְרָהָ֥ם אָבִֽיךָ׃",
+      "en": "sojourn in this land, and I will be with thee, and will bless thee; for to thee, and to thy seed, I will give all these countries and I will perform the oath which I swore to Avraham thy father;"
+    },
+    {
+      "n": 20,
+      "c": 26,
+      "v": 4,
+      "ref": "26:4",
+      "text": "וְהִרְבֵּיתִ֤י אֶֽת־זַרְעֲךָ֙ כְּכוֹכְבֵ֣י הַשָּׁמַ֔יִם וְנָתַתִּ֣י לְזַרְעֲךָ֔ אֵ֥ת כׇּל־הָאֲרָצֹ֖ת הָאֵ֑ל וְהִתְבָּרְכ֣וּ בְזַרְעֲךָ֔ כֹּ֖ל גּוֹיֵ֥י הָאָֽרֶץ׃",
+      "en": "and I will multiply thy seed as the stars of heaven, and will give to thy seed all these countries; and in thy seed shall all the nations of the earth be blessed;"
+    },
+    {
+      "n": 21,
+      "c": 26,
+      "v": 5,
+      "ref": "26:5",
+      "text": "עֵ֕קֶב אֲשֶׁר־שָׁמַ֥ע אַבְרָהָ֖ם בְּקֹלִ֑י וַיִּשְׁמֹר֙ מִשְׁמַרְתִּ֔י מִצְוֺתַ֖י חֻקּוֹתַ֥י וְתוֹרֹתָֽי׃",
+      "en": "because Avraham obeyed My voice, and kept My charge, My commandments, My statutes, and My laws."
+    },
+    {
+      "n": 22,
+      "c": 26,
+      "v": 6,
+      "ref": "26:6",
+      "text": "וַיֵּ֥שֶׁב יִצְחָ֖ק בִּגְרָֽר׃",
+      "en": "And Yiżĥaq dwelt in Gerar:"
+    },
+    {
+      "n": 23,
+      "c": 26,
+      "v": 7,
+      "ref": "26:7",
+      "text": "וַֽיִּשְׁאֲל֞וּ אַנְשֵׁ֤י הַמָּקוֹם֙ לְאִשְׁתּ֔וֹ וַיֹּ֖אמֶר אֲחֹ֣תִי הִ֑וא כִּ֤י יָרֵא֙ לֵאמֹ֣ר אִשְׁתִּ֔י פֶּן־יַֽהַרְגֻ֜נִי אַנְשֵׁ֤י הַמָּקוֹם֙ עַל־רִבְקָ֔ה כִּֽי־טוֹבַ֥ת מַרְאֶ֖ה הִֽוא׃",
+      "en": "and the men of the place asked him of his wife; and he said, She is my sister: for he feared to say, She is my wife; lest, said he, the men of the place should kill me on account of Rivqa; because she was fair to look upon."
+    },
+    {
+      "n": 24,
+      "c": 26,
+      "v": 8,
+      "ref": "26:8",
+      "text": "וַיְהִ֗י כִּ֣י אָֽרְכוּ־ל֥וֹ שָׁם֙ הַיָּמִ֔ים וַיַּשְׁקֵ֗ף אֲבִימֶ֙לֶךְ֙ מֶ֣לֶךְ פְּלִשְׁתִּ֔ים בְּעַ֖ד הַֽחַלּ֑וֹן וַיַּ֗רְא וְהִנֵּ֤ה יִצְחָק֙ מְצַחֵ֔ק אֵ֖ת רִבְקָ֥ה אִשְׁתּֽוֹ׃",
+      "en": "And it came to pass, when he had been there a long time, that Avimelekh king of the Pelishtim looked out at a window, and saw, and behold, Yiżĥaq was sporting with Rivqa his wife."
+    },
+    {
+      "n": 25,
+      "c": 26,
+      "v": 9,
+      "ref": "26:9",
+      "text": "וַיִּקְרָ֨א אֲבִימֶ֜לֶךְ לְיִצְחָ֗ק וַיֹּ֙אמֶר֙ אַ֣ךְ הִנֵּ֤ה אִשְׁתְּךָ֙ הִ֔וא וְאֵ֥יךְ אָמַ֖רְתָּ אֲחֹ֣תִי הִ֑וא וַיֹּ֤אמֶר אֵלָיו֙ יִצְחָ֔ק כִּ֣י אָמַ֔רְתִּי פֶּן־אָמ֖וּת עָלֶֽיהָ׃",
+      "en": "And Avimelekh called Yiżĥaq, and said, Behold, surely she is thy wife: and how didst thou say, She is my sister? And Yiżĥaq said to him, Because I said, Lest I die for her."
+    },
+    {
+      "n": 26,
+      "c": 26,
+      "v": 10,
+      "ref": "26:10",
+      "text": "וַיֹּ֣אמֶר אֲבִימֶ֔לֶךְ מַה־זֹּ֖את עָשִׂ֣יתָ לָּ֑נוּ כִּ֠מְעַ֠ט שָׁכַ֞ב אַחַ֤ד הָעָם֙ אֶת־אִשְׁתֶּ֔ךָ וְהֵבֵאתָ֥ עָלֵ֖ינוּ אָשָֽׁם׃",
+      "en": "And Avimelekh said, What is this thou hast done to us? one of the people might easily have lain with thy wife, and thou shouldst have brought guiltiness upon us."
+    },
+    {
+      "n": 27,
+      "c": 26,
+      "v": 11,
+      "ref": "26:11",
+      "text": "וַיְצַ֣ו אֲבִימֶ֔לֶךְ אֶת־כׇּל־הָעָ֖ם לֵאמֹ֑ר הַנֹּגֵ֜עַ בָּאִ֥ישׁ הַזֶּ֛ה וּבְאִשְׁתּ֖וֹ מ֥וֹת יוּמָֽת׃",
+      "en": "And Avimelekh charged all his people, saying, He that touches this man or his wife shall surely be put to death."
+    },
+    {
+      "n": 28,
+      "c": 26,
+      "v": 12,
+      "ref": "26:12",
+      "text": "וַיִּזְרַ֤ע יִצְחָק֙ בָּאָ֣רֶץ הַהִ֔וא וַיִּמְצָ֛א בַּשָּׁנָ֥ה הַהִ֖וא מֵאָ֣ה שְׁעָרִ֑ים וַֽיְבָרְכֵ֖הוּ יְהֹוָֽה׃",
+      "en": "Then Yiżĥaq sowed in that land, and received in the same year a hundredfold: for the Lord blessed him."
+    },
+    {
+      "n": 29,
+      "c": 26,
+      "v": 13,
+      "ref": "26:13",
+      "text": "וַיִּגְדַּ֖ל הָאִ֑ישׁ וַיֵּ֤לֶךְ הָלוֹךְ֙ וְגָדֵ֔ל עַ֥ד כִּֽי־גָדַ֖ל מְאֹֽד׃",
+      "en": "And the man grew great, and went forward, and grew until he became very great:"
+    },
+    {
+      "n": 30,
+      "c": 26,
+      "v": 14,
+      "ref": "26:14",
+      "text": "וַֽיְהִי־ל֤וֹ מִקְנֵה־צֹאן֙ וּמִקְנֵ֣ה בָקָ֔ר וַעֲבֻדָּ֖ה רַבָּ֑ה וַיְקַנְא֥וּ אֹת֖וֹ פְּלִשְׁתִּֽים׃",
+      "en": "for he had possessions of flocks, and possessions of herds, and a great store of servants: and the Pelishtim envied him."
+    },
+    {
+      "n": 31,
+      "c": 26,
+      "v": 15,
+      "ref": "26:15",
+      "text": "וְכׇל־הַבְּאֵרֹ֗ת אֲשֶׁ֤ר חָֽפְרוּ֙ עַבְדֵ֣י אָבִ֔יו בִּימֵ֖י אַבְרָהָ֣ם אָבִ֑יו סִתְּמ֣וּם פְּלִשְׁתִּ֔ים וַיְמַלְא֖וּם עָפָֽר׃",
+      "en": "For all the wells which his father’s servants had dug in the days of Avraham his father, the Pelishtim had stopped them up, and filled them with earth."
+    },
+    {
+      "n": 32,
+      "c": 26,
+      "v": 16,
+      "ref": "26:16",
+      "text": "וַיֹּ֥אמֶר אֲבִימֶ֖לֶךְ אֶל־יִצְחָ֑ק לֵ֚ךְ מֵֽעִמָּ֔נוּ כִּֽי־עָצַ֥מְתָּ מִמֶּ֖נּוּ מְאֹֽד׃",
+      "en": "And Avimelekh said to Yiżĥaq, Go from us; for thou art much mightier than we."
+    },
+    {
+      "n": 33,
+      "c": 26,
+      "v": 17,
+      "ref": "26:17",
+      "text": "וַיֵּ֥לֶךְ מִשָּׁ֖ם יִצְחָ֑ק וַיִּ֥חַן בְּנַֽחַל־גְּרָ֖ר וַיֵּ֥שֶׁב שָֽׁם׃",
+      "en": "And Yiżĥaq departed from there, and pitched in the valley of Gerar, and dwelt there."
+    },
+    {
+      "n": 34,
+      "c": 26,
+      "v": 18,
+      "ref": "26:18",
+      "text": "וַיָּ֨שׇׁב יִצְחָ֜ק וַיַּחְפֹּ֣ר&thinsp;<b>׀</b> אֶת־בְּאֵרֹ֣ת הַמַּ֗יִם אֲשֶׁ֤ר חָֽפְרוּ֙ בִּימֵי֙ אַבְרָהָ֣ם אָבִ֔יו וַיְסַתְּמ֣וּם פְּלִשְׁתִּ֔ים אַחֲרֵ֖י מ֣וֹת אַבְרָהָ֑ם וַיִּקְרָ֤א לָהֶן֙ שֵׁמ֔וֹת כַּשֵּׁמֹ֕ת אֲשֶׁר־קָרָ֥א לָהֶ֖ן אָבִֽיו׃",
+      "en": "And Yiżĥaq dug again the wells of water, which they had dug in the days of Avraham his father; for the Pelishtim had stopped them up after the death of Avraham: and he called their names after the names by which his father had called them."
+    },
+    {
+      "n": 35,
+      "c": 26,
+      "v": 19,
+      "ref": "26:19",
+      "text": "וַיַּחְפְּר֥וּ עַבְדֵֽי־יִצְחָ֖ק בַּנָּ֑חַל וַיִּ֨מְצְאוּ־שָׁ֔ם בְּאֵ֖ר מַ֥יִם חַיִּֽים׃",
+      "en": "And Yiżĥaq’s servants dug in the valley, and found there a well of springing water."
+    },
+    {
+      "n": 36,
+      "c": 26,
+      "v": 20,
+      "ref": "26:20",
+      "text": "וַיָּרִ֜יבוּ רֹעֵ֣י גְרָ֗ר עִם־רֹעֵ֥י יִצְחָ֛ק לֵאמֹ֖ר לָ֣נוּ הַמָּ֑יִם וַיִּקְרָ֤א שֵֽׁם־הַבְּאֵר֙ עֵ֔שֶׂק כִּ֥י הִֽתְעַשְּׂק֖וּ עִמּֽוֹ׃",
+      "en": "And the herdmen of Gerar did strive with Yiżĥaq’s herdmen, saying, The water is ours: and he called the name of the well ῾Eseq; because they strove with him."
+    },
+    {
+      "n": 37,
+      "c": 26,
+      "v": 21,
+      "ref": "26:21",
+      "text": "וַֽיַּחְפְּרוּ֙ בְּאֵ֣ר אַחֶ֔רֶת וַיָּרִ֖יבוּ גַּם־עָלֶ֑יהָ וַיִּקְרָ֥א שְׁמָ֖הּ שִׂטְנָֽה׃",
+      "en": "And they dug another well, and strove for that also: and he called the name of it Sitna."
+    },
+    {
+      "n": 38,
+      "c": 26,
+      "v": 22,
+      "ref": "26:22",
+      "text": "וַיַּעְתֵּ֣ק מִשָּׁ֗ם וַיַּחְפֹּר֙ בְּאֵ֣ר אַחֶ֔רֶת וְלֹ֥א רָב֖וּ עָלֶ֑יהָ וַיִּקְרָ֤א שְׁמָהּ֙ רְחֹב֔וֹת וַיֹּ֗אמֶר כִּֽי־עַתָּ֞ה הִרְחִ֧יב יְהֹוָ֛ה לָ֖נוּ וּפָרִ֥ינוּ בָאָֽרֶץ׃",
+      "en": "And he removed from there, and dug another well; and for that they strove not: and he called the name of it Reĥovot; and he said, For now the Lord has made room for us, and we shall be fruitful in the land."
+    },
+    {
+      "n": 39,
+      "c": 26,
+      "v": 23,
+      "ref": "26:23",
+      "text": "וַיַּ֥עַל מִשָּׁ֖ם בְּאֵ֥ר שָֽׁבַע׃",
+      "en": "And he went up from there to Be᾽er-sheva."
+    },
+    {
+      "n": 40,
+      "c": 26,
+      "v": 24,
+      "ref": "26:24",
+      "text": "וַיֵּרָ֨א אֵלָ֤יו יְהֹוָה֙ בַּלַּ֣יְלָה הַה֔וּא וַיֹּ֕אמֶר אָנֹכִ֕י אֱלֹהֵ֖י אַבְרָהָ֣ם אָבִ֑יךָ אַל־תִּירָא֙ כִּֽי־אִתְּךָ֣ אָנֹ֔כִי וּבֵֽרַכְתִּ֙יךָ֙ וְהִרְבֵּיתִ֣י אֶֽת־זַרְעֲךָ֔ בַּעֲב֖וּר אַבְרָהָ֥ם עַבְדִּֽי׃",
+      "en": "And the Lord appeared to him the same night, and said, I am the God of Avraham thy father: fear not, for I am with thee, and will bless thee, and multiply thy seed for My servant Avraham’s sake."
+    },
+    {
+      "n": 41,
+      "c": 26,
+      "v": 25,
+      "ref": "26:25",
+      "text": "וַיִּ֧בֶן שָׁ֣ם מִזְבֵּ֗חַ וַיִּקְרָא֙ בְּשֵׁ֣ם יְהֹוָ֔ה וַיֶּט־שָׁ֖ם אׇהֳל֑וֹ וַיִּכְרוּ־שָׁ֥ם עַבְדֵי־יִצְחָ֖ק בְּאֵֽר׃",
+      "en": "And he built an altar there, and called upon the name of the Lord, and pitched his tent there: and there Yiżĥaq’s servants dug a well."
+    },
+    {
+      "n": 42,
+      "c": 26,
+      "v": 26,
+      "ref": "26:26",
+      "text": "וַאֲבִימֶ֕לֶךְ הָלַ֥ךְ אֵלָ֖יו מִגְּרָ֑ר וַאֲחֻזַּת֙ מֵֽרֵעֵ֔הוּ וּפִיכֹ֖ל שַׂר־צְבָאֽוֹ׃",
+      "en": "Then Avimelekh went to him from Gerar, and Aĥuzzat his friend, and Pikhol the captain of his army."
+    },
+    {
+      "n": 43,
+      "c": 26,
+      "v": 27,
+      "ref": "26:27",
+      "text": "וַיֹּ֤אמֶר אֲלֵהֶם֙ יִצְחָ֔ק מַדּ֖וּעַ בָּאתֶ֣ם אֵלָ֑י וְאַתֶּם֙ שְׂנֵאתֶ֣ם אֹתִ֔י וַתְּשַׁלְּח֖וּנִי מֵאִתְּכֶֽם׃",
+      "en": "And Yiżĥaq said to them, Why do you come to me, seeing you hate me, and have sent me away from you?"
+    },
+    {
+      "n": 44,
+      "c": 26,
+      "v": 28,
+      "ref": "26:28",
+      "text": "וַיֹּאמְר֗וּ רָא֣וֹ רָאִ֘ינוּ֮ כִּֽי־הָיָ֣ה יְהֹוָ֣ה&thinsp;<small>׀</small>&thinsp;עִמָּךְ֒ וַנֹּ֗אמֶר תְּהִ֨י נָ֥א אָלָ֛ה בֵּינוֹתֵ֖ינוּ בֵּינֵ֣ינוּ וּבֵינֶ֑ךָ וְנִכְרְתָ֥ה בְרִ֖ית עִמָּֽךְ׃",
+      "en": "And they said, We saw indeed that the Lord was with thee: and we said, Let there be now an oath between us, between us and thee, and let us make a covenant with thee;"
+    },
+    {
+      "n": 45,
+      "c": 26,
+      "v": 29,
+      "ref": "26:29",
+      "text": "אִם־תַּעֲשֵׂ֨ה עִמָּ֜נוּ רָעָ֗ה כַּאֲשֶׁר֙ לֹ֣א נְגַֽעֲנ֔וּךָ וְכַאֲשֶׁ֨ר עָשִׂ֤ינוּ עִמְּךָ֙ רַק־ט֔וֹב וַנְּשַׁלֵּֽחֲךָ֖ בְּשָׁל֑וֹם אַתָּ֥ה עַתָּ֖ה בְּר֥וּךְ יְהֹוָֽה׃",
+      "en": "that thou wilt do us no hurt, as we have not touched thee, and as we have done to thee nothing but good, and have sent thee away in peace: thou art now the blessed of the Lord."
+    },
+    {
+      "n": 46,
+      "c": 26,
+      "v": 30,
+      "ref": "26:30",
+      "text": "וַיַּ֤עַשׂ לָהֶם֙ מִשְׁתֶּ֔ה וַיֹּאכְל֖וּ וַיִּשְׁתּֽוּ׃",
+      "en": "And he made them a feast, and they did eat and drink."
+    },
+    {
+      "n": 47,
+      "c": 26,
+      "v": 31,
+      "ref": "26:31",
+      "text": "וַיַּשְׁכִּ֣ימוּ בַבֹּ֔קֶר וַיִּשָּׁבְע֖וּ אִ֣ישׁ לְאָחִ֑יו וַיְשַׁלְּחֵ֣ם יִצְחָ֔ק וַיֵּלְכ֥וּ מֵאִתּ֖וֹ בְּשָׁלֽוֹם׃",
+      "en": "And they rose up early in the morning, and swore one to another: and Yiżĥaq sent them away, and they departed from him in peace."
+    },
+    {
+      "n": 48,
+      "c": 26,
+      "v": 32,
+      "ref": "26:32",
+      "text": "וַיְהִ֣י&thinsp;<b>׀</b> בַּיּ֣וֹם הַה֗וּא וַיָּבֹ֙אוּ֙ עַבְדֵ֣י יִצְחָ֔ק וַיַּגִּ֣דוּ ל֔וֹ עַל־אֹד֥וֹת הַבְּאֵ֖ר אֲשֶׁ֣ר חָפָ֑רוּ וַיֹּ֥אמְרוּ ל֖וֹ מָצָ֥אנוּ מָֽיִם׃",
+      "en": "And it came to pass the same day, that Yiżĥaq’s servants came, and told him concerning the well which they had dug, and said to him, We have found water."
+    },
+    {
+      "n": 49,
+      "c": 26,
+      "v": 33,
+      "ref": "26:33",
+      "text": "וַיִּקְרָ֥א אֹתָ֖הּ שִׁבְעָ֑ה עַל־כֵּ֤ן שֵׁם־הָעִיר֙ בְּאֵ֣ר שֶׁ֔בַע עַ֖ד הַיּ֥וֹם הַזֶּֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he called it Shiv῾a: therefore the name of the city is Be᾽er-sheva to this day."
+    },
+    {
+      "n": 50,
+      "c": 26,
+      "v": 34,
+      "ref": "26:34",
+      "text": "וַיְהִ֤י עֵשָׂו֙ בֶּן־אַרְבָּעִ֣ים שָׁנָ֔ה וַיִּקַּ֤ח אִשָּׁה֙ אֶת־יְהוּדִ֔ית בַּת־בְּאֵרִ֖י הַֽחִתִּ֑י וְאֶת־בָּ֣שְׂמַ֔ת בַּת־אֵילֹ֖ן הַֽחִתִּֽי׃",
+      "en": "And ῾Esav was forty years old when he took to wife Yehudit the daughter of Be᾽eri the Ḥittite, and Basemat the daughter of Elon the Ḥittite:"
+    },
+    {
+      "n": 51,
+      "c": 26,
+      "v": 35,
+      "ref": "26:35",
+      "text": "וַתִּהְיֶ֖יןָ מֹ֣רַת ר֑וּחַ לְיִצְחָ֖ק וּלְרִבְקָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and they were a grief of mind to Yiżĥaq and to Rivqa."
+    },
+    {
+      "n": 52,
+      "c": 27,
+      "v": 1,
+      "ref": "27:1",
+      "text": "וַֽיְהִי֙ כִּֽי־זָקֵ֣ן יִצְחָ֔ק וַתִּכְהֶ֥יןָ עֵינָ֖יו מֵרְאֹ֑ת וַיִּקְרָ֞א אֶת־עֵשָׂ֣ו&thinsp;<b>׀</b> בְּנ֣וֹ הַגָּדֹ֗ל וַיֹּ֤אמֶר אֵלָיו֙ בְּנִ֔י וַיֹּ֥אמֶר אֵלָ֖יו הִנֵּֽנִי׃",
+      "en": "And it came to pass, that when Yiżĥaq was old, and his eyes were dim, so that he could not see, he called ῾Esav his eldest son, and said to him, My son: and he said to him, Here I am."
+    },
+    {
+      "n": 53,
+      "c": 27,
+      "v": 2,
+      "ref": "27:2",
+      "text": "וַיֹּ֕אמֶר הִנֵּה־נָ֖א זָקַ֑נְתִּי לֹ֥א יָדַ֖עְתִּי י֥וֹם מוֹתִֽי׃",
+      "en": "And he said, Behold now, I am old, I know not the day of my death:"
+    },
+    {
+      "n": 54,
+      "c": 27,
+      "v": 3,
+      "ref": "27:3",
+      "text": "וְעַתָּה֙ שָׂא־נָ֣א כֵלֶ֔יךָ תֶּלְיְךָ֖ וְקַשְׁתֶּ֑ךָ וְצֵא֙ הַשָּׂדֶ֔ה וְצ֥וּדָה לִּ֖י <span class=\"mam-kq\"><span class=\"mam-kq-k\">(צידה)</span> <span class=\"mam-kq-q\">[צָֽיִד]</span></span>׃",
+      "en": "now therefore take, I pray thee, thy weapons, thy quiver and thy bow, and go out to the field, and catch me some venison;"
+    },
+    {
+      "n": 55,
+      "c": 27,
+      "v": 4,
+      "ref": "27:4",
+      "text": "וַעֲשֵׂה־לִ֨י מַטְעַמִּ֜ים כַּאֲשֶׁ֥ר אָהַ֛בְתִּי וְהָבִ֥יאָה לִּ֖י וְאֹכֵ֑לָה בַּעֲב֛וּר תְּבָרֶכְךָ֥ נַפְשִׁ֖י בְּטֶ֥רֶם אָמֽוּת׃",
+      "en": "and make me savoury food, such as I love, and bring it to me, that I may eat, that my soul may bless thee before I die."
+    },
+    {
+      "n": 56,
+      "c": 27,
+      "v": 5,
+      "ref": "27:5",
+      "text": "וְרִבְקָ֣ה שֹׁמַ֔עַת בְּדַבֵּ֣ר יִצְחָ֔ק אֶל־עֵשָׂ֖ו בְּנ֑וֹ וַיֵּ֤לֶךְ עֵשָׂו֙ הַשָּׂדֶ֔ה לָצ֥וּד צַ֖יִד לְהָבִֽיא׃",
+      "en": "And Rivqa heard when Yiżĥaq spoke to ῾Esav his son. And ῾Esav went to the field to hunt for venison, and to bring it."
+    },
+    {
+      "n": 57,
+      "c": 27,
+      "v": 6,
+      "ref": "27:6",
+      "text": "וְרִבְקָה֙ אָֽמְרָ֔ה אֶל־יַעֲקֹ֥ב בְּנָ֖הּ לֵאמֹ֑ר הִנֵּ֤ה שָׁמַ֙עְתִּי֙ אֶת־אָבִ֔יךָ מְדַבֵּ֛ר אֶל־עֵשָׂ֥ו אָחִ֖יךָ לֵאמֹֽר׃",
+      "en": "And Rivqa spoke to Ya῾aqov her son, saying, Behold, I heard thy father speak to ῾Esav thy brother, saying,"
+    },
+    {
+      "n": 58,
+      "c": 27,
+      "v": 7,
+      "ref": "27:7",
+      "text": "הָבִ֨יאָה לִּ֥י צַ֛יִד וַעֲשֵׂה־לִ֥י מַטְעַמִּ֖ים וְאֹכֵ֑לָה וַאֲבָרֶכְכָ֛ה לִפְנֵ֥י יְהֹוָ֖ה לִפְנֵ֥י מוֹתִֽי׃",
+      "en": "Bring me venison, and make me savoury food, that I may eat, and bless thee before the Lord before my death."
+    },
+    {
+      "n": 59,
+      "c": 27,
+      "v": 8,
+      "ref": "27:8",
+      "text": "וְעַתָּ֥ה בְנִ֖י שְׁמַ֣ע בְּקֹלִ֑י לַאֲשֶׁ֥ר אֲנִ֖י מְצַוָּ֥ה אֹתָֽךְ׃",
+      "en": "Now therefore, my son, obey my voice according to that which I command thee."
+    },
+    {
+      "n": 60,
+      "c": 27,
+      "v": 9,
+      "ref": "27:9",
+      "text": "לֶךְ־נָא֙ אֶל־הַצֹּ֔אן וְקַֽח־לִ֣י מִשָּׁ֗ם שְׁנֵ֛י גְּדָיֵ֥י עִזִּ֖ים טֹבִ֑ים וְאֶֽעֱשֶׂ֨ה אֹתָ֧ם מַטְעַמִּ֛ים לְאָבִ֖יךָ כַּאֲשֶׁ֥ר אָהֵֽב׃",
+      "en": "Go now to the flock, and fetch me from there two good kids of the goats; and I will make them into savoury food for thy father, such as he loves:"
+    },
+    {
+      "n": 61,
+      "c": 27,
+      "v": 10,
+      "ref": "27:10",
+      "text": "וְהֵבֵאתָ֥ לְאָבִ֖יךָ וְאָכָ֑ל בַּעֲבֻ֛ר אֲשֶׁ֥ר יְבָרֶכְךָ֖ לִפְנֵ֥י מוֹתֽוֹ׃",
+      "en": "and thou shalt bring it to thy father, that he may eat, and that he may bless thee before his death."
+    },
+    {
+      "n": 62,
+      "c": 27,
+      "v": 11,
+      "ref": "27:11",
+      "text": "וַיֹּ֣אמֶר יַעֲקֹ֔ב אֶל־רִבְקָ֖ה אִמּ֑וֹ הֵ֣ן עֵשָׂ֤ו אָחִי֙ אִ֣ישׁ שָׂעִ֔ר וְאָנֹכִ֖י אִ֥ישׁ חָלָֽק׃",
+      "en": "And Ya῾aqov said to Rivqa his mother, Behold, ῾Esav my brother is a hairy man, and I am a smooth man:"
+    },
+    {
+      "n": 63,
+      "c": 27,
+      "v": 12,
+      "ref": "27:12",
+      "text": "אוּלַ֤י יְמֻשֵּׁ֙נִי֙ אָבִ֔י וְהָיִ֥יתִי בְעֵינָ֖יו כִּמְתַעְתֵּ֑עַ וְהֵבֵאתִ֥י עָלַ֛י קְלָלָ֖ה וְלֹ֥א בְרָכָֽה׃",
+      "en": "my father perhaps will feel me, and I shall seem to him a deceiver; and I shall bring a curse upon me, and not a blessing."
+    },
+    {
+      "n": 64,
+      "c": 27,
+      "v": 13,
+      "ref": "27:13",
+      "text": "וַתֹּ֤אמֶר לוֹ֙ אִמּ֔וֹ עָלַ֥י קִלְלָתְךָ֖ בְּנִ֑י אַ֛ךְ שְׁמַ֥ע בְּקֹלִ֖י וְלֵ֥ךְ קַֽח־לִֽי׃",
+      "en": "And his mother said to him, Upon me be thy curse, my son: only obey my voice, and go fetch me them."
+    },
+    {
+      "n": 65,
+      "c": 27,
+      "v": 14,
+      "ref": "27:14",
+      "text": "וַיֵּ֙לֶךְ֙ וַיִּקַּ֔ח וַיָּבֵ֖א לְאִמּ֑וֹ וַתַּ֤עַשׂ אִמּוֹ֙ מַטְעַמִּ֔ים כַּאֲשֶׁ֖ר אָהֵ֥ב אָבִֽיו׃",
+      "en": "And he went, and fetched, and brought them to his mother: and his mother made savoury food, such as his father loved."
+    },
+    {
+      "n": 66,
+      "c": 27,
+      "v": 15,
+      "ref": "27:15",
+      "text": "וַתִּקַּ֣ח רִ֠בְקָ֠ה אֶת־בִּגְדֵ֨י עֵשָׂ֜ו בְּנָ֤הּ הַגָּדֹל֙ הַחֲמֻדֹ֔ת אֲשֶׁ֥ר אִתָּ֖הּ בַּבָּ֑יִת וַתַּלְבֵּ֥שׁ אֶֽת־יַעֲקֹ֖ב בְּנָ֥הּ הַקָּטָֽן׃",
+      "en": "And Rivqa took the best clothes of her eldest son ῾Esav, which were with her in the house, and put them upon Ya῾aqov her younger son:"
+    },
+    {
+      "n": 67,
+      "c": 27,
+      "v": 16,
+      "ref": "27:16",
+      "text": "וְאֵ֗ת עֹרֹת֙ גְּדָיֵ֣י הָֽעִזִּ֔ים הִלְבִּ֖ישָׁה עַל־יָדָ֑יו וְעַ֖ל חֶלְקַ֥ת צַוָּארָֽיו׃",
+      "en": "and she put the skins of the kids of the goats upon his hands, and upon the smooth of his neck:"
+    },
+    {
+      "n": 68,
+      "c": 27,
+      "v": 17,
+      "ref": "27:17",
+      "text": "וַתִּתֵּ֧ן אֶת־הַמַּטְעַמִּ֛ים וְאֶת־הַלֶּ֖חֶם אֲשֶׁ֣ר עָשָׂ֑תָה בְּיַ֖ד יַעֲקֹ֥ב בְּנָֽהּ׃",
+      "en": "and she gave the savoury food and the bread, which she had prepared, into the hand of her son Ya῾aqov."
+    },
+    {
+      "n": 69,
+      "c": 27,
+      "v": 18,
+      "ref": "27:18",
+      "text": "וַיָּבֹ֥א אֶל־אָבִ֖יו וַיֹּ֣אמֶר אָבִ֑י וַיֹּ֣אמֶר הִנֶּ֔נִּי מִ֥י אַתָּ֖ה בְּנִֽי׃",
+      "en": "And he came to his father, and said, My father: and he said, Here am I: who art thou, my son?"
+    },
+    {
+      "n": 70,
+      "c": 27,
+      "v": 19,
+      "ref": "27:19",
+      "text": "וַיֹּ֨אמֶר יַעֲקֹ֜ב אֶל־אָבִ֗יו אָנֹכִי֙ עֵשָׂ֣ו בְּכֹרֶ֔ךָ עָשִׂ֕יתִי כַּאֲשֶׁ֥ר דִּבַּ֖רְתָּ אֵלָ֑י קֽוּם־נָ֣א שְׁבָ֗ה וְאׇכְלָה֙ מִצֵּידִ֔י בַּעֲב֖וּר תְּבָרְכַ֥נִּי נַפְשֶֽׁךָ׃",
+      "en": "And Ya῾aqov said to his father, I am ῾Esav thy firstborn; I have done according as thou didst tell me: arise, I pray thee, sit and eat of my venison, that thy soul may bless me."
+    },
+    {
+      "n": 71,
+      "c": 27,
+      "v": 20,
+      "ref": "27:20",
+      "text": "וַיֹּ֤אמֶר יִצְחָק֙ אֶל־בְּנ֔וֹ מַה־זֶּ֛ה מִהַ֥רְתָּ לִמְצֹ֖א בְּנִ֑י וַיֹּ֕אמֶר כִּ֥י הִקְרָ֛ה יְהֹוָ֥ה אֱלֹהֶ֖יךָ לְפָנָֽי׃",
+      "en": "And Yiżĥaq said to his son, How is it that thou hast found it so quickly, my son? And he said, Because, the Lord thy God sent me good speed."
+    },
+    {
+      "n": 72,
+      "c": 27,
+      "v": 21,
+      "ref": "27:21",
+      "text": "וַיֹּ֤אמֶר יִצְחָק֙ אֶֽל־יַעֲקֹ֔ב גְּשָׁה־נָּ֥א וַאֲמֻֽשְׁךָ֖ בְּנִ֑י הַֽאַתָּ֥ה זֶ֛ה בְּנִ֥י עֵשָׂ֖ו אִם־לֹֽא׃",
+      "en": "And Yiżĥaq said to Ya῾aqov, Come near, I pray thee, that I may feel thee, my son, whether thou art really my son ῾Esav or not."
+    },
+    {
+      "n": 73,
+      "c": 27,
+      "v": 22,
+      "ref": "27:22",
+      "text": "וַיִּגַּ֧שׁ יַעֲקֹ֛ב אֶל־יִצְחָ֥ק אָבִ֖יו וַיְמֻשֵּׁ֑הוּ וַיֹּ֗אמֶר הַקֹּל֙ ק֣וֹל יַעֲקֹ֔ב וְהַיָּדַ֖יִם יְדֵ֥י עֵשָֽׂו׃",
+      "en": "And Ya῾aqov went near to Yiżĥaq his father; and he felt him, and said, The voice is Ya῾aqov’s voice, but the hands are the hands of ῾Esav."
+    },
+    {
+      "n": 74,
+      "c": 27,
+      "v": 23,
+      "ref": "27:23",
+      "text": "וְלֹ֣א הִכִּיר֔וֹ כִּֽי־הָי֣וּ יָדָ֗יו כִּידֵ֛י עֵשָׂ֥ו אָחִ֖יו שְׂעִרֹ֑ת וַֽיְבָרְכֵֽהוּ׃",
+      "en": "And he recognised him not, because his hands were hairy, as his brother ῾Esav’s hands: so he blessed him."
+    },
+    {
+      "n": 75,
+      "c": 27,
+      "v": 24,
+      "ref": "27:24",
+      "text": "וַיֹּ֕אמֶר אַתָּ֥ה זֶ֖ה בְּנִ֣י עֵשָׂ֑ו וַיֹּ֖אמֶר אָֽנִי׃",
+      "en": "And he said, Art thou really my son ῾Esav? And he said, I am."
+    },
+    {
+      "n": 76,
+      "c": 27,
+      "v": 25,
+      "ref": "27:25",
+      "text": "וַיֹּ֗אמֶר הַגִּ֤שָׁה לִּי֙ וְאֹֽכְלָה֙ מִצֵּ֣יד בְּנִ֔י לְמַ֥עַן תְּבָֽרֶכְךָ֖ נַפְשִׁ֑י וַיַּגֶּשׁ־לוֹ֙ וַיֹּאכַ֔ל וַיָּ֧בֵא ל֦וֹ יַ֖יִן וַיֵּֽשְׁתְּ׃",
+      "en": "And he said, Bring it near to me, and I will eat of my son’s venison, that my soul may bless thee. And he brought it near to him, and he did eat: and he brought him wine, and he drank."
+    },
+    {
+      "n": 77,
+      "c": 27,
+      "v": 26,
+      "ref": "27:26",
+      "text": "וַיֹּ֥אמֶר אֵלָ֖יו יִצְחָ֣ק אָבִ֑יו גְּשָׁה־נָּ֥א וּשְׁקָה־לִּ֖י בְּנִֽי׃",
+      "en": "And his father Yiżĥaq said to him, Come near now, and kiss me, my son."
+    },
+    {
+      "n": 78,
+      "c": 27,
+      "v": 27,
+      "ref": "27:27",
+      "text": "וַיִּגַּשׁ֙ וַיִּשַּׁק־ל֔וֹ וַיָּ֛רַח אֶת־רֵ֥יחַ בְּגָדָ֖יו וַֽיְבָרְכֵ֑הוּ וַיֹּ֗אמֶר רְאֵה֙ רֵ֣יחַ בְּנִ֔י כְּרֵ֣יחַ שָׂדֶ֔ה אֲשֶׁ֥ר בֵּרְכ֖וֹ יְהֹוָֽה׃",
+      "en": "And he came near, and kissed him: and he smelt the smell of his garments, and blessed him, and said, See, the smell of my son is like the smell of a field which the Lord has blessed:"
+    },
+    {
+      "n": 79,
+      "c": 27,
+      "v": 28,
+      "ref": "27:28",
+      "text": "וְיִֽתֶּן־לְךָ֙ הָאֱלֹהִ֔ים מִטַּל֙ הַשָּׁמַ֔יִם וּמִשְׁמַנֵּ֖י הָאָ֑רֶץ וְרֹ֥ב דָּגָ֖ן וְתִירֹֽשׁ׃",
+      "en": "therefore God give thee of the dew of heaven, and the fatness of the earth, and plenty of corn and wine:"
+    },
+    {
+      "n": 80,
+      "c": 27,
+      "v": 29,
+      "ref": "27:29",
+      "text": "יַֽעַבְד֣וּךָ עַמִּ֗ים <span class=\"mam-kq\"><span class=\"mam-kq-k\">(וישתחו)</span> <span class=\"mam-kq-q\">[וְיִֽשְׁתַּחֲו֤וּ]</span></span> לְךָ֙ לְאֻמִּ֔ים הֱוֵ֤ה גְבִיר֙ לְאַחֶ֔יךָ וְיִשְׁתַּחֲו֥וּ לְךָ֖ בְּנֵ֣י אִמֶּ֑ךָ אֹרְרֶ֣יךָ אָר֔וּר וּֽמְבָרְכֶ֖יךָ בָּרֽוּךְ׃",
+      "en": "let peoples serve thee, and nations bow down to thee: be lord over thy brethren, and let thy mother’s sons bow down to thee: cursed be those that curse thee, and blessed be those that bless thee."
+    },
+    {
+      "n": 81,
+      "c": 27,
+      "v": 30,
+      "ref": "27:30",
+      "text": "וַיְהִ֗י כַּאֲשֶׁ֨ר כִּלָּ֣ה יִצְחָק֮ לְבָרֵ֣ךְ אֶֽת־יַעֲקֹב֒ וַיְהִ֗י אַ֣ךְ יָצֹ֤א יָצָא֙ יַעֲקֹ֔ב מֵאֵ֥ת פְּנֵ֖י יִצְחָ֣ק אָבִ֑יו וְעֵשָׂ֣ו אָחִ֔יו בָּ֖א מִצֵּידֽוֹ׃",
+      "en": "And it came to pass, as soon as Yiżĥaq had made an end of blessing Ya῾aqov, and Ya῾aqov was yet scarce gone out from the presence of Yiżĥaq his father, that ῾Esav his brother came in from his hunting."
+    },
+    {
+      "n": 82,
+      "c": 27,
+      "v": 31,
+      "ref": "27:31",
+      "text": "וַיַּ֤עַשׂ גַּם־הוּא֙ מַטְעַמִּ֔ים וַיָּבֵ֖א לְאָבִ֑יו וַיֹּ֣אמֶר לְאָבִ֗יו יָקֻ֤ם אָבִי֙ וְיֹאכַל֙ מִצֵּ֣יד בְּנ֔וֹ בַּעֲבֻ֖ר תְּבָרְכַ֥נִּי נַפְשֶֽׁךָ׃",
+      "en": "And he also had made savoury food, and brought it to his father, and said to his father, Let my father arise, and eat of his son’s venison, that thy soul may bless me."
+    },
+    {
+      "n": 83,
+      "c": 27,
+      "v": 32,
+      "ref": "27:32",
+      "text": "וַיֹּ֥אמֶר ל֛וֹ יִצְחָ֥ק אָבִ֖יו מִי־אָ֑תָּה וַיֹּ֕אמֶר אֲנִ֛י בִּנְךָ֥ בְכֹֽרְךָ֖ עֵשָֽׂו׃",
+      "en": "And Yiżĥaq his father said to him, Who art thou? And he said, I am thy son, thy firstborn ῾Esav."
+    },
+    {
+      "n": 84,
+      "c": 27,
+      "v": 33,
+      "ref": "27:33",
+      "text": "וַיֶּחֱרַ֨ד יִצְחָ֣ק חֲרָדָה֮ גְּדֹלָ֣ה עַד־מְאֹד֒ וַיֹּ֡אמֶר מִֽי־אֵפ֡וֹא ה֣וּא הַצָּֽד־צַ֩יִד֩ וַיָּ֨בֵא לִ֜י וָאֹכַ֥ל מִכֹּ֛ל בְּטֶ֥רֶם תָּב֖וֹא וָאֲבָרְכֵ֑הוּ גַּם־בָּר֖וּךְ יִהְיֶֽה׃",
+      "en": "And Yiżĥaq trembled very much, and said, Who then is he that has taken venison, and brought it me, and I have eaten of all before thou camest, and have blessed him? moreover, he shall be blessed."
+    },
+    {
+      "n": 85,
+      "c": 27,
+      "v": 34,
+      "ref": "27:34",
+      "text": "כִּשְׁמֹ֤עַ עֵשָׂו֙ אֶת־דִּבְרֵ֣י אָבִ֔יו וַיִּצְעַ֣ק צְעָקָ֔ה גְּדֹלָ֥ה וּמָרָ֖ה עַד־מְאֹ֑ד וַיֹּ֣אמֶר לְאָבִ֔יו בָּרְכֵ֥נִי גַם־אָ֖נִי אָבִֽי׃",
+      "en": "And when ῾Esav heard the words of his father, he cried with a great and exceedingly bitter cry, and said to his father, Bless me, me also, O my father."
+    },
+    {
+      "n": 86,
+      "c": 27,
+      "v": 35,
+      "ref": "27:35",
+      "text": "וַיֹּ֕אמֶר בָּ֥א אָחִ֖יךָ בְּמִרְמָ֑ה וַיִּקַּ֖ח בִּרְכָתֶֽךָ׃",
+      "en": "And he said, Thy brother came with cunning and has taken away thy blessing."
+    },
+    {
+      "n": 87,
+      "c": 27,
+      "v": 36,
+      "ref": "27:36",
+      "text": "וַיֹּ֡אמֶר הֲכִי֩ קָרָ֨א שְׁמ֜וֹ יַעֲקֹ֗ב וַֽיַּעְקְבֵ֙נִי֙ זֶ֣ה פַעֲמַ֔יִם אֶת־בְּכֹרָתִ֣י לָקָ֔ח וְהִנֵּ֥ה עַתָּ֖ה לָקַ֣ח בִּרְכָתִ֑י וַיֹּאמַ֕ר הֲלֹא־אָצַ֥לְתָּ לִּ֖י בְּרָכָֽה׃",
+      "en": "And he said, Is not he rightly named Ya῾aqov? for he has supplanted me these two times: he took away my birthright; and, behold, now he has taken away my blessing. And he said, Hast thou not reserved a blessing for me?"
+    },
+    {
+      "n": 88,
+      "c": 27,
+      "v": 37,
+      "ref": "27:37",
+      "text": "וַיַּ֨עַן יִצְחָ֜ק וַיֹּ֣אמֶר לְעֵשָׂ֗ו הֵ֣ן גְּבִ֞יר שַׂמְתִּ֥יו לָךְ֙ וְאֶת־כׇּל־אֶחָ֗יו נָתַ֤תִּי לוֹ֙ לַעֲבָדִ֔ים וְדָגָ֥ן וְתִירֹ֖שׁ סְמַכְתִּ֑יו וּלְכָ֣ה אֵפ֔וֹא מָ֥ה אֶֽעֱשֶׂ֖ה בְּנִֽי׃",
+      "en": "And Yiżĥaq answered and said to ῾Esav, Behold, I have made him thy lord, and all his brethren have I given to him for servants; and with corn and wine have I sustained him: and what shall I do now for thee, my son?"
+    },
+    {
+      "n": 89,
+      "c": 27,
+      "v": 38,
+      "ref": "27:38",
+      "text": "וַיֹּ֨אמֶר עֵשָׂ֜ו אֶל־אָבִ֗יו הַֽבְרָכָ֨ה אַחַ֤ת הִֽוא־לְךָ֙ אָבִ֔י בָּרְכֵ֥נִי גַם־אָ֖נִי אָבִ֑י וַיִּשָּׂ֥א עֵשָׂ֛ו קֹל֖וֹ וַיֵּֽבְךְּ׃",
+      "en": "And ῾Esav said to his father, Hast thou but one blessing, my father? bless me, even me also, O my father."
+    },
+    {
+      "n": 90,
+      "c": 27,
+      "v": 39,
+      "ref": "27:39",
+      "text": "וַיַּ֛עַן יִצְחָ֥ק אָבִ֖יו וַיֹּ֣אמֶר אֵלָ֑יו הִנֵּ֞ה מִשְׁמַנֵּ֤י הָאָ֙רֶץ֙ יִהְיֶ֣ה מֽוֹשָׁבֶ֔ךָ וּמִטַּ֥ל הַשָּׁמַ֖יִם מֵעָֽל׃",
+      "en": "And ῾Esav raised his voice, and wept. And Yiżĥaq his father answered and said to him, Behold, thy dwelling shall be of the fatness of the earth, and of the dew of heaven from above;"
+    },
+    {
+      "n": 91,
+      "c": 27,
+      "v": 40,
+      "ref": "27:40",
+      "text": "וְעַל־חַרְבְּךָ֣ תִֽחְיֶ֔ה וְאֶת־אָחִ֖יךָ תַּעֲבֹ֑ד וְהָיָה֙ כַּאֲשֶׁ֣ר תָּרִ֔יד וּפָרַקְתָּ֥ עֻלּ֖וֹ מֵעַ֥ל צַוָּארֶֽךָ׃",
+      "en": "and by thy sword shalt thou live, and thou shalt serve thy brother; and it shall come to pass when thou shalt have the dominion, that thou shalt break his yoke from off thy neck."
+    },
+    {
+      "n": 92,
+      "c": 27,
+      "v": 41,
+      "ref": "27:41",
+      "text": "וַיִּשְׂטֹ֤ם עֵשָׂו֙ אֶֽת־יַעֲקֹ֔ב עַ֨ל־הַבְּרָכָ֔ה אֲשֶׁ֥ר בֵּרְכ֖וֹ אָבִ֑יו וַיֹּ֨אמֶר עֵשָׂ֜ו בְּלִבּ֗וֹ יִקְרְבוּ֙ יְמֵי֙ אֵ֣בֶל אָבִ֔י וְאַֽהַרְגָ֖ה אֶת־יַעֲקֹ֥ב אָחִֽי׃",
+      "en": "And ῾Esav hated Ya῾aqov because of the blessing with which his father blessed him: and ῾Esav said in his heart, When the days of mourning for my father are at hand; then will I slay my brother Ya῾aqov."
+    },
+    {
+      "n": 93,
+      "c": 27,
+      "v": 42,
+      "ref": "27:42",
+      "text": "וַיֻּגַּ֣ד לְרִבְקָ֔ה אֶת־דִּבְרֵ֥י עֵשָׂ֖ו בְּנָ֣הּ הַגָּדֹ֑ל וַתִּשְׁלַ֞ח וַתִּקְרָ֤א לְיַעֲקֹב֙ בְּנָ֣הּ הַקָּטָ֔ן וַתֹּ֣אמֶר אֵלָ֔יו הִנֵּה֙ עֵשָׂ֣ו אָחִ֔יךָ מִתְנַחֵ֥ם לְךָ֖ לְהׇרְגֶֽךָ׃",
+      "en": "And these words of ῾Esav, her elder son, were told to Rivqa: and she sent and called Ya῾aqov her younger son, and said to him, Behold, thy brother ῾Esav comforts himself, purposing to kill thee."
+    },
+    {
+      "n": 94,
+      "c": 27,
+      "v": 43,
+      "ref": "27:43",
+      "text": "וְעַתָּ֥ה בְנִ֖י שְׁמַ֣ע בְּקֹלִ֑י וְק֧וּם בְּרַח־לְךָ֛ אֶל־לָבָ֥ן אָחִ֖י חָרָֽנָה׃",
+      "en": "Now therefore, my son, obey my voice; and arise, flee to Lavan my brother, to Ḥaran;"
+    },
+    {
+      "n": 95,
+      "c": 27,
+      "v": 44,
+      "ref": "27:44",
+      "text": "וְיָשַׁבְתָּ֥ עִמּ֖וֹ יָמִ֣ים אֲחָדִ֑ים עַ֥ד אֲשֶׁר־תָּשׁ֖וּב חֲמַ֥ת אָחִֽיךָ׃",
+      "en": "and dwell with him a few days, until thy brother’s fury turn away;"
+    },
+    {
+      "n": 96,
+      "c": 27,
+      "v": 45,
+      "ref": "27:45",
+      "text": "עַד־שׁ֨וּב אַף־אָחִ֜יךָ מִמְּךָ֗ וְשָׁכַח֙ אֵ֣ת אֲשֶׁר־עָשִׂ֣יתָ לּ֔וֹ וְשָׁלַחְתִּ֖י וּלְקַחְתִּ֣יךָ מִשָּׁ֑ם לָמָ֥ה אֶשְׁכַּ֛ל גַּם־שְׁנֵיכֶ֖ם י֥וֹם אֶחָֽד׃",
+      "en": "until thy brother’s anger turn away from thee, and he forget that which thou hast done to him: then I will send, and fetch thee from there: why should I be bereaved of you both in one day?"
+    },
+    {
+      "n": 97,
+      "c": 27,
+      "v": 46,
+      "ref": "27:46",
+      "text": "וַתֹּ֤אמֶר רִבְקָה֙ אֶל־יִצְחָ֔ק <small>קַ֣</small>צְתִּי בְחַיַּ֔י מִפְּנֵ֖י בְּנ֣וֹת חֵ֑ת אִם־לֹקֵ֣חַ יַ֠עֲקֹ֠ב אִשָּׁ֨ה מִבְּנֽוֹת־חֵ֤ת כָּאֵ֙לֶּה֙ מִבְּנ֣וֹת הָאָ֔רֶץ לָ֥מָּה לִּ֖י חַיִּֽים׃",
+      "en": "And Rivqa said to Yiżĥaq, I am weary of my life because of the daughters of Ḥet: if Ya῾aqov take a wife of the daughters of Ḥet, such as these, of the daughters of the land, what good shall my life be to me?"
+    },
+    {
+      "n": 98,
+      "c": 28,
+      "v": 1,
+      "ref": "28:1",
+      "text": "וַיִּקְרָ֥א יִצְחָ֛ק אֶֽל־יַעֲקֹ֖ב וַיְבָ֣רֶךְ אֹת֑וֹ וַיְצַוֵּ֙הוּ֙ וַיֹּ֣אמֶר ל֔וֹ לֹֽא־תִקַּ֥ח אִשָּׁ֖ה מִבְּנ֥וֹת כְּנָֽעַן׃",
+      "en": "And Yiżĥaq called Ya῾aqov, and blessed him, and charged him, and said to him, Thou shalt not take a wife of the daughters of Kena῾an."
+    },
+    {
+      "n": 99,
+      "c": 28,
+      "v": 2,
+      "ref": "28:2",
+      "text": "ק֥וּם לֵךְ֙ פַּדֶּ֣נָֽה אֲרָ֔ם בֵּ֥יתָה בְתוּאֵ֖ל אֲבִ֣י אִמֶּ֑ךָ וְקַח־לְךָ֤ מִשָּׁם֙ אִשָּׁ֔ה מִבְּנ֥וֹת לָבָ֖ן אֲחִ֥י אִמֶּֽךָ׃",
+      "en": "Arise, go to Paddan-aram, to the house of Betu᾽el thy mother’s father; and take thee a wife from there of the daughters of Lavan thy mother’s brother."
+    },
+    {
+      "n": 100,
+      "c": 28,
+      "v": 3,
+      "ref": "28:3",
+      "text": "וְאֵ֤ל שַׁדַּי֙ יְבָרֵ֣ךְ אֹֽתְךָ֔ וְיַפְרְךָ֖ וְיַרְבֶּ֑ךָ וְהָיִ֖יתָ לִקְהַ֥ל עַמִּֽים׃",
+      "en": "And God Almighty bless thee, and make thee fruitful, and multiply thee, that thou mayst be a multitude of people;"
+    },
+    {
+      "n": 101,
+      "c": 28,
+      "v": 4,
+      "ref": "28:4",
+      "text": "וְיִֽתֶּן־לְךָ֙ אֶת־בִּרְכַּ֣ת אַבְרָהָ֔ם לְךָ֖ וּלְזַרְעֲךָ֣ אִתָּ֑ךְ לְרִשְׁתְּךָ֙ אֶת־אֶ֣רֶץ מְגֻרֶ֔יךָ אֲשֶׁר־נָתַ֥ן אֱלֹהִ֖ים לְאַבְרָהָֽם׃",
+      "en": "and give thee the blessing of Avraham, to thee, and to thy seed with thee; that thou mayst inherit the land in which thou art a sojourner, and which God gave to Avraham."
+    },
+    {
+      "n": 102,
+      "c": 28,
+      "v": 5,
+      "ref": "28:5",
+      "text": "וַיִּשְׁלַ֤ח יִצְחָק֙ אֶֽת־יַעֲקֹ֔ב וַיֵּ֖לֶךְ פַּדֶּ֣נָֽה אֲרָ֑ם אֶל־לָבָ֤ן בֶּן־בְּתוּאֵל֙ הָֽאֲרַמִּ֔י אֲחִ֣י רִבְקָ֔ה אֵ֥ם יַעֲקֹ֖ב וְעֵשָֽׂו׃",
+      "en": "And Yiżĥaq sent away Ya῾aqov: and he went to Paddan-aram to Lavan, son of Betu᾽el the Arammian, the brother of Rivqa, mother of Ya῾aqov and ῾Esav."
+    },
+    {
+      "n": 103,
+      "c": 28,
+      "v": 6,
+      "ref": "28:6",
+      "text": "וַיַּ֣רְא עֵשָׂ֗ו כִּֽי־בֵרַ֣ךְ יִצְחָק֮ אֶֽת־יַעֲקֹב֒ וְשִׁלַּ֤ח אֹתוֹ֙ פַּדֶּ֣נָֽה אֲרָ֔ם לָקַֽחַת־ל֥וֹ מִשָּׁ֖ם אִשָּׁ֑ה בְּבָרְכ֣וֹ אֹת֔וֹ וַיְצַ֤ו עָלָיו֙ לֵאמֹ֔ר לֹֽא־תִקַּ֥ח אִשָּׁ֖ה מִבְּנ֥וֹת כְּנָֽעַן׃",
+      "en": "When ῾Esav saw that Yiżĥaq had blessed Ya῾aqov, and sent him away to Paddan-aram, to take him a wife from there; and that as he blessed him he gave him a charge, saying, Thou shalt not take a wife of the daughters of Kena῾an:"
+    },
+    {
+      "n": 104,
+      "c": 28,
+      "v": 7,
+      "ref": "28:7",
+      "text": "וַיִּשְׁמַ֣ע יַעֲקֹ֔ב אֶל־אָבִ֖יו וְאֶל־אִמּ֑וֹ וַיֵּ֖לֶךְ פַּדֶּ֥נָֽה אֲרָֽם׃",
+      "en": "and that Ya῾aqov obeyed his father and his mother, and was gone to Paddan-aram,"
+    },
+    {
+      "n": 105,
+      "c": 28,
+      "v": 8,
+      "ref": "28:8",
+      "text": "וַיַּ֣רְא עֵשָׂ֔ו כִּ֥י רָע֖וֹת בְּנ֣וֹת כְּנָ֑עַן בְּעֵינֵ֖י יִצְחָ֥ק אָבִֽיו׃",
+      "en": "and ῾Esav saw that the daughters of Kena῾an pleased not Yiżĥaq his father;"
+    },
+    {
+      "n": 106,
+      "c": 28,
+      "v": 9,
+      "ref": "28:9",
+      "text": "וַיֵּ֥לֶךְ עֵשָׂ֖ו אֶל־יִשְׁמָעֵ֑אל וַיִּקַּ֡ח אֶֽת־מָחֲלַ֣ת&thinsp;<b>׀</b> בַּת־יִשְׁמָעֵ֨אל בֶּן־אַבְרָהָ֜ם אֲח֧וֹת נְבָי֛וֹת עַל־נָשָׁ֖יו ל֥וֹ לְאִשָּֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "then ῾Esav went and took to wife besides the wives he had, Maĥalat the daughter of Yishma᾽el Avraham’s son, the sister of Nevayot."
+    }
+  ],
+  "parashah": {
+    "en": "Toldot",
+    "he": "תּוֹלְדֹת",
+    "translit": "Toldot",
+    "ref": "Genesis 25:19–28:9"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 21,
+        "ref": "25:19–26:5"
+      },
+      {
+        "n": 2,
+        "start": 22,
+        "end": 28,
+        "ref": "26:6–26:12"
+      },
+      {
+        "n": 3,
+        "start": 29,
+        "end": 38,
+        "ref": "26:13–26:22"
+      },
+      {
+        "n": 4,
+        "start": 39,
+        "end": 45,
+        "ref": "26:23–26:29"
+      },
+      {
+        "n": 5,
+        "start": 46,
+        "end": 78,
+        "ref": "26:30–27:27"
+      },
+      {
+        "n": 6,
+        "start": 79,
+        "end": 101,
+        "ref": "27:28–28:4"
+      },
+      {
+        "n": 7,
+        "start": 102,
+        "end": 106,
+        "ref": "28:5–28:9"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 4,
+          "ref": "25:19–25:22"
+        },
+        {
+          "n": 2,
+          "start": 5,
+          "end": 8,
+          "ref": "25:23–25:26"
+        },
+        {
+          "n": 3,
+          "start": 9,
+          "end": 16,
+          "ref": "25:27–25:34"
+        },
+        {
+          "n": 4,
+          "start": 17,
+          "end": 21,
+          "ref": "26:1–26:5"
+        },
+        {
+          "n": 5,
+          "start": 22,
+          "end": 28,
+          "ref": "26:6–26:12"
+        },
+        {
+          "n": 6,
+          "start": 29,
+          "end": 32,
+          "ref": "26:13–26:16"
+        },
+        {
+          "n": 7,
+          "start": 33,
+          "end": 38,
+          "ref": "26:17–26:22"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 39,
+          "end": 45,
+          "ref": "26:23–26:29"
+        },
+        {
+          "n": 2,
+          "start": 46,
+          "end": 49,
+          "ref": "26:30–26:33"
+        },
+        {
+          "n": 3,
+          "start": 50,
+          "end": 55,
+          "ref": "26:34–27:4"
+        },
+        {
+          "n": 4,
+          "start": 56,
+          "end": 64,
+          "ref": "27:5–27:13"
+        },
+        {
+          "n": 5,
+          "start": 65,
+          "end": 68,
+          "ref": "27:14–27:17"
+        },
+        {
+          "n": 6,
+          "start": 69,
+          "end": 74,
+          "ref": "27:18–27:23"
+        },
+        {
+          "n": 7,
+          "start": 75,
+          "end": 78,
+          "ref": "27:24–27:27"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 79,
+          "end": 81,
+          "ref": "27:28–27:30"
+        },
+        {
+          "n": 2,
+          "start": 82,
+          "end": 84,
+          "ref": "27:31–27:33"
+        },
+        {
+          "n": 3,
+          "start": 85,
+          "end": 88,
+          "ref": "27:34–27:37"
+        },
+        {
+          "n": 4,
+          "start": 89,
+          "end": 91,
+          "ref": "27:38–27:40"
+        },
+        {
+          "n": 5,
+          "start": 92,
+          "end": 97,
+          "ref": "27:41–27:46"
+        },
+        {
+          "n": 6,
+          "start": 98,
+          "end": 101,
+          "ref": "28:1–28:4"
+        },
+        {
+          "n": 7,
+          "start": 102,
+          "end": 106,
+          "ref": "28:5–28:9"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 104,
+        "end": 106,
+        "ref": "28:7–28:9"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 35,
+          "end": 38,
+          "ref": "26:19–26:22"
+        },
+        "2": {
+          "n": "M",
+          "start": 75,
+          "end": 78,
+          "ref": "27:24–27:27"
+        },
+        "3": {
+          "n": "M",
+          "start": 104,
+          "end": 106,
+          "ref": "28:7–28:9"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

@@ -1,0 +1,1121 @@
+{
+  "slug": "vayikra",
+  "book": {
+    "en": "Leviticus",
+    "he": "ויקרא",
+    "translit": "Vayikra"
+  },
+  "multiChapter": true,
+  "ref": "Leviticus 1:1-5:26",
+  "heRef": "ויקרא א׳:א-ה׳:כ״ו",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 1,
+      "v": 1,
+      "ref": "1:1",
+      "text": "וַיִּקְרָ֖<small>א</small> אֶל־מֹשֶׁ֑ה וַיְדַבֵּ֤ר יְהֹוָה֙ אֵלָ֔יו מֵאֹ֥הֶל מוֹעֵ֖ד לֵאמֹֽר׃",
+      "en": "AND the Lord called to Moshe, and spoke to him out of the Tent of Meeting, saying,"
+    },
+    {
+      "n": 2,
+      "c": 1,
+      "v": 2,
+      "ref": "1:2",
+      "text": "דַּבֵּ֞ר אֶל־בְּנֵ֤י יִשְׂרָאֵל֙ וְאָמַרְתָּ֣ אֲלֵהֶ֔ם אָדָ֗ם כִּֽי־יַקְרִ֥יב מִכֶּ֛ם קׇרְבָּ֖ן לַֽיהֹוָ֑ה מִן־הַבְּהֵמָ֗ה מִן־הַבָּקָר֙ וּמִן־הַצֹּ֔אן תַּקְרִ֖יבוּ אֶת־קׇרְבַּנְכֶֽם׃",
+      "en": "Speak to the children of Yisra᾽el, and say to them, If any man of you bring an offering to the Lord, of the cattle shall you bring your offering, of the herd, and of the flock."
+    },
+    {
+      "n": 3,
+      "c": 1,
+      "v": 3,
+      "ref": "1:3",
+      "text": "אִם־עֹלָ֤ה קׇרְבָּנוֹ֙ מִן־הַבָּקָ֔ר זָכָ֥ר תָּמִ֖ים יַקְרִיבֶ֑נּוּ אֶל־פֶּ֜תַח אֹ֤הֶל מוֹעֵד֙ יַקְרִ֣יב אֹת֔וֹ לִרְצֹנ֖וֹ לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "If his offering be a burnt sacrifice of the herd, let him offer a male without blemish: he shall offer it at the door of the Tent of Meeting, that he may be accepted before the Lord."
+    },
+    {
+      "n": 4,
+      "c": 1,
+      "v": 4,
+      "ref": "1:4",
+      "text": "וְסָמַ֣ךְ יָד֔וֹ עַ֖ל רֹ֣אשׁ הָעֹלָ֑ה וְנִרְצָ֥ה ל֖וֹ לְכַפֵּ֥ר עָלָֽיו׃",
+      "en": "And he shall put his hand upon the head of the burnt offering; and it shall be accepted for him to make atonement for him."
+    },
+    {
+      "n": 5,
+      "c": 1,
+      "v": 5,
+      "ref": "1:5",
+      "text": "וְשָׁחַ֛ט אֶת־בֶּ֥ן הַבָּקָ֖ר לִפְנֵ֣י יְהֹוָ֑ה וְ֠הִקְרִ֠יבוּ בְּנֵ֨י אַהֲרֹ֤ן הַכֹּֽהֲנִים֙ אֶת־הַדָּ֔ם וְזָרְק֨וּ אֶת־הַדָּ֤ם עַל־הַמִּזְבֵּ֙חַ֙ סָבִ֔יב אֲשֶׁר־פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "And he shall kill the bullock before the Lord: and the priests, Aharon’s sons, shall bring the blood, and sprinkle the blood round about upon the altar that is by the door of the Tent of Meeting."
+    },
+    {
+      "n": 6,
+      "c": 1,
+      "v": 6,
+      "ref": "1:6",
+      "text": "וְהִפְשִׁ֖יט אֶת־הָעֹלָ֑ה וְנִתַּ֥ח אֹתָ֖הּ לִנְתָחֶֽיהָ׃",
+      "en": "And he shall flay the burnt offering, and cut it into its pieces."
+    },
+    {
+      "n": 7,
+      "c": 1,
+      "v": 7,
+      "ref": "1:7",
+      "text": "וְ֠נָתְנ֠וּ בְּנֵ֨י אַהֲרֹ֧ן הַכֹּהֵ֛ן אֵ֖שׁ עַל־הַמִּזְבֵּ֑חַ וְעָרְכ֥וּ עֵצִ֖ים עַל־הָאֵֽשׁ׃",
+      "en": "And the sons of Aharon the priest shall put fire upon the altar, and lay the wood in order upon the fire:"
+    },
+    {
+      "n": 8,
+      "c": 1,
+      "v": 8,
+      "ref": "1:8",
+      "text": "וְעָרְכ֗וּ בְּנֵ֤י אַהֲרֹן֙ הַכֹּ֣הֲנִ֔ים אֵ֚ת הַנְּתָחִ֔ים אֶת־הָרֹ֖אשׁ וְאֶת־הַפָּ֑דֶר עַל־הָעֵצִים֙ אֲשֶׁ֣ר עַל־הָאֵ֔שׁ אֲשֶׁ֖ר עַל־הַמִּזְבֵּֽחַ׃",
+      "en": "and the priests, Aharon’s sons, shall lay the parts, the head, and the fat, in order upon the wood that is on the fire which is upon the altar:"
+    },
+    {
+      "n": 9,
+      "c": 1,
+      "v": 9,
+      "ref": "1:9",
+      "text": "וְקִרְבּ֥וֹ וּכְרָעָ֖יו יִרְחַ֣ץ בַּמָּ֑יִם וְהִקְטִ֨יר הַכֹּהֵ֤ן אֶת־הַכֹּל֙ הַמִּזְבֵּ֔חָה עֹלָ֛ה אִשֵּׁ֥ה רֵֽיחַ־נִיח֖וֹחַ לַֽיהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "but its inwards and its legs shall he wash in water: and the priest shall burn all on the altar, to be a burnt sacrifice, an offering made by fire, of a sweet savour to the Lord."
+    },
+    {
+      "n": 10,
+      "c": 1,
+      "v": 10,
+      "ref": "1:10",
+      "text": "וְאִם־מִן־הַצֹּ֨אן קׇרְבָּנ֧וֹ מִן־הַכְּשָׂבִ֛ים א֥וֹ מִן־הָעִזִּ֖ים לְעֹלָ֑ה זָכָ֥ר תָּמִ֖ים יַקְרִיבֶֽנּוּ׃",
+      "en": "And if his offering be of the flocks, namely, of the sheep, or of the goats, for a burnt sacrifice; he shall bring it a male without blemish."
+    },
+    {
+      "n": 11,
+      "c": 1,
+      "v": 11,
+      "ref": "1:11",
+      "text": "וְשָׁחַ֨ט אֹת֜וֹ עַ֣ל יֶ֧רֶךְ הַמִּזְבֵּ֛חַ צָפֹ֖נָה לִפְנֵ֣י יְהֹוָ֑ה וְזָרְק֡וּ בְּנֵי֩ אַהֲרֹ֨ן הַכֹּהֲנִ֧ים אֶת־דָּמ֛וֹ עַל־הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "And he shall kill it on the side of the altar northward before the Lord: and the priests, Aharon’s sons, shall sprinkle its blood round about on the altar."
+    },
+    {
+      "n": 12,
+      "c": 1,
+      "v": 12,
+      "ref": "1:12",
+      "text": "וְנִתַּ֤ח אֹתוֹ֙ לִנְתָחָ֔יו וְאֶת־רֹאשׁ֖וֹ וְאֶת־פִּדְר֑וֹ וְעָרַ֤ךְ הַכֹּהֵן֙ אֹתָ֔ם עַל־הָֽעֵצִים֙ אֲשֶׁ֣ר עַל־הָאֵ֔שׁ אֲשֶׁ֖ר עַל־הַמִּזְבֵּֽחַ׃",
+      "en": "And he shall cut it into its pieces, with its head and its fat: and the priest shall lay them in order on the wood that is on the fire which is on the altar:"
+    },
+    {
+      "n": 13,
+      "c": 1,
+      "v": 13,
+      "ref": "1:13",
+      "text": "וְהַקֶּ֥רֶב וְהַכְּרָעַ֖יִם יִרְחַ֣ץ בַּמָּ֑יִם וְהִקְרִ֨יב הַכֹּהֵ֤ן אֶת־הַכֹּל֙ וְהִקְטִ֣יר הַמִּזְבֵּ֔חָה עֹלָ֣ה ה֗וּא אִשֵּׁ֛ה רֵ֥יחַ נִיחֹ֖חַ לַיהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "but he shall wash the inwards and the legs with water: and the priest shall bring it all, and burn it upon the altar: it is a burnt sacrifice, an offering made by fire, of a sweet savour to the Lord."
+    },
+    {
+      "n": 14,
+      "c": 1,
+      "v": 14,
+      "ref": "1:14",
+      "text": "וְאִ֧ם מִן־הָע֛וֹף עֹלָ֥ה קׇרְבָּנ֖וֹ לַֽיהֹוָ֑ה וְהִקְרִ֣יב מִן־הַתֹּרִ֗ים א֛וֹ מִן־בְּנֵ֥י הַיּוֹנָ֖ה אֶת־קׇרְבָּנֽוֹ׃",
+      "en": "And if the burnt sacrifice for his offering to the Lord be of birds, then he shall bring his offering of turtledoves, or of young pigeons."
+    },
+    {
+      "n": 15,
+      "c": 1,
+      "v": 15,
+      "ref": "1:15",
+      "text": "וְהִקְרִיב֤וֹ הַכֹּהֵן֙ אֶל־הַמִּזְבֵּ֔חַ וּמָלַק֙ אֶת־רֹאשׁ֔וֹ וְהִקְטִ֖יר הַמִּזְבֵּ֑חָה וְנִמְצָ֣ה דָמ֔וֹ עַ֖ל קִ֥יר הַמִּזְבֵּֽחַ׃",
+      "en": "And the priest shall bring it to the altar, and wring off its head, and burn it on the altar; and its blood shall be wrung out at the side of the altar:"
+    },
+    {
+      "n": 16,
+      "c": 1,
+      "v": 16,
+      "ref": "1:16",
+      "text": "וְהֵסִ֥יר אֶת־מֻרְאָת֖וֹ בְּנֹצָתָ֑הּ וְהִשְׁלִ֨יךְ אֹתָ֜הּ אֵ֤צֶל הַמִּזְבֵּ֙חַ֙ קֵ֔דְמָה אֶל־מְק֖וֹם הַדָּֽשֶׁן׃",
+      "en": "and he shall remove its crop with its feathers, and cast it beside the altar on the east part, by the place of the ashes:"
+    },
+    {
+      "n": 17,
+      "c": 1,
+      "v": 17,
+      "ref": "1:17",
+      "text": "וְשִׁסַּ֨ע אֹת֣וֹ בִכְנָפָיו֮ לֹ֣א יַבְדִּיל֒ וְהִקְטִ֨יר אֹת֤וֹ הַכֹּהֵן֙ הַמִּזְבֵּ֔חָה עַל־הָעֵצִ֖ים אֲשֶׁ֣ר עַל־הָאֵ֑שׁ עֹלָ֣ה ה֗וּא אִשֵּׁ֛ה רֵ֥יחַ נִיחֹ֖חַ לַיהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and he shall rend it by its wings, but shall not divide it asunder: and the priest shall burn it on the altar, on the wood that is on the fire: it is a burnt sacrifice, an offering made by fire, of a sweet savour to the Lord."
+    },
+    {
+      "n": 18,
+      "c": 2,
+      "v": 1,
+      "ref": "2:1",
+      "text": "וְנֶ֗פֶשׁ כִּֽי־תַקְרִ֞יב קׇרְבַּ֤ן מִנְחָה֙ לַֽיהֹוָ֔ה סֹ֖לֶת יִהְיֶ֣ה קׇרְבָּנ֑וֹ וְיָצַ֤ק עָלֶ֙יהָ֙ שֶׁ֔מֶן וְנָתַ֥ן עָלֶ֖יהָ לְבֹנָֽה׃",
+      "en": "And when any will offer a meal offering to the Lord, his offering shall be of fine flour; and he shall pour oil upon it, and put frankincense upon it:"
+    },
+    {
+      "n": 19,
+      "c": 2,
+      "v": 2,
+      "ref": "2:2",
+      "text": "וֶֽהֱבִיאָ֗הּ אֶל־בְּנֵ֣י אַהֲרֹן֮ הַכֹּהֲנִים֒ וְקָמַ֨ץ מִשָּׁ֜ם מְלֹ֣א קֻמְצ֗וֹ מִסׇּלְתָּהּ֙ וּמִשַּׁמְנָ֔הּ עַ֖ל כׇּל־לְבֹנָתָ֑הּ וְהִקְטִ֨יר הַכֹּהֵ֜ן אֶת־אַזְכָּרָתָהּ֙ הַמִּזְבֵּ֔חָה אִשֵּׁ֛ה רֵ֥יחַ נִיחֹ֖חַ לַיהֹוָֽה׃",
+      "en": "and he shall bring it to Aharon’s sons the priests: and he shall take from it his handful of its fine flour, and of its oil, with all its frankincense; and the priest shall burn the memorial part of it on the altar, to be an offering made by fire, a sweet savour to the Lord:"
+    },
+    {
+      "n": 20,
+      "c": 2,
+      "v": 3,
+      "ref": "2:3",
+      "text": "וְהַנּוֹתֶ֙רֶת֙ מִן־הַמִּנְחָ֔ה לְאַהֲרֹ֖ן וּלְבָנָ֑יו קֹ֥דֶשׁ קׇֽדָשִׁ֖ים מֵאִשֵּׁ֥י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and the remnant of the meal offering shall be Aharon’s and his sons’: it is a thing most holy of the offerings of the Lord made by fire."
+    },
+    {
+      "n": 21,
+      "c": 2,
+      "v": 4,
+      "ref": "2:4",
+      "text": "וְכִ֥י תַקְרִ֛ב קׇרְבַּ֥ן מִנְחָ֖ה מַאֲפֵ֣ה תַנּ֑וּר סֹ֣לֶת חַלּ֤וֹת מַצֹּת֙ בְּלוּלֹ֣ת בַּשֶּׁ֔מֶן וּרְקִיקֵ֥י מַצּ֖וֹת מְשֻׁחִ֥ים בַּשָּֽׁמֶן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And if thou bring a sacrifice of meal offering baked in the oven, it shall be unleavened cakes of fine flour mingled with oil, or unleavened wafers anointed with oil."
+    },
+    {
+      "n": 22,
+      "c": 2,
+      "v": 5,
+      "ref": "2:5",
+      "text": "וְאִם־מִנְחָ֥ה עַל־הַֽמַּחֲבַ֖ת קׇרְבָּנֶ֑ךָ סֹ֛לֶת בְּלוּלָ֥ה בַשֶּׁ֖מֶן מַצָּ֥ה תִהְיֶֽה׃",
+      "en": "And if thy sacrifice be a meal offering baked in a pan, it shall be of fine flour unleavened, mingled with oil."
+    },
+    {
+      "n": 23,
+      "c": 2,
+      "v": 6,
+      "ref": "2:6",
+      "text": "פָּת֤וֹת אֹתָהּ֙ פִּתִּ֔ים וְיָצַקְתָּ֥ עָלֶ֖יהָ שָׁ֑מֶן מִנְחָ֖ה הִֽוא׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt part it in pieces, and pour oil on it: it is a meal offering."
+    },
+    {
+      "n": 24,
+      "c": 2,
+      "v": 7,
+      "ref": "2:7",
+      "text": "וְאִם־מִנְחַ֥ת מַרְחֶ֖שֶׁת קׇרְבָּנֶ֑ךָ סֹ֥לֶת בַּשֶּׁ֖מֶן תֵּעָשֶֽׂה׃",
+      "en": "And if thy sacrifice be a meal offering baked in a frying pan, it shall be made of fine flour with oil."
+    },
+    {
+      "n": 25,
+      "c": 2,
+      "v": 8,
+      "ref": "2:8",
+      "text": "וְהֵבֵאתָ֣ אֶת־הַמִּנְחָ֗ה אֲשֶׁ֧ר יֵעָשֶׂ֛ה מֵאֵ֖לֶּה לַיהֹוָ֑ה וְהִקְרִיבָהּ֙ אֶל־הַכֹּהֵ֔ן וְהִגִּישָׁ֖הּ אֶל־הַמִּזְבֵּֽחַ׃",
+      "en": "And thou shalt bring the meal offering that is made of these things to the Lord: and when it is presented to the priest, he shall bring it to the altar."
+    },
+    {
+      "n": 26,
+      "c": 2,
+      "v": 9,
+      "ref": "2:9",
+      "text": "וְהֵרִ֨ים הַכֹּהֵ֤ן מִן־הַמִּנְחָה֙ אֶת־אַזְכָּ֣רָתָ֔הּ וְהִקְטִ֖יר הַמִּזְבֵּ֑חָה אִשֵּׁ֛ה רֵ֥יחַ נִיחֹ֖חַ לַיהֹוָֽה׃",
+      "en": "And the priest shall take from the meal offering its memorial part, and shall burn it on the altar: it is an offering made by fire, of a sweet savour to the Lord."
+    },
+    {
+      "n": 27,
+      "c": 2,
+      "v": 10,
+      "ref": "2:10",
+      "text": "וְהַנּוֹתֶ֙רֶת֙ מִן־הַמִּנְחָ֔ה לְאַהֲרֹ֖ן וּלְבָנָ֑יו קֹ֥דֶשׁ קׇֽדָשִׁ֖ים מֵאִשֵּׁ֥י יְהֹוָֽה׃",
+      "en": "And that which is left of the meal offering shall be Aharon’s and his sons’: it is a thing most holy of the offerings of the Lord made by fire."
+    },
+    {
+      "n": 28,
+      "c": 2,
+      "v": 11,
+      "ref": "2:11",
+      "text": "כׇּל־הַמִּנְחָ֗ה אֲשֶׁ֤ר תַּקְרִ֙יבוּ֙ לַיהֹוָ֔ה לֹ֥א תֵעָשֶׂ֖ה חָמֵ֑ץ כִּ֤י כׇל־שְׂאֹר֙ וְכׇל־דְּבַ֔שׁ לֹֽא־תַקְטִ֧ירוּ מִמֶּ֛נּוּ אִשֶּׁ֖ה לַֽיהֹוָֽה׃",
+      "en": "No meal offering, which you shall bring to the Lord, shall be made with leaven: for you shall burn no leaven, nor any honey, in any offering of the Lord made by fire."
+    },
+    {
+      "n": 29,
+      "c": 2,
+      "v": 12,
+      "ref": "2:12",
+      "text": "קׇרְבַּ֥ן רֵאשִׁ֛ית תַּקְרִ֥יבוּ אֹתָ֖ם לַיהֹוָ֑ה וְאֶל־הַמִּזְבֵּ֥חַ לֹא־יַעֲל֖וּ לְרֵ֥יחַ נִיחֹֽחַ׃",
+      "en": "As for the offerings of the firstfruits, you shall offer them to the Lord: but they shall not be burnt on the altar for a sweet savour."
+    },
+    {
+      "n": 30,
+      "c": 2,
+      "v": 13,
+      "ref": "2:13",
+      "text": "וְכׇל־קׇרְבַּ֣ן מִנְחָתְךָ֮ בַּמֶּ֣לַח תִּמְלָח֒ וְלֹ֣א תַשְׁבִּ֗ית מֶ֚לַח בְּרִ֣ית אֱלֹהֶ֔יךָ מֵעַ֖ל מִנְחָתֶ֑ךָ עַ֥ל כׇּל־קׇרְבָּנְךָ֖ תַּקְרִ֥יב מֶֽלַח׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And thy every meal offering shalt thou season with salt; nor shalt thou suffer the salt of the covenant of thy God to be lacking from thy meal offering: with all thy offerings thou shalt offer salt."
+    },
+    {
+      "n": 31,
+      "c": 2,
+      "v": 14,
+      "ref": "2:14",
+      "text": "וְאִם־תַּקְרִ֛יב מִנְחַ֥ת בִּכּוּרִ֖ים לַיהֹוָ֑ה אָבִ֞יב קָל֤וּי בָּאֵשׁ֙ גֶּ֣רֶשׂ כַּרְמֶ֔ל תַּקְרִ֕יב אֵ֖ת מִנְחַ֥ת בִּכּוּרֶֽיךָ׃",
+      "en": "And if thou offer a meal offering of thy firstfruits to the Lord, thou shalt offer for the meal offering of thy firstfruits ears of corn dried by the fire, corn beaten out of fresh ears."
+    },
+    {
+      "n": 32,
+      "c": 2,
+      "v": 15,
+      "ref": "2:15",
+      "text": "וְנָתַתָּ֤ עָלֶ֙יהָ֙ שֶׁ֔מֶן וְשַׂמְתָּ֥ עָלֶ֖יהָ לְבֹנָ֑ה מִנְחָ֖ה הִֽוא׃",
+      "en": "And thou shalt put oil upon it, and lay on frankincense: it is a meal offering."
+    },
+    {
+      "n": 33,
+      "c": 2,
+      "v": 16,
+      "ref": "2:16",
+      "text": "וְהִקְטִ֨יר הַכֹּהֵ֜ן אֶת־אַזְכָּרָתָ֗הּ מִגִּרְשָׂהּ֙ וּמִשַּׁמְנָ֔הּ עַ֖ל כׇּל־לְבֹנָתָ֑הּ אִשֶּׁ֖ה לַיהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And the priest shall burn the memorial part of it, of its beaten corn, and of its oil, with all its frankincense: it is an offering made by fire to the Lord."
+    },
+    {
+      "n": 34,
+      "c": 3,
+      "v": 1,
+      "ref": "3:1",
+      "text": "וְאִם־זֶ֥בַח שְׁלָמִ֖ים קׇרְבָּנ֑וֹ אִ֤ם מִן־הַבָּקָר֙ ה֣וּא מַקְרִ֔יב אִם־זָכָר֙ אִם־נְקֵבָ֔ה תָּמִ֥ים יַקְרִיבֶ֖נּוּ לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And if his offering be a sacrifice of peace offering, if he offer it of the herd; whether it be a male or female, he shall offer it without blemish before the Lord."
+    },
+    {
+      "n": 35,
+      "c": 3,
+      "v": 2,
+      "ref": "3:2",
+      "text": "וְסָמַ֤ךְ יָדוֹ֙ עַל־רֹ֣אשׁ קׇרְבָּנ֔וֹ וּשְׁחָט֕וֹ פֶּ֖תַח אֹ֣הֶל מוֹעֵ֑ד וְזָרְק֡וּ בְּנֵי֩ אַהֲרֹ֨ן הַכֹּהֲנִ֧ים אֶת־הַדָּ֛ם עַל־הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "And he shall lay his hand upon the head of his offering, and kill it at the door of the Tent of Meeting: and Aharon’s sons the priests shall sprinkle the blood on the altar round about."
+    },
+    {
+      "n": 36,
+      "c": 3,
+      "v": 3,
+      "ref": "3:3",
+      "text": "וְהִקְרִיב֙ מִזֶּ֣בַח הַשְּׁלָמִ֔ים אִשֶּׁ֖ה לַיהֹוָ֑ה אֶת־הַחֵ֙לֶב֙ הַֽמְכַסֶּ֣ה אֶת־הַקֶּ֔רֶב וְאֵת֙ כׇּל־הַחֵ֔לֶב אֲשֶׁ֖ר עַל־הַקֶּֽרֶב׃",
+      "en": "And he shall offer of the sacrifice of the peace offering an offering made by fire to the Lord; the fat that covers the inwards, and all the fat that is upon the inwards,"
+    },
+    {
+      "n": 37,
+      "c": 3,
+      "v": 4,
+      "ref": "3:4",
+      "text": "וְאֵת֙ שְׁתֵּ֣י הַכְּלָיֹ֔ת וְאֶת־הַחֵ֙לֶב֙ אֲשֶׁ֣ר עֲלֵהֶ֔ן אֲשֶׁ֖ר עַל־הַכְּסָלִ֑ים וְאֶת־הַיֹּתֶ֙רֶת֙ עַל־הַכָּבֵ֔ד עַל־הַכְּלָי֖וֹת יְסִירֶֽנָּה׃",
+      "en": "and the two kidneys, and the fat that is on them, which is by the flanks, and the appendage of the liver, with the kidneys, it shall he take away."
+    },
+    {
+      "n": 38,
+      "c": 3,
+      "v": 5,
+      "ref": "3:5",
+      "text": "וְהִקְטִ֨ירוּ אֹת֤וֹ בְנֵֽי־אַהֲרֹן֙ הַמִּזְבֵּ֔חָה עַל־הָ֣עֹלָ֔ה אֲשֶׁ֥ר עַל־הָעֵצִ֖ים אֲשֶׁ֣ר עַל־הָאֵ֑שׁ אִשֵּׁ֛ה רֵ֥יחַ נִיחֹ֖חַ לַֽיהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Aharon’s sons shall burn it on the altar upon the burnt sacrifice, which is upon the wood that is on the fire: it is an offering made by fire of a sweet savour to the Lord."
+    },
+    {
+      "n": 39,
+      "c": 3,
+      "v": 6,
+      "ref": "3:6",
+      "text": "וְאִם־מִן־הַצֹּ֧אן קׇרְבָּנ֛וֹ לְזֶ֥בַח שְׁלָמִ֖ים לַיהֹוָ֑ה זָכָר֙ א֣וֹ נְקֵבָ֔ה תָּמִ֖ים יַקְרִיבֶֽנּוּ׃",
+      "en": "And if his offering for a sacrifice of peace offering to the Lord be of the flock; male or female, he shall offer it without blemish."
+    },
+    {
+      "n": 40,
+      "c": 3,
+      "v": 7,
+      "ref": "3:7",
+      "text": "אִם־כֶּ֥שֶׂב הֽוּא־מַקְרִ֖יב אֶת־קׇרְבָּנ֑וֹ וְהִקְרִ֥יב אֹת֖וֹ לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "If he offer a lamb for his offering, then shall he offer it before the Lord."
+    },
+    {
+      "n": 41,
+      "c": 3,
+      "v": 8,
+      "ref": "3:8",
+      "text": "וְסָמַ֤ךְ אֶת־יָדוֹ֙ עַל־רֹ֣אשׁ קׇרְבָּנ֔וֹ וְשָׁחַ֣ט אֹת֔וֹ לִפְנֵ֖י אֹ֣הֶל מוֹעֵ֑ד וְ֠זָרְק֠וּ בְּנֵ֨י אַהֲרֹ֧ן אֶת־דָּמ֛וֹ עַל־הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "And he shall lay his hand upon the head of his offering, and kill it before the Tent of Meeting: and Aharon’s sons shall sprinkle its blood round about upon the altar."
+    },
+    {
+      "n": 42,
+      "c": 3,
+      "v": 9,
+      "ref": "3:9",
+      "text": "וְהִקְרִ֨יב מִזֶּ֣בַח הַשְּׁלָמִים֮ אִשֶּׁ֣ה לַיהֹוָה֒ חֶלְבּוֹ֙ הָאַלְיָ֣ה תְמִימָ֔ה לְעֻמַּ֥ת הֶעָצֶ֖ה יְסִירֶ֑נָּה וְאֶת־הַחֵ֙לֶב֙ הַֽמְכַסֶּ֣ה אֶת־הַקֶּ֔רֶב וְאֵת֙ כׇּל־הַחֵ֔לֶב אֲשֶׁ֖ר עַל־הַקֶּֽרֶב׃",
+      "en": "And he shall offer of the sacrifice of the peace offering an offering made by fire to the Lord; its fat, and the whole fat tail, it shall he take off hard by the backbone; and the fat that covers the inwards, and all the fat that is upon the inwards,"
+    },
+    {
+      "n": 43,
+      "c": 3,
+      "v": 10,
+      "ref": "3:10",
+      "text": "וְאֵת֙ שְׁתֵּ֣י הַכְּלָיֹ֔ת וְאֶת־הַחֵ֙לֶב֙ אֲשֶׁ֣ר עֲלֵהֶ֔ן אֲשֶׁ֖ר עַל־הַכְּסָלִ֑ים וְאֶת־הַיֹּתֶ֙רֶת֙ עַל־הַכָּבֵ֔ד עַל־הַכְּלָיֹ֖ת יְסִירֶֽנָּה׃",
+      "en": "and the two kidneys, and the fat that is upon them, which is by the flanks; and the appendage of the liver, with the kidneys, it shall he take away."
+    },
+    {
+      "n": 44,
+      "c": 3,
+      "v": 11,
+      "ref": "3:11",
+      "text": "וְהִקְטִיר֥וֹ הַכֹּהֵ֖ן הַמִּזְבֵּ֑חָה לֶ֥חֶם אִשֶּׁ֖ה לַיהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And the priest shall burn it on the altar: it is the food of the offering made by fire to the Lord."
+    },
+    {
+      "n": 45,
+      "c": 3,
+      "v": 12,
+      "ref": "3:12",
+      "text": "וְאִ֥ם עֵ֖ז קׇרְבָּנ֑וֹ וְהִקְרִיב֖וֹ לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And if his offering be a goat, then he shall offer it before the Lord."
+    },
+    {
+      "n": 46,
+      "c": 3,
+      "v": 13,
+      "ref": "3:13",
+      "text": "וְסָמַ֤ךְ אֶת־יָדוֹ֙ עַל־רֹאשׁ֔וֹ וְשָׁחַ֣ט אֹת֔וֹ לִפְנֵ֖י אֹ֣הֶל מוֹעֵ֑ד וְ֠זָרְק֠וּ בְּנֵ֨י אַהֲרֹ֧ן אֶת־דָּמ֛וֹ עַל־הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "And he shall lay his hand upon its head, and kill it before the Tent of Meeting: and the sons of Aharon shall sprinkle its blood upon the altar round about."
+    },
+    {
+      "n": 47,
+      "c": 3,
+      "v": 14,
+      "ref": "3:14",
+      "text": "וְהִקְרִ֤יב מִמֶּ֙נּוּ֙ קׇרְבָּנ֔וֹ אִשֶּׁ֖ה לַֽיהֹוָ֑ה אֶת־הַחֵ֙לֶב֙ הַֽמְכַסֶּ֣ה אֶת־הַקֶּ֔רֶב וְאֵת֙ כׇּל־הַחֵ֔לֶב אֲשֶׁ֖ר עַל־הַקֶּֽרֶב׃",
+      "en": "And he shall offer his offering from it, an offering made by fire to the Lord; the fat that covers the inwards, and all the fat that is upon the inwards,"
+    },
+    {
+      "n": 48,
+      "c": 3,
+      "v": 15,
+      "ref": "3:15",
+      "text": "וְאֵת֙ שְׁתֵּ֣י הַכְּלָיֹ֔ת וְאֶת־הַחֵ֙לֶב֙ אֲשֶׁ֣ר עֲלֵהֶ֔ן אֲשֶׁ֖ר עַל־הַכְּסָלִ֑ים וְאֶת־הַיֹּתֶ֙רֶת֙ עַל־הַכָּבֵ֔ד עַל־הַכְּלָיֹ֖ת יְסִירֶֽנָּה׃",
+      "en": "and the two kidneys, and the fat that is upon them, which is by the flanks, and the appendage of the liver, with the kidneys, it shall he take away."
+    },
+    {
+      "n": 49,
+      "c": 3,
+      "v": 16,
+      "ref": "3:16",
+      "text": "וְהִקְטִירָ֥ם הַכֹּהֵ֖ן הַמִּזְבֵּ֑חָה לֶ֤חֶם אִשֶּׁה֙ לְרֵ֣יחַ נִיחֹ֔חַ כׇּל־חֵ֖לֶב לַיהֹוָֽה׃",
+      "en": "And the priest shall burn them upon the altar: it is the food of the offering made by fire for a sweet savour: all the fat is the Lord’s."
+    },
+    {
+      "n": 50,
+      "c": 3,
+      "v": 17,
+      "ref": "3:17",
+      "text": "חֻקַּ֤ת עוֹלָם֙ לְדֹרֹ֣תֵיכֶ֔ם בְּכֹ֖ל מוֹשְׁבֹֽתֵיכֶ֑ם כׇּל־חֵ֥לֶב וְכׇל־דָּ֖ם לֹ֥א תֹאכֵֽלוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "It shall be a perpetual statute for your generations throughout all your dwellings, that you eat neither fat nor blood."
+    },
+    {
+      "n": 51,
+      "c": 4,
+      "v": 1,
+      "ref": "4:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 52,
+      "c": 4,
+      "v": 2,
+      "ref": "4:2",
+      "text": "דַּבֵּ֞ר אֶל־בְּנֵ֣י יִשְׂרָאֵל֮ לֵאמֹר֒ נֶ֗פֶשׁ כִּֽי־תֶחֱטָ֤א בִשְׁגָגָה֙ מִכֹּל֙ מִצְוֺ֣ת יְהֹוָ֔ה אֲשֶׁ֖ר לֹ֣א תֵעָשֶׂ֑ינָה וְעָשָׂ֕ה מֵאַחַ֖ת מֵהֵֽנָּה׃",
+      "en": "Speak to the children of Yisra᾽el saying, If a soul shall sin through ignorance against any of the commandments of the Lord concerning things which ought not to be done, and shall do against any of them:"
+    },
+    {
+      "n": 53,
+      "c": 4,
+      "v": 3,
+      "ref": "4:3",
+      "text": "אִ֣ם הַכֹּהֵ֧ן הַמָּשִׁ֛יחַ יֶחֱטָ֖א לְאַשְׁמַ֣ת הָעָ֑ם וְהִקְרִ֡יב עַ֣ל חַטָּאתוֹ֩ אֲשֶׁ֨ר חָטָ֜א פַּ֣ר בֶּן־בָּקָ֥ר תָּמִ֛ים לַיהֹוָ֖ה לְחַטָּֽאת׃",
+      "en": "if the priest that is anointed do sin to bring guiltiness on the people; then let him bring for his sin, which he has sinned, a young bullock without blemish to the Lord for a sin offering."
+    },
+    {
+      "n": 54,
+      "c": 4,
+      "v": 4,
+      "ref": "4:4",
+      "text": "וְהֵבִ֣יא אֶת־הַפָּ֗ר אֶל־פֶּ֛תַח אֹ֥הֶל מוֹעֵ֖ד לִפְנֵ֣י יְהֹוָ֑ה וְסָמַ֤ךְ אֶת־יָדוֹ֙ עַל־רֹ֣אשׁ הַפָּ֔ר וְשָׁחַ֥ט אֶת־הַפָּ֖ר לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And he shall bring the bullock to the door of the Tent of Meeting before the Lord; and shall lay his hand upon the bullock’s head, and kill the bullock before the Lord."
+    },
+    {
+      "n": 55,
+      "c": 4,
+      "v": 5,
+      "ref": "4:5",
+      "text": "וְלָקַ֛ח הַכֹּהֵ֥ן הַמָּשִׁ֖יחַ מִדַּ֣ם הַפָּ֑ר וְהֵבִ֥יא אֹת֖וֹ אֶל־אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "And the priest that is anointed shall take of the bullock’s blood, and bring it to the Tent of Meeting:"
+    },
+    {
+      "n": 56,
+      "c": 4,
+      "v": 6,
+      "ref": "4:6",
+      "text": "וְטָבַ֧ל הַכֹּהֵ֛ן אֶת־אֶצְבָּע֖וֹ בַּדָּ֑ם וְהִזָּ֨ה מִן־הַדָּ֜ם שֶׁ֤בַע פְּעָמִים֙ לִפְנֵ֣י יְהֹוָ֔ה אֶת־פְּנֵ֖י פָּרֹ֥כֶת הַקֹּֽדֶשׁ׃",
+      "en": "and the priest shall dip his finger in the blood, and sprinkle of the blood seven times before the Lord, before the veil of the sanctuary."
+    },
+    {
+      "n": 57,
+      "c": 4,
+      "v": 7,
+      "ref": "4:7",
+      "text": "וְנָתַן֩ הַכֹּהֵ֨ן מִן־הַדָּ֜ם עַל־קַ֠רְנ֠וֹת מִזְבַּ֨ח קְטֹ֤רֶת הַסַּמִּים֙ לִפְנֵ֣י יְהֹוָ֔ה אֲשֶׁ֖ר בְּאֹ֣הֶל מוֹעֵ֑ד וְאֵ֣ת&thinsp;<b>׀</b> כׇּל־דַּ֣ם הַפָּ֗ר יִשְׁפֹּךְ֙ אֶל־יְסוֹד֙ מִזְבַּ֣ח הָעֹלָ֔ה אֲשֶׁר־פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "And the priest shall put some of the blood upon the horns of the altar of sweet incense before the Lord, which is in the Tent of Meeting: and shall pour all the blood of the bullock at the bottom of the altar of the burnt offering, which is at the door of the Tent of Meeting."
+    },
+    {
+      "n": 58,
+      "c": 4,
+      "v": 8,
+      "ref": "4:8",
+      "text": "וְאֶת־כׇּל־חֵ֛לֶב פַּ֥ר הַֽחַטָּ֖את יָרִ֣ים מִמֶּ֑נּוּ אֶת־הַחֵ֙לֶב֙ הַֽמְכַסֶּ֣ה עַל־הַקֶּ֔רֶב וְאֵת֙ כׇּל־הַחֵ֔לֶב אֲשֶׁ֖ר עַל־הַקֶּֽרֶב׃",
+      "en": "And he shall take off from it all the fat of the bullock for the sin offering; the fat that covers the inwards, and all the fat that is upon the inwards,"
+    },
+    {
+      "n": 59,
+      "c": 4,
+      "v": 9,
+      "ref": "4:9",
+      "text": "וְאֵת֙ שְׁתֵּ֣י הַכְּלָיֹ֔ת וְאֶת־הַחֵ֙לֶב֙ אֲשֶׁ֣ר עֲלֵיהֶ֔ן אֲשֶׁ֖ר עַל־הַכְּסָלִ֑ים וְאֶת־הַיֹּתֶ֙רֶת֙ עַל־הַכָּבֵ֔ד עַל־הַכְּלָי֖וֹת יְסִירֶֽנָּה׃",
+      "en": "and the two kidneys, and the fat that is upon them, which is by the flanks, and the appendage of the liver, with the kidneys, it shall he take away,"
+    },
+    {
+      "n": 60,
+      "c": 4,
+      "v": 10,
+      "ref": "4:10",
+      "text": "כַּאֲשֶׁ֣ר יוּרַ֔ם מִשּׁ֖וֹר זֶ֣בַח הַשְּׁלָמִ֑ים וְהִקְטִירָם֙ הַכֹּהֵ֔ן עַ֖ל מִזְבַּ֥ח הָעֹלָֽה׃",
+      "en": "as it was taken off from the bullock of the peace offering: and the priest shall burn them upon the altar of the burnt offering."
+    },
+    {
+      "n": 61,
+      "c": 4,
+      "v": 11,
+      "ref": "4:11",
+      "text": "וְאֶת־ע֤וֹר הַפָּר֙ וְאֶת־כׇּל־בְּשָׂר֔וֹ עַל־רֹאשׁ֖וֹ וְעַל־כְּרָעָ֑יו וְקִרְבּ֖וֹ וּפִרְשֽׁוֹ׃",
+      "en": "And the skin of the bullock, and all its flesh, with its head, and with its legs, and its inwards, and its dung,"
+    },
+    {
+      "n": 62,
+      "c": 4,
+      "v": 12,
+      "ref": "4:12",
+      "text": "וְהוֹצִ֣יא אֶת־כׇּל־הַ֠פָּ֠ר אֶל־מִח֨וּץ לַֽמַּחֲנֶ֜ה אֶל־מָק֤וֹם טָהוֹר֙ אֶל־שֶׁ֣פֶךְ הַדֶּ֔שֶׁן וְשָׂרַ֥ף אֹת֛וֹ עַל־עֵצִ֖ים בָּאֵ֑שׁ עַל־שֶׁ֥פֶךְ הַדֶּ֖שֶׁן יִשָּׂרֵֽף׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "even the whole bullock shall he carry forth outside the camp to a clean place, where the ashes are poured out, and burn it on the wood with fire: where the ashes are poured out shall it be burnt."
+    },
+    {
+      "n": 63,
+      "c": 4,
+      "v": 13,
+      "ref": "4:13",
+      "text": "וְאִ֨ם כׇּל־עֲדַ֤ת יִשְׂרָאֵל֙ יִשְׁגּ֔וּ וְנֶעְלַ֣ם דָּבָ֔ר מֵעֵינֵ֖י הַקָּהָ֑ל וְ֠עָשׂ֠וּ אַחַ֨ת מִכׇּל־מִצְוֺ֧ת יְהֹוָ֛ה אֲשֶׁ֥ר לֹא־תֵעָשֶׂ֖ינָה וְאָשֵֽׁמוּ׃",
+      "en": "And if the whole congregation of Yisra᾽el sin through ignorance, and the thing be hid from the eyes of the assembly, and they have done something against any of the commandments of the Lord concerning things which should not be done, and have incurred guilt;"
+    },
+    {
+      "n": 64,
+      "c": 4,
+      "v": 14,
+      "ref": "4:14",
+      "text": "וְנֽוֹדְעָה֙ הַֽחַטָּ֔את אֲשֶׁ֥ר חָטְא֖וּ עָלֶ֑יהָ וְהִקְרִ֨יבוּ הַקָּהָ֜ל פַּ֤ר בֶּן־בָּקָר֙ לְחַטָּ֔את וְהֵבִ֣יאוּ אֹת֔וֹ לִפְנֵ֖י אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "when the sin, which they have sinned, is known, then the congregation shall offer a young bullock for the sin, and bring it before the Tent of Meeting."
+    },
+    {
+      "n": 65,
+      "c": 4,
+      "v": 15,
+      "ref": "4:15",
+      "text": "וְ֠סָמְכ֠וּ זִקְנֵ֨י הָעֵדָ֧ה אֶת־יְדֵיהֶ֛ם עַל־רֹ֥אשׁ הַפָּ֖ר לִפְנֵ֣י יְהֹוָ֑ה וְשָׁחַ֥ט אֶת־הַפָּ֖ר לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And the elders of the congregation shall lay their hands on the head of the bullock before the Lord: and the bullock shall be killed before the Lord."
+    },
+    {
+      "n": 66,
+      "c": 4,
+      "v": 16,
+      "ref": "4:16",
+      "text": "וְהֵבִ֛יא הַכֹּהֵ֥ן הַמָּשִׁ֖יחַ מִדַּ֣ם הַפָּ֑ר אֶל־אֹ֖הֶל מוֹעֵֽד׃",
+      "en": "And the priest that is anointed shall bring of the bullock’s blood to the Tent of Meeting:"
+    },
+    {
+      "n": 67,
+      "c": 4,
+      "v": 17,
+      "ref": "4:17",
+      "text": "וְטָבַ֧ל הַכֹּהֵ֛ן אֶצְבָּע֖וֹ מִן־הַדָּ֑ם וְהִזָּ֞ה שֶׁ֤בַע פְּעָמִים֙ לִפְנֵ֣י יְהֹוָ֔ה אֵ֖ת פְּנֵ֥י הַפָּרֹֽכֶת׃",
+      "en": "and the priest shall dip his finger in some of the blood, and sprinkle it seven times before the Lord, before the veil."
+    },
+    {
+      "n": 68,
+      "c": 4,
+      "v": 18,
+      "ref": "4:18",
+      "text": "וּמִן־הַדָּ֞ם יִתֵּ֣ן&thinsp;<b>׀</b> עַל־קַרְנֹ֣ת הַמִּזְבֵּ֗חַ אֲשֶׁר֙ לִפְנֵ֣י יְהֹוָ֔ה אֲשֶׁ֖ר בְּאֹ֣הֶל מוֹעֵ֑ד וְאֵ֣ת כׇּל־הַדָּ֗ם יִשְׁפֹּךְ֙ אֶל־יְסוֹד֙ מִזְבַּ֣ח הָעֹלָ֔ה אֲשֶׁר־פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "And he shall put some of the blood upon the horns of the altar which is before the Lord, that is in the Tent of Meeting, and shall pour out all the blood at the bottom of the altar of the burnt offering, which is at the door of the Tent of Meeting."
+    },
+    {
+      "n": 69,
+      "c": 4,
+      "v": 19,
+      "ref": "4:19",
+      "text": "וְאֵ֥ת כׇּל־חֶלְבּ֖וֹ יָרִ֣ים מִמֶּ֑נּוּ וְהִקְטִ֖יר הַמִּזְבֵּֽחָה׃",
+      "en": "And he shall lift off all its fat, and burn it on the altar."
+    },
+    {
+      "n": 70,
+      "c": 4,
+      "v": 20,
+      "ref": "4:20",
+      "text": "וְעָשָׂ֣ה לַפָּ֔ר כַּאֲשֶׁ֤ר עָשָׂה֙ לְפַ֣ר הַֽחַטָּ֔את כֵּ֖ן יַעֲשֶׂה־לּ֑וֹ וְכִפֶּ֧ר עֲלֵהֶ֛ם הַכֹּהֵ֖ן וְנִסְלַ֥ח לָהֶֽם׃",
+      "en": "And he shall do with the bullock as he did with the bullock for a sin offering, so shall he do with this: and the priest shall make atonement for them, and it shall be forgiven them."
+    },
+    {
+      "n": 71,
+      "c": 4,
+      "v": 21,
+      "ref": "4:21",
+      "text": "וְהוֹצִ֣יא אֶת־הַפָּ֗ר אֶל־מִחוּץ֙ לַֽמַּחֲנֶ֔ה וְשָׂרַ֣ף אֹת֔וֹ כַּאֲשֶׁ֣ר שָׂרַ֔ף אֵ֖ת הַפָּ֣ר הָרִאשׁ֑וֹן חַטַּ֥את הַקָּהָ֖ל הֽוּא׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And he shall carry the bullock outside the camp, and burn it as he burned the first bullock: it is a sin offering for the congregation."
+    },
+    {
+      "n": 72,
+      "c": 4,
+      "v": 22,
+      "ref": "4:22",
+      "text": "אֲשֶׁ֥ר נָשִׂ֖יא יֶֽחֱטָ֑א וְעָשָׂ֡ה אַחַ֣ת מִכׇּל־מִצְוֺת֩ יְהֹוָ֨ה אֱלֹהָ֜יו אֲשֶׁ֧ר לֹא־תֵעָשֶׂ֛ינָה בִּשְׁגָגָ֖ה וְאָשֵֽׁם׃",
+      "en": "When a ruler has sinned, and done something through ignorance against any one of the commandments of the Lord his God concerning things which should not be done, and has incurred guilt;"
+    },
+    {
+      "n": 73,
+      "c": 4,
+      "v": 23,
+      "ref": "4:23",
+      "text": "אֽוֹ־הוֹדַ֤ע אֵלָיו֙ חַטָּאת֔וֹ אֲשֶׁ֥ר חָטָ֖א בָּ֑הּ וְהֵבִ֧יא אֶת־קׇרְבָּנ֛וֹ שְׂעִ֥יר עִזִּ֖ים זָכָ֥ר תָּמִֽים׃",
+      "en": "or if his sin, wherein he has sinned, come to his knowledge; he shall bring his offering, a kid of the goats, a male without blemish:"
+    },
+    {
+      "n": 74,
+      "c": 4,
+      "v": 24,
+      "ref": "4:24",
+      "text": "וְסָמַ֤ךְ יָדוֹ֙ עַל־רֹ֣אשׁ הַשָּׂעִ֔יר וְשָׁחַ֣ט אֹת֗וֹ בִּמְק֛וֹם אֲשֶׁר־יִשְׁחַ֥ט אֶת־הָעֹלָ֖ה לִפְנֵ֣י יְהֹוָ֑ה חַטָּ֖את הֽוּא׃",
+      "en": "and he shall lay his hand upon the head of the goat, and kill it in the place where they kill the burnt offering before the Lord: it is a sin offering."
+    },
+    {
+      "n": 75,
+      "c": 4,
+      "v": 25,
+      "ref": "4:25",
+      "text": "וְלָקַ֨ח הַכֹּהֵ֜ן מִדַּ֤ם הַֽחַטָּאת֙ בְּאֶצְבָּע֔וֹ וְנָתַ֕ן עַל־קַרְנֹ֖ת מִזְבַּ֣ח הָעֹלָ֑ה וְאֶת־דָּמ֣וֹ יִשְׁפֹּ֔ךְ אֶל־יְס֖וֹד מִזְבַּ֥ח הָעֹלָֽה׃",
+      "en": "And the priest shall take of the blood of the sin offering with his finger, and put it upon the horns of the altar of burnt offering, and shall pour out its blood at the bottom of the altar of burnt offering."
+    },
+    {
+      "n": 76,
+      "c": 4,
+      "v": 26,
+      "ref": "4:26",
+      "text": "וְאֶת־כׇּל־חֶלְבּוֹ֙ יַקְטִ֣יר הַמִּזְבֵּ֔חָה כְּחֵ֖לֶב זֶ֣בַח הַשְּׁלָמִ֑ים וְכִפֶּ֨ר עָלָ֧יו הַכֹּהֵ֛ן מֵחַטָּאת֖וֹ וְנִסְלַ֥ח לֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And he shall burn all its fat upon the altar, as the fat of the sacrifice of the peace offering: and the priest shall make atonement for him as concerning his sin, and it shall be forgiven him."
+    },
+    {
+      "n": 77,
+      "c": 4,
+      "v": 27,
+      "ref": "4:27",
+      "text": "וְאִם־נֶ֧פֶשׁ אַחַ֛ת תֶּחֱטָ֥א בִשְׁגָגָ֖ה מֵעַ֣ם הָאָ֑רֶץ בַּ֠עֲשֹׂתָ֠הּ אַחַ֨ת מִמִּצְוֺ֧ת יְהֹוָ֛ה אֲשֶׁ֥ר לֹא־תֵעָשֶׂ֖ינָה וְאָשֵֽׁם׃",
+      "en": "And if anyone of the common people sin through ignorance, by doing something against any one of the commandments of the Lord concerning things which ought not to be done, and be guilty;"
+    },
+    {
+      "n": 78,
+      "c": 4,
+      "v": 28,
+      "ref": "4:28",
+      "text": "א֚וֹ הוֹדַ֣ע אֵלָ֔יו חַטָּאת֖וֹ אֲשֶׁ֣ר חָטָ֑א וְהֵבִ֨יא קׇרְבָּנ֜וֹ שְׂעִירַ֤ת עִזִּים֙ תְּמִימָ֣ה נְקֵבָ֔ה עַל־חַטָּאת֖וֹ אֲשֶׁ֥ר חָטָֽא׃",
+      "en": "or if his sin, which he has sinned, come to his knowledge: then he shall bring his offering, a kid of the goats, a female without blemish, for his sin which he has sinned."
+    },
+    {
+      "n": 79,
+      "c": 4,
+      "v": 29,
+      "ref": "4:29",
+      "text": "וְסָמַךְ֙ אֶת־יָד֔וֹ עַ֖ל רֹ֣אשׁ הַֽחַטָּ֑את וְשָׁחַט֙ אֶת־הַ֣חַטָּ֔את בִּמְק֖וֹם הָעֹלָֽה׃",
+      "en": "And he shall lay his hand upon the head of the sin offering, and slay the sin offering in the place of the burnt offering."
+    },
+    {
+      "n": 80,
+      "c": 4,
+      "v": 30,
+      "ref": "4:30",
+      "text": "וְלָקַ֨ח הַכֹּהֵ֤ן מִדָּמָהּ֙ בְּאֶצְבָּע֔וֹ וְנָתַ֕ן עַל־קַרְנֹ֖ת מִזְבַּ֣ח הָעֹלָ֑ה וְאֶת־כׇּל־דָּמָ֣הּ יִשְׁפֹּ֔ךְ אֶל־יְס֖וֹד הַמִּזְבֵּֽחַ׃",
+      "en": "And the priest shall take of its blood with his finger, and put it upon the horns of the altar of burnt offering, and shall pour out all its blood at the bottom of the altar."
+    },
+    {
+      "n": 81,
+      "c": 4,
+      "v": 31,
+      "ref": "4:31",
+      "text": "וְאֶת־כׇּל־חֶלְבָּ֣הּ יָסִ֗יר כַּאֲשֶׁ֨ר הוּסַ֣ר חֵ֘לֶב֮ מֵעַ֣ל זֶ֣בַח הַשְּׁלָמִים֒ וְהִקְטִ֤יר הַכֹּהֵן֙ הַמִּזְבֵּ֔חָה לְרֵ֥יחַ נִיחֹ֖חַ לַיהֹוָ֑ה וְכִפֶּ֥ר עָלָ֛יו הַכֹּהֵ֖ן וְנִסְלַ֥ח לֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And he shall take away all its fat, as the fat is taken away from off the sacrifice of the peace offering; and the priest shall burn it upon the altar for a sweet savour to the Lord; and the priest shall make atonement for him, and it shall be forgiven him."
+    },
+    {
+      "n": 82,
+      "c": 4,
+      "v": 32,
+      "ref": "4:32",
+      "text": "וְאִם־כֶּ֛בֶשׂ יָבִ֥יא קׇרְבָּנ֖וֹ לְחַטָּ֑את נְקֵבָ֥ה תְמִימָ֖ה יְבִיאֶֽנָּה׃",
+      "en": "And if he bring a lamb for a sin offering, he shall bring it a female without blemish."
+    },
+    {
+      "n": 83,
+      "c": 4,
+      "v": 33,
+      "ref": "4:33",
+      "text": "וְסָמַךְ֙ אֶת־יָד֔וֹ עַ֖ל רֹ֣אשׁ הַֽחַטָּ֑את וְשָׁחַ֤ט אֹתָהּ֙ לְחַטָּ֔את בִּמְק֕וֹם אֲשֶׁ֥ר יִשְׁחַ֖ט אֶת־הָעֹלָֽה׃",
+      "en": "And he shall lay his hand upon the head of the sin offering, and slay it for a sin offering in the place where they kill the burnt offering."
+    },
+    {
+      "n": 84,
+      "c": 4,
+      "v": 34,
+      "ref": "4:34",
+      "text": "וְלָקַ֨ח הַכֹּהֵ֜ן מִדַּ֤ם הַֽחַטָּאת֙ בְּאֶצְבָּע֔וֹ וְנָתַ֕ן עַל־קַרְנֹ֖ת מִזְבַּ֣ח הָעֹלָ֑ה וְאֶת־כׇּל־דָּמָ֣הּ יִשְׁפֹּ֔ךְ אֶל־יְס֖וֹד הַמִּזְבֵּֽחַ׃",
+      "en": "And the priest shall take of the blood of the sin offering with his finger, and put it upon the horns of the altar of burnt offering, and shall pour out all its blood at the bottom of the altar:"
+    },
+    {
+      "n": 85,
+      "c": 4,
+      "v": 35,
+      "ref": "4:35",
+      "text": "וְאֶת־כׇּל־חֶלְבָּ֣הּ יָסִ֗יר כַּאֲשֶׁ֨ר יוּסַ֥ר חֵֽלֶב־הַכֶּ֘שֶׂב֮ מִזֶּ֣בַח הַשְּׁלָמִים֒ וְהִקְטִ֨יר הַכֹּהֵ֤ן אֹתָם֙ הַמִּזְבֵּ֔חָה עַ֖ל אִשֵּׁ֣י יְהֹוָ֑ה וְכִפֶּ֨ר עָלָ֧יו הַכֹּהֵ֛ן עַל־חַטָּאת֥וֹ אֲשֶׁר־חָטָ֖א וְנִסְלַ֥ח לֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and he shall take away all its fat, as the fat of the lamb is taken away from the sacrifice of the peace offering; and the priest shall burn them upon the altar, upon the pyres of the Lord: and the priest shall make atonement for his sin that he has committed, and it shall be forgiven him."
+    },
+    {
+      "n": 86,
+      "c": 5,
+      "v": 1,
+      "ref": "5:1",
+      "text": "וְנֶ֣פֶשׁ כִּֽי־תֶחֱטָ֗א וְשָֽׁמְעָה֙ ק֣וֹל אָלָ֔ה וְה֣וּא עֵ֔ד א֥וֹ רָאָ֖ה א֣וֹ יָדָ֑ע אִם־ל֥וֹא יַגִּ֖יד וְנָשָׂ֥א עֲוֺנֽוֹ׃",
+      "en": "And if a person sin, and hear the voice of adjuration, and is a witness, whether he has seen or known of it; if he do not utter it, then he shall bear his iniquity."
+    },
+    {
+      "n": 87,
+      "c": 5,
+      "v": 2,
+      "ref": "5:2",
+      "text": "א֣וֹ נֶ֗פֶשׁ אֲשֶׁ֣ר תִּגַּע֮ בְּכׇל־דָּבָ֣ר טָמֵא֒ אוֹ֩ בְנִבְלַ֨ת חַיָּ֜ה טְמֵאָ֗ה א֚וֹ בְּנִבְלַת֙ בְּהֵמָ֣ה טְמֵאָ֔ה א֕וֹ בְּנִבְלַ֖ת שֶׁ֣רֶץ טָמֵ֑א וְנֶעְלַ֣ם מִמֶּ֔נּוּ וְה֥וּא טָמֵ֖א וְאָשֵֽׁם׃",
+      "en": "Or if a person touch any unclean thing, whether it be a carcass of an unclean beast, or a carcass of unclean cattle, or the carcass of unclean creeping things, and if it be hidden from him, so that he be unclean, and guilty:"
+    },
+    {
+      "n": 88,
+      "c": 5,
+      "v": 3,
+      "ref": "5:3",
+      "text": "א֣וֹ כִ֤י יִגַּע֙ בְּטֻמְאַ֣ת אָדָ֔ם לְכֹל֙ טֻמְאָת֔וֹ אֲשֶׁ֥ר יִטְמָ֖א בָּ֑הּ וְנֶעְלַ֣ם מִמֶּ֔נּוּ וְה֥וּא יָדַ֖ע וְאָשֵֽׁם׃",
+      "en": "or if he touch the uncleanness of man, whatever uncleanness it be with which a man shall be defiled, and it be hid from him; and he come to know of it, and be guilty:"
+    },
+    {
+      "n": 89,
+      "c": 5,
+      "v": 4,
+      "ref": "5:4",
+      "text": "א֣וֹ נֶ֡פֶשׁ כִּ֣י תִשָּׁבַע֩ לְבַטֵּ֨א בִשְׂפָתַ֜יִם לְהָרַ֣ע&thinsp;<b>׀</b> א֣וֹ לְהֵיטִ֗יב לְ֠כֹ֠ל אֲשֶׁ֨ר יְבַטֵּ֧א הָאָדָ֛ם בִּשְׁבֻעָ֖ה וְנֶעְלַ֣ם מִמֶּ֑נּוּ וְהוּא־יָדַ֥ע וְאָשֵׁ֖ם לְאַחַ֥ת מֵאֵֽלֶּה׃",
+      "en": "or if a person swear, pronouncing with his lips to do evil, or to do good, whatever it be that a man shall pronounce with an oath, and it be hid from him; when he knows of it, then he shall be guilty in one of these."
+    },
+    {
+      "n": 90,
+      "c": 5,
+      "v": 5,
+      "ref": "5:5",
+      "text": "וְהָיָ֥ה כִֽי־יֶאְשַׁ֖ם לְאַחַ֣ת מֵאֵ֑לֶּה וְהִ֨תְוַדָּ֔ה אֲשֶׁ֥ר חָטָ֖א עָלֶֽיהָ׃",
+      "en": "And it shall be, when he shall be guilty in one of these things, that he shall confess that he has sinned in that thing:"
+    },
+    {
+      "n": 91,
+      "c": 5,
+      "v": 6,
+      "ref": "5:6",
+      "text": "וְהֵבִ֣יא אֶת־אֲשָׁמ֣וֹ לַיהֹוָ֡ה עַ֣ל חַטָּאתוֹ֩ אֲשֶׁ֨ר חָטָ֜א נְקֵבָ֨ה מִן־הַצֹּ֥אן כִּשְׂבָּ֛ה אֽוֹ־שְׂעִירַ֥ת עִזִּ֖ים לְחַטָּ֑את וְכִפֶּ֥ר עָלָ֛יו הַכֹּהֵ֖ן מֵחַטָּאתֽוֹ׃",
+      "en": "and he shall bring his guilt offering to the Lord for his sin which he has sinned, a female from the flock, a lamb or a kid of the goats, for a sin offering; and the priest shall make atonement for him concerning his sin."
+    },
+    {
+      "n": 92,
+      "c": 5,
+      "v": 7,
+      "ref": "5:7",
+      "text": "וְאִם־לֹ֨א תַגִּ֣יעַ יָדוֹ֮ דֵּ֣י שֶׂה֒ וְהֵבִ֨יא אֶת־אֲשָׁמ֜וֹ אֲשֶׁ֣ר חָטָ֗א שְׁתֵּ֥י תֹרִ֛ים אֽוֹ־שְׁנֵ֥י בְנֵֽי־יוֹנָ֖ה לַֽיהֹוָ֑ה אֶחָ֥ד לְחַטָּ֖את וְאֶחָ֥ד לְעֹלָֽה׃",
+      "en": "And if he be not able to bring a lamb, then he shall bring for his trespass, which he has committed, two turtledoves, or two young pigeons, to the Lord; one for a sin offering, and the other for a burnt offering."
+    },
+    {
+      "n": 93,
+      "c": 5,
+      "v": 8,
+      "ref": "5:8",
+      "text": "וְהֵבִ֤יא אֹתָם֙ אֶל־הַכֹּהֵ֔ן וְהִקְרִ֛יב אֶת־אֲשֶׁ֥ר לַחַטָּ֖את רִאשׁוֹנָ֑ה וּמָלַ֧ק אֶת־רֹאשׁ֛וֹ מִמּ֥וּל עׇרְפּ֖וֹ וְלֹ֥א יַבְדִּֽיל׃",
+      "en": "And he shall bring them to the priest, who shall offer that which is for the sin offering first, and wring off its head from its neck, but shall not divide it asunder:"
+    },
+    {
+      "n": 94,
+      "c": 5,
+      "v": 9,
+      "ref": "5:9",
+      "text": "וְהִזָּ֞ה מִדַּ֤ם הַחַטָּאת֙ עַל־קִ֣יר הַמִּזְבֵּ֔חַ וְהַנִּשְׁאָ֣ר בַּדָּ֔ם יִמָּצֵ֖ה אֶל־יְס֣וֹד הַמִּזְבֵּ֑חַ חַטָּ֖את הֽוּא׃",
+      "en": "and he shall sprinkle of the blood of the sin offering upon the side of the altar; and the rest of the blood shall be wrung out at the bottom of the altar: it is a sin offering."
+    },
+    {
+      "n": 95,
+      "c": 5,
+      "v": 10,
+      "ref": "5:10",
+      "text": "וְאֶת־הַשֵּׁנִ֛י יַעֲשֶׂ֥ה עֹלָ֖ה כַּמִּשְׁפָּ֑ט וְכִפֶּ֨ר עָלָ֧יו הַכֹּהֵ֛ן מֵחַטָּאת֥וֹ אֲשֶׁר־חָטָ֖א וְנִסְלַ֥ח לֽוֹ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he shall offer the second for a burnt offering, according to the prescribed order: and the priest shall make atonement for him for his sin which he has sinned, and it shall be forgiven him."
+    },
+    {
+      "n": 96,
+      "c": 5,
+      "v": 11,
+      "ref": "5:11",
+      "text": "וְאִם־לֹא֩ תַשִּׂ֨יג יָד֜וֹ לִשְׁתֵּ֣י תֹרִ֗ים אוֹ֮ לִשְׁנֵ֣י בְנֵי־יוֹנָה֒ וְהֵבִ֨יא אֶת־קׇרְבָּנ֜וֹ אֲשֶׁ֣ר חָטָ֗א עֲשִׂירִ֧ת הָאֵפָ֛ה סֹ֖לֶת לְחַטָּ֑את לֹא־יָשִׂ֨ים עָלֶ֜יהָ שֶׁ֗מֶן וְלֹא־יִתֵּ֤ן עָלֶ֙יהָ֙ לְבֹנָ֔ה כִּ֥י חַטָּ֖את הִֽוא׃",
+      "en": "But if he be not able to bring two turtledoves, or two young pigeons, then he that sinned shall bring for his offering the tenth part of an efa of fine flour for a sin offering; he shall put no oil upon it, neither shall he put any frankincense upon it: for it is a sin offering."
+    },
+    {
+      "n": 97,
+      "c": 5,
+      "v": 12,
+      "ref": "5:12",
+      "text": "וֶהֱבִיאָהּ֮ אֶל־הַכֹּהֵן֒ וְקָמַ֣ץ הַכֹּהֵ֣ן&thinsp;<small>׀</small>&thinsp;מִ֠מֶּ֠נָּה מְל֨וֹא קֻמְצ֜וֹ אֶת־אַזְכָּרָתָהּ֙ וְהִקְטִ֣יר הַמִּזְבֵּ֔חָה עַ֖ל אִשֵּׁ֣י יְהֹוָ֑ה חַטָּ֖את הִֽוא׃",
+      "en": "Then shall he bring it to the priest, and the priest shall take his handful of it, the memorial part of it, and burn it on the altar, upon the pyres of the Lord: it is a sin offering."
+    },
+    {
+      "n": 98,
+      "c": 5,
+      "v": 13,
+      "ref": "5:13",
+      "text": "וְכִפֶּר֩ עָלָ֨יו הַכֹּהֵ֜ן עַל־חַטָּאת֧וֹ אֲשֶׁר־חָטָ֛א מֵֽאַחַ֥ת מֵאֵ֖לֶּה וְנִסְלַ֣ח ל֑וֹ וְהָיְתָ֥ה לַכֹּהֵ֖ן כַּמִּנְחָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the priest shall make atonement for him in regard to his sin that he has sinned in one of these, and it shall be forgiven him: and it shall be the priest’s, like the meal offering."
+    },
+    {
+      "n": 99,
+      "c": 5,
+      "v": 14,
+      "ref": "5:14",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 100,
+      "c": 5,
+      "v": 15,
+      "ref": "5:15",
+      "text": "נֶ֚פֶשׁ כִּֽי־תִמְעֹ֣ל מַ֔עַל וְחָֽטְאָה֙ בִּשְׁגָגָ֔ה מִקׇּדְשֵׁ֖י יְהֹוָ֑ה וְהֵבִיא֩ אֶת־אֲשָׁמ֨וֹ לַֽיהֹוָ֜ה אַ֧יִל תָּמִ֣ים מִן־הַצֹּ֗אן בְּעֶרְכְּךָ֛ כֶּֽסֶף־שְׁקָלִ֥ים בְּשֶֽׁקֶל־הַקֹּ֖דֶשׁ לְאָשָֽׁם׃",
+      "en": "If a person commit a trespass, and sin through ignorance, in the holy things of the Lord; then he shall bring for his guilt to the Lord a ram without blemish out of the flocks, by value (two) silver shekels, after the shekel of the sanctuary, for a guilt offering."
+    },
+    {
+      "n": 101,
+      "c": 5,
+      "v": 16,
+      "ref": "5:16",
+      "text": "וְאֵ֣ת אֲשֶׁר֩ חָטָ֨א מִן־הַקֹּ֜דֶשׁ יְשַׁלֵּ֗ם וְאֶת־חֲמִֽישִׁתוֹ֙ יוֹסֵ֣ף עָלָ֔יו וְנָתַ֥ן אֹת֖וֹ לַכֹּהֵ֑ן וְהַכֹּהֵ֗ן יְכַפֵּ֥ר עָלָ֛יו בְּאֵ֥יל הָאָשָׁ֖ם וְנִסְלַ֥ח לֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And he shall make amends for the wrong that he has done in the holy thing, and shall add the fifth part to it, and give it to the priest: and the priest shall make atonement for him with the ram of the guilt offering, and it shall be forgiven him."
+    },
+    {
+      "n": 102,
+      "c": 5,
+      "v": 17,
+      "ref": "5:17",
+      "text": "וְאִם־נֶ֙פֶשׁ֙ כִּ֣י תֶֽחֱטָ֔א וְעָֽשְׂתָ֗ה אַחַת֙ מִכׇּל־מִצְוֺ֣ת יְהֹוָ֔ה אֲשֶׁ֖ר לֹ֣א תֵעָשֶׂ֑ינָה וְלֹֽא־יָדַ֥ע וְאָשֵׁ֖ם וְנָשָׂ֥א עֲוֺנֽוֹ׃",
+      "en": "And if a person sin, and commit any of these things which are forbidden to be done by the commandments of the Lord; though he know it not, yet is he guilty, and shall bear his iniquity."
+    },
+    {
+      "n": 103,
+      "c": 5,
+      "v": 18,
+      "ref": "5:18",
+      "text": "וְ֠הֵבִ֠יא אַ֣יִל תָּמִ֧ים מִן־הַצֹּ֛אן בְּעֶרְכְּךָ֥ לְאָשָׁ֖ם אֶל־הַכֹּהֵ֑ן וְכִפֶּר֩ עָלָ֨יו הַכֹּהֵ֜ן עַ֣ל שִׁגְגָת֧וֹ אֲשֶׁר־שָׁגָ֛ג וְה֥וּא לֹֽא־יָדַ֖ע וְנִסְלַ֥ח לֽוֹ׃",
+      "en": "And he shall bring a ram without blemish out of the flock, according to the valuation, for a guilt offering, to the priest: and the priest shall make atonement for him concerning his ignorance wherein he erred and knew it not, and it shall be forgiven him."
+    },
+    {
+      "n": 104,
+      "c": 5,
+      "v": 19,
+      "ref": "5:19",
+      "text": "אָשָׁ֖ם ה֑וּא אָשֹׁ֥ם אָשַׁ֖ם לַיהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "It is a guilt offering: he has certainly trespassed against the Lord."
+    },
+    {
+      "n": 105,
+      "c": 5,
+      "v": 20,
+      "ref": "5:20",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 106,
+      "c": 5,
+      "v": 21,
+      "ref": "5:21",
+      "text": "נֶ֚פֶשׁ כִּ֣י תֶחֱטָ֔א וּמָעֲלָ֥ה מַ֖עַל בַּיהֹוָ֑ה וְכִחֵ֨שׁ בַּעֲמִית֜וֹ בְּפִקָּד֗וֹן אֽוֹ־בִתְשׂ֤וּמֶת יָד֙ א֣וֹ בְגָזֵ֔ל א֖וֹ עָשַׁ֥ק אֶת־עֲמִיתֽוֹ׃",
+      "en": "If a person sin, and commit a trespass against the Lord, and lie to his neighbour in that which was delivered him to keep, or in a loan, or in a thing taken away by violence, or have wronged his neighbour;"
+    },
+    {
+      "n": 107,
+      "c": 5,
+      "v": 22,
+      "ref": "5:22",
+      "text": "אֽוֹ־מָצָ֧א אֲבֵדָ֛ה וְכִ֥חֶשׁ בָּ֖הּ וְנִשְׁבַּ֣ע עַל־שָׁ֑קֶר עַל־אַחַ֗ת מִכֹּ֛ל אֲשֶׁר־יַעֲשֶׂ֥ה הָאָדָ֖ם לַחֲטֹ֥א בָהֵֽנָּה׃",
+      "en": "or have found that which was lost, and have lied concerning it, and have sworn falsely; in any of all these that a man does, sinning in that:"
+    },
+    {
+      "n": 108,
+      "c": 5,
+      "v": 23,
+      "ref": "5:23",
+      "text": "וְהָיָה֮ כִּֽי־יֶחֱטָ֣א וְאָשֵׁם֒ וְהֵשִׁ֨יב אֶת־הַגְּזֵלָ֜ה אֲשֶׁ֣ר גָּזָ֗ל א֤וֹ אֶת־הָעֹ֙שֶׁק֙ אֲשֶׁ֣ר עָשָׁ֔ק א֚וֹ אֶת־הַפִּקָּד֔וֹן אֲשֶׁ֥ר הׇפְקַ֖ד אִתּ֑וֹ א֥וֹ אֶת־הָאֲבֵדָ֖ה אֲשֶׁ֥ר מָצָֽא׃",
+      "en": "then it shall be, because he has sinned, and is guilty, that he shall restore that which he took violently away, or the thing which he has deceitfully acquired, or that which was delivered him to keep, or the lost thing which he found,"
+    },
+    {
+      "n": 109,
+      "c": 5,
+      "v": 24,
+      "ref": "5:24",
+      "text": "א֠וֹ מִכֹּ֞ל אֲשֶׁר־יִשָּׁבַ֣ע עָלָיו֮ לַשֶּׁ֒קֶר֒ וְשִׁלַּ֤ם אֹתוֹ֙ בְּרֹאשׁ֔וֹ וַחֲמִשִׁתָ֖יו יֹסֵ֣ף עָלָ֑יו לַאֲשֶׁ֨ר ה֥וּא ל֛וֹ יִתְּנֶ֖נּוּ בְּי֥וֹם אַשְׁמָתֽוֹ׃",
+      "en": "or all that about which he has sworn falsely; he shall even restore it in the principal, and shall add the fifth part more to it, and give it to him to whom it belongs, in the day of his trespass offering;"
+    },
+    {
+      "n": 110,
+      "c": 5,
+      "v": 25,
+      "ref": "5:25",
+      "text": "וְאֶת־אֲשָׁמ֥וֹ יָבִ֖יא לַיהֹוָ֑ה אַ֣יִל תָּמִ֧ים מִן־הַצֹּ֛אן בְּעֶרְכְּךָ֥ לְאָשָׁ֖ם אֶל־הַכֹּהֵֽן׃",
+      "en": "and he shall bring his guilt offering to the Lord, a ram without blemish out of the flock, according to the value of a guilt offering, to the priest:"
+    },
+    {
+      "n": 111,
+      "c": 5,
+      "v": 26,
+      "ref": "5:26",
+      "text": "וְכִפֶּ֨ר עָלָ֧יו הַכֹּהֵ֛ן לִפְנֵ֥י יְהֹוָ֖ה וְנִסְלַ֣ח ל֑וֹ עַל־אַחַ֛ת מִכֹּ֥ל אֲשֶֽׁר־יַעֲשֶׂ֖ה לְאַשְׁמָ֥ה בָֽהּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and the priest shall make atonement for him before the Lord: and it shall be forgiven him for anything of all that he has done wherein to incur guilt."
+    }
+  ],
+  "parashah": {
+    "en": "Vayikra",
+    "he": "וַיִּקְרָא",
+    "translit": "Vayikra",
+    "ref": "Leviticus 1:1–5:26"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 13,
+        "ref": "1:1–1:13"
+      },
+      {
+        "n": 2,
+        "start": 14,
+        "end": 23,
+        "ref": "1:14–2:6"
+      },
+      {
+        "n": 3,
+        "start": 24,
+        "end": 33,
+        "ref": "2:7–2:16"
+      },
+      {
+        "n": 4,
+        "start": 34,
+        "end": 50,
+        "ref": "3:1–3:17"
+      },
+      {
+        "n": 5,
+        "start": 51,
+        "end": 76,
+        "ref": "4:1–4:26"
+      },
+      {
+        "n": 6,
+        "start": 77,
+        "end": 95,
+        "ref": "4:27–5:10"
+      },
+      {
+        "n": 7,
+        "start": 96,
+        "end": 111,
+        "ref": "5:11–5:26"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 4,
+          "ref": "1:1–1:4"
+        },
+        {
+          "n": 2,
+          "start": 5,
+          "end": 9,
+          "ref": "1:5–1:9"
+        },
+        {
+          "n": 3,
+          "start": 10,
+          "end": 13,
+          "ref": "1:10–1:13"
+        },
+        {
+          "n": 4,
+          "start": 14,
+          "end": 17,
+          "ref": "1:14–1:17"
+        },
+        {
+          "n": 5,
+          "start": 18,
+          "end": 23,
+          "ref": "2:1–2:6"
+        },
+        {
+          "n": 6,
+          "start": 24,
+          "end": 30,
+          "ref": "2:7–2:13"
+        },
+        {
+          "n": 7,
+          "start": 31,
+          "end": 33,
+          "ref": "2:14–2:16"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 34,
+          "end": 38,
+          "ref": "3:1–3:5"
+        },
+        {
+          "n": 2,
+          "start": 39,
+          "end": 44,
+          "ref": "3:6–3:11"
+        },
+        {
+          "n": 3,
+          "start": 45,
+          "end": 50,
+          "ref": "3:12–3:17"
+        },
+        {
+          "n": 4,
+          "start": 51,
+          "end": 57,
+          "ref": "4:1–4:7"
+        },
+        {
+          "n": 5,
+          "start": 58,
+          "end": 62,
+          "ref": "4:8–4:12"
+        },
+        {
+          "n": 6,
+          "start": 63,
+          "end": 71,
+          "ref": "4:13–4:21"
+        },
+        {
+          "n": 7,
+          "start": 72,
+          "end": 76,
+          "ref": "4:22–4:26"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 77,
+          "end": 81,
+          "ref": "4:27–4:31"
+        },
+        {
+          "n": 2,
+          "start": 82,
+          "end": 85,
+          "ref": "4:32–4:35"
+        },
+        {
+          "n": 3,
+          "start": 86,
+          "end": 95,
+          "ref": "5:1–5:10"
+        },
+        {
+          "n": 4,
+          "start": 96,
+          "end": 98,
+          "ref": "5:11–5:13"
+        },
+        {
+          "n": 5,
+          "start": 99,
+          "end": 101,
+          "ref": "5:14–5:16"
+        },
+        {
+          "n": 6,
+          "start": 102,
+          "end": 104,
+          "ref": "5:17–5:19"
+        },
+        {
+          "n": 7,
+          "start": 105,
+          "end": 111,
+          "ref": "5:20–5:26"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 109,
+        "end": 111,
+        "ref": "5:24–5:26"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 31,
+          "end": 33,
+          "ref": "2:14–2:16"
+        },
+        "2": {
+          "n": "M",
+          "start": 74,
+          "end": 76,
+          "ref": "4:24–4:26"
+        },
+        "3": {
+          "n": "M",
+          "start": 109,
+          "end": 111,
+          "ref": "5:24–5:26"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

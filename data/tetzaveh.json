@@ -1,0 +1,1041 @@
+{
+  "slug": "tetzaveh",
+  "book": {
+    "en": "Exodus",
+    "he": "שמות",
+    "translit": "Shemot"
+  },
+  "multiChapter": true,
+  "ref": "Exodus 27:20-30:10",
+  "heRef": "שמות כ״ז:כ-ל׳:י",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 27,
+      "v": 20,
+      "ref": "27:20",
+      "text": "וְאַתָּ֞ה תְּצַוֶּ֣ה&thinsp;<b>׀</b> אֶת־בְּנֵ֣י יִשְׂרָאֵ֗ל וְיִקְח֨וּ אֵלֶ֜יךָ שֶׁ֣מֶן זַ֥יִת זָ֛ךְ כָּתִ֖ית לַמָּא֑וֹר לְהַעֲלֹ֥ת נֵ֖ר תָּמִֽיד׃",
+      "en": "And thou shalt command the children of Yisra᾽el, that they bring thee pure olive oil beaten for the light, to cause the lamp to burn always."
+    },
+    {
+      "n": 2,
+      "c": 27,
+      "v": 21,
+      "ref": "27:21",
+      "text": "בְּאֹ֣הֶל מוֹעֵד֩ מִח֨וּץ לַפָּרֹ֜כֶת אֲשֶׁ֣ר עַל־הָעֵדֻ֗ת יַעֲרֹךְ֩ אֹת֨וֹ אַהֲרֹ֧ן וּבָנָ֛יו מֵעֶ֥רֶב עַד־בֹּ֖קֶר לִפְנֵ֣י יְהֹוָ֑ה חֻקַּ֤ת עוֹלָם֙ לְדֹ֣רֹתָ֔ם מֵאֵ֖ת בְּנֵ֥י יִשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "In the Tent of Meeting outside the veil, which is before the Testimony, Aharon and his sons shall order it from evening to morning before the Lord: it shall be a statute for ever to their generations on behalf of the children of Yisra᾽el."
+    },
+    {
+      "n": 3,
+      "c": 28,
+      "v": 1,
+      "ref": "28:1",
+      "text": "וְאַתָּ֡ה הַקְרֵ֣ב אֵלֶ֩יךָ֩ אֶת־אַהֲרֹ֨ן אָחִ֜יךָ וְאֶת־בָּנָ֣יו אִתּ֗וֹ מִתּ֛וֹךְ בְּנֵ֥י יִשְׂרָאֵ֖ל לְכַהֲנוֹ־לִ֑י אַהֲרֹ֕ן נָדָ֧ב וַאֲבִיה֛וּא אֶלְעָזָ֥ר וְאִיתָמָ֖ר בְּנֵ֥י אַהֲרֹֽן׃",
+      "en": "And take thou to thee Aharon thy brother, and his sons with him, from among the children of Yisra᾽el that he may minister to me in the priest’s office, Aharon, Nadav, and Avihu, El῾azar, and Itamar, the sons of Aharon."
+    },
+    {
+      "n": 4,
+      "c": 28,
+      "v": 2,
+      "ref": "28:2",
+      "text": "וְעָשִׂ֥יתָ בִגְדֵי־קֹ֖דֶשׁ לְאַהֲרֹ֣ן אָחִ֑יךָ לְכָב֖וֹד וּלְתִפְאָֽרֶת׃",
+      "en": "And thou shalt make holy garments for Aharon thy brother for honour and for beauty."
+    },
+    {
+      "n": 5,
+      "c": 28,
+      "v": 3,
+      "ref": "28:3",
+      "text": "וְאַתָּ֗ה תְּדַבֵּר֙ אֶל־כׇּל־חַכְמֵי־לֵ֔ב אֲשֶׁ֥ר מִלֵּאתִ֖יו ר֣וּחַ חׇכְמָ֑ה וְעָשׂ֞וּ אֶת־בִּגְדֵ֧י אַהֲרֹ֛ן לְקַדְּשׁ֖וֹ לְכַהֲנוֹ־לִֽי׃",
+      "en": "And thou shalt speak to all that are wise hearted, whom I have filled with the spirit of wisdom, that they may make Aharon’s garments to consecrate him, that he may minister to me in the priest’s office."
+    },
+    {
+      "n": 6,
+      "c": 28,
+      "v": 4,
+      "ref": "28:4",
+      "text": "וְאֵ֨לֶּה הַבְּגָדִ֜ים אֲשֶׁ֣ר יַעֲשׂ֗וּ חֹ֤שֶׁן וְאֵפוֹד֙ וּמְעִ֔יל וּכְתֹ֥נֶת תַּשְׁבֵּ֖ץ מִצְנֶ֣פֶת וְאַבְנֵ֑ט וְעָשׂ֨וּ בִגְדֵי־קֹ֜דֶשׁ לְאַהֲרֹ֥ן אָחִ֛יךָ וּלְבָנָ֖יו לְכַהֲנוֹ־לִֽי׃",
+      "en": "And these are the garments which they shall make; a breastplate, and an efod, and a robe, and a quilted undercoat, a mitre, and a girdle: and they shall make holy garments for Aharon thy brother, and his sons, that he may minister to me in the priest’s office."
+    },
+    {
+      "n": 7,
+      "c": 28,
+      "v": 5,
+      "ref": "28:5",
+      "text": "וְהֵם֙ יִקְח֣וּ אֶת־הַזָּהָ֔ב וְאֶת־הַתְּכֵ֖לֶת וְאֶת־הָֽאַרְגָּמָ֑ן וְאֶת־תּוֹלַ֥עַת הַשָּׁנִ֖י וְאֶת־הַשֵּֽׁשׁ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And they shall take gold, and blue, and purple, and scarlet, and fine linen."
+    },
+    {
+      "n": 8,
+      "c": 28,
+      "v": 6,
+      "ref": "28:6",
+      "text": "וְעָשׂ֖וּ אֶת־הָאֵפֹ֑ד זָ֠הָ֠ב תְּכֵ֨לֶת וְאַרְגָּמָ֜ן תּוֹלַ֧עַת שָׁנִ֛י וְשֵׁ֥שׁ מׇשְׁזָ֖ר מַעֲשֵׂ֥ה חֹשֵֽׁב׃",
+      "en": "And they shall make the efod of gold, of blue, and of purple, of scarlet, and fine twined linen, the work of an artist."
+    },
+    {
+      "n": 9,
+      "c": 28,
+      "v": 7,
+      "ref": "28:7",
+      "text": "שְׁתֵּ֧י כְתֵפֹ֣ת חֹֽבְרֹ֗ת יִֽהְיֶה־לּ֛וֹ אֶל־שְׁנֵ֥י קְצוֹתָ֖יו וְחֻבָּֽר׃",
+      "en": "It shall have its two shoulderpieces joined at its two edges; and so it shall be joined together."
+    },
+    {
+      "n": 10,
+      "c": 28,
+      "v": 8,
+      "ref": "28:8",
+      "text": "וְחֵ֤שֶׁב אֲפֻדָּתוֹ֙ אֲשֶׁ֣ר עָלָ֔יו כְּמַעֲשֵׂ֖הוּ מִמֶּ֣נּוּ יִהְיֶ֑ה זָהָ֗ב תְּכֵ֧לֶת וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת שָׁנִ֖י וְשֵׁ֥שׁ מׇשְׁזָֽר׃",
+      "en": "And the finely wrought girdle of the efod, which is upon it, shall be of the same, according to its work; namely, of gold, of blue, and purple, and scarlet, and fine twined linen."
+    },
+    {
+      "n": 11,
+      "c": 28,
+      "v": 9,
+      "ref": "28:9",
+      "text": "וְלָ֣קַחְתָּ֔ אֶת־שְׁתֵּ֖י אַבְנֵי־שֹׁ֑הַם וּפִתַּחְתָּ֣ עֲלֵיהֶ֔ם שְׁמ֖וֹת בְּנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "And thou shalt take two shoham stones, and engrave on them the names of the children of Yisra᾽el:"
+    },
+    {
+      "n": 12,
+      "c": 28,
+      "v": 10,
+      "ref": "28:10",
+      "text": "שִׁשָּׁה֙ מִשְּׁמֹתָ֔ם עַ֖ל הָאֶ֣בֶן הָאֶחָ֑ת וְאֶת־שְׁמ֞וֹת הַשִּׁשָּׁ֧ה הַנּוֹתָרִ֛ים עַל־הָאֶ֥בֶן הַשֵּׁנִ֖ית כְּתוֹלְדֹתָֽם׃",
+      "en": "six of their names on one stone, and the other six names on the other stone, according to their birth."
+    },
+    {
+      "n": 13,
+      "c": 28,
+      "v": 11,
+      "ref": "28:11",
+      "text": "מַעֲשֵׂ֣ה חָרַשׁ֮ אֶ֒בֶן֒ פִּתּוּחֵ֣י חֹתָ֗ם תְּפַתַּח֙ אֶת־שְׁתֵּ֣י הָאֲבָנִ֔ים עַל־שְׁמֹ֖ת בְּנֵ֣י יִשְׂרָאֵ֑ל מֻסַבֹּ֛ת מִשְׁבְּצ֥וֹת זָהָ֖ב תַּעֲשֶׂ֥ה אֹתָֽם׃",
+      "en": "With the work of an engraver in stone, like the engravings of a signet, shalt thou engrave the two stones with the names of the children of Yisra᾽el: thou shalt make them to be set in fixtures of gold."
+    },
+    {
+      "n": 14,
+      "c": 28,
+      "v": 12,
+      "ref": "28:12",
+      "text": "וְשַׂמְתָּ֞ אֶת־שְׁתֵּ֣י הָאֲבָנִ֗ים עַ֚ל כִּתְפֹ֣ת הָֽאֵפֹ֔ד אַבְנֵ֥י זִכָּרֹ֖ן לִבְנֵ֣י יִשְׂרָאֵ֑ל וְנָשָׂא֩ אַהֲרֹ֨ן אֶת־שְׁמוֹתָ֜ם לִפְנֵ֧י יְהֹוָ֛ה עַל־שְׁתֵּ֥י כְתֵפָ֖יו לְזִכָּרֹֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And thou shalt put the two stones upon the shoulders of the efod for stones of memorial to the children of Yisra᾽el: and Aharon shall bear their names before the Lord upon his two shoulders for a memorial."
+    },
+    {
+      "n": 15,
+      "c": 28,
+      "v": 13,
+      "ref": "28:13",
+      "text": "וְעָשִׂ֥יתָ מִשְׁבְּצֹ֖ת זָהָֽב׃",
+      "en": "And thou shalt make fixtures of gold;"
+    },
+    {
+      "n": 16,
+      "c": 28,
+      "v": 14,
+      "ref": "28:14",
+      "text": "וּשְׁתֵּ֤י שַׁרְשְׁרֹת֙ זָהָ֣ב טָה֔וֹר מִגְבָּלֹ֛ת תַּעֲשֶׂ֥ה אֹתָ֖ם מַעֲשֵׂ֣ה עֲבֹ֑ת וְנָתַתָּ֛ה אֶת־שַׁרְשְׁרֹ֥ת הָעֲבֹתֹ֖ת עַל־הַֽמִּשְׁבְּצֹֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and two chains of pure gold at the ends; of wreathen work shalt thou make them, and fasten the wreathen chains to the fixtures."
+    },
+    {
+      "n": 17,
+      "c": 28,
+      "v": 15,
+      "ref": "28:15",
+      "text": "וְעָשִׂ֜יתָ חֹ֤שֶׁן מִשְׁפָּט֙ מַעֲשֵׂ֣ה חֹשֵׁ֔ב כְּמַעֲשֵׂ֥ה אֵפֹ֖ד תַּעֲשֶׂ֑נּוּ זָ֠הָ֠ב תְּכֵ֨לֶת וְאַרְגָּמָ֜ן וְתוֹלַ֧עַת שָׁנִ֛י וְשֵׁ֥שׁ מׇשְׁזָ֖ר תַּעֲשֶׂ֥ה אֹתֽוֹ׃",
+      "en": "And thou shalt make the breastplate of judgment the work of an artist; after the work of the efod thou shalt make it; of gold, of blue, and of purple, and of scarlet, and of fine twined linen, shalt thou make it."
+    },
+    {
+      "n": 18,
+      "c": 28,
+      "v": 16,
+      "ref": "28:16",
+      "text": "רָב֥וּעַ יִֽהְיֶ֖ה כָּפ֑וּל זֶ֥רֶת אׇרְכּ֖וֹ וְזֶ֥רֶת רׇחְבּֽוֹ׃",
+      "en": "Foursquare it shall be, being doubled; a span shall be its length, and a span shall be the breadth of it."
+    },
+    {
+      "n": 19,
+      "c": 28,
+      "v": 17,
+      "ref": "28:17",
+      "text": "וּמִלֵּאתָ֥ בוֹ֙ מִלֻּ֣אַת אֶ֔בֶן אַרְבָּעָ֖ה טוּרִ֣ים אָ֑בֶן ט֗וּר אֹ֤דֶם פִּטְדָה֙ וּבָרֶ֔קֶת הַטּ֖וּר הָאֶחָֽד׃",
+      "en": "And thou shalt set in it settings of stones, even four rows of stones: the first row shall be a ruby, a chrysolithe, and a beryl: this shall be the first row."
+    },
+    {
+      "n": 20,
+      "c": 28,
+      "v": 18,
+      "ref": "28:18",
+      "text": "וְהַטּ֖וּר הַשֵּׁנִ֑י נֹ֥פֶךְ סַפִּ֖יר וְיָהֲלֹֽם׃",
+      "en": "And the second row shall be a turquoise, a sapphire, and a diamond."
+    },
+    {
+      "n": 21,
+      "c": 28,
+      "v": 19,
+      "ref": "28:19",
+      "text": "וְהַטּ֖וּר הַשְּׁלִישִׁ֑י לֶ֥שֶׁם שְׁב֖וֹ וְאַחְלָֽמָה׃",
+      "en": "And the third row a ligure, an agate, and a jasper."
+    },
+    {
+      "n": 22,
+      "c": 28,
+      "v": 20,
+      "ref": "28:20",
+      "text": "וְהַטּוּר֙ הָרְבִיעִ֔י תַּרְשִׁ֥ישׁ וְשֹׁ֖הַם וְיָשְׁפֵ֑ה מְשֻׁבָּצִ֥ים זָהָ֛ב יִהְי֖וּ בְּמִלּוּאֹתָֽם׃",
+      "en": "And the fourth row an emerald, and a shoham, and a jade: they shall be enclosed in settings of gold."
+    },
+    {
+      "n": 23,
+      "c": 28,
+      "v": 21,
+      "ref": "28:21",
+      "text": "וְ֠הָאֲבָנִ֠ים תִּֽהְיֶ֜יןָ עַל־שְׁמֹ֧ת בְּנֵֽי־יִשְׂרָאֵ֛ל שְׁתֵּ֥ים עֶשְׂרֵ֖ה עַל־שְׁמֹתָ֑ם פִּתּוּחֵ֤י חוֹתָם֙ אִ֣ישׁ עַל־שְׁמ֔וֹ תִּֽהְיֶ֕יןָ לִשְׁנֵ֥י עָשָׂ֖ר שָֽׁבֶט׃",
+      "en": "And the stones shall be with the names of the children of Yisra᾽el, twelve, according to their names, like the engravings of a signet; every one with its name shall they be, according to the twelve tribes."
+    },
+    {
+      "n": 24,
+      "c": 28,
+      "v": 22,
+      "ref": "28:22",
+      "text": "וְעָשִׂ֧יתָ עַל־הַחֹ֛שֶׁן שַֽׁרְשֹׁ֥ת גַּבְלֻ֖ת מַעֲשֵׂ֣ה עֲבֹ֑ת זָהָ֖ב טָהֽוֹר׃",
+      "en": "And thou shalt make upon the breastplate plaited chains of wreathen work of pure gold."
+    },
+    {
+      "n": 25,
+      "c": 28,
+      "v": 23,
+      "ref": "28:23",
+      "text": "וְעָשִׂ֙יתָ֙ עַל־הַחֹ֔שֶׁן שְׁתֵּ֖י טַבְּע֣וֹת זָהָ֑ב וְנָתַתָּ֗ אֶת־שְׁתֵּי֙ הַטַּבָּע֔וֹת עַל־שְׁנֵ֖י קְצ֥וֹת הַחֹֽשֶׁן׃",
+      "en": "And thou shalt make upon the breastplate two rings of gold, and shalt put the two rings on the two ends of the breastplate."
+    },
+    {
+      "n": 26,
+      "c": 28,
+      "v": 24,
+      "ref": "28:24",
+      "text": "וְנָתַתָּ֗ה אֶת־שְׁתֵּי֙ עֲבֹתֹ֣ת הַזָּהָ֔ב עַל־שְׁתֵּ֖י הַטַּבָּעֹ֑ת אֶל־קְצ֖וֹת הַחֹֽשֶׁן׃",
+      "en": "And thou shalt put the two wreathen chains of gold in the two rings which are on the ends of the breastplate."
+    },
+    {
+      "n": 27,
+      "c": 28,
+      "v": 25,
+      "ref": "28:25",
+      "text": "וְאֵ֨ת שְׁתֵּ֤י קְצוֹת֙ שְׁתֵּ֣י הָעֲבֹתֹ֔ת תִּתֵּ֖ן עַל־שְׁתֵּ֣י הַֽמִּשְׁבְּצ֑וֹת וְנָתַתָּ֛ה עַל־כִּתְפ֥וֹת הָאֵפֹ֖ד אֶל־מ֥וּל פָּנָֽיו׃",
+      "en": "And the other two ends of the two wreathen chains thou shalt fasten in the two fixtures, and put them on the shoulderpieces of the efod toward its forepart."
+    },
+    {
+      "n": 28,
+      "c": 28,
+      "v": 26,
+      "ref": "28:26",
+      "text": "וְעָשִׂ֗יתָ שְׁתֵּי֙ טַבְּע֣וֹת זָהָ֔ב וְשַׂמְתָּ֣ אֹתָ֔ם עַל־שְׁנֵ֖י קְצ֣וֹת הַחֹ֑שֶׁן עַל־שְׂפָת֕וֹ אֲשֶׁ֛ר אֶל־עֵ֥בֶר הָאֵפֹ֖ד<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי ספרד ואשכנז הָאֵפ֖וֹד)</i> בָּֽיְתָה׃",
+      "en": "And thou shalt make two rings of gold, and thou shalt put them upon the two ends of the breastplate in its border, which is on the side of the efod inward."
+    },
+    {
+      "n": 29,
+      "c": 28,
+      "v": 27,
+      "ref": "28:27",
+      "text": "וְעָשִׂ֘יתָ֮ שְׁתֵּ֣י טַבְּע֣וֹת זָהָב֒ וְנָתַתָּ֣ה אֹתָ֡ם עַל־שְׁתֵּי֩ כִתְפ֨וֹת הָאֵפ֤וֹד מִלְּמַ֙טָּה֙ מִמּ֣וּל פָּנָ֔יו לְעֻמַּ֖ת מַחְבַּרְתּ֑וֹ מִמַּ֕עַל לְחֵ֖שֶׁב הָאֵפֽוֹד׃",
+      "en": "And two other rings of gold thou shalt make, and shalt put them on the two shoulderpieces of the efod underneath, toward the forepart of it, over against its coupling, above the finely wrought girdle of the efod."
+    },
+    {
+      "n": 30,
+      "c": 28,
+      "v": 28,
+      "ref": "28:28",
+      "text": "וְיִרְכְּס֣וּ אֶת־הַ֠חֹ֠שֶׁן <span class=\"mam-kq-trivial\">מִֽטַּבְּעֹתָ֞ו</span> אֶל־טַבְּעֹ֤ת הָאֵפוֹד֙ בִּפְתִ֣יל תְּכֵ֔לֶת לִֽהְי֖וֹת עַל־חֵ֣שֶׁב הָאֵפ֑וֹד וְלֹֽא־יִזַּ֣ח הַחֹ֔שֶׁן מֵעַ֖ל הָאֵפֽוֹד׃",
+      "en": "And they shall bind the breastplate by its rings to the rings of the efod with a lace of blue, that it may be above the finely wrought girdle of the efod, and that the breastplate be not loosed from the efod."
+    },
+    {
+      "n": 31,
+      "c": 28,
+      "v": 29,
+      "ref": "28:29",
+      "text": "וְנָשָׂ֣א אַ֠הֲרֹ֠ן אֶת־שְׁמ֨וֹת בְּנֵֽי־יִשְׂרָאֵ֜ל בְּחֹ֧שֶׁן הַמִּשְׁפָּ֛ט עַל־לִבּ֖וֹ בְּבֹא֣וֹ אֶל־הַקֹּ֑דֶשׁ לְזִכָּרֹ֥ן לִפְנֵֽי־יְהֹוָ֖ה תָּמִֽיד׃",
+      "en": "And Aharon shall bear the names of the children of Yisra᾽el on the breastplate of judgment upon his heart, when he goes in to the holy place, for a memorial before the Lord continually."
+    },
+    {
+      "n": 32,
+      "c": 28,
+      "v": 30,
+      "ref": "28:30",
+      "text": "וְנָתַתָּ֞ אֶל־חֹ֣שֶׁן הַמִּשְׁפָּ֗ט אֶת־הָאוּרִים֙ וְאֶת־הַתֻּמִּ֔ים וְהָיוּ֙ עַל־לֵ֣ב אַהֲרֹ֔ן בְּבֹא֖וֹ לִפְנֵ֣י יְהֹוָ֑ה וְנָשָׂ֣א אַ֠הֲרֹ֠ן אֶת־מִשְׁפַּ֨ט בְּנֵי־יִשְׂרָאֵ֧ל עַל־לִבּ֛וֹ לִפְנֵ֥י יְהֹוָ֖ה תָּמִֽיד׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And thou shalt put in the breastplate of judgment the Urim and the Tummim; and they shall be upon Aharon’s heart, when he goes in before the Lord: and Aharon shall bear the judgment of the children of Yisra᾽el upon his heart before the Lord continually."
+    },
+    {
+      "n": 33,
+      "c": 28,
+      "v": 31,
+      "ref": "28:31",
+      "text": "וְעָשִׂ֛יתָ אֶת־מְעִ֥יל הָאֵפ֖וֹד כְּלִ֥יל תְּכֵֽלֶת׃",
+      "en": "And thou shalt make the robe of the efod all of blue."
+    },
+    {
+      "n": 34,
+      "c": 28,
+      "v": 32,
+      "ref": "28:32",
+      "text": "וְהָיָ֥ה פִֽי־רֹאשׁ֖וֹ בְּתוֹכ֑וֹ שָׂפָ֡ה יִֽהְיֶה֩ לְפִ֨יו סָבִ֜יב מַעֲשֵׂ֣ה אֹרֵ֗ג כְּפִ֥י תַחְרָ֛א יִֽהְיֶה־לּ֖וֹ לֹ֥א יִקָּרֵֽעַ׃",
+      "en": "And there shall be a hole for the head, in the midst of it: it shall have a binding of woven work round about the hole, as it were the hole of a suit of armour, that it be not torn."
+    },
+    {
+      "n": 35,
+      "c": 28,
+      "v": 33,
+      "ref": "28:33",
+      "text": "וְעָשִׂ֣יתָ עַל־שׁוּלָ֗יו רִמֹּנֵי֙ תְּכֵ֤לֶת וְאַרְגָּמָן֙ וְתוֹלַ֣עַת שָׁנִ֔י עַל־שׁוּלָ֖יו סָבִ֑יב וּפַעֲמֹנֵ֥י זָהָ֛ב בְּתוֹכָ֖ם סָבִֽיב׃",
+      "en": "And beneath upon the hem of it thou shalt make pomegranates of blue, and of purple, and of scarlet, round about its hem; and bells of gold between them round about:"
+    },
+    {
+      "n": 36,
+      "c": 28,
+      "v": 34,
+      "ref": "28:34",
+      "text": "פַּעֲמֹ֤ן זָהָב֙ וְרִמּ֔וֹן פַּֽעֲמֹ֥ן זָהָ֖ב וְרִמּ֑וֹן עַל־שׁוּלֵ֥י הַמְּעִ֖יל סָבִֽיב׃",
+      "en": "a golden bell and a pomegranate, a golden bell and a pomegranate, upon the hem of the robe round about."
+    },
+    {
+      "n": 37,
+      "c": 28,
+      "v": 35,
+      "ref": "28:35",
+      "text": "וְהָיָ֥ה עַֽל־אַהֲרֹ֖ן לְשָׁרֵ֑ת וְנִשְׁמַ֣ע ק֠וֹל֠וֹ בְּבֹא֨וֹ אֶל־הַקֹּ֜דֶשׁ לִפְנֵ֧י יְהֹוָ֛ה וּבְצֵאת֖וֹ וְלֹ֥א יָמֽוּת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And it shall be upon Aharon when he comes to minister: and its sound shall be heard when he goes in to the holy place before the Lord, and when he comes out, that he die not."
+    },
+    {
+      "n": 38,
+      "c": 28,
+      "v": 36,
+      "ref": "28:36",
+      "text": "וְעָשִׂ֥יתָ צִּ֖יץ זָהָ֣ב טָה֑וֹר וּפִתַּחְתָּ֤ עָלָיו֙ פִּתּוּחֵ֣י חֹתָ֔ם קֹ֖דֶשׁ לַֽיהֹוָֽה׃",
+      "en": "And thou shalt make a plate of pure gold, and engrave upon it, like the engravings of a signet, Holiness to the Lord."
+    },
+    {
+      "n": 39,
+      "c": 28,
+      "v": 37,
+      "ref": "28:37",
+      "text": "וְשַׂמְתָּ֤ אֹתוֹ֙ עַל־פְּתִ֣יל תְּכֵ֔לֶת וְהָיָ֖ה עַל־הַמִּצְנָ֑פֶת אֶל־מ֥וּל פְּנֵֽי־הַמִּצְנֶ֖פֶת יִהְיֶֽה׃",
+      "en": "And thou shalt put it on a blue lace, that it may be upon the mitre; upon the forefront of the mitre it shall be."
+    },
+    {
+      "n": 40,
+      "c": 28,
+      "v": 38,
+      "ref": "28:38",
+      "text": "וְהָיָה֮ עַל־מֵ֣צַח אַהֲרֹן֒ וְנָשָׂ֨א אַהֲרֹ֜ן אֶת־עֲוֺ֣ן הַקֳּדָשִׁ֗ים אֲשֶׁ֤ר יַקְדִּ֙ישׁוּ֙ בְּנֵ֣י יִשְׂרָאֵ֔ל לְכׇֽל־מַתְּנֹ֖ת קׇדְשֵׁיהֶ֑ם וְהָיָ֤ה עַל־מִצְחוֹ֙ תָּמִ֔יד לְרָצ֥וֹן לָהֶ֖ם לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And it shall be upon Aharon’s forehead, that Aharon may bear the iniquity of the holy things, which the children of Yisra᾽el shall hallow in all their holy gifts; and it shall be always upon his forehead, that they may be accepted before the Lord."
+    },
+    {
+      "n": 41,
+      "c": 28,
+      "v": 39,
+      "ref": "28:39",
+      "text": "וְשִׁבַּצְתָּ֙ הַכְּתֹ֣נֶת שֵׁ֔שׁ וְעָשִׂ֖יתָ מִצְנֶ֣פֶת שֵׁ֑שׁ וְאַבְנֵ֥ט תַּעֲשֶׂ֖ה מַעֲשֵׂ֥ה רֹקֵֽם׃",
+      "en": "And thou shalt weave the coat of fine linen, and thou shalt make the mitre of fine linen, and thou shalt make the girdle of embroidery."
+    },
+    {
+      "n": 42,
+      "c": 28,
+      "v": 40,
+      "ref": "28:40",
+      "text": "וְלִבְנֵ֤י אַהֲרֹן֙ תַּעֲשֶׂ֣ה כֻתֳּנֹ֔ת וְעָשִׂ֥יתָ לָהֶ֖ם אַבְנֵטִ֑ים וּמִגְבָּעוֹת֙ תַּעֲשֶׂ֣ה לָהֶ֔ם לְכָב֖וֹד וּלְתִפְאָֽרֶת׃",
+      "en": "And for Aharon’s sons thou shalt make coats, and thou shalt make for them girdles, and turbans shalt thou make for them, for honour and for beauty."
+    },
+    {
+      "n": 43,
+      "c": 28,
+      "v": 41,
+      "ref": "28:41",
+      "text": "וְהִלְבַּשְׁתָּ֤ אֹתָם֙ אֶת־אַהֲרֹ֣ן אָחִ֔יךָ וְאֶת־בָּנָ֖יו אִתּ֑וֹ וּמָשַׁחְתָּ֨ אֹתָ֜ם וּמִלֵּאתָ֧ אֶת־יָדָ֛ם וְקִדַּשְׁתָּ֥ אֹתָ֖ם וְכִהֲנ֥וּ לִֽי׃",
+      "en": "And thou shalt put them upon Aharon thy brother, and his sons with him; and shalt anoint them, and consecrate them, and sanctify them, that they may minister to me in the priest’s office."
+    },
+    {
+      "n": 44,
+      "c": 28,
+      "v": 42,
+      "ref": "28:42",
+      "text": "וַעֲשֵׂ֤ה לָהֶם֙ מִכְנְסֵי־בָ֔ד לְכַסּ֖וֹת בְּשַׂ֣ר עֶרְוָ֑ה מִמׇּתְנַ֥יִם וְעַד־יְרֵכַ֖יִם יִהְיֽוּ׃",
+      "en": "And thou shalt make them linen breeches to cover their nakedness; from the loins even to the thighs they shall reach:"
+    },
+    {
+      "n": 45,
+      "c": 28,
+      "v": 43,
+      "ref": "28:43",
+      "text": "וְהָיוּ֩ עַל־אַהֲרֹ֨ן וְעַל־בָּנָ֜יו בְּבֹאָ֣ם&thinsp;<b>׀</b> אֶל־אֹ֣הֶל מוֹעֵ֗ד א֣וֹ בְגִשְׁתָּ֤ם אֶל־הַמִּזְבֵּ֙חַ֙ לְשָׁרֵ֣ת בַּקֹּ֔דֶשׁ וְלֹא־יִשְׂא֥וּ עָוֺ֖ן וָמֵ֑תוּ חֻקַּ֥ת עוֹלָ֛ם ל֖וֹ וּלְזַרְע֥וֹ אַחֲרָֽיו׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and they shall be upon Aharon, and upon his sons, when they come in the Tent of Meeting, or when they come near to the altar to minister in the holy place; that they bear not iniquity, and die: it shall be a statute for ever to him and his seed after him."
+    },
+    {
+      "n": 46,
+      "c": 29,
+      "v": 1,
+      "ref": "29:1",
+      "text": "וְזֶ֨ה הַדָּבָ֜ר אֲשֶֽׁר־תַּעֲשֶׂ֥ה לָהֶ֛ם לְקַדֵּ֥שׁ אֹתָ֖ם לְכַהֵ֣ן לִ֑י לְ֠קַ֠ח פַּ֣ר אֶחָ֧ד בֶּן־בָּקָ֛ר וְאֵילִ֥ם שְׁנַ֖יִם תְּמִימִֽם׃",
+      "en": "And this is the thing that thou shalt do to them to hallow them, to minister to me in the priest’s office: Take one young bullock, and two rams without blemish,"
+    },
+    {
+      "n": 47,
+      "c": 29,
+      "v": 2,
+      "ref": "29:2",
+      "text": "וְלֶ֣חֶם מַצּ֗וֹת וְחַלֹּ֤ת מַצֹּת֙ בְּלוּלֹ֣ת בַּשֶּׁ֔מֶן וּרְקִיקֵ֥י מַצּ֖וֹת מְשֻׁחִ֣ים בַּשָּׁ֑מֶן סֹ֥לֶת חִטִּ֖ים תַּעֲשֶׂ֥ה אֹתָֽם׃",
+      "en": "and unleavened bread, and cakes unleavened mingled with oil, and wafers unleavened anointed with oil: of wheaten flour shalt thou make them."
+    },
+    {
+      "n": 48,
+      "c": 29,
+      "v": 3,
+      "ref": "29:3",
+      "text": "וְנָתַתָּ֤ אוֹתָם֙ עַל־סַ֣ל אֶחָ֔ד וְהִקְרַבְתָּ֥ אֹתָ֖ם בַּסָּ֑ל וְאֶ֨ת־הַפָּ֔ר וְאֵ֖ת שְׁנֵ֥י הָאֵילִֽם׃",
+      "en": "And thou shalt put them into one basket, and bring them in the basket, with the bullock and the two rams."
+    },
+    {
+      "n": 49,
+      "c": 29,
+      "v": 4,
+      "ref": "29:4",
+      "text": "וְאֶת־אַהֲרֹ֤ן וְאֶת־בָּנָיו֙ תַּקְרִ֔יב אֶל־פֶּ֖תַח אֹ֣הֶל מוֹעֵ֑ד וְרָחַצְתָּ֥ אֹתָ֖ם בַּמָּֽיִם׃",
+      "en": "And Aharon and his sons thou shalt bring to the door of the Tent of Meeting, and shalt wash them with water."
+    },
+    {
+      "n": 50,
+      "c": 29,
+      "v": 5,
+      "ref": "29:5",
+      "text": "וְלָקַחְתָּ֣ אֶת־הַבְּגָדִ֗ים וְהִלְבַּשְׁתָּ֤ אֶֽת־אַהֲרֹן֙ אֶת־הַכֻּתֹּ֔נֶת וְאֵת֙ מְעִ֣יל הָאֵפֹ֔ד וְאֶת־הָאֵפֹ֖ד וְאֶת־הַחֹ֑שֶׁן וְאָפַדְתָּ֣ ל֔וֹ בְּחֵ֖שֶׁב הָאֵפֹֽד׃",
+      "en": "And thou shalt take the garments, and put upon Aharon the coat, and the robe of the efod, and the efod, and the breastplate, and gird him with the finely wrought girdle of the efod:"
+    },
+    {
+      "n": 51,
+      "c": 29,
+      "v": 6,
+      "ref": "29:6",
+      "text": "וְשַׂמְתָּ֥ הַמִּצְנֶ֖פֶת עַל־רֹאשׁ֑וֹ וְנָתַתָּ֛ אֶת־נֵ֥זֶר הַקֹּ֖דֶשׁ עַל־הַמִּצְנָֽפֶת׃",
+      "en": "and thou shalt put the mitre on his head, and put the holy crown upon the mitre."
+    },
+    {
+      "n": 52,
+      "c": 29,
+      "v": 7,
+      "ref": "29:7",
+      "text": "וְלָֽקַחְתָּ֙ אֶת־שֶׁ֣מֶן הַמִּשְׁחָ֔ה וְיָצַקְתָּ֖ עַל־רֹאשׁ֑וֹ וּמָשַׁחְתָּ֖ אֹתֽוֹ׃",
+      "en": "Then shalt thou take the anointing oil, and pour it on his head, and anoint him."
+    },
+    {
+      "n": 53,
+      "c": 29,
+      "v": 8,
+      "ref": "29:8",
+      "text": "וְאֶת־בָּנָ֖יו תַּקְרִ֑יב וְהִלְבַּשְׁתָּ֖ם כֻּתֳּנֹֽת׃",
+      "en": "And thou shalt bring his sons, and put coats upon them."
+    },
+    {
+      "n": 54,
+      "c": 29,
+      "v": 9,
+      "ref": "29:9",
+      "text": "וְחָגַרְתָּ֩ אֹתָ֨ם אַבְנֵ֜ט אַהֲרֹ֣ן וּבָנָ֗יו וְחָבַשְׁתָּ֤ לָהֶם֙ מִגְבָּעֹ֔ת וְהָיְתָ֥ה לָהֶ֛ם כְּהֻנָּ֖ה לְחֻקַּ֣ת עוֹלָ֑ם וּמִלֵּאתָ֥ יַֽד־אַהֲרֹ֖ן וְיַד־בָּנָֽיו׃",
+      "en": "And thou shalt gird them with girdles, Aharon and his sons, and put the turbans on them: and the priest’s office shall be theirs for a perpetual statute: and thou shalt consecrate Aharon and his sons."
+    },
+    {
+      "n": 55,
+      "c": 29,
+      "v": 10,
+      "ref": "29:10",
+      "text": "וְהִקְרַבְתָּ֙ אֶת־הַפָּ֔ר לִפְנֵ֖י אֹ֣הֶל מוֹעֵ֑ד וְסָמַ֨ךְ אַהֲרֹ֧ן וּבָנָ֛יו אֶת־יְדֵיהֶ֖ם עַל־רֹ֥אשׁ הַפָּֽר׃",
+      "en": "And thou shalt cause a bullock to be brought before the Tent of Meeting: and Aharon and his sons shall put their hands on the head of the bullock."
+    },
+    {
+      "n": 56,
+      "c": 29,
+      "v": 11,
+      "ref": "29:11",
+      "text": "וְשָׁחַטְתָּ֥ אֶת־הַפָּ֖ר לִפְנֵ֣י יְהֹוָ֑ה פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "And thou shalt kill the bullock before the Lord, by the door of the Tent of Meeting."
+    },
+    {
+      "n": 57,
+      "c": 29,
+      "v": 12,
+      "ref": "29:12",
+      "text": "וְלָֽקַחְתָּ֙ מִדַּ֣ם הַפָּ֔ר וְנָתַתָּ֛ה עַל־קַרְנֹ֥ת הַמִּזְבֵּ֖חַ בְּאֶצְבָּעֶ֑ךָ וְאֶת־כׇּל־הַדָּ֣ם תִּשְׁפֹּ֔ךְ אֶל־יְס֖וֹד הַמִּזְבֵּֽחַ׃",
+      "en": "And thou shalt take of the blood of the bullock, and put it on the horns of the altar with thy finger, and pour all the blood beside the bottom of the altar."
+    },
+    {
+      "n": 58,
+      "c": 29,
+      "v": 13,
+      "ref": "29:13",
+      "text": "וְלָֽקַחְתָּ֗ אֶֽת־כׇּל־הַחֵ֘לֶב֮ הַֽמְכַסֶּ֣ה אֶת־הַקֶּ֒רֶב֒ וְאֵ֗ת הַיֹּתֶ֙רֶת֙ עַל־הַכָּבֵ֔ד וְאֵת֙ שְׁתֵּ֣י הַכְּלָיֹ֔ת וְאֶת־הַחֵ֖לֶב אֲשֶׁ֣ר עֲלֵיהֶ֑ן וְהִקְטַרְתָּ֖ הַמִּזְבֵּֽחָה׃",
+      "en": "And thou shalt take all the fat that covers the inwards, and the appendage that is above the liver, and the two kidneys, and the fat that is upon them, and burn them upon the altar."
+    },
+    {
+      "n": 59,
+      "c": 29,
+      "v": 14,
+      "ref": "29:14",
+      "text": "וְאֶת־בְּשַׂ֤ר הַפָּר֙ וְאֶת־עֹר֣וֹ וְאֶת־פִּרְשׁ֔וֹ תִּשְׂרֹ֣ף בָּאֵ֔שׁ מִח֖וּץ לַֽמַּחֲנֶ֑ה חַטָּ֖את הֽוּא׃",
+      "en": "But the flesh of the bullock, and its skin, and its dung, shalt thou burn with fire outside the camp: it is a sin offering."
+    },
+    {
+      "n": 60,
+      "c": 29,
+      "v": 15,
+      "ref": "29:15",
+      "text": "וְאֶת־הָאַ֥יִל הָאֶחָ֖ד תִּקָּ֑ח וְסָ֨מְכ֜וּ אַהֲרֹ֧ן וּבָנָ֛יו אֶת־יְדֵיהֶ֖ם עַל־רֹ֥אשׁ הָאָֽיִל׃",
+      "en": "And thou shalt take one ram; and Aharon and his sons shall put their hands upon the head of the ram."
+    },
+    {
+      "n": 61,
+      "c": 29,
+      "v": 16,
+      "ref": "29:16",
+      "text": "וְשָׁחַטְתָּ֖ אֶת־הָאָ֑יִל וְלָֽקַחְתָּ֙ אֶת־דָּמ֔וֹ וְזָרַקְתָּ֥ עַל־הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "And thou shalt slay the ram, and thou shalt take its blood, and sprinkle it round about upon the altar."
+    },
+    {
+      "n": 62,
+      "c": 29,
+      "v": 17,
+      "ref": "29:17",
+      "text": "וְאֶ֨ת־הָאַ֔יִל תְּנַתֵּ֖חַ לִנְתָחָ֑יו וְרָחַצְתָּ֤ קִרְבּוֹ֙ וּכְרָעָ֔יו וְנָתַתָּ֥ עַל־נְתָחָ֖יו וְעַל־רֹאשֽׁוֹ׃",
+      "en": "And thou shalt cut the ram in pieces, and wash its inward parts and its legs, and put them with its pieces, and with its head."
+    },
+    {
+      "n": 63,
+      "c": 29,
+      "v": 18,
+      "ref": "29:18",
+      "text": "וְהִקְטַרְתָּ֤ אֶת־כׇּל־הָאַ֙יִל֙ הַמִּזְבֵּ֔חָה עֹלָ֥ה ה֖וּא לַֽיהֹוָ֑ה רֵ֣יחַ נִיח֔וֹחַ אִשֶּׁ֥ה לַיהֹוָ֖ה הֽוּא׃",
+      "en": "And thou shalt burn the whole ram upon the altar: it is a burnt offering to the Lord: it is a sweet savour, an offering made by fire to the Lord."
+    },
+    {
+      "n": 64,
+      "c": 29,
+      "v": 19,
+      "ref": "29:19",
+      "text": "וְלָ֣קַחְתָּ֔ אֵ֖ת הָאַ֣יִל הַשֵּׁנִ֑י וְסָמַ֨ךְ אַהֲרֹ֧ן וּבָנָ֛יו אֶת־יְדֵיהֶ֖ם עַל־רֹ֥אשׁ הָאָֽיִל׃",
+      "en": "And thou shalt take the other ram; and Aharon and his sons shall put their hands on the head of the ram."
+    },
+    {
+      "n": 65,
+      "c": 29,
+      "v": 20,
+      "ref": "29:20",
+      "text": "וְשָׁחַטְתָּ֣ אֶת־הָאַ֗יִל וְלָקַחְתָּ֤ מִדָּמוֹ֙ וְנָֽתַתָּ֡ה עַל־תְּנוּךְ֩ אֹ֨זֶן אַהֲרֹ֜ן וְעַל־תְּנ֨וּךְ אֹ֤זֶן בָּנָיו֙ הַיְמָנִ֔ית וְעַל־בֹּ֤הֶן יָדָם֙ הַיְמָנִ֔ית וְעַל־בֹּ֥הֶן רַגְלָ֖ם הַיְמָנִ֑ית וְזָרַקְתָּ֧ אֶת־הַדָּ֛ם עַל־הַמִּזְבֵּ֖חַ סָבִֽיב׃",
+      "en": "Then shalt thou kill the ram, and take of its blood, and put it upon the tip of Aharon’s right ear, and upon the tip of the right ear of his sons, and upon the thumb of their right hand, and upon the great toe of their right foot, and sprinkle the blood upon the altar round about."
+    },
+    {
+      "n": 66,
+      "c": 29,
+      "v": 21,
+      "ref": "29:21",
+      "text": "וְלָקַחְתָּ֞ מִן־הַדָּ֨ם אֲשֶׁ֥ר עַֽל־הַמִּזְבֵּ֘חַ֮ וּמִשֶּׁ֣מֶן הַמִּשְׁחָה֒ וְהִזֵּיתָ֤ עַֽל־אַהֲרֹן֙ וְעַל־בְּגָדָ֔יו וְעַל־בָּנָ֛יו וְעַל־בִּגְדֵ֥י בָנָ֖יו אִתּ֑וֹ וְקָדַ֥שׁ הוּא֙ וּבְגָדָ֔יו וּבָנָ֛יו וּבִגְדֵ֥י בָנָ֖יו אִתּֽוֹ׃",
+      "en": "And thou shalt take of the blood that is upon the altar, and of the anointing oil, and sprinkle it upon Aharon, and upon his garments, and upon his sons, and upon the garments of his sons with him: and he shall be hallowed, and his garments, and his sons, and his sons’ garments with him."
+    },
+    {
+      "n": 67,
+      "c": 29,
+      "v": 22,
+      "ref": "29:22",
+      "text": "וְלָקַחְתָּ֣ מִן־הָ֠אַ֠יִל הַחֵ֨לֶב וְהָֽאַלְיָ֜ה וְאֶת־הַחֵ֣לֶב&thinsp;<b>׀</b> הַֽמְכַסֶּ֣ה אֶת־הַקֶּ֗רֶב וְאֵ֨ת יֹתֶ֤רֶת הַכָּבֵד֙ וְאֵ֣ת&thinsp;<b>׀</b> שְׁתֵּ֣י הַכְּלָיֹ֗ת וְאֶת־הַחֵ֙לֶב֙ אֲשֶׁ֣ר עֲלֵיהֶ֔ן וְאֵ֖ת שׁ֣וֹק הַיָּמִ֑ין כִּ֛י אֵ֥יל מִלֻּאִ֖ים הֽוּא׃",
+      "en": "Also thou shalt take of the ram the fat and the fat tail, and the fat that covers the inwards, and the appendage of the liver, and the two kidneys, and the fat that is upon them, and the right shoulder; for it is a ram of consecration:"
+    },
+    {
+      "n": 68,
+      "c": 29,
+      "v": 23,
+      "ref": "29:23",
+      "text": "וְכִכַּ֨ר לֶ֜חֶם אַחַ֗ת וְֽחַלַּ֨ת לֶ֥חֶם שֶׁ֛מֶן אַחַ֖ת וְרָקִ֣יק אֶחָ֑ד מִסַּל֙ הַמַּצּ֔וֹת אֲשֶׁ֖ר לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "and one loaf of bread, and one cake of oiled bread, and one wafer out of the basket of the unleavened bread that is before the Lord:"
+    },
+    {
+      "n": 69,
+      "c": 29,
+      "v": 24,
+      "ref": "29:24",
+      "text": "וְשַׂמְתָּ֣ הַכֹּ֔ל עַ֚ל כַּפֵּ֣י אַהֲרֹ֔ן וְעַ֖ל כַּפֵּ֣י בָנָ֑יו וְהֵנַפְתָּ֥ אֹתָ֛ם תְּנוּפָ֖ה לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "and thou shalt put all in the hands of Aharon, and in the hands of his sons; and shalt wave them for a wave offering before the Lord."
+    },
+    {
+      "n": 70,
+      "c": 29,
+      "v": 25,
+      "ref": "29:25",
+      "text": "וְלָקַחְתָּ֤ אֹתָם֙ מִיָּדָ֔ם וְהִקְטַרְתָּ֥ הַמִּזְבֵּ֖חָה עַל־הָעֹלָ֑ה לְרֵ֤יחַ נִיח֙וֹחַ֙ לִפְנֵ֣י יְהֹוָ֔ה אִשֶּׁ֥ה ה֖וּא לַיהֹוָֽה׃",
+      "en": "And thou shalt receive them of their hands, and burn them upon the altar for a burnt offering, for a sweet savour before the Lord: it is an offering made by fire to the Lord."
+    },
+    {
+      "n": 71,
+      "c": 29,
+      "v": 26,
+      "ref": "29:26",
+      "text": "וְלָקַחְתָּ֣ אֶת־הֶֽחָזֶ֗ה מֵאֵ֤יל הַמִּלֻּאִים֙ אֲשֶׁ֣ר לְאַהֲרֹ֔ן וְהֵנַפְתָּ֥ אֹת֛וֹ תְּנוּפָ֖ה לִפְנֵ֣י יְהֹוָ֑ה וְהָיָ֥ה לְךָ֖ לְמָנָֽה׃",
+      "en": "And thou shalt take the breast of the ram of Aharon’s consecration, and wave it for a wave offering before the Lord: and it shall be thy part."
+    },
+    {
+      "n": 72,
+      "c": 29,
+      "v": 27,
+      "ref": "29:27",
+      "text": "וְקִדַּשְׁתָּ֞ אֵ֣ת&thinsp;<b>׀</b> חֲזֵ֣ה הַתְּנוּפָ֗ה וְאֵת֙ שׁ֣וֹק הַתְּרוּמָ֔ה אֲשֶׁ֥ר הוּנַ֖ף וַאֲשֶׁ֣ר הוּרָ֑ם מֵאֵיל֙ הַמִּלֻּאִ֔ים מֵאֲשֶׁ֥ר לְאַהֲרֹ֖ן וּמֵאֲשֶׁ֥ר לְבָנָֽיו׃",
+      "en": "And thou shalt sanctify the breast of the wave offering, and the shoulder of the heave offering, which is waved, and which is heaved up of the ram of the consecration, of that which is for Aharon, and of that which is for his sons:"
+    },
+    {
+      "n": 73,
+      "c": 29,
+      "v": 28,
+      "ref": "29:28",
+      "text": "וְהָיָה֩ לְאַהֲרֹ֨ן וּלְבָנָ֜יו לְחׇק־עוֹלָ֗ם מֵאֵת֙ בְּנֵ֣י יִשְׂרָאֵ֔ל כִּ֥י תְרוּמָ֖ה ה֑וּא וּתְרוּמָ֞ה יִהְיֶ֨ה מֵאֵ֤ת בְּנֵֽי־יִשְׂרָאֵל֙ מִזִּבְחֵ֣י שַׁלְמֵיהֶ֔ם תְּרוּמָתָ֖ם לַיהֹוָֽה׃",
+      "en": "and it shall be Aharon’s and his sons’ by a statute for ever from the children of Yisra᾽el: for it is a heave offering: and it shall be a heave offering from the children of Yisra᾽el of the sacrifice of their peace offerings, their heave offering to the Lord."
+    },
+    {
+      "n": 74,
+      "c": 29,
+      "v": 29,
+      "ref": "29:29",
+      "text": "וּבִגְדֵ֤י הַקֹּ֙דֶשׁ֙ אֲשֶׁ֣ר לְאַהֲרֹ֔ן יִהְי֥וּ לְבָנָ֖יו אַחֲרָ֑יו לְמׇשְׁחָ֣ה בָהֶ֔ם וּלְמַלֵּא־בָ֖ם אֶת־יָדָֽם׃",
+      "en": "And the holy garments of Aharon shall be his sons’ after him, to be anointed in them, and to be consecrated in them."
+    },
+    {
+      "n": 75,
+      "c": 29,
+      "v": 30,
+      "ref": "29:30",
+      "text": "שִׁבְעַ֣ת יָמִ֗ים יִלְבָּשָׁ֧ם הַכֹּהֵ֛ן תַּחְתָּ֖יו מִבָּנָ֑יו אֲשֶׁ֥ר יָבֹ֛א אֶל־אֹ֥הֶל מוֹעֵ֖ד לְשָׁרֵ֥ת בַּקֹּֽדֶשׁ׃",
+      "en": "And that son that is priest in his place shall put them on seven days, when he enters the Tent of Meeting to minister in the holy place."
+    },
+    {
+      "n": 76,
+      "c": 29,
+      "v": 31,
+      "ref": "29:31",
+      "text": "וְאֵ֛ת אֵ֥יל הַמִּלֻּאִ֖ים תִּקָּ֑ח וּבִשַּׁלְתָּ֥ אֶת־בְּשָׂר֖וֹ בְּמָקֹ֥ם קָדֹֽשׁ׃",
+      "en": "And thou shalt take the ram of the consecration, and boil its flesh in the holy place."
+    },
+    {
+      "n": 77,
+      "c": 29,
+      "v": 32,
+      "ref": "29:32",
+      "text": "וְאָכַ֨ל אַהֲרֹ֤ן וּבָנָיו֙ אֶת־בְּשַׂ֣ר הָאַ֔יִל וְאֶת־הַלֶּ֖חֶם אֲשֶׁ֣ר בַּסָּ֑ל פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "And Aharon and his sons shall eat the flesh of the ram, and the bread that is in the basket, by the door of the Tent of Meeting."
+    },
+    {
+      "n": 78,
+      "c": 29,
+      "v": 33,
+      "ref": "29:33",
+      "text": "וְאָכְל֤וּ אֹתָם֙ אֲשֶׁ֣ר כֻּפַּ֣ר בָּהֶ֔ם לְמַלֵּ֥א אֶת־יָדָ֖ם לְקַדֵּ֣שׁ אֹתָ֑ם וְזָ֥ר לֹא־יֹאכַ֖ל כִּי־קֹ֥דֶשׁ הֵֽם׃",
+      "en": "And they shall eat those things with which atonement was made to consecrate and to sanctify them: but a stranger shall not eat of them, because they are holy."
+    },
+    {
+      "n": 79,
+      "c": 29,
+      "v": 34,
+      "ref": "29:34",
+      "text": "וְֽאִם־יִוָּתֵ֞ר מִבְּשַׂ֧ר הַמִּלֻּאִ֛ים וּמִן־הַלֶּ֖חֶם עַד־הַבֹּ֑קֶר וְשָׂרַפְתָּ֤ אֶת־הַנּוֹתָר֙ בָּאֵ֔שׁ לֹ֥א יֵאָכֵ֖ל כִּי־קֹ֥דֶשׁ הֽוּא׃",
+      "en": "And if aught of the flesh of the consecrations, or of the bread, remain to the morning, then thou shalt burn the remainder with fire: it shall not be eaten, because it is holy."
+    },
+    {
+      "n": 80,
+      "c": 29,
+      "v": 35,
+      "ref": "29:35",
+      "text": "וְעָשִׂ֜יתָ לְאַהֲרֹ֤ן וּלְבָנָיו֙ כָּ֔כָה כְּכֹ֥ל אֲשֶׁר־צִוִּ֖יתִי אֹתָ֑כָה שִׁבְעַ֥ת יָמִ֖ים תְּמַלֵּ֥א יָדָֽם׃",
+      "en": "And thus shalt thou do to Aharon, and to his sons, according to all which I have commanded thee: seven days shalt thou consecrate them."
+    },
+    {
+      "n": 81,
+      "c": 29,
+      "v": 36,
+      "ref": "29:36",
+      "text": "וּפַ֨ר חַטָּ֜את תַּעֲשֶׂ֤ה לַיּוֹם֙ עַל־הַכִּפֻּרִ֔ים וְחִטֵּאתָ֙ עַל־הַמִּזְבֵּ֔חַ בְּכַפֶּרְךָ֖ עָלָ֑יו וּמָֽשַׁחְתָּ֥ אֹת֖וֹ לְקַדְּשֽׁוֹ׃",
+      "en": "And thou shalt offer every day a bullock for a sin offering for atonement: and thou shalt cleanse the altar, when thou hast made atonement for it, and thou shalt anoint it, to sanctify it."
+    },
+    {
+      "n": 82,
+      "c": 29,
+      "v": 37,
+      "ref": "29:37",
+      "text": "שִׁבְעַ֣ת יָמִ֗ים תְּכַפֵּר֙ עַל־הַמִּזְבֵּ֔חַ וְקִדַּשְׁתָּ֖ אֹת֑וֹ וְהָיָ֤ה הַמִּזְבֵּ֙חַ֙ קֹ֣דֶשׁ קׇֽדָשִׁ֔ים כׇּל־הַנֹּגֵ֥עַ בַּמִּזְבֵּ֖חַ יִקְדָּֽשׁ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Seven days thou shalt make an atonement for the altar, and sanctify it; and it shall be an altar most holy: whatever touches the altar shall be holy."
+    },
+    {
+      "n": 83,
+      "c": 29,
+      "v": 38,
+      "ref": "29:38",
+      "text": "וְזֶ֕ה אֲשֶׁ֥ר תַּעֲשֶׂ֖ה עַל־הַמִּזְבֵּ֑חַ כְּבָשִׂ֧ים בְּנֵֽי־שָׁנָ֛ה שְׁנַ֥יִם לַיּ֖וֹם תָּמִֽיד׃",
+      "en": "Now this is what thou shalt offer on the altar; two lambs of the first year day by day continually."
+    },
+    {
+      "n": 84,
+      "c": 29,
+      "v": 39,
+      "ref": "29:39",
+      "text": "אֶת־הַכֶּ֥בֶשׂ הָאֶחָ֖ד תַּעֲשֶׂ֣ה בַבֹּ֑קֶר וְאֵת֙ הַכֶּ֣בֶשׂ הַשֵּׁנִ֔י תַּעֲשֶׂ֖ה בֵּ֥ין הָעַרְבָּֽיִם׃",
+      "en": "The one lamb thou shalt offer in the morning; and the other lamb thou shalt offer towards evening."
+    },
+    {
+      "n": 85,
+      "c": 29,
+      "v": 40,
+      "ref": "29:40",
+      "text": "וְעִשָּׂרֹ֨ן סֹ֜לֶת בָּל֨וּל בְּשֶׁ֤מֶן כָּתִית֙ רֶ֣בַע הַהִ֔ין וְנֵ֕סֶךְ רְבִיעִ֥ת הַהִ֖ין יָ֑יִן לַכֶּ֖בֶשׂ הָאֶחָֽד׃",
+      "en": "And with the one lamb thou shalt bring a tenth measure of flour mingled with the fourth part of a hin of beaten oil; and the fourth part of a hin of wine for a drink offering."
+    },
+    {
+      "n": 86,
+      "c": 29,
+      "v": 41,
+      "ref": "29:41",
+      "text": "וְאֵת֙ הַכֶּ֣בֶשׂ הַשֵּׁנִ֔י תַּעֲשֶׂ֖ה בֵּ֣ין הָעַרְבָּ֑יִם כְּמִנְחַ֨ת הַבֹּ֤קֶר וּכְנִסְכָּהּ֙ תַּֽעֲשֶׂה־לָּ֔הּ לְרֵ֣יחַ נִיחֹ֔חַ אִשֶּׁ֖ה לַיהֹוָֽה׃",
+      "en": "And the other lamb thou shalt offer towards evening, and shalt do to it according the meal offering of the morning, and according to the drink offering of it, for a sweet savour, an offering made by fire to the Lord."
+    },
+    {
+      "n": 87,
+      "c": 29,
+      "v": 42,
+      "ref": "29:42",
+      "text": "עֹלַ֤ת תָּמִיד֙ לְדֹרֹ֣תֵיכֶ֔ם פֶּ֥תַח אֹֽהֶל־מוֹעֵ֖ד לִפְנֵ֣י יְהֹוָ֑ה אֲשֶׁ֨ר אִוָּעֵ֤ד לָכֶם֙ שָׁ֔מָּה לְדַבֵּ֥ר אֵלֶ֖יךָ שָֽׁם׃",
+      "en": "This shall be a continual burnt offering throughout your generations at the door of the Tent of Meeting before the Lord: where I will meet you, to speak there to thee."
+    },
+    {
+      "n": 88,
+      "c": 29,
+      "v": 43,
+      "ref": "29:43",
+      "text": "וְנֹעַדְתִּ֥י שָׁ֖מָּה לִבְנֵ֣י יִשְׂרָאֵ֑ל וְנִקְדַּ֖שׁ בִּכְבֹדִֽי׃",
+      "en": "And there I will meet with the children of Yisra᾽el, and it shall be sanctified by my glory."
+    },
+    {
+      "n": 89,
+      "c": 29,
+      "v": 44,
+      "ref": "29:44",
+      "text": "וְקִדַּשְׁתִּ֛י אֶת־אֹ֥הֶל מוֹעֵ֖ד וְאֶת־הַמִּזְבֵּ֑חַ וְאֶת־אַהֲרֹ֧ן וְאֶת־בָּנָ֛יו אֲקַדֵּ֖שׁ לְכַהֵ֥ן לִֽי׃",
+      "en": "And I will sanctify the Tent of Meeting, and the altar: I will sanctify also both Aharon and his sons, to minister to me in the priest’s office."
+    },
+    {
+      "n": 90,
+      "c": 29,
+      "v": 45,
+      "ref": "29:45",
+      "text": "וְשָׁ֣כַנְתִּ֔י בְּת֖וֹךְ בְּנֵ֣י יִשְׂרָאֵ֑ל וְהָיִ֥יתִי לָהֶ֖ם לֵאלֹהִֽים׃",
+      "en": "And I will dwell among the children of Yisra᾽el, and will be their God."
+    },
+    {
+      "n": 91,
+      "c": 29,
+      "v": 46,
+      "ref": "29:46",
+      "text": "וְיָדְע֗וּ כִּ֣י אֲנִ֤י יְהֹוָה֙ אֱלֹ֣הֵיהֶ֔ם אֲשֶׁ֨ר הוֹצֵ֧אתִי אֹתָ֛ם מֵאֶ֥רֶץ מִצְרַ֖יִם לְשׇׁכְנִ֣י בְתוֹכָ֑ם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיהֶֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And they shall know that I am the Lord their God, that brought them out of the land of Miżrayim, that I may dwell among them: I am the Lord their God."
+    },
+    {
+      "n": 92,
+      "c": 30,
+      "v": 1,
+      "ref": "30:1",
+      "text": "וְעָשִׂ֥יתָ מִזְבֵּ֖חַ מִקְטַ֣ר קְטֹ֑רֶת עֲצֵ֥י שִׁטִּ֖ים תַּעֲשֶׂ֥ה אֹתֽוֹ׃",
+      "en": "And thou shalt make an altar for the burning of incense: of shittim wood shalt thou make it."
+    },
+    {
+      "n": 93,
+      "c": 30,
+      "v": 2,
+      "ref": "30:2",
+      "text": "אַמָּ֨ה אׇרְכּ֜וֹ וְאַמָּ֤ה רׇחְבּוֹ֙ רָב֣וּעַ יִהְיֶ֔ה וְאַמָּתַ֖יִם קֹמָת֑וֹ מִמֶּ֖נּוּ קַרְנֹתָֽיו׃",
+      "en": "A cubit shall be the length of it, and a cubit its breadth; foursquare shall it be: and two cubits shall be its height: the horns thereof shall be of the same."
+    },
+    {
+      "n": 94,
+      "c": 30,
+      "v": 3,
+      "ref": "30:3",
+      "text": "וְצִפִּיתָ֨ אֹת֜וֹ זָהָ֣ב טָה֗וֹר אֶת־גַּגּ֧וֹ וְאֶת־קִירֹתָ֛יו סָבִ֖יב וְאֶת־קַרְנֹתָ֑יו וְעָשִׂ֥יתָ לּ֛וֹ זֵ֥ר זָהָ֖ב סָבִֽיב׃",
+      "en": "And thou shalt overlay it with pure gold, its top, and its sides round about, and its horns; and thou shalt make for it a rim of gold round about."
+    },
+    {
+      "n": 95,
+      "c": 30,
+      "v": 4,
+      "ref": "30:4",
+      "text": "וּשְׁתֵּי֩ טַבְּעֹ֨ת זָהָ֜ב תַּֽעֲשֶׂה־לּ֣וֹ&thinsp;<b>׀</b> מִתַּ֣חַת לְזֵר֗וֹ עַ֚ל שְׁתֵּ֣י צַלְעֹתָ֔יו תַּעֲשֶׂ֖ה עַל־שְׁנֵ֣י צִדָּ֑יו וְהָיָה֙ לְבָתִּ֣ים לְבַדִּ֔ים לָשֵׂ֥את אֹת֖וֹ בָּהֵֽמָּה׃",
+      "en": "And two golden rings shalt thou make for it under its rim, by its two corners upon the two sides of it shalt thou make it; and they shall be for places for the poles with which to bear it."
+    },
+    {
+      "n": 96,
+      "c": 30,
+      "v": 5,
+      "ref": "30:5",
+      "text": "וְעָשִׂ֥יתָ אֶת־הַבַּדִּ֖ים עֲצֵ֣י שִׁטִּ֑ים וְצִפִּיתָ֥ אֹתָ֖ם זָהָֽב׃",
+      "en": "And thou shalt make the poles of shittim wood, and overlay them with gold."
+    },
+    {
+      "n": 97,
+      "c": 30,
+      "v": 6,
+      "ref": "30:6",
+      "text": "וְנָתַתָּ֤ה אֹתוֹ֙ לִפְנֵ֣י הַפָּרֹ֔כֶת אֲשֶׁ֖ר עַל־אֲרֹ֣ן הָעֵדֻ֑ת לִפְנֵ֣י הַכַּפֹּ֗רֶת אֲשֶׁר֙ עַל־הָ֣עֵדֻ֔ת אֲשֶׁ֛ר אִוָּעֵ֥ד לְךָ֖ שָֽׁמָּה׃",
+      "en": "And thou shalt put it before the veil that is by the ark of the Testimony, before the covering that is over the Testimony, where I will meet with thee."
+    },
+    {
+      "n": 98,
+      "c": 30,
+      "v": 7,
+      "ref": "30:7",
+      "text": "וְהִקְטִ֥יר עָלָ֛יו אַהֲרֹ֖ן קְטֹ֣רֶת סַמִּ֑ים בַּבֹּ֣קֶר בַּבֹּ֗קֶר בְּהֵיטִיב֛וֹ אֶת־הַנֵּרֹ֖ת יַקְטִירֶֽנָּה׃",
+      "en": "And Aharon shall burn upon it sweet incense every morning: when he dresses the lamps, he shall burn incense on it."
+    },
+    {
+      "n": 99,
+      "c": 30,
+      "v": 8,
+      "ref": "30:8",
+      "text": "וּבְהַעֲלֹ֨ת אַהֲרֹ֧ן אֶת־הַנֵּרֹ֛ת בֵּ֥ין הָעַרְבַּ֖יִם יַקְטִירֶ֑נָּה קְטֹ֧רֶת תָּמִ֛יד לִפְנֵ֥י יְהֹוָ֖ה לְדֹרֹתֵיכֶֽם׃",
+      "en": "And when Aharon lights the lamps at evening, he shall burn incense upon it, a perpetual incense before the Lord throughout your generations."
+    },
+    {
+      "n": 100,
+      "c": 30,
+      "v": 9,
+      "ref": "30:9",
+      "text": "לֹא־תַעֲל֥וּ עָלָ֛יו קְטֹ֥רֶת זָרָ֖ה וְעֹלָ֣ה וּמִנְחָ֑ה וְנֵ֕סֶךְ לֹ֥א תִסְּכ֖וּ עָלָֽיו׃",
+      "en": "You shall offer no strange incense on it, nor burnt sacrifice, nor meal offering; neither shall you pour drink offering upon it."
+    },
+    {
+      "n": 101,
+      "c": 30,
+      "v": 10,
+      "ref": "30:10",
+      "text": "וְכִפֶּ֤ר אַהֲרֹן֙ עַל־קַרְנֹתָ֔יו אַחַ֖ת בַּשָּׁנָ֑ה מִדַּ֞ם חַטַּ֣את הַכִּפֻּרִ֗ים אַחַ֤ת בַּשָּׁנָה֙ יְכַפֵּ֤ר עָלָיו֙ לְדֹרֹ֣תֵיכֶ֔ם קֹֽדֶשׁ־קׇדָשִׁ֥ים ה֖וּא לַיהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Aharon shall sprinkle upon the horns of it once in a year the blood of the sin offering of atonements: once in the year shall he make atonement upon it throughout your generations: it is most holy to the Lord."
+    }
+  ],
+  "parashah": {
+    "en": "Tetzaveh",
+    "he": "תְּצַוֶּה",
+    "translit": "Tetzaveh",
+    "ref": "Exodus 27:20–30:10"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 14,
+        "ref": "27:20–28:12"
+      },
+      {
+        "n": 2,
+        "start": 15,
+        "end": 32,
+        "ref": "28:13–28:30"
+      },
+      {
+        "n": 3,
+        "start": 33,
+        "end": 45,
+        "ref": "28:31–28:43"
+      },
+      {
+        "n": 4,
+        "start": 46,
+        "end": 63,
+        "ref": "29:1–29:18"
+      },
+      {
+        "n": 5,
+        "start": 64,
+        "end": 82,
+        "ref": "29:19–29:37"
+      },
+      {
+        "n": 6,
+        "start": 83,
+        "end": 91,
+        "ref": "29:38–29:46"
+      },
+      {
+        "n": 7,
+        "start": 92,
+        "end": 101,
+        "ref": "30:1–30:10"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 7,
+          "ref": "27:20–28:5"
+        },
+        {
+          "n": 2,
+          "start": 8,
+          "end": 11,
+          "ref": "28:6–28:9"
+        },
+        {
+          "n": 3,
+          "start": 12,
+          "end": 14,
+          "ref": "28:10–28:12"
+        },
+        {
+          "n": 4,
+          "start": 15,
+          "end": 19,
+          "ref": "28:13–28:17"
+        },
+        {
+          "n": 5,
+          "start": 20,
+          "end": 23,
+          "ref": "28:18–28:21"
+        },
+        {
+          "n": 6,
+          "start": 24,
+          "end": 27,
+          "ref": "28:22–28:25"
+        },
+        {
+          "n": 7,
+          "start": 28,
+          "end": 32,
+          "ref": "28:26–28:30"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 33,
+          "end": 37,
+          "ref": "28:31–28:35"
+        },
+        {
+          "n": 2,
+          "start": 38,
+          "end": 40,
+          "ref": "28:36–28:38"
+        },
+        {
+          "n": 3,
+          "start": 41,
+          "end": 45,
+          "ref": "28:39–28:43"
+        },
+        {
+          "n": 4,
+          "start": 46,
+          "end": 49,
+          "ref": "29:1–29:4"
+        },
+        {
+          "n": 5,
+          "start": 50,
+          "end": 54,
+          "ref": "29:5–29:9"
+        },
+        {
+          "n": 6,
+          "start": 55,
+          "end": 59,
+          "ref": "29:10–29:14"
+        },
+        {
+          "n": 7,
+          "start": 60,
+          "end": 63,
+          "ref": "29:15–29:18"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 64,
+          "end": 66,
+          "ref": "29:19–29:21"
+        },
+        {
+          "n": 2,
+          "start": 67,
+          "end": 70,
+          "ref": "29:22–29:25"
+        },
+        {
+          "n": 3,
+          "start": 71,
+          "end": 75,
+          "ref": "29:26–29:30"
+        },
+        {
+          "n": 4,
+          "start": 76,
+          "end": 79,
+          "ref": "29:31–29:34"
+        },
+        {
+          "n": 5,
+          "start": 80,
+          "end": 82,
+          "ref": "29:35–29:37"
+        },
+        {
+          "n": 6,
+          "start": 83,
+          "end": 91,
+          "ref": "29:38–29:46"
+        },
+        {
+          "n": 7,
+          "start": 92,
+          "end": 101,
+          "ref": "30:1–30:10"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 99,
+        "end": 101,
+        "ref": "30:8–30:10"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 30,
+          "end": 32,
+          "ref": "28:28–28:30"
+        },
+        "2": {
+          "n": "M",
+          "start": 60,
+          "end": 63,
+          "ref": "29:15–29:18"
+        },
+        "3": {
+          "n": "M",
+          "start": 99,
+          "end": 101,
+          "ref": "30:8–30:10"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

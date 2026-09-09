@@ -1,0 +1,172 @@
+{
+  "slug": "haftarah-achreimot",
+  "book": {
+    "en": "Ezekiel",
+    "he": "יחזקאל",
+    "translit": "Yechezkel"
+  },
+  "multiChapter": true,
+  "ref": "Ezekiel 22:1-16",
+  "heRef": "יחזקאל כ״ב:א-ט״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 22,
+      "v": 1,
+      "ref": "22:1",
+      "text": "וַיְהִ֥י דְבַר־יְהֹוָ֖ה אֵלַ֥י לֵאמֹֽר׃",
+      "en": "Then the word of the Lord came to me, saying,"
+    },
+    {
+      "n": 2,
+      "c": 22,
+      "v": 2,
+      "ref": "22:2",
+      "text": "וְאַתָּ֣ה בֶן־אָדָ֔ם הֲתִשְׁפֹּ֥ט הֲתִשְׁפֹּ֖ט אֶת־עִ֣יר הַדָּמִ֑ים וְה֣וֹדַעְתָּ֔הּ אֵ֖ת כׇּל־תּוֹעֲבוֹתֶֽיהָ׃",
+      "en": "Now, thou son of man, wilt thou judge, wilt thou judge the bloody city? then make known to her all her abominations."
+    },
+    {
+      "n": 3,
+      "c": 22,
+      "v": 3,
+      "ref": "22:3",
+      "text": "וְאָמַרְתָּ֗ כֹּ֤ה אָמַר֙ אֲדֹנָ֣י יֱהֹוִ֔ה עִ֣יר שֹׁפֶ֥כֶת דָּ֛ם בְּתוֹכָ֖הּ לָב֣וֹא עִתָּ֑הּ וְעָשְׂתָ֧ה גִלּוּלִ֛ים עָלֶ֖יהָ לְטׇמְאָֽה׃",
+      "en": "And thou shalt say, Thus says the Lord God, A city that sheds blood in the midst of it, that her time may come, and makes idols against herself to defile herself."
+    },
+    {
+      "n": 4,
+      "c": 22,
+      "v": 4,
+      "ref": "22:4",
+      "text": "בְּדָמֵ֨ךְ אֲשֶׁר־שָׁפַ֜כְתְּ אָשַׁ֗מְתְּ וּבְגִלּוּלַ֤יִךְ אֲשֶׁר־עָשִׂית֙ טָמֵ֔את וַתַּקְרִ֣יבִי יָמַ֔יִךְ וַתָּב֖וֹא עַד־שְׁנוֹתָ֑יִךְ עַל־כֵּ֗ן נְתַתִּ֤יךְ חֶרְפָּה֙ לַגּוֹיִ֔ם וְקַלָּסָ֖ה לְכׇל־הָאֲרָצֽוֹת׃",
+      "en": "Thou art become guilty in thy blood that thou hast shed; and art defiled in thy idols which thou hast made; and thou hast caused thy days to draw near, and art come to thy years: therefore have I made thee a reproach to the nations, and a mocking to all countries."
+    },
+    {
+      "n": 5,
+      "c": 22,
+      "v": 5,
+      "ref": "22:5",
+      "text": "הַקְּרֹב֛וֹת וְהָרְחֹק֥וֹת מִמֵּ֖ךְ יִתְקַלְּסוּ־בָ֑ךְ טְמֵאַ֣ת הַשֵּׁ֔ם רַבַּ֖ת הַמְּהוּמָֽה׃",
+      "en": "Those that are near, and those that are far from thee, shall mock thee, infamous as thou art, and full of tumult."
+    },
+    {
+      "n": 6,
+      "c": 22,
+      "v": 6,
+      "ref": "22:6",
+      "text": "הִנֵּה֙ נְשִׂיאֵ֣י יִשְׂרָאֵ֔ל אִ֥ישׁ לִזְרֹע֖וֹ הָ֣יוּ בָ֑ךְ לְמַ֖עַן שְׁפׇךְ־דָּֽם׃",
+      "en": "Behold, the princes of Yisra᾽el, each of them amongst thee, putting out his full force, for shedding blood."
+    },
+    {
+      "n": 7,
+      "c": 22,
+      "v": 7,
+      "ref": "22:7",
+      "text": "אָ֤ב וָאֵם֙ הֵקַ֣לּוּ בָ֔ךְ לַגֵּ֛ר עָשׂ֥וּ בַעֹ֖שֶׁק בְּתוֹכֵ֑ךְ יָת֥וֹם וְאַלְמָנָ֖ה ה֥וֹנוּ בָֽךְ׃",
+      "en": "Amongst thee, they have made light of father and mother: in the midst of thee have they dealt by oppression with the stranger: in thee they have wronged the fatherless and the widow."
+    },
+    {
+      "n": 8,
+      "c": 22,
+      "v": 8,
+      "ref": "22:8",
+      "text": "קׇדָשַׁ֖י בָּזִ֑ית וְאֶת־שַׁבְּתֹתַ֖י חִלָּֽלְתְּ׃",
+      "en": "Thou hast despised my holy things, and hast profaned my sabbaths."
+    },
+    {
+      "n": 9,
+      "c": 22,
+      "v": 9,
+      "ref": "22:9",
+      "text": "אַנְשֵׁ֥י רָכִ֛יל הָ֥יוּ בָ֖ךְ לְמַ֣עַן שְׁפׇךְ־דָּ֑ם וְאֶל־הֶֽהָרִים֙ אָ֣כְלוּ בָ֔ךְ זִמָּ֖ה עָשׂ֥וּ בְתוֹכֵֽךְ׃",
+      "en": "In thee are men that did carry slander to shed blood: and in thee they did eat upon the mountains: in the midst of thee they have committed lewdness."
+    },
+    {
+      "n": 10,
+      "c": 22,
+      "v": 10,
+      "ref": "22:10",
+      "text": "עֶרְוַת־אָ֖ב גִּלָּה־בָ֑ךְ טְמֵאַ֥ת הַנִּדָּ֖ה עִנּוּ־בָֽךְ׃",
+      "en": "In thee they have uncovered their father’s nakedness: in thee they have abused her who is unclean of her menstrual flow."
+    },
+    {
+      "n": 11,
+      "c": 22,
+      "v": 11,
+      "ref": "22:11",
+      "text": "וְאִ֣ישׁ&thinsp;<b>׀</b> אֶת־אֵ֣שֶׁת רֵעֵ֗הוּ עָשָׂה֙ תּוֹעֵבָ֔ה וְאִ֥ישׁ אֶת־כַּלָּת֖וֹ טִמֵּ֣א בְזִמָּ֑ה וְאִ֛ישׁ אֶת־אֲחֹת֥וֹ בַת־אָבִ֖יו עִנָּה־בָֽךְ׃",
+      "en": "One has committed a disgusting act with his neighbour’s wife; and another has lewdly defiled his daughter in law; and another in thee has abused his sister, his father’s daughter."
+    },
+    {
+      "n": 12,
+      "c": 22,
+      "v": 12,
+      "ref": "22:12",
+      "text": "שֹׁ֥חַד לָֽקְחוּ־בָ֖ךְ לְמַ֣עַן שְׁפׇךְ־דָּ֑ם נֶ֧שֶׁךְ וְתַרְבִּ֣ית לָקַ֗חַתְּ וַתְּבַצְּעִ֤י רֵעַ֙יִךְ֙ בַּעֹ֔שֶׁק וְאֹתִ֣י שָׁכַ֔חַתְּ נְאֻ֖ם אֲדֹנָ֥י יֱהֹוִֽה׃",
+      "en": "In thee they have taken gifts to shed blood; thou hast taken usury and interest, and thou hast taken unjust gain of thy neighbours by extortion, and hast forgotten me, says the Lord God."
+    },
+    {
+      "n": 13,
+      "c": 22,
+      "v": 13,
+      "ref": "22:13",
+      "text": "וְהִנֵּה֙ הִכֵּ֣יתִי כַפִּ֔י אֶל־בִּצְעֵ֖ךְ אֲשֶׁ֣ר עָשִׂ֑ית וְעַ֨ל־דָּמֵ֔ךְ אֲשֶׁ֥ר הָי֖וּ בְּתוֹכֵֽךְ׃",
+      "en": "Behold, therefore I have struck my hand at thy dishonest gain which thou hast made, and at thy blood which has been in the midst of thee."
+    },
+    {
+      "n": 14,
+      "c": 22,
+      "v": 14,
+      "ref": "22:14",
+      "text": "הֲיַעֲמֹ֤ד לִבֵּךְ֙ אִם־תֶּחֱזַ֣קְנָה יָדַ֔יִךְ לַיָּמִ֕ים אֲשֶׁ֥ר אֲנִ֖י עֹשֶׂ֣ה אוֹתָ֑ךְ אֲנִ֥י יְהֹוָ֖ה דִּבַּ֥רְתִּי וְעָשִֽׂיתִי׃",
+      "en": "Can thy heart endure, or can thy hands be strong, in the days that I shall deal with thee? I the Lord have spoken it, and will do it."
+    },
+    {
+      "n": 15,
+      "c": 22,
+      "v": 15,
+      "ref": "22:15",
+      "text": "וַהֲפִיצוֹתִ֤י אוֹתָךְ֙ בַּגּוֹיִ֔ם וְזֵרִיתִ֖יךְ בָּאֲרָצ֑וֹת וַהֲתִמֹּתִ֥י טֻמְאָתֵ֖ךְ מִמֵּֽךְ׃",
+      "en": "And I will scatter thee among the nations, and disperse thee in the countries, and will consume thy uncleanliness out of thee."
+    },
+    {
+      "n": 16,
+      "c": 22,
+      "v": 16,
+      "ref": "22:16",
+      "text": "וְנִחַ֥לְתְּ בָּ֖ךְ לְעֵינֵ֣י גוֹיִ֑ם וְיָדַ֖עַתְּ כִּי־אֲנִ֥י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And thou shalt be profaned by thyself in the sight of the nations, and thou shalt know that I am the Lord."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Achrei Mot",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 29
+  },
+  "parashah": {
+    "en": "Haftarat Achrei Mot",
+    "translit": "Haftarat Achrei Mot",
+    "he": "הפטרת אחרי מות",
+    "ref": "Ezekiel 22:1-16"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 16,
+        "ref": "22:1–22:16"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

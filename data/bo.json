@@ -1,0 +1,1081 @@
+{
+  "slug": "bo",
+  "book": {
+    "en": "Exodus",
+    "he": "שמות",
+    "translit": "Shemot"
+  },
+  "multiChapter": true,
+  "ref": "Exodus 10:1-13:16",
+  "heRef": "שמות י׳:א-י״ג:ט״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 10,
+      "v": 1,
+      "ref": "10:1",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה בֹּ֖א אֶל־פַּרְעֹ֑ה כִּֽי־אֲנִ֞י הִכְבַּ֤דְתִּי אֶת־לִבּוֹ֙ וְאֶת־לֵ֣ב עֲבָדָ֔יו לְמַ֗עַן שִׁתִ֛י אֹתֹתַ֥י אֵ֖לֶּה בְּקִרְבּֽוֹ׃",
+      "en": "And the Lord said to Moshe, Go in to Par῾o: for I have hardened his heart, and the heart of his servants, that I might show these my signs before him:"
+    },
+    {
+      "n": 2,
+      "c": 10,
+      "v": 2,
+      "ref": "10:2",
+      "text": "וּלְמַ֡עַן תְּסַפֵּר֩ בְּאׇזְנֵ֨י בִנְךָ֜ וּבֶן־בִּנְךָ֗ אֵ֣ת אֲשֶׁ֤ר הִתְעַלַּ֙לְתִּי֙ בְּמִצְרַ֔יִם וְאֶת־אֹתֹתַ֖י אֲשֶׁר־שַׂ֣מְתִּי בָ֑ם וִֽידַעְתֶּ֖ם כִּי־אֲנִ֥י יְהֹוָֽה׃",
+      "en": "and that thou mayst tell in the ears of thy son, and of thy son’s son, what things I have done in Miżrayim, and my signs which I have done among them; that you may know that I am the Lord."
+    },
+    {
+      "n": 3,
+      "c": 10,
+      "v": 3,
+      "ref": "10:3",
+      "text": "וַיָּבֹ֨א מֹשֶׁ֣ה וְאַהֲרֹן֮ אֶל־פַּרְעֹה֒ וַיֹּאמְר֣וּ אֵלָ֗יו כֹּֽה־אָמַ֤ר יְהֹוָה֙ אֱלֹהֵ֣י הָֽעִבְרִ֔ים עַד־מָתַ֣י מֵאַ֔נְתָּ לֵעָנֹ֖ת מִפָּנָ֑י שַׁלַּ֥ח עַמִּ֖י וְיַֽעַבְדֻֽנִי׃",
+      "en": "And Moshe and Aharon came to Par῾o and said to him, Thus says the Lord God of the Hebrews, How long wilt thou refuse to humble thyself before me? let my people go, that they may serve me."
+    },
+    {
+      "n": 4,
+      "c": 10,
+      "v": 4,
+      "ref": "10:4",
+      "text": "כִּ֛י אִם־מָאֵ֥ן אַתָּ֖ה לְשַׁלֵּ֣חַ אֶת־עַמִּ֑י הִנְנִ֨י מֵבִ֥יא מָחָ֛ר אַרְבֶּ֖ה בִּגְבֻלֶֽךָ׃",
+      "en": "Else, if thou refuse to let my people go, behold, tomorrow I will bring the locusts into thy border:"
+    },
+    {
+      "n": 5,
+      "c": 10,
+      "v": 5,
+      "ref": "10:5",
+      "text": "וְכִסָּה֙ אֶת־עֵ֣ין הָאָ֔רֶץ וְלֹ֥א יוּכַ֖ל לִרְאֹ֣ת אֶת־הָאָ֑רֶץ וְאָכַ֣ל&thinsp;<b>׀</b> אֶת־יֶ֣תֶר הַפְּלֵטָ֗ה הַנִּשְׁאֶ֤רֶת לָכֶם֙ מִן־הַבָּרָ֔ד וְאָכַל֙ אֶת־כׇּל־הָעֵ֔ץ הַצֹּמֵ֥חַ לָכֶ֖ם מִן־הַשָּׂדֶֽה׃",
+      "en": "and they shall cover the face of the earth, so that it will not be possible to see the earth: and they shall eat the residue of that which is escaped, which remains to you from the hail, and shall eat every tree which grows for you out of the field:"
+    },
+    {
+      "n": 6,
+      "c": 10,
+      "v": 6,
+      "ref": "10:6",
+      "text": "וּמָלְא֨וּ בָתֶּ֜יךָ וּבָתֵּ֣י כׇל־עֲבָדֶ֘יךָ֮ וּבָתֵּ֣י כׇל־מִצְרַ֒יִם֒ אֲשֶׁ֨ר לֹֽא־רָא֤וּ אֲבֹתֶ֙יךָ֙ וַאֲב֣וֹת אֲבֹתֶ֔יךָ מִיּ֗וֹם הֱיוֹתָם֙ עַל־הָ֣אֲדָמָ֔ה עַ֖ד הַיּ֣וֹם הַזֶּ֑ה וַיִּ֥פֶן וַיֵּצֵ֖א מֵעִ֥ם פַּרְעֹֽה׃",
+      "en": "and they shall fill thy houses, and the houses of all thy servants, and the houses of all Miżrayim; which neither thy fathers, nor thy fathers’ fathers have seen, since the day that they were upon the earth to this day. And he turned, and went out from Par῾o."
+    },
+    {
+      "n": 7,
+      "c": 10,
+      "v": 7,
+      "ref": "10:7",
+      "text": "וַיֹּאמְרוּ֩ עַבְדֵ֨י פַרְעֹ֜ה אֵלָ֗יו עַד־מָתַי֙ יִהְיֶ֨ה זֶ֥ה לָ֙נוּ֙ לְמוֹקֵ֔שׁ שַׁלַּח֙ אֶת־הָ֣אֲנָשִׁ֔ים וְיַֽעַבְד֖וּ אֶת־יְהֹוָ֣ה אֱלֹהֵיהֶ֑ם הֲטֶ֣רֶם תֵּדַ֔ע כִּ֥י אָבְדָ֖ה מִצְרָֽיִם׃",
+      "en": "And Par῾o’s servants said to him, How long shall this man be a snare to us? let the men go, that they may serve the Lord their God: knowst thou not yet that Miżrayim is destroyed?"
+    },
+    {
+      "n": 8,
+      "c": 10,
+      "v": 8,
+      "ref": "10:8",
+      "text": "וַיּוּשַׁ֞ב אֶת־מֹשֶׁ֤ה וְאֶֽת־אַהֲרֹן֙ אֶל־פַּרְעֹ֔ה וַיֹּ֣אמֶר אֲלֵהֶ֔ם לְכ֥וּ עִבְד֖וּ אֶת־יְהֹוָ֣ה אֱלֹהֵיכֶ֑ם מִ֥י וָמִ֖י הַהֹלְכִֽים׃",
+      "en": "And Moshe and Aharon were brought back to Par῾o: and he said to them, Go, serve the Lord your God: but who are they that shall go?"
+    },
+    {
+      "n": 9,
+      "c": 10,
+      "v": 9,
+      "ref": "10:9",
+      "text": "וַיֹּ֣אמֶר מֹשֶׁ֔ה בִּנְעָרֵ֥ינוּ וּבִזְקֵנֵ֖ינוּ נֵלֵ֑ךְ בְּבָנֵ֨ינוּ וּבִבְנוֹתֵ֜נוּ בְּצֹאנֵ֤נוּ וּבִבְקָרֵ֙נוּ֙ נֵלֵ֔ךְ כִּ֥י חַג־יְהֹוָ֖ה לָֽנוּ׃",
+      "en": "And Moshe said, We will go with our young and with our old, with our sons and with our daughters, with our flocks and with our herds will we go; for we must hold a feast to the Lord."
+    },
+    {
+      "n": 10,
+      "c": 10,
+      "v": 10,
+      "ref": "10:10",
+      "text": "וַיֹּ֣אמֶר אֲלֵהֶ֗ם יְהִ֨י כֵ֤ן יְהֹוָה֙ עִמָּכֶ֔ם כַּאֲשֶׁ֛ר אֲשַׁלַּ֥ח אֶתְכֶ֖ם וְאֶֽת־טַפְּכֶ֑ם רְא֕וּ כִּ֥י רָעָ֖ה נֶ֥גֶד פְּנֵיכֶֽם׃",
+      "en": "And he said to them, Let the Lord be so with you, as I will let you go, and your little ones: look to it; for evil is before you."
+    },
+    {
+      "n": 11,
+      "c": 10,
+      "v": 11,
+      "ref": "10:11",
+      "text": "לֹ֣א כֵ֗ן לְכֽוּ־נָ֤א הַגְּבָרִים֙ וְעִבְד֣וּ אֶת־יְהֹוָ֔ה כִּ֥י אֹתָ֖הּ אַתֶּ֣ם מְבַקְשִׁ֑ים וַיְגָ֣רֶשׁ אֹתָ֔ם מֵאֵ֖ת פְּנֵ֥י פַרְעֹֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Not so: go now you that are men, and serve the Lord; for that is what you desire. And they were driven out from Par῾o’s presence."
+    },
+    {
+      "n": 12,
+      "c": 10,
+      "v": 12,
+      "ref": "10:12",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֶל־מֹשֶׁ֗ה נְטֵ֨ה יָדְךָ֜ עַל־אֶ֤רֶץ מִצְרַ֙יִם֙ בָּֽאַרְבֶּ֔ה וְיַ֖עַל עַל־אֶ֣רֶץ מִצְרָ֑יִם וְיֹאכַל֙ אֶת־כׇּל־עֵ֣שֶׂב הָאָ֔רֶץ אֵ֛ת כׇּל־אֲשֶׁ֥ר הִשְׁאִ֖יר הַבָּרָֽד׃",
+      "en": "And the Lord said to Moshe, Stretch out thy hand over the land of Miżrayim for the locusts, that they may come up on the land of Miżrayim, and eat every plant of the land, all that the hail has left."
+    },
+    {
+      "n": 13,
+      "c": 10,
+      "v": 13,
+      "ref": "10:13",
+      "text": "וַיֵּ֨ט מֹשֶׁ֣ה אֶת־מַטֵּ֘הוּ֮ עַל־אֶ֣רֶץ מִצְרַ֒יִם֒ וַֽיהֹוָ֗ה נִהַ֤ג רֽוּחַ־קָדִים֙ בָּאָ֔רֶץ כׇּל־הַיּ֥וֹם הַה֖וּא וְכׇל־הַלָּ֑יְלָה הַבֹּ֣קֶר הָיָ֔ה וְר֙וּחַ֙ הַקָּדִ֔ים נָשָׂ֖א אֶת־הָאַרְבֶּֽה׃",
+      "en": "So Moshe stretched out his rod over the land of Miżrayim, and the Lord brought an east wind upon the land all that day, and all that night; and when it was morning, the east wind brought the locusts."
+    },
+    {
+      "n": 14,
+      "c": 10,
+      "v": 14,
+      "ref": "10:14",
+      "text": "וַיַּ֣עַל הָֽאַרְבֶּ֗ה עַ֚ל כׇּל־אֶ֣רֶץ מִצְרַ֔יִם וַיָּ֕נַח בְּכֹ֖ל גְּב֣וּל מִצְרָ֑יִם כָּבֵ֣ד מְאֹ֔ד לְ֠פָנָ֠יו לֹא־הָ֨יָה כֵ֤ן אַרְבֶּה֙ כָּמֹ֔הוּ וְאַחֲרָ֖יו לֹ֥א יִֽהְיֶה־כֵּֽן׃",
+      "en": "And the locusts went up over all the land of Miżrayim, and rested in all the borders of Miżrayim: very grievous they were; before them there were no such locusts as they, neither after them shall there be such."
+    },
+    {
+      "n": 15,
+      "c": 10,
+      "v": 15,
+      "ref": "10:15",
+      "text": "וַיְכַ֞ס אֶת־עֵ֣ין כׇּל־הָאָ֘רֶץ֮ וַתֶּחְשַׁ֣ךְ הָאָ֒רֶץ֒ וַיֹּ֜אכַל אֶת־כׇּל־עֵ֣שֶׂב הָאָ֗רֶץ וְאֵת֙ כׇּל־פְּרִ֣י הָעֵ֔ץ אֲשֶׁ֥ר הוֹתִ֖יר הַבָּרָ֑ד וְלֹא־נוֹתַ֨ר כׇּל־יֶ֧רֶק בָּעֵ֛ץ וּבְעֵ֥שֶׂב הַשָּׂדֶ֖ה בְּכׇל־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "For they covered the surface of the whole earth, so that the land was darkened; and they did eat every plant of the land, and all the fruit of the trees which the hail had left: and there remained no green thing in the trees, or in the plants of the field, through all the land of Miżrayim."
+    },
+    {
+      "n": 16,
+      "c": 10,
+      "v": 16,
+      "ref": "10:16",
+      "text": "וַיְמַהֵ֣ר פַּרְעֹ֔ה לִקְרֹ֖א לְמֹשֶׁ֣ה וּֽלְאַהֲרֹ֑ן וַיֹּ֗אמֶר חָטָ֛אתִי לַיהֹוָ֥ה אֱלֹֽהֵיכֶ֖ם וְלָכֶֽם׃",
+      "en": "Then Par῾o called for Moshe and Aharon in haste; and he said, I have sinned against the Lord your God, and against you."
+    },
+    {
+      "n": 17,
+      "c": 10,
+      "v": 17,
+      "ref": "10:17",
+      "text": "וְעַתָּ֗ה שָׂ֣א נָ֤א חַטָּאתִי֙ אַ֣ךְ הַפַּ֔עַם וְהַעְתִּ֖ירוּ לַיהֹוָ֣ה אֱלֹהֵיכֶ֑ם וְיָסֵר֙ מֵֽעָלַ֔י רַ֖ק אֶת־הַמָּ֥וֶת הַזֶּֽה׃",
+      "en": "Now therefore forgive, I pray thee, my sin only this once, and entreat the Lord your God, that he may take away from me this death only."
+    },
+    {
+      "n": 18,
+      "c": 10,
+      "v": 18,
+      "ref": "10:18",
+      "text": "וַיֵּצֵ֖א מֵעִ֣ם פַּרְעֹ֑ה וַיֶּעְתַּ֖ר אֶל־יְהֹוָֽה׃",
+      "en": "And he went out from Par῾o, and entreated the Lord."
+    },
+    {
+      "n": 19,
+      "c": 10,
+      "v": 19,
+      "ref": "10:19",
+      "text": "וַיַּהֲפֹ֨ךְ יְהֹוָ֤ה רֽוּחַ־יָם֙ חָזָ֣ק מְאֹ֔ד וַיִּשָּׂא֙ אֶת־הָ֣אַרְבֶּ֔ה וַיִּתְקָעֵ֖הוּ יָ֣מָּה סּ֑וּף לֹ֤א נִשְׁאַר֙ אַרְבֶּ֣ה אֶחָ֔ד בְּכֹ֖ל גְּב֥וּל מִצְרָֽיִם׃",
+      "en": "And the Lord turned a very strong west wind, which took away the locusts, and cast them into the Sea of Suf; there remained not one locust in all the borders of Miżrayim."
+    },
+    {
+      "n": 20,
+      "c": 10,
+      "v": 20,
+      "ref": "10:20",
+      "text": "וַיְחַזֵּ֥ק יְהֹוָ֖ה אֶת־לֵ֣ב פַּרְעֹ֑ה וְלֹ֥א שִׁלַּ֖ח אֶת־בְּנֵ֥י יִשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "But the Lord hardened Par῾o’s heart, so that he would not let the children of Yisra᾽el go."
+    },
+    {
+      "n": 21,
+      "c": 10,
+      "v": 21,
+      "ref": "10:21",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֶל־מֹשֶׁ֗ה נְטֵ֤ה יָֽדְךָ֙ עַל־הַשָּׁמַ֔יִם וִ֥יהִי חֹ֖שֶׁךְ עַל־אֶ֣רֶץ מִצְרָ֑יִם וְיָמֵ֖שׁ חֹֽשֶׁךְ׃",
+      "en": "And the Lord said to Moshe, Stretch out thy hand towards heaven, that there may be darkness over the land of Miżrayim, darkness which may be felt."
+    },
+    {
+      "n": 22,
+      "c": 10,
+      "v": 22,
+      "ref": "10:22",
+      "text": "וַיֵּ֥ט מֹשֶׁ֛ה אֶת־יָד֖וֹ עַל־הַשָּׁמָ֑יִם וַיְהִ֧י חֹֽשֶׁךְ־אֲפֵלָ֛ה בְּכׇל־אֶ֥רֶץ מִצְרַ֖יִם שְׁלֹ֥שֶׁת יָמִֽים׃",
+      "en": "And Moshe stretched out his hand towards heaven; and there was a thick darkness in all the land of Miżrayim three days:"
+    },
+    {
+      "n": 23,
+      "c": 10,
+      "v": 23,
+      "ref": "10:23",
+      "text": "לֹֽא־רָא֞וּ אִ֣ישׁ אֶת־אָחִ֗יו וְלֹא־קָ֛מוּ אִ֥ישׁ מִתַּחְתָּ֖יו שְׁלֹ֣שֶׁת יָמִ֑ים וּֽלְכׇל־בְּנֵ֧י יִשְׂרָאֵ֛ל הָ֥יָה א֖וֹר בְּמוֹשְׁבֹתָֽם׃",
+      "en": "they saw not one another, neither rose any from his place for three days: but all the children of Yisra᾽el had light in their dwellings."
+    },
+    {
+      "n": 24,
+      "c": 10,
+      "v": 24,
+      "ref": "10:24",
+      "text": "וַיִּקְרָ֨א פַרְעֹ֜ה אֶל־מֹשֶׁ֗ה וַיֹּ֙אמֶר֙ לְכוּ֙ עִבְד֣וּ אֶת־יְהֹוָ֔ה רַ֛ק צֹאנְכֶ֥ם וּבְקַרְכֶ֖ם יֻצָּ֑ג גַּֽם־טַפְּכֶ֖ם יֵלֵ֥ךְ עִמָּכֶֽם׃",
+      "en": "And Par῾o called to Moshe and said, Go, serve the Lord; only let your flocks and your herds stay behind: let your little ones also go with you."
+    },
+    {
+      "n": 25,
+      "c": 10,
+      "v": 25,
+      "ref": "10:25",
+      "text": "וַיֹּ֣אמֶר מֹשֶׁ֔ה גַּם־אַתָּ֛ה תִּתֵּ֥ן בְּיָדֵ֖נוּ זְבָחִ֣ים וְעֹלֹ֑ת וְעָשִׂ֖ינוּ לַיהֹוָ֥ה אֱלֹהֵֽינוּ׃",
+      "en": "And Moshe said, Thou must give us also sacrifices and burnt offerings, that we may sacrifice to the Lord our God."
+    },
+    {
+      "n": 26,
+      "c": 10,
+      "v": 26,
+      "ref": "10:26",
+      "text": "וְגַם־מִקְנֵ֜נוּ יֵלֵ֣ךְ עִמָּ֗נוּ לֹ֤א תִשָּׁאֵר֙ פַּרְסָ֔ה כִּ֚י מִמֶּ֣נּוּ נִקַּ֔ח לַעֲבֹ֖ד אֶת־יְהֹוָ֣ה אֱלֹהֵ֑ינוּ וַאֲנַ֣חְנוּ לֹֽא־נֵדַ֗ע מַֽה־נַּעֲבֹד֙ אֶת־יְהֹוָ֔ה עַד־בֹּאֵ֖נוּ שָֽׁמָּה׃",
+      "en": "Our cattle also shall go with us; there shall not a hoof be left behind; for of them must we take to serve the Lord our God; and we know not with what we must serve the Lord, until we come there."
+    },
+    {
+      "n": 27,
+      "c": 10,
+      "v": 27,
+      "ref": "10:27",
+      "text": "וַיְחַזֵּ֥ק יְהֹוָ֖ה אֶת־לֵ֣ב פַּרְעֹ֑ה וְלֹ֥א אָבָ֖ה לְשַׁלְּחָֽם׃",
+      "en": "But the Lord hardened Par῾o’s heart, and he would not let them go."
+    },
+    {
+      "n": 28,
+      "c": 10,
+      "v": 28,
+      "ref": "10:28",
+      "text": "וַיֹּֽאמֶר־ל֥וֹ פַרְעֹ֖ה לֵ֣ךְ מֵעָלָ֑י הִשָּׁ֣מֶר לְךָ֗ אַל־תֹּ֙סֶף֙ רְא֣וֹת פָּנַ֔י כִּ֗י בְּי֛וֹם רְאֹתְךָ֥ פָנַ֖י תָּמֽוּת׃",
+      "en": "And Par῾o said to him, Get thee from me, take heed to thyself, see my face no more; for in the day thou seest my face thou shalt die."
+    },
+    {
+      "n": 29,
+      "c": 10,
+      "v": 29,
+      "ref": "10:29",
+      "text": "וַיֹּ֥אמֶר מֹשֶׁ֖ה כֵּ֣ן דִּבַּ֑רְתָּ לֹא־אֹסִ֥ף ע֖וֹד רְא֥וֹת פָּנֶֽיךָ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Moshe said, Thou hast spoken well, I will see thy face again no more."
+    },
+    {
+      "n": 30,
+      "c": 11,
+      "v": 1,
+      "ref": "11:1",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֶל־מֹשֶׁ֗ה ע֣וֹד נֶ֤גַע אֶחָד֙ אָבִ֤יא עַל־פַּרְעֹה֙ וְעַל־מִצְרַ֔יִם אַֽחֲרֵי־כֵ֕ן יְשַׁלַּ֥ח אֶתְכֶ֖ם מִזֶּ֑ה כְּשַׁ֨לְּח֔וֹ כָּלָ֕ה גָּרֵ֛שׁ יְגָרֵ֥שׁ אֶתְכֶ֖ם מִזֶּֽה׃",
+      "en": "And the Lord said to Moshe, Yet will I bring one plague more upon Par῾o, and upon Miżrayim; afterwards he will let you go from here: when he shall let you go, he shall surely thrust you out altogether from here."
+    },
+    {
+      "n": 31,
+      "c": 11,
+      "v": 2,
+      "ref": "11:2",
+      "text": "דַּבֶּר־נָ֖א בְּאׇזְנֵ֣י הָעָ֑ם וְיִשְׁאֲל֞וּ אִ֣ישׁ&thinsp;<b>׀</b> מֵאֵ֣ת רֵעֵ֗הוּ וְאִשָּׁה֙ מֵאֵ֣ת רְעוּתָ֔הּ כְּלֵי־כֶ֖סֶף וּכְלֵ֥י זָהָֽב׃",
+      "en": "Speak now in the ears of the people, and let every man ask of his neighbour, and every woman of her neighbour, jewels of silver, and jewels of gold."
+    },
+    {
+      "n": 32,
+      "c": 11,
+      "v": 3,
+      "ref": "11:3",
+      "text": "וַיִּתֵּ֧ן יְהֹוָ֛ה אֶת־חֵ֥ן הָעָ֖ם בְּעֵינֵ֣י מִצְרָ֑יִם גַּ֣ם&thinsp;<b>׀</b> הָאִ֣ישׁ מֹשֶׁ֗ה גָּד֤וֹל מְאֹד֙ בְּאֶ֣רֶץ מִצְרַ֔יִם בְּעֵינֵ֥י עַבְדֵֽי־פַרְעֹ֖ה וּבְעֵינֵ֥י הָעָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the Lord gave the people favour in the sight of Miżrayim; moreover the man Moshe was very great in the land of Miżrayim, in the sight of Par῾o’s servants, and in the sight of the people."
+    },
+    {
+      "n": 33,
+      "c": 11,
+      "v": 4,
+      "ref": "11:4",
+      "text": "וַיֹּ֣אמֶר מֹשֶׁ֔ה כֹּ֖ה אָמַ֣ר יְהֹוָ֑ה כַּחֲצֹ֣ת הַלַּ֔יְלָה אֲנִ֥י יוֹצֵ֖א בְּת֥וֹךְ מִצְרָֽיִם׃",
+      "en": "And Moshe said, Thus says the Lord, About midnight will I go out into the midst of Miżrayim:"
+    },
+    {
+      "n": 34,
+      "c": 11,
+      "v": 5,
+      "ref": "11:5",
+      "text": "וּמֵ֣ת כׇּל־בְּכוֹר֮ בְּאֶ֣רֶץ מִצְרַ֒יִם֒ מִבְּכ֤וֹר פַּרְעֹה֙ הַיֹּשֵׁ֣ב עַל־כִּסְא֔וֹ עַ֚ד בְּכ֣וֹר הַשִּׁפְחָ֔ה אֲשֶׁ֖ר אַחַ֣ר הָרֵחָ֑יִם וְכֹ֖ל בְּכ֥וֹר בְּהֵמָֽה׃",
+      "en": "and all the firstborn in the land of Miżrayim shall die, from the firstborn of Par῾o that sits on his throne, even to the firstborn of the maidservant that is behind the mill; and all the firstborn of cattle."
+    },
+    {
+      "n": 35,
+      "c": 11,
+      "v": 6,
+      "ref": "11:6",
+      "text": "וְהָ֥יְתָ֛ה צְעָקָ֥ה גְדֹלָ֖ה בְּכׇל־אֶ֣רֶץ מִצְרָ֑יִם אֲשֶׁ֤ר כָּמֹ֙הוּ֙ לֹ֣א נִהְיָ֔תָה וְכָמֹ֖הוּ לֹ֥א תֹסִֽף׃",
+      "en": "And there shall be a great cry throughout all the land of Miżrayim, such as there was none like it, nor shall be like it any more."
+    },
+    {
+      "n": 36,
+      "c": 11,
+      "v": 7,
+      "ref": "11:7",
+      "text": "וּלְכֹ֣ל&thinsp;<b>׀</b> בְּנֵ֣י יִשְׂרָאֵ֗ל לֹ֤א יֶֽחֱרַץ־כֶּ֙לֶב֙ לְשֹׁנ֔וֹ לְמֵאִ֖ישׁ וְעַד־בְּהֵמָ֑ה לְמַ֙עַן֙ תֵּֽדְע֔וּן אֲשֶׁר֙ יַפְלֶ֣ה יְהֹוָ֔ה בֵּ֥ין מִצְרַ֖יִם וּבֵ֥ין יִשְׂרָאֵֽל׃",
+      "en": "But against any of the children of Yisra᾽el not a dog shall move its tongue, neither against man or beast: that you may know that the Lord differentiates between Miżrayim and between Yisra᾽el."
+    },
+    {
+      "n": 37,
+      "c": 11,
+      "v": 8,
+      "ref": "11:8",
+      "text": "וְיָרְד֣וּ כׇל־עֲבָדֶ֩יךָ֩ אֵ֨לֶּה אֵלַ֜י וְהִשְׁתַּֽחֲווּ־לִ֣י לֵאמֹ֗ר צֵ֤א אַתָּה֙ וְכׇל־הָעָ֣ם אֲשֶׁר־בְּרַגְלֶ֔יךָ וְאַחֲרֵי־כֵ֖ן אֵצֵ֑א וַיֵּצֵ֥א מֵֽעִם־פַּרְעֹ֖ה בׇּחֳרִי־אָֽף׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And all these thy servants shall come down to me, and bow down themselves to me, saying, Get thee gone, and all the people that follow thee: and after that I will go out. And he went out from Par῾o in great anger."
+    },
+    {
+      "n": 38,
+      "c": 11,
+      "v": 9,
+      "ref": "11:9",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה לֹא־יִשְׁמַ֥ע אֲלֵיכֶ֖ם פַּרְעֹ֑ה לְמַ֛עַן רְב֥וֹת מוֹפְתַ֖י בְּאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And the Lord said to Moshe, Par῾o shall not hearken to you; that my wonders may be multiplied in the land of Miżrayim."
+    },
+    {
+      "n": 39,
+      "c": 11,
+      "v": 10,
+      "ref": "11:10",
+      "text": "וּמֹשֶׁ֣ה וְאַהֲרֹ֗ן עָשׂ֛וּ אֶת־כׇּל־הַמֹּפְתִ֥ים הָאֵ֖לֶּה לִפְנֵ֣י פַרְעֹ֑ה וַיְחַזֵּ֤ק יְהֹוָה֙ אֶת־לֵ֣ב פַּרְעֹ֔ה וְלֹֽא־שִׁלַּ֥ח אֶת־בְּנֵֽי־יִשְׂרָאֵ֖ל מֵאַרְצֽוֹ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And Moshe and Aharon did all these wonders before Par῾o: and the Lord hardened Par῾o’s heart, so that he would not let the children of Yisra᾽el go out of his land."
+    },
+    {
+      "n": 40,
+      "c": 12,
+      "v": 1,
+      "ref": "12:1",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֣ה וְאֶֽל־אַהֲרֹ֔ן בְּאֶ֥רֶץ מִצְרַ֖יִם לֵאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe and Aharon in the land of Miżrayim, saying,"
+    },
+    {
+      "n": 41,
+      "c": 12,
+      "v": 2,
+      "ref": "12:2",
+      "text": "הַחֹ֧דֶשׁ הַזֶּ֛ה לָכֶ֖ם רֹ֣אשׁ חֳדָשִׁ֑ים רִאשׁ֥וֹן הוּא֙ לָכֶ֔ם לְחׇדְשֵׁ֖י הַשָּׁנָֽה׃",
+      "en": "This month shall be to you the beginning of months: it shall be the first month of the year to you."
+    },
+    {
+      "n": 42,
+      "c": 12,
+      "v": 3,
+      "ref": "12:3",
+      "text": "דַּבְּר֗וּ אֶֽל־כׇּל־עֲדַ֤ת יִשְׂרָאֵל֙ לֵאמֹ֔ר בֶּעָשֹׂ֖ר לַחֹ֣דֶשׁ הַזֶּ֑ה וְיִקְח֣וּ לָהֶ֗ם אִ֛ישׁ שֶׂ֥ה לְבֵית־אָבֹ֖ת שֶׂ֥ה לַבָּֽיִת׃",
+      "en": "Speak to all the congregation of Yisra᾽el, saying, On the tenth day of this month they shall take to them every man a lamb, according to the house of their fathers, a lamb for a house:"
+    },
+    {
+      "n": 43,
+      "c": 12,
+      "v": 4,
+      "ref": "12:4",
+      "text": "וְאִם־יִמְעַ֣ט הַבַּ֘יִת֮ מִהְי֣וֹת מִשֶּׂה֒ וְלָקַ֣ח ה֗וּא וּשְׁכֵנ֛וֹ הַקָּרֹ֥ב אֶל־בֵּית֖וֹ בְּמִכְסַ֣ת נְפָשֹׁ֑ת אִ֚ישׁ לְפִ֣י אׇכְל֔וֹ תָּכֹ֖סּוּ עַל־הַשֶּֽׂה׃",
+      "en": "and if the household be too little for a lamb, let him and his neighbour next to his house take it according to the number of the souls; according to every man’s eating shall you make your count for the lamb."
+    },
+    {
+      "n": 44,
+      "c": 12,
+      "v": 5,
+      "ref": "12:5",
+      "text": "שֶׂ֥ה תָמִ֛ים זָכָ֥ר בֶּן־שָׁנָ֖ה יִהְיֶ֣ה לָכֶ֑ם מִן־הַכְּבָשִׂ֥ים וּמִן־הָעִזִּ֖ים תִּקָּֽחוּ׃",
+      "en": "Your lamb shall be without blemish, a male of the first year: you shall take it from the sheep, or from the goats:"
+    },
+    {
+      "n": 45,
+      "c": 12,
+      "v": 6,
+      "ref": "12:6",
+      "text": "וְהָיָ֤ה לָכֶם֙ לְמִשְׁמֶ֔רֶת עַ֣ד אַרְבָּעָ֥ה עָשָׂ֛ר י֖וֹם לַחֹ֣דֶשׁ הַזֶּ֑ה וְשָׁחֲט֣וּ אֹת֗וֹ כֹּ֛ל קְהַ֥ל עֲדַֽת־יִשְׂרָאֵ֖ל בֵּ֥ין הָעַרְבָּֽיִם׃",
+      "en": "and you shall keep it until the fourteenth day of the same month: and the whole assembly of the congregation of Yisra᾽el shall kill it towards evening."
+    },
+    {
+      "n": 46,
+      "c": 12,
+      "v": 7,
+      "ref": "12:7",
+      "text": "וְלָֽקְחוּ֙ מִן־הַדָּ֔ם וְנָ֥תְנ֛וּ עַל־שְׁתֵּ֥י הַמְּזוּזֹ֖ת וְעַל־הַמַּשְׁק֑וֹף עַ֚ל הַבָּ֣תִּ֔ים אֲשֶׁר־יֹאכְל֥וּ אֹת֖וֹ בָּהֶֽם׃",
+      "en": "And they shall take the blood, and put it on the two side posts and on the upper door post of the houses, in which they shall eat it."
+    },
+    {
+      "n": 47,
+      "c": 12,
+      "v": 8,
+      "ref": "12:8",
+      "text": "וְאָכְל֥וּ אֶת־הַבָּשָׂ֖ר בַּלַּ֣יְלָה הַזֶּ֑ה צְלִי־אֵ֣שׁ וּמַצּ֔וֹת עַל־מְרֹרִ֖ים יֹאכְלֻֽהוּ׃",
+      "en": "And they shall eat the meat in that night, roast with fire, and unleavened bread; and with bitter herbs they shall eat it."
+    },
+    {
+      "n": 48,
+      "c": 12,
+      "v": 9,
+      "ref": "12:9",
+      "text": "אַל־תֹּאכְל֤וּ מִמֶּ֙נּוּ֙ נָ֔א וּבָשֵׁ֥ל מְבֻשָּׁ֖ל בַּמָּ֑יִם כִּ֣י אִם־צְלִי־אֵ֔שׁ רֹאשׁ֥וֹ עַל־כְּרָעָ֖יו וְעַל־קִרְבּֽוֹ׃",
+      "en": "Eat not of it raw, nor boiled at all in water, but roast with fire; its head with its legs, and with its entrails."
+    },
+    {
+      "n": 49,
+      "c": 12,
+      "v": 10,
+      "ref": "12:10",
+      "text": "וְלֹא־תוֹתִ֥ירוּ מִמֶּ֖נּוּ עַד־בֹּ֑קֶר וְהַנֹּתָ֥ר מִמֶּ֛נּוּ עַד־בֹּ֖קֶר בָּאֵ֥שׁ תִּשְׂרֹֽפוּ׃",
+      "en": "And you shall let nothing of it remain until the morning; and that which remains of it until the morning you shall burn with fire."
+    },
+    {
+      "n": 50,
+      "c": 12,
+      "v": 11,
+      "ref": "12:11",
+      "text": "וְכָ֘כָה֮ תֹּאכְל֣וּ אֹתוֹ֒ מׇתְנֵיכֶ֣ם חֲגֻרִ֔ים נַֽעֲלֵיכֶם֙ בְּרַגְלֵיכֶ֔ם וּמַקֶּלְכֶ֖ם בְּיֶדְכֶ֑ם וַאֲכַלְתֶּ֤ם אֹתוֹ֙ בְּחִפָּז֔וֹן פֶּ֥סַח ה֖וּא לַיהֹוָֽה׃",
+      "en": "And thus shall you eat it; with your loins girded, your shoes on your feet, and your staff in your hand; and you shall eat it in haste; it is the Lord’s passover."
+    },
+    {
+      "n": 51,
+      "c": 12,
+      "v": 12,
+      "ref": "12:12",
+      "text": "וְעָבַרְתִּ֣י בְאֶֽרֶץ־מִצְרַ֘יִם֮ בַּלַּ֣יְלָה הַזֶּה֒ וְהִכֵּיתִ֤י כׇל־בְּכוֹר֙ בְּאֶ֣רֶץ מִצְרַ֔יִם מֵאָדָ֖ם וְעַד־בְּהֵמָ֑ה וּבְכׇל־אֱלֹהֵ֥י מִצְרַ֛יִם אֶֽעֱשֶׂ֥ה שְׁפָטִ֖ים אֲנִ֥י יְהֹוָֽה׃",
+      "en": "For I will pass through the land of Miżrayim this night, and will smite all the firstborn in the land of Miżrayim, both man and beast: and against all the gods of Miżrayim I will execute judgments: I am the Lord."
+    },
+    {
+      "n": 52,
+      "c": 12,
+      "v": 13,
+      "ref": "12:13",
+      "text": "וְהָיָה֩ הַדָּ֨ם לָכֶ֜ם לְאֹ֗ת עַ֤ל הַבָּתִּים֙ אֲשֶׁ֣ר אַתֶּ֣ם שָׁ֔ם וְרָאִ֙יתִי֙ אֶת־הַדָּ֔ם וּפָסַחְתִּ֖י עֲלֵכֶ֑ם וְלֹֽא־יִֽהְיֶ֨ה בָכֶ֥ם נֶ֙גֶף֙ לְמַשְׁחִ֔ית בְּהַכֹּתִ֖י בְּאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And the blood shall be to you for a token upon the houses where you are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Miżrayim."
+    },
+    {
+      "n": 53,
+      "c": 12,
+      "v": 14,
+      "ref": "12:14",
+      "text": "וְהָיָה֩ הַיּ֨וֹם הַזֶּ֤ה לָכֶם֙ לְזִכָּר֔וֹן וְחַגֹּתֶ֥ם אֹת֖וֹ חַ֣ג לַֽיהֹוָ֑ה לְדֹרֹ֣תֵיכֶ֔ם חֻקַּ֥ת עוֹלָ֖ם תְּחׇגֻּֽהוּ׃",
+      "en": "And this day shall be to you for a memorial; and you shall keep it a feast to the Lord; throughout your generations shall you keep it a feast by ordinance for ever."
+    },
+    {
+      "n": 54,
+      "c": 12,
+      "v": 15,
+      "ref": "12:15",
+      "text": "שִׁבְעַ֤ת יָמִים֙ מַצּ֣וֹת תֹּאכֵ֔לוּ אַ֚ךְ בַּיּ֣וֹם הָרִאשׁ֔וֹן תַּשְׁבִּ֥יתוּ שְּׂאֹ֖ר מִבָּתֵּיכֶ֑ם כִּ֣י&thinsp;<b>׀</b> כׇּל־אֹכֵ֣ל חָמֵ֗ץ וְנִכְרְתָ֞ה הַנֶּ֤פֶשׁ הַהִוא֙ מִיִּשְׂרָאֵ֔ל מִיּ֥וֹם הָרִאשֹׁ֖ן עַד־י֥וֹם הַשְּׁבִעִֽי׃",
+      "en": "Seven days shall you eat unleavened bread; but on the first day you shall have put away leaven out of your houses: for whoever eats leavened bread from the first day until the seventh day, that soul shall be cut off from Yisra᾽el."
+    },
+    {
+      "n": 55,
+      "c": 12,
+      "v": 16,
+      "ref": "12:16",
+      "text": "וּבַיּ֤וֹם הָרִאשׁוֹן֙ מִקְרָא־קֹ֔דֶשׁ וּבַיּוֹם֙ הַשְּׁבִיעִ֔י מִקְרָא־קֹ֖דֶשׁ יִהְיֶ֣ה לָכֶ֑ם כׇּל־מְלָאכָה֙ לֹא־יֵעָשֶׂ֣ה בָהֶ֔ם אַ֚ךְ אֲשֶׁ֣ר יֵאָכֵ֣ל לְכׇל־נֶ֔פֶשׁ ה֥וּא לְבַדּ֖וֹ יֵעָשֶׂ֥ה לָכֶֽם׃",
+      "en": "And on the first day there shall be a holy gathering, and on the seventh day there shall be a holy gathering to you; no manner of work shall be done on them, save that which every person must eat, that only may be done by you."
+    },
+    {
+      "n": 56,
+      "c": 12,
+      "v": 17,
+      "ref": "12:17",
+      "text": "וּשְׁמַרְתֶּם֮ אֶת־הַמַּצּוֹת֒ כִּ֗י בְּעֶ֙צֶם֙ הַיּ֣וֹם הַזֶּ֔ה הוֹצֵ֥אתִי אֶת־צִבְאוֹתֵיכֶ֖ם מֵאֶ֣רֶץ מִצְרָ֑יִם וּשְׁמַרְתֶּ֞ם אֶת־הַיּ֥וֹם הַזֶּ֛ה לְדֹרֹתֵיכֶ֖ם חֻקַּ֥ת עוֹלָֽם׃",
+      "en": "And you shall observe the commandment of unleavened bread; for on this very day have I brought your hosts out of the land of Miżrayim: therefore shall you observe this day in your generations by an ordinance for ever."
+    },
+    {
+      "n": 57,
+      "c": 12,
+      "v": 18,
+      "ref": "12:18",
+      "text": "בָּרִאשֹׁ֡ן בְּאַרְבָּעָה֩ עָשָׂ֨ר י֤וֹם לַחֹ֙דֶשׁ֙ בָּעֶ֔רֶב תֹּאכְל֖וּ מַצֹּ֑ת עַ֠ד י֣וֹם הָאֶחָ֧ד וְעֶשְׂרִ֛ים לַחֹ֖דֶשׁ בָּעָֽרֶב׃",
+      "en": "In the first month, on the fourteenth day of the month at evening, shall you eat unleavened bread, until the twenty first day of the month at evening."
+    },
+    {
+      "n": 58,
+      "c": 12,
+      "v": 19,
+      "ref": "12:19",
+      "text": "שִׁבְעַ֣ת יָמִ֔ים שְׂאֹ֕ר לֹ֥א יִמָּצֵ֖א בְּבָתֵּיכֶ֑ם כִּ֣י&thinsp;<b>׀</b> כׇּל־אֹכֵ֣ל מַחְמֶ֗צֶת וְנִכְרְתָ֞ה הַנֶּ֤פֶשׁ הַהִוא֙ מֵעֲדַ֣ת יִשְׂרָאֵ֔ל בַּגֵּ֖ר וּבְאֶזְרַ֥ח הָאָֽרֶץ׃",
+      "en": "Seven days shall there be no leaven found in your houses: for whoever eats that which is leavened, even that soul shall be cut off from the congregation of Yisra᾽el, whether he be a stranger, or born in the land."
+    },
+    {
+      "n": 59,
+      "c": 12,
+      "v": 20,
+      "ref": "12:20",
+      "text": "כׇּל־מַחְמֶ֖צֶת לֹ֣א תֹאכֵ֑לוּ בְּכֹל֙ מוֹשְׁבֹ֣תֵיכֶ֔ם תֹּאכְל֖וּ מַצּֽוֹת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "You shall eat nothing leavened; in all your habitations shall you eat unleavened bread."
+    },
+    {
+      "n": 60,
+      "c": 12,
+      "v": 21,
+      "ref": "12:21",
+      "text": "וַיִּקְרָ֥א מֹשֶׁ֛ה לְכׇל־זִקְנֵ֥י יִשְׂרָאֵ֖ל וַיֹּ֣אמֶר אֲלֵהֶ֑ם מִֽשְׁכ֗וּ וּקְח֨וּ לָכֶ֥ם צֹ֛אן לְמִשְׁפְּחֹתֵיכֶ֖ם וְשַׁחֲט֥וּ הַפָּֽסַח׃",
+      "en": "Then Moshe called for all the elders of Yisra᾽el, and said to them, Draw out and take you lambs according to your families, and kill the passover."
+    },
+    {
+      "n": 61,
+      "c": 12,
+      "v": 22,
+      "ref": "12:22",
+      "text": "וּלְקַחְתֶּ֞ם אֲגֻדַּ֣ת אֵז֗וֹב וּטְבַלְתֶּם֮ בַּדָּ֣ם אֲשֶׁר־בַּסַּף֒ וְהִגַּעְתֶּ֤ם אֶל־הַמַּשְׁקוֹף֙ וְאֶל־שְׁתֵּ֣י הַמְּזוּזֹ֔ת מִן־הַדָּ֖ם אֲשֶׁ֣ר בַּסָּ֑ף וְאַתֶּ֗ם לֹ֥א תֵצְא֛וּ אִ֥ישׁ מִפֶּֽתַח־בֵּית֖וֹ עַד־בֹּֽקֶר׃",
+      "en": "And take a bunch of hyssop, and dip it in the blood that is in the basin, and touch with it the lintel and the two side posts, with the blood that is in the basin; and none of you shall go out at the door of his house until the morning."
+    },
+    {
+      "n": 62,
+      "c": 12,
+      "v": 23,
+      "ref": "12:23",
+      "text": "וְעָבַ֣ר יְהֹוָה֮ לִנְגֹּ֣ף אֶת־מִצְרַ֒יִם֒ וְרָאָ֤ה אֶת־הַדָּם֙ עַל־הַמַּשְׁק֔וֹף וְעַ֖ל שְׁתֵּ֣י הַמְּזוּזֹ֑ת וּפָסַ֤ח יְהֹוָה֙ עַל־הַפֶּ֔תַח וְלֹ֤א יִתֵּן֙ הַמַּשְׁחִ֔ית לָבֹ֥א אֶל־בָּתֵּיכֶ֖ם לִנְגֹּֽף׃",
+      "en": "For the Lord will pass through to smite Miżrayim; and when he sees the blood upon the lintel, and on the two side posts, the Lord will pass over the door, and will not allow the destroyer to come into your houses to smite you."
+    },
+    {
+      "n": 63,
+      "c": 12,
+      "v": 24,
+      "ref": "12:24",
+      "text": "וּשְׁמַרְתֶּ֖ם אֶת־הַדָּבָ֣ר הַזֶּ֑ה לְחׇק־לְךָ֥ וּלְבָנֶ֖יךָ עַד־עוֹלָֽם׃",
+      "en": "And you shall observe this thing for an ordinance to thee and to thy sons for ever."
+    },
+    {
+      "n": 64,
+      "c": 12,
+      "v": 25,
+      "ref": "12:25",
+      "text": "וְהָיָ֞ה כִּֽי־תָבֹ֣אוּ אֶל־הָאָ֗רֶץ אֲשֶׁ֨ר יִתֵּ֧ן יְהֹוָ֛ה לָכֶ֖ם כַּאֲשֶׁ֣ר דִּבֵּ֑ר וּשְׁמַרְתֶּ֖ם אֶת־הָעֲבֹדָ֥ה הַזֹּֽאת׃",
+      "en": "And it shall come to pass, when you shall come to the land which the Lord will give you, according as he has promised, that you shall keep this service."
+    },
+    {
+      "n": 65,
+      "c": 12,
+      "v": 26,
+      "ref": "12:26",
+      "text": "וְהָיָ֕ה כִּֽי־יֹאמְר֥וּ אֲלֵיכֶ֖ם בְּנֵיכֶ֑ם מָ֛ה הָעֲבֹדָ֥ה הַזֹּ֖את לָכֶֽם׃",
+      "en": "And it shall come to pass, when your children shall say to you, What mean you by this service?"
+    },
+    {
+      "n": 66,
+      "c": 12,
+      "v": 27,
+      "ref": "12:27",
+      "text": "וַאֲמַרְתֶּ֡ם זֶֽבַח־פֶּ֨סַח ה֜וּא לַֽיהֹוָ֗ה אֲשֶׁ֣ר פָּ֠סַ֠ח עַל־בָּתֵּ֤י בְנֵֽי־יִשְׂרָאֵל֙ בְּמִצְרַ֔יִם בְּנׇגְפּ֥וֹ אֶת־מִצְרַ֖יִם וְאֶת־בָּתֵּ֣ינוּ הִצִּ֑יל וַיִּקֹּ֥ד הָעָ֖ם וַיִּֽשְׁתַּחֲוֽוּ׃",
+      "en": "that you shall say, It is the sacrifice of the Lord’s passover, who passed over the houses of the children of Yisra᾽el in Miżrayim, when he smote Miżrayim, and delivered our houses. And the people bowed the head and worshipped."
+    },
+    {
+      "n": 67,
+      "c": 12,
+      "v": 28,
+      "ref": "12:28",
+      "text": "וַיֵּלְכ֥וּ וַֽיַּעֲשׂ֖וּ בְּנֵ֣י יִשְׂרָאֵ֑ל כַּאֲשֶׁ֨ר צִוָּ֧ה יְהֹוָ֛ה אֶת־מֹשֶׁ֥ה וְאַהֲרֹ֖ן כֵּ֥ן עָשֽׂוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the children of Yisra᾽el went away, and did as the Lord had commanded Moshe and Aharon, so they did."
+    },
+    {
+      "n": 68,
+      "c": 12,
+      "v": 29,
+      "ref": "12:29",
+      "text": "וַיְהִ֣י&thinsp;<b>׀</b> בַּחֲצִ֣י הַלַּ֗יְלָה וַֽיהֹוָה֮ הִכָּ֣ה כׇל־בְּכוֹר֮ בְּאֶ֣רֶץ מִצְרַ֒יִם֒ מִבְּכֹ֤ר פַּרְעֹה֙ הַיֹּשֵׁ֣ב עַל־כִּסְא֔וֹ עַ֚ד בְּכ֣וֹר הַשְּׁבִ֔י אֲשֶׁ֖ר בְּבֵ֣ית הַבּ֑וֹר וְכֹ֖ל בְּכ֥וֹר בְּהֵמָֽה׃",
+      "en": "And it came to pass, that at midnight the Lord smote all the firstborn in the land of Miżrayim, from the firstborn of Par῾o that sat on his throne to the firstborn of the captive that was in the dungeon; and all the firstborn of cattle."
+    },
+    {
+      "n": 69,
+      "c": 12,
+      "v": 30,
+      "ref": "12:30",
+      "text": "וַיָּ֨קׇם פַּרְעֹ֜ה לַ֗יְלָה ה֤וּא וְכׇל־עֲבָדָיו֙ וְכׇל־מִצְרַ֔יִם וַתְּהִ֛י צְעָקָ֥ה גְדֹלָ֖ה בְּמִצְרָ֑יִם כִּֽי־אֵ֣ין בַּ֔יִת אֲשֶׁ֥ר אֵֽין־שָׁ֖ם מֵֽת׃",
+      "en": "And Par῾o rose up in the night, he, and all his servants, and all Miżrayim; and there was a great cry in Miżrayim; for there was not a house where there was not one dead."
+    },
+    {
+      "n": 70,
+      "c": 12,
+      "v": 31,
+      "ref": "12:31",
+      "text": "וַיִּקְרָא֩ לְמֹשֶׁ֨ה וּֽלְאַהֲרֹ֜ן לַ֗יְלָה וַיֹּ֙אמֶר֙ ק֤וּמוּ צְּאוּ֙ מִתּ֣וֹךְ עַמִּ֔י גַּם־אַתֶּ֖ם גַּם־בְּנֵ֣י יִשְׂרָאֵ֑ל וּלְכ֛וּ עִבְד֥וּ אֶת־יְהֹוָ֖ה כְּדַבֶּרְכֶֽם׃",
+      "en": "And he called for Moshe and Aharon by night, and said, Rise up, and get you out from among my people, both you and the children of Yisra᾽el; and go, serve the Lord, as you have said."
+    },
+    {
+      "n": 71,
+      "c": 12,
+      "v": 32,
+      "ref": "12:32",
+      "text": "גַּם־צֹאנְכֶ֨ם גַּם־בְּקַרְכֶ֥ם קְח֛וּ כַּאֲשֶׁ֥ר דִּבַּרְתֶּ֖ם וָלֵ֑כוּ וּבֵֽרַכְתֶּ֖ם גַּם־אֹתִֽי׃",
+      "en": "Also take your flocks and your herds, as you have said, and be gone; and bless me also."
+    },
+    {
+      "n": 72,
+      "c": 12,
+      "v": 33,
+      "ref": "12:33",
+      "text": "וַתֶּחֱזַ֤ק מִצְרַ֙יִם֙ עַל־הָעָ֔ם לְמַהֵ֖ר לְשַׁלְּחָ֣ם מִן־הָאָ֑רֶץ כִּ֥י אָמְר֖וּ כֻּלָּ֥נוּ מֵתִֽים׃",
+      "en": "And Miżrayim was urgent upon the people, that they might send them out of the land in haste; for they said, We are all dead men."
+    },
+    {
+      "n": 73,
+      "c": 12,
+      "v": 34,
+      "ref": "12:34",
+      "text": "וַיִּשָּׂ֥א הָעָ֛ם אֶת־בְּצֵק֖וֹ טֶ֣רֶם יֶחְמָ֑ץ מִשְׁאֲרֹתָ֛ם צְרֻרֹ֥ת בְּשִׂמְלֹתָ֖ם עַל־שִׁכְמָֽם׃",
+      "en": "And the people took their dough before it was leavened, their kneading troughs being bound up in their clothes upon their shoulders."
+    },
+    {
+      "n": 74,
+      "c": 12,
+      "v": 35,
+      "ref": "12:35",
+      "text": "וּבְנֵי־יִשְׂרָאֵ֥ל עָשׂ֖וּ כִּדְבַ֣ר מֹשֶׁ֑ה וַֽיִּשְׁאֲלוּ֙ מִמִּצְרַ֔יִם כְּלֵי־כֶ֛סֶף וּכְלֵ֥י זָהָ֖ב וּשְׂמָלֹֽת׃",
+      "en": "And the children of Yisra᾽el did according to the word of Moshe; and they asked of Miżrayim jewels of silver, and jewels of gold, and garments:"
+    },
+    {
+      "n": 75,
+      "c": 12,
+      "v": 36,
+      "ref": "12:36",
+      "text": "וַֽיהֹוָ֞ה נָתַ֨ן אֶת־חֵ֥ן הָעָ֛ם בְּעֵינֵ֥י מִצְרַ֖יִם וַיַּשְׁאִל֑וּם וַֽיְנַצְּל֖וּ אֶת־מִצְרָֽיִם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and the Lord gave the people favour in the sight of Miżrayim, so that they gave them such things as they required. And they despoiled Miżrayim."
+    },
+    {
+      "n": 76,
+      "c": 12,
+      "v": 37,
+      "ref": "12:37",
+      "text": "וַיִּסְע֧וּ בְנֵֽי־יִשְׂרָאֵ֛ל מֵרַעְמְסֵ֖ס סֻכֹּ֑תָה כְּשֵׁשׁ־מֵא֨וֹת אֶ֧לֶף רַגְלִ֛י הַגְּבָרִ֖ים לְבַ֥ד מִטָּֽף׃",
+      "en": "And the children of Yisra᾽el journeyed from Ra῾meses to Sukkot, about six hundred thousand men on foot, besides children."
+    },
+    {
+      "n": 77,
+      "c": 12,
+      "v": 38,
+      "ref": "12:38",
+      "text": "וְגַם־עֵ֥רֶב רַ֖ב עָלָ֣ה אִתָּ֑ם וְצֹ֣אן וּבָקָ֔ר מִקְנֶ֖ה כָּבֵ֥ד מְאֹֽד׃",
+      "en": "And a mixed multitude went up also with them; and flocks, and herds, very much cattle."
+    },
+    {
+      "n": 78,
+      "c": 12,
+      "v": 39,
+      "ref": "12:39",
+      "text": "וַיֹּאפ֨וּ אֶת־הַבָּצֵ֜ק אֲשֶׁ֨ר הוֹצִ֧יאוּ מִמִּצְרַ֛יִם עֻגֹ֥ת מַצּ֖וֹת כִּ֣י לֹ֣א חָמֵ֑ץ כִּֽי־גֹרְשׁ֣וּ מִמִּצְרַ֗יִם וְלֹ֤א יָֽכְלוּ֙ לְהִתְמַהְמֵ֔הַּ וְגַם־צֵדָ֖ה לֹא־עָשׂ֥וּ לָהֶֽם׃",
+      "en": "And they baked unleavened cakes of the dough which they brought out of Miżrayim, for it was not leavened; because they were driven out of Miżrayim, and could not delay, neither had they prepared for themselves any provision."
+    },
+    {
+      "n": 79,
+      "c": 12,
+      "v": 40,
+      "ref": "12:40",
+      "text": "וּמוֹשַׁב֙ בְּנֵ֣י יִשְׂרָאֵ֔ל אֲשֶׁ֥ר יָשְׁב֖וּ בְּמִצְרָ֑יִם שְׁלֹשִׁ֣ים שָׁנָ֔ה וְאַרְבַּ֥ע מֵא֖וֹת שָׁנָֽה׃",
+      "en": "Now the sojourning of the children of Yisra᾽el, who dwelt in Miżrayim, was four hundred and thirty years."
+    },
+    {
+      "n": 80,
+      "c": 12,
+      "v": 41,
+      "ref": "12:41",
+      "text": "וַיְהִ֗י מִקֵּץ֙ שְׁלֹשִׁ֣ים שָׁנָ֔ה וְאַרְבַּ֥ע מֵא֖וֹת שָׁנָ֑ה וַיְהִ֗י בְּעֶ֙צֶם֙ הַיּ֣וֹם הַזֶּ֔ה יָ֥צְא֛וּ כׇּל־צִבְא֥וֹת יְהֹוָ֖ה מֵאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And it came to pass at the end of four hundred and thirty years, even on that very day it came to pass, that all the hosts of the Lord went out from the land of Miżrayim."
+    },
+    {
+      "n": 81,
+      "c": 12,
+      "v": 42,
+      "ref": "12:42",
+      "text": "לֵ֣יל שִׁמֻּרִ֥ים הוּא֙ לַֽיהֹוָ֔ה לְהוֹצִיאָ֖ם מֵאֶ֣רֶץ מִצְרָ֑יִם הֽוּא־הַלַּ֤יְלָה הַזֶּה֙ לַֽיהֹוָ֔ה שִׁמֻּרִ֛ים לְכׇל־בְּנֵ֥י יִשְׂרָאֵ֖ל לְדֹרֹתָֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "It is a night of watchfulness to the Lord for bringing them out from the land of Miżrayim: this is the Lord’s watchnight, for all the children of Yisra᾽el in their generations."
+    },
+    {
+      "n": 82,
+      "c": 12,
+      "v": 43,
+      "ref": "12:43",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֣ה וְאַהֲרֹ֔ן זֹ֖את חֻקַּ֣ת הַפָּ֑סַח כׇּל־בֶּן־נֵכָ֖ר לֹא־יֹ֥אכַל בּֽוֹ׃",
+      "en": "And the Lord said to Moshe and Aharon, This is the ordinance of the passover: no stranger shall eat of it:"
+    },
+    {
+      "n": 83,
+      "c": 12,
+      "v": 44,
+      "ref": "12:44",
+      "text": "וְכׇל־עֶ֥בֶד אִ֖ישׁ מִקְנַת־כָּ֑סֶף וּמַלְתָּ֣ה אֹת֔וֹ אָ֖ז יֹ֥אכַל בּֽוֹ׃",
+      "en": "but every man’s servant that is bought for money, when thou hast circumcised him, then shall he eat of it."
+    },
+    {
+      "n": 84,
+      "c": 12,
+      "v": 45,
+      "ref": "12:45",
+      "text": "תּוֹשָׁ֥ב וְשָׂכִ֖יר לֹא־יֹ֥אכַל בּֽוֹ׃",
+      "en": "A foreigner and a hired servant shall not eat of it."
+    },
+    {
+      "n": 85,
+      "c": 12,
+      "v": 46,
+      "ref": "12:46",
+      "text": "בְּבַ֤יִת אֶחָד֙ יֵאָכֵ֔ל לֹא־תוֹצִ֧יא מִן־הַבַּ֛יִת מִן־הַבָּשָׂ֖ר ח֑וּצָה וְעֶ֖צֶם לֹ֥א תִשְׁבְּרוּ־בֽוֹ׃",
+      "en": "In one house shall it be eaten: thou shalt not take any of the meat outside, out of the house; neither shall you break a bone of it."
+    },
+    {
+      "n": 86,
+      "c": 12,
+      "v": 47,
+      "ref": "12:47",
+      "text": "כׇּל־עֲדַ֥ת יִשְׂרָאֵ֖ל יַעֲשׂ֥וּ אֹתֽוֹ׃",
+      "en": "All the congregation of Yisra᾽el shall keep it."
+    },
+    {
+      "n": 87,
+      "c": 12,
+      "v": 48,
+      "ref": "12:48",
+      "text": "וְכִֽי־יָג֨וּר אִתְּךָ֜ גֵּ֗ר וְעָ֣שָׂה פֶ֘סַח֮ לַיהֹוָה֒ הִמּ֧וֹל ל֣וֹ כׇל־זָכָ֗ר וְאָז֙ יִקְרַ֣ב לַעֲשֹׂת֔וֹ וְהָיָ֖ה כְּאֶזְרַ֣ח הָאָ֑רֶץ וְכׇל־עָרֵ֖ל לֹֽא־יֹ֥אכַל בּֽוֹ׃",
+      "en": "And when a stranger shall sojourn with thee, and will keep the passover to the Lord, let all his males be circumcised, and then let him come near and keep it; and he shall be as one that is born in the land: for no uncircumcised person shall eat of it."
+    },
+    {
+      "n": 88,
+      "c": 12,
+      "v": 49,
+      "ref": "12:49",
+      "text": "תּוֹרָ֣ה אַחַ֔ת יִהְיֶ֖ה לָֽאֶזְרָ֑ח וְלַגֵּ֖ר הַגָּ֥ר בְּתוֹכְכֶֽם׃",
+      "en": "One Tora shall be to him that is homeborn, and to the stranger that sojourns among you."
+    },
+    {
+      "n": 89,
+      "c": 12,
+      "v": 50,
+      "ref": "12:50",
+      "text": "וַֽיַּעֲשׂ֖וּ כׇּל־בְּנֵ֣י יִשְׂרָאֵ֑ל כַּאֲשֶׁ֨ר צִוָּ֧ה יְהֹוָ֛ה אֶת־מֹשֶׁ֥ה וְאֶֽת־אַהֲרֹ֖ן כֵּ֥ן עָשֽׂוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thus did all the children of Yisra᾽el; as the Lord commanded Moshe and Aharon so they did."
+    },
+    {
+      "n": 90,
+      "c": 12,
+      "v": 51,
+      "ref": "12:51",
+      "text": "וַיְהִ֕י בְּעֶ֖צֶם הַיּ֣וֹם הַזֶּ֑ה הוֹצִ֨יא יְהֹוָ֜ה אֶת־בְּנֵ֧י יִשְׂרָאֵ֛ל מֵאֶ֥רֶץ מִצְרַ֖יִם עַל־צִבְאֹתָֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And it came to pass on that selfsame day, that the Lord did bring the children of Yisra᾽el out of the land of Miżrayim by their hosts."
+    },
+    {
+      "n": 91,
+      "c": 13,
+      "v": 1,
+      "ref": "13:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 92,
+      "c": 13,
+      "v": 2,
+      "ref": "13:2",
+      "text": "קַדֶּשׁ־לִ֨י כׇל־בְּכ֜וֹר פֶּ֤טֶר כׇּל־רֶ֙חֶם֙ בִּבְנֵ֣י יִשְׂרָאֵ֔ל בָּאָדָ֖ם וּבַבְּהֵמָ֑ה לִ֖י הֽוּא׃",
+      "en": "Sanctify to me all the firstborn, whatever opens the womb among the children of Yisra᾽el, both of man and of beast: it is mine."
+    },
+    {
+      "n": 93,
+      "c": 13,
+      "v": 3,
+      "ref": "13:3",
+      "text": "וַיֹּ֨אמֶר מֹשֶׁ֜ה אֶל־הָעָ֗ם זָכ֞וֹר אֶת־הַיּ֤וֹם הַזֶּה֙ אֲשֶׁ֨ר יְצָאתֶ֤ם מִמִּצְרַ֙יִם֙ מִבֵּ֣ית עֲבָדִ֔ים כִּ֚י בְּחֹ֣זֶק יָ֔ד הוֹצִ֧יא יְהֹוָ֛ה אֶתְכֶ֖ם מִזֶּ֑ה וְלֹ֥א יֵאָכֵ֖ל חָמֵֽץ׃",
+      "en": "And Moshe said to the people, Remember this day, in which you came out from Miżrayim, out of the house of bondage; for by strength of hand the Lord brought you out from this place: no leavened bread shall be eaten."
+    },
+    {
+      "n": 94,
+      "c": 13,
+      "v": 4,
+      "ref": "13:4",
+      "text": "הַיּ֖וֹם אַתֶּ֣ם יֹצְאִ֑ים בְּחֹ֖דֶשׁ הָאָבִֽיב׃",
+      "en": "This day you came out, in the month Aviv."
+    },
+    {
+      "n": 95,
+      "c": 13,
+      "v": 5,
+      "ref": "13:5",
+      "text": "וְהָיָ֣ה כִֽי־יְבִיאֲךָ֣ יְהֹוָ֡ה אֶל־אֶ֣רֶץ הַֽ֠כְּנַעֲנִ֠י וְהַחִתִּ֨י וְהָאֱמֹרִ֜י וְהַחִוִּ֣י וְהַיְבוּסִ֗י אֲשֶׁ֨ר נִשְׁבַּ֤ע לַאֲבֹתֶ֙יךָ֙ לָ֣תֶת לָ֔ךְ אֶ֛רֶץ זָבַ֥ת חָלָ֖ב וּדְבָ֑שׁ וְעָבַדְתָּ֛ אֶת־הָעֲבֹדָ֥ה הַזֹּ֖את בַּחֹ֥דֶשׁ הַזֶּֽה׃",
+      "en": "And it shall be when the Lord shall bring thee into the land of the Kena῾ani, and the Ḥitti, and the Emori, and the Ḥivvi, and the Yevusi, which he swore to thy fathers to give thee, a land flowing with milk and honey, that thou shalt keep this service in this month."
+    },
+    {
+      "n": 96,
+      "c": 13,
+      "v": 6,
+      "ref": "13:6",
+      "text": "שִׁבְעַ֥ת יָמִ֖ים תֹּאכַ֣ל מַצֹּ֑ת וּבַיּוֹם֙ הַשְּׁבִיעִ֔י חַ֖ג לַיהֹוָֽה׃",
+      "en": "Seven days thou shalt eat unleavened bread, and on the seventh day there shall be a feast to the Lord."
+    },
+    {
+      "n": 97,
+      "c": 13,
+      "v": 7,
+      "ref": "13:7",
+      "text": "מַצּוֹת֙ יֵֽאָכֵ֔ל אֵ֖ת שִׁבְעַ֣ת הַיָּמִ֑ים וְלֹֽא־יֵרָאֶ֨ה לְךָ֜ חָמֵ֗ץ וְלֹֽא־יֵרָאֶ֥ה לְךָ֛ שְׂאֹ֖ר בְּכׇל־גְּבֻלֶֽךָ׃",
+      "en": "Unleavened bread shall be eaten for seven days; and there shall no leavened bread be seen with thee, neither shall leaven be seen with thee in all thy borders."
+    },
+    {
+      "n": 98,
+      "c": 13,
+      "v": 8,
+      "ref": "13:8",
+      "text": "וְהִגַּדְתָּ֣ לְבִנְךָ֔ בַּיּ֥וֹם הַה֖וּא לֵאמֹ֑ר בַּעֲב֣וּר זֶ֗ה עָשָׂ֤ה יְהֹוָה֙ לִ֔י בְּצֵאתִ֖י מִמִּצְרָֽיִם׃",
+      "en": "And thou shalt relate to thy son on that day, saying, This is done because of that which the Lord did to me when I came out of Miżrayim."
+    },
+    {
+      "n": 99,
+      "c": 13,
+      "v": 9,
+      "ref": "13:9",
+      "text": "וְהָיָה֩ לְךָ֨ לְא֜וֹת עַל־יָדְךָ֗ וּלְזִכָּרוֹן֙ בֵּ֣ין עֵינֶ֔יךָ לְמַ֗עַן תִּהְיֶ֛ה תּוֹרַ֥ת יְהֹוָ֖ה בְּפִ֑יךָ כִּ֚י בְּיָ֣ד חֲזָקָ֔ה הוֹצִֽאֲךָ֥ יְהֹוָ֖ה מִמִּצְרָֽיִם׃",
+      "en": "And it shall be for a sign to thee upon thy hand, and for a memorial between thy eyes, that the Lord’s Tora may be in thy mouth: for with a strong hand did the Lord bring thee out of Miżrayim."
+    },
+    {
+      "n": 100,
+      "c": 13,
+      "v": 10,
+      "ref": "13:10",
+      "text": "וְשָׁמַרְתָּ֛ אֶת־הַחֻקָּ֥ה הַזֹּ֖את לְמוֹעֲדָ֑הּ מִיָּמִ֖ים יָמִֽימָה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Thou shalt therefore keep this ordinance in its season from year to year."
+    },
+    {
+      "n": 101,
+      "c": 13,
+      "v": 11,
+      "ref": "13:11",
+      "text": "וְהָיָ֞ה כִּֽי־יְבִאֲךָ֤ יְהֹוָה֙ אֶל־אֶ֣רֶץ הַֽכְּנַעֲנִ֔י כַּאֲשֶׁ֛ר נִשְׁבַּ֥ע לְךָ֖ וְלַֽאֲבֹתֶ֑יךָ וּנְתָנָ֖הּ לָֽךְ׃",
+      "en": "And it shall be when the Lord shall bring thee into the land of the Kena῾ani, as he swore to thee and to thy fathers, and shall give it thee,"
+    },
+    {
+      "n": 102,
+      "c": 13,
+      "v": 12,
+      "ref": "13:12",
+      "text": "וְהַעֲבַרְתָּ֥ כׇל־פֶּֽטֶר־רֶ֖חֶם לַֽיהֹוָ֑ה וְכׇל־פֶּ֣טֶר&thinsp;<b>׀</b> שֶׁ֣גֶר בְּהֵמָ֗ה אֲשֶׁ֨ר יִהְיֶ֥ה לְךָ֛ הַזְּכָרִ֖ים לַיהֹוָֽה׃",
+      "en": "that thou shalt set apart to the Lord all that opens the womb, and every firstling that comes of a beast which thou hast; the males shall be the Lord’s."
+    },
+    {
+      "n": 103,
+      "c": 13,
+      "v": 13,
+      "ref": "13:13",
+      "text": "וְכׇל־פֶּ֤טֶר חֲמֹר֙ תִּפְדֶּ֣ה בְשֶׂ֔ה וְאִם־לֹ֥א תִפְדֶּ֖ה וַעֲרַפְתּ֑וֹ וְכֹ֨ל בְּכ֥וֹר אָדָ֛ם בְּבָנֶ֖יךָ תִּפְדֶּֽה׃",
+      "en": "And every firstling of an ass thou shalt redeem with a lamb; and if thou wilt not redeem it, then thou shalt break its neck: and all the firstborn of man among thy children shalt thou redeem."
+    },
+    {
+      "n": 104,
+      "c": 13,
+      "v": 14,
+      "ref": "13:14",
+      "text": "וְהָיָ֞ה כִּֽי־יִשְׁאָלְךָ֥ בִנְךָ֛ מָחָ֖ר לֵאמֹ֣ר מַה־זֹּ֑את וְאָמַרְתָּ֣ אֵלָ֔יו בְּחֹ֣זֶק יָ֗ד הוֹצִיאָ֧נוּ יְהֹוָ֛ה מִמִּצְרַ֖יִם מִבֵּ֥ית עֲבָדִֽים׃",
+      "en": "And it shall be when thy son asks thee in time to come, saying, What is this? that thou shalt say to him, By strength of hand the Lord brought us out of Miżrayim, from the house of bondage:"
+    },
+    {
+      "n": 105,
+      "c": 13,
+      "v": 15,
+      "ref": "13:15",
+      "text": "וַיְהִ֗י כִּֽי־הִקְשָׁ֣ה פַרְעֹה֮ לְשַׁלְּחֵ֒נוּ֒ וַיַּהֲרֹ֨ג יְהֹוָ֤ה כׇּל־בְּכוֹר֙ בְּאֶ֣רֶץ מִצְרַ֔יִם מִבְּכֹ֥ר אָדָ֖ם וְעַד־בְּכ֣וֹר בְּהֵמָ֑ה עַל־כֵּן֩ אֲנִ֨י זֹבֵ֜חַ לַֽיהֹוָ֗ה כׇּל־פֶּ֤טֶר רֶ֙חֶם֙ הַזְּכָרִ֔ים וְכׇל־בְּכ֥וֹר בָּנַ֖י אֶפְדֶּֽה׃",
+      "en": "and it came to pass, when Par῾o would hardly let us go, that the Lord slew all the firstborn in the land of Miżrayim, both the firstborn of man, and the firstborn of beast: therefore I sacrifice to the Lord all that opens the womb, being males; but all the firstborn of my children I redeem."
+    },
+    {
+      "n": 106,
+      "c": 13,
+      "v": 16,
+      "ref": "13:16",
+      "text": "וְהָיָ֤ה לְאוֹת֙ עַל־יָ֣דְכָ֔ה וּלְטוֹטָפֹ֖ת בֵּ֣ין עֵינֶ֑יךָ כִּ֚י בְּחֹ֣זֶק יָ֔ד הוֹצִיאָ֥נוּ יְהֹוָ֖ה מִמִּצְרָֽיִם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And it shall be for a token upon thy hand, and for frontlets between thy eyes: for by strength of hand the Lord brought us forth out of Miżrayim."
+    }
+  ],
+  "parashah": {
+    "en": "Bo",
+    "he": "בֹּא",
+    "translit": "Bo",
+    "ref": "Exodus 10:1–13:16"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 11,
+        "ref": "10:1–10:11"
+      },
+      {
+        "n": 2,
+        "start": 12,
+        "end": 23,
+        "ref": "10:12–10:23"
+      },
+      {
+        "n": 3,
+        "start": 24,
+        "end": 32,
+        "ref": "10:24–11:3"
+      },
+      {
+        "n": 4,
+        "start": 33,
+        "end": 59,
+        "ref": "11:4–12:20"
+      },
+      {
+        "n": 5,
+        "start": 60,
+        "end": 67,
+        "ref": "12:21–12:28"
+      },
+      {
+        "n": 6,
+        "start": 68,
+        "end": 90,
+        "ref": "12:29–12:51"
+      },
+      {
+        "n": 7,
+        "start": 91,
+        "end": 106,
+        "ref": "13:1–13:16"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "10:1–10:3"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 6,
+          "ref": "10:4–10:6"
+        },
+        {
+          "n": 3,
+          "start": 7,
+          "end": 11,
+          "ref": "10:7–10:11"
+        },
+        {
+          "n": 4,
+          "start": 12,
+          "end": 15,
+          "ref": "10:12–10:15"
+        },
+        {
+          "n": 5,
+          "start": 16,
+          "end": 23,
+          "ref": "10:16–10:23"
+        },
+        {
+          "n": 6,
+          "start": 24,
+          "end": 29,
+          "ref": "10:24–10:29"
+        },
+        {
+          "n": 7,
+          "start": 30,
+          "end": 32,
+          "ref": "11:1–11:3"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 33,
+          "end": 39,
+          "ref": "11:4–11:10"
+        },
+        {
+          "n": 2,
+          "start": 40,
+          "end": 49,
+          "ref": "12:1–12:10"
+        },
+        {
+          "n": 3,
+          "start": 50,
+          "end": 52,
+          "ref": "12:11–12:13"
+        },
+        {
+          "n": 4,
+          "start": 53,
+          "end": 55,
+          "ref": "12:14–12:16"
+        },
+        {
+          "n": 5,
+          "start": 56,
+          "end": 59,
+          "ref": "12:17–12:20"
+        },
+        {
+          "n": 6,
+          "start": 60,
+          "end": 63,
+          "ref": "12:21–12:24"
+        },
+        {
+          "n": 7,
+          "start": 64,
+          "end": 67,
+          "ref": "12:25–12:28"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 68,
+          "end": 71,
+          "ref": "12:29–12:32"
+        },
+        {
+          "n": 2,
+          "start": 72,
+          "end": 75,
+          "ref": "12:33–12:36"
+        },
+        {
+          "n": 3,
+          "start": 76,
+          "end": 81,
+          "ref": "12:37–12:42"
+        },
+        {
+          "n": 4,
+          "start": 82,
+          "end": 90,
+          "ref": "12:43–12:51"
+        },
+        {
+          "n": 5,
+          "start": 91,
+          "end": 94,
+          "ref": "13:1–13:4"
+        },
+        {
+          "n": 6,
+          "start": 95,
+          "end": 100,
+          "ref": "13:5–13:10"
+        },
+        {
+          "n": 7,
+          "start": 101,
+          "end": 106,
+          "ref": "13:11–13:16"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 104,
+        "end": 106,
+        "ref": "13:14–13:16"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 30,
+          "end": 32,
+          "ref": "11:1–11:3"
+        },
+        "2": {
+          "n": "M",
+          "start": 64,
+          "end": 67,
+          "ref": "12:25–12:28"
+        },
+        "3": {
+          "n": "M",
+          "start": 104,
+          "end": 106,
+          "ref": "13:14–13:16"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

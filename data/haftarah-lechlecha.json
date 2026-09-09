@@ -1,0 +1,212 @@
+{
+  "slug": "haftarah-lechlecha",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 40:27-41:16",
+  "heRef": "ישעיהו מ׳:כ״ז-ל״א, מ״א:א-ט״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 40,
+      "v": 27,
+      "ref": "40:27",
+      "text": "לָ֤מָּה תֹאמַר֙ יַעֲקֹ֔ב וּתְדַבֵּ֖ר יִשְׂרָאֵ֑ל נִסְתְּרָ֤ה דַרְכִּי֙ מֵיְהֹוָ֔ה וּמֵאֱלֹהַ֖י מִשְׁפָּטִ֥י יַעֲבֽוֹר׃",
+      "en": "Why sayst thou, O Ya῾aqov, and speakest, O Yisra᾽el, My way is hid from the Lord, and my judgment is passed over from my God?"
+    },
+    {
+      "n": 2,
+      "c": 40,
+      "v": 28,
+      "ref": "40:28",
+      "text": "הֲל֨וֹא יָדַ֜עְתָּ אִם־לֹ֣א שָׁמַ֗עְתָּ אֱלֹהֵ֨י עוֹלָ֤ם&thinsp;<small>׀</small>&thinsp;יְהֹוָה֙ בּוֹרֵא֙ קְצ֣וֹת הָאָ֔רֶץ לֹ֥א יִיעַ֖ף וְלֹ֣א יִיגָ֑ע אֵ֥ין חֵ֖קֶר לִתְבוּנָתֽוֹ׃",
+      "en": "Hast thou not known? hast thou not heard, that the everlasting God, the Lord, the Creator of the ends of the earth, faints not, nor is he weary? there is no searching of his understanding."
+    },
+    {
+      "n": 3,
+      "c": 40,
+      "v": 29,
+      "ref": "40:29",
+      "text": "נֹתֵ֥ן לַיָּעֵ֖ף כֹּ֑חַ וּלְאֵ֥ין אוֹנִ֖ים עׇצְמָ֥ה יַרְבֶּֽה׃",
+      "en": "He gives power to the faint; and to the power­less he increases strength."
+    },
+    {
+      "n": 4,
+      "c": 40,
+      "v": 30,
+      "ref": "40:30",
+      "text": "וְיִעֲפ֥וּ נְעָרִ֖ים וְיִגָ֑עוּ וּבַחוּרִ֖ים כָּשׁ֥וֹל יִכָּשֵֽׁלוּ׃",
+      "en": "Even the youths shall faint and be weary, and the young men shall utterly fall:"
+    },
+    {
+      "n": 5,
+      "c": 40,
+      "v": 31,
+      "ref": "40:31",
+      "text": "וְקוֹיֵ֤ יְהֹוָה֙ יַחֲלִ֣יפוּ כֹ֔חַ יַעֲל֥וּ אֵ֖בֶר כַּנְּשָׁרִ֑ים יָר֙וּצוּ֙ וְלֹ֣א יִיגָ֔עוּ יֵלְכ֖וּ וְלֹ֥א יִיעָֽפוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "but they that wait upon the Lord shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; they shall walk, and not faint."
+    },
+    {
+      "n": 6,
+      "c": 41,
+      "v": 1,
+      "ref": "41:1",
+      "text": "הַחֲרִ֤ישׁוּ אֵלַי֙ אִיִּ֔ים וּלְאֻמִּ֖ים יַחֲלִ֣יפוּ כֹ֑חַ יִגְּשׁוּ֙ אָ֣ז יְדַבֵּ֔רוּ יַחְדָּ֖ו לַמִּשְׁפָּ֥ט נִקְרָֽבָה׃",
+      "en": "Keep silence before me, O islands; and let the people renew their strength: let them come near; then let them speak: let us come near together to judgment."
+    },
+    {
+      "n": 7,
+      "c": 41,
+      "v": 2,
+      "ref": "41:2",
+      "text": "מִ֤י הֵעִיר֙ מִמִּזְרָ֔ח צֶ֖דֶק יִקְרָאֵ֣הוּ לְרַגְל֑וֹ יִתֵּ֨ן לְפָנָ֤יו גּוֹיִם֙ וּמְלָכִ֣ים יַ֔רְדְּ יִתֵּ֤ן כֶּֽעָפָר֙ חַרְבּ֔וֹ כְּקַ֥שׁ נִדָּ֖ף קַשְׁתּֽוֹ׃",
+      "en": "Who raised up one from the east whom righteousness met wherever he set his foot, gave the nations before him, and made him rule over his kings; his sword makes them as dust, his bow as driven stubble."
+    },
+    {
+      "n": 8,
+      "c": 41,
+      "v": 3,
+      "ref": "41:3",
+      "text": "יִרְדְּפֵ֖ם יַעֲב֣וֹר שָׁל֑וֹם אֹ֥רַח בְּרַגְלָ֖יו לֹ֥א יָבֽוֹא׃",
+      "en": "That he pursued them, and passed on safely; even by a path that his feet have not trodden."
+    },
+    {
+      "n": 9,
+      "c": 41,
+      "v": 4,
+      "ref": "41:4",
+      "text": "מִֽי־פָעַ֣ל וְעָשָׂ֔ה קֹרֵ֥א הַדֹּר֖וֹת מֵרֹ֑אשׁ אֲנִ֤י יְהֹוָה֙ רִאשׁ֔וֹן וְאֶת־אַחֲרֹנִ֖ים אֲנִי־הֽוּא׃",
+      "en": "Who has wrought and done it? He who calls the generations from the beginning; I the Lord, the first; and with the last, I am he."
+    },
+    {
+      "n": 10,
+      "c": 41,
+      "v": 5,
+      "ref": "41:5",
+      "text": "רָא֤וּ אִיִּים֙ וְיִרָ֔אוּ קְצ֥וֹת הָאָ֖רֶץ יֶחֱרָ֑דוּ קָרְב֖וּ וַיֶּאֱתָיֽוּן׃",
+      "en": "The isles saw it, and feared; the ends of the earth trembled; they drew near, and came."
+    },
+    {
+      "n": 11,
+      "c": 41,
+      "v": 6,
+      "ref": "41:6",
+      "text": "אִ֥ישׁ אֶת־רֵעֵ֖הוּ יַעְזֹ֑רוּ וּלְאָחִ֖יו יֹאמַ֥ר חֲזָֽק׃",
+      "en": "They helped every one his neighbour; and every one said to his brother, Be of good courage."
+    },
+    {
+      "n": 12,
+      "c": 41,
+      "v": 7,
+      "ref": "41:7",
+      "text": "וַיְחַזֵּ֤ק חָרָשׁ֙ אֶת־צֹרֵ֔ף מַחֲלִ֥יק פַּטִּ֖ישׁ אֶת־ה֣וֹלֶם פָּ֑עַם אֹמֵ֤ר לַדֶּ֙בֶק֙ ט֣וֹב ה֔וּא וַיְחַזְּקֵ֥הוּ בְמַסְמְרִ֖ים לֹ֥א יִמּֽוֹט׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "So the carpenter encouraged the goldsmith, and he that smoothes with the hammer him that smote the anvil, saying of the soldering, It is good: and he fastened it with nails, that it should not be moved."
+    },
+    {
+      "n": 13,
+      "c": 41,
+      "v": 8,
+      "ref": "41:8",
+      "text": "וְאַתָּה֙ יִשְׂרָאֵ֣ל עַבְדִּ֔י יַעֲקֹ֖ב אֲשֶׁ֣ר בְּחַרְתִּ֑יךָ זֶ֖רַע אַבְרָהָ֥ם אֹהֲבִֽי׃",
+      "en": "But thou, Yisra᾽el, art my servant, Ya῾aqov whom I have chosen, the seed of Avraham my friend."
+    },
+    {
+      "n": 14,
+      "c": 41,
+      "v": 9,
+      "ref": "41:9",
+      "text": "אֲשֶׁ֤ר הֶחֱזַקְתִּ֙יךָ֙ מִקְצ֣וֹת הָאָ֔רֶץ וּמֵאֲצִילֶ֖יהָ קְרָאתִ֑יךָ וָאֹ֤מַר לְךָ֙ עַבְדִּי־אַ֔תָּה בְּחַרְתִּ֖יךָ וְלֹ֥א מְאַסְתִּֽיךָ׃",
+      "en": "Thou whom I have taken from the ends of the earth, and called thee from its farthest corners, and said to thee, Thou art my servant; I have chosen thee, and not cast thee away."
+    },
+    {
+      "n": 15,
+      "c": 41,
+      "v": 10,
+      "ref": "41:10",
+      "text": "אַל־תִּירָא֙ כִּ֣י עִמְּךָ־אָ֔נִי אַל־תִּשְׁתָּ֖ע כִּֽי־אֲנִ֣י אֱלֹהֶ֑יךָ אִמַּצְתִּ֙יךָ֙ אַף־עֲזַרְתִּ֔יךָ אַף־תְּמַכְתִּ֖יךָ בִּימִ֥ין צִדְקִֽי׃",
+      "en": "Fear not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; indeed, I will help thee; moreover, I will uphold thee with the right hand of my righteousness."
+    },
+    {
+      "n": 16,
+      "c": 41,
+      "v": 11,
+      "ref": "41:11",
+      "text": "הֵ֤ן יֵבֹ֙שׁוּ֙ וְיִכָּ֣לְמ֔וּ כֹּ֖ל הַנֶּחֱרִ֣ים בָּ֑ךְ יִהְי֥וּ כְאַ֛יִן וְיֹאבְד֖וּ אַנְשֵׁ֥י רִיבֶֽךָ׃",
+      "en": "Behold, all they that were incensed against thee shall be ashamed and confounded: they shall be as nothing; and they that strive with thee shall perish."
+    },
+    {
+      "n": 17,
+      "c": 41,
+      "v": 12,
+      "ref": "41:12",
+      "text": "תְּבַקְשֵׁם֙ וְלֹ֣א תִמְצָאֵ֔ם אַנְשֵׁ֖י מַצֻּתֶ֑ךָ יִהְי֥וּ כְאַ֛יִן וּכְאֶ֖פֶס אַנְשֵׁ֥י מִלְחַמְתֶּֽךָ׃",
+      "en": "Thou shalt seek them, and shalt not find them, those that contend with thee: they that war against thee shall be as nothing, and as a thing of nought."
+    },
+    {
+      "n": 18,
+      "c": 41,
+      "v": 13,
+      "ref": "41:13",
+      "text": "כִּ֗י אֲנִ֛י יְהֹוָ֥ה אֱלֹהֶ֖יךָ מַחֲזִ֣יק יְמִינֶ֑ךָ הָאֹמֵ֥ר לְךָ֛ אַל־תִּירָ֖א אֲנִ֥י עֲזַרְתִּֽיךָ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "For I, the Lord thy God will hold thy right hand, saying to thee, Fear not; I will help thee."
+    },
+    {
+      "n": 19,
+      "c": 41,
+      "v": 14,
+      "ref": "41:14",
+      "text": "אַל־תִּֽירְאִי֙ תּוֹלַ֣עַת יַעֲקֹ֔ב מְתֵ֖י יִשְׂרָאֵ֑ל אֲנִ֤י עֲזַרְתִּיךְ֙ נְאֻם־יְהֹוָ֔ה וְגֹאֲלֵ֖ךְ קְד֥וֹשׁ יִשְׂרָאֵֽל׃",
+      "en": "Fear not, thou worm Ya῾aqov, O men of Yisra᾽el; I will help thee, says the Lord, and thy redeemer, the Holy One of Yisra᾽el."
+    },
+    {
+      "n": 20,
+      "c": 41,
+      "v": 15,
+      "ref": "41:15",
+      "text": "הִנֵּ֣ה שַׂמְתִּ֗יךְ לְמוֹרַג֙ חָר֣וּץ חָדָ֔שׁ בַּ֖עַל פִּיפִיּ֑וֹת תָּד֤וּשׁ הָרִים֙ וְתָדֹ֔ק וּגְבָע֖וֹת כַּמֹּ֥ץ תָּשִֽׂים׃",
+      "en": "Behold, I will make of thee a new sharp threshing instrument having teeth: thou shalt thresh the mountains, and beat them small, and shalt make the hills as chaff."
+    },
+    {
+      "n": 21,
+      "c": 41,
+      "v": 16,
+      "ref": "41:16",
+      "text": "תִּזְרֵם֙ וְר֣וּחַ תִּשָּׂאֵ֔ם וּסְעָרָ֖ה תָּפִ֣יץ אוֹתָ֑ם וְאַתָּה֙ תָּגִ֣יל בַּֽיהֹוָ֔ה בִּקְד֥וֹשׁ יִשְׂרָאֵ֖ל תִּתְהַלָּֽל׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt fan them, and the wind shall carry them away, and the storm wind shall scatter them: and thou shalt rejoice in the Lord, and shalt glory in the Holy One of Yisra᾽el."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Lech-Lecha",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 3
+  },
+  "parashah": {
+    "en": "Haftarat Lech-Lecha",
+    "translit": "Haftarat Lech-Lecha",
+    "he": "הפטרת לך לך",
+    "ref": "Isaiah 40:27-41:16"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 21,
+        "ref": "40:27–41:16"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

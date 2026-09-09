@@ -1,0 +1,837 @@
+{
+  "slug": "bechukotai",
+  "book": {
+    "en": "Leviticus",
+    "he": "ויקרא",
+    "translit": "Vayikra"
+  },
+  "multiChapter": true,
+  "ref": "Leviticus 26:3-27:34",
+  "heRef": "ויקרא כ״ו:ג-כ״ז:ל״ד",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 26,
+      "v": 3,
+      "ref": "26:3",
+      "text": "אִם־בְּחֻקֹּתַ֖י תֵּלֵ֑כוּ וְאֶת־מִצְוֺתַ֣י תִּשְׁמְר֔וּ וַעֲשִׂיתֶ֖ם אֹתָֽם׃",
+      "en": "If you walk in my statutes, and keep my commandments, and do them;"
+    },
+    {
+      "n": 2,
+      "c": 26,
+      "v": 4,
+      "ref": "26:4",
+      "text": "וְנָתַתִּ֥י גִשְׁמֵיכֶ֖ם בְּעִתָּ֑ם וְנָתְנָ֤ה הָאָ֙רֶץ֙ יְבוּלָ֔הּ וְעֵ֥ץ הַשָּׂדֶ֖ה יִתֵּ֥ן פִּרְיֽוֹ׃",
+      "en": "then I will give you rain in due season, and the land shall yield its increase, and the trees of the field shall yield their fruit."
+    },
+    {
+      "n": 3,
+      "c": 26,
+      "v": 5,
+      "ref": "26:5",
+      "text": "וְהִשִּׂ֨יג לָכֶ֥ם דַּ֙יִשׁ֙ אֶת־בָּצִ֔יר וּבָצִ֖יר יַשִּׂ֣יג אֶת־זָ֑רַע וַאֲכַלְתֶּ֤ם לַחְמְכֶם֙ לָשֹׂ֔בַע וִֽישַׁבְתֶּ֥ם לָבֶ֖טַח בְּאַרְצְכֶֽם׃",
+      "en": "And your threshing shall reach to the vintage, and the vintage shall reach to the sowing time: and you shall eat your bread to the full, and dwell in your land safely."
+    },
+    {
+      "n": 4,
+      "c": 26,
+      "v": 6,
+      "ref": "26:6",
+      "text": "וְנָתַתִּ֤י שָׁלוֹם֙ בָּאָ֔רֶץ וּשְׁכַבְתֶּ֖ם וְאֵ֣ין מַחֲרִ֑יד וְהִשְׁבַּתִּ֞י חַיָּ֤ה רָעָה֙ מִן־הָאָ֔רֶץ וְחֶ֖רֶב לֹא־תַעֲבֹ֥ר בְּאַרְצְכֶֽם׃",
+      "en": "And I will give peace in the land, and you shall lie down, and none shall make you afraid: and I will remove evil beasts out of the land, neither shall the sword go through your land."
+    },
+    {
+      "n": 5,
+      "c": 26,
+      "v": 7,
+      "ref": "26:7",
+      "text": "וּרְדַפְתֶּ֖ם אֶת־אֹיְבֵיכֶ֑ם וְנָפְל֥וּ לִפְנֵיכֶ֖ם לֶחָֽרֶב׃",
+      "en": "And you shall chase your enemies, and they shall fall before you by the sword."
+    },
+    {
+      "n": 6,
+      "c": 26,
+      "v": 8,
+      "ref": "26:8",
+      "text": "וְרָדְפ֨וּ מִכֶּ֤ם חֲמִשָּׁה֙ מֵאָ֔ה וּמֵאָ֥ה מִכֶּ֖ם רְבָבָ֣ה יִרְדֹּ֑פוּ וְנָפְל֧וּ אֹיְבֵיכֶ֛ם לִפְנֵיכֶ֖ם לֶחָֽרֶב׃",
+      "en": "And five of you shall chase a hundred, and a hundred of you shall put ten thousand to flight: and your enemies shall fall before you by the sword."
+    },
+    {
+      "n": 7,
+      "c": 26,
+      "v": 9,
+      "ref": "26:9",
+      "text": "וּפָנִ֣יתִי אֲלֵיכֶ֔ם וְהִפְרֵיתִ֣י אֶתְכֶ֔ם וְהִרְבֵּיתִ֖י אֶתְכֶ֑ם וַהֲקִימֹתִ֥י אֶת־בְּרִיתִ֖י אִתְּכֶֽם׃",
+      "en": "For I will turn myself to you, and make you fruitful, and multiply you, and establish my covenant with you."
+    },
+    {
+      "n": 8,
+      "c": 26,
+      "v": 10,
+      "ref": "26:10",
+      "text": "וַאֲכַלְתֶּ֥ם יָשָׁ֖ן נוֹשָׁ֑ן וְיָשָׁ֕ן מִפְּנֵ֥י חָדָ֖שׁ תּוֹצִֽיאוּ׃",
+      "en": "And you shall eat old store, and remove the old because of the new."
+    },
+    {
+      "n": 9,
+      "c": 26,
+      "v": 11,
+      "ref": "26:11",
+      "text": "וְנָתַתִּ֥י מִשְׁכָּנִ֖י בְּתוֹכְכֶ֑ם וְלֹֽא־תִגְעַ֥ל נַפְשִׁ֖י אֶתְכֶֽם׃",
+      "en": "And I will set my tabernacle among you: and my soul shall not abhor you."
+    },
+    {
+      "n": 10,
+      "c": 26,
+      "v": 12,
+      "ref": "26:12",
+      "text": "וְהִתְהַלַּכְתִּי֙ בְּת֣וֹכְכֶ֔ם וְהָיִ֥יתִי לָכֶ֖ם לֵֽאלֹהִ֑ים וְאַתֶּ֖ם תִּהְיוּ־לִ֥י לְעָֽם׃",
+      "en": "And I will walk among you, and will be your God, and you shall be my people."
+    },
+    {
+      "n": 11,
+      "c": 26,
+      "v": 13,
+      "ref": "26:13",
+      "text": "אֲנִ֞י יְהֹוָ֣ה אֱלֹֽהֵיכֶ֗ם אֲשֶׁ֨ר הוֹצֵ֤אתִי אֶתְכֶם֙ מֵאֶ֣רֶץ מִצְרַ֔יִם מִֽהְיֹ֥ת לָהֶ֖ם עֲבָדִ֑ים וָאֶשְׁבֹּר֙ מֹטֹ֣ת עֻלְּכֶ֔ם וָאוֹלֵ֥ךְ אֶתְכֶ֖ם קֽוֹמְמִיּֽוּת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "I am the Lord your God, who brought you out of the land of Miżrayim, that you should not be their bondmen; and I have broken the bars of your yoke, and made you walk upright."
+    },
+    {
+      "n": 12,
+      "c": 26,
+      "v": 14,
+      "ref": "26:14",
+      "text": "וְאִם־לֹ֥א תִשְׁמְע֖וּ לִ֑י וְלֹ֣א תַעֲשׂ֔וּ אֵ֥ת כׇּל־הַמִּצְוֺ֖ת הָאֵֽלֶּה׃",
+      "en": "But if you will not hearken to me, and will not do all these commands:"
+    },
+    {
+      "n": 13,
+      "c": 26,
+      "v": 15,
+      "ref": "26:15",
+      "text": "וְאִם־בְּחֻקֹּתַ֣י תִּמְאָ֔סוּ וְאִ֥ם אֶת־מִשְׁפָּטַ֖י תִּגְעַ֣ל נַפְשְׁכֶ֑ם לְבִלְתִּ֤י עֲשׂוֹת֙ אֶת־כׇּל־מִצְוֺתַ֔י לְהַפְרְכֶ֖ם אֶת־בְּרִיתִֽי׃",
+      "en": "and if you shall despise my statutes, or if your soul abhor my judgments, so that you will not do all my commandments, but that you break my covenant:"
+    },
+    {
+      "n": 14,
+      "c": 26,
+      "v": 16,
+      "ref": "26:16",
+      "text": "אַף־אֲנִ֞י אֶֽעֱשֶׂה־זֹּ֣את לָכֶ֗ם וְהִפְקַדְתִּ֨י עֲלֵיכֶ֤ם בֶּֽהָלָה֙ אֶת־הַשַּׁחֶ֣פֶת וְאֶת־הַקַּדַּ֔חַת מְכַלּ֥וֹת עֵינַ֖יִם וּמְדִיבֹ֣ת נָ֑פֶשׁ וּזְרַעְתֶּ֤ם לָרִיק֙ זַרְעֲכֶ֔ם וַאֲכָלֻ֖הוּ אֹיְבֵיכֶֽם׃",
+      "en": "I also will do this to you; I will even appoint over you terror, consumption, and fever, that shall consume the eyes, and cause sorrow of heart: and you shall sow your seed in vain, for your enemies shall eat it."
+    },
+    {
+      "n": 15,
+      "c": 26,
+      "v": 17,
+      "ref": "26:17",
+      "text": "וְנָתַתִּ֤י פָנַי֙ בָּכֶ֔ם וְנִגַּפְתֶּ֖ם לִפְנֵ֣י אֹיְבֵיכֶ֑ם וְרָד֤וּ בָכֶם֙ שֹֽׂנְאֵיכֶ֔ם וְנַסְתֶּ֖ם וְאֵין־רֹדֵ֥ף אֶתְכֶֽם׃",
+      "en": "And I will set my face against you, and you shall be slain before your enemies: they that hate you shall reign over you; and you shall flee when none pursues you."
+    },
+    {
+      "n": 16,
+      "c": 26,
+      "v": 18,
+      "ref": "26:18",
+      "text": "וְאִ֨ם־עַד־אֵ֔לֶּה לֹ֥א תִשְׁמְע֖וּ לִ֑י וְיָסַפְתִּי֙ לְיַסְּרָ֣ה אֶתְכֶ֔ם שֶׁ֖בַע עַל־חַטֹּאתֵיכֶֽם׃",
+      "en": "And if you will not yet for all this hearken to me, then I will punish you seven times more for your sins."
+    },
+    {
+      "n": 17,
+      "c": 26,
+      "v": 19,
+      "ref": "26:19",
+      "text": "וְשָׁבַרְתִּ֖י אֶת־גְּא֣וֹן עֻזְּכֶ֑ם וְנָתַתִּ֤י אֶת־שְׁמֵיכֶם֙ כַּבַּרְזֶ֔ל וְאֶֽת־אַרְצְכֶ֖ם כַּנְּחֻשָֽׁה׃",
+      "en": "And I will break the pride of your power; and I will make your skies like iron, and your earth like brass:"
+    },
+    {
+      "n": 18,
+      "c": 26,
+      "v": 20,
+      "ref": "26:20",
+      "text": "וְתַ֥ם לָרִ֖יק כֹּחֲכֶ֑ם וְלֹֽא־תִתֵּ֤ן אַרְצְכֶם֙ אֶת־יְבוּלָ֔הּ וְעֵ֣ץ הָאָ֔רֶץ לֹ֥א יִתֵּ֖ן פִּרְיֽוֹ׃",
+      "en": "and your strength shall be spent in vain: for your land shall not yield her increase, neither shall the trees of the land yield their fruit."
+    },
+    {
+      "n": 19,
+      "c": 26,
+      "v": 21,
+      "ref": "26:21",
+      "text": "וְאִם־תֵּֽלְכ֤וּ עִמִּי֙ קֶ֔רִי וְלֹ֥א תֹאב֖וּ לִשְׁמֹ֣עַֽ לִ֑י וְיָסַפְתִּ֤י עֲלֵיכֶם֙ מַכָּ֔ה שֶׁ֖בַע כְּחַטֹּאתֵיכֶֽם׃",
+      "en": "And if you walk contrary to me, and will not hearken to me; I will bring seven times more plagues upon you according to your sins."
+    },
+    {
+      "n": 20,
+      "c": 26,
+      "v": 22,
+      "ref": "26:22",
+      "text": "וְהִשְׁלַחְתִּ֨י בָכֶ֜ם אֶת־חַיַּ֤ת הַשָּׂדֶה֙ וְשִׁכְּלָ֣ה אֶתְכֶ֔ם וְהִכְרִ֙יתָה֙ אֶת־בְּהֶמְתְּכֶ֔ם וְהִמְעִ֖יטָה אֶתְכֶ֑ם וְנָשַׁ֖מּוּ דַּרְכֵיכֶֽם׃",
+      "en": "I will also send wild beasts among you, which shall rob you of your children, and destroy your cattle, and make you few in number; and your highways shall be desolate."
+    },
+    {
+      "n": 21,
+      "c": 26,
+      "v": 23,
+      "ref": "26:23",
+      "text": "וְאִ֨ם־בְּאֵ֔לֶּה לֹ֥א תִוָּסְר֖וּ לִ֑י וַהֲלַכְתֶּ֥ם עִמִּ֖י קֶֽרִי׃",
+      "en": "And if you will not be admonished by me as a result of these things, but will walk contrary to me;"
+    },
+    {
+      "n": 22,
+      "c": 26,
+      "v": 24,
+      "ref": "26:24",
+      "text": "וְהָלַכְתִּ֧י אַף־אֲנִ֛י עִמָּכֶ֖ם בְּקֶ֑רִי וְהִכֵּיתִ֤י אֶתְכֶם֙ גַּם־אָ֔נִי שֶׁ֖בַע עַל־חַטֹּאתֵיכֶֽם׃",
+      "en": "then will I also walk contrary to you, and will punish you yet seven times for your sins."
+    },
+    {
+      "n": 23,
+      "c": 26,
+      "v": 25,
+      "ref": "26:25",
+      "text": "וְהֵבֵאתִ֨י עֲלֵיכֶ֜ם חֶ֗רֶב נֹקֶ֙מֶת֙ נְקַם־בְּרִ֔ית וְנֶאֱסַפְתֶּ֖ם אֶל־עָרֵיכֶ֑ם וְשִׁלַּ֤חְתִּי דֶ֙בֶר֙ בְּת֣וֹכְכֶ֔ם וְנִתַּתֶּ֖ם בְּיַד־אוֹיֵֽב׃",
+      "en": "And I will bring a sword upon you, that shall avenge my covenant: and when you are gathered together within your cities, I will send the pestilence among you; and you shall be delivered into the hand of the enemy."
+    },
+    {
+      "n": 24,
+      "c": 26,
+      "v": 26,
+      "ref": "26:26",
+      "text": "בְּשִׁבְרִ֣י לָכֶם֮ מַטֵּה־לֶ֒חֶם֒ וְ֠אָפ֠וּ עֶ֣שֶׂר נָשִׁ֤ים לַחְמְכֶם֙ בְּתַנּ֣וּר אֶחָ֔ד וְהֵשִׁ֥יבוּ לַחְמְכֶ֖ם בַּמִּשְׁקָ֑ל וַאֲכַלְתֶּ֖ם וְלֹ֥א תִשְׂבָּֽעוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And when I have broken the staff of your bread, ten women shall bake your bread in one oven, and they shall return you your bread by weight: and you shall eat, and not be satisfied."
+    },
+    {
+      "n": 25,
+      "c": 26,
+      "v": 27,
+      "ref": "26:27",
+      "text": "וְאִ֨ם־בְּזֹ֔את לֹ֥א תִשְׁמְע֖וּ לִ֑י וַהֲלַכְתֶּ֥ם עִמִּ֖י בְּקֶֽרִי׃",
+      "en": "And if you will not for all this hearken to me, but walk contrary to me;"
+    },
+    {
+      "n": 26,
+      "c": 26,
+      "v": 28,
+      "ref": "26:28",
+      "text": "וְהָלַכְתִּ֥י עִמָּכֶ֖ם בַּחֲמַת־קֶ֑רִי וְיִסַּרְתִּ֤י אֶתְכֶם֙ אַף־אָ֔נִי שֶׁ֖בַע עַל־חַטֹּאתֵיכֶֽם׃",
+      "en": "then I will walk contrary to you also in fury; and will chastise you seven times for your sins."
+    },
+    {
+      "n": 27,
+      "c": 26,
+      "v": 29,
+      "ref": "26:29",
+      "text": "וַאֲכַלְתֶּ֖ם בְּשַׂ֣ר בְּנֵיכֶ֑ם וּבְשַׂ֥ר בְּנֹתֵיכֶ֖ם תֹּאכֵֽלוּ׃",
+      "en": "And you shall eat the flesh of your sons, and the flesh of your daughters shall you eat."
+    },
+    {
+      "n": 28,
+      "c": 26,
+      "v": 30,
+      "ref": "26:30",
+      "text": "וְהִשְׁמַדְתִּ֞י אֶת־בָּמֹֽתֵיכֶ֗ם וְהִכְרַתִּי֙ אֶת־חַמָּ֣נֵיכֶ֔ם וְנָֽתַתִּי֙ אֶת־פִּגְרֵיכֶ֔ם עַל־פִּגְרֵ֖י גִּלּוּלֵיכֶ֑ם וְגָעֲלָ֥ה נַפְשִׁ֖י אֶתְכֶֽם׃",
+      "en": "And I will destroy your high places, and cut down your images, and cast your carcasses upon the carcasses of your idols, and my soul shall abhor you."
+    },
+    {
+      "n": 29,
+      "c": 26,
+      "v": 31,
+      "ref": "26:31",
+      "text": "וְנָתַתִּ֤י אֶת־עָֽרֵיכֶם֙ חׇרְבָּ֔ה וַהֲשִׁמּוֹתִ֖י אֶת־מִקְדְּשֵׁיכֶ֑ם וְלֹ֣א אָרִ֔יחַ בְּרֵ֖יחַ נִיחֹֽחֲכֶֽם׃",
+      "en": "And I will make your cities waste, and bring your sanctuaries to desolation, and I will not smell the savour of your sweet odours."
+    },
+    {
+      "n": 30,
+      "c": 26,
+      "v": 32,
+      "ref": "26:32",
+      "text": "וַהֲשִׁמֹּתִ֥י אֲנִ֖י אֶת־הָאָ֑רֶץ וְשָֽׁמְמ֤וּ עָלֶ֙יהָ֙ אֹֽיְבֵיכֶ֔ם הַיֹּשְׁבִ֖ים בָּֽהּ׃",
+      "en": "And I will bring the land into desolation: and your enemies who dwell in it shall be astonished at it."
+    },
+    {
+      "n": 31,
+      "c": 26,
+      "v": 33,
+      "ref": "26:33",
+      "text": "וְאֶתְכֶם֙ אֱזָרֶ֣ה בַגּוֹיִ֔ם וַהֲרִיקֹתִ֥י אַחֲרֵיכֶ֖ם חָ֑רֶב וְהָיְתָ֤ה אַרְצְכֶם֙ שְׁמָמָ֔ה וְעָרֵיכֶ֖ם יִהְי֥וּ חׇרְבָּֽה׃",
+      "en": "And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste."
+    },
+    {
+      "n": 32,
+      "c": 26,
+      "v": 34,
+      "ref": "26:34",
+      "text": "אָז֩ תִּרְצֶ֨ה הָאָ֜רֶץ אֶת־שַׁבְּתֹתֶ֗יהָ כֹּ֚ל יְמֵ֣י הׇשַּׁמָּ֔הֿ וְאַתֶּ֖ם בְּאֶ֣רֶץ אֹיְבֵיכֶ֑ם אָ֚ז תִּשְׁבַּ֣ת הָאָ֔רֶץ וְהִרְצָ֖ת אֶת־שַׁבְּתֹתֶֽיהָ׃",
+      "en": "Then shall the land enjoy her sabbaths, as long as it lies desolate, and you are in your enemies’ land; then shall the land rest, and enjoy her sabbaths."
+    },
+    {
+      "n": 33,
+      "c": 26,
+      "v": 35,
+      "ref": "26:35",
+      "text": "כׇּל־יְמֵ֥י הׇשַּׁמָּ֖הֿ תִּשְׁבֹּ֑ת אֵ֣ת אֲשֶׁ֧ר לֹֽא־שָׁבְתָ֛ה בְּשַׁבְּתֹתֵיכֶ֖ם בְּשִׁבְתְּכֶ֥ם עָלֶֽיהָ׃",
+      "en": "As long as it lies desolate it shall rest; because it did not rest in your sabbaths, when you dwelt upon it."
+    },
+    {
+      "n": 34,
+      "c": 26,
+      "v": 36,
+      "ref": "26:36",
+      "text": "וְהַנִּשְׁאָרִ֣ים בָּכֶ֔ם וְהֵבֵ֤אתִי מֹ֙רֶךְ֙ בִּלְבָבָ֔ם בְּאַרְצֹ֖ת אֹיְבֵיהֶ֑ם וְרָדַ֣ף אֹתָ֗ם ק֚וֹל עָלֶ֣ה נִדָּ֔ף וְנָס֧וּ מְנֻֽסַת־חֶ֛רֶב וְנָפְל֖וּ וְאֵ֥ין רֹדֵֽף׃",
+      "en": "And upon those who are left alive of you I will send a faintness into their hearts in the lands of their enemies; and the sound of a shaken leaf shall chase them; and they shall flee, as fleeing from a sword; and they shall fall when none pursues."
+    },
+    {
+      "n": 35,
+      "c": 26,
+      "v": 37,
+      "ref": "26:37",
+      "text": "וְכָשְׁל֧וּ אִישׁ־בְּאָחִ֛יו כְּמִפְּנֵי־חֶ֖רֶב וְרֹדֵ֣ף אָ֑יִן וְלֹא־תִֽהְיֶ֤ה לָכֶם֙ תְּקוּמָ֔ה לִפְנֵ֖י אֹֽיְבֵיכֶֽם׃",
+      "en": "And they shall fall one upon another, as it were before a sword, when none pursues: and you shall have no power to stand before your enemies."
+    },
+    {
+      "n": 36,
+      "c": 26,
+      "v": 38,
+      "ref": "26:38",
+      "text": "וַאֲבַדְתֶּ֖ם בַּגּוֹיִ֑ם וְאָכְלָ֣ה אֶתְכֶ֔ם אֶ֖רֶץ אֹיְבֵיכֶֽם׃",
+      "en": "And you shall perish among the heathen, and the land of your enemies shall eat you up."
+    },
+    {
+      "n": 37,
+      "c": 26,
+      "v": 39,
+      "ref": "26:39",
+      "text": "וְהַנִּשְׁאָרִ֣ים בָּכֶ֗ם יִמַּ֙קּוּ֙ בַּֽעֲוֺנָ֔ם בְּאַרְצֹ֖ת אֹיְבֵיכֶ֑ם וְאַ֛ף בַּעֲוֺנֹ֥ת אֲבֹתָ֖ם אִתָּ֥ם יִמָּֽקּוּ׃",
+      "en": "And they that are left of you shall pine away in their iniquity in your enemies’ lands; and also in the iniquities of their fathers shall they pine away with them."
+    },
+    {
+      "n": 38,
+      "c": 26,
+      "v": 40,
+      "ref": "26:40",
+      "text": "וְהִתְוַדּ֤וּ אֶת־עֲוֺנָם֙ וְאֶת־עֲוֺ֣ן אֲבֹתָ֔ם בְּמַעֲלָ֖ם אֲשֶׁ֣ר מָֽעֲלוּ־בִ֑י וְאַ֕ף אֲשֶׁר־הָֽלְכ֥וּ עִמִּ֖י בְּקֶֽרִי׃",
+      "en": "And they shall confess their iniquity, and the iniquity of their fathers, with their trespass which they trespassed against me, and that also they have walked contrary to me;"
+    },
+    {
+      "n": 39,
+      "c": 26,
+      "v": 41,
+      "ref": "26:41",
+      "text": "אַף־אֲנִ֗י אֵלֵ֤ךְ עִמָּם֙ בְּקֶ֔רִי וְהֵבֵאתִ֣י אֹתָ֔ם בְּאֶ֖רֶץ אֹיְבֵיהֶ֑ם אוֹ־אָ֣ז יִכָּנַ֗ע לְבָבָם֙ הֶֽעָרֵ֔ל וְאָ֖ז יִרְצ֥וּ אֶת־עֲוֺנָֽם׃",
+      "en": "and that I also walked contrary to them, and brought them into the land of their enemies; then only will their uncircumcised hearts be humbled, and then they will make amends for their sin."
+    },
+    {
+      "n": 40,
+      "c": 26,
+      "v": 42,
+      "ref": "26:42",
+      "text": "וְזָכַרְתִּ֖י אֶת־בְּרִיתִ֣י יַעֲק֑וֹב וְאַף֩ אֶת־בְּרִיתִ֨י יִצְחָ֜ק וְאַ֨ף אֶת־בְּרִיתִ֧י אַבְרָהָ֛ם אֶזְכֹּ֖ר וְהָאָ֥רֶץ אֶזְכֹּֽר׃",
+      "en": "Then will I remember my covenant with Ya῾aqov, and also my covenant with Yiżĥaq, and also my covenant with Avraham will I remember; and I will remember the land."
+    },
+    {
+      "n": 41,
+      "c": 26,
+      "v": 43,
+      "ref": "26:43",
+      "text": "וְהָאָ֩רֶץ֩ תֵּעָזֵ֨ב מֵהֶ֜ם וְתִ֣רֶץ אֶת־שַׁבְּתֹתֶ֗יהָ בׇּהְשַׁמָּהֿ֙ מֵהֶ֔ם וְהֵ֖ם יִרְצ֣וּ אֶת־עֲוֺנָ֑ם יַ֣עַן וּבְיַ֔עַן בְּמִשְׁפָּטַ֣י מָאָ֔סוּ וְאֶת־חֻקֹּתַ֖י גָּעֲלָ֥ה נַפְשָֽׁם׃",
+      "en": "The land also shall be forsaken by them, and shall enjoy her sabbaths, while she lies desolate without them: and they shall make amends for their iniquity: because, even because they despised my judgments, and because their soul abhorred my statutes."
+    },
+    {
+      "n": 42,
+      "c": 26,
+      "v": 44,
+      "ref": "26:44",
+      "text": "וְאַף־גַּם־זֹ֠את בִּֽהְיוֹתָ֞ם בְּאֶ֣רֶץ אֹֽיְבֵיהֶ֗ם לֹֽא־מְאַסְתִּ֤ים וְלֹֽא־גְעַלְתִּים֙ לְכַלֹּתָ֔ם לְהָפֵ֥ר בְּרִיתִ֖י אִתָּ֑ם כִּ֛י אֲנִ֥י יְהֹוָ֖ה אֱלֹהֵיהֶֽם׃",
+      "en": "And yet for all that, when they are in the land of their enemies, I will not cast them away, nor will I abhor them, to destroy them utterly, and to break my covenant with them: for I am the Lord their God."
+    },
+    {
+      "n": 43,
+      "c": 26,
+      "v": 45,
+      "ref": "26:45",
+      "text": "וְזָכַרְתִּ֥י לָהֶ֖ם בְּרִ֣ית רִאשֹׁנִ֑ים אֲשֶׁ֣ר הוֹצֵֽאתִי־אֹתָם֩ מֵאֶ֨רֶץ מִצְרַ֜יִם לְעֵינֵ֣י הַגּוֹיִ֗ם לִהְי֥וֹת לָהֶ֛ם לֵאלֹהִ֖ים אֲנִ֥י יְהֹוָֽה׃",
+      "en": "But I will for their sakes remember the covenant of their ancestors, whom I brought out of the land of Miżrayim in the sight of the nations, that I might be their God: I am the Lord."
+    },
+    {
+      "n": 44,
+      "c": 26,
+      "v": 46,
+      "ref": "26:46",
+      "text": "אֵ֠לֶּה הַֽחֻקִּ֣ים וְהַמִּשְׁפָּטִים֮ וְהַתּוֹרֹת֒ אֲשֶׁר֙ נָתַ֣ן יְהֹוָ֔ה בֵּינ֕וֹ וּבֵ֖ין בְּנֵ֣י יִשְׂרָאֵ֑ל בְּהַ֥ר סִינַ֖י בְּיַד־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "These are the statutes and the judgments and the Torot, which the Lord made between him and the children of Yisra᾽el in Mount Sinay by the hand of Moshe."
+    },
+    {
+      "n": 45,
+      "c": 27,
+      "v": 1,
+      "ref": "27:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 46,
+      "c": 27,
+      "v": 2,
+      "ref": "27:2",
+      "text": "דַּבֵּ֞ר אֶל־בְּנֵ֤י יִשְׂרָאֵל֙ וְאָמַרְתָּ֣ אֲלֵהֶ֔ם אִ֕ישׁ כִּ֥י יַפְלִ֖א נֶ֑דֶר בְּעֶרְכְּךָ֥ נְפָשֹׁ֖ת לַֽיהֹוָֽה׃",
+      "en": "Speak to the children of Yisra᾽el, and say to them, If a man make a singular vow, to give to the Lord the estimated value of persons,"
+    },
+    {
+      "n": 47,
+      "c": 27,
+      "v": 3,
+      "ref": "27:3",
+      "text": "וְהָיָ֤ה עֶרְכְּךָ֙ הַזָּכָ֔ר מִבֶּן֙ עֶשְׂרִ֣ים שָׁנָ֔ה וְעַ֖ד בֶּן־שִׁשִּׁ֣ים שָׁנָ֑ה וְהָיָ֣ה עֶרְכְּךָ֗ חֲמִשִּׁ֛ים שֶׁ֥קֶל כֶּ֖סֶף בְּשֶׁ֥קֶל הַקֹּֽדֶשׁ׃",
+      "en": "then the estimation shall be of the male from twenty years old even to sixty years old, the estimation shall be fifty shekels of silver, according to the shekel of the sanctuary."
+    },
+    {
+      "n": 48,
+      "c": 27,
+      "v": 4,
+      "ref": "27:4",
+      "text": "וְאִם־נְקֵבָ֖ה הִ֑וא וְהָיָ֥ה עֶרְכְּךָ֖ שְׁלֹשִׁ֥ים שָֽׁקֶל׃",
+      "en": "And if it be a female, then the estimation shall be thirty shekels."
+    },
+    {
+      "n": 49,
+      "c": 27,
+      "v": 5,
+      "ref": "27:5",
+      "text": "וְאִ֨ם מִבֶּן־חָמֵ֜שׁ שָׁנִ֗ים וְעַד֙ בֶּן־עֶשְׂרִ֣ים שָׁנָ֔ה וְהָיָ֧ה עֶרְכְּךָ֛ הַזָּכָ֖ר עֶשְׂרִ֣ים שְׁקָלִ֑ים וְלַנְּקֵבָ֖ה עֲשֶׂ֥רֶת שְׁקָלִֽים׃",
+      "en": "And if it be from five years old to twenty years old, then the estimation shall be of the male twenty shekels, and for the female ten shekels."
+    },
+    {
+      "n": 50,
+      "c": 27,
+      "v": 6,
+      "ref": "27:6",
+      "text": "וְאִ֣ם מִבֶּן־חֹ֗דֶשׁ וְעַד֙ בֶּן־חָמֵ֣שׁ שָׁנִ֔ים וְהָיָ֤ה עֶרְכְּךָ֙ הַזָּכָ֔ר חֲמִשָּׁ֥ה שְׁקָלִ֖ים כָּ֑סֶף וְלַנְּקֵבָ֣ה עֶרְכְּךָ֔ שְׁלֹ֥שֶׁת שְׁקָלִ֖ים כָּֽסֶף׃",
+      "en": "And if it be from a month old to five years old, then the estimation shall be of the male five shekels of silver, and for the female the estimation shall be three shekels of silver."
+    },
+    {
+      "n": 51,
+      "c": 27,
+      "v": 7,
+      "ref": "27:7",
+      "text": "וְ֠אִ֠ם מִבֶּן־שִׁשִּׁ֨ים שָׁנָ֤ה וָמַ֙עְלָה֙ אִם־זָכָ֔ר וְהָיָ֣ה עֶרְכְּךָ֔ חֲמִשָּׁ֥ה עָשָׂ֖ר שָׁ֑קֶל וְלַנְּקֵבָ֖ה עֲשָׂרָ֥ה שְׁקָלִֽים׃",
+      "en": "And if it be from sixty years old and above; if it be a male, then the estimation shall be fifteen shekels, and for the female ten shekels."
+    },
+    {
+      "n": 52,
+      "c": 27,
+      "v": 8,
+      "ref": "27:8",
+      "text": "וְאִם־מָ֥ךְ הוּא֙ מֵֽעֶרְכֶּ֔ךָ וְהֶֽעֱמִידוֹ֙ לִפְנֵ֣י הַכֹּהֵ֔ן וְהֶעֱרִ֥יךְ אֹת֖וֹ הַכֹּהֵ֑ן עַל־פִּ֗י אֲשֶׁ֤ר תַּשִּׂיג֙ יַ֣ד הַנֹּדֵ֔ר יַעֲרִיכֶ֖נּוּ הַכֹּהֵֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "But if he be too poor for the estimated value, then he shall present himself before the priest, and the priest shall value him; according to the ability of him that vowed shall the priest value him."
+    },
+    {
+      "n": 53,
+      "c": 27,
+      "v": 9,
+      "ref": "27:9",
+      "text": "וְאִ֨ם־בְּהֵמָ֔ה אֲשֶׁ֨ר יַקְרִ֧יבוּ מִמֶּ֛נָּה קׇרְבָּ֖ן לַֽיהֹוָ֑ה כֹּל֩ אֲשֶׁ֨ר יִתֵּ֥ן מִמֶּ֛נּוּ לַיהֹוָ֖ה יִֽהְיֶה־קֹּֽדֶשׁ׃",
+      "en": "And if it be a beast, of which men bring an offering to the Lord, all that any man gives of such to the Lord shall be holy."
+    },
+    {
+      "n": 54,
+      "c": 27,
+      "v": 10,
+      "ref": "27:10",
+      "text": "לֹ֣א יַחֲלִיפֶ֗נּוּ וְלֹֽא־יָמִ֥יר אֹת֛וֹ ט֥וֹב בְּרָ֖ע אוֹ־רַ֣ע בְּט֑וֹב וְאִם־הָמֵ֨ר יָמִ֤יר בְּהֵמָה֙ בִּבְהֵמָ֔ה וְהָֽיָה־ה֥וּא וּתְמוּרָת֖וֹ יִֽהְיֶה־קֹּֽדֶשׁ׃",
+      "en": "He shall not alter it, nor change it, a good for a bad, or a bad for a good: and if he shall at all change beast for beast, then it and its substitute shall be holy."
+    },
+    {
+      "n": 55,
+      "c": 27,
+      "v": 11,
+      "ref": "27:11",
+      "text": "וְאִם֙ כׇּל־בְּהֵמָ֣ה טְמֵאָ֔ה אֲ֠שֶׁ֠ר לֹא־יַקְרִ֧יבוּ מִמֶּ֛נָּה קׇרְבָּ֖ן לַֽיהֹוָ֑ה וְהֶֽעֱמִ֥יד אֶת־הַבְּהֵמָ֖ה לִפְנֵ֥י הַכֹּהֵֽן׃",
+      "en": "And if it be any unclean beast, of which they do not offer a sacrifice to the Lord, then he shall present the beast before the priest:"
+    },
+    {
+      "n": 56,
+      "c": 27,
+      "v": 12,
+      "ref": "27:12",
+      "text": "וְהֶעֱרִ֤יךְ הַכֹּהֵן֙ אֹתָ֔הּ בֵּ֥ין ט֖וֹב וּבֵ֣ין רָ֑ע כְּעֶרְכְּךָ֥ הַכֹּהֵ֖ן כֵּ֥ן יִהְיֶֽה׃",
+      "en": "and the priest shall value it, whether it be good or bad: as the priest values it, so shall it be."
+    },
+    {
+      "n": 57,
+      "c": 27,
+      "v": 13,
+      "ref": "27:13",
+      "text": "וְאִם־גָּאֹ֖ל יִגְאָלֶ֑נָּה וְיָסַ֥ף חֲמִישִׁת֖וֹ עַל־עֶרְכֶּֽךָ׃",
+      "en": "But if he will at all redeem it, then he shall add a fifth part thereof to the estimation."
+    },
+    {
+      "n": 58,
+      "c": 27,
+      "v": 14,
+      "ref": "27:14",
+      "text": "וְאִ֗ישׁ כִּֽי־יַקְדִּ֨שׁ אֶת־בֵּית֥וֹ קֹ֙דֶשׁ֙ לַֽיהֹוָ֔ה וְהֶעֱרִיכוֹ֙ הַכֹּהֵ֔ן בֵּ֥ין ט֖וֹב וּבֵ֣ין רָ֑ע כַּאֲשֶׁ֨ר יַעֲרִ֥יךְ אֹת֛וֹ הַכֹּהֵ֖ן כֵּ֥ן יָקֽוּם׃",
+      "en": "And when a man shall sanctify his house to be dedicated to the Lord, then the priest shall estimate it, whether it be good or bad: as the priest shall estimate it, so shall it stand."
+    },
+    {
+      "n": 59,
+      "c": 27,
+      "v": 15,
+      "ref": "27:15",
+      "text": "וְאִ֨ם־הַמַּקְדִּ֔ישׁ יִגְאַ֖ל אֶת־בֵּית֑וֹ וְ֠יָסַ֠ף חֲמִישִׁ֧ית כֶּֽסֶף־עֶרְכְּךָ֛ עָלָ֖יו וְהָ֥יָה לֽוֹ׃",
+      "en": "And if he that sanctified it will redeem his house, then he shall add the fifth part of the money of the estimation to it, and it shall be his."
+    },
+    {
+      "n": 60,
+      "c": 27,
+      "v": 16,
+      "ref": "27:16",
+      "text": "וְאִ֣ם&thinsp;<b>׀</b> מִשְּׂדֵ֣ה אֲחֻזָּת֗וֹ יַקְדִּ֥ישׁ אִישׁ֙ לַֽיהֹוָ֔ה וְהָיָ֥ה עֶרְכְּךָ֖ לְפִ֣י זַרְע֑וֹ זֶ֚רַע חֹ֣מֶר שְׂעֹרִ֔ים בַּחֲמִשִּׁ֖ים שֶׁ֥קֶל כָּֽסֶף׃",
+      "en": "And if a man shall dedicate to the Lord some part of a field of his possession, then the estimation shall be according to the seed required for it, a ĥomer of barley seed shall be valued at fifty shekels of silver."
+    },
+    {
+      "n": 61,
+      "c": 27,
+      "v": 17,
+      "ref": "27:17",
+      "text": "אִם־מִשְּׁנַ֥ת הַיֹּבֵ֖ל יַקְדִּ֣ישׁ שָׂדֵ֑הוּ כְּעֶרְכְּךָ֖ יָקֽוּם׃",
+      "en": "If he dedicate his field from the year of jubilee, according to the estimation it shall stand."
+    },
+    {
+      "n": 62,
+      "c": 27,
+      "v": 18,
+      "ref": "27:18",
+      "text": "וְאִם־אַחַ֣ר הַיֹּבֵל֮ יַקְדִּ֣ישׁ שָׂדֵ֒הוּ֒ וְחִשַּׁב־ל֨וֹ הַכֹּהֵ֜ן אֶת־הַכֶּ֗סֶף עַל־פִּ֤י הַשָּׁנִים֙ הַנּ֣וֹתָרֹ֔ת עַ֖ד שְׁנַ֣ת הַיֹּבֵ֑ל וְנִגְרַ֖ע מֵֽעֶרְכֶּֽךָ׃",
+      "en": "But if he dedicate his field after the jubilee, then the priest shall reckon to him the money according to the years that remain, even to the year of the jubilee, and it shall be abated from the estimation."
+    },
+    {
+      "n": 63,
+      "c": 27,
+      "v": 19,
+      "ref": "27:19",
+      "text": "וְאִם־גָּאֹ֤ל יִגְאַל֙ אֶת־הַשָּׂדֶ֔ה הַמַּקְדִּ֖ישׁ אֹת֑וֹ וְ֠יָסַ֠ף חֲמִשִׁ֧ית כֶּֽסֶף־עֶרְכְּךָ֛ עָלָ֖יו וְקָ֥ם לֽוֹ׃",
+      "en": "And if he that sanctified the field will redeem it, then he shall add the fifth part of the money of the estimation to it, and it shall become his property."
+    },
+    {
+      "n": 64,
+      "c": 27,
+      "v": 20,
+      "ref": "27:20",
+      "text": "וְאִם־לֹ֤א יִגְאַל֙ אֶת־הַשָּׂדֶ֔ה וְאִם־מָכַ֥ר אֶת־הַשָּׂדֶ֖ה לְאִ֣ישׁ אַחֵ֑ר לֹ֥א יִגָּאֵ֖ל עֽוֹד׃",
+      "en": "And if he will not redeem the field, or if he have sold the field to another man, it shall not be redeemed any more."
+    },
+    {
+      "n": 65,
+      "c": 27,
+      "v": 21,
+      "ref": "27:21",
+      "text": "וְהָיָ֨ה הַשָּׂדֶ֜ה בְּצֵאת֣וֹ בַיֹּבֵ֗ל קֹ֛דֶשׁ לַֽיהֹוָ֖ה כִּשְׂדֵ֣ה הַחֵ֑רֶם לַכֹּהֵ֖ן תִּהְיֶ֥ה אֲחֻזָּתֽוֹ׃",
+      "en": "But the field, when it goes out in the jubilee, shall be holy to the Lord, as a field devoted; the possession of it shall be the priest’s."
+    },
+    {
+      "n": 66,
+      "c": 27,
+      "v": 22,
+      "ref": "27:22",
+      "text": "וְאִם֙ אֶת־שְׂדֵ֣ה מִקְנָת֔וֹ אֲשֶׁ֕ר לֹ֖א מִשְּׂדֵ֣ה אֲחֻזָּת֑וֹ יַקְדִּ֖ישׁ לַֽיהֹוָֽה׃",
+      "en": "And if a man dedicate to the Lord a field which he has bought, which is not of the fields of his possession;"
+    },
+    {
+      "n": 67,
+      "c": 27,
+      "v": 23,
+      "ref": "27:23",
+      "text": "וְחִשַּׁב־ל֣וֹ הַכֹּהֵ֗ן אֵ֚ת מִכְסַ֣ת הָֽעֶרְכְּךָ֔ עַ֖ד שְׁנַ֣ת הַיֹּבֵ֑ל וְנָתַ֤ן אֶת־הָעֶרְכְּךָ֙ בַּיּ֣וֹם הַה֔וּא קֹ֖דֶשׁ לַיהֹוָֽה׃",
+      "en": "then the priest shall reckon to him the worth of the estimation, to the year of the jubilee, and he shall give the estimation in that day, as a holy thing to the Lord."
+    },
+    {
+      "n": 68,
+      "c": 27,
+      "v": 24,
+      "ref": "27:24",
+      "text": "בִּשְׁנַ֤ת הַיּוֹבֵל֙ יָשׁ֣וּב הַשָּׂדֶ֔ה לַאֲשֶׁ֥ר קָנָ֖הוּ מֵאִתּ֑וֹ לַאֲשֶׁר־ל֖וֹ אֲחֻזַּ֥ת הָאָֽרֶץ׃",
+      "en": "In the year of the jubilee the field shall return to him of whom it was bought, to him to whom the possession of the land did belong."
+    },
+    {
+      "n": 69,
+      "c": 27,
+      "v": 25,
+      "ref": "27:25",
+      "text": "וְכׇ֨ל־עֶרְכְּךָ֔ יִהְיֶ֖ה בְּשֶׁ֣קֶל הַקֹּ֑דֶשׁ עֶשְׂרִ֥ים גֵּרָ֖ה יִהְיֶ֥ה הַשָּֽׁקֶל׃",
+      "en": "And all estimations shall be according to the shekel of the sanctuary: twenty gera shall be the shekel."
+    },
+    {
+      "n": 70,
+      "c": 27,
+      "v": 26,
+      "ref": "27:26",
+      "text": "אַךְ־בְּכ֞וֹר אֲשֶׁר־יְבֻכַּ֤ר לַֽיהֹוָה֙ בִּבְהֵמָ֔ה לֹֽא־יַקְדִּ֥ישׁ אִ֖ישׁ אֹת֑וֹ אִם־שׁ֣וֹר אִם־שֶׂ֔ה לַֽיהֹוָ֖ה הֽוּא׃",
+      "en": "Only the firstling of the beasts, which should be the Lord’s firstling, no man shall dedicate that; whether it be ox, or sheep: it is the Lord’s."
+    },
+    {
+      "n": 71,
+      "c": 27,
+      "v": 27,
+      "ref": "27:27",
+      "text": "וְאִ֨ם בַּבְּהֵמָ֤ה הַטְּמֵאָה֙ וּפָדָ֣ה בְעֶרְכֶּ֔ךָ וְיָסַ֥ף חֲמִשִׁת֖וֹ עָלָ֑יו וְאִם־לֹ֥א יִגָּאֵ֖ל וְנִמְכַּ֥ר בְּעֶרְכֶּֽךָ׃",
+      "en": "And if it be of an unclean beast, then he shall redeem it according to the estimation, and shall add to it a fifth part of it: or if it be not redeemed, then it shall be sold according to the estimation."
+    },
+    {
+      "n": 72,
+      "c": 27,
+      "v": 28,
+      "ref": "27:28",
+      "text": "אַךְ־כׇּל־חֵ֡רֶם אֲשֶׁ֣ר יַחֲרִם֩ אִ֨ישׁ לַֽיהֹוָ֜ה מִכׇּל־אֲשֶׁר־ל֗וֹ מֵאָדָ֤ם וּבְהֵמָה֙ וּמִשְּׂדֵ֣ה אֲחֻזָּת֔וֹ לֹ֥א יִמָּכֵ֖ר וְלֹ֣א יִגָּאֵ֑ל כׇּל־חֵ֕רֶם קֹֽדֶשׁ־קׇדָשִׁ֥ים ה֖וּא לַיהֹוָֽה׃",
+      "en": "Notwithstanding no devoted thing, that a man shall devote to the Lord of all that he has, both of man and beast, and of the field of his possession, shall be sold or redeemed: every devoted thing is most holy to the Lord."
+    },
+    {
+      "n": 73,
+      "c": 27,
+      "v": 29,
+      "ref": "27:29",
+      "text": "כׇּל־חֵ֗רֶם אֲשֶׁ֧ר יׇחֳרַ֛ם מִן־הָאָדָ֖ם לֹ֣א יִפָּדֶ֑ה מ֖וֹת יוּמָֽת׃",
+      "en": "None devoted of men, which shall be doomed to death, shall be redeemed; but shall surely be put to death."
+    },
+    {
+      "n": 74,
+      "c": 27,
+      "v": 30,
+      "ref": "27:30",
+      "text": "וְכׇל־מַעְשַׂ֨ר הָאָ֜רֶץ מִזֶּ֤רַע הָאָ֙רֶץ֙ מִפְּרִ֣י הָעֵ֔ץ לַיהֹוָ֖ה ה֑וּא קֹ֖דֶשׁ לַֽיהֹוָֽה׃",
+      "en": "And all the tithe of the land, whether of the seed of the land, or of the fruit of the tree, is the Lord’s: it is holy to the Lord."
+    },
+    {
+      "n": 75,
+      "c": 27,
+      "v": 31,
+      "ref": "27:31",
+      "text": "וְאִם־גָּאֹ֥ל יִגְאַ֛ל אִ֖ישׁ מִמַּֽעַשְׂר֑וֹ חֲמִשִׁית֖וֹ יֹסֵ֥ף עָלָֽיו׃",
+      "en": "And if a man will at all redeem of his tithes, he shall add to it the fifth part of it."
+    },
+    {
+      "n": 76,
+      "c": 27,
+      "v": 32,
+      "ref": "27:32",
+      "text": "וְכׇל־מַעְשַׂ֤ר בָּקָר֙ וָצֹ֔אן כֹּ֥ל אֲשֶׁר־יַעֲבֹ֖ר תַּ֣חַת הַשָּׁ֑בֶט הָֽעֲשִׂירִ֕י יִֽהְיֶה־קֹּ֖דֶשׁ לַֽיהֹוָֽה׃",
+      "en": "And concerning the tithe of the herd, or of the flock, of whatever passes under the rod, the tenth shall be holy to the Lord."
+    },
+    {
+      "n": 77,
+      "c": 27,
+      "v": 33,
+      "ref": "27:33",
+      "text": "לֹ֧א יְבַקֵּ֛ר בֵּֽין־ט֥וֹב לָרַ֖ע וְלֹ֣א יְמִירֶ֑נּוּ וְאִם־הָמֵ֣ר יְמִירֶ֔נּוּ וְהָֽיָה־ה֧וּא וּתְמוּרָת֛וֹ יִֽהְיֶה־קֹּ֖דֶשׁ לֹ֥א יִגָּאֵֽל׃",
+      "en": "He shall not search whether it be good or bad, neither shall he change it: and if he change it at all, then both it and its substitute shall be holy; it shall not be redeemed."
+    },
+    {
+      "n": 78,
+      "c": 27,
+      "v": 34,
+      "ref": "27:34",
+      "text": "אֵ֣לֶּה הַמִּצְוֺ֗ת אֲשֶׁ֨ר צִוָּ֧ה יְהֹוָ֛ה אֶת־מֹשֶׁ֖ה אֶל־בְּנֵ֣י יִשְׂרָאֵ֑ל בְּהַ֖ר סִינָֽי׃",
+      "en": "These are the commandments, which the Lord commanded Moshe for the children of Yisra᾽el in Mount Sinay.\n\t\t\t\n\t\t\t\n\t\t\t\tVayyiqra"
+    }
+  ],
+  "parashah": {
+    "en": "Bechukotai",
+    "he": "בְּחֻקֹּתַי",
+    "translit": "Bechukotai",
+    "ref": "Leviticus 26:3–27:34"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 3,
+        "ref": "26:3–26:5"
+      },
+      {
+        "n": 2,
+        "start": 4,
+        "end": 7,
+        "ref": "26:6–26:9"
+      },
+      {
+        "n": 3,
+        "start": 8,
+        "end": 44,
+        "ref": "26:10–26:46"
+      },
+      {
+        "n": 4,
+        "start": 45,
+        "end": 59,
+        "ref": "27:1–27:15"
+      },
+      {
+        "n": 5,
+        "start": 60,
+        "end": 65,
+        "ref": "27:16–27:21"
+      },
+      {
+        "n": 6,
+        "start": 66,
+        "end": 72,
+        "ref": "27:22–27:28"
+      },
+      {
+        "n": 7,
+        "start": 73,
+        "end": 78,
+        "ref": "27:29–27:34"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 4,
+          "ref": "26:3–26:6"
+        },
+        {
+          "n": 2,
+          "start": 5,
+          "end": 8,
+          "ref": "26:7–26:10"
+        },
+        {
+          "n": 3,
+          "start": 9,
+          "end": 12,
+          "ref": "26:11–26:14"
+        },
+        {
+          "n": 4,
+          "start": 13,
+          "end": 16,
+          "ref": "26:15–26:18"
+        },
+        {
+          "n": 5,
+          "start": 17,
+          "end": 20,
+          "ref": "26:19–26:22"
+        },
+        {
+          "n": 6,
+          "start": 21,
+          "end": 23,
+          "ref": "26:23–26:25"
+        },
+        {
+          "n": 7,
+          "start": 24,
+          "end": 26,
+          "ref": "26:26–26:28"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 27,
+          "end": 30,
+          "ref": "26:29–26:32"
+        },
+        {
+          "n": 2,
+          "start": 31,
+          "end": 34,
+          "ref": "26:33–26:36"
+        },
+        {
+          "n": 3,
+          "start": 35,
+          "end": 38,
+          "ref": "26:37–26:40"
+        },
+        {
+          "n": 4,
+          "start": 39,
+          "end": 42,
+          "ref": "26:41–26:44"
+        },
+        {
+          "n": 5,
+          "start": 43,
+          "end": 46,
+          "ref": "26:45–27:2"
+        },
+        {
+          "n": 6,
+          "start": 47,
+          "end": 49,
+          "ref": "27:3–27:5"
+        },
+        {
+          "n": 7,
+          "start": 50,
+          "end": 52,
+          "ref": "27:6–27:8"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 53,
+          "end": 56,
+          "ref": "27:9–27:12"
+        },
+        {
+          "n": 2,
+          "start": 57,
+          "end": 60,
+          "ref": "27:13–27:16"
+        },
+        {
+          "n": 3,
+          "start": 61,
+          "end": 64,
+          "ref": "27:17–27:20"
+        },
+        {
+          "n": 4,
+          "start": 65,
+          "end": 68,
+          "ref": "27:21–27:24"
+        },
+        {
+          "n": 5,
+          "start": 69,
+          "end": 72,
+          "ref": "27:25–27:28"
+        },
+        {
+          "n": 6,
+          "start": 73,
+          "end": 75,
+          "ref": "27:29–27:31"
+        },
+        {
+          "n": 7,
+          "start": 76,
+          "end": 78,
+          "ref": "27:32–27:34"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 76,
+        "end": 78,
+        "ref": "27:32–27:34"
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

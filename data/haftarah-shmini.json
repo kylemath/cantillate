@@ -1,0 +1,364 @@
+{
+  "slug": "haftarah-shmini",
+  "book": {
+    "en": "II Samuel",
+    "he": "שמואל ב",
+    "translit": "Shmuel B"
+  },
+  "multiChapter": true,
+  "ref": "II Samuel 6:1-7:17",
+  "heRef": "שמואל ב ו׳:א-כ״ג, ז׳:א-י״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 6,
+      "v": 1,
+      "ref": "6:1",
+      "text": "וַיֹּ֨סֶף ע֥וֹד דָּוִ֛ד אֶת־כׇּל־בָּח֥וּר בְּיִשְׂרָאֵ֖ל שְׁלֹשִׁ֥ים אָֽלֶף׃",
+      "en": "Again, David gathered together all the chosen men of Yisra᾽el, thirty thousand."
+    },
+    {
+      "n": 2,
+      "c": 6,
+      "v": 2,
+      "ref": "6:2",
+      "text": "וַיָּ֣קׇם&thinsp;<b>׀</b> וַיֵּ֣לֶךְ דָּוִ֗ד וְכׇל־הָעָם֙ אֲשֶׁ֣ר אִתּ֔וֹ מִֽבַּעֲלֵ֖י יְהוּדָ֑ה לְהַעֲל֣וֹת מִשָּׁ֗ם אֵ֚ת אֲר֣וֹן הָאֱלֹהִ֔ים אֲשֶׁר־נִקְרָ֣א שֵׁ֗ם שֵׁ֣ם יְהֹוָ֧ה צְבָא֛וֹת יֹשֵׁ֥ב הַכְּרֻבִ֖ים עָלָֽיו׃",
+      "en": "And David arose, and went with all the people that were with him from Ba῾ale-yehuda, to bring up from there the ark of God, whose name is called by the name of the Lord of hosts who dwells upon the keruvim."
+    },
+    {
+      "n": 3,
+      "c": 6,
+      "v": 3,
+      "ref": "6:3",
+      "text": "וַיַּרְכִּ֜בוּ אֶת־אֲר֤וֹן הָאֱלֹהִים֙ אֶל־עֲגָלָ֣ה חֲדָשָׁ֔ה וַיִּ֨שָּׂאֻ֔הוּ מִבֵּ֥ית אֲבִינָדָ֖ב אֲשֶׁ֣ר בַּגִּבְעָ֑ה וְעֻזָּ֣א וְאַחְי֗וֹ בְּנֵי֙ אֲבִ֣ינָדָ֔ב נֹהֲגִ֖ים אֶת־הָעֲגָלָ֥ה חֲדָשָֽׁה׃",
+      "en": "And they set the ark of God upon a new cart, and brought it out of the house of Avinadav who was in Giv῾a: and ῾Uzza and Aĥyo, the sons of Avinadav, drove the new cart."
+    },
+    {
+      "n": 4,
+      "c": 6,
+      "v": 4,
+      "ref": "6:4",
+      "text": "וַיִּשָּׂאֻ֗הוּ מִבֵּ֤ית אֲבִֽינָדָב֙ אֲשֶׁ֣ר בַּגִּבְעָ֔ה עִ֖ם אֲר֣וֹן הָאֱלֹהִ֑ים וְאַחְי֕וֹ הֹלֵ֖ךְ לִפְנֵ֥י הָאָרֽוֹן׃",
+      "en": "And they brought it out of the house of Avinadav which was at Giv῾a, accompanying the ark of God: and Aĥyo went before the ark."
+    },
+    {
+      "n": 5,
+      "c": 6,
+      "v": 5,
+      "ref": "6:5",
+      "text": "וְדָוִ֣ד&thinsp;<b>׀</b> וְכׇל־בֵּ֣ית יִשְׂרָאֵ֗ל מְשַֽׂחֲקִים֙ לִפְנֵ֣י יְהֹוָ֔ה בְּכֹ֖ל עֲצֵ֣י בְרוֹשִׁ֑ים וּבְכִנֹּר֤וֹת וּבִנְבָלִים֙ וּבְתֻפִּ֔ים וּבִמְנַעַנְעִ֖ים וּֽבְצֶלְצֱלִֽים׃",
+      "en": "And David and all the house of Yisra᾽el played before the Lord on all manner of instruments made of cypress wood, on lyres, and on lutes, and on timbrels, and on rattles, and on cymbals."
+    },
+    {
+      "n": 6,
+      "c": 6,
+      "v": 6,
+      "ref": "6:6",
+      "text": "וַיָּבֹ֖אוּ עַד־גֹּ֣רֶן נָכ֑וֹן וַיִּשְׁלַ֨ח עֻזָּ֜ה אֶל־אֲר֤וֹן הָֽאֱלֹהִים֙ וַיֹּ֣אחֶז בּ֔וֹ כִּ֥י שָֽׁמְט֖וּ הַבָּקָֽר׃",
+      "en": "And when they came to Nakhon’s threshingfloor, ῾Uzza put out his hand to the ark of God, and took hold of it; for the oxen shook it."
+    },
+    {
+      "n": 7,
+      "c": 6,
+      "v": 7,
+      "ref": "6:7",
+      "text": "וַיִּֽחַר־אַ֤ף יְהֹוָה֙ בְּעֻזָּ֔ה וַיַּכֵּ֥הוּ שָׁ֛ם הָאֱלֹהִ֖ים עַל־הַשַּׁ֑ל וַיָּ֣מׇת שָׁ֔ם עִ֖ם אֲר֥וֹן הָאֱלֹהִֽים׃",
+      "en": "And the anger of the Lord burned against ῾Uzza; and God smote him there for his error; and there he died by the ark of God."
+    },
+    {
+      "n": 8,
+      "c": 6,
+      "v": 8,
+      "ref": "6:8",
+      "text": "וַיִּ֣חַר לְדָוִ֔ד עַל֩ אֲשֶׁ֨ר פָּרַ֧ץ יְהֹוָ֛ה פֶּ֖רֶץ בְּעֻזָּ֑ה וַיִּקְרָ֞א לַמָּק֤וֹם הַהוּא֙ פֶּ֣רֶץ עֻזָּ֔ה עַ֖ד הַיּ֥וֹם הַזֶּֽה׃",
+      "en": "And David was displeased, because the Lord had burst out against ῾Uzza: and he called the name of the place Pereż-῾uzza to this day."
+    },
+    {
+      "n": 9,
+      "c": 6,
+      "v": 9,
+      "ref": "6:9",
+      "text": "וַיִּרָ֥א דָוִ֛ד אֶת־יְהֹוָ֖ה בַּיּ֣וֹם הַה֑וּא וַיֹּ֕אמֶר אֵ֛יךְ יָב֥וֹא אֵלַ֖י אֲר֥וֹן יְהֹוָֽה׃",
+      "en": "And David was afraid of the Lord that day, and said, How shall the ark of the Lord come to me?"
+    },
+    {
+      "n": 10,
+      "c": 6,
+      "v": 10,
+      "ref": "6:10",
+      "text": "וְלֹא־אָבָ֣ה דָוִ֗ד לְהָסִ֥יר אֵלָ֛יו אֶת־אֲר֥וֹן יְהֹוָ֖ה עַל־עִ֣יר דָּוִ֑ד וַיַּטֵּ֣הוּ דָוִ֔ד בֵּ֥ית עֹבֵֽד־אֱדֹ֖ם הַגִּתִּֽי׃",
+      "en": "So David would not remove the ark of the Lord to him into the city of David: but David carried it aside into the house of ῾Oved-edom the Gitti."
+    },
+    {
+      "n": 11,
+      "c": 6,
+      "v": 11,
+      "ref": "6:11",
+      "text": "וַיֵּ֩שֶׁב֩ אֲר֨וֹן יְהֹוָ֜ה בֵּ֣ית עֹבֵ֥ד אֱדֹ֛ם הַגִּתִּ֖י שְׁלֹשָׁ֣ה חֳדָשִׁ֑ים וַיְבָ֧רֶךְ יְהֹוָ֛ה אֶת־עֹבֵ֥ד אֱדֹ֖ם וְאֶת־כׇּל־בֵּיתֽוֹ׃",
+      "en": "And the ark of the Lord continued in the house of ῾Oved-edom the Gitti three months: and the Lord blessed ῾Oved-edom, and all his household."
+    },
+    {
+      "n": 12,
+      "c": 6,
+      "v": 12,
+      "ref": "6:12",
+      "text": "וַיֻּגַּ֗ד לַמֶּ֣לֶךְ דָּוִד֮ לֵאמֹר֒ בֵּרַ֣ךְ יְהֹוָ֗ה אֶת־בֵּ֨ית עֹבֵ֤ד אֱדֹם֙ וְאֶת־כׇּל־אֲשֶׁר־ל֔וֹ בַּעֲב֖וּר אֲר֣וֹן הָאֱלֹהִ֑ים וַיֵּ֣לֶךְ דָּוִ֗ד וַיַּ֩עַל֩ אֶת־אֲר֨וֹן הָאֱלֹהִ֜ים מִבֵּ֨ית עֹבֵ֥ד אֱדֹ֛ם עִ֥יר דָּוִ֖ד בְּשִׂמְחָֽה׃",
+      "en": "And it was told king David, saying, The Lord has blessed the house of ῾Oved-edom, and all that he has, because of the ark of God. So David went and brought up the ark of God from the house of ῾Oved-edom into the city of David with gladness."
+    },
+    {
+      "n": 13,
+      "c": 6,
+      "v": 13,
+      "ref": "6:13",
+      "text": "וַיְהִ֗י כִּ֧י צָעֲד֛וּ נֹשְׂאֵ֥י אֲרוֹן־יְהֹוָ֖ה שִׁשָּׁ֣ה צְעָדִ֑ים וַיִּזְבַּ֥ח שׁ֖וֹר וּמְרִֽיא׃",
+      "en": "And when they that bore the ark of the Lord had gone six paces, he sacrificed an ox and a fatling."
+    },
+    {
+      "n": 14,
+      "c": 6,
+      "v": 14,
+      "ref": "6:14",
+      "text": "וְדָוִ֛ד מְכַרְכֵּ֥ר בְּכׇל־עֹ֖ז לִפְנֵ֣י יְהֹוָ֑ה וְדָוִ֕ד חָג֖וּר אֵפ֥וֹד בָּֽד׃",
+      "en": "And David leaped about before the Lord with all his might; and David was girded with a linen efod."
+    },
+    {
+      "n": 15,
+      "c": 6,
+      "v": 15,
+      "ref": "6:15",
+      "text": "וְדָוִד֙ וְכׇל־בֵּ֣ית יִשְׂרָאֵ֔ל מַעֲלִ֖ים אֶת־אֲר֣וֹן יְהֹוָ֑ה בִּתְרוּעָ֖ה וּבְק֥וֹל שׁוֹפָֽר׃",
+      "en": "So David and all the house of Yisra᾽el brought up the ark of the Lord with shouting, and with the sound of the shofar."
+    },
+    {
+      "n": 16,
+      "c": 6,
+      "v": 16,
+      "ref": "6:16",
+      "text": "וְהָיָה֙ אֲר֣וֹן יְהֹוָ֔ה בָּ֖א עִ֣יר דָּוִ֑ד וּמִיכַ֨ל בַּת־שָׁא֜וּל נִשְׁקְפָ֣ה&thinsp;<b>׀</b> בְּעַ֣ד הַחַלּ֗וֹן וַתֵּ֨רֶא אֶת־הַמֶּ֤לֶךְ דָּוִד֙ מְפַזֵּ֤ז וּמְכַרְכֵּר֙ לִפְנֵ֣י יְהֹוָ֔ה וַתִּ֥בֶז ל֖וֹ בְּלִבָּֽהּ׃",
+      "en": "And as the ark of the Lord came into the city of David, Mikhal, Sha᾽ul’s daughter looked through a window, and saw king David dancing and leaping before the Lord; and she despised him in her heart."
+    },
+    {
+      "n": 17,
+      "c": 6,
+      "v": 17,
+      "ref": "6:17",
+      "text": "וַיָּבִ֜אוּ אֶת־אֲר֣וֹן יְהֹוָ֗ה וַיַּצִּ֤גוּ אֹתוֹ֙ בִּמְקוֹמ֔וֹ בְּת֣וֹךְ הָאֹ֔הֶל אֲשֶׁ֥ר נָטָה־ל֖וֹ דָּוִ֑ד וַיַּ֨עַל דָּוִ֥ד עֹל֛וֹת לִפְנֵ֥י יְהֹוָ֖ה וּשְׁלָמִֽים׃",
+      "en": "And they brought in the ark of the Lord, and set it in its place, in the midst of the tent that David had pitched for it: and David offered burnt offerings and peace offerings before the Lord."
+    },
+    {
+      "n": 18,
+      "c": 6,
+      "v": 18,
+      "ref": "6:18",
+      "text": "וַיְכַ֣ל דָּוִ֔ד מֵהַעֲל֥וֹת הָעוֹלָ֖ה וְהַשְּׁלָמִ֑ים וַיְבָ֣רֶךְ אֶת־הָעָ֔ם בְּשֵׁ֖ם יְהֹוָ֥ה צְבָאֽוֹת׃",
+      "en": "And as soon as David had made an end of offering burnt offerings and peace offerings, he blessed the people in the name of the Lord of hosts."
+    },
+    {
+      "n": 19,
+      "c": 6,
+      "v": 19,
+      "ref": "6:19",
+      "text": "וַיְחַלֵּ֨ק לְכׇל־הָעָ֜ם לְכׇל־הֲמ֣וֹן יִשְׂרָאֵל֮ לְמֵאִ֣ישׁ וְעַד־אִשָּׁה֒ לְאִ֗ישׁ חַלַּ֥ת לֶ֙חֶם֙ אַחַ֔ת וְאֶשְׁפָּ֣ר אֶחָ֔ד וַאֲשִׁישָׁ֖ה אֶחָ֑ת וַיֵּ֥לֶךְ כׇּל־הָעָ֖ם אִ֥ישׁ לְבֵיתֽוֹ׃",
+      "en": "And he made a distribution among all the people, among the whole multitude of Yisra᾽el, both men and women, to everyone a cake of bread, and a good piece of meat, and a cake of raisins. So all the people departed everyone to his house."
+    },
+    {
+      "n": 20,
+      "c": 6,
+      "v": 20,
+      "ref": "6:20",
+      "text": "וַיָּ֥שׇׁב דָּוִ֖ד לְבָרֵ֣ךְ אֶת־בֵּית֑וֹ&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַתֵּצֵ֞א מִיכַ֤ל בַּת־שָׁאוּל֙ לִקְרַ֣את דָּוִ֔ד וַתֹּ֗אמֶר מַה־נִּכְבַּ֨ד הַיּ֜וֹם מֶ֣לֶךְ יִשְׂרָאֵ֗ל אֲשֶׁ֨ר נִגְלָ֤ה הַיּוֹם֙ לְעֵינֵי֙ אַמְה֣וֹת עֲבָדָ֔יו כְּהִגָּל֥וֹת נִגְל֖וֹת אַחַ֥ד הָרֵקִֽים׃",
+      "en": "Then David returned to bless his household. And Mikhal the daughter of Sha᾽ul came out to meet David, and said, How glorious was the king of Yisra᾽el today, in that he uncovered himself today in the eyes of the handmaids of his servants, as one of the low fellows shamelessly uncovers himself!"
+    },
+    {
+      "n": 21,
+      "c": 6,
+      "v": 21,
+      "ref": "6:21",
+      "text": "וַיֹּ֣אמֶר דָּוִד֮ אֶל־מִיכַל֒ לִפְנֵ֣י יְהֹוָ֗ה אֲשֶׁ֨ר בָּחַר־בִּ֤י מֵֽאָבִיךְ֙ וּמִכׇּל־בֵּית֔וֹ לְצַוֺּ֨ת אֹתִ֥י נָגִ֛יד עַל־עַ֥ם יְהֹוָ֖ה עַל־יִשְׂרָאֵ֑ל וְשִׂחַקְתִּ֖י לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And David said to Mikhal, It was before the Lord, who chose me before thy father, and before all his house, to appoint me prince over the people of the Lord, over Yisra᾽el. Therefore will I play before the Lord,"
+    },
+    {
+      "n": 22,
+      "c": 6,
+      "v": 22,
+      "ref": "6:22",
+      "text": "וּנְקַלֹּ֤תִי עוֹד֙ מִזֹּ֔את וְהָיִ֥יתִי שָׁפָ֖ל בְּעֵינָ֑י וְעִם־הָֽאֲמָהוֹת֙ אֲשֶׁ֣ר אָמַ֔רְתְּ עִמָּ֖ם אִכָּבֵֽדָה׃",
+      "en": "and I will yet be more lightly esteemed than this, holding myself lowly: and of the maidservants of whom thou hast spoken, of them shall I be had in honour."
+    },
+    {
+      "n": 23,
+      "c": 6,
+      "v": 23,
+      "ref": "6:23",
+      "text": "וּלְמִיכַל֙ בַּת־שָׁא֔וּל לֹא־הָ֥יָה לָ֖הּ יָ֑לֶד עַ֖ד י֥וֹם מוֹתָֽהּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Mikhal the daughter of Sha᾽ul had no child to the day of her death."
+    },
+    {
+      "n": 24,
+      "c": 7,
+      "v": 1,
+      "ref": "7:1",
+      "text": "וַיְהִ֕י כִּֽי־יָשַׁ֥ב הַמֶּ֖לֶךְ בְּבֵית֑וֹ וַיהֹוָ֛ה הֵנִיחַֽ־ל֥וֹ מִסָּבִ֖יב מִכׇּל־אֹיְבָֽיו׃",
+      "en": "And it came to pass, when the king sat in his house, and the Lord had given him rest round about from all his enemies;"
+    },
+    {
+      "n": 25,
+      "c": 7,
+      "v": 2,
+      "ref": "7:2",
+      "text": "וַיֹּ֤אמֶר הַמֶּ֙לֶךְ֙ אֶל־נָתָ֣ן הַנָּבִ֔יא רְאֵ֣ה נָ֔א אָנֹכִ֥י יוֹשֵׁ֖ב בְּבֵ֣ית אֲרָזִ֑ים וַֽאֲרוֹן֙ הָאֱלֹהִ֔ים יֹשֵׁ֖ב בְּת֥וֹךְ הַיְרִיעָֽה׃",
+      "en": "that the king said to Natan the prophet, See now, I dwell in a house of cedar, but the ark of God dwells within curtain."
+    },
+    {
+      "n": 26,
+      "c": 7,
+      "v": 3,
+      "ref": "7:3",
+      "text": "וַיֹּ֤אמֶר נָתָן֙ אֶל־הַמֶּ֔לֶךְ כֹּ֛ל אֲשֶׁ֥ר בִּֽלְבָבְךָ֖ לֵ֣ךְ עֲשֵׂ֑ה כִּ֥י יְהֹוָ֖ה עִמָּֽךְ׃",
+      "en": "And Natan said to the king, Go, do all that is in thy heart; for the Lord is with thee."
+    },
+    {
+      "n": 27,
+      "c": 7,
+      "v": 4,
+      "ref": "7:4",
+      "text": "וַיְהִ֖י בַּלַּ֣יְלָה הַה֑וּא&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וַֽיְהִי֙ דְּבַר־יְהֹוָ֔ה אֶל־נָתָ֖ן לֵאמֹֽר׃",
+      "en": "And it came to pass that night,    that the word of the Lord came to Natan, saying,"
+    },
+    {
+      "n": 28,
+      "c": 7,
+      "v": 5,
+      "ref": "7:5",
+      "text": "לֵ֤ךְ וְאָֽמַרְתָּ֙ אֶל־עַבְדִּ֣י אֶל־דָּוִ֔ד&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;כֹּ֖ה אָמַ֣ר יְהֹוָ֑ה הַאַתָּ֛ה תִּבְנֶה־לִּ֥י בַ֖יִת לְשִׁבְתִּֽי׃",
+      "en": "Go and tell my servant David, Thus says the Lord, shalt thou build me a house for me to dwell in?"
+    },
+    {
+      "n": 29,
+      "c": 7,
+      "v": 6,
+      "ref": "7:6",
+      "text": "כִּ֣י לֹ֤א יָשַׁ֙בְתִּי֙ בְּבַ֔יִת לְ֠מִיּ֠וֹם הַעֲלֹתִ֞י אֶת־בְּנֵ֤י יִשְׂרָאֵל֙ מִמִּצְרַ֔יִם וְעַ֖ד הַיּ֣וֹם הַזֶּ֑ה וָאֶֽהְיֶה֙ מִתְהַלֵּ֔ךְ בְּאֹ֖הֶל וּבְמִשְׁכָּֽן׃",
+      "en": "For I have not dwelt in any house since that time that I brought up the children of Yisra᾽el out of Miżrayim, even to this day, but I have walked in a tent and in a tabernacle."
+    },
+    {
+      "n": 30,
+      "c": 7,
+      "v": 7,
+      "ref": "7:7",
+      "text": "בְּכֹ֥ל אֲשֶֽׁר־הִתְהַלַּ֘כְתִּי֮ בְּכׇל־בְּנֵ֣י יִשְׂרָאֵל֒ הֲדָבָ֣ר דִּבַּ֗רְתִּי אֶת־אַחַד֙ שִׁבְטֵ֣י יִשְׂרָאֵ֔ל אֲשֶׁ֣ר צִוִּ֗יתִי לִרְע֛וֹת אֶת־עַמִּ֥י אֶת־יִשְׂרָאֵ֖ל לֵאמֹ֑ר לָ֛מָּה לֹֽא־בְנִיתֶ֥ם לִ֖י בֵּ֥ית אֲרָזִֽים׃",
+      "en": "In all the places where I have walked with all the children of Yisra᾽el, did I speak a word with any of the rulers of Yisra᾽el, whom I commanded as shepherds of my people Yisra᾽el, saying, Why do you not build me a house of cedar?"
+    },
+    {
+      "n": 31,
+      "c": 7,
+      "v": 8,
+      "ref": "7:8",
+      "text": "וְ֠עַתָּ֠ה כֹּה־תֹאמַ֞ר לְעַבְדִּ֣י לְדָוִ֗ד כֹּ֤ה אָמַר֙ יְהֹוָ֣ה צְבָא֔וֹת אֲנִ֤י לְקַחְתִּ֙יךָ֙ מִן־הַנָּוֶ֔ה מֵאַחַ֖ר הַצֹּ֑אן לִֽהְי֣וֹת נָגִ֔יד עַל־עַמִּ֖י עַל־יִשְׂרָאֵֽל׃",
+      "en": "Now therefore so shalt thou say to my servant David, Thus says the Lord of hosts, I took thee from the sheepfold, from following the sheep, to be ruler over my people, over Yisra᾽el:"
+    },
+    {
+      "n": 32,
+      "c": 7,
+      "v": 9,
+      "ref": "7:9",
+      "text": "וָאֶהְיֶ֣ה עִמְּךָ֗ בְּכֹל֙ אֲשֶׁ֣ר הָלַ֔כְתָּ וָאַכְרִ֥תָה אֶת־כׇּל־אֹיְבֶ֖יךָ מִפָּנֶ֑יךָ וְעָשִׂ֤תִֽי־לְךָ֙ שֵׁ֣ם גָּד֔וֹל כְּשֵׁ֥ם הַגְּדֹלִ֖ים אֲשֶׁ֥ר בָּאָֽרֶץ׃",
+      "en": "and I was with thee wherever thou didst go, and have cut off all thy enemies out of thy sight, and have made thee a great name, like the name of the great men that are on the earth."
+    },
+    {
+      "n": 33,
+      "c": 7,
+      "v": 10,
+      "ref": "7:10",
+      "text": "וְשַׂמְתִּ֣י מָ֠ק֠וֹם לְעַמִּ֨י לְיִשְׂרָאֵ֤ל וּנְטַעְתִּיו֙ וְשָׁכַ֣ן תַּחְתָּ֔יו וְלֹ֥א יִרְגַּ֖ז ע֑וֹד וְלֹֽא־יֹסִ֤יפוּ בְנֵֽי־עַוְלָה֙ לְעַנּוֹת֔וֹ כַּאֲשֶׁ֖ר בָּרִאשׁוֹנָֽה׃",
+      "en": "Moreover I have appointed a place for my people Yisra᾽el, and planted them, that they may dwell in a place of their own, and be troubled no more; neither shall the children of wickedness torment them any more, as at the beginning,"
+    },
+    {
+      "n": 34,
+      "c": 7,
+      "v": 11,
+      "ref": "7:11",
+      "text": "וּלְמִן־הַיּ֗וֹם אֲשֶׁ֨ר צִוִּ֤יתִי שֹֽׁפְטִים֙ עַל־עַמִּ֣י יִשְׂרָאֵ֔ל וַהֲנִיחֹ֥תִי לְךָ֖ מִכׇּל־אֹיְבֶ֑יךָ וְהִגִּ֤יד לְךָ֙ יְהֹוָ֔ה כִּי־בַ֖יִת יַעֲשֶׂה־לְּךָ֥ יְהֹוָֽה׃",
+      "en": "and as since the time that I commanded judges to be over my people Yisra᾽el; but I will give thee rest from all thy enemies, and the Lord tells thee that he will make thee a house."
+    },
+    {
+      "n": 35,
+      "c": 7,
+      "v": 12,
+      "ref": "7:12",
+      "text": "כִּ֣י&thinsp;<b>׀</b> יִמְלְא֣וּ יָמֶ֗יךָ וְשָֽׁכַבְתָּ֙ אֶת־אֲבֹתֶ֔יךָ וַהֲקִימֹתִ֤י אֶֽת־זַרְעֲךָ֙ אַחֲרֶ֔יךָ אֲשֶׁ֥ר יֵצֵ֖א מִמֵּעֶ֑יךָ וַהֲכִינֹתִ֖י אֶת־מַמְלַכְתּֽוֹ׃",
+      "en": "And when the days are fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, who shall issue from thy bowels, and I will establish his kingdom."
+    },
+    {
+      "n": 36,
+      "c": 7,
+      "v": 13,
+      "ref": "7:13",
+      "text": "ה֥וּא יִבְנֶה־בַּ֖יִת לִשְׁמִ֑י וְכֹנַנְתִּ֛י אֶת־כִּסֵּ֥א מַמְלַכְתּ֖וֹ עַד־עוֹלָֽם׃",
+      "en": "He shall build a house for my name, and I will make firm the throne of his kingdom for ever."
+    },
+    {
+      "n": 37,
+      "c": 7,
+      "v": 14,
+      "ref": "7:14",
+      "text": "אֲנִי֙ אֶֽהְיֶה־לּ֣וֹ לְאָ֔ב וְה֖וּא יִֽהְיֶה־לִּ֣י לְבֵ֑ן אֲשֶׁר֙ בְּהַ֣עֲוֺת֔וֹ וְהֹֽכַחְתִּיו֙ בְּשֵׁ֣בֶט אֲנָשִׁ֔ים וּבְנִגְעֵ֖י בְּנֵ֥י אָדָֽם׃",
+      "en": "I will be his father, and he will be my son. If he commit iniquity, I will chasten him with the rod of men, and with such plagues as befall the sons of Adam:"
+    },
+    {
+      "n": 38,
+      "c": 7,
+      "v": 15,
+      "ref": "7:15",
+      "text": "וְחַסְדִּ֖י לֹא־יָס֣וּר מִמֶּ֑נּוּ כַּאֲשֶׁ֤ר הֲסִרֹ֙תִי֙ מֵעִ֣ם שָׁא֔וּל אֲשֶׁ֥ר הֲסִרֹ֖תִי מִלְּפָנֶֽיךָ׃",
+      "en": "but my covenant love shall not depart away from him, as I took it from Sha᾽ul, whom I put away before thee."
+    },
+    {
+      "n": 39,
+      "c": 7,
+      "v": 16,
+      "ref": "7:16",
+      "text": "וְנֶאְמַ֨ן בֵּיתְךָ֧ וּמַֽמְלַכְתְּךָ֛ עַד־עוֹלָ֖ם לְפָנֶ֑יךָ כִּֽסְאֲךָ֔ יִהְיֶ֥ה נָכ֖וֹן עַד־עוֹלָֽם׃",
+      "en": "And thy house and thy kingdom shall be established for ever before thee: thy throne shall be firm for ever."
+    },
+    {
+      "n": 40,
+      "c": 7,
+      "v": 17,
+      "ref": "7:17",
+      "text": "כְּכֹל֙ הַדְּבָרִ֣ים הָאֵ֔לֶּה וּכְכֹ֖ל הַחִזָּי֣וֹן הַזֶּ֑ה כֵּ֛ן דִּבֶּ֥ר נָתָ֖ן אֶל־דָּוִֽד׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "According to all these words, and according to all this vision, so did Natan speak to David."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Shmini",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 26
+  },
+  "parashah": {
+    "en": "Haftarat Shmini",
+    "translit": "Haftarat Shmini",
+    "he": "הפטרת שמיני",
+    "ref": "II Samuel 6:1-7:17"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 40,
+        "ref": "6:1–7:17"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

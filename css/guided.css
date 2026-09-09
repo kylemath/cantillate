@@ -77,6 +77,8 @@ body.onboarding { overflow: hidden; }
   margin: 20px 0 8px; font-size: 11px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted);
 }
+/* The returning-device offer on the intro, under the install steps. */
+.ob-return { margin-top: 28px; }
 .ob-note {
   margin: 10px 0 0; font-size: 13px; color: var(--muted);
   padding-inline-start: 10px; border-inline-start: 2px solid var(--line);

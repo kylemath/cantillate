@@ -1,0 +1,1457 @@
+{
+  "slug": "noach",
+  "book": {
+    "en": "Genesis",
+    "he": "בראשית",
+    "translit": "Bereshit"
+  },
+  "multiChapter": true,
+  "ref": "Genesis 6:9-11:32",
+  "heRef": "בראשית ו׳:ט-י״א:ל״ב",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 6,
+      "v": 9,
+      "ref": "6:9",
+      "text": "אֵ֚לֶּה תּוֹלְדֹ֣ת נֹ֔חַ נֹ֗חַ אִ֥ישׁ צַדִּ֛יק תָּמִ֥ים הָיָ֖ה בְּדֹֽרֹתָ֑יו אֶת־הָֽאֱלֹהִ֖ים הִֽתְהַלֶּךְ־נֹֽחַ׃",
+      "en": "These are the generations of Noaĥ: Noaĥ was a just man and perfect in his generations, and Noaĥ walked with God."
+    },
+    {
+      "n": 2,
+      "c": 6,
+      "v": 10,
+      "ref": "6:10",
+      "text": "וַיּ֥וֹלֶד נֹ֖חַ שְׁלֹשָׁ֣ה בָנִ֑ים אֶת־שֵׁ֖ם אֶת־חָ֥ם וְאֶת־יָֽפֶת׃",
+      "en": "And Noaĥ begot three sons, Shem, Ḥam, and Yefet."
+    },
+    {
+      "n": 3,
+      "c": 6,
+      "v": 11,
+      "ref": "6:11",
+      "text": "וַתִּשָּׁחֵ֥ת הָאָ֖רֶץ לִפְנֵ֣י הָֽאֱלֹהִ֑ים וַתִּמָּלֵ֥א הָאָ֖רֶץ חָמָֽס׃",
+      "en": "The earth also was corrupt before God, and the earth was filled with violence."
+    },
+    {
+      "n": 4,
+      "c": 6,
+      "v": 12,
+      "ref": "6:12",
+      "text": "וַיַּ֧רְא אֱלֹהִ֛ים אֶת־הָאָ֖רֶץ וְהִנֵּ֣ה נִשְׁחָ֑תָה כִּֽי־הִשְׁחִ֧ית כׇּל־בָּשָׂ֛ר אֶת־דַּרְכּ֖וֹ עַל־הָאָֽרֶץ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And God looked upon the earth, and, behold, it was corrupt; for all flesh had corrupted its way upon the earth."
+    },
+    {
+      "n": 5,
+      "c": 6,
+      "v": 13,
+      "ref": "6:13",
+      "text": "וַיֹּ֨אמֶר אֱלֹהִ֜ים לְנֹ֗חַ קֵ֤ץ כׇּל־בָּשָׂר֙ בָּ֣א לְפָנַ֔י כִּֽי־מָלְאָ֥ה הָאָ֛רֶץ חָמָ֖ס מִפְּנֵיהֶ֑ם וְהִנְנִ֥י מַשְׁחִיתָ֖ם אֶת־הָאָֽרֶץ׃",
+      "en": "And God said to Noaĥ, The end of all flesh is come before Me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth."
+    },
+    {
+      "n": 6,
+      "c": 6,
+      "v": 14,
+      "ref": "6:14",
+      "text": "עֲשֵׂ֤ה לְךָ֙ תֵּבַ֣ת עֲצֵי־גֹ֔פֶר קִנִּ֖ים תַּֽעֲשֶׂ֣ה אֶת־הַתֵּבָ֑ה וְכָֽפַרְתָּ֥ אֹתָ֛הּ מִבַּ֥יִת וּמִח֖וּץ בַּכֹּֽפֶר׃",
+      "en": "Make thee an ark of gofer wood; rooms shalt thou make in the ark, and shalt pitch it within and without with pitch."
+    },
+    {
+      "n": 7,
+      "c": 6,
+      "v": 15,
+      "ref": "6:15",
+      "text": "וְזֶ֕ה אֲשֶׁ֥ר תַּֽעֲשֶׂ֖ה אֹתָ֑הּ שְׁלֹ֧שׁ מֵא֣וֹת אַמָּ֗ה אֹ֚רֶךְ הַתֵּבָ֔ה חֲמִשִּׁ֤ים אַמָּה֙ רׇחְבָּ֔הּ וּשְׁלֹשִׁ֥ים אַמָּ֖ה קוֹמָתָֽהּ׃",
+      "en": "And this is the fashion of which thou shalt make it: the length of the ark shall be three hundred cubits, the breadth of it fifty cubits, and the height of it thirty cubits."
+    },
+    {
+      "n": 8,
+      "c": 6,
+      "v": 16,
+      "ref": "6:16",
+      "text": "צֹ֣הַר&thinsp;<b>׀</b> תַּעֲשֶׂ֣ה לַתֵּבָ֗ה וְאֶל־אַמָּה֙ תְּכַלֶּ֣נָּה מִלְמַ֔עְלָה וּפֶ֥תַח הַתֵּבָ֖ה בְּצִדָּ֣הּ תָּשִׂ֑ים תַּחְתִּיִּ֛ם שְׁנִיִּ֥ם וּשְׁלִשִׁ֖ים תַּֽעֲשֶֽׂהָ׃",
+      "en": "A window shalt thou make to the ark, and to a cubit shalt thou finish it above; and the door of the ark shalt thou set in its side; with lower, second, and third stories shalt thou make it."
+    },
+    {
+      "n": 9,
+      "c": 6,
+      "v": 17,
+      "ref": "6:17",
+      "text": "וַאֲנִ֗י הִנְנִי֩ מֵבִ֨יא אֶת־הַמַּבּ֥וּל מַ֙יִם֙ עַל־הָאָ֔רֶץ לְשַׁחֵ֣ת כׇּל־בָּשָׂ֗ר אֲשֶׁר־בּוֹ֙ ר֣וּחַ חַיִּ֔ים מִתַּ֖חַת הַשָּׁמָ֑יִם כֹּ֥ל אֲשֶׁר־בָּאָ֖רֶץ יִגְוָֽע׃",
+      "en": "And, behold, I will bring the flood of waters upon the earth, to destroy all flesh, in which is the breath of life, from under heaven; and every thing that is on the earth shall die."
+    },
+    {
+      "n": 10,
+      "c": 6,
+      "v": 18,
+      "ref": "6:18",
+      "text": "וַהֲקִמֹתִ֥י אֶת־בְּרִיתִ֖י אִתָּ֑ךְ וּבָאתָ֙ אֶל־הַתֵּבָ֔ה אַתָּ֕ה וּבָנֶ֛יךָ וְאִשְׁתְּךָ֥ וּנְשֵֽׁי־בָנֶ֖יךָ אִתָּֽךְ׃",
+      "en": "But with thee will I establish My covenant; and thou shalt come into the ark, thou, and thy sons, and thy wife, and thy sons’ wives with thee."
+    },
+    {
+      "n": 11,
+      "c": 6,
+      "v": 19,
+      "ref": "6:19",
+      "text": "וּמִכׇּל־הָ֠חַ֠י מִֽכׇּל־בָּשָׂ֞ר שְׁנַ֧יִם מִכֹּ֛ל תָּבִ֥יא אֶל־הַתֵּבָ֖ה לְהַחֲיֹ֣ת אִתָּ֑ךְ זָכָ֥ר וּנְקֵבָ֖ה יִֽהְיֽוּ׃",
+      "en": "And of every living thing of all flesh, two of every sort shalt thou bring into the ark, to keep them alive with thee; they shall be male and female."
+    },
+    {
+      "n": 12,
+      "c": 6,
+      "v": 20,
+      "ref": "6:20",
+      "text": "מֵהָע֣וֹף לְמִינֵ֗הוּ וּמִן־הַבְּהֵמָה֙ לְמִינָ֔הּ מִכֹּ֛ל רֶ֥מֶשׂ הָֽאֲדָמָ֖ה לְמִינֵ֑הוּ שְׁנַ֧יִם מִכֹּ֛ל יָבֹ֥אוּ אֵלֶ֖יךָ לְהַֽחֲיֽוֹת׃",
+      "en": "Of birds after their kind, and of cattle after their kind, of every creeping thing of the earth after its kind, two of every sort shall come to thee, to keep them alive."
+    },
+    {
+      "n": 13,
+      "c": 6,
+      "v": 21,
+      "ref": "6:21",
+      "text": "וְאַתָּ֣ה קַח־לְךָ֗ מִכׇּל־מַֽאֲכָל֙ אֲשֶׁ֣ר יֵֽאָכֵ֔ל וְאָסַפְתָּ֖ אֵלֶ֑יךָ וְהָיָ֥ה לְךָ֛ וְלָהֶ֖ם לְאׇכְלָֽה׃",
+      "en": "And take thou to thee of all food that is eaten, and gather it to thee; and it shall be for food for thee, and for them."
+    },
+    {
+      "n": 14,
+      "c": 6,
+      "v": 22,
+      "ref": "6:22",
+      "text": "וַיַּ֖עַשׂ נֹ֑חַ כְּ֠כֹ֠ל אֲשֶׁ֨ר צִוָּ֥ה אֹת֛וֹ אֱלֹהִ֖ים כֵּ֥ן עָשָֽׂה׃",
+      "en": "So Noaĥ did according to all that God commanded him; thus he did."
+    },
+    {
+      "n": 15,
+      "c": 7,
+      "v": 1,
+      "ref": "7:1",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ לְנֹ֔חַ בֹּֽא־אַתָּ֥ה וְכׇל־בֵּיתְךָ֖ אֶל־הַתֵּבָ֑ה כִּֽי־אֹתְךָ֥ רָאִ֛יתִי צַדִּ֥יק לְפָנַ֖י בַּדּ֥וֹר הַזֶּֽה׃",
+      "en": "And the Lord said to Noaĥ, Come thou and all thy house into the ark; for thee have I seen righteous before Me in this generation."
+    },
+    {
+      "n": 16,
+      "c": 7,
+      "v": 2,
+      "ref": "7:2",
+      "text": "מִכֹּ֣ל&thinsp;<b>׀</b> הַבְּהֵמָ֣ה הַטְּהוֹרָ֗ה תִּֽקַּח־לְךָ֛ שִׁבְעָ֥ה שִׁבְעָ֖ה אִ֣ישׁ וְאִשְׁתּ֑וֹ וּמִן־הַבְּהֵמָ֡ה אֲ֠שֶׁ֠ר לֹ֣א טְהֹרָ֥ה הִ֛וא שְׁנַ֖יִם אִ֥ישׁ וְאִשְׁתּֽוֹ׃",
+      "en": "Of every clean beast thou shalt take to thee by sevens, male and female: and of beasts that are not clean by twos, male and female."
+    },
+    {
+      "n": 17,
+      "c": 7,
+      "v": 3,
+      "ref": "7:3",
+      "text": "גַּ֣ם מֵע֧וֹף הַשָּׁמַ֛יִם שִׁבְעָ֥ה שִׁבְעָ֖ה זָכָ֣ר וּנְקֵבָ֑ה לְחַיּ֥וֹת זֶ֖רַע עַל־פְּנֵ֥י כׇל־הָאָֽרֶץ׃",
+      "en": "Of birds of the air, also by sevens, the male and the female; to keep seed alive upon the face of all the earth."
+    },
+    {
+      "n": 18,
+      "c": 7,
+      "v": 4,
+      "ref": "7:4",
+      "text": "כִּי֩ לְיָמִ֨ים ע֜וֹד שִׁבְעָ֗ה אָֽנֹכִי֙ מַמְטִ֣יר עַל־הָאָ֔רֶץ אַרְבָּעִ֣ים י֔וֹם וְאַרְבָּעִ֖ים לָ֑יְלָה וּמָחִ֗יתִי אֶֽת־כׇּל־הַיְקוּם֙ אֲשֶׁ֣ר עָשִׂ֔יתִי מֵעַ֖ל פְּנֵ֥י הָֽאֲדָמָֽה׃",
+      "en": "For in another seven days, I will cause it to rain upon the earth forty days and forty nights; and every living substance that I have made will I destroy from off the face of the earth."
+    },
+    {
+      "n": 19,
+      "c": 7,
+      "v": 5,
+      "ref": "7:5",
+      "text": "וַיַּ֖עַשׂ נֹ֑חַ כְּכֹ֥ל אֲשֶׁר־צִוָּ֖הוּ יְהֹוָֽה׃",
+      "en": "And Noaĥ did according to all that the Lord commanded him."
+    },
+    {
+      "n": 20,
+      "c": 7,
+      "v": 6,
+      "ref": "7:6",
+      "text": "וְנֹ֕חַ בֶּן־שֵׁ֥שׁ מֵא֖וֹת שָׁנָ֑ה וְהַמַּבּ֣וּל הָיָ֔ה מַ֖יִם עַל־הָאָֽרֶץ׃",
+      "en": "And Noaĥ was six hundred years old when the flood of waters was upon the earth."
+    },
+    {
+      "n": 21,
+      "c": 7,
+      "v": 7,
+      "ref": "7:7",
+      "text": "וַיָּ֣בֹא נֹ֗חַ וּ֠בָנָ֠יו וְאִשְׁתּ֧וֹ וּנְשֵֽׁי־בָנָ֛יו אִתּ֖וֹ אֶל־הַתֵּבָ֑ה מִפְּנֵ֖י מֵ֥י הַמַּבּֽוּל׃",
+      "en": "And Noaĥ went in, and his sons, and his wife, and his sons’ wives with him, into the ark, because of the waters of the flood."
+    },
+    {
+      "n": 22,
+      "c": 7,
+      "v": 8,
+      "ref": "7:8",
+      "text": "מִן־הַבְּהֵמָה֙ הַטְּהוֹרָ֔ה וּמִ֨ן־הַבְּהֵמָ֔ה אֲשֶׁ֥ר אֵינֶ֖נָּה טְהֹרָ֑ה וּמִ֨ן־הָע֔וֹף וְכֹ֥ל אֲשֶׁר־רֹמֵ֖שׂ עַל־הָֽאֲדָמָֽה׃",
+      "en": "Of clean beasts, and of beasts that are not clean, and of birds and of everything that creeps upon the earth,"
+    },
+    {
+      "n": 23,
+      "c": 7,
+      "v": 9,
+      "ref": "7:9",
+      "text": "שְׁנַ֨יִם שְׁנַ֜יִם בָּ֧אוּ אֶל־נֹ֛חַ אֶל־הַתֵּבָ֖ה זָכָ֣ר וּנְקֵבָ֑ה כַּֽאֲשֶׁ֛ר צִוָּ֥ה אֱלֹהִ֖ים אֶת־נֹֽחַ׃",
+      "en": "there went in two and two to Noaĥ into the ark, male and female, as God had commanded Noaĥ."
+    },
+    {
+      "n": 24,
+      "c": 7,
+      "v": 10,
+      "ref": "7:10",
+      "text": "וַיְהִ֖י לְשִׁבְעַ֣ת הַיָּמִ֑ים וּמֵ֣י הַמַּבּ֔וּל הָי֖וּ עַל־הָאָֽרֶץ׃",
+      "en": "And it came to pass after seven days, that the waters of the flood were upon the earth."
+    },
+    {
+      "n": 25,
+      "c": 7,
+      "v": 11,
+      "ref": "7:11",
+      "text": "בִּשְׁנַ֨ת שֵׁשׁ־מֵא֤וֹת שָׁנָה֙ לְחַיֵּי־נֹ֔חַ בַּחֹ֙דֶשׁ֙ הַשֵּׁנִ֔י בְּשִׁבְעָֽה־עָשָׂ֥ר י֖וֹם לַחֹ֑דֶשׁ בַּיּ֣וֹם הַזֶּ֗ה נִבְקְעוּ֙ כׇּֽל־מַעְיְנֹת֙<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי ספרד ואשכנז מַעְיְנוֹת֙)</i> תְּה֣וֹם רַבָּ֔ה וַאֲרֻבֹּ֥ת הַשָּׁמַ֖יִם נִפְתָּֽחוּ׃",
+      "en": "In the six hundredth year of Noaĥ’s life, in the second month, the seventeenth day of the month, on that same day were all the fountains of the great deep broken open, and the windows of heaven were opened."
+    },
+    {
+      "n": 26,
+      "c": 7,
+      "v": 12,
+      "ref": "7:12",
+      "text": "וַיְהִ֥י הַגֶּ֖שֶׁם עַל־הָאָ֑רֶץ אַרְבָּעִ֣ים י֔וֹם וְאַרְבָּעִ֖ים לָֽיְלָה׃",
+      "en": "And the rain was upon the earth forty days and forty nights."
+    },
+    {
+      "n": 27,
+      "c": 7,
+      "v": 13,
+      "ref": "7:13",
+      "text": "בְּעֶ֨צֶם הַיּ֤וֹם הַזֶּה֙ בָּ֣א נֹ֔חַ וְשֵׁם־וְחָ֥ם וָיֶ֖פֶת בְּנֵי־נֹ֑חַ וְאֵ֣שֶׁת נֹ֗חַ וּשְׁלֹ֧שֶׁת נְשֵֽׁי־בָנָ֛יו אִתָּ֖ם אֶל־הַתֵּבָֽה׃",
+      "en": "In the selfsame day Noaĥ, and Shem, and Ḥam, and Yefet, the sons of Noaĥ, and Noaĥ’s wife, and the three wives of his sons with them, entered into the ark;"
+    },
+    {
+      "n": 28,
+      "c": 7,
+      "v": 14,
+      "ref": "7:14",
+      "text": "הֵ֜מָּה וְכׇל־הַֽחַיָּ֣ה לְמִינָ֗הּ וְכׇל־הַבְּהֵמָה֙ לְמִינָ֔הּ וְכׇל־הָרֶ֛מֶשׂ הָרֹמֵ֥שׂ עַל־הָאָ֖רֶץ לְמִינֵ֑הוּ וְכׇל־הָע֣וֹף לְמִינֵ֔הוּ כֹּ֖ל צִפּ֥וֹר כׇּל־כָּנָֽף׃",
+      "en": "they, and every beast after its kind, and all the cattle after their kind, and every creeping thing that creeps on the earth after its kind, and every bird after its kind, every bird of every sort."
+    },
+    {
+      "n": 29,
+      "c": 7,
+      "v": 15,
+      "ref": "7:15",
+      "text": "וַיָּבֹ֥אוּ אֶל־נֹ֖חַ אֶל־הַתֵּבָ֑ה שְׁנַ֤יִם שְׁנַ֙יִם֙ מִכׇּל־הַבָּשָׂ֔ר אֲשֶׁר־בּ֖וֹ ר֥וּחַ חַיִּֽים׃",
+      "en": "And they went in to Noaĥ into the ark, two and two of all flesh in which is the breath of life."
+    },
+    {
+      "n": 30,
+      "c": 7,
+      "v": 16,
+      "ref": "7:16",
+      "text": "וְהַבָּאִ֗ים זָכָ֨ר וּנְקֵבָ֤ה מִכׇּל־בָּשָׂר֙ בָּ֔אוּ כַּֽאֲשֶׁ֛ר צִוָּ֥ה אֹת֖וֹ אֱלֹהִ֑ים וַיִּסְגֹּ֥ר יְהֹוָ֖ה בַּֽעֲדֽוֹ׃",
+      "en": "And they that went in, went in male and female of all flesh, as God had commanded him: and the Lord shut him in."
+    },
+    {
+      "n": 31,
+      "c": 7,
+      "v": 17,
+      "ref": "7:17",
+      "text": "וַֽיְהִ֧י הַמַּבּ֛וּל אַרְבָּעִ֥ים י֖וֹם עַל־הָאָ֑רֶץ וַיִּרְבּ֣וּ הַמַּ֗יִם וַיִּשְׂאוּ֙ אֶת־הַתֵּבָ֔ה וַתָּ֖רׇם מֵעַ֥ל הָאָֽרֶץ׃",
+      "en": "And the flood was forty days upon the earth; and the waters increased, and bore up the ark, and it was raised above the earth."
+    },
+    {
+      "n": 32,
+      "c": 7,
+      "v": 18,
+      "ref": "7:18",
+      "text": "וַיִּגְבְּר֥וּ הַמַּ֛יִם וַיִּרְבּ֥וּ מְאֹ֖ד עַל־הָאָ֑רֶץ וַתֵּ֥לֶךְ הַתֵּבָ֖ה עַל־פְּנֵ֥י הַמָּֽיִם׃",
+      "en": "And the waters prevailed, and were increased greatly upon the earth; and the ark went upon the face of the waters."
+    },
+    {
+      "n": 33,
+      "c": 7,
+      "v": 19,
+      "ref": "7:19",
+      "text": "וְהַמַּ֗יִם גָּ֥בְר֛וּ מְאֹ֥ד מְאֹ֖ד עַל־הָאָ֑רֶץ וַיְכֻסּ֗וּ כׇּל־הֶֽהָרִים֙ הַגְּבֹהִ֔ים אֲשֶׁר־תַּ֖חַת כׇּל־הַשָּׁמָֽיִם׃",
+      "en": "And the waters prevailed exceedingly upon the earth; and all the high mountains, that were under the whole heaven, were covered."
+    },
+    {
+      "n": 34,
+      "c": 7,
+      "v": 20,
+      "ref": "7:20",
+      "text": "חֲמֵ֨שׁ עֶשְׂרֵ֤ה אַמָּה֙ מִלְמַ֔עְלָה גָּבְר֖וּ הַמָּ֑יִם וַיְכֻסּ֖וּ הֶהָרִֽים׃",
+      "en": "Fifteen cubits upward did the waters prevail; and the mountains were covered."
+    },
+    {
+      "n": 35,
+      "c": 7,
+      "v": 21,
+      "ref": "7:21",
+      "text": "וַיִּגְוַ֞ע כׇּל־בָּשָׂ֣ר&thinsp;<b>׀</b> הָרֹמֵ֣שׂ עַל־הָאָ֗רֶץ בָּע֤וֹף וּבַבְּהֵמָה֙ וּבַ֣חַיָּ֔ה וּבְכׇל־הַשֶּׁ֖רֶץ הַשֹּׁרֵ֣ץ עַל־הָאָ֑רֶץ וְכֹ֖ל הָאָדָֽם׃",
+      "en": "And all flesh perished that moved upon the earth, both of birds, and of cattle, and of beasts, and of every creeping thing that creeps upon the earth, and all mankind:"
+    },
+    {
+      "n": 36,
+      "c": 7,
+      "v": 22,
+      "ref": "7:22",
+      "text": "כֹּ֡ל אֲשֶׁר֩ נִשְׁמַת־ר֨וּחַ חַיִּ֜ים בְּאַפָּ֗יו מִכֹּ֛ל אֲשֶׁ֥ר בֶּחָֽרָבָ֖ה מֵֽתוּ׃",
+      "en": "all in whose nostrils was the breath of life, of all that was on the dry land, died."
+    },
+    {
+      "n": 37,
+      "c": 7,
+      "v": 23,
+      "ref": "7:23",
+      "text": "וַיִּ֜מַח אֶֽת־כׇּל־הַיְק֣וּם&thinsp;<b>׀</b> אֲשֶׁ֣ר&thinsp;<b>׀</b> עַל־פְּנֵ֣י הָֽאֲדָמָ֗ה מֵאָדָ֤ם עַד־בְּהֵמָה֙ עַד־רֶ֙מֶשׂ֙ וְעַד־ע֣וֹף הַשָּׁמַ֔יִם וַיִּמָּח֖וּ מִן־הָאָ֑רֶץ וַיִּשָּׁ֧אֶר אַךְ־נֹ֛חַ וַֽאֲשֶׁ֥ר אִתּ֖וֹ בַּתֵּבָֽה׃",
+      "en": "And He destroyed every living substance which was upon the face of the ground, both man, and cattle, and creeping things, and the birds of the heaven; they were destroyed from the earth: and Noaĥ only remained alive, and they that were with him in the ark."
+    },
+    {
+      "n": 38,
+      "c": 7,
+      "v": 24,
+      "ref": "7:24",
+      "text": "וַיִּגְבְּר֥וּ הַמַּ֖יִם עַל־הָאָ֑רֶץ חֲמִשִּׁ֥ים וּמְאַ֖ת יֽוֹם׃",
+      "en": "And the waters prevailed upon the earth a hundred and fifty days."
+    },
+    {
+      "n": 39,
+      "c": 8,
+      "v": 1,
+      "ref": "8:1",
+      "text": "וַיִּזְכֹּ֤ר אֱלֹהִים֙ אֶת־נֹ֔חַ וְאֵ֤ת כׇּל־הַֽחַיָּה֙ וְאֶת־כׇּל־הַבְּהֵמָ֔ה אֲשֶׁ֥ר אִתּ֖וֹ בַּתֵּבָ֑ה וַיַּעֲבֵ֨ר אֱלֹהִ֥ים ר֙וּחַ֙ עַל־הָאָ֔רֶץ וַיָּשֹׁ֖כּוּ הַמָּֽיִם׃",
+      "en": "And God remembered Noaĥ, and every living thing, and all the cattle that were with him in the ark: and God made a wind to pass over the earth, and the waters were assuaged;"
+    },
+    {
+      "n": 40,
+      "c": 8,
+      "v": 2,
+      "ref": "8:2",
+      "text": "וַיִּסָּֽכְרוּ֙ מַעְיְנֹ֣ת תְּה֔וֹם וַֽאֲרֻבֹּ֖ת הַשָּׁמָ֑יִם וַיִּכָּלֵ֥א הַגֶּ֖שֶׁם מִן־הַשָּׁמָֽיִם׃",
+      "en": "the fountains also of the deep and the windows of heaven were stopped,"
+    },
+    {
+      "n": 41,
+      "c": 8,
+      "v": 3,
+      "ref": "8:3",
+      "text": "וַיָּשֻׁ֧בוּ הַמַּ֛יִם מֵעַ֥ל הָאָ֖רֶץ הָל֣וֹךְ וָשׁ֑וֹב וַיַּחְסְר֣וּ הַמַּ֔יִם מִקְצֵ֕ה חֲמִשִּׁ֥ים וּמְאַ֖ת יֽוֹם׃",
+      "en": "and the rain from heaven was restrained; and the waters receded from the earth continually: and after the end of a hundred and fifty days the waters were abated."
+    },
+    {
+      "n": 42,
+      "c": 8,
+      "v": 4,
+      "ref": "8:4",
+      "text": "וַתָּ֤נַח הַתֵּבָה֙ בַּחֹ֣דֶשׁ הַשְּׁבִיעִ֔י בְּשִׁבְעָה־עָשָׂ֥ר י֖וֹם לַחֹ֑דֶשׁ עַ֖ל הָרֵ֥י אֲרָרָֽט׃",
+      "en": "And the ark rested in the seventh month, on the seventeenth day of the month, upon the mountains of Ararat."
+    },
+    {
+      "n": 43,
+      "c": 8,
+      "v": 5,
+      "ref": "8:5",
+      "text": "וְהַמַּ֗יִם הָיוּ֙ הָל֣וֹךְ וְחָס֔וֹר עַ֖ד הַחֹ֣דֶשׁ הָֽעֲשִׂירִ֑י בָּֽעֲשִׂירִי֙ בְּאֶחָ֣ד לַחֹ֔דֶשׁ נִרְא֖וּ רָאשֵׁ֥י הֶֽהָרִֽים׃",
+      "en": "And the waters decreased continually until the tenth month: in the tenth month, on the first day of the month, were the tops of the mountains seen."
+    },
+    {
+      "n": 44,
+      "c": 8,
+      "v": 6,
+      "ref": "8:6",
+      "text": "וַיְהִ֕י מִקֵּ֖ץ אַרְבָּעִ֣ים י֑וֹם וַיִּפְתַּ֣ח נֹ֔חַ אֶת־חַלּ֥וֹן הַתֵּבָ֖ה אֲשֶׁ֥ר עָשָֽׂה׃",
+      "en": "And it came to pass at the end of forty days, that Noaĥ opened the window of the ark which he had made:"
+    },
+    {
+      "n": 45,
+      "c": 8,
+      "v": 7,
+      "ref": "8:7",
+      "text": "וַיְשַׁלַּ֖ח אֶת־הָֽעֹרֵ֑ב וַיֵּצֵ֤א יָצוֹא֙ וָשׁ֔וֹב עַד־יְבֹ֥שֶׁת הַמַּ֖יִם מֵעַ֥ל הָאָֽרֶץ׃",
+      "en": "and he sent forth the raven, which went forth to and fro, until the waters were dried up from off the earth."
+    },
+    {
+      "n": 46,
+      "c": 8,
+      "v": 8,
+      "ref": "8:8",
+      "text": "וַיְשַׁלַּ֥ח אֶת־הַיּוֹנָ֖ה מֵאִתּ֑וֹ לִרְאוֹת֙ הֲקַ֣לּוּ הַמַּ֔יִם מֵעַ֖ל פְּנֵ֥י הָֽאֲדָמָֽה׃",
+      "en": "Also he sent forth the dove from him, to see if the waters were abated from the face of the ground;"
+    },
+    {
+      "n": 47,
+      "c": 8,
+      "v": 9,
+      "ref": "8:9",
+      "text": "וְלֹֽא־מָצְאָה֩ הַיּוֹנָ֨ה מָנ֜וֹחַ לְכַף־רַגְלָ֗הּ וַתָּ֤שׇׁב אֵלָיו֙ אֶל־הַתֵּבָ֔ה כִּי־מַ֖יִם עַל־פְּנֵ֣י כׇל־הָאָ֑רֶץ וַיִּשְׁלַ֤ח יָדוֹ֙ וַיִּקָּחֶ֔הָ וַיָּבֵ֥א אֹתָ֛הּ אֵלָ֖יו אֶל־הַתֵּבָֽה׃",
+      "en": "but the dove found no rest for the sole of her foot, and she returned to him into the ark, for the waters were on the face of the whole earth: then he put out his hand, and took her, and pulled her in to him into the ark."
+    },
+    {
+      "n": 48,
+      "c": 8,
+      "v": 10,
+      "ref": "8:10",
+      "text": "וַיָּ֣חֶל ע֔וֹד שִׁבְעַ֥ת יָמִ֖ים אֲחֵרִ֑ים וַיֹּ֛סֶף שַׁלַּ֥ח אֶת־הַיּוֹנָ֖ה מִן־הַתֵּבָֽה׃",
+      "en": "And he waited yet another seven days; and again he sent forth the dove out of the ark;"
+    },
+    {
+      "n": 49,
+      "c": 8,
+      "v": 11,
+      "ref": "8:11",
+      "text": "וַתָּבֹ֨א אֵלָ֤יו הַיּוֹנָה֙ לְעֵ֣ת עֶ֔רֶב וְהִנֵּ֥ה עֲלֵה־זַ֖יִת טָרָ֣ף בְּפִ֑יהָ וַיֵּ֣דַע נֹ֔חַ כִּי־קַ֥לּוּ הַמַּ֖יִם מֵעַ֥ל הָאָֽרֶץ׃",
+      "en": "and the dove came in to him in the evening; and, lo, in her mouth was an olive leaf plucked off: so Noaĥ knew that the waters were abated from off the earth."
+    },
+    {
+      "n": 50,
+      "c": 8,
+      "v": 12,
+      "ref": "8:12",
+      "text": "וַיִּיָּ֣חֶל ע֔וֹד שִׁבְעַ֥ת יָמִ֖ים אֲחֵרִ֑ים וַיְשַׁלַּח֙ אֶת־הַיּוֹנָ֔ה וְלֹֽא־יָסְפָ֥ה שׁוּב־אֵלָ֖יו עֽוֹד׃",
+      "en": "And he waited yet another seven days; and sent forth the dove; which returned not again to him any more."
+    },
+    {
+      "n": 51,
+      "c": 8,
+      "v": 13,
+      "ref": "8:13",
+      "text": "וַ֠יְהִ֠י בְּאַחַ֨ת וְשֵׁשׁ־מֵא֜וֹת שָׁנָ֗ה בָּֽרִאשׁוֹן֙ בְּאֶחָ֣ד לַחֹ֔דֶשׁ חָֽרְב֥וּ הַמַּ֖יִם מֵעַ֣ל הָאָ֑רֶץ וַיָּ֤סַר נֹ֙חַ֙ אֶת־מִכְסֵ֣ה הַתֵּבָ֔ה וַיַּ֕רְא וְהִנֵּ֥ה חָֽרְב֖וּ פְּנֵ֥י הָֽאֲדָמָֽה׃",
+      "en": "And it came to pass in the six hundred and first year, in the first month on the first day of the month, that the waters were dried up from off the earth: and Noaĥ removed the covering of the ark, and looked, and, behold, the face of the ground was dry."
+    },
+    {
+      "n": 52,
+      "c": 8,
+      "v": 14,
+      "ref": "8:14",
+      "text": "וּבַחֹ֙דֶשׁ֙ הַשֵּׁנִ֔י בְּשִׁבְעָ֧ה וְעֶשְׂרִ֛ים י֖וֹם לַחֹ֑דֶשׁ יָבְשָׁ֖ה הָאָֽרֶץ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And in the second month, on the twenty-seventh day of the month, was the earth dried."
+    },
+    {
+      "n": 53,
+      "c": 8,
+      "v": 15,
+      "ref": "8:15",
+      "text": "וַיְדַבֵּ֥ר אֱלֹהִ֖ים אֶל־נֹ֥חַ לֵאמֹֽר׃",
+      "en": "And God spoke to Noaĥ, saying,"
+    },
+    {
+      "n": 54,
+      "c": 8,
+      "v": 16,
+      "ref": "8:16",
+      "text": "צֵ֖א מִן־הַתֵּבָ֑ה אַתָּ֕ה וְאִשְׁתְּךָ֛ וּבָנֶ֥יךָ וּנְשֵֽׁי־בָנֶ֖יךָ אִתָּֽךְ׃",
+      "en": "Go out of the ark, thou, and thy wife, and thy sons, and thy sons’ wives with thee."
+    },
+    {
+      "n": 55,
+      "c": 8,
+      "v": 17,
+      "ref": "8:17",
+      "text": "כׇּל־הַחַיָּ֨ה אֲשֶֽׁר־אִתְּךָ֜ מִכׇּל־בָּשָׂ֗ר בָּע֧וֹף וּבַבְּהֵמָ֛ה וּבְכׇל־הָרֶ֛מֶשׂ הָרֹמֵ֥שׂ עַל־הָאָ֖רֶץ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(הוצא)</span> <span class=\"mam-kq-q\">[הַיְצֵ֣א]</span></span> אִתָּ֑ךְ וְשָֽׁרְצ֣וּ בָאָ֔רֶץ וּפָר֥וּ וְרָב֖וּ עַל־הָאָֽרֶץ׃",
+      "en": "Bring out with thee every living thing that is with thee, of all flesh, both of birds, and of cattle, and of every creeping thing that creeps on the earth; that they may breed abundantly on the earth, and be fruitful, and multiply upon the earth."
+    },
+    {
+      "n": 56,
+      "c": 8,
+      "v": 18,
+      "ref": "8:18",
+      "text": "וַיֵּ֖צֵא־נֹ֑חַ וּבָנָ֛יו וְאִשְׁתּ֥וֹ וּנְשֵֽׁי־בָנָ֖יו אִתּֽוֹ׃",
+      "en": "And Noaĥ went out, and his sons, and his wife, and his sons’ wives with him:"
+    },
+    {
+      "n": 57,
+      "c": 8,
+      "v": 19,
+      "ref": "8:19",
+      "text": "כׇּל־הַֽחַיָּ֗ה כׇּל־הָרֶ֙מֶשׂ֙ וְכׇל־הָע֔וֹף כֹּ֖ל רוֹמֵ֣שׂ עַל־הָאָ֑רֶץ לְמִשְׁפְּחֹ֣תֵיהֶ֔ם יָצְא֖וּ מִן־הַתֵּבָֽה׃",
+      "en": "every beast, every creeping thing, and every bird, and whatever creeps on the earth, after their kinds, went out of the ark."
+    },
+    {
+      "n": 58,
+      "c": 8,
+      "v": 20,
+      "ref": "8:20",
+      "text": "וַיִּ֥בֶן נֹ֛חַ מִזְבֵּ֖חַ לַֽיהֹוָ֑ה וַיִּקַּ֞ח מִכֹּ֣ל&thinsp;<b>׀</b> הַבְּהֵמָ֣ה הַטְּהֹרָ֗ה וּמִכֹּל֙ הָע֣וֹף הַטָּה֔וֹר וַיַּ֥עַל עֹלֹ֖ת בַּמִּזְבֵּֽחַ׃",
+      "en": "And Noaĥ built an altar to the Lord; and took of every clean beast, and of every clean bird, and offered burnt offerings on the altar."
+    },
+    {
+      "n": 59,
+      "c": 8,
+      "v": 21,
+      "ref": "8:21",
+      "text": "וַיָּ֣רַח יְהֹוָה֮ אֶת־רֵ֣יחַ הַנִּיחֹ֒חַ֒ וַיֹּ֨אמֶר יְהֹוָ֜ה אֶל־לִבּ֗וֹ לֹֽא־אֹ֠סִ֠ף לְקַלֵּ֨ל ע֤וֹד אֶת־הָֽאֲדָמָה֙ בַּעֲב֣וּר הָֽאָדָ֔ם כִּ֠י יֵ֣צֶר לֵ֧ב הָאָדָ֛ם רַ֖ע מִנְּעֻרָ֑יו וְלֹֽא־אֹסִ֥ף ע֛וֹד לְהַכּ֥וֹת אֶת־כׇּל־חַ֖י כַּֽאֲשֶׁ֥ר עָשִֽׂיתִי׃",
+      "en": "And the Lord smelled the sweet savour; and the Lord said in His heart, I will not again curse the ground any more for man’s sake; for the impulse of man’s heart is evil from his youth; neither will I again smite any more everything living, as I have done."
+    },
+    {
+      "n": 60,
+      "c": 8,
+      "v": 22,
+      "ref": "8:22",
+      "text": "עֹ֖ד כׇּל־יְמֵ֣י הָאָ֑רֶץ זֶ֡רַע וְ֠קָצִ֠יר וְקֹ֨ר וָחֹ֜ם וְקַ֧יִץ וָחֹ֛רֶף וְי֥וֹם וָלַ֖יְלָה לֹ֥א יִשְׁבֹּֽתוּ׃",
+      "en": "While the earth remains, seed time and harvest, and cold and heat, and summer and winter, and day and night shall not cease."
+    },
+    {
+      "n": 61,
+      "c": 9,
+      "v": 1,
+      "ref": "9:1",
+      "text": "וַיְבָ֣רֶךְ אֱלֹהִ֔ים אֶת־נֹ֖חַ וְאֶת־בָּנָ֑יו וַיֹּ֧אמֶר לָהֶ֛ם פְּר֥וּ וּרְב֖וּ וּמִלְא֥וּ אֶת־הָאָֽרֶץ׃",
+      "en": "And God blessed Noaĥ and his sons, and said to them, Be fruitful, and multiply, and replenish the earth."
+    },
+    {
+      "n": 62,
+      "c": 9,
+      "v": 2,
+      "ref": "9:2",
+      "text": "וּמוֹרַאֲכֶ֤ם וְחִתְּכֶם֙ יִֽהְיֶ֔ה עַ֚ל כׇּל־חַיַּ֣ת הָאָ֔רֶץ וְעַ֖ל כׇּל־ע֣וֹף הַשָּׁמָ֑יִם בְּכֹל֩ אֲשֶׁ֨ר תִּרְמֹ֧שׂ הָֽאֲדָמָ֛ה וּֽבְכׇל־דְּגֵ֥י הַיָּ֖ם בְּיֶדְכֶ֥ם נִתָּֽנוּ׃",
+      "en": "And the fear of you and the dread of you shall be upon every beast of the earth, and upon every bird of the air, upon all that moves upon the earth, and upon all the fishes of the sea; into your hand are they delivered."
+    },
+    {
+      "n": 63,
+      "c": 9,
+      "v": 3,
+      "ref": "9:3",
+      "text": "כׇּל־רֶ֙מֶשׂ֙ אֲשֶׁ֣ר הוּא־חַ֔י לָכֶ֥ם יִהְיֶ֖ה לְאׇכְלָ֑ה כְּיֶ֣רֶק עֵ֔שֶׂב נָתַ֥תִּי לָכֶ֖ם אֶת־כֹּֽל׃",
+      "en": "Every moving thing that lives shall be food for you; even as the green herb have I given you all things."
+    },
+    {
+      "n": 64,
+      "c": 9,
+      "v": 4,
+      "ref": "9:4",
+      "text": "אַךְ־בָּשָׂ֕ר בְּנַפְשׁ֥וֹ דָמ֖וֹ לֹ֥א תֹאכֵֽלוּ׃",
+      "en": "But flesh with its life, which is its blood, you shall not eat."
+    },
+    {
+      "n": 65,
+      "c": 9,
+      "v": 5,
+      "ref": "9:5",
+      "text": "וְאַ֨ךְ אֶת־דִּמְכֶ֤ם לְנַפְשֹֽׁתֵיכֶם֙ אֶדְרֹ֔שׁ מִיַּ֥ד כׇּל־חַיָּ֖ה אֶדְרְשֶׁ֑נּוּ וּמִיַּ֣ד הָֽאָדָ֗ם מִיַּד֙ אִ֣ישׁ אָחִ֔יו אֶדְרֹ֖שׁ אֶת־נֶ֥פֶשׁ הָֽאָדָֽם׃",
+      "en": "And surely your blood of your lives will I require; at the hand of every beast will I require it, and at the hand of man; at the hand of every man’s brother will I require the life of man."
+    },
+    {
+      "n": 66,
+      "c": 9,
+      "v": 6,
+      "ref": "9:6",
+      "text": "שֹׁפֵךְ֙ דַּ֣ם הָֽאָדָ֔ם בָּֽאָדָ֖ם דָּמ֣וֹ יִשָּׁפֵ֑ךְ כִּ֚י בְּצֶ֣לֶם אֱלֹהִ֔ים עָשָׂ֖ה אֶת־הָאָדָֽם׃",
+      "en": "Whoso sheds man’s blood by man shall his blood be shed: for in the image of God made He man."
+    },
+    {
+      "n": 67,
+      "c": 9,
+      "v": 7,
+      "ref": "9:7",
+      "text": "וְאַתֶּ֖ם פְּר֣וּ וּרְב֑וּ שִׁרְצ֥וּ בָאָ֖רֶץ וּרְבוּ־בָֽהּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And as for you, be fruitful, and multiply; bring forth abundantly in the earth, and multiply in it."
+    },
+    {
+      "n": 68,
+      "c": 9,
+      "v": 8,
+      "ref": "9:8",
+      "text": "וַיֹּ֤אמֶר אֱלֹהִים֙ אֶל־נֹ֔חַ וְאֶל־בָּנָ֥יו אִתּ֖וֹ לֵאמֹֽר׃",
+      "en": "And God spoke to Noaĥ, and to his sons with him, saying,"
+    },
+    {
+      "n": 69,
+      "c": 9,
+      "v": 9,
+      "ref": "9:9",
+      "text": "וַאֲנִ֕י הִנְנִ֥י מֵקִ֛ים אֶת־בְּרִיתִ֖י אִתְּכֶ֑ם וְאֶֽת־זַרְעֲכֶ֖ם אַֽחֲרֵיכֶֽם׃",
+      "en": "And behold, I establish My covenant with you, and with your seed after you;"
+    },
+    {
+      "n": 70,
+      "c": 9,
+      "v": 10,
+      "ref": "9:10",
+      "text": "וְאֵ֨ת כׇּל־נֶ֤פֶשׁ הַֽחַיָּה֙ אֲשֶׁ֣ר אִתְּכֶ֔ם בָּע֧וֹף בַּבְּהֵמָ֛ה וּֽבְכׇל־חַיַּ֥ת הָאָ֖רֶץ אִתְּכֶ֑ם מִכֹּל֙ יֹצְאֵ֣י הַתֵּבָ֔ה לְכֹ֖ל חַיַּ֥ת הָאָֽרֶץ׃",
+      "en": "and with every living creature that is with you, of the birds, of the cattle, and of every beast of the earth with you; from all that came out of the ark, to every beast of the earth."
+    },
+    {
+      "n": 71,
+      "c": 9,
+      "v": 11,
+      "ref": "9:11",
+      "text": "וַהֲקִמֹתִ֤י אֶת־בְּרִיתִי֙ אִתְּכֶ֔ם וְלֹֽא־יִכָּרֵ֧ת כׇּל־בָּשָׂ֛ר ע֖וֹד מִמֵּ֣י הַמַּבּ֑וּל וְלֹֽא־יִהְיֶ֥ה ע֛וֹד מַבּ֖וּל לְשַׁחֵ֥ת הָאָֽרֶץ׃",
+      "en": "And I will establish My covenant with you; neither shall all flesh be cut off any more by the waters of the flood; neither shall there any more be a flood to destroy the earth."
+    },
+    {
+      "n": 72,
+      "c": 9,
+      "v": 12,
+      "ref": "9:12",
+      "text": "וַיֹּ֣אמֶר אֱלֹהִ֗ים זֹ֤את אֽוֹת־הַבְּרִית֙ אֲשֶׁר־אֲנִ֣י נֹתֵ֗ן בֵּינִי֙ וּבֵ֣ינֵיכֶ֔ם וּבֵ֛ין כׇּל־נֶ֥פֶשׁ חַיָּ֖ה אֲשֶׁ֣ר אִתְּכֶ֑ם לְדֹרֹ֖ת עוֹלָֽם׃",
+      "en": "And God said, This is the token of the covenant which I make between Me and you and every living creature that is with you, for perpetual generations:"
+    },
+    {
+      "n": 73,
+      "c": 9,
+      "v": 13,
+      "ref": "9:13",
+      "text": "אֶת־קַשְׁתִּ֕י נָתַ֖תִּי בֶּֽעָנָ֑ן וְהָֽיְתָה֙ לְא֣וֹת בְּרִ֔ית בֵּינִ֖י וּבֵ֥ין הָאָֽרֶץ׃",
+      "en": "I have set My bow in the cloud, and it shall be for a token of a covenant between Me and the earth."
+    },
+    {
+      "n": 74,
+      "c": 9,
+      "v": 14,
+      "ref": "9:14",
+      "text": "וְהָיָ֕ה בְּעַֽנְנִ֥י עָנָ֖ן עַל־הָאָ֑רֶץ וְנִרְאֲתָ֥ה הַקֶּ֖שֶׁת בֶּעָנָֽן׃",
+      "en": "And it shall come to pass, when I bring a cloud over the earth, that the bow shall be seen in the cloud:"
+    },
+    {
+      "n": 75,
+      "c": 9,
+      "v": 15,
+      "ref": "9:15",
+      "text": "וְזָכַרְתִּ֣י אֶת־בְּרִיתִ֗י אֲשֶׁ֤ר בֵּינִי֙ וּבֵ֣ינֵיכֶ֔ם וּבֵ֛ין כׇּל־נֶ֥פֶשׁ חַיָּ֖ה בְּכׇל־בָּשָׂ֑ר וְלֹֽא־יִֽהְיֶ֨ה ע֤וֹד הַמַּ֙יִם֙ לְמַבּ֔וּל לְשַׁחֵ֖ת כׇּל־בָּשָֽׂר׃",
+      "en": "and I will remember My covenant, which is between Me and you and every living creature of all flesh; and the waters shall no more become a flood to destroy all flesh."
+    },
+    {
+      "n": 76,
+      "c": 9,
+      "v": 16,
+      "ref": "9:16",
+      "text": "וְהָיְתָ֥ה הַקֶּ֖שֶׁת בֶּֽעָנָ֑ן וּרְאִיתִ֗יהָ לִזְכֹּר֙ בְּרִ֣ית עוֹלָ֔ם בֵּ֣ין אֱלֹהִ֔ים וּבֵין֙ כׇּל־נֶ֣פֶשׁ חַיָּ֔ה בְּכׇל־בָּשָׂ֖ר אֲשֶׁ֥ר עַל־הָאָֽרֶץ׃",
+      "en": "And the bow shall be in the cloud; and I will look upon it, that I may remember the everlasting covenant between God and every living creature of all flesh that is upon the earth."
+    },
+    {
+      "n": 77,
+      "c": 9,
+      "v": 17,
+      "ref": "9:17",
+      "text": "וַיֹּ֥אמֶר אֱלֹהִ֖ים אֶל־נֹ֑חַ זֹ֤את אֽוֹת־הַבְּרִית֙ אֲשֶׁ֣ר הֲקִמֹ֔תִי בֵּינִ֕י וּבֵ֥ין כׇּל־בָּשָׂ֖ר אֲשֶׁ֥ר עַל־הָאָֽרֶץ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And God said to Noaĥ, This is the token of the covenant, which I have established between Me and all flesh that is upon the earth."
+    },
+    {
+      "n": 78,
+      "c": 9,
+      "v": 18,
+      "ref": "9:18",
+      "text": "וַיִּֽהְי֣וּ בְנֵי־נֹ֗חַ הַיֹּֽצְאִים֙ מִן־הַתֵּבָ֔ה שֵׁ֖ם וְחָ֣ם וָיָ֑פֶת וְחָ֕ם ה֖וּא אֲבִ֥י כְנָֽעַן׃",
+      "en": "And the sons of Noaĥ, that went out of the ark, were Shem, and Ḥam, and Yefet: and Ḥam is the father of Kena῾an."
+    },
+    {
+      "n": 79,
+      "c": 9,
+      "v": 19,
+      "ref": "9:19",
+      "text": "שְׁלֹשָׁ֥ה אֵ֖לֶּה בְּנֵי־נֹ֑חַ וּמֵאֵ֖לֶּה נָֽפְצָ֥ה כׇל־הָאָֽרֶץ׃",
+      "en": "These are the three sons of Noaĥ: and of them was the whole earth overspread."
+    },
+    {
+      "n": 80,
+      "c": 9,
+      "v": 20,
+      "ref": "9:20",
+      "text": "וַיָּ֥חֶל נֹ֖חַ אִ֣ישׁ הָֽאֲדָמָ֑ה וַיִּטַּ֖ע כָּֽרֶם׃",
+      "en": "And Noaĥ began to be a husbandman, and he planted a vineyard:"
+    },
+    {
+      "n": 81,
+      "c": 9,
+      "v": 21,
+      "ref": "9:21",
+      "text": "וַיֵּ֥שְׁתְּ מִן־הַיַּ֖יִן וַיִּשְׁכָּ֑ר וַיִּתְגַּ֖ל בְּת֥וֹךְ אׇהֳלֹֽה׃",
+      "en": "And he drank of the wine, and was drunk; and he was uncovered within his tent."
+    },
+    {
+      "n": 82,
+      "c": 9,
+      "v": 22,
+      "ref": "9:22",
+      "text": "וַיַּ֗רְא חָ֚ם אֲבִ֣י כְנַ֔עַן אֵ֖ת עֶרְוַ֣ת אָבִ֑יו וַיַּגֵּ֥ד לִשְׁנֵֽי־אֶחָ֖יו בַּחֽוּץ׃",
+      "en": "And Ḥam, the father of Kena῾an saw the nakedness of his father, and told his two brethren outside."
+    },
+    {
+      "n": 83,
+      "c": 9,
+      "v": 23,
+      "ref": "9:23",
+      "text": "וַיִּקַּח֩ שֵׁ֨ם וָיֶ֜פֶת אֶת־הַשִּׂמְלָ֗ה וַיָּשִׂ֙ימוּ֙ עַל־שְׁכֶ֣ם שְׁנֵיהֶ֔ם וַיֵּֽלְכוּ֙ אֲחֹ֣רַנִּ֔ית וַיְכַסּ֕וּ אֵ֖ת עֶרְוַ֣ת אֲבִיהֶ֑ם וּפְנֵיהֶם֙ אֲחֹ֣רַנִּ֔ית וְעֶרְוַ֥ת אֲבִיהֶ֖ם לֹ֥א רָאֽוּ׃",
+      "en": "And Shem and Yefet took the garment, and laid it upon both their shoulders, and went backward, and covered the nakedness of their father; and their faces were backward, and they saw not their father’s nakedness."
+    },
+    {
+      "n": 84,
+      "c": 9,
+      "v": 24,
+      "ref": "9:24",
+      "text": "וַיִּ֥יקֶץ נֹ֖חַ מִיֵּינ֑וֹ וַיֵּ֕דַע אֵ֛ת אֲשֶׁר־עָ֥שָׂה ל֖וֹ בְּנ֥וֹ הַקָּטָֽן׃",
+      "en": "And Noaĥ awoke from his wine, and knew what his younger son had done to him."
+    },
+    {
+      "n": 85,
+      "c": 9,
+      "v": 25,
+      "ref": "9:25",
+      "text": "וַיֹּ֖אמֶר אָר֣וּר כְּנָ֑עַן עֶ֥בֶד עֲבָדִ֖ים יִֽהְיֶ֥ה לְאֶחָֽיו׃",
+      "en": "And he said, Cursed be Kena῾an; a servant of servants shall he be to his brethren."
+    },
+    {
+      "n": 86,
+      "c": 9,
+      "v": 26,
+      "ref": "9:26",
+      "text": "וַיֹּ֕אמֶר בָּר֥וּךְ יְהֹוָ֖ה אֱלֹ֣הֵי שֵׁ֑ם וִיהִ֥י כְנַ֖עַן עֶ֥בֶד לָֽמוֹ׃",
+      "en": "And he said, Blessed be the Lord God of Shem; and Kena῾an shall be his servant."
+    },
+    {
+      "n": 87,
+      "c": 9,
+      "v": 27,
+      "ref": "9:27",
+      "text": "יַ֤פְתְּ אֱלֹהִים֙ לְיֶ֔פֶת וְיִשְׁכֹּ֖ן בְּאׇֽהֳלֵי־שֵׁ֑ם וִיהִ֥י כְנַ֖עַן עֶ֥בֶד לָֽמוֹ׃",
+      "en": "God shall enlarge Yefet, and he shall dwell in the tents of Shem; and Kena῾an shall be his servant."
+    },
+    {
+      "n": 88,
+      "c": 9,
+      "v": 28,
+      "ref": "9:28",
+      "text": "וַֽיְחִי־נֹ֖חַ אַחַ֣ר הַמַּבּ֑וּל שְׁלֹ֤שׁ מֵאוֹת֙ שָׁנָ֔ה וַֽחֲמִשִּׁ֖ים שָׁנָֽה׃",
+      "en": "And Noaĥ lived after the flood three hundred and fifty years."
+    },
+    {
+      "n": 89,
+      "c": 9,
+      "v": 29,
+      "ref": "9:29",
+      "text": "וַיִּֽהְיוּ֙<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי ספרד ואשכנז וַֽיְהִי֙)</i> כׇּל־יְמֵי־נֹ֔חַ תְּשַׁ֤ע מֵאוֹת֙ שָׁנָ֔ה וַחֲמִשִּׁ֖ים שָׁנָ֑ה וַיָּמֹֽת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And all the days of Noaĥ were nine hundred and fifty years: and he died."
+    },
+    {
+      "n": 90,
+      "c": 10,
+      "v": 1,
+      "ref": "10:1",
+      "text": "וְאֵ֙לֶּה֙ תּוֹלְדֹ֣ת בְּנֵי־נֹ֔חַ שֵׁ֖ם חָ֣ם וָיָ֑פֶת וַיִּוָּלְד֥וּ לָהֶ֛ם בָּנִ֖ים אַחַ֥ר הַמַּבּֽוּל׃",
+      "en": "Now these are the generations of the sons of Noaĥ: Shem, Ḥam, and Yefet; and to them were sons born after the flood."
+    },
+    {
+      "n": 91,
+      "c": 10,
+      "v": 2,
+      "ref": "10:2",
+      "text": "בְּנֵ֣י יֶ֔פֶת גֹּ֣מֶר וּמָג֔וֹג וּמָדַ֖י וְיָוָ֣ן וְתֻבָ֑ל וּמֶ֖שֶׁךְ וְתִירָֽס׃",
+      "en": "The sons of Yefet; Gomer, and Magog, and Maday, and Yavan, and Tuval, and Meshekh, and Tiras."
+    },
+    {
+      "n": 92,
+      "c": 10,
+      "v": 3,
+      "ref": "10:3",
+      "text": "וּבְנֵ֖י גֹּ֑מֶר אַשְׁכְּנַ֥ז וְרִיפַ֖ת וְתֹגַרְמָֽה׃",
+      "en": "And the sons of Gomer; Ashkenaz, and Rifat, and Togarma."
+    },
+    {
+      "n": 93,
+      "c": 10,
+      "v": 4,
+      "ref": "10:4",
+      "text": "וּבְנֵ֥י יָוָ֖ן אֱלִישָׁ֣ה וְתַרְשִׁ֑ישׁ כִּתִּ֖ים וְדֹדָנִֽים׃",
+      "en": "And the sons of Yavan; Elisha, and Tarshish, Kittim, and Dodanim."
+    },
+    {
+      "n": 94,
+      "c": 10,
+      "v": 5,
+      "ref": "10:5",
+      "text": "מֵ֠אֵ֠לֶּה נִפְרְד֞וּ אִיֵּ֤י הַגּוֹיִם֙ בְּאַרְצֹתָ֔ם אִ֖ישׁ לִלְשֹׁנ֑וֹ לְמִשְׁפְּחֹתָ֖ם בְּגוֹיֵהֶֽם׃",
+      "en": "By these were the isles of the nations divided in their lands; everyone after his tongue, after their families, in their nations."
+    },
+    {
+      "n": 95,
+      "c": 10,
+      "v": 6,
+      "ref": "10:6",
+      "text": "וּבְנֵ֖י חָ֑ם כּ֥וּשׁ וּמִצְרַ֖יִם וּפ֥וּט וּכְנָֽעַן׃",
+      "en": "And the sons of Ḥam; Kush, and Miżrayim, and Put, and Kena῾an."
+    },
+    {
+      "n": 96,
+      "c": 10,
+      "v": 7,
+      "ref": "10:7",
+      "text": "וּבְנֵ֣י כ֔וּשׁ סְבָא֙ וַֽחֲוִילָ֔ה וְסַבְתָּ֥ה וְרַעְמָ֖ה וְסַבְתְּכָ֑א וּבְנֵ֥י רַעְמָ֖ה שְׁבָ֥א וּדְדָֽן׃",
+      "en": "And the sons of Kush; Seva, and Ḥavila, and Savta, and Ra῾ma, and Savtekha, and the sons of Ra῾ma; Sheva, and Dedan."
+    },
+    {
+      "n": 97,
+      "c": 10,
+      "v": 8,
+      "ref": "10:8",
+      "text": "וְכ֖וּשׁ יָלַ֣ד אֶת־נִמְרֹ֑ד ה֣וּא הֵחֵ֔ל לִֽהְי֥וֹת גִּבֹּ֖ר בָּאָֽרֶץ׃",
+      "en": "And Kush begot Nimrod: he began to be a mighty one in the earth."
+    },
+    {
+      "n": 98,
+      "c": 10,
+      "v": 9,
+      "ref": "10:9",
+      "text": "הֽוּא־הָיָ֥ה גִבֹּֽר־צַ֖יִד לִפְנֵ֣י יְהֹוָ֑ה עַל־כֵּן֙ יֵֽאָמַ֔ר כְּנִמְרֹ֛ד גִּבּ֥וֹר צַ֖יִד לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "He was a mighty hunter before the Lord: wherefore it is said, Like Nimrod the mighty hunter before the Lord."
+    },
+    {
+      "n": 99,
+      "c": 10,
+      "v": 10,
+      "ref": "10:10",
+      "text": "וַתְּהִ֨י רֵאשִׁ֤ית מַמְלַכְתּוֹ֙ בָּבֶ֔ל וְאֶ֖רֶךְ וְאַכַּ֣ד וְכַלְנֵ֑ה בְּאֶ֖רֶץ שִׁנְעָֽר׃",
+      "en": "And the beginning of his kingdom was Bavel, and Erekh, and Akkad, and Kalne, in the land of Shin῾ar."
+    },
+    {
+      "n": 100,
+      "c": 10,
+      "v": 11,
+      "ref": "10:11",
+      "text": "מִן־הָאָ֥רֶץ הַהִ֖וא יָצָ֣א אַשּׁ֑וּר וַיִּ֙בֶן֙ אֶת־נִ֣ינְוֵ֔ה וְאֶת־רְחֹבֹ֥ת עִ֖יר וְאֶת־כָּֽלַח׃",
+      "en": "Out of that land went forth Ashshur, and built Nineve, and the city Reĥovot, and Kelaĥ."
+    },
+    {
+      "n": 101,
+      "c": 10,
+      "v": 12,
+      "ref": "10:12",
+      "text": "וְֽאֶת־רֶ֔סֶן בֵּ֥ין נִֽינְוֵ֖ה וּבֵ֣ין כָּ֑לַח הִ֖וא הָעִ֥יר הַגְּדֹלָֽה׃",
+      "en": "And Resen between Nineve and Kelaĥ: that is a great city."
+    },
+    {
+      "n": 102,
+      "c": 10,
+      "v": 13,
+      "ref": "10:13",
+      "text": "וּמִצְרַ֡יִם יָלַ֞ד אֶת־לוּדִ֧ים וְאֶת־עֲנָמִ֛ים וְאֶת־לְהָבִ֖ים וְאֶת־נַפְתֻּחִֽים׃",
+      "en": "And Miżrayim begot Ludim, and ῾Anamim, and Lehavim and Naftuhim."
+    },
+    {
+      "n": 103,
+      "c": 10,
+      "v": 14,
+      "ref": "10:14",
+      "text": "וְֽאֶת־פַּתְרֻסִ֞ים וְאֶת־כַּסְלֻחִ֗ים אֲשֶׁ֨ר יָצְא֥וּ מִשָּׁ֛ם פְּלִשְׁתִּ֖ים וְאֶת־כַּפְתֹּרִֽים׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And Patrusim, and Kasluĥim, (out of whom came Pelishtim) and Kaftorim."
+    },
+    {
+      "n": 104,
+      "c": 10,
+      "v": 15,
+      "ref": "10:15",
+      "text": "וּכְנַ֗עַן יָלַ֛ד אֶת־צִידֹ֥ן בְּכֹר֖וֹ וְאֶת־חֵֽת׃",
+      "en": "And Kena῾an begot Żidon his firstborn, and Ḥet,"
+    },
+    {
+      "n": 105,
+      "c": 10,
+      "v": 16,
+      "ref": "10:16",
+      "text": "וְאֶת־הַיְבוּסִי֙ וְאֶת־הָ֣אֱמֹרִ֔י וְאֵ֖ת הַגִּרְגָּשִֽׁי׃",
+      "en": "and the Yevusi, and the Emori, and the Girgashi."
+    },
+    {
+      "n": 106,
+      "c": 10,
+      "v": 17,
+      "ref": "10:17",
+      "text": "וְאֶת־הַֽחִוִּ֥י וְאֶת־הַֽעַרְקִ֖י וְאֶת־הַסִּינִֽי׃",
+      "en": "And the Ḥivvi, and the ῾Arqi, and the Sini,"
+    },
+    {
+      "n": 107,
+      "c": 10,
+      "v": 18,
+      "ref": "10:18",
+      "text": "וְאֶת־הָֽאַרְוָדִ֥י וְאֶת־הַצְּמָרִ֖י וְאֶת־הַֽחֲמָתִ֑י וְאַחַ֣ר נָפֹ֔צוּ מִשְׁפְּח֖וֹת הַֽכְּנַעֲנִֽי׃",
+      "en": "and the Arvadi, and the Żemari, and the Hamati: and afterwards the families of the Kena῾ani were spread abroad."
+    },
+    {
+      "n": 108,
+      "c": 10,
+      "v": 19,
+      "ref": "10:19",
+      "text": "וַיְהִ֞י גְּב֤וּל הַֽכְּנַעֲנִי֙ מִצִּידֹ֔ן בֹּאֲכָ֥ה גְרָ֖רָה עַד־עַזָּ֑ה בֹּאֲכָ֞ה סְדֹ֧מָה וַעֲמֹרָ֛ה וְאַדְמָ֥ה וּצְבֹיִ֖ם עַד־לָֽשַׁע׃",
+      "en": "And the border of the Kena῾ani was from Żidon, as thou comest to Gerar, unto ῾Azza; as thou goest to Sedom, and ῾Amora, and Adma, and Żevoyim, unto Lesha."
+    },
+    {
+      "n": 109,
+      "c": 10,
+      "v": 20,
+      "ref": "10:20",
+      "text": "אֵ֣לֶּה בְנֵי־חָ֔ם לְמִשְׁפְּחֹתָ֖ם לִלְשֹֽׁנֹתָ֑ם בְּאַרְצֹתָ֖ם בְּגוֹיֵהֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "These are the sons of Ḥam, after their families, after their tongues, in their lands, in their nations."
+    },
+    {
+      "n": 110,
+      "c": 10,
+      "v": 21,
+      "ref": "10:21",
+      "text": "וּלְשֵׁ֥ם יֻלַּ֖ד גַּם־ה֑וּא אֲבִי֙ כׇּל־בְּנֵי־עֵ֔בֶר אֲחִ֖י יֶ֥פֶת הַגָּדֽוֹל׃",
+      "en": "To Shem also, the father of all the children of ῾Ever, the brother of Yefet the elder, to him were children born."
+    },
+    {
+      "n": 111,
+      "c": 10,
+      "v": 22,
+      "ref": "10:22",
+      "text": "בְּנֵ֥י שֵׁ֖ם עֵילָ֣ם וְאַשּׁ֑וּר וְאַרְפַּכְשַׁ֖ד וְל֥וּד וַֽאֲרָֽם׃",
+      "en": "The children of Shem; ῾Elam, and Ashshur, and Arpakhshad, and Lud, and Aram."
+    },
+    {
+      "n": 112,
+      "c": 10,
+      "v": 23,
+      "ref": "10:23",
+      "text": "וּבְנֵ֖י אֲרָ֑ם ע֥וּץ וְח֖וּל וְגֶ֥תֶר וָמַֽשׁ׃",
+      "en": "And the children of Aram; ῾Uż, and Ḥul, and Geter, and Mash."
+    },
+    {
+      "n": 113,
+      "c": 10,
+      "v": 24,
+      "ref": "10:24",
+      "text": "וְאַרְפַּכְשַׁ֖ד יָלַ֣ד אֶת־שָׁ֑לַח וְשֶׁ֖לַח יָלַ֥ד אֶת־עֵֽבֶר׃",
+      "en": "And Arpakhshad begot Shelaĥ, and Shelaĥ begot ῾Ever."
+    },
+    {
+      "n": 114,
+      "c": 10,
+      "v": 25,
+      "ref": "10:25",
+      "text": "וּלְעֵ֥בֶר יֻלַּ֖ד שְׁנֵ֣י בָנִ֑ים שֵׁ֣ם הָֽאֶחָ֞ד פֶּ֗לֶג כִּ֤י בְיָמָיו֙ נִפְלְגָ֣ה הָאָ֔רֶץ וְשֵׁ֥ם אָחִ֖יו יׇקְטָֽן׃",
+      "en": "And to ῾Ever were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother’s name was Yoqtan."
+    },
+    {
+      "n": 115,
+      "c": 10,
+      "v": 26,
+      "ref": "10:26",
+      "text": "וְיׇקְטָ֣ן יָלַ֔ד אֶת־אַלְמוֹדָ֖ד וְאֶת־שָׁ֑לֶף וְאֶת־חֲצַרְמָ֖וֶת וְאֶת־יָֽרַח׃",
+      "en": "And Yoqtan begot Almodad, and Shelef, and Ḥażarmavet, and Yeraĥ,"
+    },
+    {
+      "n": 116,
+      "c": 10,
+      "v": 27,
+      "ref": "10:27",
+      "text": "וְאֶת־הֲדוֹרָ֥ם וְאֶת־אוּזָ֖ל וְאֶת־דִּקְלָֽה׃",
+      "en": "and Hadoram, and Uzal, and Diqla,"
+    },
+    {
+      "n": 117,
+      "c": 10,
+      "v": 28,
+      "ref": "10:28",
+      "text": "וְאֶת־עוֹבָ֥ל וְאֶת־אֲבִֽימָאֵ֖ל וְאֶת־שְׁבָֽא׃",
+      "en": "and ῾Oval, and Avima᾽el, and Sheva,"
+    },
+    {
+      "n": 118,
+      "c": 10,
+      "v": 29,
+      "ref": "10:29",
+      "text": "וְאֶת־אוֹפִ֥ר וְאֶת־חֲוִילָ֖ה וְאֶת־יוֹבָ֑ב כׇּל־אֵ֖לֶּה בְּנֵ֥י יׇקְטָֽן׃",
+      "en": "and Ofir, and Ḥavila, and Yovav: all these were the sons of Yoqtan."
+    },
+    {
+      "n": 119,
+      "c": 10,
+      "v": 30,
+      "ref": "10:30",
+      "text": "וַיְהִ֥י מוֹשָׁבָ֖ם מִמֵּשָׁ֑א בֹּאֲכָ֥ה סְפָ֖רָה הַ֥ר הַקֶּֽדֶם׃",
+      "en": "And their dwelling was from Mesha, as thou goest to Sefar a mountain of the east."
+    },
+    {
+      "n": 120,
+      "c": 10,
+      "v": 31,
+      "ref": "10:31",
+      "text": "אֵ֣לֶּה בְנֵי־שֵׁ֔ם לְמִשְׁפְּחֹתָ֖ם לִלְשֹׁנֹתָ֑ם בְּאַרְצֹתָ֖ם לְגוֹיֵהֶֽם׃",
+      "en": "These are the sons of Shem, after their families, after their tongues, in their lands, after their nations."
+    },
+    {
+      "n": 121,
+      "c": 10,
+      "v": 32,
+      "ref": "10:32",
+      "text": "אֵ֣לֶּה מִשְׁפְּחֹ֧ת בְּנֵי־נֹ֛חַ לְתוֹלְדֹתָ֖ם בְּגוֹיֵהֶ֑ם וּמֵאֵ֜לֶּה נִפְרְד֧וּ הַגּוֹיִ֛ם בָּאָ֖רֶץ אַחַ֥ר הַמַּבּֽוּל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "These are the families of the sons of Noaĥ, after their generations, in their nations: and from these were the nations divided in the earth after the flood."
+    },
+    {
+      "n": 122,
+      "c": 11,
+      "v": 1,
+      "ref": "11:1",
+      "text": "וַיְהִ֥י כׇל־הָאָ֖רֶץ שָׂפָ֣ה אֶחָ֑ת וּדְבָרִ֖ים אֲחָדִֽים׃",
+      "en": "And the whole earth was of one language, and of one speech."
+    },
+    {
+      "n": 123,
+      "c": 11,
+      "v": 2,
+      "ref": "11:2",
+      "text": "וַיְהִ֖י בְּנׇסְעָ֣ם מִקֶּ֑דֶם וַֽיִּמְצְא֥וּ בִקְעָ֛ה בְּאֶ֥רֶץ שִׁנְעָ֖ר וַיֵּ֥שְׁבוּ שָֽׁם׃",
+      "en": "And it came to pass, as they journeyed from the east, that they found a plain in the land of Shin῾ar; and they dwelt there."
+    },
+    {
+      "n": 124,
+      "c": 11,
+      "v": 3,
+      "ref": "11:3",
+      "text": "וַיֹּאמְר֞וּ אִ֣ישׁ אֶל־רֵעֵ֗הוּ הָ֚בָה נִלְבְּנָ֣ה לְבֵנִ֔ים וְנִשְׂרְפָ֖ה לִשְׂרֵפָ֑ה וַתְּהִ֨י לָהֶ֤ם הַלְּבֵנָה֙ לְאָ֔בֶן וְהַ֣חֵמָ֔ר הָיָ֥ה לָהֶ֖ם לַחֹֽמֶר׃",
+      "en": "And they said to one another, Come, let us make bricks, and burn them thoroughly. And they had brick for stone, and slime had they for mortar."
+    },
+    {
+      "n": 125,
+      "c": 11,
+      "v": 4,
+      "ref": "11:4",
+      "text": "וַיֹּאמְר֞וּ הָ֣בָה&thinsp;<b>׀</b> נִבְנֶה־לָּ֣נוּ עִ֗יר וּמִגְדָּל֙ וְרֹאשׁ֣וֹ בַשָּׁמַ֔יִם וְנַֽעֲשֶׂה־לָּ֖נוּ שֵׁ֑ם פֶּן־נָפ֖וּץ עַל־פְּנֵ֥י כׇל־הָאָֽרֶץ׃",
+      "en": "And they said, Come, let us build us a city and a tower, whose top may reach to heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth."
+    },
+    {
+      "n": 126,
+      "c": 11,
+      "v": 5,
+      "ref": "11:5",
+      "text": "וַיֵּ֣רֶד יְהֹוָ֔ה לִרְאֹ֥ת אֶת־הָעִ֖יר וְאֶת־הַמִּגְדָּ֑ל אֲשֶׁ֥ר בָּנ֖וּ בְּנֵ֥י הָאָדָֽם׃",
+      "en": "And the Lord came down to see the city and the tower, which the children of men were building."
+    },
+    {
+      "n": 127,
+      "c": 11,
+      "v": 6,
+      "ref": "11:6",
+      "text": "וַיֹּ֣אמֶר יְהֹוָ֗ה הֵ֣ן עַ֤ם אֶחָד֙ וְשָׂפָ֤ה אַחַת֙ לְכֻלָּ֔ם וְזֶ֖ה הַחִלָּ֣ם לַעֲשׂ֑וֹת וְעַתָּה֙ לֹֽא־יִבָּצֵ֣ר מֵהֶ֔ם כֹּ֛ל אֲשֶׁ֥ר יָזְמ֖וּ לַֽעֲשֽׂוֹת׃",
+      "en": "And the Lord said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be withheld from them, which they have schemed to do."
+    },
+    {
+      "n": 128,
+      "c": 11,
+      "v": 7,
+      "ref": "11:7",
+      "text": "הָ֚בָה נֵֽרְדָ֔ה וְנָבְלָ֥ה שָׁ֖ם שְׂפָתָ֑ם אֲשֶׁר֙ לֹ֣א יִשְׁמְע֔וּ אִ֖ישׁ שְׂפַ֥ת רֵעֵֽהוּ׃",
+      "en": "Come, let us go down, and there confound their language, that they may not understand one another’s speech."
+    },
+    {
+      "n": 129,
+      "c": 11,
+      "v": 8,
+      "ref": "11:8",
+      "text": "וַיָּ֨פֶץ יְהֹוָ֥ה אֹתָ֛ם מִשָּׁ֖ם עַל־פְּנֵ֣י כׇל־הָאָ֑רֶץ וַֽיַּחְדְּל֖וּ לִבְנֹ֥ת הָעִֽיר׃",
+      "en": "So the Lord scattered them abroad from there upon the face of all the earth: and they ceased to build the city."
+    },
+    {
+      "n": 130,
+      "c": 11,
+      "v": 9,
+      "ref": "11:9",
+      "text": "עַל־כֵּ֞ן קָרָ֤א שְׁמָהּ֙ בָּבֶ֔ל כִּי־שָׁ֛ם בָּלַ֥ל יְהֹוָ֖ה שְׂפַ֣ת כׇּל־הָאָ֑רֶץ וּמִשָּׁם֙ הֱפִיצָ֣ם יְהֹוָ֔ה עַל־פְּנֵ֖י כׇּל־הָאָֽרֶץ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Therefore is the name of it called Bavel; because the Lord did there confound the language of all the earth: and from thence did the Lord scatter them abroad upon the face of all the earth."
+    },
+    {
+      "n": 131,
+      "c": 11,
+      "v": 10,
+      "ref": "11:10",
+      "text": "אֵ֚לֶּה תּוֹלְדֹ֣ת שֵׁ֔ם שֵׁ֚ם בֶּן־מְאַ֣ת שָׁנָ֔ה וַיּ֖וֹלֶד אֶת־אַרְפַּכְשָׁ֑ד שְׁנָתַ֖יִם אַחַ֥ר הַמַּבּֽוּל׃",
+      "en": "These are the generations of Shem: Shem was a hundred years old, and begot Arpakhshad two years after the flood:"
+    },
+    {
+      "n": 132,
+      "c": 11,
+      "v": 11,
+      "ref": "11:11",
+      "text": "וַֽיְחִי־שֵׁ֗ם אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת־אַרְפַּכְשָׁ֔ד חֲמֵ֥שׁ מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and Shem lived after he begot Arpakhshad five hundred years, and begot sons and daughters."
+    },
+    {
+      "n": 133,
+      "c": 11,
+      "v": 12,
+      "ref": "11:12",
+      "text": "וְאַרְפַּכְשַׁ֣ד חַ֔י חָמֵ֥שׁ וּשְׁלֹשִׁ֖ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־שָֽׁלַח׃",
+      "en": "And Arpakhshad lived thirty five years, and begot Shelaĥ."
+    },
+    {
+      "n": 134,
+      "c": 11,
+      "v": 13,
+      "ref": "11:13",
+      "text": "וַיְחִ֣י אַרְפַּכְשַׁ֗ד אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת־שֶׁ֔לַח שָׁלֹ֣שׁ שָׁנִ֔ים וְאַרְבַּ֥ע מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And Arpakhshad lived after he begot Shelaĥ four hundred and three years, and begot sons and daughters."
+    },
+    {
+      "n": 135,
+      "c": 11,
+      "v": 14,
+      "ref": "11:14",
+      "text": "וְשֶׁ֥לַח חַ֖י שְׁלֹשִׁ֣ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־עֵֽבֶר׃",
+      "en": "And Shelaĥ lived thirty years, and begot ῾Ever:"
+    },
+    {
+      "n": 136,
+      "c": 11,
+      "v": 15,
+      "ref": "11:15",
+      "text": "וַֽיְחִי־שֶׁ֗לַח אַחֲרֵי֙ הוֹלִיד֣וֹ אֶת־עֵ֔בֶר שָׁלֹ֣שׁ שָׁנִ֔ים וְאַרְבַּ֥ע מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and Shelaĥ lived after he begot ῾Ever four hundred and three years, and begot sons and daughters."
+    },
+    {
+      "n": 137,
+      "c": 11,
+      "v": 16,
+      "ref": "11:16",
+      "text": "וַֽיְחִי־עֵ֕בֶר אַרְבַּ֥ע וּשְׁלֹשִׁ֖ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־פָּֽלֶג׃",
+      "en": "And ῾Ever lived thirty four years, and begot Peleg:"
+    },
+    {
+      "n": 138,
+      "c": 11,
+      "v": 17,
+      "ref": "11:17",
+      "text": "וַֽיְחִי־עֵ֗בֶר אַחֲרֵי֙ הוֹלִיד֣וֹ אֶת־פֶּ֔לֶג שְׁלֹשִׁ֣ים שָׁנָ֔ה וְאַרְבַּ֥ע מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and ῾Ever lived after he begot Peleg four hundred and thirty years, and begot sons and daughters."
+    },
+    {
+      "n": 139,
+      "c": 11,
+      "v": 18,
+      "ref": "11:18",
+      "text": "וַֽיְחִי־פֶ֖לֶג שְׁלֹשִׁ֣ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־רְעֽוּ׃",
+      "en": "And Peleg lived thirty years, and begot Re῾u:"
+    },
+    {
+      "n": 140,
+      "c": 11,
+      "v": 19,
+      "ref": "11:19",
+      "text": "וַֽיְחִי־פֶ֗לֶג אַחֲרֵי֙ הוֹלִיד֣וֹ אֶת־רְע֔וּ תֵּ֥שַׁע שָׁנִ֖ים וּמָאתַ֣יִם שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and Peleg lived after he begot Re῾u two hundred and nine years, and begot sons and daughters."
+    },
+    {
+      "n": 141,
+      "c": 11,
+      "v": 20,
+      "ref": "11:20",
+      "text": "וַיְחִ֣י רְע֔וּ שְׁתַּ֥יִם וּשְׁלֹשִׁ֖ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־שְׂרֽוּג׃",
+      "en": "And Re῾u lived thirty two years, and begot Serug:"
+    },
+    {
+      "n": 142,
+      "c": 11,
+      "v": 21,
+      "ref": "11:21",
+      "text": "וַיְחִ֣י רְע֗וּ אַחֲרֵי֙ הוֹלִיד֣וֹ אֶת־שְׂר֔וּג שֶׁ֥בַע שָׁנִ֖ים וּמָאתַ֣יִם שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and Re῾u lived after he begot Serug two hundred and seven years, and begot sons and daughters."
+    },
+    {
+      "n": 143,
+      "c": 11,
+      "v": 22,
+      "ref": "11:22",
+      "text": "וַיְחִ֥י שְׂר֖וּג שְׁלֹשִׁ֣ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־נָחֽוֹר׃",
+      "en": "And Serug lived thirty years, and begot Naĥor:"
+    },
+    {
+      "n": 144,
+      "c": 11,
+      "v": 23,
+      "ref": "11:23",
+      "text": "וַיְחִ֣י שְׂר֗וּג אַחֲרֵ֛י הוֹלִיד֥וֹ אֶת־נָח֖וֹר מָאתַ֣יִם שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and Serug lived after he begot Naĥor two hundred years, and begot sons and daughters."
+    },
+    {
+      "n": 145,
+      "c": 11,
+      "v": 24,
+      "ref": "11:24",
+      "text": "וַיְחִ֣י נָח֔וֹר תֵּ֥שַׁע וְעֶשְׂרִ֖ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־תָּֽרַח׃",
+      "en": "And Naĥor lived twenty nine years, and begot Teraĥ:"
+    },
+    {
+      "n": 146,
+      "c": 11,
+      "v": 25,
+      "ref": "11:25",
+      "text": "וַיְחִ֣י נָח֗וֹר אַחֲרֵי֙ הוֹלִיד֣וֹ אֶת־תֶּ֔רַח תְּשַֽׁע־עֶשְׂרֵ֥ה שָׁנָ֖ה וּמְאַ֣ת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and Naĥor lived after he begot Teraĥ a hundred and nineteen years, and begot sons and daughters."
+    },
+    {
+      "n": 147,
+      "c": 11,
+      "v": 26,
+      "ref": "11:26",
+      "text": "וַֽיְחִי־תֶ֖רַח שִׁבְעִ֣ים שָׁנָ֑ה וַיּ֙וֹלֶד֙ אֶת־אַבְרָ֔ם אֶת־נָח֖וֹר וְאֶת־הָרָֽן׃",
+      "en": "And Teraĥ lived seventy years, and begot Avram, Naĥor, and Haran."
+    },
+    {
+      "n": 148,
+      "c": 11,
+      "v": 27,
+      "ref": "11:27",
+      "text": "וְאֵ֙לֶּה֙ תּוֹלְדֹ֣ת תֶּ֔רַח תֶּ֚רַח הוֹלִ֣יד אֶת־אַבְרָ֔ם אֶת־נָח֖וֹר וְאֶת־הָרָ֑ן וְהָרָ֖ן הוֹלִ֥יד אֶת־לֽוֹט׃",
+      "en": "Now these are the generations of Teraĥ: Teraĥ begot Avram, Naĥor, and Haran; and Haran begot Lot."
+    },
+    {
+      "n": 149,
+      "c": 11,
+      "v": 28,
+      "ref": "11:28",
+      "text": "וַיָּ֣מׇת הָרָ֔ן עַל־פְּנֵ֖י תֶּ֣רַח אָבִ֑יו בְּאֶ֥רֶץ מוֹלַדְתּ֖וֹ בְּא֥וּר כַּשְׂדִּֽים׃",
+      "en": "And Haran died before his father Teraĥ in the land of his nativity, in Ur-kasdim."
+    },
+    {
+      "n": 150,
+      "c": 11,
+      "v": 29,
+      "ref": "11:29",
+      "text": "וַיִּקַּ֨ח אַבְרָ֧ם וְנָח֛וֹר לָהֶ֖ם נָשִׁ֑ים שֵׁ֤ם אֵֽשֶׁת־אַבְרָם֙ שָׂרָ֔י וְשֵׁ֤ם אֵֽשֶׁת־נָחוֹר֙ מִלְכָּ֔ה בַּת־הָרָ֥ן אֲבִֽי־מִלְכָּ֖ה וַֽאֲבִ֥י יִסְכָּֽה׃",
+      "en": "And Avram and Naĥor took wives for themselves; the name of Avram’s wife was Saray; and the name of Naĥor’s wife, Milka, the daughter of Haran, the father of Milka, and the father of Yiska."
+    },
+    {
+      "n": 151,
+      "c": 11,
+      "v": 30,
+      "ref": "11:30",
+      "text": "וַתְּהִ֥י שָׂרַ֖י עֲקָרָ֑ה אֵ֥ין לָ֖הּ וָלָֽד׃",
+      "en": "But Saray was barren; she had no child."
+    },
+    {
+      "n": 152,
+      "c": 11,
+      "v": 31,
+      "ref": "11:31",
+      "text": "וַיִּקַּ֨ח תֶּ֜רַח אֶת־אַבְרָ֣ם בְּנ֗וֹ וְאֶת־ל֤וֹט בֶּן־הָרָן֙ בֶּן־בְּנ֔וֹ וְאֵת֙ שָׂרַ֣י כַּלָּת֔וֹ אֵ֖שֶׁת אַבְרָ֣ם בְּנ֑וֹ וַיֵּצְא֨וּ אִתָּ֜ם מֵא֣וּר כַּשְׂדִּ֗ים לָלֶ֙כֶת֙ אַ֣רְצָה כְּנַ֔עַן וַיָּבֹ֥אוּ עַד־חָרָ֖ן וַיֵּ֥שְׁבוּ שָֽׁם׃",
+      "en": "And Teraĥ took Avram his son, and Lot the son of Haran his son’s son, and Saray his daughter in law, his son Avram’s wife; and they went out with them from Ur-kasdim, to go into the land of Kena῾an; and they came to Ḥaran, and dwelt there."
+    },
+    {
+      "n": 153,
+      "c": 11,
+      "v": 32,
+      "ref": "11:32",
+      "text": "וַיִּהְי֣וּ יְמֵי־תֶ֔רַח חָמֵ֥שׁ שָׁנִ֖ים וּמָאתַ֣יִם שָׁנָ֑ה וַיָּ֥מׇת תֶּ֖רַח בְּחָרָֽן׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And the days of Teraĥ were two hundred and five years: and Teraĥ died in Ḥaran."
+    }
+  ],
+  "parashah": {
+    "en": "Noach",
+    "he": "נֹחַ",
+    "translit": "Noach",
+    "ref": "Genesis 6:9–11:32"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 14,
+        "ref": "6:9–6:22"
+      },
+      {
+        "n": 2,
+        "start": 15,
+        "end": 30,
+        "ref": "7:1–7:16"
+      },
+      {
+        "n": 3,
+        "start": 31,
+        "end": 52,
+        "ref": "7:17–8:14"
+      },
+      {
+        "n": 4,
+        "start": 53,
+        "end": 67,
+        "ref": "8:15–9:7"
+      },
+      {
+        "n": 5,
+        "start": 68,
+        "end": 77,
+        "ref": "9:8–9:17"
+      },
+      {
+        "n": 6,
+        "start": 78,
+        "end": 121,
+        "ref": "9:18–10:32"
+      },
+      {
+        "n": 7,
+        "start": 122,
+        "end": 153,
+        "ref": "11:1–11:32"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 8,
+          "ref": "6:9–6:16"
+        },
+        {
+          "n": 2,
+          "start": 9,
+          "end": 11,
+          "ref": "6:17–6:19"
+        },
+        {
+          "n": 3,
+          "start": 12,
+          "end": 14,
+          "ref": "6:20–6:22"
+        },
+        {
+          "n": 4,
+          "start": 15,
+          "end": 23,
+          "ref": "7:1–7:9"
+        },
+        {
+          "n": 5,
+          "start": 24,
+          "end": 30,
+          "ref": "7:10–7:16"
+        },
+        {
+          "n": 6,
+          "start": 31,
+          "end": 38,
+          "ref": "7:17–7:24"
+        },
+        {
+          "n": 7,
+          "start": 39,
+          "end": 52,
+          "ref": "8:1–8:14"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 53,
+          "end": 60,
+          "ref": "8:15–8:22"
+        },
+        {
+          "n": 2,
+          "start": 61,
+          "end": 67,
+          "ref": "9:1–9:7"
+        },
+        {
+          "n": 3,
+          "start": 68,
+          "end": 77,
+          "ref": "9:8–9:17"
+        },
+        {
+          "n": 4,
+          "start": 78,
+          "end": 89,
+          "ref": "9:18–9:29"
+        },
+        {
+          "n": 5,
+          "start": 90,
+          "end": 103,
+          "ref": "10:1–10:14"
+        },
+        {
+          "n": 6,
+          "start": 104,
+          "end": 109,
+          "ref": "10:15–10:20"
+        },
+        {
+          "n": 7,
+          "start": 110,
+          "end": 121,
+          "ref": "10:21–10:32"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 122,
+          "end": 125,
+          "ref": "11:1–11:4"
+        },
+        {
+          "n": 2,
+          "start": 126,
+          "end": 130,
+          "ref": "11:5–11:9"
+        },
+        {
+          "n": 3,
+          "start": 131,
+          "end": 134,
+          "ref": "11:10–11:13"
+        },
+        {
+          "n": 4,
+          "start": 135,
+          "end": 138,
+          "ref": "11:14–11:17"
+        },
+        {
+          "n": 5,
+          "start": 139,
+          "end": 142,
+          "ref": "11:18–11:21"
+        },
+        {
+          "n": 6,
+          "start": 143,
+          "end": 146,
+          "ref": "11:22–11:25"
+        },
+        {
+          "n": 7,
+          "start": 147,
+          "end": 153,
+          "ref": "11:26–11:32"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 150,
+        "end": 153,
+        "ref": "11:29–11:32"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 50,
+          "end": 52,
+          "ref": "8:12–8:14"
+        },
+        "2": {
+          "n": "M",
+          "start": 115,
+          "end": 121,
+          "ref": "10:26–10:32"
+        },
+        "3": {
+          "n": "M",
+          "start": 150,
+          "end": 153,
+          "ref": "11:29–11:32"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

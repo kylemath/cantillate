@@ -151,6 +151,12 @@ TEXT_ONLY = {
         "step with the text. The coach line uses the measured haftarah trope "
         "shapes instead."
     ),
+    "haftarah-tazria": (
+        "PocketTorah's tazria-h.txt onset track is not monotonic (mark 165 is "
+        "177.400s after a previous start at 177.646s), so the recording is left "
+        "out rather than forcing a broken word timeline. The coach line uses the "
+        "measured haftarah trope shapes instead."
+    ),
 }
 
 # Recordings that align except for a small known drift. The build still uses them

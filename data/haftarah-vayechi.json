@@ -1,0 +1,140 @@
+{
+  "slug": "haftarah-vayechi",
+  "book": {
+    "en": "I Kings",
+    "he": "מלכים א",
+    "translit": "Melachim A"
+  },
+  "multiChapter": true,
+  "ref": "I Kings 2:1-12",
+  "heRef": "מלכים א ב׳:א-י״ב",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 2,
+      "v": 1,
+      "ref": "2:1",
+      "text": "וַיִּקְרְב֥וּ יְמֵֽי־דָוִ֖ד לָמ֑וּת וַיְצַ֛ו אֶת־שְׁלֹמֹ֥ה בְנ֖וֹ לֵאמֹֽר׃",
+      "en": "Now the days of David drew near that he should die; and he charged Shelomo his son, saying,"
+    },
+    {
+      "n": 2,
+      "c": 2,
+      "v": 2,
+      "ref": "2:2",
+      "text": "אָנֹכִ֣י הֹלֵ֔ךְ בְּדֶ֖רֶךְ כׇּל־הָאָ֑רֶץ וְחָזַקְתָּ֖ וְהָיִ֥יתָֽ לְאִֽישׁ׃",
+      "en": "I go the way of all the earth: be thou strong therefore, and show thyself a man;"
+    },
+    {
+      "n": 3,
+      "c": 2,
+      "v": 3,
+      "ref": "2:3",
+      "text": "וְשָׁמַרְתָּ֞ אֶת־מִשְׁמֶ֣רֶת&thinsp;<b>׀</b> יְהֹוָ֣ה אֱלֹהֶ֗יךָ לָלֶ֤כֶת בִּדְרָכָיו֙ לִשְׁמֹ֨ר חֻקֹּתָ֤יו מִצְוֺתָיו֙ וּמִשְׁפָּטָ֣יו וְעֵדְוֺתָ֔יו כַּכָּת֖וּב בְּתוֹרַ֣ת מֹשֶׁ֑ה לְמַ֣עַן תַּשְׂכִּ֗יל אֵ֚ת כׇּל־אֲשֶׁ֣ר תַּעֲשֶׂ֔ה וְאֵ֛ת כׇּל־אֲשֶׁ֥ר תִּפְנֶ֖ה שָֽׁם׃",
+      "en": "and keep the charge of the Lord thy God, to walk in his ways, to keep his statutes, and his commandments, and his judgments, and his testimonies, as it is written in the Tora of Moshe, that thou mayst prosper in all that thou doest, and wherever thou turnest thyself:"
+    },
+    {
+      "n": 4,
+      "c": 2,
+      "v": 4,
+      "ref": "2:4",
+      "text": "לְמַ֩עַן֩ יָקִ֨ים יְהֹוָ֜ה אֶת־דְּבָר֗וֹ אֲשֶׁ֨ר דִּבֶּ֣ר עָלַי֮ לֵאמֹר֒ אִם־יִשְׁמְר֨וּ בָנֶ֜יךָ אֶת־דַּרְכָּ֗ם לָלֶ֤כֶת לְפָנַי֙ בֶּאֱמֶ֔ת בְּכׇל־לְבָבָ֖ם וּבְכׇל־נַפְשָׁ֑ם לֵאמֹ֕ר לֹֽא־יִכָּרֵ֤ת לְךָ֙ אִ֔ישׁ מֵעַ֖ל כִּסֵּ֥א יִשְׂרָאֵֽל׃",
+      "en": "that the Lord may continue his word which he spoke concerning me, saying, If thy children take heed to their way, to walk before me in truth with all their heart and with all their soul, there shall not fail thee (said he) a man on the throne of Yisra᾽el."
+    },
+    {
+      "n": 5,
+      "c": 2,
+      "v": 5,
+      "ref": "2:5",
+      "text": "וְגַ֣ם אַתָּ֣ה יָדַ֡עְתָּ אֵת֩ אֲשֶׁר־עָ֨שָׂה לִ֜י יוֹאָ֣ב בֶּן־צְרוּיָ֗ה אֲשֶׁ֣ר עָשָׂ֣ה לִשְׁנֵֽי־שָׂרֵ֣י צִבְא֣וֹת יִ֠שְׂרָאֵ֠ל לְאַבְנֵ֨ר בֶּן־נֵ֜ר וְלַעֲמָשָׂ֤א בֶן־יֶ֙תֶר֙ וַיַּ֣הַרְגֵ֔ם וַיָּ֥שֶׂם דְּמֵֽי־מִלְחָמָ֖ה בְּשָׁלֹ֑ם וַיִּתֵּ֞ן דְּמֵ֣י מִלְחָמָ֗ה בַּחֲגֹֽרָתוֹ֙ אֲשֶׁ֣ר בְּמׇתְנָ֔יו וּֽבְנַעֲל֖וֹ אֲשֶׁ֥ר בְּרַגְלָֽיו׃",
+      "en": "Moreover thou knowst also what Yo᾽av the son of Żeruya did to me, and what he did to the two captains of the hosts of Yisra᾽el, to Avner the son of Ner, and to ῾Amasa the son of Yeter, whom he slew, and shed the blood of war in peace, and put the blood of war upon his girdle that was about his loins, and in his shoes that were on his feet."
+    },
+    {
+      "n": 6,
+      "c": 2,
+      "v": 6,
+      "ref": "2:6",
+      "text": "וְעָשִׂ֖יתָ כְּחׇכְמָתֶ֑ךָ וְלֹֽא־תוֹרֵ֧ד שֵׂיבָת֛וֹ בְּשָׁלֹ֖ם שְׁאֹֽל׃",
+      "en": "Do therefore according to thy wisdom, and let not his hoar head go down to She᾽ol in peace."
+    },
+    {
+      "n": 7,
+      "c": 2,
+      "v": 7,
+      "ref": "2:7",
+      "text": "וְלִבְנֵ֨י בַרְזִלַּ֤י הַגִּלְעָדִי֙ תַּֽעֲשֶׂה־חֶ֔סֶד וְהָי֖וּ בְּאֹכְלֵ֣י שֻׁלְחָנֶ֑ךָ כִּי־כֵן֙ קָרְב֣וּ אֵלַ֔י בְּבׇרְחִ֕י מִפְּנֵ֖י אַבְשָׁל֥וֹם אָחִֽיךָ׃",
+      "en": "But show loyal love to the sons of Barzillay the Gil῾adite, and let them be of those that eat at thy table: for they came to me when I fled from Avshalom thy brother."
+    },
+    {
+      "n": 8,
+      "c": 2,
+      "v": 8,
+      "ref": "2:8",
+      "text": "וְהִנֵּ֣ה עִ֠מְּךָ֠ שִֽׁמְעִ֨י בֶן־גֵּרָ֥א בֶֽן־הַיְמִינִי֮ מִבַּחֻרִים֒ וְה֤וּא קִֽלְלַ֙נִי֙ קְלָלָ֣ה נִמְרֶ֔צֶת בְּי֖וֹם לֶכְתִּ֣י מַחֲנָ֑יִם וְהֽוּא־יָרַ֤ד לִקְרָאתִי֙ הַיַּרְדֵּ֔ן וָאֶשָּׁ֨בַֽע ל֤וֹ בַֽיהֹוָה֙ לֵאמֹ֔ר אִם־אֲמִֽיתְךָ֖ בֶּחָֽרֶב׃",
+      "en": "And, behold, thou hast with thee Shim῾i the son of Gera, a Binyeminite of Baĥurim, who cursed me with a grievous curse on the day when I went to Maĥanayim: but he came down to meet me at the Yarden, and I swore to him by the Lord, saying, I will not put thee to death with the sword."
+    },
+    {
+      "n": 9,
+      "c": 2,
+      "v": 9,
+      "ref": "2:9",
+      "text": "וְעַתָּה֙ אַל־תְּנַקֵּ֔הוּ כִּ֛י אִ֥ישׁ חָכָ֖ם אָ֑תָּה וְיָֽדַעְתָּ֙ אֵ֣ת אֲשֶׁ֣ר תַּֽעֲשֶׂה־לּ֔וֹ וְהוֹרַדְתָּ֧ אֶת־שֵׂיבָת֛וֹ בְּדָ֖ם שְׁאֽוֹל׃",
+      "en": "Now therefore hold him not guiltless: for thou art a wise man, and knowst what thou oughtest to do to him; but his hoar head bring thou down to She᾽ol with blood."
+    },
+    {
+      "n": 10,
+      "c": 2,
+      "v": 10,
+      "ref": "2:10",
+      "text": "וַיִּשְׁכַּ֥ב דָּוִ֖ד עִם־אֲבֹתָ֑יו וַיִּקָּבֵ֖ר בְּעִ֥יר דָּוִֽד׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "So David slept with his fathers, and was buried in the city of David."
+    },
+    {
+      "n": 11,
+      "c": 2,
+      "v": 11,
+      "ref": "2:11",
+      "text": "וְהַיָּמִ֗ים אֲשֶׁ֨ר מָלַ֤ךְ דָּוִד֙ עַל־יִשְׂרָאֵ֔ל אַרְבָּעִ֖ים שָׁנָ֑ה בְּחֶבְר֤וֹן מָלַךְ֙ שֶׁ֣בַע שָׁנִ֔ים וּבִירוּשָׁלַ֣͏ִם מָלַ֔ךְ שְׁלֹשִׁ֥ים וְשָׁלֹ֖שׁ שָׁנִֽים׃",
+      "en": "And the days that David reigned over Yisra᾽el were forty years: seven years he reigned in Ḥevron, and thirty three years he reigned in Yerushalayim."
+    },
+    {
+      "n": 12,
+      "c": 2,
+      "v": 12,
+      "ref": "2:12",
+      "text": "וּשְׁלֹמֹ֕ה יָשַׁ֕ב עַל־כִּסֵּ֖א דָּוִ֣ד אָבִ֑יו וַתִּכֹּ֥ן מַלְכֻת֖וֹ מְאֹֽד׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Then Shelomo sat upon the throne of David his father; and his kingdom was firmly established."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Vayechi",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 12
+  },
+  "parashah": {
+    "en": "Haftarat Vayechi",
+    "translit": "Haftarat Vayechi",
+    "he": "הפטרת ויחי",
+    "ref": "I Kings 2:1-12"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 12,
+        "ref": "2:1–2:12"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

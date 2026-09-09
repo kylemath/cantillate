@@ -1,0 +1,1345 @@
+{
+  "slug": "kitisa",
+  "book": {
+    "en": "Exodus",
+    "he": "שמות",
+    "translit": "Shemot"
+  },
+  "multiChapter": true,
+  "ref": "Exodus 30:11-34:35",
+  "heRef": "שמות ל׳:י״א-ל״ד:ל״ה",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 30,
+      "v": 11,
+      "ref": "30:11",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 2,
+      "c": 30,
+      "v": 12,
+      "ref": "30:12",
+      "text": "כִּ֣י תִשָּׂ֞א אֶת־רֹ֥אשׁ בְּנֵֽי־יִשְׂרָאֵל֮ לִפְקֻדֵיהֶם֒ וְנָ֨תְנ֜וּ אִ֣ישׁ כֹּ֧פֶר נַפְשׁ֛וֹ לַיהֹוָ֖ה בִּפְקֹ֣ד אֹתָ֑ם וְלֹא־יִהְיֶ֥ה בָהֶ֛ם נֶ֖גֶף בִּפְקֹ֥ד אֹתָֽם׃",
+      "en": "When thou dost take the sum of the children of Yisra᾽el after their number, then shall they give every man a ransom for his soul to the Lord, when thou dost number them; that there be no plague among them, when thou dost number them."
+    },
+    {
+      "n": 3,
+      "c": 30,
+      "v": 13,
+      "ref": "30:13",
+      "text": "זֶ֣ה&thinsp;<b>׀</b> יִתְּנ֗וּ כׇּל־הָעֹבֵר֙ עַל־הַפְּקֻדִ֔ים מַחֲצִ֥ית הַשֶּׁ֖קֶל בְּשֶׁ֣קֶל הַקֹּ֑דֶשׁ עֶשְׂרִ֤ים גֵּרָה֙ הַשֶּׁ֔קֶל מַחֲצִ֣ית הַשֶּׁ֔קֶל תְּרוּמָ֖ה לַֽיהֹוָֽה׃",
+      "en": "This they shall give, every one that passes among them that are numbered, half a shekel after the shekel of the sanctuary: (a shekel is twenty gera:) a half shekel shall be the offering of the Lord."
+    },
+    {
+      "n": 4,
+      "c": 30,
+      "v": 14,
+      "ref": "30:14",
+      "text": "כֹּ֗ל הָעֹבֵר֙ עַל־הַפְּקֻדִ֔ים מִבֶּ֛ן עֶשְׂרִ֥ים שָׁנָ֖ה וָמָ֑עְלָה יִתֵּ֖ן תְּרוּמַ֥ת יְהֹוָֽה׃",
+      "en": "Every one that passes among them that are numbered, from twenty years old and above, shall give the offering of the Lord."
+    },
+    {
+      "n": 5,
+      "c": 30,
+      "v": 15,
+      "ref": "30:15",
+      "text": "הֶֽעָשִׁ֣יר לֹֽא־יַרְבֶּ֗ה וְהַדַּל֙ לֹ֣א יַמְעִ֔יט מִֽמַּחֲצִ֖ית הַשָּׁ֑קֶל לָתֵת֙ אֶת־תְּרוּמַ֣ת יְהֹוָ֔ה לְכַפֵּ֖ר עַל־נַפְשֹׁתֵיכֶֽם׃",
+      "en": "The rich shall not give more, and the poor shall not give less than half a shekel, when they give the offering of the Lord, to make atonement for your souls."
+    },
+    {
+      "n": 6,
+      "c": 30,
+      "v": 16,
+      "ref": "30:16",
+      "text": "וְלָקַחְתָּ֞ אֶת־כֶּ֣סֶף הַכִּפֻּרִ֗ים מֵאֵת֙ בְּנֵ֣י יִשְׂרָאֵ֔ל וְנָתַתָּ֣ אֹת֔וֹ עַל־עֲבֹדַ֖ת אֹ֣הֶל מוֹעֵ֑ד וְהָיָה֩ לִבְנֵ֨י יִשְׂרָאֵ֤ל לְזִכָּרוֹן֙ לִפְנֵ֣י יְהֹוָ֔ה לְכַפֵּ֖ר עַל־נַפְשֹׁתֵיכֶֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And thou shalt take the atonement money of the children of Yisra᾽el, and shalt appoint it for the service of the Tent of Meeting; that it may be a memorial to the children of Yisra᾽el before the Lord, to make atonement for your souls."
+    },
+    {
+      "n": 7,
+      "c": 30,
+      "v": 17,
+      "ref": "30:17",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 8,
+      "c": 30,
+      "v": 18,
+      "ref": "30:18",
+      "text": "וְעָשִׂ֜יתָ כִּיּ֥וֹר נְחֹ֛שֶׁת וְכַנּ֥וֹ נְחֹ֖שֶׁת לְרׇחְצָ֑ה וְנָתַתָּ֣ אֹת֗וֹ בֵּֽין־אֹ֤הֶל מוֹעֵד֙ וּבֵ֣ין הַמִּזְבֵּ֔חַ וְנָתַתָּ֥ שָׁ֖מָּה מָֽיִם׃",
+      "en": "Thou shalt also make a laver of brass, and its pedestal also of brass, for washing: and thou shalt put it between the Tent of Meeting and the altar, and thou shalt put water in it."
+    },
+    {
+      "n": 9,
+      "c": 30,
+      "v": 19,
+      "ref": "30:19",
+      "text": "וְרָחֲצ֛וּ אַהֲרֹ֥ן וּבָנָ֖יו מִמֶּ֑נּוּ אֶת־יְדֵיהֶ֖ם וְאֶת־רַגְלֵיהֶֽם׃",
+      "en": "For Aharon and his sons shall wash their hands and their feet thereat:"
+    },
+    {
+      "n": 10,
+      "c": 30,
+      "v": 20,
+      "ref": "30:20",
+      "text": "בְּבֹאָ֞ם אֶל־אֹ֧הֶל מוֹעֵ֛ד יִרְחֲצוּ־מַ֖יִם וְלֹ֣א יָמֻ֑תוּ א֣וֹ בְגִשְׁתָּ֤ם אֶל־הַמִּזְבֵּ֙חַ֙ לְשָׁרֵ֔ת לְהַקְטִ֥יר אִשֶּׁ֖ה לַֽיהֹוָֽה׃",
+      "en": "when they go into the Tent of Meeting, they shall wash with water, that they die not; or when they come near to the altar to minister, to burn offering made by fire to the Lord:"
+    },
+    {
+      "n": 11,
+      "c": 30,
+      "v": 21,
+      "ref": "30:21",
+      "text": "וְרָחֲצ֛וּ יְדֵיהֶ֥ם וְרַגְלֵיהֶ֖ם וְלֹ֣א יָמֻ֑תוּ וְהָיְתָ֨ה לָהֶ֧ם חׇק־עוֹלָ֛ם ל֥וֹ וּלְזַרְע֖וֹ לְדֹרֹתָֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "so they shall wash their hands and their feet, that they die not: and it shall be a statute for ever to them, to him and to his seed throughout their generations."
+    },
+    {
+      "n": 12,
+      "c": 30,
+      "v": 22,
+      "ref": "30:22",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "Moreover the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 13,
+      "c": 30,
+      "v": 23,
+      "ref": "30:23",
+      "text": "וְאַתָּ֣ה קַח־לְךָ֮ בְּשָׂמִ֣ים רֹאשׁ֒ מׇר־דְּרוֹר֙ חֲמֵ֣שׁ מֵא֔וֹת וְקִנְּמׇן־בֶּ֥שֶׂם מַחֲצִית֖וֹ חֲמִשִּׁ֣ים וּמָאתָ֑יִם וּקְנֵה־בֹ֖שֶׂם חֲמִשִּׁ֥ים וּמָאתָֽיִם׃",
+      "en": "Take thou also to thee the best spices, of pure myrrh five hundred shekels, and of sweet cinnamon half so much, two hundred and fifty shekels, and of sweet calamus two hundred and fifty shekels,"
+    },
+    {
+      "n": 14,
+      "c": 30,
+      "v": 24,
+      "ref": "30:24",
+      "text": "וְקִדָּ֕ה חֲמֵ֥שׁ מֵא֖וֹת בְּשֶׁ֣קֶל הַקֹּ֑דֶשׁ וְשֶׁ֥מֶן זַ֖יִת הִֽין׃",
+      "en": "and of cassia five hundred shekels, after the shekel of the sanctuary, and of olive oil a hin:"
+    },
+    {
+      "n": 15,
+      "c": 30,
+      "v": 25,
+      "ref": "30:25",
+      "text": "וְעָשִׂ֣יתָ אֹת֗וֹ שֶׁ֚מֶן מִשְׁחַת־קֹ֔דֶשׁ רֹ֥קַח מִרְקַ֖חַת מַעֲשֵׂ֣ה רֹקֵ֑חַ שֶׁ֥מֶן מִשְׁחַת־קֹ֖דֶשׁ יִהְיֶֽה׃",
+      "en": "and thou shalt make it an oil of holy ointment, an ointment compounded after the art of the perfumer: it shall be a holy anointing oil."
+    },
+    {
+      "n": 16,
+      "c": 30,
+      "v": 26,
+      "ref": "30:26",
+      "text": "וּמָשַׁחְתָּ֥ ב֖וֹ אֶת־אֹ֣הֶל מוֹעֵ֑ד וְאֵ֖ת אֲר֥וֹן הָעֵדֻֽת׃",
+      "en": "And thou shalt anoint the Tent of Meeting with it, and the ark of the Testimony,"
+    },
+    {
+      "n": 17,
+      "c": 30,
+      "v": 27,
+      "ref": "30:27",
+      "text": "וְאֶת־הַשֻּׁלְחָן֙ וְאֶת־כׇּל־כֵּלָ֔יו וְאֶת־הַמְּנֹרָ֖ה וְאֶת־כֵּלֶ֑יהָ וְאֵ֖ת מִזְבַּ֥ח הַקְּטֹֽרֶת׃",
+      "en": "and the table and all its vessels, and the candlestick and its vessels, and the altar of incense,"
+    },
+    {
+      "n": 18,
+      "c": 30,
+      "v": 28,
+      "ref": "30:28",
+      "text": "וְאֶת־מִזְבַּ֥ח הָעֹלָ֖ה וְאֶת־כׇּל־כֵּלָ֑יו וְאֶת־הַכִּיֹּ֖ר וְאֶת־כַּנּֽוֹ׃",
+      "en": "and the altar of burnt offering with all its vessels, and the laver and its pedestal."
+    },
+    {
+      "n": 19,
+      "c": 30,
+      "v": 29,
+      "ref": "30:29",
+      "text": "וְקִדַּשְׁתָּ֣ אֹתָ֔ם וְהָי֖וּ קֹ֣דֶשׁ קׇֽדָשִׁ֑ים כׇּל־הַנֹּגֵ֥עַ בָּהֶ֖ם יִקְדָּֽשׁ׃",
+      "en": "And thou shalt sanctify them, that they may be most holy: whatever touches them shall be holy."
+    },
+    {
+      "n": 20,
+      "c": 30,
+      "v": 30,
+      "ref": "30:30",
+      "text": "וְאֶת־אַהֲרֹ֥ן וְאֶת־בָּנָ֖יו תִּמְשָׁ֑ח וְקִדַּשְׁתָּ֥ אֹתָ֖ם לְכַהֵ֥ן לִֽי׃",
+      "en": "And thou shalt anoint Aharon and his sons, and consecrate them, that they may minister to me in the priest’s office."
+    },
+    {
+      "n": 21,
+      "c": 30,
+      "v": 31,
+      "ref": "30:31",
+      "text": "וְאֶל־בְּנֵ֥י יִשְׂרָאֵ֖ל תְּדַבֵּ֣ר לֵאמֹ֑ר שֶׁ֠מֶן מִשְׁחַת־קֹ֨דֶשׁ יִהְיֶ֥ה זֶ֛ה לִ֖י לְדֹרֹתֵיכֶֽם׃",
+      "en": "And thou shalt speak to the children of Yisra᾽el, saying, This shall be a holy anointing oil to me throughout your generations."
+    },
+    {
+      "n": 22,
+      "c": 30,
+      "v": 32,
+      "ref": "30:32",
+      "text": "עַל־בְּשַׂ֤ר אָדָם֙ לֹ֣א יִיסָ֔ךְ וּ֨בְמַתְכֻּנְתּ֔וֹ לֹ֥א תַעֲשׂ֖וּ כָּמֹ֑הוּ קֹ֣דֶשׁ ה֔וּא קֹ֖דֶשׁ יִהְיֶ֥ה לָכֶֽם׃",
+      "en": "Upon man’s flesh shall it not be poured, neither shall you make any other like it, after the composition of it: it is holy, and holy shall it be for you."
+    },
+    {
+      "n": 23,
+      "c": 30,
+      "v": 33,
+      "ref": "30:33",
+      "text": "אִ֚ישׁ אֲשֶׁ֣ר יִרְקַ֣ח כָּמֹ֔הוּ וַאֲשֶׁ֥ר יִתֵּ֛ן מִמֶּ֖נּוּ עַל־זָ֑ר וְנִכְרַ֖ת מֵעַמָּֽיו׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Whoever compounds any like it, or whoever puts any of it upon a stranger, shall even be cut off from his people."
+    },
+    {
+      "n": 24,
+      "c": 30,
+      "v": 34,
+      "ref": "30:34",
+      "text": "וַיֹּ֩אמֶר֩ יְהֹוָ֨ה אֶל־מֹשֶׁ֜ה קַח־לְךָ֣ סַמִּ֗ים נָטָ֤ף&thinsp;<small>׀</small>&thinsp;וּשְׁחֵ֙לֶת֙ וְחֶלְבְּנָ֔ה סַמִּ֖ים וּלְבֹנָ֣ה זַכָּ֑ה בַּ֥ד בְּבַ֖ד יִהְיֶֽה׃",
+      "en": "And the Lord said to Moshe, Take to thee sweet spices, storax, and onycha, and galbanum; sweet spices with pure frankincense: of each shall there be a like weight:"
+    },
+    {
+      "n": 25,
+      "c": 30,
+      "v": 35,
+      "ref": "30:35",
+      "text": "וְעָשִׂ֤יתָ אֹתָהּ֙ קְטֹ֔רֶת רֹ֖קַח מַעֲשֵׂ֣ה רוֹקֵ֑חַ מְמֻלָּ֖ח טָה֥וֹר קֹֽדֶשׁ׃",
+      "en": "and thou shalt make it a perfume, a confection after the art of the perfumer, mingled with salt, pure and holy:"
+    },
+    {
+      "n": 26,
+      "c": 30,
+      "v": 36,
+      "ref": "30:36",
+      "text": "וְשָֽׁחַקְתָּ֣ מִמֶּ֘נָּה֮ הָדֵק֒ וְנָתַתָּ֨ה מִמֶּ֜נָּה לִפְנֵ֤י הָעֵדֻת֙ בְּאֹ֣הֶל מוֹעֵ֔ד אֲשֶׁ֛ר אִוָּעֵ֥ד לְךָ֖ שָׁ֑מָּה קֹ֥דֶשׁ קׇֽדָשִׁ֖ים תִּהְיֶ֥ה לָכֶֽם׃",
+      "en": "and thou shalt beat some of it very small, and put of it before the Testimony in the Tent of Meeting, where I will meet with thee: it shall be to you most holy."
+    },
+    {
+      "n": 27,
+      "c": 30,
+      "v": 37,
+      "ref": "30:37",
+      "text": "וְהַקְּטֹ֙רֶת֙ אֲשֶׁ֣ר תַּעֲשֶׂ֔ה בְּמַ֨תְכֻּנְתָּ֔הּ לֹ֥א תַעֲשׂ֖וּ לָכֶ֑ם קֹ֛דֶשׁ תִּהְיֶ֥ה לְךָ֖ לַיהֹוָֽה׃",
+      "en": "And as for the perfume which thou shalt make, you shall not make it for yourselves according to its prescribed composition: it shall be holy for the Lord."
+    },
+    {
+      "n": 28,
+      "c": 30,
+      "v": 38,
+      "ref": "30:38",
+      "text": "אִ֛ישׁ אֲשֶׁר־יַעֲשֶׂ֥ה כָמ֖וֹהָ לְהָרִ֣יחַ בָּ֑הּ וְנִכְרַ֖ת מֵעַמָּֽיו׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Whoever shall make like to that, to partake of its scent, shall even be cut off from his people."
+    },
+    {
+      "n": 29,
+      "c": 31,
+      "v": 1,
+      "ref": "31:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 30,
+      "c": 31,
+      "v": 2,
+      "ref": "31:2",
+      "text": "רְאֵ֖ה קָרָ֣אתִֽי בְשֵׁ֑ם בְּצַלְאֵ֛ל בֶּן־אוּרִ֥י בֶן־ח֖וּר לְמַטֵּ֥ה יְהוּדָֽה׃",
+      "en": "See, I have called by name Beżal᾽el the son of Uri, the son of Ḥur, of the tribe of Yehuda:"
+    },
+    {
+      "n": 31,
+      "c": 31,
+      "v": 3,
+      "ref": "31:3",
+      "text": "וָאֲמַלֵּ֥א אֹת֖וֹ ר֣וּחַ אֱלֹהִ֑ים בְּחׇכְמָ֛ה וּבִתְבוּנָ֥ה וּבְדַ֖עַת וּבְכׇל־מְלָאכָֽה׃",
+      "en": "and I have filled him with the spirit of God, in wisdom, and in understanding, and in knowledge, and in all manner of workmanship,"
+    },
+    {
+      "n": 32,
+      "c": 31,
+      "v": 4,
+      "ref": "31:4",
+      "text": "לַחְשֹׁ֖ב מַחֲשָׁבֹ֑ת לַעֲשׂ֛וֹת בַּזָּהָ֥ב וּבַכֶּ֖סֶף וּבַנְּחֹֽשֶׁת׃",
+      "en": "to contrive works of art, to work in gold, and in silver, and in brass,"
+    },
+    {
+      "n": 33,
+      "c": 31,
+      "v": 5,
+      "ref": "31:5",
+      "text": "וּבַחֲרֹ֥שֶׁת אֶ֛בֶן לְמַלֹּ֖את וּבַחֲרֹ֣שֶׁת עֵ֑ץ לַעֲשׂ֖וֹת בְּכׇל־מְלָאכָֽה׃",
+      "en": "and in cutting of stones, to set them, and in carving of timber, to work in all manner of workmanship."
+    },
+    {
+      "n": 34,
+      "c": 31,
+      "v": 6,
+      "ref": "31:6",
+      "text": "וַאֲנִ֞י הִנֵּ֧ה נָתַ֣תִּי אִתּ֗וֹ אֵ֣ת אׇהֳלִיאָ֞ב בֶּן־אֲחִֽיסָמָךְ֙ לְמַטֵּה־דָ֔ן וּבְלֵ֥ב כׇּל־חֲכַם־לֵ֖ב נָתַ֣תִּי חׇכְמָ֑ה וְעָשׂ֕וּ אֵ֖ת כׇּל־אֲשֶׁ֥ר צִוִּיתִֽךָ׃",
+      "en": "And I, behold, I have given with him Oholi᾽av, the son of Aĥisamakh, of the tribe of Dan: and in the hearts of all that are wise hearted I have put wisdom, that they may make all that I have commanded thee;"
+    },
+    {
+      "n": 35,
+      "c": 31,
+      "v": 7,
+      "ref": "31:7",
+      "text": "אֵ֣ת&thinsp;<b>׀</b> אֹ֣הֶל מוֹעֵ֗ד וְאֶת־הָֽאָרֹן֙ לָֽעֵדֻ֔ת וְאֶת־הַכַּפֹּ֖רֶת אֲשֶׁ֣ר עָלָ֑יו וְאֵ֖ת כׇּל־כְּלֵ֥י הָאֹֽהֶל׃",
+      "en": "the Tent of Meeting, and the ark of the Testimony, and the covering that is on it, and all the furniture of the Tent,"
+    },
+    {
+      "n": 36,
+      "c": 31,
+      "v": 8,
+      "ref": "31:8",
+      "text": "וְאֶת־הַשֻּׁלְחָן֙ וְאֶת־כֵּלָ֔יו וְאֶת־הַמְּנֹרָ֥ה הַטְּהֹרָ֖ה וְאֶת־כׇּל־כֵּלֶ֑יהָ וְאֵ֖ת מִזְבַּ֥ח הַקְּטֹֽרֶת׃",
+      "en": "and the table and its furniture, and the pure candlestick with all its furniture, and the altar of incense,"
+    },
+    {
+      "n": 37,
+      "c": 31,
+      "v": 9,
+      "ref": "31:9",
+      "text": "וְאֶת־מִזְבַּ֥ח הָעֹלָ֖ה וְאֶת־כׇּל־כֵּלָ֑יו וְאֶת־הַכִּיּ֖וֹר וְאֶת־כַּנּֽוֹ׃",
+      "en": "and the altar of burnt offering with all its furniture, and the laver and its pedestal,"
+    },
+    {
+      "n": 38,
+      "c": 31,
+      "v": 10,
+      "ref": "31:10",
+      "text": "וְאֵ֖ת בִּגְדֵ֣י הַשְּׂרָ֑ד וְאֶת־בִּגְדֵ֤י הַקֹּ֙דֶשׁ֙ לְאַהֲרֹ֣ן הַכֹּהֵ֔ן וְאֶת־בִּגְדֵ֥י בָנָ֖יו לְכַהֵֽן׃",
+      "en": "and the uniforms, and the holy garments for Aharon the priest, and the garments of his sons, to minister in the priest’s office,"
+    },
+    {
+      "n": 39,
+      "c": 31,
+      "v": 11,
+      "ref": "31:11",
+      "text": "וְאֵ֨ת שֶׁ֧מֶן הַמִּשְׁחָ֛ה וְאֶת־קְטֹ֥רֶת הַסַּמִּ֖ים לַקֹּ֑דֶשׁ כְּכֹ֥ל אֲשֶׁר־צִוִּיתִ֖ךָ יַעֲשֽׂוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and the anointing oil, and incense of spices for the holy place: according to all that I have commanded thee shall they do."
+    },
+    {
+      "n": 40,
+      "c": 31,
+      "v": 12,
+      "ref": "31:12",
+      "text": "וַיֹּ֥אמֶר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 41,
+      "c": 31,
+      "v": 13,
+      "ref": "31:13",
+      "text": "וְאַתָּ֞ה דַּבֵּ֨ר אֶל־בְּנֵ֤י יִשְׂרָאֵל֙ לֵאמֹ֔ר אַ֥ךְ אֶת־שַׁבְּתֹתַ֖י תִּשְׁמֹ֑רוּ כִּי֩ א֨וֹת הִ֜וא בֵּינִ֤י וּבֵֽינֵיכֶם֙ לְדֹרֹ֣תֵיכֶ֔ם לָדַ֕עַת כִּ֛י אֲנִ֥י יְהֹוָ֖ה מְקַדִּשְׁכֶֽם׃",
+      "en": "Speak also to the children of Yisra᾽el saying, Verily my sabbaths shall you keep: for it is a sign between me and you throughout your generations; that you may know that I am the Lord who sanctifies you."
+    },
+    {
+      "n": 42,
+      "c": 31,
+      "v": 14,
+      "ref": "31:14",
+      "text": "וּשְׁמַרְתֶּם֙ אֶת־הַשַּׁבָּ֔ת כִּ֛י קֹ֥דֶשׁ הִ֖וא לָכֶ֑ם מְחַֽלְלֶ֙יהָ֙ מ֣וֹת יוּמָ֔ת כִּ֗י כׇּל־הָעֹשֶׂ֥ה בָהּ֙ מְלָאכָ֔ה וְנִכְרְתָ֛ה הַנֶּ֥פֶשׁ הַהִ֖וא מִקֶּ֥רֶב עַמֶּֽיהָ׃",
+      "en": "You shall keep the sabbath therefore; for it is holy to you: everyone that profanes it shall surely be put to death: for whoever does any work on it, that soul shall be cut off from among his people."
+    },
+    {
+      "n": 43,
+      "c": 31,
+      "v": 15,
+      "ref": "31:15",
+      "text": "שֵׁ֣שֶׁת יָמִים֮ יֵעָשֶׂ֣ה מְלָאכָה֒ וּבַיּ֣וֹם הַשְּׁבִיעִ֗י שַׁבַּ֧ת שַׁבָּת֛וֹן קֹ֖דֶשׁ לַיהֹוָ֑ה כׇּל־הָעֹשֶׂ֧ה מְלָאכָ֛ה בְּי֥וֹם הַשַּׁבָּ֖ת מ֥וֹת יוּמָֽת׃",
+      "en": "Six days may work be done; but on the seventh is the sabbath of rest, holy to the Lord: whoever does any work on the sabbath day, he shall surely be put to death."
+    },
+    {
+      "n": 44,
+      "c": 31,
+      "v": 16,
+      "ref": "31:16",
+      "text": "וְשָׁמְר֥וּ בְנֵֽי־יִשְׂרָאֵ֖ל אֶת־הַשַּׁבָּ֑ת לַעֲשׂ֧וֹת אֶת־הַשַּׁבָּ֛ת לְדֹרֹתָ֖ם בְּרִ֥ית עוֹלָֽם׃",
+      "en": "Wherefore the children of Yisra᾽el shall keep the sabbath, to observe the sabbath throughout their generations, for a perpetual covenant."
+    },
+    {
+      "n": 45,
+      "c": 31,
+      "v": 17,
+      "ref": "31:17",
+      "text": "בֵּינִ֗י וּבֵין֙ בְּנֵ֣י יִשְׂרָאֵ֔ל א֥וֹת הִ֖וא לְעֹלָ֑ם כִּי־שֵׁ֣שֶׁת יָמִ֗ים עָשָׂ֤ה יְהֹוָה֙ אֶת־הַשָּׁמַ֣יִם וְאֶת־הָאָ֔רֶץ וּבַיּוֹם֙ הַשְּׁבִיעִ֔י שָׁבַ֖ת וַיִּנָּפַֽשׁ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "It is a sign between me and the children of Yisra᾽el for ever: for in six days the Lord made heaven and earth, and on the seventh day he rested, and was refreshed."
+    },
+    {
+      "n": 46,
+      "c": 31,
+      "v": 18,
+      "ref": "31:18",
+      "text": "וַיִּתֵּ֣ן אֶל־מֹשֶׁ֗ה כְּכַלֹּתוֹ֙ לְדַבֵּ֤ר אִתּוֹ֙ בְּהַ֣ר סִינַ֔י שְׁנֵ֖י לֻחֹ֣ת הָעֵדֻ֑ת לֻחֹ֣ת אֶ֔בֶן כְּתֻבִ֖ים בְּאֶצְבַּ֥ע אֱלֹהִֽים׃",
+      "en": "And he gave to Moshe, when he had made an end of speaking to him upon mount Sinay, two tablets of the Testimony, tablets of stone, written with the finger of God."
+    },
+    {
+      "n": 47,
+      "c": 32,
+      "v": 1,
+      "ref": "32:1",
+      "text": "וַיַּ֣רְא הָעָ֔ם כִּֽי־בֹשֵׁ֥שׁ מֹשֶׁ֖ה לָרֶ֣דֶת מִן־הָהָ֑ר וַיִּקָּהֵ֨ל הָעָ֜ם עַֽל־אַהֲרֹ֗ן וַיֹּאמְר֤וּ אֵלָיו֙ ק֣וּם&thinsp;<b>׀</b> עֲשֵׂה־לָ֣נוּ אֱלֹהִ֗ים אֲשֶׁ֤ר יֵֽלְכוּ֙ לְפָנֵ֔ינוּ כִּי־זֶ֣ה&thinsp;<b>׀</b> מֹשֶׁ֣ה הָאִ֗ישׁ אֲשֶׁ֤ר הֶֽעֱלָ֙נוּ֙ מֵאֶ֣רֶץ מִצְרַ֔יִם לֹ֥א יָדַ֖עְנוּ מֶה־הָ֥יָה לֽוֹ׃",
+      "en": "And when the people saw that Moshe delayed to come down from the mountain, the people gathered themselves together to Aharon, and said to him, Up, make us gods, which shall go before us; for as for this man Moshe, who brought us up out of the land of Miżrayim, we know not what is become of him."
+    },
+    {
+      "n": 48,
+      "c": 32,
+      "v": 2,
+      "ref": "32:2",
+      "text": "וַיֹּ֤אמֶר אֲלֵהֶם֙ אַהֲרֹ֔ן פָּֽרְקוּ֙ נִזְמֵ֣י הַזָּהָ֔ב אֲשֶׁר֙ בְּאׇזְנֵ֣י נְשֵׁיכֶ֔ם בְּנֵיכֶ֖ם וּבְנֹתֵיכֶ֑ם וְהָבִ֖יאוּ אֵלָֽי׃",
+      "en": "And Aharon said to them, Break off the golden earrings, which are in the ears of your wives, of your sons, and of your daughters, and bring them to me."
+    },
+    {
+      "n": 49,
+      "c": 32,
+      "v": 3,
+      "ref": "32:3",
+      "text": "וַיִּתְפָּֽרְקוּ֙ כׇּל־הָעָ֔ם אֶת־נִזְמֵ֥י הַזָּהָ֖ב אֲשֶׁ֣ר בְּאׇזְנֵיהֶ֑ם וַיָּבִ֖יאוּ אֶֽל־אַהֲרֹֽן׃",
+      "en": "And all the people broke off the golden earrings which were in their ears, and brought them to Aharon."
+    },
+    {
+      "n": 50,
+      "c": 32,
+      "v": 4,
+      "ref": "32:4",
+      "text": "וַיִּקַּ֣ח מִיָּדָ֗ם וַיָּ֤צַר אֹתוֹ֙ בַּחֶ֔רֶט וַֽיַּעֲשֵׂ֖הוּ עֵ֣גֶל מַסֵּכָ֑ה וַיֹּ֣אמְר֔וּ אֵ֤לֶּה אֱלֹהֶ֙יךָ֙ יִשְׂרָאֵ֔ל אֲשֶׁ֥ר הֶעֱל֖וּךָ מֵאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And he received the gold at their hand, and fashioned it with a graving tool and made it a molten calf: and they said, These are thy gods, O Yisra᾽el, which brought thee up out of the land of Miżrayim."
+    },
+    {
+      "n": 51,
+      "c": 32,
+      "v": 5,
+      "ref": "32:5",
+      "text": "וַיַּ֣רְא אַהֲרֹ֔ן וַיִּ֥בֶן מִזְבֵּ֖חַ לְפָנָ֑יו וַיִּקְרָ֤א אַֽהֲרֹן֙ וַיֹּאמַ֔ר חַ֥ג לַיהֹוָ֖ה מָחָֽר׃",
+      "en": "And when Aharon saw it, he built an altar before it; and Aharon made proclamation, and said, Tomorrow is a feast to the Lord."
+    },
+    {
+      "n": 52,
+      "c": 32,
+      "v": 6,
+      "ref": "32:6",
+      "text": "וַיַּשְׁכִּ֙ימוּ֙ מִֽמׇּחֳרָ֔ת וַיַּעֲל֣וּ עֹלֹ֔ת וַיַּגִּ֖שׁוּ שְׁלָמִ֑ים וַיֵּ֤שֶׁב הָעָם֙ לֶֽאֱכֹ֣ל וְשָׁת֔וֹ וַיָּקֻ֖מוּ לְצַחֵֽק׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And they rose up early on the morrow, and offered burnt offerings, and brought peace offerings; and the people sat down to eat and to drink, and rose up to disport themselves."
+    },
+    {
+      "n": 53,
+      "c": 32,
+      "v": 7,
+      "ref": "32:7",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֑ה לֶךְ־רֵ֕ד כִּ֚י שִׁחֵ֣ת עַמְּךָ֔ אֲשֶׁ֥ר הֶעֱלֵ֖יתָ מֵאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And the Lord said to Moshe, Go, get thee down; for thy people, which thou broughtest up out of the land of Miżrayim, have become corrupt:"
+    },
+    {
+      "n": 54,
+      "c": 32,
+      "v": 8,
+      "ref": "32:8",
+      "text": "סָ֣רוּ מַהֵ֗ר מִן־הַדֶּ֙רֶךְ֙ אֲשֶׁ֣ר צִוִּיתִ֔ם עָשׂ֣וּ לָהֶ֔ם עֵ֖גֶל מַסֵּכָ֑ה וַיִּשְׁתַּֽחֲווּ־לוֹ֙ וַיִּזְבְּחוּ־ל֔וֹ וַיֹּ֣אמְר֔וּ אֵ֤לֶּה אֱלֹהֶ֙יךָ֙ יִשְׂרָאֵ֔ל אֲשֶׁ֥ר הֶֽעֱל֖וּךָ מֵאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "they have turned aside quickly out of the way which I commanded them: they have made them a molten calf, and have worshipped it, and have sacrificed to it, and said, These are thy gods, O Yisra᾽el, which have brought thee up out of the land of Miżrayim."
+    },
+    {
+      "n": 55,
+      "c": 32,
+      "v": 9,
+      "ref": "32:9",
+      "text": "וַיֹּ֥אמֶר יְהֹוָ֖ה אֶל־מֹשֶׁ֑ה רָאִ֙יתִי֙ אֶת־הָעָ֣ם הַזֶּ֔ה וְהִנֵּ֥ה עַם־קְשֵׁה־עֹ֖רֶף הֽוּא׃",
+      "en": "And the Lord said to Moshe, I have seen this people, and, behold, it is a stiffnecked people:"
+    },
+    {
+      "n": 56,
+      "c": 32,
+      "v": 10,
+      "ref": "32:10",
+      "text": "וְעַתָּה֙ הַנִּ֣יחָה לִּ֔י וְיִֽחַר־אַפִּ֥י בָהֶ֖ם וַאֲכַלֵּ֑ם וְאֶֽעֱשֶׂ֥ה אוֹתְךָ֖ לְג֥וֹי גָּדֽוֹל׃",
+      "en": "now therefore let me alone, that my wrath may burn against them, and that I may consume them: and I will make of thee a great nation."
+    },
+    {
+      "n": 57,
+      "c": 32,
+      "v": 11,
+      "ref": "32:11",
+      "text": "וַיְחַ֣ל מֹשֶׁ֔ה אֶת־פְּנֵ֖י יְהֹוָ֣ה אֱלֹהָ֑יו וַיֹּ֗אמֶר לָמָ֤ה יְהֹוָה֙ יֶחֱרֶ֤ה אַפְּךָ֙ בְּעַמֶּ֔ךָ אֲשֶׁ֤ר הוֹצֵ֙אתָ֙ מֵאֶ֣רֶץ מִצְרַ֔יִם בְּכֹ֥חַ גָּד֖וֹל וּבְיָ֥ד חֲזָקָֽה׃",
+      "en": "And Moshe besought the Lord his God, and said, Lord, why does thy wrath burn against thy people, whom thou hast brought forth out of the land of Miżrayim with great power, and with a mighty hand?"
+    },
+    {
+      "n": 58,
+      "c": 32,
+      "v": 12,
+      "ref": "32:12",
+      "text": "לָ֩מָּה֩ יֹאמְר֨וּ מִצְרַ֜יִם לֵאמֹ֗ר בְּרָעָ֤ה הֽוֹצִיאָם֙ לַהֲרֹ֤ג אֹתָם֙ בֶּֽהָרִ֔ים וּ֨לְכַלֹּתָ֔ם מֵעַ֖ל פְּנֵ֣י הָֽאֲדָמָ֑ה שׁ֚וּב מֵחֲר֣וֹן אַפֶּ֔ךָ וְהִנָּחֵ֥ם עַל־הָרָעָ֖ה לְעַמֶּֽךָ׃",
+      "en": "Wherefore should Miżrayim speak, and say, In an evil hour did he bring them out, to slay them in the mountains, and to consume them from the face of the earth? Turn from thy fierce anger, and relent of this evil against thy people."
+    },
+    {
+      "n": 59,
+      "c": 32,
+      "v": 13,
+      "ref": "32:13",
+      "text": "זְכֹ֡ר לְאַבְרָהָם֩ לְיִצְחָ֨ק וּלְיִשְׂרָאֵ֜ל עֲבָדֶ֗יךָ אֲשֶׁ֨ר נִשְׁבַּ֣עְתָּ לָהֶם֮ בָּךְ֒ וַתְּדַבֵּ֣ר אֲלֵהֶ֔ם אַרְבֶּה֙ אֶֽת־זַרְעֲכֶ֔ם כְּכוֹכְבֵ֖י הַשָּׁמָ֑יִם וְכׇל־הָאָ֨רֶץ הַזֹּ֜את אֲשֶׁ֣ר אָמַ֗רְתִּי אֶתֵּן֙ לְזַרְעֲכֶ֔ם וְנָחֲל֖וּ לְעֹלָֽם׃",
+      "en": "Remember Avraham, Yiżĥaq, and Yisra᾽el, thy servants, to whom thou didst swear by thy own self, and didst say to them, I will multiply your seed as the stars of heaven, and all this land that I have spoken of will I give to your seed, and they shall inherit it for ever."
+    },
+    {
+      "n": 60,
+      "c": 32,
+      "v": 14,
+      "ref": "32:14",
+      "text": "וַיִּנָּ֖חֶם יְהֹוָ֑ה עַל־הָ֣רָעָ֔ה אֲשֶׁ֥ר דִּבֶּ֖ר לַעֲשׂ֥וֹת לְעַמּֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And the Lord relented of the evil which he thought to do to his people."
+    },
+    {
+      "n": 61,
+      "c": 32,
+      "v": 15,
+      "ref": "32:15",
+      "text": "וַיִּ֜פֶן וַיֵּ֤רֶד מֹשֶׁה֙ מִן־הָהָ֔ר וּשְׁנֵ֛י לֻחֹ֥ת הָעֵדֻ֖ת בְּיָד֑וֹ לֻחֹ֗ת כְּתֻבִים֙ מִשְּׁנֵ֣י עֶבְרֵיהֶ֔ם מִזֶּ֥ה וּמִזֶּ֖ה הֵ֥ם כְּתֻבִֽים׃",
+      "en": "And Moshe turned, and went down from the mountain, and the two tablets of the Testimony were in his hand: tablets written on both their sides; on the one side and on the other were they written."
+    },
+    {
+      "n": 62,
+      "c": 32,
+      "v": 16,
+      "ref": "32:16",
+      "text": "וְהַ֨לֻּחֹ֔ת מַעֲשֵׂ֥ה אֱלֹהִ֖ים הֵ֑מָּה וְהַמִּכְתָּ֗ב מִכְתַּ֤ב אֱלֹהִים֙ ה֔וּא חָר֖וּת עַל־הַלֻּחֹֽת׃",
+      "en": "And the tablets were the work of God, and the writing was the writing of God, engraved upon the tablets."
+    },
+    {
+      "n": 63,
+      "c": 32,
+      "v": 17,
+      "ref": "32:17",
+      "text": "וַיִּשְׁמַ֧ע יְהוֹשֻׁ֛עַ אֶת־ק֥וֹל הָעָ֖ם בְּרֵעֹ֑ה וַיֹּ֙אמֶר֙ אֶל־מֹשֶׁ֔ה ק֥וֹל מִלְחָמָ֖ה בַּֽמַּחֲנֶֽה׃",
+      "en": "And when Yehoshua heard the noise of the people as they shouted, he said to Moshe, There is a noise of war in the camp."
+    },
+    {
+      "n": 64,
+      "c": 32,
+      "v": 18,
+      "ref": "32:18",
+      "text": "וַיֹּ֗אמֶר אֵ֥ין קוֹל֙ עֲנ֣וֹת גְּבוּרָ֔ה וְאֵ֥ין ק֖וֹל עֲנ֣וֹת חֲלוּשָׁ֑ה ק֣וֹל עַנּ֔וֹת אָנֹכִ֖י שֹׁמֵֽעַ׃",
+      "en": "But he said, It is not the voice of those who shout for mastery, neither is it the voice of those who cry for being overcome: but the noise of those who sing do I hear."
+    },
+    {
+      "n": 65,
+      "c": 32,
+      "v": 19,
+      "ref": "32:19",
+      "text": "וַֽיְהִ֗י כַּאֲשֶׁ֤ר קָרַב֙ אֶל־הַֽמַּחֲנֶ֔ה וַיַּ֥רְא אֶת־הָעֵ֖גֶל וּמְחֹלֹ֑ת וַיִּֽחַר־אַ֣ף מֹשֶׁ֗ה וַיַּשְׁלֵ֤ךְ <span class=\"mam-kq-trivial\">מִיָּדָו֙</span> אֶת־הַלֻּחֹ֔ת וַיְשַׁבֵּ֥ר אֹתָ֖ם תַּ֥חַת הָהָֽר׃",
+      "en": "And it came to pass, as soon as he came near to the camp, that he saw the calf, and the dancing: and Moshe’s anger burned, and he threw the tablets out of his hands, and broke them at the foot of the mountain."
+    },
+    {
+      "n": 66,
+      "c": 32,
+      "v": 20,
+      "ref": "32:20",
+      "text": "וַיִּקַּ֞ח אֶת־הָעֵ֨גֶל אֲשֶׁ֤ר עָשׂוּ֙ וַיִּשְׂרֹ֣ף בָּאֵ֔שׁ וַיִּטְחַ֖ן עַ֣ד אֲשֶׁר־דָּ֑ק וַיִּ֙זֶר֙ עַל־פְּנֵ֣י הַמַּ֔יִם וַיַּ֖שְׁקְ אֶת־בְּנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "And he took the calf which they had made, and burnt it in the fire, and ground it to powder, and scattered it upon the water, and made the children of Yisra᾽el drink of it."
+    },
+    {
+      "n": 67,
+      "c": 32,
+      "v": 21,
+      "ref": "32:21",
+      "text": "וַיֹּ֤אמֶר מֹשֶׁה֙ אֶֽל־אַהֲרֹ֔ן מֶֽה־עָשָׂ֥ה לְךָ֖ הָעָ֣ם הַזֶּ֑ה כִּֽי־הֵבֵ֥אתָ עָלָ֖יו חֲטָאָ֥ה גְדֹלָֽה׃",
+      "en": "And Moshe said to Aharon, What has this people done to thee, that thou hast brought so great a sin upon them?"
+    },
+    {
+      "n": 68,
+      "c": 32,
+      "v": 22,
+      "ref": "32:22",
+      "text": "וַיֹּ֣אמֶר אַהֲרֹ֔ן אַל־יִ֥חַר אַ֖ף אֲדֹנִ֑י אַתָּה֙ יָדַ֣עְתָּ אֶת־הָעָ֔ם כִּ֥י בְרָ֖ע הֽוּא׃",
+      "en": "And Aharon said, Let not the anger of my lord burn: thou knowst the people, that they are bent on mischief."
+    },
+    {
+      "n": 69,
+      "c": 32,
+      "v": 23,
+      "ref": "32:23",
+      "text": "וַיֹּ֣אמְרוּ לִ֔י עֲשֵׂה־לָ֣נוּ אֱלֹהִ֔ים אֲשֶׁ֥ר יֵלְכ֖וּ לְפָנֵ֑ינוּ כִּי־זֶ֣ה&thinsp;<b>׀</b> מֹשֶׁ֣ה הָאִ֗ישׁ אֲשֶׁ֤ר הֶֽעֱלָ֙נוּ֙ מֵאֶ֣רֶץ מִצְרַ֔יִם לֹ֥א יָדַ֖עְנוּ מֶה־הָ֥יָה לֽוֹ׃",
+      "en": "For they said to me, Make us gods, which shall go before us: for as for this Moshe, the man that brought us up out of the land of Miżrayim, we know not what is become of him."
+    },
+    {
+      "n": 70,
+      "c": 32,
+      "v": 24,
+      "ref": "32:24",
+      "text": "וָאֹמַ֤ר לָהֶם֙ לְמִ֣י זָהָ֔ב הִתְפָּרָ֖קוּ וַיִּתְּנוּ־לִ֑י וָאַשְׁלִכֵ֣הוּ בָאֵ֔שׁ וַיֵּצֵ֖א הָעֵ֥גֶל הַזֶּֽה׃",
+      "en": "And I said to them, Who has any gold? They broke it off and gave it me: then I threw it into the fire, and there came out this calf."
+    },
+    {
+      "n": 71,
+      "c": 32,
+      "v": 25,
+      "ref": "32:25",
+      "text": "וַיַּ֤רְא מֹשֶׁה֙ אֶת־הָעָ֔ם כִּ֥י פָרֻ֖עַ ה֑וּא כִּֽי־פְרָעֹ֣ה אַהֲרֹ֔ן לְשִׁמְצָ֖ה בְּקָמֵיהֶֽם׃",
+      "en": "And when Moshe saw that the people were in disorder; (for Aharon had made them disorderly to the scandal of their enemies:)"
+    },
+    {
+      "n": 72,
+      "c": 32,
+      "v": 26,
+      "ref": "32:26",
+      "text": "וַיַּעֲמֹ֤ד מֹשֶׁה֙ בְּשַׁ֣עַר הַֽמַּחֲנֶ֔ה וַיֹּ֕אמֶר מִ֥י לַיהֹוָ֖ה אֵלָ֑י וַיֵּאָסְפ֥וּ אֵלָ֖יו כׇּל־בְּנֵ֥י לֵוִֽי׃",
+      "en": "then Moshe stood in the gate of the camp, and said, Who is on the Lord’s side? let him come to me. And all the sons of Levi gathered themselves together to him."
+    },
+    {
+      "n": 73,
+      "c": 32,
+      "v": 27,
+      "ref": "32:27",
+      "text": "וַיֹּ֣אמֶר לָהֶ֗ם כֹּֽה־אָמַ֤ר יְהֹוָה֙ אֱלֹהֵ֣י יִשְׂרָאֵ֔ל שִׂ֥ימוּ אִישׁ־חַרְבּ֖וֹ עַל־יְרֵכ֑וֹ עִבְר֨וּ וָשׁ֜וּבוּ מִשַּׁ֤עַר לָשַׁ֙עַר֙ בַּֽמַּחֲנֶ֔ה וְהִרְג֧וּ אִֽישׁ־אֶת־אָחִ֛יו וְאִ֥ישׁ אֶת־רֵעֵ֖הוּ וְאִ֥ישׁ אֶת־קְרֹבֽוֹ׃",
+      "en": "And he said to them, Thus says the Lord God of Yisra᾽el, Put every man his sword by his side, and go to and fro from gate to gate throughout the camp, and slay every man his brother, and every man his companion, and every man his neighbour."
+    },
+    {
+      "n": 74,
+      "c": 32,
+      "v": 28,
+      "ref": "32:28",
+      "text": "וַיַּֽעֲשׂ֥וּ בְנֵֽי־לֵוִ֖י כִּדְבַ֣ר מֹשֶׁ֑ה וַיִּפֹּ֤ל מִן־הָעָם֙ בַּיּ֣וֹם הַה֔וּא כִּשְׁלֹ֥שֶׁת אַלְפֵ֖י אִֽישׁ׃",
+      "en": "And the children of Levi did according to the word of Moshe: and there fell of the people that day about three thousand men."
+    },
+    {
+      "n": 75,
+      "c": 32,
+      "v": 29,
+      "ref": "32:29",
+      "text": "וַיֹּ֣אמֶר מֹשֶׁ֗ה מִלְא֨וּ יֶדְכֶ֤ם הַיּוֹם֙ לַֽיהֹוָ֔ה כִּ֛י אִ֥ישׁ בִּבְנ֖וֹ וּבְאָחִ֑יו וְלָתֵ֧ת עֲלֵיכֶ֛ם הַיּ֖וֹם בְּרָכָֽה׃",
+      "en": "For Moshe said, Consecrate yourselves today to the Lord, even every man against his son, and against his brother; that he may bestow upon you a blessing this day."
+    },
+    {
+      "n": 76,
+      "c": 32,
+      "v": 30,
+      "ref": "32:30",
+      "text": "וַֽיְהִי֙ מִֽמׇּחֳרָ֔ת וַיֹּ֤אמֶר מֹשֶׁה֙ אֶל־הָעָ֔ם אַתֶּ֥ם חֲטָאתֶ֖ם חֲטָאָ֣ה גְדֹלָ֑ה וְעַתָּה֙ אֶֽעֱלֶ֣ה אֶל־יְהֹוָ֔ה אוּלַ֥י אֲכַפְּרָ֖ה בְּעַ֥ד חַטַּאתְכֶֽם׃",
+      "en": "And it came to pass on the morrow, that Moshe said to the people, You have sinned a great sin: and now I will go up to the Lord; perhaps I shall make atonement for your sin."
+    },
+    {
+      "n": 77,
+      "c": 32,
+      "v": 31,
+      "ref": "32:31",
+      "text": "וַיָּ֧שׇׁב מֹשֶׁ֛ה אֶל־יְהֹוָ֖ה וַיֹּאמַ֑ר אָ֣נָּ֗א חָטָ֞א הָעָ֤ם הַזֶּה֙ חֲטָאָ֣ה גְדֹלָ֔ה וַיַּֽעֲשׂ֥וּ לָהֶ֖ם אֱלֹהֵ֥י זָהָֽב׃",
+      "en": "And Moshe returned to the Lord, and said, Oh, this people has sinned a great sin, and they have made them gods of gold."
+    },
+    {
+      "n": 78,
+      "c": 32,
+      "v": 32,
+      "ref": "32:32",
+      "text": "וְעַתָּ֖ה אִם־תִּשָּׂ֣א חַטָּאתָ֑ם וְאִם־אַ֕יִן מְחֵ֣נִי נָ֔א מִֽסִּפְרְךָ֖ אֲשֶׁ֥ר כָּתָֽבְתָּ׃",
+      "en": "Yet now, if thou wilt forgive their sin – ; and if not, blot me, I pray thee, out of thy book which thou hast written."
+    },
+    {
+      "n": 79,
+      "c": 32,
+      "v": 33,
+      "ref": "32:33",
+      "text": "וַיֹּ֥אמֶר יְהֹוָ֖ה אֶל־מֹשֶׁ֑ה מִ֚י אֲשֶׁ֣ר חָֽטָא־לִ֔י אֶמְחֶ֖נּוּ מִסִּפְרִֽי׃",
+      "en": "And the Lord said to Moshe, Whoever has sinned against me, him will I blot out of my book."
+    },
+    {
+      "n": 80,
+      "c": 32,
+      "v": 34,
+      "ref": "32:34",
+      "text": "וְעַתָּ֞ה לֵ֣ךְ&thinsp;<b>׀</b> נְחֵ֣ה אֶת־הָעָ֗ם אֶ֤ל אֲשֶׁר־דִּבַּ֙רְתִּי֙ לָ֔ךְ הִנֵּ֥ה מַלְאָכִ֖י יֵלֵ֣ךְ לְפָנֶ֑יךָ וּבְי֣וֹם פׇּקְדִ֔י וּפָקַדְתִּ֥י עֲלֵהֶ֖ם חַטָּאתָֽם׃",
+      "en": "Therefore now go, lead the people to the place of which I have spoken to thee: behold, my angel shall go before thee: nevertheless in the day when I punish, I will punish their sin upon them."
+    },
+    {
+      "n": 81,
+      "c": 32,
+      "v": 35,
+      "ref": "32:35",
+      "text": "וַיִּגֹּ֥ף יְהֹוָ֖ה אֶת־הָעָ֑ם עַ֚ל אֲשֶׁ֣ר עָשׂ֣וּ אֶת־הָעֵ֔גֶל אֲשֶׁ֥ר עָשָׂ֖ה אַהֲרֹֽן׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the Lord plagued the people, because they made the calf, which Aharon had made."
+    },
+    {
+      "n": 82,
+      "c": 33,
+      "v": 1,
+      "ref": "33:1",
+      "text": "וַיְדַבֵּ֨ר יְהֹוָ֤ה אֶל־מֹשֶׁה֙ לֵ֣ךְ עֲלֵ֣ה מִזֶּ֔ה אַתָּ֣ה וְהָעָ֔ם אֲשֶׁ֥ר הֶֽעֱלִ֖יתָ מֵאֶ֣רֶץ מִצְרָ֑יִם אֶל־הָאָ֗רֶץ אֲשֶׁ֣ר נִ֠שְׁבַּ֠עְתִּי לְאַבְרָהָ֨ם לְיִצְחָ֤ק וּֽלְיַעֲקֹב֙ לֵאמֹ֔ר לְזַרְעֲךָ֖ אֶתְּנֶֽנָּה׃",
+      "en": "And the Lord said to Moshe, Depart, and go up from here, thou and the people whom thou hast brought up out of the land of Miżrayim, to the land of which I swore to Avraham, to Yiżĥaq, and to Ya῾aqov, saying, To thy seed will I give it:"
+    },
+    {
+      "n": 83,
+      "c": 33,
+      "v": 2,
+      "ref": "33:2",
+      "text": "וְשָׁלַחְתִּ֥י לְפָנֶ֖יךָ מַלְאָ֑ךְ וְגֵֽרַשְׁתִּ֗י אֶת־הַֽכְּנַעֲנִי֙ הָֽאֱמֹרִ֔י וְהַֽחִתִּי֙ וְהַפְּרִזִּ֔י הַחִוִּ֖י וְהַיְבוּסִֽי׃",
+      "en": "and I will send an angel before thee; and I will drive out the Kena῾ani, the Emori, and the Ḥitti, and the Perizzi, the Ḥivvi, and the Yevusi:"
+    },
+    {
+      "n": 84,
+      "c": 33,
+      "v": 3,
+      "ref": "33:3",
+      "text": "אֶל־אֶ֛רֶץ זָבַ֥ת חָלָ֖ב וּדְבָ֑שׁ כִּי֩ לֹ֨א אֶֽעֱלֶ֜ה בְּקִרְבְּךָ֗ כִּ֤י עַם־קְשֵׁה־עֹ֙רֶף֙ אַ֔תָּה פֶּן־אֲכֶלְךָ֖ בַּדָּֽרֶךְ׃",
+      "en": "into a land flowing with milk and honey: for I will not go up in the midst of thee; for thou art a stiffnecked people: lest I consume thee on the way."
+    },
+    {
+      "n": 85,
+      "c": 33,
+      "v": 4,
+      "ref": "33:4",
+      "text": "וַיִּשְׁמַ֣ע הָעָ֗ם אֶת־הַדָּבָ֥ר הָרָ֛ע הַזֶּ֖ה וַיִּתְאַבָּ֑לוּ וְלֹא־שָׁ֛תוּ אִ֥ישׁ עֶדְי֖וֹ עָלָֽיו׃",
+      "en": "And when the people heard these evil tidings, they mourned: and no man put on him his ornaments."
+    },
+    {
+      "n": 86,
+      "c": 33,
+      "v": 5,
+      "ref": "33:5",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֶל־מֹשֶׁ֗ה אֱמֹ֤ר אֶל־בְּנֵֽי־יִשְׂרָאֵל֙ אַתֶּ֣ם עַם־קְשֵׁה־עֹ֔רֶף רֶ֧גַע אֶחָ֛ד אֶֽעֱלֶ֥ה בְקִרְבְּךָ֖ וְכִלִּיתִ֑יךָ וְעַתָּ֗ה הוֹרֵ֤ד עֶדְיְךָ֙ מֵֽעָלֶ֔יךָ וְאֵדְעָ֖ה מָ֥ה אֶֽעֱשֶׂה־לָּֽךְ׃",
+      "en": "For the Lord had said to Moshe, Say to the children of Yisra᾽el, You are a stiffnecked people: I will come up into the midst of thee for a moment and consume thee: therefore now put off thy ornaments from thee, that I may know what to do to thee."
+    },
+    {
+      "n": 87,
+      "c": 33,
+      "v": 6,
+      "ref": "33:6",
+      "text": "וַיִּֽתְנַצְּל֧וּ בְנֵֽי־יִשְׂרָאֵ֛ל אֶת־עֶדְיָ֖ם מֵהַ֥ר חוֹרֵֽב׃",
+      "en": "And the children of Yisra᾽el stripped themselves of their ornaments by the mount Ḥorev."
+    },
+    {
+      "n": 88,
+      "c": 33,
+      "v": 7,
+      "ref": "33:7",
+      "text": "וּמֹשֶׁה֩ יִקַּ֨ח אֶת־הָאֹ֜הֶל וְנָֽטָה־ל֣וֹ&thinsp;<b>׀</b> מִח֣וּץ לַֽמַּחֲנֶ֗ה הַרְחֵק֙ מִן־הַֽמַּחֲנֶ֔ה וְקָ֥רָא ל֖וֹ אֹ֣הֶל מוֹעֵ֑ד וְהָיָה֙ כׇּל־מְבַקֵּ֣שׁ יְהֹוָ֔ה יֵצֵא֙ אֶל־אֹ֣הֶל מוֹעֵ֔ד אֲשֶׁ֖ר מִח֥וּץ לַֽמַּחֲנֶֽה׃",
+      "en": "And Moshe would take the Tent, and pitch it outside the camp, afar off from the camp, and he called it the Tent of Meeting. And it came to pass, that everyone who sought the Lord went out to the Tent of Meeting, which was outside the camp."
+    },
+    {
+      "n": 89,
+      "c": 33,
+      "v": 8,
+      "ref": "33:8",
+      "text": "וְהָיָ֗ה כְּצֵ֤את מֹשֶׁה֙ אֶל־הָאֹ֔הֶל יָק֙וּמוּ֙ כׇּל־הָעָ֔ם וְנִ֨צְּב֔וּ אִ֖ישׁ פֶּ֣תַח אׇהֳל֑וֹ וְהִבִּ֙יטוּ֙ אַחֲרֵ֣י מֹשֶׁ֔ה עַד־בֹּא֖וֹ הָאֹֽהֱלָה׃",
+      "en": "And it came to pass, when Moshe went out to the Tent, that all the people rose up, and stood every man at his tent door, and looked after Moshe until he was gone into the Tent."
+    },
+    {
+      "n": 90,
+      "c": 33,
+      "v": 9,
+      "ref": "33:9",
+      "text": "וְהָיָ֗ה כְּבֹ֤א מֹשֶׁה֙ הָאֹ֔הֱלָה יֵרֵד֙ עַמּ֣וּד הֶֽעָנָ֔ן וְעָמַ֖ד פֶּ֣תַח הָאֹ֑הֶל וְדִבֶּ֖ר עִם־מֹשֶֽׁה׃",
+      "en": "And it came to pass, as Moshe entered the Tent, the cloudy pillar descended, and stood at the door of the Tent, and one talked with Moshe."
+    },
+    {
+      "n": 91,
+      "c": 33,
+      "v": 10,
+      "ref": "33:10",
+      "text": "וְרָאָ֤ה כׇל־הָעָם֙ אֶת־עַמּ֣וּד הֶֽעָנָ֔ן עֹמֵ֖ד פֶּ֣תַח הָאֹ֑הֶל וְקָ֤ם כׇּל־הָעָם֙ וְהִֽשְׁתַּחֲו֔וּ אִ֖ישׁ פֶּ֥תַח אׇהֳלֽוֹ׃",
+      "en": "And all the people saw the cloudy pillar stand at the door of the Tent: and all the people rose up and worshipped, every man in his tent door."
+    },
+    {
+      "n": 92,
+      "c": 33,
+      "v": 11,
+      "ref": "33:11",
+      "text": "וְדִבֶּ֨ר יְהֹוָ֤ה אֶל־מֹשֶׁה֙ פָּנִ֣ים אֶל־פָּנִ֔ים כַּאֲשֶׁ֛ר יְדַבֵּ֥ר אִ֖ישׁ אֶל־רֵעֵ֑הוּ וְשָׁב֙ אֶל־הַֽמַּחֲנֶ֔ה וּמְשָׁ֨רְת֜וֹ יְהוֹשֻׁ֤עַ בִּן־נוּן֙ נַ֔עַר לֹ֥א יָמִ֖ישׁ מִתּ֥וֹךְ הָאֹֽהֶל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And the Lord spoke to Moshe face to face, as a man speaks to his friend. And he turned back to the camp: but his servant Yehoshua, the son of Nun, a young man, did not depart out of the Tent."
+    },
+    {
+      "n": 93,
+      "c": 33,
+      "v": 12,
+      "ref": "33:12",
+      "text": "וַיֹּ֨אמֶר מֹשֶׁ֜ה אֶל־יְהֹוָ֗ה רְ֠אֵ֠ה אַתָּ֞ה אֹמֵ֤ר אֵלַי֙ הַ֚עַל אֶת־הָעָ֣ם הַזֶּ֔ה וְאַתָּה֙ לֹ֣א הֽוֹדַעְתַּ֔נִי אֵ֥ת אֲשֶׁר־תִּשְׁלַ֖ח עִמִּ֑י וְאַתָּ֤ה אָמַ֙רְתָּ֙ יְדַעְתִּ֣יךָֽ בְשֵׁ֔ם וְגַם־מָצָ֥אתָ חֵ֖ן בְּעֵינָֽי׃",
+      "en": "And Moshe said to the Lord, See, thou sayst to me, Bring up this people: and thou hast not let me know whom thou wilt send with me. Yet thou hast said, I know thee by name, and thou hast also found favour in my sight."
+    },
+    {
+      "n": 94,
+      "c": 33,
+      "v": 13,
+      "ref": "33:13",
+      "text": "וְעַתָּ֡ה אִם־נָא֩ מָצָ֨אתִי חֵ֜ן בְּעֵינֶ֗יךָ הוֹדִעֵ֤נִי נָא֙ אֶת־דְּרָכֶ֔ךָ וְאֵדָ֣עֲךָ֔ לְמַ֥עַן אֶמְצָא־חֵ֖ן בְּעֵינֶ֑יךָ וּרְאֵ֕ה כִּ֥י עַמְּךָ֖ הַגּ֥וֹי הַזֶּֽה׃",
+      "en": "Now therefore, I pray thee, if I have found favour in thy sight, show me now thy way, that I may know thee, that I may find favour in thy sight: and consider that this nation is thy people."
+    },
+    {
+      "n": 95,
+      "c": 33,
+      "v": 14,
+      "ref": "33:14",
+      "text": "וַיֹּאמַ֑ר פָּנַ֥י יֵלֵ֖כוּ וַהֲנִחֹ֥תִי לָֽךְ׃",
+      "en": "And he said, My presence shall go with thee, and I will give thee rest."
+    },
+    {
+      "n": 96,
+      "c": 33,
+      "v": 15,
+      "ref": "33:15",
+      "text": "וַיֹּ֖אמֶר אֵלָ֑יו אִם־אֵ֤ין פָּנֶ֙יךָ֙ הֹלְכִ֔ים אַֽל־תַּעֲלֵ֖נוּ מִזֶּֽה׃",
+      "en": "And he said to him, If thy presence go not with me, carry us not up from here."
+    },
+    {
+      "n": 97,
+      "c": 33,
+      "v": 16,
+      "ref": "33:16",
+      "text": "וּבַמֶּ֣ה&thinsp;<b>׀</b> יִוָּדַ֣ע אֵפ֗וֹא כִּֽי־מָצָ֨אתִי חֵ֤ן בְּעֵינֶ֙יךָ֙ אֲנִ֣י וְעַמֶּ֔ךָ הֲל֖וֹא בְּלֶכְתְּךָ֣ עִמָּ֑נוּ וְנִפְלִ֙ינוּ֙ אֲנִ֣י וְעַמְּךָ֔ מִכׇּ֨ל־הָעָ֔ם אֲשֶׁ֖ר עַל־פְּנֵ֥י הָאֲדָמָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "For in what shall it be known here that I and thy people have found favour in thy sight? is it not in that thou goest with us? so shall we be differentiated, I and thy people, from all the people that are upon the face of the earth."
+    },
+    {
+      "n": 98,
+      "c": 33,
+      "v": 17,
+      "ref": "33:17",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה גַּ֣ם אֶת־הַדָּבָ֥ר הַזֶּ֛ה אֲשֶׁ֥ר דִּבַּ֖רְתָּ אֶֽעֱשֶׂ֑ה כִּֽי־מָצָ֤אתָ חֵן֙ בְּעֵינַ֔י וָאֵדָעֲךָ֖ בְּשֵֽׁם׃",
+      "en": "And the Lord said to Moshe, I will do this thing also that thou hast spoken: for thou hast found favour in my sight, and I know thee by name."
+    },
+    {
+      "n": 99,
+      "c": 33,
+      "v": 18,
+      "ref": "33:18",
+      "text": "וַיֹּאמַ֑ר הַרְאֵ֥נִי נָ֖א אֶת־כְּבֹדֶֽךָ׃",
+      "en": "And he said, I pray thee, show me thy glory."
+    },
+    {
+      "n": 100,
+      "c": 33,
+      "v": 19,
+      "ref": "33:19",
+      "text": "וַיֹּ֗אמֶר אֲנִ֨י אַעֲבִ֤יר כׇּל־טוּבִי֙ עַל־פָּנֶ֔יךָ וְקָרָ֧אתִֽי בְשֵׁ֛ם יְהֹוָ֖ה לְפָנֶ֑יךָ וְחַנֹּתִי֙ אֶת־אֲשֶׁ֣ר אָחֹ֔ן וְרִחַמְתִּ֖י אֶת־אֲשֶׁ֥ר אֲרַחֵֽם׃",
+      "en": "And he said, I will make all my goodness pass before thee, and I will proclaim the name of the Lord before thee; and will be gracious to whom I will be gracious, and will show mercy on whom I will show mercy."
+    },
+    {
+      "n": 101,
+      "c": 33,
+      "v": 20,
+      "ref": "33:20",
+      "text": "וַיֹּ֕אמֶר לֹ֥א תוּכַ֖ל לִרְאֹ֣ת אֶת־פָּנָ֑י כִּ֛י לֹֽא־יִרְאַ֥נִי הָאָדָ֖ם וָחָֽי׃",
+      "en": "And he said, Thou canst not see my face; for no man shall see me, and live."
+    },
+    {
+      "n": 102,
+      "c": 33,
+      "v": 21,
+      "ref": "33:21",
+      "text": "וַיֹּ֣אמֶר יְהֹוָ֔ה הִנֵּ֥ה מָק֖וֹם אִתִּ֑י וְנִצַּבְתָּ֖ עַל־הַצּֽוּר׃",
+      "en": "And the Lord said, Behold, there is a place by me, and thou shalt stand upon a rock:"
+    },
+    {
+      "n": 103,
+      "c": 33,
+      "v": 22,
+      "ref": "33:22",
+      "text": "וְהָיָה֙ בַּעֲבֹ֣ר כְּבֹדִ֔י וְשַׂמְתִּ֖יךָ בְּנִקְרַ֣ת הַצּ֑וּר וְשַׂכֹּתִ֥י כַפִּ֛י עָלֶ֖יךָ עַד־עׇבְרִֽי׃",
+      "en": "and it shall come to pass, while my glory passes by, that I will put thee in a cleft of the rock, and will cover thee with my hand while I pass by:"
+    },
+    {
+      "n": 104,
+      "c": 33,
+      "v": 23,
+      "ref": "33:23",
+      "text": "וַהֲסִרֹתִי֙ אֶת־כַּפִּ֔י וְרָאִ֖יתָ אֶת־אֲחֹרָ֑י וּפָנַ֖י לֹ֥א יֵרָאֽוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br><sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(ספק פרשה סתומה בכתר ארם צובה)</i>",
+      "en": "and I will take away my hand and thou shalt see my back: but my face shall not be seen."
+    },
+    {
+      "n": 105,
+      "c": 34,
+      "v": 1,
+      "ref": "34:1",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה פְּסׇל־לְךָ֛ שְׁנֵֽי־לֻחֹ֥ת אֲבָנִ֖ים כָּרִאשֹׁנִ֑ים וְכָתַבְתִּי֙ עַל־הַלֻּחֹ֔ת אֶ֨ת־הַדְּבָרִ֔ים אֲשֶׁ֥ר הָי֛וּ עַל־הַלֻּחֹ֥ת הָרִאשֹׁנִ֖ים אֲשֶׁ֥ר שִׁבַּֽרְתָּ׃",
+      "en": "And the Lord said to Moshe, Hew for thyself two tablets of stone like the first: and I will write upon these tablets the words that were on the first tablets, which thou didst break."
+    },
+    {
+      "n": 106,
+      "c": 34,
+      "v": 2,
+      "ref": "34:2",
+      "text": "וֶהְיֵ֥ה נָכ֖וֹן לַבֹּ֑קֶר וְעָלִ֤יתָ בַבֹּ֙קֶר֙ אֶל־הַ֣ר סִינַ֔י וְנִצַּבְתָּ֥ לִ֛י שָׁ֖ם עַל־רֹ֥אשׁ הָהָֽר׃",
+      "en": "And be ready in the morning, and come up in the morning to mount Sinay, and present thyself there to me on the top of the mountain."
+    },
+    {
+      "n": 107,
+      "c": 34,
+      "v": 3,
+      "ref": "34:3",
+      "text": "וְאִישׁ֙ לֹֽא־יַעֲלֶ֣ה עִמָּ֔ךְ וְגַם־אִ֥ישׁ אַל־יֵרָ֖א בְּכׇל־הָהָ֑ר גַּם־הַצֹּ֤אן וְהַבָּקָר֙ אַל־יִרְע֔וּ אֶל־מ֖וּל הָהָ֥ר הַהֽוּא׃",
+      "en": "And no man shall come up with thee, neither let any man be seen throughout all the mountain; neither let the flocks nor herds feed before that mountain."
+    },
+    {
+      "n": 108,
+      "c": 34,
+      "v": 4,
+      "ref": "34:4",
+      "text": "וַיִּפְסֹ֡ל שְׁנֵֽי־לֻחֹ֨ת אֲבָנִ֜ים כָּרִאשֹׁנִ֗ים וַיַּשְׁכֵּ֨ם מֹשֶׁ֤ה בַבֹּ֙קֶר֙ וַיַּ֙עַל֙ אֶל־הַ֣ר סִינַ֔י כַּאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֹת֑וֹ וַיִּקַּ֣ח בְּיָד֔וֹ שְׁנֵ֖י לֻחֹ֥ת אֲבָנִֽים׃",
+      "en": "And he hewed two tablets of stone like the first; and Moshe rose up early in the morning, and went up to mount Sinay, as the Lord had commanded him, and took in his hand the two tablets of stone."
+    },
+    {
+      "n": 109,
+      "c": 34,
+      "v": 5,
+      "ref": "34:5",
+      "text": "וַיֵּ֤רֶד יְהֹוָה֙ בֶּֽעָנָ֔ן וַיִּתְיַצֵּ֥ב עִמּ֖וֹ שָׁ֑ם וַיִּקְרָ֥א בְשֵׁ֖ם יְהֹוָֽה׃",
+      "en": "And the Lord descended in the cloud, and stood with him there, and proclaimed the name of the Lord."
+    },
+    {
+      "n": 110,
+      "c": 34,
+      "v": 6,
+      "ref": "34:6",
+      "text": "וַיַּעֲבֹ֨ר יְהֹוָ֥ה&thinsp;<small>׀</small>&thinsp;עַל־פָּנָיו֮ וַיִּקְרָא֒ יְהֹוָ֣ה&thinsp;<small>׀</small>&thinsp;יְהֹוָ֔ה אֵ֥ל רַח֖וּם וְחַנּ֑וּן אֶ֥רֶךְ אַפַּ֖יִם וְרַב־חֶ֥סֶד וֶאֱמֶֽת׃",
+      "en": "And the Lord passed by before him, and proclaimed, The Lord, The Lord, mighty, merciful and gracious, longsuffering, and abundant in love and truth,"
+    },
+    {
+      "n": 111,
+      "c": 34,
+      "v": 7,
+      "ref": "34:7",
+      "text": "<big>נֹ</big>צֵ֥ר<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי תימן נֹצֵ֥ר בנו״ן רגילה)</i> חֶ֙סֶד֙ לָאֲלָפִ֔ים נֹשֵׂ֥א עָוֺ֛ן וָפֶ֖שַׁע וְחַטָּאָ֑ה וְנַקֵּה֙ לֹ֣א יְנַקֶּ֔ה פֹּקֵ֣ד&thinsp;<b>׀</b> עֲוֺ֣ן אָב֗וֹת עַל־בָּנִים֙ וְעַל־בְּנֵ֣י בָנִ֔ים עַל־שִׁלֵּשִׁ֖ים וְעַל־רִבֵּעִֽים׃",
+      "en": "keeping troth to thousands, forgiving iniquity, and transgression, and sin, but who will by no means clear the guilty; punishing the iniquity of the fathers on the children, and on the children’s children, to the third and to the fourth generation."
+    },
+    {
+      "n": 112,
+      "c": 34,
+      "v": 8,
+      "ref": "34:8",
+      "text": "וַיְמַהֵ֖ר מֹשֶׁ֑ה וַיִּקֹּ֥ד אַ֖רְצָה וַיִּשְׁתָּֽחוּ׃",
+      "en": "And Moshe made haste, and bowed his head toward the earth, and worshipped."
+    },
+    {
+      "n": 113,
+      "c": 34,
+      "v": 9,
+      "ref": "34:9",
+      "text": "וַיֹּ֡אמֶר אִם־נָא֩ מָצָ֨אתִי חֵ֤ן בְּעֵינֶ֙יךָ֙ אֲדֹנָ֔י יֵֽלֶךְ־נָ֥א אֲדֹנָ֖י בְּקִרְבֵּ֑נוּ כִּ֤י עַם־קְשֵׁה־עֹ֙רֶף֙ ה֔וּא וְסָלַחְתָּ֛ לַעֲוֺנֵ֥נוּ וּלְחַטָּאתֵ֖נוּ וּנְחַלְתָּֽנוּ׃",
+      "en": "And he said, If now I have found favour in thy sight, O Lord, let my Lord, I pray thee, go among us; for it is a stiffnecked people; and pardon our iniquity and our sin, and take us for thy inheritance."
+    },
+    {
+      "n": 114,
+      "c": 34,
+      "v": 10,
+      "ref": "34:10",
+      "text": "וַיֹּ֗אמֶר הִנֵּ֣ה אָנֹכִי֮ כֹּרֵ֣ת בְּרִית֒ נֶ֤גֶד כׇּֽל־עַמְּךָ֙ אֶעֱשֶׂ֣ה נִפְלָאֹ֔ת אֲשֶׁ֛ר לֹֽא־נִבְרְא֥וּ בְכׇל־הָאָ֖רֶץ וּבְכׇל־הַגּוֹיִ֑ם וְרָאָ֣ה כׇל־הָ֠עָ֠ם אֲשֶׁר־אַתָּ֨ה בְקִרְבּ֜וֹ אֶת־מַעֲשֵׂ֤ה יְהֹוָה֙ כִּֽי־נוֹרָ֣א ה֔וּא אֲשֶׁ֥ר אֲנִ֖י עֹשֶׂ֥ה עִמָּֽךְ׃",
+      "en": "And he said, Behold, I make a covenant: before all thy people I will do marvels, such as have not been done in all the earth, nor in any nation: and all the people among whom thou art shall see the work of the Lord that I will do with thee, that it is tremendous."
+    },
+    {
+      "n": 115,
+      "c": 34,
+      "v": 11,
+      "ref": "34:11",
+      "text": "שְׁמׇ֨ר־לְךָ֔ אֵ֛ת אֲשֶׁ֥ר אָנֹכִ֖י מְצַוְּךָ֣ הַיּ֑וֹם הִנְנִ֧י גֹרֵ֣שׁ מִפָּנֶ֗יךָ אֶת־הָאֱמֹרִי֙ וְהַֽכְּנַעֲנִ֔י וְהַחִתִּי֙ וְהַפְּרִזִּ֔י וְהַחִוִּ֖י וְהַיְבוּסִֽי׃",
+      "en": "Observe thou that which I command thee this day: behold, I drive out before thee the Emori, and the Kena῾ani, and the Ḥitti, and the Perizzi, and the Ḥivvi, and the Yevusi."
+    },
+    {
+      "n": 116,
+      "c": 34,
+      "v": 12,
+      "ref": "34:12",
+      "text": "הִשָּׁ֣מֶר לְךָ֗ פֶּן־תִּכְרֹ֤ת בְּרִית֙ לְיוֹשֵׁ֣ב הָאָ֔רֶץ אֲשֶׁ֥ר אַתָּ֖ה בָּ֣א עָלֶ֑יהָ פֶּן־יִהְיֶ֥ה לְמוֹקֵ֖שׁ בְּקִרְבֶּֽךָ׃",
+      "en": "Take heed to thyself, lest thou make a covenant with the inhabitants of the land to which thou goest, lest it be for a snare in the midst of thee:"
+    },
+    {
+      "n": 117,
+      "c": 34,
+      "v": 13,
+      "ref": "34:13",
+      "text": "כִּ֤י אֶת־מִזְבְּחֹתָם֙ תִּתֹּצ֔וּן וְאֶת־מַצֵּבֹתָ֖ם תְּשַׁבֵּר֑וּן וְאֶת־אֲשֵׁרָ֖יו תִּכְרֹתֽוּן׃",
+      "en": "but you shall destroy their altars, break their images, and cut down their asherim:"
+    },
+    {
+      "n": 118,
+      "c": 34,
+      "v": 14,
+      "ref": "34:14",
+      "text": "כִּ֛י לֹ֥א תִֽשְׁתַּחֲוֶ֖ה לְאֵ֣ל אַחֵ֑<big>ר</big> כִּ֤י יְהֹוָה֙ קַנָּ֣א שְׁמ֔וֹ אֵ֥ל קַנָּ֖א הֽוּא׃",
+      "en": "for thou shalt worship no other god: for the Lord, whose name is Jealous, is a jealous God:"
+    },
+    {
+      "n": 119,
+      "c": 34,
+      "v": 15,
+      "ref": "34:15",
+      "text": "פֶּן־תִּכְרֹ֥ת בְּרִ֖ית לְיוֹשֵׁ֣ב הָאָ֑רֶץ וְזָנ֣וּ&thinsp;<b>׀</b> אַחֲרֵ֣י אֱלֹֽהֵיהֶ֗ם וְזָבְחוּ֙ לֵאלֹ֣הֵיהֶ֔ם וְקָרָ֣א לְךָ֔ וְאָכַלְתָּ֖ מִזִּבְחֽוֹ׃",
+      "en": "lest thou make a covenant with the inhabitants of the land, and they go astray after their gods, and do sacrifice to their gods, and call thee, and thou eat of their sacrifice;"
+    },
+    {
+      "n": 120,
+      "c": 34,
+      "v": 16,
+      "ref": "34:16",
+      "text": "וְלָקַחְתָּ֥ מִבְּנֹתָ֖יו לְבָנֶ֑יךָ וְזָנ֣וּ בְנֹתָ֗יו אַחֲרֵי֙ אֱלֹ֣הֵיהֶ֔ן וְהִזְנוּ֙ אֶת־בָּנֶ֔יךָ אַחֲרֵ֖י אֱלֹהֵיהֶֽן׃",
+      "en": "and thou take of their daughters to thy sons, and their daughters play the harlot after their gods, and make thy sons play the harlot after their gods."
+    },
+    {
+      "n": 121,
+      "c": 34,
+      "v": 17,
+      "ref": "34:17",
+      "text": "אֱלֹהֵ֥י מַסֵּכָ֖ה לֹ֥א תַעֲשֶׂה־לָּֽךְ׃",
+      "en": "Thou shalt make thee no molten gods."
+    },
+    {
+      "n": 122,
+      "c": 34,
+      "v": 18,
+      "ref": "34:18",
+      "text": "אֶת־חַ֣ג הַמַּצּוֹת֮ תִּשְׁמֹר֒ שִׁבְעַ֨ת יָמִ֜ים תֹּאכַ֤ל מַצּוֹת֙ אֲשֶׁ֣ר צִוִּיתִ֔ךָ לְמוֹעֵ֖ד חֹ֣דֶשׁ הָאָבִ֑יב כִּ֚י בְּחֹ֣דֶשׁ הָֽאָבִ֔יב יָצָ֖אתָ מִמִּצְרָֽיִם׃",
+      "en": "The feast of unleavened bread shalt thou keep. Seven days thou shalt eat unleavened bread, as I commanded thee, in the time of the month Aviv: (for in the month Aviv thou didst come out from Miżrayim.)"
+    },
+    {
+      "n": 123,
+      "c": 34,
+      "v": 19,
+      "ref": "34:19",
+      "text": "כׇּל־פֶּ֥טֶר רֶ֖חֶם לִ֑י וְכׇֽל־מִקְנְךָ֙ תִּזָּכָ֔ר פֶּ֖טֶר שׁ֥וֹר וָשֶֽׂה׃",
+      "en": "All that opens the womb is mine; and every firstling among thy cattle, whether ox or sheep, that is male."
+    },
+    {
+      "n": 124,
+      "c": 34,
+      "v": 20,
+      "ref": "34:20",
+      "text": "וּפֶ֤טֶר חֲמוֹר֙ תִּפְדֶּ֣ה בְשֶׂ֔ה וְאִם־לֹ֥א תִפְדֶּ֖ה וַעֲרַפְתּ֑וֹ כֹּ֣ל בְּכ֤וֹר בָּנֶ֙יךָ֙ תִּפְדֶּ֔ה וְלֹֽא־יֵרָא֥וּ פָנַ֖י רֵיקָֽם׃",
+      "en": "But the firstling of an ass thou shalt redeem with a lamb: and if thou redeem it not, then shalt thou break its neck. All the firstborn of thy sons thou shalt redeem. And none shall appear before me empty."
+    },
+    {
+      "n": 125,
+      "c": 34,
+      "v": 21,
+      "ref": "34:21",
+      "text": "שֵׁ֤שֶׁת יָמִים֙ תַּעֲבֹ֔ד וּבַיּ֥וֹם הַשְּׁבִיעִ֖י תִּשְׁבֹּ֑ת בֶּחָרִ֥ישׁ וּבַקָּצִ֖יר תִּשְׁבֹּֽת׃",
+      "en": "Six days thou shalt work, but on the seventh day thou shalt rest: in plowing and in harvest thou shalt rest."
+    },
+    {
+      "n": 126,
+      "c": 34,
+      "v": 22,
+      "ref": "34:22",
+      "text": "וְחַ֤ג שָׁבֻעֹת֙ תַּעֲשֶׂ֣ה לְךָ֔ בִּכּוּרֵ֖י קְצִ֣יר חִטִּ֑ים וְחַג֙ הָֽאָסִ֔יף תְּקוּפַ֖ת הַשָּׁנָֽה׃",
+      "en": "And thou shalt observe the feast of weeks, of the firstfruits of wheat harvest, and the feast of ingathering at the year’s end."
+    },
+    {
+      "n": 127,
+      "c": 34,
+      "v": 23,
+      "ref": "34:23",
+      "text": "שָׁלֹ֥שׁ פְּעָמִ֖ים בַּשָּׁנָ֑ה יֵרָאֶה֙ כׇּל־זְכ֣וּרְךָ֔ אֶת־פְּנֵ֛י הָֽאָדֹ֥ן&thinsp;<small>׀</small>&thinsp;יְהֹוָ֖ה אֱלֹהֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "Three times in the year shall all your males appear before the Lord God, the God of Yisra᾽el."
+    },
+    {
+      "n": 128,
+      "c": 34,
+      "v": 24,
+      "ref": "34:24",
+      "text": "כִּֽי־אוֹרִ֤ישׁ גּוֹיִם֙ מִפָּנֶ֔יךָ וְהִרְחַבְתִּ֖י אֶת־גְּבֻלֶ֑ךָ וְלֹא־יַחְמֹ֥ד אִישׁ֙ אֶֽת־אַרְצְךָ֔ בַּעֲלֹֽתְךָ֗ לֵרָאוֹת֙ אֶת־פְּנֵי֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ שָׁלֹ֥שׁ פְּעָמִ֖ים בַּשָּׁנָֽה׃",
+      "en": "For I will cast the nations before thee, and enlarge thy borders: neither shall any man desire thy land, when thou shalt go up to appear before the Lord thy God three times in the year."
+    },
+    {
+      "n": 129,
+      "c": 34,
+      "v": 25,
+      "ref": "34:25",
+      "text": "לֹֽא־תִשְׁחַ֥ט עַל־חָמֵ֖ץ דַּם־זִבְחִ֑י וְלֹא־יָלִ֣ין לַבֹּ֔קֶר זֶ֖בַח חַ֥ג הַפָּֽסַח׃",
+      "en": "Thou shalt not offer the blood of my sacrifice with leaven; neither shall the sacrifice of the feast of the passover be left to the morning."
+    },
+    {
+      "n": 130,
+      "c": 34,
+      "v": 26,
+      "ref": "34:26",
+      "text": "רֵאשִׁ֗ית בִּכּוּרֵי֙ אַדְמָ֣תְךָ֔ תָּבִ֕יא בֵּ֖ית יְהֹוָ֣ה אֱלֹהֶ֑יךָ לֹא־תְבַשֵּׁ֥ל גְּדִ֖י בַּחֲלֵ֥ב אִמּֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "The first of the firstfruits of thy land thou shalt bring to the house of the Lord thy God. Thou shalt not boil a kid in its mother’s milk."
+    },
+    {
+      "n": 131,
+      "c": 34,
+      "v": 27,
+      "ref": "34:27",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה כְּתׇב־לְךָ֖ אֶת־הַדְּבָרִ֣ים הָאֵ֑לֶּה כִּ֞י עַל־פִּ֣י&thinsp;<b>׀</b> הַדְּבָרִ֣ים הָאֵ֗לֶּה כָּרַ֧תִּי אִתְּךָ֛ בְּרִ֖ית וְאֶת־יִשְׂרָאֵֽל׃",
+      "en": "And the Lord said to Moshe, Write thou these words: for after the tenor of these words I have made a covenant with thee and with Yisra᾽el."
+    },
+    {
+      "n": 132,
+      "c": 34,
+      "v": 28,
+      "ref": "34:28",
+      "text": "וַֽיְהִי־שָׁ֣ם עִם־יְהֹוָ֗ה אַרְבָּעִ֥ים יוֹם֙ וְאַרְבָּעִ֣ים לַ֔יְלָה לֶ֚חֶם לֹ֣א אָכַ֔ל וּמַ֖יִם לֹ֣א שָׁתָ֑ה וַיִּכְתֹּ֣ב עַל־הַלֻּחֹ֗ת אֵ֚ת דִּבְרֵ֣י הַבְּרִ֔ית עֲשֶׂ֖רֶת הַדְּבָרִֽים׃",
+      "en": "And he was there with the Lord forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tablets the words of the covenant, the ten Words."
+    },
+    {
+      "n": 133,
+      "c": 34,
+      "v": 29,
+      "ref": "34:29",
+      "text": "וַיְהִ֗י בְּרֶ֤דֶת מֹשֶׁה֙ מֵהַ֣ר סִינַ֔י וּשְׁנֵ֨י לֻחֹ֤ת הָֽעֵדֻת֙ בְּיַד־מֹשֶׁ֔ה בְּרִדְתּ֖וֹ מִן־הָהָ֑ר וּמֹשֶׁ֣ה לֹֽא־יָדַ֗ע כִּ֥י קָרַ֛ן ע֥וֹר פָּנָ֖יו בְּדַבְּר֥וֹ אִתּֽוֹ׃",
+      "en": "And it came to pass, when Moshe came down from mount Sinay with the two tablets of Testimony in Moshe’s hand, when he came down from the mountain, that Moshe knew not that the skin of his face shone while he talked with him."
+    },
+    {
+      "n": 134,
+      "c": 34,
+      "v": 30,
+      "ref": "34:30",
+      "text": "וַיַּ֨רְא אַהֲרֹ֜ן וְכׇל־בְּנֵ֤י יִשְׂרָאֵל֙ אֶת־מֹשֶׁ֔ה וְהִנֵּ֥ה קָרַ֖ן ע֣וֹר פָּנָ֑יו וַיִּֽירְא֖וּ מִגֶּ֥שֶׁת אֵלָֽיו׃",
+      "en": "And when Aharon and all the children of Yisra᾽el saw Moshe, behold, the skin of his face shone; and they were afraid to come near him."
+    },
+    {
+      "n": 135,
+      "c": 34,
+      "v": 31,
+      "ref": "34:31",
+      "text": "וַיִּקְרָ֤א אֲלֵהֶם֙ מֹשֶׁ֔ה וַיָּשֻׁ֧בוּ אֵלָ֛יו אַהֲרֹ֥ן וְכׇל־הַנְּשִׂאִ֖ים בָּעֵדָ֑ה וַיְדַבֵּ֥ר מֹשֶׁ֖ה אֲלֵהֶֽם׃",
+      "en": "And Moshe called to them; and Aharon and all the rulers of the congregation returned to him: and Moshe talked with them."
+    },
+    {
+      "n": 136,
+      "c": 34,
+      "v": 32,
+      "ref": "34:32",
+      "text": "וְאַחֲרֵי־כֵ֥ן נִגְּשׁ֖וּ כׇּל־בְּנֵ֣י יִשְׂרָאֵ֑ל וַיְצַוֵּ֕ם אֵת֩ כׇּל־אֲשֶׁ֨ר דִּבֶּ֧ר יְהֹוָ֛ה אִתּ֖וֹ בְּהַ֥ר סִינָֽי׃",
+      "en": "And afterwards all the children of Yisra᾽el came near: and he gave them in commandment all that the Lord had spoken with him in mount Sinay."
+    },
+    {
+      "n": 137,
+      "c": 34,
+      "v": 33,
+      "ref": "34:33",
+      "text": "וַיְכַ֣ל מֹשֶׁ֔ה מִדַּבֵּ֖ר אִתָּ֑ם וַיִּתֵּ֥ן עַל־פָּנָ֖יו מַסְוֶֽה׃",
+      "en": "And when Moshe had finished speaking with them, he put a veil on his face."
+    },
+    {
+      "n": 138,
+      "c": 34,
+      "v": 34,
+      "ref": "34:34",
+      "text": "וּבְבֹ֨א מֹשֶׁ֜ה לִפְנֵ֤י יְהֹוָה֙ לְדַבֵּ֣ר אִתּ֔וֹ יָסִ֥יר אֶת־הַמַּסְוֶ֖ה עַד־צֵאת֑וֹ וְיָצָ֗א וְדִבֶּר֙ אֶל־בְּנֵ֣י יִשְׂרָאֵ֔ל אֵ֖ת אֲשֶׁ֥ר יְצֻוֶּֽה׃",
+      "en": "But when Moshe went in before the Lord to speak with him, he took the veil off, until he came out. And he came out, and spoke to the children of Yisra᾽el that which he was commanded."
+    },
+    {
+      "n": 139,
+      "c": 34,
+      "v": 35,
+      "ref": "34:35",
+      "text": "וְרָא֤וּ בְנֵֽי־יִשְׂרָאֵל֙ אֶת־פְּנֵ֣י מֹשֶׁ֔ה כִּ֣י קָרַ֔ן ע֖וֹר פְּנֵ֣י מֹשֶׁ֑ה וְהֵשִׁ֨יב מֹשֶׁ֤ה אֶת־הַמַּסְוֶה֙ עַל־פָּנָ֔יו עַד־בֹּא֖וֹ לְדַבֵּ֥ר אִתּֽוֹ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the children of Yisra᾽el saw the face of Moshe, that the skin of Moshe’s face shone: and Moshe put the veil upon his face again, until he went in to speak with him."
+    }
+  ],
+  "parashah": {
+    "en": "Ki Tisa",
+    "he": "כִּי תִשָּׂא",
+    "translit": "Ki Tisa",
+    "ref": "Exodus 30:11–34:35"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 45,
+        "ref": "30:11–31:17"
+      },
+      {
+        "n": 2,
+        "start": 46,
+        "end": 92,
+        "ref": "31:18–33:11"
+      },
+      {
+        "n": 3,
+        "start": 93,
+        "end": 97,
+        "ref": "33:12–33:16"
+      },
+      {
+        "n": 4,
+        "start": 98,
+        "end": 104,
+        "ref": "33:17–33:23"
+      },
+      {
+        "n": 5,
+        "start": 105,
+        "end": 113,
+        "ref": "34:1–34:9"
+      },
+      {
+        "n": 6,
+        "start": 114,
+        "end": 130,
+        "ref": "34:10–34:26"
+      },
+      {
+        "n": 7,
+        "start": 131,
+        "end": 139,
+        "ref": "34:27–34:35"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "30:11–30:13"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 6,
+          "ref": "30:14–30:16"
+        },
+        {
+          "n": 3,
+          "start": 7,
+          "end": 11,
+          "ref": "30:17–30:21"
+        },
+        {
+          "n": 4,
+          "start": 12,
+          "end": 23,
+          "ref": "30:22–30:33"
+        },
+        {
+          "n": 5,
+          "start": 24,
+          "end": 28,
+          "ref": "30:34–30:38"
+        },
+        {
+          "n": 6,
+          "start": 29,
+          "end": 39,
+          "ref": "31:1–31:11"
+        },
+        {
+          "n": 7,
+          "start": 40,
+          "end": 45,
+          "ref": "31:12–31:17"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 46,
+          "end": 52,
+          "ref": "31:18–32:6"
+        },
+        {
+          "n": 2,
+          "start": 53,
+          "end": 57,
+          "ref": "32:7–32:11"
+        },
+        {
+          "n": 3,
+          "start": 58,
+          "end": 60,
+          "ref": "32:12–32:14"
+        },
+        {
+          "n": 4,
+          "start": 61,
+          "end": 70,
+          "ref": "32:15–32:24"
+        },
+        {
+          "n": 5,
+          "start": 71,
+          "end": 75,
+          "ref": "32:25–32:29"
+        },
+        {
+          "n": 6,
+          "start": 76,
+          "end": 87,
+          "ref": "32:30–33:6"
+        },
+        {
+          "n": 7,
+          "start": 88,
+          "end": 92,
+          "ref": "33:7–33:11"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 93,
+          "end": 97,
+          "ref": "33:12–33:16"
+        },
+        {
+          "n": 2,
+          "start": 98,
+          "end": 104,
+          "ref": "33:17–33:23"
+        },
+        {
+          "n": 3,
+          "start": 105,
+          "end": 113,
+          "ref": "34:1–34:9"
+        },
+        {
+          "n": 4,
+          "start": 114,
+          "end": 121,
+          "ref": "34:10–34:17"
+        },
+        {
+          "n": 5,
+          "start": 122,
+          "end": 125,
+          "ref": "34:18–34:21"
+        },
+        {
+          "n": 6,
+          "start": 126,
+          "end": 130,
+          "ref": "34:22–34:26"
+        },
+        {
+          "n": 7,
+          "start": 131,
+          "end": 139,
+          "ref": "34:27–34:35"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 137,
+        "end": 139,
+        "ref": "34:33–34:35"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 43,
+          "end": 45,
+          "ref": "31:15–31:17"
+        },
+        "2": {
+          "n": "M",
+          "start": 90,
+          "end": 92,
+          "ref": "33:9–33:11"
+        },
+        "3": {
+          "n": "M",
+          "start": 137,
+          "end": 139,
+          "ref": "34:33–34:35"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

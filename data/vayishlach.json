@@ -1,0 +1,1457 @@
+{
+  "slug": "vayishlach",
+  "book": {
+    "en": "Genesis",
+    "he": "בראשית",
+    "translit": "Bereshit"
+  },
+  "multiChapter": true,
+  "ref": "Genesis 32:4-36:43",
+  "heRef": "בראשית ל״ב:ד-ל״ו:מ״ג",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 32,
+      "v": 4,
+      "ref": "32:4",
+      "text": "וַיִּשְׁלַ֨ח יַעֲקֹ֤ב מַלְאָכִים֙ לְפָנָ֔יו אֶל־עֵשָׂ֖ו אָחִ֑יו אַ֥רְצָה שֵׂעִ֖יר שְׂדֵ֥ה אֱדֽוֹם׃",
+      "en": "And Ya῾aqov sent messengers before him to ῾Esav his brother to the land of Se῾ir, the country of Edom."
+    },
+    {
+      "n": 2,
+      "c": 32,
+      "v": 5,
+      "ref": "32:5",
+      "text": "וַיְצַ֤ו אֹתָם֙ לֵאמֹ֔ר כֹּ֣ה תֹאמְר֔וּן לַֽאדֹנִ֖י לְעֵשָׂ֑ו כֹּ֤ה אָמַר֙ עַבְדְּךָ֣ יַעֲקֹ֔ב עִם־לָבָ֣ן גַּ֔רְתִּי וָאֵחַ֖ר עַד־עָֽתָּה׃",
+      "en": "And he commanded them, saying, Thus shall you speak to my lord ῾Esav; Thy servant Ya῾aqov says thus, I have sojourned with Lavan, and stayed there until now:"
+    },
+    {
+      "n": 3,
+      "c": 32,
+      "v": 6,
+      "ref": "32:6",
+      "text": "וַֽיְהִי־לִי֙ שׁ֣וֹר וַחֲמ֔וֹר צֹ֖אן וְעֶ֣בֶד וְשִׁפְחָ֑ה וָֽאֶשְׁלְחָה֙ לְהַגִּ֣יד לַֽאדֹנִ֔י לִמְצֹא־חֵ֖ן בְּעֵינֶֽיךָ׃",
+      "en": "and I have oxen, and asses, flocks, and menservants, and womenservants: and I have sent to tell my lord, that I may find favour in thy sight."
+    },
+    {
+      "n": 4,
+      "c": 32,
+      "v": 7,
+      "ref": "32:7",
+      "text": "וַיָּשֻׁ֙בוּ֙ הַמַּלְאָכִ֔ים אֶֽל־יַעֲקֹ֖ב לֵאמֹ֑ר בָּ֤אנוּ אֶל־אָחִ֙יךָ֙ אֶל־עֵשָׂ֔ו וְגַם֙ הֹלֵ֣ךְ לִקְרָֽאתְךָ֔ וְאַרְבַּע־מֵא֥וֹת אִ֖ישׁ עִמּֽוֹ׃",
+      "en": "And the messengers returned to Ya῾aqov, saying, We came to thy brother ῾Esav, and also he is coming to meet thee, and four hundred men with him."
+    },
+    {
+      "n": 5,
+      "c": 32,
+      "v": 8,
+      "ref": "32:8",
+      "text": "וַיִּירָ֧א יַעֲקֹ֛ב מְאֹ֖ד וַיֵּ֣צֶר ל֑וֹ וַיַּ֜חַץ אֶת־הָעָ֣ם אֲשֶׁר־אִתּ֗וֹ וְאֶת־הַצֹּ֧אן וְאֶת־הַבָּקָ֛ר וְהַגְּמַלִּ֖ים לִשְׁנֵ֥י מַחֲנֽוֹת׃",
+      "en": "Then Ya῾aqov was greatly afraid and distressed: and he divided the people that were with him, and the flocks, and herds, and the camels, into two camps;"
+    },
+    {
+      "n": 6,
+      "c": 32,
+      "v": 9,
+      "ref": "32:9",
+      "text": "וַיֹּ֕אמֶר אִם־יָב֥וֹא עֵשָׂ֛ו אֶל־הַמַּחֲנֶ֥ה הָאַחַ֖ת וְהִכָּ֑הוּ וְהָיָ֛ה הַמַּחֲנֶ֥ה הַנִּשְׁאָ֖ר לִפְלֵיטָֽה׃",
+      "en": "and said, If ῾Esav come to the one camp, and smite it, then the camp which is left shall escape."
+    },
+    {
+      "n": 7,
+      "c": 32,
+      "v": 10,
+      "ref": "32:10",
+      "text": "וַיֹּ֘אמֶר֮ יַעֲקֹב֒ אֱלֹהֵי֙ אָבִ֣י אַבְרָהָ֔ם וֵאלֹהֵ֖י אָבִ֣י יִצְחָ֑ק יְהֹוָ֞ה הָאֹמֵ֣ר אֵלַ֗י שׁ֧וּב לְאַרְצְךָ֛ וּלְמוֹלַדְתְּךָ֖ וְאֵיטִ֥יבָה עִמָּֽךְ׃",
+      "en": "And Ya῾aqov said, O God of my father Avraham, and God of my father Yiżĥaq, the Lord Who did say to me, Return to thy country, and to thy kindred, and I will deal well with thee:"
+    },
+    {
+      "n": 8,
+      "c": 32,
+      "v": 11,
+      "ref": "32:11",
+      "text": "קָטֹ֜נְתִּי מִכֹּ֤ל הַחֲסָדִים֙ וּמִכׇּל־הָ֣אֱמֶ֔ת אֲשֶׁ֥ר עָשִׂ֖יתָ אֶת־עַבְדֶּ֑ךָ כִּ֣י בְמַקְלִ֗י עָבַ֙רְתִּי֙ אֶת־הַיַּרְדֵּ֣ן הַזֶּ֔ה וְעַתָּ֥ה הָיִ֖יתִי לִשְׁנֵ֥י מַחֲנֽוֹת׃",
+      "en": "I am unworthy of the least of all the mercies, and of all the truth, which Thou hast shown Thy servant; for with my staff I passed over this Yarden; and now I am become two camps."
+    },
+    {
+      "n": 9,
+      "c": 32,
+      "v": 12,
+      "ref": "32:12",
+      "text": "הַצִּילֵ֥נִי נָ֛א מִיַּ֥ד אָחִ֖י מִיַּ֣ד עֵשָׂ֑ו כִּֽי־יָרֵ֤א אָנֹכִי֙ אֹת֔וֹ פֶּן־יָב֣וֹא וְהִכַּ֔נִי אֵ֖ם עַל־בָּנִֽים׃",
+      "en": "Deliver me, I pray Thee, from the hand of my brother, from the hand of ῾Esav: for I fear him, lest he come and smite me, the mother with the children."
+    },
+    {
+      "n": 10,
+      "c": 32,
+      "v": 13,
+      "ref": "32:13",
+      "text": "וְאַתָּ֣ה אָמַ֔רְתָּ הֵיטֵ֥ב אֵיטִ֖יב עִמָּ֑ךְ וְשַׂמְתִּ֤י אֶֽת־זַרְעֲךָ֙ כְּח֣וֹל הַיָּ֔ם אֲשֶׁ֥ר לֹא־יִסָּפֵ֖ר מֵרֹֽב׃",
+      "en": "And Thou didst say, I will surely do thee good, and make thy seed like the sand of the sea, which cannot be numbered for multitude."
+    },
+    {
+      "n": 11,
+      "c": 32,
+      "v": 14,
+      "ref": "32:14",
+      "text": "וַיָּ֥לֶן שָׁ֖ם בַּלַּ֣יְלָה הַה֑וּא וַיִּקַּ֞ח מִן־הַבָּ֧א בְיָד֛וֹ מִנְחָ֖ה לְעֵשָׂ֥ו אָחִֽיו׃",
+      "en": "And he lodged there that same night; and took of that which came to his hand a present for ῾Esav his brother;"
+    },
+    {
+      "n": 12,
+      "c": 32,
+      "v": 15,
+      "ref": "32:15",
+      "text": "עִזִּ֣ים מָאתַ֔יִם וּתְיָשִׁ֖ים עֶשְׂרִ֑ים רְחֵלִ֥ים מָאתַ֖יִם וְאֵילִ֥ים עֶשְׂרִֽים׃",
+      "en": "two hundred she goats, and twenty he goats, two hundred ewes, and twenty rams,"
+    },
+    {
+      "n": 13,
+      "c": 32,
+      "v": 16,
+      "ref": "32:16",
+      "text": "גְּמַלִּ֧ים מֵינִיק֛וֹת וּבְנֵיהֶ֖ם שְׁלֹשִׁ֑ים פָּר֤וֹת אַרְבָּעִים֙ וּפָרִ֣ים עֲשָׂרָ֔ה אֲתֹנֹ֣ת עֶשְׂרִ֔ים וַעְיָרִ֖ם עֲשָׂרָֽה׃",
+      "en": "thirty milch camels with their colts, forty cows, and ten bulls, twenty she asses, and ten foals."
+    },
+    {
+      "n": 14,
+      "c": 32,
+      "v": 17,
+      "ref": "32:17",
+      "text": "וַיִּתֵּן֙ בְּיַד־עֲבָדָ֔יו עֵ֥דֶר עֵ֖דֶר לְבַדּ֑וֹ וַיֹּ֤אמֶר אֶל־עֲבָדָיו֙ עִבְר֣וּ לְפָנַ֔י וְרֶ֣וַח תָּשִׂ֔ימוּ בֵּ֥ין עֵ֖דֶר וּבֵ֥ין עֵֽדֶר׃",
+      "en": "And he delivered them into the hand of his servants, every drove by itself; and said to his servants, Pass over before me, and put a space between drove and drove."
+    },
+    {
+      "n": 15,
+      "c": 32,
+      "v": 18,
+      "ref": "32:18",
+      "text": "וַיְצַ֥ו אֶת־הָרִאשׁ֖וֹן לֵאמֹ֑ר כִּ֣י יִֽפְגׇשְׁךָ֞ עֵשָׂ֣ו אָחִ֗י וּשְׁאֵֽלְךָ֙ לֵאמֹ֔ר לְמִי־אַ֙תָּה֙ וְאָ֣נָה תֵלֵ֔ךְ וּלְמִ֖י אֵ֥לֶּה לְפָנֶֽיךָ׃",
+      "en": "And he commanded the foremost, saying, When ῾Esav my brother meets thee, and asks thee, saying, Whose art thou? and whither dost thou go? and whose are these before thee?"
+    },
+    {
+      "n": 16,
+      "c": 32,
+      "v": 19,
+      "ref": "32:19",
+      "text": "וְאָֽמַרְתָּ֙ לְעַבְדְּךָ֣ לְיַעֲקֹ֔ב מִנְחָ֥ה הִוא֙ שְׁלוּחָ֔ה לַֽאדֹנִ֖י לְעֵשָׂ֑ו וְהִנֵּ֥ה גַם־ה֖וּא אַחֲרֵֽינוּ׃",
+      "en": "Then thou shalt say, They are thy servant Ya῾aqov’s, it is a present sent to my lord ῾Esav: and, behold, also he is behind us."
+    },
+    {
+      "n": 17,
+      "c": 32,
+      "v": 20,
+      "ref": "32:20",
+      "text": "וַיְצַ֞ו גַּ֣ם אֶת־הַשֵּׁנִ֗י גַּ֚ם אֶת־הַשְּׁלִישִׁ֔י גַּ֚ם אֶת־כׇּל־הַהֹ֣לְכִ֔ים אַחֲרֵ֥י הָעֲדָרִ֖ים לֵאמֹ֑ר כַּדָּבָ֤ר הַזֶּה֙ תְּדַבְּר֣וּן אֶל־עֵשָׂ֔ו בְּמֹצַאֲכֶ֖ם אֹתֽוֹ׃",
+      "en": "And so commanded he the second, and the third, and all that followed the droves, saying, In this manner shall you speak to ῾Esav, when you find him."
+    },
+    {
+      "n": 18,
+      "c": 32,
+      "v": 21,
+      "ref": "32:21",
+      "text": "וַאֲמַרְתֶּ֕ם גַּ֗ם הִנֵּ֛ה עַבְדְּךָ֥ יַעֲקֹ֖ב אַחֲרֵ֑ינוּ כִּֽי־אָמַ֞ר אֲכַפְּרָ֣ה פָנָ֗יו בַּמִּנְחָה֙ הַהֹלֶ֣כֶת לְפָנָ֔י וְאַחֲרֵי־כֵן֙ אֶרְאֶ֣ה פָנָ֔יו אוּלַ֖י יִשָּׂ֥א פָנָֽי׃",
+      "en": "And say moreover, Behold, thy servant Ya῾aqov is behind us. For he said, I will appease him with the present that goes before me, and afterwards I will see his face; perhaps he will accept me."
+    },
+    {
+      "n": 19,
+      "c": 32,
+      "v": 22,
+      "ref": "32:22",
+      "text": "וַתַּעֲבֹ֥ר הַמִּנְחָ֖ה עַל־פָּנָ֑יו וְה֛וּא לָ֥ן בַּלַּֽיְלָה־הַה֖וּא בַּֽמַּחֲנֶֽה׃",
+      "en": "So the present went over before him: and he himself  lodged that night in the camp."
+    },
+    {
+      "n": 20,
+      "c": 32,
+      "v": 23,
+      "ref": "32:23",
+      "text": "וַיָּ֣קׇם&thinsp;<b>׀</b> בַּלַּ֣יְלָה ה֗וּא וַיִּקַּ֞ח אֶת־שְׁתֵּ֤י נָשָׁיו֙ וְאֶת־שְׁתֵּ֣י שִׁפְחֹתָ֔יו וְאֶת־אַחַ֥ד עָשָׂ֖ר יְלָדָ֑יו וַֽיַּעֲבֹ֔ר אֵ֖ת מַעֲבַ֥ר יַבֹּֽק׃",
+      "en": "And he rose up that night, and took his two wives, and his two womenservants, and his eleven sons, and passed over the ford of Yabboq."
+    },
+    {
+      "n": 21,
+      "c": 32,
+      "v": 24,
+      "ref": "32:24",
+      "text": "וַיִּ֨קָּחֵ֔ם וַיַּֽעֲבִרֵ֖ם אֶת־הַנָּ֑חַל וַֽיַּעֲבֵ֖ר אֶת־אֲשֶׁר־לֽוֹ׃",
+      "en": "And he took them, and sent them over the wadi, and sent over that which he had."
+    },
+    {
+      "n": 22,
+      "c": 32,
+      "v": 25,
+      "ref": "32:25",
+      "text": "וַיִּוָּתֵ֥ר יַעֲקֹ֖ב לְבַדּ֑וֹ וַיֵּאָבֵ֥ק אִישׁ֙ עִמּ֔וֹ עַ֖ד עֲל֥וֹת הַשָּֽׁחַר׃",
+      "en": "And Ya῾aqov was left alone; and there wrestled a man with him until the breaking of the day."
+    },
+    {
+      "n": 23,
+      "c": 32,
+      "v": 26,
+      "ref": "32:26",
+      "text": "וַיַּ֗רְא כִּ֣י לֹ֤א יָכֹל֙ ל֔וֹ וַיִּגַּ֖ע בְּכַף־יְרֵכ֑וֹ וַתֵּ֙קַע֙ כַּף־יֶ֣רֶךְ יַעֲקֹ֔ב בְּהֵאָֽבְק֖וֹ עִמּֽוֹ׃",
+      "en": "And when he saw that he did not prevail against him, he touched the hollow of his thigh; and the hollow of Ya῾aqov’s thigh was put out of joint, as he wrestled with him."
+    },
+    {
+      "n": 24,
+      "c": 32,
+      "v": 27,
+      "ref": "32:27",
+      "text": "וַיֹּ֣אמֶר שַׁלְּחֵ֔נִי כִּ֥י עָלָ֖ה הַשָּׁ֑חַר וַיֹּ֙אמֶר֙ לֹ֣א אֲשַֽׁלֵּחֲךָ֔ כִּ֖י אִם־בֵּרַכְתָּֽנִי׃",
+      "en": "And he said, Let me go, for the day breaks. And he said, I will not let thee go, unless thou bless me."
+    },
+    {
+      "n": 25,
+      "c": 32,
+      "v": 28,
+      "ref": "32:28",
+      "text": "וַיֹּ֥אמֶר אֵלָ֖יו מַה־שְּׁמֶ֑ךָ וַיֹּ֖אמֶר יַעֲקֹֽב׃",
+      "en": "And he said to him, What is thy name? And he said, Ya῾aqov."
+    },
+    {
+      "n": 26,
+      "c": 32,
+      "v": 29,
+      "ref": "32:29",
+      "text": "וַיֹּ֗אמֶר לֹ֤א יַעֲקֹב֙ יֵאָמֵ֥ר עוֹד֙ שִׁמְךָ֔ כִּ֖י אִם־יִשְׂרָאֵ֑ל כִּֽי־שָׂרִ֧יתָ עִם־אֱלֹהִ֛ים וְעִם־אֲנָשִׁ֖ים וַתּוּכָֽל׃",
+      "en": "And he said, Thy name shall be called no more Ya῾aqov, but Yisra᾽el: for thou hast contended with God and with men, and hast prevailed."
+    },
+    {
+      "n": 27,
+      "c": 32,
+      "v": 30,
+      "ref": "32:30",
+      "text": "וַיִּשְׁאַ֣ל יַעֲקֹ֗ב וַיֹּ֙אמֶר֙ הַגִּֽידָה־נָּ֣א שְׁמֶ֔ךָ וַיֹּ֕אמֶר לָ֥מָּה זֶּ֖ה תִּשְׁאַ֣ל לִשְׁמִ֑י וַיְבָ֥רֶךְ אֹת֖וֹ שָֽׁם׃",
+      "en": "And Ya῾aqov asked him, and said, Tell me, I pray thee, thy name. And he said, Why is it that thou dost ask after my name? And he blessed him there."
+    },
+    {
+      "n": 28,
+      "c": 32,
+      "v": 31,
+      "ref": "32:31",
+      "text": "וַיִּקְרָ֧א יַעֲקֹ֛ב שֵׁ֥ם הַמָּק֖וֹם פְּנִיאֵ֑ל כִּֽי־רָאִ֤יתִי אֱלֹהִים֙ פָּנִ֣ים אֶל־פָּנִ֔ים וַתִּנָּצֵ֖ל נַפְשִֽׁי׃",
+      "en": "And Ya῾aqov called the name of the place Peni᾽el: for I have seen God face to face, and my life is preserved."
+    },
+    {
+      "n": 29,
+      "c": 32,
+      "v": 32,
+      "ref": "32:32",
+      "text": "וַיִּֽזְרַֽח־ל֣וֹ הַשֶּׁ֔מֶשׁ כַּאֲשֶׁ֥ר עָבַ֖ר אֶת־פְּנוּאֵ֑ל וְה֥וּא צֹלֵ֖עַ עַל־יְרֵכֽוֹ׃",
+      "en": "And as he passed over Penu᾽el the sun rose upon him, and he limped upon his thigh."
+    },
+    {
+      "n": 30,
+      "c": 32,
+      "v": 33,
+      "ref": "32:33",
+      "text": "עַל־כֵּ֡ן לֹֽא־יֹאכְל֨וּ בְנֵֽי־יִשְׂרָאֵ֜ל אֶת־גִּ֣יד הַנָּשֶׁ֗ה אֲשֶׁר֙ עַל־כַּ֣ף הַיָּרֵ֔ךְ עַ֖ד הַיּ֣וֹם הַזֶּ֑ה כִּ֤י נָגַע֙ בְּכַף־יֶ֣רֶךְ יַעֲקֹ֔ב בְּגִ֖יד הַנָּשֶֽׁה׃",
+      "en": "Therefore the children of Yisra᾽el eat not of the sinew of the vein, which is upon the hollow of the thigh, to this day: because he touched the hollow of Ya῾aqov’s thigh in the sinew of the vein."
+    },
+    {
+      "n": 31,
+      "c": 33,
+      "v": 1,
+      "ref": "33:1",
+      "text": "וַיִּשָּׂ֨א יַעֲקֹ֜ב עֵינָ֗יו וַיַּרְא֙ וְהִנֵּ֣ה עֵשָׂ֣ו בָּ֔א וְעִמּ֕וֹ אַרְבַּ֥ע מֵא֖וֹת אִ֑ישׁ וַיַּ֣חַץ אֶת־הַיְלָדִ֗ים עַל־לֵאָה֙ וְעַל־רָחֵ֔ל וְעַ֖ל שְׁתֵּ֥י הַשְּׁפָחֽוֹת׃",
+      "en": "And Ya῾aqov lifted up his eyes, and looked, and, behold, ῾Esav came, and with him four hundred men. And he divided the children to Le᾽a, and to Raĥel, and to the two handmaids."
+    },
+    {
+      "n": 32,
+      "c": 33,
+      "v": 2,
+      "ref": "33:2",
+      "text": "וַיָּ֧שֶׂם אֶת־הַשְּׁפָח֛וֹת וְאֶת־יַלְדֵיהֶ֖ן רִֽאשֹׁנָ֑ה וְאֶת־לֵאָ֤ה וִֽילָדֶ֙יהָ֙ אַחֲרֹנִ֔ים וְאֶת־רָחֵ֥ל וְאֶת־יוֹסֵ֖ף אַחֲרֹנִֽים׃",
+      "en": "And he put the handmaids and their children foremost, and Le᾽a and her children after, and Raĥel and Yosef  last of all."
+    },
+    {
+      "n": 33,
+      "c": 33,
+      "v": 3,
+      "ref": "33:3",
+      "text": "וְה֖וּא עָבַ֣ר לִפְנֵיהֶ֑ם וַיִּשְׁתַּ֤חוּ אַ֙רְצָה֙ שֶׁ֣בַע פְּעָמִ֔ים עַד־גִּשְׁתּ֖וֹ עַד־אָחִֽיו׃",
+      "en": "And he passed over before them, and bowed himself to the ground seven times, until he came near to his brother."
+    },
+    {
+      "n": 34,
+      "c": 33,
+      "v": 4,
+      "ref": "33:4",
+      "text": "וַיָּ֨רׇץ עֵשָׂ֤ו לִקְרָאתוֹ֙ וַֽיְחַבְּקֵ֔הוּ וַיִּפֹּ֥ל עַל־צַוָּארָ֖ו וַׄיִּׄשָּׁׄקֵ֑ׄהׄוּׄ וַיִּבְכּֽוּ׃",
+      "en": "And ῾Esav ran to meet him, and embraced him, and fell on his neck, and kissed him: and they wept."
+    },
+    {
+      "n": 35,
+      "c": 33,
+      "v": 5,
+      "ref": "33:5",
+      "text": "וַיִּשָּׂ֣א אֶת־עֵינָ֗יו וַיַּ֤רְא אֶת־הַנָּשִׁים֙ וְאֶת־הַיְלָדִ֔ים וַיֹּ֖אמֶר מִי־אֵ֣לֶּה לָּ֑ךְ וַיֹּאמַ֕ר הַיְלָדִ֕ים אֲשֶׁר־חָנַ֥ן אֱלֹהִ֖ים אֶת־עַבְדֶּֽךָ׃",
+      "en": "And he lifted up his eyes, and saw the women and the children; and said, Who are those with thee? And he said, The children which God has graciously given thy servant."
+    },
+    {
+      "n": 36,
+      "c": 33,
+      "v": 6,
+      "ref": "33:6",
+      "text": "וַתִּגַּ֧שְׁןָ הַשְּׁפָח֛וֹת הֵ֥נָּה וְיַלְדֵיהֶ֖ן וַתִּֽשְׁתַּחֲוֶֽיןָ׃",
+      "en": "Then the handmaidens came near, they and their children, and they bowed themselves."
+    },
+    {
+      "n": 37,
+      "c": 33,
+      "v": 7,
+      "ref": "33:7",
+      "text": "וַתִּגַּ֧שׁ גַּם־לֵאָ֛ה וִילָדֶ֖יהָ וַיִּֽשְׁתַּחֲו֑וּ וְאַחַ֗ר נִגַּ֥שׁ יוֹסֵ֛ף וְרָחֵ֖ל וַיִּֽשְׁתַּחֲוֽוּ׃",
+      "en": "And Le᾽a also with her children came near, and bowed themselves: and after came Yosef near and Raĥel, and they bowed themselves."
+    },
+    {
+      "n": 38,
+      "c": 33,
+      "v": 8,
+      "ref": "33:8",
+      "text": "וַיֹּ֕אמֶר מִ֥י לְךָ֛ כׇּל־הַמַּחֲנֶ֥ה הַזֶּ֖ה אֲשֶׁ֣ר פָּגָ֑שְׁתִּי וַיֹּ֕אמֶר לִמְצֹא־חֵ֖ן בְּעֵינֵ֥י אֲדֹנִֽי׃",
+      "en": "And he said, What meanest thou by all this drove which I met? And he said, These are to find favour in the sight of my lord."
+    },
+    {
+      "n": 39,
+      "c": 33,
+      "v": 9,
+      "ref": "33:9",
+      "text": "וַיֹּ֥אמֶר עֵשָׂ֖ו יֶשׁ־לִ֣י רָ֑ב אָחִ֕י יְהִ֥י לְךָ֖ אֲשֶׁר־לָֽךְ׃",
+      "en": "And ῾Esav said, I have enough, my brother; keep what thou hast to thyself."
+    },
+    {
+      "n": 40,
+      "c": 33,
+      "v": 10,
+      "ref": "33:10",
+      "text": "וַיֹּ֣אמֶר יַעֲקֹ֗ב אַל־נָא֙ אִם־נָ֨א מָצָ֤אתִי חֵן֙ בְּעֵינֶ֔יךָ וְלָקַחְתָּ֥ מִנְחָתִ֖י מִיָּדִ֑י כִּ֣י עַל־כֵּ֞ן רָאִ֣יתִי פָנֶ֗יךָ כִּרְאֹ֛ת פְּנֵ֥י אֱלֹהִ֖ים וַתִּרְצֵֽנִי׃",
+      "en": "And Ya῾aqov said, By no means, if now I have found favour in thy sight, then receive my present at my hand: for truly I have seen thy face, as though I had seen the face of an angel, and thou wast pleased with me."
+    },
+    {
+      "n": 41,
+      "c": 33,
+      "v": 11,
+      "ref": "33:11",
+      "text": "קַח־נָ֤א אֶת־בִּרְכָתִי֙ אֲשֶׁ֣ר הֻבָ֣את לָ֔ךְ כִּֽי־חַנַּ֥נִי אֱלֹהִ֖ים וְכִ֣י יֶשׁ־לִי־כֹ֑ל וַיִּפְצַר־בּ֖וֹ וַיִּקָּֽח׃",
+      "en": "Take, I pray thee, my blessing that is brought to thee; because God has dealt graciously with me, and because I have enough. And he urged him, and he took it."
+    },
+    {
+      "n": 42,
+      "c": 33,
+      "v": 12,
+      "ref": "33:12",
+      "text": "וַיֹּ֖אמֶר נִסְעָ֣ה וְנֵלֵ֑כָה וְאֵלְכָ֖ה לְנֶגְדֶּֽךָ׃",
+      "en": "And he said, Let us take our journey, and let us go, and I will go before thee."
+    },
+    {
+      "n": 43,
+      "c": 33,
+      "v": 13,
+      "ref": "33:13",
+      "text": "וַיֹּ֣אמֶר אֵלָ֗יו אֲדֹנִ֤י יֹדֵ֙עַ֙ כִּֽי־הַיְלָדִ֣ים רַכִּ֔ים וְהַצֹּ֥אן וְהַבָּקָ֖ר עָל֣וֹת עָלָ֑י וּדְפָקוּם֙ י֣וֹם אֶחָ֔ד וָמֵ֖תוּ כׇּל־הַצֹּֽאן׃",
+      "en": "And he said to him, My lord knows that the children are tender, and the flocks and herds giving suck are a care for me: and if they should overdrive them one day, all the flock will die."
+    },
+    {
+      "n": 44,
+      "c": 33,
+      "v": 14,
+      "ref": "33:14",
+      "text": "יַעֲבׇר־נָ֥א אֲדֹנִ֖י לִפְנֵ֣י עַבְדּ֑וֹ וַאֲנִ֞י אֶֽתְנָהֲלָ֣ה לְאִטִּ֗י לְרֶ֨גֶל הַמְּלָאכָ֤ה אֲשֶׁר־לְפָנַי֙ וּלְרֶ֣גֶל הַיְלָדִ֔ים עַ֛ד אֲשֶׁר־אָבֹ֥א אֶל־אֲדֹנִ֖י שֵׂעִֽירָה׃",
+      "en": "Let my lord, I pray thee, pass over before his servant: and I will lead on slowly, according to the pace of the cattle that goes before me and the children, until I come to my lord to Se῾ir."
+    },
+    {
+      "n": 45,
+      "c": 33,
+      "v": 15,
+      "ref": "33:15",
+      "text": "וַיֹּ֣אמֶר עֵשָׂ֔ו אַצִּֽיגָה־נָּ֣א עִמְּךָ֔ מִן־הָעָ֖ם אֲשֶׁ֣ר אִתִּ֑י וַיֹּ֙אמֶר֙ לָ֣מָּה זֶּ֔ה אֶמְצָא־חֵ֖ן בְּעֵינֵ֥י אֲדֹנִֽי׃",
+      "en": "And ῾Esav said, Let me now leave with thee some of the folk that are with me. And he said, What need is there? let me find favour in the sight of my lord."
+    },
+    {
+      "n": 46,
+      "c": 33,
+      "v": 16,
+      "ref": "33:16",
+      "text": "וַיָּ֩שׇׁב֩ בַּיּ֨וֹם הַה֥וּא עֵשָׂ֛ו לְדַרְכּ֖וֹ שֵׂעִֽירָה׃",
+      "en": "So ῾Esav returned that day on his way to Se῾ir."
+    },
+    {
+      "n": 47,
+      "c": 33,
+      "v": 17,
+      "ref": "33:17",
+      "text": "וְיַעֲקֹב֙ נָסַ֣ע סֻכֹּ֔תָה וַיִּ֥בֶן ל֖וֹ בָּ֑יִת וּלְמִקְנֵ֙הוּ֙ עָשָׂ֣ה סֻכֹּ֔ת עַל־כֵּ֛ן קָרָ֥א שֵׁם־הַמָּק֖וֹם סֻכּֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And Ya῾aqov journeyed to Sukkot, and built him a house, and made booths for his cattle: therefore the name of the place is called Sukkot."
+    },
+    {
+      "n": 48,
+      "c": 33,
+      "v": 18,
+      "ref": "33:18",
+      "text": "וַיָּבֹא֩ יַעֲקֹ֨ב שָׁלֵ֜ם עִ֣יר שְׁכֶ֗ם אֲשֶׁר֙ בְּאֶ֣רֶץ כְּנַ֔עַן בְּבֹא֖וֹ מִפַּדַּ֣ן אֲרָ֑ם וַיִּ֖חַן אֶת־פְּנֵ֥י הָעִֽיר׃",
+      "en": "And Ya῾aqov came to Shalem, a city of Shekhem, which is in the land of Kena῾an, when he came from Paddan-aram; and pitched his tent before the city."
+    },
+    {
+      "n": 49,
+      "c": 33,
+      "v": 19,
+      "ref": "33:19",
+      "text": "וַיִּ֜קֶן אֶת־חֶלְקַ֣ת הַשָּׂדֶ֗ה אֲשֶׁ֤ר נָֽטָה־שָׁם֙ אׇהֳל֔וֹ מִיַּ֥ד בְּנֵֽי־חֲמ֖וֹר אֲבִ֣י שְׁכֶ֑ם בְּמֵאָ֖ה קְשִׂיטָֽה׃",
+      "en": "And he bought the piece of land on which he had spread his tent, at the hand of the children of Ḥamor, Shekhem’s father, for a hundred pieces of money."
+    },
+    {
+      "n": 50,
+      "c": 33,
+      "v": 20,
+      "ref": "33:20",
+      "text": "וַיַּצֶּב־שָׁ֖ם מִזְבֵּ֑חַ וַיִּ֨קְרָא־ל֔וֹ אֵ֖ל אֱלֹהֵ֥י יִשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And he erected there an altar, and called it El-elohe-yisra᾽el."
+    },
+    {
+      "n": 51,
+      "c": 34,
+      "v": 1,
+      "ref": "34:1",
+      "text": "וַתֵּצֵ֤א דִינָה֙ בַּת־לֵאָ֔ה אֲשֶׁ֥ר יָלְדָ֖ה לְיַעֲקֹ֑ב לִרְא֖וֹת בִּבְנ֥וֹת הָאָֽרֶץ׃",
+      "en": "And Dina the daughter of Le᾽a, whom she bore to Ya῾aqov, went out to see the daughters of the land."
+    },
+    {
+      "n": 52,
+      "c": 34,
+      "v": 2,
+      "ref": "34:2",
+      "text": "וַיַּ֨רְא אֹתָ֜הּ שְׁכֶ֧ם בֶּן־חֲמ֛וֹר הַֽחִוִּ֖י נְשִׂ֣יא הָאָ֑רֶץ וַיִּקַּ֥ח אֹתָ֛הּ וַיִּשְׁכַּ֥ב אֹתָ֖הּ וַיְעַנֶּֽהָ׃",
+      "en": "And when Shekhem the son of Ḥamor the Ḥivvite, prince of the country, saw her, he took her, and lay with her, and defiled her."
+    },
+    {
+      "n": 53,
+      "c": 34,
+      "v": 3,
+      "ref": "34:3",
+      "text": "וַתִּדְבַּ֣ק נַפְשׁ֔וֹ בְּדִינָ֖ה בַּֽת־יַעֲקֹ֑ב וַיֶּֽאֱהַב֙ אֶת־הַֽנַּעֲרָ֔ וַיְדַבֵּ֖ר עַל־לֵ֥ב הַֽנַּעֲרָֽ׃",
+      "en": "And his soul was drawn to Dina the daughter of Ya῾aqov, and he loved the girl, and spoke kindly to the girl."
+    },
+    {
+      "n": 54,
+      "c": 34,
+      "v": 4,
+      "ref": "34:4",
+      "text": "וַיֹּ֣אמֶר שְׁכֶ֔ם אֶל־חֲמ֥וֹר אָבִ֖יו לֵאמֹ֑ר קַֽח־לִ֛י אֶת־הַיַּלְדָּ֥ה הַזֹּ֖את לְאִשָּֽׁה׃",
+      "en": "And Shekhem spoke to his father Ḥamor, saying, Get me this child for a wife."
+    },
+    {
+      "n": 55,
+      "c": 34,
+      "v": 5,
+      "ref": "34:5",
+      "text": "וְיַעֲקֹ֣ב שָׁמַ֗ע כִּ֤י טִמֵּא֙ אֶת־דִּינָ֣ה בִתּ֔וֹ וּבָנָ֛יו הָי֥וּ אֶת־מִקְנֵ֖הוּ בַּשָּׂדֶ֑ה וְהֶחֱרִ֥שׁ יַעֲקֹ֖ב עַד־בֹּאָֽם׃",
+      "en": "And Ya῾aqov heard that he had defiled Dina his daughter: now his sons were with his cattle in the field: and Ya῾aqov held his peace until they were come."
+    },
+    {
+      "n": 56,
+      "c": 34,
+      "v": 6,
+      "ref": "34:6",
+      "text": "וַיֵּצֵ֛א חֲמ֥וֹר אֲבִֽי־שְׁכֶ֖ם אֶֽל־יַעֲקֹ֑ב לְדַבֵּ֖ר אִתּֽוֹ׃",
+      "en": "And Ḥamor the father of Shekhem went out to Ya῾aqov to speak with him."
+    },
+    {
+      "n": 57,
+      "c": 34,
+      "v": 7,
+      "ref": "34:7",
+      "text": "וּבְנֵ֨י יַעֲקֹ֜ב בָּ֤אוּ מִן־הַשָּׂדֶה֙ כְּשׇׁמְעָ֔ם וַיִּֽתְעַצְּבוּ֙ הָֽאֲנָשִׁ֔ים וַיִּ֥חַר לָהֶ֖ם מְאֹ֑ד כִּֽי־נְבָלָ֞ה עָשָׂ֣ה בְיִשְׂרָאֵ֗ל לִשְׁכַּב֙ אֶת־בַּֽת־יַעֲקֹ֔ב וְכֵ֖ן לֹ֥א יֵעָשֶֽׂה׃",
+      "en": "And the sons of Ya῾aqov came from the field when they heard it: and the men were grieved, and they were very angry, because he had done a disgraceful thing in Yisra᾽el in lying with Ya῾aqov’s daughter; which thing ought not to be done."
+    },
+    {
+      "n": 58,
+      "c": 34,
+      "v": 8,
+      "ref": "34:8",
+      "text": "וַיְדַבֵּ֥ר חֲמ֖וֹר אִתָּ֣ם לֵאמֹ֑ר שְׁכֶ֣ם בְּנִ֗י חָֽשְׁקָ֤ה נַפְשׁוֹ֙ בְּבִתְּכֶ֔ם תְּנ֨וּ נָ֥א אֹתָ֛הּ ל֖וֹ לְאִשָּֽׁה׃",
+      "en": "And Ḥamor spoke with them, saying, The soul of my son Shekhem longs for your daughter: I pray you give her him to wife."
+    },
+    {
+      "n": 59,
+      "c": 34,
+      "v": 9,
+      "ref": "34:9",
+      "text": "וְהִֽתְחַתְּנ֖וּ אֹתָ֑נוּ בְּנֹֽתֵיכֶם֙ תִּתְּנוּ־לָ֔נוּ וְאֶת־בְּנֹתֵ֖ינוּ תִּקְח֥וּ לָכֶֽם׃",
+      "en": "And make marriages with us; give your daughters to us, and take our daughters to you."
+    },
+    {
+      "n": 60,
+      "c": 34,
+      "v": 10,
+      "ref": "34:10",
+      "text": "וְאִתָּ֖נוּ תֵּשֵׁ֑בוּ וְהָאָ֙רֶץ֙ תִּהְיֶ֣ה לִפְנֵיכֶ֔ם שְׁבוּ֙ וּסְחָר֔וּהָ וְהֵֽאָחֲז֖וּ בָּֽהּ׃",
+      "en": "And you shall dwell with us: and the land shall be before you; dwell and trade in it, and get property in it."
+    },
+    {
+      "n": 61,
+      "c": 34,
+      "v": 11,
+      "ref": "34:11",
+      "text": "וַיֹּ֤אמֶר שְׁכֶם֙ אֶל־אָבִ֣יהָ וְאֶל־אַחֶ֔יהָ אֶמְצָא־חֵ֖ן בְּעֵינֵיכֶ֑ם וַאֲשֶׁ֥ר תֹּאמְר֛וּ אֵלַ֖י אֶתֵּֽן׃",
+      "en": "And Shekhem said to her father and to her brethren, Let me find favour in your eyes, and what you shall say to me I will give."
+    },
+    {
+      "n": 62,
+      "c": 34,
+      "v": 12,
+      "ref": "34:12",
+      "text": "הַרְבּ֨וּ עָלַ֤י מְאֹד֙ מֹ֣הַר וּמַתָּ֔ן וְאֶ֨תְּנָ֔ה כַּאֲשֶׁ֥ר תֹּאמְר֖וּ אֵלָ֑י וּתְנוּ־לִ֥י אֶת־הַֽנַּעֲרָ֖ לְאִשָּֽׁה׃",
+      "en": "Ask me never so much dowry and gift, and I will give according as you shall say to me: but give me the girl for a wife."
+    },
+    {
+      "n": 63,
+      "c": 34,
+      "v": 13,
+      "ref": "34:13",
+      "text": "וַיַּעֲנ֨וּ בְנֵֽי־יַעֲקֹ֜ב אֶת־שְׁכֶ֨ם וְאֶת־חֲמ֥וֹר אָבִ֛יו בְּמִרְמָ֖ה וַיְדַבֵּ֑רוּ אֲשֶׁ֣ר טִמֵּ֔א אֵ֖ת דִּינָ֥ה אֲחֹתָֽם׃",
+      "en": "And the sons of Ya῾aqov answered Shekhem and Ḥamor his father with cunning, because he had defiled Dina their sister, and they spoke:"
+    },
+    {
+      "n": 64,
+      "c": 34,
+      "v": 14,
+      "ref": "34:14",
+      "text": "וַיֹּאמְר֣וּ אֲלֵיהֶ֗ם לֹ֤א נוּכַל֙ לַעֲשׂוֹת֙ הַדָּבָ֣ר הַזֶּ֔ה לָתֵת֙ אֶת־אֲחֹתֵ֔נוּ לְאִ֖ישׁ אֲשֶׁר־ל֣וֹ עׇרְלָ֑ה כִּֽי־חֶרְפָּ֥ה הִ֖וא לָֽנוּ׃",
+      "en": "and they said to them, We cannot do this thing, to give our sister to one that is uncircumcised; for that would be a reproach to us:"
+    },
+    {
+      "n": 65,
+      "c": 34,
+      "v": 15,
+      "ref": "34:15",
+      "text": "אַךְ־בְּזֹ֖את נֵא֣וֹת לָכֶ֑ם אִ֚ם תִּהְי֣וּ כָמֹ֔נוּ לְהִמֹּ֥ל לָכֶ֖ם כׇּל־זָכָֽר׃",
+      "en": "but in this will we consent to you: If you will be as we are, that every male of you be circumcised;"
+    },
+    {
+      "n": 66,
+      "c": 34,
+      "v": 16,
+      "ref": "34:16",
+      "text": "וְנָתַ֤נּוּ אֶת־בְּנֹתֵ֙ינוּ֙ לָכֶ֔ם וְאֶת־בְּנֹתֵיכֶ֖ם נִֽקַּֽח־לָ֑נוּ וְיָשַׁ֣בְנוּ אִתְּכֶ֔ם וְהָיִ֖ינוּ לְעַ֥ם אֶחָֽד׃",
+      "en": "then will we give our daughters to you, and we will take your daughters to us, and we will dwell with you, and we will become one people."
+    },
+    {
+      "n": 67,
+      "c": 34,
+      "v": 17,
+      "ref": "34:17",
+      "text": "וְאִם־לֹ֧א תִשְׁמְע֛וּ אֵלֵ֖ינוּ לְהִמּ֑וֹל וְלָקַ֥חְנוּ אֶת־בִּתֵּ֖נוּ וְהָלָֽכְנוּ׃",
+      "en": "But if you will not hearken to us, to be circumcised; then will we take our daughter, and we will be gone."
+    },
+    {
+      "n": 68,
+      "c": 34,
+      "v": 18,
+      "ref": "34:18",
+      "text": "וַיִּֽיטְב֥וּ דִבְרֵיהֶ֖ם בְּעֵינֵ֣י חֲמ֑וֹר וּבְעֵינֵ֖י שְׁכֶ֥ם בֶּן־חֲמֽוֹר׃",
+      "en": "And their words pleased Ḥamor, and Shekhem, Ḥamor’s son."
+    },
+    {
+      "n": 69,
+      "c": 34,
+      "v": 19,
+      "ref": "34:19",
+      "text": "וְלֹֽא־אֵחַ֤ר הַנַּ֙עַר֙ לַעֲשׂ֣וֹת הַדָּבָ֔ר כִּ֥י חָפֵ֖ץ בְּבַֽת־יַעֲקֹ֑ב וְה֣וּא נִכְבָּ֔ד מִכֹּ֖ל בֵּ֥ית אָבִֽיו׃",
+      "en": "And the young man did not delay to do the thing, because he had delight in Ya῾aqov’s daughter: and he was the most honoured of all the house of his father."
+    },
+    {
+      "n": 70,
+      "c": 34,
+      "v": 20,
+      "ref": "34:20",
+      "text": "וַיָּבֹ֥א חֲמ֛וֹר וּשְׁכֶ֥ם בְּנ֖וֹ אֶל־שַׁ֣עַר עִירָ֑ם וַֽיְדַבְּר֛וּ אֶל־אַנְשֵׁ֥י עִירָ֖ם לֵאמֹֽר׃",
+      "en": "And Ḥamor and Shekhem his son came to the gate of their city, and spoke with the men of their city, saying,"
+    },
+    {
+      "n": 71,
+      "c": 34,
+      "v": 21,
+      "ref": "34:21",
+      "text": "הָאֲנָשִׁ֨ים הָאֵ֜לֶּה שְֽׁלֵמִ֧ים הֵ֣ם אִתָּ֗נוּ וְיֵשְׁב֤וּ בָאָ֙רֶץ֙ וְיִסְחֲר֣וּ אֹתָ֔הּ וְהָאָ֛רֶץ הִנֵּ֥ה רַֽחֲבַת־יָדַ֖יִם לִפְנֵיהֶ֑ם אֶת־בְּנֹתָם֙ נִקַּֽח־לָ֣נוּ לְנָשִׁ֔ים וְאֶת־בְּנֹתֵ֖ינוּ נִתֵּ֥ן לָהֶֽם׃",
+      "en": "These men are peaceable with us; therefore let them dwell in the land, and trade in it; for the land, behold, it is large enough for them; let us take their daughters to us for wives, and let us give them our daughters."
+    },
+    {
+      "n": 72,
+      "c": 34,
+      "v": 22,
+      "ref": "34:22",
+      "text": "אַךְ־בְּ֠זֹ֠את יֵאֹ֨תוּ לָ֤נוּ הָאֲנָשִׁים֙ לָשֶׁ֣בֶת אִתָּ֔נוּ לִהְי֖וֹת לְעַ֣ם אֶחָ֑ד בְּהִמּ֥וֹל לָ֙נוּ֙ כׇּל־זָכָ֔ר כַּאֲשֶׁ֖ר הֵ֥ם נִמֹּלִֽים׃",
+      "en": "Only on this condition will the men consent to us to dwell with us, to be one people, if every male among us be circumcised, as they are circumcised."
+    },
+    {
+      "n": 73,
+      "c": 34,
+      "v": 23,
+      "ref": "34:23",
+      "text": "מִקְנֵהֶ֤ם וְקִנְיָנָם֙ וְכׇל־בְּהֶמְתָּ֔ם הֲל֥וֹא לָ֖נוּ הֵ֑ם אַ֚ךְ נֵא֣וֹתָה לָהֶ֔ם וְיֵשְׁב֖וּ אִתָּֽנוּ׃",
+      "en": "Shall not their cattle and their substance and every beast of theirs be ours? only let us consent to them, and they will dwell with us."
+    },
+    {
+      "n": 74,
+      "c": 34,
+      "v": 24,
+      "ref": "34:24",
+      "text": "וַיִּשְׁמְע֤וּ אֶל־חֲמוֹר֙ וְאֶל־שְׁכֶ֣ם בְּנ֔וֹ כׇּל־יֹצְאֵ֖י שַׁ֣עַר עִיר֑וֹ וַיִּמֹּ֙לוּ֙ כׇּל־זָכָ֔ר כׇּל־יֹצְאֵ֖י שַׁ֥עַר עִירֽוֹ׃",
+      "en": "And to Ḥamor and to Shekhem his son all that went out of the gate of his city hearkened; and every male was circumcised, all that went out of the gate of his city."
+    },
+    {
+      "n": 75,
+      "c": 34,
+      "v": 25,
+      "ref": "34:25",
+      "text": "וַיְהִי֩ בַיּ֨וֹם הַשְּׁלִישִׁ֜י בִּֽהְיוֹתָ֣ם כֹּֽאֲבִ֗ים וַיִּקְח֣וּ שְׁנֵֽי־בְנֵי־יַ֠עֲקֹ֠ב שִׁמְע֨וֹן וְלֵוִ֜י אֲחֵ֤י דִינָה֙ אִ֣ישׁ חַרְבּ֔וֹ וַיָּבֹ֥אוּ עַל־הָעִ֖יר בֶּ֑טַח וַיַּֽהַרְג֖וּ כׇּל־זָכָֽר׃",
+      "en": "And it came to pass on the third day, when they were in pain, that two of the sons of Ya῾aqov, Shim῾on and Levi, Dina’s brethren, took each man his sword, and came upon the city unresisted, and slew all the males."
+    },
+    {
+      "n": 76,
+      "c": 34,
+      "v": 26,
+      "ref": "34:26",
+      "text": "וְאֶת־חֲמוֹר֙ וְאֶת־שְׁכֶ֣ם בְּנ֔וֹ הָרְג֖וּ לְפִי־חָ֑רֶב וַיִּקְח֧וּ אֶת־דִּינָ֛ה מִבֵּ֥ית שְׁכֶ֖ם וַיֵּצֵֽאוּ׃",
+      "en": "And they slew Ḥamor and Shekhem his son with the edge of the sword, and took Dina out of Shekhem’s house, and went out."
+    },
+    {
+      "n": 77,
+      "c": 34,
+      "v": 27,
+      "ref": "34:27",
+      "text": "בְּנֵ֣י יַעֲקֹ֗ב בָּ֚אוּ עַל־הַ֣חֲלָלִ֔ים וַיָּבֹ֖זּוּ הָעִ֑יר אֲשֶׁ֥ר טִמְּא֖וּ אֲחוֹתָֽם׃",
+      "en": "The sons of Ya῾aqov came upon the slain, and plundered the city, because they had defiled their sister."
+    },
+    {
+      "n": 78,
+      "c": 34,
+      "v": 28,
+      "ref": "34:28",
+      "text": "אֶת־צֹאנָ֥ם וְאֶת־בְּקָרָ֖ם וְאֶת־חֲמֹרֵיהֶ֑ם וְאֵ֧ת אֲשֶׁר־בָּעִ֛יר וְאֶת־אֲשֶׁ֥ר בַּשָּׂדֶ֖ה לָקָֽחוּ׃",
+      "en": "They took their sheep, and their oxen, and their asses, and that which was in the city, and that which was in the field,"
+    },
+    {
+      "n": 79,
+      "c": 34,
+      "v": 29,
+      "ref": "34:29",
+      "text": "וְאֶת־כׇּל־חֵילָ֤ם וְאֶת־כׇּל־טַפָּם֙ וְאֶת־נְשֵׁיהֶ֔ם שָׁב֖וּ וַיָּבֹ֑זּוּ וְאֵ֖ת כׇּל־אֲשֶׁ֥ר בַּבָּֽיִת׃",
+      "en": "and all their wealth, and all their little ones, and their wives they took captive, and plundered all that was in the house."
+    },
+    {
+      "n": 80,
+      "c": 34,
+      "v": 30,
+      "ref": "34:30",
+      "text": "וַיֹּ֨אמֶר יַעֲקֹ֜ב אֶל־שִׁמְע֣וֹן וְאֶל־לֵוִי֮ עֲכַרְתֶּ֣ם אֹתִי֒ לְהַבְאִישֵׁ֙נִי֙ בְּיֹשֵׁ֣ב הָאָ֔רֶץ בַּֽכְּנַעֲנִ֖י וּבַפְּרִזִּ֑י וַאֲנִי֙ מְתֵ֣י מִסְפָּ֔ר וְנֶאֶסְפ֤וּ עָלַי֙ וְהִכּ֔וּנִי וְנִשְׁמַדְתִּ֖י אֲנִ֥י וּבֵיתִֽי׃",
+      "en": "And Ya῾aqov said to Shim῾on and Levi, You have brought trouble on me to make me odious among the inhabitants of the land, among the Kena῾ani and the Perizzi; and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house."
+    },
+    {
+      "n": 81,
+      "c": 34,
+      "v": 31,
+      "ref": "34:31",
+      "text": "וַיֹּאמְר֑וּ הַכְזוֹנָ֕ה יַעֲשֶׂ֖ה אֶת־אֲחוֹתֵֽנוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "But they said, Should he deal with our sister as with a harlot?"
+    },
+    {
+      "n": 82,
+      "c": 35,
+      "v": 1,
+      "ref": "35:1",
+      "text": "וַיֹּ֤אמֶר אֱלֹהִים֙ אֶֽל־יַעֲקֹ֔ב ק֛וּם עֲלֵ֥ה בֵֽית־אֵ֖ל וְשֶׁב־שָׁ֑ם וַעֲשֵׂה־שָׁ֣ם מִזְבֵּ֔חַ לָאֵל֙ הַנִּרְאֶ֣ה אֵלֶ֔יךָ בְּבׇ֨רְחֲךָ֔ מִפְּנֵ֖י עֵשָׂ֥ו אָחִֽיךָ׃",
+      "en": "And God said to Ya῾aqov, Arise, go up to Bet-el, and dwell there: and make there an altar to God, Who appeared to thee when thou didst flee from the face of ῾Esav thy brother."
+    },
+    {
+      "n": 83,
+      "c": 35,
+      "v": 2,
+      "ref": "35:2",
+      "text": "וַיֹּ֤אמֶר יַעֲקֹב֙ אֶל־בֵּית֔וֹ וְאֶ֖ל כׇּל־אֲשֶׁ֣ר עִמּ֑וֹ הָסִ֜רוּ אֶת־אֱלֹהֵ֤י הַנֵּכָר֙ אֲשֶׁ֣ר בְּתֹכְכֶ֔ם וְהִֽטַּהֲר֔וּ וְהַחֲלִ֖יפוּ שִׂמְלֹתֵיכֶֽם׃",
+      "en": "Then Ya῾aqov said to his household, and to all that were with him, Put away the strange gods that are among you, and make yourselves clean, and change your garments:"
+    },
+    {
+      "n": 84,
+      "c": 35,
+      "v": 3,
+      "ref": "35:3",
+      "text": "וְנָק֥וּמָה וְנַעֲלֶ֖ה בֵּֽית־אֵ֑ל וְאֶֽעֱשֶׂה־שָּׁ֣ם מִזְבֵּ֗חַ לָאֵ֞ל הָעֹנֶ֤ה אֹתִי֙ בְּי֣וֹם צָֽרָתִ֔י וַֽיְהִי֙ עִמָּדִ֔י בַּדֶּ֖רֶךְ אֲשֶׁ֥ר הָלָֽכְתִּי׃",
+      "en": "and let us arise, and go up to Bet-el; and I will make there an altar to God, Who answers me in the day of my distress, and was with me in the way on which I went."
+    },
+    {
+      "n": 85,
+      "c": 35,
+      "v": 4,
+      "ref": "35:4",
+      "text": "וַיִּתְּנ֣וּ אֶֽל־יַעֲקֹ֗ב אֵ֣ת כׇּל־אֱלֹהֵ֤י הַנֵּכָר֙ אֲשֶׁ֣ר בְּיָדָ֔ם וְאֶת־הַנְּזָמִ֖ים אֲשֶׁ֣ר בְּאׇזְנֵיהֶ֑ם וַיִּטְמֹ֤ן אֹתָם֙ יַעֲקֹ֔ב תַּ֥חַת הָאֵלָ֖ה אֲשֶׁ֥ר עִם־שְׁכֶֽם׃",
+      "en": "And they gave to Ya῾aqov all the strange gods which were in their hand, and all their earrings which were in their ears; and Ya῾aqov hid them under the oak which was by Shekhem."
+    },
+    {
+      "n": 86,
+      "c": 35,
+      "v": 5,
+      "ref": "35:5",
+      "text": "וַיִּסָּ֑עוּ וַיְהִ֣י&thinsp;<b>׀</b> חִתַּ֣ת אֱלֹהִ֗ים עַל־הֶֽעָרִים֙ אֲשֶׁר֙ סְבִיב֣וֹתֵיהֶ֔ם וְלֹ֣א רָֽדְפ֔וּ אַחֲרֵ֖י בְּנֵ֥י יַעֲקֹֽב׃",
+      "en": "And they journeyed: and the terror of God was upon the cities that were round about them, and they did not pursue after the sons of Ya῾aqov."
+    },
+    {
+      "n": 87,
+      "c": 35,
+      "v": 6,
+      "ref": "35:6",
+      "text": "וַיָּבֹ֨א יַעֲקֹ֜ב ל֗וּזָה אֲשֶׁר֙ בְּאֶ֣רֶץ כְּנַ֔עַן הִ֖וא בֵּֽית־אֵ֑ל ה֖וּא וְכׇל־הָעָ֥ם אֲשֶׁר־עִמּֽוֹ׃",
+      "en": "So Ya῾aqov came to Luz, which is in the land of Kena῾an, that is, Bet-el, he and all the people that were with him."
+    },
+    {
+      "n": 88,
+      "c": 35,
+      "v": 7,
+      "ref": "35:7",
+      "text": "וַיִּ֤בֶן שָׁם֙ מִזְבֵּ֔חַ וַיִּקְרָא֙ לַמָּק֔וֹם אֵ֖ל בֵּֽית־אֵ֑ל כִּ֣י שָׁ֗ם נִגְל֤וּ אֵלָיו֙ הָֽאֱלֹהִ֔ים בְּבׇרְח֖וֹ מִפְּנֵ֥י אָחִֽיו׃",
+      "en": "And he built there an altar, and called the place El-bet-el: because there God appeared to him, when he fled from the face of his brother."
+    },
+    {
+      "n": 89,
+      "c": 35,
+      "v": 8,
+      "ref": "35:8",
+      "text": "וַתָּ֤מׇת דְּבֹרָה֙ מֵינֶ֣קֶת רִבְקָ֔ה וַתִּקָּבֵ֛ר מִתַּ֥חַת לְבֵֽית־אֵ֖ל תַּ֣חַת הָֽאַלּ֑וֹן וַיִּקְרָ֥א שְׁמ֖וֹ אַלּ֥וֹן בָּכֽוּת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Devora, Rivqa’s nurse died, and she was buried beneath Bet-el under an oak: and the name of it was called Allon-bakhut."
+    },
+    {
+      "n": 90,
+      "c": 35,
+      "v": 9,
+      "ref": "35:9",
+      "text": "וַיֵּרָ֨א אֱלֹהִ֤ים אֶֽל־יַעֲקֹב֙ ע֔וֹד בְּבֹא֖וֹ מִפַּדַּ֣ן אֲרָ֑ם וַיְבָ֖רֶךְ אֹתֽוֹ׃",
+      "en": "And God appeared to Ya῾aqov again, when he came out of Paddan-aram, and blessed him."
+    },
+    {
+      "n": 91,
+      "c": 35,
+      "v": 10,
+      "ref": "35:10",
+      "text": "וַיֹּֽאמֶר־ל֥וֹ אֱלֹהִ֖ים שִׁמְךָ֣ יַעֲקֹ֑ב לֹֽא־יִקָּרֵא֩ שִׁמְךָ֨ ע֜וֹד יַעֲקֹ֗ב כִּ֤י אִם־יִשְׂרָאֵל֙ יִהְיֶ֣ה שְׁמֶ֔ךָ וַיִּקְרָ֥א אֶת־שְׁמ֖וֹ יִשְׂרָאֵֽל׃",
+      "en": "And God said to him, Thy name Ya῾aqov: thy name shall not be called any more Ya῾aqov, but Yisra᾽el shall be thy name: and He called his name Yisra᾽el."
+    },
+    {
+      "n": 92,
+      "c": 35,
+      "v": 11,
+      "ref": "35:11",
+      "text": "וַיֹּ֩אמֶר֩ ל֨וֹ אֱלֹהִ֜ים אֲנִ֨י אֵ֤ל שַׁדַּי֙ פְּרֵ֣ה וּרְבֵ֔ה גּ֛וֹי וּקְהַ֥ל גּוֹיִ֖ם יִהְיֶ֣ה מִמֶּ֑ךָּ וּמְלָכִ֖ים מֵחֲלָצֶ֥יךָ יֵצֵֽאוּ׃",
+      "en": "And God said to him, I am God Almighty: be fruitful and multiply; a nation and a company of nations shall be of thee, and kings shall come out of thy loins;"
+    },
+    {
+      "n": 93,
+      "c": 35,
+      "v": 12,
+      "ref": "35:12",
+      "text": "וְאֶת־הָאָ֗רֶץ אֲשֶׁ֥ר נָתַ֛תִּי לְאַבְרָהָ֥ם וּלְיִצְחָ֖ק לְךָ֣ אֶתְּנֶ֑נָּה וּֽלְזַרְעֲךָ֥ אַחֲרֶ֖יךָ אֶתֵּ֥ן אֶת־הָאָֽרֶץ׃",
+      "en": "and the land which I gave to Avraham and Yiżĥaq, to thee I will give it, and to thy seed after thee will I give the land."
+    },
+    {
+      "n": 94,
+      "c": 35,
+      "v": 13,
+      "ref": "35:13",
+      "text": "וַיַּ֥עַל מֵעָלָ֖יו אֱלֹהִ֑ים בַּמָּק֖וֹם אֲשֶׁר־דִּבֶּ֥ר אִתּֽוֹ׃",
+      "en": "And God went up from him in the place where He talked with him."
+    },
+    {
+      "n": 95,
+      "c": 35,
+      "v": 14,
+      "ref": "35:14",
+      "text": "וַיַּצֵּ֨ב יַעֲקֹ֜ב מַצֵּבָ֗ה בַּמָּק֛וֹם אֲשֶׁר־דִּבֶּ֥ר אִתּ֖וֹ מַצֶּ֣בֶת אָ֑בֶן וַיַּסֵּ֤ךְ עָלֶ֙יהָ֙ נֶ֔סֶךְ וַיִּצֹ֥ק עָלֶ֖יהָ שָֽׁמֶן׃",
+      "en": "And Ya῾aqov set up a pillar in the place where He talked with him, a pillar of stone: and he poured a drink offering on it, and he poured oil on it."
+    },
+    {
+      "n": 96,
+      "c": 35,
+      "v": 15,
+      "ref": "35:15",
+      "text": "וַיִּקְרָ֨א יַעֲקֹ֜ב אֶת־שֵׁ֣ם הַמָּק֗וֹם אֲשֶׁר֩ דִּבֶּ֨ר אִתּ֥וֹ שָׁ֛ם אֱלֹהִ֖ים בֵּֽית־אֵֽל׃",
+      "en": "And Ya῾aqov called the name of the place where God had spoken with him, Bet-el."
+    },
+    {
+      "n": 97,
+      "c": 35,
+      "v": 16,
+      "ref": "35:16",
+      "text": "וַיִּסְעוּ֙ מִבֵּ֣ית אֵ֔ל וַֽיְהִי־ע֥וֹד כִּבְרַת־הָאָ֖רֶץ לָב֣וֹא אֶפְרָ֑תָה וַתֵּ֥לֶד רָחֵ֖ל וַתְּקַ֥שׁ בְּלִדְתָּֽהּ׃",
+      "en": "And they journeyed from Bet-el; and there was but a little way to come to Efrat: and Raĥel travailed, and she had hard labour."
+    },
+    {
+      "n": 98,
+      "c": 35,
+      "v": 17,
+      "ref": "35:17",
+      "text": "וַיְהִ֥י בְהַקְשֹׁתָ֖הּ בְּלִדְתָּ֑הּ וַתֹּ֨אמֶר לָ֤הּ הַמְיַלֶּ֙דֶת֙ אַל־תִּ֣ירְאִ֔י כִּֽי־גַם־זֶ֥ה לָ֖ךְ בֵּֽן׃",
+      "en": "And it came to pass, when she was in hard labour, that the midwife said to her, Fear not; thou shalt have this son also."
+    },
+    {
+      "n": 99,
+      "c": 35,
+      "v": 18,
+      "ref": "35:18",
+      "text": "וַיְהִ֞י בְּצֵ֤את נַפְשָׁהּ֙ כִּ֣י מֵ֔תָה וַתִּקְרָ֥א שְׁמ֖וֹ בֶּן־אוֹנִ֑י וְאָבִ֖יו קָֽרָא־ל֥וֹ בִנְיָמִֽין׃",
+      "en": "And it came to pass, as her soul was departing (for she died), that she called his name Ben-oni: but his father called him Binyamin."
+    },
+    {
+      "n": 100,
+      "c": 35,
+      "v": 19,
+      "ref": "35:19",
+      "text": "וַתָּ֖מׇת רָחֵ֑ל וַתִּקָּבֵר֙ בְּדֶ֣רֶךְ אֶפְרָ֔תָה הִ֖וא בֵּ֥ית לָֽחֶם׃",
+      "en": "And Raĥel died, and was buried in the way to Efrat, which is Bet-leĥem."
+    },
+    {
+      "n": 101,
+      "c": 35,
+      "v": 20,
+      "ref": "35:20",
+      "text": "וַיַּצֵּ֧ב יַעֲקֹ֛ב מַצֵּבָ֖ה עַל־קְבֻרָתָ֑הּ הִ֛וא מַצֶּ֥בֶת קְבֻֽרַת־רָחֵ֖ל עַד־הַיּֽוֹם׃",
+      "en": "And Ya῾aqov set a pillar upon her grave: that is the pillar of Raĥel’s grave to this day."
+    },
+    {
+      "n": 102,
+      "c": 35,
+      "v": 21,
+      "ref": "35:21",
+      "text": "וַיִּסַּ֖ע יִשְׂרָאֵ֑ל וַיֵּ֣ט אׇֽהֳלֹ֔ה מֵהָ֖לְאָה לְמִגְדַּל־עֵֽדֶר׃",
+      "en": "And Yisra᾽el journeyed, and pitched his tent beyond the tower of ῾Eder."
+    },
+    {
+      "n": 103,
+      "c": 35,
+      "v": 22,
+      "ref": "35:22",
+      "text": "וַיְהִ֗י בִּשְׁכֹּ֤ן יִשְׂרָאֵל֙ בָּאָ֣רֶץ הַהִ֔וא וַיֵּ֣לֶךְ רְאוּבֵ֗֔ן וַיִּשְׁכַּ֕ב֙ אֶת־בִּלְהָ֖ה֙ פִּילֶ֣גֶשׁ אָבִ֑֔יו וַיִּשְׁמַ֖ע יִשְׂרָאֵ֑͏ֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>וַיִּֽהְי֥וּ בְנֵֽי־יַעֲקֹ֖ב שְׁנֵ֥ים עָשָֽׂר׃",
+      "en": "And it came to pass, when Yisra᾽el dwelt in that land, that Re᾽uven went and lay with Bilha his father’s concubine: and Yisra᾽el heard of it. Now the sons of Ya῾aqov were twelve:"
+    },
+    {
+      "n": 104,
+      "c": 35,
+      "v": 23,
+      "ref": "35:23",
+      "text": "בְּנֵ֣י לֵאָ֔ה בְּכ֥וֹר יַעֲקֹ֖ב רְאוּבֵ֑ן וְשִׁמְעוֹן֙ וְלֵוִ֣י וִֽיהוּדָ֔ה וְיִשָּׂשכָ֖ר וּזְבֻלֽוּן׃",
+      "en": "the sons of Le᾽a; Re᾽uven, Ya῾aqov’s first-born, and Shim῾on and Levi, and Yehuda, and Yissakhar and Zevulun."
+    },
+    {
+      "n": 105,
+      "c": 35,
+      "v": 24,
+      "ref": "35:24",
+      "text": "בְּנֵ֣י רָחֵ֔ל יוֹסֵ֖ף וּבִנְיָמִֽן׃",
+      "en": "The sons of Raĥel; Yosef and Binyamin."
+    },
+    {
+      "n": 106,
+      "c": 35,
+      "v": 25,
+      "ref": "35:25",
+      "text": "וּבְנֵ֤י בִלְהָה֙ שִׁפְחַ֣ת רָחֵ֔ל דָּ֖ן וְנַפְתָּלִֽי׃",
+      "en": "And the sons of Bilha, Raĥel’s handmaid; Dan, and Naftali."
+    },
+    {
+      "n": 107,
+      "c": 35,
+      "v": 26,
+      "ref": "35:26",
+      "text": "וּבְנֵ֥י זִלְפָּ֛ה שִׁפְחַ֥ת לֵאָ֖ה גָּ֣ד וְאָשֵׁ֑ר אֵ֚לֶּה בְּנֵ֣י יַעֲקֹ֔ב אֲשֶׁ֥ר יֻלַּד־ל֖וֹ בְּפַדַּ֥ן אֲרָֽם׃",
+      "en": "And the sons of Zilpa, Le᾽a’s handmaid; Gad, and Asher: these are the sons of Ya῾aqov who were born to him in Paddan-aram."
+    },
+    {
+      "n": 108,
+      "c": 35,
+      "v": 27,
+      "ref": "35:27",
+      "text": "וַיָּבֹ֤א יַעֲקֹב֙ אֶל־יִצְחָ֣ק אָבִ֔יו מַמְרֵ֖א קִרְיַ֣ת הָֽאַרְבַּ֑ע הִ֣וא חֶבְר֔וֹן אֲשֶׁר־גָּֽר־שָׁ֥ם אַבְרָהָ֖ם וְיִצְחָֽק׃",
+      "en": "And Ya῾aqov came to Yiżĥaq his father to Mamre, to the city of Arba, which is Ḥevron, where Avraham and Yiżĥaq sojourned."
+    },
+    {
+      "n": 109,
+      "c": 35,
+      "v": 28,
+      "ref": "35:28",
+      "text": "וַיִּֽהְי֖וּ יְמֵ֣י יִצְחָ֑ק מְאַ֥ת שָׁנָ֖ה וּשְׁמֹנִ֥ים שָׁנָֽה׃",
+      "en": "And the days of Yiżĥaq were a hundred and eighty years."
+    },
+    {
+      "n": 110,
+      "c": 35,
+      "v": 29,
+      "ref": "35:29",
+      "text": "וַיִּגְוַ֨ע יִצְחָ֤ק וַיָּ֙מׇת֙ וַיֵּאָ֣סֶף אֶל־עַמָּ֔יו זָקֵ֖ן וּשְׂבַ֣ע יָמִ֑ים וַיִּקְבְּר֣וּ אֹת֔וֹ עֵשָׂ֥ו וְיַעֲקֹ֖ב בָּנָֽיו׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Yiżĥaq expired, and died, and was gathered to his people, being old and full of days: and his sons ῾Esav and Ya῾aqov buried him."
+    },
+    {
+      "n": 111,
+      "c": 36,
+      "v": 1,
+      "ref": "36:1",
+      "text": "וְאֵ֛לֶּה תֹּלְד֥וֹת עֵשָׂ֖ו ה֥וּא אֱדֽוֹם׃",
+      "en": "Now these are the generations of ῾Esav, who is Edom."
+    },
+    {
+      "n": 112,
+      "c": 36,
+      "v": 2,
+      "ref": "36:2",
+      "text": "עֵשָׂ֛ו לָקַ֥ח אֶת־נָשָׁ֖יו מִבְּנ֣וֹת כְּנָ֑עַן אֶת־עָדָ֗ה בַּת־אֵילוֹן֙ הַֽחִתִּ֔י וְאֶת־אׇהֳלִֽיבָמָה֙ בַּת־עֲנָ֔ה בַּת־צִבְע֖וֹן הַֽחִוִּֽי׃",
+      "en": "῾Esav took his wives of the daughters of Kena῾an; ῾Ada the daughter of Elon the Ḥittite, and Oholivama, daughter of ῾Ana, daughter of Żiv῾on the Ḥivvite;"
+    },
+    {
+      "n": 113,
+      "c": 36,
+      "v": 3,
+      "ref": "36:3",
+      "text": "וְאֶת־בָּשְׂמַ֥ת בַּת־יִשְׁמָעֵ֖אל אֲח֥וֹת נְבָיֽוֹת׃",
+      "en": "and Basemat, daughter of Yishma᾽el, sister of Nevayot."
+    },
+    {
+      "n": 114,
+      "c": 36,
+      "v": 4,
+      "ref": "36:4",
+      "text": "וַתֵּ֧לֶד עָדָ֛ה לְעֵשָׂ֖ו אֶת־אֱלִיפָ֑ז וּבָ֣שְׂמַ֔ת יָלְדָ֖ה אֶת־רְעוּאֵֽל׃",
+      "en": "And ῾Ada bore to ῾Esav Elifaz; and Basemat bore Re῾u᾽el;"
+    },
+    {
+      "n": 115,
+      "c": 36,
+      "v": 5,
+      "ref": "36:5",
+      "text": "וְאׇהֳלִֽיבָמָה֙ יָֽלְדָ֔ה אֶת־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[יְע֥וּשׁ]</span> <span class=\"mam-kq-k\">(יעיש)</span></span> וְאֶת־יַעְלָ֖ם וְאֶת־קֹ֑רַח אֵ֚לֶּה בְּנֵ֣י עֵשָׂ֔ו אֲשֶׁ֥ר יֻלְּדוּ־ל֖וֹ בְּאֶ֥רֶץ כְּנָֽעַן׃",
+      "en": "and Oholivama bore Ye῾ush and Ya῾lam, and Qoraĥ: these were the sons of ῾Esav who were born to him in the land of Kena῾an."
+    },
+    {
+      "n": 116,
+      "c": 36,
+      "v": 6,
+      "ref": "36:6",
+      "text": "וַיִּקַּ֣ח עֵשָׂ֡ו אֶת־נָ֠שָׁ֠יו וְאֶת־בָּנָ֣יו וְאֶת־בְּנֹתָיו֮ וְאֶת־כׇּל־נַפְשׁ֣וֹת בֵּיתוֹ֒ וְאֶת־מִקְנֵ֣הוּ וְאֶת־כׇּל־בְּהֶמְתּ֗וֹ וְאֵת֙ כׇּל־קִנְיָנ֔וֹ אֲשֶׁ֥ר רָכַ֖שׁ בְּאֶ֣רֶץ כְּנָ֑עַן וַיֵּ֣לֶךְ אֶל־אֶ֔רֶץ מִפְּנֵ֖י יַעֲקֹ֥ב אָחִֽיו׃",
+      "en": "And ῾Esav took his wives, and his sons, and his daughters, and all the persons of his house, and his cattle, and all his beasts, and all his substance, which he had acquired in the land of Kena῾an; and went into another country away from his brother Ya῾aqov."
+    },
+    {
+      "n": 117,
+      "c": 36,
+      "v": 7,
+      "ref": "36:7",
+      "text": "כִּֽי־הָיָ֧ה רְכוּשָׁ֛ם רָ֖ב מִשֶּׁ֣בֶת יַחְדָּ֑ו וְלֹ֨א יָֽכְלָ֜ה אֶ֤רֶץ מְגֽוּרֵיהֶם֙ לָשֵׂ֣את אֹתָ֔ם מִפְּנֵ֖י מִקְנֵיהֶֽם׃",
+      "en": "For their property was too great for them to dwell together; and the land in which they sojourned could not bear them because of their cattle."
+    },
+    {
+      "n": 118,
+      "c": 36,
+      "v": 8,
+      "ref": "36:8",
+      "text": "וַיֵּ֤שֶׁב עֵשָׂו֙ בְּהַ֣ר שֵׂעִ֔יר עֵשָׂ֖ו ה֥וּא אֱדֽוֹם׃",
+      "en": "Thus dwelt ῾Esav in mount Se῾ir: ῾Esav is Edom."
+    },
+    {
+      "n": 119,
+      "c": 36,
+      "v": 9,
+      "ref": "36:9",
+      "text": "וְאֵ֛לֶּה תֹּלְד֥וֹת עֵשָׂ֖ו אֲבִ֣י אֱד֑וֹם בְּהַ֖ר שֵׂעִֽיר׃",
+      "en": "And these are the generations of ῾Esav the father of Edom in mount Se῾ir:"
+    },
+    {
+      "n": 120,
+      "c": 36,
+      "v": 10,
+      "ref": "36:10",
+      "text": "אֵ֖לֶּה שְׁמ֣וֹת בְּנֵֽי־עֵשָׂ֑ו אֱלִיפַ֗ז בֶּן־עָדָה֙ אֵ֣שֶׁת עֵשָׂ֔ו רְעוּאֵ֕ל בֶּן־בָּשְׂמַ֖ת אֵ֥שֶׁת עֵשָֽׂו׃",
+      "en": "these are the names of ῾Esav’s sons; Elifaz the son of ῾Ada the wife of ῾Esav, Re῾u᾽el the son of Basemat the wife of ῾Esav."
+    },
+    {
+      "n": 121,
+      "c": 36,
+      "v": 11,
+      "ref": "36:11",
+      "text": "וַיִּהְי֖וּ בְּנֵ֣י אֱלִיפָ֑ז תֵּימָ֣ן אוֹמָ֔ר צְפ֥וֹ וְגַעְתָּ֖ם וּקְנַֽז׃",
+      "en": "And the sons of Elifaz were Teman, Omar, Żefo, and Ga῾tam, and Qenaz."
+    },
+    {
+      "n": 122,
+      "c": 36,
+      "v": 12,
+      "ref": "36:12",
+      "text": "וְתִמְנַ֣ע&thinsp;<b>׀</b> הָיְתָ֣ה פִילֶ֗גֶשׁ לֶֽאֱלִיפַז֙ בֶּן־עֵשָׂ֔ו וַתֵּ֥לֶד לֶאֱלִיפַ֖ז אֶת־עֲמָלֵ֑ק אֵ֕לֶּה בְּנֵ֥י עָדָ֖ה אֵ֥שֶׁת עֵשָֽׂו׃",
+      "en": "And Timna was concubine to Elifaz ῾Esav’s son; and she bore to Elifaz ῾Amaleq; these were the sons of ῾Ada ῾Esav’s wife."
+    },
+    {
+      "n": 123,
+      "c": 36,
+      "v": 13,
+      "ref": "36:13",
+      "text": "וְאֵ֙לֶּה֙ בְּנֵ֣י רְעוּאֵ֔ל נַ֥חַת וָזֶ֖רַח שַׁמָּ֣ה וּמִזָּ֑ה אֵ֣לֶּה הָי֔וּ בְּנֵ֥י בָשְׂמַ֖ת אֵ֥שֶׁת עֵשָֽׂו׃",
+      "en": "And these are the sons of Re῾u᾽el; Naĥat, and Zeraĥ, Shamma, and Mizza: these were the sons of Basemat ῾Esav’s wife."
+    },
+    {
+      "n": 124,
+      "c": 36,
+      "v": 14,
+      "ref": "36:14",
+      "text": "וְאֵ֣לֶּה הָי֗וּ בְּנֵ֨י אׇהֳלִיבָמָ֧ה בַת־עֲנָ֛ה בַּת־צִבְע֖וֹן אֵ֣שֶׁת עֵשָׂ֑ו וַתֵּ֣לֶד לְעֵשָׂ֔ו אֶת־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[יְע֥וּשׁ]</span> <span class=\"mam-kq-k\">(יעיש)</span></span> וְאֶת־יַעְלָ֖ם וְאֶת־קֹֽרַח׃",
+      "en": "And these were the sons of Oholivama, the daughter of ῾Ana the daughter of Żiv῾on, ῾Esav’s wife: and she bore to ῾Esav Ye῾ush, and Ya῾lam, and Qoraĥ."
+    },
+    {
+      "n": 125,
+      "c": 36,
+      "v": 15,
+      "ref": "36:15",
+      "text": "אֵ֖לֶּה אַלּוּפֵ֣י בְנֵֽי־עֵשָׂ֑ו בְּנֵ֤י אֱלִיפַז֙ בְּכ֣וֹר עֵשָׂ֔ו אַלּ֤וּף תֵּימָן֙ אַלּ֣וּף אוֹמָ֔ר אַלּ֥וּף צְפ֖וֹ אַלּ֥וּף קְנַֽז׃",
+      "en": "These were the chiefs of the sons of ῾Esav: the sons of Elifaz the firstborn son of ῾Esav; the chief Teman, the chief Omar, the chief Żefo, the chief Qenaz,"
+    },
+    {
+      "n": 126,
+      "c": 36,
+      "v": 16,
+      "ref": "36:16",
+      "text": "אַלּֽוּף־קֹ֛רַח אַלּ֥וּף גַּעְתָּ֖ם אַלּ֣וּף עֲמָלֵ֑ק אֵ֣לֶּה אַלּוּפֵ֤י אֱלִיפַז֙ בְּאֶ֣רֶץ אֱד֔וֹם אֵ֖לֶּה בְּנֵ֥י עָדָֽה׃",
+      "en": "the chief Qoraĥ, the chief Ga῾tam, the chief ῾Amaleq: these are the chiefs of Elifaz in the land of Edom; these were the sons of ῾Ada."
+    },
+    {
+      "n": 127,
+      "c": 36,
+      "v": 17,
+      "ref": "36:17",
+      "text": "וְאֵ֗לֶּה בְּנֵ֤י רְעוּאֵל֙ בֶּן־עֵשָׂ֔ו אַלּ֥וּף נַ֙חַת֙ אַלּ֣וּף זֶ֔רַח אַלּ֥וּף שַׁמָּ֖ה אַלּ֣וּף מִזָּ֑ה אֵ֣לֶּה אַלּוּפֵ֤י רְעוּאֵל֙ בְּאֶ֣רֶץ אֱד֔וֹם אֵ֕לֶּה בְּנֵ֥י בָשְׂמַ֖ת אֵ֥שֶׁת עֵשָֽׂו׃",
+      "en": "And these are the sons of Re῾u᾽el ῾Esav’s son; the chief Naĥat, the chief Zeraĥ, the chief Shamma, the chief Mizza: these are the chiefs that came of Re῾u᾽el in the land of Edom; these are the sons of Basemat ῾Esav’s wife."
+    },
+    {
+      "n": 128,
+      "c": 36,
+      "v": 18,
+      "ref": "36:18",
+      "text": "וְאֵ֗לֶּה בְּנֵ֤י אׇהֳלִֽיבָמָה֙ אֵ֣שֶׁת עֵשָׂ֔ו אַלּ֥וּף יְע֛וּשׁ אַלּ֥וּף יַעְלָ֖ם אַלּ֣וּף קֹ֑רַח אֵ֣לֶּה אַלּוּפֵ֞י אׇהֳלִֽיבָמָ֛ה בַּת־עֲנָ֖ה אֵ֥שֶׁת עֵשָֽׂו׃",
+      "en": "And these are the sons of Oholivama ῾Esav’s wife; the chief Ye῾ush, the chief Ya῾lam, the chief Qoraĥ: these were the chiefs that came of Oholivama the daughter of ῾Ana, ῾Esav’s wife."
+    },
+    {
+      "n": 129,
+      "c": 36,
+      "v": 19,
+      "ref": "36:19",
+      "text": "אֵ֧לֶּה בְנֵי־עֵשָׂ֛ו וְאֵ֥לֶּה אַלּוּפֵיהֶ֖ם ה֥וּא אֱדֽוֹם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "These are the sons of ῾Esav, who is Edom, and these are their chiefs."
+    },
+    {
+      "n": 130,
+      "c": 36,
+      "v": 20,
+      "ref": "36:20",
+      "text": "אֵ֤לֶּה בְנֵֽי־שֵׂעִיר֙ הַחֹרִ֔י יֹשְׁבֵ֖י הָאָ֑רֶץ לוֹטָ֥ן וְשׁוֹבָ֖ל וְצִבְע֥וֹן וַעֲנָֽה׃",
+      "en": "These are the sons of Se῾ir the Ḥorian who inhabited the land; Lotan, and Shoval, and Żiv῾on and ῾Ana."
+    },
+    {
+      "n": 131,
+      "c": 36,
+      "v": 21,
+      "ref": "36:21",
+      "text": "וְדִשׁ֥וֹן וְאֵ֖צֶר וְדִישָׁ֑ן אֵ֣לֶּה אַלּוּפֵ֧י הַחֹרִ֛י בְּנֵ֥י שֵׂעִ֖יר בְּאֶ֥רֶץ אֱדֽוֹם׃",
+      "en": "And Dishon, and Eżer, and Dishan: these are the chiefs of the Ḥori, the children of Se῾ir in the land of Edom."
+    },
+    {
+      "n": 132,
+      "c": 36,
+      "v": 22,
+      "ref": "36:22",
+      "text": "וַיִּהְי֥וּ בְנֵי־לוֹטָ֖ן חֹרִ֣י וְהֵימָ֑ם וַאֲח֥וֹת לוֹטָ֖ן תִּמְנָֽע׃",
+      "en": "And the children of Lotan were Ḥori and Hemam; and Lotan’s sister was Timna."
+    },
+    {
+      "n": 133,
+      "c": 36,
+      "v": 23,
+      "ref": "36:23",
+      "text": "וְאֵ֙לֶּה֙ בְּנֵ֣י שׁוֹבָ֔ל עַלְוָ֥ן וּמָנַ֖חַת וְעֵיבָ֑ל שְׁפ֖וֹ וְאוֹנָֽם׃",
+      "en": "And the children of Shoval were these; ῾Alevan, and Manaĥat, and ῾Eval, Shefo, and Onam."
+    },
+    {
+      "n": 134,
+      "c": 36,
+      "v": 24,
+      "ref": "36:24",
+      "text": "וְאֵ֥לֶּה בְנֵֽי־צִבְע֖וֹן וְאַיָּ֣ה וַעֲנָ֑ה ה֣וּא עֲנָ֗ה אֲשֶׁ֨ר מָצָ֤א אֶת־הַיֵּמִם֙ בַּמִּדְבָּ֔ר בִּרְעֹת֥וֹ אֶת־הַחֲמֹרִ֖ים לְצִבְע֥וֹן אָבִֽיו׃",
+      "en": "And these are the children of Żiv῾on; both Ayya, and ῾Ana: this was that ῾Ana that found the hot springs in the wilderness, as he fed the asses of Żiv῾on his father."
+    },
+    {
+      "n": 135,
+      "c": 36,
+      "v": 25,
+      "ref": "36:25",
+      "text": "וְאֵ֥לֶּה בְנֵֽי־עֲנָ֖ה דִּשֹׁ֑ן וְאׇהֳלִיבָמָ֖ה בַּת־עֲנָֽה׃",
+      "en": "And the children of ῾Ana were these; Dishon, and Oholivama the daughter of ῾Ana."
+    },
+    {
+      "n": 136,
+      "c": 36,
+      "v": 26,
+      "ref": "36:26",
+      "text": "וְאֵ֖לֶּה בְּנֵ֣י דִישָׁ֑ן חֶמְדָּ֥ן וְאֶשְׁבָּ֖ן וְיִתְרָ֥ן וּכְרָֽן׃",
+      "en": "And these are the children of Dishan; Ḥemdan, and Eshban, and Yitran, and Keran."
+    },
+    {
+      "n": 137,
+      "c": 36,
+      "v": 27,
+      "ref": "36:27",
+      "text": "אֵ֖לֶּה בְּנֵי־אֵ֑צֶר בִּלְהָ֥ן וְזַעֲוָ֖ן וַעֲקָֽן׃",
+      "en": "The children of Eżer are these; Bilhan, and Za῾avan, and ῾Aqan."
+    },
+    {
+      "n": 138,
+      "c": 36,
+      "v": 28,
+      "ref": "36:28",
+      "text": "אֵ֥לֶּה בְנֵֽי־דִישָׁ֖ן ע֥וּץ וַאֲרָֽן׃",
+      "en": "The children of Dishan are these; Uż, and Aran."
+    },
+    {
+      "n": 139,
+      "c": 36,
+      "v": 29,
+      "ref": "36:29",
+      "text": "אֵ֖לֶּה אַלּוּפֵ֣י הַחֹרִ֑י אַלּ֤וּף לוֹטָן֙ אַלּ֣וּף שׁוֹבָ֔ל אַלּ֥וּף צִבְע֖וֹן אַלּ֥וּף עֲנָֽה׃",
+      "en": "These are the chiefs that came of the Ḥori: the chief Lotan, the chief Shoval, the chief Żiv῾on, the chief ῾Ana,"
+    },
+    {
+      "n": 140,
+      "c": 36,
+      "v": 30,
+      "ref": "36:30",
+      "text": "אַלּ֥וּף דִּשֹׁ֛ן אַלּ֥וּף אֵ֖צֶר אַלּ֣וּף דִּישָׁ֑ן אֵ֣לֶּה אַלּוּפֵ֧י הַחֹרִ֛י לְאַלֻּפֵיהֶ֖ם בְּאֶ֥רֶץ שֵׂעִֽיר׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "the chief Dishon, the chief Eżer, the chief Dishan: these are the chiefs that came of the Ḥori, according to their chiefs in the land of Se῾ir."
+    },
+    {
+      "n": 141,
+      "c": 36,
+      "v": 31,
+      "ref": "36:31",
+      "text": "וְאֵ֙לֶּה֙ הַמְּלָכִ֔ים אֲשֶׁ֥ר מָלְכ֖וּ בְּאֶ֣רֶץ אֱד֑וֹם לִפְנֵ֥י מְלׇךְ־מֶ֖לֶךְ לִבְנֵ֥י יִשְׂרָאֵֽל׃",
+      "en": "And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yisra᾽el."
+    },
+    {
+      "n": 142,
+      "c": 36,
+      "v": 32,
+      "ref": "36:32",
+      "text": "וַיִּמְלֹ֣ךְ בֶּאֱד֔וֹם בֶּ֖לַע בֶּן־בְּע֑וֹר וְשֵׁ֥ם עִיר֖וֹ דִּנְהָֽבָה׃",
+      "en": "And Bela the son of Be῾or reigned in Edom: and the name of his city was Dinhava."
+    },
+    {
+      "n": 143,
+      "c": 36,
+      "v": 33,
+      "ref": "36:33",
+      "text": "וַיָּ֖מׇת בָּ֑לַע וַיִּמְלֹ֣ךְ תַּחְתָּ֔יו יוֹבָ֥ב בֶּן־זֶ֖רַח מִבׇּצְרָֽה׃",
+      "en": "And Bela died, and Yovav the son of Zeraĥ of Bożra reigned in his place;"
+    },
+    {
+      "n": 144,
+      "c": 36,
+      "v": 34,
+      "ref": "36:34",
+      "text": "וַיָּ֖מׇת יוֹבָ֑ב וַיִּמְלֹ֣ךְ תַּחְתָּ֔יו חֻשָׁ֖ם מֵאֶ֥רֶץ הַתֵּימָנִֽי׃",
+      "en": "and Yovav died, and Ḥusham of the land of the Temani reigned in his place;"
+    },
+    {
+      "n": 145,
+      "c": 36,
+      "v": 35,
+      "ref": "36:35",
+      "text": "וַיָּ֖מׇת חֻשָׁ֑ם וַיִּמְלֹ֨ךְ תַּחְתָּ֜יו הֲדַ֣ד בֶּן־בְּדַ֗ד הַמַּכֶּ֤ה אֶת־מִדְיָן֙ בִּשְׂדֵ֣ה מוֹאָ֔ב וְשֵׁ֥ם עִיר֖וֹ עֲוִֽית׃",
+      "en": "and Ḥusham died, and Hadad the son of Bedad, who smote Midyan in the field of Mo᾽av, reigned in his place; and the name of his city was ῾Avit."
+    },
+    {
+      "n": 146,
+      "c": 36,
+      "v": 36,
+      "ref": "36:36",
+      "text": "וַיָּ֖מׇת הֲדָ֑ד וַיִּמְלֹ֣ךְ תַּחְתָּ֔יו שַׂמְלָ֖ה מִמַּשְׂרֵקָֽה׃",
+      "en": "And Hadad died, and Samla of Masreqa reigned in his place;"
+    },
+    {
+      "n": 147,
+      "c": 36,
+      "v": 37,
+      "ref": "36:37",
+      "text": "וַיָּ֖מׇת שַׂמְלָ֑ה וַיִּמְלֹ֣ךְ תַּחְתָּ֔יו שָׁא֖וּל מֵרְחֹב֥וֹת הַנָּהָֽר׃",
+      "en": "and Samla died, and Sha᾽ul of Reĥovot by the river reigned in his place;"
+    },
+    {
+      "n": 148,
+      "c": 36,
+      "v": 38,
+      "ref": "36:38",
+      "text": "וַיָּ֖מׇת שָׁא֑וּל וַיִּמְלֹ֣ךְ תַּחְתָּ֔יו בַּ֥עַל חָנָ֖ן בֶּן־עַכְבּֽוֹר׃",
+      "en": "and Sha᾽ul died, and Ba῾al-ĥanan the son of ῾Akhbor reigned in his place;"
+    },
+    {
+      "n": 149,
+      "c": 36,
+      "v": 39,
+      "ref": "36:39",
+      "text": "וַיָּ֘מׇת֮ בַּ֣עַל חָנָ֣ן בֶּן־עַכְבּוֹר֒ וַיִּמְלֹ֤ךְ תַּחְתָּיו֙ הֲדַ֔ר וְשֵׁ֥ם עִיר֖וֹ פָּ֑עוּ וְשֵׁ֨ם אִשְׁתּ֤וֹ מְהֵֽיטַבְאֵל֙ בַּת־מַטְרֵ֔ד בַּ֖ת מֵ֥י זָהָֽב׃",
+      "en": "and Ba῾al-ĥanan the son of ῾Akhbor died, and Hadar reigned in his place, and the name of his city was Pa῾u; and his wife’s name was Mehetav᾽el, daughter of Matred, daughter of Me-zahav."
+    },
+    {
+      "n": 150,
+      "c": 36,
+      "v": 40,
+      "ref": "36:40",
+      "text": "וְ֠אֵ֠לֶּה שְׁמ֞וֹת אַלּוּפֵ֤י עֵשָׂו֙ לְמִשְׁפְּחֹתָ֔ם לִמְקֹמֹתָ֖ם בִּשְׁמֹתָ֑ם אַלּ֥וּף תִּמְנָ֛ע אַלּ֥וּף עַֽלְוָ֖ה אַלּ֥וּף יְתֵֽת׃",
+      "en": "And these are the names of the chiefs that came of ῾Esav, according to their families, after their places, by their names; the chief Timna, the chief ῾Aleva, the chief Yetet,"
+    },
+    {
+      "n": 151,
+      "c": 36,
+      "v": 41,
+      "ref": "36:41",
+      "text": "אַלּ֧וּף אׇהֳלִיבָמָ֛ה אַלּ֥וּף אֵלָ֖ה אַלּ֥וּף פִּינֹֽן׃",
+      "en": "the chief Oholivama, the chief Ela, the chief Pinon,"
+    },
+    {
+      "n": 152,
+      "c": 36,
+      "v": 42,
+      "ref": "36:42",
+      "text": "אַלּ֥וּף קְנַ֛ז אַלּ֥וּף תֵּימָ֖ן אַלּ֥וּף מִבְצָֽר׃",
+      "en": "the chief Qenaz, the chief Teman, the chief Mivżar,"
+    },
+    {
+      "n": 153,
+      "c": 36,
+      "v": 43,
+      "ref": "36:43",
+      "text": "אַלּ֥וּף מַגְדִּיאֵ֖ל אַלּ֣וּף עִירָ֑ם אֵ֣לֶּה&thinsp;<b>׀</b> אַלּוּפֵ֣י אֱד֗וֹם לְמֹֽשְׁבֹתָם֙ בְּאֶ֣רֶץ אֲחֻזָּתָ֔ם ה֥וּא עֵשָׂ֖ו אֲבִ֥י אֱדֽוֹם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "the chief Magdi᾽el, the chief ῾Iram: these are the chiefs of Edom, according to their settlements in the land of their possession. He is ῾Esav the father of Edom."
+    }
+  ],
+  "parashah": {
+    "en": "Vayishlach",
+    "he": "וַיִּשְׁלַח",
+    "translit": "Vayishlach",
+    "ref": "Genesis 32:4–36:43"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 10,
+        "ref": "32:4–32:13"
+      },
+      {
+        "n": 2,
+        "start": 11,
+        "end": 27,
+        "ref": "32:14–32:30"
+      },
+      {
+        "n": 3,
+        "start": 28,
+        "end": 35,
+        "ref": "32:31–33:5"
+      },
+      {
+        "n": 4,
+        "start": 36,
+        "end": 50,
+        "ref": "33:6–33:20"
+      },
+      {
+        "n": 5,
+        "start": 51,
+        "end": 92,
+        "ref": "34:1–35:11"
+      },
+      {
+        "n": 6,
+        "start": 93,
+        "end": 129,
+        "ref": "35:12–36:19"
+      },
+      {
+        "n": 7,
+        "start": 130,
+        "end": 153,
+        "ref": "36:20–36:43"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "32:4–32:6"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 6,
+          "ref": "32:7–32:9"
+        },
+        {
+          "n": 3,
+          "start": 7,
+          "end": 10,
+          "ref": "32:10–32:13"
+        },
+        {
+          "n": 4,
+          "start": 11,
+          "end": 19,
+          "ref": "32:14–32:22"
+        },
+        {
+          "n": 5,
+          "start": 20,
+          "end": 27,
+          "ref": "32:23–32:30"
+        },
+        {
+          "n": 6,
+          "start": 28,
+          "end": 35,
+          "ref": "32:31–33:5"
+        },
+        {
+          "n": 7,
+          "start": 36,
+          "end": 50,
+          "ref": "33:6–33:20"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 51,
+          "end": 54,
+          "ref": "34:1–34:4"
+        },
+        {
+          "n": 2,
+          "start": 55,
+          "end": 62,
+          "ref": "34:5–34:12"
+        },
+        {
+          "n": 3,
+          "start": 63,
+          "end": 67,
+          "ref": "34:13–34:17"
+        },
+        {
+          "n": 4,
+          "start": 68,
+          "end": 73,
+          "ref": "34:18–34:23"
+        },
+        {
+          "n": 5,
+          "start": 74,
+          "end": 81,
+          "ref": "34:24–34:31"
+        },
+        {
+          "n": 6,
+          "start": 82,
+          "end": 92,
+          "ref": "35:1–35:11"
+        },
+        {
+          "n": 7,
+          "start": 93,
+          "end": 96,
+          "ref": "35:12–35:15"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 97,
+          "end": 107,
+          "ref": "35:16–35:26"
+        },
+        {
+          "n": 2,
+          "start": 108,
+          "end": 110,
+          "ref": "35:27–35:29"
+        },
+        {
+          "n": 3,
+          "start": 111,
+          "end": 118,
+          "ref": "36:1–36:8"
+        },
+        {
+          "n": 4,
+          "start": 119,
+          "end": 129,
+          "ref": "36:9–36:19"
+        },
+        {
+          "n": 5,
+          "start": 130,
+          "end": 140,
+          "ref": "36:20–36:30"
+        },
+        {
+          "n": 6,
+          "start": 141,
+          "end": 149,
+          "ref": "36:31–36:39"
+        },
+        {
+          "n": 7,
+          "start": 150,
+          "end": 153,
+          "ref": "36:40–36:43"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 150,
+        "end": 153,
+        "ref": "36:40–36:43"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 48,
+          "end": 50,
+          "ref": "33:18–33:20"
+        },
+        "2": {
+          "n": "M",
+          "start": 93,
+          "end": 96,
+          "ref": "35:12–35:15"
+        },
+        "3": {
+          "n": "M",
+          "start": 150,
+          "end": 153,
+          "ref": "36:40–36:43"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

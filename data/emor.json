@@ -1,0 +1,1225 @@
+{
+  "slug": "emor",
+  "book": {
+    "en": "Leviticus",
+    "he": "ויקרא",
+    "translit": "Vayikra"
+  },
+  "multiChapter": true,
+  "ref": "Leviticus 21:1-24:23",
+  "heRef": "ויקרא כ״א:א-כ״ד:כ״ג",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 21,
+      "v": 1,
+      "ref": "21:1",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה אֱמֹ֥ר אֶל־הַכֹּהֲנִ֖ים בְּנֵ֣י אַהֲרֹ֑ן וְאָמַרְתָּ֣ אֲלֵהֶ֔ם לְנֶ֥פֶשׁ לֹֽא־יִטַּמָּ֖א בְּעַמָּֽיו׃",
+      "en": "And the Lord said to Moshe, Speak to the priests the sons of Aharon, and say to them, There shall none be defiled for the dead among his people:"
+    },
+    {
+      "n": 2,
+      "c": 21,
+      "v": 2,
+      "ref": "21:2",
+      "text": "כִּ֚י אִם־לִשְׁאֵר֔וֹ הַקָּרֹ֖ב אֵלָ֑יו לְאִמּ֣וֹ וּלְאָבִ֔יו וְלִבְנ֥וֹ וּלְבִתּ֖וֹ וּלְאָחִֽיו׃",
+      "en": "but for his kin, that is near to him, for his mother, and for his father, and for his son and for his daughter, and for his brother,"
+    },
+    {
+      "n": 3,
+      "c": 21,
+      "v": 3,
+      "ref": "21:3",
+      "text": "וְלַאֲחֹת֤וֹ הַבְּתוּלָה֙ הַקְּרוֹבָ֣ה אֵלָ֔יו אֲשֶׁ֥ר לֹֽא־הָיְתָ֖ה לְאִ֑ישׁ לָ֖הּ יִטַּמָּֽא׃",
+      "en": "and for his sister a virgin, that is near to him, and who has had no husband; for her may he be defiled."
+    },
+    {
+      "n": 4,
+      "c": 21,
+      "v": 4,
+      "ref": "21:4",
+      "text": "לֹ֥א יִטַּמָּ֖א בַּ֣עַל בְּעַמָּ֑יו לְהֵ֖חַלּֽוֹ׃",
+      "en": "But he shall not defile himself, being a chief man among his people, to profane himself."
+    },
+    {
+      "n": 5,
+      "c": 21,
+      "v": 5,
+      "ref": "21:5",
+      "text": "לֹֽא־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[יִקְרְח֤וּ]</span> <span class=\"mam-kq-k\">(יקרחה)</span></span> קׇרְחָה֙ בְּרֹאשָׁ֔ם וּפְאַ֥ת זְקָנָ֖ם לֹ֣א יְגַלֵּ֑חוּ וּבִ֨בְשָׂרָ֔ם לֹ֥א יִשְׂרְט֖וּ שָׂרָֽטֶת׃",
+      "en": "They shall not make baldness on their head, neither shall they shave off the corner of their beard, nor make any cuttings in their flesh."
+    },
+    {
+      "n": 6,
+      "c": 21,
+      "v": 6,
+      "ref": "21:6",
+      "text": "קְדֹשִׁ֤ים יִהְיוּ֙ לֵאלֹ֣הֵיהֶ֔ם וְלֹ֣א יְחַלְּל֔וּ שֵׁ֖ם אֱלֹהֵיהֶ֑ם כִּי֩ אֶת־אִשֵּׁ֨י יְהֹוָ֜ה לֶ֧חֶם אֱלֹהֵיהֶ֛ם הֵ֥ם מַקְרִיבִ֖ם וְהָ֥יוּ קֹֽדֶשׁ׃",
+      "en": "They shall be holy to their God, and not profane the name of their God: for the offerings of the Lord made by fire, the bread of their God, they do offer: therefore they shall be holy."
+    },
+    {
+      "n": 7,
+      "c": 21,
+      "v": 7,
+      "ref": "21:7",
+      "text": "אִשָּׁ֨ה זֹנָ֤ה וַחֲלָלָה֙ לֹ֣א יִקָּ֔חוּ וְאִשָּׁ֛ה גְּרוּשָׁ֥ה מֵאִישָׁ֖הּ לֹ֣א יִקָּ֑חוּ כִּֽי־קָדֹ֥שׁ ה֖וּא לֵאלֹהָֽיו׃",
+      "en": "They shall not take a wife that is a harlot, or profaned; neither shall they take a woman put away from her husband: for he is holy to his God."
+    },
+    {
+      "n": 8,
+      "c": 21,
+      "v": 8,
+      "ref": "21:8",
+      "text": "וְקִ֨דַּשְׁתּ֔וֹ כִּֽי־אֶת־לֶ֥חֶם אֱלֹהֶ֖יךָ ה֣וּא מַקְרִ֑יב קָדֹשׁ֙ יִֽהְיֶה־לָּ֔ךְ כִּ֣י קָד֔וֹשׁ אֲנִ֥י יְהֹוָ֖ה מְקַדִּשְׁכֶֽם׃",
+      "en": "Thou shalt sanctify him therefore; for he offers the bread of thy God: he shall be holy to thee: for I the Lord, who sanctify you, am holy."
+    },
+    {
+      "n": 9,
+      "c": 21,
+      "v": 9,
+      "ref": "21:9",
+      "text": "וּבַת֙ אִ֣ישׁ כֹּהֵ֔ן כִּ֥י תֵחֵ֖ל לִזְנ֑וֹת אֶת־אָבִ֙יהָ֙ הִ֣יא מְחַלֶּ֔לֶת בָּאֵ֖שׁ תִּשָּׂרֵֽף׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the daughter of any priest, if she profane herself by playing the harlot, she profanes her father: she shall be burnt with fire."
+    },
+    {
+      "n": 10,
+      "c": 21,
+      "v": 10,
+      "ref": "21:10",
+      "text": "וְהַכֹּהֵן֩ הַגָּד֨וֹל מֵאֶחָ֜יו אֲֽשֶׁר־יוּצַ֥ק עַל־רֹאשׁ֣וֹ&thinsp;<b>׀</b> שֶׁ֤מֶן הַמִּשְׁחָה֙ וּמִלֵּ֣א אֶת־יָד֔וֹ לִלְבֹּ֖שׁ אֶת־הַבְּגָדִ֑ים אֶת־רֹאשׁוֹ֙ לֹ֣א יִפְרָ֔ע וּבְגָדָ֖יו לֹ֥א יִפְרֹֽם׃",
+      "en": "And he that is the high priest among his brethren, upon whose head the anointing oil was poured, and that is consecrated to put on the garments, shall not suffer the hair of his head to grow long, nor rend his clothes;"
+    },
+    {
+      "n": 11,
+      "c": 21,
+      "v": 11,
+      "ref": "21:11",
+      "text": "וְעַ֛ל כׇּל־נַפְשֹׁ֥ת מֵ֖ת לֹ֣א יָבֹ֑א לְאָבִ֥יו וּלְאִמּ֖וֹ לֹ֥א יִטַּמָּֽא׃",
+      "en": "neither shall he go in to any dead body, nor defile himself for his father, or for his mother;"
+    },
+    {
+      "n": 12,
+      "c": 21,
+      "v": 12,
+      "ref": "21:12",
+      "text": "וּמִן־הַמִּקְדָּשׁ֙ לֹ֣א יֵצֵ֔א וְלֹ֣א יְחַלֵּ֔ל אֵ֖ת מִקְדַּ֣שׁ אֱלֹהָ֑יו כִּ֡י נֵ֠זֶר שֶׁ֣מֶן מִשְׁחַ֧ת אֱלֹהָ֛יו עָלָ֖יו אֲנִ֥י יְהֹוָֽה׃",
+      "en": "neither shall he go out of the sanctuary, nor profane the sanctuary of his God; for the crown of the anointing oil of his God is upon him: I am the Lord."
+    },
+    {
+      "n": 13,
+      "c": 21,
+      "v": 13,
+      "ref": "21:13",
+      "text": "וְה֕וּא אִשָּׁ֥ה בִבְתוּלֶ֖יהָ יִקָּֽח׃",
+      "en": "And he shall take a wife in her virginity."
+    },
+    {
+      "n": 14,
+      "c": 21,
+      "v": 14,
+      "ref": "21:14",
+      "text": "אַלְמָנָ֤ה וּגְרוּשָׁה֙ וַחֲלָלָ֣ה זֹנָ֔ה אֶת־אֵ֖לֶּה לֹ֣א יִקָּ֑ח כִּ֛י אִם־בְּתוּלָ֥ה מֵעַמָּ֖יו יִקַּ֥ח אִשָּֽׁה׃",
+      "en": "A widow, or a divorced woman, or a profaned, or a harlot, these shall he not take: but he shall take a virgin of his own people to wife."
+    },
+    {
+      "n": 15,
+      "c": 21,
+      "v": 15,
+      "ref": "21:15",
+      "text": "וְלֹֽא־יְחַלֵּ֥ל זַרְע֖וֹ בְּעַמָּ֑יו כִּ֛י אֲנִ֥י יְהֹוָ֖ה מְקַדְּשֽׁוֹ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Neither shall he profane his seed among his people: for I the Lord do sanctify him."
+    },
+    {
+      "n": 16,
+      "c": 21,
+      "v": 16,
+      "ref": "21:16",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 17,
+      "c": 21,
+      "v": 17,
+      "ref": "21:17",
+      "text": "דַּבֵּ֥ר אֶֽל־אַהֲרֹ֖ן לֵאמֹ֑ר אִ֣ישׁ מִֽזַּרְעֲךָ֞ לְדֹרֹתָ֗ם אֲשֶׁ֨ר יִהְיֶ֥ה בוֹ֙ מ֔וּם לֹ֣א יִקְרַ֔ב לְהַקְרִ֖יב לֶ֥חֶם אֱלֹהָֽיו׃",
+      "en": "speak to Aharon, saying, Whoever he be of thy seed in their generations that has any blemish, let him not approach to offer the bread of his God."
+    },
+    {
+      "n": 18,
+      "c": 21,
+      "v": 18,
+      "ref": "21:18",
+      "text": "כִּ֥י כׇל־אִ֛ישׁ אֲשֶׁר־בּ֥וֹ מ֖וּם לֹ֣א יִקְרָ֑ב אִ֤ישׁ עִוֵּר֙ א֣וֹ פִסֵּ֔חַ א֥וֹ חָרֻ֖ם א֥וֹ שָׂרֽוּעַ׃",
+      "en": "For whatever man he be that has a blemish, he shall not approach: a blind man, or a lame, or he that has a flat nose, or anything superfluous,"
+    },
+    {
+      "n": 19,
+      "c": 21,
+      "v": 19,
+      "ref": "21:19",
+      "text": "א֣וֹ אִ֔ישׁ אֲשֶׁר־יִהְיֶ֥ה ב֖וֹ שֶׁ֣בֶר רָ֑גֶל א֖וֹ שֶׁ֥בֶר יָֽד׃",
+      "en": "or a man that is brokenfooted, or brokenhanded,"
+    },
+    {
+      "n": 20,
+      "c": 21,
+      "v": 20,
+      "ref": "21:20",
+      "text": "אֽוֹ־גִבֵּ֣ן אוֹ־דַ֔ק א֖וֹ תְּבַלֻּ֣ל בְּעֵינ֑וֹ א֤וֹ גָרָב֙ א֣וֹ יַלֶּ֔פֶת א֖וֹ מְר֥וֹחַ אָֽשֶׁךְ׃",
+      "en": "or crookbacked, or a dwarf, or that has a blemish in his eye, or be scurvy, or scabbed, or whose stones are crushed."
+    },
+    {
+      "n": 21,
+      "c": 21,
+      "v": 21,
+      "ref": "21:21",
+      "text": "כׇּל־אִ֞ישׁ אֲשֶׁר־בּ֣וֹ מ֗וּם מִזֶּ֙רַע֙ אַהֲרֹ֣ן הַכֹּהֵ֔ן לֹ֣א יִגַּ֔שׁ לְהַקְרִ֖יב אֶת־אִשֵּׁ֣י יְהֹוָ֑ה מ֣וּם בּ֔וֹ אֵ֚ת לֶ֣חֶם אֱלֹהָ֔יו לֹ֥א יִגַּ֖שׁ לְהַקְרִֽיב׃",
+      "en": "No man that has a blemish of the seed of Aharon the priest shall come near to offer the offerings of the Lord made by fire: he has a blemish; he shall not come near to offer the bread of his God."
+    },
+    {
+      "n": 22,
+      "c": 21,
+      "v": 22,
+      "ref": "21:22",
+      "text": "לֶ֣חֶם אֱלֹהָ֔יו מִקׇּדְשֵׁ֖י הַקֳּדָשִׁ֑ים וּמִן־הַקֳּדָשִׁ֖ים יֹאכֵֽל׃",
+      "en": "He shall eat the bread of his God, both of the most holy, and of the holy."
+    },
+    {
+      "n": 23,
+      "c": 21,
+      "v": 23,
+      "ref": "21:23",
+      "text": "אַ֣ךְ אֶל־הַפָּרֹ֜כֶת לֹ֣א יָבֹ֗א וְאֶל־הַמִּזְבֵּ֛חַ לֹ֥א יִגַּ֖שׁ כִּֽי־מ֣וּם בּ֑וֹ וְלֹ֤א יְחַלֵּל֙ אֶת־מִקְדָּשַׁ֔י כִּ֛י אֲנִ֥י יְהֹוָ֖ה מְקַדְּשָֽׁם׃",
+      "en": "Only he shall not go in unto the veil, nor come near to the altar, because he has a blemish; that he profane not my holy places: for I the Lord do sanctify them."
+    },
+    {
+      "n": 24,
+      "c": 21,
+      "v": 24,
+      "ref": "21:24",
+      "text": "וַיְדַבֵּ֣ר מֹשֶׁ֔ה אֶֽל־אַהֲרֹ֖ן וְאֶל־בָּנָ֑יו וְאֶֽל־כׇּל־בְּנֵ֖י יִשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Moshe spoke to Aharon, and to his sons, and to all the children of Yisra᾽el."
+    },
+    {
+      "n": 25,
+      "c": 22,
+      "v": 1,
+      "ref": "22:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe saying,"
+    },
+    {
+      "n": 26,
+      "c": 22,
+      "v": 2,
+      "ref": "22:2",
+      "text": "דַּבֵּ֨ר אֶֽל־אַהֲרֹ֜ן וְאֶל־בָּנָ֗יו וְיִנָּֽזְרוּ֙ מִקׇּדְשֵׁ֣י בְנֵֽי־יִשְׂרָאֵ֔ל וְלֹ֥א יְחַלְּל֖וּ אֶת־שֵׁ֣ם קׇדְשִׁ֑י אֲשֶׁ֨ר הֵ֧ם מַקְדִּשִׁ֛ים לִ֖י אֲנִ֥י יְהֹוָֽה׃",
+      "en": "Speak to Aharon and to his sons, that they separate themselves from the holy things of the children of Yisra᾽el which they hallow to me, and they profane not my holy name, I am the Lord."
+    },
+    {
+      "n": 27,
+      "c": 22,
+      "v": 3,
+      "ref": "22:3",
+      "text": "אֱמֹ֣ר אֲלֵהֶ֗ם לְדֹרֹ֨תֵיכֶ֜ם כׇּל־אִ֣ישׁ&thinsp;<b>׀</b> אֲשֶׁר־יִקְרַ֣ב מִכׇּל־זַרְעֲכֶ֗ם אֶל־הַקֳּדָשִׁים֙ אֲשֶׁ֨ר יַקְדִּ֤ישׁוּ בְנֵֽי־יִשְׂרָאֵל֙ לַֽיהֹוָ֔ה וְטֻמְאָת֖וֹ עָלָ֑יו וְנִכְרְתָ֞ה הַנֶּ֧פֶשׁ הַהִ֛וא מִלְּפָנַ֖י אֲנִ֥י יְהֹוָֽה׃",
+      "en": "Say to them, Whoever he be of all your seed among your generations, that approaches the holy things, which the children of Yisra᾽el hallow to the Lord, having his uncleanness upon him, that soul shall be cut off from my presence: I am the Lord."
+    },
+    {
+      "n": 28,
+      "c": 22,
+      "v": 4,
+      "ref": "22:4",
+      "text": "אִ֣ישׁ אִ֞ישׁ מִזֶּ֣רַע אַהֲרֹ֗ן וְה֤וּא צָר֙וּעַ֙ א֣וֹ זָ֔ב בַּקֳּדָשִׁים֙ לֹ֣א יֹאכַ֔ל עַ֖ד אֲשֶׁ֣ר יִטְהָ֑ר וְהַנֹּגֵ֙עַ֙ בְּכׇל־טְמֵא־נֶ֔פֶשׁ א֣וֹ אִ֔ישׁ אֲשֶׁר־תֵּצֵ֥א מִמֶּ֖נּוּ שִׁכְבַת־זָֽרַע׃",
+      "en": "What man soever of the seed of Aharon that is stricken with żara῾at, or has a running issue; he shall not eat of the holy things, until he be clean. And whoever touches anything that is unclean by the dead, or a man whose semen goes from him;"
+    },
+    {
+      "n": 29,
+      "c": 22,
+      "v": 5,
+      "ref": "22:5",
+      "text": "אוֹ־אִישׁ֙ אֲשֶׁ֣ר יִגַּ֔ע בְּכׇל־שֶׁ֖רֶץ אֲשֶׁ֣ר יִטְמָא־ל֑וֹ א֤וֹ בְאָדָם֙ אֲשֶׁ֣ר יִטְמָא־ל֔וֹ לְכֹ֖ל טֻמְאָתֽוֹ׃",
+      "en": "or whoever touches any creeping thing, whereby he may be made unclean, or a man of whom he may take uncleanness, whatever uncleanness he has;"
+    },
+    {
+      "n": 30,
+      "c": 22,
+      "v": 6,
+      "ref": "22:6",
+      "text": "נֶ֚פֶשׁ אֲשֶׁ֣ר תִּגַּע־בּ֔וֹ וְטָמְאָ֖ה עַד־הָעָ֑רֶב וְלֹ֤א יֹאכַל֙ מִן־הַקֳּדָשִׁ֔ים כִּ֛י אִם־רָחַ֥ץ בְּשָׂר֖וֹ בַּמָּֽיִם׃",
+      "en": "the person who has touched any such shall be unclean until evening, and shall not eat of the holy things, unless he bathe his flesh with water."
+    },
+    {
+      "n": 31,
+      "c": 22,
+      "v": 7,
+      "ref": "22:7",
+      "text": "וּבָ֥א הַשֶּׁ֖מֶשׁ וְטָהֵ֑ר וְאַחַר֙ יֹאכַ֣ל מִן־הַקֳּדָשִׁ֔ים כִּ֥י לַחְמ֖וֹ הֽוּא׃",
+      "en": "And when the sun is down, he shall be clean, and shall afterwards eat of the holy things; because it is his food."
+    },
+    {
+      "n": 32,
+      "c": 22,
+      "v": 8,
+      "ref": "22:8",
+      "text": "נְבֵלָ֧ה וּטְרֵפָ֛ה לֹ֥א יֹאכַ֖ל לְטׇמְאָה־בָ֑הּ אֲנִ֖י יְהֹוָֽה׃",
+      "en": "That which dies of itself, or is torn with beasts, he shall not eat to defile himself with it: I am the Lord."
+    },
+    {
+      "n": 33,
+      "c": 22,
+      "v": 9,
+      "ref": "22:9",
+      "text": "וְשָׁמְר֣וּ אֶת־מִשְׁמַרְתִּ֗י וְלֹֽא־יִשְׂא֤וּ עָלָיו֙ חֵ֔טְא וּמֵ֥תוּ ב֖וֹ כִּ֣י יְחַלְּלֻ֑הוּ אֲנִ֥י יְהֹוָ֖ה מְקַדְּשָֽׁם׃",
+      "en": "They shall therefore keep my charge, lest they bear sin for it, and die therefore, if they profane it: I the Lord do sanctify them."
+    },
+    {
+      "n": 34,
+      "c": 22,
+      "v": 10,
+      "ref": "22:10",
+      "text": "וְכׇל־זָ֖ר לֹא־יֹ֣אכַל קֹ֑דֶשׁ תּוֹשַׁ֥ב כֹּהֵ֛ן וְשָׂכִ֖יר לֹא־יֹ֥אכַל קֹֽדֶשׁ׃",
+      "en": "No stranger shall eat of the holy thing: a tenant of a priest, or a hired servant, shall not eat of the holy thing."
+    },
+    {
+      "n": 35,
+      "c": 22,
+      "v": 11,
+      "ref": "22:11",
+      "text": "וְכֹהֵ֗ן כִּֽי־יִקְנֶ֥ה נֶ֙פֶשׁ֙ קִנְיַ֣ן כַּסְפּ֔וֹ ה֖וּא יֹ֣אכַל בּ֑וֹ וִילִ֣יד בֵּית֔וֹ הֵ֖ם יֹאכְל֥וּ בְלַחְמֽוֹ׃",
+      "en": "But if a priest buy any person with money, he may eat of it, and he that is born in his house: they shall eat of his bread."
+    },
+    {
+      "n": 36,
+      "c": 22,
+      "v": 12,
+      "ref": "22:12",
+      "text": "וּבַ֨ת־כֹּהֵ֔ן כִּ֥י תִהְיֶ֖ה לְאִ֣ישׁ זָ֑ר הִ֕וא בִּתְרוּמַ֥ת הַקֳּדָשִׁ֖ים לֹ֥א תֹאכֵֽל׃",
+      "en": "And if a priest’s daughter be married to a stranger, she may not eat of an offering of the holy things."
+    },
+    {
+      "n": 37,
+      "c": 22,
+      "v": 13,
+      "ref": "22:13",
+      "text": "וּבַת־כֹּהֵן֩ כִּ֨י תִהְיֶ֜ה אַלְמָנָ֣ה וּגְרוּשָׁ֗ה וְזֶ֘רַע֮ אֵ֣ין לָהּ֒ וְשָׁבָ֞ה אֶל־בֵּ֤ית אָבִ֙יהָ֙ כִּנְעוּרֶ֔יהָ מִלֶּ֥חֶם אָבִ֖יהָ תֹּאכֵ֑ל וְכׇל־זָ֖ר לֹא־יֹ֥אכַל בּֽוֹ׃",
+      "en": "But if a priest’s daughter be a widow, or divorced, and have no child, and has returned to her father’s house, as in her youth, she shall eat of her father’s bread: but no stranger shall eat of it."
+    },
+    {
+      "n": 38,
+      "c": 22,
+      "v": 14,
+      "ref": "22:14",
+      "text": "וְאִ֕ישׁ כִּֽי־יֹאכַ֥ל קֹ֖דֶשׁ בִּשְׁגָגָ֑ה וְיָסַ֤ף חֲמִֽשִׁיתוֹ֙ עָלָ֔יו וְנָתַ֥ן לַכֹּהֵ֖ן אֶת־הַקֹּֽדֶשׁ׃",
+      "en": "And if a man eat of the holy thing unwittingly, then he shall add the fifth part thereof to it, and shall give the holy thing to the priest."
+    },
+    {
+      "n": 39,
+      "c": 22,
+      "v": 15,
+      "ref": "22:15",
+      "text": "וְלֹ֣א יְחַלְּל֔וּ אֶת־קׇדְשֵׁ֖י בְּנֵ֣י יִשְׂרָאֵ֑ל אֵ֥ת אֲשֶׁר־יָרִ֖ימוּ לַיהֹוָֽה׃",
+      "en": "And they shall not profane the holy things of the children of Yisra᾽el, which they offer to the Lord;"
+    },
+    {
+      "n": 40,
+      "c": 22,
+      "v": 16,
+      "ref": "22:16",
+      "text": "וְהִשִּׂ֤יאוּ אוֹתָם֙ עֲוֺ֣ן אַשְׁמָ֔ה בְּאׇכְלָ֖ם אֶת־קׇדְשֵׁיהֶ֑ם כִּ֛י אֲנִ֥י יְהֹוָ֖ה מְקַדְּשָֽׁם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and so cause them to bear the iniquity of trespass, when they eat their holy things: for I the Lord do sanctify them."
+    },
+    {
+      "n": 41,
+      "c": 22,
+      "v": 17,
+      "ref": "22:17",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 42,
+      "c": 22,
+      "v": 18,
+      "ref": "22:18",
+      "text": "דַּבֵּ֨ר אֶֽל־אַהֲרֹ֜ן וְאֶל־בָּנָ֗יו וְאֶל֙ כׇּל־בְּנֵ֣י יִשְׂרָאֵ֔ל וְאָמַרְתָּ֖ אֲלֵהֶ֑ם אִ֣ישׁ אִישׁ֩ מִבֵּ֨ית יִשְׂרָאֵ֜ל וּמִן־הַגֵּ֣ר בְּיִשְׂרָאֵ֗ל אֲשֶׁ֨ר יַקְרִ֤יב קׇרְבָּנוֹ֙ לְכׇל־נִדְרֵיהֶם֙ וּלְכׇל־נִדְבוֹתָ֔ם אֲשֶׁר־יַקְרִ֥יבוּ לַיהֹוָ֖ה לְעֹלָֽה׃",
+      "en": "Speak to Aharon, and to his sons, and to all the children of Yisra᾽el, and say to them, Whatever he be of the house of Yisra᾽el, or of the strangers in Yisra᾽el, that will offer their sacrifice for all their vows, and for all their freewill offerings, which they will offer to the Lord for a burnt offering;"
+    },
+    {
+      "n": 43,
+      "c": 22,
+      "v": 19,
+      "ref": "22:19",
+      "text": "לִֽרְצֹנְכֶ֑ם תָּמִ֣ים זָכָ֔ר בַּבָּקָ֕ר בַּכְּשָׂבִ֖ים וּבָֽעִזִּֽים׃",
+      "en": "you shall offer, that you may be accepted, a male without blemish, of the oxen, of the sheep, or of the goats."
+    },
+    {
+      "n": 44,
+      "c": 22,
+      "v": 20,
+      "ref": "22:20",
+      "text": "כֹּ֛ל אֲשֶׁר־בּ֥וֹ מ֖וּם לֹ֣א תַקְרִ֑יבוּ כִּי־לֹ֥א לְרָצ֖וֹן יִהְיֶ֥ה לָכֶֽם׃",
+      "en": "But whatever has a blemish, that shall you not offer: for it shall not be acceptable for you."
+    },
+    {
+      "n": 45,
+      "c": 22,
+      "v": 21,
+      "ref": "22:21",
+      "text": "וְאִ֗ישׁ כִּֽי־יַקְרִ֤יב זֶֽבַח־שְׁלָמִים֙ לַיהֹוָ֔ה לְפַלֵּא־נֶ֙דֶר֙ א֣וֹ לִנְדָבָ֔ה בַּבָּקָ֖ר א֣וֹ בַצֹּ֑אן תָּמִ֤ים יִֽהְיֶה֙ לְרָצ֔וֹן כׇּל־מ֖וּם לֹ֥א יִהְיֶה־בּֽוֹ׃",
+      "en": "And whoever offers a sacrifice of peace offerings to the Lord to accomplish his vow, or a freewill offering in oxen or sheep, it shall be perfect to be accepted; no blemish shall be in it."
+    },
+    {
+      "n": 46,
+      "c": 22,
+      "v": 22,
+      "ref": "22:22",
+      "text": "עַוֶּ֩רֶת֩ א֨וֹ שָׁב֜וּר אוֹ־חָר֣וּץ אֽוֹ־יַבֶּ֗לֶת א֤וֹ גָרָב֙ א֣וֹ יַלֶּ֔פֶת לֹא־תַקְרִ֥יבוּ אֵ֖לֶּה לַיהֹוָ֑ה וְאִשֶּׁ֗ה לֹא־תִתְּנ֥וּ מֵהֶ֛ם עַל־הַמִּזְבֵּ֖חַ לַיהֹוָֽה׃",
+      "en": "Blind, or broken, or maimed, or having a growth, or scurvy, or scabbed, you shall not offer these to the Lord, nor make an offering by fire of them upon the altar to the Lord."
+    },
+    {
+      "n": 47,
+      "c": 22,
+      "v": 23,
+      "ref": "22:23",
+      "text": "וְשׁ֥וֹר וָשֶׂ֖ה שָׂר֣וּעַ וְקָל֑וּט נְדָבָה֙ תַּעֲשֶׂ֣ה אֹת֔וֹ וּלְנֵ֖דֶר לֹ֥א יֵרָצֶֽה׃",
+      "en": "Either a bullock or a lamb that has anything superfluous or too short, that mayst thou offer for a freewill offering; but for a vow it shall not be accepted."
+    },
+    {
+      "n": 48,
+      "c": 22,
+      "v": 24,
+      "ref": "22:24",
+      "text": "וּמָע֤וּךְ וְכָתוּת֙ וְנָת֣וּק וְכָר֔וּת לֹ֥א תַקְרִ֖יבוּ לַֽיהֹוָ֑ה וּֽבְאַרְצְכֶ֖ם לֹ֥א תַעֲשֽׂוּ׃",
+      "en": "You shall not offer to the Lord that which has its testicles bruised or crushed, or broken, or cut; neither shall you do thus in your land."
+    },
+    {
+      "n": 49,
+      "c": 22,
+      "v": 25,
+      "ref": "22:25",
+      "text": "וּמִיַּ֣ד בֶּן־נֵכָ֗ר לֹ֥א תַקְרִ֛יבוּ אֶת־לֶ֥חֶם אֱלֹהֵיכֶ֖ם מִכׇּל־אֵ֑לֶּה כִּ֣י מׇשְׁחָתָ֤ם בָּהֶם֙ מ֣וּם בָּ֔ם לֹ֥א יֵרָצ֖וּ לָכֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Neither from a stranger’s hand shall you offer the bread of your God from any of these; because their corruption is in them, their blemish is in them: they shall not be accepted for you."
+    },
+    {
+      "n": 50,
+      "c": 22,
+      "v": 26,
+      "ref": "22:26",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 51,
+      "c": 22,
+      "v": 27,
+      "ref": "22:27",
+      "text": "שׁ֣וֹר אוֹ־כֶ֤שֶׂב אוֹ־עֵז֙ כִּ֣י יִוָּלֵ֔ד וְהָיָ֛ה שִׁבְעַ֥ת יָמִ֖ים תַּ֣חַת אִמּ֑וֹ וּמִיּ֤וֹם הַשְּׁמִינִי֙ וָהָ֔לְאָה יֵרָצֶ֕ה לְקׇרְבַּ֥ן אִשֶּׁ֖ה לַיהֹוָֽה׃",
+      "en": "When a bullock, or a sheep, or a goat, is brought forth, then it shall be seven days under its dam; and from the eighth day and thenceforth it shall be accepted for an offering made by fire to the Lord."
+    },
+    {
+      "n": 52,
+      "c": 22,
+      "v": 28,
+      "ref": "22:28",
+      "text": "וְשׁ֖וֹר אוֹ־שֶׂ֑ה אֹת֣וֹ וְאֶת־בְּנ֔וֹ לֹ֥א תִשְׁחֲט֖וּ בְּי֥וֹם אֶחָֽד׃",
+      "en": "And whether it be cow or ewe, you shall not kill it and its young both in one day."
+    },
+    {
+      "n": 53,
+      "c": 22,
+      "v": 29,
+      "ref": "22:29",
+      "text": "וְכִֽי־תִזְבְּח֥וּ זֶֽבַח־תּוֹדָ֖ה לַיהֹוָ֑ה לִֽרְצֹנְכֶ֖ם תִּזְבָּֽחוּ׃",
+      "en": "And when you will offer a sacrifice of thanksgiving to the Lord, offer it that it may be accepted."
+    },
+    {
+      "n": 54,
+      "c": 22,
+      "v": 30,
+      "ref": "22:30",
+      "text": "בַּיּ֤וֹם הַהוּא֙ יֵאָכֵ֔ל לֹֽא־תוֹתִ֥ירוּ מִמֶּ֖נּוּ עַד־בֹּ֑קֶר אֲנִ֖י יְהֹוָֽה׃",
+      "en": "On the same day it shall be eaten up; you shall leave none of it until the morrow: I am the Lord."
+    },
+    {
+      "n": 55,
+      "c": 22,
+      "v": 31,
+      "ref": "22:31",
+      "text": "וּשְׁמַרְתֶּם֙ מִצְוֺתַ֔י וַעֲשִׂיתֶ֖ם אֹתָ֑ם אֲנִ֖י יְהֹוָֽה׃",
+      "en": "And you shall keep my commandments, and do them: I am the Lord."
+    },
+    {
+      "n": 56,
+      "c": 22,
+      "v": 32,
+      "ref": "22:32",
+      "text": "וְלֹ֤א תְחַלְּלוּ֙ אֶת־שֵׁ֣ם קׇדְשִׁ֔י וְנִ֨קְדַּשְׁתִּ֔י בְּת֖וֹךְ בְּנֵ֣י יִשְׂרָאֵ֑ל אֲנִ֥י יְהֹוָ֖ה מְקַדִּשְׁכֶֽם׃",
+      "en": "Neither shall you profane my holy name; but I will be hallowed among the children of  Yisra᾽el: I am the Lord who make you holy,"
+    },
+    {
+      "n": 57,
+      "c": 22,
+      "v": 33,
+      "ref": "22:33",
+      "text": "הַמּוֹצִ֤יא אֶתְכֶם֙ מֵאֶ֣רֶץ מִצְרַ֔יִם לִהְי֥וֹת לָכֶ֖ם לֵאלֹהִ֑ים אֲנִ֖י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "who brought you out of the land of Miżrayim, to be your God: I am the Lord."
+    },
+    {
+      "n": 58,
+      "c": 23,
+      "v": 1,
+      "ref": "23:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 59,
+      "c": 23,
+      "v": 2,
+      "ref": "23:2",
+      "text": "דַּבֵּ֞ר אֶל־בְּנֵ֤י יִשְׂרָאֵל֙ וְאָמַרְתָּ֣ אֲלֵהֶ֔ם מוֹעֲדֵ֣י יְהֹוָ֔ה אֲשֶׁר־תִּקְרְא֥וּ אֹתָ֖ם מִקְרָאֵ֣י קֹ֑דֶשׁ אֵ֥לֶּה הֵ֖ם מוֹעֲדָֽי׃",
+      "en": "Speak to the children of Yisra᾽el, and say to them, The feasts of the Lord, which you shall proclaim to be holy gatherings, these are my feasts."
+    },
+    {
+      "n": 60,
+      "c": 23,
+      "v": 3,
+      "ref": "23:3",
+      "text": "שֵׁ֣שֶׁת יָמִים֮ תֵּעָשֶׂ֣ה מְלָאכָה֒ וּבַיּ֣וֹם הַשְּׁבִיעִ֗י שַׁבַּ֤ת שַׁבָּתוֹן֙ מִקְרָא־קֹ֔דֶשׁ כׇּל־מְלָאכָ֖ה לֹ֣א תַעֲשׂ֑וּ שַׁבָּ֥ת הִוא֙ לַֽיהֹוָ֔ה בְּכֹ֖ל מוֹשְׁבֹֽתֵיכֶֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Six days shall work be done: but the seventh day is the sabbath of solemn rest, a holy gathering; you shall do no work: it is a sabbath to the Lord in all your dwellings."
+    },
+    {
+      "n": 61,
+      "c": 23,
+      "v": 4,
+      "ref": "23:4",
+      "text": "אֵ֚לֶּה מוֹעֲדֵ֣י יְהֹוָ֔ה מִקְרָאֵ֖י קֹ֑דֶשׁ אֲשֶׁר־תִּקְרְא֥וּ אֹתָ֖ם בְּמוֹעֲדָֽם׃",
+      "en": "These are the feasts of the Lord, holy gatherings, which you shall proclaim in their seasons."
+    },
+    {
+      "n": 62,
+      "c": 23,
+      "v": 5,
+      "ref": "23:5",
+      "text": "בַּחֹ֣דֶשׁ הָרִאשׁ֗וֹן בְּאַרְבָּעָ֥ה עָשָׂ֛ר לַחֹ֖דֶשׁ בֵּ֣ין הָעַרְבָּ֑יִם פֶּ֖סַח לַיהֹוָֽה׃",
+      "en": "On the fourteenth day of the first month towards evening is the Lord’s passover."
+    },
+    {
+      "n": 63,
+      "c": 23,
+      "v": 6,
+      "ref": "23:6",
+      "text": "וּבַחֲמִשָּׁ֨ה עָשָׂ֥ר יוֹם֙ לַחֹ֣דֶשׁ הַזֶּ֔ה חַ֥ג הַמַּצּ֖וֹת לַיהֹוָ֑ה שִׁבְעַ֥ת יָמִ֖ים מַצּ֥וֹת תֹּאכֵֽלוּ׃",
+      "en": "And on the fifteenth day of the same month is the feast of unleavened bread to the Lord: seven days you must eat unleavened bread."
+    },
+    {
+      "n": 64,
+      "c": 23,
+      "v": 7,
+      "ref": "23:7",
+      "text": "בַּיּוֹם֙ הָֽרִאשׁ֔וֹן מִקְרָא־קֹ֖דֶשׁ יִהְיֶ֣ה לָכֶ֑ם כׇּל־מְלֶ֥אכֶת עֲבֹדָ֖ה לֹ֥א תַעֲשֽׂוּ׃",
+      "en": "On the first day you shall have a holy gathering: you shall do no servile work."
+    },
+    {
+      "n": 65,
+      "c": 23,
+      "v": 8,
+      "ref": "23:8",
+      "text": "וְהִקְרַבְתֶּ֥ם אִשֶּׁ֛ה לַיהֹוָ֖ה שִׁבְעַ֣ת יָמִ֑ים בַּיּ֤וֹם הַשְּׁבִיעִי֙ מִקְרָא־קֹ֔דֶשׁ כׇּל־מְלֶ֥אכֶת עֲבֹדָ֖ה לֹ֥א תַעֲשֽׂוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "But you shall offer an offering made by fire to the Lord for seven days: on the seventh day is a holy gathering: you shall do no servile work."
+    },
+    {
+      "n": 66,
+      "c": 23,
+      "v": 9,
+      "ref": "23:9",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 67,
+      "c": 23,
+      "v": 10,
+      "ref": "23:10",
+      "text": "דַּבֵּ֞ר אֶל־בְּנֵ֤י יִשְׂרָאֵל֙ וְאָמַרְתָּ֣ אֲלֵהֶ֔ם כִּֽי־תָבֹ֣אוּ אֶל־הָאָ֗רֶץ אֲשֶׁ֤ר אֲנִי֙ נֹתֵ֣ן לָכֶ֔ם וּקְצַרְתֶּ֖ם אֶת־קְצִירָ֑הּ וַהֲבֵאתֶ֥ם אֶת־עֹ֛מֶר רֵאשִׁ֥ית קְצִירְכֶ֖ם אֶל־הַכֹּהֵֽן׃",
+      "en": "Speak to the children of Yisra᾽el, and say to them, When you are come to the land which I give to you, and shall reap its harvest, then you shall bring an ῾omer of the firstfruits of your harvest to the priest:"
+    },
+    {
+      "n": 68,
+      "c": 23,
+      "v": 11,
+      "ref": "23:11",
+      "text": "וְהֵנִ֧יף אֶת־הָעֹ֛מֶר לִפְנֵ֥י יְהֹוָ֖ה לִֽרְצֹנְכֶ֑ם מִֽמׇּחֳרַת֙ הַשַּׁבָּ֔ת יְנִיפֶ֖נּוּ הַכֹּהֵֽן׃",
+      "en": "and he shall wave the ῾omer before the Lord, to be accepted for you: on the morrow after the sabbath the priest shall wave it."
+    },
+    {
+      "n": 69,
+      "c": 23,
+      "v": 12,
+      "ref": "23:12",
+      "text": "וַעֲשִׂיתֶ֕ם בְּי֥וֹם הֲנִֽיפְכֶ֖ם אֶת־הָעֹ֑מֶר כֶּ֣בֶשׂ תָּמִ֧ים בֶּן־שְׁנָת֛וֹ לְעֹלָ֖ה לַיהֹוָֽה׃",
+      "en": "And you shall offer that day when you wave the ῾omer a he lamb without blemish of the first year for a burnt offering to the Lord."
+    },
+    {
+      "n": 70,
+      "c": 23,
+      "v": 13,
+      "ref": "23:13",
+      "text": "וּמִנְחָתוֹ֩ שְׁנֵ֨י עֶשְׂרֹנִ֜ים סֹ֣לֶת בְּלוּלָ֥ה בַשֶּׁ֛מֶן אִשֶּׁ֥ה לַיהֹוָ֖ה רֵ֣יחַ נִיחֹ֑חַ וְנִסְכֹּ֥ה יַ֖יִן רְבִיעִ֥ת הַהִֽין׃",
+      "en": "And the meal offering thereof shall be two tenth measures of fine flour mingled with oil, an offering made by fire to the Lord for a sweet savour: and its drink offering shall be of wine, the fourth part of a hin."
+    },
+    {
+      "n": 71,
+      "c": 23,
+      "v": 14,
+      "ref": "23:14",
+      "text": "וְלֶ֩חֶם֩ וְקָלִ֨י וְכַרְמֶ֜ל לֹ֣א תֹֽאכְל֗וּ עַד־עֶ֙צֶם֙ הַיּ֣וֹם הַזֶּ֔ה עַ֚ד הֲבִ֣יאֲכֶ֔ם אֶת־קׇרְבַּ֖ן אֱלֹהֵיכֶ֑ם חֻקַּ֤ת עוֹלָם֙ לְדֹרֹ֣תֵיכֶ֔ם בְּכֹ֖ל מֹשְׁבֹֽתֵיכֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And you shall eat neither bread, nor parched corn, nor green ears, until that very day, until you have brought an offering to your God: it shall be a statute for ever throughout your generations in all your dwellings."
+    },
+    {
+      "n": 72,
+      "c": 23,
+      "v": 15,
+      "ref": "23:15",
+      "text": "וּסְפַרְתֶּ֤ם לָכֶם֙ מִמׇּחֳרַ֣ת הַשַּׁבָּ֔ת מִיּוֹם֙ הֲבִ֣יאֲכֶ֔ם אֶת־עֹ֖מֶר הַתְּנוּפָ֑ה שֶׁ֥בַע שַׁבָּת֖וֹת תְּמִימֹ֥ת תִּהְיֶֽינָה׃",
+      "en": "And you shall count for yourselves from the morrow after the sabbath, from the day that you brought the ῾omer of the wave offering; seven complete sabbaths shall there be:"
+    },
+    {
+      "n": 73,
+      "c": 23,
+      "v": 16,
+      "ref": "23:16",
+      "text": "עַ֣ד מִֽמׇּחֳרַ֤ת הַשַּׁבָּת֙ הַשְּׁבִיעִ֔ת תִּסְפְּר֖וּ חֲמִשִּׁ֣ים י֑וֹם וְהִקְרַבְתֶּ֛ם מִנְחָ֥ה חֲדָשָׁ֖ה לַיהֹוָֽה׃",
+      "en": "to the morrow after the seventh sabbath shall you number fifty days and you shall offer a new meal offering to the Lord."
+    },
+    {
+      "n": 74,
+      "c": 23,
+      "v": 17,
+      "ref": "23:17",
+      "text": "מִמּוֹשְׁבֹ֨תֵיכֶ֜ם תָּבִ֣יאּוּ&thinsp;<b>׀</b> לֶ֣חֶם תְּנוּפָ֗ה שְׁ֚תַּיִם שְׁנֵ֣י עֶשְׂרֹנִ֔ים סֹ֣לֶת תִּהְיֶ֔ינָה חָמֵ֖ץ תֵּאָפֶ֑ינָה בִּכּוּרִ֖ים לַֽיהֹוָֽה׃",
+      "en": "You shall bring out of your habitations two wave loaves of two tenth measures: they shall be of fine flour; they shall be baked with leaven; they are the firstfruits to the Lord."
+    },
+    {
+      "n": 75,
+      "c": 23,
+      "v": 18,
+      "ref": "23:18",
+      "text": "וְהִקְרַבְתֶּ֣ם עַל־הַלֶּ֗חֶם שִׁבְעַ֨ת כְּבָשִׂ֤ים תְּמִימִם֙ בְּנֵ֣י שָׁנָ֔ה וּפַ֧ר בֶּן־בָּקָ֛ר אֶחָ֖ד וְאֵילִ֣ם שְׁנָ֑יִם יִהְי֤וּ עֹלָה֙ לַֽיהֹוָ֔ה וּמִנְחָתָם֙ וְנִסְכֵּיהֶ֔ם אִשֵּׁ֥ה רֵֽיחַ־נִיחֹ֖חַ לַיהֹוָֽה׃",
+      "en": "And you shall offer with the bread seven lambs without blemish of the first year, and one young bullock, and two rams: they shall be for a burnt offering to the Lord, with their meal offering, and their drink offerings, an offering made by fire, of sweet savour to the Lord."
+    },
+    {
+      "n": 76,
+      "c": 23,
+      "v": 19,
+      "ref": "23:19",
+      "text": "וַעֲשִׂיתֶ֛ם שְׂעִיר־עִזִּ֥ים אֶחָ֖ד לְחַטָּ֑את וּשְׁנֵ֧י כְבָשִׂ֛ים בְּנֵ֥י שָׁנָ֖ה לְזֶ֥בַח שְׁלָמִֽים׃",
+      "en": "Then you shall sacrifice one kid of the goats for a sin offering, and two lambs of the first year for a sacrifice of peace offerings."
+    },
+    {
+      "n": 77,
+      "c": 23,
+      "v": 20,
+      "ref": "23:20",
+      "text": "וְהֵנִ֣יף הַכֹּהֵ֣ן&thinsp;<small>׀</small>&thinsp;אֹתָ֡ם עַל֩ לֶ֨חֶם הַבִּכֻּרִ֤ים תְּנוּפָה֙ לִפְנֵ֣י יְהֹוָ֔ה עַל־שְׁנֵ֖י כְּבָשִׂ֑ים קֹ֛דֶשׁ יִהְי֥וּ לַיהֹוָ֖ה לַכֹּהֵֽן׃",
+      "en": "And the priest shall wave them with the bread of the firstfruits for a wave offering before the Lord, with the two lambs: they shall be holy to the Lord for the priest."
+    },
+    {
+      "n": 78,
+      "c": 23,
+      "v": 21,
+      "ref": "23:21",
+      "text": "וּקְרָאתֶ֞ם בְּעֶ֣צֶם&thinsp;<b>׀</b> הַיּ֣וֹם הַזֶּ֗ה מִֽקְרָא־קֹ֙דֶשׁ֙ יִהְיֶ֣ה לָכֶ֔ם כׇּל־מְלֶ֥אכֶת עֲבֹדָ֖ה לֹ֣א תַעֲשׂ֑וּ חֻקַּ֥ת עוֹלָ֛ם בְּכׇל־מוֹשְׁבֹ֥תֵיכֶ֖ם לְדֹרֹֽתֵיכֶֽם׃",
+      "en": "And you shall proclaim on this very same day, that it may be a holy gathering to you: you shall do no servile work: it shall be a statute for ever in all your dwellings throughout your generations."
+    },
+    {
+      "n": 79,
+      "c": 23,
+      "v": 22,
+      "ref": "23:22",
+      "text": "וּֽבְקֻצְרְכֶ֞ם אֶת־קְצִ֣יר אַרְצְכֶ֗ם לֹֽא־תְכַלֶּ֞ה פְּאַ֤ת שָֽׂדְךָ֙ בְּקֻצְרֶ֔ךָ וְלֶ֥קֶט קְצִירְךָ֖ לֹ֣א תְלַקֵּ֑ט לֶֽעָנִ֤י וְלַגֵּר֙ תַּעֲזֹ֣ב אֹתָ֔ם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And when you reap the harvest of your land, thou shalt not altogether remove the corners of thy field when thou reapest, nor shalt thou gather any gleaning of thy harvest: thou shalt leave them to the poor, and to the stranger: I am the Lord your God."
+    },
+    {
+      "n": 80,
+      "c": 23,
+      "v": 23,
+      "ref": "23:23",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 81,
+      "c": 23,
+      "v": 24,
+      "ref": "23:24",
+      "text": "דַּבֵּ֛ר אֶל־בְּנֵ֥י יִשְׂרָאֵ֖ל לֵאמֹ֑ר בַּחֹ֨דֶשׁ הַשְּׁבִיעִ֜י בְּאֶחָ֣ד לַחֹ֗דֶשׁ יִהְיֶ֤ה לָכֶם֙ שַׁבָּת֔וֹן זִכְר֥וֹן תְּרוּעָ֖ה מִקְרָא־קֹֽדֶשׁ׃",
+      "en": "Speak to the children of Yisra᾽el, saying, In the seventh month, on the first day of the month, shall you have a sabbath, a memorial of  blowing of  horns, a holy gathering."
+    },
+    {
+      "n": 82,
+      "c": 23,
+      "v": 25,
+      "ref": "23:25",
+      "text": "כׇּל־מְלֶ֥אכֶת עֲבֹדָ֖ה לֹ֣א תַעֲשׂ֑וּ וְהִקְרַבְתֶּ֥ם אִשֶּׁ֖ה לַיהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "You shall do no servile work: but you shall offer an offering made by fire to the Lord."
+    },
+    {
+      "n": 83,
+      "c": 23,
+      "v": 26,
+      "ref": "23:26",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 84,
+      "c": 23,
+      "v": 27,
+      "ref": "23:27",
+      "text": "אַ֡ךְ בֶּעָשׂ֣וֹר לַחֹ֩דֶשׁ֩ הַשְּׁבִיעִ֨י הַזֶּ֜ה י֧וֹם הַכִּפֻּרִ֣ים ה֗וּא מִֽקְרָא־קֹ֙דֶשׁ֙ יִהְיֶ֣ה לָכֶ֔ם וְעִנִּיתֶ֖ם אֶת־נַפְשֹׁתֵיכֶ֑ם וְהִקְרַבְתֶּ֥ם אִשֶּׁ֖ה לַיהֹוָֽה׃",
+      "en": "Also on the tenth day of this seventh month there shall be a day of atonement: it shall be a holy gathering to you; and you shall afflict your souls, and offer an offering made by fire to the Lord."
+    },
+    {
+      "n": 85,
+      "c": 23,
+      "v": 28,
+      "ref": "23:28",
+      "text": "וְכׇל־מְלָאכָה֙ לֹ֣א תַעֲשׂ֔וּ בְּעֶ֖צֶם הַיּ֣וֹם הַזֶּ֑ה כִּ֣י י֤וֹם כִּפֻּרִים֙ ה֔וּא לְכַפֵּ֣ר עֲלֵיכֶ֔ם לִפְנֵ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "And you shall do no work on that very same day: for it is a day of atonement, to make atonement for you before the Lord your God."
+    },
+    {
+      "n": 86,
+      "c": 23,
+      "v": 29,
+      "ref": "23:29",
+      "text": "כִּ֤י כׇל־הַנֶּ֙פֶשׁ֙ אֲשֶׁ֣ר לֹֽא־תְעֻנֶּ֔ה בְּעֶ֖צֶם הַיּ֣וֹם הַזֶּ֑ה וְנִכְרְתָ֖ה מֵֽעַמֶּֽיהָ׃",
+      "en": "For whatever person shall not be afflicted on that same day, he shall be cut off from his people."
+    },
+    {
+      "n": 87,
+      "c": 23,
+      "v": 30,
+      "ref": "23:30",
+      "text": "וְכׇל־הַנֶּ֗פֶשׁ אֲשֶׁ֤ר תַּעֲשֶׂה֙ כׇּל־מְלָאכָ֔ה בְּעֶ֖צֶם הַיּ֣וֹם הַזֶּ֑ה וְהַֽאֲבַדְתִּ֛י אֶת־הַנֶּ֥פֶשׁ הַהִ֖וא מִקֶּ֥רֶב עַמָּֽהּ׃",
+      "en": "And whatever person does any work on that same day, the same person will I destroy from among his people."
+    },
+    {
+      "n": 88,
+      "c": 23,
+      "v": 31,
+      "ref": "23:31",
+      "text": "כׇּל־מְלָאכָ֖ה לֹ֣א תַעֲשׂ֑וּ חֻקַּ֤ת עוֹלָם֙ לְדֹרֹ֣תֵיכֶ֔ם בְּכֹ֖ל מֹשְׁבֹֽתֵיכֶֽם׃",
+      "en": "You shall do no manner of work: it shall be a statute for ever throughout your generations in all your dwellings."
+    },
+    {
+      "n": 89,
+      "c": 23,
+      "v": 32,
+      "ref": "23:32",
+      "text": "שַׁבַּ֨ת שַׁבָּת֥וֹן הוּא֙ לָכֶ֔ם וְעִנִּיתֶ֖ם אֶת־נַפְשֹׁתֵיכֶ֑ם בְּתִשְׁעָ֤ה לַחֹ֙דֶשׁ֙ בָּעֶ֔רֶב מֵעֶ֣רֶב עַד־עֶ֔רֶב תִּשְׁבְּת֖וּ שַׁבַּתְּכֶֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "It shall be to you a sabbath of solemn rest, and you shall afflict your souls: on the ninth day of the month at evening, from evening to evening shall you celebrate your sabbath."
+    },
+    {
+      "n": 90,
+      "c": 23,
+      "v": 33,
+      "ref": "23:33",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 91,
+      "c": 23,
+      "v": 34,
+      "ref": "23:34",
+      "text": "דַּבֵּ֛ר אֶל־בְּנֵ֥י יִשְׂרָאֵ֖ל לֵאמֹ֑ר בַּחֲמִשָּׁ֨ה עָשָׂ֜ר י֗וֹם לַחֹ֤דֶשׁ הַשְּׁבִיעִי֙ הַזֶּ֔ה חַ֧ג הַסֻּכּ֛וֹת שִׁבְעַ֥ת יָמִ֖ים לַיהֹוָֽה׃",
+      "en": "Speak to the children of Yisra᾽el, saying, The fifteenth day of this seventh month shall be the feast of booths for seven days to the Lord."
+    },
+    {
+      "n": 92,
+      "c": 23,
+      "v": 35,
+      "ref": "23:35",
+      "text": "בַּיּ֥וֹם הָרִאשׁ֖וֹן מִקְרָא־קֹ֑דֶשׁ כׇּל־מְלֶ֥אכֶת עֲבֹדָ֖ה לֹ֥א תַעֲשֽׂוּ׃",
+      "en": "On the first day shall be a holy gathering: you shall do no servile work."
+    },
+    {
+      "n": 93,
+      "c": 23,
+      "v": 36,
+      "ref": "23:36",
+      "text": "שִׁבְעַ֣ת יָמִ֔ים תַּקְרִ֥יבוּ אִשֶּׁ֖ה לַיהֹוָ֑ה בַּיּ֣וֹם הַשְּׁמִינִ֡י מִקְרָא־קֹ֩דֶשׁ֩ יִהְיֶ֨ה לָכֶ֜ם וְהִקְרַבְתֶּ֨ם אִשֶּׁ֤ה לַֽיהֹוָה֙ עֲצֶ֣רֶת הִ֔וא כׇּל־מְלֶ֥אכֶת עֲבֹדָ֖ה לֹ֥א תַעֲשֽׂוּ׃",
+      "en": "Seven days you shall offer an offering made by fire to the Lord: on the eighth day shall be a holy gathering to you; and you shall offer an offering made by fire to the Lord; it is a solemn assembly; and you shall do no servile work."
+    },
+    {
+      "n": 94,
+      "c": 23,
+      "v": 37,
+      "ref": "23:37",
+      "text": "אֵ֚לֶּה מוֹעֲדֵ֣י יְהֹוָ֔ה אֲשֶׁר־תִּקְרְא֥וּ אֹתָ֖ם מִקְרָאֵ֣י קֹ֑דֶשׁ לְהַקְרִ֨יב אִשֶּׁ֜ה לַיהֹוָ֗ה עֹלָ֧ה וּמִנְחָ֛ה זֶ֥בַח וּנְסָכִ֖ים דְּבַר־י֥וֹם בְּיוֹמֽוֹ׃",
+      "en": "These are the feasts of the Lord, which you shall proclaim to be holy gatherings, to offer an offering made by fire to the Lord, a burnt offering, and a meal offering, a sacrifice, and drink offerings, every thing upon its day:"
+    },
+    {
+      "n": 95,
+      "c": 23,
+      "v": 38,
+      "ref": "23:38",
+      "text": "מִלְּבַ֖ד שַׁבְּתֹ֣ת יְהֹוָ֑ה וּמִלְּבַ֣ד מַתְּנֽוֹתֵיכֶ֗ם וּמִלְּבַ֤ד כׇּל־נִדְרֵיכֶם֙ וּמִלְּבַד֙ כׇּל־נִדְבֹ֣תֵיכֶ֔ם אֲשֶׁ֥ר תִּתְּנ֖וּ לַיהֹוָֽה׃",
+      "en": "beside the sabbaths of the Lord, and beside your gifts, and beside all your vows, and beside all your freewill offerings, which you give to the Lord."
+    },
+    {
+      "n": 96,
+      "c": 23,
+      "v": 39,
+      "ref": "23:39",
+      "text": "אַ֡ךְ בַּחֲמִשָּׁה֩ עָשָׂ֨ר י֜וֹם לַחֹ֣דֶשׁ הַשְּׁבִיעִ֗י בְּאׇסְפְּכֶם֙ אֶת־תְּבוּאַ֣ת הָאָ֔רֶץ תָּחֹ֥גּוּ אֶת־חַג־יְהֹוָ֖ה שִׁבְעַ֣ת יָמִ֑ים בַּיּ֤וֹם הָֽרִאשׁוֹן֙ שַׁבָּת֔וֹן וּבַיּ֥וֹם הַשְּׁמִינִ֖י שַׁבָּתֽוֹן׃",
+      "en": "Also on the fifteenth day of the seventh month, when you have gathered in the fruit of the land, you shall keep a feast to the Lord seven days: on the first day shall be a sabbath, and on the eighth day shall be a sabbath."
+    },
+    {
+      "n": 97,
+      "c": 23,
+      "v": 40,
+      "ref": "23:40",
+      "text": "וּלְקַחְתֶּ֨ם לָכֶ֜ם בַּיּ֣וֹם הָרִאשׁ֗וֹן פְּרִ֨י עֵ֤ץ הָדָר֙ כַּפֹּ֣ת תְּמָרִ֔ים וַעֲנַ֥ף עֵץ־עָבֹ֖ת וְעַרְבֵי־נָ֑חַל וּשְׂמַחְתֶּ֗ם לִפְנֵ֛י יְהֹוָ֥ה אֱלֹהֵיכֶ֖ם שִׁבְעַ֥ת יָמִֽים׃",
+      "en": "And you shall take for yourselves on the first day the fruit of the tree hadar, branches of palm trees, and the boughs of thick leaved trees, and willows of the brook; and you shall rejoice before the Lord your God seven days."
+    },
+    {
+      "n": 98,
+      "c": 23,
+      "v": 41,
+      "ref": "23:41",
+      "text": "וְחַגֹּתֶ֤ם אֹתוֹ֙ חַ֣ג לַֽיהֹוָ֔ה שִׁבְעַ֥ת יָמִ֖ים בַּשָּׁנָ֑ה חֻקַּ֤ת עוֹלָם֙ לְדֹרֹ֣תֵיכֶ֔ם בַּחֹ֥דֶשׁ הַשְּׁבִיעִ֖י תָּחֹ֥גּוּ אֹתֽוֹ׃",
+      "en": "And you shall keep it a feast to the Lord seven days in the year. It shall be a statute for ever in your generations: you shall celebrate it in the seventh month."
+    },
+    {
+      "n": 99,
+      "c": 23,
+      "v": 42,
+      "ref": "23:42",
+      "text": "בַּסֻּכֹּ֥ת תֵּשְׁב֖וּ שִׁבְעַ֣ת יָמִ֑ים כׇּל־הָֽאֶזְרָח֙ בְּיִשְׂרָאֵ֔ל יֵשְׁב֖וּ בַּסֻּכֹּֽת׃",
+      "en": "You shall dwell in booths seven days; all that are home born in Yisra᾽el shall dwell in booths:"
+    },
+    {
+      "n": 100,
+      "c": 23,
+      "v": 43,
+      "ref": "23:43",
+      "text": "לְמַ֘עַן֮ יֵדְע֣וּ דֹרֹֽתֵיכֶם֒ כִּ֣י בַסֻּכּ֗וֹת הוֹשַׁ֙בְתִּי֙ אֶת־בְּנֵ֣י יִשְׂרָאֵ֔ל בְּהוֹצִיאִ֥י אוֹתָ֖ם מֵאֶ֣רֶץ מִצְרָ֑יִם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "that your generations may know that I made the children of Yisra᾽el to dwell in booths, when I brought them out of the land of Miżrayim: I am the Lord your God."
+    },
+    {
+      "n": 101,
+      "c": 23,
+      "v": 44,
+      "ref": "23:44",
+      "text": "וַיְדַבֵּ֣ר מֹשֶׁ֔ה אֶֽת־מֹעֲדֵ֖י יְהֹוָ֑ה אֶל־בְּנֵ֖י יִשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Moshe declared to the children of Yisra᾽el the appointed seasons of the Lord."
+    },
+    {
+      "n": 102,
+      "c": 24,
+      "v": 1,
+      "ref": "24:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 103,
+      "c": 24,
+      "v": 2,
+      "ref": "24:2",
+      "text": "צַ֞ו אֶת־בְּנֵ֣י יִשְׂרָאֵ֗ל וְיִקְח֨וּ אֵלֶ֜יךָ שֶׁ֣מֶן זַ֥יִת זָ֛ךְ כָּתִ֖ית לַמָּא֑וֹר לְהַעֲלֹ֥ת נֵ֖ר תָּמִֽיד׃",
+      "en": "Command the children of Yisra᾽el, that they bring to thee pure oil olive beaten for the light, to cause the lamps to burn continually."
+    },
+    {
+      "n": 104,
+      "c": 24,
+      "v": 3,
+      "ref": "24:3",
+      "text": "מִחוּץ֩ לְפָרֹ֨כֶת הָעֵדֻ֜ת בְּאֹ֣הֶל מוֹעֵ֗ד יַעֲרֹךְ֩ אֹת֨וֹ אַהֲרֹ֜ן מֵעֶ֧רֶב עַד־בֹּ֛קֶר לִפְנֵ֥י יְהֹוָ֖ה תָּמִ֑יד חֻקַּ֥ת עוֹלָ֖ם לְדֹרֹֽתֵיכֶֽם׃",
+      "en": "Outside the veil of the Testimony, in the Tent of Meeting, shall Aharon order it from evening unto morning before the Lord continually: it shall be a statute for ever in your generations."
+    },
+    {
+      "n": 105,
+      "c": 24,
+      "v": 4,
+      "ref": "24:4",
+      "text": "עַ֚ל הַמְּנֹרָ֣ה הַטְּהֹרָ֔ה יַעֲרֹ֖ךְ אֶת־הַנֵּר֑וֹת לִפְנֵ֥י יְהֹוָ֖ה תָּמִֽיד׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "He shall order the lamps upon the pure candlestick, before the Lord continually."
+    },
+    {
+      "n": 106,
+      "c": 24,
+      "v": 5,
+      "ref": "24:5",
+      "text": "וְלָקַחְתָּ֣ סֹ֔לֶת וְאָפִיתָ֣ אֹתָ֔הּ שְׁתֵּ֥ים עֶשְׂרֵ֖ה חַלּ֑וֹת שְׁנֵי֙ עֶשְׂרֹנִ֔ים יִהְיֶ֖ה הַֽחַלָּ֥ה הָאֶחָֽת׃",
+      "en": "And thou shalt take fine flour, and bake of it twelve cakes: two tenth measures shall be in one cake."
+    },
+    {
+      "n": 107,
+      "c": 24,
+      "v": 6,
+      "ref": "24:6",
+      "text": "וְשַׂמְתָּ֥ אוֹתָ֛ם שְׁתַּ֥יִם מַֽעֲרָכ֖וֹת שֵׁ֣שׁ הַֽמַּעֲרָ֑כֶת עַ֛ל הַשֻּׁלְחָ֥ן הַטָּהֹ֖ר לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And thou shalt set them in two rows, six on a row, upon the pure table before the Lord."
+    },
+    {
+      "n": 108,
+      "c": 24,
+      "v": 7,
+      "ref": "24:7",
+      "text": "וְנָתַתָּ֥ עַל־הַֽמַּעֲרֶ֖כֶת לְבֹנָ֣ה זַכָּ֑ה וְהָיְתָ֤ה לַלֶּ֙חֶם֙ לְאַזְכָּרָ֔ה אִשֶּׁ֖ה לַֽיהֹוָֽה׃",
+      "en": "And thou shalt put pure frankincense upon each row, that it may be on the bread for a memorial, an offering made by fire to the Lord."
+    },
+    {
+      "n": 109,
+      "c": 24,
+      "v": 8,
+      "ref": "24:8",
+      "text": "בְּי֨וֹם הַשַּׁבָּ֜ת בְּי֣וֹם הַשַּׁבָּ֗ת יַֽעַרְכֶ֛נּוּ לִפְנֵ֥י יְהֹוָ֖ה תָּמִ֑יד מֵאֵ֥ת בְּנֵֽי־יִשְׂרָאֵ֖ל בְּרִ֥ית עוֹלָֽם׃",
+      "en": "Every sabbath he shall set it in order before the Lord continually, an everlasting covenant from the children of Yisra᾽el."
+    },
+    {
+      "n": 110,
+      "c": 24,
+      "v": 9,
+      "ref": "24:9",
+      "text": "וְהָֽיְתָה֙ לְאַהֲרֹ֣ן וּלְבָנָ֔יו וַאֲכָלֻ֖הוּ בְּמָק֣וֹם קָדֹ֑שׁ כִּ֡י קֹ֩דֶשׁ֩ קׇֽדָשִׁ֨ים ה֥וּא ל֛וֹ מֵאִשֵּׁ֥י יְהֹוָ֖ה חׇק־עוֹלָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And it shall be Aharon’s and his sons’; and they shall eat it in the holy place: for it is most holy to him of the offerings of the Lord made by fire by a perpetual due."
+    },
+    {
+      "n": 111,
+      "c": 24,
+      "v": 10,
+      "ref": "24:10",
+      "text": "וַיֵּצֵא֙ בֶּן־אִשָּׁ֣ה יִשְׂרְאֵלִ֔ית וְהוּא֙ בֶּן־אִ֣ישׁ מִצְרִ֔י בְּת֖וֹךְ בְּנֵ֣י יִשְׂרָאֵ֑ל וַיִּנָּצוּ֙ בַּֽמַּחֲנֶ֔ה בֶּ֚ן הַיִּשְׂרְאֵלִ֔ית וְאִ֖ישׁ הַיִּשְׂרְאֵלִֽי׃",
+      "en": "And the son of a Yisra᾽elite woman, whose father was a Miżrian man, went out among the children of Yisra᾽el: and this son of the Yisra᾽elite woman and a man of Yisra᾽el strove together in the camp;"
+    },
+    {
+      "n": 112,
+      "c": 24,
+      "v": 11,
+      "ref": "24:11",
+      "text": "וַ֠יִּקֹּ֠ב בֶּן־הָֽאִשָּׁ֨ה הַיִּשְׂרְאֵלִ֤ית אֶת־הַשֵּׁם֙ וַיְקַלֵּ֔ל וַיָּבִ֥יאוּ אֹת֖וֹ אֶל־מֹשֶׁ֑ה וְשֵׁ֥ם אִמּ֛וֹ שְׁלֹמִ֥ית בַּת־דִּבְרִ֖י לְמַטֵּה־דָֽן׃",
+      "en": "and the Yisra᾽elite woman’s son blasphemed the name of the Lord, and cursed. And they brought him to Moshe: (and his mother’s name was Shelomit, the daughter of Divri, of the tribe of Dan: )"
+    },
+    {
+      "n": 113,
+      "c": 24,
+      "v": 12,
+      "ref": "24:12",
+      "text": "וַיַּנִּיחֻ֖הוּ בַּמִּשְׁמָ֑ר לִפְרֹ֥שׁ לָהֶ֖ם עַל־פִּ֥י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and they put him in custody, that the mind of the Lord might be shown them."
+    },
+    {
+      "n": 114,
+      "c": 24,
+      "v": 13,
+      "ref": "24:13",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 115,
+      "c": 24,
+      "v": 14,
+      "ref": "24:14",
+      "text": "הוֹצֵ֣א אֶת־הַֽמְקַלֵּ֗ל אֶל־מִחוּץ֙ לַֽמַּחֲנֶ֔ה וְסָמְכ֧וּ כׇֽל־הַשֹּׁמְעִ֛ים אֶת־יְדֵיהֶ֖ם עַל־רֹאשׁ֑וֹ וְרָגְמ֥וּ אֹת֖וֹ כׇּל־הָעֵדָֽה׃",
+      "en": "Bring forth him that has cursed outside the camp; and let all that heard him lay their hands upon his head, and let all the congregation stone him."
+    },
+    {
+      "n": 116,
+      "c": 24,
+      "v": 15,
+      "ref": "24:15",
+      "text": "וְאֶל־בְּנֵ֥י יִשְׂרָאֵ֖ל תְּדַבֵּ֣ר לֵאמֹ֑ר אִ֥ישׁ אִ֛ישׁ כִּֽי־יְקַלֵּ֥ל אֱלֹהָ֖יו וְנָשָׂ֥א חֶטְאֽוֹ׃",
+      "en": "And thou shalt speak to the children of Yisra᾽el, saying, Whoever curses his God shall bear his sin."
+    },
+    {
+      "n": 117,
+      "c": 24,
+      "v": 16,
+      "ref": "24:16",
+      "text": "וְנֹקֵ֤ב שֵׁם־יְהֹוָה֙ מ֣וֹת יוּמָ֔ת רָג֥וֹם יִרְגְּמוּ־ב֖וֹ כׇּל־הָעֵדָ֑ה כַּגֵּר֙ כָּֽאֶזְרָ֔ח בְּנׇקְבוֹ־שֵׁ֖ם יוּמָֽת׃",
+      "en": "And he who blasphemes the name of the Lord, shall surely be put to death, and all the congregation shall certainly stone him: both the stranger, and he that is born in the land, when he blasphemes the name of the Lord, shall be put to death."
+    },
+    {
+      "n": 118,
+      "c": 24,
+      "v": 17,
+      "ref": "24:17",
+      "text": "וְאִ֕ישׁ כִּ֥י יַכֶּ֖ה כׇּל־נֶ֣פֶשׁ אָדָ֑ם מ֖וֹת יוּמָֽת׃",
+      "en": "And he that kills any man shall surely be put to death."
+    },
+    {
+      "n": 119,
+      "c": 24,
+      "v": 18,
+      "ref": "24:18",
+      "text": "וּמַכֵּ֥ה נֶֽפֶשׁ־בְּהֵמָ֖ה יְשַׁלְּמֶ֑נָּה נֶ֖פֶשׁ תַּ֥חַת נָֽפֶשׁ׃",
+      "en": "And he that kills a beast shall make it good; beast for beast."
+    },
+    {
+      "n": 120,
+      "c": 24,
+      "v": 19,
+      "ref": "24:19",
+      "text": "וְאִ֕ישׁ כִּֽי־יִתֵּ֥ן מ֖וּם בַּעֲמִית֑וֹ כַּאֲשֶׁ֣ר עָשָׂ֔ה כֵּ֖ן יֵעָ֥שֶׂה לּֽוֹ׃",
+      "en": "And if a man maim his neighbour; as he has done, so shall it be done to him;"
+    },
+    {
+      "n": 121,
+      "c": 24,
+      "v": 20,
+      "ref": "24:20",
+      "text": "שֶׁ֚בֶר תַּ֣חַת שֶׁ֔בֶר עַ֚יִן תַּ֣חַת עַ֔יִן שֵׁ֖ן תַּ֣חַת שֵׁ֑ן כַּאֲשֶׁ֨ר יִתֵּ֥ן מוּם֙ בָּֽאָדָ֔ם כֵּ֖ן יִנָּ֥תֶן בּֽוֹ׃",
+      "en": "breach for breach, eye for eye, tooth for tooth: as he has maimed a man, so shall it be done to him."
+    },
+    {
+      "n": 122,
+      "c": 24,
+      "v": 21,
+      "ref": "24:21",
+      "text": "וּמַכֵּ֥ה בְהֵמָ֖ה יְשַׁלְּמֶ֑נָּה וּמַכֵּ֥ה אָדָ֖ם יוּמָֽת׃",
+      "en": "And he that kills a beast, he shall restore it: and he that kills a man, he shall be put to death."
+    },
+    {
+      "n": 123,
+      "c": 24,
+      "v": 22,
+      "ref": "24:22",
+      "text": "מִשְׁפַּ֤ט אֶחָד֙ יִהְיֶ֣ה לָכֶ֔ם כַּגֵּ֥ר כָּאֶזְרָ֖ח יִהְיֶ֑ה כִּ֛י אֲנִ֥י יְהֹוָ֖ה אֱלֹהֵיכֶֽם׃",
+      "en": "You shall have one manner of law, as well for the stranger, as for one of your own country: for I am the Lord your God."
+    },
+    {
+      "n": 124,
+      "c": 24,
+      "v": 23,
+      "ref": "24:23",
+      "text": "וַיְדַבֵּ֣ר מֹשֶׁה֮ אֶל־בְּנֵ֣י יִשְׂרָאֵל֒ וַיּוֹצִ֣יאוּ אֶת־הַֽמְקַלֵּ֗ל אֶל־מִחוּץ֙ לַֽמַּחֲנֶ֔ה וַיִּרְגְּמ֥וּ אֹת֖וֹ אָ֑בֶן וּבְנֵֽי־יִשְׂרָאֵ֣ל עָשׂ֔וּ כַּֽאֲשֶׁ֛ר צִוָּ֥ה יְהֹוָ֖ה אֶת־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Moshe spoke to the children of Yisra᾽el, and they brought him that had cursed out of the camp, and stoned him with stones. And the children of Yisra᾽el did as the Lord commanded Moshe."
+    }
+  ],
+  "parashah": {
+    "en": "Emor",
+    "he": "אֱמֹר",
+    "translit": "Emor",
+    "ref": "Leviticus 21:1–24:23"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 15,
+        "ref": "21:1–21:15"
+      },
+      {
+        "n": 2,
+        "start": 16,
+        "end": 40,
+        "ref": "21:16–22:16"
+      },
+      {
+        "n": 3,
+        "start": 41,
+        "end": 57,
+        "ref": "22:17–22:33"
+      },
+      {
+        "n": 4,
+        "start": 58,
+        "end": 79,
+        "ref": "23:1–23:22"
+      },
+      {
+        "n": 5,
+        "start": 80,
+        "end": 89,
+        "ref": "23:23–23:32"
+      },
+      {
+        "n": 6,
+        "start": 90,
+        "end": 101,
+        "ref": "23:33–23:44"
+      },
+      {
+        "n": 7,
+        "start": 102,
+        "end": 124,
+        "ref": "24:1–24:23"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 6,
+          "ref": "21:1–21:6"
+        },
+        {
+          "n": 2,
+          "start": 7,
+          "end": 12,
+          "ref": "21:7–21:12"
+        },
+        {
+          "n": 3,
+          "start": 13,
+          "end": 15,
+          "ref": "21:13–21:15"
+        },
+        {
+          "n": 4,
+          "start": 16,
+          "end": 24,
+          "ref": "21:16–21:24"
+        },
+        {
+          "n": 5,
+          "start": 25,
+          "end": 33,
+          "ref": "22:1–22:9"
+        },
+        {
+          "n": 6,
+          "start": 34,
+          "end": 36,
+          "ref": "22:10–22:12"
+        },
+        {
+          "n": 7,
+          "start": 37,
+          "end": 40,
+          "ref": "22:13–22:16"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 41,
+          "end": 44,
+          "ref": "22:17–22:20"
+        },
+        {
+          "n": 2,
+          "start": 45,
+          "end": 49,
+          "ref": "22:21–22:25"
+        },
+        {
+          "n": 3,
+          "start": 50,
+          "end": 57,
+          "ref": "22:26–22:33"
+        },
+        {
+          "n": 4,
+          "start": 58,
+          "end": 60,
+          "ref": "23:1–23:3"
+        },
+        {
+          "n": 5,
+          "start": 61,
+          "end": 65,
+          "ref": "23:4–23:8"
+        },
+        {
+          "n": 6,
+          "start": 66,
+          "end": 71,
+          "ref": "23:9–23:14"
+        },
+        {
+          "n": 7,
+          "start": 72,
+          "end": 79,
+          "ref": "23:15–23:22"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 80,
+          "end": 82,
+          "ref": "23:23–23:25"
+        },
+        {
+          "n": 2,
+          "start": 83,
+          "end": 89,
+          "ref": "23:26–23:32"
+        },
+        {
+          "n": 3,
+          "start": 90,
+          "end": 101,
+          "ref": "23:33–23:44"
+        },
+        {
+          "n": 4,
+          "start": 102,
+          "end": 105,
+          "ref": "24:1–24:4"
+        },
+        {
+          "n": 5,
+          "start": 106,
+          "end": 110,
+          "ref": "24:5–24:9"
+        },
+        {
+          "n": 6,
+          "start": 111,
+          "end": 113,
+          "ref": "24:10–24:12"
+        },
+        {
+          "n": 7,
+          "start": 114,
+          "end": 124,
+          "ref": "24:13–24:23"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 122,
+        "end": 124,
+        "ref": "24:21–24:23"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 37,
+          "end": 40,
+          "ref": "22:13–22:16"
+        },
+        "2": {
+          "n": "M",
+          "start": 76,
+          "end": 79,
+          "ref": "23:19–23:22"
+        },
+        "3": {
+          "n": "M",
+          "start": 122,
+          "end": 124,
+          "ref": "24:21–24:23"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

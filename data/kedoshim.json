@@ -1,0 +1,725 @@
+{
+  "slug": "kedoshim",
+  "book": {
+    "en": "Leviticus",
+    "he": "ויקרא",
+    "translit": "Vayikra"
+  },
+  "multiChapter": true,
+  "ref": "Leviticus 19:1-20:27",
+  "heRef": "ויקרא י״ט:א-כ׳:כ״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 19,
+      "v": 1,
+      "ref": "19:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe saying,"
+    },
+    {
+      "n": 2,
+      "c": 19,
+      "v": 2,
+      "ref": "19:2",
+      "text": "דַּבֵּ֞ר אֶל־כׇּל־עֲדַ֧ת בְּנֵי־יִשְׂרָאֵ֛ל וְאָמַרְתָּ֥ אֲלֵהֶ֖ם קְדֹשִׁ֣ים תִּהְי֑וּ כִּ֣י קָד֔וֹשׁ אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "Speak to all the congregation of the children of Yisra᾽el, and say to them, You shall be holy: for I the Lord your God am holy."
+    },
+    {
+      "n": 3,
+      "c": 19,
+      "v": 3,
+      "ref": "19:3",
+      "text": "אִ֣ישׁ אִמּ֤וֹ וְאָבִיו֙ תִּירָ֔אוּ וְאֶת־שַׁבְּתֹתַ֖י תִּשְׁמֹ֑רוּ אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "You shall fear every man his mother, and his father, and keep my sabbaths: I am the Lord your God."
+    },
+    {
+      "n": 4,
+      "c": 19,
+      "v": 4,
+      "ref": "19:4",
+      "text": "אַל־תִּפְנוּ֙ אֶל־הָ֣אֱלִילִ֔ם וֵֽאלֹהֵי֙ מַסֵּכָ֔ה לֹ֥א תַעֲשׂ֖וּ לָכֶ֑ם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "Turn not to idols, nor make to yourselves molten gods: I am the Lord your God."
+    },
+    {
+      "n": 5,
+      "c": 19,
+      "v": 5,
+      "ref": "19:5",
+      "text": "וְכִ֧י תִזְבְּח֛וּ זֶ֥בַח שְׁלָמִ֖ים לַיהֹוָ֑ה לִֽרְצֹנְכֶ֖ם תִּזְבָּחֻֽהוּ׃",
+      "en": "And if you offer a sacrifice of peace offering to the Lord, you shall offer it so that it may be favourably accepted."
+    },
+    {
+      "n": 6,
+      "c": 19,
+      "v": 6,
+      "ref": "19:6",
+      "text": "בְּי֧וֹם זִבְחֲכֶ֛ם יֵאָכֵ֖ל וּמִֽמׇּחֳרָ֑ת וְהַנּוֹתָר֙ עַד־י֣וֹם הַשְּׁלִישִׁ֔י בָּאֵ֖שׁ יִשָּׂרֵֽף׃",
+      "en": "It shall be eaten the same day you offer it, and on the morrow: and if aught remain until the third day, it shall be burnt in fire."
+    },
+    {
+      "n": 7,
+      "c": 19,
+      "v": 7,
+      "ref": "19:7",
+      "text": "וְאִ֛ם הֵאָכֹ֥ל יֵאָכֵ֖ל בַּיּ֣וֹם הַשְּׁלִישִׁ֑י פִּגּ֥וּל ה֖וּא לֹ֥א יֵרָצֶֽה׃",
+      "en": "And if it be eaten at all on the third day, it is abominable; it shall not be accepted."
+    },
+    {
+      "n": 8,
+      "c": 19,
+      "v": 8,
+      "ref": "19:8",
+      "text": "וְאֹֽכְלָיו֙ עֲוֺנ֣וֹ יִשָּׂ֔א כִּֽי־אֶת־קֹ֥דֶשׁ יְהֹוָ֖ה חִלֵּ֑ל וְנִכְרְתָ֛ה הַנֶּ֥פֶשׁ הַהִ֖וא מֵעַמֶּֽיהָ׃",
+      "en": "Therefore everyone that eats it shall bear his iniquity, because he has profaned the hallowed thing of the Lord: and that soul shalt be cut off from among his people."
+    },
+    {
+      "n": 9,
+      "c": 19,
+      "v": 9,
+      "ref": "19:9",
+      "text": "וּֽבְקֻצְרְכֶם֙ אֶת־קְצִ֣יר אַרְצְכֶ֔ם לֹ֧א תְכַלֶּ֛ה פְּאַ֥ת שָׂדְךָ֖ לִקְצֹ֑ר וְלֶ֥קֶט קְצִֽירְךָ֖ לֹ֥א תְלַקֵּֽט׃",
+      "en": "And when you reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleaning of thy harvest."
+    },
+    {
+      "n": 10,
+      "c": 19,
+      "v": 10,
+      "ref": "19:10",
+      "text": "וְכַרְמְךָ֙ לֹ֣א תְעוֹלֵ֔ל וּפֶ֥רֶט כַּרְמְךָ֖ לֹ֣א תְלַקֵּ֑ט לֶֽעָנִ֤י וְלַגֵּר֙ תַּעֲזֹ֣ב אֹתָ֔ם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "And thou shalt not glean thy vineyard, neither shalt thou gather the single grapes of thy vineyard; thou shalt leave them for the poor and stranger: I am the Lord your God."
+    },
+    {
+      "n": 11,
+      "c": 19,
+      "v": 11,
+      "ref": "19:11",
+      "text": "לֹ֖א תִּגְנֹ֑בוּ וְלֹא־תְכַחֲשׁ֥וּ וְלֹֽא־תְשַׁקְּר֖וּ אִ֥ישׁ בַּעֲמִיתֽוֹ׃",
+      "en": "You shall not steal, neither deal falsely, neither lie one to another."
+    },
+    {
+      "n": 12,
+      "c": 19,
+      "v": 12,
+      "ref": "19:12",
+      "text": "וְלֹֽא־תִשָּׁבְע֥וּ בִשְׁמִ֖י לַשָּׁ֑קֶר וְחִלַּלְתָּ֛ אֶת־שֵׁ֥ם אֱלֹהֶ֖יךָ אֲנִ֥י יְהֹוָֽה׃",
+      "en": "And you shall not swear by my name falsely, neither shalt thou profane the name of thy God: I am the Lord."
+    },
+    {
+      "n": 13,
+      "c": 19,
+      "v": 13,
+      "ref": "19:13",
+      "text": "לֹֽא־תַעֲשֹׁ֥ק אֶת־רֵֽעֲךָ֖ וְלֹ֣א תִגְזֹ֑ל לֹֽא־תָלִ֞ין פְּעֻלַּ֥ת שָׂכִ֛יר אִתְּךָ֖ עַד־בֹּֽקֶר׃",
+      "en": "Thou shalt not defraud thy neighbour, neither rob him: the wages of him that is hired shall not abide with thee all night until the morning."
+    },
+    {
+      "n": 14,
+      "c": 19,
+      "v": 14,
+      "ref": "19:14",
+      "text": "לֹא־תְקַלֵּ֣ל חֵרֵ֔שׁ וְלִפְנֵ֣י עִוֵּ֔ר לֹ֥א תִתֵּ֖ן מִכְשֹׁ֑ל וְיָרֵ֥אתָ מֵּאֱלֹהֶ֖יךָ אֲנִ֥י יְהֹוָֽה׃",
+      "en": "Thou shalt not curse the deaf, nor put a stumbling block before the blind, but shalt fear thy God: I am the Lord."
+    },
+    {
+      "n": 15,
+      "c": 19,
+      "v": 15,
+      "ref": "19:15",
+      "text": "לֹא־תַעֲשׂ֥וּ עָ֙וֶל֙ בַּמִּשְׁפָּ֔ט לֹא־תִשָּׂ֣א פְנֵי־דָ֔ל וְלֹ֥א תֶהְדַּ֖ר פְּנֵ֣י גָד֑וֹל בְּצֶ֖דֶק תִּשְׁפֹּ֥ט עֲמִיתֶֽךָ׃",
+      "en": "You shall do no unrighteousness in judgment: thou shalt not respect the person of the poor, nor honour the person of the mighty: but in righteousness shalt thou judge thy neighbour."
+    },
+    {
+      "n": 16,
+      "c": 19,
+      "v": 16,
+      "ref": "19:16",
+      "text": "לֹא־תֵלֵ֤ךְ רָכִיל֙ בְּעַמֶּ֔יךָ לֹ֥א תַעֲמֹ֖ד עַל־דַּ֣ם רֵעֶ֑ךָ<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בכתר ארם צובה היה כתוב רֵעֶ֑יךָ)</i> אֲנִ֖י יְהֹוָֽה׃",
+      "en": "Thou shalt not go up and down as a talebearer among thy people: neither shalt thou stand aside when mischief befalls thy neighbour: I am the Lord."
+    },
+    {
+      "n": 17,
+      "c": 19,
+      "v": 17,
+      "ref": "19:17",
+      "text": "לֹֽא־תִשְׂנָ֥א אֶת־אָחִ֖יךָ בִּלְבָבֶ֑ךָ הוֹכֵ֤חַ תּוֹכִ֙יחַ֙ אֶת־עֲמִיתֶ֔ךָ וְלֹא־תִשָּׂ֥א עָלָ֖יו חֵֽטְא׃",
+      "en": "Thou shalt not hate thy brother in thy heart: thou shalt certainly rebuke thy neighbour, and not suffer sin on his account."
+    },
+    {
+      "n": 18,
+      "c": 19,
+      "v": 18,
+      "ref": "19:18",
+      "text": "לֹֽא־תִקֹּ֤ם וְלֹֽא־תִטֹּר֙ אֶת־בְּנֵ֣י עַמֶּ֔ךָ וְאָֽהַבְתָּ֥ לְרֵעֲךָ֖ כָּמ֑וֹךָ אֲנִ֖י יְהֹוָֽה׃",
+      "en": "Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the Lord."
+    },
+    {
+      "n": 19,
+      "c": 19,
+      "v": 19,
+      "ref": "19:19",
+      "text": "אֶֽת־חֻקֹּתַי֮ תִּשְׁמֹ֒רוּ֒ בְּהֶמְתְּךָ֙ לֹא־תַרְבִּ֣יעַ כִּלְאַ֔יִם שָׂדְךָ֖ לֹא־תִזְרַ֣ע כִּלְאָ֑יִם וּבֶ֤גֶד כִּלְאַ֙יִם֙ שַֽׁעַטְנֵ֔ז לֹ֥א יַעֲלֶ֖ה עָלֶֽיךָ׃",
+      "en": "You shall keep my statutes. Thou shalt not let thy cattle gender with a diverse kind: thou shalt not sow thy field with mingled seed: neither shall a garment mingled of linen and wool come upon thee."
+    },
+    {
+      "n": 20,
+      "c": 19,
+      "v": 20,
+      "ref": "19:20",
+      "text": "וְ֠אִ֠ישׁ כִּֽי־יִשְׁכַּ֨ב אֶת־אִשָּׁ֜ה שִׁכְבַת־זֶ֗רַע וְהִ֤וא שִׁפְחָה֙ נֶחֱרֶ֣פֶת לְאִ֔ישׁ וְהׇפְדֵּה֙ לֹ֣א נִפְדָּ֔תָה א֥וֹ חֻפְשָׁ֖הֿ לֹ֣א נִתַּן־לָ֑הּ בִּקֹּ֧רֶת תִּהְיֶ֛ה לֹ֥א יוּמְת֖וּ כִּי־לֹ֥א חֻפָּֽשָׁה׃",
+      "en": "And whoever lies carnally with a woman, that is a bondmaid, designated to a man, and not wholly redeemed, nor freedom given her; inquiry shall be made; they shall not be put to death, because she was not free."
+    },
+    {
+      "n": 21,
+      "c": 19,
+      "v": 21,
+      "ref": "19:21",
+      "text": "וְהֵבִ֤יא אֶת־אֲשָׁמוֹ֙ לַֽיהֹוָ֔ה אֶל־פֶּ֖תַח אֹ֣הֶל מוֹעֵ֑ד אֵ֖יל אָשָֽׁם׃",
+      "en": "And he shall bring his guilt offering to the Lord, to the door of the Tent of Meeting, a ram for a guilt offering."
+    },
+    {
+      "n": 22,
+      "c": 19,
+      "v": 22,
+      "ref": "19:22",
+      "text": "וְכִפֶּר֩ עָלָ֨יו הַכֹּהֵ֜ן בְּאֵ֤יל הָֽאָשָׁם֙ לִפְנֵ֣י יְהֹוָ֔ה עַל־חַטָּאת֖וֹ אֲשֶׁ֣ר חָטָ֑א וְנִסְלַ֣ח ל֔וֹ מֵחַטָּאת֖וֹ אֲשֶׁ֥ר חָטָֽא׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And the priest shall make atonement for him with the ram of the guilt offering before the Lord for his sin which he has done: and the sin which he has done shall be forgiven him."
+    },
+    {
+      "n": 23,
+      "c": 19,
+      "v": 23,
+      "ref": "19:23",
+      "text": "וְכִי־תָבֹ֣אוּ אֶל־הָאָ֗רֶץ וּנְטַעְתֶּם֙ כׇּל־עֵ֣ץ מַאֲכָ֔ל וַעֲרַלְתֶּ֥ם עׇרְלָת֖וֹ אֶת־פִּרְי֑וֹ שָׁלֹ֣שׁ שָׁנִ֗ים יִהְיֶ֥ה לָכֶ֛ם עֲרֵלִ֖ים לֹ֥א יֵאָכֵֽל׃",
+      "en": "And when you shall come into the land, and shall have planted all manner of trees for food, then you shall reckon their fruit as uncircumcised: three years shall it be as uncircumcised unto you: it shall not be eaten."
+    },
+    {
+      "n": 24,
+      "c": 19,
+      "v": 24,
+      "ref": "19:24",
+      "text": "וּבַשָּׁנָה֙ הָרְבִיעִ֔ת יִהְיֶ֖ה כׇּל־פִּרְי֑וֹ קֹ֥דֶשׁ הִלּוּלִ֖ים לַיהֹוָֽה׃",
+      "en": "But in the fourth year all its fruit shall be holy for praisegiving to the Lord."
+    },
+    {
+      "n": 25,
+      "c": 19,
+      "v": 25,
+      "ref": "19:25",
+      "text": "וּבַשָּׁנָ֣ה הַחֲמִישִׁ֗ת תֹּֽאכְלוּ֙ אֶת־פִּרְי֔וֹ לְהוֹסִ֥יף לָכֶ֖ם תְּבוּאָת֑וֹ אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "And in the fifth year shall you eat of its fruit, that it may yield to you its increase: I am the Lord your God."
+    },
+    {
+      "n": 26,
+      "c": 19,
+      "v": 26,
+      "ref": "19:26",
+      "text": "לֹ֥א תֹאכְל֖וּ עַל־הַדָּ֑ם לֹ֥א תְנַחֲשׁ֖וּ וְלֹ֥א תְעוֹנֵֽנוּ׃",
+      "en": "You shall not eat anything with the blood: neither shall you use enchantment, nor observe times."
+    },
+    {
+      "n": 27,
+      "c": 19,
+      "v": 27,
+      "ref": "19:27",
+      "text": "לֹ֣א תַקִּ֔פוּ פְּאַ֖ת רֹאשְׁכֶ֑ם וְלֹ֣א תַשְׁחִ֔ית אֵ֖ת פְּאַ֥ת זְקָנֶֽךָ׃",
+      "en": "You shall not round the corners of your heads, neither shalt thou mar the corners of thy beard."
+    },
+    {
+      "n": 28,
+      "c": 19,
+      "v": 28,
+      "ref": "19:28",
+      "text": "וְשֶׂ֣רֶט לָנֶ֗פֶשׁ לֹ֤א תִתְּנוּ֙ בִּבְשַׂרְכֶ֔ם וּכְתֹ֣בֶת קַֽעֲקַ֔ע לֹ֥א תִתְּנ֖וּ בָּכֶ֑ם אֲנִ֖י יְהֹוָֽה׃",
+      "en": "You shall not make any cuttings in your flesh for the dead, nor print any marks upon you: I am the Lord."
+    },
+    {
+      "n": 29,
+      "c": 19,
+      "v": 29,
+      "ref": "19:29",
+      "text": "אַל־תְּחַלֵּ֥ל אֶֽת־בִּתְּךָ֖ לְהַזְנוֹתָ֑הּ וְלֹא־תִזְנֶ֣ה הָאָ֔רֶץ וּמָלְאָ֥ה הָאָ֖רֶץ זִמָּֽה׃",
+      "en": "Do not prostitute thy daughter, to cause her to be a harlot; lest the land fall to harlotry, and the land become full of foulness."
+    },
+    {
+      "n": 30,
+      "c": 19,
+      "v": 30,
+      "ref": "19:30",
+      "text": "אֶת־שַׁבְּתֹתַ֣י תִּשְׁמֹ֔רוּ וּמִקְדָּשִׁ֖י תִּירָ֑אוּ אֲנִ֖י יְהֹוָֽה׃",
+      "en": "You shall keep my sabbaths, and reverence my sanctuary: I am the Lord."
+    },
+    {
+      "n": 31,
+      "c": 19,
+      "v": 31,
+      "ref": "19:31",
+      "text": "אַל־תִּפְנ֤וּ אֶל־הָאֹבֹת֙ וְאֶל־הַיִּדְּעֹנִ֔ים אַל־תְּבַקְשׁ֖וּ לְטׇמְאָ֣ה בָהֶ֑ם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "You shall not apply to mediums or wizards, nor seek to be defiled by them: I am the Lord your God."
+    },
+    {
+      "n": 32,
+      "c": 19,
+      "v": 32,
+      "ref": "19:32",
+      "text": "מִפְּנֵ֤י שֵׂיבָה֙ תָּק֔וּם וְהָדַרְתָּ֖ פְּנֵ֣י זָקֵ֑ן וְיָרֵ֥אתָ מֵּאֱלֹהֶ֖יךָ אֲנִ֥י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thou shalt rise up before the hoary head, and honour the face of the old man, and fear thy God: I am the Lord."
+    },
+    {
+      "n": 33,
+      "c": 19,
+      "v": 33,
+      "ref": "19:33",
+      "text": "וְכִֽי־יָג֧וּר אִתְּךָ֛ גֵּ֖ר בְּאַרְצְכֶ֑ם לֹ֥א תוֹנ֖וּ אֹתֽוֹ׃",
+      "en": "And if a stranger sojourn with thee in your land, you shall not wrong him."
+    },
+    {
+      "n": 34,
+      "c": 19,
+      "v": 34,
+      "ref": "19:34",
+      "text": "כְּאֶזְרָ֣ח מִכֶּם֩ יִהְיֶ֨ה לָכֶ֜ם הַגֵּ֣ר&thinsp;<b>׀</b> הַגָּ֣ר אִתְּכֶ֗ם וְאָהַבְתָּ֥ לוֹ֙ כָּמ֔וֹךָ כִּֽי־גֵרִ֥ים הֱיִיתֶ֖ם בְּאֶ֣רֶץ מִצְרָ֑יִם אֲנִ֖י יְהֹוָ֥ה אֱלֹהֵיכֶֽם׃",
+      "en": "But the stranger that dwells with you shall be to you as one born among you, and thou shalt love him as thyself; for you were strangers in the land of Miżrayim: I am the Lord your God."
+    },
+    {
+      "n": 35,
+      "c": 19,
+      "v": 35,
+      "ref": "19:35",
+      "text": "לֹא־תַעֲשׂ֥וּ עָ֖וֶל בַּמִּשְׁפָּ֑ט בַּמִּדָּ֕ה בַּמִּשְׁקָ֖ל וּבַמְּשׂוּרָֽה׃",
+      "en": "You shall do no unrighteousness in judgment, in meteyard, in weight, or in measure."
+    },
+    {
+      "n": 36,
+      "c": 19,
+      "v": 36,
+      "ref": "19:36",
+      "text": "מֹ֧אזְנֵי צֶ֣דֶק אַבְנֵי־צֶ֗דֶק אֵ֥יפַת צֶ֛דֶק וְהִ֥ין צֶ֖דֶק יִהְיֶ֣ה לָכֶ֑ם אֲנִי֙ יְהֹוָ֣ה אֱלֹֽהֵיכֶ֔ם אֲשֶׁר־הוֹצֵ֥אתִי אֶתְכֶ֖ם מֵאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "Just balances, just weights, a just efa, and a just hin, shall you have: I am the Lord your God, who brought you out of the land of Miżrayim."
+    },
+    {
+      "n": 37,
+      "c": 19,
+      "v": 37,
+      "ref": "19:37",
+      "text": "וּשְׁמַרְתֶּ֤ם אֶת־כׇּל־חֻקֹּתַי֙ וְאֶת־כׇּל־מִשְׁפָּטַ֔י וַעֲשִׂיתֶ֖ם אֹתָ֑ם אֲנִ֖י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Therefore shall you observe all my statutes, and all my judgments, and do them: I am the Lord."
+    },
+    {
+      "n": 38,
+      "c": 20,
+      "v": 1,
+      "ref": "20:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 39,
+      "c": 20,
+      "v": 2,
+      "ref": "20:2",
+      "text": "וְאֶל־בְּנֵ֣י יִשְׂרָאֵל֮ תֹּאמַר֒ אִ֣ישׁ אִישׁ֩ מִבְּנֵ֨י יִשְׂרָאֵ֜ל וּמִן־הַגֵּ֣ר&thinsp;<b>׀</b> הַגָּ֣ר בְּיִשְׂרָאֵ֗ל אֲשֶׁ֨ר יִתֵּ֧ן מִזַּרְע֛וֹ לַמֹּ֖לֶךְ מ֣וֹת יוּמָ֑ת עַ֥ם הָאָ֖רֶץ יִרְגְּמֻ֥הוּ בָאָֽבֶן׃",
+      "en": "Again, thou shalt say to the children of Yisra᾽el, Whoever he be of the children of Yisra᾽el, or of the strangers that sojourn in Yisra᾽el, that gives any of his seed to Molekh; he shall surely be put to death: the people of the land shall stone him with stones."
+    },
+    {
+      "n": 40,
+      "c": 20,
+      "v": 3,
+      "ref": "20:3",
+      "text": "וַאֲנִ֞י אֶתֵּ֤ן אֶת־פָּנַי֙ בָּאִ֣ישׁ הַה֔וּא וְהִכְרַתִּ֥י אֹת֖וֹ מִקֶּ֣רֶב עַמּ֑וֹ כִּ֤י מִזַּרְעוֹ֙ נָתַ֣ן לַמֹּ֔לֶךְ לְמַ֗עַן טַמֵּא֙ אֶת־מִקְדָּשִׁ֔י וּלְחַלֵּ֖ל אֶת־שֵׁ֥ם קׇדְשִֽׁי׃",
+      "en": "And I will set my face against that man, and will cut him off from among his people; because he has given of his seed to Molekh, to defile my sanctuary, and to profane my holy name."
+    },
+    {
+      "n": 41,
+      "c": 20,
+      "v": 4,
+      "ref": "20:4",
+      "text": "וְאִ֡ם הַעְלֵ֣ם יַעְלִ֩ימֽוּ֩ עַ֨ם הָאָ֜רֶץ אֶת־עֵֽינֵיהֶם֙ מִן־הָאִ֣ישׁ הַה֔וּא בְּתִתּ֥וֹ מִזַּרְע֖וֹ לַמֹּ֑לֶךְ לְבִלְתִּ֖י הָמִ֥ית אֹתֽוֹ׃",
+      "en": "And if the people of the land do at all hide their eyes from that man, when he gives of his seed to Molekh, and kill him not:"
+    },
+    {
+      "n": 42,
+      "c": 20,
+      "v": 5,
+      "ref": "20:5",
+      "text": "וְשַׂמְתִּ֨י אֲנִ֧י אֶת־פָּנַ֛י בָּאִ֥ישׁ הַה֖וּא וּבְמִשְׁפַּחְתּ֑וֹ וְהִכְרַתִּ֨י אֹת֜וֹ וְאֵ֣ת&thinsp;<b>׀</b> כׇּל־הַזֹּנִ֣ים אַחֲרָ֗יו לִזְנ֛וֹת אַחֲרֵ֥י הַמֹּ֖לֶךְ מִקֶּ֥רֶב עַמָּֽם׃",
+      "en": "then I will set my face against that man, and against his family, and will cut him off, and all that go astray after him, going astray after Molekh, from among their people."
+    },
+    {
+      "n": 43,
+      "c": 20,
+      "v": 6,
+      "ref": "20:6",
+      "text": "וְהַנֶּ֗פֶשׁ אֲשֶׁ֨ר תִּפְנֶ֤ה אֶל־הָֽאֹבֹת֙ וְאֶל־הַיִּדְּעֹנִ֔ים לִזְנֹ֖ת אַחֲרֵיהֶ֑ם וְנָתַתִּ֤י אֶת־פָּנַי֙ בַּנֶּ֣פֶשׁ הַהִ֔וא וְהִכְרַתִּ֥י אֹת֖וֹ מִקֶּ֥רֶב עַמּֽוֹ׃",
+      "en": "And the person that applies to mediums and to wizards, to go astray after them, I will even set my face against that person, and will cut him off from among his people."
+    },
+    {
+      "n": 44,
+      "c": 20,
+      "v": 7,
+      "ref": "20:7",
+      "text": "וְהִ֨תְקַדִּשְׁתֶּ֔ם וִהְיִיתֶ֖ם קְדֹשִׁ֑ים כִּ֛י אֲנִ֥י יְהֹוָ֖ה אֱלֹהֵיכֶֽם׃",
+      "en": "Sanctify yourselves therefore, and be holy: for I am the Lord your God."
+    },
+    {
+      "n": 45,
+      "c": 20,
+      "v": 8,
+      "ref": "20:8",
+      "text": "וּשְׁמַרְתֶּם֙ אֶת־חֻקֹּתַ֔י וַעֲשִׂיתֶ֖ם אֹתָ֑ם אֲנִ֥י יְהֹוָ֖ה מְקַדִּשְׁכֶֽם׃",
+      "en": "And you shall keep my statutes, and do them: I am the Lord who sanctifies you."
+    },
+    {
+      "n": 46,
+      "c": 20,
+      "v": 9,
+      "ref": "20:9",
+      "text": "כִּֽי־אִ֣ישׁ אִ֗ישׁ אֲשֶׁ֨ר יְקַלֵּ֧ל אֶת־אָבִ֛יו וְאֶת־אִמּ֖וֹ מ֣וֹת יוּמָ֑ת אָבִ֧יו וְאִמּ֛וֹ קִלֵּ֖ל דָּמָ֥יו בּֽוֹ׃",
+      "en": "For everyone that curses his father or his mother shall be surely put to death: he has cursed his father or his mother; his blood shall be upon him."
+    },
+    {
+      "n": 47,
+      "c": 20,
+      "v": 10,
+      "ref": "20:10",
+      "text": "וְאִ֗ישׁ אֲשֶׁ֤ר יִנְאַף֙ אֶת־אֵ֣שֶׁת אִ֔ישׁ אֲשֶׁ֥ר יִנְאַ֖ף אֶת־אֵ֣שֶׁת רֵעֵ֑הוּ מֽוֹת־יוּמַ֥ת הַנֹּאֵ֖ף וְהַנֹּאָֽפֶת׃",
+      "en": "And the man that commits adultery with another man’s wife, that commits adultery with his neighbour’s wife, the adulterer and the adulteress shall surely be put to death."
+    },
+    {
+      "n": 48,
+      "c": 20,
+      "v": 11,
+      "ref": "20:11",
+      "text": "וְאִ֗ישׁ אֲשֶׁ֤ר יִשְׁכַּב֙ אֶת־אֵ֣שֶׁת אָבִ֔יו עֶרְוַ֥ת אָבִ֖יו גִּלָּ֑ה מֽוֹת־יוּמְת֥וּ שְׁנֵיהֶ֖ם דְּמֵיהֶ֥ם בָּֽם׃",
+      "en": "And the man that lies with his father’s wife has uncovered his father’s nakedness: both of them shall surely be put to death; their blood is upon them."
+    },
+    {
+      "n": 49,
+      "c": 20,
+      "v": 12,
+      "ref": "20:12",
+      "text": "וְאִ֗ישׁ אֲשֶׁ֤ר יִשְׁכַּב֙ אֶת־כַּלָּת֔וֹ מ֥וֹת יוּמְת֖וּ שְׁנֵיהֶ֑ם תֶּ֥בֶל עָשׂ֖וּ דְּמֵיהֶ֥ם בָּֽם׃",
+      "en": "And if a man lie with his daughter in law, both of them shall surely be put to death: they have wrought unnatural sin; their blood shall be upon them."
+    },
+    {
+      "n": 50,
+      "c": 20,
+      "v": 13,
+      "ref": "20:13",
+      "text": "וְאִ֗ישׁ אֲשֶׁ֨ר יִשְׁכַּ֤ב אֶת־זָכָר֙ מִשְׁכְּבֵ֣י אִשָּׁ֔ה תּוֹעֵבָ֥ה עָשׂ֖וּ שְׁנֵיהֶ֑ם מ֥וֹת יוּמָ֖תוּ דְּמֵיהֶ֥ם בָּֽם׃",
+      "en": "If a man also lie with a man, as one lies with a woman, both of them have committed an abomination: they shall surely be put to death; their blood shall be upon them."
+    },
+    {
+      "n": 51,
+      "c": 20,
+      "v": 14,
+      "ref": "20:14",
+      "text": "וְאִ֗ישׁ אֲשֶׁ֨ר יִקַּ֧ח אֶת־אִשָּׁ֛ה וְאֶת־אִמָּ֖הּ זִמָּ֣ה הִ֑וא בָּאֵ֞שׁ יִשְׂרְפ֤וּ אֹתוֹ֙ וְאֶתְהֶ֔ן וְלֹא־תִהְיֶ֥ה זִמָּ֖ה בְּתוֹכְכֶֽם׃",
+      "en": "And if a man take a wife and her mother, it is wickedness: they shall be burnt with fire, both he and they; that there be no wickedness among you."
+    },
+    {
+      "n": 52,
+      "c": 20,
+      "v": 15,
+      "ref": "20:15",
+      "text": "וְאִ֗ישׁ אֲשֶׁ֨ר יִתֵּ֧ן שְׁכׇבְתּ֛וֹ בִּבְהֵמָ֖ה מ֣וֹת יוּמָ֑ת וְאֶת־הַבְּהֵמָ֖ה תַּהֲרֹֽגוּ׃",
+      "en": "And if a man lie with a beast, he shall surely be put to death: and you shall slay the beast."
+    },
+    {
+      "n": 53,
+      "c": 20,
+      "v": 16,
+      "ref": "20:16",
+      "text": "וְאִשָּׁ֗ה אֲשֶׁ֨ר תִּקְרַ֤ב אֶל־כׇּל־בְּהֵמָה֙ לְרִבְעָ֣הֿ אֹתָ֔הּ וְהָרַגְתָּ֥ אֶת־הָאִשָּׁ֖ה וְאֶת־הַבְּהֵמָ֑ה מ֥וֹת יוּמָ֖תוּ דְּמֵיהֶ֥ם בָּֽם׃",
+      "en": "And if a woman approach any beast, and lie down before it, thou shalt kill the woman, and the beast: they shall surely be put to death; their blood shall be upon them."
+    },
+    {
+      "n": 54,
+      "c": 20,
+      "v": 17,
+      "ref": "20:17",
+      "text": "וְאִ֣ישׁ אֲשֶׁר־יִקַּ֣ח אֶת־אֲחֹת֡וֹ בַּת־אָבִ֣יו א֣וֹ בַת־אִ֠מּ֠וֹ וְרָאָ֨ה אֶת־עֶרְוָתָ֜הּ וְהִֽיא־תִרְאֶ֤ה אֶת־עֶרְוָתוֹ֙ חֶ֣סֶד ה֔וּא וְנִ֨כְרְת֔וּ לְעֵינֵ֖י בְּנֵ֣י עַמָּ֑ם עֶרְוַ֧ת אֲחֹת֛וֹ גִּלָּ֖ה עֲוֺנ֥וֹ יִשָּֽׂא׃",
+      "en": "And if a man shall take his sister, his father’s daughter, or his mother’s daughter, and see her nakedness, and she see his nakedness; it is a disgraceful deed; and they shall be cut off in the sight of their people: he has uncovered his sister’s nakedness; he shall bear his iniquity."
+    },
+    {
+      "n": 55,
+      "c": 20,
+      "v": 18,
+      "ref": "20:18",
+      "text": "וְ֠אִ֠ישׁ אֲשֶׁר־יִשְׁכַּ֨ב אֶת־אִשָּׁ֜ה דָּוָ֗ה וְגִלָּ֤ה אֶת־עֶרְוָתָהּ֙ אֶת־מְקֹרָ֣הּ הֶֽעֱרָ֔ה וְהִ֕וא גִּלְּתָ֖ה אֶת־מְק֣וֹר דָּמֶ֑יהָ וְנִכְרְת֥וּ שְׁנֵיהֶ֖ם מִקֶּ֥רֶב עַמָּֽם׃",
+      "en": "And if a man shall lie with a woman during her menstrual sickness, and shall uncover her nakedness; he has made naked her fountain, and she has uncovered the fountain of her blood: and both of them shall be cut off from among their people."
+    },
+    {
+      "n": 56,
+      "c": 20,
+      "v": 19,
+      "ref": "20:19",
+      "text": "וְעֶרְוַ֨ת אֲח֧וֹת אִמְּךָ֛ וַאֲח֥וֹת אָבִ֖יךָ לֹ֣א תְגַלֵּ֑ה כִּ֧י אֶת־שְׁאֵר֛וֹ הֶעֱרָ֖ה עֲוֺנָ֥ם יִשָּֽׂאוּ׃",
+      "en": "And thou shalt not uncover the nakedness of thy mother’s sister, nor of thy father’s sister: for he uncovers his near kin: they shall bear their iniquity."
+    },
+    {
+      "n": 57,
+      "c": 20,
+      "v": 20,
+      "ref": "20:20",
+      "text": "וְאִ֗ישׁ אֲשֶׁ֤ר יִשְׁכַּב֙ אֶת־דֹּ֣דָת֔וֹ עֶרְוַ֥ת דֹּד֖וֹ גִּלָּ֑ה חֶטְאָ֥ם יִשָּׂ֖אוּ עֲרִירִ֥ים יָמֻֽתוּ׃",
+      "en": "And if a man shall lie with his uncle’s wife, he has uncovered his uncle’s nakedness: they shall bear their sin; they shall die childless."
+    },
+    {
+      "n": 58,
+      "c": 20,
+      "v": 21,
+      "ref": "20:21",
+      "text": "וְאִ֗ישׁ אֲשֶׁ֥ר יִקַּ֛ח אֶת־אֵ֥שֶׁת אָחִ֖יו נִדָּ֣ה הִ֑וא עֶרְוַ֥ת אָחִ֛יו גִּלָּ֖ה עֲרִירִ֥ים יִהְיֽוּ׃",
+      "en": "And if a man shall take his brother’s wife, it is an unclean thing: he has uncovered his brother’s nakedness; they shall be childless."
+    },
+    {
+      "n": 59,
+      "c": 20,
+      "v": 22,
+      "ref": "20:22",
+      "text": "וּשְׁמַרְתֶּ֤ם אֶת־כׇּל־חֻקֹּתַי֙ וְאֶת־כׇּל־מִשְׁפָּטַ֔י וַעֲשִׂיתֶ֖ם אֹתָ֑ם וְלֹא־תָקִ֤יא אֶתְכֶם֙ הָאָ֔רֶץ אֲשֶׁ֨ר אֲנִ֜י מֵבִ֥יא אֶתְכֶ֛ם שָׁ֖מָּה לָשֶׁ֥בֶת בָּֽהּ׃",
+      "en": "You shall therefore keep all my statutes, and all my judgments, and do them: that the land, into which I bring you to dwell, vomit you not out."
+    },
+    {
+      "n": 60,
+      "c": 20,
+      "v": 23,
+      "ref": "20:23",
+      "text": "וְלֹ֤א תֵֽלְכוּ֙ בְּחֻקֹּ֣ת הַגּ֔וֹי אֲשֶׁר־אֲנִ֥י מְשַׁלֵּ֖חַ מִפְּנֵיכֶ֑ם כִּ֤י אֶת־כׇּל־אֵ֙לֶּה֙ עָשׂ֔וּ וָאָקֻ֖ץ בָּֽם׃",
+      "en": "And you shall not walk in the practices of the nation, which I cast out before you: for they committed all these things, and therefore I abhorred them."
+    },
+    {
+      "n": 61,
+      "c": 20,
+      "v": 24,
+      "ref": "20:24",
+      "text": "וָאֹמַ֣ר לָכֶ֗ם אַתֶּם֮ תִּֽירְשׁ֣וּ אֶת־אַדְמָתָם֒ וַאֲנִ֞י אֶתְּנֶ֤נָּה לָכֶם֙ לָרֶ֣שֶׁת אֹתָ֔הּ אֶ֛רֶץ זָבַ֥ת חָלָ֖ב וּדְבָ֑שׁ אֲנִי֙ יְהֹוָ֣ה אֱלֹֽהֵיכֶ֔ם אֲשֶׁר־הִבְדַּ֥לְתִּי אֶתְכֶ֖ם מִן־הָֽעַמִּֽים׃",
+      "en": "But I have said to you, You shall inherit their land, and I will give it to you to possess it, a land that flows with milk and honey: I am the Lord your God, who have separated you from the peoples."
+    },
+    {
+      "n": 62,
+      "c": 20,
+      "v": 25,
+      "ref": "20:25",
+      "text": "וְהִבְדַּלְתֶּ֞ם בֵּֽין־הַבְּהֵמָ֤ה הַטְּהֹרָה֙ לַטְּמֵאָ֔ה וּבֵין־הָע֥וֹף הַטָּמֵ֖א לַטָּהֹ֑ר וְלֹֽא־תְשַׁקְּצ֨וּ אֶת־נַפְשֹֽׁתֵיכֶ֜ם בַּבְּהֵמָ֣ה וּבָע֗וֹף וּבְכֹל֙ אֲשֶׁ֣ר תִּרְמֹ֣שׂ הָֽאֲדָמָ֔ה אֲשֶׁר־הִבְדַּ֥לְתִּי לָכֶ֖ם לְטַמֵּֽא׃",
+      "en": "You shall therefore distinguish between clean beasts and unclean, and between unclean birds and clean: and you shall not make your souls abominable by beast, or by bird, or by any manner of living thing that creeps on the ground, which I have separated from you as unclean."
+    },
+    {
+      "n": 63,
+      "c": 20,
+      "v": 26,
+      "ref": "20:26",
+      "text": "וִהְיִ֤יתֶם לִי֙ קְדֹשִׁ֔ים כִּ֥י קָד֖וֹשׁ אֲנִ֣י יְהֹוָ֑ה וָאַבְדִּ֥ל אֶתְכֶ֛ם מִן־הָֽעַמִּ֖ים לִהְי֥וֹת לִֽי׃",
+      "en": "And you shall be holy to me: for I the Lord am holy, and have separated you from the peoples, that you should be mine."
+    },
+    {
+      "n": 64,
+      "c": 20,
+      "v": 27,
+      "ref": "20:27",
+      "text": "וְאִ֣ישׁ אֽוֹ־אִשָּׁ֗ה כִּי־יִהְיֶ֨ה בָהֶ֥ם א֛וֹב א֥וֹ יִדְּעֹנִ֖י מ֣וֹת יוּמָ֑תוּ בָּאֶ֛בֶן יִרְגְּמ֥וּ אֹתָ֖ם דְּמֵיהֶ֥ם בָּֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "A man also or woman that is a medium or a wizard, shall surely be put to death: they shall stone them with stones: their blood shall be upon them."
+    }
+  ],
+  "parashah": {
+    "en": "Kedoshim",
+    "he": "קְדֹשִׁים",
+    "translit": "Kedoshim",
+    "ref": "Leviticus 19:1–20:27"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 14,
+        "ref": "19:1–19:14"
+      },
+      {
+        "n": 2,
+        "start": 15,
+        "end": 22,
+        "ref": "19:15–19:22"
+      },
+      {
+        "n": 3,
+        "start": 23,
+        "end": 32,
+        "ref": "19:23–19:32"
+      },
+      {
+        "n": 4,
+        "start": 33,
+        "end": 37,
+        "ref": "19:33–19:37"
+      },
+      {
+        "n": 5,
+        "start": 38,
+        "end": 44,
+        "ref": "20:1–20:7"
+      },
+      {
+        "n": 6,
+        "start": 45,
+        "end": 59,
+        "ref": "20:8–20:22"
+      },
+      {
+        "n": 7,
+        "start": 60,
+        "end": 64,
+        "ref": "20:23–20:27"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 4,
+          "ref": "19:1–19:4"
+        },
+        {
+          "n": 2,
+          "start": 5,
+          "end": 7,
+          "ref": "19:5–19:7"
+        },
+        {
+          "n": 3,
+          "start": 8,
+          "end": 10,
+          "ref": "19:8–19:10"
+        },
+        {
+          "n": 4,
+          "start": 11,
+          "end": 13,
+          "ref": "19:11–19:13"
+        },
+        {
+          "n": 5,
+          "start": 14,
+          "end": 16,
+          "ref": "19:14–19:16"
+        },
+        {
+          "n": 6,
+          "start": 17,
+          "end": 19,
+          "ref": "19:17–19:19"
+        },
+        {
+          "n": 7,
+          "start": 20,
+          "end": 22,
+          "ref": "19:20–19:22"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 23,
+          "end": 25,
+          "ref": "19:23–19:25"
+        },
+        {
+          "n": 2,
+          "start": 26,
+          "end": 28,
+          "ref": "19:26–19:28"
+        },
+        {
+          "n": 3,
+          "start": 29,
+          "end": 31,
+          "ref": "19:29–19:31"
+        },
+        {
+          "n": 4,
+          "start": 32,
+          "end": 34,
+          "ref": "19:32–19:34"
+        },
+        {
+          "n": 5,
+          "start": 35,
+          "end": 37,
+          "ref": "19:35–19:37"
+        },
+        {
+          "n": 6,
+          "start": 38,
+          "end": 40,
+          "ref": "20:1–20:3"
+        },
+        {
+          "n": 7,
+          "start": 41,
+          "end": 43,
+          "ref": "20:4–20:6"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 44,
+          "end": 46,
+          "ref": "20:7–20:9"
+        },
+        {
+          "n": 2,
+          "start": 47,
+          "end": 49,
+          "ref": "20:10–20:12"
+        },
+        {
+          "n": 3,
+          "start": 50,
+          "end": 52,
+          "ref": "20:13–20:15"
+        },
+        {
+          "n": 4,
+          "start": 53,
+          "end": 55,
+          "ref": "20:16–20:18"
+        },
+        {
+          "n": 5,
+          "start": 56,
+          "end": 58,
+          "ref": "20:19–20:21"
+        },
+        {
+          "n": 6,
+          "start": 59,
+          "end": 61,
+          "ref": "20:22–20:24"
+        },
+        {
+          "n": 7,
+          "start": 62,
+          "end": 64,
+          "ref": "20:25–20:27"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 62,
+        "end": 64,
+        "ref": "20:25–20:27"
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

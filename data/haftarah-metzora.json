@@ -1,0 +1,188 @@
+{
+  "slug": "haftarah-metzora",
+  "book": {
+    "en": "II Kings",
+    "he": "מלכים ב",
+    "translit": "Melachim B"
+  },
+  "multiChapter": true,
+  "ref": "II Kings 7:3-20",
+  "heRef": "מלכים ב ז׳:ג-כ",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 7,
+      "v": 3,
+      "ref": "7:3",
+      "text": "וְאַרְבָּעָ֧ה אֲנָשִׁ֛ים הָי֥וּ מְצֹרָעִ֖ים פֶּ֣תַח הַשָּׁ֑עַר וַיֹּֽאמְרוּ֙ אִ֣ישׁ אֶל־רֵעֵ֔הוּ מָ֗ה אֲנַ֛חְנוּ יֹשְׁבִ֥ים פֹּ֖ה עַד־מָֽתְנוּ׃",
+      "en": "And there were four men afflicted with żara῾at at the entrance of the gate: and they said to one another, Why do we sit here until we die?"
+    },
+    {
+      "n": 2,
+      "c": 7,
+      "v": 4,
+      "ref": "7:4",
+      "text": "אִם־אָמַ֩רְנוּ֩ נָב֨וֹא הָעִ֜יר וְהָרָעָ֤ב בָּעִיר֙ וָמַ֣תְנוּ שָׁ֔ם וְאִם־יָשַׁ֥בְנוּ פֹ֖ה וָמָ֑תְנוּ וְעַתָּ֗ה לְכוּ֙ וְנִפְּלָה֙ אֶל־מַחֲנֵ֣ה אֲרָ֔ם אִם־יְחַיֻּ֣נוּ נִֽחְיֶ֔ה וְאִם־יְמִיתֻ֖נוּ וָמָֽתְנוּ׃",
+      "en": "If we say, We will enter the city, then the famine is in the city, and we shall die there: and if we sit still here, we will die also. Now therefore come, and let us go over to the camp of Aram: if they save us alive, we shall live; and if they kill us, we shall but die."
+    },
+    {
+      "n": 3,
+      "c": 7,
+      "v": 5,
+      "ref": "7:5",
+      "text": "וַיָּקֻ֣מוּ בַנֶּ֔שֶׁף לָב֖וֹא אֶל־מַחֲנֵ֣ה אֲרָ֑ם וַיָּבֹ֗אוּ עַד־קְצֵה֙ מַחֲנֵ֣ה אֲרָ֔ם וְהִנֵּ֥ה אֵֽין־שָׁ֖ם אִֽישׁ׃",
+      "en": "And they rose up in the twilight, to go to the camp of Aram: and when they were come to the outer edge of the camp of Aram, behold, there was no man there."
+    },
+    {
+      "n": 4,
+      "c": 7,
+      "v": 6,
+      "ref": "7:6",
+      "text": "וַאדֹנָ֞י הִשְׁמִ֣יעַ&thinsp;<b>׀</b> אֶת־מַחֲנֵ֣ה אֲרָ֗ם ק֥וֹל רֶ֙כֶב֙ ק֣וֹל ס֔וּס ק֖וֹל חַ֣יִל גָּד֑וֹל וַיֹּאמְר֞וּ אִ֣ישׁ אֶל־אָחִ֗יו הִנֵּ֣ה שָֽׂכַר־עָלֵ֩ינוּ֩ מֶ֨לֶךְ יִשְׂרָאֵ֜ל אֶת־מַלְכֵ֧י הַחִתִּ֛ים וְאֶת־מַלְכֵ֥י מִצְרַ֖יִם לָב֥וֹא עָלֵֽינוּ׃",
+      "en": "For the Lord had made the camp of Aram to hear a noise of chariots, and a noise of horses, the noise of a great host: and they said to one another, Lo, the king of Yisra᾽el has hired against us the kings of the Ḥittites, and the kings of Miżrayim, to come upon us."
+    },
+    {
+      "n": 5,
+      "c": 7,
+      "v": 7,
+      "ref": "7:7",
+      "text": "וַיָּק֘וּמוּ֮ וַיָּנ֣וּסוּ בַנֶּ֒שֶׁף֒ וַיַּעַזְב֣וּ אֶת־אׇהֳלֵיהֶ֗ם וְאֶת־סֽוּסֵיהֶם֙ וְאֶת־חֲמֹ֣רֵיהֶ֔ם הַֽמַּחֲנֶ֖ה כַּאֲשֶׁר־הִ֑יא וַיָּנֻ֖סוּ אֶל־נַפְשָֽׁם׃",
+      "en": "So they arose and fled in the twilight, and left their tents, and their horses, and their asses, even the camp as it was, and fled for their life."
+    },
+    {
+      "n": 6,
+      "c": 7,
+      "v": 8,
+      "ref": "7:8",
+      "text": "וַיָּבֹ֩אוּ֩ הַֽמְצֹרָעִ֨ים הָאֵ֜לֶּה עַד־קְצֵ֣ה הַֽמַּחֲנֶ֗ה וַיָּבֹ֜אוּ אֶל־אֹ֤הֶל אֶחָד֙ וַיֹּאכְל֣וּ וַיִּשְׁתּ֔וּ וַיִּשְׂא֣וּ מִשָּׁ֗ם כֶּ֤סֶף וְזָהָב֙ וּבְגָדִ֔ים וַיֵּלְכ֖וּ וַיַּטְמִ֑נוּ וַיָּשֻׁ֗בוּ וַיָּבֹ֙אוּ֙ אֶל־אֹ֣הֶל אַחֵ֔ר וַיִּשְׂא֣וּ מִשָּׁ֔ם וַיֵּלְכ֖וּ וַיַּטְמִֽנוּ׃",
+      "en": "And when these diseased men came to the outer edge of the camp, they went into one tent, and did eat and drink, and carried from there silver, and gold, and raiment, and went and hid it; and came back, and entered into another tent, and carried from there also, and went and hid it."
+    },
+    {
+      "n": 7,
+      "c": 7,
+      "v": 9,
+      "ref": "7:9",
+      "text": "וַיֹּאמְרוּ֩ אִ֨ישׁ אֶל־רֵעֵ֜הוּ לֹא־כֵ֣ן&thinsp;<b>׀</b> אֲנַ֣חְנוּ עֹשִׂ֗ים הַיּ֤וֹם הַזֶּה֙ יוֹם־בְּשֹׂרָ֣ה ה֔וּא וַאֲנַ֣חְנוּ מַחְשִׁ֗ים וְחִכִּ֛ינוּ עַד־א֥וֹר הַבֹּ֖קֶר וּמְצָאָ֣נוּ עָו֑וֹן וְעַתָּה֙ לְכ֣וּ וְנָבֹ֔אָה וְנַגִּ֖ידָה בֵּ֥ית הַמֶּֽלֶךְ׃",
+      "en": "Then they said to one another, We do not behave correctly: this day is a day of good tidings, and we hold our peace: if we tarry till the morning light, punishment will come upon us: now therefore come, that we may go and tell the king’s household."
+    },
+    {
+      "n": 8,
+      "c": 7,
+      "v": 10,
+      "ref": "7:10",
+      "text": "וַיָּבֹ֗אוּ וַֽיִּקְרְאוּ֮ אֶל־שֹׁעֵ֣ר הָעִיר֒ וַיַּגִּ֤ידוּ לָהֶם֙ לֵאמֹ֔ר בָּ֚אנוּ אֶל־מַחֲנֵ֣ה אֲרָ֔ם וְהִנֵּ֧ה אֵֽין־שָׁ֛ם אִ֖ישׁ וְק֣וֹל אָדָ֑ם כִּ֣י אִם־הַסּ֤וּס אָסוּר֙ וְהַחֲמ֣וֹר אָס֔וּר וְאֹהָלִ֖ים כַּאֲשֶׁר־הֵֽמָּה׃",
+      "en": "So they came and called to the gatekeepers of the city: and they told them, saying, We came to the camp of Aram, and, behold, there was no man there, neither voice of man, but horses tied, and asses tied, and the tents as they were."
+    },
+    {
+      "n": 9,
+      "c": 7,
+      "v": 11,
+      "ref": "7:11",
+      "text": "וַיִּקְרָ֖א הַשֹּׁעֲרִ֑ים וַיַּגִּ֕ידוּ בֵּ֥ית הַמֶּ֖לֶךְ פְּנִֽימָה׃",
+      "en": "And he called the gatekeepers; and they told it to the king’s house within."
+    },
+    {
+      "n": 10,
+      "c": 7,
+      "v": 12,
+      "ref": "7:12",
+      "text": "וַיָּ֨קׇם הַמֶּ֜לֶךְ לַ֗יְלָה וַיֹּ֙אמֶר֙ אֶל־עֲבָדָ֔יו אַגִּֽידָה־נָּ֣א לָכֶ֔ם אֵ֛ת אֲשֶׁר־עָ֥שׂוּ לָ֖נוּ אֲרָ֑ם יָדְע֞וּ כִּֽי־רְעֵבִ֣ים אֲנַ֗חְנוּ וַיֵּֽצְא֤וּ מִן־הַֽמַּחֲנֶה֙ לְהֵחָבֵ֤ה <span class=\"mam-kq\"><span class=\"mam-kq-k\">(בהשדה)</span> <span class=\"mam-kq-q\">[בַשָּׂדֶה֙]</span></span> לֵאמֹ֔ר כִּֽי־יֵצְא֤וּ מִן־הָעִיר֙ וְנִתְפְּשֵׂ֣ם חַיִּ֔ים וְאֶל־הָעִ֖יר נָבֹֽא׃",
+      "en": "And the king arose in the night, and said to his servants, I will now tell you what Aram has done to us. They know that we are hungry; therefore are they gone out of the camp to hide themselves in the field, saying, When they come out of the city, we shall catch them alive, and get into the city."
+    },
+    {
+      "n": 11,
+      "c": 7,
+      "v": 13,
+      "ref": "7:13",
+      "text": "וַיַּ֩עַן֩ אֶחָ֨ד מֵעֲבָדָ֜יו וַיֹּ֗אמֶר וְיִקְחוּ־נָ֞א חֲמִשָּׁ֣ה מִן־הַסּוּסִים֮ הַֽנִּשְׁאָרִים֮ אֲשֶׁ֣ר נִשְׁאֲרוּ־בָהּ֒ הִנָּ֗ם כְּכׇל־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[הֲמ֤וֹן]</span> <span class=\"mam-kq-k\">(ההמון)</span></span> יִשְׂרָאֵל֙ אֲשֶׁ֣ר נִשְׁאֲרוּ־בָ֔הּ הִנָּ֕ם כְּכׇל־הֲמ֥וֹן יִשְׂרָאֵ֖ל אֲשֶׁר־תָּ֑מּוּ וְנִשְׁלְחָ֖ה וְנִרְאֶֽה׃",
+      "en": "And one of his servants answered and said, Let some take, I pray thee, five of the horses that remain, which are left in the city, (behold, they are as all the multitude of Yisra᾽el that are left in it: behold, I say, they are even as all the multitude of Yisra᾽el that are consumed:) and let us send and see."
+    },
+    {
+      "n": 12,
+      "c": 7,
+      "v": 14,
+      "ref": "7:14",
+      "text": "וַיִּקְח֕וּ שְׁנֵ֖י רֶ֣כֶב סוּסִ֑ים וַיִּשְׁלַ֨ח הַמֶּ֜לֶךְ אַחֲרֵ֧י מַֽחֲנֵה־אֲרָ֛ם לֵאמֹ֖ר לְכ֥וּ וּרְאֽוּ׃",
+      "en": "They took therefore two chariot horses; and the king sent after the camp of Aram, saying, Go and see."
+    },
+    {
+      "n": 13,
+      "c": 7,
+      "v": 15,
+      "ref": "7:15",
+      "text": "וַיֵּלְכ֣וּ אַחֲרֵיהֶם֮ עַד־הַיַּרְדֵּן֒ וְהִנֵּ֣ה כׇל־הַדֶּ֗רֶךְ מְלֵאָ֤ה בְגָדִים֙ וְכֵלִ֔ים אֲשֶׁר־הִשְׁלִ֥יכוּ אֲרָ֖ם <span class=\"mam-kq\"><span class=\"mam-kq-k\">(בהחפזם)</span> <span class=\"mam-kq-q\">[בְּחׇפְזָ֑ם]</span></span> וַיָּשֻׁ֙בוּ֙ הַמַּלְאָכִ֔ים וַיַּגִּ֖דוּ לַמֶּֽלֶךְ׃",
+      "en": "And they went after them to the Yarden: and, lo, all the way was full of garments and vessels, which Aram had cast away in their haste. And the messengers returned, and told the king."
+    },
+    {
+      "n": 14,
+      "c": 7,
+      "v": 16,
+      "ref": "7:16",
+      "text": "וַיֵּצֵ֣א הָעָ֔ם וַיָּבֹ֕זּוּ אֵ֖ת מַחֲנֵ֣ה אֲרָ֑ם וַיְהִ֨י סְאָה־סֹ֜לֶת בְּשֶׁ֗קֶל וְסָאתַ֧יִם שְׂעֹרִ֛ים בְּשֶׁ֖קֶל כִּדְבַ֥ר יְהֹוָֽה׃",
+      "en": "And the people went out, and plundered the camp of Aram. So a measure of fine flour was sold for a shekel, and two measures of barley for a shekel, according to the word of the Lord."
+    },
+    {
+      "n": 15,
+      "c": 7,
+      "v": 17,
+      "ref": "7:17",
+      "text": "וְהַמֶּ֩לֶךְ֩ הִפְקִ֨יד אֶת־הַשָּׁלִ֜ישׁ אֲשֶׁר־נִשְׁעָ֤ן עַל־יָדוֹ֙ עַל־הַשַּׁ֔עַר וַיִּרְמְסֻ֧הוּ הָעָ֛ם בַּשַּׁ֖עַר וַיָּמֹ֑ת כַּאֲשֶׁ֤ר דִּבֶּר֙ אִ֣ישׁ הָאֱלֹהִ֔ים אֲשֶׁ֣ר דִּבֶּ֔ר בְּרֶ֥דֶת הַמֶּ֖לֶךְ אֵלָֽיו׃",
+      "en": "And the king appointed the officer on whose hand he had leaned to have the charge of the gate: and the people trampled upon him in the gate, and he died, as the man of God had said, who spoke when the king came down to him."
+    },
+    {
+      "n": 16,
+      "c": 7,
+      "v": 18,
+      "ref": "7:18",
+      "text": "וַיְהִ֗י כְּדַבֵּר֙ אִ֣ישׁ הָאֱלֹהִ֔ים אֶל־הַמֶּ֖לֶךְ לֵאמֹ֑ר סָאתַ֨יִם שְׂעֹרִ֜ים בְּשֶׁ֗קֶל וּֽסְאָה־סֹ֙לֶת֙ בְּשֶׁ֔קֶל יִֽהְיֶה֙ כָּעֵ֣ת מָחָ֔ר בְּשַׁ֖עַר שֹׁמְרֽוֹן׃",
+      "en": "And it came to pass when the man of God had spoken to the king, saying, Two measures of barley for a shekel, and a measure of fine flour for a shekel, shall be to morrow about this time in the gate of Shomeron,"
+    },
+    {
+      "n": 17,
+      "c": 7,
+      "v": 19,
+      "ref": "7:19",
+      "text": "וַיַּ֨עַן הַשָּׁלִ֜ישׁ אֶת־אִ֣ישׁ הָאֱלֹהִים֮ וַיֹּאמַר֒ וְהִנֵּ֣ה יְהֹוָ֗ה עֹשֶׂ֤ה אֲרֻבּוֹת֙ בַּשָּׁמַ֔יִם הֲיִֽהְיֶ֖ה כַּדָּבָ֣ר הַזֶּ֑ה וַיֹּ֗אמֶר הִנְּךָ֤ רֹאֶה֙ בְּעֵינֶ֔יךָ וּמִשָּׁ֖ם לֹ֥א תֹאכֵֽל׃",
+      "en": "that that officer answered the man of God, and said, Now, behold, if the Lord should make windows in heaven, might such a thing be? And he said, Behold, thou shalt see it with thy eyes, but shalt not eat of it."
+    },
+    {
+      "n": 18,
+      "c": 7,
+      "v": 20,
+      "ref": "7:20",
+      "text": "וַֽיְהִי־ל֖וֹ כֵּ֑ן וַיִּרְמְס֨וּ אֹת֥וֹ הָעָ֛ם בַּשַּׁ֖עַר וַיָּמֹֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And so it happened to him: for the people trampled upon him in the gate, and he died."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Metzora",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 28
+  },
+  "parashah": {
+    "en": "Haftarat Metzora",
+    "translit": "Haftarat Metzora",
+    "he": "הפטרת מצרע",
+    "ref": "II Kings 7:3-20"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 18,
+        "ref": "7:3–7:20"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

@@ -41,6 +41,7 @@ let step = 0;
 let editingMode = false;    // true when rewriting an existing plan — demos stay hidden
 let signinBusy = false;     // a sign-in popup is open
 let signinFailed = false;   // the last attempt didn't complete (popup closed, offline, blocked)
+let hadLocalPlan = false;   // a plan was already on this device when the wizard opened
 let unwatchAuth = null;
 
 // Chrome and Edge fire this when the app is installable; capturing it lets the
@@ -72,6 +73,15 @@ function isIOS() {
     || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
 }
 
+// High Holiday occasion only: a typed RH/YK date (or the next one) cues those
+// readings. Bar/bat/aliyah still use calendar.forDate (next Shabbat) per M1 S3.
+function resolveEnteredDate(iso) {
+  if (draft.occasion === 'highholiday') {
+    return calendar.holidayOn(iso) || calendar.nextHoliday(iso);
+  }
+  return calendar.forDate(iso);
+}
+
 function newDraft() {
   return {
     role: 'self',
@@ -99,6 +109,10 @@ export function open({ done, editing = null } = {}) {
   editingMode = !!editing;
   signinBusy = false;
   signinFailed = false;
+  // Remembered so a sign-in on the intro can tell "this device already had a
+  // plan" (someone starting a new one) from "the plan just arrived from the
+  // cloud" (someone coming back on a new phone).
+  hadLocalPlan = !!plan.get();
   if (editing) {
     draft.role = editing.role || draft.role;
     draft.occasion = editing.occasion || draft.occasion;
@@ -114,16 +128,31 @@ export function open({ done, editing = null } = {}) {
     // have had the offer, in this wizard and in the topbar, every day since.
     draft.needsAccount = false;
   }
-  // Someone changing an existing plan doesn't need to be taught how to install
-  // the app, and neither does someone who already has.
-  step = (editing || isInstalled()) ? 1 : 0;
+  // First applicable screen, not a hardcoded index: the intro is skipped when
+  // there is nothing left to offer on it (already installed AND already signed
+  // in, or rewriting a plan), but it stays up on a new device so they can sign
+  // back into their progress without re-answering the rest of the wizard.
+  step = 0;
+  while (step < STEPS.length - 1 && !applies(STEPS[step])) step += 1;
   mount();
-  // The sign-in screen is the one that changes under the reader without them
-  // touching it — the popup completes, or the SDK finishes loading — so it is
-  // redrawn when the session changes. Only that screen: a redraw anywhere else
-  // would take the name or the date out from under a half-finished answer.
+  // The intro and the later account screen both change under the reader without
+  // them touching them — the popup completes, a stored session restores, or the
+  // SDK finishes loading — so they are redrawn when the session changes. Only
+  // those two: a redraw anywhere else would take the name or the date out from
+  // under a half-finished answer.
   unwatchAuth = auth.watchUser(() => {
-    if (root && STEPS[step] === 'account') render();
+    if (!root) return;
+    if (STEPS[step] === 'install') {
+      resumeCloudPlanIfNew().then((resumed) => {
+        if (resumed || !root || STEPS[step] !== 'install') return;
+        // A click-driven sign-in navigates itself once the popup finishes;
+        // only skip forward here for a session that restored underneath us.
+        if (!applies('install') && !signinBusy) next();
+        else render();
+      });
+      return;
+    }
+    if (STEPS[step] === 'account') render();
   });
   calendar.load().then(() => { if (root) render(); });
   render();
@@ -151,12 +180,15 @@ function mount() {
 // Steps that don't apply to this reader are skipped in both directions, so Back
 // never lands on a screen that was never shown.
 function applies(name) {
-  if (name === 'install') return !isInstalled();
+  if (name === 'install') return installApplies();
   // Nobody else's simcha to ask about, and no date to hang it on, when someone is
   // just learning to chant: they go straight to choosing a parashah by name.
   if (name === 'whose' || name === 'date') return draft.occasion !== 'learning';
   if (name === 'name') return draft.occasion !== 'learning' && draft.role !== 'self';
   if (name === 'parashah') return !draft.rec || !!draft.browseFrom;
+  // High Holidays are not read on a weekly cycle — asking annual vs triennial
+  // would be a nonsense question and would assume seven Shabbat aliyot.
+  if (name === 'cycle') return !(draft.rec && draft.rec.holiday);
   if (name === 'account') return accountApplies();
   return true;
 }
@@ -188,6 +220,35 @@ function accountApplies() {
     draft.needsAccount = state === 'ready' && !signedInForKeeps();
   }
   return draft.needsAccount;
+}
+
+// The first screen teaches the home-screen install and, on a new device, offers
+// sign-in so a returning reader can skip the rest of the wizard. Skip it only
+// when both of those have nothing left to say: already installed, and either
+// already signed in or there is no project to sign in to. Rewriting a plan
+// never needs either lesson.
+function installApplies() {
+  if (editingMode) return false;
+  if (!isInstalled()) return true;
+  return introOffersSignIn();
+}
+
+function introOffersSignIn() {
+  return auth.readyState() !== 'unconfigured' && !signedInForKeeps();
+}
+
+// A plan that arrived with this sign-in — it was not on the device when the
+// wizard opened — is the reader coming back on a new phone. Hand it over and
+// skip the questions they have already answered elsewhere.
+async function resumeCloudPlanIfNew() {
+  if (editingMode || hadLocalPlan || !signedInForKeeps()) return false;
+  try { await auth.whenSynced(); } catch (e) { return false; }
+  if (!root) return false;
+  const existing = plan.get();
+  if (!existing) return false;
+  close();
+  onDone(existing);
+  return true;
 }
 
 function go(delta) {
@@ -246,23 +307,62 @@ function bodyFor(name) {
   return body ? body() : '';
 }
 
-// 1. Keep it on the home screen. A reader who practises daily for eight months
-// should not be hunting for a link each time, and a standalone window loses the
-// browser chrome that eats a phone's short side.
+// 1. Keep it on the home screen — and, on a new device, sign back in. A reader
+// who practises daily for eight months should not be hunting for a link each
+// time, and they should not have to re-answer the wizard to reach the progress
+// they already have. One screen, two ways back in; starting fresh is the way past.
 function installBody() {
   const ios = isIOS();
+  const installed = isInstalled();
+  const state = auth.readyState();
+  const offerSignIn = introOffersSignIn();
   const how = ios
     ? `<li>Tap <b>Share</b> <span class="ob-ico">\u2191</span> at the bottom of Safari</li>
        <li>Choose <b>Add to Home Screen</b></li>
        <li>Tap <b>Add</b></li>`
     : `<li>Open your browser\u2019s <b>\u22ee</b> menu</li>
        <li>Choose <b>Install app</b> (or <b>Add to Home screen</b>)</li>`;
-  return `
+  const pwa = installed ? '' : `
     <h2 class="ob-h">Keep this on your home screen</h2>
     <p class="ob-sub">You\u2019ll come back most days. Installed, it opens like an app, fills the screen and works without signal.</p>
     <ol class="ob-steps">${how}</ol>
-    <button class="ob-go" id="obInstall" ${installPrompt ? '' : 'hidden'}>\u2b07 Install now</button>
-    <button class="ob-go ob-ghost" id="obSkipInstall">I\u2019ll do it later \u2014 let\u2019s start</button>`;
+    <button class="ob-go" id="obInstall" ${installPrompt ? '' : 'hidden'}>\u2b07 Install now</button>`;
+  const returning = !offerSignIn ? signedInIntroNote() : `
+    ${installed
+      ? `<h2 class="ob-h">Get your progress back</h2>
+         <p class="ob-sub">Practicing on another phone or computer? Sign in and this one has the same
+           plan, scores and takes \u2014 instead of starting over.</p>`
+      : `<p class="ob-label ob-return">Coming back on a new device?</p>
+         <p class="ob-sub">Sign in and your plan, scores and takes are here \u2014 instead of starting
+           the setup over.</p>`}
+    ${state === 'failed'
+      ? `<p class="ob-warn">Signing in isn\u2019t reachable right now. Carry on and use the \u2630
+          menu once you have a signal.</p>`
+      : signInButton(state)}
+    ${signinFailed ? `<p class="ob-warn">That didn\u2019t finish \u2014 the popup may have been closed or
+      blocked. Try again, or carry on and sign in later from the \u2630 menu.</p>` : ''}`;
+  const skip = offerSignIn
+    ? 'I\u2019m new \u2014 let\u2019s start'
+    : (installed ? 'Continue' : 'I\u2019ll do it later \u2014 let\u2019s start');
+  return `
+    ${pwa}
+    ${returning}
+    <button class="ob-go ob-ghost" id="obSkipInstall">${skip}</button>`;
+}
+
+function signedInIntroNote() {
+  if (!signedInForKeeps()) return '';
+  const id = auth.getGoogleIdentity() || {};
+  const as = id.name || id.email || '';
+  return `<p class="ob-note ob-good">\u2713 Signed in${as
+    ? ` as <b>${escapeHtml(as)}</b>` : ''}. Your progress will be here.</p>`;
+}
+
+function signInButton(state) {
+  const loading = state !== 'ready';
+  const label = signinBusy ? 'Signing in\u2026' : (loading ? 'Preparing sign-in\u2026' : 'Sign in with Google');
+  return `<button class="ob-go" id="obSignIn" ${loading || signinBusy ? 'disabled' : ''}>
+      <span class="ob-g" aria-hidden="true">G</span> ${label}</button>`;
 }
 
 // 2. What the occasion is. Tapping an answer IS moving on — a question with four
@@ -285,7 +385,7 @@ function whoBody() {
     </div>`;
   return `
     <h2 class="ob-h">What are you learning for?</h2>
-    <div class="ob-choices">${occ('barmitzvah')}${occ('batmitzvah')}${occ('aliyah')}${occ('learning')}</div>
+    <div class="ob-choices">${occ('barmitzvah')}${occ('batmitzvah')}${occ('aliyah')}${occ('learning')}${occ('highholiday')}</div>
     ${demos}`;
 }
 
@@ -338,7 +438,7 @@ function dateBody() {
   // resolves to must be on screen and Next must work. Resolving here rather than
   // only in the input handler is what makes the screen self-sufficient.
   if (!loading && !draft.rec && draft.enteredDate) {
-    draft.rec = calendar.forDate(draft.enteredDate);
+    draft.rec = resolveEnteredDate(draft.enteredDate);
   }
   // Being on this screen with a date in hand means the reader is answering by date
   // after all, so the browse-by-name detour is dropped from the flow rather than
@@ -346,7 +446,9 @@ function dateBody() {
   if (draft.rec) draft.browseFrom = null;
   return `
     <h2 class="ob-h">When is it?</h2>
-    <p class="ob-sub">The date tells us which parashah you\u2019ll be reading. Not sure of the exact day? Any date that week is close enough.</p>
+    <p class="ob-sub">${draft.occasion === 'highholiday'
+      ? 'Rosh Hashanah or Yom Kippur \u2014 the date names the day\u2019s readings, not that week\u2019s Shabbat.'
+      : 'The date tells us which parashah you\u2019ll be reading. Not sure of the exact day? Any date that week is close enough.'}</p>
     <input class="ob-input ob-date" id="obDate" type="date"
       ${cov ? `min="${cov.from}" max="${cov.to}"` : ''}
       value="${escapeAttr(draft.enteredDate)}" />
@@ -372,14 +474,18 @@ function resolvedCard() {
   // date and then chose a different parashah by name should not be told their
   // simcha week is the one they browsed to.
   const gap = (new Date(`${rec.date}T12:00:00`) - new Date(`${draft.enteredDate}T12:00:00`)) / 86400000;
-  const shifted = rec.date !== draft.enteredDate && gap > 0 && gap < 7;
+  const shifted = !rec.holiday && rec.date !== draft.enteredDate && gap > 0 && gap < 7;
   return `
     <div class="ob-parashah">
       <p class="ob-pname">${escapeHtml(rec.parashah)}</p>
       <p class="ob-phe" lang="he" dir="rtl">${escapeHtml(rec.hebrew)}</p>
       <p class="ob-pmeta">${escapeHtml(plan.formatDate(rec.date))}${rec.hebrewDate ? ` \u00b7 ${escapeHtml(rec.hebrewDate)}` : ''}</p>
+      ${rec.holiday && rec.date === draft.enteredDate
+        ? `<p class="ob-note">High Holiday readings for this date \u2014 not the weekly Shabbat parashah.</p>` : ''}
+      ${rec.holiday && rec.date !== draft.enteredDate
+        ? `<p class="ob-note">The next High Holiday after ${escapeHtml(plan.formatDate(draft.enteredDate))} is this one.</p>` : ''}
       ${shifted ? `<p class="ob-note">Read on the Shabbat of that week.</p>` : ''}
-      ${rec.date !== draft.enteredDate && !shifted
+      ${!rec.holiday && rec.date !== draft.enteredDate && !shifted
     ? `<p class="ob-warn">This is a different week from ${escapeHtml(plan.formatDate(draft.enteredDate))} \u2014 you chose this parashah by name. If that isn\u2019t right, go back and pick again.</p>` : ''}
       ${rec.combined ? `<p class="ob-note">Two parshiyot are read together that week.</p>` : ''}
       <dl class="ob-refs">
@@ -387,7 +493,7 @@ function resolvedCard() {
         ${rec.maftirRef ? `<div><dt>Maftir</dt><dd>${escapeHtml(rec.maftirRef)}</dd></div>` : ''}
         ${rec.haftarahRef ? `<div><dt>Haftarah</dt><dd>${escapeHtml(rec.haftarahRef)}</dd></div>` : ''}
       </dl>
-      ${rec.special ? `<p class="ob-note">${escapeHtml(rec.special)} \u2014 the maftir and haftarah that week are the special ones, not the parashah\u2019s own. Worth checking with whoever is teaching you.</p>` : ''}
+      ${!rec.holiday && rec.special ? `<p class="ob-note">${escapeHtml(rec.special)} \u2014 the maftir and haftarah that week are the special ones, not the parashah\u2019s own. Worth checking with whoever is teaching you.</p>` : ''}
     </div>`;
 }
 
@@ -395,16 +501,22 @@ function resolvedCard() {
 // shows the next Shabbat it comes round on, which is usually enough to recognise.
 function parashahBody() {
   const from = draft.browseFrom || calendar.today();
-  const list = calendar.parashiyot(from);
+  const holidayBrowse = draft.occasion === 'highholiday';
+  const list = holidayBrowse ? calendar.holidayServices(from) : calendar.parashiyot(from);
   const rows = list.map((r) => `
-    <button class="ob-prow${draft.rec && draft.rec.date === r.date ? ' on' : ''}" data-date="${r.date}">
+    <button class="ob-prow${draft.rec && draft.rec.date === r.date && draft.rec.holidayId === (r.holidayId || undefined) ? ' on' : ''}"
+      data-date="${r.date}"${r.holidayId ? ` data-svc="${r.holidayId}"` : ''}>
       <span class="ob-prow-name">${escapeHtml(r.parashah)}</span>
       <span class="ob-prow-he" lang="he" dir="rtl">${escapeHtml(r.hebrew)}</span>
       <span class="ob-prow-when">${escapeHtml(plan.formatDate(r.date))}</span>
     </button>`).join('');
   return `
-    <h2 class="ob-h">Which parashah?</h2>
-    <p class="ob-sub">${list.length ? 'Every parashah, with the next Shabbat it is read on.' : 'Loading the calendar\u2026'}</p>
+    <h2 class="ob-h">${holidayBrowse ? 'Which High Holiday?' : 'Which parashah?'}</h2>
+    <p class="ob-sub">${list.length
+      ? (holidayBrowse
+        ? 'Rosh Hashanah, Yom Kippur, and Yom Kippur Mincha, with the next date each is read.'
+        : 'Every parashah, with the next Shabbat it is read on.')
+      : 'Loading the calendar\u2026'}</p>
     <input class="ob-input" id="obFilter" type="search" placeholder="Search by name" autocomplete="off" />
     <div class="ob-plist" id="obPlist">${rows}</div>
     <button class="ob-go" id="obNext" ${draft.rec ? '' : 'disabled'}>Next</button>`;
@@ -430,22 +542,24 @@ function cycleBody() {
 // 6. Which parts they will actually chant. Pre-selected from the occasion, so the
 // common case (a bar mitzvah reading maftir and haftarah) is one tap.
 function partsBody() {
-  const chosen = draft.parts || plan.defaultParts(draft.occasion);
+  const chosen = draft.parts || plan.defaultParts(draft.occasion, draft.rec);
   const ids = new Set(chosen.map(plan.partId));
+  const nums = plan.aliyahNumbers(draft.rec);
+  const showMaftir = !(draft.rec && draft.rec.holiday && !draft.rec.maftirRef);
   const row = (part) => {
     const id = plan.partId(part);
     return `<button class="ob-part${ids.has(id) ? ' on' : ''}" data-part="${id}">
         <span class="ob-part-check" aria-hidden="true">${ids.has(id) ? '\u2713' : ''}</span>
         <span class="ob-part-main">
           <span class="ob-part-name">${plan.partLabel(part)}</span>
-          <span class="ob-part-sub">${plan.partBlurb(part)}</span>
+          <span class="ob-part-sub">${plan.partBlurb(part, draft.rec)}</span>
         </span>
       </button>`;
   };
   // Each aliyah shows the pesukim it covers, on the cycle just chosen: a reader is
   // told "you have the third aliyah" and has no way to check that against a
   // parashah-wide range. Bare numbers when the calendar hasn't been reached yet.
-  const aliyot = plan.ALIYAH_NUMBERS.map((n) => {
+  const aliyot = nums.map((n) => {
     const id = `aliyah-${n}`;
     const ref = calendar.aliyahRef(draft.rec, n, draft.cycle);
     const verses = ref.replace(/^.*?(?=\d+:\d)/, '');
@@ -454,24 +568,27 @@ function partsBody() {
         ${verses ? `<span class="ob-alnum-ref">${escapeHtml(verses)}</span>` : ''}
       </button>`;
   }).join('');
+  const aliyahLabel = nums.length === 7
+    ? 'Or one of the seven aliyot'
+    : `Or one of the ${nums.length} aliyot`;
   return `
     <h2 class="ob-h">What will ${draft.role === 'self' ? 'you' : (draft.learner || 'they')} be chanting?</h2>
     <p class="ob-sub">Pick everything for now \u2014 you can add or drop a part later.</p>
     <div class="ob-parts">
-      ${row(plan.maftirPart())}
+      ${showMaftir ? row(plan.maftirPart()) : ''}
       ${row(plan.haftarahPart())}
     </div>
-    <p class="ob-label">Or one of the seven aliyot</p>
+    <p class="ob-label">${aliyahLabel}</p>
     <div class="ob-alnums">${aliyot}</div>
     <button class="ob-go" id="obNext" ${ids.size ? '' : 'disabled'}>Next</button>`;
 }
 
-// 7. An account, at the end of the questions and before a single note has been
-// sung. Everything the app knows about a reader lives in one browser's local
-// storage until they say otherwise, so a cleared cache, a new phone, or an
-// evening on the other parent's iPad loses months of work. This is the one moment
-// where asking costs nothing — there is nothing to lose yet — and from here every
-// take is saved to an account rather than to a device.
+// 7. An account, at the end of the questions — for a reader who skipped the
+// same offer on the intro. Everything the app knows about a reader lives in one
+// browser's local storage until they say otherwise, so a cleared cache, a new
+// phone, or an evening on the other parent's iPad loses months of work. Someone
+// who already signed in on the first screen never sees this; someone coming back
+// on a new device should have signed in there and skipped the rest.
 function accountBody() {
   const state = auth.readyState();
   const user = auth.getUser();
@@ -501,8 +618,6 @@ function accountBody() {
       <button class="ob-go" id="obNext">Carry on</button>`;
   }
 
-  const loading = state !== 'ready';
-  const label = signinBusy ? 'Signing in\u2026' : (loading ? 'Preparing sign-in\u2026' : 'Sign in with Google');
   return `
     <h2 class="ob-h">Save ${whose} progress</h2>
     <p class="ob-sub">${whose === 'your' ? 'You\u2019ll' : 'They\u2019ll'} practise most days between now and the
@@ -515,15 +630,14 @@ function accountBody() {
       nickname and everything already earned under it.</p>` : ''}
     ${signinFailed ? `<p class="ob-warn">That didn\u2019t finish \u2014 the popup may have been closed or
       blocked. Try again, or carry on and sign in later from the \u2630 menu.</p>` : ''}
-    <button class="ob-go" id="obSignIn" ${loading || signinBusy ? 'disabled' : ''}>
-      <span class="ob-g" aria-hidden="true">G</span> ${label}</button>
+    ${signInButton(state)}
     <button class="ob-go ob-ghost" id="obSkipAccount">Not now \u2014 keep it on this device</button>`;
 }
 
 // 8. The plan, in one screen, before anything is committed.
 function readyBody() {
   const rec = draft.rec || {};
-  const chosen = draft.parts || plan.defaultParts(draft.occasion);
+  const chosen = draft.parts || plan.defaultParts(draft.occasion, draft.rec);
   const who = draft.role === 'self' ? 'You' : (draft.learner || 'They');
   // A part with a substituted passage says so here, because "Haftarah" on its own
   // would hide the very thing the reader went out of their way to choose.
@@ -541,7 +655,9 @@ function readyBody() {
     </div>
     <p class="ob-ready">${who} will be chanting:</p>
     <ul class="ob-readylist">${items}</ul>
-    <p class="ob-sub">${plan.CYCLES[draft.cycle].label} \u00b7 ${plan.CYCLES[draft.cycle].sub}</p>
+    ${draft.rec && draft.rec.holiday
+      ? '<p class="ob-sub">High Holiday leining \u2014 not the weekly annual/triennial cycle.</p>'
+      : `<p class="ob-sub">${plan.CYCLES[draft.cycle].label} \u00b7 ${plan.CYCLES[draft.cycle].sub}</p>`}
     ${savingNote()}
     <button class="ob-go ob-primary" id="obFinish">Start learning</button>`;
 }
@@ -580,6 +696,13 @@ function wireFor(name) {
       try { await p.prompt(); } catch (e) { /* dismissed */ }
       next();
     });
+    wireSignIn(async () => {
+      if (await resumeCloudPlanIfNew()) return;
+      if (!root) return;
+      draft.needsAccount = false;
+      if (signedInForKeeps()) next();
+      else render();
+    });
   }
 
   if (name === 'who') {
@@ -612,7 +735,7 @@ function wireFor(name) {
     const input = byId('obDate');
     const resolve = () => {
       draft.enteredDate = input.value;
-      draft.rec = draft.enteredDate ? calendar.forDate(draft.enteredDate) : null;
+      draft.rec = draft.enteredDate ? resolveEnteredDate(draft.enteredDate) : null;
       draft.browseFrom = null;
       byId('obResolved').innerHTML = resolvedCard();
       nextBtn.disabled = !draft.rec;
@@ -635,7 +758,9 @@ function wireFor(name) {
     const list = byId('obPlist');
     const bind = () => list.querySelectorAll('.ob-prow').forEach((b) =>
       b.addEventListener('click', () => {
-        draft.rec = calendar.on(b.dataset.date);
+        draft.rec = b.dataset.svc
+          ? calendar.holidayNamed(b.dataset.date, b.dataset.svc)
+          : calendar.on(b.dataset.date);
         // A date they actually gave us is theirs to keep: picking the parashah by
         // name here overrides which reading it is, not when the simcha is.
         if (!draft.enteredDate && draft.rec) draft.enteredDate = draft.rec.date;
@@ -660,7 +785,7 @@ function wireFor(name) {
 
   if (name === 'parts') {
     root.querySelectorAll('[data-part]').forEach((b) => b.addEventListener('click', () => {
-      const chosen = draft.parts || plan.defaultParts(draft.occasion);
+      const chosen = draft.parts || plan.defaultParts(draft.occasion, draft.rec);
       const id = b.dataset.part;
       const kept = chosen.filter((p) => plan.partId(p) !== id);
       draft.parts = kept.length === chosen.length
@@ -673,20 +798,7 @@ function wireFor(name) {
   if (name === 'account') {
     const skip = byId('obSkipAccount');
     if (skip) skip.addEventListener('click', next);
-    const signIn = byId('obSignIn');
-    if (signIn) signIn.addEventListener('click', async () => {
-      signinBusy = true;
-      signinFailed = false;
-      render();
-      try {
-        await auth.signIn();
-      } catch (e) {
-        // A closed or blocked popup is the common case and is not an error worth
-        // stopping for: the screen says so and offers the way past it.
-        console.warn('[onboarding] sign-in did not complete:', e);
-        signinFailed = true;
-      }
-      signinBusy = false;
+    wireSignIn(async () => {
       // Straight on once there is a session — the reader answered the question,
       // and the last screen confirms where their practice is being saved. A
       // failure re-renders in place with the explanation.
@@ -696,6 +808,27 @@ function wireFor(name) {
   }
 
   if (name === 'ready') byId('obFinish').addEventListener('click', finish);
+}
+
+function wireSignIn(after) {
+  const signIn = document.getElementById('obSignIn');
+  if (!signIn) return;
+  signIn.addEventListener('click', async () => {
+    signinBusy = true;
+    signinFailed = false;
+    render();
+    try {
+      await auth.signIn();
+    } catch (e) {
+      // A closed or blocked popup is the common case and is not an error worth
+      // stopping for: the screen says so and offers the way past it.
+      console.warn('[onboarding] sign-in did not complete:', e);
+      signinFailed = true;
+    }
+    signinBusy = false;
+    if (after) await after();
+    else if (root) render();
+  });
 }
 
 function escapeHtml(s) {

@@ -1,0 +1,292 @@
+{
+  "slug": "haftarah-chayeisara",
+  "book": {
+    "en": "I Kings",
+    "he": "מלכים א",
+    "translit": "Melachim A"
+  },
+  "multiChapter": true,
+  "ref": "I Kings 1:1-31",
+  "heRef": "מלכים א א׳:א-ל״א",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 1,
+      "v": 1,
+      "ref": "1:1",
+      "text": "וְהַמֶּ֤לֶךְ דָּוִד֙ זָקֵ֔ן בָּ֖א בַּיָּמִ֑ים וַיְכַסֻּ֙הוּ֙ בַּבְּגָדִ֔ים וְלֹ֥א יִחַ֖ם לֽוֹ׃",
+      "en": "Now king David was old, advanced in years; and they covered him with clothes, but he could not become warm."
+    },
+    {
+      "n": 2,
+      "c": 1,
+      "v": 2,
+      "ref": "1:2",
+      "text": "וַיֹּ֧אמְרוּ ל֣וֹ עֲבָדָ֗יו יְבַקְשׁ֞וּ לַאדֹנִ֤י הַמֶּ֙לֶךְ֙ נַעֲרָ֣ה בְתוּלָ֔ה וְעָֽמְדָה֙ לִפְנֵ֣י הַמֶּ֔לֶךְ וּתְהִי־ל֖וֹ סֹכֶ֑נֶת וְשָׁכְבָ֣ה בְחֵיקֶ֔ךָ וְחַ֖ם לַאדֹנִ֥י הַמֶּֽלֶךְ׃",
+      "en": "So his servants said to him, Let there be sought for my lord the king a young virgin: and let her stand before the king, and be his attendant, and let her lie in thy bosom, that my lord the king may become warm."
+    },
+    {
+      "n": 3,
+      "c": 1,
+      "v": 3,
+      "ref": "1:3",
+      "text": "וַיְבַקְשׁוּ֙ נַעֲרָ֣ה יָפָ֔ה בְּכֹ֖ל גְּב֣וּל יִשְׂרָאֵ֑ל וַֽיִּמְצְא֗וּ אֶת־אֲבִישַׁג֙ הַשּׁ֣וּנַמִּ֔ית וַיָּבִ֥אוּ אֹתָ֖הּ לַמֶּֽלֶךְ׃",
+      "en": "So they sought for a fair maiden throughout all the territory of Yisra᾽el, and found Avishag the Shunammite, and brought her to the king."
+    },
+    {
+      "n": 4,
+      "c": 1,
+      "v": 4,
+      "ref": "1:4",
+      "text": "וְהַֽנַּעֲרָ֖ה יָפָ֣ה עַד־מְאֹ֑ד וַתְּהִ֨י לַמֶּ֤לֶךְ סֹכֶ֙נֶת֙ וַתְּשָׁ֣רְתֵ֔הוּ וְהַמֶּ֖לֶךְ לֹ֥א יְדָעָֽהּ׃",
+      "en": "And the maiden was very fair, and she attended the king, and ministered to him: but the king had no intimacy with her."
+    },
+    {
+      "n": 5,
+      "c": 1,
+      "v": 5,
+      "ref": "1:5",
+      "text": "וַאֲדֹנִיָּ֧ה בֶן־חַגִּ֛ית מִתְנַשֵּׂ֥א לֵאמֹ֖ר אֲנִ֣י אֶמְלֹ֑ךְ וַיַּ֣עַשׂ ל֗וֹ רֶ֚כֶב וּפָ֣רָשִׁ֔ים וַחֲמִשִּׁ֥ים אִ֖ישׁ רָצִ֥ים לְפָנָֽיו׃",
+      "en": "Then Adoniyya the son of Ḥaggit exalted himself, saying, I will be king: and he set up chariots and horsemen for himself, and fifty men to run before him."
+    },
+    {
+      "n": 6,
+      "c": 1,
+      "v": 6,
+      "ref": "1:6",
+      "text": "וְלֹֽא־עֲצָב֨וֹ אָבִ֤יו מִיָּמָיו֙ לֵאמֹ֔ר מַדּ֖וּעַ כָּ֣כָה עָשִׂ֑יתָ וְגַם־ה֤וּא טֽוֹב־תֹּ֙אַר֙ מְאֹ֔ד וְאֹת֥וֹ יָלְדָ֖ה אַחֲרֵ֥י אַבְשָׁלֽוֹם׃",
+      "en": "And his father had never grieved him at any time in saying, Why hast thou done so? and he also was a very good looking man; and his mother bore him after Avshalom."
+    },
+    {
+      "n": 7,
+      "c": 1,
+      "v": 7,
+      "ref": "1:7",
+      "text": "וַיִּהְי֣וּ דְבָרָ֔יו עִ֚ם יוֹאָ֣ב בֶּן־צְרוּיָ֔ה וְעִ֖ם אֶבְיָתָ֣ר הַכֹּהֵ֑ן וַֽיַּעְזְר֔וּ אַחֲרֵ֖י אֲדֹנִיָּֽה׃",
+      "en": "And he conferred with Yo᾽av the son of Żeruya, and with Evyatar the priest: and they following Adoniyya helped him."
+    },
+    {
+      "n": 8,
+      "c": 1,
+      "v": 8,
+      "ref": "1:8",
+      "text": "וְצָד֣וֹק הַ֠כֹּהֵ֠ן וּבְנָיָ֨הוּ בֶן־יְהוֹיָדָ֜ע וְנָתָ֤ן הַנָּבִיא֙ וְשִׁמְעִ֣י וְרֵעִ֔י וְהַגִּבּוֹרִ֖ים אֲשֶׁ֣ר לְדָוִ֑ד לֹ֥א הָי֖וּ עִם־אֲדֹנִיָּֽהוּ׃",
+      "en": "But Żadoq the priest, and Benayahu the son of Yehoyada, and Natan the prophet, and Shim῾i, and Re῾i, and the warriors who belonged to David, were not with Adoniyyahu."
+    },
+    {
+      "n": 9,
+      "c": 1,
+      "v": 9,
+      "ref": "1:9",
+      "text": "וַיִּזְבַּ֣ח אֲדֹנִיָּ֗הוּ צֹ֤אן וּבָקָר֙ וּמְרִ֔יא עִ֚ם אֶ֣בֶן הַזֹּחֶ֔לֶת אֲשֶׁר־אֵ֖צֶל עֵ֣ין רֹגֵ֑ל וַיִּקְרָ֗א אֶת־כׇּל־אֶחָיו֙ בְּנֵ֣י הַמֶּ֔לֶךְ וּלְכׇל־אַנְשֵׁ֥י יְהוּדָ֖ה עַבְדֵ֥י הַמֶּֽלֶךְ׃",
+      "en": "And Adoniyyahu slaughtered sheep and oxen and fat cattle by the stone of Zoĥelet, which is by ῾En-rogel, and called all his brethren the king’s sons, and all the men of Yehuda the king’s servants:"
+    },
+    {
+      "n": 10,
+      "c": 1,
+      "v": 10,
+      "ref": "1:10",
+      "text": "וְֽאֶת־נָתָן֩ הַנָּבִ֨יא וּבְנָיָ֜הוּ וְֽאֶת־הַגִּבּוֹרִ֛ים וְאֶת־שְׁלֹמֹ֥ה אָחִ֖יו לֹ֥א קָרָֽא׃",
+      "en": "but Natan the prophet, and Benayahu and the warriors, and Shelomo his brother, he did not call."
+    },
+    {
+      "n": 11,
+      "c": 1,
+      "v": 11,
+      "ref": "1:11",
+      "text": "וַיֹּ֣אמֶר נָתָ֗ן אֶל־בַּת־שֶׁ֤בַע אֵם־שְׁלֹמֹה֙ לֵאמֹ֔ר הֲל֣וֹא שָׁמַ֔עַתְּ כִּ֥י מָלַ֖ךְ אֲדֹנִיָּ֣הוּ בֶן־חַגִּ֑ית וַאֲדֹנֵ֥ינוּ דָוִ֖ד לֹ֥א יָדָֽע׃",
+      "en": "And Natan spoke to Bat-sheva the mother of Shelomo, saying, Hast thou not heard that Adoniyyahu the son of Ḥaggit is reigning, and David our lord does not know of it?"
+    },
+    {
+      "n": 12,
+      "c": 1,
+      "v": 12,
+      "ref": "1:12",
+      "text": "וְעַתָּ֕ה לְכִ֛י אִיעָצֵ֥ךְ נָ֖א עֵצָ֑ה וּמַלְּטִי֙ אֶת־נַפְשֵׁ֔ךְ וְאֶת־נֶ֥פֶשׁ בְּנֵ֖ךְ שְׁלֹמֹֽה׃",
+      "en": "Now therefore come, let me, I pray thee, give thee counsel, that thou mayst save thy own life, and the life of thy son Shelomo."
+    },
+    {
+      "n": 13,
+      "c": 1,
+      "v": 13,
+      "ref": "1:13",
+      "text": "לְכִ֞י וּבֹ֣אִי&thinsp;<b>׀</b> אֶל־הַמֶּ֣לֶךְ דָּוִ֗ד וְאָמַ֤רְתְּ אֵלָיו֙ הֲלֹֽא־אַתָּ֞ה אֲדֹנִ֣י הַמֶּ֗לֶךְ נִשְׁבַּ֤עְתָּ לַאֲמָֽתְךָ֙ לֵאמֹ֔ר כִּֽי־שְׁלֹמֹ֤ה בְנֵךְ֙ יִמְלֹ֣ךְ אַחֲרַ֔י וְה֖וּא יֵשֵׁ֣ב עַל־כִּסְאִ֑י וּמַדּ֖וּעַ מָלַ֥ךְ אֲדֹנִיָּֽהוּ׃",
+      "en": "Go and get thee in to king David, and say to him, Didst not thou, my lord, O king, swear to thy handmaid, saying, Indeed, Shelomo thy son shall reign after me, and he shall sit upon my throne? why then does Adoniyyahu reign?"
+    },
+    {
+      "n": 14,
+      "c": 1,
+      "v": 14,
+      "ref": "1:14",
+      "text": "הִנֵּ֗ה עוֹדָ֛ךְ מְדַבֶּ֥רֶת שָׁ֖ם עִם־הַמֶּ֑לֶךְ וַֽאֲנִי֙ אָב֣וֹא אַחֲרַ֔יִךְ וּמִלֵּאתִ֖י אֶת־דְּבָרָֽיִךְ׃",
+      "en": "Behold, while thou yet talkest there with the king, I also will come in after thee, and confirm thy words."
+    },
+    {
+      "n": 15,
+      "c": 1,
+      "v": 15,
+      "ref": "1:15",
+      "text": "וַתָּבֹ֨א בַת־שֶׁ֤בַע אֶל־הַמֶּ֙לֶךְ֙ הַחַ֔דְרָה וְהַמֶּ֖לֶךְ זָקֵ֣ן מְאֹ֑ד וַאֲבִישַׁג֙ הַשּׁ֣וּנַמִּ֔ית מְשָׁרַ֖ת אֶת־הַמֶּֽלֶךְ׃",
+      "en": "And Bat-sheva went in to the king into the chamber: and the king was very old; and Avishag the Shunammite ministered to the king."
+    },
+    {
+      "n": 16,
+      "c": 1,
+      "v": 16,
+      "ref": "1:16",
+      "text": "וַתִּקֹּ֣ד בַּת־שֶׁ֔בַע וַתִּשְׁתַּ֖חוּ לַמֶּ֑לֶךְ וַיֹּ֥אמֶר הַמֶּ֖לֶךְ מַה־לָּֽךְ׃",
+      "en": "And Bat-sheva bowed, and prostrated herself before the king. And the king said, What wouldst thou?"
+    },
+    {
+      "n": 17,
+      "c": 1,
+      "v": 17,
+      "ref": "1:17",
+      "text": "וַתֹּ֣אמֶר ל֗וֹ אֲדֹנִי֙ אַתָּ֨ה נִשְׁבַּ֜עְתָּ בַּיהֹוָ֤ה אֱלֹהֶ֙יךָ֙ לַאֲמָתֶ֔ךָ כִּֽי־שְׁלֹמֹ֥ה בְנֵ֖ךְ יִמְלֹ֣ךְ אַחֲרָ֑י וְה֖וּא יֵשֵׁ֥ב עַל־כִּסְאִֽי׃",
+      "en": "And she said to him, My lord, thou didst swear by the Lord thy God to thy handmaid, saying, Indeed Shelomo thy son shall reign after me, and he shall sit upon my throne."
+    },
+    {
+      "n": 18,
+      "c": 1,
+      "v": 18,
+      "ref": "1:18",
+      "text": "וְעַתָּ֕ה הִנֵּ֥ה אֲדֹנִיָּ֖ה מָלָ֑ךְ וְעַתָּ֛ה אֲדֹנִ֥י הַמֶּ֖לֶךְ לֹ֥א יָדָֽעְתָּ׃",
+      "en": "And now, behold, Adoniyya reigns; and now, my lord the king, thou knowst it not:"
+    },
+    {
+      "n": 19,
+      "c": 1,
+      "v": 19,
+      "ref": "1:19",
+      "text": "וַ֠יִּזְבַּ֠ח שׁ֥וֹר וּֽמְרִיא־וְצֹאן֮ לָרֹב֒&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>וַיִּקְרָא֙ לְכׇל־בְּנֵ֣י הַמֶּ֔לֶךְ וּלְאֶבְיָתָר֙ הַכֹּהֵ֔ן וּלְיֹאָ֖ב שַׂ֣ר הַצָּבָ֑א וְלִשְׁלֹמֹ֥ה עַבְדְּךָ֖ לֹ֥א קָרָֽא׃",
+      "en": "and he has slaughtered oxen and fat cattle and sheep in abundance, and has called all the sons of the king, and Evyatar the priest, and Yo᾽av the captain of the host: but Shelomo thy servant he has not called."
+    },
+    {
+      "n": 20,
+      "c": 1,
+      "v": 20,
+      "ref": "1:20",
+      "text": "וְאַתָּה֙ אֲדֹנִ֣י הַמֶּ֔לֶךְ עֵינֵ֥י כׇל־יִשְׂרָאֵ֖ל עָלֶ֑יךָ לְהַגִּ֣יד לָהֶ֔ם מִ֗י יֵשֵׁ֛ב עַל־כִּסֵּ֥א אֲדֹנִֽי־הַמֶּ֖לֶךְ אַחֲרָֽיו׃",
+      "en": "And thou, my lord, O king, the eyes of all Yisra᾽el are upon thee, that thou shouldst tell them who shall sit on the throne of my lord the king after him."
+    },
+    {
+      "n": 21,
+      "c": 1,
+      "v": 21,
+      "ref": "1:21",
+      "text": "וְהָיָ֕ה כִּשְׁכַ֥ב אֲדֹנִֽי־הַמֶּ֖לֶךְ עִם־אֲבֹתָ֑יו וְהָיִ֗יתִי אֲנִ֛י וּבְנִ֥י שְׁלֹמֹ֖ה חַטָּאִֽים׃",
+      "en": "Otherwise it shall come to pass, when my lord the king shall sleep with his fathers, that I and my son Shelomo shall be counted offenders."
+    },
+    {
+      "n": 22,
+      "c": 1,
+      "v": 22,
+      "ref": "1:22",
+      "text": "וְהִנֵּ֛ה עוֹדֶ֥נָּה מְדַבֶּ֖רֶת עִם־הַמֶּ֑לֶךְ וְנָתָ֥ן הַנָּבִ֖יא בָּֽא׃",
+      "en": "And, lo, while she yet talked with the king, Natan the prophet also came in."
+    },
+    {
+      "n": 23,
+      "c": 1,
+      "v": 23,
+      "ref": "1:23",
+      "text": "וַיַּגִּ֤ידוּ לַמֶּ֙לֶךְ֙ לֵאמֹ֔ר הִנֵּ֖ה נָתָ֣ן הַנָּבִ֑יא וַיָּבֹא֙ לִפְנֵ֣י הַמֶּ֔לֶךְ וַיִּשְׁתַּ֧חוּ לַמֶּ֛לֶךְ עַל־אַפָּ֖יו אָֽרְצָה׃",
+      "en": "And they told the king, saying, Behold Natan the prophet. And when he was come in before the king, he bowed himself down before the king with his face to the ground."
+    },
+    {
+      "n": 24,
+      "c": 1,
+      "v": 24,
+      "ref": "1:24",
+      "text": "וַיֹּ֘אמֶר֮ נָתָן֒ אֲדֹנִ֣י הַמֶּ֔לֶךְ אַתָּ֣ה אָמַ֔רְתָּ אֲדֹנִיָּ֖הוּ יִמְלֹ֣ךְ אַחֲרָ֑י וְה֖וּא יֵשֵׁ֥ב עַל־כִּסְאִֽי׃",
+      "en": "And Natan said, My lord, O king, hast thou said, Adoniyyahu shall reign after me, and he shall sit upon my throne?"
+    },
+    {
+      "n": 25,
+      "c": 1,
+      "v": 25,
+      "ref": "1:25",
+      "text": "כִּ֣י&thinsp;<b>׀</b> יָרַ֣ד הַיּ֗וֹם וַ֠יִּזְבַּ֠ח שׁ֥וֹר וּֽמְרִיא־וְצֹאן֮ לָרֹב֒ וַיִּקְרָא֩ לְכׇל־בְּנֵ֨י הַמֶּ֜לֶךְ וּלְשָׂרֵ֤י הַצָּבָא֙ וּלְאֶבְיָתָ֣ר הַכֹּהֵ֔ן וְהִנָּ֛ם אֹכְלִ֥ים וְשֹׁתִ֖ים לְפָנָ֑יו וַיֹּ֣אמְר֔וּ יְחִ֖י הַמֶּ֥לֶךְ אֲדֹנִיָּֽהוּ׃",
+      "en": "For he is gone down this day, and has slaughtered oxen and fat cattle and sheep in abundance, and has called all the king’s sons, and the captains of the host, and Evyatar the priest; and, behold, they eat and drink before him, and say, Long live king Adoniyyahu!"
+    },
+    {
+      "n": 26,
+      "c": 1,
+      "v": 26,
+      "ref": "1:26",
+      "text": "וְלִ֣י אֲנִֽי־עַ֠בְדֶּ֠ךָ וּלְצָדֹ֨ק הַכֹּהֵ֜ן וְלִבְנָיָ֧הוּ בֶן־יְהוֹיָדָ֛ע וְלִשְׁלֹמֹ֥ה עַבְדְּךָ֖ לֹ֥א קָרָֽא׃",
+      "en": "But me, even me thy servant, and Żadoq the priest, and Benayahu the son of Yehoyada, and thy servant Shelomo, has he not called."
+    },
+    {
+      "n": 27,
+      "c": 1,
+      "v": 27,
+      "ref": "1:27",
+      "text": "אִ֗ם מֵאֵת֙ אֲדֹנִ֣י הַמֶּ֔לֶךְ נִֽהְיָ֖ה הַדָּבָ֣ר הַזֶּ֑ה וְלֹ֤א הוֹדַ֙עְתָּ֙ אֶֽת־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[עַבְדְּךָ֔]</span> <span class=\"mam-kq-k\">(עבדיך)</span></span> מִ֗י יֵשֵׁ֛ב עַל־כִּסֵּ֥א אֲדֹנִֽי־הַמֶּ֖לֶךְ אַחֲרָֽיו׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Is this thing done by my lord the king, and thou hast not informed thy servant, who should sit on the throne of my lord the king after him?"
+    },
+    {
+      "n": 28,
+      "c": 1,
+      "v": 28,
+      "ref": "1:28",
+      "text": "וַיַּ֨עַן הַמֶּ֤לֶךְ דָּוִד֙ וַיֹּ֔אמֶר קִרְאוּ־לִ֖י לְבַת־שָׁ֑בַע וַתָּבֹא֙ לִפְנֵ֣י הַמֶּ֔לֶךְ וַֽתַּעֲמֹ֖ד לִפְנֵ֥י הַמֶּֽלֶךְ׃",
+      "en": "Then king David answered and said, Call me Bat-sheva. And she came into the king’s presence, and stood before the king."
+    },
+    {
+      "n": 29,
+      "c": 1,
+      "v": 29,
+      "ref": "1:29",
+      "text": "וַיִּשָּׁבַ֥ע הַמֶּ֖לֶךְ וַיֹּאמַ֑ר חַי־יְהֹוָ֕ה אֲשֶׁר־פָּדָ֥ה אֶת־נַפְשִׁ֖י מִכׇּל־צָרָֽה׃",
+      "en": "And the king swore, and said, As the Lord lives, who has redeemed my soul out of all distress,"
+    },
+    {
+      "n": 30,
+      "c": 1,
+      "v": 30,
+      "ref": "1:30",
+      "text": "כִּ֡י כַּאֲשֶׁר֩ נִשְׁבַּ֨עְתִּי לָ֜ךְ בַּיהֹוָ֨ה אֱלֹהֵ֤י יִשְׂרָאֵל֙ לֵאמֹ֔ר כִּֽי־שְׁלֹמֹ֤ה בְנֵךְ֙ יִמְלֹ֣ךְ אַחֲרַ֔י וְה֛וּא יֵשֵׁ֥ב עַל־כִּסְאִ֖י תַּחְתָּ֑י כִּ֛י כֵּ֥ן אֶעֱשֶׂ֖ה הַיּ֥וֹם הַזֶּֽה׃",
+      "en": "even as I swore to thee by the Lord God of Yisra᾽el, saying, Indeed, Shelomo thy son shall reign after me, and he shall sit upon my throne in my stead; even so will I certainly do this day."
+    },
+    {
+      "n": 31,
+      "c": 1,
+      "v": 31,
+      "ref": "1:31",
+      "text": "וַתִּקֹּ֨ד בַּת־שֶׁ֤בַע אַפַּ֙יִם֙ אֶ֔רֶץ וַתִּשְׁתַּ֖חוּ לַמֶּ֑לֶךְ וַתֹּ֕אמֶר יְחִ֗י אֲדֹנִ֛י הַמֶּ֥לֶךְ דָּוִ֖ד לְעֹלָֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Then Bat-sheva bowed with her face to the earth, and prostrated herself to the king, and said, Let my lord king David live for ever."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Chayei Sara",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 5
+  },
+  "parashah": {
+    "en": "Haftarat Chayei Sara",
+    "translit": "Haftarat Chayei Sara",
+    "he": "הפטרת חיי שרה",
+    "ref": "I Kings 1:1-31"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 31,
+        "ref": "1:1–1:31"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

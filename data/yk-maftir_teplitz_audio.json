@@ -1,0 +1,104 @@
+{
+  "slug": "yk-maftir",
+  "source": "https://www.mjcnj.com/hhrecordings",
+  "license": "Cantor Teplitz / MJC High Holiday recording. Not Creative Commons. Included as a local study source; redistribution rights remain with the cantor and congregation.",
+  "attribution": "Chanted by Cantor Teplitz (MJC). Local source from mjcnj.com/hhrecordings; not CC-licensed.",
+  "verses": {
+    "1": {
+      "file": "audio/teplitz/yk-maftir-1.m4a",
+      "start": 4.16,
+      "end": 30.06,
+      "onsets": [
+        4.16,
+        6.56,
+        8.64,
+        9.98,
+        13.4,
+        13.86,
+        15.18,
+        15.88,
+        18.28,
+        20.04,
+        20.92,
+        24.16,
+        24.66,
+        27.8,
+        28.6
+      ]
+    },
+    "2": {
+      "file": "audio/teplitz/yk-maftir-1.m4a",
+      "start": 30.06,
+      "end": 60.78,
+      "onsets": [
+        30.06,
+        32.08,
+        34.42,
+        37.32,
+        37.76,
+        39.72,
+        40.42,
+        40.86,
+        43.92,
+        45.02,
+        47.12,
+        49.32,
+        50.32,
+        50.82,
+        52.58,
+        54.1,
+        55.84,
+        57.68
+      ]
+    },
+    "3": {
+      "file": "audio/teplitz/yk-maftir-1.m4a",
+      "start": 60.78,
+      "end": 82.28,
+      "onsets": [
+        60.78,
+        63.04,
+        64.62,
+        65.2,
+        67.26,
+        68.92,
+        70.62,
+        72.38,
+        74.4,
+        76.58,
+        78.1
+      ]
+    },
+    "4": {
+      "file": "audio/teplitz/yk-maftir-1.m4a",
+      "start": 82.28,
+      "end": 96.3,
+      "onsets": [
+        82.28,
+        84.02,
+        86.9,
+        88.3,
+        91.0,
+        92.6
+      ]
+    },
+    "5": {
+      "file": "audio/teplitz/yk-maftir-1.m4a",
+      "start": 96.3,
+      "end": 115.72,
+      "onsets": [
+        96.3,
+        99.9,
+        100.28,
+        103.36,
+        103.96,
+        104.62,
+        107.16,
+        110.88,
+        111.5,
+        112.38,
+        113.34
+      ]
+    }
+  }
+}

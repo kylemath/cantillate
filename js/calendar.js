@@ -15,10 +15,12 @@
 // found from any page at any depth (scripts/smoke.html loads these modules from a
 // subdirectory) and from any base path the app is deployed under.
 const DATA_URL = new URL('../data/calendar.json', import.meta.url).href;
+const HOLIDAYS_URL = new URL('../data/holidays.json', import.meta.url).href;
 
 let _doc = null;
 let _pending = null;
 let _byDate = null;
+let _holidays = null;
 
 // Hebcal appends the reason to a ref when a special Shabbat displaces the usual
 // reading ("Numbers 28:9-28:15 | Shabbat Rosh Chodesh"). That reason is exactly
@@ -81,17 +83,46 @@ export function normalize(r) {
   };
 }
 
+function normalizeHoliday(day) {
+  if (!day || !_holidays) return null;
+  const svc = (_holidays.services || {})[day.svc];
+  if (!svc) return null;
+  return {
+    date: day.d,
+    parashah: svc.label,
+    hebrew: day.he || svc.hebrew || '',
+    slug: svc.slug,
+    slugs: svc.slug ? [svc.slug] : [],
+    combined: false,
+    hebrewDate: day.hd || '',
+    hebrewYear: day.hy || null,
+    triYear: null,
+    torahRef: svc.torahRef || '',
+    maftirRef: svc.maftirRef || '',
+    triMaftirRef: '',
+    haftarahRef: svc.haftarahRef || '',
+    aliyot: { annual: (svc.aliyot || []).slice(), triennial: null },
+    special: svc.label,
+    holiday: true,
+    holidayId: svc.id,
+    aliyahCount: svc.aliyahCount,
+    maftirSlug: svc.maftirSlug || null,
+    haftarahSlug: svc.haftarahSlug || null,
+  };
+}
+
 export async function load() {
-  if (_doc) return _doc;
+  if (_doc && _holidays) return _doc;
   if (!_pending) {
-    _pending = fetch(DATA_URL)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((doc) => {
-        _doc = doc && Array.isArray(doc.shabbatot) ? doc : null;
-        if (_doc) _byDate = new Map(_doc.shabbatot.map((r) => [r.d, r]));
-        return _doc;
-      })
-      .catch(() => null);
+    _pending = Promise.all([
+      fetch(DATA_URL).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+      fetch(HOLIDAYS_URL).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+    ]).then(([doc, hol]) => {
+      _doc = doc && Array.isArray(doc.shabbatot) ? doc : null;
+      if (_doc) _byDate = new Map(_doc.shabbatot.map((r) => [r.d, r]));
+      _holidays = hol && Array.isArray(hol.days) ? hol : null;
+      return _doc;
+    });
   }
   return _pending;
 }
@@ -133,17 +164,61 @@ export function on(iso) {
   return normalize(_byDate.get(iso) || null);
 }
 
-// The reading for a date: that Shabbat if the date IS one, else the next Shabbat
-// on which a parashah is read. A bar mitzvah is generally called on a Shabbat,
-// but readers type the birthday, the Sunday of the party, or a weekday aufruf —
-// all of which should resolve to a reading rather than an error.
-export function forDate(iso) {
+// The High Holiday falling on this civil date (RH Day 1/2 or YK morning).
+// YK Mincha shares Yom Kippur's date; morning wins so a typed YK date cues the
+// day leining. Use holidayNamed(iso, 'yk-mincha') to open Mincha explicitly.
+export function holidayOn(iso) {
+  if (!_holidays || !iso) return null;
+  const days = _holidays.days || [];
+  const match = days.find((d) => d.d === iso && d.svc !== 'yk-mincha')
+    || days.find((d) => d.d === iso);
+  return normalizeHoliday(match);
+}
+
+export function holidayNamed(iso, svc) {
+  if (!_holidays || !iso || !svc) return null;
+  const day = (_holidays.days || []).find((d) => d.d === iso && d.svc === svc);
+  return normalizeHoliday(day);
+}
+
+export function nextHoliday(iso) {
+  if (!_holidays || !iso) return null;
+  const days = _holidays.days || [];
+  const match = days.find((d) => d.d >= iso && d.svc !== 'yk-mincha');
+  return normalizeHoliday(match);
+}
+
+// Upcoming holiday services on or after `from`, including YK Mincha as its own row.
+export function holidayServices(from = today()) {
+  if (!_holidays) return [];
+  const seen = new Set();
+  const out = [];
+  for (const d of _holidays.days || []) {
+    if (d.d < from) continue;
+    const key = `${d.svc}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const rec = normalizeHoliday(d);
+    if (rec) out.push(rec);
+  }
+  return out;
+}
+
+// The next Shabbat on or after this date. Used by the weekly demo and by anyone
+// who is not standing on a High Holiday — upcoming() must not jump to RH/YK.
+export function forShabbat(iso) {
   const list = rows();
   if (!list.length || !iso) return null;
   const exact = on(iso);
   if (exact) return exact;
   const next = list.find((r) => r.d >= iso);
   return normalize(next || list[list.length - 1]);
+}
+
+// Shabbat snap only. High Holiday lookup is holidayOn / nextHoliday — M1 S3
+// forbids stealing a bar/bat date onto RH/YK unless the reader chose that occasion.
+export function forDate(iso) {
+  return forShabbat(iso);
 }
 
 // Whether a date sits inside the built table at all.
@@ -153,7 +228,9 @@ export function covers(iso) {
 }
 
 // The upcoming Shabbat's reading (today included, if today is one).
-export function upcoming(from = today()) { return forDate(from); }
+// Shabbat-only: a High Holiday that happens to be today must not steal the
+// "this week's parasha" demo.
+export function upcoming(from = today()) { return forShabbat(from); }
 
 // `n` Shabbatot either side of a date, for a "not this one?" browse-by-week list.
 export function around(iso, n = 3) {
@@ -200,7 +277,7 @@ export function triennialYearOfHebrewYear(hy) {
 // The ref of a single aliyah (1-7) of a Shabbat's reading, on a cycle.
 export function aliyahRef(rec, n, cycle = 'annual') {
   const set = rec && rec.aliyot
-    ? (cycle === 'triennial' ? rec.aliyot.triennial : rec.aliyot.annual)
+    ? ((cycle === 'triennial' && rec.aliyot.triennial) ? rec.aliyot.triennial : rec.aliyot.annual)
     : null;
   const i = Number(n) - 1;
   return (set && i >= 0 && set[i]) || '';

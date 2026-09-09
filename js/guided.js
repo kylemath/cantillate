@@ -218,8 +218,10 @@ function buildContext(p) {
   const target = plan.partTarget(p, current);
   if (target.kind === 'passage' || api.readingId() !== target.readingId) {
     // A substituted passage, or a text-only fallback: the whole passage IS the part.
-    chunk = api.wholeChunk();
-    verses = range(1, count);
+    // When it borrows a recorded reading's files, wholeChunk is the carved-out
+    // span in that file — not 1..parentLength.
+    chunk = api.wholeChunk() || { n: 'C', kind: 'passage', start: 1, end: count };
+    verses = range(chunk.start || 1, Math.min(chunk.end || count, count));
   } else if (p.kind === 'haftarah') {
     chunk = api.wholeChunk() || { n: 'H', kind: 'haftarah', start: 1, end: count };
     verses = range(chunk.start || 1, Math.min(chunk.end || count, count));
@@ -748,6 +750,7 @@ function renderMenu() {
         <label class="g-row"><span>Text size</span>
           <input type="range" id="gTextSize" min="0.8" max="2.4" step="0.1" value="${api.readScale()}" /></label>
         ${translitRowHtml()}
+        ${sourceRowHtml()}
         <label class="g-row g-row-check"><span>Show the pitch analysis</span>
           <input type="checkbox" id="gAnalysis" ${api.analysisOn() ? 'checked' : ''} /></label>
         <button class="g-row-btn" id="gOffline">\u2b07 Save the audio for offline</button>
@@ -776,6 +779,21 @@ function renderMenu() {
 // app.js). Past that it is not shown greyed but simply gone: a dead switch in a
 // four-row menu invites a reader to poke at it, and the note below has already
 // said, before it happened, that this is coming.
+// The workshop's #audioSource lives in a settings sheet guided mode hides. Same
+// source ids and cantillate.audioSource pref — a row here, not a second selector.
+function sourceRowHtml() {
+  const sources = (api.audioSources && api.audioSources()) || [];
+  if (sources.length < 2) return '';
+  const cur = api.audioSource ? api.audioSource() : '';
+  const opts = sources.map((s) => {
+    const id = s.id || '';
+    const sel = id === cur ? ' selected' : '';
+    return `<option value="${escapeAttr(id)}"${sel}>${escapeHtml(s.label || id)}</option>`;
+  }).join('');
+  return `<label class="g-row"><span>Style</span>
+          <select id="gAudioSource">${opts}</select></label>`;
+}
+
 function translitRowHtml() {
   if (!api.translitAllowed()) return '';
   return `<label class="g-row g-row-check"><span>Show the words in English letters</span>
@@ -979,6 +997,10 @@ function wireMenu() {
   if (size) size.addEventListener('input', () => api.setReadScale(parseFloat(size.value)));
   const tl = byId('gTranslit');
   if (tl) tl.addEventListener('change', () => api.setTranslit(tl.checked));
+  const src = byId('gAudioSource');
+  if (src) src.addEventListener('change', () => {
+    if (api.setAudioSource) api.setAudioSource(src.value);
+  });
   const an = byId('gAnalysis');
   if (an) an.addEventListener('change', () => api.setAnalysis(an.checked));
   const whole = byId('gWholeAliyah');
@@ -1168,8 +1190,8 @@ function voiceNote(desc) {
       will be chanting along with the cantor.</p>`;
   }
   if (rec) {
-    return `<p class="ob-note">These pesukim sit inside ${escapeHtml(rec.label)}, which is recorded.
-      Choose that whole passage and the cantor sings it; as it stands the guide voice will be synthesized.</p>`;
+    return `<p class="ob-note ob-good">\u266a Recorded \u2014 these pesukim sit inside
+      ${escapeHtml(rec.label)}, and the cantor who sang that reading will sing this stretch.</p>`;
   }
   return `<p class="ob-note">No one has recorded these pesukim, so the guide voice will be
     synthesized \u2014 the words and the accents are exact, and every accent\u2019s tune and timing is
@@ -1244,6 +1266,7 @@ function wirePicker() {
       // book text, or the reader would be taught by the synthesized guide while a
       // recording of exactly this passage sat unused.
       recordedAs: desc.recording && desc.recording.exact ? desc.recording.slug : null,
+      recordedFrom: desc.recording && !desc.recording.exact ? desc.recording.slug : null,
     });
   });
 }
@@ -1280,7 +1303,10 @@ export function planReadiness(p = plan.get()) {
     // not under a reading slug — see tanakh.progressSlug.
     const whole = target.kind !== 'parashah';
     const slug = target.kind === 'passage'
-      ? (target.custom.progressSlug || target.readingId)
+      ? (target.custom.recordedAs
+        || target.custom.recordedFrom
+        || target.custom.progressSlug
+        || target.readingId)
       : (whole ? target.readingId : p.slug);
     const key = target.kind === 'passage' ? 'C' : (target.aliyah || 'H');
     const score = whole

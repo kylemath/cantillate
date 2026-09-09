@@ -12,6 +12,10 @@ Nevi'im they come from: a reader looks for the haftarah by the week it is chante
 not by whether it happens to be in Isaiah or in Judges. So they are ordered by
 their parashah's place in the year, which is the order they will be needed in.
 
+High Holiday readings (`kind: "holiday"`, or an explicit High Holidays group
+label) sit between the sefer groups and Haftarot. The group is omitted when no
+such readings exist — the menu never draws an empty optgroup.
+
 Each reading's sefer and starting verse are read from its own data file rather
 than the build registry, so a reading built by any route still lands in the right
 place. Run automatically at the end of build_reading.py, or by hand:
@@ -31,6 +35,14 @@ TRANSLIT = {"Genesis": "Bereshit", "Exodus": "Shemot", "Leviticus": "Vayikra",
             "Numbers": "Bamidbar", "Deuteronomy": "Devarim"}
 
 HAFTARAH_GROUP = "Haftarot"
+HOLIDAY_GROUP = "High Holidays"
+# Slug contract from agent 1411: RH Day 1, RH Day 2, YK Day, YK Mincha.
+HOLIDAY_SLUG_ORDER = (
+    "rh1-torah", "rh1-maftir", "rh1-haftarah",
+    "rh2-torah", "rh2-maftir", "rh2-haftarah",
+    "yk-torah", "yk-maftir", "yk-haftarah",
+    "yk-mincha-torah", "yk-mincha-haftarah",
+)
 
 
 def reading_place(entry):
@@ -119,15 +131,32 @@ def haftarah_order(entry):
     return (n if n is not None else 999, entry["slug"])
 
 
+def is_holiday(entry):
+    """High Holiday readings: kind holiday, or already labeled High Holidays."""
+    kind = entry.get("kind", "parashah")
+    return kind == "holiday" or entry.get("group") == HOLIDAY_GROUP
+
+
+def holiday_order(entry):
+    """RH1 → RH2 → YK → YK Mincha; unknown holiday slugs (blessings) after."""
+    slug = entry.get("slug") or ""
+    try:
+        return (HOLIDAY_SLUG_ORDER.index(slug), slug)
+    except ValueError:
+        return (len(HOLIDAY_SLUG_ORDER), slug)
+
+
 def organize(quiet=False):
     manifest = json.load(open(MANIFEST, encoding="utf-8"))
 
     def kind_of(m):
         return m.get("kind", "parashah")
 
-    parashiyot = [m for m in manifest if kind_of(m) == "parashah"]
-    haftarot = [m for m in manifest if kind_of(m) == "haftarah"]
-    others = [m for m in manifest if kind_of(m) not in ("parashah", "haftarah")]
+    parashiyot = [m for m in manifest if kind_of(m) == "parashah" and not is_holiday(m)]
+    haftarot = [m for m in manifest if kind_of(m) == "haftarah" and not is_holiday(m)]
+    holidays = [m for m in manifest if is_holiday(m)]
+    others = [m for m in manifest
+              if kind_of(m) not in ("parashah", "haftarah") and not is_holiday(m)]
 
     # Every entry says which pesukim it covers, drills included where they have any
     # (a drill's invented words have none, and keep the key off).
@@ -152,7 +181,14 @@ def organize(quiet=False):
         m["group"] = HAFTARAH_GROUP
     haftarot.sort(key=haftarah_order)
 
-    ordered = [p[5] for p in placed] + haftarot + others
+    for m in holidays:
+        m["group"] = HOLIDAY_GROUP
+    holidays.sort(key=holiday_order)
+
+    # Sefer groups, then High Holidays (omitted when empty), then Haftarot, then
+    # drills / excerpts / custom. The workshop menu draws one optgroup per distinct
+    # group label, so an empty High Holidays list never appears.
+    ordered = [p[5] for p in placed] + holidays + haftarot + others
     with open(MANIFEST, "w", encoding="utf-8") as f:
         json.dump(ordered, f, ensure_ascii=False, indent=2)
 

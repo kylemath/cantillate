@@ -1,0 +1,190 @@
+{
+  "slug": "rh2-haftarah",
+  "book": {
+    "en": "Jeremiah",
+    "he": "ירמיהו",
+    "translit": "Yirmiyahu"
+  },
+  "multiChapter": true,
+  "ref": "Jeremiah 31:1-31:19",
+  "heRef": "ירמיהו ל״א:א-י״ט",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 31,
+      "v": 1,
+      "ref": "31:1",
+      "text": "בָּעֵ֤ת הַהִיא֙ נְאֻם־יְהֹוָ֔ה אֶֽהְיֶה֙ לֵֽאלֹהִ֔ים לְכֹ֖ל מִשְׁפְּח֣וֹת יִשְׂרָאֵ֑ל וְהֵ֖מָּה יִֽהְיוּ־לִ֥י לְעָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "At that time, says the Lord, will I be the God of all the families of Yisra᾽el, and they shall be my people."
+    },
+    {
+      "n": 2,
+      "c": 31,
+      "v": 2,
+      "ref": "31:2",
+      "text": "כֹּ֚ה אָמַ֣ר יְהֹוָ֔ה מָצָ֥א חֵן֙ בַּמִּדְבָּ֔ר עַ֖ם שְׂרִ֣ידֵי חָ֑רֶב הָל֥וֹךְ לְהַרְגִּיע֖וֹ יִשְׂרָאֵֽל׃",
+      "en": "Thus says the Lord, The people who were left of the sword found grace in the wilderness; when Yisra᾽el sought for rest."
+    },
+    {
+      "n": 3,
+      "c": 31,
+      "v": 3,
+      "ref": "31:3",
+      "text": "מֵרָח֕וֹק יְהֹוָ֖ה נִרְאָ֣ה לִ֑י וְאַהֲבַ֤ת עוֹלָם֙ אֲהַבְתִּ֔יךְ עַל־כֵּ֖ן מְשַׁכְתִּ֥יךְ חָֽסֶד׃",
+      "en": "The Lord appeared of old to me, saying, I have loved thee with an everlasting love: therefore I have remained true to thee."
+    },
+    {
+      "n": 4,
+      "c": 31,
+      "v": 4,
+      "ref": "31:4",
+      "text": "ע֤וֹד אֶבְנֵךְ֙ וְֽנִבְנֵ֔ית בְּתוּלַ֖ת יִשְׂרָאֵ֑ל ע֚וֹד תַּעְדִּ֣י תֻפַּ֔יִךְ וְיָצָ֖את בִּמְח֥וֹל מְשַׂחֲקִֽים׃",
+      "en": "Again I will build thee, and thou shalt be built, O virgin of Yisra᾽el: thou shalt again be adorned with thy timbrels, and shalt go out dancing with them that make merry."
+    },
+    {
+      "n": 5,
+      "c": 31,
+      "v": 5,
+      "ref": "31:5",
+      "text": "ע֚וֹד תִּטְּעִ֣י כְרָמִ֔ים בְּהָרֵ֖י שֹֽׁמְר֑וֹן נָטְע֥וּ נֹטְעִ֖ים וְחִלֵּֽלוּ׃",
+      "en": "Thou shalt yet plant vines upon the mountains of Shomron: the planters shall plant, and shall enjoy the fruit."
+    },
+    {
+      "n": 6,
+      "c": 31,
+      "v": 6,
+      "ref": "31:6",
+      "text": "כִּ֣י יֶשׁ־י֔וֹם קָרְא֥וּ נֹצְרִ֖ים בְּהַ֣ר אֶפְרָ֑יִם ק֚וּמוּ וְנַעֲלֶ֣ה צִיּ֔וֹן אֶל־יְהֹוָ֖ה אֱלֹהֵֽינוּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "For there shall be a day, that the watchmen upon the mount Efrayim shall cry, Arise, and let us go up to Żiyyon to the Lord our God."
+    },
+    {
+      "n": 7,
+      "c": 31,
+      "v": 7,
+      "ref": "31:7",
+      "text": "כִּי־כֹ֣ה&thinsp;<b>׀</b> אָמַ֣ר יְהֹוָ֗ה רׇנּ֤וּ לְיַֽעֲקֹב֙ שִׂמְחָ֔ה וְצַהֲל֖וּ בְּרֹ֣אשׁ הַגּוֹיִ֑ם הַשְׁמִ֤יעוּ הַֽלְלוּ֙ וְאִמְר֔וּ הוֹשַׁ֤ע יְהֹוָה֙ אֶֽת־עַמְּךָ֔ אֵ֖ת שְׁאֵרִ֥ית יִשְׂרָאֵֽל׃",
+      "en": "For thus says the Lord; Sing with gladness for Ya῾aqov, and shout on the hilltops of the nations: announce, praise, and say, O Lord, save Thy people, the remnant of Yisra᾽el."
+    },
+    {
+      "n": 8,
+      "c": 31,
+      "v": 8,
+      "ref": "31:8",
+      "text": "הִנְנִי֩ מֵבִ֨יא אוֹתָ֜ם מֵאֶ֣רֶץ צָפ֗וֹן וְקִבַּצְתִּים֮ מִיַּרְכְּתֵי־אָ֒רֶץ֒ בָּ֚ם עִוֵּ֣ר וּפִסֵּ֔חַ הָרָ֥ה וְיֹלֶ֖דֶת יַחְדָּ֑ו קָהָ֥ל גָּד֖וֹל יָשׁ֥וּבוּ הֵֽנָּה׃",
+      "en": "Behold, I will bring them from the north country, and gather them from the ends of the earth, and with them the blind and the lame, the woman with child and her that travails with child together: a great company shall return there."
+    },
+    {
+      "n": 9,
+      "c": 31,
+      "v": 9,
+      "ref": "31:9",
+      "text": "בִּבְכִ֣י יָבֹ֗אוּ וּֽבְתַחֲנוּנִים֮ אֽוֹבִילֵם֒ אֽוֹלִיכֵם֙ אֶל־נַ֣חֲלֵי מַ֔יִם בְּדֶ֣רֶךְ יָשָׁ֔ר לֹ֥א יִכָּשְׁל֖וּ בָּ֑הּ כִּֽי־הָיִ֤יתִי לְיִשְׂרָאֵל֙ לְאָ֔ב וְאֶפְרַ֖יִם בְּכֹ֥רִי הֽוּא׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "They shall come with weeping, and with supplications will I lead them: I will cause them to walk by the rivers of waters in a straight way, in which they shall not stumble: for I am a father to Yisra᾽el, and Efrayim is my firstborn."
+    },
+    {
+      "n": 10,
+      "c": 31,
+      "v": 10,
+      "ref": "31:10",
+      "text": "שִׁמְע֤וּ דְבַר־יְהֹוָה֙ גּוֹיִ֔ם וְהַגִּ֥ידוּ בָאִיִּ֖ים מִמֶּרְחָ֑ק וְאִמְר֗וּ מְזָרֵ֤ה יִשְׂרָאֵל֙ יְקַבְּצֶ֔נּוּ וּשְׁמָר֖וֹ כְּרֹעֶ֥ה עֶדְרֽוֹ׃",
+      "en": "Hear the word of the Lord, O you nations, and declare it in the isles afar off, and say, He that scattered Yisra᾽el will gather him, and keep him, as a shepherd keeps his flock."
+    },
+    {
+      "n": 11,
+      "c": 31,
+      "v": 11,
+      "ref": "31:11",
+      "text": "כִּֽי־פָדָ֥ה יְהֹוָ֖ה אֶֽת־יַעֲקֹ֑ב וּגְאָל֕וֹ מִיַּ֖ד חָזָ֥ק מִמֶּֽנּוּ׃",
+      "en": "For the Lord has redeemed Ya῾aqov, and ransomed him from the hand of him that was stronger than he."
+    },
+    {
+      "n": 12,
+      "c": 31,
+      "v": 12,
+      "ref": "31:12",
+      "text": "וּבָ֘אוּ֮ וְרִנְּנ֣וּ בִמְרוֹם־צִיּוֹן֒ וְנָהֲר֞וּ אֶל־ט֣וּב יְהֹוָ֗ה עַל־דָּגָן֙ וְעַל־תִּירֹ֣שׁ וְעַל־יִצְהָ֔ר וְעַל־בְּנֵי־צֹ֖אן וּבָקָ֑ר וְהָיְתָ֤ה נַפְשָׁם֙ כְּגַ֣ן רָוֶ֔ה וְלֹא־יוֹסִ֥יפוּ לְדַאֲבָ֖ה עֽוֹד׃",
+      "en": "Therefore they shall come and sing in the height of Żiyyon, and shall flow to the bounty of the Lord, for wheat, and for wine, and for oil, and for the young of the flock and of the herd: and their soul shall be like a watered garden; and they shall not languish in sorrow any more."
+    },
+    {
+      "n": 13,
+      "c": 31,
+      "v": 13,
+      "ref": "31:13",
+      "text": "אָ֣ז תִּשְׂמַ֤ח בְּתוּלָה֙ בְּמָח֔וֹל וּבַחֻרִ֥ים וּזְקֵנִ֖ים יַחְדָּ֑ו וְהָפַכְתִּ֨י אֶבְלָ֤ם לְשָׂשׂוֹן֙ וְנִ֣חַמְתִּ֔ים וְשִׂמַּחְתִּ֖ים מִיגוֹנָֽם׃",
+      "en": "Then shall the virgin rejoice in the dance, both young men and old together: for I will turn their mourning to joy, and will comfort them, and make them rejoice from their sorrow."
+    },
+    {
+      "n": 14,
+      "c": 31,
+      "v": 14,
+      "ref": "31:14",
+      "text": "וְרִוֵּיתִ֛י נֶ֥פֶשׁ הַכֹּהֲנִ֖ים דָּ֑שֶׁן וְעַמִּ֛י אֶת־טוּבִ֥י יִשְׂבָּ֖עוּ נְאֻם־יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And I will satiate the soul of the priests with fatness, and my people shall be satisfied with my goodness, says the Lord."
+    },
+    {
+      "n": 15,
+      "c": 31,
+      "v": 15,
+      "ref": "31:15",
+      "text": "כֹּ֣ה&thinsp;<b>׀</b> אָמַ֣ר יְהֹוָ֗ה ק֣וֹל בְּרָמָ֤ה נִשְׁמָע֙ נְהִי֙ בְּכִ֣י תַמְרוּרִ֔ים רָחֵ֖ל מְבַכָּ֣ה עַל־בָּנֶ֑יהָ מֵאֲנָ֛ה לְהִנָּחֵ֥ם עַל־בָּנֶ֖יהָ כִּ֥י אֵינֶֽנּוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Thus says the Lord; A voice was heard in Rama, lamentation, and bitter weeping; Raĥel weeping for her children; she refused to be comforted for her children, because they are not."
+    },
+    {
+      "n": 16,
+      "c": 31,
+      "v": 16,
+      "ref": "31:16",
+      "text": "כֹּ֣ה&thinsp;<b>׀</b> אָמַ֣ר יְהֹוָ֗ה מִנְעִ֤י קוֹלֵךְ֙ מִבֶּ֔כִי וְעֵינַ֖יִךְ מִדִּמְעָ֑ה כִּי֩ יֵ֨שׁ שָׂכָ֤ר לִפְעֻלָּתֵךְ֙ נְאֻם־יְהֹוָ֔ה וְשָׁ֖בוּ מֵאֶ֥רֶץ אוֹיֵֽב׃",
+      "en": "Thus says the Lord; Keep thy voice from weeping, and thy eyes from tears: for thy work shall be rewarded, says the Lord; and they shall come back again from the land of the enemy."
+    },
+    {
+      "n": 17,
+      "c": 31,
+      "v": 17,
+      "ref": "31:17",
+      "text": "וְיֵשׁ־תִּקְוָ֥ה לְאַחֲרִיתֵ֖ךְ נְאֻם־יְהֹוָ֑ה וְשָׁ֥בוּ בָנִ֖ים לִגְבוּלָֽם׃",
+      "en": "And there is hope for thy future, says the Lord, and thy children shall come back again to their own border."
+    },
+    {
+      "n": 18,
+      "c": 31,
+      "v": 18,
+      "ref": "31:18",
+      "text": "שָׁמ֣וֹעַ שָׁמַ֗עְתִּי אֶפְרַ֙יִם֙ מִתְנוֹדֵ֔ד יִסַּרְתַּ֙נִי֙ וָֽאִוָּסֵ֔ר כְּעֵ֖גֶל לֹ֣א לֻמָּ֑ד הֲשִׁבֵ֣נִי וְאָשׁ֔וּבָה כִּ֥י אַתָּ֖ה יְהֹוָ֥ה אֱלֹהָֽי׃",
+      "en": "I have surely heard Efrayim bemoaning himself thus; Thou hast chastised me, and I was chastised, like an untrained calf: turn me back, and I shall be turned; for Thou art the Lord my God."
+    },
+    {
+      "n": 19,
+      "c": 31,
+      "v": 19,
+      "ref": "31:19",
+      "text": "כִּֽי־אַחֲרֵ֤י שׁוּבִי֙ נִחַ֔מְתִּי וְאַֽחֲרֵי֙ הִוָּ֣דְעִ֔י סָפַ֖קְתִּי עַל־יָרֵ֑ךְ בֹּ֚שְׁתִּי וְגַם־נִכְלַ֔מְתִּי כִּ֥י נָשָׂ֖אתִי חֶרְפַּ֥ת נְעוּרָֽי׃",
+      "en": "For after I had returned away, I repented; and after I was instructed, I smote upon my thigh: I was ashamed, and even confounded, because I did bear the reproach of my youth."
+    }
+  ],
+  "kind": "holiday",
+  "tropeStyle": "haftarah",
+  "parashah": {
+    "en": "Rosh Hashanah Day 2",
+    "he": "ראש השנה יום ב׳",
+    "translit": "Rosh Hashanah Day 2",
+    "ref": "Jeremiah 31:1-31:19"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 19,
+        "ref": "31:1–31:19"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Holiday aliyah boundaries from the MJC public leyning page (mjcnj.com/hhrecordings) and its PDFs."
+}

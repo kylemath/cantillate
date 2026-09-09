@@ -1,0 +1,702 @@
+{
+  "note": "Rosh Hashanah and Yom Kippur civil dates for guided onboarding. Built by scripts/build_calendar.py --holidays from Hebcal so a typed RH/YK date cues High Holiday readings instead of that week's Shabbat. YK Mincha shares Yom Kippur's civil date.",
+  "source": "Parashah schedule from Hebcal (hebcal.com, BSD-2-Clause); diaspora, Ashkenazi rite. Triennial per R. Eisenberg's CJLS system.",
+  "builtAt": "2026-09-09T20:23:23Z",
+  "from": "2024-01-01",
+  "to": "2045-12-31",
+  "services": {
+    "rh1": {
+      "id": "rh1",
+      "label": "Rosh Hashanah Day 1",
+      "hebrew": "רֹאשׁ הַשָּׁנָה",
+      "slug": "rh1-torah",
+      "maftirSlug": "rh1-maftir",
+      "haftarahSlug": "rh1-haftarah",
+      "aliyahCount": 5,
+      "torahRef": "Genesis 21:1-34",
+      "maftirRef": "Numbers 29:1-6",
+      "haftarahRef": "I Samuel 1:1-2:10",
+      "aliyot": [
+        "Genesis 21:1-4",
+        "Genesis 21:5-12",
+        "Genesis 21:13-21",
+        "Genesis 21:22-27",
+        "Genesis 21:28-34"
+      ]
+    },
+    "rh2": {
+      "id": "rh2",
+      "label": "Rosh Hashanah Day 2",
+      "hebrew": "רֹאשׁ הַשָּׁנָה",
+      "slug": "rh2-torah",
+      "maftirSlug": "rh2-maftir",
+      "haftarahSlug": "rh2-haftarah",
+      "aliyahCount": 5,
+      "torahRef": "Genesis 22:1-24",
+      "maftirRef": "Numbers 29:1-6",
+      "haftarahRef": "Jeremiah 31:1-19",
+      "aliyot": [
+        "Genesis 22:1-3",
+        "Genesis 22:4-8",
+        "Genesis 22:9-14",
+        "Genesis 22:15-19",
+        "Genesis 22:20-24"
+      ]
+    },
+    "yk": {
+      "id": "yk",
+      "label": "Yom Kippur",
+      "hebrew": "יוֹם כִּפּוּר",
+      "slug": "yk-torah",
+      "maftirSlug": "yk-maftir",
+      "haftarahSlug": "yk-haftarah",
+      "aliyahCount": 6,
+      "torahRef": "Leviticus 16:1-34",
+      "maftirRef": "Numbers 29:7-11",
+      "haftarahRef": "Isaiah 57:14-58:14",
+      "aliyot": [
+        "Leviticus 16:1-6",
+        "Leviticus 16:7-11",
+        "Leviticus 16:12-17",
+        "Leviticus 16:18-24",
+        "Leviticus 16:25-30",
+        "Leviticus 16:31-34"
+      ]
+    },
+    "yk-mincha": {
+      "id": "yk-mincha",
+      "label": "Yom Kippur Mincha",
+      "hebrew": "יוֹם כִּפּוּר מִנְחָה",
+      "slug": "yk-mincha-torah",
+      "maftirSlug": null,
+      "haftarahSlug": "yk-mincha-haftarah",
+      "aliyahCount": 3,
+      "torahRef": "Leviticus 18:1-30",
+      "maftirRef": "",
+      "haftarahRef": "Jonah 1:1-4:11",
+      "aliyot": [
+        "Leviticus 18:1-5",
+        "Leviticus 18:6-21",
+        "Leviticus 18:22-30"
+      ]
+    }
+  },
+  "days": [
+    {
+      "d": "2024-10-03",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5785",
+      "hy": null,
+      "he": "ראש השנה 5785"
+    },
+    {
+      "d": "2024-10-04",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5785",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2024-10-12",
+      "svc": "yk",
+      "hd": "10 Tishrei 5785",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2024-10-12",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5785",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2025-09-23",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5786",
+      "hy": null,
+      "he": "ראש השנה 5786"
+    },
+    {
+      "d": "2025-09-24",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5786",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2025-10-02",
+      "svc": "yk",
+      "hd": "10 Tishrei 5786",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2025-10-02",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5786",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2026-09-12",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5787",
+      "hy": null,
+      "he": "ראש השנה 5787"
+    },
+    {
+      "d": "2026-09-13",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5787",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2026-09-21",
+      "svc": "yk",
+      "hd": "10 Tishrei 5787",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2026-09-21",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5787",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2027-10-02",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5788",
+      "hy": null,
+      "he": "ראש השנה 5788"
+    },
+    {
+      "d": "2027-10-03",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5788",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2027-10-11",
+      "svc": "yk",
+      "hd": "10 Tishrei 5788",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2027-10-11",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5788",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2028-09-21",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5789",
+      "hy": null,
+      "he": "ראש השנה 5789"
+    },
+    {
+      "d": "2028-09-22",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5789",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2028-09-30",
+      "svc": "yk",
+      "hd": "10 Tishrei 5789",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2028-09-30",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5789",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2029-09-10",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5790",
+      "hy": null,
+      "he": "ראש השנה 5790"
+    },
+    {
+      "d": "2029-09-11",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5790",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2029-09-19",
+      "svc": "yk",
+      "hd": "10 Tishrei 5790",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2029-09-19",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5790",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2030-09-28",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5791",
+      "hy": null,
+      "he": "ראש השנה 5791"
+    },
+    {
+      "d": "2030-09-29",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5791",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2030-10-07",
+      "svc": "yk",
+      "hd": "10 Tishrei 5791",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2030-10-07",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5791",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2031-09-18",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5792",
+      "hy": null,
+      "he": "ראש השנה 5792"
+    },
+    {
+      "d": "2031-09-19",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5792",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2031-09-27",
+      "svc": "yk",
+      "hd": "10 Tishrei 5792",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2031-09-27",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5792",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2032-09-06",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5793",
+      "hy": null,
+      "he": "ראש השנה 5793"
+    },
+    {
+      "d": "2032-09-07",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5793",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2032-09-15",
+      "svc": "yk",
+      "hd": "10 Tishrei 5793",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2032-09-15",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5793",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2033-09-24",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5794",
+      "hy": null,
+      "he": "ראש השנה 5794"
+    },
+    {
+      "d": "2033-09-25",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5794",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2033-10-03",
+      "svc": "yk",
+      "hd": "10 Tishrei 5794",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2033-10-03",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5794",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2034-09-14",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5795",
+      "hy": null,
+      "he": "ראש השנה 5795"
+    },
+    {
+      "d": "2034-09-15",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5795",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2034-09-23",
+      "svc": "yk",
+      "hd": "10 Tishrei 5795",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2034-09-23",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5795",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2035-10-04",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5796",
+      "hy": null,
+      "he": "ראש השנה 5796"
+    },
+    {
+      "d": "2035-10-05",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5796",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2035-10-13",
+      "svc": "yk",
+      "hd": "10 Tishrei 5796",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2035-10-13",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5796",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2036-09-22",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5797",
+      "hy": null,
+      "he": "ראש השנה 5797"
+    },
+    {
+      "d": "2036-09-23",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5797",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2036-10-01",
+      "svc": "yk",
+      "hd": "10 Tishrei 5797",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2036-10-01",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5797",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2037-09-10",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5798",
+      "hy": null,
+      "he": "ראש השנה 5798"
+    },
+    {
+      "d": "2037-09-11",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5798",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2037-09-19",
+      "svc": "yk",
+      "hd": "10 Tishrei 5798",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2037-09-19",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5798",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2038-09-30",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5799",
+      "hy": null,
+      "he": "ראש השנה 5799"
+    },
+    {
+      "d": "2038-10-01",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5799",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2038-10-09",
+      "svc": "yk",
+      "hd": "10 Tishrei 5799",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2038-10-09",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5799",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2039-09-19",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5800",
+      "hy": null,
+      "he": "ראש השנה 5800"
+    },
+    {
+      "d": "2039-09-20",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5800",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2039-09-28",
+      "svc": "yk",
+      "hd": "10 Tishrei 5800",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2039-09-28",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5800",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2040-09-08",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5801",
+      "hy": null,
+      "he": "ראש השנה 5801"
+    },
+    {
+      "d": "2040-09-09",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5801",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2040-09-17",
+      "svc": "yk",
+      "hd": "10 Tishrei 5801",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2040-09-17",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5801",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2041-09-26",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5802",
+      "hy": null,
+      "he": "ראש השנה 5802"
+    },
+    {
+      "d": "2041-09-27",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5802",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2041-10-05",
+      "svc": "yk",
+      "hd": "10 Tishrei 5802",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2041-10-05",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5802",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2042-09-15",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5803",
+      "hy": null,
+      "he": "ראש השנה 5803"
+    },
+    {
+      "d": "2042-09-16",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5803",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2042-09-24",
+      "svc": "yk",
+      "hd": "10 Tishrei 5803",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2042-09-24",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5803",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2043-10-05",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5804",
+      "hy": null,
+      "he": "ראש השנה 5804"
+    },
+    {
+      "d": "2043-10-06",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5804",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2043-10-14",
+      "svc": "yk",
+      "hd": "10 Tishrei 5804",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2043-10-14",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5804",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2044-09-22",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5805",
+      "hy": null,
+      "he": "ראש השנה 5805"
+    },
+    {
+      "d": "2044-09-23",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5805",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2044-10-01",
+      "svc": "yk",
+      "hd": "10 Tishrei 5805",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2044-10-01",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5805",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    },
+    {
+      "d": "2045-09-12",
+      "svc": "rh1",
+      "hd": "1 Tishrei 5806",
+      "hy": null,
+      "he": "ראש השנה 5806"
+    },
+    {
+      "d": "2045-09-13",
+      "svc": "rh2",
+      "hd": "2 Tishrei 5806",
+      "hy": null,
+      "he": "ראש השנה ב׳"
+    },
+    {
+      "d": "2045-09-21",
+      "svc": "yk",
+      "hd": "10 Tishrei 5806",
+      "hy": null,
+      "he": "יום כיפור"
+    },
+    {
+      "d": "2045-09-21",
+      "svc": "yk-mincha",
+      "hd": "10 Tishrei 5806",
+      "hy": null,
+      "he": "יוֹם כִּפּוּר מִנְחָה"
+    }
+  ]
+}

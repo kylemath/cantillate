@@ -1,0 +1,933 @@
+{
+  "slug": "metzora",
+  "book": {
+    "en": "Leviticus",
+    "he": "ויקרא",
+    "translit": "Vayikra"
+  },
+  "multiChapter": true,
+  "ref": "Leviticus 14:1-15:33",
+  "heRef": "ויקרא י״ד:א-ט״ו:ל״ג",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 14,
+      "v": 1,
+      "ref": "14:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 2,
+      "c": 14,
+      "v": 2,
+      "ref": "14:2",
+      "text": "זֹ֤את תִּֽהְיֶה֙ תּוֹרַ֣ת הַמְּצֹרָ֔ע בְּי֖וֹם טׇהֳרָת֑וֹ וְהוּבָ֖א אֶל־הַכֹּהֵֽן׃",
+      "en": "This shall be the Tora of the one stricken with żara῾at in the day of his cleansing: He shall be brought to the priest:"
+    },
+    {
+      "n": 3,
+      "c": 14,
+      "v": 3,
+      "ref": "14:3",
+      "text": "וְיָצָא֙ הַכֹּהֵ֔ן אֶל־מִח֖וּץ לַֽמַּחֲנֶ֑ה וְרָאָה֙ הַכֹּהֵ֔ן וְהִנֵּ֛ה נִרְפָּ֥א נֶֽגַע־הַצָּרַ֖עַת מִן־הַצָּרֽוּעַ׃",
+      "en": "and the priest shall go out of the camp; and the priest shall look, and, behold, if the plague of żara῾at be healed in the one afflicted;"
+    },
+    {
+      "n": 4,
+      "c": 14,
+      "v": 4,
+      "ref": "14:4",
+      "text": "וְצִוָּה֙ הַכֹּהֵ֔ן וְלָקַ֧ח לַמִּטַּהֵ֛ר שְׁתֵּֽי־צִפֳּרִ֥ים חַיּ֖וֹת טְהֹר֑וֹת וְעֵ֣ץ אֶ֔רֶז וּשְׁנִ֥י תוֹלַ֖עַת וְאֵזֹֽב׃",
+      "en": "then shall the priest command to take for him that is to be cleansed two birds alive and clean, and cedar wood, and scarlet, and hyssop:"
+    },
+    {
+      "n": 5,
+      "c": 14,
+      "v": 5,
+      "ref": "14:5",
+      "text": "וְצִוָּה֙ הַכֹּהֵ֔ן וְשָׁחַ֖ט אֶת־הַצִּפּ֣וֹר הָאֶחָ֑ת אֶל־כְּלִי־חֶ֖רֶשׂ עַל־מַ֥יִם חַיִּֽים׃",
+      "en": "and the priest shall command that one of the birds be killed in an earthen vessel over running water:"
+    },
+    {
+      "n": 6,
+      "c": 14,
+      "v": 6,
+      "ref": "14:6",
+      "text": "אֶת־הַצִּפֹּ֤ר הַֽחַיָּה֙ יִקַּ֣ח אֹתָ֔הּ וְאֶת־עֵ֥ץ הָאֶ֛רֶז וְאֶת־שְׁנִ֥י הַתּוֹלַ֖עַת וְאֶת־הָאֵזֹ֑ב וְטָבַ֨ל אוֹתָ֜ם וְאֵ֣ת&thinsp;<b>׀</b> הַצִּפֹּ֣ר הַֽחַיָּ֗ה בְּדַם֙ הַצִּפֹּ֣ר הַשְּׁחֻטָ֔ה עַ֖ל הַמַּ֥יִם הַֽחַיִּֽים׃",
+      "en": "as for the living bird, he shall take it, and the cedar wood, and the scarlet, and the hyssop, and shall dip them and the living bird in the blood of the bird that was killed over the running water:"
+    },
+    {
+      "n": 7,
+      "c": 14,
+      "v": 7,
+      "ref": "14:7",
+      "text": "וְהִזָּ֗ה עַ֧ל הַמִּטַּהֵ֛ר מִן־הַצָּרַ֖עַת שֶׁ֣בַע פְּעָמִ֑ים וְטִ֣הֲר֔וֹ וְשִׁלַּ֛ח אֶת־הַצִּפֹּ֥ר הַֽחַיָּ֖ה עַל־פְּנֵ֥י הַשָּׂדֶֽה׃",
+      "en": "and he shall sprinkle upon him that is to be cleansed from the żara῾at seven times, and shall pronounce him clean, and shall let the living bird loose into the open field."
+    },
+    {
+      "n": 8,
+      "c": 14,
+      "v": 8,
+      "ref": "14:8",
+      "text": "וְכִבֶּס֩ הַמִּטַּהֵ֨ר אֶת־בְּגָדָ֜יו וְגִלַּ֣ח אֶת־כׇּל־שְׂעָר֗וֹ וְרָחַ֤ץ בַּמַּ֙יִם֙ וְטָהֵ֔ר וְאַחַ֖ר יָב֣וֹא אֶל־הַֽמַּחֲנֶ֑ה וְיָשַׁ֛ב מִח֥וּץ לְאׇהֳל֖וֹ שִׁבְעַ֥ת יָמִֽים׃",
+      "en": "And he that is to be cleansed shall wash his clothes, and shave off all his hair, and bathe himself in water, and be clean: and after that he shall come into the camp, but he shall remain outside his tent seven days."
+    },
+    {
+      "n": 9,
+      "c": 14,
+      "v": 9,
+      "ref": "14:9",
+      "text": "וְהָיָה֩ בַיּ֨וֹם הַשְּׁבִיעִ֜י יְגַלַּ֣ח אֶת־כׇּל־שְׂעָר֗וֹ אֶת־רֹאשׁ֤וֹ וְאֶת־זְקָנוֹ֙ וְאֵת֙ גַּבֹּ֣ת עֵינָ֔יו וְאֶת־כׇּל־שְׂעָר֖וֹ יְגַלֵּ֑חַ וְכִבֶּ֣ס אֶת־בְּגָדָ֗יו וְרָחַ֧ץ אֶת־בְּשָׂר֛וֹ בַּמַּ֖יִם וְטָהֵֽר׃",
+      "en": "And it shall be on the seventh day, that he shall shave all his hair off his head and his beard and his eyebrows, even all his hair he shall shave off: and he shall bathe his clothes, also he shall wash his flesh in water, and he shall be clean."
+    },
+    {
+      "n": 10,
+      "c": 14,
+      "v": 10,
+      "ref": "14:10",
+      "text": "וּבַיּ֣וֹם הַשְּׁמִינִ֗י יִקַּ֤ח שְׁנֵֽי־כְבָשִׂים֙ תְּמִימִ֔ם וְכַבְשָׂ֥ה אַחַ֛ת בַּת־שְׁנָתָ֖הּ תְּמִימָ֑ה וּשְׁלֹשָׁ֣ה עֶשְׂרֹנִ֗ים סֹ֤לֶת מִנְחָה֙ בְּלוּלָ֣ה בַשֶּׁ֔מֶן וְלֹ֥ג אֶחָ֖ד שָֽׁמֶן׃",
+      "en": "And on the eighth day he shall take two he lambs without blemish, and one ewe lamb of the first year without blemish, and three tenth measures of fine flour for a meal offering, mingled with oil, and one log of oil."
+    },
+    {
+      "n": 11,
+      "c": 14,
+      "v": 11,
+      "ref": "14:11",
+      "text": "וְהֶעֱמִ֞יד הַכֹּהֵ֣ן הַֽמְטַהֵ֗ר אֵ֛ת הָאִ֥ישׁ הַמִּטַּהֵ֖ר וְאֹתָ֑ם לִפְנֵ֣י יְהֹוָ֔ה פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "And the priest that makes him clean shall present the man that is to be made clean, and those things, before the Lord, at the door of the Tent of Meeting:"
+    },
+    {
+      "n": 12,
+      "c": 14,
+      "v": 12,
+      "ref": "14:12",
+      "text": "וְלָקַ֨ח הַכֹּהֵ֜ן אֶת־הַכֶּ֣בֶשׂ הָאֶחָ֗ד וְהִקְרִ֥יב אֹת֛וֹ לְאָשָׁ֖ם וְאֶת־לֹ֣ג הַשָּׁ֑מֶן וְהֵנִ֥יף אֹתָ֛ם תְּנוּפָ֖ה לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "and the priest shall take one he lamb, and offer it for a guilt offering, and the log of oil, and wave them for a wave offering before the Lord:"
+    },
+    {
+      "n": 13,
+      "c": 14,
+      "v": 13,
+      "ref": "14:13",
+      "text": "וְשָׁחַ֣ט אֶת־הַכֶּ֗בֶשׂ בִּ֠מְק֠וֹם אֲשֶׁ֨ר יִשְׁחַ֧ט אֶת־הַֽחַטָּ֛את וְאֶת־הָעֹלָ֖ה בִּמְק֣וֹם הַקֹּ֑דֶשׁ כִּ֡י כַּ֠חַטָּ֠את הָאָשָׁ֥ם הוּא֙ לַכֹּהֵ֔ן קֹ֥דֶשׁ קׇֽדָשִׁ֖ים הֽוּא׃",
+      "en": "and he shall slaughter the lamb in the place where he shall kill the sin offering and the burnt offering, in the holy place: for as the sin offering is the priest’s, so is the guilt offering: it is most holy:"
+    },
+    {
+      "n": 14,
+      "c": 14,
+      "v": 14,
+      "ref": "14:14",
+      "text": "וְלָקַ֣ח הַכֹּהֵן֮ מִדַּ֣ם הָאָשָׁם֒ וְנָתַן֙ הַכֹּהֵ֔ן עַל־תְּנ֛וּךְ אֹ֥זֶן הַמִּטַּהֵ֖ר הַיְמָנִ֑ית וְעַל־בֹּ֤הֶן יָדוֹ֙ הַיְמָנִ֔ית וְעַל־בֹּ֥הֶן רַגְל֖וֹ הַיְמָנִֽית׃",
+      "en": "and the priest shall take some of the blood of the guilt offering, and the priest shall put it upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot:"
+    },
+    {
+      "n": 15,
+      "c": 14,
+      "v": 15,
+      "ref": "14:15",
+      "text": "וְלָקַ֥ח הַכֹּהֵ֖ן מִלֹּ֣ג הַשָּׁ֑מֶן וְיָצַ֛ק עַל־כַּ֥ף הַכֹּהֵ֖ן הַשְּׂמָאלִֽית׃",
+      "en": "and the priest shall take some of the log of oil, and pour it into the palm of his own left hand:"
+    },
+    {
+      "n": 16,
+      "c": 14,
+      "v": 16,
+      "ref": "14:16",
+      "text": "וְטָבַ֤ל הַכֹּהֵן֙ אֶת־אֶצְבָּע֣וֹ הַיְמָנִ֔ית מִן־הַשֶּׁ֕מֶן אֲשֶׁ֥ר עַל־כַּפּ֖וֹ הַשְּׂמָאלִ֑ית וְהִזָּ֨ה מִן־הַשֶּׁ֧מֶן בְּאֶצְבָּע֛וֹ שֶׁ֥בַע פְּעָמִ֖ים לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "and the priest shall dip his right finger in the oil that is in his left hand, and shall sprinkle of the oil with his finger seven times before the Lord:"
+    },
+    {
+      "n": 17,
+      "c": 14,
+      "v": 17,
+      "ref": "14:17",
+      "text": "וּמִיֶּ֨תֶר הַשֶּׁ֜מֶן אֲשֶׁ֣ר עַל־כַּפּ֗וֹ יִתֵּ֤ן הַכֹּהֵן֙ עַל־תְּנ֞וּךְ אֹ֤זֶן הַמִּטַּהֵר֙ הַיְמָנִ֔ית וְעַל־בֹּ֤הֶן יָדוֹ֙ הַיְמָנִ֔ית וְעַל־בֹּ֥הֶן רַגְל֖וֹ הַיְמָנִ֑ית עַ֖ל דַּ֥ם הָאָשָֽׁם׃",
+      "en": "and of the rest of the oil that is in his hand shall the priest put upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot, upon the blood of the guilt offering:"
+    },
+    {
+      "n": 18,
+      "c": 14,
+      "v": 18,
+      "ref": "14:18",
+      "text": "וְהַנּוֹתָ֗ר בַּשֶּׁ֙מֶן֙ אֲשֶׁר֙ עַל־כַּ֣ף הַכֹּהֵ֔ן יִתֵּ֖ן עַל־רֹ֣אשׁ הַמִּטַּהֵ֑ר וְכִפֶּ֥ר עָלָ֛יו הַכֹּהֵ֖ן לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "and the remnant of the oil that is in the priest’s hand he shall pour upon the head of him that is to be cleansed: and the priest shall make atonement for him before the Lord."
+    },
+    {
+      "n": 19,
+      "c": 14,
+      "v": 19,
+      "ref": "14:19",
+      "text": "וְעָשָׂ֤ה הַכֹּהֵן֙ אֶת־הַ֣חַטָּ֔את וְכִפֶּ֕ר עַל־הַמִּטַּהֵ֖ר מִטֻּמְאָת֑וֹ וְאַחַ֖ר יִשְׁחַ֥ט אֶת־הָעֹלָֽה׃",
+      "en": "And the priest shall offer the sin offering, and make atonement for him that is to be cleansed from his uncleanness; and afterwards he shall kill the burnt offering:"
+    },
+    {
+      "n": 20,
+      "c": 14,
+      "v": 20,
+      "ref": "14:20",
+      "text": "וְהֶעֱלָ֧ה הַכֹּהֵ֛ן אֶת־הָעֹלָ֥ה וְאֶת־הַמִּנְחָ֖ה הַמִּזְבֵּ֑חָה וְכִפֶּ֥ר עָלָ֛יו הַכֹּהֵ֖ן וְטָהֵֽר׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and the priest shall offer the burnt offering and the meal offering upon the altar: and the priest shall make atonement for him, and he shall be clean."
+    },
+    {
+      "n": 21,
+      "c": 14,
+      "v": 21,
+      "ref": "14:21",
+      "text": "וְאִם־דַּ֣ל ה֗וּא וְאֵ֣ין יָדוֹ֮ מַשֶּׂ֒גֶת֒ וְ֠לָקַ֠ח כֶּ֣בֶשׂ אֶחָ֥ד אָשָׁ֛ם לִתְנוּפָ֖ה לְכַפֵּ֣ר עָלָ֑יו וְעִשָּׂר֨וֹן סֹ֜לֶת אֶחָ֨ד בָּל֥וּל בַּשֶּׁ֛מֶן לְמִנְחָ֖ה וְלֹ֥ג שָֽׁמֶן׃",
+      "en": "And if he be poor, and his means do not suffice; then he shall take one lamb for a guilt offering to be waved, to make atonement for him, and one tenth measure of fine flour mingled with oil for a meal offering, and a log of oil;"
+    },
+    {
+      "n": 22,
+      "c": 14,
+      "v": 22,
+      "ref": "14:22",
+      "text": "וּשְׁתֵּ֣י תֹרִ֗ים א֤וֹ שְׁנֵי֙ בְּנֵ֣י יוֹנָ֔ה אֲשֶׁ֥ר תַּשִּׂ֖יג יָד֑וֹ וְהָיָ֤ה אֶחָד֙ חַטָּ֔את וְהָאֶחָ֖ד עֹלָֽה׃",
+      "en": "and two turtledoves, or two young pigeons, such as his means permit; and the one shall be a sin offering, and the other a burnt offering."
+    },
+    {
+      "n": 23,
+      "c": 14,
+      "v": 23,
+      "ref": "14:23",
+      "text": "וְהֵבִ֨יא אֹתָ֜ם בַּיּ֧וֹם הַשְּׁמִינִ֛י לְטׇהֳרָת֖וֹ אֶל־הַכֹּהֵ֑ן אֶל־פֶּ֥תַח אֹֽהֶל־מוֹעֵ֖ד לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And he shall bring them on the eighth day for his cleansing to the priest, to the door of the Tent of Meeting, before the Lord."
+    },
+    {
+      "n": 24,
+      "c": 14,
+      "v": 24,
+      "ref": "14:24",
+      "text": "וְלָקַ֧ח הַכֹּהֵ֛ן אֶת־כֶּ֥בֶשׂ הָאָשָׁ֖ם וְאֶת־לֹ֣ג הַשָּׁ֑מֶן וְהֵנִ֨יף אֹתָ֧ם הַכֹּהֵ֛ן תְּנוּפָ֖ה לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "And the priest shall take the lamb of the guilt offering, and the log of oil, and the priest shall wave them for a wave offering before the Lord:"
+    },
+    {
+      "n": 25,
+      "c": 14,
+      "v": 25,
+      "ref": "14:25",
+      "text": "וְשָׁחַט֮ אֶת־כֶּ֣בֶשׂ הָֽאָשָׁם֒ וְלָקַ֤ח הַכֹּהֵן֙ מִדַּ֣ם הָֽאָשָׁ֔ם וְנָתַ֛ן עַל־תְּנ֥וּךְ אֹֽזֶן־הַמִּטַּהֵ֖ר הַיְמָנִ֑ית וְעַל־בֹּ֤הֶן יָדוֹ֙ הַיְמָנִ֔ית וְעַל־בֹּ֥הֶן רַגְל֖וֹ הַיְמָנִֽית׃",
+      "en": "and he shall kill the lamb of the guilt offering, and the priest shall take some of the blood of the guilt offering, and put it upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot:"
+    },
+    {
+      "n": 26,
+      "c": 14,
+      "v": 26,
+      "ref": "14:26",
+      "text": "וּמִן־הַשֶּׁ֖מֶן יִצֹ֣ק הַכֹּהֵ֑ן עַל־כַּ֥ף הַכֹּהֵ֖ן הַשְּׂמָאלִֽית׃",
+      "en": "and the priest shall pour of the oil into the palm of his own left hand:"
+    },
+    {
+      "n": 27,
+      "c": 14,
+      "v": 27,
+      "ref": "14:27",
+      "text": "וְהִזָּ֤ה הַכֹּהֵן֙ בְּאֶצְבָּע֣וֹ הַיְמָנִ֔ית מִן־הַשֶּׁ֕מֶן אֲשֶׁ֥ר עַל־כַּפּ֖וֹ הַשְּׂמָאלִ֑ית שֶׁ֥בַע פְּעָמִ֖ים לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "and the priest shall sprinkle with his right finger some of the oil that is in his left hand seven times before the Lord:"
+    },
+    {
+      "n": 28,
+      "c": 14,
+      "v": 28,
+      "ref": "14:28",
+      "text": "וְנָתַ֨ן הַכֹּהֵ֜ן מִן־הַשֶּׁ֣מֶן&thinsp;<b>׀</b> אֲשֶׁ֣ר עַל־כַּפּ֗וֹ עַל־תְּנ֞וּךְ אֹ֤זֶן הַמִּטַּהֵר֙ הַיְמָנִ֔ית וְעַל־בֹּ֤הֶן יָדוֹ֙ הַיְמָנִ֔ית וְעַל־בֹּ֥הֶן רַגְל֖וֹ הַיְמָנִ֑ית עַל־מְק֖וֹם דַּ֥ם הָאָשָֽׁם׃",
+      "en": "and the priest shall put of the oil that is in his hand upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot, upon the place of the blood of the guilt offering:"
+    },
+    {
+      "n": 29,
+      "c": 14,
+      "v": 29,
+      "ref": "14:29",
+      "text": "וְהַנּוֹתָ֗ר מִן־הַשֶּׁ֙מֶן֙ אֲשֶׁר֙ עַל־כַּ֣ף הַכֹּהֵ֔ן יִתֵּ֖ן עַל־רֹ֣אשׁ הַמִּטַּהֵ֑ר לְכַפֵּ֥ר עָלָ֖יו לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "and the rest of the oil that is in the priest’s hand he shall put upon the head of him that is to be cleansed, to make atonement for him before the Lord."
+    },
+    {
+      "n": 30,
+      "c": 14,
+      "v": 30,
+      "ref": "14:30",
+      "text": "וְעָשָׂ֤ה אֶת־הָֽאֶחָד֙ מִן־הַתֹּרִ֔ים א֖וֹ מִן־בְּנֵ֣י הַיּוֹנָ֑ה מֵאֲשֶׁ֥ר תַּשִּׂ֖יג יָדֽוֹ׃",
+      "en": "And he shall offer one of the turtledoves, or of the young pigeons, such as his means permit;"
+    },
+    {
+      "n": 31,
+      "c": 14,
+      "v": 31,
+      "ref": "14:31",
+      "text": "אֵ֣ת אֲשֶׁר־תַּשִּׂ֞יג יָד֗וֹ אֶת־הָאֶחָ֥ד חַטָּ֛את וְאֶת־הָאֶחָ֥ד עֹלָ֖ה עַל־הַמִּנְחָ֑ה וְכִפֶּ֧ר הַכֹּהֵ֛ן עַ֥ל הַמִּטַּהֵ֖ר לִפְנֵ֥י יְהֹוָֽה׃",
+      "en": "even such as his means permit, the one for a sin offering, and the other for a burnt offering, with the meal offering: and the priest shall make atonement for him that is to be cleansed before the Lord."
+    },
+    {
+      "n": 32,
+      "c": 14,
+      "v": 32,
+      "ref": "14:32",
+      "text": "זֹ֣את תּוֹרַ֔ת אֲשֶׁר־בּ֖וֹ נֶ֣גַע צָרָ֑עַת אֲשֶׁ֛ר לֹֽא־תַשִּׂ֥יג יָד֖וֹ בְּטׇהֳרָתֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "This is the Tora of him in whom is the plague of żara῾at whose means do not permit much for his cleansing."
+    },
+    {
+      "n": 33,
+      "c": 14,
+      "v": 33,
+      "ref": "14:33",
+      "text": "וַיְדַבֵּ֣ר יְהֹוָ֔ה אֶל־מֹשֶׁ֥ה וְאֶֽל־אַהֲרֹ֖ן לֵאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe and to Aharon, saying,"
+    },
+    {
+      "n": 34,
+      "c": 14,
+      "v": 34,
+      "ref": "14:34",
+      "text": "כִּ֤י תָבֹ֙אוּ֙ אֶל־אֶ֣רֶץ כְּנַ֔עַן אֲשֶׁ֥ר אֲנִ֛י נֹתֵ֥ן לָכֶ֖ם לַאֲחֻזָּ֑ה וְנָתַתִּי֙ נֶ֣גַע צָרַ֔עַת בְּבֵ֖ית אֶ֥רֶץ אֲחֻזַּתְכֶֽם׃",
+      "en": "When you come into the land of Kena῾an, which I give to you for a possession, and I put the plague of żara῾at in a house of the land of your possession;"
+    },
+    {
+      "n": 35,
+      "c": 14,
+      "v": 35,
+      "ref": "14:35",
+      "text": "וּבָא֙ אֲשֶׁר־ל֣וֹ הַבַּ֔יִת וְהִגִּ֥יד לַכֹּהֵ֖ן לֵאמֹ֑ר כְּנֶ֕גַע נִרְאָ֥ה לִ֖י בַּבָּֽיִת׃",
+      "en": "and he that owns the house shall come and tell the priest, saying, It seems to me there is as it were a plague in the house:"
+    },
+    {
+      "n": 36,
+      "c": 14,
+      "v": 36,
+      "ref": "14:36",
+      "text": "וְצִוָּ֨ה הַכֹּהֵ֜ן וּפִנּ֣וּ אֶת־הַבַּ֗יִת בְּטֶ֨רֶם יָבֹ֤א הַכֹּהֵן֙ לִרְא֣וֹת אֶת־הַנֶּ֔גַע וְלֹ֥א יִטְמָ֖א כׇּל־אֲשֶׁ֣ר בַּבָּ֑יִת וְאַ֥חַר כֵּ֛ן יָבֹ֥א הַכֹּהֵ֖ן לִרְא֥וֹת אֶת־הַבָּֽיִת׃",
+      "en": "then the priest shall command that they empty the house, before the priest go into it to see the plague, so that all that is in the house be not made unclean: and afterward the priest shall go in to see the house:"
+    },
+    {
+      "n": 37,
+      "c": 14,
+      "v": 37,
+      "ref": "14:37",
+      "text": "וְרָאָ֣ה אֶת־הַנֶּ֗גַע וְהִנֵּ֤ה הַנֶּ֙גַע֙ בְּקִירֹ֣ת הַבַּ֔יִת שְׁקַֽעֲרוּרֹת֙ יְרַקְרַקֹּ֔ת א֖וֹ אֲדַמְדַּמֹּ֑ת וּמַרְאֵיהֶ֥ן שָׁפָ֖ל מִן־הַקִּֽיר׃",
+      "en": "and he shall look at the plague, and, behold, if the plague be in the walls of the house in greenish or reddish depressions, which in sight are lower than the wall;"
+    },
+    {
+      "n": 38,
+      "c": 14,
+      "v": 38,
+      "ref": "14:38",
+      "text": "וְיָצָ֧א הַכֹּהֵ֛ן מִן־הַבַּ֖יִת אֶל־פֶּ֣תַח הַבָּ֑יִת וְהִסְגִּ֥יר אֶת־הַבַּ֖יִת שִׁבְעַ֥ת יָמִֽים׃",
+      "en": "then the priest shall go out of the house to the door of the house, and shut up the house seven days:"
+    },
+    {
+      "n": 39,
+      "c": 14,
+      "v": 39,
+      "ref": "14:39",
+      "text": "וְשָׁ֥ב הַכֹּהֵ֖ן בַּיּ֣וֹם הַשְּׁבִיעִ֑י וְרָאָ֕ה וְהִנֵּ֛ה פָּשָׂ֥ה הַנֶּ֖גַע בְּקִירֹ֥ת הַבָּֽיִת׃",
+      "en": "and the priest shall come back on the seventh day, and shall look: and, behold, if the plague be spread in the walls of the house;"
+    },
+    {
+      "n": 40,
+      "c": 14,
+      "v": 40,
+      "ref": "14:40",
+      "text": "וְצִוָּה֙ הַכֹּהֵ֔ן וְחִלְּצוּ֙ אֶת־הָ֣אֲבָנִ֔ים אֲשֶׁ֥ר בָּהֵ֖ן הַנָּ֑גַע וְהִשְׁלִ֤יכוּ אֶתְהֶן֙ אֶל־מִח֣וּץ לָעִ֔יר אֶל־מָק֖וֹם טָמֵֽא׃",
+      "en": "then the priest shall command that they take away the stones in which the plague is, and they shall cast them into an unclean place outside the city:"
+    },
+    {
+      "n": 41,
+      "c": 14,
+      "v": 41,
+      "ref": "14:41",
+      "text": "וְאֶת־הַבַּ֛יִת יַקְצִ֥עַ מִבַּ֖יִת סָבִ֑יב וְשָׁפְכ֗וּ אֶת־הֶֽעָפָר֙ אֲשֶׁ֣ר הִקְצ֔וּ אֶל־מִח֣וּץ לָעִ֔יר אֶל־מָק֖וֹם טָמֵֽא׃",
+      "en": "and he shall cause the house to be scraped within round about, and they shall pour out the dust that they scrape off outside the city in an unclean place:"
+    },
+    {
+      "n": 42,
+      "c": 14,
+      "v": 42,
+      "ref": "14:42",
+      "text": "וְלָקְחוּ֙ אֲבָנִ֣ים אֲחֵר֔וֹת וְהֵבִ֖יאוּ אֶל־תַּ֣חַת הָאֲבָנִ֑ים וְעָפָ֥ר אַחֵ֛ר יִקַּ֖ח וְטָ֥ח אֶת־הַבָּֽיִת׃",
+      "en": "and they shall take other stones, and put them in the place of those stones; and he shall take other mortar, and shall plaster the house."
+    },
+    {
+      "n": 43,
+      "c": 14,
+      "v": 43,
+      "ref": "14:43",
+      "text": "וְאִם־יָשׁ֤וּב הַנֶּ֙גַע֙ וּפָרַ֣ח בַּבַּ֔יִת אַחַ֖ר חִלֵּ֣ץ אֶת־הָאֲבָנִ֑ים וְאַחֲרֵ֛י הִקְצ֥וֹת אֶת־הַבַּ֖יִת וְאַחֲרֵ֥י הִטּֽוֹחַ׃",
+      "en": "And if the plague come back, and break out in the house, after he has taken away the stones, and after he has scraped the house, and after it is plastered;"
+    },
+    {
+      "n": 44,
+      "c": 14,
+      "v": 44,
+      "ref": "14:44",
+      "text": "וּבָא֙ הַכֹּהֵ֔ן וְרָאָ֕ה וְהִנֵּ֛ה פָּשָׂ֥ה הַנֶּ֖גַע בַּבָּ֑יִת צָרַ֨עַת מַמְאֶ֥רֶת הִ֛וא בַּבַּ֖יִת טָמֵ֥א הֽוּא׃",
+      "en": "then the priest shall come and look, and, behold, if the plague be spread in the house, it is a malignant żara῾at in the house: it is unclean."
+    },
+    {
+      "n": 45,
+      "c": 14,
+      "v": 45,
+      "ref": "14:45",
+      "text": "וְנָתַ֣ץ אֶת־הַבַּ֗יִת אֶת־אֲבָנָיו֙ וְאֶת־עֵצָ֔יו וְאֵ֖ת כׇּל־עֲפַ֣ר הַבָּ֑יִת וְהוֹצִיא֙ אֶל־מִח֣וּץ לָעִ֔יר אֶל־מָק֖וֹם טָמֵֽא׃",
+      "en": "And he shall break down the house, the stones of it, and its timber, and all the mortar of the house; and he shall carry them out of the city into an unclean place."
+    },
+    {
+      "n": 46,
+      "c": 14,
+      "v": 46,
+      "ref": "14:46",
+      "text": "וְהַבָּא֙ אֶל־הַבַּ֔יִת כׇּל־יְמֵ֖י הִסְגִּ֣יר אֹת֑וֹ יִטְמָ֖א עַד־הָעָֽרֶב׃",
+      "en": "Moreover he that goes into the house all the while that it is shut up shall be unclean until evening."
+    },
+    {
+      "n": 47,
+      "c": 14,
+      "v": 47,
+      "ref": "14:47",
+      "text": "וְהַשֹּׁכֵ֣ב בַּבַּ֔יִת יְכַבֵּ֖ס אֶת־בְּגָדָ֑יו וְהָאֹכֵ֣ל בַּבַּ֔יִת יְכַבֵּ֖ס אֶת־בְּגָדָֽיו׃",
+      "en": "And he that lies in the house shall wash his clothes; and he that eats in the house shall wash his clothes."
+    },
+    {
+      "n": 48,
+      "c": 14,
+      "v": 48,
+      "ref": "14:48",
+      "text": "וְאִם־בֹּ֨א יָבֹ֜א הַכֹּהֵ֗ן וְרָאָה֙ וְ֠הִנֵּ֠ה לֹא־פָשָׂ֤ה הַנֶּ֙גַע֙ בַּבַּ֔יִת אַחֲרֵ֖י הִטֹּ֣חַ אֶת־הַבָּ֑יִת וְטִהַ֤ר הַכֹּהֵן֙ אֶת־הַבַּ֔יִת כִּ֥י נִרְפָּ֖א הַנָּֽגַע׃",
+      "en": "And if the priest shall come in, and look upon it, and, behold, the plague has not spread in the house, after the house was plastered: then the priest shall pronounce the house clean, because the plague is healed."
+    },
+    {
+      "n": 49,
+      "c": 14,
+      "v": 49,
+      "ref": "14:49",
+      "text": "וְלָקַ֛ח לְחַטֵּ֥א אֶת־הַבַּ֖יִת שְׁתֵּ֣י צִפֳּרִ֑ים וְעֵ֣ץ אֶ֔רֶז וּשְׁנִ֥י תוֹלַ֖עַת וְאֵזֹֽב׃",
+      "en": "And he shall take to cleanse the house two birds, and cedar wood, and scarlet, and hyssop:"
+    },
+    {
+      "n": 50,
+      "c": 14,
+      "v": 50,
+      "ref": "14:50",
+      "text": "וְשָׁחַ֖ט אֶת־הַצִּפֹּ֣ר הָאֶחָ֑ת אֶל־כְּלִי־חֶ֖רֶשׂ עַל־מַ֥יִם חַיִּֽים׃",
+      "en": "and he shall kill one of the birds in an earthen vessel over running water:"
+    },
+    {
+      "n": 51,
+      "c": 14,
+      "v": 51,
+      "ref": "14:51",
+      "text": "וְלָקַ֣ח אֶת־עֵֽץ־הָ֠אֶ֠רֶז וְאֶת־הָ֨אֵזֹ֜ב וְאֵ֣ת&thinsp;<b>׀</b> שְׁנִ֣י הַתּוֹלַ֗עַת וְאֵת֮ הַצִּפֹּ֣ר הַֽחַיָּה֒ וְטָבַ֣ל אֹתָ֗ם בְּדַם֙ הַצִּפֹּ֣ר הַשְּׁחוּטָ֔ה וּבַמַּ֖יִם הַֽחַיִּ֑ים וְהִזָּ֥ה אֶל־הַבַּ֖יִת שֶׁ֥בַע פְּעָמִֽים׃",
+      "en": "and he shall take the cedar wood, and the hyssop, and the scarlet, and the living bird, and dip them in the blood of the slaughtered bird, and in the running water, and sprinkle the house seven times:"
+    },
+    {
+      "n": 52,
+      "c": 14,
+      "v": 52,
+      "ref": "14:52",
+      "text": "וְחִטֵּ֣א אֶת־הַבַּ֔יִת בְּדַם֙ הַצִּפּ֔וֹר וּבַמַּ֖יִם הַֽחַיִּ֑ים וּבַצִּפֹּ֣ר הַחַיָּ֗ה וּבְעֵ֥ץ הָאֶ֛רֶז וּבָאֵזֹ֖ב וּבִשְׁנִ֥י הַתּוֹלָֽעַת׃",
+      "en": "and he shall cleanse the house with the blood of the bird, and with the running water, and with the living bird, and with the cedar wood, and with the hyssop, and with the scarlet:"
+    },
+    {
+      "n": 53,
+      "c": 14,
+      "v": 53,
+      "ref": "14:53",
+      "text": "וְשִׁלַּ֞ח אֶת־הַצִּפֹּ֧ר הַֽחַיָּ֛ה אֶל־מִח֥וּץ לָעִ֖יר אֶל־פְּנֵ֣י הַשָּׂדֶ֑ה וְכִפֶּ֥ר עַל־הַבַּ֖יִת וְטָהֵֽר׃",
+      "en": "but he shall let go the living bird out of the city into the open fields, and make atonement for the house: and it shall be clean."
+    },
+    {
+      "n": 54,
+      "c": 14,
+      "v": 54,
+      "ref": "14:54",
+      "text": "זֹ֖את הַתּוֹרָ֑ה לְכׇל־נֶ֥גַע הַצָּרַ֖עַת וְלַנָּֽתֶק׃",
+      "en": "This is the Tora for all manner of plague of żara῾at, and the patch,"
+    },
+    {
+      "n": 55,
+      "c": 14,
+      "v": 55,
+      "ref": "14:55",
+      "text": "וּלְצָרַ֥עַת הַבֶּ֖גֶד וְלַבָּֽיִת׃",
+      "en": "and for the żara῾at of a garment, and of a house,"
+    },
+    {
+      "n": 56,
+      "c": 14,
+      "v": 56,
+      "ref": "14:56",
+      "text": "וְלַשְׂאֵ֥ת וְלַסַּפַּ֖חַת וְלַבֶּהָֽרֶת׃",
+      "en": "and for a swelling, and for a scab, and for a bright spot:"
+    },
+    {
+      "n": 57,
+      "c": 14,
+      "v": 57,
+      "ref": "14:57",
+      "text": "לְהוֹרֹ֕ת בְּי֥וֹם הַטָּמֵ֖א וּבְי֣וֹם הַטָּהֹ֑ר זֹ֥את תּוֹרַ֖ת הַצָּרָֽעַת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "to teach when it is unclean, and when it is clean: this is the Tora of żara῾at."
+    },
+    {
+      "n": 58,
+      "c": 15,
+      "v": 1,
+      "ref": "15:1",
+      "text": "וַיְדַבֵּ֣ר יְהֹוָ֔ה אֶל־מֹשֶׁ֥ה וְאֶֽל־אַהֲרֹ֖ן לֵאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe and to Aharon, saying,"
+    },
+    {
+      "n": 59,
+      "c": 15,
+      "v": 2,
+      "ref": "15:2",
+      "text": "דַּבְּרוּ֙ אֶל־בְּנֵ֣י יִשְׂרָאֵ֔ל וַאֲמַרְתֶּ֖ם אֲלֵהֶ֑ם אִ֣ישׁ אִ֗ישׁ כִּ֤י יִהְיֶה֙ זָ֣ב מִבְּשָׂר֔וֹ זוֹב֖וֹ טָמֵ֥א הֽוּא׃",
+      "en": "Speak to the children of Yisra᾽el, and say to them, When any man has a running issue out of his flesh, because of his issue he is unclean."
+    },
+    {
+      "n": 60,
+      "c": 15,
+      "v": 3,
+      "ref": "15:3",
+      "text": "וְזֹ֛את תִּהְיֶ֥ה טֻמְאָת֖וֹ בְּזוֹב֑וֹ רָ֣ר בְּשָׂר֞וֹ אֶת־זוֹב֗וֹ אֽוֹ־הֶחְתִּ֤ים בְּשָׂרוֹ֙ מִזּוֹב֔וֹ טֻמְאָת֖וֹ הִֽוא׃",
+      "en": "And this shall be his uncleanness in his issue: whether his flesh run with his issue, or his flesh be stopped from his issue, it is his uncleanness."
+    },
+    {
+      "n": 61,
+      "c": 15,
+      "v": 4,
+      "ref": "15:4",
+      "text": "כׇּל־הַמִּשְׁכָּ֗ב אֲשֶׁ֨ר יִשְׁכַּ֥ב עָלָ֛יו הַזָּ֖ב יִטְמָ֑א וְכׇֽל־הַכְּלִ֛י אֲשֶׁר־יֵשֵׁ֥ב עָלָ֖יו יִטְמָֽא׃",
+      "en": "Every bed, whereon he that has the issue lies down, is unclean: and everything, whereon he sits, shall be unclean."
+    },
+    {
+      "n": 62,
+      "c": 15,
+      "v": 5,
+      "ref": "15:5",
+      "text": "וְאִ֕ישׁ אֲשֶׁ֥ר יִגַּ֖ע בְּמִשְׁכָּב֑וֹ יְכַבֵּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ בַּמַּ֖יִם וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And whoever touches his bed shall wash his clothes, and bathe himself in water, and be unclean until evening."
+    },
+    {
+      "n": 63,
+      "c": 15,
+      "v": 6,
+      "ref": "15:6",
+      "text": "וְהַיֹּשֵׁב֙ עַֽל־הַכְּלִ֔י אֲשֶׁר־יֵשֵׁ֥ב עָלָ֖יו הַזָּ֑ב יְכַבֵּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ בַּמַּ֖יִם וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And he that sits on anything on which he that has the issue sat, shall wash his clothes, and bathe himself in water, and be unclean until evening."
+    },
+    {
+      "n": 64,
+      "c": 15,
+      "v": 7,
+      "ref": "15:7",
+      "text": "וְהַנֹּגֵ֖עַ בִּבְשַׂ֣ר הַזָּ֑ב יְכַבֵּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ בַּמַּ֖יִם וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And he that touches the flesh of him that has the issue shall wash his clothes, and bathe himself in water, and be unclean until evening."
+    },
+    {
+      "n": 65,
+      "c": 15,
+      "v": 8,
+      "ref": "15:8",
+      "text": "וְכִֽי־יָרֹ֥ק הַזָּ֖ב בַּטָּה֑וֹר וְכִבֶּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ בַּמַּ֖יִם וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And if he that has the issue spit upon him that is clean; then he shall wash his clothes, and bathe himself in water, and be unclean until evening."
+    },
+    {
+      "n": 66,
+      "c": 15,
+      "v": 9,
+      "ref": "15:9",
+      "text": "וְכׇל־הַמֶּרְכָּ֗ב אֲשֶׁ֨ר יִרְכַּ֥ב עָלָ֛יו הַזָּ֖ב יִטְמָֽא׃",
+      "en": "And whatever saddle he that has the issue rides upon, shall be unclean."
+    },
+    {
+      "n": 67,
+      "c": 15,
+      "v": 10,
+      "ref": "15:10",
+      "text": "וְכׇל־הַנֹּגֵ֗עַ בְּכֹל֙ אֲשֶׁ֣ר יִהְיֶ֣ה תַחְתָּ֔יו יִטְמָ֖א עַד־הָעָ֑רֶב וְהַנּוֹשֵׂ֣א אוֹתָ֔ם יְכַבֵּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ בַּמַּ֖יִם וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And whoever touches anything that was under him shall be unclean until evening: and he that bears any of those things shall wash his clothes, and bathe himself in water, and be unclean until evening."
+    },
+    {
+      "n": 68,
+      "c": 15,
+      "v": 11,
+      "ref": "15:11",
+      "text": "וְכֹ֨ל אֲשֶׁ֤ר יִגַּע־בּוֹ֙ הַזָּ֔ב וְיָדָ֖יו לֹא־שָׁטַ֣ף בַּמָּ֑יִם וְכִבֶּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ בַּמַּ֖יִם וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And whomever he touches that has the issue, and has not rinsed his hands in water, he shall wash his clothes, and bathe himself in water, and be unclean until evening."
+    },
+    {
+      "n": 69,
+      "c": 15,
+      "v": 12,
+      "ref": "15:12",
+      "text": "וּכְלִי־חֶ֛רֶשׂ אֲשֶׁר־יִגַּע־בּ֥וֹ הַזָּ֖ב יִשָּׁבֵ֑ר וְכׇ֨ל־כְּלִי־עֵ֔ץ יִשָּׁטֵ֖ף בַּמָּֽיִם׃",
+      "en": "And the vessel of earth, that he who has the issue touches, shall be broken: and every vessel of wood shall be rinsed in water."
+    },
+    {
+      "n": 70,
+      "c": 15,
+      "v": 13,
+      "ref": "15:13",
+      "text": "וְכִֽי־יִטְהַ֤ר הַזָּב֙ מִזּוֹב֔וֹ וְסָ֨פַר ל֜וֹ שִׁבְעַ֥ת יָמִ֛ים לְטׇהֳרָת֖וֹ וְכִבֶּ֣ס בְּגָדָ֑יו וְרָחַ֧ץ בְּשָׂר֛וֹ בְּמַ֥יִם חַיִּ֖ים וְטָהֵֽר׃",
+      "en": "And when he that has an issue is cleansed of his issue; then he shall number to himself seven days for his cleansing, and wash his clothes, and bathe his flesh in running water, and he shall be clean."
+    },
+    {
+      "n": 71,
+      "c": 15,
+      "v": 14,
+      "ref": "15:14",
+      "text": "וּבַיּ֣וֹם הַשְּׁמִינִ֗י יִֽקַּֽח־לוֹ֙ שְׁתֵּ֣י תֹרִ֔ים א֥וֹ שְׁנֵ֖י בְּנֵ֣י יוֹנָ֑ה וּבָ֣א&thinsp;<b>׀</b> לִפְנֵ֣י יְהֹוָ֗ה אֶל־פֶּ֙תַח֙ אֹ֣הֶל מוֹעֵ֔ד וּנְתָנָ֖ם אֶל־הַכֹּהֵֽן׃",
+      "en": "And on the eighth day he shall take for himself two turtledoves, or two young pigeons, and come before the Lord to the door of the Tent of Meeting, and give them to the priest:"
+    },
+    {
+      "n": 72,
+      "c": 15,
+      "v": 15,
+      "ref": "15:15",
+      "text": "וְעָשָׂ֤ה אֹתָם֙ הַכֹּהֵ֔ן אֶחָ֣ד חַטָּ֔את וְהָאֶחָ֖ד עֹלָ֑ה וְכִפֶּ֨ר עָלָ֧יו הַכֹּהֵ֛ן לִפְנֵ֥י יְהֹוָ֖ה מִזּוֹבֽוֹ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and the priest shall offer them, the one for a sin offering, and the other for a burnt offering; and the priest shall make atonement for him before the Lord because of his issue."
+    },
+    {
+      "n": 73,
+      "c": 15,
+      "v": 16,
+      "ref": "15:16",
+      "text": "וְאִ֕ישׁ כִּֽי־תֵצֵ֥א מִמֶּ֖נּוּ שִׁכְבַת־זָ֑רַע וְרָחַ֥ץ בַּמַּ֛יִם אֶת־כׇּל־בְּשָׂר֖וֹ וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And if the semen goes out from a man, then he shall bathe all his flesh in water, and be unclean until evening."
+    },
+    {
+      "n": 74,
+      "c": 15,
+      "v": 17,
+      "ref": "15:17",
+      "text": "וְכׇל־בֶּ֣גֶד וְכׇל־ע֔וֹר אֲשֶׁר־יִהְיֶ֥ה עָלָ֖יו שִׁכְבַת־זָ֑רַע וְכֻבַּ֥ס בַּמַּ֖יִם וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And every garment, and every skin, on which the semen is, shall be washed with water and be unclean until evening."
+    },
+    {
+      "n": 75,
+      "c": 15,
+      "v": 18,
+      "ref": "15:18",
+      "text": "וְאִשָּׁ֕ה אֲשֶׁ֨ר יִשְׁכַּ֥ב אִ֛ישׁ אֹתָ֖הּ שִׁכְבַת־זָ֑רַע וְרָחֲצ֣וּ בַמַּ֔יִם וְטָמְא֖וּ עַד־הָעָֽרֶב׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "The woman also with whom a man shall lie with emission of semen, they shall both bathe themselves in water, and be unclean until evening."
+    },
+    {
+      "n": 76,
+      "c": 15,
+      "v": 19,
+      "ref": "15:19",
+      "text": "וְאִשָּׁה֙ כִּֽי־תִהְיֶ֣ה זָבָ֔ה דָּ֛ם יִהְיֶ֥ה זֹבָ֖הּ בִּבְשָׂרָ֑הּ שִׁבְעַ֤ת יָמִים֙ תִּהְיֶ֣ה בְנִדָּתָ֔הּ וְכׇל־הַנֹּגֵ֥עַ בָּ֖הּ יִטְמָ֥א עַד־הָעָֽרֶב׃",
+      "en": "And if a woman have an issue, and her issue in her flesh be blood, she shall be seven days in her menstrual separation: and whoever touches her shall be unclean until evening."
+    },
+    {
+      "n": 77,
+      "c": 15,
+      "v": 20,
+      "ref": "15:20",
+      "text": "וְכֹל֩ אֲשֶׁ֨ר תִּשְׁכַּ֥ב עָלָ֛יו בְּנִדָּתָ֖הּ יִטְמָ֑א וְכֹ֛ל אֲשֶׁר־תֵּשֵׁ֥ב עָלָ֖יו יִטְמָֽא׃",
+      "en": "And everything that she lies upon in her separation shall be unclean: everything also that she sits upon shall be unclean."
+    },
+    {
+      "n": 78,
+      "c": 15,
+      "v": 21,
+      "ref": "15:21",
+      "text": "וְכׇל־הַנֹּגֵ֖עַ בְּמִשְׁכָּבָ֑הּ יְכַבֵּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ בַּמַּ֖יִם וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And whoever touches her bed shall wash his clothes, and bathe himself in water, and be unclean until evening."
+    },
+    {
+      "n": 79,
+      "c": 15,
+      "v": 22,
+      "ref": "15:22",
+      "text": "וְכׇ֨ל־הַנֹּגֵ֔עַ בְּכׇל־כְּלִ֖י אֲשֶׁר־תֵּשֵׁ֣ב עָלָ֑יו יְכַבֵּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ בַּמַּ֖יִם וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And whoever touches anything that she sat upon shall wash his clothes, and bathe himself in water, and be unclean until evening."
+    },
+    {
+      "n": 80,
+      "c": 15,
+      "v": 23,
+      "ref": "15:23",
+      "text": "וְאִ֨ם עַֽל־הַמִּשְׁכָּ֜ב ה֗וּא א֧וֹ עַֽל־הַכְּלִ֛י אֲשֶׁר־הִ֥וא יֹשֶֽׁבֶת־עָלָ֖יו בְּנׇגְעוֹ־ב֑וֹ יִטְמָ֖א עַד־הָעָֽרֶב׃",
+      "en": "And if it be on her bed, or on anything whereon she sits, when he touches it, he shall be unclean until evening."
+    },
+    {
+      "n": 81,
+      "c": 15,
+      "v": 24,
+      "ref": "15:24",
+      "text": "וְאִ֡ם שָׁכֹב֩ יִשְׁכַּ֨ב אִ֜ישׁ אֹתָ֗הּ וּתְהִ֤י נִדָּתָהּ֙ עָלָ֔יו וְטָמֵ֖א שִׁבְעַ֣ת יָמִ֑ים וְכׇל־הַמִּשְׁכָּ֛ב אֲשֶׁר־יִשְׁכַּ֥ב עָלָ֖יו יִטְמָֽא׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And if any man lie with her at all, and her menstrual flow be upon him, he shall be unclean seven days: and all the bed on which he lies shall be unclean."
+    },
+    {
+      "n": 82,
+      "c": 15,
+      "v": 25,
+      "ref": "15:25",
+      "text": "וְאִשָּׁ֡ה כִּֽי־יָזוּב֩ ז֨וֹב דָּמָ֜הּ יָמִ֣ים רַבִּ֗ים בְּלֹא֙ עֶת־נִדָּתָ֔הּ א֥וֹ כִֽי־תָז֖וּב עַל־נִדָּתָ֑הּ כׇּל־יְמֵ֞י ז֣וֹב טֻמְאָתָ֗הּ כִּימֵ֧י נִדָּתָ֛הּ תִּהְיֶ֖ה טְמֵאָ֥ה הִֽוא׃",
+      "en": "And if a woman have an issue of her blood many days not in the time of her menstruation, or if it run beyond the time of her menstruation; all the days of the issue of her uncleanness shall be as the days of her menstruation: she shall be unclean."
+    },
+    {
+      "n": 83,
+      "c": 15,
+      "v": 26,
+      "ref": "15:26",
+      "text": "כׇּל־הַמִּשְׁכָּ֞ב אֲשֶׁר־תִּשְׁכַּ֤ב עָלָיו֙ כׇּל־יְמֵ֣י זוֹבָ֔הּ כְּמִשְׁכַּ֥ב נִדָּתָ֖הּ יִֽהְיֶה־לָּ֑הּ וְכׇֽל־הַכְּלִי֙ אֲשֶׁ֣ר תֵּשֵׁ֣ב עָלָ֔יו טָמֵ֣א יִהְיֶ֔ה כְּטֻמְאַ֖ת נִדָּתָֽהּ׃",
+      "en": "Every bed on which she lies all the days of her issue shall be to her as the bed of her menstruation: and whatever she sits upon shall be unclean, as the uncleanness of her menstruation."
+    },
+    {
+      "n": 84,
+      "c": 15,
+      "v": 27,
+      "ref": "15:27",
+      "text": "וְכׇל־הַנּוֹגֵ֥עַ בָּ֖ם יִטְמָ֑א וְכִבֶּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ בַּמַּ֖יִם וְטָמֵ֥א עַד־הָעָֽרֶב׃",
+      "en": "And whoever touches those things shall be unclean, and shall wash his clothes, and bathe himself in water, and be unclean until evening."
+    },
+    {
+      "n": 85,
+      "c": 15,
+      "v": 28,
+      "ref": "15:28",
+      "text": "וְאִֽם־טָהֲרָ֖ה מִזּוֹבָ֑הּ וְסָ֥פְרָה לָּ֛הּ שִׁבְעַ֥ת יָמִ֖ים וְאַחַ֥ר תִּטְהָֽר׃",
+      "en": "But if she be cleansed of her issue, then she shall number to herself seven days, and after that she shall be clean."
+    },
+    {
+      "n": 86,
+      "c": 15,
+      "v": 29,
+      "ref": "15:29",
+      "text": "וּבַיּ֣וֹם הַשְּׁמִינִ֗י תִּֽקַּֽח־לָהּ֙ שְׁתֵּ֣י תֹרִ֔ים א֥וֹ שְׁנֵ֖י בְּנֵ֣י יוֹנָ֑ה וְהֵבִיאָ֤ה אוֹתָם֙ אֶל־הַכֹּהֵ֔ן אֶל־פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד׃",
+      "en": "And on the eighth day she shall take for herself two turtles, or two young pigeons, and bring them to the priest, to the door of the Tent of Meeting."
+    },
+    {
+      "n": 87,
+      "c": 15,
+      "v": 30,
+      "ref": "15:30",
+      "text": "וְעָשָׂ֤ה הַכֹּהֵן֙ אֶת־הָאֶחָ֣ד חַטָּ֔את וְאֶת־הָאֶחָ֖ד עֹלָ֑ה וְכִפֶּ֨ר עָלֶ֤יהָ הַכֹּהֵן֙ לִפְנֵ֣י יְהֹוָ֔ה מִזּ֖וֹב טֻמְאָתָֽהּ׃",
+      "en": "And the priest shall offer the one for a sin offering, and the other for a burnt offering; and the priest shall make atonement for her before the Lord for the issue of her uncleanness."
+    },
+    {
+      "n": 88,
+      "c": 15,
+      "v": 31,
+      "ref": "15:31",
+      "text": "וְהִזַּרְתֶּ֥ם אֶת־בְּנֵי־יִשְׂרָאֵ֖ל מִטֻּמְאָתָ֑ם וְלֹ֤א יָמֻ֙תוּ֙ בְּטֻמְאָתָ֔ם בְּטַמְּאָ֥ם אֶת־מִשְׁכָּנִ֖י אֲשֶׁ֥ר בְּתוֹכָֽם׃",
+      "en": "Thus shall you separate the children of Yisra᾽el from their uncleanness; that they die not in their uncleanness, when they defile my tabernacle that is among them."
+    },
+    {
+      "n": 89,
+      "c": 15,
+      "v": 32,
+      "ref": "15:32",
+      "text": "זֹ֥את תּוֹרַ֖ת הַזָּ֑ב וַאֲשֶׁ֨ר תֵּצֵ֥א מִמֶּ֛נּוּ שִׁכְבַת־זֶ֖רַע לְטׇמְאָה־בָֽהּ׃",
+      "en": "This is the Tora of him that has an issue, and of him whose semen goes from him, and he is defiled with it;"
+    },
+    {
+      "n": 90,
+      "c": 15,
+      "v": 33,
+      "ref": "15:33",
+      "text": "וְהַדָּוָה֙ בְּנִדָּתָ֔הּ וְהַזָּב֙ אֶת־זוֹב֔וֹ לַזָּכָ֖ר וְלַנְּקֵבָ֑ה וּלְאִ֕ישׁ אֲשֶׁ֥ר יִשְׁכַּ֖ב עִם־טְמֵאָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and of her that is sick in her menstrual flow, and of him that has an issue, of the man, and of the woman, and of him that lies with her that is unclean."
+    }
+  ],
+  "parashah": {
+    "en": "Metzora",
+    "he": "מְצֹרָע",
+    "translit": "Metzora",
+    "ref": "Leviticus 14:1–15:33"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 12,
+        "ref": "14:1–14:12"
+      },
+      {
+        "n": 2,
+        "start": 13,
+        "end": 20,
+        "ref": "14:13–14:20"
+      },
+      {
+        "n": 3,
+        "start": 21,
+        "end": 32,
+        "ref": "14:21–14:32"
+      },
+      {
+        "n": 4,
+        "start": 33,
+        "end": 53,
+        "ref": "14:33–14:53"
+      },
+      {
+        "n": 5,
+        "start": 54,
+        "end": 72,
+        "ref": "14:54–15:15"
+      },
+      {
+        "n": 6,
+        "start": 73,
+        "end": 85,
+        "ref": "15:16–15:28"
+      },
+      {
+        "n": 7,
+        "start": 86,
+        "end": 90,
+        "ref": "15:29–15:33"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 5,
+          "ref": "14:1–14:5"
+        },
+        {
+          "n": 2,
+          "start": 6,
+          "end": 10,
+          "ref": "14:6–14:10"
+        },
+        {
+          "n": 3,
+          "start": 11,
+          "end": 14,
+          "ref": "14:11–14:14"
+        },
+        {
+          "n": 4,
+          "start": 15,
+          "end": 18,
+          "ref": "14:15–14:18"
+        },
+        {
+          "n": 5,
+          "start": 19,
+          "end": 22,
+          "ref": "14:19–14:22"
+        },
+        {
+          "n": 6,
+          "start": 23,
+          "end": 26,
+          "ref": "14:23–14:26"
+        },
+        {
+          "n": 7,
+          "start": 27,
+          "end": 30,
+          "ref": "14:27–14:30"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 31,
+          "end": 35,
+          "ref": "14:31–14:35"
+        },
+        {
+          "n": 2,
+          "start": 36,
+          "end": 40,
+          "ref": "14:36–14:40"
+        },
+        {
+          "n": 3,
+          "start": 41,
+          "end": 44,
+          "ref": "14:41–14:44"
+        },
+        {
+          "n": 4,
+          "start": 45,
+          "end": 48,
+          "ref": "14:45–14:48"
+        },
+        {
+          "n": 5,
+          "start": 49,
+          "end": 52,
+          "ref": "14:49–14:52"
+        },
+        {
+          "n": 6,
+          "start": 53,
+          "end": 56,
+          "ref": "14:53–14:56"
+        },
+        {
+          "n": 7,
+          "start": 57,
+          "end": 60,
+          "ref": "14:57–15:3"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 61,
+          "end": 65,
+          "ref": "15:4–15:8"
+        },
+        {
+          "n": 2,
+          "start": 66,
+          "end": 70,
+          "ref": "15:9–15:13"
+        },
+        {
+          "n": 3,
+          "start": 71,
+          "end": 74,
+          "ref": "15:14–15:17"
+        },
+        {
+          "n": 4,
+          "start": 75,
+          "end": 78,
+          "ref": "15:18–15:21"
+        },
+        {
+          "n": 5,
+          "start": 79,
+          "end": 82,
+          "ref": "15:22–15:25"
+        },
+        {
+          "n": 6,
+          "start": 83,
+          "end": 86,
+          "ref": "15:26–15:29"
+        },
+        {
+          "n": 7,
+          "start": 87,
+          "end": 90,
+          "ref": "15:30–15:33"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 88,
+        "end": 90,
+        "ref": "15:31–15:33"
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

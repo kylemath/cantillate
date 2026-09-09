@@ -1,0 +1,196 @@
+{
+  "slug": "haftarah-tzav",
+  "book": {
+    "en": "Jeremiah",
+    "he": "ירמיהו",
+    "translit": "Yirmiyahu"
+  },
+  "multiChapter": true,
+  "ref": "Jeremiah 7:21-8:3, 9:22-23",
+  "heRef": "ירמיהו ז׳:כ״א-ל״ד, ח׳:א-ג, ט׳:כ״ב-כ״ג",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 7,
+      "v": 21,
+      "ref": "7:21",
+      "text": "כֹּ֥ה אָמַ֛ר יְהֹוָ֥ה צְבָא֖וֹת אֱלֹהֵ֣י יִשְׂרָאֵ֑ל עֹלוֹתֵיכֶ֛ם סְפ֥וּ עַל־זִבְחֵיכֶ֖ם וְאִכְל֥וּ בָשָֽׂר׃",
+      "en": "Thus says the Lord of hosts, the God of Yisra᾽el; Add your burnt offerings to your sacrifices, and eat meat."
+    },
+    {
+      "n": 2,
+      "c": 7,
+      "v": 22,
+      "ref": "7:22",
+      "text": "כִּ֠י לֹֽא־דִבַּ֤רְתִּי אֶת־אֲבֽוֹתֵיכֶם֙ וְלֹ֣א צִוִּיתִ֔ים בְּי֛וֹם <span class=\"mam-kq\"><span class=\"mam-kq-k\">(הוציא)</span> <span class=\"mam-kq-q\">[הוֹצִיאִ֥י]</span></span> אוֹתָ֖ם מֵאֶ֣רֶץ מִצְרָ֑יִם עַל־דִּבְרֵ֥י עוֹלָ֖ה וָזָֽבַח׃",
+      "en": "For I did not speak to your fathers, nor command them in the day that I brought them out of the land of Miżrayim, concerning burnt offerings or sacrifices:"
+    },
+    {
+      "n": 3,
+      "c": 7,
+      "v": 23,
+      "ref": "7:23",
+      "text": "כִּ֣י אִֽם־אֶת־הַדָּבָ֣ר הַ֠זֶּ֠ה צִוִּ֨יתִי אוֹתָ֤ם לֵאמֹר֙ שִׁמְע֣וּ בְקוֹלִ֔י וְהָיִ֤יתִי לָכֶם֙ לֵֽאלֹהִ֔ים וְאַתֶּ֖ם תִּֽהְיוּ־לִ֣י לְעָ֑ם וַהֲלַכְתֶּ֗ם בְּכׇל־הַדֶּ֙רֶךְ֙ אֲשֶׁ֣ר אֲצַוֶּ֣ה אֶתְכֶ֔ם לְמַ֖עַן יִיטַ֥ב לָכֶֽם׃",
+      "en": "but this thing I commanded them, saying, Obey my voice, and I will be your God, and you shall be my people: and walk in all the ways that I have commanded you, that it may be well with you."
+    },
+    {
+      "n": 4,
+      "c": 7,
+      "v": 24,
+      "ref": "7:24",
+      "text": "וְלֹ֤א שָֽׁמְעוּ֙ וְלֹא־הִטּ֣וּ אֶת־אׇזְנָ֔ם וַיֵּֽלְכוּ֙ בְּמֹ֣עֵצ֔וֹת בִּשְׁרִר֖וּת לִבָּ֣ם הָרָ֑ע וַיִּהְי֥וּ לְאָח֖וֹר וְלֹ֥א לְפָנִֽים׃",
+      "en": "But they did not hearken, nor incline their ear, but walked in the counsels and in the imagination of their evil heart, and went backward, and not forward."
+    },
+    {
+      "n": 5,
+      "c": 7,
+      "v": 25,
+      "ref": "7:25",
+      "text": "לְמִן־הַיּ֗וֹם אֲשֶׁ֨ר יָצְא֤וּ אֲבֽוֹתֵיכֶם֙ מֵאֶ֣רֶץ מִצְרַ֔יִם עַ֖ד הַיּ֣וֹם הַזֶּ֑ה וָאֶשְׁלַ֤ח אֲלֵיכֶם֙ אֶת־כׇּל־עֲבָדַ֣י הַנְּבִיאִ֔ים י֖וֹם הַשְׁכֵּ֥ם וְשָׁלֹֽחַ׃",
+      "en": "From the day that your fathers came forth out of the land of Miżrayim to this day I have sent to you all my servants the prophets, sending them from morning till night."
+    },
+    {
+      "n": 6,
+      "c": 7,
+      "v": 26,
+      "ref": "7:26",
+      "text": "וְל֤וֹא שָֽׁמְעוּ֙ אֵלַ֔י וְלֹ֥א הִטּ֖וּ אֶת־אׇזְנָ֑ם וַיַּקְשׁוּ֙ אֶת־עׇרְפָּ֔ם הֵרֵ֖עוּ מֵאֲבוֹתָֽם׃",
+      "en": "Yet they did not hearken to me, nor incline their ear, but stiffened their neck: they did worse than their fathers."
+    },
+    {
+      "n": 7,
+      "c": 7,
+      "v": 27,
+      "ref": "7:27",
+      "text": "וְדִבַּרְתָּ֤ אֲלֵיהֶם֙ אֶת־כׇּל־הַדְּבָרִ֣ים הָאֵ֔לֶּה וְלֹ֥א יִשְׁמְע֖וּ אֵלֶ֑יךָ וְקָרָ֥אתָ אֲלֵיהֶ֖ם וְלֹ֥א יַעֲנֽוּכָה׃",
+      "en": "Therefore thou shalt speak all these words to them; but they will not hearken to thee: thou shalt also call to them; but they will not answer thee."
+    },
+    {
+      "n": 8,
+      "c": 7,
+      "v": 28,
+      "ref": "7:28",
+      "text": "וְאָמַרְתָּ֣ אֲלֵיהֶ֗ם זֶ֤ה הַגּוֹי֙ אֲשֶׁ֣ר לֽוֹא־שָׁמְע֗וּ בְּקוֹל֙ יְהֹוָ֣ה אֱלֹהָ֔יו וְלֹ֥א לָקְח֖וּ מוּסָ֑ר אָֽבְדָה֙ הָאֱמוּנָ֔ה וְנִכְרְתָ֖ה מִפִּיהֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "But thou shalt say to them, This is a nation that does not obey the voice of the Lord their God, nor does it receive correction: truthfulness is perished, and is cut off from their mouth."
+    },
+    {
+      "n": 9,
+      "c": 7,
+      "v": 29,
+      "ref": "7:29",
+      "text": "גׇּזִּ֤י נִזְרֵךְ֙ וְֽהַשְׁלִ֔יכִי וּשְׂאִ֥י עַל־שְׁפָיִ֖ם קִינָ֑ה כִּ֚י מָאַ֣ס יְהֹוָ֔ה וַיִּטֹּ֖שׁ אֶת־דּ֥וֹר עֶבְרָתֽוֹ׃",
+      "en": "Cut off thy hair, and cast it away, and take up a lamentation on the high hills; for the Lord has rejected and forsaken the generation of his wrath."
+    },
+    {
+      "n": 10,
+      "c": 7,
+      "v": 30,
+      "ref": "7:30",
+      "text": "כִּי־עָשׂ֨וּ בְנֵי־יְהוּדָ֥ה הָרַ֛ע בְּעֵינַ֖י נְאֻם־יְהֹוָ֑ה שָׂ֣מוּ שִׁקּוּצֵיהֶ֗ם בַּבַּ֛יִת אֲשֶׁר־נִקְרָֽא־שְׁמִ֥י עָלָ֖יו לְטַמְּאֽוֹ׃",
+      "en": "For the children of Yehuda have done evil in my sight, says the Lord: they have set their abominations in the house which is called by my name, to pollute it."
+    },
+    {
+      "n": 11,
+      "c": 7,
+      "v": 31,
+      "ref": "7:31",
+      "text": "וּבָנ֞וּ בָּמ֣וֹת הַתֹּ֗פֶת אֲשֶׁר֙ בְּגֵ֣יא בֶן־הִנֹּ֔ם לִשְׂרֹ֛ף אֶת־בְּנֵיהֶ֥ם וְאֶת־בְּנֹתֵיהֶ֖ם בָּאֵ֑שׁ אֲשֶׁר֙ לֹ֣א צִוִּ֔יתִי וְלֹ֥א עָלְתָ֖ה עַל־לִבִּֽי׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And they have built the high places of Tofet, which is in the valley of Ben-hinnom, to burn their sons and their daughters in the fire, which I did not command them, nor did it come into my heart."
+    },
+    {
+      "n": 12,
+      "c": 7,
+      "v": 32,
+      "ref": "7:32",
+      "text": "לָכֵ֞ן הִנֵּֽה־יָמִ֤ים בָּאִים֙ נְאֻם־יְהֹוָ֔ה וְלֹא־יֵאָמֵ֨ר ע֤וֹד הַתֹּ֙פֶת֙ וְגֵ֣יא בֶן־הִנֹּ֔ם כִּ֖י אִם־גֵּ֣יא הַהֲרֵגָ֑ה וְקָבְר֥וּ בְתֹ֖פֶת מֵאֵ֥ין מָקֽוֹם׃",
+      "en": "Therefore, behold, days are coming, says the Lord, it shall no more be called Tofet, nor the valley of Ben-hinnom, but the Valley of Slaughter: for they shall bury in Tofet, because there is no room."
+    },
+    {
+      "n": 13,
+      "c": 7,
+      "v": 33,
+      "ref": "7:33",
+      "text": "וְֽהָ֨יְתָ֜ה נִבְלַ֨ת הָעָ֤ם הַזֶּה֙ לְמַֽאֲכָ֔ל לְע֥וֹף הַשָּׁמַ֖יִם וּלְבֶהֱמַ֣ת הָאָ֑רֶץ וְאֵ֖ין מַחֲרִֽיד׃",
+      "en": "And the carcasses of this people shall be food for the birds of the heaven, and for the beasts of the earth; and none shall frighten them away."
+    },
+    {
+      "n": 14,
+      "c": 7,
+      "v": 34,
+      "ref": "7:34",
+      "text": "וְהִשְׁבַּתִּ֣י&thinsp;<b>׀</b> מֵעָרֵ֣י יְהוּדָ֗ה וּמֵֽחֻצוֹת֙ יְר֣וּשָׁלַ֔͏ִם ק֤וֹל שָׂשׂוֹן֙ וְק֣וֹל שִׂמְחָ֔ה ק֥וֹל חָתָ֖ן וְק֣וֹל כַּלָּ֑ה כִּ֥י לְחׇרְבָּ֖ה תִּהְיֶ֥ה הָאָֽרֶץ׃",
+      "en": "Then will I cause to cease from the cities of Yehuda, and from the streets of Yerushalayim, the voice of mirth, and the voice of gladness, the voice of the bridegroom, and the voice of the bride: for the land shall be desolate."
+    },
+    {
+      "n": 15,
+      "c": 8,
+      "v": 1,
+      "ref": "8:1",
+      "text": "בָּעֵ֣ת הַהִ֣יא נְאֻם־יְהֹוָ֡ה <span class=\"mam-kq\"><span class=\"mam-kq-k\">(ויציאו)</span> <span class=\"mam-kq-q\">[יוֹצִ֣יאוּ]</span></span> אֶת־עַצְמ֣וֹת מַלְכֵי־יְהוּדָ֣ה וְאֶת־עַצְמוֹת־שָׂרָיו֩ וְאֶת־עַצְמ֨וֹת הַכֹּהֲנִ֜ים וְאֵ֣ת&thinsp;<b>׀</b> עַצְמ֣וֹת הַנְּבִיאִ֗ים וְאֵ֛ת עַצְמ֥וֹת יוֹשְׁבֵֽי־יְרוּשָׁלָ֖͏ִם מִקִּבְרֵיהֶֽם׃",
+      "en": "At that time, says the Lord, they shall bring out the bones of the kings of Yehuda, and the bones of his princes, and the bones of the priests, and the bones of the prophets, and the bones of the inhabitants of Yerushalayim, out of their graves:"
+    },
+    {
+      "n": 16,
+      "c": 8,
+      "v": 2,
+      "ref": "8:2",
+      "text": "וּשְׁטָחוּם֩ לַשֶּׁ֨מֶשׁ וְלַיָּרֵ֜חַ וּלְכֹ֣ל&thinsp;<b>׀</b> צְבָ֣א הַשָּׁמַ֗יִם אֲשֶׁ֨ר אֲהֵב֜וּם וַאֲשֶׁ֤ר עֲבָדוּם֙ וַֽאֲשֶׁר֙ הָלְכ֣וּ אַחֲרֵיהֶ֔ם וַאֲשֶׁ֣ר דְּרָשׁ֔וּם וַאֲשֶׁ֥ר הִֽשְׁתַּחֲו֖וּ לָהֶ֑ם לֹ֤א יֵאָֽסְפוּ֙ וְלֹ֣א יִקָּבֵ֔רוּ לְדֹ֛מֶן עַל־פְּנֵ֥י הָאֲדָמָ֖ה יִהְיֽוּ׃",
+      "en": "and they shall spread them before the sun, and the moon, and all the host of heaven, whom they have loved, and whom they have served, and after whom they have walked, and whom they have sought, and whom they have worshipped: they shall not be gathered, nor be buried; they shall be for dung upon the face of the earth."
+    },
+    {
+      "n": 17,
+      "c": 8,
+      "v": 3,
+      "ref": "8:3",
+      "text": "וְנִבְחַ֥ר מָ֙וֶת֙ מֵחַיִּ֔ים לְכֹ֗ל הַשְּׁאֵרִית֙ הַנִּשְׁאָרִ֔ים מִן־הַמִּשְׁפָּחָ֥ה הָרָעָ֖ה הַזֹּ֑את בְּכׇל־הַמְּקֹמ֤וֹת הַנִּשְׁאָרִים֙ אֲשֶׁ֣ר הִדַּחְתִּ֣ים שָׁ֔ם נְאֻ֖ם יְהֹוָ֥ה צְבָאֽוֹת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And death shall be chosen rather than life by all the residue of those who remain of this evil family, who remain in all the places into which I have driven them, says the Lord of hosts."
+    },
+    {
+      "n": 18,
+      "c": 9,
+      "v": 22,
+      "ref": "9:22",
+      "text": "כֹּ֣ה&thinsp;<b>׀</b> אָמַ֣ר יְהֹוָ֗ה אַל־יִתְהַלֵּ֤ל חָכָם֙ בְּחׇכְמָת֔וֹ וְאַל־יִתְהַלֵּ֥ל הַגִּבּ֖וֹר בִּגְבוּרָת֑וֹ אַל־יִתְהַלֵּ֥ל עָשִׁ֖יר בְּעׇשְׁרֽוֹ׃",
+      "en": "Thus says the Lord, Let not the wise man glory in his wisdom, neither let the mighty man glory in his might, let not the rich man glory in his riches:"
+    },
+    {
+      "n": 19,
+      "c": 9,
+      "v": 23,
+      "ref": "9:23",
+      "text": "כִּ֣י אִם־בְּזֹ֞את יִתְהַלֵּ֣ל הַמִּתְהַלֵּ֗ל הַשְׂכֵּל֮ וְיָדֹ֣עַ אוֹתִי֒ כִּ֚י אֲנִ֣י יְהֹוָ֔ה עֹ֥שֶׂה חֶ֛סֶד מִשְׁפָּ֥ט וּצְדָקָ֖ה בָּאָ֑רֶץ כִּֽי־בְאֵ֥לֶּה חָפַ֖צְתִּי נְאֻם־יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "but let him that glories glory in this, that he understands and knows me, that I am the Lord who exercise faithful love, justice, and righteousness, in the earth: for in these things I delight, says the Lord."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Tzav",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 25
+  },
+  "parashah": {
+    "en": "Haftarat Tzav",
+    "translit": "Haftarat Tzav",
+    "he": "הפטרת צו",
+    "ref": "Jeremiah 7:21-8:3, 9:22-23"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 19,
+        "ref": "7:21–9:23"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

@@ -23,6 +23,7 @@ let db = null;
 let currentUser = null;
 let loadFailed = false; // the SDK never arrived (offline, blocked); see readyState
 let synced = false;    // true once this session's cloud progress has merged in
+let syncWaiters = [];  // resolve when the in-flight merge finishes (see whenSynced)
 let pushTimer = null;
 // Extra, corpus-wide summary fields (per-sefer practice aggregates + hours)
 // computed in app.js where the readings metadata lives, then merged into the
@@ -37,6 +38,38 @@ export function getUser() { return currentUser; }
 // state for the first moment of a page load, and anything that puts a sign-in
 // button on screen has to tell it apart from "sign-in will never work here".
 export function isReady() { return !!(auth && fb); }
+
+// Resolves once this session's cloud snapshot has been merged into local
+// progress (or immediately if that has already happened, or there is no user).
+// Sign-in callers that need the restored plan — the onboarding intro on a new
+// device — have to wait for this; the popup finishing is not the same moment
+// as the plan arriving.
+export function whenSynced() {
+  if (synced || !currentUser) return Promise.resolve();
+  return new Promise((resolve) => { syncWaiters.push(resolve); });
+}
+
+function flushSyncWaiters() {
+  const waiting = syncWaiters.splice(0);
+  for (const fn of waiting) {
+    try { fn(); } catch (e) { /* a waiter's failure is its own */ }
+  }
+}
+
+// The popup can resolve before onAuthStateChanged has swapped in the Google
+// user (an anonymous session is still currentUser until then). Wait until a
+// lasting account is present, then until that account's snapshot has merged.
+async function waitForSignedInSync() {
+  if (!currentUser || currentUser.isAnonymous) {
+    await new Promise((resolve) => {
+      const unsub = watchUser(() => {
+        if (currentUser && !currentUser.isAnonymous) { unsub(); resolve(); }
+      });
+      if (currentUser && !currentUser.isAnonymous) { unsub(); resolve(); }
+    });
+  }
+  await whenSynced();
+}
 
 // The same answer with its reasons, for UI that has to choose between offering
 // sign-in, waiting for it, and not mentioning it at all:
@@ -157,7 +190,10 @@ async function handleUser(user) {
   synced = false;
   stateCb.onUserChange(currentUser, { configured: true });
   notifyWatchers();
-  if (!currentUser) return;
+  if (!currentUser) {
+    flushSyncWaiters();
+    return;
+  }
   // Pull this account's saved progress and merge it with whatever is local
   // (including anything earned while logged out), keeping the best of each.
   try {
@@ -168,6 +204,7 @@ async function handleUser(user) {
     console.warn('[auth] could not load cloud progress:', e);
   }
   synced = true;
+  flushSyncWaiters();
   stateCb.onProgressMerged();
   // Persist the merged snapshot back up (so local-only progress is saved and
   // the leaderboard summary reflects it).
@@ -184,12 +221,14 @@ export async function signIn() {
   if (currentUser && currentUser.isAnonymous && fb.linkWithPopup) {
     try {
       await fb.linkWithPopup(currentUser, provider);
+      await waitForSignedInSync();
       return;
     } catch (e) {
       console.warn('[auth] could not link anonymous account, signing in fresh:', e);
     }
   }
   await fb.signInWithPopup(auth, provider);
+  await waitForSignedInSync();
 }
 
 // Sign in anonymously (no Google account) so a logged-out user can still post

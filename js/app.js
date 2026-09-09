@@ -221,7 +221,7 @@ function cycleKeyFor(cycle, year) {
 function defaultAliyot(cycle, year) {
   if (state.data && state.data.aliyot) {
     return cycle === 'triennial'
-      ? (state.data.aliyot.triennial[year] || [])
+      ? (state.data.aliyot.triennial[year] || state.data.aliyot.annual || [])
       : (state.data.aliyot.annual || []);
   }
   return aliyotFor(state.slug, cycle, year);
@@ -510,26 +510,58 @@ function markFirstVisitDone() {
 // can open that reading and the words are in it.
 //
 // Returns { slug, label, exact } for the tightest recorded reading that contains
-// the range, or null.
-function recordingCovering(bookEn, from, to) {
+// the range, or null. `preferSlug` wins when it also covers — so narrowing an
+// aliyah already open keeps that cantor, instead of jumping to a tighter holiday
+// excerpt of the same pesukim.
+function recordingCovering(bookEn, from, to, preferSlug = null) {
   const abs = (r) => r[0] * 1000 + r[1];   // chapters are never 1000 pesukim long
   const a = abs(from);
   const b = abs(to);
   let best = null;
+  let preferred = null;
   for (const meta of AVAILABLE) {
     const c = meta.covers;
     if (!c || c.book !== bookEn || !readingSources(meta).length) continue;
     const lo = abs(c.from);
     const hi = abs(c.to);
     if (lo > a || hi < b) continue;
-    const span = hi - lo;
-    if (!best || span < best.span) {
-      best = { slug: meta.slug, label: meta.label, exact: lo === a && hi === b, span };
+    const hit = { slug: meta.slug, label: meta.label, exact: lo === a && hi === b, span: hi - lo };
+    if (preferSlug && (meta.slug === preferSlug || dataSlugOf(meta) === preferSlug)) {
+      preferred = hit;
     }
+    if (!best || hit.span < best.span) best = hit;
   }
-  if (!best) return null;
-  delete best.span;
-  return best;
+  const pick = preferred || best;
+  if (!pick) return null;
+  delete pick.span;
+  return pick;
+}
+
+// The open reading, if it already contains this range — used so "adjust this
+// aliyah" keeps Teplitz on RH or PocketTorah on Vayera.
+function preferredCoverSlug() {
+  return state.readingId || state.slug || null;
+}
+
+// 1-based verse indices of [from, to] inside a covering reading's data file.
+function excerptRangeInCover(bookEntry, parent, from, to) {
+  const c = parent && parent.covers;
+  if (!bookEntry || !c || !bookEntry.chapters) return null;
+  const a = corpus.absIndex(bookEntry.chapters, from[0], from[1]);
+  const b = corpus.absIndex(bookEntry.chapters, to[0], to[1]);
+  const lo = corpus.absIndex(bookEntry.chapters, c.from[0], c.from[1]);
+  const hi = corpus.absIndex(bookEntry.chapters, c.to[0], c.to[1]);
+  if (a < lo || b > hi) return null;
+  let start = a - lo + 1;
+  let end = b - lo + 1;
+  // A named excerpt (Shema) already carves a span out of its parent file.
+  const base = parent.range;
+  if (base && base.length === 2) {
+    start += base[0] - 1;
+    end += base[0] - 1;
+  }
+  if (start < 1 || end < start) return null;
+  return [start, end];
 }
 
 function guidedApi() {
@@ -583,7 +615,7 @@ function guidedApi() {
         // Where practice on this passage is filed: the book and the pasuk it starts
         // at, so every range beginning there shares one tally (see progressSlug).
         progressSlug: corpus.progressSlug(bookSlug, r.from),
-        recording: recordingCovering(entry.en, r.from, r.to),
+        recording: recordingCovering(entry.en, r.from, r.to, preferredCoverSlug()),
         accents: entry.accents,
         book: { slug: entry.slug, en: entry.en, he: entry.he },
       };
@@ -649,7 +681,10 @@ function guidedApi() {
       // parashah. Drills own their verses, so the full length is correct for them.
       if (state.excerpt) {
         const [start, end] = divisionRange();
-        return { n: 'H', kind: 'excerpt', start, end };
+        // A custom subset borrowed from a recorded reading is still a passage
+        // (plan readiness keys it as 'C'); a named excerpt like the Shema is 'H'.
+        const custom = state.readingKind === 'custom';
+        return { n: custom ? 'C' : 'H', kind: custom ? 'passage' : 'excerpt', start, end };
       }
       return { n: 'H', kind: state.readingKind === 'drill' ? 'drill' : 'haftarah',
         start: 1, end: state.data.verses.length };
@@ -704,6 +739,9 @@ function guidedApi() {
     translitOn: () => translitOn(),
     translitAllowed: () => state.level <= FULL_VERSE_LEVEL,
     setTranslit: (on) => { if (on !== state.showTranslit) setTranslit(on); },
+    audioSources: () => (state.sources || []).slice(),
+    audioSource: () => state.audioSource,
+    setAudioSource: (sid) => switchAudioSource(sid),
     download: () => { const b = $('btnOffline'); if (b && !b.hidden) b.click(); },
 
     // The account, for a reader who never sees the workshop's topbar: guided mode
@@ -3061,7 +3099,7 @@ function syncPortionUI() {
   // A fixed passage, a drill set or a haftarah has no annual/triennial choice to
   // make, so the portion controls (and the aliyah-boundary editor) come off the
   // bar entirely.
-  const fixed = !hasAliyotCycle(state.readingKind);
+  const fixed = !hasAliyotCycle(state.readingKind) || state.readingKind === 'holiday';
   for (const id of ['portion', 'portionLabel', 'cycToday', 'btnEditAliyot']) {
     const c = $(id);
     if (c) c.hidden = fixed;
@@ -3348,7 +3386,10 @@ async function loadCorpusShapes() {
   } catch (e) { /* fall back to the stylized motifs in trope.js */ }
 }
 
-// Populate + show/hide the topbar voice selector for the current reading.
+// Populate + show/hide the topbar source selector for the current reading.
+// Relabeled Style when a reading offers more than one recorded source (weekly vs
+// High Holiday cantillation, or Eikev's demo second voice). Same #audioSource
+// control — no second dropdown.
 function renderSourceSelector() {
   const sel = $('audioSource');
   const label = $('audioSourceLabel');
@@ -3356,7 +3397,13 @@ function renderSourceSelector() {
   const sources = state.sources || [];
   const multi = sources.length > 1;
   sel.hidden = !multi;
-  if (label) label.hidden = !multi;
+  if (label) {
+    label.hidden = !multi;
+    label.textContent = multi ? 'Style' : 'Voice';
+  }
+  sel.title = multi
+    ? 'Choose which recorded style to hear for the example and duet practice'
+    : 'Choose which recorded voice to hear for the example and duet practice';
   sel.innerHTML = '';
   sources.forEach((s) => {
     const o = document.createElement('option');
@@ -3404,7 +3451,15 @@ function readingKind(meta) { return (meta && meta.kind) || 'parashah'; }
 // A haftarah is chanted straight through, so it has no aliyot to choose between
 // and its verse range is fixed — the same as an excerpt or a drill in that
 // respect, which is what the portion control and the aliyot pane key off.
-function hasAliyotCycle(kind) { return kind === 'parashah'; }
+function hasAliyotCycle(kind) {
+  if (kind === 'parashah') return true;
+  // Holiday Torah (RH 5 / YK 6 / Mincha 3) has real aliyot; maftir/haftarah do not.
+  if (kind === 'holiday') {
+    const meta = AVAILABLE.find((p) => p.slug === state.readingId);
+    return !!(meta && meta.holidayPart === 'torah');
+  }
+  return false;
+}
 
 // Which melody a reading is taught in. Carried by the manifest entry and by the
 // data file (either is enough), defaulting to the Torah reading style.
@@ -3472,6 +3527,11 @@ async function ensureTikkunData() {
 function readingTitle(kind, meta) {
   const par = state.data.parashah;
   if (kind === 'custom') {
+    // Prefer the subset's own label: when this passage borrows a parent's
+    // data file, state.data.ref is the whole covering reading.
+    if (meta && meta.label) {
+      return meta.name && meta.name !== meta.label ? `${meta.name} · ${meta.label}` : meta.label;
+    }
     const ref = `${state.data.ref} — ${state.data.heRef}`;
     return meta && meta.name ? `${meta.name} · ${ref}` : ref;
   }
@@ -3486,7 +3546,7 @@ function readingTitle(kind, meta) {
 // (see js/tanakh.js) — which is also what lets a passage the reader opened last
 // week be restored from a menu entry alone.
 async function readingDocFor(meta) {
-  if (readingKind(meta) === 'custom' && meta.custom) {
+  if (readingKind(meta) === 'custom' && meta.custom && !meta.base) {
     const { book, from, to } = meta.custom;
     await corpus.loadIndex();
     const entry = corpus.bookEntry(book);
@@ -3513,9 +3573,12 @@ async function loadData(readingId) {
   // advances the pesukim of Va'etchanan rather than starting a parallel tally.
   // A custom passage brings its own slug (the book plus where it starts), so
   // every range that opens on the same pasuk shares one tally.
-  state.slug = (kind === 'custom' && state.data.slug) || dataSlug;
+  // A custom subset that borrows a recorded reading files progress under that
+  // reading (same pesukim, same cantor). An unrecorded custom passage keeps its
+  // own tanakh: slug so every range starting on the same pasuk shares a tally.
+  state.slug = (kind === 'custom' && !meta.base && state.data.slug) || dataSlug;
   state.readingKind = kind;
-  state.excerpt = kind === 'excerpt' ? meta : null;
+  state.excerpt = (kind === 'excerpt' || (kind === 'custom' && meta.range)) ? meta : null;
   state.drill = kind === 'drill' ? meta : null;
   state.custom = kind === 'custom' ? (state.data.custom || meta.custom) : null;
   // Set before the audio source loads: it decides which measured trope corpus is
@@ -3527,7 +3590,9 @@ async function loadData(readingId) {
   // An excerpt or a haftarah is a fixed passage, so the annual/triennial portion
   // control has nothing to choose; pin it to annual and hide the picker (see
   // syncPortionUI).
-  if (!hasAliyotCycle(kind)) { state.cycle = 'annual'; state.triYear = 1; }
+  // Holiday Torah has aliyot (5/6/3) but no triennial third — keep the aliyah
+  // pane, pin annual so a leftover weekly Year 1/2/3 does not empty the list.
+  if (!hasAliyotCycle(kind) || kind === 'holiday') { state.cycle = 'annual'; state.triYear = 1; }
   syncPortionUI();
   // Resolve which recorded voice (audio source) to load for this reading, then
   // fetch its recorded-chant / pitch / shapes data. Honours the user's saved
@@ -3666,23 +3731,43 @@ function customEntry(bookEntry, from, to, name = '', style = corpus.CUSTOM_TROPE
   const { from: lo, to: hi, count } = corpus.normalizeRange(bookEntry, from, to);
   const ref = corpus.refFor(bookEntry.en, lo, hi);
   const heRef = corpus.heRefFor(bookEntry.he, lo, hi);
+  const rec = recordingCovering(bookEntry.en, lo, hi, preferredCoverSlug());
+  const parent = rec && AVAILABLE.find((p) => p.slug === rec.slug);
+  const span = parent && excerptRangeInCover(bookEntry, parent, lo, hi);
   // A named passage shows its name in the menu, so the reference it stands for
   // leads the tooltip instead of being lost.
-  const melody = style === 'torah' ? 'Torah melody' : 'haftarah melody';
+  const recorded = !!(parent && span);
+  const melody = recorded
+    ? (tropeStyleOf(parent) === 'haftarah' ? 'haftarah melody' : 'Torah melody')
+    : (style === 'torah' ? 'Torah melody' : 'haftarah melody');
+  const voice = recorded
+    ? `recorded · ${parent.label}`
+    : 'synthesized guide';
   const notes = [name ? ref : '', heRef,
-    `${plural(count, 'pasuk', 'pesukim')} · ${melody}, synthesized guide`].filter(Boolean);
+    `${plural(count, 'pasuk', 'pesukim')} · ${melody}, ${voice}`].filter(Boolean);
   if (bookEntry.accents === 'poetic') notes.push(POETIC_NOTE);
-  return {
+  const entry = {
     slug: corpus.readingId(bookEntry.slug, lo, hi),
     kind: 'custom',
-    tropeStyle: style,
+    tropeStyle: recorded ? tropeStyleOf(parent) : style,
     group: CUSTOM_GROUP,
     label: name || ref,
     name,
     note: notes.join(' · '),
-    sources: [],
-    custom: { book: bookEntry.slug, from: lo, to: hi, count, style },
+    sources: recorded ? (parent.sources || []).map((s) => ({ ...s })) : [],
+    custom: {
+      book: bookEntry.slug, from: lo, to: hi, count, style,
+      recordedFrom: recorded ? rec.slug : null,
+    },
   };
+  if (recorded) {
+    // Same shape as a named excerpt (the Shema): reuse the parent's files and
+    // narrow the verses, so the cantor who sang the full aliyah sings this slice.
+    entry.base = dataSlugOf(parent);
+    entry.file = parent.file;
+    entry.range = span;
+  }
+  return entry;
 }
 
 // Rebuild the Any passage group from what's persisted: the passages the reader
@@ -3740,8 +3825,16 @@ async function openCustomRange(bookSlug, from, to,
   };
   if (name) saveCustomPassage(desc, name);
   if (remember) rememberCustomRange(desc);
+  const rec = recordingCovering(entry.en, norm.from, norm.to, preferredCoverSlug());
+  // The exact pesukim of a shipped reading: open that reading, recording and all,
+  // rather than wrapping the same words as a custom excerpt.
+  if (rec && rec.exact && AVAILABLE.some((p) => p.slug === rec.slug)) {
+    syncCustomMenu();
+    await loadData(rec.slug);
+    return AVAILABLE.find((p) => p.slug === rec.slug);
+  }
   const meta = customEntry(entry, norm.from, norm.to,
-    savedNameFor(entry.slug, norm.from, norm.to), tropeStyle);
+    savedNameFor(entry.slug, norm.from, norm.to) || name, tropeStyle);
   syncCustomMenu(meta.slug, meta);
   await loadData(meta.slug);
   return meta;
@@ -3759,7 +3852,7 @@ async function restoreCustomRanges() {
 // starts with an empty English column and fills it the first time the column is
 // actually opened.
 async function ensureCustomEnglish() {
-  if (state.readingKind !== 'custom' || !state.custom) return;
+  if (state.readingKind !== 'custom' || !state.custom || state.excerpt) return;
   const book = state.custom.book;
   const { from, to } = state.custom;
   const entry = corpus.bookEntry(book);
@@ -3968,8 +4061,14 @@ function updateCustomPreview() {
   if (!r) { box.textContent = ''; return; }
   const ref = corpus.refFor(r.entry.en, r.from, r.to);
   const heRef = corpus.heRefFor(r.entry.he, r.from, r.to);
+  const rec = recordingCovering(r.entry.en, r.from, r.to, preferredCoverSlug());
+  const voice = rec
+    ? (rec.exact
+      ? ` · recorded as ${rec.label}`
+      : ` · recorded (from ${rec.label})`)
+    : ' · synthesized guide';
   box.innerHTML = `<b>${escapeHtml(ref)}</b> <span class="cr-he">${escapeHtml(heRef)}</span>`
-    + `<span class="hint"> · ${plural(r.count, 'pasuk', 'pesukim')}</span>`;
+    + `<span class="hint"> · ${plural(r.count, 'pasuk', 'pesukim')}${voice}</span>`;
   const tooLong = r.count > corpus.MAX_VERSES;
   open.disabled = tooLong;
   status.textContent = tooLong

@@ -1,0 +1,1073 @@
+{
+  "slug": "chayeisara",
+  "book": {
+    "en": "Genesis",
+    "he": "בראשית",
+    "translit": "Bereshit"
+  },
+  "multiChapter": true,
+  "ref": "Genesis 23:1-25:18",
+  "heRef": "בראשית כ״ג:א-כ״ה:י״ח",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 23,
+      "v": 1,
+      "ref": "23:1",
+      "text": "וַיִּהְיוּ֙ חַיֵּ֣י שָׂרָ֔ה מֵאָ֥ה שָׁנָ֛ה וְעֶשְׂרִ֥ים שָׁנָ֖ה וְשֶׁ֣בַע שָׁנִ֑ים שְׁנֵ֖י חַיֵּ֥י שָׂרָֽה׃",
+      "en": "And Sara was a hundred and twenty seven years old: these were the years of Sara’s life."
+    },
+    {
+      "n": 2,
+      "c": 23,
+      "v": 2,
+      "ref": "23:2",
+      "text": "וַתָּ֣מׇת שָׂרָ֗ה בְּקִרְיַ֥ת אַרְבַּ֛ע הִ֥וא חֶבְר֖וֹן בְּאֶ֣רֶץ כְּנָ֑עַן וַיָּבֹא֙ אַבְרָהָ֔ם לִסְפֹּ֥ד לְשָׂרָ֖ה וְלִבְ<small>כֹּ</small>תָֽהּ׃",
+      "en": "And Sara died in Qiryat-arba; that is Ḥevron, in the land of Kena῾an: and Avraham came to mourn for Sara, and to weep for her."
+    },
+    {
+      "n": 3,
+      "c": 23,
+      "v": 3,
+      "ref": "23:3",
+      "text": "וַיָּ֙קׇם֙ אַבְרָהָ֔ם מֵעַ֖ל פְּנֵ֣י מֵת֑וֹ וַיְדַבֵּ֥ר אֶל־בְּנֵי־חֵ֖ת לֵאמֹֽר׃",
+      "en": "And Avraham stood up from before his dead, and spoke to the sons of Ḥet, saying,"
+    },
+    {
+      "n": 4,
+      "c": 23,
+      "v": 4,
+      "ref": "23:4",
+      "text": "גֵּר־וְתוֹשָׁ֥ב אָנֹכִ֖י עִמָּכֶ֑ם תְּנ֨וּ לִ֤י אֲחֻזַּת־קֶ֙בֶר֙ עִמָּכֶ֔ם וְאֶקְבְּרָ֥ה מֵתִ֖י מִלְּפָנָֽי׃",
+      "en": "I am a stranger and a sojourner with you: give me a possession of a buryingplace with you, that I may bury my dead out of my sight."
+    },
+    {
+      "n": 5,
+      "c": 23,
+      "v": 5,
+      "ref": "23:5",
+      "text": "וַיַּעֲנ֧וּ בְנֵי־חֵ֛ת אֶת־אַבְרָהָ֖ם לֵאמֹ֥ר לֽוֹ׃",
+      "en": "And the children of Ḥet answered Avraham, saying to him,"
+    },
+    {
+      "n": 6,
+      "c": 23,
+      "v": 6,
+      "ref": "23:6",
+      "text": "שְׁמָעֵ֣נוּ&thinsp;<b>׀</b> אֲדֹנִ֗י נְשִׂ֨יא אֱלֹהִ֤ים אַתָּה֙ בְּתוֹכֵ֔נוּ בְּמִבְחַ֣ר קְבָרֵ֔ינוּ קְבֹ֖ר אֶת־מֵתֶ֑ךָ אִ֣ישׁ מִמֶּ֔נּוּ אֶת־קִבְר֛וֹ לֹֽא־יִכְלֶ֥ה מִמְּךָ֖ מִקְּבֹ֥ר מֵתֶֽךָ׃",
+      "en": "Hear us, my lord: thou art a mighty prince among us: in the choice of our sepulchres bury thy dead; none of us shall with- hold from thee his tomb, but that thou mayst bury thy dead."
+    },
+    {
+      "n": 7,
+      "c": 23,
+      "v": 7,
+      "ref": "23:7",
+      "text": "וַיָּ֧קׇם אַבְרָהָ֛ם וַיִּשְׁתַּ֥חוּ לְעַם־הָאָ֖רֶץ לִבְנֵי־חֵֽת׃",
+      "en": "And Avraham stood up, and bowed himself to the people of the land, to the children of Ḥet."
+    },
+    {
+      "n": 8,
+      "c": 23,
+      "v": 8,
+      "ref": "23:8",
+      "text": "וַיְדַבֵּ֥ר אִתָּ֖ם לֵאמֹ֑ר אִם־יֵ֣שׁ אֶֽת־נַפְשְׁכֶ֗ם לִקְבֹּ֤ר אֶת־מֵתִי֙ מִלְּפָנַ֔י שְׁמָע֕וּנִי וּפִגְעוּ־לִ֖י בְּעֶפְר֥וֹן בֶּן־צֹֽחַר׃",
+      "en": "And he spoke with them, saying, If it be your mind that I should bury my dead out of my sight; hear me, and intreat for me to ῾Efron the son of Żoĥar,"
+    },
+    {
+      "n": 9,
+      "c": 23,
+      "v": 9,
+      "ref": "23:9",
+      "text": "וְיִתֶּן־לִ֗י אֶת־מְעָרַ֤ת הַמַּכְפֵּלָה֙ אֲשֶׁר־ל֔וֹ אֲשֶׁ֖ר בִּקְצֵ֣ה שָׂדֵ֑הוּ בְּכֶ֨סֶף מָלֵ֜א יִתְּנֶ֥נָּה לִּ֛י בְּתוֹכְכֶ֖ם לַאֲחֻזַּת־קָֽבֶר׃",
+      "en": "that he may give me the cave of Makhpela, which he has, which is in the end of his field; for the full price he shall give it me for a possession of a buryingplace amongst you."
+    },
+    {
+      "n": 10,
+      "c": 23,
+      "v": 10,
+      "ref": "23:10",
+      "text": "וְעֶפְר֥וֹן יֹשֵׁ֖ב בְּת֣וֹךְ בְּנֵי־חֵ֑ת וַיַּ֩עַן֩ עֶפְר֨וֹן הַחִתִּ֤י אֶת־אַבְרָהָם֙ בְּאׇזְנֵ֣י בְנֵי־חֵ֔ת לְכֹ֛ל בָּאֵ֥י שַֽׁעַר־עִיר֖וֹ לֵאמֹֽר׃",
+      "en": "And ῾Efron dwelt among the children of Ḥet: and ῾Efron the Ḥitti answered Avraham in the hearing of the children of Ḥet, even of all that went in at the gate of his city, saying,"
+    },
+    {
+      "n": 11,
+      "c": 23,
+      "v": 11,
+      "ref": "23:11",
+      "text": "לֹֽא־אֲדֹנִ֣י שְׁמָעֵ֔נִי הַשָּׂדֶה֙ נָתַ֣תִּי לָ֔ךְ וְהַמְּעָרָ֥ה אֲשֶׁר־בּ֖וֹ לְךָ֣ נְתַתִּ֑יהָ לְעֵינֵ֧י בְנֵי־עַמִּ֛י נְתַתִּ֥יהָ לָּ֖ךְ קְבֹ֥ר מֵתֶֽךָ׃",
+      "en": "No, my lord, hear me: the field I give thee, and the cave that is in it, I give it thee; in the presence of the sons of my people I give it thee: bury thy dead."
+    },
+    {
+      "n": 12,
+      "c": 23,
+      "v": 12,
+      "ref": "23:12",
+      "text": "וַיִּשְׁתַּ֙חוּ֙ אַבְרָהָ֔ם לִפְנֵ֖י עַ֥ם הָאָֽרֶץ׃",
+      "en": "And Avraham bowed himself down before the people of the land."
+    },
+    {
+      "n": 13,
+      "c": 23,
+      "v": 13,
+      "ref": "23:13",
+      "text": "וַיְדַבֵּ֨ר אֶל־עֶפְר֜וֹן בְּאׇזְנֵ֤י עַם־הָאָ֙רֶץ֙ לֵאמֹ֔ר אַ֛ךְ אִם־אַתָּ֥ה ל֖וּ שְׁמָעֵ֑נִי נָתַ֜תִּי כֶּ֤סֶף הַשָּׂדֶה֙ קַ֣ח מִמֶּ֔נִּי וְאֶקְבְּרָ֥ה אֶת־מֵתִ֖י שָֽׁמָּה׃",
+      "en": "And he spoke to ῾Efron in the hearing of the people of the land, saying, But if thou wilt give it, I pray thee, hear me: I will give thee the price of the field; take it of me, and I will bury my dead there."
+    },
+    {
+      "n": 14,
+      "c": 23,
+      "v": 14,
+      "ref": "23:14",
+      "text": "וַיַּ֧עַן עֶפְר֛וֹן אֶת־אַבְרָהָ֖ם לֵאמֹ֥ר לֽוֹ׃",
+      "en": "And ῾Efron answered Avraham, saying to him,"
+    },
+    {
+      "n": 15,
+      "c": 23,
+      "v": 15,
+      "ref": "23:15",
+      "text": "אֲדֹנִ֣י שְׁמָעֵ֔נִי אֶ֩רֶץ֩ אַרְבַּ֨ע מֵאֹ֧ת שֶֽׁקֶל־כֶּ֛סֶף בֵּינִ֥י וּבֵֽינְךָ֖ מַה־הִ֑וא וְאֶת־מֵתְךָ֖ קְבֹֽר׃",
+      "en": "My lord, hearken to me: a piece of land worth four hundred shekels of silver; what is that between me and thee? bury therefore thy dead."
+    },
+    {
+      "n": 16,
+      "c": 23,
+      "v": 16,
+      "ref": "23:16",
+      "text": "וַיִּשְׁמַ֣ע אַבְרָהָם֮ אֶל־עֶפְרוֹן֒ וַיִּשְׁקֹ֤ל אַבְרָהָם֙ לְעֶפְרֹ֔ן אֶת־הַכֶּ֕סֶף אֲשֶׁ֥ר דִּבֶּ֖ר בְּאׇזְנֵ֣י בְנֵי־חֵ֑ת אַרְבַּ֤ע מֵאוֹת֙ שֶׁ֣קֶל כֶּ֔סֶף עֹבֵ֖ר לַסֹּחֵֽר׃",
+      "en": "And Avraham hearkened to ῾Efron; and Avraham weighed to ῾Efron the silver, which he had named in the hearing of the sons of Ḥet, four hundred shekels of silver, current money with the merchant."
+    },
+    {
+      "n": 17,
+      "c": 23,
+      "v": 17,
+      "ref": "23:17",
+      "text": "וַיָּ֣קׇם&thinsp;<b>׀</b> שְׂדֵ֣ה עֶפְר֗וֹן אֲשֶׁר֙ בַּמַּכְפֵּלָ֔ה אֲשֶׁ֖ר לִפְנֵ֣י מַמְרֵ֑א הַשָּׂדֶה֙ וְהַמְּעָרָ֣ה אֲשֶׁר־בּ֔וֹ וְכׇל־הָעֵץ֙ אֲשֶׁ֣ר בַּשָּׂדֶ֔ה אֲשֶׁ֥ר בְּכׇל־גְּבֻל֖וֹ סָבִֽיב׃",
+      "en": "And the field of ῾Efron, which was in Makhpela, which was before Mamre, the field, and the cave which was in it, and all the trees that were in the field, that were in all the borders round about, were made over"
+    },
+    {
+      "n": 18,
+      "c": 23,
+      "v": 18,
+      "ref": "23:18",
+      "text": "לְאַבְרָהָ֥ם לְמִקְנָ֖ה לְעֵינֵ֣י בְנֵי־חֵ֑ת בְּכֹ֖ל בָּאֵ֥י שַֽׁעַר־עִירֽוֹ׃",
+      "en": "to Avraham for a possession in the presence of the children of Ḥet, before all that went in at the gate of his city."
+    },
+    {
+      "n": 19,
+      "c": 23,
+      "v": 19,
+      "ref": "23:19",
+      "text": "וְאַחֲרֵי־כֵן֩ קָבַ֨ר אַבְרָהָ֜ם אֶת־שָׂרָ֣ה אִשְׁתּ֗וֹ אֶל־מְעָרַ֞ת שְׂדֵ֧ה הַמַּכְפֵּלָ֛ה עַל־פְּנֵ֥י מַמְרֵ֖א הִ֣וא חֶבְר֑וֹן בְּאֶ֖רֶץ כְּנָֽעַן׃",
+      "en": "And after this, Avraham buried Sara his wife in the cave of the field of Makhpela before Mamre: the same is Ḥevron in the land of Kena῾an."
+    },
+    {
+      "n": 20,
+      "c": 23,
+      "v": 20,
+      "ref": "23:20",
+      "text": "וַיָּ֨קׇם הַשָּׂדֶ֜ה וְהַמְּעָרָ֧ה אֲשֶׁר־בּ֛וֹ לְאַבְרָהָ֖ם לַאֲחֻזַּת־קָ֑בֶר מֵאֵ֖ת בְּנֵי־חֵֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the field, and the cave that is in it, were made over to Avraham for a possession of a buryingplace by the sons of Ḥet."
+    },
+    {
+      "n": 21,
+      "c": 24,
+      "v": 1,
+      "ref": "24:1",
+      "text": "וְאַבְרָהָ֣ם זָקֵ֔ן בָּ֖א בַּיָּמִ֑ים וַֽיהֹוָ֛ה בֵּרַ֥ךְ אֶת־אַבְרָהָ֖ם בַּכֹּֽל׃",
+      "en": "And Avraham was old, advanced in age: and the Lord had blessed Avraham in all things."
+    },
+    {
+      "n": 22,
+      "c": 24,
+      "v": 2,
+      "ref": "24:2",
+      "text": "וַיֹּ֣אמֶר אַבְרָהָ֗ם אֶל־עַבְדּוֹ֙ זְקַ֣ן בֵּית֔וֹ הַמֹּשֵׁ֖ל בְּכׇל־אֲשֶׁר־ל֑וֹ שִֽׂים־נָ֥א יָדְךָ֖ תַּ֥חַת יְרֵכִֽי׃",
+      "en": "And Avraham said to the eldest servant of his house, that ruled over all that he had, Put, I pray thee, thy hand under my thigh:"
+    },
+    {
+      "n": 23,
+      "c": 24,
+      "v": 3,
+      "ref": "24:3",
+      "text": "וְאַשְׁבִּ֣יעֲךָ֔ בַּֽיהֹוָה֙ אֱלֹהֵ֣י הַשָּׁמַ֔יִם וֵֽאלֹהֵ֖י הָאָ֑רֶץ אֲשֶׁ֨ר לֹֽא־תִקַּ֤ח אִשָּׁה֙ לִבְנִ֔י מִבְּנוֹת֙ הַֽכְּנַעֲנִ֔י אֲשֶׁ֥ר אָנֹכִ֖י יוֹשֵׁ֥ב בְּקִרְבּֽוֹ׃",
+      "en": "and I will make thee swear by the Lord, the God of heaven, and the God of the earth, that thou shalt not take a wife to my son of the daughters of the Kena῾ani, among whom I dwell;"
+    },
+    {
+      "n": 24,
+      "c": 24,
+      "v": 4,
+      "ref": "24:4",
+      "text": "כִּ֧י אֶל־אַרְצִ֛י וְאֶל־מוֹלַדְתִּ֖י תֵּלֵ֑ךְ וְלָקַחְתָּ֥ אִשָּׁ֖ה לִבְנִ֥י לְיִצְחָֽק׃",
+      "en": "but thou shalt go to my country, and to my kindred, and take a wife to my son Yiżĥaq."
+    },
+    {
+      "n": 25,
+      "c": 24,
+      "v": 5,
+      "ref": "24:5",
+      "text": "וַיֹּ֤אמֶר אֵלָיו֙ הָעֶ֔בֶד אוּלַי֙ לֹא־תֹאבֶ֣ה הָֽאִשָּׁ֔ה לָלֶ֥כֶת אַחֲרַ֖י אֶל־הָאָ֣רֶץ הַזֹּ֑את הֶֽהָשֵׁ֤ב אָשִׁיב֙ אֶת־בִּנְךָ֔ אֶל־הָאָ֖רֶץ אֲשֶׁר־יָצָ֥אתָ מִשָּֽׁם׃",
+      "en": "And the servant said to him, Perhaps the woman will not be willing to follow me to this land: must I needs bring thy son back to the land from where thou didst come?"
+    },
+    {
+      "n": 26,
+      "c": 24,
+      "v": 6,
+      "ref": "24:6",
+      "text": "וַיֹּ֥אמֶר אֵלָ֖יו אַבְרָהָ֑ם הִשָּׁ֣מֶר לְךָ֔ פֶּן־תָּשִׁ֥יב אֶת־בְּנִ֖י שָֽׁמָּה׃",
+      "en": "And Avraham said to him, Beware lest thou bring my son back there."
+    },
+    {
+      "n": 27,
+      "c": 24,
+      "v": 7,
+      "ref": "24:7",
+      "text": "יְהֹוָ֣ה&thinsp;<b>׀</b> אֱלֹהֵ֣י הַשָּׁמַ֗יִם אֲשֶׁ֨ר לְקָחַ֜נִי מִבֵּ֣ית אָבִי֮ וּמֵאֶ֣רֶץ מֽוֹלַדְתִּי֒ וַאֲשֶׁ֨ר דִּבֶּר־לִ֜י וַאֲשֶׁ֤ר נִֽשְׁבַּֽע־לִי֙ לֵאמֹ֔ר לְזַ֨רְעֲךָ֔ אֶתֵּ֖ן אֶת־הָאָ֣רֶץ הַזֹּ֑את ה֗וּא יִשְׁלַ֤ח מַלְאָכוֹ֙ לְפָנֶ֔יךָ וְלָקַחְתָּ֥ אִשָּׁ֛ה לִבְנִ֖י מִשָּֽׁם׃",
+      "en": "The Lord God of heaven, Who took me from my father’s house, and from the land of my kindred, and Who spoke to me, and swore to me, saying, To thy seed will I give this land; He shall send His angel before thee, and thou shalt take a wife for my son from there."
+    },
+    {
+      "n": 28,
+      "c": 24,
+      "v": 8,
+      "ref": "24:8",
+      "text": "וְאִם־לֹ֨א תֹאבֶ֤ה הָֽאִשָּׁה֙ לָלֶ֣כֶת אַחֲרֶ֔יךָ וְנִקִּ֕יתָ מִשְּׁבֻעָתִ֖י זֹ֑את רַ֣ק אֶת־בְּנִ֔י לֹ֥א תָשֵׁ֖ב שָֽׁמָּה׃",
+      "en": "And if the woman will not be willing to follow thee, then thou shalt be clear from this my oath: only bring not my son back there."
+    },
+    {
+      "n": 29,
+      "c": 24,
+      "v": 9,
+      "ref": "24:9",
+      "text": "וַיָּ֤שֶׂם הָעֶ֙בֶד֙ אֶת־יָד֔וֹ תַּ֛חַת יֶ֥רֶךְ אַבְרָהָ֖ם אֲדֹנָ֑יו וַיִּשָּׁ֣בַֽע ל֔וֹ עַל־הַדָּבָ֖ר הַזֶּֽה׃",
+      "en": "And the servant put his hand under the thigh of Avraham his master, and swore to him concerning that matter."
+    },
+    {
+      "n": 30,
+      "c": 24,
+      "v": 10,
+      "ref": "24:10",
+      "text": "וַיִּקַּ֣ח הָ֠עֶ֠בֶד עֲשָׂרָ֨ה גְמַלִּ֜ים מִגְּמַלֵּ֤י אֲדֹנָיו֙ וַיֵּ֔לֶךְ וְכׇל־ט֥וּב אֲדֹנָ֖יו בְּיָד֑וֹ וַיָּ֗קׇם וַיֵּ֛לֶךְ אֶל־אֲרַ֥ם נַֽהֲרַ֖יִם אֶל־עִ֥יר נָחֽוֹר׃",
+      "en": "And the servant took ten camels of the camels of his master, and departed; for all the goods of his master were in his hand: and he arose, and went to Aram-naharayim, to the city of Naĥor."
+    },
+    {
+      "n": 31,
+      "c": 24,
+      "v": 11,
+      "ref": "24:11",
+      "text": "וַיַּבְרֵ֧ךְ הַגְּמַלִּ֛ים מִח֥וּץ לָעִ֖יר אֶל־בְּאֵ֣ר הַמָּ֑יִם לְעֵ֣ת עֶ֔רֶב לְעֵ֖ת צֵ֥את הַשֹּׁאֲבֹֽת׃",
+      "en": "And he made his camels kneel down outside the city by a well of water at the time of evening, at the time that the women go out to draw water."
+    },
+    {
+      "n": 32,
+      "c": 24,
+      "v": 12,
+      "ref": "24:12",
+      "text": "וַיֹּאמַ֓ר&thinsp;<b>׀</b> יְהֹוָ֗ה אֱלֹהֵי֙ אֲדֹנִ֣י אַבְרָהָ֔ם הַקְרֵה־נָ֥א לְפָנַ֖י הַיּ֑וֹם וַעֲשֵׂה־חֶ֕סֶד עִ֖ם אֲדֹנִ֥י אַבְרָהָֽם׃",
+      "en": "And he said, O Lord God of my master Avraham, I pray Thee, send me good speed this day, and show kindness to my master Avraham."
+    },
+    {
+      "n": 33,
+      "c": 24,
+      "v": 13,
+      "ref": "24:13",
+      "text": "הִנֵּ֛ה אָנֹכִ֥י נִצָּ֖ב עַל־עֵ֣ין הַמָּ֑יִם וּבְנוֹת֙ אַנְשֵׁ֣י הָעִ֔יר יֹצְאֹ֖ת לִשְׁאֹ֥ב מָֽיִם׃",
+      "en": "Behold, I stand here by the well of water; and the daughters of the men of the city come out to draw water:"
+    },
+    {
+      "n": 34,
+      "c": 24,
+      "v": 14,
+      "ref": "24:14",
+      "text": "וְהָיָ֣ה הַֽנַּעֲרָ֗ אֲשֶׁ֨ר אֹמַ֤ר אֵלֶ֙יהָ֙ הַטִּי־נָ֤א כַדֵּךְ֙ וְאֶשְׁתֶּ֔ה וְאָמְרָ֣ה שְׁתֵ֔ה וְגַם־גְּמַלֶּ֖יךָ אַשְׁקֶ֑ה אֹתָ֤הּ הֹכַ֙חְתָּ֙ לְעַבְדְּךָ֣ לְיִצְחָ֔ק וּבָ֣הּ אֵדַ֔ע כִּי־עָשִׂ֥יתָ חֶ֖סֶד עִם־אֲדֹנִֽי׃",
+      "en": "and let it come to pass, that the girl to whom I shall say, Let down thy pitcher, I pray thee, that I may drink; and she shall say, Drink, and I will give thy camels drink also: let her be she that Thou hast appointed for Thy servant Yiżĥaq; and thereby shall I know that Thou hast shown kindness to my master."
+    },
+    {
+      "n": 35,
+      "c": 24,
+      "v": 15,
+      "ref": "24:15",
+      "text": "וַֽיְהִי־ה֗וּא טֶ֘רֶם֮ כִּלָּ֣ה לְדַבֵּר֒ וְהִנֵּ֧ה רִבְקָ֣ה יֹצֵ֗את אֲשֶׁ֤ר יֻלְּדָה֙ לִבְתוּאֵ֣ל בֶּן־מִלְכָּ֔ה אֵ֥שֶׁת נָח֖וֹר אֲחִ֣י אַבְרָהָ֑ם וְכַדָּ֖הּ עַל־שִׁכְמָֽהּ׃",
+      "en": "And it came to pass, before he had done speaking, that, behold, Rivqa came out, who was born to Betu᾽el, son of Milka, the wife of Naĥor, Avraham’s brother, with her pitcher upon her shoulder."
+    },
+    {
+      "n": 36,
+      "c": 24,
+      "v": 16,
+      "ref": "24:16",
+      "text": "וְהַֽנַּעֲרָ֗ טֹבַ֤ת מַרְאֶה֙ מְאֹ֔ד בְּתוּלָ֕ה וְאִ֖ישׁ לֹ֣א יְדָעָ֑הּ וַתֵּ֣רֶד הָעַ֔יְנָה וַתְּמַלֵּ֥א כַדָּ֖הּ וַתָּֽעַל׃",
+      "en": "And the girl was very fair to look upon, a virgin, neither had any man known her: and she went down to the well, and filled her pitcher, and came up."
+    },
+    {
+      "n": 37,
+      "c": 24,
+      "v": 17,
+      "ref": "24:17",
+      "text": "וַיָּ֥רׇץ הָעֶ֖בֶד לִקְרָאתָ֑הּ וַיֹּ֕אמֶר הַגְמִיאִ֥ינִי נָ֛א מְעַט־מַ֖יִם מִכַּדֵּֽךְ׃",
+      "en": "And the servant ran to meet her, and said, Let me, I pray thee, drink a little water of thy pitcher."
+    },
+    {
+      "n": 38,
+      "c": 24,
+      "v": 18,
+      "ref": "24:18",
+      "text": "וַתֹּ֖אמֶר שְׁתֵ֣ה אֲדֹנִ֑י וַתְּמַהֵ֗ר וַתֹּ֧רֶד כַּדָּ֛הּ עַל־יָדָ֖הּ וַתַּשְׁקֵֽהוּ׃",
+      "en": "And she said, Drink, my lord: and she hastened, and let down her pitcher upon her hand, and gave him drink."
+    },
+    {
+      "n": 39,
+      "c": 24,
+      "v": 19,
+      "ref": "24:19",
+      "text": "וַתְּכַ֖ל לְהַשְׁקֹת֑וֹ וַתֹּ֗אמֶר גַּ֤ם לִגְמַלֶּ֙יךָ֙ אֶשְׁאָ֔ב עַ֥ד אִם־כִּלּ֖וּ לִשְׁתֹּֽת׃",
+      "en": "And when she had done giving him drink, she said, I will draw water for thy camels also, until they have done drinking."
+    },
+    {
+      "n": 40,
+      "c": 24,
+      "v": 20,
+      "ref": "24:20",
+      "text": "וַתְּמַהֵ֗ר וַתְּעַ֤ר כַּדָּהּ֙ אֶל־הַשֹּׁ֔קֶת וַתָּ֥רׇץ ע֛וֹד אֶֽל־הַבְּאֵ֖ר לִשְׁאֹ֑ב וַתִּשְׁאַ֖ב לְכׇל־גְּמַלָּֽיו׃",
+      "en": "And she hastened, and emptied her pitcher into the trough, and ran again to the well to draw water, and drew for all his camels."
+    },
+    {
+      "n": 41,
+      "c": 24,
+      "v": 21,
+      "ref": "24:21",
+      "text": "וְהָאִ֥ישׁ מִשְׁתָּאֵ֖ה לָ֑הּ מַחֲרִ֕ישׁ לָדַ֗עַת הַֽהִצְלִ֧יחַ יְהֹוָ֛ה דַּרְכּ֖וֹ אִם־לֹֽא׃",
+      "en": "And the man wondering at her held his peace, to know whether the Lord had made his journey prosperous or not."
+    },
+    {
+      "n": 42,
+      "c": 24,
+      "v": 22,
+      "ref": "24:22",
+      "text": "וַיְהִ֗י כַּאֲשֶׁ֨ר כִּלּ֤וּ הַגְּמַלִּים֙ לִשְׁתּ֔וֹת וַיִּקַּ֤ח הָאִישׁ֙ נֶ֣זֶם זָהָ֔ב בֶּ֖קַע מִשְׁקָל֑וֹ וּשְׁנֵ֤י צְמִידִים֙ עַל־יָדֶ֔יהָ עֲשָׂרָ֥ה זָהָ֖ב מִשְׁקָלָֽם׃",
+      "en": "And it came to pass, as the camels had done drinking, that the man took a golden earring of half a shekel weight, and two bracelets for her hands of ten shekels weight of gold;"
+    },
+    {
+      "n": 43,
+      "c": 24,
+      "v": 23,
+      "ref": "24:23",
+      "text": "וַיֹּ֙אמֶר֙ בַּת־מִ֣י אַ֔תְּ הַגִּ֥ידִי נָ֖א לִ֑י הֲיֵ֧שׁ בֵּית־אָבִ֛יךְ מָק֥וֹם לָ֖נוּ לָלִֽין׃",
+      "en": "and said, Whose daughter art thou? tell me, I pray thee: is there room in thy father’s house for us to lodge in?"
+    },
+    {
+      "n": 44,
+      "c": 24,
+      "v": 24,
+      "ref": "24:24",
+      "text": "וַתֹּ֣אמֶר אֵלָ֔יו בַּת־בְּתוּאֵ֖ל אָנֹ֑כִי בֶּן־מִלְכָּ֕ה אֲשֶׁ֥ר יָלְדָ֖ה לְנָחֽוֹר׃",
+      "en": "And she said to him, I am the daughter of Betu᾽el the son of Milka, whom she bore to Naĥor."
+    },
+    {
+      "n": 45,
+      "c": 24,
+      "v": 25,
+      "ref": "24:25",
+      "text": "וַתֹּ֣אמֶר אֵלָ֔יו גַּם־תֶּ֥בֶן גַּם־מִסְפּ֖וֹא רַ֣ב עִמָּ֑נוּ גַּם־מָק֖וֹם לָלֽוּן׃",
+      "en": "And she said to him, We have both straw and provender enough, and room to lodge in."
+    },
+    {
+      "n": 46,
+      "c": 24,
+      "v": 26,
+      "ref": "24:26",
+      "text": "וַיִּקֹּ֣ד הָאִ֔ישׁ וַיִּשְׁתַּ֖חוּ לַֽיהֹוָֽה׃",
+      "en": "And the man bowed down his head, and prostrated himself to the Lord."
+    },
+    {
+      "n": 47,
+      "c": 24,
+      "v": 27,
+      "ref": "24:27",
+      "text": "וַיֹּ֗אמֶר בָּר֤וּךְ יְהֹוָה֙ אֱלֹהֵי֙ אֲדֹנִ֣י אַבְרָהָ֔ם אֲ֠שֶׁ֠ר לֹֽא־עָזַ֥ב חַסְדּ֛וֹ וַאֲמִתּ֖וֹ מֵעִ֣ם אֲדֹנִ֑י אָנֹכִ֗י בַּדֶּ֙רֶךְ֙ נָחַ֣נִי יְהֹוָ֔ה בֵּ֖ית אֲחֵ֥י אֲדֹנִֽי׃",
+      "en": "And he said, Blessed be the Lord God of my master Avraham, Who has not left my master destitute of His love and His truth: as for me, the Lord has guided me in the way to the house of my master’s brethren."
+    },
+    {
+      "n": 48,
+      "c": 24,
+      "v": 28,
+      "ref": "24:28",
+      "text": "וַתָּ֙רׇץ֙ הַֽנַּעֲרָ֔ וַתַּגֵּ֖ד לְבֵ֣ית אִמָּ֑הּ כַּדְּבָרִ֖ים הָאֵֽלֶּה׃",
+      "en": "And the girl ran, and told them of her mother’s house these things."
+    },
+    {
+      "n": 49,
+      "c": 24,
+      "v": 29,
+      "ref": "24:29",
+      "text": "וּלְרִבְקָ֥ה אָ֖ח וּשְׁמ֣וֹ לָבָ֑ן וַיָּ֨רׇץ לָבָ֧ן אֶל־הָאִ֛ישׁ הַח֖וּצָה אֶל־הָעָֽיִן׃",
+      "en": "And Rivqa had a brother, and his name was Lavan: and Lavan ran out to the man, to the well."
+    },
+    {
+      "n": 50,
+      "c": 24,
+      "v": 30,
+      "ref": "24:30",
+      "text": "וַיְהִ֣י&thinsp;<b>׀</b> כִּרְאֹ֣ת אֶת־הַנֶּ֗זֶם וְֽאֶת־הַצְּמִדִים֮ עַל־יְדֵ֣י אֲחֹתוֹ֒ וּכְשׇׁמְע֗וֹ אֶת־דִּבְרֵ֞י רִבְקָ֤ה אֲחֹתוֹ֙ לֵאמֹ֔ר כֹּֽה־דִבֶּ֥ר אֵלַ֖י הָאִ֑ישׁ וַיָּבֹא֙ אֶל־הָאִ֔ישׁ וְהִנֵּ֛ה עֹמֵ֥ד עַל־הַגְּמַלִּ֖ים עַל־הָעָֽיִן׃",
+      "en": "And it came to pass, when he saw the earring and bracelets upon his sister’s hands, and when he heard the words of Rivqa his sister, saying, Thus spoke the man to me; that he came to the man; and, behold, he stood by the camels at the well."
+    },
+    {
+      "n": 51,
+      "c": 24,
+      "v": 31,
+      "ref": "24:31",
+      "text": "וַיֹּ֕אמֶר בּ֖וֹא בְּר֣וּךְ יְהֹוָ֑ה לָ֤מָּה תַעֲמֹד֙ בַּח֔וּץ וְאָנֹכִי֙ פִּנִּ֣יתִי הַבַּ֔יִת וּמָק֖וֹם לַגְּמַלִּֽים׃",
+      "en": "And he said, Come in, thou blessed of the Lord; why dost thou stand outside? for I have prepared the house, and room for the camels."
+    },
+    {
+      "n": 52,
+      "c": 24,
+      "v": 32,
+      "ref": "24:32",
+      "text": "וַיָּבֹ֤א הָאִישׁ֙ הַבַּ֔יְתָה וַיְפַתַּ֖ח הַגְּמַלִּ֑ים וַיִּתֵּ֨ן תֶּ֤בֶן וּמִסְפּוֹא֙ לַגְּמַלִּ֔ים וּמַ֙יִם֙ לִרְחֹ֣ץ רַגְלָ֔יו וְרַגְלֵ֥י הָאֲנָשִׁ֖ים אֲשֶׁ֥ר אִתּֽוֹ׃",
+      "en": "And the man came into the house: and he ungirded his camels, and gave straw and provender for the camels, and water to wash his feet, and the men’s feet that were with him."
+    },
+    {
+      "n": 53,
+      "c": 24,
+      "v": 33,
+      "ref": "24:33",
+      "text": "<span class=\"mam-kq\"><span class=\"mam-kq-k\">(ויישם)</span> <span class=\"mam-kq-q\">[וַיּוּשַׂ֤ם]</span></span> לְפָנָיו֙ לֶאֱכֹ֔ל וַיֹּ֙אמֶר֙ לֹ֣א אֹכַ֔ל עַ֥ד אִם־דִּבַּ֖רְתִּי דְּבָרָ֑י וַיֹּ֖אמֶר דַּבֵּֽר׃",
+      "en": "And there was set food before him to eat: but he said, I will not eat, until I have told my errand. And he said, Speak on."
+    },
+    {
+      "n": 54,
+      "c": 24,
+      "v": 34,
+      "ref": "24:34",
+      "text": "וַיֹּאמַ֑ר עֶ֥בֶד אַבְרָהָ֖ם אָנֹֽכִי׃",
+      "en": "And he said, I am Avraham’s servant."
+    },
+    {
+      "n": 55,
+      "c": 24,
+      "v": 35,
+      "ref": "24:35",
+      "text": "וַיהֹוָ֞ה בֵּרַ֧ךְ אֶת־אֲדֹנִ֛י מְאֹ֖ד וַיִּגְדָּ֑ל וַיִּתֶּן־ל֞וֹ צֹ֤אן וּבָקָר֙ וְכֶ֣סֶף וְזָהָ֔ב וַעֲבָדִם֙ וּשְׁפָחֹ֔ת וּגְמַלִּ֖ים וַחֲמֹרִֽים׃",
+      "en": "And the Lord has blessed my master greatly; and he is become great: and He has given him flocks, and herds, and silver, and gold, and menservants, and maidservants, and camels, and asses."
+    },
+    {
+      "n": 56,
+      "c": 24,
+      "v": 36,
+      "ref": "24:36",
+      "text": "וַתֵּ֡לֶד שָׂרָה֩ אֵ֨שֶׁת אֲדֹנִ֥י בֵן֙ לַֽאדֹנִ֔י אַחֲרֵ֖י זִקְנָתָ֑הּ וַיִּתֶּן־ל֖וֹ אֶת־כׇּל־אֲשֶׁר־לֽוֹ׃",
+      "en": "And Sara my master’s wife bore a son to my master when she was old: and to him he has given all that he has."
+    },
+    {
+      "n": 57,
+      "c": 24,
+      "v": 37,
+      "ref": "24:37",
+      "text": "וַיַּשְׁבִּעֵ֥נִי אֲדֹנִ֖י לֵאמֹ֑ר לֹא־תִקַּ֤ח אִשָּׁה֙ לִבְנִ֔י מִבְּנוֹת֙ הַֽכְּנַעֲנִ֔י אֲשֶׁ֥ר אָנֹכִ֖י יֹשֵׁ֥ב בְּאַרְצֽוֹ׃",
+      "en": "And my master made me swear, saying, Thou shalt not take a wife to my son of the daughters of the Kena῾ani, in whose land I dwell:"
+    },
+    {
+      "n": 58,
+      "c": 24,
+      "v": 38,
+      "ref": "24:38",
+      "text": "אִם־לֹ֧א אֶל־בֵּית־אָבִ֛י תֵּלֵ֖ךְ וְאֶל־מִשְׁפַּחְתִּ֑י וְלָקַחְתָּ֥ אִשָּׁ֖ה לִבְנִֽי׃",
+      "en": "but thou shalt go to my father’s house, and to my kindred, and take a wife for my son."
+    },
+    {
+      "n": 59,
+      "c": 24,
+      "v": 39,
+      "ref": "24:39",
+      "text": "וָאֹמַ֖ר אֶל־אֲדֹנִ֑י אֻלַ֛י לֹא־תֵלֵ֥ךְ הָאִשָּׁ֖ה אַחֲרָֽי׃",
+      "en": "And I said to my master, Perhaps the woman will not follow me."
+    },
+    {
+      "n": 60,
+      "c": 24,
+      "v": 40,
+      "ref": "24:40",
+      "text": "וַיֹּ֖אמֶר אֵלָ֑י יְהֹוָ֞ה אֲשֶׁר־הִתְהַלַּ֣כְתִּי לְפָנָ֗יו יִשְׁלַ֨ח מַלְאָכ֤וֹ אִתָּךְ֙ וְהִצְלִ֣יחַ דַּרְכֶּ֔ךָ וְלָקַחְתָּ֤ אִשָּׁה֙ לִבְנִ֔י מִמִּשְׁפַּחְתִּ֖י וּמִבֵּ֥ית אָבִֽי׃",
+      "en": "And he said to me, The Lord, before Whom I walk, will send His angel with thee, and prosper thy way; and thou shalt take a wife for my son of my kindred, and of my father’s house:"
+    },
+    {
+      "n": 61,
+      "c": 24,
+      "v": 41,
+      "ref": "24:41",
+      "text": "אָ֤ז תִּנָּקֶה֙ מֵאָ֣לָתִ֔י כִּ֥י תָב֖וֹא אֶל־מִשְׁפַּחְתִּ֑י וְאִם־לֹ֤א יִתְּנוּ֙ לָ֔ךְ וְהָיִ֥יתָ נָקִ֖י מֵאָלָתִֽי׃",
+      "en": "then shalt thou be clear from this my oath, when thou comest to my kindred; and if they grant it not to thee, thou shalt be clear of my oath."
+    },
+    {
+      "n": 62,
+      "c": 24,
+      "v": 42,
+      "ref": "24:42",
+      "text": "וָאָבֹ֥א הַיּ֖וֹם אֶל־הָעָ֑יִן וָאֹמַ֗ר יְהֹוָה֙ אֱלֹהֵי֙ אֲדֹנִ֣י אַבְרָהָ֔ם אִם־יֶשְׁךָ־נָּא֙ מַצְלִ֣יחַ דַּרְכִּ֔י אֲשֶׁ֥ר אָנֹכִ֖י הֹלֵ֥ךְ עָלֶֽיהָ׃",
+      "en": "And I came this day to the well, and said, O Lord God of my master Avraham, if now Thou do prosper my way which I go:"
+    },
+    {
+      "n": 63,
+      "c": 24,
+      "v": 43,
+      "ref": "24:43",
+      "text": "הִנֵּ֛ה אָנֹכִ֥י נִצָּ֖ב עַל־עֵ֣ין הַמָּ֑יִם וְהָיָ֤ה הָֽעַלְמָה֙ הַיֹּצֵ֣את לִשְׁאֹ֔ב וְאָמַרְתִּ֣י אֵלֶ֔יהָ הַשְׁקִֽינִי־נָ֥א מְעַט־מַ֖יִם מִכַּדֵּֽךְ׃",
+      "en": "behold, I stand by the well of water; and it shall come to pass, that the maid who comes forth to draw, and I say to her, Give me, I pray thee, a little water from thy pitcher to drink;"
+    },
+    {
+      "n": 64,
+      "c": 24,
+      "v": 44,
+      "ref": "24:44",
+      "text": "וְאָמְרָ֤ה אֵלַי֙ גַּם־אַתָּ֣ה שְׁתֵ֔ה וְגַ֥ם לִגְמַלֶּ֖יךָ אֶשְׁאָ֑ב הִ֣וא הָֽאִשָּׁ֔ה אֲשֶׁר־הֹכִ֥יחַ יְהֹוָ֖ה לְבֶן־אֲדֹנִֽי׃",
+      "en": "and she say to me, Both drink thou, and I will also draw for thy camels: she shall be the woman whom the Lord has appointed for my master’s son."
+    },
+    {
+      "n": 65,
+      "c": 24,
+      "v": 45,
+      "ref": "24:45",
+      "text": "אֲנִי֩ טֶ֨רֶם אֲכַלֶּ֜ה לְדַבֵּ֣ר אֶל־לִבִּ֗י וְהִנֵּ֨ה רִבְקָ֤ה יֹצֵאת֙ וְכַדָּ֣הּ עַל־שִׁכְמָ֔הּ וַתֵּ֥רֶד הָעַ֖יְנָה וַתִּשְׁאָ֑ב וָאֹמַ֥ר אֵלֶ֖יהָ הַשְׁקִ֥ינִי נָֽא׃",
+      "en": "And before I had done speaking in my heart, behold, Rivqa came out with her pitcher on her shoulder; and she went down to the well, and drew water: and I said to her, Let me drink, I pray thee."
+    },
+    {
+      "n": 66,
+      "c": 24,
+      "v": 46,
+      "ref": "24:46",
+      "text": "וַתְּמַהֵ֗ר וַתּ֤וֹרֶד כַּדָּהּ֙ מֵֽעָלֶ֔יהָ וַתֹּ֣אמֶר שְׁתֵ֔ה וְגַם־גְּמַלֶּ֖יךָ אַשְׁקֶ֑ה וָאֵ֕שְׁתְּ וְגַ֥ם הַגְּמַלִּ֖ים הִשְׁקָֽתָה׃",
+      "en": "And she made haste, and let down her pitcher from her shoulder, and said, Drink, and I will give thy camels to drink also: so I drank, and she made the camels drink also."
+    },
+    {
+      "n": 67,
+      "c": 24,
+      "v": 47,
+      "ref": "24:47",
+      "text": "וָאֶשְׁאַ֣ל אֹתָ֗הּ וָאֹמַר֮ בַּת־מִ֣י אַתְּ֒ וַתֹּ֗אמֶר בַּת־בְּתוּאֵל֙ בֶּן־נָח֔וֹר אֲשֶׁ֥ר יָֽלְדָה־לּ֖וֹ מִלְכָּ֑ה וָאָשִׂ֤ם הַנֶּ֙זֶם֙ עַל־אַפָּ֔הּ וְהַצְּמִידִ֖ים עַל־יָדֶֽיהָ׃",
+      "en": "And I asked her, and said, Whose daughter art thou? And she said, The daughter of Betu᾽el, Naĥor’s son, whom Milka bore to him: and I put the ring upon her nose, and the bracelets upon her hands."
+    },
+    {
+      "n": 68,
+      "c": 24,
+      "v": 48,
+      "ref": "24:48",
+      "text": "וָאֶקֹּ֥ד וָֽאֶשְׁתַּחֲוֶ֖ה לַיהֹוָ֑ה וָאֲבָרֵ֗ךְ אֶת־יְהֹוָה֙ אֱלֹהֵי֙ אֲדֹנִ֣י אַבְרָהָ֔ם אֲשֶׁ֤ר הִנְחַ֙נִי֙ בְּדֶ֣רֶךְ אֱמֶ֔ת לָקַ֛חַת אֶת־בַּת־אֲחִ֥י אֲדֹנִ֖י לִבְנֽוֹ׃",
+      "en": "And I bowed down my head, and worshipped the Lord, and blessed the Lord God of my master Avraham, Who had led me in the right way to take my master’s brother’s daughter for his son."
+    },
+    {
+      "n": 69,
+      "c": 24,
+      "v": 49,
+      "ref": "24:49",
+      "text": "וְ֠עַתָּ֠ה אִם־יֶשְׁכֶ֨ם עֹשִׂ֜ים חֶ֧סֶד וֶֽאֱמֶ֛ת אֶת־אֲדֹנִ֖י הַגִּ֣ידוּ לִ֑י וְאִם־לֹ֕א הַגִּ֣ידוּ לִ֔י וְאֶפְנֶ֥ה עַל־יָמִ֖ין א֥וֹ עַל־שְׂמֹֽאל׃",
+      "en": "And now if you will deal kindly and truly with my master, tell me: and if not, tell me; so that I may turn to the right hand, or to the left."
+    },
+    {
+      "n": 70,
+      "c": 24,
+      "v": 50,
+      "ref": "24:50",
+      "text": "וַיַּ֨עַן לָבָ֤ן וּבְתוּאֵל֙ וַיֹּ֣אמְר֔וּ מֵיְהֹוָ֖ה יָצָ֣א הַדָּבָ֑ר לֹ֥א נוּכַ֛ל דַּבֵּ֥ר אֵלֶ֖יךָ רַ֥ע אוֹ־טֽוֹב׃",
+      "en": "Then Lavan and Betu᾽el answered and said, The thing comes from the Lord: we cannot speak to thee bad or good."
+    },
+    {
+      "n": 71,
+      "c": 24,
+      "v": 51,
+      "ref": "24:51",
+      "text": "הִנֵּֽה־רִבְקָ֥ה לְפָנֶ֖יךָ קַ֣ח וָלֵ֑ךְ וּתְהִ֤י אִשָּׁה֙ לְבֶן־אֲדֹנֶ֔יךָ כַּאֲשֶׁ֖ר דִּבֶּ֥ר יְהֹוָֽה׃",
+      "en": "Behold, Rivqa is before thee, take her, and go, and let her be thy master’s son’s wife, as the Lord has spoken."
+    },
+    {
+      "n": 72,
+      "c": 24,
+      "v": 52,
+      "ref": "24:52",
+      "text": "וַיְהִ֕י כַּאֲשֶׁ֥ר שָׁמַ֛ע עֶ֥בֶד אַבְרָהָ֖ם אֶת־דִּבְרֵיהֶ֑ם וַיִּשְׁתַּ֥חוּ אַ֖רְצָה לַֽיהֹוָֽה׃",
+      "en": "And it came to pass, that, when Avraham’s servant heard their words, he prostrated himself to the earth before the Lord."
+    },
+    {
+      "n": 73,
+      "c": 24,
+      "v": 53,
+      "ref": "24:53",
+      "text": "וַיּוֹצֵ֨א הָעֶ֜בֶד כְּלֵי־כֶ֨סֶף וּכְלֵ֤י זָהָב֙ וּבְגָדִ֔ים וַיִּתֵּ֖ן לְרִבְקָ֑ה וּמִ֨גְדָּנֹ֔ת נָתַ֥ן לְאָחִ֖יהָ וּלְאִמָּֽהּ׃",
+      "en": "And the servant brought out jewels of silver, and jewels of gold, and garments, and gave them to Rivqa: he gave also to her brother and to her mother precious things."
+    },
+    {
+      "n": 74,
+      "c": 24,
+      "v": 54,
+      "ref": "24:54",
+      "text": "וַיֹּאכְל֣וּ וַיִּשְׁתּ֗וּ ה֛וּא וְהָאֲנָשִׁ֥ים אֲשֶׁר־עִמּ֖וֹ וַיָּלִ֑ינוּ וַיָּק֣וּמוּ בַבֹּ֔קֶר וַיֹּ֖אמֶר שַׁלְּחֻ֥נִי לַֽאדֹנִֽי׃",
+      "en": "And they did eat and drink, he and the men that were with him, and tarried all night; and they rose up in the morning, and he said, Send me away to my master."
+    },
+    {
+      "n": 75,
+      "c": 24,
+      "v": 55,
+      "ref": "24:55",
+      "text": "וַיֹּ֤אמֶר אָחִ֙יהָ֙ וְאִמָּ֔הּ תֵּשֵׁ֨ב הַנַּעֲרָ֥ אִתָּ֛נוּ יָמִ֖ים א֣וֹ עָשׂ֑וֹר אַחַ֖ר תֵּלֵֽךְ׃",
+      "en": "And her brother and her mother said, Let the girl stay with us a few days, at the least ten; after that she shall go."
+    },
+    {
+      "n": 76,
+      "c": 24,
+      "v": 56,
+      "ref": "24:56",
+      "text": "וַיֹּ֤אמֶר אֲלֵהֶם֙ אַל־תְּאַחֲר֣וּ אֹתִ֔י וַֽיהֹוָ֖ה הִצְלִ֣יחַ דַּרְכִּ֑י שַׁלְּח֕וּנִי וְאֵלְכָ֖ה לַֽאדֹנִֽי׃",
+      "en": "And he said to them, Hinder me not, seeing the Lord has prospered my way; send me away that I may go to my master."
+    },
+    {
+      "n": 77,
+      "c": 24,
+      "v": 57,
+      "ref": "24:57",
+      "text": "וַיֹּאמְר֖וּ נִקְרָ֣א לַֽנַּעֲרָ֑ וְנִשְׁאֲלָ֖ה אֶת־פִּֽיהָ׃",
+      "en": "And they said, We will call the girl, and inquire at her mouth."
+    },
+    {
+      "n": 78,
+      "c": 24,
+      "v": 58,
+      "ref": "24:58",
+      "text": "וַיִּקְרְא֤וּ לְרִבְקָה֙ וַיֹּאמְר֣וּ אֵלֶ֔יהָ הֲתֵלְכִ֖י עִם־הָאִ֣ישׁ הַזֶּ֑ה וַתֹּ֖אמֶר אֵלֵֽךְ׃",
+      "en": "And they called Rivqa, and said to her, Wilt thou go with this man? And she said, I will go."
+    },
+    {
+      "n": 79,
+      "c": 24,
+      "v": 59,
+      "ref": "24:59",
+      "text": "וַֽיְשַׁלְּח֛וּ אֶת־רִבְקָ֥ה אֲחֹתָ֖ם וְאֶת־מֵנִקְתָּ֑הּ וְאֶת־עֶ֥בֶד אַבְרָהָ֖ם וְאֶת־אֲנָשָֽׁיו׃",
+      "en": "And they sent away Rivqa their sister, and her nurse, and Avraham’s servant, and his men."
+    },
+    {
+      "n": 80,
+      "c": 24,
+      "v": 60,
+      "ref": "24:60",
+      "text": "וַיְבָרְכ֤וּ אֶת־רִבְקָה֙ וַיֹּ֣אמְרוּ לָ֔הּ אֲחֹתֵ֕נוּ אַ֥תְּ הֲיִ֖י לְאַלְפֵ֣י רְבָבָ֑ה וְיִירַ֣שׁ זַרְעֵ֔ךְ אֵ֖ת שַׁ֥עַר שֹׂנְאָֽיו׃",
+      "en": "And they blessed Rivqa, and said to her, Thou art our sister, be thou the mother of thousands of ten thousands, and let thy seed possess the gate of those which hate them."
+    },
+    {
+      "n": 81,
+      "c": 24,
+      "v": 61,
+      "ref": "24:61",
+      "text": "וַתָּ֨קׇם רִבְקָ֜ה וְנַעֲרֹתֶ֗יהָ וַתִּרְכַּ֙בְנָה֙ עַל־הַגְּמַלִּ֔ים וַתֵּלַ֖כְנָה אַחֲרֵ֣י הָאִ֑ישׁ וַיִּקַּ֥ח הָעֶ֛בֶד אֶת־רִבְקָ֖ה וַיֵּלַֽךְ׃",
+      "en": "And Rivqa, and her maids arose, and they rode upon the camels, and followed the man: and the servant took Rivqa, and went his way."
+    },
+    {
+      "n": 82,
+      "c": 24,
+      "v": 62,
+      "ref": "24:62",
+      "text": "וְיִצְחָק֙ בָּ֣א מִבּ֔וֹא בְּאֵ֥ר לַחַ֖י רֹאִ֑י וְה֥וּא יוֹשֵׁ֖ב בְּאֶ֥רֶץ הַנֶּֽגֶב׃",
+      "en": "And Yiżĥaq came from the way of Be᾽er-laĥay-ro᾽i; for he dwelt in the land of the Negev."
+    },
+    {
+      "n": 83,
+      "c": 24,
+      "v": 63,
+      "ref": "24:63",
+      "text": "וַיֵּצֵ֥א יִצְחָ֛ק לָשׂ֥וּחַ בַּשָּׂדֶ֖ה לִפְנ֣וֹת עָ֑רֶב וַיִּשָּׂ֤א עֵינָיו֙ וַיַּ֔רְא וְהִנֵּ֥ה גְמַלִּ֖ים בָּאִֽים׃",
+      "en": "And Yiżĥaq went out to meditate in the field at the evening time: and he lifted up his eyes, and saw, and, behold, camels were coming."
+    },
+    {
+      "n": 84,
+      "c": 24,
+      "v": 64,
+      "ref": "24:64",
+      "text": "וַתִּשָּׂ֤א רִבְקָה֙ אֶת־עֵינֶ֔יהָ וַתֵּ֖רֶא אֶת־יִצְחָ֑ק וַתִּפֹּ֖ל מֵעַ֥ל הַגָּמָֽל׃",
+      "en": "And Rivqa lifted up her eyes, and when she saw Yiżĥaq, she descended from the camel."
+    },
+    {
+      "n": 85,
+      "c": 24,
+      "v": 65,
+      "ref": "24:65",
+      "text": "וַתֹּ֣אמֶר אֶל־הָעֶ֗בֶד מִֽי־הָאִ֤ישׁ הַלָּזֶה֙ הַהֹלֵ֤ךְ בַּשָּׂדֶה֙ לִקְרָאתֵ֔נוּ וַיֹּ֥אמֶר הָעֶ֖בֶד ה֣וּא אֲדֹנִ֑י וַתִּקַּ֥ח הַצָּעִ֖יף וַתִּתְכָּֽס׃",
+      "en": "And she said to the servant, What man is this that walks in the field to meet us? And the servant said, It is my master: therefore she took her veil, and covered herself."
+    },
+    {
+      "n": 86,
+      "c": 24,
+      "v": 66,
+      "ref": "24:66",
+      "text": "וַיְסַפֵּ֥ר הָעֶ֖בֶד לְיִצְחָ֑ק אֵ֥ת כׇּל־הַדְּבָרִ֖ים אֲשֶׁ֥ר עָשָֽׂה׃",
+      "en": "And the servant told Yiżĥaq all the things that he had done."
+    },
+    {
+      "n": 87,
+      "c": 24,
+      "v": 67,
+      "ref": "24:67",
+      "text": "וַיְבִאֶ֣הָ יִצְחָ֗ק הָאֹ֙הֱלָה֙ שָׂרָ֣ה אִמּ֔וֹ וַיִּקַּ֧ח אֶת־רִבְקָ֛ה וַתְּהִי־ל֥וֹ לְאִשָּׁ֖ה וַיֶּאֱהָבֶ֑הָ וַיִּנָּחֵ֥ם יִצְחָ֖ק אַחֲרֵ֥י אִמּֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Yiżĥaq brought her into his mother Sara’s tent, and took Rivqa, and she became his wife; and he loved her: and Yiżĥaq was comforted after his mother’s death."
+    },
+    {
+      "n": 88,
+      "c": 25,
+      "v": 1,
+      "ref": "25:1",
+      "text": "וַיֹּ֧סֶף אַבְרָהָ֛ם וַיִּקַּ֥ח אִשָּׁ֖ה וּשְׁמָ֥הּ קְטוּרָֽה׃",
+      "en": "Then again Avraham took a wife, and her name was Qetura."
+    },
+    {
+      "n": 89,
+      "c": 25,
+      "v": 2,
+      "ref": "25:2",
+      "text": "וַתֵּ֣לֶד ל֗וֹ אֶת־זִמְרָן֙ וְאֶת־יׇקְשָׁ֔ן וְאֶת־מְדָ֖ן וְאֶת־מִדְיָ֑ן וְאֶת־יִשְׁבָּ֖ק וְאֶת־שֽׁוּחַ׃",
+      "en": "And she bore him Zimran, and Yoqshan, and Medan, and Midyan, and Yishbaq, and Shuaĥ."
+    },
+    {
+      "n": 90,
+      "c": 25,
+      "v": 3,
+      "ref": "25:3",
+      "text": "וְיׇקְשָׁ֣ן יָלַ֔ד אֶת־שְׁבָ֖א וְאֶת־דְּדָ֑ן וּבְנֵ֣י דְדָ֔ן הָי֛וּ אַשּׁוּרִ֥ם וּלְטוּשִׁ֖ם וּלְאֻמִּֽים׃",
+      "en": "And Yoqshan begot Sheva, and Dedan. And the sons of Dedan were Ashshurim, and Letushim, and Le᾽ummim."
+    },
+    {
+      "n": 91,
+      "c": 25,
+      "v": 4,
+      "ref": "25:4",
+      "text": "וּבְנֵ֣י מִדְיָ֗ן עֵיפָ֤ה וָעֵ֙פֶר֙ וַחֲנֹ֔ךְ וַאֲבִידָ֖ע וְאֶלְדָּעָ֑ה כׇּל־אֵ֖לֶּה בְּנֵ֥י קְטוּרָֽה׃",
+      "en": "And the sons of Midyan; ῾Efa and ῾Efer, and Ḥanokh, and Avida, and Elda῾a. All these were the children of Qetura."
+    },
+    {
+      "n": 92,
+      "c": 25,
+      "v": 5,
+      "ref": "25:5",
+      "text": "וַיִּתֵּ֧ן אַבְרָהָ֛ם אֶת־כׇּל־אֲשֶׁר־ל֖וֹ לְיִצְחָֽק׃",
+      "en": "And Avraham gave all that he had to Yiżĥaq."
+    },
+    {
+      "n": 93,
+      "c": 25,
+      "v": 6,
+      "ref": "25:6",
+      "text": "וְלִבְנֵ֤י הַפִּֽילַגְשִׁים֙ אֲשֶׁ֣ר לְאַבְרָהָ֔ם נָתַ֥ן אַבְרָהָ֖ם מַתָּנֹ֑ת וַֽיְשַׁלְּחֵ֞ם מֵעַ֨ל יִצְחָ֤ק בְּנוֹ֙ בְּעוֹדֶ֣נּוּ חַ֔י קֵ֖דְמָה אֶל־אֶ֥רֶץ קֶֽדֶם׃",
+      "en": "But to the sons of the concubines, which Avraham had, Avraham gave gifts, and sent them away from his son, while he yet lived, eastward, to the east country."
+    },
+    {
+      "n": 94,
+      "c": 25,
+      "v": 7,
+      "ref": "25:7",
+      "text": "וְאֵ֗לֶּה יְמֵ֛י שְׁנֵֽי־חַיֵּ֥י אַבְרָהָ֖ם אֲשֶׁר־חָ֑י מְאַ֥ת שָׁנָ֛ה וְשִׁבְעִ֥ים שָׁנָ֖ה וְחָמֵ֥שׁ שָׁנִֽים׃",
+      "en": "And these are the days of the years of Avraham’s life which he lived, a hundred and seventy five years."
+    },
+    {
+      "n": 95,
+      "c": 25,
+      "v": 8,
+      "ref": "25:8",
+      "text": "וַיִּגְוַ֨ע וַיָּ֧מׇת אַבְרָהָ֛ם בְּשֵׂיבָ֥ה טוֹבָ֖ה זָקֵ֣ן וְשָׂבֵ֑עַ וַיֵּאָ֖סֶף אֶל־עַמָּֽיו׃",
+      "en": "Then Avraham expired, and died in a good old age, an old man, and full of years; and was gathered to his people."
+    },
+    {
+      "n": 96,
+      "c": 25,
+      "v": 9,
+      "ref": "25:9",
+      "text": "וַיִּקְבְּר֨וּ אֹת֜וֹ יִצְחָ֤ק וְיִשְׁמָעֵאל֙ בָּנָ֔יו אֶל־מְעָרַ֖ת הַמַּכְפֵּלָ֑ה אֶל־שְׂדֵ֞ה עֶפְרֹ֤ן בֶּן־צֹ֙חַר֙ הַֽחִתִּ֔י אֲשֶׁ֖ר עַל־פְּנֵ֥י מַמְרֵֽא׃",
+      "en": "And his sons Yiżĥaq and Yishma᾽el buried him in the cave of Makhpela, in the field of ῾Efron the son of Żoĥar the Ḥittite, which is before Mamre;"
+    },
+    {
+      "n": 97,
+      "c": 25,
+      "v": 10,
+      "ref": "25:10",
+      "text": "הַשָּׂדֶ֛ה אֲשֶׁר־קָנָ֥ה אַבְרָהָ֖ם מֵאֵ֣ת בְּנֵי־חֵ֑ת שָׁ֛מָּה קֻבַּ֥ר אַבְרָהָ֖ם וְשָׂרָ֥ה אִשְׁתּֽוֹ׃",
+      "en": "the field which Avraham purchased of the sons of Ḥet: there was Avraham buried, and Sara his wife."
+    },
+    {
+      "n": 98,
+      "c": 25,
+      "v": 11,
+      "ref": "25:11",
+      "text": "וַיְהִ֗י אַחֲרֵי֙ מ֣וֹת אַבְרָהָ֔ם וַיְבָ֥רֶךְ אֱלֹהִ֖ים אֶת־יִצְחָ֣ק בְּנ֑וֹ וַיֵּ֣שֶׁב יִצְחָ֔ק עִם־בְּאֵ֥ר לַחַ֖י רֹאִֽי׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And it came to pass after the death of Avraham, that God blessed his son Yiżĥaq; and Yiżĥaq dwelt by Be᾽er-laĥay-ro᾽i."
+    },
+    {
+      "n": 99,
+      "c": 25,
+      "v": 12,
+      "ref": "25:12",
+      "text": "וְאֵ֛לֶּה תֹּלְדֹ֥ת יִשְׁמָעֵ֖אל בֶּן־אַבְרָהָ֑ם אֲשֶׁ֨ר יָלְדָ֜ה הָגָ֧ר הַמִּצְרִ֛ית שִׁפְחַ֥ת שָׂרָ֖ה לְאַבְרָהָֽם׃",
+      "en": "Now these are the generations of Yishma᾽el, Avraham’s son, whom Hagar the Miżrian, Sara’s handmaid, bore to Avraham:"
+    },
+    {
+      "n": 100,
+      "c": 25,
+      "v": 13,
+      "ref": "25:13",
+      "text": "וְאֵ֗לֶּה שְׁמוֹת֙ בְּנֵ֣י יִשְׁמָעֵ֔אל בִּשְׁמֹתָ֖ם לְתוֹלְדֹתָ֑ם בְּכֹ֤ר יִשְׁמָעֵאל֙ נְבָיֹ֔ת וְקֵדָ֥ר וְאַדְבְּאֵ֖ל וּמִבְשָֽׂם׃",
+      "en": "and these are the names of the sons of Yishma᾽el, by their names, according to their generations: the firstborn of Yishma᾽el, Nevayot; and Qedar, and Adbe᾽el, and Mivsam,"
+    },
+    {
+      "n": 101,
+      "c": 25,
+      "v": 14,
+      "ref": "25:14",
+      "text": "וּמִשְׁמָ֥ע וְדוּמָ֖ה וּמַשָּֽׂא׃",
+      "en": "and Mishma, and Duma, and Massa,"
+    },
+    {
+      "n": 102,
+      "c": 25,
+      "v": 15,
+      "ref": "25:15",
+      "text": "חֲדַ֣ד וְתֵימָ֔א יְט֥וּר נָפִ֖ישׁ וָקֵֽדְמָה׃",
+      "en": "Ḥadad, and Tema, Yetur, Nafish, and Qedema."
+    },
+    {
+      "n": 103,
+      "c": 25,
+      "v": 16,
+      "ref": "25:16",
+      "text": "אֵ֣לֶּה הֵ֞ם בְּנֵ֤י יִשְׁמָעֵאל֙ וְאֵ֣לֶּה שְׁמֹתָ֔ם בְּחַצְרֵיהֶ֖ם וּבְטִֽירֹתָ֑ם שְׁנֵים־עָשָׂ֥ר נְשִׂיאִ֖ם לְאֻמֹּתָֽם׃",
+      "en": "These are the sons of Yishma᾽el, and these are their names, by their towns, and by their encampments; twelve princes according to their nations."
+    },
+    {
+      "n": 104,
+      "c": 25,
+      "v": 17,
+      "ref": "25:17",
+      "text": "וְאֵ֗לֶּה שְׁנֵי֙ חַיֵּ֣י יִשְׁמָעֵ֔אל מְאַ֥ת שָׁנָ֛ה וּשְׁלֹשִׁ֥ים שָׁנָ֖ה וְשֶׁ֣בַע שָׁנִ֑ים וַיִּגְוַ֣ע וַיָּ֔מׇת וַיֵּאָ֖סֶף אֶל־עַמָּֽיו׃",
+      "en": "And these are the years of the life of Yishma᾽el, a hundred and thirty seven years: and he expired and died; and was gathered to his people."
+    },
+    {
+      "n": 105,
+      "c": 25,
+      "v": 18,
+      "ref": "25:18",
+      "text": "וַיִּשְׁכְּנ֨וּ מֵֽחֲוִילָ֜ה עַד־שׁ֗וּר אֲשֶׁר֙ עַל־פְּנֵ֣י מִצְרַ֔יִם בֹּאֲכָ֖ה אַשּׁ֑וּרָה עַל־פְּנֵ֥י כׇל־אֶחָ֖יו נָפָֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And they dwelt from Ḥavila to Shur, that is before Miżrayim, as thou goest toward Ashshur: and he dwelt in the presence of all his brethren."
+    }
+  ],
+  "parashah": {
+    "en": "Chayei Sara",
+    "he": "חַיֵּי שָׂרָה",
+    "translit": "Chayei Sara",
+    "ref": "Genesis 23:1–25:18"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 16,
+        "ref": "23:1–23:16"
+      },
+      {
+        "n": 2,
+        "start": 17,
+        "end": 29,
+        "ref": "23:17–24:9"
+      },
+      {
+        "n": 3,
+        "start": 30,
+        "end": 46,
+        "ref": "24:10–24:26"
+      },
+      {
+        "n": 4,
+        "start": 47,
+        "end": 72,
+        "ref": "24:27–24:52"
+      },
+      {
+        "n": 5,
+        "start": 73,
+        "end": 87,
+        "ref": "24:53–24:67"
+      },
+      {
+        "n": 6,
+        "start": 88,
+        "end": 98,
+        "ref": "25:1–25:11"
+      },
+      {
+        "n": 7,
+        "start": 99,
+        "end": 105,
+        "ref": "25:12–25:18"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 4,
+          "ref": "23:1–23:4"
+        },
+        {
+          "n": 2,
+          "start": 5,
+          "end": 7,
+          "ref": "23:5–23:7"
+        },
+        {
+          "n": 3,
+          "start": 8,
+          "end": 12,
+          "ref": "23:8–23:12"
+        },
+        {
+          "n": 4,
+          "start": 13,
+          "end": 16,
+          "ref": "23:13–23:16"
+        },
+        {
+          "n": 5,
+          "start": 17,
+          "end": 20,
+          "ref": "23:17–23:20"
+        },
+        {
+          "n": 6,
+          "start": 21,
+          "end": 24,
+          "ref": "24:1–24:4"
+        },
+        {
+          "n": 7,
+          "start": 25,
+          "end": 29,
+          "ref": "24:5–24:9"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 30,
+          "end": 34,
+          "ref": "24:10–24:14"
+        },
+        {
+          "n": 2,
+          "start": 35,
+          "end": 40,
+          "ref": "24:15–24:20"
+        },
+        {
+          "n": 3,
+          "start": 41,
+          "end": 46,
+          "ref": "24:21–24:26"
+        },
+        {
+          "n": 4,
+          "start": 47,
+          "end": 53,
+          "ref": "24:27–24:33"
+        },
+        {
+          "n": 5,
+          "start": 54,
+          "end": 61,
+          "ref": "24:34–24:41"
+        },
+        {
+          "n": 6,
+          "start": 62,
+          "end": 69,
+          "ref": "24:42–24:49"
+        },
+        {
+          "n": 7,
+          "start": 70,
+          "end": 72,
+          "ref": "24:50–24:52"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 73,
+          "end": 78,
+          "ref": "24:53–24:58"
+        },
+        {
+          "n": 2,
+          "start": 79,
+          "end": 81,
+          "ref": "24:59–24:61"
+        },
+        {
+          "n": 3,
+          "start": 82,
+          "end": 87,
+          "ref": "24:62–24:67"
+        },
+        {
+          "n": 4,
+          "start": 88,
+          "end": 93,
+          "ref": "25:1–25:6"
+        },
+        {
+          "n": 5,
+          "start": 94,
+          "end": 98,
+          "ref": "25:7–25:11"
+        },
+        {
+          "n": 6,
+          "start": 99,
+          "end": 102,
+          "ref": "25:12–25:15"
+        },
+        {
+          "n": 7,
+          "start": 103,
+          "end": 105,
+          "ref": "25:16–25:18"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 103,
+        "end": 105,
+        "ref": "25:16–25:18"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 25,
+          "end": 29,
+          "ref": "24:5–24:9"
+        },
+        "2": {
+          "n": "M",
+          "start": 70,
+          "end": 72,
+          "ref": "24:50–24:52"
+        },
+        "3": {
+          "n": "M",
+          "start": 103,
+          "end": 105,
+          "ref": "25:16–25:18"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

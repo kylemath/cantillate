@@ -1,0 +1,180 @@
+{
+  "slug": "haftarah-emor",
+  "book": {
+    "en": "Ezekiel",
+    "he": "יחזקאל",
+    "translit": "Yechezkel"
+  },
+  "multiChapter": true,
+  "ref": "Ezekiel 44:15-31",
+  "heRef": "יחזקאל מ״ד:ט״ו-ל״א",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 44,
+      "v": 15,
+      "ref": "44:15",
+      "text": "וְהַכֹּהֲנִ֨ים הַלְוִיִּ֜ם בְּנֵ֣י צָד֗וֹק אֲשֶׁ֨ר שָׁמְר֜וּ אֶת־מִשְׁמֶ֤רֶת מִקְדָּשִׁי֙ בִּתְע֤וֹת בְּנֵֽי־יִשְׂרָאֵל֙ מֵֽעָלַ֔י הֵ֛מָּה יִקְרְב֥וּ אֵלַ֖י לְשָׁרְתֵ֑נִי וְעָמְד֣וּ לְפָנַ֗י לְהַקְרִ֥יב לִי֙ חֵ֣לֶב וָדָ֔ם נְאֻ֖ם אֲדֹנָ֥י יֱהֹוִֽה׃",
+      "en": "But the priests the Levites, the sons of Żadoq, that kept the charge of my sanctuary when the children of Yisra᾽el went astray from me, they shall come near to me to minister to me, and they shall stand before me to offer to me the fat and the blood, says the Lord God:"
+    },
+    {
+      "n": 2,
+      "c": 44,
+      "v": 16,
+      "ref": "44:16",
+      "text": "הֵ֜מָּה יָבֹ֣אוּ אֶל־מִקְדָּשִׁ֗י וְהֵ֛מָּה יִקְרְב֥וּ אֶל־שֻׁלְחָנִ֖י לְשָׁרְתֵ֑נִי וְשָׁמְר֖וּ אֶת־מִשְׁמַרְתִּֽי׃",
+      "en": "they shall enter into my sanctuary, and they shall come near to my table, to minister to me, and they shall keep my charge."
+    },
+    {
+      "n": 3,
+      "c": 44,
+      "v": 17,
+      "ref": "44:17",
+      "text": "וְהָיָ֗ה בְּבוֹאָם֙ אֶֽל־שַׁעֲרֵי֙ הֶחָצֵ֣ר הַפְּנִימִ֔ית בִּגְדֵ֥י פִשְׁתִּ֖ים יִלְבָּ֑שׁוּ וְלֹֽא־יַעֲלֶ֤ה עֲלֵיהֶם֙ צֶ֔מֶר בְּשָׁרְתָ֗ם בְּשַׁעֲרֵ֛י הֶחָצֵ֥ר הַפְּנִימִ֖ית וָבָֽיְתָה׃",
+      "en": "And it shall come to pass, that when they enter in at the gates of the inner court, they shall be clothed with linen garments; and no wool shall come upon them, whilst they minister in the gates of the inner court, and within."
+    },
+    {
+      "n": 4,
+      "c": 44,
+      "v": 18,
+      "ref": "44:18",
+      "text": "פַּאֲרֵ֤י פִשְׁתִּים֙ יִהְי֣וּ עַל־רֹאשָׁ֔ם וּמִכְנְסֵ֣י פִשְׁתִּ֔ים יִֽהְי֖וּ עַל־מׇתְנֵיהֶ֑ם לֹ֥א יַחְגְּר֖וּ בַּיָּֽזַע׃",
+      "en": "They shall have linen turbans upon their heads, and shall have linen breeches upon their loins; they shall not gird themselves with anything that causes sweat."
+    },
+    {
+      "n": 5,
+      "c": 44,
+      "v": 19,
+      "ref": "44:19",
+      "text": "וּ֠בְצֵאתָ֠ם אֶל־הֶחָצֵ֨ר הַחִיצוֹנָ֜ה אֶל־הֶחָצֵ֣ר הַחִיצוֹנָה֮ אֶל־הָעָם֒ יִפְשְׁט֣וּ אֶת־בִּגְדֵיהֶ֗ם אֲשֶׁר־הֵ֙מָּה֙ מְשָׁרְתִ֣ם בָּ֔ם וְהִנִּ֥יחוּ אוֹתָ֖ם בְּלִֽשְׁכֹ֣ת הַקֹּ֑דֶשׁ וְלָֽבְשׁוּ֙ בְּגָדִ֣ים אֲחֵרִ֔ים וְלֹא־יְקַדְּשׁ֥וּ אֶת־הָעָ֖ם בְּבִגְדֵיהֶֽם׃",
+      "en": "And when they go out into the outer court, into the outer court to the people, they shall put off their garments in which they minister, and lay them in the holy chambers, and they shall put on other garments; so as not to hallow the people with their garments."
+    },
+    {
+      "n": 6,
+      "c": 44,
+      "v": 20,
+      "ref": "44:20",
+      "text": "וְרֹאשָׁם֙ לֹ֣א יְגַלֵּ֔חוּ וּפֶ֖רַע לֹ֣א יְשַׁלֵּ֑חוּ כָּס֥וֹם יִכְסְמ֖וּ אֶת־רָאשֵׁיהֶֽם׃",
+      "en": "Nor shall they shave their heads, nor suffer their locks to grow long; but they shall crop their heads."
+    },
+    {
+      "n": 7,
+      "c": 44,
+      "v": 21,
+      "ref": "44:21",
+      "text": "וְיַ֥יִן לֹא־יִשְׁתּ֖וּ כׇּל־כֹּהֵ֑ן בְּבוֹאָ֖ם אֶל־הֶחָצֵ֥ר הַפְּנִימִֽית׃",
+      "en": "Nor shall any priest drink wine, when they enter into the inner court."
+    },
+    {
+      "n": 8,
+      "c": 44,
+      "v": 22,
+      "ref": "44:22",
+      "text": "וְאַלְמָנָה֙ וּגְרוּשָׁ֔ה לֹא־יִקְח֥וּ לָהֶ֖ם לְנָשִׁ֑ים כִּ֣י אִם־בְּתוּלֹ֗ת מִזֶּ֙רַע֙ בֵּ֣ית יִשְׂרָאֵ֔ל וְהָֽאַלְמָנָה֙ אֲשֶׁ֣ר תִּֽהְיֶ֣ה אַלְמָנָ֔ה מִכֹּהֵ֖ן יִקָּֽחוּ׃",
+      "en": "Nor shall they take a widow, or a divorced woman for wives: but they shall take virgins of the seed of the house of Yisra᾽el, or a widow that is the widow of a priest."
+    },
+    {
+      "n": 9,
+      "c": 44,
+      "v": 23,
+      "ref": "44:23",
+      "text": "וְאֶת־עַמִּ֣י יוֹר֔וּ בֵּ֥ין קֹ֖דֶשׁ לְחֹ֑ל וּבֵין־טָמֵ֥א לְטָה֖וֹר יוֹדִעֻֽם׃",
+      "en": "And they shall teach my people the difference between the holy and common, and cause them to discern between the unclean and the clean."
+    },
+    {
+      "n": 10,
+      "c": 44,
+      "v": 24,
+      "ref": "44:24",
+      "text": "וְעַל־רִ֗יב הֵ֚מָּה יַעַמְד֣וּ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(לשפט)</span> <span class=\"mam-kq-q\">[לְמִשְׁפָּ֔ט]</span></span> בְּמִשְׁפָּטַ֖י <span class=\"mam-kq\"><span class=\"mam-kq-k\">(ושפטהו)</span> <span class=\"mam-kq-q\">[יִשְׁפְּט֑וּהוּ]</span></span> וְאֶת־תּוֹרֹתַ֤י וְאֶת־חֻקֹּתַי֙ בְּכׇל־מוֹעֲדַ֣י יִשְׁמֹ֔רוּ וְאֶת־שַׁבְּתוֹתַ֖י יְקַדֵּֽשׁוּ׃",
+      "en": "And in a controversy they shall stand in judgment and they shall judge it according to my judgments: and they shall keep my Torot and my statutes in all my appointed times; and they shall hallow my sabbaths."
+    },
+    {
+      "n": 11,
+      "c": 44,
+      "v": 25,
+      "ref": "44:25",
+      "text": "וְאֶל־מֵ֣ת אָדָ֔ם לֹ֥א יָב֖וֹא לְטׇמְאָ֑ה כִּ֣י אִם־לְאָ֡ב וּ֠לְאֵ֠ם וּלְבֵ֨ן וּלְבַ֜ת לְאָ֗ח וּלְאָח֛וֹת אֲשֶֽׁר־לֹא־הָיְתָ֥ה לְאִ֖ישׁ יִטַּמָּֽאוּ׃",
+      "en": "And they shall come near no dead person to defile themselves: but for father, or for mother, or for son, or for daughter, for brother, or for sister that has had no husband, they may defile themselves."
+    },
+    {
+      "n": 12,
+      "c": 44,
+      "v": 26,
+      "ref": "44:26",
+      "text": "וְאַחֲרֵ֖י טׇהֳרָת֑וֹ שִׁבְעַ֥ת יָמִ֖ים יִסְפְּרוּ־לֽוֹ׃",
+      "en": "And after he is cleansed, they shall reckon to him seven days."
+    },
+    {
+      "n": 13,
+      "c": 44,
+      "v": 27,
+      "ref": "44:27",
+      "text": "וּבְיוֹם֩ בֹּא֨וֹ אֶל־הַקֹּ֜דֶשׁ אֶל־הֶחָצֵ֤ר הַפְּנִימִית֙ לְשָׁרֵ֣ת בַּקֹּ֔דֶשׁ יַקְרִ֖יב חַטָּאת֑וֹ נְאֻ֖ם אֲדֹנָ֥י יֱהֹוִֽה׃",
+      "en": "And in the day that he goes into the sanctuary, into the inner court, to minister in the sanctuary, he shall offer his sin offering, says the Lord God."
+    },
+    {
+      "n": 14,
+      "c": 44,
+      "v": 28,
+      "ref": "44:28",
+      "text": "וְהָיְתָ֤ה לָהֶם֙ לְֽנַחֲלָ֔ה אֲנִ֖י נַחֲלָתָ֑ם וַאֲחֻזָּ֗ה לֹֽא־תִתְּנ֤וּ לָהֶם֙ בְּיִשְׂרָאֵ֔ל אֲנִ֖י אֲחֻזָּתָֽם׃",
+      "en": "And it shall be to them for an inheritance: I am their inheritance: and you shall give them no possession in Yisra᾽el: I am their possession."
+    },
+    {
+      "n": 15,
+      "c": 44,
+      "v": 29,
+      "ref": "44:29",
+      "text": "הַמִּנְחָה֙ וְהַחַטָּ֣את וְהָאָשָׁ֔ם הֵ֖מָּה יֹאכְל֑וּם וְכׇל־חֵ֥רֶם בְּיִשְׂרָאֵ֖ל לָהֶ֥ם יִהְיֶֽה׃",
+      "en": "They shall eat the meal offering, and the sin offering, and the guilt offering: and every devoted thing in Yisra᾽el shall be theirs."
+    },
+    {
+      "n": 16,
+      "c": 44,
+      "v": 30,
+      "ref": "44:30",
+      "text": "וְרֵאשִׁית֩ כׇּל־בִּכּ֨וּרֵי כֹ֜ל וְכׇל־תְּר֣וּמַת כֹּ֗ל מִכֹּל֙ תְּרוּמ֣וֹתֵיכֶ֔ם לַכֹּהֲנִ֖ים יִהְיֶ֑ה וְרֵאשִׁ֤ית עֲרִסֽוֹתֵיכֶם֙ תִּתְּנ֣וּ לַכֹּהֵ֔ן לְהָנִ֥יחַ בְּרָכָ֖ה אֶל־בֵּיתֶֽךָ׃",
+      "en": "And the first of all the firstfruits of all things, and every heave offering of all your heave offerings, shall belong to the priests: you shall also give to the priest the first of your dough, that he may cause a blessing to rest on thy house."
+    },
+    {
+      "n": 17,
+      "c": 44,
+      "v": 31,
+      "ref": "44:31",
+      "text": "כׇּל־נְבֵלָה֙ וּטְרֵפָ֔ה מִן־הָע֖וֹף וּמִן־הַבְּהֵמָ֑ה לֹ֥א יֹאכְל֖וּ הַכֹּהֲנִֽים׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "The priests shall not eat of anything that dies of itself, or is torn, whether it be bird or beast."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Emor",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 31
+  },
+  "parashah": {
+    "en": "Haftarat Emor",
+    "translit": "Haftarat Emor",
+    "he": "הפטרת אמור",
+    "ref": "Ezekiel 44:15-31"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 17,
+        "ref": "44:15–44:31"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

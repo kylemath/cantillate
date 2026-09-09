@@ -1,0 +1,1401 @@
+{
+  "slug": "bereshit",
+  "book": {
+    "en": "Genesis",
+    "he": "בראשית",
+    "translit": "Bereshit"
+  },
+  "multiChapter": true,
+  "ref": "Genesis 1:1-6:8",
+  "heRef": "בראשית א׳:א-ו׳:ח",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 1,
+      "v": 1,
+      "ref": "1:1",
+      "text": "<big>בְּ</big>רֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַשָּׁמַ֖יִם וְאֵ֥ת הָאָֽרֶץ׃",
+      "en": "IN THE BEGINNING God created the heaven and the earth."
+    },
+    {
+      "n": 2,
+      "c": 1,
+      "v": 2,
+      "ref": "1:2",
+      "text": "וְהָאָ֗רֶץ הָיְתָ֥ה תֹ֙הוּ֙ וָבֹ֔הוּ וְחֹ֖שֶׁךְ עַל־פְּנֵ֣י תְה֑וֹם וְר֣וּחַ אֱלֹהִ֔ים מְרַחֶ֖פֶת עַל־פְּנֵ֥י הַמָּֽיִם׃",
+      "en": "And the earth was without form and void; and darkness was on the face of the deep. And a wind from God moved over the surface of the waters."
+    },
+    {
+      "n": 3,
+      "c": 1,
+      "v": 3,
+      "ref": "1:3",
+      "text": "וַיֹּ֥אמֶר אֱלֹהִ֖ים יְהִ֣י א֑וֹר וַֽיְהִי־אֽוֹר׃",
+      "en": "And God said, Let there be light: and there was light."
+    },
+    {
+      "n": 4,
+      "c": 1,
+      "v": 4,
+      "ref": "1:4",
+      "text": "וַיַּ֧רְא אֱלֹהִ֛ים אֶת־הָא֖וֹר כִּי־ט֑וֹב וַיַּבְדֵּ֣ל אֱלֹהִ֔ים בֵּ֥ין הָא֖וֹר וּבֵ֥ין הַחֹֽשֶׁךְ׃",
+      "en": "And God saw the light, that it was good: and God divided the light from the darkness."
+    },
+    {
+      "n": 5,
+      "c": 1,
+      "v": 5,
+      "ref": "1:5",
+      "text": "וַיִּקְרָ֨א אֱלֹהִ֤ים&thinsp;<small>׀</small>&thinsp;לָאוֹר֙ י֔וֹם וְלַחֹ֖שֶׁךְ קָ֣רָא לָ֑יְלָה וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם אֶחָֽד׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And God called the light Day, and the darkness He called Night. And there was evening and there was morning, one day."
+    },
+    {
+      "n": 6,
+      "c": 1,
+      "v": 6,
+      "ref": "1:6",
+      "text": "וַיֹּ֣אמֶר אֱלֹהִ֔ים יְהִ֥י רָקִ֖יעַ בְּת֣וֹךְ הַמָּ֑יִם וִיהִ֣י מַבְדִּ֔יל בֵּ֥ין מַ֖יִם לָמָֽיִם׃",
+      "en": "And God said, Let there be a firmament in the midst of the waters, and let it divide water from water."
+    },
+    {
+      "n": 7,
+      "c": 1,
+      "v": 7,
+      "ref": "1:7",
+      "text": "וַיַּ֣עַשׂ אֱלֹהִים֮ אֶת־הָרָקִ֒יעַ֒ וַיַּבְדֵּ֗ל בֵּ֤ין הַמַּ֙יִם֙ אֲשֶׁר֙ מִתַּ֣חַת לָרָקִ֔יעַ וּבֵ֣ין הַמַּ֔יִם אֲשֶׁ֖ר מֵעַ֣ל לָרָקִ֑יעַ וַֽיְהִי־כֵֽן׃",
+      "en": "And God made the firmament, and divided the waters which were under the firmament from the waters which were above the firmament: and it was so."
+    },
+    {
+      "n": 8,
+      "c": 1,
+      "v": 8,
+      "ref": "1:8",
+      "text": "וַיִּקְרָ֧א אֱלֹהִ֛ים לָֽרָקִ֖יעַ שָׁמָ֑יִם וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם שֵׁנִֽי׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And God called the firmament Heaven. And there was evening and there was morning, a second day."
+    },
+    {
+      "n": 9,
+      "c": 1,
+      "v": 9,
+      "ref": "1:9",
+      "text": "וַיֹּ֣אמֶר אֱלֹהִ֗ים יִקָּו֨וּ הַמַּ֜יִם מִתַּ֤חַת הַשָּׁמַ֙יִם֙ אֶל־מָק֣וֹם אֶחָ֔ד וְתֵרָאֶ֖ה הַיַּבָּשָׁ֑ה וַֽיְהִי־כֵֽן׃",
+      "en": "And God said, Let the waters under the heaven be gathered together to one place, and let the dry land appear: and it was so."
+    },
+    {
+      "n": 10,
+      "c": 1,
+      "v": 10,
+      "ref": "1:10",
+      "text": "וַיִּקְרָ֨א אֱלֹהִ֤ים&thinsp;<small>׀</small>&thinsp;לַיַּבָּשָׁה֙ אֶ֔רֶץ וּלְמִקְוֵ֥ה הַמַּ֖יִם קָרָ֣א יַמִּ֑ים וַיַּ֥רְא אֱלֹהִ֖ים כִּי־טֽוֹב׃",
+      "en": "And God called the dry land Earth; and the gathering together of the waters He called Seas: and God saw that it was good."
+    },
+    {
+      "n": 11,
+      "c": 1,
+      "v": 11,
+      "ref": "1:11",
+      "text": "וַיֹּ֣אמֶר אֱלֹהִ֗ים תַּֽדְשֵׁ֤א הָאָ֙רֶץ֙ דֶּ֗שֶׁא עֵ֚שֶׂב מַזְרִ֣יעַ זֶ֔רַע עֵ֣ץ פְּרִ֞י עֹ֤שֶׂה פְּרִי֙ לְמִינ֔וֹ אֲשֶׁ֥ר זַרְעוֹ־ב֖וֹ עַל־הָאָ֑רֶץ וַֽיְהִי־כֵֽן׃",
+      "en": "And God said, Let the earth bring forth grass, herb yielding seed, and fruit tree yielding fruit after its kind, whose seed is in itself, upon the earth: and it was so."
+    },
+    {
+      "n": 12,
+      "c": 1,
+      "v": 12,
+      "ref": "1:12",
+      "text": "וַתּוֹצֵ֨א הָאָ֜רֶץ דֶּ֠שֶׁא עֵ֣שֶׂב מַזְרִ֤יעַ זֶ֙רַע֙ לְמִינֵ֔הוּ וְעֵ֧ץ עֹֽשֶׂה־פְּרִ֛י אֲשֶׁ֥ר זַרְעוֹ־ב֖וֹ לְמִינֵ֑הוּ וַיַּ֥רְא אֱלֹהִ֖ים כִּי־טֽוֹב׃",
+      "en": "And the earth brought forth grass, herb yielding seed after its kind, and tree yielding fruit, whose seed was in itself, after its kind: and God saw that it was good."
+    },
+    {
+      "n": 13,
+      "c": 1,
+      "v": 13,
+      "ref": "1:13",
+      "text": "וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם שְׁלִישִֽׁי׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And there was evening and there was morning, a third day."
+    },
+    {
+      "n": 14,
+      "c": 1,
+      "v": 14,
+      "ref": "1:14",
+      "text": "וַיֹּ֣אמֶר אֱלֹהִ֗ים יְהִ֤י מְאֹרֹת֙ בִּרְקִ֣יעַ הַשָּׁמַ֔יִם לְהַבְדִּ֕יל בֵּ֥ין הַיּ֖וֹם וּבֵ֣ין הַלָּ֑יְלָה וְהָי֤וּ לְאֹתֹת֙ וּלְמ֣וֹעֲדִ֔ים וּלְיָמִ֖ים וְשָׁנִֽים׃",
+      "en": "And God said, Let there be lights in the firmament of heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:"
+    },
+    {
+      "n": 15,
+      "c": 1,
+      "v": 15,
+      "ref": "1:15",
+      "text": "וְהָי֤וּ לִמְאוֹרֹת֙ בִּרְקִ֣יעַ הַשָּׁמַ֔יִם לְהָאִ֖יר עַל־הָאָ֑רֶץ וַֽיְהִי־כֵֽן׃",
+      "en": "and let them be for lights in the firmament of heaven to give light upon the earth: and it was so."
+    },
+    {
+      "n": 16,
+      "c": 1,
+      "v": 16,
+      "ref": "1:16",
+      "text": "וַיַּ֣עַשׂ אֱלֹהִ֔ים אֶת־שְׁנֵ֥י הַמְּאֹרֹ֖ת הַגְּדֹלִ֑ים אֶת־הַמָּא֤וֹר הַגָּדֹל֙ לְמֶמְשֶׁ֣לֶת הַיּ֔וֹם וְאֶת־הַמָּא֤וֹר הַקָּטֹן֙ לְמֶמְשֶׁ֣לֶת הַלַּ֔יְלָה וְאֵ֖ת הַכּוֹכָבִֽים׃",
+      "en": "And God made the two great lights; the greater light to rule the day, and the lesser light to rule the night: and the stars also."
+    },
+    {
+      "n": 17,
+      "c": 1,
+      "v": 17,
+      "ref": "1:17",
+      "text": "וַיִּתֵּ֥ן אֹתָ֛ם אֱלֹהִ֖ים בִּרְקִ֣יעַ הַשָּׁמָ֑יִם לְהָאִ֖יר עַל־הָאָֽרֶץ׃",
+      "en": "And God set them in the firmament of heaven to give light upon the earth,"
+    },
+    {
+      "n": 18,
+      "c": 1,
+      "v": 18,
+      "ref": "1:18",
+      "text": "וְלִמְשֹׁל֙ בַּיּ֣וֹם וּבַלַּ֔יְלָה וּֽלְהַבְדִּ֔יל בֵּ֥ין הָא֖וֹר וּבֵ֣ין הַחֹ֑שֶׁךְ וַיַּ֥רְא אֱלֹהִ֖ים כִּי־טֽוֹב׃",
+      "en": "and to rule over the day and over the night, and to divide the light from the darkness: and God saw that it was good."
+    },
+    {
+      "n": 19,
+      "c": 1,
+      "v": 19,
+      "ref": "1:19",
+      "text": "וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם רְבִיעִֽי׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And there was evening and there was morning, a fourth day."
+    },
+    {
+      "n": 20,
+      "c": 1,
+      "v": 20,
+      "ref": "1:20",
+      "text": "וַיֹּ֣אמֶר אֱלֹהִ֔ים יִשְׁרְצ֣וּ הַמַּ֔יִם שֶׁ֖רֶץ נֶ֣פֶשׁ חַיָּ֑ה וְעוֹף֙ יְעוֹפֵ֣ף עַל־הָאָ֔רֶץ עַל־פְּנֵ֖י רְקִ֥יעַ הַשָּׁמָֽיִם׃",
+      "en": "And God said, Let the waters swarm abundantly with moving creatures that have life, and let birds fly above the earth in the open firmament of heaven."
+    },
+    {
+      "n": 21,
+      "c": 1,
+      "v": 21,
+      "ref": "1:21",
+      "text": "וַיִּבְרָ֣א אֱלֹהִ֔ים אֶת־הַתַּנִּינִ֖ם הַגְּדֹלִ֑ים וְאֵ֣ת כׇּל־נֶ֣פֶשׁ הַֽחַיָּ֣ה&thinsp;<small>׀</small>&thinsp;הָֽרֹמֶ֡שֶׂת אֲשֶׁר֩ שָׁרְצ֨וּ הַמַּ֜יִם לְמִֽינֵהֶ֗ם וְאֵ֨ת כׇּל־ע֤וֹף כָּנָף֙ לְמִינֵ֔הוּ וַיַּ֥רְא אֱלֹהִ֖ים כִּי־טֽוֹב׃",
+      "en": "And God created the great crocodiles, and every living creature that moves, which the waters brought forth abundantly, after their kind, and every winged bird after its kind: and God saw that it was good."
+    },
+    {
+      "n": 22,
+      "c": 1,
+      "v": 22,
+      "ref": "1:22",
+      "text": "וַיְבָ֧רֶךְ אֹתָ֛ם אֱלֹהִ֖ים לֵאמֹ֑ר פְּר֣וּ וּרְב֗וּ וּמִלְא֤וּ אֶת־הַמַּ֙יִם֙ בַּיַּמִּ֔ים וְהָע֖וֹף יִ֥רֶב בָּאָֽרֶץ׃",
+      "en": "And God blessed them, saying, Be fruitful, and multiply, and fill the waters in the seas, and let birds multiply in the earth."
+    },
+    {
+      "n": 23,
+      "c": 1,
+      "v": 23,
+      "ref": "1:23",
+      "text": "וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם חֲמִישִֽׁי׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And there was evening and there was morning, a fifth day."
+    },
+    {
+      "n": 24,
+      "c": 1,
+      "v": 24,
+      "ref": "1:24",
+      "text": "וַיֹּ֣אמֶר אֱלֹהִ֗ים תּוֹצֵ֨א הָאָ֜רֶץ נֶ֤פֶשׁ חַיָּה֙ לְמִינָ֔הּ בְּהֵמָ֥ה וָרֶ֛מֶשׂ וְחַֽיְתוֹ־אֶ֖רֶץ לְמִינָ֑הּ וַֽיְהִי־כֵֽן׃",
+      "en": "And God said, Let the earth bring forth living creatures after their kind, cattle, and creeping things, and beasts of the earth after their kind: and it was so."
+    },
+    {
+      "n": 25,
+      "c": 1,
+      "v": 25,
+      "ref": "1:25",
+      "text": "וַיַּ֣עַשׂ אֱלֹהִים֩ אֶת־חַיַּ֨ת הָאָ֜רֶץ לְמִינָ֗הּ וְאֶת־הַבְּהֵמָה֙ לְמִינָ֔הּ וְאֵ֛ת כׇּל־רֶ֥מֶשׂ הָֽאֲדָמָ֖ה לְמִינֵ֑הוּ וַיַּ֥רְא אֱלֹהִ֖ים כִּי־טֽוֹב׃",
+      "en": "And God made the beasts of the earth after their kind, and cattle after their kind, and everything that creeps on the earth after its kind: and God saw that it was good."
+    },
+    {
+      "n": 26,
+      "c": 1,
+      "v": 26,
+      "ref": "1:26",
+      "text": "וַיֹּ֣אמֶר אֱלֹהִ֔ים נַֽעֲשֶׂ֥ה אָדָ֛ם בְּצַלְמֵ֖נוּ כִּדְמוּתֵ֑נוּ וְיִרְדּוּ֩ בִדְגַ֨ת הַיָּ֜ם וּבְע֣וֹף הַשָּׁמַ֗יִם וּבַבְּהֵמָה֙ וּבְכׇל־הָאָ֔רֶץ וּבְכׇל־הָרֶ֖מֶשׂ הָֽרֹמֵ֥שׂ עַל־הָאָֽרֶץ׃",
+      "en": "And God said, Let Us make Mankind in Our image, after Our likeness: and let them have dominion over the fish of the sea, and over the birds of the air, and over the cattle, and over all the earth, and over every creeping thing that creeps on the earth."
+    },
+    {
+      "n": 27,
+      "c": 1,
+      "v": 27,
+      "ref": "1:27",
+      "text": "וַיִּבְרָ֨א אֱלֹהִ֤ים&thinsp;<small>׀</small>&thinsp;אֶת־הָֽאָדָם֙ בְּצַלְמ֔וֹ בְּצֶ֥לֶם אֱלֹהִ֖ים בָּרָ֣א אֹת֑וֹ זָכָ֥ר וּנְקֵבָ֖ה בָּרָ֥א אֹתָֽם׃",
+      "en": "So God created Mankind in His own image, in the image of God He created him; male and female He created them."
+    },
+    {
+      "n": 28,
+      "c": 1,
+      "v": 28,
+      "ref": "1:28",
+      "text": "וַיְבָ֣רֶךְ אֹתָם֮ אֱלֹהִים֒ וַיֹּ֨אמֶר לָהֶ֜ם אֱלֹהִ֗ים פְּר֥וּ וּרְב֛וּ וּמִלְא֥וּ אֶת־הָאָ֖רֶץ וְכִבְשֻׁ֑הָ וּרְד֞וּ בִּדְגַ֤ת הַיָּם֙ וּבְע֣וֹף הַשָּׁמַ֔יִם וּבְכׇל־חַיָּ֖ה הָֽרֹמֶ֥שֶׂת עַל־הָאָֽרֶץ׃",
+      "en": "And God blessed them, and God said to them, Be fruitful, and multiply, replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the birds of the air, and over every living thing that moves on the earth."
+    },
+    {
+      "n": 29,
+      "c": 1,
+      "v": 29,
+      "ref": "1:29",
+      "text": "וַיֹּ֣אמֶר אֱלֹהִ֗ים הִנֵּה֩ נָתַ֨תִּי לָכֶ֜ם אֶת־כׇּל־עֵ֣שֶׂב&thinsp;<b>׀</b> זֹרֵ֣עַ זֶ֗רַע אֲשֶׁר֙ עַל־פְּנֵ֣י כׇל־הָאָ֔רֶץ וְאֶת־כׇּל־הָעֵ֛ץ אֲשֶׁר־בּ֥וֹ פְרִי־עֵ֖ץ זֹרֵ֣עַ זָ֑רַע לָכֶ֥ם יִֽהְיֶ֖ה לְאׇכְלָֽה׃",
+      "en": "And God said, Behold I have given you every herb bearing seed, which is upon the face of all the earth, and every tree, on which is the fruit yielding seed; to you it shall be for food."
+    },
+    {
+      "n": 30,
+      "c": 1,
+      "v": 30,
+      "ref": "1:30",
+      "text": "וּֽלְכׇל־חַיַּ֣ת הָ֠אָ֠רֶץ וּלְכׇל־ע֨וֹף הַשָּׁמַ֜יִם וּלְכֹ֣ל&thinsp;<b>׀</b> רוֹמֵ֣שׂ עַל־הָאָ֗רֶץ אֲשֶׁר־בּוֹ֙ נֶ֣פֶשׁ חַיָּ֔ה אֶת־כׇּל־יֶ֥רֶק עֵ֖שֶׂב לְאׇכְלָ֑ה וַֽיְהִי־כֵֽן׃",
+      "en": "And to every beast of the earth, and to every bird of the air, and to everything that creeps on the earth, wherein there is life, I have given every green herb for food: and it was so."
+    },
+    {
+      "n": 31,
+      "c": 1,
+      "v": 31,
+      "ref": "1:31",
+      "text": "וַיַּ֤רְא אֱלֹהִים֙ אֶת־כׇּל־אֲשֶׁ֣ר עָשָׂ֔ה וְהִנֵּה־ט֖וֹב מְאֹ֑ד וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם הַשִּׁשִּֽׁי׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And God saw everything that He had made, and, behold, it was very good. And there was evening and there was morning, the sixth day."
+    },
+    {
+      "n": 32,
+      "c": 2,
+      "v": 1,
+      "ref": "2:1",
+      "text": "וַיְכֻלּ֛וּ הַשָּׁמַ֥יִם וְהָאָ֖רֶץ וְכׇל־צְבָאָֽם׃",
+      "en": "Thus the heavens and the earth were finished, and all their host."
+    },
+    {
+      "n": 33,
+      "c": 2,
+      "v": 2,
+      "ref": "2:2",
+      "text": "וַיְכַ֤ל אֱלֹהִים֙ בַּיּ֣וֹם הַשְּׁבִיעִ֔י מְלַאכְתּ֖וֹ אֲשֶׁ֣ר עָשָׂ֑ה וַיִּשְׁבֹּת֙ בַּיּ֣וֹם הַשְּׁבִיעִ֔י מִכׇּל־מְלַאכְתּ֖וֹ אֲשֶׁ֥ר עָשָֽׂה׃",
+      "en": "And by the seventh day God ended His work which He had done; and He rested on the seventh day from all His work which He had done."
+    },
+    {
+      "n": 34,
+      "c": 2,
+      "v": 3,
+      "ref": "2:3",
+      "text": "וַיְבָ֤רֶךְ אֱלֹהִים֙ אֶת־י֣וֹם הַשְּׁבִיעִ֔י וַיְקַדֵּ֖שׁ אֹת֑וֹ כִּ֣י ב֤וֹ שָׁבַת֙ מִכׇּל־מְלַאכְתּ֔וֹ אֲשֶׁר־בָּרָ֥א אֱלֹהִ֖ים לַעֲשֽׂוֹת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And God blessed the seventh day, and sanctified it: because in it He rested from all his work which God had created and performed."
+    },
+    {
+      "n": 35,
+      "c": 2,
+      "v": 4,
+      "ref": "2:4",
+      "text": "אֵ֣לֶּה תוֹלְד֧וֹת הַשָּׁמַ֛יִם וְהָאָ֖רֶץ בְּ<small>הִ</small>בָּֽרְאָ֑ם בְּי֗וֹם עֲשׂ֛וֹת יְהֹוָ֥ה אֱלֹהִ֖ים אֶ֥רֶץ וְשָׁמָֽיִם׃",
+      "en": "These are the generations of the heaven and of the earth when they were created, in the day that the Lord God made the earth and the heavens."
+    },
+    {
+      "n": 36,
+      "c": 2,
+      "v": 5,
+      "ref": "2:5",
+      "text": "וְכֹ֣ל&thinsp;<b>׀</b> שִׂ֣יחַ הַשָּׂדֶ֗ה טֶ֚רֶם יִֽהְיֶ֣ה בָאָ֔רֶץ וְכׇל־עֵ֥שֶׂב הַשָּׂדֶ֖ה טֶ֣רֶם יִצְמָ֑ח כִּי֩ לֹ֨א הִמְטִ֜יר יְהֹוָ֤ה אֱלֹהִים֙ עַל־הָאָ֔רֶץ וְאָדָ֣ם אַ֔יִן לַֽעֲבֹ֖ד אֶת־הָֽאֲדָמָֽה׃",
+      "en": "And no plant of the field was yet in the earth, and no herb of the field had yet grown: for the Lord God had not caused it to rain upon the earth, and there was not a man to till the ground."
+    },
+    {
+      "n": 37,
+      "c": 2,
+      "v": 6,
+      "ref": "2:6",
+      "text": "וְאֵ֖ד יַֽעֲלֶ֣ה מִן־הָאָ֑רֶץ וְהִשְׁקָ֖ה אֶֽת־כׇּל־פְּנֵ֥י הָֽאֲדָמָֽה׃",
+      "en": "But there went up a mist from the earth, and watered the whole face of the ground."
+    },
+    {
+      "n": 38,
+      "c": 2,
+      "v": 7,
+      "ref": "2:7",
+      "text": "וַיִּ֩יצֶר֩ יְהֹוָ֨ה אֱלֹהִ֜ים אֶת־הָֽאָדָ֗ם עָפָר֙ מִן־הָ֣אֲדָמָ֔ה וַיִּפַּ֥ח בְּאַפָּ֖יו נִשְׁמַ֣ת חַיִּ֑ים וַיְהִ֥י הָֽאָדָ֖ם לְנֶ֥פֶשׁ חַיָּֽה׃",
+      "en": "And the Lord God formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul."
+    },
+    {
+      "n": 39,
+      "c": 2,
+      "v": 8,
+      "ref": "2:8",
+      "text": "וַיִּטַּ֞ע יְהֹוָ֧ה אֱלֹהִ֛ים גַּן־בְּעֵ֖דֶן מִקֶּ֑דֶם וַיָּ֣שֶׂם שָׁ֔ם אֶת־הָֽאָדָ֖ם אֲשֶׁ֥ר יָצָֽר׃",
+      "en": "And the Lord God planted a garden eastward in ῾Eden; and there He put the man whom He had formed."
+    },
+    {
+      "n": 40,
+      "c": 2,
+      "v": 9,
+      "ref": "2:9",
+      "text": "וַיַּצְמַ֞ח יְהֹוָ֤ה אֱלֹהִים֙ מִן־הָ֣אֲדָמָ֔ה כׇּל־עֵ֛ץ נֶחְמָ֥ד לְמַרְאֶ֖ה וְט֣וֹב לְמַאֲכָ֑ל וְעֵ֤ץ הַֽחַיִּים֙ בְּת֣וֹךְ הַגָּ֔ן וְעֵ֕ץ הַדַּ֖עַת ט֥וֹב וָרָֽע׃",
+      "en": "And out of the ground the Lord God made to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of the knowledge of good and evil."
+    },
+    {
+      "n": 41,
+      "c": 2,
+      "v": 10,
+      "ref": "2:10",
+      "text": "וְנָהָר֙ יֹצֵ֣א מֵעֵ֔דֶן לְהַשְׁק֖וֹת אֶת־הַגָּ֑ן וּמִשָּׁם֙ יִפָּרֵ֔ד וְהָיָ֖ה לְאַרְבָּעָ֥ה רָאשִֽׁים׃",
+      "en": "And a river went out of ῾Eden to water the garden; and from thence it was parted, and branched into four streams."
+    },
+    {
+      "n": 42,
+      "c": 2,
+      "v": 11,
+      "ref": "2:11",
+      "text": "שֵׁ֥ם הָֽאֶחָ֖ד פִּישׁ֑וֹן ה֣וּא הַסֹּבֵ֗ב אֵ֚ת כׇּל־אֶ֣רֶץ הַֽחֲוִילָ֔ה אֲשֶׁר־שָׁ֖ם הַזָּהָֽב׃",
+      "en": "The name of the first is Pishon: that it is which compasses the whole land of Ḥavila, where there is gold;"
+    },
+    {
+      "n": 43,
+      "c": 2,
+      "v": 12,
+      "ref": "2:12",
+      "text": "וּֽזְהַ֛ב הָאָ֥רֶץ הַהִ֖וא ט֑וֹב שָׁ֥ם הַבְּדֹ֖לַח וְאֶ֥בֶן הַשֹּֽׁהַם׃",
+      "en": "and the gold of that land is good: there is bdellium and the shoham stone."
+    },
+    {
+      "n": 44,
+      "c": 2,
+      "v": 13,
+      "ref": "2:13",
+      "text": "וְשֵֽׁם־הַנָּהָ֥ר הַשֵּׁנִ֖י גִּיח֑וֹן ה֣וּא הַסּוֹבֵ֔ב אֵ֖ת כׇּל־אֶ֥רֶץ כּֽוּשׁ׃",
+      "en": "And the name of the second river is Giĥon: it compasses the whole land of Kush."
+    },
+    {
+      "n": 45,
+      "c": 2,
+      "v": 14,
+      "ref": "2:14",
+      "text": "וְשֵׁ֨ם הַנָּהָ֤ר הַשְּׁלִישִׁי֙ חִדֶּ֔קֶל ה֥וּא הַֽהֹלֵ֖ךְ קִדְמַ֣ת אַשּׁ֑וּר וְהַנָּהָ֥ר הָֽרְבִיעִ֖י ה֥וּא פְרָֽת׃",
+      "en": "And the name of the third river is Ḥiddeqel: that is it which goes toward the east of Ashshur. And the fourth river is Perat."
+    },
+    {
+      "n": 46,
+      "c": 2,
+      "v": 15,
+      "ref": "2:15",
+      "text": "וַיִּקַּ֛ח יְהֹוָ֥ה אֱלֹהִ֖ים אֶת־הָֽאָדָ֑ם וַיַּנִּחֵ֣הוּ בְגַן־עֵ֔דֶן לְעׇבְדָ֖הּ וּלְשׇׁמְרָֽהּ׃",
+      "en": "And the Lord God took the man, and put him into the garden of ῾Eden to till it and to keep it."
+    },
+    {
+      "n": 47,
+      "c": 2,
+      "v": 16,
+      "ref": "2:16",
+      "text": "וַיְצַו֙ יְהֹוָ֣ה אֱלֹהִ֔ים עַל־הָֽאָדָ֖ם לֵאמֹ֑ר מִכֹּ֥ל עֵֽץ־הַגָּ֖ן אָכֹ֥ל תֹּאכֵֽל׃",
+      "en": "And the Lord God commanded the man, saying, Of every tree of the garden thou mayst freely eat:"
+    },
+    {
+      "n": 48,
+      "c": 2,
+      "v": 17,
+      "ref": "2:17",
+      "text": "וּמֵעֵ֗ץ הַדַּ֙עַת֙ ט֣וֹב וָרָ֔ע לֹ֥א תֹאכַ֖ל מִמֶּ֑נּוּ כִּ֗י בְּי֛וֹם אֲכׇלְךָ֥ מִמֶּ֖נּוּ מ֥וֹת תָּמֽוּת׃",
+      "en": "but of the tree of the knowledge of good and evil, thou shalt not eat of it: for on the day that thou eatest of it thou shalt surely die."
+    },
+    {
+      "n": 49,
+      "c": 2,
+      "v": 18,
+      "ref": "2:18",
+      "text": "וַיֹּ֙אמֶר֙ יְהֹוָ֣ה אֱלֹהִ֔ים לֹא־ט֛וֹב הֱי֥וֹת הָֽאָדָ֖ם לְבַדּ֑וֹ אֶֽעֱשֶׂה־לּ֥וֹ עֵ֖זֶר כְּנֶגְדּֽוֹ׃",
+      "en": "And the Lord God said, It is not good that the man should be alone; I will make him a help to match him."
+    },
+    {
+      "n": 50,
+      "c": 2,
+      "v": 19,
+      "ref": "2:19",
+      "text": "וַיִּ֩צֶר֩ יְהֹוָ֨ה אֱלֹהִ֜ים מִן־הָֽאֲדָמָ֗ה כׇּל־חַיַּ֤ת הַשָּׂדֶה֙ וְאֵת֙ כׇּל־ע֣וֹף הַשָּׁמַ֔יִם וַיָּבֵא֙ אֶל־הָ֣אָדָ֔ם לִרְא֖וֹת מַה־יִּקְרָא־ל֑וֹ וְכֹל֩ אֲשֶׁ֨ר יִקְרָא־ל֧וֹ הָֽאָדָ֛ם נֶ֥פֶשׁ חַיָּ֖ה ה֥וּא שְׁמֽוֹ׃",
+      "en": "And out of the ground the Lord God formed every beast of the field, and every bird of the air; and brought them to the man to see what he would call them: and whatever the man called every living creature, that was its name."
+    },
+    {
+      "n": 51,
+      "c": 2,
+      "v": 20,
+      "ref": "2:20",
+      "text": "וַיִּקְרָ֨א הָֽאָדָ֜ם שֵׁמ֗וֹת לְכׇל־הַבְּהֵמָה֙ וּלְע֣וֹף הַשָּׁמַ֔יִם וּלְכֹ֖ל חַיַּ֣ת הַשָּׂדֶ֑ה וּלְאָדָ֕ם לֹֽא־מָצָ֥א עֵ֖זֶר כְּנֶגְדּֽוֹ׃",
+      "en": "And the man gave names to all cattle, and to the birds of the air, and to every beast of the field; but for the man there was not found a help to match him."
+    },
+    {
+      "n": 52,
+      "c": 2,
+      "v": 21,
+      "ref": "2:21",
+      "text": "וַיַּפֵּל֩ יְהֹוָ֨ה אֱלֹהִ֧ים&thinsp;<small>׀</small>&thinsp;תַּרְדֵּמָ֛ה עַל־הָאָדָ֖ם וַיִּישָׁ֑ן וַיִּקַּ֗ח אַחַת֙ מִצַּלְעֹתָ֔יו וַיִּסְגֹּ֥ר בָּשָׂ֖ר תַּחְתֶּֽנָּה׃",
+      "en": "And the Lord God caused a deep sleep to fall upon the man, and he slept: and He took one of his sides, and closed up the flesh in its place,"
+    },
+    {
+      "n": 53,
+      "c": 2,
+      "v": 22,
+      "ref": "2:22",
+      "text": "וַיִּ֩בֶן֩ יְהֹוָ֨ה אֱלֹהִ֧ים&thinsp;<small>׀</small>&thinsp;אֶֽת־הַצֵּלָ֛ע אֲשֶׁר־לָקַ֥ח מִן־הָֽאָדָ֖ם לְאִשָּׁ֑ה וַיְבִאֶ֖הָ אֶל־הָֽאָדָֽם׃",
+      "en": "and of the side, which the Lord God had taken from the man, He made a woman, and brought her to the man."
+    },
+    {
+      "n": 54,
+      "c": 2,
+      "v": 23,
+      "ref": "2:23",
+      "text": "וַיֹּ֘אמֶר֮ הָֽאָדָם֒ זֹ֣את הַפַּ֗עַם עֶ֚צֶם מֵֽעֲצָמַ֔י וּבָשָׂ֖ר מִבְּשָׂרִ֑י לְזֹאת֙ יִקָּרֵ֣א אִשָּׁ֔ה כִּ֥י מֵאִ֖ישׁ לֻֽקְחָה־זֹּֽאת׃",
+      "en": "And the man said, This is now bone of my bones, and flesh of my flesh: she shall be called Woman, because she was taken out of Man."
+    },
+    {
+      "n": 55,
+      "c": 2,
+      "v": 24,
+      "ref": "2:24",
+      "text": "עַל־כֵּן֙ יַֽעֲזׇב־אִ֔ישׁ אֶת־אָבִ֖יו וְאֶת־אִמּ֑וֹ וְדָבַ֣ק בְּאִשְׁתּ֔וֹ וְהָי֖וּ לְבָשָׂ֥ר אֶחָֽד׃",
+      "en": "That is why a man leaves his father and his mother, and cleaves to his wife: and they become one flesh."
+    },
+    {
+      "n": 56,
+      "c": 2,
+      "v": 25,
+      "ref": "2:25",
+      "text": "וַיִּֽהְי֤וּ שְׁנֵיהֶם֙ עֲרוּמִּ֔ים הָֽאָדָ֖ם וְאִשְׁתּ֑וֹ וְלֹ֖א יִתְבֹּשָֽׁשׁוּ׃",
+      "en": "And they were both naked, the man and his wife, and they felt no shame."
+    },
+    {
+      "n": 57,
+      "c": 3,
+      "v": 1,
+      "ref": "3:1",
+      "text": "וְהַנָּחָשׁ֙ הָיָ֣ה עָר֔וּם מִכֹּל֙ חַיַּ֣ת הַשָּׂדֶ֔ה אֲשֶׁ֥ר עָשָׂ֖ה יְהֹוָ֣ה אֱלֹהִ֑ים וַיֹּ֙אמֶר֙ אֶל־הָ֣אִשָּׁ֔ה אַ֚ף כִּֽי־אָמַ֣ר אֱלֹהִ֔ים לֹ֣א תֹֽאכְל֔וּ מִכֹּ֖ל עֵ֥ץ הַגָּֽן׃",
+      "en": "Now the serpent was craftier than all the beasts of the field which the Lord God had made. And he said to the woman, Has God said, You shall not eat of any tree of the garden?"
+    },
+    {
+      "n": 58,
+      "c": 3,
+      "v": 2,
+      "ref": "3:2",
+      "text": "וַתֹּ֥אמֶר הָֽאִשָּׁ֖ה אֶל־הַנָּחָ֑שׁ מִפְּרִ֥י עֵֽץ־הַגָּ֖ן נֹאכֵֽל׃",
+      "en": "And the woman said to the serpent, We may eat of the fruit of the trees of the garden:"
+    },
+    {
+      "n": 59,
+      "c": 3,
+      "v": 3,
+      "ref": "3:3",
+      "text": "וּמִפְּרִ֣י הָעֵץ֮ אֲשֶׁ֣ר בְּתוֹךְ־הַגָּן֒ אָמַ֣ר אֱלֹהִ֗ים לֹ֤א תֹֽאכְלוּ֙ מִמֶּ֔נּוּ וְלֹ֥א תִגְּע֖וּ בּ֑וֹ פֶּן־תְּמֻתֽוּן׃",
+      "en": "but of the fruit of the tree which is in the midst of the garden, God has said, You shall not eat of it, neither shall you touch it, lest you die."
+    },
+    {
+      "n": 60,
+      "c": 3,
+      "v": 4,
+      "ref": "3:4",
+      "text": "וַיֹּ֥אמֶר הַנָּחָ֖שׁ אֶל־הָֽאִשָּׁ֑ה לֹֽא־מ֖וֹת תְּמֻתֽוּן׃",
+      "en": "And the serpent said to the woman, You shall not surely die:"
+    },
+    {
+      "n": 61,
+      "c": 3,
+      "v": 5,
+      "ref": "3:5",
+      "text": "כִּ֚י יֹדֵ֣עַ אֱלֹהִ֔ים כִּ֗י בְּיוֹם֙ אֲכׇלְכֶ֣ם מִמֶּ֔נּוּ וְנִפְקְח֖וּ עֵֽינֵיכֶ֑ם וִהְיִיתֶם֙ כֵּֽאלֹהִ֔ים יֹדְעֵ֖י ט֥וֹב וָרָֽע׃",
+      "en": "for God knows that on the day you eat of it, then your eyes shall be opened, and you shall be as gods, knowing good and evil."
+    },
+    {
+      "n": 62,
+      "c": 3,
+      "v": 6,
+      "ref": "3:6",
+      "text": "וַתֵּ֣רֶא הָֽאִשָּׁ֡ה כִּ֣י טוֹב֩ הָעֵ֨ץ לְמַאֲכָ֜ל וְכִ֧י תַֽאֲוָה־ה֣וּא לָעֵינַ֗יִם וְנֶחְמָ֤ד הָעֵץ֙ לְהַשְׂכִּ֔יל וַתִּקַּ֥ח מִפִּרְי֖וֹ וַתֹּאכַ֑ל וַתִּתֵּ֧ן גַּם־לְאִישָׁ֛הּ עִמָּ֖הּ וַיֹּאכַֽל׃",
+      "en": "And when the woman saw that the tree was good for food, and that it was a delight to the eyes, and a tree to be desired to make one wise, she took of its fruit, and did eat, and gave also to her husband with her; and he did eat."
+    },
+    {
+      "n": 63,
+      "c": 3,
+      "v": 7,
+      "ref": "3:7",
+      "text": "וַתִּפָּקַ֙חְנָה֙ עֵינֵ֣י שְׁנֵיהֶ֔ם וַיֵּ֣דְע֔וּ כִּ֥י עֵֽירֻמִּ֖ם הֵ֑ם וַֽיִּתְפְּרוּ֙ עֲלֵ֣ה תְאֵנָ֔ה וַיַּעֲשׂ֥וּ לָהֶ֖ם חֲגֹרֹֽת׃",
+      "en": "And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves loincloths."
+    },
+    {
+      "n": 64,
+      "c": 3,
+      "v": 8,
+      "ref": "3:8",
+      "text": "וַֽיִּשְׁמְע֞וּ אֶת־ק֨וֹל יְהֹוָ֧ה אֱלֹהִ֛ים מִתְהַלֵּ֥ךְ בַּגָּ֖ן לְר֣וּחַ הַיּ֑וֹם וַיִּתְחַבֵּ֨א הָֽאָדָ֜ם וְאִשְׁתּ֗וֹ מִפְּנֵי֙ יְהֹוָ֣ה אֱלֹהִ֔ים בְּת֖וֹךְ עֵ֥ץ הַגָּֽן׃",
+      "en": "And they heard the voice of the Lord God walking in the garden in the breeze of the day: and the man and his wife hid themselves from the presence of the Lord God amongst the trees of the garden."
+    },
+    {
+      "n": 65,
+      "c": 3,
+      "v": 9,
+      "ref": "3:9",
+      "text": "וַיִּקְרָ֛א יְהֹוָ֥ה אֱלֹהִ֖ים אֶל־הָֽאָדָ֑ם וַיֹּ֥אמֶר ל֖וֹ אַיֶּֽכָּה׃",
+      "en": "And the Lord God called to the man, and said to him, Where art thou?"
+    },
+    {
+      "n": 66,
+      "c": 3,
+      "v": 10,
+      "ref": "3:10",
+      "text": "וַיֹּ֕אמֶר אֶת־קֹלְךָ֥ שָׁמַ֖עְתִּי בַּגָּ֑ן וָאִירָ֛א כִּֽי־עֵירֹ֥ם אָנֹ֖כִי וָאֵחָבֵֽא׃",
+      "en": "And he said, I heard Thy voice in the garden, and I was afraid, because I was naked; and I hid myself."
+    },
+    {
+      "n": 67,
+      "c": 3,
+      "v": 11,
+      "ref": "3:11",
+      "text": "וַיֹּ֕אמֶר מִ֚י הִגִּ֣יד לְךָ֔ כִּ֥י עֵירֹ֖ם אָ֑תָּה הֲמִן־הָעֵ֗ץ אֲשֶׁ֧ר צִוִּיתִ֛יךָ לְבִלְתִּ֥י אֲכׇל־מִמֶּ֖נּוּ אָכָֽלְתָּ׃",
+      "en": "And He said, Who told thee that thou wast naked? Hast thou eaten of the tree, of which I commanded thee that thou shouldst not eat?"
+    },
+    {
+      "n": 68,
+      "c": 3,
+      "v": 12,
+      "ref": "3:12",
+      "text": "וַיֹּ֖אמֶר הָֽאָדָ֑ם הָֽאִשָּׁה֙ אֲשֶׁ֣ר נָתַ֣תָּה עִמָּדִ֔י הִ֛וא נָֽתְנָה־לִּ֥י מִן־הָעֵ֖ץ וָאֹכֵֽל׃",
+      "en": "And the man said, The woman whom Thou didst give to be with me, she gave me of the tree, and I did eat."
+    },
+    {
+      "n": 69,
+      "c": 3,
+      "v": 13,
+      "ref": "3:13",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֧ה אֱלֹהִ֛ים לָאִשָּׁ֖ה מַה־זֹּ֣את עָשִׂ֑ית וַתֹּ֙אמֶר֙ הָֽאִשָּׁ֔ה הַנָּחָ֥שׁ הִשִּׁיאַ֖נִי וָאֹכֵֽל׃",
+      "en": "And the Lord God said to the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat."
+    },
+    {
+      "n": 70,
+      "c": 3,
+      "v": 14,
+      "ref": "3:14",
+      "text": "וַיֹּ֩אמֶר֩ יְהֹוָ֨ה אֱלֹהִ֥ים&thinsp;<small>׀</small>&thinsp;אֶֽל־הַנָּחָשׁ֮ כִּ֣י עָשִׂ֣יתָ זֹּאת֒ אָר֤וּר אַתָּה֙ מִכׇּל־הַבְּהֵמָ֔ה וּמִכֹּ֖ל חַיַּ֣ת הַשָּׂדֶ֑ה עַל־גְּחֹנְךָ֣ תֵלֵ֔ךְ וְעָפָ֥ר תֹּאכַ֖ל כׇּל־יְמֵ֥י חַיֶּֽיךָ׃",
+      "en": "And the Lord God said to the serpent, Because thou hast done this, thou art cursed above all cattle, and above every beast of the field; upon thy belly shalt thou go, and dust shalt thou eat all the days of thy life:"
+    },
+    {
+      "n": 71,
+      "c": 3,
+      "v": 15,
+      "ref": "3:15",
+      "text": "וְאֵיבָ֣ה&thinsp;<b>׀</b> אָשִׁ֗ית בֵּֽינְךָ֙ וּבֵ֣ין הָֽאִשָּׁ֔ה וּבֵ֥ין זַרְעֲךָ֖ וּבֵ֣ין זַרְעָ֑הּ ה֚וּא יְשׁוּפְךָ֣ רֹ֔אשׁ וְאַתָּ֖ה תְּשׁוּפֶ֥נּוּ עָקֵֽב׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel."
+    },
+    {
+      "n": 72,
+      "c": 3,
+      "v": 16,
+      "ref": "3:16",
+      "text": "אֶֽל־הָאִשָּׁ֣ה אָמַ֗ר הַרְבָּ֤ה אַרְבֶּה֙ עִצְּבוֹנֵ֣ךְ וְהֵֽרֹנֵ֔ךְ בְּעֶ֖צֶב תֵּֽלְדִ֣י בָנִ֑ים וְאֶל־אִישֵׁךְ֙ תְּשׁ֣וּקָתֵ֔ךְ וְה֖וּא יִמְשׇׁל־בָּֽךְ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Unto the woman He said, I will greatly multiply the pain of thy childbearing; in sorrow thou shalt bring forth children; and yet thy desire shall be to thy husband, and he shall rule over thee."
+    },
+    {
+      "n": 73,
+      "c": 3,
+      "v": 17,
+      "ref": "3:17",
+      "text": "וּלְאָדָ֣ם אָמַ֗ר כִּֽי־שָׁמַ֘עְתָּ֮ לְק֣וֹל אִשְׁתֶּ֒ךָ֒ וַתֹּ֙אכַל֙ מִן־הָעֵ֔ץ אֲשֶׁ֤ר צִוִּיתִ֙יךָ֙ לֵאמֹ֔ר לֹ֥א תֹאכַ֖ל מִמֶּ֑נּוּ אֲרוּרָ֤ה הָֽאֲדָמָה֙ בַּֽעֲבוּרֶ֔ךָ בְּעִצָּבוֹן֙ תֹּֽאכְלֶ֔נָּה כֹּ֖ל יְמֵ֥י חַיֶּֽיךָ׃",
+      "en": "And to the man He said, Because thou hast hearkened to the voice of thy wife, and hast eaten of the tree, of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life;"
+    },
+    {
+      "n": 74,
+      "c": 3,
+      "v": 18,
+      "ref": "3:18",
+      "text": "וְק֥וֹץ וְדַרְדַּ֖ר תַּצְמִ֣יחַֽ לָ֑ךְ וְאָכַלְתָּ֖ אֶת־עֵ֥שֶׂב הַשָּׂדֶֽה׃",
+      "en": "thorns also and thistles shall it bring forth to thee; and thou shalt eat the herb of the field;"
+    },
+    {
+      "n": 75,
+      "c": 3,
+      "v": 19,
+      "ref": "3:19",
+      "text": "בְּזֵעַ֤ת אַפֶּ֙יךָ֙ תֹּ֣אכַל לֶ֔חֶם עַ֤ד שֽׁוּבְךָ֙ אֶל־הָ֣אֲדָמָ֔ה כִּ֥י מִמֶּ֖נָּה לֻקָּ֑חְתָּ כִּֽי־עָפָ֣ר אַ֔תָּה וְאֶל־עָפָ֖ר תָּשֽׁוּב׃",
+      "en": "in the sweat of thy face shalt thou eat bread, till thou return to the ground; for out of it wast thou taken: for dust thou art, and to dust shalt thou return."
+    },
+    {
+      "n": 76,
+      "c": 3,
+      "v": 20,
+      "ref": "3:20",
+      "text": "וַיִּקְרָ֧א הָֽאָדָ֛ם שֵׁ֥ם אִשְׁתּ֖וֹ חַוָּ֑ה כִּ֛י הִ֥וא הָֽיְתָ֖ה אֵ֥ם כׇּל־חָֽי׃",
+      "en": "And the man called his wife’s name Ḥavva; because she was the mother of all living (Ḥay)."
+    },
+    {
+      "n": 77,
+      "c": 3,
+      "v": 21,
+      "ref": "3:21",
+      "text": "וַיַּ֩עַשׂ֩ יְהֹוָ֨ה אֱלֹהִ֜ים לְאָדָ֧ם וּלְאִשְׁתּ֛וֹ כׇּתְנ֥וֹת ע֖וֹר וַיַּלְבִּשֵֽׁם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "For the man also and for his wife did the Lord God make coats of skins, and clothed them."
+    },
+    {
+      "n": 78,
+      "c": 3,
+      "v": 22,
+      "ref": "3:22",
+      "text": "וַיֹּ֣אמֶר&thinsp;<b>׀</b> יְהֹוָ֣ה אֱלֹהִ֗ים הֵ֤ן הָֽאָדָם֙ הָיָה֙ כְּאַחַ֣ד מִמֶּ֔נּוּ לָדַ֖עַת ט֣וֹב וָרָ֑ע וְעַתָּ֣ה&thinsp;<b>׀</b> פֶּן־יִשְׁלַ֣ח יָד֗וֹ וְלָקַח֙ גַּ֚ם מֵעֵ֣ץ הַֽחַיִּ֔ים וְאָכַ֖ל וָחַ֥י לְעֹלָֽם׃",
+      "en": "And the Lord God said, Behold, the man is become like one of Us, knowing good and evil: and now, what if he put forth his hand, and take also of the tree of life, and eating, live for ever:"
+    },
+    {
+      "n": 79,
+      "c": 3,
+      "v": 23,
+      "ref": "3:23",
+      "text": "וַֽיְשַׁלְּחֵ֛הוּ יְהֹוָ֥ה אֱלֹהִ֖ים מִגַּן־עֵ֑דֶן לַֽעֲבֹד֙ אֶת־הָ֣אֲדָמָ֔ה אֲשֶׁ֥ר לֻקַּ֖ח מִשָּֽׁם׃",
+      "en": "therefore the Lord God sent him out of the garden of ῾Eden, to till the ground from whence he was taken."
+    },
+    {
+      "n": 80,
+      "c": 3,
+      "v": 24,
+      "ref": "3:24",
+      "text": "וַיְגָ֖רֶשׁ אֶת־הָֽאָדָ֑ם וַיַּשְׁכֵּן֩ מִקֶּ֨דֶם לְגַן־עֵ֜דֶן אֶת־הַכְּרֻבִ֗ים וְאֵ֨ת לַ֤הַט הַחֶ֙רֶב֙ הַמִּתְהַפֶּ֔כֶת לִשְׁמֹ֕ר אֶת־דֶּ֖רֶךְ עֵ֥ץ הַֽחַיִּֽים׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "So He drove out the man; and He placed the keruvim at the east of the garden of ῾Eden, and the bright blade of a revolving sword to guard the way to the tree of life."
+    },
+    {
+      "n": 81,
+      "c": 4,
+      "v": 1,
+      "ref": "4:1",
+      "text": "וְהָ֣אָדָ֔ם יָדַ֖ע אֶת־חַוָּ֣ה אִשְׁתּ֑וֹ וַתַּ֙הַר֙ וַתֵּ֣לֶד אֶת־קַ֔יִן וַתֹּ֕אמֶר קָנִ֥יתִי אִ֖ישׁ אֶת־יְהֹוָֽה׃",
+      "en": "And the man knew Ḥavva his wife; and she conceived, and bore Qayin saying, I have acquired a manchild from the Lord."
+    },
+    {
+      "n": 82,
+      "c": 4,
+      "v": 2,
+      "ref": "4:2",
+      "text": "וַתֹּ֣סֶף לָלֶ֔דֶת אֶת־אָחִ֖יו אֶת־הָ֑בֶל וַֽיְהִי־הֶ֙בֶל֙ רֹ֣עֵה צֹ֔אן וְקַ֕יִן הָיָ֖ה עֹבֵ֥ד אֲדָמָֽה׃",
+      "en": "And she again bore, his brother Hevel. And Hevel was a keeper of sheep, but Qayin was a tiller of the ground."
+    },
+    {
+      "n": 83,
+      "c": 4,
+      "v": 3,
+      "ref": "4:3",
+      "text": "וַֽיְהִ֖י מִקֵּ֣ץ יָמִ֑ים וַיָּבֵ֨א קַ֜יִן מִפְּרִ֧י הָֽאֲדָמָ֛ה מִנְחָ֖ה לַֽיהֹוָֽה׃",
+      "en": "And in process of time it came to pass, that Qayin brought of the fruit of the ground an offering to the Lord."
+    },
+    {
+      "n": 84,
+      "c": 4,
+      "v": 4,
+      "ref": "4:4",
+      "text": "וְהֶ֨בֶל הֵבִ֥יא גַם־ה֛וּא מִבְּכֹר֥וֹת צֹאנ֖וֹ וּמֵֽחֶלְבֵהֶ֑ן וַיִּ֣שַׁע יְהֹוָ֔ה אֶל־הֶ֖בֶל וְאֶל־מִנְחָתֽוֹ׃",
+      "en": "And Hevel, he also brought of the firstlings of his flock and of the fat parts thereof. And the Lord had respect to Hevel and to his offering:"
+    },
+    {
+      "n": 85,
+      "c": 4,
+      "v": 5,
+      "ref": "4:5",
+      "text": "וְאֶל־קַ֥יִן וְאֶל־מִנְחָת֖וֹ לֹ֣א שָׁעָ֑ה וַיִּ֤חַר לְקַ֙יִן֙ מְאֹ֔ד וַֽיִּפְּל֖וּ פָּנָֽיו׃",
+      "en": "but to Qayin and to his offering He had not respect. And Qayin was very angry, and his face fell."
+    },
+    {
+      "n": 86,
+      "c": 4,
+      "v": 6,
+      "ref": "4:6",
+      "text": "וַיֹּ֥אמֶר יְהֹוָ֖ה אֶל־קָ֑יִן לָ֚מָּה חָ֣רָה לָ֔ךְ וְלָ֖מָּה נָפְל֥וּ פָנֶֽיךָ׃",
+      "en": "And the Lord said to Qayin, Why art thou angry? and why art thou crestfallen?"
+    },
+    {
+      "n": 87,
+      "c": 4,
+      "v": 7,
+      "ref": "4:7",
+      "text": "הֲל֤וֹא אִם־תֵּיטִיב֙ שְׂאֵ֔ת וְאִם֙ לֹ֣א תֵיטִ֔יב לַפֶּ֖תַח חַטָּ֣את רֹבֵ֑ץ וְאֵלֶ֙יךָ֙ תְּשׁ֣וּקָת֔וֹ וְאַתָּ֖ה תִּמְשׇׁל־בּֽוֹ׃",
+      "en": "If thou doest well, shalt thou not be accepted? and if thou doest not well, sin crouches at the door, and to thee shall be his desire. Yet thou mayst rule over him."
+    },
+    {
+      "n": 88,
+      "c": 4,
+      "v": 8,
+      "ref": "4:8",
+      "text": "וַיֹּ֥אמֶר קַ֖יִן אֶל־הֶ֣בֶל אָחִ֑יו וַֽיְהִי֙ בִּהְיוֹתָ֣ם בַּשָּׂדֶ֔ה וַיָּ֥קׇם קַ֛יִן אֶל־הֶ֥בֶל אָחִ֖יו וַיַּהַרְגֵֽהוּ׃",
+      "en": "And Qayin talked with Hevel his brother: and it came to pass, when they were in the field, that Qayin rose up against Hevel his brother, and slew him."
+    },
+    {
+      "n": 89,
+      "c": 4,
+      "v": 9,
+      "ref": "4:9",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־קַ֔יִן אֵ֖י הֶ֣בֶל אָחִ֑יךָ וַיֹּ֙אמֶר֙ לֹ֣א יָדַ֔עְתִּי הֲשֹׁמֵ֥ר אָחִ֖י אָנֹֽכִי׃",
+      "en": "And the Lord said to Qayin, Where is Hevel thy brother? And he said, I know not: am I my brother’s keeper?"
+    },
+    {
+      "n": 90,
+      "c": 4,
+      "v": 10,
+      "ref": "4:10",
+      "text": "וַיֹּ֖אמֶר מֶ֣ה עָשִׂ֑יתָ ק֚וֹל דְּמֵ֣י אָחִ֔יךָ צֹעֲקִ֥ים אֵלַ֖י מִן־הָֽאֲדָמָֽה׃",
+      "en": "And He said, What hast thou done? the voice of thy brother’s blood cries to Me from the ground."
+    },
+    {
+      "n": 91,
+      "c": 4,
+      "v": 11,
+      "ref": "4:11",
+      "text": "וְעַתָּ֖ה אָר֣וּר אָ֑תָּה מִן־הָֽאֲדָמָה֙ אֲשֶׁ֣ר פָּצְתָ֣ה אֶת־פִּ֔יהָ לָקַ֛חַת אֶת־דְּמֵ֥י אָחִ֖יךָ מִיָּדֶֽךָ׃",
+      "en": "And now cursed art thou from the earth, which has opened her mouth to receive thy brother’s blood from thy hand;"
+    },
+    {
+      "n": 92,
+      "c": 4,
+      "v": 12,
+      "ref": "4:12",
+      "text": "כִּ֤י תַֽעֲבֹד֙ אֶת־הָ֣אֲדָמָ֔ה לֹֽא־תֹסֵ֥ף תֵּת־כֹּחָ֖הּ לָ֑ךְ נָ֥ע וָנָ֖ד תִּֽהְיֶ֥ה בָאָֽרֶץ׃",
+      "en": "when thou tillest the ground, it shall not henceforth yield to thee her strength; a fugitive and a vagabond shalt thou be on the earth."
+    },
+    {
+      "n": 93,
+      "c": 4,
+      "v": 13,
+      "ref": "4:13",
+      "text": "וַיֹּ֥אמֶר קַ֖יִן אֶל־יְהֹוָ֑ה גָּד֥וֹל עֲוֺנִ֖י מִנְּשֹֽׂא<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי ספרד ואשכנז מִנְּשֽׂוֹא)</i>׃",
+      "en": "And Qayin said to the Lord, My punishment is greater than I can bear."
+    },
+    {
+      "n": 94,
+      "c": 4,
+      "v": 14,
+      "ref": "4:14",
+      "text": "הֵן֩ גֵּרַ֨שְׁתָּ אֹתִ֜י הַיּ֗וֹם מֵעַל֙ פְּנֵ֣י הָֽאֲדָמָ֔ה וּמִפָּנֶ֖יךָ אֶסָּתֵ֑ר וְהָיִ֜יתִי נָ֤ע וָנָד֙ בָּאָ֔רֶץ וְהָיָ֥ה כׇל־מֹצְאִ֖י יַֽהַרְגֵֽנִי׃",
+      "en": "Behold, Thou hast driven me out this day from the face of the earth; and from Thy face I shall be hid; and I shall be a fugitive and a vagabond in the earth; and it shall come to pass, that anyone that finds me shall slay me."
+    },
+    {
+      "n": 95,
+      "c": 4,
+      "v": 15,
+      "ref": "4:15",
+      "text": "וַיֹּ֧אמֶר ל֣וֹ יְהֹוָ֗ה לָכֵן֙ כׇּל־הֹרֵ֣ג קַ֔יִן שִׁבְעָתַ֖יִם יֻקָּ֑ם וַיָּ֨שֶׂם יְהֹוָ֤ה לְקַ֙יִן֙ א֔וֹת לְבִלְתִּ֥י הַכּוֹת־אֹת֖וֹ כׇּל־מֹצְאֽוֹ׃",
+      "en": "And the Lord said to him, Therefore whoever slays Qayin, vengeance shall be taken on him sevenfold. And the Lord set a mark upon Qayin, lest any finding him should smite him."
+    },
+    {
+      "n": 96,
+      "c": 4,
+      "v": 16,
+      "ref": "4:16",
+      "text": "וַיֵּ֥צֵא קַ֖יִן מִלִּפְנֵ֣י יְהֹוָ֑ה וַיֵּ֥שֶׁב בְּאֶֽרֶץ־נ֖וֹד קִדְמַת־עֵֽדֶן׃",
+      "en": "And Qayin went out from the presence of the Lord, and dwelt in the land of Nod, to the east of ῾Eden."
+    },
+    {
+      "n": 97,
+      "c": 4,
+      "v": 17,
+      "ref": "4:17",
+      "text": "וַיֵּ֤דַע קַ֙יִן֙ אֶת־אִשְׁתּ֔וֹ וַתַּ֖הַר וַתֵּ֣לֶד אֶת־חֲנ֑וֹךְ וַֽיְהִי֙ בֹּ֣נֶה עִ֔יר וַיִּקְרָא֙ שֵׁ֣ם הָעִ֔יר כְּשֵׁ֖ם בְּנ֥וֹ חֲנֽוֹךְ׃",
+      "en": "And Qayin knew his wife; and she conceived, and bore Ḥanokh: and he built a city, and called the name of the city, after the name of his son, Ḥanokh."
+    },
+    {
+      "n": 98,
+      "c": 4,
+      "v": 18,
+      "ref": "4:18",
+      "text": "וַיִּוָּלֵ֤ד לַֽחֲנוֹךְ֙ אֶת־עִירָ֔ד וְעִירָ֕ד יָלַ֖ד אֶת־מְחֽוּיָאֵ֑ל וּמְחִיָּיאֵ֗ל יָלַד֙ אֶת־מְת֣וּשָׁאֵ֔ל וּמְתוּשָׁאֵ֖ל יָלַ֥ד אֶת־לָֽמֶךְ׃",
+      "en": "And to Ḥanokh was born ῾Irad: and ῾Irad begot Meĥuya᾽el: and Meĥiyya᾽el begot Metusha᾽el: and Metusha᾽el begot Lemekh."
+    },
+    {
+      "n": 99,
+      "c": 4,
+      "v": 19,
+      "ref": "4:19",
+      "text": "וַיִּֽקַּֽח־ל֥וֹ לֶ֖מֶךְ שְׁתֵּ֣י נָשִׁ֑ים שֵׁ֤ם הָֽאַחַת֙ עָדָ֔ה וְשֵׁ֥ם הַשֵּׁנִ֖ית צִלָּֽה׃",
+      "en": "And Lemekh took to him two wives: the name of the one was ῾Ada, and the name of the other Żilla."
+    },
+    {
+      "n": 100,
+      "c": 4,
+      "v": 20,
+      "ref": "4:20",
+      "text": "וַתֵּ֥לֶד עָדָ֖ה אֶת־יָבָ֑ל ה֣וּא הָיָ֔ה אֲבִ֕י יֹשֵׁ֥ב אֹ֖הֶל וּמִקְנֶֽה׃",
+      "en": "And ῾Ada bore Yaval: he was the father of such as dwell in tents, and of such as have cattle."
+    },
+    {
+      "n": 101,
+      "c": 4,
+      "v": 21,
+      "ref": "4:21",
+      "text": "וְשֵׁ֥ם אָחִ֖יו יוּבָ֑ל ה֣וּא הָיָ֔ה אֲבִ֕י כׇּל־תֹּפֵ֥שׂ כִּנּ֖וֹר וְעוּגָֽב׃",
+      "en": "And his brother’s name was Yuval: he was the father of all such as handle the lyre and pipe."
+    },
+    {
+      "n": 102,
+      "c": 4,
+      "v": 22,
+      "ref": "4:22",
+      "text": "וְצִלָּ֣ה גַם־הִ֗וא יָֽלְדָה֙ אֶת־תּ֣וּבַל קַ֔יִן לֹטֵ֕שׁ כׇּל־חֹרֵ֥שׁ נְחֹ֖שֶׁת וּבַרְזֶ֑ל וַֽאֲח֥וֹת תּֽוּבַל־קַ֖יִן נַֽעֲמָֽה׃",
+      "en": "And Żilla, she also bore Tuval-qayin, forger of every sharp instrument in brass and iron: and the sister of Tuval-qayin was Na῾ama."
+    },
+    {
+      "n": 103,
+      "c": 4,
+      "v": 23,
+      "ref": "4:23",
+      "text": "וַיֹּ֨אמֶר לֶ֜מֶךְ לְנָשָׁ֗יו עָדָ֤ה וְצִלָּה֙ שְׁמַ֣עַן קוֹלִ֔י נְשֵׁ֣י לֶ֔מֶךְ הַאְזֵ֖נָּה אִמְרָתִ֑י כִּ֣י אִ֤ישׁ הָרַ֙גְתִּי֙ לְפִצְעִ֔י וְיֶ֖לֶד לְחַבֻּרָתִֽי׃",
+      "en": "And Lemekh said to his wives, ῾Ada and Żilla, Hear my voice; wives of Lemekh, hearken to my speech: for I have slain a man for wounding me, and a young man for my hurt."
+    },
+    {
+      "n": 104,
+      "c": 4,
+      "v": 24,
+      "ref": "4:24",
+      "text": "כִּ֥י שִׁבְעָתַ֖יִם יֻקַּם־קָ֑יִן וְלֶ֖מֶךְ שִׁבְעִ֥ים וְשִׁבְעָֽה׃",
+      "en": "If Qayin shall be avenged sevenfold, truly Lemekh seventy and sevenfold."
+    },
+    {
+      "n": 105,
+      "c": 4,
+      "v": 25,
+      "ref": "4:25",
+      "text": "וַיֵּ֨דַע אָדָ֥ם עוֹד֙ אֶת־אִשְׁתּ֔וֹ וַתֵּ֣לֶד בֵּ֔ן וַתִּקְרָ֥א אֶת־שְׁמ֖וֹ שֵׁ֑ת כִּ֣י שָֽׁת־לִ֤י אֱלֹהִים֙ זֶ֣רַע אַחֵ֔ר תַּ֣חַת הֶ֔בֶל כִּ֥י הֲרָג֖וֹ קָֽיִן׃",
+      "en": "And Adam (Man) knew his wife again; and she bore a son, and called his name Shet: For God, said she, has appointed me another seed instead of Hevel whom Qayin slew."
+    },
+    {
+      "n": 106,
+      "c": 4,
+      "v": 26,
+      "ref": "4:26",
+      "text": "וּלְשֵׁ֤ת גַּם־הוּא֙ יֻלַּד־בֵּ֔ן וַיִּקְרָ֥א אֶת־שְׁמ֖וֹ אֱנ֑וֹשׁ אָ֣ז הוּחַ֔ל לִקְרֹ֖א בְּשֵׁ֥ם יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And to Shet, to him also there was born a son; and he called his name Enosh: then men began to call upon the Lord by name."
+    },
+    {
+      "n": 107,
+      "c": 5,
+      "v": 1,
+      "ref": "5:1",
+      "text": "זֶ֣ה סֵ֔פֶר<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי תימן <big>סֵ֔</big>פֶר בסמ״ך גדולה)</i> תּוֹלְדֹ֖ת אָדָ֑ם בְּי֗וֹם בְּרֹ֤א אֱלֹהִים֙ אָדָ֔ם בִּדְמ֥וּת אֱלֹהִ֖ים עָשָׂ֥ה אֹתֽוֹ׃",
+      "en": "This is the book of the generations of Adam (Man). In the day that God created mankind, in the likeness of God He made him;"
+    },
+    {
+      "n": 108,
+      "c": 5,
+      "v": 2,
+      "ref": "5:2",
+      "text": "זָכָ֥ר וּנְקֵבָ֖ה בְּרָאָ֑ם וַיְבָ֣רֶךְ אֹתָ֗ם וַיִּקְרָ֤א אֶת־שְׁמָם֙ אָדָ֔ם בְּי֖וֹם הִבָּֽרְאָֽם׃",
+      "en": "male and female He created them; and blessed them, and called their name Man, in the day when they were created."
+    },
+    {
+      "n": 109,
+      "c": 5,
+      "v": 3,
+      "ref": "5:3",
+      "text": "וַיְחִ֣י אָדָ֗ם שְׁלֹשִׁ֤ים וּמְאַת֙ שָׁנָ֔ה וַיּ֥וֹלֶד בִּדְמוּת֖וֹ כְּצַלְמ֑וֹ וַיִּקְרָ֥א אֶת־שְׁמ֖וֹ שֵֽׁת׃",
+      "en": "And Adam lived a hundred and thirty years, and begot a son in his own likeness, after his image; and called his name Shet:"
+    },
+    {
+      "n": 110,
+      "c": 5,
+      "v": 4,
+      "ref": "5:4",
+      "text": "וַיִּֽהְי֣וּ יְמֵי־אָדָ֗ם אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת־שֵׁ֔ת שְׁמֹנֶ֥ה מֵאֹ֖ת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃",
+      "en": "and the days of Adam after he had begotten Shet were eight hundred years: and he begot sons and daughters:"
+    },
+    {
+      "n": 111,
+      "c": 5,
+      "v": 5,
+      "ref": "5:5",
+      "text": "וַיִּֽהְי֞וּ כׇּל־יְמֵ֤י אָדָם֙ אֲשֶׁר־חַ֔י תְּשַׁ֤ע מֵאוֹת֙ שָׁנָ֔ה וּשְׁלֹשִׁ֖ים שָׁנָ֑ה וַיָּמֹֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and all the days that Adam lived were nine hundred and thirty years: and he died."
+    },
+    {
+      "n": 112,
+      "c": 5,
+      "v": 6,
+      "ref": "5:6",
+      "text": "וַֽיְחִי־שֵׁ֕ת חָמֵ֥שׁ שָׁנִ֖ים וּמְאַ֣ת שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־אֱנֽוֹשׁ׃",
+      "en": "And Shet lived a hundred and five years, and begot Enosh:"
+    },
+    {
+      "n": 113,
+      "c": 5,
+      "v": 7,
+      "ref": "5:7",
+      "text": "וַֽיְחִי־שֵׁ֗ת אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת־אֱנ֔וֹשׁ שֶׁ֣בַע שָׁנִ֔ים וּשְׁמֹנֶ֥ה מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃",
+      "en": "and Shet lived after he begot Enosh eight hundred and seven years, and begot sons and daughters:"
+    },
+    {
+      "n": 114,
+      "c": 5,
+      "v": 8,
+      "ref": "5:8",
+      "text": "וַיִּֽהְיוּ֙ כׇּל־יְמֵי־שֵׁ֔ת שְׁתֵּ֤ים עֶשְׂרֵה֙ שָׁנָ֔ה וּתְשַׁ֥ע מֵא֖וֹת שָׁנָ֑ה וַיָּמֹֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and all the days of Shet were nine hundred and twelve years: and he died."
+    },
+    {
+      "n": 115,
+      "c": 5,
+      "v": 9,
+      "ref": "5:9",
+      "text": "וַיְחִ֥י אֱנ֖וֹשׁ תִּשְׁעִ֣ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־קֵינָֽן׃",
+      "en": "And Enosh lived ninety years, and begot Qenan:"
+    },
+    {
+      "n": 116,
+      "c": 5,
+      "v": 10,
+      "ref": "5:10",
+      "text": "וַיְחִ֣י אֱנ֗וֹשׁ אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת־קֵינָ֔ן חֲמֵ֤שׁ עֶשְׂרֵה֙ שָׁנָ֔ה וּשְׁמֹנֶ֥ה מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃",
+      "en": "and Enosh lived after he begot Qenan eight hundred and fifteen years, and begot sons and daughters:"
+    },
+    {
+      "n": 117,
+      "c": 5,
+      "v": 11,
+      "ref": "5:11",
+      "text": "וַיִּֽהְיוּ֙ כׇּל־יְמֵ֣י אֱנ֔וֹשׁ חָמֵ֣שׁ שָׁנִ֔ים וּתְשַׁ֥ע מֵא֖וֹת שָׁנָ֑ה וַיָּמֹֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and all the days of Enosh were nine hundred and five years: and he died."
+    },
+    {
+      "n": 118,
+      "c": 5,
+      "v": 12,
+      "ref": "5:12",
+      "text": "וַיְחִ֥י קֵינָ֖ן שִׁבְעִ֣ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־מַֽהֲלַלְאֵֽל׃",
+      "en": "And Qenan lived seventy years, and begot Mahalal᾽el:"
+    },
+    {
+      "n": 119,
+      "c": 5,
+      "v": 13,
+      "ref": "5:13",
+      "text": "וַיְחִ֣י קֵינָ֗ן אַחֲרֵי֙ הוֹלִיד֣וֹ אֶת־מַֽהֲלַלְאֵ֔ל אַרְבָּעִ֣ים שָׁנָ֔ה וּשְׁמֹנֶ֥ה מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃",
+      "en": "and Qenan lived after he begot Mahalal᾽el eight hundred and forty years, and begot sons and daughters:"
+    },
+    {
+      "n": 120,
+      "c": 5,
+      "v": 14,
+      "ref": "5:14",
+      "text": "וַיִּֽהְיוּ֙ כׇּל־יְמֵ֣י קֵינָ֔ן עֶ֣שֶׂר שָׁנִ֔ים וּתְשַׁ֥ע מֵא֖וֹת שָׁנָ֑ה וַיָּמֹֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and all the days of Qenan were nine hundred and ten years: and he died."
+    },
+    {
+      "n": 121,
+      "c": 5,
+      "v": 15,
+      "ref": "5:15",
+      "text": "וַיְחִ֣י מַֽהֲלַלְאֵ֔ל חָמֵ֥שׁ שָׁנִ֖ים וְשִׁשִּׁ֣ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־יָֽרֶד׃",
+      "en": "And Mahalal᾽el lived sixty five years, and begot Yered:"
+    },
+    {
+      "n": 122,
+      "c": 5,
+      "v": 16,
+      "ref": "5:16",
+      "text": "וַיְחִ֣י מַֽהֲלַלְאֵ֗ל אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת־יֶ֔רֶד שְׁלֹשִׁ֣ים שָׁנָ֔ה וּשְׁמֹנֶ֥ה מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃",
+      "en": "and Mahalal᾽el lived after he begot Yered eight hundred and thirty years, and he begot sons and daughters:"
+    },
+    {
+      "n": 123,
+      "c": 5,
+      "v": 17,
+      "ref": "5:17",
+      "text": "וַיִּהְיוּ֙ כׇּל־יְמֵ֣י מַהֲלַלְאֵ֔ל חָמֵ֤שׁ וְתִשְׁעִים֙ שָׁנָ֔ה וּשְׁמֹנֶ֥ה מֵא֖וֹת שָׁנָ֑ה וַיָּמֹֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and all the days of Mahalal᾽el were eight hundred and ninety five years: and he died."
+    },
+    {
+      "n": 124,
+      "c": 5,
+      "v": 18,
+      "ref": "5:18",
+      "text": "וַֽיְחִי־יֶ֕רֶד שְׁתַּ֧יִם וְשִׁשִּׁ֛ים שָׁנָ֖ה וּמְאַ֣ת שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־חֲנֽוֹךְ׃",
+      "en": "And Yered lived a hundred and sixty two years, and he begot Ḥanokh:"
+    },
+    {
+      "n": 125,
+      "c": 5,
+      "v": 19,
+      "ref": "5:19",
+      "text": "וַֽיְחִי־יֶ֗רֶד אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת־חֲנ֔וֹךְ שְׁמֹנֶ֥ה מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃",
+      "en": "and Yered lived after he begot Ḥanokh eight hundred years, and begot sons and daughters:"
+    },
+    {
+      "n": 126,
+      "c": 5,
+      "v": 20,
+      "ref": "5:20",
+      "text": "וַיִּֽהְיוּ֙ כׇּל־יְמֵי־יֶ֔רֶד שְׁתַּ֤יִם וְשִׁשִּׁים֙ שָׁנָ֔ה וּתְשַׁ֥ע מֵא֖וֹת שָׁנָ֑ה וַיָּמֹֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and all the days of Yered were nine hundred and sixty two years: and he died."
+    },
+    {
+      "n": 127,
+      "c": 5,
+      "v": 21,
+      "ref": "5:21",
+      "text": "וַיְחִ֣י חֲנ֔וֹךְ חָמֵ֥שׁ וְשִׁשִּׁ֖ים שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־מְתוּשָֽׁלַח׃",
+      "en": "And Ḥanokh lived sixty five years, and begot Metushelaĥ:"
+    },
+    {
+      "n": 128,
+      "c": 5,
+      "v": 22,
+      "ref": "5:22",
+      "text": "וַיִּתְהַלֵּ֨ךְ חֲנ֜וֹךְ אֶת־הָֽאֱלֹהִ֗ים אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת־מְתוּשֶׁ֔לַח שְׁלֹ֥שׁ מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃",
+      "en": "and Ḥanokh walked with God after he begot Metushelaĥ three hundred years, and begot sons and daughters:"
+    },
+    {
+      "n": 129,
+      "c": 5,
+      "v": 23,
+      "ref": "5:23",
+      "text": "וַיְהִ֖י כׇּל־יְמֵ֣י חֲנ֑וֹךְ חָמֵ֤שׁ וְשִׁשִּׁים֙ שָׁנָ֔ה וּשְׁלֹ֥שׁ מֵא֖וֹת שָׁנָֽה׃",
+      "en": "and all the days of Ḥanokh were three hundred and sixty five years:"
+    },
+    {
+      "n": 130,
+      "c": 5,
+      "v": 24,
+      "ref": "5:24",
+      "text": "וַיִּתְהַלֵּ֥ךְ חֲנ֖וֹךְ אֶת־הָֽאֱלֹהִ֑ים וְאֵינֶ֕נּוּ כִּֽי־לָקַ֥ח אֹת֖וֹ אֱלֹהִֽים׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and Ḥanokh walked with God: and he was not; for God took him."
+    },
+    {
+      "n": 131,
+      "c": 5,
+      "v": 25,
+      "ref": "5:25",
+      "text": "וַיְחִ֣י מְתוּשֶׁ֔לַח שֶׁ֧בַע וּשְׁמֹנִ֛ים שָׁנָ֖ה וּמְאַ֣ת שָׁנָ֑ה וַיּ֖וֹלֶד אֶת־לָֽמֶךְ׃",
+      "en": "And Metushelaĥ lived a hundred and eighty seven years, and begot Lemekh:"
+    },
+    {
+      "n": 132,
+      "c": 5,
+      "v": 26,
+      "ref": "5:26",
+      "text": "וַיְחִ֣י מְתוּשֶׁ֗לַח אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת־לֶ֔מֶךְ שְׁתַּ֤יִם וּשְׁמוֹנִים֙ שָׁנָ֔ה וּשְׁבַ֥ע מֵא֖וֹת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃",
+      "en": "and Metushelaĥ lived after he begot Lemekh seven hundred and eighty two years, and begot sons and daughters:"
+    },
+    {
+      "n": 133,
+      "c": 5,
+      "v": 27,
+      "ref": "5:27",
+      "text": "וַיִּהְיוּ֙ כׇּל־יְמֵ֣י מְתוּשֶׁ֔לַח תֵּ֤שַׁע וְשִׁשִּׁים֙ שָׁנָ֔ה וּתְשַׁ֥ע מֵא֖וֹת שָׁנָ֑ה וַיָּמֹֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and all the days of Metushelaĥ were nine hundred and sixty nine years: and he died."
+    },
+    {
+      "n": 134,
+      "c": 5,
+      "v": 28,
+      "ref": "5:28",
+      "text": "וַֽיְחִי־לֶ֕מֶךְ שְׁתַּ֧יִם וּשְׁמֹנִ֛ים שָׁנָ֖ה וּמְאַ֣ת שָׁנָ֑ה וַיּ֖וֹלֶד בֵּֽן׃",
+      "en": "And Lemekh lived a hundred and eighty two years, and begot a son:"
+    },
+    {
+      "n": 135,
+      "c": 5,
+      "v": 29,
+      "ref": "5:29",
+      "text": "וַיִּקְרָ֧א אֶת־שְׁמ֛וֹ נֹ֖חַ לֵאמֹ֑ר זֶ֞֠ה יְנַחֲמֵ֤נוּ מִֽמַּעֲשֵׂ֙נוּ֙ וּמֵעִצְּב֣וֹן יָדֵ֔ינוּ מִן־הָ֣אֲדָמָ֔ה אֲשֶׁ֥ר אֵֽרְרָ֖הּ יְהֹוָֽה׃",
+      "en": "and he called his name Noaĥ, saying, This one shall comfort us for our work and the toil of our hands, because of the ground which the Lord has cursed."
+    },
+    {
+      "n": 136,
+      "c": 5,
+      "v": 30,
+      "ref": "5:30",
+      "text": "וַֽיְחִי־לֶ֗מֶךְ אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת־נֹ֔חַ חָמֵ֤שׁ וְתִשְׁעִים֙ שָׁנָ֔ה וַחֲמֵ֥שׁ מֵאֹ֖ת שָׁנָ֑ה וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת׃",
+      "en": "And Lemekh lived after he begot Noaĥ five hundred and ninety five years, and begot sons and daughters:"
+    },
+    {
+      "n": 137,
+      "c": 5,
+      "v": 31,
+      "ref": "5:31",
+      "text": "וַֽיְהִי֙ כׇּל־יְמֵי־לֶ֔מֶךְ שֶׁ֤בַע וְשִׁבְעִים֙ שָׁנָ֔ה וּשְׁבַ֥ע מֵא֖וֹת שָׁנָ֑ה וַיָּמֹֽת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and all the days of Lemekh were seven hundred and seventy seven years: and he died."
+    },
+    {
+      "n": 138,
+      "c": 5,
+      "v": 32,
+      "ref": "5:32",
+      "text": "וַֽיְהִי־נֹ֕חַ בֶּן־חֲמֵ֥שׁ מֵא֖וֹת שָׁנָ֑ה וַיּ֣וֹלֶד נֹ֔חַ אֶת־שֵׁ֖ם אֶת־חָ֥ם וְאֶת־יָֽפֶת׃",
+      "en": "And Noaĥ was five hundred years old: and Noaĥ begot Shem, Ḥam, and Yefet."
+    },
+    {
+      "n": 139,
+      "c": 6,
+      "v": 1,
+      "ref": "6:1",
+      "text": "וַֽיְהִי֙ כִּֽי־הֵחֵ֣ל הָֽאָדָ֔ם לָרֹ֖ב עַל־פְּנֵ֣י הָֽאֲדָמָ֑ה וּבָנ֖וֹת יֻלְּד֥וּ לָהֶֽם׃",
+      "en": "And it came to pass, when men began to multiply on the face of the earth, and daughters were born to them,"
+    },
+    {
+      "n": 140,
+      "c": 6,
+      "v": 2,
+      "ref": "6:2",
+      "text": "וַיִּרְא֤וּ בְנֵי־הָֽאֱלֹהִים֙ אֶת־בְּנ֣וֹת הָֽאָדָ֔ם כִּ֥י טֹבֹ֖ת הֵ֑נָּה וַיִּקְח֤וּ לָהֶם֙ נָשִׁ֔ים מִכֹּ֖ל אֲשֶׁ֥ר בָּחָֽרוּ׃",
+      "en": "that the distinguished men saw that the daughters of men were fair; and they took them wives of all whom they chose."
+    },
+    {
+      "n": 141,
+      "c": 6,
+      "v": 3,
+      "ref": "6:3",
+      "text": "וַיֹּ֣אמֶר יְהֹוָ֗ה לֹֽא־יָד֨וֹן רוּחִ֤י בָֽאָדָם֙ לְעֹלָ֔ם בְּשַׁגַּ֖ם ה֣וּא בָשָׂ֑ר וְהָי֣וּ יָמָ֔יו מֵאָ֥ה וְעֶשְׂרִ֖ים שָׁנָֽה׃",
+      "en": "And the Lord said, My spirit shall not always strive on account of man, for that he also is flesh: and his days shall be a hundred and twenty years."
+    },
+    {
+      "n": 142,
+      "c": 6,
+      "v": 4,
+      "ref": "6:4",
+      "text": "הַנְּפִלִ֞ים הָי֣וּ בָאָ֘רֶץ֮ בַּיָּמִ֣ים הָהֵם֒ וְגַ֣ם אַֽחֲרֵי־כֵ֗ן אֲשֶׁ֨ר יָבֹ֜אוּ בְּנֵ֤י הָֽאֱלֹהִים֙ אֶל־בְּנ֣וֹת הָֽאָדָ֔ם וְיָלְד֖וּ לָהֶ֑ם הֵ֧מָּה הַגִּבֹּרִ֛ים אֲשֶׁ֥ר מֵעוֹלָ֖ם אַנְשֵׁ֥י הַשֵּֽׁם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "There were Nefilim in the earth in those days; and also after that, when the distinguished men came in to the daughters of men, and they bore children to them; the same were mighty men of old, men of renown."
+    },
+    {
+      "n": 143,
+      "c": 6,
+      "v": 5,
+      "ref": "6:5",
+      "text": "וַיַּ֣רְא יְהֹוָ֔ה כִּ֥י רַבָּ֛ה רָעַ֥ת הָאָדָ֖ם בָּאָ֑רֶץ וְכׇל־יֵ֙צֶר֙ מַחְשְׁבֹ֣ת לִבּ֔וֹ רַ֥ק רַ֖ע כׇּל־הַיּֽוֹם׃",
+      "en": "And the Lord saw that the wickedness of man was great in the earth, and that all the impulse of the thoughts of his heart was only evil continually."
+    },
+    {
+      "n": 144,
+      "c": 6,
+      "v": 6,
+      "ref": "6:6",
+      "text": "וַיִּנָּ֣חֶם יְהֹוָ֔ה כִּֽי־עָשָׂ֥ה אֶת־הָֽאָדָ֖ם בָּאָ֑רֶץ וַיִּתְעַצֵּ֖ב אֶל־לִבּֽוֹ׃",
+      "en": "And the Lord repented that He had made man on the earth, and it grieved Him at His heart."
+    },
+    {
+      "n": 145,
+      "c": 6,
+      "v": 7,
+      "ref": "6:7",
+      "text": "וַיֹּ֣אמֶר יְהֹוָ֗ה אֶמְחֶ֨ה אֶת־הָאָדָ֤ם אֲשֶׁר־בָּרָ֙אתִי֙ מֵעַל֙ פְּנֵ֣י הָֽאֲדָמָ֔ה מֵֽאָדָם֙ עַד־בְּהֵמָ֔ה עַד־רֶ֖מֶשׂ וְעַד־ע֣וֹף הַשָּׁמָ֑יִם כִּ֥י נִחַ֖מְתִּי כִּ֥י עֲשִׂיתִֽם׃",
+      "en": "And the Lord said, I will destroy man whom I have created from the face of the earth: both man, and beast, and creeping things, and the birds of the air; for I repent that I have made them."
+    },
+    {
+      "n": 146,
+      "c": 6,
+      "v": 8,
+      "ref": "6:8",
+      "text": "וְנֹ֕חַ מָ֥צָא חֵ֖ן בְּעֵינֵ֥י יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "But Noaĥ found favour in the eyes of the Lord."
+    }
+  ],
+  "parashah": {
+    "en": "Bereshit",
+    "he": "בְּרֵאשִׁית",
+    "translit": "Bereshit",
+    "ref": "Genesis 1:1–6:8"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 34,
+        "ref": "1:1–2:3"
+      },
+      {
+        "n": 2,
+        "start": 35,
+        "end": 50,
+        "ref": "2:4–2:19"
+      },
+      {
+        "n": 3,
+        "start": 51,
+        "end": 77,
+        "ref": "2:20–3:21"
+      },
+      {
+        "n": 4,
+        "start": 78,
+        "end": 98,
+        "ref": "3:22–4:18"
+      },
+      {
+        "n": 5,
+        "start": 99,
+        "end": 102,
+        "ref": "4:19–4:22"
+      },
+      {
+        "n": 6,
+        "start": 103,
+        "end": 130,
+        "ref": "4:23–5:24"
+      },
+      {
+        "n": 7,
+        "start": 131,
+        "end": 146,
+        "ref": "5:25–6:8"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 5,
+          "ref": "1:1–1:5"
+        },
+        {
+          "n": 2,
+          "start": 6,
+          "end": 8,
+          "ref": "1:6–1:8"
+        },
+        {
+          "n": 3,
+          "start": 9,
+          "end": 13,
+          "ref": "1:9–1:13"
+        },
+        {
+          "n": 4,
+          "start": 14,
+          "end": 19,
+          "ref": "1:14–1:19"
+        },
+        {
+          "n": 5,
+          "start": 20,
+          "end": 23,
+          "ref": "1:20–1:23"
+        },
+        {
+          "n": 6,
+          "start": 24,
+          "end": 31,
+          "ref": "1:24–1:31"
+        },
+        {
+          "n": 7,
+          "start": 32,
+          "end": 34,
+          "ref": "2:1–2:3"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 35,
+          "end": 40,
+          "ref": "2:4–2:9"
+        },
+        {
+          "n": 2,
+          "start": 41,
+          "end": 50,
+          "ref": "2:10–2:19"
+        },
+        {
+          "n": 3,
+          "start": 51,
+          "end": 56,
+          "ref": "2:20–2:25"
+        },
+        {
+          "n": 4,
+          "start": 57,
+          "end": 77,
+          "ref": "3:1–3:21"
+        },
+        {
+          "n": 5,
+          "start": 78,
+          "end": 80,
+          "ref": "3:22–3:24"
+        },
+        {
+          "n": 6,
+          "start": 81,
+          "end": 98,
+          "ref": "4:1–4:18"
+        },
+        {
+          "n": 7,
+          "start": 99,
+          "end": 106,
+          "ref": "4:19–4:26"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 107,
+          "end": 111,
+          "ref": "5:1–5:5"
+        },
+        {
+          "n": 2,
+          "start": 112,
+          "end": 114,
+          "ref": "5:6–5:8"
+        },
+        {
+          "n": 3,
+          "start": 115,
+          "end": 120,
+          "ref": "5:9–5:14"
+        },
+        {
+          "n": 4,
+          "start": 121,
+          "end": 126,
+          "ref": "5:15–5:20"
+        },
+        {
+          "n": 5,
+          "start": 127,
+          "end": 130,
+          "ref": "5:21–5:24"
+        },
+        {
+          "n": 6,
+          "start": 131,
+          "end": 137,
+          "ref": "5:25–5:31"
+        },
+        {
+          "n": 7,
+          "start": 138,
+          "end": 146,
+          "ref": "5:32–6:8"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 143,
+        "end": 146,
+        "ref": "6:5–6:8"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 32,
+          "end": 34,
+          "ref": "2:1–2:3"
+        },
+        "2": {
+          "n": "M",
+          "start": 103,
+          "end": 106,
+          "ref": "4:23–4:26"
+        },
+        "3": {
+          "n": "M",
+          "start": 143,
+          "end": 146,
+          "ref": "6:5–6:8"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

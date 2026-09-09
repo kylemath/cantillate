@@ -1,0 +1,172 @@
+{
+  "slug": "haftarah-bo",
+  "book": {
+    "en": "Jeremiah",
+    "he": "ירמיהו",
+    "translit": "Yirmiyahu"
+  },
+  "multiChapter": true,
+  "ref": "Jeremiah 46:13-28",
+  "heRef": "ירמיהו מ״ו:י״ג-כ״ח",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 46,
+      "v": 13,
+      "ref": "46:13",
+      "text": "הַדָּבָר֙ אֲשֶׁ֣ר דִּבֶּ֣ר יְהֹוָ֔ה אֶֽל־יִרְמְיָ֖הוּ הַנָּבִ֑יא לָב֗וֹא נְבֽוּכַדְרֶאצַּר֙ מֶ֣לֶךְ בָּבֶ֔ל לְהַכּ֖וֹת אֶת־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "The word that the Lord spoke to Yirmeyahu the prophet, how Nevukhadreżżar king of Bavel should come and smite the land of Miżrayim."
+    },
+    {
+      "n": 2,
+      "c": 46,
+      "v": 14,
+      "ref": "46:14",
+      "text": "הַגִּ֤ידוּ בְמִצְרַ֙יִם֙ וְהַשְׁמִ֣יעֽוּ בְמִגְדּ֔וֹל וְהַשְׁמִ֥יעוּ בְנֹ֖ף וּבְתַחְפַּנְחֵ֑ס אִמְר֗וּ הִתְיַצֵּב֙ וְהָכֵ֣ן לָ֔ךְ כִּֽי־אָכְלָ֥ה חֶ֖רֶב סְבִיבֶֽיךָ׃",
+      "en": "Declare in Miżrayim, and publish in Migdol, and report in Nof and in Taĥpanĥes: say, Stand to, and prepare thyself; for the sword shall devour round about thee."
+    },
+    {
+      "n": 3,
+      "c": 46,
+      "v": 15,
+      "ref": "46:15",
+      "text": "מַדּ֖וּעַ נִסְחַ֣ף אַבִּירֶ֑יךָ לֹ֣א עָמַ֔ד כִּ֥י יְהֹוָ֖ה הֲדָפֽוֹ׃",
+      "en": "Why are thy valiant men swept away? None of them stood, because the Lord did thrust him down."
+    },
+    {
+      "n": 4,
+      "c": 46,
+      "v": 16,
+      "ref": "46:16",
+      "text": "הִרְבָּ֖ה כּוֹשֵׁ֑ל גַּם־נָפַ֞ל אִ֣ישׁ אֶל־רֵעֵ֗הוּ וַיֹּֽאמְרוּ֙ ק֣וּמָה&thinsp;<b>׀</b> וְנָשֻׁ֣בָה אֶל־עַמֵּ֗נוּ וְאֶל־אֶ֙רֶץ֙ מוֹלַדְתֵּ֔נוּ מִפְּנֵ֖י חֶ֥רֶב הַיּוֹנָֽה׃",
+      "en": "He made many to fall, indeed, one fell upon another: and they said, Arise, and let us go again to our own people, and to the land of our nativity, from the oppressing sword."
+    },
+    {
+      "n": 5,
+      "c": 46,
+      "v": 17,
+      "ref": "46:17",
+      "text": "קָרְא֖וּ שָׁ֑ם פַּרְעֹ֤ה מֶֽלֶךְ־מִצְרַ֙יִם֙ שָׁא֔וֹן הֶעֱבִ֖יר הַמּוֹעֵֽד׃",
+      "en": "They did cry there, Par῾o king of Miżrayim is but a noise; he has passed the time appointed."
+    },
+    {
+      "n": 6,
+      "c": 46,
+      "v": 18,
+      "ref": "46:18",
+      "text": "חַי־אָ֙נִי֙ נְאֻם־הַמֶּ֔לֶךְ יְהֹוָ֥ה צְבָא֖וֹת שְׁמ֑וֹ כִּ֚י כְּתָב֣וֹר בֶּהָרִ֔ים וּכְכַרְמֶ֖ל בַּיָּ֥ם יָבֽוֹא׃",
+      "en": "As I live, says the King, whose name is the Lord of hosts, Surely as Tavor is among the mountains, and as Karmel by the sea, so shall he come."
+    },
+    {
+      "n": 7,
+      "c": 46,
+      "v": 19,
+      "ref": "46:19",
+      "text": "כְּלֵ֤י גוֹלָה֙ עֲשִׂ֣י לָ֔ךְ יוֹשֶׁ֖בֶת בַּת־מִצְרָ֑יִם כִּי־נֹף֙ לְשַׁמָּ֣ה תִֽהְיֶ֔ה וְנִצְּתָ֖ה מֵאֵ֥ין יוֹשֵֽׁב׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "O thou daughter dwelling in Miżrayim, furnish thyself with the baggage of Exile: for Nof shall be waste and desolate without inhabitant."
+    },
+    {
+      "n": 8,
+      "c": 46,
+      "v": 20,
+      "ref": "46:20",
+      "text": "עֶגְלָ֥ה יְפֵה־פִיָּ֖ה מִצְרָ֑יִם קֶ֥רֶץ מִצָּפ֖וֹן בָּ֥א בָֽא׃",
+      "en": "Miżrayim is like a very fair heifer, but destruction comes; it comes out of the north."
+    },
+    {
+      "n": 9,
+      "c": 46,
+      "v": 21,
+      "ref": "46:21",
+      "text": "גַּם־שְׂכִרֶ֤יהָ בְקִרְבָּהּ֙ כְּעֶגְלֵ֣י מַרְבֵּ֔ק כִּֽי־גַם־הֵ֧מָּה הִפְנ֛וּ נָ֥סוּ יַחְדָּ֖יו לֹ֣א עָמָ֑דוּ כִּ֣י י֥וֹם אֵידָ֛ם בָּ֥א עֲלֵיהֶ֖ם עֵ֥ת פְּקֻדָּתָֽם׃",
+      "en": "Also her hired men in the midst of her are like fatted bullocks; for they also are turned back, and are fled away together: they did not stand, because the day of their calamity was come upon them, and the time of their punishment."
+    },
+    {
+      "n": 10,
+      "c": 46,
+      "v": 22,
+      "ref": "46:22",
+      "text": "קוֹלָ֖הּ כַּנָּחָ֣שׁ יֵלֵ֑ךְ כִּֽי־בְחַ֣יִל יֵלֵ֔כוּ וּבְקַרְדֻּמּוֹת֙ בָּ֣אוּ לָ֔הּ כְּחֹטְבֵ֖י עֵצִֽים׃",
+      "en": "Her sound is like that of a snake on the move; for they shall march with force and come against her with axes, like hewers of wood."
+    },
+    {
+      "n": 11,
+      "c": 46,
+      "v": 23,
+      "ref": "46:23",
+      "text": "כָּרְת֤וּ יַעְרָהּ֙ נְאֻם־יְהֹוָ֔ה כִּ֖י לֹ֣א יֵחָקֵ֑ר כִּ֤י רַבּוּ֙ מֵֽאַרְבֶּ֔ה וְאֵ֥ין לָהֶ֖ם מִסְפָּֽר׃",
+      "en": "They shall cut down her forest, says the Lord, though it cannot be searched; because they are more numerous than locusts, and are innumerable."
+    },
+    {
+      "n": 12,
+      "c": 46,
+      "v": 24,
+      "ref": "46:24",
+      "text": "הֹבִ֖ישָׁה בַּת־מִצְרָ֑יִם נִתְּנָ֖ה בְּיַ֥ד עַם־צָפֽוֹן׃",
+      "en": "The daughter of Miżrayim shall be confounded; she shall be delivered into the hand of the people of the north."
+    },
+    {
+      "n": 13,
+      "c": 46,
+      "v": 25,
+      "ref": "46:25",
+      "text": "אָמַר֩ יְהֹוָ֨ה צְבָא֜וֹת אֱלֹהֵ֣י יִשְׂרָאֵ֗ל הִנְנִ֤י פוֹקֵד֙ אֶל־אָמ֣וֹן מִנֹּ֔א וְעַל־פַּרְעֹה֙ וְעַל־מִצְרַ֔יִם וְעַל־אֱלֹהֶ֖יהָ וְעַל־מְלָכֶ֑יהָ וְעַ֨ל־פַּרְעֹ֔ה וְעַ֥ל הַבֹּטְחִ֖ים בּֽוֹ׃",
+      "en": "The Lord of hosts, the God of Yisra᾽el, says; Behold, I will punish Amon of No, and Par῾o and Miżrayim, with their gods, and their kings; even Par῾o, and all those who trust in him:"
+    },
+    {
+      "n": 14,
+      "c": 46,
+      "v": 26,
+      "ref": "46:26",
+      "text": "וּנְתַתִּ֗ים בְּיַד֙ מְבַקְשֵׁ֣י נַפְשָׁ֔ם וּבְיַ֛ד נְבוּכַדְרֶאצַּ֥ר מֶלֶךְ־בָּבֶ֖ל וּבְיַד־עֲבָדָ֑יו וְאַחֲרֵי־כֵ֛ן תִּשְׁכֹּ֥ן כִּֽימֵי־קֶ֖דֶם נְאֻם־יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and I will deliver them into the hand of those who seek their lives, and into the hand of Nevukhadreżżar king of Bavel, and into the hand of his servants: and afterwards it shall be inhabited, as in the days of old, says the Lord."
+    },
+    {
+      "n": 15,
+      "c": 46,
+      "v": 27,
+      "ref": "46:27",
+      "text": "וְ֠אַתָּ֠ה אַל־תִּירָ֞א עַבְדִּ֤י יַֽעֲקֹב֙ וְאַל־תֵּחַ֣ת יִשְׂרָאֵ֔ל כִּ֠י הִנְנִ֤י מוֹשִֽׁעֲךָ֙ מֵרָח֔וֹק וְאֶֽת־זַרְעֲךָ֖ מֵאֶ֣רֶץ שִׁבְיָ֑ם וְשָׁ֧ב יַעֲק֛וֹב וְשָׁקַ֥ט וְשַׁאֲנַ֖ן וְאֵ֥ין מַחֲרִֽיד׃",
+      "en": "But fear not thou, O my servant Ya῾aqov, and be not dismayed, O Yisra᾽el: for, behold, I will save thee from afar, and thy seed from the land of their captivity; and Ya῾aqov shall return, and be quiet and at ease, and none shall make him afraid."
+    },
+    {
+      "n": 16,
+      "c": 46,
+      "v": 28,
+      "ref": "46:28",
+      "text": "אַ֠תָּ֠ה אַל־תִּירָ֞א עַבְדִּ֤י יַֽעֲקֹב֙ נְאֻם־יְהֹוָ֔ה כִּ֥י אִתְּךָ֖ אָ֑נִי כִּי֩ אֶעֱשֶׂ֨ה כָלָ֜ה בְּכׇֽל־הַגּוֹיִ֣ם&thinsp;<b>׀</b> אֲשֶׁ֧ר הִדַּחְתִּ֣יךָ שָּׁ֗מָּה וְאֹֽתְךָ֙ לֹא־אֶעֱשֶׂ֣ה כָלָ֔ה וְיִסַּרְתִּ֙יךָ֙ לַמִּשְׁפָּ֔ט וְנַקֵּ֖ה לֹ֥א אֲנַקֶּֽךָּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Fear thou not, O Ya῾aqov my servant, says the Lord: for I am with thee; for I will make a full end of all the nations where I have driven thee: but I will not make a full end of thee, but correct thee in due measure; yet will I not utterly destroy thee."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Bo",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 15
+  },
+  "parashah": {
+    "en": "Haftarat Bo",
+    "translit": "Haftarat Bo",
+    "he": "הפטרת בא",
+    "ref": "Jeremiah 46:13-28"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 16,
+        "ref": "46:13–46:28"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

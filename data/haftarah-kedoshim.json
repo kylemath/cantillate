@@ -1,0 +1,116 @@
+{
+  "slug": "haftarah-kedoshim",
+  "book": {
+    "en": "Amos",
+    "he": "עמוס",
+    "translit": "Amos"
+  },
+  "multiChapter": true,
+  "ref": "Amos 9:7-15",
+  "heRef": "עמוס ט׳:ז-ט״ו",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 9,
+      "v": 7,
+      "ref": "9:7",
+      "text": "הֲל֣וֹא כִבְנֵי֩ כֻשִׁיִּ֨ים אַתֶּ֥ם לִ֛י בְּנֵ֥י יִשְׂרָאֵ֖ל נְאֻם־יְהֹוָ֑ה הֲל֣וֹא אֶת־יִשְׂרָאֵ֗ל הֶעֱלֵ֙יתִי֙ מֵאֶ֣רֶץ מִצְרַ֔יִם וּפְלִשְׁתִּיִּ֥ים מִכַּפְתּ֖וֹר וַאֲרָ֥ם מִקִּֽיר׃",
+      "en": "Are you not as much mine as the children of the Kushiyyim, O children of Yisra᾽el? says the Lord. Have not I brought up Yisra᾽el out of the land of Miżrayim? and the Pelishtim from Kaftor, and Aram from Qir?"
+    },
+    {
+      "n": 2,
+      "c": 9,
+      "v": 8,
+      "ref": "9:8",
+      "text": "הִנֵּ֞ה עֵינֵ֣י&thinsp;<b>׀</b> אֲדֹנָ֣י יֱהֹוִ֗ה בַּמַּמְלָכָה֙ הַֽחַטָּאָ֔ה וְהִשְׁמַדְתִּ֣י אֹתָ֔הּ מֵעַ֖ל פְּנֵ֣י הָאֲדָמָ֑ה אֶ֗פֶס כִּ֠י לֹ֣א הַשְׁמֵ֥יד אַשְׁמִ֛יד אֶת־בֵּ֥ית יַעֲקֹ֖ב נְאֻם־יְהֹוָֽה׃",
+      "en": "Behold, the eyes of the Lord God are upon the sinful kingdom, and I will destroy it from off the face of the earth; except that I will not utterly destroy the house of Ya῾aqov, says the Lord."
+    },
+    {
+      "n": 3,
+      "c": 9,
+      "v": 9,
+      "ref": "9:9",
+      "text": "כִּֽי־הִנֵּ֤ה אָֽנֹכִי֙ מְצַוֶּ֔ה וַהֲנִע֥וֹתִי בְכׇֽל־הַגּוֹיִ֖ם אֶת־בֵּ֣ית יִשְׂרָאֵ֑ל כַּאֲשֶׁ֤ר יִנּ֙וֹעַ֙ בַּכְּבָרָ֔ה וְלֹֽא־יִפּ֥וֹל צְר֖וֹר אָֽרֶץ׃",
+      "en": "For, lo, I will command, and I will sift the house of Yisra᾽el among all nations, as corn is sifted in a sieve, yet shall not the least grain fall upon the earth."
+    },
+    {
+      "n": 4,
+      "c": 9,
+      "v": 10,
+      "ref": "9:10",
+      "text": "בַּחֶ֣רֶב יָמ֔וּתוּ כֹּ֖ל חַטָּאֵ֣י עַמִּ֑י הָאֹמְרִ֗ים לֹֽא־תַגִּ֧ישׁ וְתַקְדִּ֛ים בַּעֲדֵ֖ינוּ הָרָעָֽה׃",
+      "en": "All the sinners of my people shall die by the sword, who say, The evil shall not overtake or meet us."
+    },
+    {
+      "n": 5,
+      "c": 9,
+      "v": 11,
+      "ref": "9:11",
+      "text": "בַּיּ֣וֹם הַה֔וּא אָקִ֛ים אֶת־סֻכַּ֥ת דָּוִ֖יד הַנֹּפֶ֑לֶת וְגָדַרְתִּ֣י אֶת־פִּרְצֵיהֶ֗ן וַהֲרִֽסֹתָיו֙ אָקִ֔ים וּבְנִיתִ֖יהָ כִּימֵ֥י עוֹלָֽם׃",
+      "en": "On that day I will raise up the tabernacle of David that is fallen, and repair its breaches; and I will raise up his ruins, and I will build it as in the days of old:"
+    },
+    {
+      "n": 6,
+      "c": 9,
+      "v": 12,
+      "ref": "9:12",
+      "text": "לְמַ֨עַן יִֽירְשׁ֜וּ אֶת־שְׁאֵרִ֤ית אֱדוֹם֙ וְכׇל־הַגּוֹיִ֔ם אֲשֶׁר־נִקְרָ֥א שְׁמִ֖י עֲלֵיהֶ֑ם נְאֻם־יְהֹוָ֖ה עֹ֥שֶׂה זֹּֽאת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "that they may possess the remnant of Edom, and of all the nations, who are called by my name, says the Lord who does this."
+    },
+    {
+      "n": 7,
+      "c": 9,
+      "v": 13,
+      "ref": "9:13",
+      "text": "הִנֵּ֨ה יָמִ֤ים בָּאִים֙ נְאֻם־יְהֹוָ֔ה וְנִגַּ֤שׁ חוֹרֵשׁ֙ בַּקֹּצֵ֔ר וְדֹרֵ֥ךְ עֲנָבִ֖ים בְּמֹשֵׁ֣ךְ הַזָּ֑רַע וְהִטִּ֤יפוּ הֶֽהָרִים֙ עָסִ֔יס וְכׇל־הַגְּבָע֖וֹת תִּתְמוֹגַֽגְנָה׃",
+      "en": "Behold, days are coming, says the Lord, when the ploughman shall overtake the reaper, and the treader of grapes him who sows seed; and the mountains shall drop sweet wine, and all the hills shall melt."
+    },
+    {
+      "n": 8,
+      "c": 9,
+      "v": 14,
+      "ref": "9:14",
+      "text": "וְשַׁבְתִּי֮ אֶת־שְׁב֣וּת עַמִּ֣י יִשְׂרָאֵל֒ וּבָנ֞וּ עָרִ֤ים נְשַׁמּוֹת֙ וְיָשָׁ֔בוּ וְנָטְע֣וּ כְרָמִ֔ים וְשָׁת֖וּ אֶת־יֵינָ֑ם וְעָשׂ֣וּ גַנּ֔וֹת וְאָכְל֖וּ אֶת־פְּרִיהֶֽם׃",
+      "en": "And I will bring back the captivity of my people of Yisra᾽el, and they shall build the waste cities, and inhabit them; and they shall plant vineyards, and drink their wine; they shall also make gardens, and eat the fruit of them."
+    },
+    {
+      "n": 9,
+      "c": 9,
+      "v": 15,
+      "ref": "9:15",
+      "text": "וּנְטַעְתִּ֖ים עַל־אַדְמָתָ֑ם וְלֹ֨א יִנָּתְשׁ֜וּ ע֗וֹד מֵעַ֤ל אַדְמָתָם֙ אֲשֶׁ֣ר נָתַ֣תִּי לָהֶ֔ם אָמַ֖ר יְהֹוָ֥ה אֱלֹהֶֽיךָ׃",
+      "en": "And I will plant them upon their land, and they shall no more be plucked up out of their land which I have given them, says the Lord thy God."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Kedoshim",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 30
+  },
+  "parashah": {
+    "en": "Haftarat Kedoshim",
+    "translit": "Haftarat Kedoshim",
+    "he": "הפטרת קדושים",
+    "ref": "Amos 9:7-15"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 9,
+        "ref": "9:7–9:15"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

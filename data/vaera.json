@@ -1,0 +1,1201 @@
+{
+  "slug": "vaera",
+  "book": {
+    "en": "Exodus",
+    "he": "שמות",
+    "translit": "Shemot"
+  },
+  "multiChapter": true,
+  "ref": "Exodus 6:2-9:35",
+  "heRef": "שמות ו׳:ב-ט׳:ל״ה",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 6,
+      "v": 2,
+      "ref": "6:2",
+      "text": "וַיְדַבֵּ֥ר אֱלֹהִ֖ים אֶל־מֹשֶׁ֑ה וַיֹּ֥אמֶר אֵלָ֖יו אֲנִ֥י יְהֹוָֽה׃",
+      "en": "And God spoke to Moshe, and said to him, I am the Lord:"
+    },
+    {
+      "n": 2,
+      "c": 6,
+      "v": 3,
+      "ref": "6:3",
+      "text": "וָאֵרָ֗א אֶל־אַבְרָהָ֛ם אֶל־יִצְחָ֥ק וְאֶֽל־יַעֲקֹ֖ב בְּאֵ֣ל שַׁדָּ֑י וּשְׁמִ֣י יְהֹוָ֔ה לֹ֥א נוֹדַ֖עְתִּי לָהֶֽם׃",
+      "en": "and I appeared to Avraham, to Yiżĥaq, and to Ya῾aqov, by the name of God Almighty, but by my name, The Lord, I was not known to them."
+    },
+    {
+      "n": 3,
+      "c": 6,
+      "v": 4,
+      "ref": "6:4",
+      "text": "וְגַ֨ם הֲקִמֹ֤תִי אֶת־בְּרִיתִי֙ אִתָּ֔ם לָתֵ֥ת לָהֶ֖ם אֶת־אֶ֣רֶץ כְּנָ֑עַן אֵ֛ת אֶ֥רֶץ מְגֻרֵיהֶ֖ם אֲשֶׁר־גָּ֥רוּ בָֽהּ׃",
+      "en": "And I have also established my covenant with them, to give them the land of Kena῾an, the land of their sojournings, in which they sojourned."
+    },
+    {
+      "n": 4,
+      "c": 6,
+      "v": 5,
+      "ref": "6:5",
+      "text": "וְגַ֣ם&thinsp;<b>׀</b> אֲנִ֣י שָׁמַ֗עְתִּי אֶֽת־נַאֲקַת֙ בְּנֵ֣י יִשְׂרָאֵ֔ל אֲשֶׁ֥ר מִצְרַ֖יִם מַעֲבִדִ֣ים אֹתָ֑ם וָאֶזְכֹּ֖ר אֶת־בְּרִיתִֽי׃",
+      "en": "And I have also heard the groaning of the children of Yisra᾽el, kept in bondage by Miżrayim; and I have remembered my covenant."
+    },
+    {
+      "n": 5,
+      "c": 6,
+      "v": 6,
+      "ref": "6:6",
+      "text": "לָכֵ֞ן אֱמֹ֥ר לִבְנֵֽי־יִשְׂרָאֵל֮ אֲנִ֣י יְהֹוָה֒ וְהוֹצֵאתִ֣י אֶתְכֶ֗ם מִתַּ֙חַת֙ סִבְלֹ֣ת מִצְרַ֔יִם וְהִצַּלְתִּ֥י אֶתְכֶ֖ם מֵעֲבֹדָתָ֑ם וְגָאַלְתִּ֤י אֶתְכֶם֙ בִּזְר֣וֹעַ נְטוּיָ֔ה וּבִשְׁפָטִ֖ים גְּדֹלִֽים׃",
+      "en": "Therefore say to the children of Yisra᾽el, I am the Lord, and I will bring you out from under the burdens of Miżrayim, and I will deliver you out of their bondage, and I will redeem you with an outstretched arm, and with great judgments:"
+    },
+    {
+      "n": 6,
+      "c": 6,
+      "v": 7,
+      "ref": "6:7",
+      "text": "וְלָקַחְתִּ֨י אֶתְכֶ֥ם לִי֙ לְעָ֔ם וְהָיִ֥יתִי לָכֶ֖ם לֵֽאלֹהִ֑ים וִֽידַעְתֶּ֗ם כִּ֣י אֲנִ֤י יְהֹוָה֙ אֱלֹ֣הֵיכֶ֔ם הַמּוֹצִ֣יא אֶתְכֶ֔ם מִתַּ֖חַת סִבְל֥וֹת מִצְרָֽיִם׃",
+      "en": "and I will take you to me for a people, and I will be to you a God: and you shall know that I am the Lord your God, who brings you out from under the burdens of Miżrayim."
+    },
+    {
+      "n": 7,
+      "c": 6,
+      "v": 8,
+      "ref": "6:8",
+      "text": "וְהֵבֵאתִ֤י אֶתְכֶם֙ אֶל־הָאָ֔רֶץ אֲשֶׁ֤ר נָשָׂ֙אתִי֙ אֶת־יָדִ֔י לָתֵ֣ת אֹתָ֔הּ לְאַבְרָהָ֥ם לְיִצְחָ֖ק וּֽלְיַעֲקֹ֑ב וְנָתַתִּ֨י אֹתָ֥הּ לָכֶ֛ם מוֹרָשָׁ֖ה אֲנִ֥י יְהֹוָֽה׃",
+      "en": "And I will bring you into the land, which I swore to give to Avraham, to Yiżĥaq, and to Ya῾aqov; and I will give it you for a heritage: I am the Lord."
+    },
+    {
+      "n": 8,
+      "c": 6,
+      "v": 9,
+      "ref": "6:9",
+      "text": "וַיְדַבֵּ֥ר מֹשֶׁ֛ה כֵּ֖ן אֶל־בְּנֵ֣י יִשְׂרָאֵ֑ל וְלֹ֤א שָֽׁמְעוּ֙ אֶל־מֹשֶׁ֔ה מִקֹּ֣צֶר ר֔וּחַ וּמֵעֲבֹדָ֖ה קָשָֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Moshe spoke so to the children of Yisra᾽el: but they hearkened not to Moshe for anguish of spirit, and for cruel bondage."
+    },
+    {
+      "n": 9,
+      "c": 6,
+      "v": 10,
+      "ref": "6:10",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 10,
+      "c": 6,
+      "v": 11,
+      "ref": "6:11",
+      "text": "בֹּ֣א דַבֵּ֔ר אֶל־פַּרְעֹ֖ה מֶ֣לֶךְ מִצְרָ֑יִם וִֽישַׁלַּ֥ח אֶת־בְּנֵֽי־יִשְׂרָאֵ֖ל מֵאַרְצֽוֹ׃",
+      "en": "Go in, speak to Par῾o, king of Miżrayim, that he let the children of Yisra᾽el go out of his land."
+    },
+    {
+      "n": 11,
+      "c": 6,
+      "v": 12,
+      "ref": "6:12",
+      "text": "וַיְדַבֵּ֣ר מֹשֶׁ֔ה לִפְנֵ֥י יְהֹוָ֖ה לֵאמֹ֑ר הֵ֤ן בְּנֵֽי־יִשְׂרָאֵל֙ לֹֽא־שָׁמְע֣וּ אֵלַ֔י וְאֵיךְ֙ יִשְׁמָעֵ֣נִי פַרְעֹ֔ה וַאֲנִ֖י עֲרַ֥ל שְׂפָתָֽיִם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Moshe spoke before the Lord, saying, Behold, the children of Yisra᾽el have not hearkened to me; how then shall Par῾o hear me, who am of uncircumcised lips?"
+    },
+    {
+      "n": 12,
+      "c": 6,
+      "v": 13,
+      "ref": "6:13",
+      "text": "וַיְדַבֵּ֣ר יְהֹוָה֮ אֶל־מֹשֶׁ֣ה וְאֶֽל־אַהֲרֹן֒ וַיְצַוֵּם֙ אֶל־בְּנֵ֣י יִשְׂרָאֵ֔ל וְאֶל־פַּרְעֹ֖ה מֶ֣לֶךְ מִצְרָ֑יִם לְהוֹצִ֥יא אֶת־בְּנֵֽי־יִשְׂרָאֵ֖ל מֵאֶ֥רֶץ מִצְרָֽיִם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the Lord spoke to Moshe and to Aharon, and gave them a charge to the children of Yisra᾽el, and to Par῾o king of Miżrayim, to bring the children of Yisra᾽el out of the land of Miżrayim."
+    },
+    {
+      "n": 13,
+      "c": 6,
+      "v": 14,
+      "ref": "6:14",
+      "text": "אֵ֖לֶּה רָאשֵׁ֣י בֵית־אֲבֹתָ֑ם בְּנֵ֨י רְאוּבֵ֜ן בְּכֹ֣ר יִשְׂרָאֵ֗ל חֲנ֤וֹךְ וּפַלּוּא֙ חֶצְרֹ֣ן וְכַרְמִ֔י אֵ֖לֶּה מִשְׁפְּחֹ֥ת רְאוּבֵֽן׃",
+      "en": "These are the heads of their fathers’ houses: the sons of Re᾽uven, the firstborn of Yisra᾽el, Ḥanokh and Pallu, Ḥeżron, and Karmi: these are the families of Re᾽uven."
+    },
+    {
+      "n": 14,
+      "c": 6,
+      "v": 15,
+      "ref": "6:15",
+      "text": "וּבְנֵ֣י שִׁמְע֗וֹן יְמוּאֵ֨ל וְיָמִ֤ין וְאֹ֙הַד֙ וְיָכִ֣ין וְצֹ֔חַר וְשָׁא֖וּל בֶּן־הַֽכְּנַעֲנִ֑ית אֵ֖לֶּה מִשְׁפְּחֹ֥ת שִׁמְעֽוֹן׃",
+      "en": "And the sons of Shim῾on, Yemu᾽el and Yamin, and Ohad, and Yakhin, and Żoĥar, and Sha᾽ul the son of the Kena῾anite woman; these are the families of Shim῾on."
+    },
+    {
+      "n": 15,
+      "c": 6,
+      "v": 16,
+      "ref": "6:16",
+      "text": "וְאֵ֨לֶּה שְׁמ֤וֹת בְּנֵֽי־לֵוִי֙ לְתֹ֣לְדֹתָ֔ם גֵּרְשׁ֕וֹן וּקְהָ֖ת וּמְרָרִ֑י וּשְׁנֵי֙ חַיֵּ֣י לֵוִ֔י שֶׁ֧בַע וּשְׁלֹשִׁ֛ים וּמְאַ֖ת שָׁנָֽה׃",
+      "en": "And these are the names of the sons of Levi, by generations, Gershon, and Qehat, and Merari: and the years of Levi’s life were a hundred and thirty seven years."
+    },
+    {
+      "n": 16,
+      "c": 6,
+      "v": 17,
+      "ref": "6:17",
+      "text": "בְּנֵ֥י גֵרְשׁ֛וֹן לִבְנִ֥י וְשִׁמְעִ֖י לְמִשְׁפְּחֹתָֽם׃",
+      "en": "The sons of Gershon, Livni and Shim῾i, according to their families."
+    },
+    {
+      "n": 17,
+      "c": 6,
+      "v": 18,
+      "ref": "6:18",
+      "text": "וּבְנֵ֣י קְהָ֔ת עַמְרָ֣ם וְיִצְהָ֔ר וְחֶבְר֖וֹן וְעֻזִּיאֵ֑ל וּשְׁנֵי֙ חַיֵּ֣י קְהָ֔ת שָׁלֹ֧שׁ וּשְׁלֹשִׁ֛ים וּמְאַ֖ת שָׁנָֽה׃",
+      "en": "And the sons of Qehat, ῾Amram, and Yiżhar, and Ḥevron, and ῾Uzzi᾽el; and the years of the life of Qehat were a hundred and thirty three years."
+    },
+    {
+      "n": 18,
+      "c": 6,
+      "v": 19,
+      "ref": "6:19",
+      "text": "וּבְנֵ֥י מְרָרִ֖י מַחְלִ֣י וּמוּשִׁ֑י אֵ֛לֶּה מִשְׁפְּחֹ֥ת הַלֵּוִ֖י לְתֹלְדֹתָֽם׃",
+      "en": "And the sons of Merari were Maĥli and Mushi: these are the families of Levi by their generations."
+    },
+    {
+      "n": 19,
+      "c": 6,
+      "v": 20,
+      "ref": "6:20",
+      "text": "וַיִּקַּ֨ח עַמְרָ֜ם אֶת־יוֹכֶ֤בֶד דֹּֽדָתוֹ֙ ל֣וֹ לְאִשָּׁ֔ה וַתֵּ֣לֶד ל֔וֹ אֶֽת־אַהֲרֹ֖ן וְאֶת־מֹשֶׁ֑ה וּשְׁנֵי֙ חַיֵּ֣י עַמְרָ֔ם שֶׁ֧בַע וּשְׁלֹשִׁ֛ים וּמְאַ֖ת שָׁנָֽה׃",
+      "en": "And ῾Amram took him Yokheved his father’s sister to wife; and she bore him Aharon and Moshe: and the years of the life of ῾Amram were a hundred and thirty seven years."
+    },
+    {
+      "n": 20,
+      "c": 6,
+      "v": 21,
+      "ref": "6:21",
+      "text": "וּבְנֵ֖י יִצְהָ֑ר קֹ֥רַח וָנֶ֖פֶג וְזִכְרִֽי׃",
+      "en": "And the sons of Yiżhar; Qoraĥ, and Nefeg, and Zikhri."
+    },
+    {
+      "n": 21,
+      "c": 6,
+      "v": 22,
+      "ref": "6:22",
+      "text": "וּבְנֵ֖י עֻזִּיאֵ֑ל מִֽישָׁאֵ֥ל וְאֶלְצָפָ֖ן וְסִתְרִֽי׃",
+      "en": "And the sons of ῾Uzzi᾽el; Misha᾽el, and Elżafan and Sitri."
+    },
+    {
+      "n": 22,
+      "c": 6,
+      "v": 23,
+      "ref": "6:23",
+      "text": "וַיִּקַּ֨ח אַהֲרֹ֜ן אֶת־אֱלִישֶׁ֧בַע בַּת־עַמִּינָדָ֛ב אֲח֥וֹת נַחְשׁ֖וֹן ל֣וֹ לְאִשָּׁ֑ה וַתֵּ֣לֶד ל֗וֹ אֶת־נָדָב֙ וְאֶת־אֲבִיה֔וּא אֶת־אֶלְעָזָ֖ר וְאֶת־אִֽיתָמָֽר׃",
+      "en": "And Aharon took him Elisheva daughter of ῾Amminadav, sister of Naĥshon, to wife; and she bore him Nadav, and Avihu, El῾azar and Itamar."
+    },
+    {
+      "n": 23,
+      "c": 6,
+      "v": 24,
+      "ref": "6:24",
+      "text": "וּבְנֵ֣י קֹ֔רַח אַסִּ֥יר וְאֶלְקָנָ֖ה וַאֲבִיאָסָ֑ף אֵ֖לֶּה מִשְׁפְּחֹ֥ת הַקׇּרְחִֽי׃",
+      "en": "And the sons of Qoraĥ; Assir, and Elqana, and Avi᾽asaf: these are the families of the Qorĥi."
+    },
+    {
+      "n": 24,
+      "c": 6,
+      "v": 25,
+      "ref": "6:25",
+      "text": "וְאֶלְעָזָ֨ר בֶּֽן־אַהֲרֹ֜ן לָקַֽח־ל֨וֹ מִבְּנ֤וֹת פּֽוּטִיאֵל֙ ל֣וֹ לְאִשָּׁ֔ה וַתֵּ֥לֶד ל֖וֹ אֶת־פִּֽינְחָ֑ס אֵ֗לֶּה רָאשֵׁ֛י אֲב֥וֹת הַלְוִיִּ֖ם לְמִשְׁפְּחֹתָֽם׃",
+      "en": "And El῾azar Aharon’s son took him one of the daughters of Puti᾽el to wife; and she bore him Pineĥas: these are the heads of the fathers of the Levites according to their families."
+    },
+    {
+      "n": 25,
+      "c": 6,
+      "v": 26,
+      "ref": "6:26",
+      "text": "ה֥וּא אַהֲרֹ֖ן וּמֹשֶׁ֑ה אֲשֶׁ֨ר אָמַ֤ר יְהֹוָה֙ לָהֶ֔ם הוֹצִ֜יאוּ אֶת־בְּנֵ֧י יִשְׂרָאֵ֛ל מֵאֶ֥רֶץ מִצְרַ֖יִם עַל־צִבְאֹתָֽם׃",
+      "en": "These are that Aharon and Moshe, to whom the Lord said, Bring out the children of Yisra᾽el from the land of Miżrayim according to their hosts."
+    },
+    {
+      "n": 26,
+      "c": 6,
+      "v": 27,
+      "ref": "6:27",
+      "text": "הֵ֗ם הַֽמְדַבְּרִים֙ אֶל־פַּרְעֹ֣ה מֶֽלֶךְ־מִצְרַ֔יִם לְהוֹצִ֥יא אֶת־בְּנֵֽי־יִשְׂרָאֵ֖ל מִמִּצְרָ֑יִם ה֥וּא מֹשֶׁ֖ה וְאַהֲרֹֽן׃",
+      "en": "These are they who spoke to Par῾o king of Miżrayim, to bring out the children of Yisra᾽el from Miżrayim: these are that Moshe and Aharon."
+    },
+    {
+      "n": 27,
+      "c": 6,
+      "v": 28,
+      "ref": "6:28",
+      "text": "וַיְהִ֗י בְּי֨וֹם דִּבֶּ֧ר יְהֹוָ֛ה אֶל־מֹשֶׁ֖ה בְּאֶ֥רֶץ מִצְרָֽיִם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And it came to pass on the day when the Lord spoke to Moshe in the land of Miżrayim,"
+    },
+    {
+      "n": 28,
+      "c": 6,
+      "v": 29,
+      "ref": "6:29",
+      "text": "וַיְדַבֵּ֧ר יְהֹוָ֛ה אֶל־מֹשֶׁ֥ה לֵּאמֹ֖ר אֲנִ֣י יְהֹוָ֑ה דַּבֵּ֗ר אֶל־פַּרְעֹה֙ מֶ֣לֶךְ מִצְרַ֔יִם אֵ֛ת כׇּל־אֲשֶׁ֥ר אֲנִ֖י דֹּבֵ֥ר אֵלֶֽיךָ׃",
+      "en": "that the Lord spoke to Moshe, saying, I am the Lord: speak to Par῾o king of Miżrayim all that I say to thee."
+    },
+    {
+      "n": 29,
+      "c": 6,
+      "v": 30,
+      "ref": "6:30",
+      "text": "וַיֹּ֥אמֶר מֹשֶׁ֖ה לִפְנֵ֣י יְהֹוָ֑ה הֵ֤ן אֲנִי֙ עֲרַ֣ל שְׂפָתַ֔יִם וְאֵ֕יךְ יִשְׁמַ֥ע אֵלַ֖י פַּרְעֹֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Moshe said before the Lord, Behold, I am of uncircumcised lips, and how shall Par῾o hearken to me?"
+    },
+    {
+      "n": 30,
+      "c": 7,
+      "v": 1,
+      "ref": "7:1",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה רְאֵ֛ה נְתַתִּ֥יךָ אֱלֹהִ֖ים לְפַרְעֹ֑ה וְאַהֲרֹ֥ן אָחִ֖יךָ יִהְיֶ֥ה נְבִיאֶֽךָ׃",
+      "en": "And the Lord said to Moshe, See, I have made thee a god to Par῾o: and Aharon thy brother shall be thy prophet."
+    },
+    {
+      "n": 31,
+      "c": 7,
+      "v": 2,
+      "ref": "7:2",
+      "text": "אַתָּ֣ה תְדַבֵּ֔ר אֵ֖ת כׇּל־אֲשֶׁ֣ר אֲצַוֶּ֑ךָּ וְאַהֲרֹ֤ן אָחִ֙יךָ֙ יְדַבֵּ֣ר אֶל־פַּרְעֹ֔ה וְשִׁלַּ֥ח אֶת־בְּנֵֽי־יִשְׂרָאֵ֖ל מֵאַרְצֽוֹ׃",
+      "en": "Thou shall speak all that I command thee: and Aharon thy brother shall speak to Par῾o, that he send the children of Yisra᾽el out of his land."
+    },
+    {
+      "n": 32,
+      "c": 7,
+      "v": 3,
+      "ref": "7:3",
+      "text": "וַאֲנִ֥י אַקְשֶׁ֖ה אֶת־לֵ֣ב פַּרְעֹ֑ה וְהִרְבֵּיתִ֧י אֶת־אֹתֹתַ֛י וְאֶת־מוֹפְתַ֖י בְּאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And I will harden Par῾o’s heart, and multiply my signs and my wonders in the land of Miżrayim."
+    },
+    {
+      "n": 33,
+      "c": 7,
+      "v": 4,
+      "ref": "7:4",
+      "text": "וְלֹֽא־יִשְׁמַ֤ע אֲלֵכֶם֙ פַּרְעֹ֔ה וְנָתַתִּ֥י אֶת־יָדִ֖י בְּמִצְרָ֑יִם וְהוֹצֵאתִ֨י אֶת־צִבְאֹתַ֜י אֶת־עַמִּ֤י בְנֵֽי־יִשְׂרָאֵל֙ מֵאֶ֣רֶץ מִצְרַ֔יִם בִּשְׁפָטִ֖ים גְּדֹלִֽים׃",
+      "en": "But Par῾o shall not hearken to you, that I may lay my hand upon Miżrayim, and bring out my armies, my people the children of Yisra᾽el, out of the land of Miżrayim by great judgments."
+    },
+    {
+      "n": 34,
+      "c": 7,
+      "v": 5,
+      "ref": "7:5",
+      "text": "וְיָדְע֤וּ מִצְרַ֙יִם֙ כִּֽי־אֲנִ֣י יְהֹוָ֔ה בִּנְטֹתִ֥י אֶת־יָדִ֖י עַל־מִצְרָ֑יִם וְהוֹצֵאתִ֥י אֶת־בְּנֵֽי־יִשְׂרָאֵ֖ל מִתּוֹכָֽם׃",
+      "en": "And Miżrayim shall know that I am the Lord, when I stretch out my hand upon Miżrayim, and bring out the children of Yisra᾽el from among them."
+    },
+    {
+      "n": 35,
+      "c": 7,
+      "v": 6,
+      "ref": "7:6",
+      "text": "וַיַּ֥עַשׂ מֹשֶׁ֖ה וְאַהֲרֹ֑ן כַּאֲשֶׁ֨ר צִוָּ֧ה יְהֹוָ֛ה אֹתָ֖ם כֵּ֥ן עָשֽׂוּ׃",
+      "en": "And Moshe and Aharon did as the Lord commanded them, so they did."
+    },
+    {
+      "n": 36,
+      "c": 7,
+      "v": 7,
+      "ref": "7:7",
+      "text": "וּמֹשֶׁה֙ בֶּן־שְׁמֹנִ֣ים שָׁנָ֔ה וְאַֽהֲרֹ֔ן בֶּן־שָׁלֹ֥שׁ וּשְׁמֹנִ֖ים שָׁנָ֑ה בְּדַבְּרָ֖ם אֶל־פַּרְעֹֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Moshe was eighty years old, and Aharon, eighty three years old, when they spoke to Par῾o."
+    },
+    {
+      "n": 37,
+      "c": 7,
+      "v": 8,
+      "ref": "7:8",
+      "text": "וַיֹּ֣אמֶר יְהֹוָ֔ה אֶל־מֹשֶׁ֥ה וְאֶֽל־אַהֲרֹ֖ן לֵאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe and to Aharon, saying,"
+    },
+    {
+      "n": 38,
+      "c": 7,
+      "v": 9,
+      "ref": "7:9",
+      "text": "כִּי֩ יְדַבֵּ֨ר אֲלֵכֶ֤ם פַּרְעֹה֙ לֵאמֹ֔ר תְּנ֥וּ לָכֶ֖ם מוֹפֵ֑ת וְאָמַרְתָּ֣ אֶֽל־אַהֲרֹ֗ן קַ֧ח אֶֽת־מַטְּךָ֛ וְהַשְׁלֵ֥ךְ לִפְנֵֽי־פַרְעֹ֖ה יְהִ֥י לְתַנִּֽין׃",
+      "en": "When Par῾o shall speak to you, saying, Show a miracle for yourselves: then thou shalt say to Aharon, Take thy rod, and cast it before Par῾o, and it shall turn into a snake."
+    },
+    {
+      "n": 39,
+      "c": 7,
+      "v": 10,
+      "ref": "7:10",
+      "text": "וַיָּבֹ֨א מֹשֶׁ֤ה וְאַהֲרֹן֙ אֶל־פַּרְעֹ֔ה וַיַּ֣עֲשׂוּ כֵ֔ן כַּאֲשֶׁ֖ר צִוָּ֣ה יְהֹוָ֑ה וַיַּשְׁלֵ֨ךְ אַהֲרֹ֜ן אֶת־מַטֵּ֗הוּ לִפְנֵ֥י פַרְעֹ֛ה וְלִפְנֵ֥י עֲבָדָ֖יו וַיְהִ֥י לְתַנִּֽין׃",
+      "en": "And Moshe and Aharon went in to Par῾o, and they did so as the Lord had commanded: and Aharon threw down his rod before Par῾o, and before his servants, and it turned into a snake."
+    },
+    {
+      "n": 40,
+      "c": 7,
+      "v": 11,
+      "ref": "7:11",
+      "text": "וַיִּקְרָא֙ גַּם־פַּרְעֹ֔ה לַֽחֲכָמִ֖ים וְלַֽמְכַשְּׁפִ֑ים וַיַּֽעֲשׂ֨וּ גַם־הֵ֜ם חַרְטֻמֵּ֥י מִצְרַ֛יִם בְּלַהֲטֵיהֶ֖ם כֵּֽן׃",
+      "en": "Then Par῾o also called the wise men and the sorcerers: and the magicians of Miżrayim, they also did in like manner with their secret arts."
+    },
+    {
+      "n": 41,
+      "c": 7,
+      "v": 12,
+      "ref": "7:12",
+      "text": "וַיַּשְׁלִ֙יכוּ֙ אִ֣ישׁ מַטֵּ֔הוּ וַיִּהְי֖וּ לְתַנִּינִ֑ם וַיִּבְלַ֥ע מַטֵּֽה־אַהֲרֹ֖ן אֶת־מַטֹּתָֽם׃",
+      "en": "For they cast down every man his rod, and they turned to snakes: but Aharon’s rod swallowed up their rods."
+    },
+    {
+      "n": 42,
+      "c": 7,
+      "v": 13,
+      "ref": "7:13",
+      "text": "וַיֶּֽחֱזַק֙ לֵ֣ב פַּרְעֹ֔ה וְלֹ֥א שָׁמַ֖ע אֲלֵהֶ֑ם כַּאֲשֶׁ֖ר דִּבֶּ֥ר יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the heart of Par῾o was hardened, that he did not hearken to them; as the Lord had said."
+    },
+    {
+      "n": 43,
+      "c": 7,
+      "v": 14,
+      "ref": "7:14",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה כָּבֵ֖ד לֵ֣ב פַּרְעֹ֑ה מֵאֵ֖ן לְשַׁלַּ֥ח הָעָֽם׃",
+      "en": "And the Lord said to Moshe, Par῾o’s heart is hardened, he refuses to let the people go."
+    },
+    {
+      "n": 44,
+      "c": 7,
+      "v": 15,
+      "ref": "7:15",
+      "text": "לֵ֣ךְ אֶל־פַּרְעֹ֞ה בַּבֹּ֗קֶר הִנֵּה֙ יֹצֵ֣א הַמַּ֔יְמָה וְנִצַּבְתָּ֥ לִקְרָאת֖וֹ עַל־שְׂפַ֣ת הַיְאֹ֑ר וְהַמַּטֶּ֛ה אֲשֶׁר־נֶהְפַּ֥ךְ לְנָחָ֖שׁ תִּקַּ֥ח בְּיָדֶֽךָ׃",
+      "en": "Get thee to Par῾o in the morning; lo, he goes out to the water; and thou shalt stand by the River’s brink to meet him; and the rod which was turned to a snake shalt thou take in thy hand."
+    },
+    {
+      "n": 45,
+      "c": 7,
+      "v": 16,
+      "ref": "7:16",
+      "text": "וְאָמַרְתָּ֣ אֵלָ֗יו יְהֹוָ֞ה אֱלֹהֵ֤י הָעִבְרִים֙ שְׁלָחַ֤נִי אֵלֶ֙יךָ֙ לֵאמֹ֔ר שַׁלַּח֙ אֶת־עַמִּ֔י וְיַֽעַבְדֻ֖נִי בַּמִּדְבָּ֑ר וְהִנֵּ֥ה לֹא־שָׁמַ֖עְתָּ עַד־כֹּֽה׃",
+      "en": "And thou shalt say to him, The Lord God of the Hebrews has sent me to thee, saying, Let my people go, that they may serve me in the wilderness: and, behold, till now thou wouldst not hear."
+    },
+    {
+      "n": 46,
+      "c": 7,
+      "v": 17,
+      "ref": "7:17",
+      "text": "כֹּ֚ה אָמַ֣ר יְהֹוָ֔ה בְּזֹ֣את תֵּדַ֔ע כִּ֖י אֲנִ֣י יְהֹוָ֑ה הִנֵּ֨ה אָנֹכִ֜י מַכֶּ֣ה&thinsp;<b>׀</b> בַּמַּטֶּ֣ה אֲשֶׁר־בְּיָדִ֗י עַל־הַמַּ֛יִם אֲשֶׁ֥ר בַּיְאֹ֖ר וְנֶהֶפְכ֥וּ לְדָֽם׃",
+      "en": "Thus says the Lord, In this thou shalt know that I am the Lord: behold, I will smite with the rod that is in my hand upon the water in the River, and it shall be turned to blood."
+    },
+    {
+      "n": 47,
+      "c": 7,
+      "v": 18,
+      "ref": "7:18",
+      "text": "וְהַדָּגָ֧ה אֲשֶׁר־בַּיְאֹ֛ר תָּמ֖וּת וּבָאַ֣שׁ הַיְאֹ֑ר וְנִלְא֣וּ מִצְרַ֔יִם לִשְׁתּ֥וֹת מַ֖יִם מִן־הַיְאֹֽר׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the fish that is in the River shall die, and the river shall stink; and Miżrayim shall no longer be able to drink the water of the River."
+    },
+    {
+      "n": 48,
+      "c": 7,
+      "v": 19,
+      "ref": "7:19",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֶל־מֹשֶׁ֗ה אֱמֹ֣ר אֶֽל־אַהֲרֹ֡ן קַ֣ח מַטְּךָ֣ וּנְטֵֽה־יָדְךָ֩ עַל־מֵימֵ֨י מִצְרַ֜יִם עַֽל־נַהֲרֹתָ֣ם&thinsp;<b>׀</b> עַל־יְאֹרֵיהֶ֣ם וְעַל־אַגְמֵיהֶ֗ם וְעַ֛ל כׇּל־מִקְוֵ֥ה מֵימֵיהֶ֖ם וְיִֽהְיוּ־דָ֑ם וְהָ֤יָה דָם֙ בְּכׇל־אֶ֣רֶץ מִצְרַ֔יִם וּבָעֵצִ֖ים וּבָאֲבָנִֽים׃",
+      "en": "And the Lord spoke to Moshe, Say to Aharon, Take thy rod, and stretch out thy hand upon the waters of Miżrayim, upon their streams, upon their canals, and upon their ponds, and upon all their pools of water, that they may become blood; and that there may be blood throughout all the land of Miżrayim, both in vessels of wood, and in vessels of stone."
+    },
+    {
+      "n": 49,
+      "c": 7,
+      "v": 20,
+      "ref": "7:20",
+      "text": "וַיַּֽעֲשׂוּ־כֵן֩ מֹשֶׁ֨ה וְאַהֲרֹ֜ן כַּאֲשֶׁ֣ר&thinsp;<b>׀</b> צִוָּ֣ה יְהֹוָ֗ה וַיָּ֤רֶם בַּמַּטֶּה֙ וַיַּ֤ךְ אֶת־הַמַּ֙יִם֙ אֲשֶׁ֣ר בַּיְאֹ֔ר לְעֵינֵ֣י פַרְעֹ֔ה וּלְעֵינֵ֖י עֲבָדָ֑יו וַיֵּהָ֥פְכ֛וּ כׇּל־הַמַּ֥יִם אֲשֶׁר־בַּיְאֹ֖ר לְדָֽם׃",
+      "en": "And Moshe and Aharon did so, as the Lord commanded; and he lifted up the rod, and smote the waters that were in the River, in the sight of Par῾o, and in the sight of his servants; and all the water that was in the River was turned to blood."
+    },
+    {
+      "n": 50,
+      "c": 7,
+      "v": 21,
+      "ref": "7:21",
+      "text": "וְהַדָּגָ֨ה אֲשֶׁר־בַּיְאֹ֥ר מֵ֙תָה֙ וַיִּבְאַ֣שׁ הַיְאֹ֔ר וְלֹא־יָכְל֣וּ מִצְרַ֔יִם לִשְׁתּ֥וֹת מַ֖יִם מִן־הַיְאֹ֑ר וַיְהִ֥י הַדָּ֖ם בְּכׇל־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And the fish that was in the River died; and the River stank, and Miżrayim could not drink of the water of the River; and there was blood throughout all the land of Miżrayim."
+    },
+    {
+      "n": 51,
+      "c": 7,
+      "v": 22,
+      "ref": "7:22",
+      "text": "וַיַּֽעֲשׂוּ־כֵ֛ן חַרְטֻמֵּ֥י מִצְרַ֖יִם בְּלָטֵיהֶ֑ם וַיֶּחֱזַ֤ק לֵב־פַּרְעֹה֙ וְלֹא־שָׁמַ֣ע אֲלֵהֶ֔ם כַּאֲשֶׁ֖ר דִּבֶּ֥ר יְהֹוָֽה׃",
+      "en": "And the magicians of Par῾o did so with their secret arts: and Par῾o’s heart was hardened, neither did he hearken to them; as the Lord had said."
+    },
+    {
+      "n": 52,
+      "c": 7,
+      "v": 23,
+      "ref": "7:23",
+      "text": "וַיִּ֣פֶן פַּרְעֹ֔ה וַיָּבֹ֖א אֶל־בֵּית֑וֹ וְלֹא־שָׁ֥ת לִבּ֖וֹ גַּם־לָזֹֽאת׃",
+      "en": "And Par῾o turned and went to his house, neither did he set his heart even to this."
+    },
+    {
+      "n": 53,
+      "c": 7,
+      "v": 24,
+      "ref": "7:24",
+      "text": "וַיַּחְפְּר֧וּ כׇל־מִצְרַ֛יִם סְבִיבֹ֥ת הַיְאֹ֖ר מַ֣יִם לִשְׁתּ֑וֹת כִּ֣י לֹ֤א יָֽכְלוּ֙ לִשְׁתֹּ֔ת מִמֵּימֵ֖י הַיְאֹֽר׃",
+      "en": "And all Miżrayim dug round about the River for water to drink; for they could not drink of the water of the River."
+    },
+    {
+      "n": 54,
+      "c": 7,
+      "v": 25,
+      "ref": "7:25",
+      "text": "וַיִּמָּלֵ֖א שִׁבְעַ֣ת יָמִ֑ים אַחֲרֵ֥י הַכּוֹת־יְהֹוָ֖ה אֶת־הַיְאֹֽר׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And seven days were completed, after the Lord had smitten the River."
+    },
+    {
+      "n": 55,
+      "c": 7,
+      "v": 26,
+      "ref": "7:26",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה בֹּ֖א אֶל־פַּרְעֹ֑ה וְאָמַרְתָּ֣ אֵלָ֗יו כֹּ֚ה אָמַ֣ר יְהֹוָ֔ה שַׁלַּ֥ח אֶת־עַמִּ֖י וְיַֽעַבְדֻֽנִי׃",
+      "en": "And the Lord spoke to Moshe, Go to Par῾o, and say to him, Thus says the Lord, Let my people go, that they may serve me."
+    },
+    {
+      "n": 56,
+      "c": 7,
+      "v": 27,
+      "ref": "7:27",
+      "text": "וְאִם־מָאֵ֥ן אַתָּ֖ה לְשַׁלֵּ֑חַ הִנֵּ֣ה אָנֹכִ֗י נֹגֵ֛ף אֶת־כׇּל־גְּבוּלְךָ֖ בַּֽצְפַרְדְּעִֽים׃",
+      "en": "And if thou refuse to let them go, behold, I will smite all thy borders with frogs:"
+    },
+    {
+      "n": 57,
+      "c": 7,
+      "v": 28,
+      "ref": "7:28",
+      "text": "וְשָׁרַ֣ץ הַיְאֹר֮ צְפַרְדְּעִים֒ וְעָלוּ֙ וּבָ֣אוּ בְּבֵיתֶ֔ךָ וּבַחֲדַ֥ר מִשְׁכָּבְךָ֖ וְעַל־מִטָּתֶ֑ךָ וּבְבֵ֤ית עֲבָדֶ֙יךָ֙ וּבְעַמֶּ֔ךָ וּבְתַנּוּרֶ֖יךָ וּבְמִשְׁאֲרוֹתֶֽיךָ׃",
+      "en": "and the river shall bring forth frogs in swarms, and these will go up and come into thy house, and into thy bedchamber, and upon thy bed, and into the house of thy servants, and upon thy people, and into thy ovens, and into thy kneading troughs:"
+    },
+    {
+      "n": 58,
+      "c": 7,
+      "v": 29,
+      "ref": "7:29",
+      "text": "וּבְכָ֥ה וּֽבְעַמְּךָ֖ וּבְכׇל־עֲבָדֶ֑יךָ יַעֲל֖וּ הַֽצְפַרְדְּעִֽים׃",
+      "en": "and the frogs shall come up both on thee, and on thy people, and on all thy servants."
+    },
+    {
+      "n": 59,
+      "c": 8,
+      "v": 1,
+      "ref": "8:1",
+      "text": "וַיֹּ֣אמֶר יְהֹוָה֮ אֶל־מֹשֶׁה֒ אֱמֹ֣ר אֶֽל־אַהֲרֹ֗ן נְטֵ֤ה אֶת־יָדְךָ֙ בְּמַטֶּ֔ךָ עַ֨ל־הַנְּהָרֹ֔ת עַל־הַיְאֹרִ֖ים וְעַל־הָאֲגַמִּ֑ים וְהַ֥עַל אֶת־הַֽצְפַרְדְּעִ֖ים עַל־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And the Lord spoke to Moshe, Say to Aharon, Stretch forth thy hand with thy rod over the streams, over the canals, and over the ponds, and cause frogs to come up upon the land of Miżrayim."
+    },
+    {
+      "n": 60,
+      "c": 8,
+      "v": 2,
+      "ref": "8:2",
+      "text": "וַיֵּ֤ט אַהֲרֹן֙ אֶת־יָד֔וֹ עַ֖ל מֵימֵ֣י מִצְרָ֑יִם וַתַּ֙עַל֙ הַצְּפַרְדֵּ֔עַ וַתְּכַ֖ס אֶת־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And Aharon stretched out his hand over the waters of Miżrayim. And the frogs came up, and covered the land of Miżrayim."
+    },
+    {
+      "n": 61,
+      "c": 8,
+      "v": 3,
+      "ref": "8:3",
+      "text": "וַיַּֽעֲשׂוּ־כֵ֥ן הַֽחַרְטֻמִּ֖ים בְּלָטֵיהֶ֑ם וַיַּעֲל֥וּ אֶת־הַֽצְפַרְדְּעִ֖ים עַל־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And the magicians did so with their secret arts, and brought up frogs on the land of Miżrayim."
+    },
+    {
+      "n": 62,
+      "c": 8,
+      "v": 4,
+      "ref": "8:4",
+      "text": "וַיִּקְרָ֨א פַרְעֹ֜ה לְמֹשֶׁ֣ה וּֽלְאַהֲרֹ֗ן וַיֹּ֙אמֶר֙ הַעְתִּ֣ירוּ אֶל־יְהֹוָ֔ה וְיָסֵר֙ הַֽצְפַרְדְּעִ֔ים מִמֶּ֖נִּי וּמֵֽעַמִּ֑י וַאֲשַׁלְּחָה֙ אֶת־הָעָ֔ם וְיִזְבְּח֖וּ לַיהֹוָֽה׃",
+      "en": "Then Par῾o called to Moshe and Aharon, and said, Entreat the Lord, that he may take away the frogs from me, and from my people; and I will let the people go, that they may do sacrifice to the Lord."
+    },
+    {
+      "n": 63,
+      "c": 8,
+      "v": 5,
+      "ref": "8:5",
+      "text": "וַיֹּ֨אמֶר מֹשֶׁ֣ה לְפַרְעֹה֮ הִתְפָּאֵ֣ר עָלַי֒ לְמָתַ֣י&thinsp;<b>׀</b> אַעְתִּ֣יר לְךָ֗ וְלַעֲבָדֶ֙יךָ֙ וּֽלְעַמְּךָ֔ לְהַכְרִית֙ הַֽצְפַרְדְּעִ֔ים מִמְּךָ֖ וּמִבָּתֶּ֑יךָ רַ֥ק בַּיְאֹ֖ר תִּשָּׁאַֽרְנָה׃",
+      "en": "And Moshe said to Par῾o, Challenge me to fix a time when I should entreat for thee, and for thy servants, and for thy people, to destroy the frogs from thee and thy houses, that they may remain in the River only?"
+    },
+    {
+      "n": 64,
+      "c": 8,
+      "v": 6,
+      "ref": "8:6",
+      "text": "וַיֹּ֖אמֶר לְמָחָ֑ר וַיֹּ֙אמֶר֙ כִּדְבָ֣רְךָ֔ לְמַ֣עַן תֵּדַ֔ע כִּי־אֵ֖ין כַּיהֹוָ֥ה אֱלֹהֵֽינוּ׃",
+      "en": "And he said, Tomorrow. And he said, Be it according to thy word: that thou mayst know that there is none like the Lord our God."
+    },
+    {
+      "n": 65,
+      "c": 8,
+      "v": 7,
+      "ref": "8:7",
+      "text": "וְסָר֣וּ הַֽצְפַרְדְּעִ֗ים מִמְּךָ֙ וּמִבָּ֣תֶּ֔יךָ וּמֵעֲבָדֶ֖יךָ וּמֵעַמֶּ֑ךָ רַ֥ק בַּיְאֹ֖ר תִּשָּׁאַֽרְנָה׃",
+      "en": "And the frogs shall depart from thee, and from thy houses, and from thy servants, and from thy people; they shall remain in the River only."
+    },
+    {
+      "n": 66,
+      "c": 8,
+      "v": 8,
+      "ref": "8:8",
+      "text": "וַיֵּצֵ֥א מֹשֶׁ֛ה וְאַהֲרֹ֖ן מֵעִ֣ם פַּרְעֹ֑ה וַיִּצְעַ֤ק מֹשֶׁה֙ אֶל־יְהֹוָ֔ה עַל־דְּבַ֥ר הַֽצְפַרְדְּעִ֖ים אֲשֶׁר־שָׂ֥ם לְפַרְעֹֽה׃",
+      "en": "And Moshe and Aharon went out from Par῾o: and Moshe cried to the Lord because of the frogs which he had brought against Par῾o."
+    },
+    {
+      "n": 67,
+      "c": 8,
+      "v": 9,
+      "ref": "8:9",
+      "text": "וַיַּ֥עַשׂ יְהֹוָ֖ה כִּדְבַ֣ר מֹשֶׁ֑ה וַיָּמֻ֙תוּ֙ הַֽצְפַרְדְּעִ֔ים מִן־הַבָּתִּ֥ים מִן־הַחֲצֵרֹ֖ת וּמִן־הַשָּׂדֹֽת׃",
+      "en": "And the Lord did according to the word of Moshe; and the frogs died out of the houses, out of the courts, and out of the fields."
+    },
+    {
+      "n": 68,
+      "c": 8,
+      "v": 10,
+      "ref": "8:10",
+      "text": "וַיִּצְבְּר֥וּ אֹתָ֖ם חֳמָרִ֣ם חֳמָרִ֑ם וַתִּבְאַ֖שׁ הָאָֽרֶץ׃",
+      "en": "And they gathered them together in heaps: and the land stank."
+    },
+    {
+      "n": 69,
+      "c": 8,
+      "v": 11,
+      "ref": "8:11",
+      "text": "וַיַּ֣רְא פַּרְעֹ֗ה כִּ֤י הָֽיְתָה֙ הָֽרְוָחָ֔ה וְהַכְבֵּד֙ אֶת־לִבּ֔וֹ וְלֹ֥א שָׁמַ֖ע אֲלֵהֶ֑ם כַּאֲשֶׁ֖ר דִּבֶּ֥ר יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "But when Par῾o saw that there was respite, he hardened his heart, and hearkened not to them; as the Lord had said."
+    },
+    {
+      "n": 70,
+      "c": 8,
+      "v": 12,
+      "ref": "8:12",
+      "text": "וַיֹּ֣אמֶר יְהֹוָה֮ אֶל־מֹשֶׁה֒ אֱמֹר֙ אֶֽל־אַהֲרֹ֔ן נְטֵ֣ה אֶֽת־מַטְּךָ֔ וְהַ֖ךְ אֶת־עֲפַ֣ר הָאָ֑רֶץ וְהָיָ֥ה לְכִנִּ֖ם בְּכׇל־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And the Lord said to Moshe, Say to Aharon, Stretch out thy rod, and smite the dust of the land, that it may turn into lice throughout all the land of Miżrayim."
+    },
+    {
+      "n": 71,
+      "c": 8,
+      "v": 13,
+      "ref": "8:13",
+      "text": "וַיַּֽעֲשׂוּ־כֵ֗ן וַיֵּט֩ אַהֲרֹ֨ן אֶת־יָד֤וֹ בְמַטֵּ֙הוּ֙ וַיַּךְ֙ אֶת־עֲפַ֣ר הָאָ֔רֶץ וַתְּהִי֙ הַכִּנָּ֔ם בָּאָדָ֖ם וּבַבְּהֵמָ֑ה כׇּל־עֲפַ֥ר הָאָ֛רֶץ הָיָ֥ה כִנִּ֖ים בְּכׇל־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And they did so; for Aharon stretched out his hand with his rod, and smote the dust of the earth, and it became lice in man, and in beast; all the dust of the land became lice throughout all the land of Miżrayim."
+    },
+    {
+      "n": 72,
+      "c": 8,
+      "v": 14,
+      "ref": "8:14",
+      "text": "וַיַּעֲשׂוּ־כֵ֨ן הַחַרְטֻמִּ֧ים בְּלָטֵיהֶ֛ם לְהוֹצִ֥יא אֶת־הַכִּנִּ֖ים וְלֹ֣א יָכֹ֑לוּ וַתְּהִי֙ הַכִּנָּ֔ם בָּאָדָ֖ם וּבַבְּהֵמָֽה׃",
+      "en": "And the magicians did so with their secret arts to bring forth lice, but they could not: so there were lice on man and beast."
+    },
+    {
+      "n": 73,
+      "c": 8,
+      "v": 15,
+      "ref": "8:15",
+      "text": "וַיֹּאמְר֤וּ הַֽחַרְטֻמִּם֙ אֶל־פַּרְעֹ֔ה אֶצְבַּ֥ע אֱלֹהִ֖ים הִ֑וא וַיֶּחֱזַ֤ק לֵב־פַּרְעֹה֙ וְלֹֽא־שָׁמַ֣ע אֲלֵהֶ֔ם כַּאֲשֶׁ֖ר דִּבֶּ֥ר יְהֹוָֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Then the magicians said to Par῾o, This is the finger of God: and Par῾o’s heart was hardened, and he hearkened not to them; as the Lord had said."
+    },
+    {
+      "n": 74,
+      "c": 8,
+      "v": 16,
+      "ref": "8:16",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֶל־מֹשֶׁ֗ה הַשְׁכֵּ֤ם בַּבֹּ֙קֶר֙ וְהִתְיַצֵּב֙ לִפְנֵ֣י פַרְעֹ֔ה הִנֵּ֖ה יוֹצֵ֣א הַמָּ֑יְמָה וְאָמַרְתָּ֣ אֵלָ֗יו כֹּ֚ה אָמַ֣ר יְהֹוָ֔ה שַׁלַּ֥ח עַמִּ֖י וְיַֽעַבְדֻֽנִי׃",
+      "en": "And the Lord said to Moshe, Rise up early in the morning, and stand before Par῾o; lo he comes forth to the water; and say to him, Thus says the Lord, Let my people go, that they may serve me."
+    },
+    {
+      "n": 75,
+      "c": 8,
+      "v": 17,
+      "ref": "8:17",
+      "text": "כִּ֣י אִם־אֵינְךָ֮ מְשַׁלֵּ֣חַ אֶת־עַמִּי֒ הִנְנִי֩ מַשְׁלִ֨יחַ בְּךָ֜ וּבַעֲבָדֶ֧יךָ וּֽבְעַמְּךָ֛ וּבְבָתֶּ֖יךָ אֶת־הֶעָרֹ֑ב וּמָ֨לְא֜וּ בָּתֵּ֤י מִצְרַ֙יִם֙ אֶת־הֶ֣עָרֹ֔ב וְגַ֥ם הָאֲדָמָ֖ה אֲשֶׁר־הֵ֥ם עָלֶֽיהָ׃",
+      "en": "Else, if thou wilt not let my people go, behold, I will send swarms of gnats upon thee, and upon thy servants, and upon thy people, and into thy houses: and the houses of Miżrayim shall be full of swarms of gnats, and also the ground on which they are."
+    },
+    {
+      "n": 76,
+      "c": 8,
+      "v": 18,
+      "ref": "8:18",
+      "text": "וְהִפְלֵיתִי֩ בַיּ֨וֹם הַה֜וּא אֶת־אֶ֣רֶץ גֹּ֗שֶׁן אֲשֶׁ֤ר עַמִּי֙ עֹמֵ֣ד עָלֶ֔יהָ לְבִלְתִּ֥י הֱיֽוֹת־שָׁ֖ם עָרֹ֑ב לְמַ֣עַן תֵּדַ֔ע כִּ֛י אֲנִ֥י יְהֹוָ֖ה בְּקֶ֥רֶב הָאָֽרֶץ׃",
+      "en": "And I will separate in that day the land of Goshen, in which my people dwell, that no swarms of gnats shall be there; to the end that thou mayst know that I am the Lord in the midst of the earth."
+    },
+    {
+      "n": 77,
+      "c": 8,
+      "v": 19,
+      "ref": "8:19",
+      "text": "וְשַׂמְתִּ֣י פְדֻ֔ת בֵּ֥ין עַמִּ֖י וּבֵ֣ין עַמֶּ֑ךָ לְמָחָ֥ר יִהְיֶ֖ה הָאֹ֥ת הַזֶּֽה׃",
+      "en": "And I will put a division between my people and thy people: tomorrow shall this sign be."
+    },
+    {
+      "n": 78,
+      "c": 8,
+      "v": 20,
+      "ref": "8:20",
+      "text": "וַיַּ֤עַשׂ יְהֹוָה֙ כֵּ֔ן וַיָּבֹא֙ עָרֹ֣ב כָּבֵ֔ד בֵּ֥יתָה פַרְעֹ֖ה וּבֵ֣ית עֲבָדָ֑יו וּבְכׇל־אֶ֧רֶץ מִצְרַ֛יִם תִּשָּׁחֵ֥ת הָאָ֖רֶץ מִפְּנֵ֥י הֶעָרֹֽב׃",
+      "en": "And the Lord did so; and there came a grievous swarm of gnats into the house of Par῾o, and into his servants’ houses; and in all the land of Miżrayim the land was devastated by reason of the swarm of gnats."
+    },
+    {
+      "n": 79,
+      "c": 8,
+      "v": 21,
+      "ref": "8:21",
+      "text": "וַיִּקְרָ֣א פַרְעֹ֔ה אֶל־מֹשֶׁ֖ה וּֽלְאַהֲרֹ֑ן וַיֹּ֗אמֶר לְכ֛וּ זִבְח֥וּ לֵאלֹֽהֵיכֶ֖ם בָּאָֽרֶץ׃",
+      "en": "And Par῾o called for Moshe and for Aharon, and said, Go, sacrifice to your God in the land."
+    },
+    {
+      "n": 80,
+      "c": 8,
+      "v": 22,
+      "ref": "8:22",
+      "text": "וַיֹּ֣אמֶר מֹשֶׁ֗ה לֹ֤א נָכוֹן֙ לַעֲשׂ֣וֹת כֵּ֔ן כִּ֚י תּוֹעֲבַ֣ת מִצְרַ֔יִם נִזְבַּ֖ח לַיהֹוָ֣ה אֱלֹהֵ֑ינוּ הֵ֣ן נִזְבַּ֞ח אֶת־תּוֹעֲבַ֥ת מִצְרַ֛יִם לְעֵינֵיהֶ֖ם וְלֹ֥א יִסְקְלֻֽנוּ׃",
+      "en": "And Moshe said, It is not proper so to do; for we shall sacrifice the abomination of Miżrayim to the Lord our God: lo, shall we sacrifice the abomination of Miżrayim before their eyes, and will they not stone us?"
+    },
+    {
+      "n": 81,
+      "c": 8,
+      "v": 23,
+      "ref": "8:23",
+      "text": "דֶּ֚רֶךְ שְׁלֹ֣שֶׁת יָמִ֔ים נֵלֵ֖ךְ בַּמִּדְבָּ֑ר וְזָבַ֙חְנוּ֙ לַֽיהֹוָ֣ה אֱלֹהֵ֔ינוּ כַּאֲשֶׁ֖ר יֹאמַ֥ר אֵלֵֽינוּ׃",
+      "en": "We will go three days’ journey into the wilderness, and sacrifice to the Lord our God, as he shall command us."
+    },
+    {
+      "n": 82,
+      "c": 8,
+      "v": 24,
+      "ref": "8:24",
+      "text": "וַיֹּ֣אמֶר פַּרְעֹ֗ה אָנֹכִ֞י אֲשַׁלַּ֤ח אֶתְכֶם֙ וּזְבַחְתֶּ֞ם לַיהֹוָ֤ה אֱלֹֽהֵיכֶם֙ בַּמִּדְבָּ֔ר רַ֛ק הַרְחֵ֥ק לֹא־תַרְחִ֖יקוּ לָלֶ֑כֶת הַעְתִּ֖ירוּ בַּעֲדִֽי׃",
+      "en": "And Par῾o said, I will let you go, that you may sacrifice to the Lord your God in the wilderness; only you shall not go very far away: entreat for me."
+    },
+    {
+      "n": 83,
+      "c": 8,
+      "v": 25,
+      "ref": "8:25",
+      "text": "וַיֹּ֣אמֶר מֹשֶׁ֗ה הִנֵּ֨ה אָנֹכִ֜י יוֹצֵ֤א מֵֽעִמָּךְ֙ וְהַעְתַּרְתִּ֣י אֶל־יְהֹוָ֔ה וְסָ֣ר הֶעָרֹ֗ב מִפַּרְעֹ֛ה מֵעֲבָדָ֥יו וּמֵעַמּ֖וֹ מָחָ֑ר רַ֗ק אַל־יֹסֵ֤ף פַּרְעֹה֙ הָתֵ֔ל לְבִלְתִּי֙ שַׁלַּ֣ח אֶת־הָעָ֔ם לִזְבֹּ֖חַ לַֽיהֹוָֽה׃",
+      "en": "And Moshe said, Behold, I go out from thee, and I will entreat the Lord that the swarm of gnats may depart from Par῾o, from his servants, and from his people, tomorrow: but let not Par῾o deal deceitfully any more in not letting the people go to sacrifice to the Lord."
+    },
+    {
+      "n": 84,
+      "c": 8,
+      "v": 26,
+      "ref": "8:26",
+      "text": "וַיֵּצֵ֥א מֹשֶׁ֖ה מֵעִ֣ם פַּרְעֹ֑ה וַיֶּעְתַּ֖ר אֶל־יְהֹוָֽה׃",
+      "en": "And Moshe went out from Par῾o, and entreated the Lord."
+    },
+    {
+      "n": 85,
+      "c": 8,
+      "v": 27,
+      "ref": "8:27",
+      "text": "וַיַּ֤עַשׂ יְהֹוָה֙ כִּדְבַ֣ר מֹשֶׁ֔ה וַיָּ֙סַר֙ הֶעָרֹ֔ב מִפַּרְעֹ֖ה מֵעֲבָדָ֣יו וּמֵעַמּ֑וֹ לֹ֥א נִשְׁאַ֖ר אֶחָֽד׃",
+      "en": "And the Lord did according to the word of Moshe; and he removed the swarm of gnats from Par῾o, from his servants, and from his people; there remained not one."
+    },
+    {
+      "n": 86,
+      "c": 8,
+      "v": 28,
+      "ref": "8:28",
+      "text": "וַיַּכְבֵּ֤ד פַּרְעֹה֙ אֶת־לִבּ֔וֹ גַּ֖ם בַּפַּ֣עַם הַזֹּ֑את וְלֹ֥א שִׁלַּ֖ח אֶת־הָעָֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Par῾o hardened his heart at this time also, neither would he let the people go."
+    },
+    {
+      "n": 87,
+      "c": 9,
+      "v": 1,
+      "ref": "9:1",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה בֹּ֖א אֶל־פַּרְעֹ֑ה וְדִבַּרְתָּ֣ אֵלָ֗יו כֹּֽה־אָמַ֤ר יְהֹוָה֙ אֱלֹהֵ֣י הָֽעִבְרִ֔ים שַׁלַּ֥ח אֶת־עַמִּ֖י וְיַֽעַבְדֻֽנִי׃",
+      "en": "Then the Lord said to Moshe, Go in to Par῾o, and tell him, Thus says the Lord God of the Hebrews, Let my people go, that they may serve me."
+    },
+    {
+      "n": 88,
+      "c": 9,
+      "v": 2,
+      "ref": "9:2",
+      "text": "כִּ֛י אִם־מָאֵ֥ן אַתָּ֖ה לְשַׁלֵּ֑חַ וְעוֹדְךָ֖ מַחֲזִ֥יק בָּֽם׃",
+      "en": "For if thou refuse to let them go, and wilt hold them still,"
+    },
+    {
+      "n": 89,
+      "c": 9,
+      "v": 3,
+      "ref": "9:3",
+      "text": "הִנֵּ֨ה יַד־יְהֹוָ֜ה הוֹיָ֗ה בְּמִקְנְךָ֙ אֲשֶׁ֣ר בַּשָּׂדֶ֔ה בַּסּוּסִ֤ים בַּֽחֲמֹרִים֙ בַּגְּמַלִּ֔ים בַּבָּקָ֖ר וּבַצֹּ֑אן דֶּ֖בֶר כָּבֵ֥ד מְאֹֽד׃",
+      "en": "behold, the hand of the Lord is upon thy cattle which is in the field, upon the horses, upon the asses, upon the camels, upon the oxen, and upon the sheep: there shall be a very grievous plague."
+    },
+    {
+      "n": 90,
+      "c": 9,
+      "v": 4,
+      "ref": "9:4",
+      "text": "וְהִפְלָ֣ה יְהֹוָ֔ה בֵּ֚ין מִקְנֵ֣ה יִשְׂרָאֵ֔ל וּבֵ֖ין מִקְנֵ֣ה מִצְרָ֑יִם וְלֹ֥א יָמ֛וּת מִכׇּל־לִבְנֵ֥י יִשְׂרָאֵ֖ל דָּבָֽר׃",
+      "en": "And the Lord shall separate the cattle of Yisra᾽el from the cattle of Miżrayim: and nothing shall die of all that belongs to the children of Yisra᾽el."
+    },
+    {
+      "n": 91,
+      "c": 9,
+      "v": 5,
+      "ref": "9:5",
+      "text": "וַיָּ֥שֶׂם יְהֹוָ֖ה מוֹעֵ֣ד לֵאמֹ֑ר מָחָ֗ר יַעֲשֶׂ֧ה יְהֹוָ֛ה הַדָּבָ֥ר הַזֶּ֖ה בָּאָֽרֶץ׃",
+      "en": "And the Lord appointed a set time, saying, Tomorrow the Lord shall do this thing in the land."
+    },
+    {
+      "n": 92,
+      "c": 9,
+      "v": 6,
+      "ref": "9:6",
+      "text": "וַיַּ֨עַשׂ יְהֹוָ֜ה אֶת־הַדָּבָ֤ר הַזֶּה֙ מִֽמׇּחֳרָ֔ת וַיָּ֕מׇת כֹּ֖ל מִקְנֵ֣ה מִצְרָ֑יִם וּמִמִּקְנֵ֥ה בְנֵֽי־יִשְׂרָאֵ֖ל לֹא־מֵ֥ת אֶחָֽד׃",
+      "en": "And the Lord did that thing on the morrow, and all the cattle of Miżrayim died: but of the cattle of the children of Yisra᾽el not one died."
+    },
+    {
+      "n": 93,
+      "c": 9,
+      "v": 7,
+      "ref": "9:7",
+      "text": "וַיִּשְׁלַ֣ח פַּרְעֹ֔ה וְהִנֵּ֗ה לֹא־מֵ֛ת מִמִּקְנֵ֥ה יִשְׂרָאֵ֖ל עַד־אֶחָ֑ד וַיִּכְבַּד֙ לֵ֣ב פַּרְעֹ֔ה וְלֹ֥א שִׁלַּ֖ח אֶת־הָעָֽם׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Par῾o sent, and, behold, there was not one of the cattle of Yisra᾽el dead. And the heart of Par῾o was hard, and he did not let the people go."
+    },
+    {
+      "n": 94,
+      "c": 9,
+      "v": 8,
+      "ref": "9:8",
+      "text": "וַיֹּ֣אמֶר יְהֹוָה֮ אֶל־מֹשֶׁ֣ה וְאֶֽל־אַהֲרֹן֒ קְח֤וּ לָכֶם֙ מְלֹ֣א חׇפְנֵיכֶ֔ם פִּ֖יחַ כִּבְשָׁ֑ן וּזְרָק֥וֹ מֹשֶׁ֛ה הַשָּׁמַ֖יְמָה לְעֵינֵ֥י פַרְעֹֽה׃",
+      "en": "And the Lord said to Moshe and to Aharon, Take for yourselves handfuls of soot of the furnace, and let Moshe sprinkle it heaven- wards in the sight of Par῾o."
+    },
+    {
+      "n": 95,
+      "c": 9,
+      "v": 9,
+      "ref": "9:9",
+      "text": "וְהָיָ֣ה לְאָבָ֔ק עַ֖ל כׇּל־אֶ֣רֶץ מִצְרָ֑יִם וְהָיָ֨ה עַל־הָאָדָ֜ם וְעַל־הַבְּהֵמָ֗ה לִשְׁחִ֥ין פֹּרֵ֛חַ אֲבַעְבֻּעֹ֖ת בְּכׇל־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And it shall become small dust in all the land of Miżrayim, and shall be a pox breaking out in blisters upon man, and upon beast, throughout all the land of Miżrayim."
+    },
+    {
+      "n": 96,
+      "c": 9,
+      "v": 10,
+      "ref": "9:10",
+      "text": "וַיִּקְח֞וּ אֶת־פִּ֣יחַ הַכִּבְשָׁ֗ן וַיַּֽעַמְדוּ֙ לִפְנֵ֣י פַרְעֹ֔ה וַיִּזְרֹ֥ק אֹת֛וֹ מֹשֶׁ֖ה הַשָּׁמָ֑יְמָה וַיְהִ֗י שְׁחִין֙ אֲבַעְבֻּעֹ֔ת פֹּרֵ֕חַ בָּאָדָ֖ם וּבַבְּהֵמָֽה׃",
+      "en": "And they took soot of the furnace, and stood before Par῾o; and Moshe sprinkled it up heavenwards; and it became a pox breaking out in blisters on man and beast."
+    },
+    {
+      "n": 97,
+      "c": 9,
+      "v": 11,
+      "ref": "9:11",
+      "text": "וְלֹֽא־יָכְל֣וּ הַֽחַרְטֻמִּ֗ים לַעֲמֹ֛ד לִפְנֵ֥י מֹשֶׁ֖ה מִפְּנֵ֣י הַשְּׁחִ֑ין כִּֽי־הָיָ֣ה הַשְּׁחִ֔ין בַּֽחַרְטֻמִּ֖ם וּבְכׇל־מִצְרָֽיִם׃",
+      "en": "And the magicians could not stand before Moshe because of the pox; for the pox was on the magicians, and on all Miżrayim."
+    },
+    {
+      "n": 98,
+      "c": 9,
+      "v": 12,
+      "ref": "9:12",
+      "text": "וַיְחַזֵּ֤ק יְהֹוָה֙ אֶת־לֵ֣ב פַּרְעֹ֔ה וְלֹ֥א שָׁמַ֖ע אֲלֵהֶ֑ם כַּאֲשֶׁ֛ר דִּבֶּ֥ר יְהֹוָ֖ה אֶל־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the Lord hardened the heart of Par῾o, and he hearkened not to them; as the Lord had spoken to Moshe."
+    },
+    {
+      "n": 99,
+      "c": 9,
+      "v": 13,
+      "ref": "9:13",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־מֹשֶׁ֔ה הַשְׁכֵּ֣ם בַּבֹּ֔קֶר וְהִתְיַצֵּ֖ב לִפְנֵ֣י פַרְעֹ֑ה וְאָמַרְתָּ֣ אֵלָ֗יו כֹּֽה־אָמַ֤ר יְהֹוָה֙ אֱלֹהֵ֣י הָֽעִבְרִ֔ים שַׁלַּ֥ח אֶת־עַמִּ֖י וְיַֽעַבְדֻֽנִי׃",
+      "en": "And the Lord said to Moshe, Rise up early in the morning, and stand before Par῾o, and say to him, Thus says the Lord God of the Hebrews, Let my people go, that they may serve me."
+    },
+    {
+      "n": 100,
+      "c": 9,
+      "v": 14,
+      "ref": "9:14",
+      "text": "כִּ֣י&thinsp;<b>׀</b> בַּפַּ֣עַם הַזֹּ֗את אֲנִ֨י שֹׁלֵ֜חַ אֶת־כׇּל־מַגֵּפֹתַי֙ אֶֽל־לִבְּךָ֔ וּבַעֲבָדֶ֖יךָ וּבְעַמֶּ֑ךָ בַּעֲב֣וּר תֵּדַ֔ע כִּ֛י אֵ֥ין כָּמֹ֖נִי בְּכׇל־הָאָֽרֶץ׃",
+      "en": "For I will at this time send all my plagues upon thy heart, and on thy servants, and on thy people; that thou mayst know that there is none like me in all the earth."
+    },
+    {
+      "n": 101,
+      "c": 9,
+      "v": 15,
+      "ref": "9:15",
+      "text": "כִּ֤י עַתָּה֙ שָׁלַ֣חְתִּי אֶת־יָדִ֔י וָאַ֥ךְ אוֹתְךָ֛ וְאֶֽת־עַמְּךָ֖ בַּדָּ֑בֶר וַתִּכָּחֵ֖ד מִן־הָאָֽרֶץ׃",
+      "en": "For now if I would stretch out my hand, I might smite thee and thy people with pestilence; and thou shouldst be cut off from the earth."
+    },
+    {
+      "n": 102,
+      "c": 9,
+      "v": 16,
+      "ref": "9:16",
+      "text": "וְאוּלָ֗ם בַּעֲב֥וּר זֹאת֙ הֶעֱמַדְתִּ֔יךָ בַּעֲב֖וּר הַרְאֹתְךָ֣ אֶת־כֹּחִ֑י וּלְמַ֛עַן סַפֵּ֥ר שְׁמִ֖י בְּכׇל־הָאָֽרֶץ׃",
+      "en": "And in very deed for this cause have I raised thee up, to show in thee my power; and that my name may be proclaimed throughout all the earth."
+    },
+    {
+      "n": 103,
+      "c": 9,
+      "v": 17,
+      "ref": "9:17",
+      "text": "עוֹדְךָ֖ מִסְתּוֹלֵ֣ל בְּעַמִּ֑י לְבִלְתִּ֖י שַׁלְּחָֽם׃",
+      "en": "If as yet thou dost exalt thyself against my people, so as not to let them go,"
+    },
+    {
+      "n": 104,
+      "c": 9,
+      "v": 18,
+      "ref": "9:18",
+      "text": "הִנְנִ֤י מַמְטִיר֙ כָּעֵ֣ת מָחָ֔ר בָּרָ֖ד כָּבֵ֣ד מְאֹ֑ד אֲשֶׁ֨ר לֹא־הָיָ֤ה כָמֹ֙הוּ֙ בְּמִצְרַ֔יִם לְמִן־הַיּ֥וֹם הִוָּסְדָ֖הֿ וְעַד־עָֽתָּה׃",
+      "en": "behold, tomorrow about this time I will cause it to rain a very grievous hail, such as has not been in Miżrayim since its foundation until now."
+    },
+    {
+      "n": 105,
+      "c": 9,
+      "v": 19,
+      "ref": "9:19",
+      "text": "וְעַתָּ֗ה שְׁלַ֤ח הָעֵז֙ אֶֽת־מִקְנְךָ֔ וְאֵ֛ת כׇּל־אֲשֶׁ֥ר לְךָ֖ בַּשָּׂדֶ֑ה כׇּל־הָאָדָ֨ם וְהַבְּהֵמָ֜ה אֲשֶֽׁר־יִמָּצֵ֣א בַשָּׂדֶ֗ה וְלֹ֤א יֵֽאָסֵף֙ הַבַּ֔יְתָה וְיָרַ֧ד עֲלֵהֶ֛ם הַבָּרָ֖ד וָמֵֽתוּ׃",
+      "en": "Send therefore now, and gather thy cattle, and all that thou hast in the field; for upon every man and beast which shall be found in the field, and shall not be brought home, the hail shall come down, and they shall die."
+    },
+    {
+      "n": 106,
+      "c": 9,
+      "v": 20,
+      "ref": "9:20",
+      "text": "הַיָּרֵא֙ אֶת־דְּבַ֣ר יְהֹוָ֔ה מֵֽעַבְדֵ֖י פַּרְעֹ֑ה הֵנִ֛יס אֶת־עֲבָדָ֥יו וְאֶת־מִקְנֵ֖הוּ אֶל־הַבָּתִּֽים׃",
+      "en": "He that feared the word of the Lord among the servants of Par῾o made his servants and his cattle flee into the houses:"
+    },
+    {
+      "n": 107,
+      "c": 9,
+      "v": 21,
+      "ref": "9:21",
+      "text": "וַאֲשֶׁ֥ר לֹא־שָׂ֛ם לִבּ֖וֹ אֶל־דְּבַ֣ר יְהֹוָ֑ה וַֽיַּעֲזֹ֛ב אֶת־עֲבָדָ֥יו וְאֶת־מִקְנֵ֖הוּ בַּשָּׂדֶֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "and he that regarded not the word of the Lord left his servants and his cattle in the field."
+    },
+    {
+      "n": 108,
+      "c": 9,
+      "v": 22,
+      "ref": "9:22",
+      "text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֶל־מֹשֶׁ֗ה נְטֵ֤ה אֶת־יָֽדְךָ֙ עַל־הַשָּׁמַ֔יִם וִיהִ֥י בָרָ֖ד בְּכׇל־אֶ֣רֶץ מִצְרָ֑יִם עַל־הָאָדָ֣ם וְעַל־הַבְּהֵמָ֗ה וְעַ֛ל כׇּל־עֵ֥שֶׂב הַשָּׂדֶ֖ה בְּאֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And the Lord said to Moshe, Stretch out thy hand towards heaven, that there may be hail in all the land of Miżrayim, on man and beast, and on every plant of the field, throughout the land of Miżrayim."
+    },
+    {
+      "n": 109,
+      "c": 9,
+      "v": 23,
+      "ref": "9:23",
+      "text": "וַיֵּ֨ט מֹשֶׁ֣ה אֶת־מַטֵּ֘הוּ֮ עַל־הַשָּׁמַ֒יִם֒ וַֽיהֹוָ֗ה נָתַ֤ן קֹלֹת֙ וּבָרָ֔ד וַתִּ֥הֲלַךְ אֵ֖שׁ אָ֑רְצָה וַיַּמְטֵ֧ר יְהֹוָ֛ה בָּרָ֖ד עַל־אֶ֥רֶץ מִצְרָֽיִם׃",
+      "en": "And Moshe stretched out his rod towards heaven: and the Lord sent thunder and hail, and the fire ran down upon the ground; and the Lord rained hail upon the land of Miżrayim."
+    },
+    {
+      "n": 110,
+      "c": 9,
+      "v": 24,
+      "ref": "9:24",
+      "text": "וַיְהִ֣י בָרָ֔ד וְאֵ֕שׁ מִתְלַקַּ֖חַת בְּת֣וֹךְ הַבָּרָ֑ד כָּבֵ֣ד מְאֹ֔ד אֲ֠שֶׁ֠ר לֹֽא־הָיָ֤ה כָמֹ֙הוּ֙ בְּכׇל־אֶ֣רֶץ מִצְרַ֔יִם מֵאָ֖ז הָיְתָ֥ה לְגֽוֹי׃",
+      "en": "So there was hail, and fire flaring up amidst the hail, very grievous, such as there was none like it in all the land of Miżrayim since it became a nation."
+    },
+    {
+      "n": 111,
+      "c": 9,
+      "v": 25,
+      "ref": "9:25",
+      "text": "וַיַּ֨ךְ הַבָּרָ֜ד בְּכׇל־אֶ֣רֶץ מִצְרַ֗יִם אֵ֚ת כׇּל־אֲשֶׁ֣ר בַּשָּׂדֶ֔ה מֵאָדָ֖ם וְעַד־בְּהֵמָ֑ה וְאֵ֨ת כׇּל־עֵ֤שֶׂב הַשָּׂדֶה֙ הִכָּ֣ה הַבָּרָ֔ד וְאֶת־כׇּל־עֵ֥ץ הַשָּׂדֶ֖ה שִׁבֵּֽר׃",
+      "en": "And the hail smote throughout all the land of Miżrayim all that was in the field, both man and beast; and the hail smote every plant of the field, and broke every tree of the field."
+    },
+    {
+      "n": 112,
+      "c": 9,
+      "v": 26,
+      "ref": "9:26",
+      "text": "רַ֚ק בְּאֶ֣רֶץ גֹּ֔שֶׁן אֲשֶׁר־שָׁ֖ם בְּנֵ֣י יִשְׂרָאֵ֑ל לֹ֥א הָיָ֖ה בָּרָֽד׃",
+      "en": "Only in the land of Goshen, where the children of Yisra᾽el were, was there no hail."
+    },
+    {
+      "n": 113,
+      "c": 9,
+      "v": 27,
+      "ref": "9:27",
+      "text": "וַיִּשְׁלַ֣ח פַּרְעֹ֗ה וַיִּקְרָא֙ לְמֹשֶׁ֣ה וּֽלְאַהֲרֹ֔ן וַיֹּ֥אמֶר אֲלֵהֶ֖ם חָטָ֣אתִי הַפָּ֑עַם יְהֹוָה֙ הַצַּדִּ֔יק וַאֲנִ֥י וְעַמִּ֖י הָרְשָׁעִֽים׃",
+      "en": "And Par῾o sent, and called for Moshe and Aharon, and said to them, I have sinned this time: the Lord is righteous, and I and my people are wicked."
+    },
+    {
+      "n": 114,
+      "c": 9,
+      "v": 28,
+      "ref": "9:28",
+      "text": "הַעְתִּ֙ירוּ֙ אֶל־יְהֹוָ֔ה וְרַ֕ב מִֽהְיֹ֛ת קֹלֹ֥ת אֱלֹהִ֖ים וּבָרָ֑ד וַאֲשַׁלְּחָ֣ה אֶתְכֶ֔ם וְלֹ֥א תֹסִפ֖וּן לַעֲמֹֽד׃",
+      "en": "Entreat the Lord that there be no more mighty thunderings and hail; and I will let you go, and you shall stay no longer."
+    },
+    {
+      "n": 115,
+      "c": 9,
+      "v": 29,
+      "ref": "9:29",
+      "text": "וַיֹּ֤אמֶר אֵלָיו֙ מֹשֶׁ֔ה כְּצֵאתִי֙ אֶת־הָעִ֔יר אֶפְרֹ֥שׂ אֶת־כַּפַּ֖י אֶל־יְהֹוָ֑ה הַקֹּל֣וֹת יֶחְדָּל֗וּן וְהַבָּרָד֙ לֹ֣א יִֽהְיֶה־ע֔וֹד לְמַ֣עַן תֵּדַ֔ע כִּ֥י לַיהֹוָ֖ה הָאָֽרֶץ׃",
+      "en": "And Moshe said to him, As soon as I am gone out of the city, I will spread out my hands to the Lord; and the thunder shall cease, neither shall there be any more hail; that thou mayst know that the earth is the Lord’s."
+    },
+    {
+      "n": 116,
+      "c": 9,
+      "v": 30,
+      "ref": "9:30",
+      "text": "וְאַתָּ֖ה וַעֲבָדֶ֑יךָ יָדַ֕עְתִּי כִּ֚י טֶ֣רֶם תִּֽירְא֔וּן מִפְּנֵ֖י יְהֹוָ֥ה אֱלֹהִֽים׃",
+      "en": "But as for thee and thy servants, I know that you will not yet fear the Lord God."
+    },
+    {
+      "n": 117,
+      "c": 9,
+      "v": 31,
+      "ref": "9:31",
+      "text": "וְהַפִּשְׁתָּ֥ה וְהַשְּׂעֹרָ֖ה נֻכָּ֑תָה כִּ֤י הַשְּׂעֹרָה֙ אָבִ֔יב וְהַפִּשְׁתָּ֖ה גִּבְעֹֽל׃",
+      "en": "And the flax and the barley were struck: for the barley was in the ear, and the flax was in bud."
+    },
+    {
+      "n": 118,
+      "c": 9,
+      "v": 32,
+      "ref": "9:32",
+      "text": "וְהַחִטָּ֥ה וְהַכֻּסֶּ֖מֶת לֹ֣א נֻכּ֑וּ כִּ֥י אֲפִילֹ֖ת הֵֽנָּה׃",
+      "en": "But the wheat and the spelt were not struck: for they were late ripening."
+    },
+    {
+      "n": 119,
+      "c": 9,
+      "v": 33,
+      "ref": "9:33",
+      "text": "וַיֵּצֵ֨א מֹשֶׁ֜ה מֵעִ֤ם פַּרְעֹה֙ אֶת־הָעִ֔יר וַיִּפְרֹ֥שׂ כַּפָּ֖יו אֶל־יְהֹוָ֑ה וַֽיַּחְדְּל֤וּ הַקֹּלוֹת֙ וְהַבָּרָ֔ד וּמָטָ֖ר לֹא־נִתַּ֥ךְ אָֽרְצָה׃",
+      "en": "And Moshe went out of the city from Par῾o, and spread out his hands to the Lord: and the thunders and hail ceased, and the rain was no longer poured upon the earth."
+    },
+    {
+      "n": 120,
+      "c": 9,
+      "v": 34,
+      "ref": "9:34",
+      "text": "וַיַּ֣רְא פַּרְעֹ֗ה כִּֽי־חָדַ֨ל הַמָּטָ֧ר וְהַבָּרָ֛ד וְהַקֹּלֹ֖ת וַיֹּ֣סֶף לַחֲטֹ֑א וַיַּכְבֵּ֥ד לִבּ֖וֹ ה֥וּא וַעֲבָדָֽיו׃",
+      "en": "And when Par῾o saw that the rain and the hail and the thunders had ceased, he sinned yet again, and hardened his heart, he and his servants."
+    },
+    {
+      "n": 121,
+      "c": 9,
+      "v": 35,
+      "ref": "9:35",
+      "text": "וַיֶּֽחֱזַק֙ לֵ֣ב פַּרְעֹ֔ה וְלֹ֥א שִׁלַּ֖ח אֶת־בְּנֵ֣י יִשְׂרָאֵ֑ל כַּאֲשֶׁ֛ר דִּבֶּ֥ר יְהֹוָ֖ה בְּיַד־מֹשֶֽׁה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And the heart of Par῾o was hard, neither would he let the children of Yisra᾽el go; as the Lord had spoken by Moshe."
+    }
+  ],
+  "parashah": {
+    "en": "Vaera",
+    "he": "וָאֵרָא",
+    "translit": "Vaera",
+    "ref": "Exodus 6:2–9:35"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 12,
+        "ref": "6:2–6:13"
+      },
+      {
+        "n": 2,
+        "start": 13,
+        "end": 27,
+        "ref": "6:14–6:28"
+      },
+      {
+        "n": 3,
+        "start": 28,
+        "end": 36,
+        "ref": "6:29–7:7"
+      },
+      {
+        "n": 4,
+        "start": 37,
+        "end": 64,
+        "ref": "7:8–8:6"
+      },
+      {
+        "n": 5,
+        "start": 65,
+        "end": 76,
+        "ref": "8:7–8:18"
+      },
+      {
+        "n": 6,
+        "start": 77,
+        "end": 102,
+        "ref": "8:19–9:16"
+      },
+      {
+        "n": 7,
+        "start": 103,
+        "end": 121,
+        "ref": "9:17–9:35"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 4,
+          "ref": "6:2–6:5"
+        },
+        {
+          "n": 2,
+          "start": 5,
+          "end": 8,
+          "ref": "6:6–6:9"
+        },
+        {
+          "n": 3,
+          "start": 9,
+          "end": 12,
+          "ref": "6:10–6:13"
+        },
+        {
+          "n": 4,
+          "start": 13,
+          "end": 18,
+          "ref": "6:14–6:19"
+        },
+        {
+          "n": 5,
+          "start": 19,
+          "end": 24,
+          "ref": "6:20–6:25"
+        },
+        {
+          "n": 6,
+          "start": 25,
+          "end": 27,
+          "ref": "6:26–6:28"
+        },
+        {
+          "n": 7,
+          "start": 28,
+          "end": 36,
+          "ref": "6:29–7:7"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 37,
+          "end": 42,
+          "ref": "7:8–7:13"
+        },
+        {
+          "n": 2,
+          "start": 43,
+          "end": 47,
+          "ref": "7:14–7:18"
+        },
+        {
+          "n": 3,
+          "start": 48,
+          "end": 54,
+          "ref": "7:19–7:25"
+        },
+        {
+          "n": 4,
+          "start": 55,
+          "end": 58,
+          "ref": "7:26–7:29"
+        },
+        {
+          "n": 5,
+          "start": 59,
+          "end": 64,
+          "ref": "8:1–8:6"
+        },
+        {
+          "n": 6,
+          "start": 65,
+          "end": 69,
+          "ref": "8:7–8:11"
+        },
+        {
+          "n": 7,
+          "start": 70,
+          "end": 73,
+          "ref": "8:12–8:15"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 74,
+          "end": 81,
+          "ref": "8:16–8:23"
+        },
+        {
+          "n": 2,
+          "start": 82,
+          "end": 86,
+          "ref": "8:24–8:28"
+        },
+        {
+          "n": 3,
+          "start": 87,
+          "end": 93,
+          "ref": "9:1–9:7"
+        },
+        {
+          "n": 4,
+          "start": 94,
+          "end": 102,
+          "ref": "9:8–9:16"
+        },
+        {
+          "n": 5,
+          "start": 103,
+          "end": 107,
+          "ref": "9:17–9:21"
+        },
+        {
+          "n": 6,
+          "start": 108,
+          "end": 112,
+          "ref": "9:22–9:26"
+        },
+        {
+          "n": 7,
+          "start": 113,
+          "end": 121,
+          "ref": "9:27–9:35"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 119,
+        "end": 121,
+        "ref": "9:33–9:35"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 34,
+          "end": 36,
+          "ref": "7:5–7:7"
+        },
+        "2": {
+          "n": "M",
+          "start": 70,
+          "end": 73,
+          "ref": "8:12–8:15"
+        },
+        "3": {
+          "n": "M",
+          "start": 119,
+          "end": 121,
+          "ref": "9:33–9:35"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

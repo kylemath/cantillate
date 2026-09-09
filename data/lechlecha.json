@@ -1,0 +1,1241 @@
+{
+  "slug": "lechlecha",
+  "book": {
+    "en": "Genesis",
+    "he": "בראשית",
+    "translit": "Bereshit"
+  },
+  "multiChapter": true,
+  "ref": "Genesis 12:1-17:27",
+  "heRef": "בראשית י״ב:א-י״ז:כ״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 12,
+      "v": 1,
+      "ref": "12:1",
+      "text": "וַיֹּ֤אמֶר יְהֹוָה֙ אֶל־אַבְרָ֔ם לֶךְ־לְךָ֛ מֵאַרְצְךָ֥ וּמִמּֽוֹלַדְתְּךָ֖ וּמִבֵּ֣ית אָבִ֑יךָ אֶל־הָאָ֖רֶץ אֲשֶׁ֥ר אַרְאֶֽךָּ׃",
+      "en": "Now the Lord said to Avram, Get thee out of thy country, and from thy kindred, and from thy father’s house, to the land that I will show thee:"
+    },
+    {
+      "n": 2,
+      "c": 12,
+      "v": 2,
+      "ref": "12:2",
+      "text": "וְאֶֽעֶשְׂךָ֙ לְג֣וֹי גָּד֔וֹל וַאֲבָ֣רֶכְךָ֔ וַאֲגַדְּלָ֖ה שְׁמֶ֑ךָ וֶהְיֵ֖ה בְּרָכָֽה׃",
+      "en": "and I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing:"
+    },
+    {
+      "n": 3,
+      "c": 12,
+      "v": 3,
+      "ref": "12:3",
+      "text": "וַאֲבָֽרְכָה֙ מְבָ֣רְכֶ֔יךָ וּמְקַלֶּלְךָ֖ אָאֹ֑ר וְנִבְרְכ֣וּ בְךָ֔ כֹּ֖ל מִשְׁפְּחֹ֥ת הָאֲדָמָֽה׃",
+      "en": "and I will bless them that bless thee, and curse him that curses thee: and in thee shall all the families of the earth be blessed."
+    },
+    {
+      "n": 4,
+      "c": 12,
+      "v": 4,
+      "ref": "12:4",
+      "text": "וַיֵּ֣לֶךְ אַבְרָ֗ם כַּאֲשֶׁ֨ר דִּבֶּ֤ר אֵלָיו֙ יְהֹוָ֔ה וַיֵּ֥לֶךְ אִתּ֖וֹ ל֑וֹט וְאַבְרָ֗ם בֶּן־חָמֵ֤שׁ שָׁנִים֙ וְשִׁבְעִ֣ים שָׁנָ֔ה בְּצֵאת֖וֹ מֵחָרָֽן׃",
+      "en": "So Avram departed, as the Lord had spoken to him; and Lot went with him: and Avram was seventy five years old when he departed out of Ḥaran."
+    },
+    {
+      "n": 5,
+      "c": 12,
+      "v": 5,
+      "ref": "12:5",
+      "text": "וַיִּקַּ֣ח אַבְרָם֩ אֶת־שָׂרַ֨י אִשְׁתּ֜וֹ וְאֶת־ל֣וֹט בֶּן־אָחִ֗יו וְאֶת־כׇּל־רְכוּשָׁם֙ אֲשֶׁ֣ר רָכָ֔שׁוּ וְאֶת־הַנֶּ֖פֶשׁ אֲשֶׁר־עָשׂ֣וּ בְחָרָ֑ן וַיֵּצְא֗וּ לָלֶ֙כֶת֙ אַ֣רְצָה כְּנַ֔עַן וַיָּבֹ֖אוּ אַ֥רְצָה כְּנָֽעַן׃",
+      "en": "And Avram took Saray his wife, and Lot his brother’s son, and all their substance that they had gathered, and the souls that they had acquired in Ḥaran; and they went forth to go to the land of Kena῾an; and into the land of Kena῾an they came."
+    },
+    {
+      "n": 6,
+      "c": 12,
+      "v": 6,
+      "ref": "12:6",
+      "text": "וַיַּעֲבֹ֤ר אַבְרָם֙ בָּאָ֔רֶץ עַ֚ד מְק֣וֹם שְׁכֶ֔ם עַ֖ד אֵל֣וֹן מוֹרֶ֑ה וְהַֽכְּנַעֲנִ֖י אָ֥ז בָּאָֽרֶץ׃",
+      "en": "And Avram passed through the land to the place of Shekhem unto the terebinth of More. And the Kena῾ani was then in the land."
+    },
+    {
+      "n": 7,
+      "c": 12,
+      "v": 7,
+      "ref": "12:7",
+      "text": "וַיֵּרָ֤א יְהֹוָה֙ אֶל־אַבְרָ֔ם וַיֹּ֕אמֶר לְזַ֨רְעֲךָ֔ אֶתֵּ֖ן אֶת־הָאָ֣רֶץ הַזֹּ֑את וַיִּ֤בֶן שָׁם֙ מִזְבֵּ֔חַ לַיהֹוָ֖ה הַנִּרְאֶ֥ה אֵלָֽיו׃",
+      "en": "And the Lord appeared to Avram, and said, To thy seed will I give this land: and there he built an altar to the Lord, who had appeared to him."
+    },
+    {
+      "n": 8,
+      "c": 12,
+      "v": 8,
+      "ref": "12:8",
+      "text": "וַיַּעְתֵּ֨ק מִשָּׁ֜ם הָהָ֗רָה מִקֶּ֛דֶם לְבֵֽית־אֵ֖ל וַיֵּ֣ט אׇהֳלֹ֑ה בֵּֽית־אֵ֤ל מִיָּם֙ וְהָעַ֣י מִקֶּ֔דֶם וַיִּֽבֶן־שָׁ֤ם מִזְבֵּ֙חַ֙ לַֽיהֹוָ֔ה וַיִּקְרָ֖א בְּשֵׁ֥ם יְהֹוָֽה׃",
+      "en": "And he removed from there to a mountain on the east of Bet-el, and pitched his tent, having Bet-el on the west, and ῾Ay on the east: and there he built an altar to the Lord, and called upon the name of the Lord."
+    },
+    {
+      "n": 9,
+      "c": 12,
+      "v": 9,
+      "ref": "12:9",
+      "text": "וַיִּסַּ֣ע אַבְרָ֔ם הָל֥וֹךְ וְנָס֖וֹעַ הַנֶּֽגְבָּה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And Avram journeyed, going on still toward the Negev."
+    },
+    {
+      "n": 10,
+      "c": 12,
+      "v": 10,
+      "ref": "12:10",
+      "text": "וַיְהִ֥י רָעָ֖ב בָּאָ֑רֶץ וַיֵּ֨רֶד אַבְרָ֤ם מִצְרַ֙יְמָה֙ לָג֣וּר שָׁ֔ם כִּֽי־כָבֵ֥ד הָרָעָ֖ב בָּאָֽרֶץ׃",
+      "en": "And there was famine in the land: and Avram went down to Miżrayim to sojourn there; for the famine was severe in the land."
+    },
+    {
+      "n": 11,
+      "c": 12,
+      "v": 11,
+      "ref": "12:11",
+      "text": "וַיְהִ֕י כַּאֲשֶׁ֥ר הִקְרִ֖יב לָב֣וֹא מִצְרָ֑יְמָה וַיֹּ֙אמֶר֙ אֶל־שָׂרַ֣י אִשְׁתּ֔וֹ הִנֵּה־נָ֣א יָדַ֔עְתִּי כִּ֛י אִשָּׁ֥ה יְפַת־מַרְאֶ֖ה אָֽתְּ׃",
+      "en": "And it came to pass, when he was come near to enter to Miżrayim that he said to Saray his wife, Behold now, I know that thou art a fair woman to look upon:"
+    },
+    {
+      "n": 12,
+      "c": 12,
+      "v": 12,
+      "ref": "12:12",
+      "text": "וְהָיָ֗ה כִּֽי־יִרְא֤וּ אֹתָךְ֙ הַמִּצְרִ֔ים וְאָמְר֖וּ אִשְׁתּ֣וֹ זֹ֑את וְהָרְג֥וּ אֹתִ֖י וְאֹתָ֥ךְ יְחַיּֽוּ׃",
+      "en": "therefore it shall come to pass, when the Miżrim shall see thee, that they shall say, This is his wife: and they will kill me, but they will save thee alive."
+    },
+    {
+      "n": 13,
+      "c": 12,
+      "v": 13,
+      "ref": "12:13",
+      "text": "אִמְרִי־נָ֖א אֲחֹ֣תִי אָ֑תְּ לְמַ֙עַן֙ יִֽיטַב־לִ֣י בַעֲבוּרֵ֔ךְ וְחָיְתָ֥ה נַפְשִׁ֖י בִּגְלָלֵֽךְ׃",
+      "en": "Say, I pray thee, thou art my sister: that it may be well with me for thy sake; and my soul shall live because of thee."
+    },
+    {
+      "n": 14,
+      "c": 12,
+      "v": 14,
+      "ref": "12:14",
+      "text": "וַיְהִ֕י כְּב֥וֹא אַבְרָ֖ם מִצְרָ֑יְמָה וַיִּרְא֤וּ הַמִּצְרִים֙ אֶת־הָ֣אִשָּׁ֔ה כִּֽי־יָפָ֥ה הִ֖וא מְאֹֽד׃",
+      "en": "And it came to pass, that, when Avram was come to Miżrayim, the Miżrim beheld the woman that she was very fair."
+    },
+    {
+      "n": 15,
+      "c": 12,
+      "v": 15,
+      "ref": "12:15",
+      "text": "וַיִּרְא֤וּ אֹתָהּ֙ שָׂרֵ֣י פַרְעֹ֔ה וַיְהַֽלְל֥וּ אֹתָ֖הּ אֶל־פַּרְעֹ֑ה וַתֻּקַּ֥ח הָאִשָּׁ֖ה בֵּ֥ית פַּרְעֹֽה׃",
+      "en": "The princes also of Par῾o saw her, and commended her before Par῾o: and the woman was taken into Par῾o’s house."
+    },
+    {
+      "n": 16,
+      "c": 12,
+      "v": 16,
+      "ref": "12:16",
+      "text": "וּלְאַבְרָ֥ם הֵיטִ֖יב בַּעֲבוּרָ֑הּ וַֽיְהִי־ל֤וֹ צֹאן־וּבָקָר֙ וַחֲמֹרִ֔ים וַעֲבָדִים֙ וּשְׁפָחֹ֔ת וַאֲתֹנֹ֖ת וּגְמַלִּֽים׃",
+      "en": "And he treated Avram well for her sake: and he had sheep, and oxen, and he asses, and menservants, and maidservants, and she asses, and camels."
+    },
+    {
+      "n": 17,
+      "c": 12,
+      "v": 17,
+      "ref": "12:17",
+      "text": "וַיְנַגַּ֨ע יְהֹוָ֧ה&thinsp;<small>׀</small>&thinsp;אֶת־פַּרְעֹ֛ה נְגָעִ֥ים גְּדֹלִ֖ים וְאֶת־בֵּית֑וֹ עַל־דְּבַ֥ר שָׂרַ֖י אֵ֥שֶׁת אַבְרָֽם׃",
+      "en": "And the Lord plagued Par῾o and his house with great plagues because of Saray, Avram’s wife."
+    },
+    {
+      "n": 18,
+      "c": 12,
+      "v": 18,
+      "ref": "12:18",
+      "text": "וַיִּקְרָ֤א פַרְעֹה֙ לְאַבְרָ֔ם וַיֹּ֕אמֶר מַה־זֹּ֖את עָשִׂ֣יתָ לִּ֑י לָ֚מָּה לֹא־הִגַּ֣דְתָּ לִּ֔י כִּ֥י אִשְׁתְּךָ֖ הִֽוא׃",
+      "en": "And Par῾o called Avram, and said, What is this that thou hast done to me? why didst thou not tell me that she was thy wife?"
+    },
+    {
+      "n": 19,
+      "c": 12,
+      "v": 19,
+      "ref": "12:19",
+      "text": "לָמָ֤ה אָמַ֙רְתָּ֙ אֲחֹ֣תִי הִ֔וא וָאֶקַּ֥ח אֹתָ֛הּ לִ֖י לְאִשָּׁ֑ה וְעַתָּ֕ה הִנֵּ֥ה אִשְׁתְּךָ֖ קַ֥ח וָלֵֽךְ׃",
+      "en": "Why didst thou say, She is my sister? so I might have taken her to me to wife: now therefore behold thy wife, take her, and go thy way."
+    },
+    {
+      "n": 20,
+      "c": 12,
+      "v": 20,
+      "ref": "12:20",
+      "text": "וַיְצַ֥ו עָלָ֛יו פַּרְעֹ֖ה אֲנָשִׁ֑ים וַֽיְשַׁלְּח֥וּ אֹת֛וֹ וְאֶת־אִשְׁתּ֖וֹ וְאֶת־כׇּל־אֲשֶׁר־לֽוֹ׃",
+      "en": "And Par῾o commanded his men concerning him: and they sent him away, and his wife, and all that he had."
+    },
+    {
+      "n": 21,
+      "c": 13,
+      "v": 1,
+      "ref": "13:1",
+      "text": "וַיַּ֩עַל֩ אַבְרָ֨ם מִמִּצְרַ֜יִם ה֠וּא וְאִשְׁתּ֧וֹ וְכׇל־אֲשֶׁר־ל֛וֹ וְל֥וֹט עִמּ֖וֹ הַנֶּֽגְבָּה׃",
+      "en": "And Avram went up out of Miżrayim, he, and his wife, and all that he had, and Lot with him, into the Negev."
+    },
+    {
+      "n": 22,
+      "c": 13,
+      "v": 2,
+      "ref": "13:2",
+      "text": "וְאַבְרָ֖ם כָּבֵ֣ד מְאֹ֑ד בַּמִּקְנֶ֕ה בַּכֶּ֖סֶף וּבַזָּהָֽב׃",
+      "en": "And Avram was very rich in cattle, in silver, and in gold."
+    },
+    {
+      "n": 23,
+      "c": 13,
+      "v": 3,
+      "ref": "13:3",
+      "text": "וַיֵּ֙לֶךְ֙ לְמַסָּעָ֔יו מִנֶּ֖גֶב וְעַד־בֵּֽית־אֵ֑ל עַד־הַמָּק֗וֹם אֲשֶׁר־הָ֨יָה שָׁ֤ם <span class=\"mam-kq-trivial\">אׇֽהֳלֹה֙</span> בַּתְּחִלָּ֔ה בֵּ֥ין בֵּֽית־אֵ֖ל וּבֵ֥ין הָעָֽי׃",
+      "en": "And he went on his journeys from the Negev even to Bet-el, to the place where his tent had been at the beginning, between Bet-el and ῾Ay;"
+    },
+    {
+      "n": 24,
+      "c": 13,
+      "v": 4,
+      "ref": "13:4",
+      "text": "אֶל־מְקוֹם֙ הַמִּזְבֵּ֔חַ אֲשֶׁר־עָ֥שָׂה שָׁ֖ם בָּרִאשֹׁנָ֑ה וַיִּקְרָ֥א שָׁ֛ם אַבְרָ֖ם בְּשֵׁ֥ם יְהֹוָֽה׃",
+      "en": "to the place of the altar, which he had made there at the first: and there Avram called on the name of the Lord."
+    },
+    {
+      "n": 25,
+      "c": 13,
+      "v": 5,
+      "ref": "13:5",
+      "text": "וְגַ֨ם־לְל֔וֹט הַהֹלֵ֖ךְ אֶת־אַבְרָ֑ם הָיָ֥ה צֹאן־וּבָקָ֖ר וְאֹהָלִֽים׃",
+      "en": "And Lot also, who went with Avram, had flocks, and herds, and tents."
+    },
+    {
+      "n": 26,
+      "c": 13,
+      "v": 6,
+      "ref": "13:6",
+      "text": "וְלֹא־נָשָׂ֥א אֹתָ֛ם הָאָ֖רֶץ לָשֶׁ֣בֶת יַחְדָּ֑ו כִּֽי־הָיָ֤ה רְכוּשָׁם֙ רָ֔ב וְלֹ֥א יָֽכְל֖וּ לָשֶׁ֥בֶת יַחְדָּֽו׃",
+      "en": "And the land was not able to bear them, that they might dwell together: for their substance was great, so that they could not dwell together."
+    },
+    {
+      "n": 27,
+      "c": 13,
+      "v": 7,
+      "ref": "13:7",
+      "text": "וַֽיְהִי־רִ֗יב בֵּ֚ין רֹעֵ֣י מִקְנֵֽה־אַבְרָ֔ם וּבֵ֖ין רֹעֵ֣י מִקְנֵה־ל֑וֹט וְהַֽכְּנַעֲנִי֙ וְהַפְּרִזִּ֔י אָ֖ז יֹשֵׁ֥ב בָּאָֽרֶץ׃",
+      "en": "And there was a strife between the herdmen of Avram’s cattle and the herdmen of Lot’s cattle: and the Kena῾ani and the Perizzi dwelt then in the land."
+    },
+    {
+      "n": 28,
+      "c": 13,
+      "v": 8,
+      "ref": "13:8",
+      "text": "וַיֹּ֨אמֶר אַבְרָ֜ם אֶל־ל֗וֹט אַל־נָ֨א תְהִ֤י מְרִיבָה֙ בֵּינִ֣י וּבֵינֶ֔ךָ וּבֵ֥ין רֹעַ֖י וּבֵ֣ין רֹעֶ֑יךָ כִּֽי־אֲנָשִׁ֥ים אַחִ֖ים אֲנָֽחְנוּ׃",
+      "en": "And Avram said to Lot, Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen, for we are brethren."
+    },
+    {
+      "n": 29,
+      "c": 13,
+      "v": 9,
+      "ref": "13:9",
+      "text": "הֲלֹ֤א כׇל־הָאָ֙רֶץ֙ לְפָנֶ֔יךָ הִפָּ֥רֶד נָ֖א מֵעָלָ֑י אִם־הַשְּׂמֹ֣אל וְאֵימִ֔נָה וְאִם־הַיָּמִ֖ין וְאַשְׂמְאִֽילָה׃",
+      "en": "Is not the whole land before thee? separate thyself, I pray thee, from me: if thou wilt take the left hand, then I will go to the right; or if thou depart to the right hand, then I will go to the left."
+    },
+    {
+      "n": 30,
+      "c": 13,
+      "v": 10,
+      "ref": "13:10",
+      "text": "וַיִּשָּׂא־ל֣וֹט אֶת־עֵינָ֗יו וַיַּרְא֙ אֶת־כׇּל־כִּכַּ֣ר הַיַּרְדֵּ֔ן כִּ֥י כֻלָּ֖הּ מַשְׁקֶ֑ה לִפְנֵ֣י&thinsp;<b>׀</b> שַׁחֵ֣ת יְהֹוָ֗ה אֶת־סְדֹם֙ וְאֶת־עֲמֹרָ֔ה כְּגַן־יְהֹוָה֙ כְּאֶ֣רֶץ מִצְרַ֔יִם בֹּאֲכָ֖ה צֹֽעַר׃",
+      "en": "And Lot lifted up his eyes, and beheld all the plain of the Yarden, that it was well watered everywhere, before the Lord destroyed Sedom and ῾Amora, like the garden of the Lord, like the land of Miżrayim, as thou comest to Żo῾ar."
+    },
+    {
+      "n": 31,
+      "c": 13,
+      "v": 11,
+      "ref": "13:11",
+      "text": "וַיִּבְחַר־ל֣וֹ ל֗וֹט אֵ֚ת כׇּל־כִּכַּ֣ר הַיַּרְדֵּ֔ן וַיִּסַּ֥ע ל֖וֹט מִקֶּ֑דֶם וַיִּפָּ֣רְד֔וּ אִ֖ישׁ מֵעַ֥ל אָחִֽיו׃",
+      "en": "Then Lot chose him all the plain of the Yarden; and Lot journeyed east; and they separated themselves one from the other."
+    },
+    {
+      "n": 32,
+      "c": 13,
+      "v": 12,
+      "ref": "13:12",
+      "text": "אַבְרָ֖ם יָשַׁ֣ב בְּאֶֽרֶץ־כְּנָ֑עַן וְל֗וֹט יָשַׁב֙ בְּעָרֵ֣י הַכִּכָּ֔ר וַיֶּאֱהַ֖ל עַד־סְדֹֽם׃",
+      "en": "Avram dwelt in the land of Kena῾an, and Lot dwelt in the cities of the plain, and pitched his tent toward Sedom."
+    },
+    {
+      "n": 33,
+      "c": 13,
+      "v": 13,
+      "ref": "13:13",
+      "text": "וְאַנְשֵׁ֣י סְדֹ֔ם רָעִ֖ים וְחַטָּאִ֑ים לַיהֹוָ֖ה מְאֹֽד׃",
+      "en": "But the men of Sedom were wicked and sinners before the Lord exceedingly."
+    },
+    {
+      "n": 34,
+      "c": 13,
+      "v": 14,
+      "ref": "13:14",
+      "text": "וַֽיהֹוָ֞ה אָמַ֣ר אֶל־אַבְרָ֗ם אַחֲרֵי֙ הִפָּֽרֶד־ל֣וֹט מֵֽעִמּ֔וֹ שָׂ֣א נָ֤א עֵינֶ֙יךָ֙ וּרְאֵ֔ה מִן־הַמָּק֖וֹם אֲשֶׁר־אַתָּ֣ה שָׁ֑ם צָפֹ֥נָה וָנֶ֖גְבָּה וָקֵ֥דְמָה וָיָֽמָּה׃",
+      "en": "And the Lord said to Avram, after Lot was separated from him, Lift up now thy eyes, and look from the place where thou art, northward, and southward, and eastward, and westward;"
+    },
+    {
+      "n": 35,
+      "c": 13,
+      "v": 15,
+      "ref": "13:15",
+      "text": "כִּ֧י אֶת־כׇּל־הָאָ֛רֶץ אֲשֶׁר־אַתָּ֥ה רֹאֶ֖ה לְךָ֣ אֶתְּנֶ֑נָּה וּֽלְזַרְעֲךָ֖ עַד־עוֹלָֽם׃",
+      "en": "for all the land which thou seest, to thee will I give it, and to thy seed for ever."
+    },
+    {
+      "n": 36,
+      "c": 13,
+      "v": 16,
+      "ref": "13:16",
+      "text": "וְשַׂמְתִּ֥י אֶֽת־זַרְעֲךָ֖ כַּעֲפַ֣ר הָאָ֑רֶץ אֲשֶׁ֣ר&thinsp;<b>׀</b> אִם־יוּכַ֣ל אִ֗ישׁ לִמְנוֹת֙ אֶת־עֲפַ֣ר הָאָ֔רֶץ גַּֽם־זַרְעֲךָ֖ יִמָּנֶֽה׃",
+      "en": "And I will make thy seed as the dust of the earth: so that if a man can number the dust of the earth, then shall thy seed also be numbered."
+    },
+    {
+      "n": 37,
+      "c": 13,
+      "v": 17,
+      "ref": "13:17",
+      "text": "ק֚וּם הִתְהַלֵּ֣ךְ בָּאָ֔רֶץ לְאׇרְכָּ֖הּ וּלְרׇחְבָּ֑הּ כִּ֥י לְךָ֖ אֶתְּנֶֽנָּה׃",
+      "en": "Arise, walk through the land in the length of it and in the breadth of it; for I will give it to thee."
+    },
+    {
+      "n": 38,
+      "c": 13,
+      "v": 18,
+      "ref": "13:18",
+      "text": "וַיֶּאֱהַ֣ל אַבְרָ֗ם וַיָּבֹ֛א וַיֵּ֛שֶׁב בְּאֵלֹנֵ֥י מַמְרֵ֖א אֲשֶׁ֣ר בְּחֶבְר֑וֹן וַיִּֽבֶן־שָׁ֥ם מִזְבֵּ֖חַ לַֽיהֹוָֽה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Then Avram removed his tent, and came and dwelt by the terebinths of Mamre, which is in Ḥevron, and built there an altar to the Lord."
+    },
+    {
+      "n": 39,
+      "c": 14,
+      "v": 1,
+      "ref": "14:1",
+      "text": "וַיְהִ֗י בִּימֵי֙ אַמְרָפֶ֣ל מֶֽלֶךְ־שִׁנְעָ֔ר אַרְי֖וֹךְ מֶ֣לֶךְ אֶלָּסָ֑ר כְּדׇרְלָעֹ֙מֶר֙ מֶ֣לֶךְ עֵילָ֔ם וְתִדְעָ֖ל מֶ֥לֶךְ גּוֹיִֽם׃",
+      "en": "And it came to pass in the days of Amrafel king of Shin῾ar, Aryokh king of Ellasar, Kedorla῾omer king of ῾Elam, and Tid῾al king of Goyim,"
+    },
+    {
+      "n": 40,
+      "c": 14,
+      "v": 2,
+      "ref": "14:2",
+      "text": "עָשׂ֣וּ מִלְחָמָ֗ה אֶת־בֶּ֙רַע֙ מֶ֣לֶךְ סְדֹ֔ם וְאֶת־בִּרְשַׁ֖ע מֶ֣לֶךְ עֲמֹרָ֑ה שִׁנְאָ֣ב&thinsp;<b>׀</b> מֶ֣לֶךְ אַדְמָ֗ה וְשֶׁמְאֵ֙בֶר֙ מֶ֣לֶךְ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(צביים)</span> <span class=\"mam-kq-q\">[צְבוֹיִ֔ם]</span></span> וּמֶ֥לֶךְ בֶּ֖לַע הִיא־צֹֽעַר׃",
+      "en": "that these made war with Bera king of Sedom, and with Birsha king of ῾Amora, Shin᾽av, king of Adma, and Shem᾽ever, king of Żevoyim, and the king of Bela which is Żo῾ar."
+    },
+    {
+      "n": 41,
+      "c": 14,
+      "v": 3,
+      "ref": "14:3",
+      "text": "כׇּל־אֵ֙לֶּה֙ חָֽבְר֔וּ אֶל־עֵ֖מֶק הַשִּׂדִּ֑ים ה֖וּא יָ֥ם הַמֶּֽלַח׃",
+      "en": "All these were joined together in the vale of Siddim, which is the salt sea."
+    },
+    {
+      "n": 42,
+      "c": 14,
+      "v": 4,
+      "ref": "14:4",
+      "text": "שְׁתֵּ֤ים עֶשְׂרֵה֙ שָׁנָ֔ה עָבְד֖וּ אֶת־כְּדׇרְלָעֹ֑מֶר וּשְׁלֹשׁ־עֶשְׂרֵ֥ה שָׁנָ֖ה מָרָֽדוּ׃",
+      "en": "Twelve years they served Kedorla῾omer, and in the thirteenth year they rebelled."
+    },
+    {
+      "n": 43,
+      "c": 14,
+      "v": 5,
+      "ref": "14:5",
+      "text": "וּבְאַרְבַּע֩ עֶשְׂרֵ֨ה שָׁנָ֜ה בָּ֣א כְדׇרְלָעֹ֗מֶר וְהַמְּלָכִים֙ אֲשֶׁ֣ר אִתּ֔וֹ וַיַּכּ֤וּ אֶת־רְפָאִים֙ בְּעַשְׁתְּרֹ֣ת קַרְנַ֔יִם וְאֶת־הַזּוּזִ֖ים בְּהָ֑ם וְאֵת֙ הָֽאֵימִ֔ים בְּשָׁוֵ֖ה קִרְיָתָֽיִם׃",
+      "en": "And in the fourteenth year came Kedorla῾omer, and the kings that were with him and smote the Refa᾽im in ῾Ashterot-qarnayim, and the Zuzim in Ham, and the Emim in Shave-qiryatayim,"
+    },
+    {
+      "n": 44,
+      "c": 14,
+      "v": 6,
+      "ref": "14:6",
+      "text": "וְאֶת־הַחֹרִ֖י בְּהַרְרָ֣ם שֵׂעִ֑יר עַ֚ד אֵ֣יל פָּארָ֔ן אֲשֶׁ֖ר עַל־הַמִּדְבָּֽר׃",
+      "en": "and the Ḥori in their mount Se῾ir, unto El-paran, which is by the wilderness."
+    },
+    {
+      "n": 45,
+      "c": 14,
+      "v": 7,
+      "ref": "14:7",
+      "text": "וַ֠יָּשֻׁ֠בוּ וַיָּבֹ֜אוּ אֶל־עֵ֤ין מִשְׁפָּט֙ הִ֣וא קָדֵ֔שׁ וַיַּכּ֕וּ אֶֽת־כׇּל־שְׂדֵ֖ה הָעֲמָלֵקִ֑י וְגַם֙ אֶת־הָ֣אֱמֹרִ֔י הַיֹּשֵׁ֖ב בְּחַֽצְצֹ֥ן תָּמָֽר׃",
+      "en": "And they returned, and came to ῾En-mishpat, which is Qadesh, and smote all the country of the ῾Amaleqi, and also the Emori, that dwelt in Ḥażażon-tamar."
+    },
+    {
+      "n": 46,
+      "c": 14,
+      "v": 8,
+      "ref": "14:8",
+      "text": "וַיֵּצֵ֨א מֶֽלֶךְ־סְדֹ֜ם וּמֶ֣לֶךְ עֲמֹרָ֗ה וּמֶ֤לֶךְ אַדְמָה֙ וּמֶ֣לֶךְ <span class=\"mam-kq\"><span class=\"mam-kq-k\">(צביים)</span> <span class=\"mam-kq-q\">[צְבוֹיִ֔ם]</span></span> וּמֶ֥לֶךְ בֶּ֖לַע הִוא־צֹ֑עַר וַיַּֽעַרְכ֤וּ אִתָּם֙ מִלְחָמָ֔ה בְּעֵ֖מֶק הַשִּׂדִּֽים׃",
+      "en": "And there went out the king of Sedom, and the king of ῾Amora, and the king of Adma, and the king of Żevoyim, and the king of Bela (the same is Żo῾ar;) and they joined battle with them in the vale of Siddim;"
+    },
+    {
+      "n": 47,
+      "c": 14,
+      "v": 9,
+      "ref": "14:9",
+      "text": "אֵ֣ת כְּדׇרְלָעֹ֜מֶר מֶ֣לֶךְ עֵילָ֗ם וְתִדְעָל֙ מֶ֣לֶךְ גּוֹיִ֔ם וְאַמְרָפֶל֙ מֶ֣לֶךְ שִׁנְעָ֔ר וְאַרְי֖וֹךְ מֶ֣לֶךְ אֶלָּסָ֑ר אַרְבָּעָ֥ה מְלָכִ֖ים אֶת־הַחֲמִשָּֽׁה׃",
+      "en": "with Kedorla῾omer the king of ῾Elam, and with Tid῾al, king of Goyim, and Amrafel, king of Shin῾ar, and Aryokh, king of Ellasar; four kings against five."
+    },
+    {
+      "n": 48,
+      "c": 14,
+      "v": 10,
+      "ref": "14:10",
+      "text": "וְעֵ֣מֶק הַשִּׂדִּ֗ים בֶּֽאֱרֹ֤ת בֶּאֱרֹת֙ חֵמָ֔ר וַיָּנֻ֛סוּ מֶֽלֶךְ־סְדֹ֥ם וַעֲמֹרָ֖ה וַיִּפְּלוּ־שָׁ֑מָּה וְהַנִּשְׁאָרִ֖ים הֶ֥רָה נָּֽסוּ׃",
+      "en": "And the vale of Siddim was full of slime pits; and the kings of Sedom and ῾Amora fled, and fell there; and they that remained fled to the mountain."
+    },
+    {
+      "n": 49,
+      "c": 14,
+      "v": 11,
+      "ref": "14:11",
+      "text": "וַ֠יִּקְח֠וּ אֶת־כׇּל־רְכֻ֨שׁ סְדֹ֧ם וַעֲמֹרָ֛ה וְאֶת־כׇּל־אׇכְלָ֖ם וַיֵּלֵֽכוּ׃",
+      "en": "And they took all the goods of Sedom and ῾Amora, and all their foodstuff, and went their way."
+    },
+    {
+      "n": 50,
+      "c": 14,
+      "v": 12,
+      "ref": "14:12",
+      "text": "וַיִּקְח֨וּ אֶת־ל֧וֹט וְאֶת־רְכֻשׁ֛וֹ בֶּן־אֲחִ֥י אַבְרָ֖ם וַיֵּלֵ֑כוּ וְה֥וּא יֹשֵׁ֖ב בִּסְדֹֽם׃",
+      "en": "And they took Lot, Avram’s brother’s son, who dwelt in Sedom, and his goods, and departed."
+    },
+    {
+      "n": 51,
+      "c": 14,
+      "v": 13,
+      "ref": "14:13",
+      "text": "וַיָּבֹא֙ הַפָּלִ֔יט וַיַּגֵּ֖ד לְאַבְרָ֣ם הָעִבְרִ֑י וְהוּא֩ שֹׁכֵ֨ן בְּאֵֽלֹנֵ֜י מַמְרֵ֣א הָאֱמֹרִ֗י אֲחִ֤י אֶשְׁכֹּל֙ וַאֲחִ֣י עָנֵ֔ר וְהֵ֖ם בַּעֲלֵ֥י בְרִית־אַבְרָֽם׃",
+      "en": "And there came one that had escaped, and told Avram the Hebrew; for he dwelt by the terebinths of Mamre the Emori, brother of Eshkol, and brother of ῾Aner: and these were confederate with Avram."
+    },
+    {
+      "n": 52,
+      "c": 14,
+      "v": 14,
+      "ref": "14:14",
+      "text": "וַיִּשְׁמַ֣ע אַבְרָ֔ם כִּ֥י נִשְׁבָּ֖ה אָחִ֑יו וַיָּ֨רֶק אֶת־חֲנִיכָ֜יו יְלִידֵ֣י בֵית֗וֹ שְׁמֹנָ֤ה עָשָׂר֙ וּשְׁלֹ֣שׁ מֵא֔וֹת וַיִּרְדֹּ֖ף עַד־דָּֽן׃",
+      "en": "And when Avram heard that his brother was taken captive, he led forth his trained servants, born in his own house, three hundred and eighteen, and pursued them to Dan."
+    },
+    {
+      "n": 53,
+      "c": 14,
+      "v": 15,
+      "ref": "14:15",
+      "text": "וַיֵּחָלֵ֨ק עֲלֵיהֶ֧ם&thinsp;<small>׀</small>&thinsp;לַ֛יְלָה ה֥וּא וַעֲבָדָ֖יו וַיַּכֵּ֑ם וַֽיִּרְדְּפֵם֙ עַד־חוֹבָ֔ה אֲשֶׁ֥ר מִשְּׂמֹ֖אל לְדַמָּֽשֶׂק׃",
+      "en": "And he divided himself against them, he and his servants by night, and smote them, and pursued them to Ḥova, which is on the left hand of Dammeseq."
+    },
+    {
+      "n": 54,
+      "c": 14,
+      "v": 16,
+      "ref": "14:16",
+      "text": "וַיָּ֕שֶׁב אֵ֖ת כׇּל־הָרְכֻ֑שׁ וְגַם֩ אֶת־ל֨וֹט אָחִ֤יו וּרְכֻשׁוֹ֙ הֵשִׁ֔יב וְגַ֥ם אֶת־הַנָּשִׁ֖ים וְאֶת־הָעָֽם׃",
+      "en": "And he brought back all the goods, and also brought back his brother Lot, and his goods, and the women also, and the people."
+    },
+    {
+      "n": 55,
+      "c": 14,
+      "v": 17,
+      "ref": "14:17",
+      "text": "וַיֵּצֵ֣א מֶֽלֶךְ־סְדֹם֮ לִקְרָאתוֹ֒ אַחֲרֵ֣י שׁוּב֗וֹ מֵֽהַכּוֹת֙ אֶת־כְּדׇרְלָעֹ֔מֶר וְאֶת־הַמְּלָכִ֖ים אֲשֶׁ֣ר אִתּ֑וֹ אֶל־עֵ֣מֶק שָׁוֵ֔ה ה֖וּא עֵ֥מֶק הַמֶּֽלֶךְ׃",
+      "en": "And the king of Sedom went out to meet him after his return from the slaughter of Kedorla῾omer and of the kings that were with him, at the valley of Shave, which is the king’s dale."
+    },
+    {
+      "n": 56,
+      "c": 14,
+      "v": 18,
+      "ref": "14:18",
+      "text": "וּמַלְכִּי־צֶ֙דֶק֙ מֶ֣לֶךְ שָׁלֵ֔ם הוֹצִ֖יא לֶ֣חֶם וָיָ֑יִן וְה֥וּא כֹהֵ֖ן לְאֵ֥ל עֶלְיֽוֹן׃",
+      "en": "And Malki-żedeq king of Shalem brought out bread and wine: and he was a priest of the most high God."
+    },
+    {
+      "n": 57,
+      "c": 14,
+      "v": 19,
+      "ref": "14:19",
+      "text": "וַֽיְבָרְכֵ֖הוּ וַיֹּאמַ֑ר בָּר֤וּךְ אַבְרָם֙ לְאֵ֣ל עֶלְי֔וֹן קֹנֵ֖ה שָׁמַ֥יִם וָאָֽרֶץ׃",
+      "en": "And he blessed him, and said, Blessed be Avram of the most high God, Possessor of heaven and earth:"
+    },
+    {
+      "n": 58,
+      "c": 14,
+      "v": 20,
+      "ref": "14:20",
+      "text": "וּבָרוּךְ֙ אֵ֣ל עֶלְי֔וֹן אֲשֶׁר־מִגֵּ֥ן צָרֶ֖יךָ בְּיָדֶ֑ךָ וַיִּתֶּן־ל֥וֹ מַעֲשֵׂ֖ר מִכֹּֽל׃",
+      "en": "and blessed be the most high God, Who has delivered thy enemies into thy hand. And he gave him a tithe of everything."
+    },
+    {
+      "n": 59,
+      "c": 14,
+      "v": 21,
+      "ref": "14:21",
+      "text": "וַיֹּ֥אמֶר מֶֽלֶךְ־סְדֹ֖ם אֶל־אַבְרָ֑ם תֶּן־לִ֣י הַנֶּ֔פֶשׁ וְהָרְכֻ֖שׁ קַֽח־לָֽךְ׃",
+      "en": "And the king of Sedom said to Avram, Give me the persons, and take the goods to thyself."
+    },
+    {
+      "n": 60,
+      "c": 14,
+      "v": 22,
+      "ref": "14:22",
+      "text": "וַיֹּ֥אמֶר אַבְרָ֖ם אֶל־מֶ֣לֶךְ סְדֹ֑ם הֲרִמֹ֨תִי יָדִ֤י אֶל־יְהֹוָה֙ אֵ֣ל עֶלְי֔וֹן קֹנֵ֖ה שָׁמַ֥יִם וָאָֽרֶץ׃",
+      "en": "And Avram said to the king of Sedom, I have raised my hand to the Lord, the most high God, the Possessor of heaven and earth,"
+    },
+    {
+      "n": 61,
+      "c": 14,
+      "v": 23,
+      "ref": "14:23",
+      "text": "אִם־מִחוּט֙ וְעַ֣ד שְׂרֽוֹךְ־נַ֔עַל וְאִם־אֶקַּ֖ח מִכׇּל־אֲשֶׁר־לָ֑ךְ וְלֹ֣א תֹאמַ֔ר אֲנִ֖י הֶעֱשַׁ֥רְתִּי אֶת־אַבְרָֽם׃",
+      "en": "that I will take nothing from a thread even to a shoe-latchet, and that I will not take anything that is thine, lest thou shouldst say, I have made Avram rich:"
+    },
+    {
+      "n": 62,
+      "c": 14,
+      "v": 24,
+      "ref": "14:24",
+      "text": "בִּלְעָדַ֗י רַ֚ק אֲשֶׁ֣ר אָֽכְל֣וּ הַנְּעָרִ֔ים וְחֵ֙לֶק֙ הָֽאֲנָשִׁ֔ים אֲשֶׁ֥ר הָלְכ֖וּ אִתִּ֑י עָנֵר֙ אֶשְׁכֹּ֣ל וּמַמְרֵ֔א הֵ֖ם יִקְח֥וּ חֶלְקָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "save only that which the young men have eaten, and the share of the men who went with me, ῾Aner, Eshkol, and Mamre; let them take their share."
+    },
+    {
+      "n": 63,
+      "c": 15,
+      "v": 1,
+      "ref": "15:1",
+      "text": "אַחַ֣ר&thinsp;<b>׀</b> הַדְּבָרִ֣ים הָאֵ֗לֶּה הָיָ֤ה דְבַר־יְהֹוָה֙ אֶל־אַבְרָ֔ם בַּֽמַּחֲזֶ֖ה לֵאמֹ֑ר אַל־תִּירָ֣א אַבְרָ֗ם אָנֹכִי֙ מָגֵ֣ן לָ֔ךְ שְׂכָרְךָ֖ הַרְבֵּ֥ה מְאֹֽד׃",
+      "en": "After these things the word of the Lord came to Avram in a vision, saying, Fear not, Avram: I am thy shield; thy reward will be very great."
+    },
+    {
+      "n": 64,
+      "c": 15,
+      "v": 2,
+      "ref": "15:2",
+      "text": "וַיֹּ֣אמֶר אַבְרָ֗ם אֲדֹנָ֤י יֱהֹוִה֙ מַה־תִּתֶּן־לִ֔י וְאָנֹכִ֖י הוֹלֵ֣ךְ עֲרִירִ֑י וּבֶן־מֶ֣שֶׁק בֵּיתִ֔י ה֖וּא דַּמֶּ֥שֶׂק אֱלִיעֶֽזֶר׃",
+      "en": "And Avram said, Lord God, what wilt thou give me, seeing I go childless, and the steward of my house is Eli῾ezer of Dammeseq?"
+    },
+    {
+      "n": 65,
+      "c": 15,
+      "v": 3,
+      "ref": "15:3",
+      "text": "וַיֹּ֣אמֶר אַבְרָ֔ם הֵ֣ן לִ֔י לֹ֥א נָתַ֖תָּה זָ֑רַע וְהִנֵּ֥ה בֶן־בֵּיתִ֖י יוֹרֵ֥שׁ אֹתִֽי׃",
+      "en": "And Avram said, Behold, to me Thou hast given no seed: and, one born in my house is my heir."
+    },
+    {
+      "n": 66,
+      "c": 15,
+      "v": 4,
+      "ref": "15:4",
+      "text": "וְהִנֵּ֨ה דְבַר־יְהֹוָ֤ה אֵלָיו֙ לֵאמֹ֔ר לֹ֥א יִֽירָשְׁךָ֖ זֶ֑ה כִּי־אִם֙ אֲשֶׁ֣ר יֵצֵ֣א מִמֵּעֶ֔יךָ ה֖וּא יִֽירָשֶֽׁךָ׃",
+      "en": "And, behold, the word of the Lord came to him, saying, This shall not be thy heir; but he that shall come forth out of thy own bowels shall be thy heir."
+    },
+    {
+      "n": 67,
+      "c": 15,
+      "v": 5,
+      "ref": "15:5",
+      "text": "וַיּוֹצֵ֨א אֹת֜וֹ הַח֗וּצָה וַיֹּ֙אמֶר֙ הַבֶּט־נָ֣א הַשָּׁמַ֗יְמָה וּסְפֹר֙ הַכּ֣וֹכָבִ֔ים אִם־תּוּכַ֖ל לִסְפֹּ֣ר אֹתָ֑ם וַיֹּ֣אמֶר ל֔וֹ כֹּ֥ה יִהְיֶ֖ה זַרְעֶֽךָ׃",
+      "en": "And He brought him outside, and said, Look now toward heaven, and count the stars, if thou be able to number them: and He said to him, So shall thy seed be."
+    },
+    {
+      "n": 68,
+      "c": 15,
+      "v": 6,
+      "ref": "15:6",
+      "text": "וְהֶאֱמִ֖ן בַּֽיהֹוָ֑ה וַיַּחְשְׁבֶ֥הָ לּ֖וֹ צְדָקָֽה׃",
+      "en": "And he believed in the Lord; and He counted it to him for righteousness."
+    },
+    {
+      "n": 69,
+      "c": 15,
+      "v": 7,
+      "ref": "15:7",
+      "text": "וַיֹּ֖אמֶר אֵלָ֑יו אֲנִ֣י יְהֹוָ֗ה אֲשֶׁ֤ר הוֹצֵאתִ֙יךָ֙ מֵא֣וּר כַּשְׂדִּ֔ים לָ֧תֶת לְךָ֛ אֶת־הָאָ֥רֶץ הַזֹּ֖את לְרִשְׁתָּֽהּ׃",
+      "en": "And He said to him, I am the Lord that brought thee out of Ur-kasdim, to give thee this land to inherit it."
+    },
+    {
+      "n": 70,
+      "c": 15,
+      "v": 8,
+      "ref": "15:8",
+      "text": "וַיֹּאמַ֑ר אֲדֹנָ֣י יֱהֹוִ֔ה בַּמָּ֥ה אֵדַ֖ע כִּ֥י אִֽירָשֶֽׁנָּה׃",
+      "en": "And he said, Lord God, by what shall I know that I shall inherit it?"
+    },
+    {
+      "n": 71,
+      "c": 15,
+      "v": 9,
+      "ref": "15:9",
+      "text": "וַיֹּ֣אמֶר אֵלָ֗יו קְחָ֥ה לִי֙ עֶגְלָ֣ה מְשֻׁלֶּ֔שֶׁת וְעֵ֥ז מְשֻׁלֶּ֖שֶׁת וְאַ֣יִל מְשֻׁלָּ֑שׁ וְתֹ֖ר וְגוֹזָֽל׃",
+      "en": "And He said to him, Take Me a heifer three years old, and a goat three years old, and a ram three years old, and a turtledove, and a young pigeon."
+    },
+    {
+      "n": 72,
+      "c": 15,
+      "v": 10,
+      "ref": "15:10",
+      "text": "וַיִּֽקַּֽח־ל֣וֹ אֶת־כׇּל־אֵ֗לֶּה וַיְבַתֵּ֤ר אֹתָם֙ בַּתָּ֔וֶךְ וַיִּתֵּ֥ן אִישׁ־בִּתְר֖וֹ לִקְרַ֣את רֵעֵ֑הוּ וְאֶת־הַצִּפֹּ֖ר לֹ֥א בָתָֽר׃",
+      "en": "And he took to Him all these, and divided them in the midst, and laid each half against the other: but the birds he divided not."
+    },
+    {
+      "n": 73,
+      "c": 15,
+      "v": 11,
+      "ref": "15:11",
+      "text": "וַיֵּ֥רֶד הָעַ֖יִט עַל־הַפְּגָרִ֑ים וַיַּשֵּׁ֥ב אֹתָ֖ם אַבְרָֽם׃",
+      "en": "And the eagle came down upon the carcasses, and Avram drove them away."
+    },
+    {
+      "n": 74,
+      "c": 15,
+      "v": 12,
+      "ref": "15:12",
+      "text": "וַיְהִ֤י הַשֶּׁ֙מֶשׁ֙ לָב֔וֹא וְתַרְדֵּמָ֖ה נָפְלָ֣ה עַל־אַבְרָ֑ם וְהִנֵּ֥ה אֵימָ֛ה חֲשֵׁכָ֥ה גְדֹלָ֖ה נֹפֶ֥לֶת עָלָֽיו׃",
+      "en": "And when the sun was going down, a deep sleep fell upon Avram; and, lo, a horror of great darkness fell upon him."
+    },
+    {
+      "n": 75,
+      "c": 15,
+      "v": 13,
+      "ref": "15:13",
+      "text": "וַיֹּ֣אמֶר לְאַבְרָ֗ם יָדֹ֨עַ תֵּדַ֜ע כִּי־גֵ֣ר&thinsp;<b>׀</b> יִהְיֶ֣ה זַרְעֲךָ֗ בְּאֶ֙רֶץ֙ לֹ֣א לָהֶ֔ם וַעֲבָד֖וּם וְעִנּ֣וּ אֹתָ֑ם אַרְבַּ֥ע מֵא֖וֹת שָׁנָֽה׃",
+      "en": "And He said to Avram, Know surely that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;"
+    },
+    {
+      "n": 76,
+      "c": 15,
+      "v": 14,
+      "ref": "15:14",
+      "text": "וְגַ֧ם אֶת־הַגּ֛וֹי אֲשֶׁ֥ר יַעֲבֹ֖דוּ דָּ֣ן אָנֹ֑כִי וְאַחֲרֵי־כֵ֥ן יֵצְא֖וּ בִּרְכֻ֥שׁ גָּדֽוֹל׃",
+      "en": "and also that nation, whom they shall serve, will I judge: and afterwards shall they come out with great substance."
+    },
+    {
+      "n": 77,
+      "c": 15,
+      "v": 15,
+      "ref": "15:15",
+      "text": "וְאַתָּ֛ה תָּב֥וֹא אֶל־אֲבֹתֶ֖יךָ בְּשָׁל֑וֹם תִּקָּבֵ֖ר בְּשֵׂיבָ֥ה טוֹבָֽה׃",
+      "en": "And thou shalt go to thy fathers in peace; thou shalt be buried in a good old age."
+    },
+    {
+      "n": 78,
+      "c": 15,
+      "v": 16,
+      "ref": "15:16",
+      "text": "וְד֥וֹר רְבִיעִ֖י יָשׁ֣וּבוּ הֵ֑נָּה כִּ֧י לֹא־שָׁלֵ֛ם עֲוֺ֥ן הָאֱמֹרִ֖י עַד־הֵֽנָּה׃",
+      "en": "But in the fourth generation they shall come back here, for the iniquity of the Emori is not yet full."
+    },
+    {
+      "n": 79,
+      "c": 15,
+      "v": 17,
+      "ref": "15:17",
+      "text": "וַיְהִ֤י הַשֶּׁ֙מֶשׁ֙ בָּ֔אָה וַעֲלָטָ֖ה הָיָ֑ה וְהִנֵּ֨ה תַנּ֤וּר עָשָׁן֙ וְלַפִּ֣יד אֵ֔שׁ אֲשֶׁ֣ר עָבַ֔ר בֵּ֖ין הַגְּזָרִ֥ים הָאֵֽלֶּה׃",
+      "en": "And it came to pass, that, when the sun went down, and it was dark, behold a smoking furnace, and a burning torch that passed between those pieces."
+    },
+    {
+      "n": 80,
+      "c": 15,
+      "v": 18,
+      "ref": "15:18",
+      "text": "בַּיּ֣וֹם הַה֗וּא כָּרַ֧ת יְהֹוָ֛ה אֶת־אַבְרָ֖ם בְּרִ֣ית לֵאמֹ֑ר לְזַרְעֲךָ֗ נָתַ֙תִּי֙ אֶת־הָאָ֣רֶץ הַזֹּ֔את מִנְּהַ֣ר מִצְרַ֔יִם עַד־הַנָּהָ֥ר הַגָּדֹ֖ל נְהַר־פְּרָֽת׃",
+      "en": "In the same day the Lord made a covenant with Avram, saying, To thy seed have I given this land, from the river of Miżrayim to the great river, the river Perat:"
+    },
+    {
+      "n": 81,
+      "c": 15,
+      "v": 19,
+      "ref": "15:19",
+      "text": "אֶת־הַקֵּינִי֙ וְאֶת־הַקְּנִזִּ֔י וְאֵ֖ת הַקַּדְמֹנִֽי׃",
+      "en": "the Qeni, and the Qenizzi, and the Qadmoni,"
+    },
+    {
+      "n": 82,
+      "c": 15,
+      "v": 20,
+      "ref": "15:20",
+      "text": "וְאֶת־הַחִתִּ֥י וְאֶת־הַפְּרִזִּ֖י וְאֶת־הָרְפָאִֽים׃",
+      "en": "and the Ḥitti, and the Perizzi, and the Refa᾽im,"
+    },
+    {
+      "n": 83,
+      "c": 15,
+      "v": 21,
+      "ref": "15:21",
+      "text": "וְאֶת־הָֽאֱמֹרִי֙ וְאֶת־הַֽכְּנַעֲנִ֔י וְאֶת־הַגִּרְגָּשִׁ֖י וְאֶת־הַיְבוּסִֽי׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "and the Emori, and the Kena῾ani, and the Girgashi, and the Yevusi."
+    },
+    {
+      "n": 84,
+      "c": 16,
+      "v": 1,
+      "ref": "16:1",
+      "text": "וְשָׂרַי֙ אֵ֣שֶׁת אַבְרָ֔ם לֹ֥א יָלְדָ֖ה ל֑וֹ וְלָ֛הּ שִׁפְחָ֥ה מִצְרִ֖ית וּשְׁמָ֥הּ הָגָֽר׃",
+      "en": "Now Saray Avram’s wife bore him no children: and she had a Miżrian handmaid, whose name was Hagar."
+    },
+    {
+      "n": 85,
+      "c": 16,
+      "v": 2,
+      "ref": "16:2",
+      "text": "וַתֹּ֨אמֶר שָׂרַ֜י אֶל־אַבְרָ֗ם הִנֵּה־נָ֞א עֲצָרַ֤נִי יְהֹוָה֙ מִלֶּ֔דֶת בֹּא־נָא֙ אֶל־שִׁפְחָתִ֔י אוּלַ֥י אִבָּנֶ֖ה מִמֶּ֑נָּה וַיִּשְׁמַ֥ע אַבְרָ֖ם לְק֥וֹל שָׂרָֽי׃",
+      "en": "And Saray said to Avram, Behold now, the Lord has restrained me from bearing: I pray thee, go in to my maid; it may be that I may obtain children by her. And Avram hearkened to the voice of Saray."
+    },
+    {
+      "n": 86,
+      "c": 16,
+      "v": 3,
+      "ref": "16:3",
+      "text": "וַתִּקַּ֞ח שָׂרַ֣י אֵֽשֶׁת־אַבְרָ֗ם אֶת־הָגָ֤ר הַמִּצְרִית֙ שִׁפְחָתָ֔הּ מִקֵּץ֙ עֶ֣שֶׂר שָׁנִ֔ים לְשֶׁ֥בֶת אַבְרָ֖ם בְּאֶ֣רֶץ כְּנָ֑עַן וַתִּתֵּ֥ן אֹתָ֛הּ לְאַבְרָ֥ם אִישָׁ֖הּ ל֥וֹ לְאִשָּֽׁה׃",
+      "en": "And Saray Avram’s wife took Hagar, her maid, the Miżrian, after Avram had dwelt ten years in the land of Kena῾an, and gave her to her husband Avram for a wife."
+    },
+    {
+      "n": 87,
+      "c": 16,
+      "v": 4,
+      "ref": "16:4",
+      "text": "וַיָּבֹ֥א אֶל־הָגָ֖ר וַתַּ֑הַר וַתֵּ֙רֶא֙ כִּ֣י הָרָ֔תָה וַתֵּקַ֥ל גְּבִרְתָּ֖הּ בְּעֵינֶֽיהָ׃",
+      "en": "And he went in to Hagar, and she conceived: and when she saw that she had conceived, her mistress was despised in her eyes."
+    },
+    {
+      "n": 88,
+      "c": 16,
+      "v": 5,
+      "ref": "16:5",
+      "text": "וַתֹּ֨אמֶר שָׂרַ֣י אֶל־אַבְרָם֮ חֲמָסִ֣י עָלֶ֒יךָ֒ אָנֹכִ֗י נָתַ֤תִּי שִׁפְחָתִי֙ בְּחֵיקֶ֔ךָ וַתֵּ֙רֶא֙ כִּ֣י הָרָ֔תָה וָאֵקַ֖ל בְּעֵינֶ֑יהָ יִשְׁפֹּ֥ט יְהֹוָ֖ה בֵּינִ֥י וּבֵינֶֽיׄךָ׃",
+      "en": "And Saray said to Avram, My wrong be upon thee: I have given my maid into thy bosom; and when she saw that she had conceived, I was despised in her eyes: the Lord judge between me and thee."
+    },
+    {
+      "n": 89,
+      "c": 16,
+      "v": 6,
+      "ref": "16:6",
+      "text": "וַיֹּ֨אמֶר אַבְרָ֜ם אֶל־שָׂרַ֗י הִנֵּ֤ה שִׁפְחָתֵךְ֙ בְּיָדֵ֔ךְ עֲשִׂי־לָ֖הּ הַטּ֣וֹב בְּעֵינָ֑יִךְ וַתְּעַנֶּ֣הָ שָׂרַ֔י וַתִּבְרַ֖ח מִפָּנֶֽיהָ׃",
+      "en": "But Avram said to Saray, Behold, thy maid is in thy hand; do to her as it pleases thee. And when Saray dealt harshly with her, she fled from her face."
+    },
+    {
+      "n": 90,
+      "c": 16,
+      "v": 7,
+      "ref": "16:7",
+      "text": "וַֽיִּמְצָאָ֞הּ מַלְאַ֧ךְ יְהֹוָ֛ה עַל־עֵ֥ין הַמַּ֖יִם בַּמִּדְבָּ֑ר עַל־הָעַ֖יִן בְּדֶ֥רֶךְ שֽׁוּר׃",
+      "en": "And an angel of the Lord found her by a fountain of water in the wilderness, by the fountain on the way to Shur."
+    },
+    {
+      "n": 91,
+      "c": 16,
+      "v": 8,
+      "ref": "16:8",
+      "text": "וַיֹּאמַ֗ר הָגָ֞ר שִׁפְחַ֥ת שָׂרַ֛י אֵֽי־מִזֶּ֥ה בָ֖את וְאָ֣נָה תֵלֵ֑כִי וַתֹּ֕אמֶר מִפְּנֵי֙ שָׂרַ֣י גְּבִרְתִּ֔י אָנֹכִ֖י בֹּרַֽחַת׃",
+      "en": "And he said, Hagar, Saray’s maid, whence camest thou? and whither wilt thou go? And she said, I flee from the face of my mistress Saray."
+    },
+    {
+      "n": 92,
+      "c": 16,
+      "v": 9,
+      "ref": "16:9",
+      "text": "וַיֹּ֤אמֶר לָהּ֙ מַלְאַ֣ךְ יְהֹוָ֔ה שׁ֖וּבִי אֶל־גְּבִרְתֵּ֑ךְ וְהִתְעַנִּ֖י תַּ֥חַת יָדֶֽיהָ׃",
+      "en": "And the angel of the Lord said to her, Return to thy mistress, and submit thyself to her hands."
+    },
+    {
+      "n": 93,
+      "c": 16,
+      "v": 10,
+      "ref": "16:10",
+      "text": "וַיֹּ֤אמֶר לָהּ֙ מַלְאַ֣ךְ יְהֹוָ֔ה הַרְבָּ֥ה אַרְבֶּ֖ה אֶת־זַרְעֵ֑ךְ וְלֹ֥א יִסָּפֵ֖ר מֵרֹֽב׃",
+      "en": "And the angel of the Lord said to her, I will multiply thy seed exceedingly, that it shall not be numbered for multitude."
+    },
+    {
+      "n": 94,
+      "c": 16,
+      "v": 11,
+      "ref": "16:11",
+      "text": "וַיֹּ֤אמֶר לָהּ֙ מַלְאַ֣ךְ יְהֹוָ֔ה הִנָּ֥ךְ הָרָ֖ה וְיֹלַ֣דְתְּ בֵּ֑ן וְקָרָ֤את שְׁמוֹ֙ יִשְׁמָעֵ֔אל כִּֽי־שָׁמַ֥ע יְהֹוָ֖ה אֶל־עׇנְיֵֽךְ׃",
+      "en": "And the angel of the Lord said to her, Behold, thou art with child, and shalt bear a son, and shalt call his name Yishma᾽el; because the Lord has heard thy affliction."
+    },
+    {
+      "n": 95,
+      "c": 16,
+      "v": 12,
+      "ref": "16:12",
+      "text": "וְה֤וּא יִהְיֶה֙ פֶּ֣רֶא אָדָ֔ם יָד֣וֹ בַכֹּ֔ל וְיַ֥ד כֹּ֖ל בּ֑וֹ וְעַל־פְּנֵ֥י כׇל־אֶחָ֖יו יִשְׁכֹּֽן׃",
+      "en": "And he will be a wild man; his hand will be against every man, and every man’s hand against him; and he shall dwell in the presence of all his brethren."
+    },
+    {
+      "n": 96,
+      "c": 16,
+      "v": 13,
+      "ref": "16:13",
+      "text": "וַתִּקְרָ֤א שֵׁם־יְהֹוָה֙ הַדֹּבֵ֣ר אֵלֶ֔יהָ אַתָּ֖ה אֵ֣ל רֳאִ֑י כִּ֣י אָֽמְרָ֗ה הֲגַ֥ם הֲלֹ֛ם רָאִ֖יתִי אַחֲרֵ֥י רֹאִֽי׃",
+      "en": "And she called the name of the Lord that spoke to her, Thou God seest me: for she said,"
+    },
+    {
+      "n": 97,
+      "c": 16,
+      "v": 14,
+      "ref": "16:14",
+      "text": "עַל־כֵּן֙ קָרָ֣א לַבְּאֵ֔ר בְּאֵ֥ר לַחַ֖י רֹאִ֑י הִנֵּ֥ה בֵין־קָדֵ֖שׁ וּבֵ֥ין בָּֽרֶד׃",
+      "en": "Have I also here looked after Him that sees me? Therefore the well was called Be᾽er-laĥay-ro᾽i; behold, it is between Qadesh and Bered."
+    },
+    {
+      "n": 98,
+      "c": 16,
+      "v": 15,
+      "ref": "16:15",
+      "text": "וַתֵּ֧לֶד הָגָ֛ר לְאַבְרָ֖ם בֵּ֑ן וַיִּקְרָ֨א אַבְרָ֧ם שֶׁם־בְּנ֛וֹ אֲשֶׁר־יָלְדָ֥ה הָגָ֖ר יִשְׁמָעֵֽאל׃",
+      "en": "And Hagar bore Avram a son: and Avram called his son’s name, whom Hagar bore, Yishma᾽el."
+    },
+    {
+      "n": 99,
+      "c": 16,
+      "v": 16,
+      "ref": "16:16",
+      "text": "וְאַבְרָ֕ם בֶּן־שְׁמֹנִ֥ים שָׁנָ֖ה וְשֵׁ֣שׁ שָׁנִ֑ים בְּלֶֽדֶת־הָגָ֥ר אֶת־יִשְׁמָעֵ֖אל לְאַבְרָֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And Avram was eighty six years old, when Hagar bore Yishma᾽el to Avram."
+    },
+    {
+      "n": 100,
+      "c": 17,
+      "v": 1,
+      "ref": "17:1",
+      "text": "וַיְהִ֣י אַבְרָ֔ם בֶּן־תִּשְׁעִ֥ים שָׁנָ֖ה וְתֵ֣שַׁע שָׁנִ֑ים וַיֵּרָ֨א יְהֹוָ֜ה אֶל־אַבְרָ֗ם וַיֹּ֤אמֶר אֵלָיו֙ אֲנִי־אֵ֣ל שַׁדַּ֔י הִתְהַלֵּ֥ךְ לְפָנַ֖י וֶהְיֵ֥ה תָמִֽים׃",
+      "en": "And when Avram was ninety nine years old, the Lord appeared to Avram, and said to him, I am the Almighty God; walk before Me, and be perfect."
+    },
+    {
+      "n": 101,
+      "c": 17,
+      "v": 2,
+      "ref": "17:2",
+      "text": "וְאֶתְּנָ֥ה בְרִיתִ֖י בֵּינִ֣י וּבֵינֶ֑ךָ וְאַרְבֶּ֥ה אוֹתְךָ֖ בִּמְאֹ֥ד מְאֹֽד׃",
+      "en": "And I will make My covenant between Me and thee, and will multiply thee exceedingly."
+    },
+    {
+      "n": 102,
+      "c": 17,
+      "v": 3,
+      "ref": "17:3",
+      "text": "וַיִּפֹּ֥ל אַבְרָ֖ם עַל־פָּנָ֑יו וַיְדַבֵּ֥ר אִתּ֛וֹ אֱלֹהִ֖ים לֵאמֹֽר׃",
+      "en": "And Avram fell on his face: and God talked with him, saying,"
+    },
+    {
+      "n": 103,
+      "c": 17,
+      "v": 4,
+      "ref": "17:4",
+      "text": "אֲנִ֕י הִנֵּ֥ה בְרִיתִ֖י אִתָּ֑ךְ וְהָיִ֕יתָ לְאַ֖ב הֲמ֥וֹן גּוֹיִֽם׃",
+      "en": "As for Me, behold, My covenant is with thee, and thou shalt be a father of many nations."
+    },
+    {
+      "n": 104,
+      "c": 17,
+      "v": 5,
+      "ref": "17:5",
+      "text": "וְלֹא־יִקָּרֵ֥א ע֛וֹד אֶת־שִׁמְךָ֖ אַבְרָ֑ם וְהָיָ֤ה שִׁמְךָ֙ אַבְרָהָ֔ם כִּ֛י אַב־הֲמ֥וֹן גּוֹיִ֖ם נְתַתִּֽיךָ׃",
+      "en": "Neither shall thy name any more be called Avram, but thy name shall be Avraham; for a father of many nations have I made thee."
+    },
+    {
+      "n": 105,
+      "c": 17,
+      "v": 6,
+      "ref": "17:6",
+      "text": "וְהִפְרֵתִ֤י אֹֽתְךָ֙ בִּמְאֹ֣ד מְאֹ֔ד וּנְתַתִּ֖יךָ לְגוֹיִ֑ם וּמְלָכִ֖ים מִמְּךָ֥ יֵצֵֽאוּ׃",
+      "en": "And I will make thee exceedingly fruitful, and I will make nations of thee, and kings shall come out of thee."
+    },
+    {
+      "n": 106,
+      "c": 17,
+      "v": 7,
+      "ref": "17:7",
+      "text": "וַהֲקִמֹתִ֨י אֶת־בְּרִיתִ֜י בֵּינִ֣י וּבֵינֶ֗ךָ וּבֵ֨ין זַרְעֲךָ֧ אַחֲרֶ֛יךָ לְדֹרֹתָ֖ם לִבְרִ֣ית עוֹלָ֑ם לִהְי֤וֹת לְךָ֙ לֵֽאלֹהִ֔ים וּֽלְזַרְעֲךָ֖ אַחֲרֶֽיךָ׃",
+      "en": "And I will establish My covenant between Me and thee and thy seed after thee in their generations for an everlasting covenant, to be a God to thee, and to thy seed after thee."
+    },
+    {
+      "n": 107,
+      "c": 17,
+      "v": 8,
+      "ref": "17:8",
+      "text": "וְנָתַתִּ֣י לְ֠ךָ֠ וּלְזַרְעֲךָ֨ אַחֲרֶ֜יךָ אֵ֣ת&thinsp;<b>׀</b> אֶ֣רֶץ מְגֻרֶ֗יךָ אֵ֚ת כׇּל־אֶ֣רֶץ כְּנַ֔עַן לַאֲחֻזַּ֖ת עוֹלָ֑ם וְהָיִ֥יתִי לָהֶ֖ם לֵאלֹהִֽים׃",
+      "en": "And I will give to thee, and to thy seed after thee, the land in which thou dost sojourn, all the land of Kena῾an, for an everlasting possession; and I will be their God."
+    },
+    {
+      "n": 108,
+      "c": 17,
+      "v": 9,
+      "ref": "17:9",
+      "text": "וַיֹּ֤אמֶר אֱלֹהִים֙ אֶל־אַבְרָהָ֔ם וְאַתָּ֖ה אֶת־בְּרִיתִ֣י תִשְׁמֹ֑ר אַתָּ֛ה וְזַרְעֲךָ֥ אַֽחֲרֶ֖יךָ לְדֹרֹתָֽם׃",
+      "en": "And God said to Avraham, Thou shalt keep My covenant therefore, thou, and thy seed after thee in their generations."
+    },
+    {
+      "n": 109,
+      "c": 17,
+      "v": 10,
+      "ref": "17:10",
+      "text": "זֹ֣את בְּרִיתִ֞י אֲשֶׁ֣ר תִּשְׁמְר֗וּ בֵּינִי֙ וּבֵ֣ינֵיכֶ֔ם וּבֵ֥ין זַרְעֲךָ֖ אַחֲרֶ֑יךָ הִמּ֥וֹל לָכֶ֖ם כׇּל־זָכָֽר׃",
+      "en": "This is My covenant, which you shall keep, between Me and you and thy seed after thee; Every manchild among you shall be circumcised."
+    },
+    {
+      "n": 110,
+      "c": 17,
+      "v": 11,
+      "ref": "17:11",
+      "text": "וּנְמַלְתֶּ֕ם אֵ֖ת בְּשַׂ֣ר עׇרְלַתְכֶ֑ם וְהָיָה֙ לְא֣וֹת בְּרִ֔ית בֵּינִ֖י וּבֵינֵיכֶֽם׃",
+      "en": "And you shall circumcise the flesh of your foreskin; and it shall be a token of the covenant between Me and you."
+    },
+    {
+      "n": 111,
+      "c": 17,
+      "v": 12,
+      "ref": "17:12",
+      "text": "וּבֶן־שְׁמֹנַ֣ת יָמִ֗ים יִמּ֥וֹל לָכֶ֛ם כׇּל־זָכָ֖ר לְדֹרֹתֵיכֶ֑ם יְלִ֣יד בָּ֔יִת וּמִקְנַת־כֶּ֙סֶף֙ מִכֹּ֣ל בֶּן־נֵכָ֔ר אֲשֶׁ֛ר לֹ֥א מִֽזַּרְעֲךָ֖ הֽוּא׃",
+      "en": "And he that is eight days old shall be circumcised among you, every manchild in your generations, he that is born in the house, or bought with money of any stranger, who is not of thy seed."
+    },
+    {
+      "n": 112,
+      "c": 17,
+      "v": 13,
+      "ref": "17:13",
+      "text": "הִמּ֧וֹל&thinsp;<small>׀</small>&thinsp;יִמּ֛וֹל יְלִ֥יד בֵּֽיתְךָ֖ וּמִקְנַ֣ת כַּסְפֶּ֑ךָ וְהָיְתָ֧ה בְרִיתִ֛י בִּבְשַׂרְכֶ֖ם לִבְרִ֥ית עוֹלָֽם׃",
+      "en": "He that is born in thy house, and he that is bought with thy money, must needs be circumcised: and My covenant shall be in your flesh for an everlasting covenant."
+    },
+    {
+      "n": 113,
+      "c": 17,
+      "v": 14,
+      "ref": "17:14",
+      "text": "וְעָרֵ֣ל&thinsp;<b>׀</b> זָכָ֗ר אֲשֶׁ֤ר לֹֽא־יִמּוֹל֙ אֶת־בְּשַׂ֣ר עׇרְלָת֔וֹ וְנִכְרְתָ֛ה הַנֶּ֥פֶשׁ הַהִ֖וא מֵעַמֶּ֑יהָ אֶת־בְּרִיתִ֖י הֵפַֽר׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And the uncircumcised manchild the flesh of whose foreskin is not circumcised, that soul shall be cut off from his people; he has broken My covenant."
+    },
+    {
+      "n": 114,
+      "c": 17,
+      "v": 15,
+      "ref": "17:15",
+      "text": "וַיֹּ֤אמֶר אֱלֹהִים֙ אֶל־אַבְרָהָ֔ם שָׂרַ֣י אִשְׁתְּךָ֔ לֹא־תִקְרָ֥א אֶת־שְׁמָ֖הּ שָׂרָ֑י כִּ֥י שָׂרָ֖ה שְׁמָֽהּ׃",
+      "en": "And God said to Avraham, As for Saray thy wife, thou shalt not call her name Saray, but Sara shall her name be."
+    },
+    {
+      "n": 115,
+      "c": 17,
+      "v": 16,
+      "ref": "17:16",
+      "text": "וּבֵרַכְתִּ֣י אֹתָ֔הּ וְגַ֨ם נָתַ֧תִּי מִמֶּ֛נָּה לְךָ֖ בֵּ֑ן וּבֵֽרַכְתִּ֙יהָ֙ וְהָֽיְתָ֣ה לְגוֹיִ֔ם מַלְכֵ֥י עַמִּ֖ים מִמֶּ֥נָּה יִהְיֽוּ׃",
+      "en": "And I will bless her, and give thee a son also of her: and I will bless her, and she shall be a mother of nations; kings of peoples shall issue from her."
+    },
+    {
+      "n": 116,
+      "c": 17,
+      "v": 17,
+      "ref": "17:17",
+      "text": "וַיִּפֹּ֧ל אַבְרָהָ֛ם עַל־פָּנָ֖יו וַיִּצְחָ֑ק וַיֹּ֣אמֶר בְּלִבּ֗וֹ הַלְּבֶ֤ן מֵאָֽה־שָׁנָה֙ יִוָּלֵ֔ד וְאִ֨ם־שָׂרָ֔ה הֲבַת־תִּשְׁעִ֥ים שָׁנָ֖ה תֵּלֵֽד׃",
+      "en": "Then Avraham fell upon his face, and laughed, and said in his heart, Shall a child be born to him that is a hundred years old? and shall Sara, that is ninety years old, give birth?"
+    },
+    {
+      "n": 117,
+      "c": 17,
+      "v": 18,
+      "ref": "17:18",
+      "text": "וַיֹּ֥אמֶר אַבְרָהָ֖ם אֶל־הָֽאֱלֹהִ֑ים ל֥וּ יִשְׁמָעֵ֖אל יִחְיֶ֥ה לְפָנֶֽיךָ׃",
+      "en": "And Avraham said to God, O that Yishma᾽el might live before thee!"
+    },
+    {
+      "n": 118,
+      "c": 17,
+      "v": 19,
+      "ref": "17:19",
+      "text": "וַיֹּ֣אמֶר אֱלֹהִ֗ים אֲבָל֙ שָׂרָ֣ה אִשְׁתְּךָ֗ יֹלֶ֤דֶת לְךָ֙ בֵּ֔ן וְקָרָ֥אתָ אֶת־שְׁמ֖וֹ יִצְחָ֑ק וַהֲקִמֹתִ֨י אֶת־בְּרִיתִ֥י אִתּ֛וֹ לִבְרִ֥ית עוֹלָ֖ם לְזַרְע֥וֹ אַחֲרָֽיו׃",
+      "en": "And God said, Sara thy wife shall bear thee a son indeed; and thou shalt call his name Yiżĥaq: and I will establish My covenant with him for an everlasting covenant, and with his seed after him."
+    },
+    {
+      "n": 119,
+      "c": 17,
+      "v": 20,
+      "ref": "17:20",
+      "text": "וּֽלְיִשְׁמָעֵאל֮ שְׁמַעְתִּ֒יךָ֒ הִנֵּ֣ה&thinsp;<b>׀</b> בֵּרַ֣כְתִּי אֹת֗וֹ וְהִפְרֵיתִ֥י אֹת֛וֹ וְהִרְבֵּיתִ֥י אֹת֖וֹ בִּמְאֹ֣ד מְאֹ֑ד שְׁנֵים־עָשָׂ֤ר נְשִׂיאִם֙ יוֹלִ֔יד וּנְתַתִּ֖יו לְג֥וֹי גָּדֽוֹל׃",
+      "en": "And as for Yishma᾽el I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; twelve princes shall he beget, and I will make him a great nation."
+    },
+    {
+      "n": 120,
+      "c": 17,
+      "v": 21,
+      "ref": "17:21",
+      "text": "וְאֶת־בְּרִיתִ֖י אָקִ֣ים אֶת־יִצְחָ֑ק אֲשֶׁר֩ תֵּלֵ֨ד לְךָ֤ שָׂרָה֙ לַמּוֹעֵ֣ד הַזֶּ֔ה בַּשָּׁנָ֖ה הָאַחֶֽרֶת׃",
+      "en": "But my covenant will I establish with Yiżĥaq, whom Sara shall bear to thee at this time next year."
+    },
+    {
+      "n": 121,
+      "c": 17,
+      "v": 22,
+      "ref": "17:22",
+      "text": "וַיְכַ֖ל לְדַבֵּ֣ר אִתּ֑וֹ וַיַּ֣עַל אֱלֹהִ֔ים מֵעַ֖ל אַבְרָהָֽם׃",
+      "en": "And He finished talking with him, and God went up from Avraham."
+    },
+    {
+      "n": 122,
+      "c": 17,
+      "v": 23,
+      "ref": "17:23",
+      "text": "וַיִּקַּ֨ח אַבְרָהָ֜ם אֶת־יִשְׁמָעֵ֣אל בְּנ֗וֹ וְאֵ֨ת כׇּל־יְלִידֵ֤י בֵיתוֹ֙ וְאֵת֙ כׇּל־מִקְנַ֣ת כַּסְפּ֔וֹ כׇּל־זָכָ֕ר בְּאַנְשֵׁ֖י בֵּ֣ית אַבְרָהָ֑ם וַיָּ֜מׇל אֶת־בְּשַׂ֣ר עׇרְלָתָ֗ם בְּעֶ֙צֶם֙ הַיּ֣וֹם הַזֶּ֔ה כַּאֲשֶׁ֛ר דִּבֶּ֥ר אִתּ֖וֹ אֱלֹהִֽים׃",
+      "en": "And Avraham took Yishma᾽el his son, and all that were born in his house, and all that were bought with his money, every male among the men of Avraham’s house; and circumcised the flesh of their foreskin in the selfsame day, as God had said to him."
+    },
+    {
+      "n": 123,
+      "c": 17,
+      "v": 24,
+      "ref": "17:24",
+      "text": "וְאַ֨בְרָהָ֔ם בֶּן־תִּשְׁעִ֥ים וָתֵ֖שַׁע שָׁנָ֑ה בְּהִמֹּל֖וֹ בְּשַׂ֥ר עׇרְלָתֽוֹ׃",
+      "en": "And Avraham was ninety nine years old, when he was circumcised in the flesh of his foreskin."
+    },
+    {
+      "n": 124,
+      "c": 17,
+      "v": 25,
+      "ref": "17:25",
+      "text": "וְיִשְׁמָעֵ֣אל בְּנ֔וֹ בֶּן־שְׁלֹ֥שׁ עֶשְׂרֵ֖ה שָׁנָ֑ה בְּהִ֨מֹּל֔וֹ אֵ֖ת בְּשַׂ֥ר עׇרְלָתֽוֹ׃",
+      "en": "And Yishma᾽el his son was thirteen years old, when he was circumcised in the flesh of his foreskin."
+    },
+    {
+      "n": 125,
+      "c": 17,
+      "v": 26,
+      "ref": "17:26",
+      "text": "בְּעֶ֙צֶם֙ הַיּ֣וֹם הַזֶּ֔ה נִמּ֖וֹל אַבְרָהָ֑ם וְיִשְׁמָעֵ֖אל בְּנֽוֹ׃",
+      "en": "In the selfsame day was Avraham circumcised, and Yishma᾽el his son."
+    },
+    {
+      "n": 126,
+      "c": 17,
+      "v": 27,
+      "ref": "17:27",
+      "text": "וְכׇל־אַנְשֵׁ֤י בֵיתוֹ֙ יְלִ֣יד בָּ֔יִת וּמִקְנַת־כֶּ֖סֶף מֵאֵ֣ת בֶּן־נֵכָ֑ר נִמֹּ֖לוּ אִתּֽוֹ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And all the men of his house, born in the house, and bought with money of a stranger, were circumcised with him."
+    }
+  ],
+  "parashah": {
+    "en": "Lech-Lecha",
+    "he": "לֶךְ-לְךָ",
+    "translit": "Lech-Lecha",
+    "ref": "Genesis 12:1–17:27"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 13,
+        "ref": "12:1–12:13"
+      },
+      {
+        "n": 2,
+        "start": 14,
+        "end": 24,
+        "ref": "12:14–13:4"
+      },
+      {
+        "n": 3,
+        "start": 25,
+        "end": 38,
+        "ref": "13:5–13:18"
+      },
+      {
+        "n": 4,
+        "start": 39,
+        "end": 58,
+        "ref": "14:1–14:20"
+      },
+      {
+        "n": 5,
+        "start": 59,
+        "end": 68,
+        "ref": "14:21–15:6"
+      },
+      {
+        "n": 6,
+        "start": 69,
+        "end": 105,
+        "ref": "15:7–17:6"
+      },
+      {
+        "n": 7,
+        "start": 106,
+        "end": 126,
+        "ref": "17:7–17:27"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 3,
+          "ref": "12:1–12:3"
+        },
+        {
+          "n": 2,
+          "start": 4,
+          "end": 9,
+          "ref": "12:4–12:9"
+        },
+        {
+          "n": 3,
+          "start": 10,
+          "end": 13,
+          "ref": "12:10–12:13"
+        },
+        {
+          "n": 4,
+          "start": 14,
+          "end": 20,
+          "ref": "12:14–12:20"
+        },
+        {
+          "n": 5,
+          "start": 21,
+          "end": 24,
+          "ref": "13:1–13:4"
+        },
+        {
+          "n": 6,
+          "start": 25,
+          "end": 31,
+          "ref": "13:5–13:11"
+        },
+        {
+          "n": 7,
+          "start": 32,
+          "end": 38,
+          "ref": "13:12–13:18"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 39,
+          "end": 47,
+          "ref": "14:1–14:9"
+        },
+        {
+          "n": 2,
+          "start": 48,
+          "end": 54,
+          "ref": "14:10–14:16"
+        },
+        {
+          "n": 3,
+          "start": 55,
+          "end": 58,
+          "ref": "14:17–14:20"
+        },
+        {
+          "n": 4,
+          "start": 59,
+          "end": 62,
+          "ref": "14:21–14:24"
+        },
+        {
+          "n": 5,
+          "start": 63,
+          "end": 68,
+          "ref": "15:1–15:6"
+        },
+        {
+          "n": 6,
+          "start": 69,
+          "end": 78,
+          "ref": "15:7–15:16"
+        },
+        {
+          "n": 7,
+          "start": 79,
+          "end": 83,
+          "ref": "15:17–15:21"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 84,
+          "end": 89,
+          "ref": "16:1–16:6"
+        },
+        {
+          "n": 2,
+          "start": 90,
+          "end": 92,
+          "ref": "16:7–16:9"
+        },
+        {
+          "n": 3,
+          "start": 93,
+          "end": 99,
+          "ref": "16:10–16:16"
+        },
+        {
+          "n": 4,
+          "start": 100,
+          "end": 105,
+          "ref": "17:1–17:6"
+        },
+        {
+          "n": 5,
+          "start": 106,
+          "end": 116,
+          "ref": "17:7–17:17"
+        },
+        {
+          "n": 6,
+          "start": 117,
+          "end": 122,
+          "ref": "17:18–17:23"
+        },
+        {
+          "n": 7,
+          "start": 123,
+          "end": 126,
+          "ref": "17:24–17:27"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 123,
+        "end": 126,
+        "ref": "17:24–17:27"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 36,
+          "end": 38,
+          "ref": "13:16–13:18"
+        },
+        "2": {
+          "n": "M",
+          "start": 79,
+          "end": 83,
+          "ref": "15:17–15:21"
+        },
+        "3": {
+          "n": "M",
+          "start": 123,
+          "end": 126,
+          "ref": "17:24–17:27"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

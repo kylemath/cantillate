@@ -1,0 +1,212 @@
+{
+  "slug": "haftarah-yitro",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 6:1-7:6, 9:5-6",
+  "heRef": "ישעיהו ו׳:א-י״ג, ז׳:א-ו, ט׳:ה-ו",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 6,
+      "v": 1,
+      "ref": "6:1",
+      "text": "בִּשְׁנַת־מוֹת֙ הַמֶּ֣לֶךְ עֻזִּיָּ֔הוּ וָאֶרְאֶ֧ה אֶת־אֲדֹנָ֛י יֹשֵׁ֥ב עַל־כִּסֵּ֖א רָ֣ם וְנִשָּׂ֑א וְשׁוּלָ֖יו מְלֵאִ֥ים אֶת־הַהֵיכָֽל׃",
+      "en": "In the year that king ῾Uzziyyahu died I saw the Lord sitting upon a throne, high and lifted up, and his train filled the temple."
+    },
+    {
+      "n": 2,
+      "c": 6,
+      "v": 2,
+      "ref": "6:2",
+      "text": "שְׂרָפִ֨ים עֹמְדִ֤ים&thinsp;<small>׀</small>&thinsp;מִמַּ֙עַל֙ ל֔וֹ שֵׁ֧שׁ כְּנָפַ֛יִם שֵׁ֥שׁ כְּנָפַ֖יִם לְאֶחָ֑ד בִּשְׁתַּ֣יִם&thinsp;<b>׀</b> יְכַסֶּ֣ה פָנָ֗יו וּבִשְׁתַּ֛יִם יְכַסֶּ֥ה רַגְלָ֖יו וּבִשְׁתַּ֥יִם יְעוֹפֵֽף׃",
+      "en": "Serafim stood above him: each one had six wings; with two he covered his face, and with two he covered his feet, and with two he did fly."
+    },
+    {
+      "n": 3,
+      "c": 6,
+      "v": 3,
+      "ref": "6:3",
+      "text": "וְקָרָ֨א זֶ֤ה אֶל־זֶה֙ וְאָמַ֔ר קָד֧וֹשׁ&thinsp;<small>׀</small>&thinsp;קָד֛וֹשׁ קָד֖וֹשׁ יְהֹוָ֣ה צְבָא֑וֹת מְלֹ֥א כׇל־הָאָ֖רֶץ כְּבוֹדֽוֹ׃",
+      "en": "And one cried to another, and said, Holy, holy, holy, is the Lord of hosts: the whole earth is full of his glory."
+    },
+    {
+      "n": 4,
+      "c": 6,
+      "v": 4,
+      "ref": "6:4",
+      "text": "וַיָּנֻ֙עוּ֙ אַמּ֣וֹת הַסִּפִּ֔ים מִקּ֖וֹל הַקּוֹרֵ֑א וְהַבַּ֖יִת יִמָּלֵ֥א עָשָֽׁן׃",
+      "en": "And the posts of the door moved at the voice of him that cried, and the house was filled with smoke."
+    },
+    {
+      "n": 5,
+      "c": 6,
+      "v": 5,
+      "ref": "6:5",
+      "text": "וָאֹמַ֞ר אֽוֹי־לִ֣י כִֽי־נִדְמֵ֗יתִי כִּ֣י אִ֤ישׁ טְמֵֽא־שְׂפָתַ֙יִם֙ אָנֹ֔כִי וּבְתוֹךְ֙ עַם־טְמֵ֣א שְׂפָתַ֔יִם אָנֹכִ֖י יוֹשֵׁ֑ב כִּ֗י אֶת־הַמֶּ֛לֶךְ יְהֹוָ֥ה צְבָא֖וֹת רָא֥וּ עֵינָֽי׃",
+      "en": "Then said I, Woe is me! for I am ruined; because I am a man of unclean lips, and I dwell in the midst of a people of unclean lips: for my eyes have seen the King, the Lord of hosts."
+    },
+    {
+      "n": 6,
+      "c": 6,
+      "v": 6,
+      "ref": "6:6",
+      "text": "וַיָּ֣עׇף אֵלַ֗י אֶחָד֙ מִן־הַשְּׂרָפִ֔ים וּבְיָד֖וֹ רִצְפָּ֑ה בְּמֶ֨לְקַחַ֔יִם לָקַ֖ח מֵעַ֥ל הַמִּזְבֵּֽחַ׃",
+      "en": "Then one of the serafim flew to me, having a live coal in his hand, which he had taken with tongs from off the altar:"
+    },
+    {
+      "n": 7,
+      "c": 6,
+      "v": 7,
+      "ref": "6:7",
+      "text": "וַיַּגַּ֣ע עַל־פִּ֔י וַיֹּ֕אמֶר הִנֵּ֛ה נָגַ֥ע זֶ֖ה עַל־שְׂפָתֶ֑יךָ וְסָ֣ר עֲוֺנֶ֔ךָ וְחַטָּאתְךָ֖ תְּכֻפָּֽר׃",
+      "en": "and he laid it upon my mouth, and said, Lo, this has touched thy lips; and thy iniquity is taken away, and thy sin is purged."
+    },
+    {
+      "n": 8,
+      "c": 6,
+      "v": 8,
+      "ref": "6:8",
+      "text": "וָאֶשְׁמַ֞ע אֶת־ק֤וֹל אֲדֹנָי֙ אֹמֵ֔ר אֶת־מִ֥י אֶשְׁלַ֖ח וּמִ֣י יֵֽלֶךְ־לָ֑נוּ וָאֹמַ֖ר הִנְנִ֥י שְׁלָחֵֽנִי׃",
+      "en": "Also I heard the voice of the Lord, saying, Whom shall I send, and who will go for us? Then said I, Here am I; send me."
+    },
+    {
+      "n": 9,
+      "c": 6,
+      "v": 9,
+      "ref": "6:9",
+      "text": "וַיֹּ֕אמֶר לֵ֥ךְ וְאָמַרְתָּ֖ לָעָ֣ם הַזֶּ֑ה שִׁמְע֤וּ שָׁמ֙וֹעַ֙ וְאַל־תָּבִ֔ינוּ וּרְא֥וּ רָא֖וֹ וְאַל־תֵּדָֽעוּ׃",
+      "en": "And he said, Go, and tell this people, Hear indeed, but understand not; and see indeed, but perceive not."
+    },
+    {
+      "n": 10,
+      "c": 6,
+      "v": 10,
+      "ref": "6:10",
+      "text": "הַשְׁמֵן֙ לֵב־הָעָ֣ם הַזֶּ֔ה וְאׇזְנָ֥יו הַכְבֵּ֖ד וְעֵינָ֣יו הָשַׁ֑ע פֶּן־יִרְאֶ֨ה בְעֵינָ֜יו וּבְאׇזְנָ֣יו יִשְׁמָ֗ע וּלְבָב֥וֹ יָבִ֛ין וָשָׁ֖ב וְרָ֥פָא לֽוֹ׃",
+      "en": "Make the heart of this people fat, and make their ears heavy, and smear over their eyes; lest they see with their eyes, and hear with their ears, and understand with their heart, and return, and be healed."
+    },
+    {
+      "n": 11,
+      "c": 6,
+      "v": 11,
+      "ref": "6:11",
+      "text": "וָאֹמַ֕ר עַד־מָתַ֖י אֲדֹנָ֑י וַיֹּ֡אמֶר עַ֣ד אֲשֶׁר֩ אִם־שָׁא֨וּ עָרִ֜ים מֵאֵ֣ין יוֹשֵׁ֗ב וּבָתִּים֙ מֵאֵ֣ין אָדָ֔ם וְהָאֲדָמָ֖ה תִּשָּׁאֶ֥ה שְׁמָמָֽה׃",
+      "en": "Then said I, Lord, how long? And he answered, Until the cities be wasted without inhabitant, and the houses without man, and the land be utterly desolate,"
+    },
+    {
+      "n": 12,
+      "c": 6,
+      "v": 12,
+      "ref": "6:12",
+      "text": "וְרִחַ֥ק יְהֹוָ֖ה אֶת־הָאָדָ֑ם וְרַבָּ֥ה הָעֲזוּבָ֖ה בְּקֶ֥רֶב הָאָֽרֶץ׃",
+      "en": "and the Lord has removed men far away, and there be a great forsaking in the midst of the land."
+    },
+    {
+      "n": 13,
+      "c": 6,
+      "v": 13,
+      "ref": "6:13",
+      "text": "וְע֥וֹד בָּהּ֙ עֲשִׂ֣רִיָּ֔ה וְשָׁ֖בָה וְהָיְתָ֣ה לְבָעֵ֑ר כָּאֵלָ֣ה וְכָאַלּ֗וֹן אֲשֶׁ֤ר בְּשַׁלֶּ֙כֶת֙ מַצֶּ֣בֶת בָּ֔ם זֶ֥רַע קֹ֖דֶשׁ מַצַּבְתָּֽהּ׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And if one tenth remain in it, then that shall again be consumed: but like a terebinth and like an oak, whose stump remains when they cast their leaves, so the holy seed is its immovable stump."
+    },
+    {
+      "n": 14,
+      "c": 7,
+      "v": 1,
+      "ref": "7:1",
+      "text": "וַיְהִ֡י בִּימֵ֣י אָ֠חָ֠ז בֶּן־יוֹתָ֨ם בֶּן־עֻזִּיָּ֜הוּ מֶ֣לֶךְ יְהוּדָ֗ה עָלָ֣ה רְצִ֣ין מֶֽלֶךְ־אֲ֠רָ֠ם וּפֶ֨קַח בֶּן־רְמַלְיָ֤הוּ מֶֽלֶךְ־יִשְׂרָאֵל֙ יְר֣וּשָׁלַ֔͏ִם לַמִּלְחָמָ֖ה עָלֶ֑יהָ וְלֹ֥א יָכֹ֖ל לְהִלָּחֵ֥ם עָלֶֽיהָ׃",
+      "en": "And it came to pass in the days of Aĥaz the son of Yotam, the son of ῾Uzziyyahu, king of Yehuda, that Reżin the king of Aram, and Peqaĥ the son of Remalyahu, king of Yisra᾽el, went up to Yerushalayim to war against it, but could not prevail against it."
+    },
+    {
+      "n": 15,
+      "c": 7,
+      "v": 2,
+      "ref": "7:2",
+      "text": "וַיֻּגַּ֗ד לְבֵ֤ית דָּוִד֙ לֵאמֹ֔ר נָ֥חָה אֲרָ֖ם עַל־אֶפְרָ֑יִם וַיָּ֤נַע לְבָבוֹ֙ וּלְבַ֣ב עַמּ֔וֹ כְּנ֥וֹעַ עֲצֵי־יַ֖עַר מִפְּנֵי־רֽוּחַ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And it was told the house of David, saying, Aram is confederate with Efrayim. And his heart was moved, and the heart of his people, as the trees of the forest are moved with the wind."
+    },
+    {
+      "n": 16,
+      "c": 7,
+      "v": 3,
+      "ref": "7:3",
+      "text": "וַיֹּ֣אמֶר יְהֹוָה֮ אֶֽל־יְשַֽׁעְיָ֒הוּ֒ צֵא־נָא֙ לִקְרַ֣את אָחָ֔ז אַתָּ֕ה וּשְׁאָ֖ר יָשׁ֣וּב בְּנֶ֑ךָ אֶל־קְצֵ֗ה תְּעָלַת֙ הַבְּרֵכָ֣ה הָעֶלְיוֹנָ֔ה אֶל־מְסִלַּ֖ת שְׂדֵ֥ה כוֹבֵֽס׃",
+      "en": "Then said the Lord to Yesha῾yahu, Go out now to meet Aĥaz, thou, and She᾽ar-yashuv thy son, at the end of the aqueduct of the upper pool in the highway of the washers’ field;"
+    },
+    {
+      "n": 17,
+      "c": 7,
+      "v": 4,
+      "ref": "7:4",
+      "text": "וְאָמַרְתָּ֣ אֵ֠לָ֠יו הִשָּׁמֵ֨ר וְהַשְׁקֵ֜ט אַל־תִּירָ֗א וּלְבָֽבְךָ֙ אַל־יֵרַ֔ךְ מִשְּׁנֵ֨י זַנְב֧וֹת הָאוּדִ֛ים הָעֲשֵׁנִ֖ים הָאֵ֑לֶּה בׇּחֳרִי־אַ֛ף רְצִ֥ין וַאֲרָ֖ם וּבֶן־רְמַלְיָֽהוּ׃",
+      "en": "and say to him, Take heed, and be quiet; fear not, neither be fainthearted on account of the two tails of these smoking firebrands, for the fierce anger of Reżin and Aram, and of the son of Remalyahu."
+    },
+    {
+      "n": 18,
+      "c": 7,
+      "v": 5,
+      "ref": "7:5",
+      "text": "יַ֗עַן כִּֽי־יָעַ֥ץ עָלֶ֛יךָ אֲרָ֖ם רָעָ֑ה אֶפְרַ֥יִם וּבֶן־רְמַלְיָ֖הוּ לֵאמֹֽר׃",
+      "en": "Because Aram, Efrayim, and the son of Remalyahu, have taken evil counsel against thee, saying,"
+    },
+    {
+      "n": 19,
+      "c": 7,
+      "v": 6,
+      "ref": "7:6",
+      "text": "נַעֲלֶ֤ה בִֽיהוּדָה֙ וּנְקִיצֶ֔נָּה וְנַבְקִעֶ֖נָּה אֵלֵ֑ינוּ וְנַמְלִ֥יךְ מֶ֙לֶךְ֙ בְּתוֹכָ֔הּ אֵ֖ת בֶּן־טָֽבְאַֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "Let us go up against Yehuda, and harass it, and let us make a breach in it for us, and set a king in the midst of it, namely the son of Tave᾽all:"
+    },
+    {
+      "n": 20,
+      "c": 9,
+      "v": 5,
+      "ref": "9:5",
+      "text": "כִּֽי־יֶ֣לֶד יֻלַּד־לָ֗נוּ בֵּ֚ן נִתַּן־לָ֔נוּ וַתְּהִ֥י הַמִּשְׂרָ֖ה עַל־שִׁכְמ֑וֹ וַיִּקְרָ֨א שְׁמ֜וֹ פֶּ֠לֶא יוֹעֵץ֙ אֵ֣ל גִּבּ֔וֹר אֲבִי־עַ֖ד שַׂר־שָׁלֽוֹם׃",
+      "en": "For to us a child is born, to us a son is given: and the government is upon his shoulder: and his name is called Pele-yo῾eż-el-gibbor-avi-῾ad-sar-shalom,"
+    },
+    {
+      "n": 21,
+      "c": 9,
+      "v": 6,
+      "ref": "9:6",
+      "text": "<span class=\"mam-kq\"><span class=\"mam-kq-k\">(לם רבה)</span> <span class=\"mam-kq-q\">[לְמַרְבֵּ֨ה]</span></span> הַמִּשְׂרָ֜ה וּלְשָׁל֣וֹם אֵֽין־קֵ֗ץ עַל־כִּסֵּ֤א דָוִד֙ וְעַל־מַמְלַכְתּ֔וֹ לְהָכִ֤ין אֹתָהּ֙ וּֽלְסַעֲדָ֔הּ בְּמִשְׁפָּ֖ט וּבִצְדָקָ֑ה מֵֽעַתָּה֙ וְעַד־עוֹלָ֔ם קִנְאַ֛ת יְהֹוָ֥ה צְבָא֖וֹת תַּעֲשֶׂה־זֹּֽאת׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "for the increase of the realm and for peace without end, upon the throne of David, and upon his kingdom, to order it, and to establish it with judgment and with justice: from henceforth for ever. The zeal of the Lord of hosts performs this."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Yitro",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 17
+  },
+  "parashah": {
+    "en": "Haftarat Yitro",
+    "translit": "Haftarat Yitro",
+    "he": "הפטרת יתרו",
+    "ref": "Isaiah 6:1-7:6, 9:5-6"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 21,
+        "ref": "6:1–9:6"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}

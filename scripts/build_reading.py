@@ -42,13 +42,16 @@ import tanakh                             # noqa: E402  (book names, Hebrew nume
 from readings import REGISTRY as TORAH_REGISTRY   # noqa: E402
 from haftarot import REGISTRY as HAFTARAH_REGISTRY  # noqa: E402
 from local_readings import REGISTRY as LOCAL_REGISTRY  # noqa: E402
+from holiday_readings import REGISTRY as HOLIDAY_REGISTRY  # noqa: E402
 from aliyot_build import build_aliyot_doc, HEBCAL_ATTRIBUTION  # noqa: E402
 
 # Every buildable reading, by slug. The Torah parashiyot are hand-written in
 # scripts/readings.py; the haftarot are derived from Hebcal's leyning table in
 # scripts/haftarot.py, so all 54 are available without typing any of them out;
-# scripts/local_readings.py holds passages taught by a recording of one's own.
-REGISTRY = {**TORAH_REGISTRY, **HAFTARAH_REGISTRY, **LOCAL_REGISTRY}
+# scripts/local_readings.py holds passages taught by a recording of one's own;
+# scripts/holiday_readings.py holds High Holiday leyning (Teplitz / MJC).
+REGISTRY = {**TORAH_REGISTRY, **HAFTARAH_REGISTRY, **LOCAL_REGISTRY,
+            **HOLIDAY_REGISTRY}
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUDIO_DIR = os.path.join(HERE, "audio")
@@ -121,7 +124,10 @@ def mp3_disk(src, i):
 # list (each PocketTorah-style remote fetch, or a `local` drop-in), or use the
 # legacy top-level pt_* fields (treated as a single default PocketTorah source).
 def reading_sources(cfg):
-    if cfg.get("sources"):
+    if "sources" in cfg:
+        # Explicit empty list = text-only (do not fall back to PocketTorah).
+        if not cfg["sources"]:
+            return []
         out = []
         for s in cfg["sources"]:
             d = dict(s)
@@ -206,7 +212,8 @@ def build_text(cfg):
     # PocketTorah's WLC word counts are what the recording's onsets were labelled
     # against. Its file names differ from Sefaria's outside the Torah ("Kings_1"
     # for "I Kings"), so the registry names the file explicitly.
-    wlc_book = cfg.get("wlc_book") or book
+    # Honor an explicit None (Jonah has no PocketTorah WLC file).
+    wlc_book = cfg["wlc_book"] if "wlc_book" in cfg else book
     wlc_ch = []
     if wlc_book:
         wlc = json.loads(get(f"{RAW}/data/torah/json/{wlc_book}.json").decode("utf-8-sig"))
@@ -254,6 +261,27 @@ def build_text(cfg):
                       "triennial": {}}
         aliyot_src = "haftarah"
         print(f"  haftarah: one chunk of {N} pesukim")
+    elif kind == "holiday":
+        # High Holiday leyning: do not ask Hebcal for a weekly parashah (that
+        # would pull Vayera's seven aliyot onto RH Day 1). Torah uses the
+        # registry `annual` tuples (5 / 6 / 3). Maftir and haftarah are one chunk.
+        part = cfg.get("holidayPart", "torah")
+        N = len(verses)
+        if part in ("haftarah", "maftir", "blessing"):
+            mark = "H" if part == "haftarah" else "M"
+            aliyot_doc = {"annual": [{"n": mark, "start": 1, "end": N,
+                                      "ref": f"{verses[0]['ref']}{EN_DASH}{verses[-1]['ref']}"}],
+                          "triennial": {}}
+            aliyot_src = "holiday"
+            print(f"  holiday {part}: one chunk of {N} pesukim")
+        else:
+            aliyot_doc, aliyot_src = build_aliyot_doc(
+                verses, parashah_name=None, hebcal_key=None,
+                fallback_annual=cfg.get("annual"))
+            aliyot_doc["triennial"] = {}
+            aliyot_doc.pop("maftir", None)
+            print(f"  holiday torah: {len(aliyot_doc['annual'])} aliyot "
+                  f"(source={aliyot_src}, no triennial)")
     else:
         # aliyot (source-independent): real annual + triennial (+ maftir) boundaries
         # from Hebcal, mapped onto this reading's verse indices. Falls back to the
@@ -359,15 +387,32 @@ def load_source_tracks(src):
 def build_audio(cfg, src, verses, bounds):
     """Align this source's word onsets to the reading and write its audio doc."""
     labels = load_source_tracks(src)
+    # PocketTorah labels are N marks for N words. align_recording.py writes N+1
+    # (the last mark is the end of the last word). Counting that extra mark as a
+    # word shifts every later file by one and breaks split-aliyah local sources.
+    nfiles = len(src["pt_files"])
+    total_marks = sum(len(labels[i][0]) for i in src["pt_files"])
+    total_wlc = bounds[-1][1] if bounds else 0
+    extra_end = (src.get("kind") == "local"
+                 and nfiles > 0
+                 and total_marks == total_wlc + nfiles)
+    if extra_end:
+        print(f"  local tracks: {nfiles} files use aligner N+1 marks "
+              f"({total_marks} marks / {total_wlc} WLC words)")
+
+    def nwords(i):
+        n = len(labels[i][0])
+        return n - 1 if extra_end else n
+
     foff, off = {}, 0
     for i in src["pt_files"]:
         foff[i] = off
-        off += len(labels[i][0])
+        off += nwords(i)
 
     frange, acc = {}, 0
     for i in src["pt_files"]:
-        frange[i] = (acc, acc + len(labels[i][0]))
-        acc += len(labels[i][0])
+        frange[i] = (acc, acc + nwords(i))
+        acc += nwords(i)
 
     def file_for(gw):
         for i in src["pt_files"]:
@@ -576,12 +621,15 @@ def register(cfg, sources):
     # What the app needs to know about a reading before it opens it: which
     # cantillation style teaches it, and (for a haftarah) which parashah it goes
     # with and where in the year it falls, so the menu can be put in order.
-    for key in ("tropeStyle", "tradition", "calendarNumber"):
+    for key in ("tropeStyle", "tradition", "calendarNumber",
+                "holidayPart", "occasion"):
         if cfg.get(key) is not None:
             entry[key] = cfg[key]
     if cfg.get("haftarah"):
         entry["haftarah"] = cfg["haftarah"]
-    if sources:
+    if "sources" in cfg:
+        entry["sources"] = manifest_sources(sources)
+    elif sources:
         entry["sources"] = manifest_sources(sources)
     note = cfg.get("note") or prev.get("note")
     if note:

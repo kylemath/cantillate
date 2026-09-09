@@ -1,0 +1,214 @@
+{
+  "slug": "yk-haftarah",
+  "book": {
+    "en": "Isaiah",
+    "he": "ישעיהו",
+    "translit": "Yeshayahu"
+  },
+  "multiChapter": true,
+  "ref": "Isaiah 57:14-58:14",
+  "heRef": "ישעיהו נ״ז:י״ד-כ״א, נ״ח:א-י״ד",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 57,
+      "v": 14,
+      "ref": "57:14",
+      "text": "וְאָמַ֥ר סֹֽלּוּ־סֹ֖לּוּ פַּנּוּ־דָ֑רֶךְ הָרִ֥ימוּ מִכְשׁ֖וֹל מִדֶּ֥רֶךְ עַמִּֽי׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And one shall say, Bank up, build up, prepare the way, take up the stumblingblock out of the way of my people."
+    },
+    {
+      "n": 2,
+      "c": 57,
+      "v": 15,
+      "ref": "57:15",
+      "text": "כִּי֩ כֹ֨ה אָמַ֜ר רָ֣ם וְנִשָּׂ֗א שֹׁכֵ֥ן עַד֙ וְקָד֣וֹשׁ שְׁמ֔וֹ מָר֥וֹם וְקָד֖וֹשׁ אֶשְׁכּ֑וֹן וְאֶת־דַּכָּא֙ וּשְׁפַל־ר֔וּחַ לְהַחֲיוֹת֙ ר֣וּחַ שְׁפָלִ֔ים וּֽלְהַחֲי֖וֹת לֵ֥ב נִדְכָּאִֽים׃",
+      "en": "For thus says the high and lofty One that inhabits eternity, whose name is Holy; I dwell on high and in a holy place, yet with him also that is of a contrite and humble spirit, to revive the spirit of the humble, and to revive the heart of the contrite ones."
+    },
+    {
+      "n": 3,
+      "c": 57,
+      "v": 16,
+      "ref": "57:16",
+      "text": "כִּ֣י לֹ֤א לְעוֹלָם֙ אָרִ֔יב וְלֹ֥א לָנֶ֖צַח אֶקְצ֑וֹף כִּי־ר֙וּחַ֙ מִלְּפָנַ֣י יַעֲט֔וֹף וּנְשָׁמ֖וֹת אֲנִ֥י עָשִֽׂיתִי׃",
+      "en": "For I will not contend for ever, neither will I be always angry: but the spirit and the soul which I have made, should faint before me."
+    },
+    {
+      "n": 4,
+      "c": 57,
+      "v": 17,
+      "ref": "57:17",
+      "text": "בַּעֲוֺ֥ן בִּצְע֛וֹ קָצַ֥פְתִּי וְאַכֵּ֖הוּ הַסְתֵּ֣ר וְאֶקְצֹ֑ף וַיֵּ֥לֶךְ שׁוֹבָ֖ב בְּדֶ֥רֶךְ לִבּֽוֹ׃",
+      "en": "For the iniquity of his covetousness was I wrathful, and smote him; I hid me, and was angry: but he went on perversely in the way of his heart."
+    },
+    {
+      "n": 5,
+      "c": 57,
+      "v": 18,
+      "ref": "57:18",
+      "text": "דְּרָכָ֥יו רָאִ֖יתִי וְאֶרְפָּאֵ֑הוּ וְאַנְחֵ֕הוּ וַאֲשַׁלֵּ֧ם נִחֻמִ֛ים ל֖וֹ וְלַאֲבֵלָֽיו׃",
+      "en": "I have seen his ways, and will heal him: I will lead him also, and bestow comforts on him and on his mourners."
+    },
+    {
+      "n": 6,
+      "c": 57,
+      "v": 19,
+      "ref": "57:19",
+      "text": "בּוֹרֵ֖א <span class=\"mam-kq\"><span class=\"mam-kq-k\">(נוב)</span> <span class=\"mam-kq-q\">[נִ֣יב]</span></span> שְׂפָתָ֑יִם שָׁל֨וֹם&thinsp;<small>׀</small>&thinsp;שָׁל֜וֹם לָרָח֧וֹק וְלַקָּר֛וֹב אָמַ֥ר יְהֹוָ֖ה וּרְפָאתִֽיו׃",
+      "en": "I will create a new expression of the lips: Peace, peace, both for far and near, says the Lord. And I will heal him."
+    },
+    {
+      "n": 7,
+      "c": 57,
+      "v": 20,
+      "ref": "57:20",
+      "text": "וְהָרְשָׁעִ֖ים כַּיָּ֣ם נִגְרָ֑שׁ כִּ֤י הַשְׁקֵט֙ לֹ֣א יוּכָ֔ל וַיִּגְרְשׁ֥וּ מֵימָ֖יו רֶ֥פֶשׁ וָטִֽיט׃",
+      "en": "But the wicked are like the troubled sea, which cannot be still, and whose waters cast up mire and dirt."
+    },
+    {
+      "n": 8,
+      "c": 57,
+      "v": 21,
+      "ref": "57:21",
+      "text": "אֵ֣ין שָׁל֔וֹם אָמַ֥ר אֱלֹהַ֖י לָרְשָׁעִֽים׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "There will be no peace, says my God, for the wicked."
+    },
+    {
+      "n": 9,
+      "c": 58,
+      "v": 1,
+      "ref": "58:1",
+      "text": "קְרָ֤א בְגָרוֹן֙ אַל־תַּחְשֹׂ֔ךְ כַּשּׁוֹפָ֖ר הָרֵ֣ם קוֹלֶ֑ךָ וְהַגֵּ֤ד לְעַמִּי֙ פִּשְׁעָ֔ם וּלְבֵ֥ית יַעֲקֹ֖ב חַטֹּאתָֽם׃",
+      "en": "Cry aloud, spare not, lift up thy voice like the shofar, and show my people their transgression, and the house of Ya῾aqov their sins."
+    },
+    {
+      "n": 10,
+      "c": 58,
+      "v": 2,
+      "ref": "58:2",
+      "text": "וְאוֹתִ֗י י֥וֹם יוֹם֙ יִדְרֹשׁ֔וּן וְדַ֥עַת דְּרָכַ֖י יֶחְפָּצ֑וּן כְּג֞וֹי אֲשֶׁר־צְדָקָ֣ה עָשָׂ֗ה וּמִשְׁפַּ֤ט אֱלֹהָיו֙ לֹ֣א עָזָ֔ב יִשְׁאָל֙וּנִי֙ מִשְׁפְּטֵי־צֶ֔דֶק קִרְבַ֥ת אֱלֹהִ֖ים יֶחְפָּצֽוּן׃",
+      "en": "Yet they seek me daily, and desire to know my ways, as a nation that did righteousness, and forsook not the ordinance of their God, they ask of me judgments of justice; they desire that God should be near."
+    },
+    {
+      "n": 11,
+      "c": 58,
+      "v": 3,
+      "ref": "58:3",
+      "text": "לָ֤מָּה צַּ֙מְנוּ֙ וְלֹ֣א רָאִ֔יתָ עִנִּ֥ינוּ נַפְשֵׁ֖נוּ וְלֹ֣א תֵדָ֑ע הֵ֣ן בְּי֤וֹם צֹֽמְכֶם֙ תִּמְצְאוּ־חֵ֔פֶץ וְכׇל־עַצְּבֵיכֶ֖ם תִּנְגֹּֽשׂוּ׃",
+      "en": "Why have we fasted, say they, and Thou seest not? why have we afflicted our soul, and Thou takest no knowledge? Behold, in the day of your fast you pursue your business, and exact all your payments."
+    },
+    {
+      "n": 12,
+      "c": 58,
+      "v": 4,
+      "ref": "58:4",
+      "text": "הֵ֣ן לְרִ֤יב וּמַצָּה֙ תָּצ֔וּמוּ וּלְהַכּ֖וֹת בְּאֶגְרֹ֣ף רֶ֑שַׁע לֹא־תָצ֣וּמוּ כַיּ֔וֹם לְהַשְׁמִ֥יעַ בַּמָּר֖וֹם קוֹלְכֶֽם׃",
+      "en": "Behold, you fast for strife and debate, and to smite with the fist of wickedness: you fast not this day to make your voice to be heard on high."
+    },
+    {
+      "n": 13,
+      "c": 58,
+      "v": 5,
+      "ref": "58:5",
+      "text": "הֲכָזֶ֗ה יִֽהְיֶה֙ צ֣וֹם אֶבְחָרֵ֔הוּ י֛וֹם עַנּ֥וֹת אָדָ֖ם נַפְשׁ֑וֹ הֲלָכֹ֨ף כְּאַגְמֹ֜ן רֹאשׁ֗וֹ וְשַׂ֤ק וָאֵ֙פֶר֙ יַצִּ֔יעַ הֲלָזֶה֙ תִּקְרָא־צ֔וֹם וְי֥וֹם רָצ֖וֹן לַיהֹוָֽה׃",
+      "en": "Is such the fast that I have chosen? a day for a man to afflict his soul? is it to bow down his head like a bulrush, and to spread sackcloth and ashes under him? wilt thou call this a fast, and an acceptable day to the Lord?"
+    },
+    {
+      "n": 14,
+      "c": 58,
+      "v": 6,
+      "ref": "58:6",
+      "text": "הֲל֣וֹא זֶה֮ צ֣וֹם אֶבְחָרֵ֒הוּ֒ פַּתֵּ֙חַ֙ חַרְצֻבּ֣וֹת רֶ֔שַׁע הַתֵּ֖ר אֲגֻדּ֣וֹת מוֹטָ֑ה וְשַׁלַּ֤ח רְצוּצִים֙ חׇפְשִׁ֔ים וְכׇל־מוֹטָ֖ה תְּנַתֵּֽקוּ׃",
+      "en": "Is not this rather the fast that I have chosen? to loose the chains of wickedness, to undo the bands of the yoke, and to let the oppressed go free, and to break every yoke?"
+    },
+    {
+      "n": 15,
+      "c": 58,
+      "v": 7,
+      "ref": "58:7",
+      "text": "הֲל֨וֹא פָרֹ֤ס לָרָעֵב֙ לַחְמֶ֔ךָ וַעֲנִיִּ֥ים מְרוּדִ֖ים תָּ֣בִיא בָ֑יִת כִּֽי־תִרְאֶ֤ה עָרֹם֙ וְכִסִּית֔וֹ וּמִבְּשָׂרְךָ֖ לֹ֥א תִתְעַלָּֽם׃",
+      "en": "Is it not to share thy bread with the hungry, and that thou bring the poor that are cast out to thy house? when thou seest the naked, that thou cover him; and that thou hide not thyself from thy own flesh?"
+    },
+    {
+      "n": 16,
+      "c": 58,
+      "v": 8,
+      "ref": "58:8",
+      "text": "אָ֣ז יִבָּקַ֤ע כַּשַּׁ֙חַר֙ אוֹרֶ֔ךָ וַאֲרֻֽכָתְךָ֖ מְהֵרָ֣ה תִצְמָ֑ח וְהָלַ֤ךְ לְפָנֶ֙יךָ֙ צִדְקֶ֔ךָ כְּב֥וֹד יְהֹוָ֖ה יַאַסְפֶֽךָ׃",
+      "en": "Then shall thy light break forth like the morning, and thy health shall spring forth speedily: and thy righteousness shall go before thee; the glory of the Lord shall be thy rearguard."
+    },
+    {
+      "n": 17,
+      "c": 58,
+      "v": 9,
+      "ref": "58:9",
+      "text": "אָ֤ז תִּקְרָא֙ וַיהֹוָ֣ה יַעֲנֶ֔ה תְּשַׁוַּ֖ע וְיֹאמַ֣ר הִנֵּ֑נִי אִם־תָּסִ֤יר מִתּֽוֹכְךָ֙ מוֹטָ֔ה שְׁלַ֥ח אֶצְבַּ֖ע וְדַבֶּר־אָֽוֶן׃",
+      "en": "Then shalt thou call, and the Lord shall answer; thou shalt cry, and he shall say, Here I am. If thou take away from the midst of thee the yoke, the pointing of the finger, and speaking iniquity;"
+    },
+    {
+      "n": 18,
+      "c": 58,
+      "v": 10,
+      "ref": "58:10",
+      "text": "וְתָפֵ֤ק לָֽרָעֵב֙ נַפְשֶׁ֔ךָ וְנֶ֥פֶשׁ נַעֲנָ֖ה תַּשְׂבִּ֑יעַ וְזָרַ֤ח בַּחֹ֙שֶׁךְ֙ אוֹרֶ֔ךָ וַאֲפֵלָתְךָ֖ כַּֽצׇּהֳרָֽיִם׃",
+      "en": "and if thou draw out thy soul to the hungry, and satisfy the afflicted soul; then shall thy light rise in darkness, and thy gloom be as the noonday:"
+    },
+    {
+      "n": 19,
+      "c": 58,
+      "v": 11,
+      "ref": "58:11",
+      "text": "וְנָחֲךָ֣ יְהֹוָה֮ תָּמִיד֒ וְהִשְׂבִּ֤יעַ בְּצַחְצָחוֹת֙ נַפְשֶׁ֔ךָ וְעַצְמֹתֶ֖יךָ יַחֲלִ֑יץ וְהָיִ֙יתָ֙ כְּגַ֣ן רָוֶ֔ה וּכְמוֹצָ֣א מַ֔יִם אֲשֶׁ֥ר לֹֽא־יְכַזְּב֖וּ מֵימָֽיו׃",
+      "en": "and the Lord shall guide thee continually, and satisfy thy soul in drought, and make strong thy bones: and thou shalt be like a watered garden, and like a spring of water, whose waters fail not."
+    },
+    {
+      "n": 20,
+      "c": 58,
+      "v": 12,
+      "ref": "58:12",
+      "text": "וּבָנ֤וּ מִמְּךָ֙ חׇרְב֣וֹת עוֹלָ֔ם מוֹסְדֵ֥י דוֹר־וָד֖וֹר תְּקוֹמֵ֑ם וְקֹרָ֤א לְךָ֙ גֹּדֵ֣ר פֶּ֔רֶץ מְשֹׁבֵ֥ב נְתִיב֖וֹת לָשָֽׁבֶת׃",
+      "en": "And they that shall be of thee shall build the old waste places: thou shalt raise up the foundations of many generations, and thou shalt be called, The repairer of the breach, The restorer of paths to dwell in."
+    },
+    {
+      "n": 21,
+      "c": 58,
+      "v": 13,
+      "ref": "58:13",
+      "text": "אִם־תָּשִׁ֤יב מִשַּׁבָּת֙ רַגְלֶ֔ךָ עֲשׂ֥וֹת חֲפָצֶ֖ךָ בְּי֣וֹם קׇדְשִׁ֑י וְקָרָ֨אתָ לַשַּׁבָּ֜ת עֹ֗נֶג לִקְד֤וֹשׁ יְהֹוָה֙ מְכֻבָּ֔ד וְכִבַּדְתּוֹ֙ מֵעֲשׂ֣וֹת דְּרָכֶ֔יךָ מִמְּצ֥וֹא חֶפְצְךָ֖ וְדַבֵּ֥ר דָּבָֽר׃",
+      "en": "If thou restrain thy foot because of the sabbath, from pursuing thy business on my holy day; and call the sabbath a delight, the holy day of the Lord honourable; and shalt honour it, not doing thy own ways, nor pursuing thy own business, nor speaking of vain matters,"
+    },
+    {
+      "n": 22,
+      "c": 58,
+      "v": 14,
+      "ref": "58:14",
+      "text": "אָ֗ז תִּתְעַנַּג֙ עַל־יְהֹוָ֔ה וְהִרְכַּבְתִּ֖יךָ עַל־<span class=\"mam-kq\"><span class=\"mam-kq-q\">[בָּ֣מֳתֵי]</span> <span class=\"mam-kq-k\">(במותי)</span></span> אָ֑רֶץ וְהַאֲכַלְתִּ֗יךָ נַחֲלַת֙ יַעֲקֹ֣ב אָבִ֔יךָ כִּ֛י פִּ֥י יְהֹוָ֖ה דִּבֵּֽר׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "then shalt thou delight thyself in the Lord; and I will cause thee to ride upon the high places of the earth, and feed thee with the heritage of Ya῾aqov thy father: for the mouth of the Lord has spoken it."
+    }
+  ],
+  "kind": "holiday",
+  "tropeStyle": "haftarah",
+  "parashah": {
+    "en": "Yom Kippur",
+    "he": "יום כיפור",
+    "translit": "Yom Kippur",
+    "ref": "Isaiah 57:14-58:14"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 22,
+        "ref": "57:14–58:14"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Holiday aliyah boundaries from the MJC public leyning page (mjcnj.com/hhrecordings) and its PDFs."
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "yk-maftir",
+  "book": {
+    "en": "Numbers",
+    "he": "במדבר",
+    "translit": "Bamidbar"
+  },
+  "multiChapter": true,
+  "ref": "Numbers 29:7-29:11",
+  "heRef": "במדבר כ״ט:ז-י״א",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 29,
+      "v": 7,
+      "ref": "29:7",
+      "text": "וּבֶעָשׂוֹר֩ לַחֹ֨דֶשׁ הַשְּׁבִיעִ֜י הַזֶּ֗ה מִֽקְרָא־קֹ֙דֶשׁ֙ יִהְיֶ֣ה לָכֶ֔ם וְעִנִּיתֶ֖ם אֶת־נַפְשֹׁתֵיכֶ֑ם כׇּל־מְלָאכָ֖ה לֹ֥א תַעֲשֽׂוּ׃",
+      "en": "And you shall have on the tenth day of this seventh month a holy gathering; and you shall afflict your souls: you shall not do any work:"
+    },
+    {
+      "n": 2,
+      "c": 29,
+      "v": 8,
+      "ref": "29:8",
+      "text": "וְהִקְרַבְתֶּ֨ם עֹלָ֤ה לַֽיהֹוָה֙ רֵ֣יחַ נִיחֹ֔חַ פַּ֧ר בֶּן־בָּקָ֛ר אֶחָ֖ד אַ֣יִל אֶחָ֑ד כְּבָשִׂ֤ים בְּנֵֽי־שָׁנָה֙ שִׁבְעָ֔ה תְּמִימִ֖ם יִהְי֥וּ לָכֶֽם׃",
+      "en": "and you shall offer a burnt offering to the Lord for a sweet savour; one young bullock, one ram, and seven lambs of the first year; they shall be to you without blemish:"
+    },
+    {
+      "n": 3,
+      "c": 29,
+      "v": 9,
+      "ref": "29:9",
+      "text": "וּמִ֨נְחָתָ֔ם סֹ֖לֶת בְּלוּלָ֣ה בַשָּׁ֑מֶן שְׁלֹשָׁ֤ה עֶשְׂרֹנִים֙ לַפָּ֔ר שְׁנֵי֙ עֶשְׂרֹנִ֔ים לָאַ֖יִל הָאֶחָֽד׃",
+      "en": "and their meal offering shall be of flour mingled with oil, three tenth measures to a bullock, and two tenth measures to one ram,"
+    },
+    {
+      "n": 4,
+      "c": 29,
+      "v": 10,
+      "ref": "29:10",
+      "text": "עִשָּׂרוֹן֙ עִשָּׂר֔וֹן לַכֶּ֖בֶשׂ הָאֶחָ֑ד לְשִׁבְעַ֖ת הַכְּבָשִֽׂים׃",
+      "en": "a tenth measure for every lamb, for all the seven lambs:"
+    },
+    {
+      "n": 5,
+      "c": 29,
+      "v": 11,
+      "ref": "29:11",
+      "text": "שְׂעִיר־עִזִּ֥ים אֶחָ֖ד חַטָּ֑את מִלְּבַ֞ד חַטַּ֤את הַכִּפֻּרִים֙ וְעֹלַ֣ת הַתָּמִ֔יד וּמִנְחָתָ֖הּ וְנִסְכֵּיהֶֽם׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "one kid of the goats for a sin offering; besides the sin offering of atonement, and the continual burnt offering, and the meal offering of it, and their drink offerings."
+    }
+  ],
+  "kind": "holiday",
+  "parashah": {
+    "en": "Yom Kippur",
+    "he": "יום כיפור",
+    "translit": "Yom Kippur",
+    "ref": "Numbers 29:7-29:11"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "M",
+        "start": 1,
+        "end": 5,
+        "ref": "29:7–29:11"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Holiday aliyah boundaries from the MJC public leyning page (mjcnj.com/hhrecordings) and its PDFs."
+}

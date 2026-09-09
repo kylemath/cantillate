@@ -1,0 +1,1001 @@
+{
+  "slug": "terumah",
+  "book": {
+    "en": "Exodus",
+    "he": "שמות",
+    "translit": "Shemot"
+  },
+  "multiChapter": true,
+  "ref": "Exodus 25:1-27:19",
+  "heRef": "שמות כ״ה:א-כ״ז:י״ט",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 25,
+      "v": 1,
+      "ref": "25:1",
+      "text": "וַיְדַבֵּ֥ר יְהֹוָ֖ה אֶל־מֹשֶׁ֥ה לֵּאמֹֽר׃",
+      "en": "And the Lord spoke to Moshe, saying,"
+    },
+    {
+      "n": 2,
+      "c": 25,
+      "v": 2,
+      "ref": "25:2",
+      "text": "דַּבֵּר֙ אֶל־בְּנֵ֣י יִשְׂרָאֵ֔ל וְיִקְחוּ־לִ֖י תְּרוּמָ֑ה מֵאֵ֤ת כׇּל־אִישׁ֙ אֲשֶׁ֣ר יִדְּבֶ֣נּוּ לִבּ֔וֹ תִּקְח֖וּ אֶת־תְּרוּמָתִֽי׃",
+      "en": "Speak to the children of Yisra᾽el that they bring me an offering: of every man whose heart prompts him to give you shall take my offering."
+    },
+    {
+      "n": 3,
+      "c": 25,
+      "v": 3,
+      "ref": "25:3",
+      "text": "וְזֹאת֙ הַתְּרוּמָ֔ה אֲשֶׁ֥ר תִּקְח֖וּ מֵאִתָּ֑ם זָהָ֥ב וָכֶ֖סֶף וּנְחֹֽשֶׁת׃",
+      "en": "And this is the offering which you shall take of them; gold, and silver, and brass,"
+    },
+    {
+      "n": 4,
+      "c": 25,
+      "v": 4,
+      "ref": "25:4",
+      "text": "וּתְכֵ֧לֶת וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת שָׁנִ֖י וְשֵׁ֥שׁ וְעִזִּֽים׃",
+      "en": "and blue, and purple, and scarlet, and fine linen, and goats’ hair,"
+    },
+    {
+      "n": 5,
+      "c": 25,
+      "v": 5,
+      "ref": "25:5",
+      "text": "וְעֹרֹ֨ת אֵילִ֧ם מְאׇדָּמִ֛ים וְעֹרֹ֥ת תְּחָשִׁ֖ים וַעֲצֵ֥י שִׁטִּֽים׃",
+      "en": "and rams’ skins dyed red, and taĥash skins, and shittim wood,"
+    },
+    {
+      "n": 6,
+      "c": 25,
+      "v": 6,
+      "ref": "25:6",
+      "text": "שֶׁ֖מֶן לַמָּאֹ֑ר בְּשָׂמִים֙ לְשֶׁ֣מֶן הַמִּשְׁחָ֔ה וְלִקְטֹ֖רֶת הַסַּמִּֽים׃",
+      "en": "oil for the light, spices for the anointing oil, and for the sweet incense,"
+    },
+    {
+      "n": 7,
+      "c": 25,
+      "v": 7,
+      "ref": "25:7",
+      "text": "אַבְנֵי־שֹׁ֕הַם וְאַבְנֵ֖י מִלֻּאִ֑ים לָאֵפֹ֖ד וְלַחֹֽשֶׁן׃",
+      "en": "shoham stones, and stones to be set in the efod, and in the breastplate."
+    },
+    {
+      "n": 8,
+      "c": 25,
+      "v": 8,
+      "ref": "25:8",
+      "text": "וְעָ֥שׂוּ לִ֖י מִקְדָּ֑שׁ וְשָׁכַנְתִּ֖י בְּתוֹכָֽם׃",
+      "en": "And let them make me a sanctuary; that I may dwell among them."
+    },
+    {
+      "n": 9,
+      "c": 25,
+      "v": 9,
+      "ref": "25:9",
+      "text": "כְּכֹ֗ל אֲשֶׁ֤ר אֲנִי֙ מַרְאֶ֣ה אוֹתְךָ֔ אֵ֚ת תַּבְנִ֣ית הַמִּשְׁכָּ֔ן וְאֵ֖ת תַּבְנִ֣ית כׇּל־כֵּלָ֑יו וְכֵ֖ן תַּעֲשֽׂוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "According to all that I show thee, the pattern of the tabernacle, and the pattern of all its vessels, even so shall you make it."
+    },
+    {
+      "n": 10,
+      "c": 25,
+      "v": 10,
+      "ref": "25:10",
+      "text": "וְעָשׂ֥וּ אֲר֖וֹן עֲצֵ֣י שִׁטִּ֑ים אַמָּתַ֨יִם וָחֵ֜צִי אׇרְכּ֗וֹ וְאַמָּ֤ה וָחֵ֙צִי֙ רׇחְבּ֔וֹ וְאַמָּ֥ה וָחֵ֖צִי קֹמָתֽוֹ׃",
+      "en": "And they shall make an ark of shittim wood: two cubits and a half shall be its length, and a cubit and a half its breadth, and a cubit and a half its height."
+    },
+    {
+      "n": 11,
+      "c": 25,
+      "v": 11,
+      "ref": "25:11",
+      "text": "וְצִפִּיתָ֤ אֹתוֹ֙ זָהָ֣ב טָה֔וֹר מִבַּ֥יִת וּמִח֖וּץ תְּצַפֶּ֑נּוּ וְעָשִׂ֧יתָ עָלָ֛יו זֵ֥ר זָהָ֖ב סָבִֽיב׃",
+      "en": "And thou shalt overlay it with pure gold, inside and outside shalt thou overlay it, and shalt make upon it a rim of gold round about."
+    },
+    {
+      "n": 12,
+      "c": 25,
+      "v": 12,
+      "ref": "25:12",
+      "text": "וְיָצַ֣קְתָּ לּ֗וֹ אַרְבַּע֙ טַבְּעֹ֣ת זָהָ֔ב וְנָ֣תַתָּ֔ה עַ֖ל אַרְבַּ֣ע פַּעֲמֹתָ֑יו וּשְׁתֵּ֣י טַבָּעֹ֗ת עַל־צַלְעוֹ֙ הָֽאֶחָ֔ת וּשְׁתֵּי֙ טַבָּעֹ֔ת עַל־צַלְע֖וֹ הַשֵּׁנִֽית׃",
+      "en": "And thou shalt cast four rings of gold for it, and put them in its four corners, and two rings shall be on the one side of it, and two rings on the other side of it."
+    },
+    {
+      "n": 13,
+      "c": 25,
+      "v": 13,
+      "ref": "25:13",
+      "text": "וְעָשִׂ֥יתָ בַדֵּ֖י עֲצֵ֣י שִׁטִּ֑ים וְצִפִּיתָ֥ אֹתָ֖ם זָהָֽב׃",
+      "en": "And thou shalt make poles of shittim wood, and overlay them with gold."
+    },
+    {
+      "n": 14,
+      "c": 25,
+      "v": 14,
+      "ref": "25:14",
+      "text": "וְהֵבֵאתָ֤ אֶת־הַבַּדִּים֙ בַּטַּבָּעֹ֔ת עַ֖ל צַלְעֹ֣ת הָאָרֹ֑ן לָשֵׂ֥את אֶת־הָאָרֹ֖ן בָּהֶֽם׃",
+      "en": "And thou shalt put the poles into the rings on the sides of the ark, that the ark may be carried therewith."
+    },
+    {
+      "n": 15,
+      "c": 25,
+      "v": 15,
+      "ref": "25:15",
+      "text": "בְּטַבְּעֹת֙ הָאָרֹ֔ן יִהְי֖וּ הַבַּדִּ֑ים לֹ֥א יָסֻ֖רוּ מִמֶּֽנּוּ׃",
+      "en": "The poles shall be in the rings of the ark: they shall not be taken from it."
+    },
+    {
+      "n": 16,
+      "c": 25,
+      "v": 16,
+      "ref": "25:16",
+      "text": "וְנָתַתָּ֖ אֶל־הָאָרֹ֑ן אֵ֚ת הָעֵדֻ֔ת אֲשֶׁ֥ר אֶתֵּ֖ן אֵלֶֽיךָ׃",
+      "en": "And thou shalt put into the ark the Testimony which I shall give thee."
+    },
+    {
+      "n": 17,
+      "c": 25,
+      "v": 17,
+      "ref": "25:17",
+      "text": "וְעָשִׂ֥יתָ כַפֹּ֖רֶת זָהָ֣ב טָה֑וֹר אַמָּתַ֤יִם וָחֵ֙צִי֙ אׇרְכָּ֔הּ וְאַמָּ֥ה וָחֵ֖צִי רׇחְבָּֽהּ׃",
+      "en": "And thou shalt make a covering of pure gold: two cubits and a half shall be its length, and a cubit and a half its breadth."
+    },
+    {
+      "n": 18,
+      "c": 25,
+      "v": 18,
+      "ref": "25:18",
+      "text": "וְעָשִׂ֛יתָ שְׁנַ֥יִם כְּרֻבִ֖ים זָהָ֑ב מִקְשָׁה֙ תַּעֲשֶׂ֣ה אֹתָ֔ם מִשְּׁנֵ֖י קְצ֥וֹת הַכַּפֹּֽרֶת׃",
+      "en": "And thou shalt make two keruvim of gold, of beaten work shalt thou make them, at the two ends of the covering."
+    },
+    {
+      "n": 19,
+      "c": 25,
+      "v": 19,
+      "ref": "25:19",
+      "text": "וַ֠עֲשֵׂ֠ה כְּר֨וּב אֶחָ֤ד מִקָּצָה֙ מִזֶּ֔ה וּכְרוּב־אֶחָ֥ד מִקָּצָ֖ה מִזֶּ֑ה מִן־הַכַּפֹּ֛רֶת תַּעֲשׂ֥וּ אֶת־הַכְּרֻבִ֖ים עַל־שְׁנֵ֥י קְצוֹתָֽיו׃",
+      "en": "And make one keruv on the one end, and the other keruv on the other end: of the covering shall you make the keruvim on the two ends of it."
+    },
+    {
+      "n": 20,
+      "c": 25,
+      "v": 20,
+      "ref": "25:20",
+      "text": "וְהָי֣וּ הַכְּרֻבִים֩ פֹּרְשֵׂ֨י כְנָפַ֜יִם לְמַ֗עְלָה סֹכְכִ֤ים בְּכַנְפֵיהֶם֙ עַל־הַכַּפֹּ֔רֶת וּפְנֵיהֶ֖ם אִ֣ישׁ אֶל־אָחִ֑יו אֶ֨ל־הַכַּפֹּ֔רֶת יִהְי֖וּ פְּנֵ֥י הַכְּרֻבִֽים׃",
+      "en": "And the keruvim shall stretch out their wings on high, overspreading the covering with their wings, and their faces shall look one to another; toward the covering shall the faces of the keruvim be."
+    },
+    {
+      "n": 21,
+      "c": 25,
+      "v": 21,
+      "ref": "25:21",
+      "text": "וְנָתַתָּ֧ אֶת־הַכַּפֹּ֛רֶת עַל־הָאָרֹ֖ן מִלְמָ֑עְלָה וְאֶל־הָ֣אָרֹ֔ן תִּתֵּן֙ אֶת־הָ֣עֵדֻ֔ת אֲשֶׁ֥ר אֶתֵּ֖ן אֵלֶֽיךָ׃",
+      "en": "And thou shalt put the covering above, upon the ark; and in the ark thou shalt put the Testimony that I shall give thee."
+    },
+    {
+      "n": 22,
+      "c": 25,
+      "v": 22,
+      "ref": "25:22",
+      "text": "וְנוֹעַדְתִּ֣י לְךָ֮ שָׁם֒ וְדִבַּרְתִּ֨י אִתְּךָ֜ מֵעַ֣ל הַכַּפֹּ֗רֶת מִבֵּין֙ שְׁנֵ֣י הַכְּרֻבִ֔ים אֲשֶׁ֖ר עַל־אֲר֣וֹן הָעֵדֻ֑ת אֵ֣ת כׇּל־אֲשֶׁ֧ר אֲצַוֶּ֛ה אוֹתְךָ֖ אֶל־בְּנֵ֥י יִשְׂרָאֵֽל׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And there I will meet with thee, and I will speak with thee from above the covering, from between the two keruvim which are upon the ark of the Testimony, of all things which I will give thee in commandment to the children of Yisra᾽el."
+    },
+    {
+      "n": 23,
+      "c": 25,
+      "v": 23,
+      "ref": "25:23",
+      "text": "וְעָשִׂ֥יתָ שֻׁלְחָ֖ן עֲצֵ֣י שִׁטִּ֑ים אַמָּתַ֤יִם אׇרְכּוֹ֙ וְאַמָּ֣ה רׇחְבּ֔וֹ וְאַמָּ֥ה וָחֵ֖צִי קֹמָתֽוֹ׃",
+      "en": "Thou shalt also make a table of shittim wood: two cubits shall be its length, and a cubit its breadth, and a cubit and a half its height."
+    },
+    {
+      "n": 24,
+      "c": 25,
+      "v": 24,
+      "ref": "25:24",
+      "text": "וְצִפִּיתָ֥ אֹת֖וֹ זָהָ֣ב טָה֑וֹר וְעָשִׂ֥יתָ לּ֛וֹ זֵ֥ר זָהָ֖ב סָבִֽיב׃",
+      "en": "And thou shalt overlay it with pure gold, and make for it a rim of gold round about."
+    },
+    {
+      "n": 25,
+      "c": 25,
+      "v": 25,
+      "ref": "25:25",
+      "text": "וְעָשִׂ֨יתָ לּ֥וֹ מִסְגֶּ֛רֶת טֹ֖פַח סָבִ֑יב וְעָשִׂ֧יתָ זֵר־זָהָ֛ב לְמִסְגַּרְתּ֖וֹ סָבִֽיב׃",
+      "en": "And thou shalt make for it a border of a handbreadth round about, and thou shalt make a golden crown for its border round about."
+    },
+    {
+      "n": 26,
+      "c": 25,
+      "v": 26,
+      "ref": "25:26",
+      "text": "וְעָשִׂ֣יתָ לּ֔וֹ אַרְבַּ֖ע טַבְּעֹ֣ת זָהָ֑ב וְנָתַתָּ֙ אֶת־הַטַּבָּעֹ֔ת עַ֚ל אַרְבַּ֣ע הַפֵּאֹ֔ת אֲשֶׁ֖ר לְאַרְבַּ֥ע רַגְלָֽיו׃",
+      "en": "And thou shalt make for it four rings of gold, and put the rings in the four corners that are on its four legs."
+    },
+    {
+      "n": 27,
+      "c": 25,
+      "v": 27,
+      "ref": "25:27",
+      "text": "לְעֻמַּת֙ הַמִּסְגֶּ֔רֶת תִּהְיֶ֖יןָ הַטַּבָּעֹ֑ת לְבָתִּ֣ים לְבַדִּ֔ים לָשֵׂ֖את אֶת־הַשֻּׁלְחָֽן׃",
+      "en": "Over against the border shall the rings be for places of the poles to bear the table."
+    },
+    {
+      "n": 28,
+      "c": 25,
+      "v": 28,
+      "ref": "25:28",
+      "text": "וְעָשִׂ֤יתָ אֶת־הַבַּדִּים֙ עֲצֵ֣י שִׁטִּ֔ים וְצִפִּיתָ֥ אֹתָ֖ם זָהָ֑ב וְנִשָּׂא־בָ֖ם אֶת־הַשֻּׁלְחָֽן׃",
+      "en": "And thou shalt make the poles of shittim wood, and overlay them with gold, and they shall be for carrying the table."
+    },
+    {
+      "n": 29,
+      "c": 25,
+      "v": 29,
+      "ref": "25:29",
+      "text": "וְעָשִׂ֨יתָ קְּעָרֹתָ֜יו וְכַפֹּתָ֗יו וּקְשׂוֹתָיו֙ וּמְנַקִּיֹּתָ֔יו אֲשֶׁ֥ר יֻסַּ֖ךְ בָּהֵ֑ן זָהָ֥ב טָה֖וֹר תַּעֲשֶׂ֥ה אֹתָֽם׃",
+      "en": "And thou shalt make its dishes, and its spoons, and its jars, and its bowls, used for pouring out: of pure gold shalt thou make them."
+    },
+    {
+      "n": 30,
+      "c": 25,
+      "v": 30,
+      "ref": "25:30",
+      "text": "וְנָתַתָּ֧ עַֽל־הַשֻּׁלְחָ֛ן לֶ֥חֶם פָּנִ֖ים לְפָנַ֥י תָּמִֽיד׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And thou shalt set upon the table showbread before me always."
+    },
+    {
+      "n": 31,
+      "c": 25,
+      "v": 31,
+      "ref": "25:31",
+      "text": "וְעָשִׂ֥יתָ מְנֹרַ֖ת זָהָ֣ב טָה֑וֹר מִקְשָׁ֞ה תֵּעָשֶׂ֤ה<sup class=\"footnote-marker\">*</sup><i class=\"footnote\">(בספרי ספרד ואשכנז תֵּיעָשֶׂ֤ה)</i> הַמְּנוֹרָה֙ יְרֵכָ֣הּ וְקָנָ֔הּ גְּבִיעֶ֛יהָ כַּפְתֹּרֶ֥יהָ וּפְרָחֶ֖יהָ מִמֶּ֥נָּה יִהְיֽוּ׃",
+      "en": "And thou shalt make a candlestick of pure gold: of beaten work shall the candlestick be made: its shaft, and its branches, its bowls, its bulbs, and its flowers, shall be of the same."
+    },
+    {
+      "n": 32,
+      "c": 25,
+      "v": 32,
+      "ref": "25:32",
+      "text": "וְשִׁשָּׁ֣ה קָנִ֔ים יֹצְאִ֖ים מִצִּדֶּ֑יהָ שְׁלֹשָׁ֣ה&thinsp;<b>׀</b> קְנֵ֣י מְנֹרָ֗ה מִצִּדָּהּ֙ הָאֶחָ֔ד וּשְׁלֹשָׁה֙ קְנֵ֣י מְנֹרָ֔ה מִצִּדָּ֖הּ הַשֵּׁנִֽי׃",
+      "en": "And six branches shall come out of its sides; three branches of the candlestick out of the one side, and three branches of the candlestick out of the other side:"
+    },
+    {
+      "n": 33,
+      "c": 25,
+      "v": 33,
+      "ref": "25:33",
+      "text": "שְׁלֹשָׁ֣ה גְ֠בִעִ֠ים מְֽשֻׁקָּדִ֞ים בַּקָּנֶ֣ה הָאֶחָד֮ כַּפְתֹּ֣ר וָפֶ֒רַח֒ וּשְׁלֹשָׁ֣ה גְבִעִ֗ים מְשֻׁקָּדִ֛ים בַּקָּנֶ֥ה הָאֶחָ֖ד כַּפְתֹּ֣ר וָפָ֑רַח כֵּ֚ן לְשֵׁ֣שֶׁת הַקָּנִ֔ים הַיֹּצְאִ֖ים מִן־הַמְּנֹרָֽה׃",
+      "en": "three cups made like almonds, with a bulb and a flower in one branch; and three cups made like almonds in the other branch, with a bulb and a flower: so in the six branches that come out of the candlestick."
+    },
+    {
+      "n": 34,
+      "c": 25,
+      "v": 34,
+      "ref": "25:34",
+      "text": "וּבַמְּנֹרָ֖ה אַרְבָּעָ֣ה גְבִעִ֑ים מְשֻׁ֨קָּדִ֔ים כַּפְתֹּרֶ֖יהָ וּפְרָחֶֽיהָ׃",
+      "en": "And in the candlestick shall be four bowls made like almonds, with their bulbs and flowers."
+    },
+    {
+      "n": 35,
+      "c": 25,
+      "v": 35,
+      "ref": "25:35",
+      "text": "וְכַפְתֹּ֡ר תַּ֩חַת֩ שְׁנֵ֨י הַקָּנִ֜ים מִמֶּ֗נָּה וְכַפְתֹּר֙ תַּ֣חַת שְׁנֵ֤י הַקָּנִים֙ מִמֶּ֔נָּה וְכַפְתֹּ֕ר תַּחַת־שְׁנֵ֥י הַקָּנִ֖ים מִמֶּ֑נָּה לְשֵׁ֙שֶׁת֙ הַקָּנִ֔ים הַיֹּצְאִ֖ים מִן־הַמְּנֹרָֽה׃",
+      "en": "And there shall be a bulb under two branches of the same piece, and a bulb under two branches of the same piece, and a bulb under two branches of the same piece, according to the six branches that proceed out of the candlestick."
+    },
+    {
+      "n": 36,
+      "c": 25,
+      "v": 36,
+      "ref": "25:36",
+      "text": "כַּפְתֹּרֵיהֶ֥ם וּקְנֹתָ֖ם מִמֶּ֣נָּה יִהְי֑וּ כֻּלָּ֛הּ מִקְשָׁ֥ה אַחַ֖ת זָהָ֥ב טָהֽוֹר׃",
+      "en": "Their bulbs and their branches shall be made of the same piece: all shall be one beaten work of pure gold."
+    },
+    {
+      "n": 37,
+      "c": 25,
+      "v": 37,
+      "ref": "25:37",
+      "text": "וְעָשִׂ֥יתָ אֶת־נֵרֹתֶ֖יהָ שִׁבְעָ֑ה וְהֶֽעֱלָה֙ אֶת־נֵ֣רֹתֶ֔יהָ וְהֵאִ֖יר עַל־עֵ֥בֶר פָּנֶֽיהָ׃",
+      "en": "And thou shalt make its seven lamps: and they shall light its lamps, that they may give light over against it."
+    },
+    {
+      "n": 38,
+      "c": 25,
+      "v": 38,
+      "ref": "25:38",
+      "text": "וּמַלְקָחֶ֥יהָ וּמַחְתֹּתֶ֖יהָ זָהָ֥ב טָהֽוֹר׃",
+      "en": "And its tongs, and its ashpans, shall be of pure gold."
+    },
+    {
+      "n": 39,
+      "c": 25,
+      "v": 39,
+      "ref": "25:39",
+      "text": "כִּכָּ֛ר זָהָ֥ב טָה֖וֹר יַעֲשֶׂ֣ה אֹתָ֑הּ אֵ֥ת כׇּל־הַכֵּלִ֖ים הָאֵֽלֶּה׃",
+      "en": "Of a talent of pure gold shall he make it, with all these vessels."
+    },
+    {
+      "n": 40,
+      "c": 25,
+      "v": 40,
+      "ref": "25:40",
+      "text": "וּרְאֵ֖ה וַעֲשֵׂ֑ה בְּתַ֨בְנִיתָ֔ם אֲשֶׁר־אַתָּ֥ה מׇרְאֶ֖ה בָּהָֽר׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And look that thou make them after their pattern, which was shown thee in the mountain."
+    },
+    {
+      "n": 41,
+      "c": 26,
+      "v": 1,
+      "ref": "26:1",
+      "text": "וְאֶת־הַמִּשְׁכָּ֥ן תַּעֲשֶׂ֖ה עֶ֣שֶׂר יְרִיעֹ֑ת שֵׁ֣שׁ מׇשְׁזָ֗ר וּתְכֵ֤לֶת וְאַרְגָּמָן֙ וְתֹלַ֣עַת שָׁנִ֔י כְּרֻבִ֛ים מַעֲשֵׂ֥ה חֹשֵׁ֖ב תַּעֲשֶׂ֥ה אֹתָֽם׃",
+      "en": "Moreover thou shalt make the tabernacle with ten curtains of fine twined linen, and blue, and purple, and scarlet: with keruvim of artistic work shalt thou make them."
+    },
+    {
+      "n": 42,
+      "c": 26,
+      "v": 2,
+      "ref": "26:2",
+      "text": "אֹ֣רֶךְ&thinsp;<b>׀</b> הַיְרִיעָ֣ה הָֽאַחַ֗ת שְׁמֹנֶ֤ה וְעֶשְׂרִים֙ בָּֽאַמָּ֔ה וְרֹ֙חַב֙ אַרְבַּ֣ע בָּאַמָּ֔ה הַיְרִיעָ֖ה הָאֶחָ֑ת מִדָּ֥ה אַחַ֖ת לְכׇל־הַיְרִיעֹֽת׃",
+      "en": "The length of one curtain shall be twenty eight cubits, and the breadth of one curtain four cubits: and the curtains shall be all of one measure."
+    },
+    {
+      "n": 43,
+      "c": 26,
+      "v": 3,
+      "ref": "26:3",
+      "text": "חֲמֵ֣שׁ הַיְרִיעֹ֗ת תִּֽהְיֶ֙יןָ֙ חֹֽבְרֹ֔ת אִשָּׁ֖ה אֶל־אֲחֹתָ֑הּ וְחָמֵ֤שׁ יְרִיעֹת֙ חֹֽבְרֹ֔ת אִשָּׁ֖ה אֶל־אֲחֹתָֽהּ׃",
+      "en": "The five curtains shall be coupled together one to another; and the other five curtains shall be coupled one to another."
+    },
+    {
+      "n": 44,
+      "c": 26,
+      "v": 4,
+      "ref": "26:4",
+      "text": "וְעָשִׂ֜יתָ לֻֽלְאֹ֣ת תְּכֵ֗לֶת עַ֣ל שְׂפַ֤ת הַיְרִיעָה֙ הָאֶחָ֔ת מִקָּצָ֖ה בַּחֹבָ֑רֶת וְכֵ֤ן תַּעֲשֶׂה֙ בִּשְׂפַ֣ת הַיְרִיעָ֔ה הַקִּ֣יצוֹנָ֔ה בַּמַּחְבֶּ֖רֶת הַשֵּׁנִֽית׃",
+      "en": "And thou shalt make loops of blue upon the edge of the one curtain that is at the edge of the first coupling; and likewise shalt thou make in the uttermost edge of the curtain, that is outmost in the second coupling."
+    },
+    {
+      "n": 45,
+      "c": 26,
+      "v": 5,
+      "ref": "26:5",
+      "text": "חֲמִשִּׁ֣ים לֻֽלָאֹ֗ת תַּעֲשֶׂה֮ בַּיְרִיעָ֣ה הָאֶחָת֒ וַחֲמִשִּׁ֣ים לֻֽלָאֹ֗ת תַּעֲשֶׂה֙ בִּקְצֵ֣ה הַיְרִיעָ֔ה אֲשֶׁ֖ר בַּמַּחְבֶּ֣רֶת הַשֵּׁנִ֑ית מַקְבִּילֹת֙ הַלֻּ֣לָאֹ֔ת אִשָּׁ֖ה אֶל־אֲחֹתָֽהּ׃",
+      "en": "Fifty loops shalt thou make in the one curtain, and fifty loops shalt thou make in the edge of the curtain that is in the second coupling; that the loops may take hold one of another."
+    },
+    {
+      "n": 46,
+      "c": 26,
+      "v": 6,
+      "ref": "26:6",
+      "text": "וְעָשִׂ֕יתָ חֲמִשִּׁ֖ים קַרְסֵ֣י זָהָ֑ב וְחִבַּרְתָּ֨ אֶת־הַיְרִיעֹ֜ת אִשָּׁ֤ה אֶל־אֲחֹתָהּ֙ בַּקְּרָסִ֔ים וְהָיָ֥ה הַמִּשְׁכָּ֖ן אֶחָֽד׃",
+      "en": "And thou shalt make fifty golden clasps, and couple the curtains together with the clasps: that the tabernacle may be one."
+    },
+    {
+      "n": 47,
+      "c": 26,
+      "v": 7,
+      "ref": "26:7",
+      "text": "וְעָשִׂ֙יתָ֙ יְרִיעֹ֣ת עִזִּ֔ים לְאֹ֖הֶל עַל־הַמִּשְׁכָּ֑ן עַשְׁתֵּי־עֶשְׂרֵ֥ה יְרִיעֹ֖ת תַּעֲשֶׂ֥ה אֹתָֽם׃",
+      "en": "And thou shalt make curtains of goats’ hair to be a covering upon the tabernacle: eleven curtains shalt thou make."
+    },
+    {
+      "n": 48,
+      "c": 26,
+      "v": 8,
+      "ref": "26:8",
+      "text": "אֹ֣רֶךְ&thinsp;<b>׀</b> הַיְרִיעָ֣ה הָֽאַחַ֗ת שְׁלֹשִׁים֙ בָּֽאַמָּ֔ה וְרֹ֙חַב֙ אַרְבַּ֣ע בָּאַמָּ֔ה הַיְרִיעָ֖ה הָאֶחָ֑ת מִדָּ֣ה אַחַ֔ת לְעַשְׁתֵּ֥י עֶשְׂרֵ֖ה יְרִיעֹֽת׃",
+      "en": "The length of one curtain shall be thirty cubits, and the breadth of one curtain four cubits: and the eleven curtains shall be all of one measure."
+    },
+    {
+      "n": 49,
+      "c": 26,
+      "v": 9,
+      "ref": "26:9",
+      "text": "וְחִבַּרְתָּ֞ אֶת־חֲמֵ֤שׁ הַיְרִיעֹת֙ לְבָ֔ד וְאֶת־שֵׁ֥שׁ הַיְרִיעֹ֖ת לְבָ֑ד וְכָפַלְתָּ֙ אֶת־הַיְרִיעָ֣ה הַשִּׁשִּׁ֔ית אֶל־מ֖וּל פְּנֵ֥י הָאֹֽהֶל׃",
+      "en": "And thou shalt couple five curtains by themselves, and six curtains by themselves, and shalt double the sixth curtain in the forefront of the tabernacle."
+    },
+    {
+      "n": 50,
+      "c": 26,
+      "v": 10,
+      "ref": "26:10",
+      "text": "וְעָשִׂ֜יתָ חֲמִשִּׁ֣ים לֻֽלָאֹ֗ת עַ֣ל שְׂפַ֤ת הַיְרִיעָה֙ הָֽאֶחָ֔ת הַקִּיצֹנָ֖ה בַּחֹבָ֑רֶת וַחֲמִשִּׁ֣ים לֻֽלָאֹ֗ת עַ֚ל שְׂפַ֣ת הַיְרִיעָ֔ה הַחֹבֶ֖רֶת הַשֵּׁנִֽית׃",
+      "en": "And thou shalt make fifty loops on the edge of the one curtain that is outmost in the coupling, and fifty loops in the edge of the curtain of the second coupling."
+    },
+    {
+      "n": 51,
+      "c": 26,
+      "v": 11,
+      "ref": "26:11",
+      "text": "וְעָשִׂ֛יתָ קַרְסֵ֥י נְחֹ֖שֶׁת חֲמִשִּׁ֑ים וְהֵבֵאתָ֤ אֶת־הַקְּרָסִים֙ בַּלֻּ֣לָאֹ֔ת וְחִבַּרְתָּ֥ אֶת־הָאֹ֖הֶל וְהָיָ֥ה אֶחָֽד׃",
+      "en": "And thou shalt make fifty clasps of brass, and put the clasps into the loops, and couple the tent together, that it may be one."
+    },
+    {
+      "n": 52,
+      "c": 26,
+      "v": 12,
+      "ref": "26:12",
+      "text": "וְסֶ֙רַח֙ הָעֹדֵ֔ף בִּירִיעֹ֖ת הָאֹ֑הֶל חֲצִ֤י הַיְרִיעָה֙ הָעֹדֶ֔פֶת תִּסְרַ֕ח עַ֖ל אֲחֹרֵ֥י הַמִּשְׁכָּֽן׃",
+      "en": "And the remnant that remains of the curtains of the tent, the half curtain that remains, shall hang over the back of the tabernacle."
+    },
+    {
+      "n": 53,
+      "c": 26,
+      "v": 13,
+      "ref": "26:13",
+      "text": "וְהָאַמָּ֨ה מִזֶּ֜ה וְהָאַמָּ֤ה מִזֶּה֙ בָּעֹדֵ֔ף בְּאֹ֖רֶךְ יְרִיעֹ֣ת הָאֹ֑הֶל יִהְיֶ֨ה סָר֜וּחַ עַל־צִדֵּ֧י הַמִּשְׁכָּ֛ן מִזֶּ֥ה וּמִזֶּ֖ה לְכַסֹּתֽוֹ׃",
+      "en": "And a cubit on the one side, and a cubit on the other side, of that which remains in the length of the curtains of the tent, shall hang over the sides of the tabernacle on this side and on that side, to cover it."
+    },
+    {
+      "n": 54,
+      "c": 26,
+      "v": 14,
+      "ref": "26:14",
+      "text": "וְעָשִׂ֤יתָ מִכְסֶה֙ לָאֹ֔הֶל עֹרֹ֥ת אֵילִ֖ם מְאׇדָּמִ֑ים וּמִכְסֵ֛ה עֹרֹ֥ת תְּחָשִׁ֖ים מִלְמָֽעְלָה׃&nbsp;<span class=\"mam-spi-pe\">{פ}</span><br>",
+      "en": "And thou shalt make a covering for the Tent, of rams’ skins dyed red, and a covering above of taĥash skins."
+    },
+    {
+      "n": 55,
+      "c": 26,
+      "v": 15,
+      "ref": "26:15",
+      "text": "וְעָשִׂ֥יתָ אֶת־הַקְּרָשִׁ֖ים לַמִּשְׁכָּ֑ן עֲצֵ֥י שִׁטִּ֖ים עֹמְדִֽים׃",
+      "en": "And thou shalt make boards for the tabernacle of shittim wood standing up."
+    },
+    {
+      "n": 56,
+      "c": 26,
+      "v": 16,
+      "ref": "26:16",
+      "text": "עֶ֥שֶׂר אַמּ֖וֹת אֹ֣רֶךְ הַקָּ֑רֶשׁ וְאַמָּה֙ וַחֲצִ֣י הָֽאַמָּ֔ה רֹ֖חַב הַקֶּ֥רֶשׁ הָאֶחָֽד׃",
+      "en": "Ten cubits shall be the length of a board, and a cubit and a half shall be the breadth of one board."
+    },
+    {
+      "n": 57,
+      "c": 26,
+      "v": 17,
+      "ref": "26:17",
+      "text": "שְׁתֵּ֣י יָד֗וֹת לַקֶּ֙רֶשׁ֙ הָאֶחָ֔ד מְשֻׁ֨לָּבֹ֔ת אִשָּׁ֖ה אֶל־אֲחֹתָ֑הּ כֵּ֣ן תַּעֲשֶׂ֔ה לְכֹ֖ל קַרְשֵׁ֥י הַמִּשְׁכָּֽן׃",
+      "en": "Two tenons shall there be in one board, connected one with the other: thus shalt thou make for all the boards of the tabernacle."
+    },
+    {
+      "n": 58,
+      "c": 26,
+      "v": 18,
+      "ref": "26:18",
+      "text": "וְעָשִׂ֥יתָ אֶת־הַקְּרָשִׁ֖ים לַמִּשְׁכָּ֑ן עֶשְׂרִ֣ים קֶ֔רֶשׁ לִפְאַ֖ת נֶ֥גְבָּה תֵימָֽנָה׃",
+      "en": "And thou shalt make the boards for the tabernacle, twenty boards on the south side southward."
+    },
+    {
+      "n": 59,
+      "c": 26,
+      "v": 19,
+      "ref": "26:19",
+      "text": "וְאַרְבָּעִים֙ אַדְנֵי־כֶ֔סֶף תַּעֲשֶׂ֕ה תַּ֖חַת עֶשְׂרִ֣ים הַקָּ֑רֶשׁ שְׁנֵ֨י אֲדָנִ֜ים תַּֽחַת־הַקֶּ֤רֶשׁ הָאֶחָד֙ לִשְׁתֵּ֣י יְדֹתָ֔יו וּשְׁנֵ֧י אֲדָנִ֛ים תַּֽחַת־הַקֶּ֥רֶשׁ הָאֶחָ֖ד לִשְׁתֵּ֥י יְדֹתָֽיו׃",
+      "en": "And thou shalt make forty sockets of silver under the twenty boards; two sockets under one board for its two tenons, and two sockets under another board for its two tenons."
+    },
+    {
+      "n": 60,
+      "c": 26,
+      "v": 20,
+      "ref": "26:20",
+      "text": "וּלְצֶ֧לַע הַמִּשְׁכָּ֛ן הַשֵּׁנִ֖ית לִפְאַ֣ת צָפ֑וֹן עֶשְׂרִ֖ים קָֽרֶשׁ׃",
+      "en": "And for the second side of the tabernacle on the north side there shall be twenty boards:"
+    },
+    {
+      "n": 61,
+      "c": 26,
+      "v": 21,
+      "ref": "26:21",
+      "text": "וְאַרְבָּעִ֥ים אַדְנֵיהֶ֖ם כָּ֑סֶף שְׁנֵ֣י אֲדָנִ֗ים תַּ֚חַת הַקֶּ֣רֶשׁ הָֽאֶחָ֔ד וּשְׁנֵ֣י אֲדָנִ֔ים תַּ֖חַת הַקֶּ֥רֶשׁ הָאֶחָֽד׃",
+      "en": "and their forty sockets of silver: two sockets under one board, and two sockets under another board."
+    },
+    {
+      "n": 62,
+      "c": 26,
+      "v": 22,
+      "ref": "26:22",
+      "text": "וּֽלְיַרְכְּתֵ֥י הַמִּשְׁכָּ֖ן יָ֑מָּה תַּעֲשֶׂ֖ה שִׁשָּׁ֥ה קְרָשִֽׁים׃",
+      "en": "And for the side of the tabernacle westward thou shalt make six boards."
+    },
+    {
+      "n": 63,
+      "c": 26,
+      "v": 23,
+      "ref": "26:23",
+      "text": "וּשְׁנֵ֤י קְרָשִׁים֙ תַּעֲשֶׂ֔ה לִמְקֻצְעֹ֖ת הַמִּשְׁכָּ֑ן בַּיַּרְכָתָֽיִם׃",
+      "en": "And two boards shalt thou make for the corners of the tabernacle in the west side."
+    },
+    {
+      "n": 64,
+      "c": 26,
+      "v": 24,
+      "ref": "26:24",
+      "text": "וְיִֽהְי֣וּ תֹֽאֲמִם֮ מִלְּמַ֒טָּה֒ וְיַחְדָּ֗ו יִהְי֤וּ תַמִּים֙ עַל־רֹאשׁ֔וֹ אֶל־הַטַּבַּ֖עַת הָאֶחָ֑ת כֵּ֚ן יִהְיֶ֣ה לִשְׁנֵיהֶ֔ם לִשְׁנֵ֥י הַמִּקְצֹעֹ֖ת יִהְיֽוּ׃",
+      "en": "And they shall be coupled together beneath, and they shall be coupled together above the head of it unto one ring: thus shall it be for them both; they shall be for the two corners."
+    },
+    {
+      "n": 65,
+      "c": 26,
+      "v": 25,
+      "ref": "26:25",
+      "text": "וְהָיוּ֙ שְׁמֹנָ֣ה קְרָשִׁ֔ים וְאַדְנֵיהֶ֣ם כֶּ֔סֶף שִׁשָּׁ֥ה עָשָׂ֖ר אֲדָנִ֑ים שְׁנֵ֣י אֲדָנִ֗ים תַּ֚חַת הַקֶּ֣רֶשׁ הָאֶחָ֔ד וּשְׁנֵ֣י אֲדָנִ֔ים תַּ֖חַת הַקֶּ֥רֶשׁ הָאֶחָֽד׃",
+      "en": "And they shall be eight boards, and their sockets of silver, sixteen sockets; two sockets under one board, and two sockets under another board."
+    },
+    {
+      "n": 66,
+      "c": 26,
+      "v": 26,
+      "ref": "26:26",
+      "text": "וְעָשִׂ֥יתָ בְרִיחִ֖ם עֲצֵ֣י שִׁטִּ֑ים חֲמִשָּׁ֕ה לְקַרְשֵׁ֥י צֶֽלַע־הַמִּשְׁכָּ֖ן הָאֶחָֽד׃",
+      "en": "And thou shalt make bars of shittim wood; five for the boards of the one side of the tabernacle,"
+    },
+    {
+      "n": 67,
+      "c": 26,
+      "v": 27,
+      "ref": "26:27",
+      "text": "וַחֲמִשָּׁ֣ה בְרִיחִ֔ם לְקַרְשֵׁ֥י צֶֽלַע־הַמִּשְׁכָּ֖ן הַשֵּׁנִ֑ית וַחֲמִשָּׁ֣ה בְרִיחִ֗ם לְקַרְשֵׁי֙ צֶ֣לַע הַמִּשְׁכָּ֔ן לַיַּרְכָתַ֖יִם יָֽמָּה׃",
+      "en": "and five bars for the boards of the other side of the tabernacle, and five bars for the boards of the third side of the tabernacle, for the side westward."
+    },
+    {
+      "n": 68,
+      "c": 26,
+      "v": 28,
+      "ref": "26:28",
+      "text": "וְהַבְּרִ֥יחַ הַתִּיכֹ֖ן בְּת֣וֹךְ הַקְּרָשִׁ֑ים מַבְרִ֕חַ מִן־הַקָּצֶ֖ה אֶל־הַקָּצֶֽה׃",
+      "en": "And the middle bar in the midst of the boards shall reach from end to end."
+    },
+    {
+      "n": 69,
+      "c": 26,
+      "v": 29,
+      "ref": "26:29",
+      "text": "וְֽאֶת־הַקְּרָשִׁ֞ים תְּצַפֶּ֣ה זָהָ֗ב וְאֶת־טַבְּעֹֽתֵיהֶם֙ תַּעֲשֶׂ֣ה זָהָ֔ב בָּתִּ֖ים לַבְּרִיחִ֑ם וְצִפִּיתָ֥ אֶת־הַבְּרִיחִ֖ם זָהָֽב׃",
+      "en": "And thou shalt overlay the boards with gold, and make their rings of gold as places for the bars: and thou shalt overlay the bars with gold."
+    },
+    {
+      "n": 70,
+      "c": 26,
+      "v": 30,
+      "ref": "26:30",
+      "text": "וַהֲקֵמֹתָ֖ אֶת־הַמִּשְׁכָּ֑ן כְּמִ֨שְׁפָּט֔וֹ אֲשֶׁ֥ר הׇרְאֵ֖יתָ בָּהָֽר׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And thou shalt rear up the tabernacle according to its fashion which was shown thee in the mountain."
+    },
+    {
+      "n": 71,
+      "c": 26,
+      "v": 31,
+      "ref": "26:31",
+      "text": "וְעָשִׂ֣יתָ פָרֹ֗כֶת תְּכֵ֧לֶת וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת שָׁנִ֖י וְשֵׁ֣שׁ מׇשְׁזָ֑ר מַעֲשֵׂ֥ה חֹשֵׁ֛ב יַעֲשֶׂ֥ה אֹתָ֖הּ כְּרֻבִֽים׃",
+      "en": "And thou shalt make a veil of blue, and purple, and scarlet, and fine twined linen with keruvim shall it be made of artistic work:"
+    },
+    {
+      "n": 72,
+      "c": 26,
+      "v": 32,
+      "ref": "26:32",
+      "text": "וְנָתַתָּ֣ה אֹתָ֗הּ עַל־אַרְבָּעָה֙ עַמּוּדֵ֣י שִׁטִּ֔ים מְצֻפִּ֣ים זָהָ֔ב וָוֵיהֶ֖ם זָהָ֑ב עַל־אַרְבָּעָ֖ה אַדְנֵי־כָֽסֶף׃",
+      "en": "and thou shalt hang it upon four pillars of shittim wood overlaid with gold: their hooks shall be of gold, upon four sockets of silver."
+    },
+    {
+      "n": 73,
+      "c": 26,
+      "v": 33,
+      "ref": "26:33",
+      "text": "וְנָתַתָּ֣ה אֶת־הַפָּרֹ֘כֶת֮ תַּ֣חַת הַקְּרָסִים֒ וְהֵבֵאתָ֥ שָׁ֙מָּה֙ מִבֵּ֣ית לַפָּרֹ֔כֶת אֵ֖ת אֲר֣וֹן הָעֵד֑וּת וְהִבְדִּילָ֤ה הַפָּרֹ֙כֶת֙ לָכֶ֔ם בֵּ֣ין הַקֹּ֔דֶשׁ וּבֵ֖ין קֹ֥דֶשׁ הַקֳּדָשִֽׁים׃",
+      "en": "And thou shalt hang up the veil under the clasps, that thou mayst bring in there within the veil the ark of the Testimony: and the veil shall be for you as a division between the holy place and the most holy."
+    },
+    {
+      "n": 74,
+      "c": 26,
+      "v": 34,
+      "ref": "26:34",
+      "text": "וְנָתַתָּ֙ אֶת־הַכַּפֹּ֔רֶת עַ֖ל אֲר֣וֹן הָעֵדֻ֑ת בְּקֹ֖דֶשׁ הַקֳּדָשִֽׁים׃",
+      "en": "And thou shalt put the covering upon the ark of the Testimony in the most holy place."
+    },
+    {
+      "n": 75,
+      "c": 26,
+      "v": 35,
+      "ref": "26:35",
+      "text": "וְשַׂמְתָּ֤ אֶת־הַשֻּׁלְחָן֙ מִח֣וּץ לַפָּרֹ֔כֶת וְאֶת־הַמְּנֹרָה֙ נֹ֣כַח הַשֻּׁלְחָ֔ן עַ֛ל צֶ֥לַע הַמִּשְׁכָּ֖ן תֵּימָ֑נָה וְהַ֨שֻּׁלְחָ֔ן תִּתֵּ֖ן עַל־צֶ֥לַע צָפֽוֹן׃",
+      "en": "And thou shalt set the table outside the veil, and the candlestick over against the table on the side of the tabernacle toward the south: and thou shalt put the table on the north side."
+    },
+    {
+      "n": 76,
+      "c": 26,
+      "v": 36,
+      "ref": "26:36",
+      "text": "וְעָשִׂ֤יתָ מָסָךְ֙ לְפֶ֣תַח הָאֹ֔הֶל תְּכֵ֧לֶת וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת שָׁנִ֖י וְשֵׁ֣שׁ מׇשְׁזָ֑ר מַעֲשֵׂ֖ה רֹקֵֽם׃",
+      "en": "And thou shalt make a screen for the door of the tent, of blue, and purple, and scarlet, and fine twined linen, the work of an embroiderer."
+    },
+    {
+      "n": 77,
+      "c": 26,
+      "v": 37,
+      "ref": "26:37",
+      "text": "וְעָשִׂ֣יתָ לַמָּסָ֗ךְ חֲמִשָּׁה֙ עַמּוּדֵ֣י שִׁטִּ֔ים וְצִפִּיתָ֤ אֹתָם֙ זָהָ֔ב וָוֵיהֶ֖ם זָהָ֑ב וְיָצַקְתָּ֣ לָהֶ֔ם חֲמִשָּׁ֖ה אַדְנֵ֥י נְחֹֽשֶׁת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And thou shalt make for the screen five pillars of shittim wood, and overlay them with gold, and their hooks shall be of gold: and thou shalt cast five sockets of brass for them."
+    },
+    {
+      "n": 78,
+      "c": 27,
+      "v": 1,
+      "ref": "27:1",
+      "text": "וְעָשִׂ֥יתָ אֶת־הַמִּזְבֵּ֖חַ עֲצֵ֣י שִׁטִּ֑ים חָמֵשׁ֩ אַמּ֨וֹת אֹ֜רֶךְ וְחָמֵ֧שׁ אַמּ֣וֹת רֹ֗חַב רָב֤וּעַ יִהְיֶה֙ הַמִּזְבֵּ֔חַ וְשָׁלֹ֥שׁ אַמּ֖וֹת קֹמָתֽוֹ׃",
+      "en": "And thou shalt make an altar of shittim wood, five cubits long, and five cubits broad; the altar shall be foursquare: and the height of it shall be three cubits."
+    },
+    {
+      "n": 79,
+      "c": 27,
+      "v": 2,
+      "ref": "27:2",
+      "text": "וְעָשִׂ֣יתָ קַרְנֹתָ֗יו עַ֚ל אַרְבַּ֣ע פִּנֹּתָ֔יו מִמֶּ֖נּוּ תִּהְיֶ֣יןָ קַרְנֹתָ֑יו וְצִפִּיתָ֥ אֹת֖וֹ נְחֹֽשֶׁת׃",
+      "en": "And thou shalt make the horns of it upon its four corners: its horns shall be of the same: and thou shalt overlay it with brass."
+    },
+    {
+      "n": 80,
+      "c": 27,
+      "v": 3,
+      "ref": "27:3",
+      "text": "וְעָשִׂ֤יתָ סִּֽירֹתָיו֙ לְדַשְּׁנ֔וֹ וְיָעָיו֙ וּמִזְרְקֹתָ֔יו וּמִזְלְגֹתָ֖יו וּמַחְתֹּתָ֑יו לְכׇל־כֵּלָ֖יו תַּעֲשֶׂ֥ה נְחֹֽשֶׁת׃",
+      "en": "And thou shalt make its pans to receive its ashes, and its shovels, and its basins, and its forks, and its firepans: all its vessels thou shalt make of brass."
+    },
+    {
+      "n": 81,
+      "c": 27,
+      "v": 4,
+      "ref": "27:4",
+      "text": "וְעָשִׂ֤יתָ לּוֹ֙ מִכְבָּ֔ר מַעֲשֵׂ֖ה רֶ֣שֶׁת נְחֹ֑שֶׁת וְעָשִׂ֣יתָ עַל־הָרֶ֗שֶׁת אַרְבַּע֙ טַבְּעֹ֣ת נְחֹ֔שֶׁת עַ֖ל אַרְבַּ֥ע קְצוֹתָֽיו׃",
+      "en": "And thou shalt make for it a grate of network of brass; and upon the net shalt thou make four brazen rings on its four corners."
+    },
+    {
+      "n": 82,
+      "c": 27,
+      "v": 5,
+      "ref": "27:5",
+      "text": "וְנָתַתָּ֣ה אֹתָ֗הּ תַּ֛חַת כַּרְכֹּ֥ב הַמִּזְבֵּ֖חַ מִלְּמָ֑טָּה וְהָיְתָ֣ה הָרֶ֔שֶׁת עַ֖ד חֲצִ֥י הַמִּזְבֵּֽחַ׃",
+      "en": "And thou shalt put it under the ledge of the altar beneath, that the net may reach to the midst of the altar."
+    },
+    {
+      "n": 83,
+      "c": 27,
+      "v": 6,
+      "ref": "27:6",
+      "text": "וְעָשִׂ֤יתָ בַדִּים֙ לַמִּזְבֵּ֔חַ בַּדֵּ֖י עֲצֵ֣י שִׁטִּ֑ים וְצִפִּיתָ֥ אֹתָ֖ם נְחֹֽשֶׁת׃",
+      "en": "And thou shalt make poles for the altar, poles of shittim wood, and overlay them with brass."
+    },
+    {
+      "n": 84,
+      "c": 27,
+      "v": 7,
+      "ref": "27:7",
+      "text": "וְהוּבָ֥א אֶת־בַּדָּ֖יו בַּטַּבָּעֹ֑ת וְהָי֣וּ הַבַּדִּ֗ים עַל־שְׁתֵּ֛י צַלְעֹ֥ת הַמִּזְבֵּ֖חַ בִּשְׂאֵ֥ת אֹתֽוֹ׃",
+      "en": "And the poles shall be put into the rings, and the poles shall be upon the two sides of the altar, to carry it."
+    },
+    {
+      "n": 85,
+      "c": 27,
+      "v": 8,
+      "ref": "27:8",
+      "text": "נְב֥וּב לֻחֹ֖ת תַּעֲשֶׂ֣ה אֹת֑וֹ כַּאֲשֶׁ֨ר הֶרְאָ֥ה אֹתְךָ֛ בָּהָ֖ר כֵּ֥ן יַעֲשֽׂוּ׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "Hollow with boards shalt thou make it: as it was shown thee in the mountain, so shall they make it."
+    },
+    {
+      "n": 86,
+      "c": 27,
+      "v": 9,
+      "ref": "27:9",
+      "text": "וְעָשִׂ֕יתָ אֵ֖ת חֲצַ֣ר הַמִּשְׁכָּ֑ן לִפְאַ֣ת נֶֽגֶב־תֵּ֠ימָ֠נָה קְלָעִ֨ים לֶחָצֵ֜ר שֵׁ֣שׁ מׇשְׁזָ֗ר מֵאָ֤ה בָֽאַמָּה֙ אֹ֔רֶךְ לַפֵּאָ֖ה הָאֶחָֽת׃",
+      "en": "And thou shalt make the court of the tabernacle: for the south side southward there shall be hangings for the court of fine twined linen of a hundred cubits long for one side:"
+    },
+    {
+      "n": 87,
+      "c": 27,
+      "v": 10,
+      "ref": "27:10",
+      "text": "וְעַמֻּדָ֣יו עֶשְׂרִ֔ים וְאַדְנֵיהֶ֥ם עֶשְׂרִ֖ים נְחֹ֑שֶׁת וָוֵ֧י הָעַמֻּדִ֛ים וַחֲשֻׁקֵיהֶ֖ם כָּֽסֶף׃",
+      "en": "and its twenty pillars and their twenty sockets shall be of brass; the hooks of the pillars and their joints shall be of silver."
+    },
+    {
+      "n": 88,
+      "c": 27,
+      "v": 11,
+      "ref": "27:11",
+      "text": "וְכֵ֨ן לִפְאַ֤ת צָפוֹן֙ בָּאֹ֔רֶךְ קְלָעִ֖ים מֵ֣אָה אֹ֑רֶךְ <span class=\"mam-kq-trivial\">וְעַמֻּדָ֣ו</span> עֶשְׂרִ֗ים וְאַדְנֵיהֶ֤ם עֶשְׂרִים֙ נְחֹ֔שֶׁת וָוֵ֧י הָֽעַמֻּדִ֛ים וַחֲשֻׁקֵיהֶ֖ם כָּֽסֶף׃",
+      "en": "And likewise for the north side in length there shall be hangings of a hundred cubits long, and its twenty pillars and their twenty sockets of brass; the hooks of the pillars and their joints of silver."
+    },
+    {
+      "n": 89,
+      "c": 27,
+      "v": 12,
+      "ref": "27:12",
+      "text": "וְרֹ֤חַב הֶֽחָצֵר֙ לִפְאַת־יָ֔ם קְלָעִ֖ים חֲמִשִּׁ֣ים אַמָּ֑ה עַמֻּדֵיהֶ֣ם עֲשָׂרָ֔ה וְאַדְנֵיהֶ֖ם עֲשָׂרָֽה׃",
+      "en": "And for the breadth of the court on the west side shall be hangings of fifty cubits: their pillars ten, and their sockets ten."
+    },
+    {
+      "n": 90,
+      "c": 27,
+      "v": 13,
+      "ref": "27:13",
+      "text": "וְרֹ֣חַב הֶֽחָצֵ֗ר לִפְאַ֛ת קֵ֥דְמָה מִזְרָ֖חָה חֲמִשִּׁ֥ים אַמָּֽה׃",
+      "en": "And the breadth of the court on the east side eastward shall be fifty cubits."
+    },
+    {
+      "n": 91,
+      "c": 27,
+      "v": 14,
+      "ref": "27:14",
+      "text": "וַחֲמֵ֨שׁ עֶשְׂרֵ֥ה אַמָּ֛ה קְלָעִ֖ים לַכָּתֵ֑ף עַמֻּדֵיהֶ֣ם שְׁלֹשָׁ֔ה וְאַדְנֵיהֶ֖ם שְׁלֹשָֽׁה׃",
+      "en": "The hangings of one side of the gate shall be fifteen cubits: their pillars three, and their sockets three."
+    },
+    {
+      "n": 92,
+      "c": 27,
+      "v": 15,
+      "ref": "27:15",
+      "text": "וְלַכָּתֵף֙ הַשֵּׁנִ֔ית חֲמֵ֥שׁ עֶשְׂרֵ֖ה קְלָעִ֑ים עַמֻּדֵיהֶ֣ם שְׁלֹשָׁ֔ה וְאַדְנֵיהֶ֖ם שְׁלֹשָֽׁה׃",
+      "en": "And on the other side shall be hangings of fifteen cubits: their pillars three, and their sockets three."
+    },
+    {
+      "n": 93,
+      "c": 27,
+      "v": 16,
+      "ref": "27:16",
+      "text": "וּלְשַׁ֨עַר הֶֽחָצֵ֜ר מָסָ֣ךְ&thinsp;<b>׀</b> עֶשְׂרִ֣ים אַמָּ֗ה תְּכֵ֨לֶת וְאַרְגָּמָ֜ן וְתוֹלַ֧עַת שָׁנִ֛י וְשֵׁ֥שׁ מׇשְׁזָ֖ר מַעֲשֵׂ֣ה רֹקֵ֑ם עַמֻּֽדֵיהֶם֙ אַרְבָּעָ֔ה וְאַדְנֵיהֶ֖ם אַרְבָּעָֽה׃",
+      "en": "And for the gate of the court shall be a screen of twenty cubits, of blue, and purple, and scarlet, and fine twined linen, wrought with embroidery: and their pillars shall be four, and their sockets four."
+    },
+    {
+      "n": 94,
+      "c": 27,
+      "v": 17,
+      "ref": "27:17",
+      "text": "כׇּל־עַמּוּדֵ֨י הֶֽחָצֵ֤ר סָבִיב֙ מְחֻשָּׁקִ֣ים כֶּ֔סֶף וָוֵיהֶ֖ם כָּ֑סֶף וְאַדְנֵיהֶ֖ם נְחֹֽשֶׁת׃",
+      "en": "All the pillars round about the court shall be bound with silver; their hooks shall be of silver, and their sockets of brass."
+    },
+    {
+      "n": 95,
+      "c": 27,
+      "v": 18,
+      "ref": "27:18",
+      "text": "אֹ֣רֶךְ הֶֽחָצֵר֩ מֵאָ֨ה בָֽאַמָּ֜ה וְרֹ֣חַב&thinsp;<b>׀</b> חֲמִשִּׁ֣ים בַּחֲמִשִּׁ֗ים וְקֹמָ֛ה חָמֵ֥שׁ אַמּ֖וֹת שֵׁ֣שׁ מׇשְׁזָ֑ר וְאַדְנֵיהֶ֖ם נְחֹֽשֶׁת׃",
+      "en": "The length of the court shall be a hundred cubits, and the breadth fifty everywhere, and the height, five cubits of fine twined linen, and their sockets of brass."
+    },
+    {
+      "n": 96,
+      "c": 27,
+      "v": 19,
+      "ref": "27:19",
+      "text": "לְכֹל֙ כְּלֵ֣י הַמִּשְׁכָּ֔ן בְּכֹ֖ל עֲבֹדָת֑וֹ וְכׇל־יְתֵדֹתָ֛יו וְכׇל־יִתְדֹ֥ת הֶחָצֵ֖ר נְחֹֽשֶׁת׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "All the vessels of the tabernacle in all its service, and all its pegs, and all the pegs of the court, shall be of brass."
+    }
+  ],
+  "parashah": {
+    "en": "Terumah",
+    "he": "תְּרוּמָה",
+    "translit": "Terumah",
+    "ref": "Exodus 25:1–27:19"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": 1,
+        "start": 1,
+        "end": 16,
+        "ref": "25:1–25:16"
+      },
+      {
+        "n": 2,
+        "start": 17,
+        "end": 40,
+        "ref": "25:17–25:40"
+      },
+      {
+        "n": 3,
+        "start": 41,
+        "end": 54,
+        "ref": "26:1–26:14"
+      },
+      {
+        "n": 4,
+        "start": 55,
+        "end": 70,
+        "ref": "26:15–26:30"
+      },
+      {
+        "n": 5,
+        "start": 71,
+        "end": 77,
+        "ref": "26:31–26:37"
+      },
+      {
+        "n": 6,
+        "start": 78,
+        "end": 85,
+        "ref": "27:1–27:8"
+      },
+      {
+        "n": 7,
+        "start": 86,
+        "end": 96,
+        "ref": "27:9–27:19"
+      }
+    ],
+    "triennial": {
+      "1": [
+        {
+          "n": 1,
+          "start": 1,
+          "end": 5,
+          "ref": "25:1–25:5"
+        },
+        {
+          "n": 2,
+          "start": 6,
+          "end": 9,
+          "ref": "25:6–25:9"
+        },
+        {
+          "n": 3,
+          "start": 10,
+          "end": 16,
+          "ref": "25:10–25:16"
+        },
+        {
+          "n": 4,
+          "start": 17,
+          "end": 22,
+          "ref": "25:17–25:22"
+        },
+        {
+          "n": 5,
+          "start": 23,
+          "end": 30,
+          "ref": "25:23–25:30"
+        },
+        {
+          "n": 6,
+          "start": 31,
+          "end": 33,
+          "ref": "25:31–25:33"
+        },
+        {
+          "n": 7,
+          "start": 34,
+          "end": 40,
+          "ref": "25:34–25:40"
+        }
+      ],
+      "2": [
+        {
+          "n": 1,
+          "start": 41,
+          "end": 43,
+          "ref": "26:1–26:3"
+        },
+        {
+          "n": 2,
+          "start": 44,
+          "end": 46,
+          "ref": "26:4–26:6"
+        },
+        {
+          "n": 3,
+          "start": 47,
+          "end": 51,
+          "ref": "26:7–26:11"
+        },
+        {
+          "n": 4,
+          "start": 52,
+          "end": 54,
+          "ref": "26:12–26:14"
+        },
+        {
+          "n": 5,
+          "start": 55,
+          "end": 61,
+          "ref": "26:15–26:21"
+        },
+        {
+          "n": 6,
+          "start": 62,
+          "end": 65,
+          "ref": "26:22–26:25"
+        },
+        {
+          "n": 7,
+          "start": 66,
+          "end": 70,
+          "ref": "26:26–26:30"
+        }
+      ],
+      "3": [
+        {
+          "n": 1,
+          "start": 71,
+          "end": 73,
+          "ref": "26:31–26:33"
+        },
+        {
+          "n": 2,
+          "start": 74,
+          "end": 77,
+          "ref": "26:34–26:37"
+        },
+        {
+          "n": 3,
+          "start": 78,
+          "end": 80,
+          "ref": "27:1–27:3"
+        },
+        {
+          "n": 4,
+          "start": 81,
+          "end": 85,
+          "ref": "27:4–27:8"
+        },
+        {
+          "n": 5,
+          "start": 86,
+          "end": 89,
+          "ref": "27:9–27:12"
+        },
+        {
+          "n": 6,
+          "start": 90,
+          "end": 93,
+          "ref": "27:13–27:16"
+        },
+        {
+          "n": 7,
+          "start": 94,
+          "end": 96,
+          "ref": "27:17–27:19"
+        }
+      ]
+    },
+    "maftir": {
+      "annual": {
+        "n": "M",
+        "start": 94,
+        "end": 96,
+        "ref": "27:17–27:19"
+      },
+      "triennial": {
+        "1": {
+          "n": "M",
+          "start": 37,
+          "end": 40,
+          "ref": "25:37–25:40"
+        },
+        "2": {
+          "n": "M",
+          "start": 66,
+          "end": 70,
+          "ref": "26:26–26:30"
+        },
+        "3": {
+          "n": "M",
+          "start": 94,
+          "end": 96,
+          "ref": "27:17–27:19"
+        }
+      }
+    }
+  },
+  "aliyotAttribution": "Aliyah boundaries from Hebcal (hebcal-leyning & hebcal-triennial, BSD-2-Clause); triennial per R. Eisenberg's CJLS system."
+}

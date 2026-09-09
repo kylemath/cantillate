@@ -1,0 +1,188 @@
+{
+  "slug": "haftarah-tetzaveh",
+  "book": {
+    "en": "Ezekiel",
+    "he": "יחזקאל",
+    "translit": "Yechezkel"
+  },
+  "multiChapter": true,
+  "ref": "Ezekiel 43:10-27",
+  "heRef": "יחזקאל מ״ג:י-כ״ז",
+  "versionTitle": "Miqra according to the Masorah",
+  "heVersionTitle": "Miqra according to the Masorah",
+  "enVersionTitle": "The Koren Jerusalem Bible",
+  "license": "Leningrad Codex text is public domain; MAM digital edition CC-BY (Sefaria).",
+  "source": "https://www.sefaria.org",
+  "verses": [
+    {
+      "n": 1,
+      "c": 43,
+      "v": 10,
+      "ref": "43:10",
+      "text": "אַתָּ֣ה בֶן־אָדָ֗ם הַגֵּ֤ד אֶת־בֵּֽית־יִשְׂרָאֵל֙ אֶת־הַבַּ֔יִת וְיִכָּלְמ֖וּ מֵעֲוֺנֽוֹתֵיהֶ֑ם וּמָדְד֖וּ אֶת־תׇּכְנִֽית׃",
+      "en": "Thou son of man, describe the house to the house of Yisra᾽el, that they may be ashamed of their iniquities: and let them measure the pattern."
+    },
+    {
+      "n": 2,
+      "c": 43,
+      "v": 11,
+      "ref": "43:11",
+      "text": "וְאִֽם־נִכְלְמ֞וּ מִכֹּ֣ל אֲשֶׁר־עָשׂ֗וּ צוּרַ֣ת הַבַּ֡יִת וּתְכוּנָת֡וֹ וּמוֹצָאָ֡יו וּמוֹבָאָ֣יו וְֽכׇל־<span class=\"mam-kq-trivial\">צוּרֹתָ֡ו</span> וְאֵ֣ת כׇּל־חֻקֹּתָיו֩ וְכׇל־<span class=\"mam-kq-trivial\">צ֨וּרֹתָ֤ו</span> וְכׇל־<span class=\"mam-kq-trivial\">תּֽוֹרֹתָו֙</span> הוֹדַ֣ע אוֹתָ֔ם וּכְתֹ֖ב לְעֵינֵיהֶ֑ם וְיִשְׁמְר֞וּ אֶת־כׇּל־צוּרָת֛וֹ וְאֶת־כׇּל־חֻקֹּתָ֖יו וְעָשׂ֥וּ אוֹתָֽם׃",
+      "en": "And if they are ashamed of all that they have done, make known to them the form of the house, and its fashion, and its exits, and its entrances, and all its forms, and its ordinances, and all its shapes, and all its Torot: and write it in their sight, that they may keep its whole form, and all its ordinances, and do them."
+    },
+    {
+      "n": 3,
+      "c": 43,
+      "v": 12,
+      "ref": "43:12",
+      "text": "זֹ֖את תּוֹרַ֣ת הַבָּ֑יִת עַל־רֹ֣אשׁ הָ֠הָ֠ר כׇּל־גְּבֻל֞וֹ סָבִ֤יב&thinsp;<small>׀</small>&thinsp;סָבִיב֙ קֹ֣דֶשׁ קׇדָשִׁ֔ים הִנֵּה־זֹ֖את תּוֹרַ֥ת הַבָּֽיִת׃",
+      "en": "This is the Tora of the house; Upon the top of the mountain its whole limit round about shall be most holy. Behold, this is the Tora of the house."
+    },
+    {
+      "n": 4,
+      "c": 43,
+      "v": 13,
+      "ref": "43:13",
+      "text": "וְאֵ֨לֶּה מִדּ֤וֹת הַמִּזְבֵּ֙חַ֙ בָּאַמּ֔וֹת אַמָּ֥ה אַמָּ֖ה וָטֹ֑פַח וְחֵ֨יק הָאַמָּ֜ה וְאַמָּה־רֹ֗חַב וּגְבוּלָ֨הּ אֶל־שְׂפָתָ֤הּ סָבִיב֙ זֶ֣רֶת הָאֶחָ֔ד וְזֶ֖ה גַּ֥ב הַמִּזְבֵּֽחַ׃",
+      "en": "And these are the measures of the altar by cubits: the cubit is a cubit and a hand breadth; the bottom shall be a cubit, and the breadth a cubit, and its border by its edge round about shall be a span: and this shall be the higher part of the altar."
+    },
+    {
+      "n": 5,
+      "c": 43,
+      "v": 14,
+      "ref": "43:14",
+      "text": "וּמֵחֵ֨יק הָאָ֜רֶץ עַד־הָעֲזָרָ֤ה הַתַּחְתּוֹנָה֙ שְׁתַּ֣יִם אַמּ֔וֹת וְרֹ֖חַב אַמָּ֣ה אֶחָ֑ת וּמֵהָעֲזָרָ֨ה הַקְּטַנָּ֜ה עַד־הָעֲזָרָ֤ה הַגְּדוֹלָה֙ אַרְבַּ֣ע אַמּ֔וֹת וְרֹ֖חַב הָאַמָּֽה׃",
+      "en": "And from the bottom upon the ground even to the lower ledge shall be two cubits, and the breadth one cubit; and from the lesser ledge to the greater ledge shall be four cubits, and the breadth one cubit."
+    },
+    {
+      "n": 6,
+      "c": 43,
+      "v": 15,
+      "ref": "43:15",
+      "text": "וְהַהַרְאֵ֖ל אַרְבַּ֣ע אַמּ֑וֹת <span class=\"mam-kq\"><span class=\"mam-kq-k\">(ומהאראיל)</span> <span class=\"mam-kq-q\">[וּמֵהָאֲרִיאֵ֣ל]</span></span> וּלְמַ֔עְלָה הַקְּרָנ֖וֹת אַרְבַּֽע׃",
+      "en": "And the altar hearth shall be four cubits high; and from the altar hearth and upwards shall be four horns."
+    },
+    {
+      "n": 7,
+      "c": 43,
+      "v": 16,
+      "ref": "43:16",
+      "text": "<span class=\"mam-kq\"><span class=\"mam-kq-k\">(והאראיל)</span> <span class=\"mam-kq-q\">[וְהָאֲרִיאֵ֗ל]</span></span> שְׁתֵּ֤ים עֶשְׂרֵה֙ אֹ֔רֶךְ בִּשְׁתֵּ֥ים עֶשְׂרֵ֖ה רֹ֑חַב רָב֕וּעַ אֶ֖ל אַרְבַּ֥עַת רְבָעָֽיו׃",
+      "en": "And the altar hearth shall be twelve cubits long by twelve broad, square in its four sides."
+    },
+    {
+      "n": 8,
+      "c": 43,
+      "v": 17,
+      "ref": "43:17",
+      "text": "וְהָעֲזָרָ֞ה אַרְבַּ֧ע עֶשְׂרֵ֣ה אֹ֗רֶךְ בְּאַרְבַּ֤ע עֶשְׂרֵה֙ רֹ֔חַב אֶ֖ל אַרְבַּ֣עַת רְבָעֶ֑יהָ וְהַגְּבוּל֩ סָבִ֨יב אוֹתָ֜הּ חֲצִ֣י הָאַמָּ֗ה וְהַחֵֽיק־לָ֤הּ אַמָּה֙ סָבִ֔יב וּמַעֲלֹתֵ֖הוּ פְּנ֥וֹת קָדִֽים׃",
+      "en": "And the ledge shall be fourteen cubits long by fourteen broad its four sides, and the border about it shall be half a cubit; and the bottom of it shall be a cubit about; and its stairs shall look towards the east."
+    },
+    {
+      "n": 9,
+      "c": 43,
+      "v": 18,
+      "ref": "43:18",
+      "text": "וַיֹּ֣אמֶר אֵלַ֗י בֶּן־אָדָם֙ כֹּ֤ה אָמַר֙ אֲדֹנָ֣י יֱהֹוִ֔ה אֵ֚לֶּה חֻקּ֣וֹת הַמִּזְבֵּ֔חַ בְּי֖וֹם הֵעָשׂוֹת֑וֹ לְהַעֲל֤וֹת עָלָיו֙ עוֹלָ֔ה וְלִזְרֹ֥ק עָלָ֖יו דָּֽם׃",
+      "en": "And he said to me, Son of man, thus says the Lord God; These are the ordinances of the altar on the day when they shall make it, to offer burnt offerings upon it, and to sprinkle blood upon it."
+    },
+    {
+      "n": 10,
+      "c": 43,
+      "v": 19,
+      "ref": "43:19",
+      "text": "וְנָתַתָּ֣ה אֶל־הַכֹּהֲנִ֣ים הַלְוִיִּ֡ם אֲשֶׁ֣ר הֵם֩ מִזֶּ֨רַע צָד֜וֹק הַקְּרֹבִ֣ים אֵלַ֗י נְאֻ֛ם אֲדֹנָ֥י יֱהֹוִ֖ה לְשָׁרְתֵ֑נִי פַּ֥ר בֶּן־בָּקָ֖ר לְחַטָּֽאת׃",
+      "en": "And thou shalt give to the priests the Levites that are of the seed of Żadoq, who come near to me, to minister to me, says the Lord God, a young bullock for a sin offering."
+    },
+    {
+      "n": 11,
+      "c": 43,
+      "v": 20,
+      "ref": "43:20",
+      "text": "וְלָקַחְתָּ֣ מִדָּמ֗וֹ וְנָ֨תַתָּ֜ה עַל־אַרְבַּ֤ע קַרְנֹתָיו֙ וְאֶל־אַרְבַּע֙ פִּנּ֣וֹת הָעֲזָרָ֔ה וְאֶֽל־הַגְּב֖וּל סָבִ֑יב וְחִטֵּאתָ֥ אוֹת֖וֹ וְכִפַּרְתָּֽהוּ׃",
+      "en": "And thou shalt take of its blood, and put it on the four horns of it, and on the four corners of the ledge, and upon the border round about: thus shalt thou purify and make atonement for it."
+    },
+    {
+      "n": 12,
+      "c": 43,
+      "v": 21,
+      "ref": "43:21",
+      "text": "וְלָ֣קַחְתָּ֔ אֵ֖ת הַפָּ֣ר הַחַטָּ֑את וּשְׂרָפוֹ֙ בְּמִפְקַ֣ד הַבַּ֔יִת מִח֖וּץ לַמִּקְדָּֽשׁ׃",
+      "en": "Thou shalt take the bullock also of the sin offering, and it shall be burnt in the appointed place of the house, outside the sanctuary."
+    },
+    {
+      "n": 13,
+      "c": 43,
+      "v": 22,
+      "ref": "43:22",
+      "text": "וּבַיּוֹם֙ הַשֵּׁנִ֔י תַּקְרִ֛יב שְׂעִיר־עִזִּ֥ים תָּמִ֖ים לְחַטָּ֑את וְחִטְּאוּ֙ אֶת־הַמִּזְבֵּ֔חַ כַּאֲשֶׁ֥ר חִטְּא֖וּ בַּפָּֽר׃",
+      "en": "And on the second day thou shalt offer a he goat without blemish for a sin offering; and they shall purify the altar, as they did purify it with the bullock."
+    },
+    {
+      "n": 14,
+      "c": 43,
+      "v": 23,
+      "ref": "43:23",
+      "text": "בְּכַלּוֹתְךָ֖ מֵחַטֵּ֑א תַּקְרִיב֙ פַּ֣ר בֶּן־בָּקָ֣ר תָּמִ֔ים וְאַ֥יִל מִן־הַצֹּ֖אן תָּמִֽים׃",
+      "en": "When thou hast made an end of purifying it, thou shalt offer a young bullock without blemish, and a ram out of the flock without blemish."
+    },
+    {
+      "n": 15,
+      "c": 43,
+      "v": 24,
+      "ref": "43:24",
+      "text": "וְהִקְרַבְתָּ֖ם לִפְנֵ֣י יְהֹוָ֑ה וְהִשְׁלִ֨יכוּ הַכֹּהֲנִ֤ים עֲלֵיהֶם֙ מֶ֔לַח וְהֶעֱל֥וּ אוֹתָ֛ם עֹלָ֖ה לַיהֹוָֽה׃",
+      "en": "And thou shalt present them before the Lord, and the priests shall cast salt upon them, and they shall offer them up for a burnt offering to the Lord."
+    },
+    {
+      "n": 16,
+      "c": 43,
+      "v": 25,
+      "ref": "43:25",
+      "text": "שִׁבְעַ֣ת יָמִ֔ים תַּעֲשֶׂ֥ה שְׂעִיר־חַטָּ֖את לַיּ֑וֹם וּפַ֧ר בֶּן־בָּקָ֛ר וְאַ֥יִל מִן־הַצֹּ֖אן תְּמִימִ֥ים יַֽעֲשֽׂוּ׃",
+      "en": "Seven days shalt thou prepare every day a goat for a sin offering: they shall also prepare a young bullock, and a ram out of the flock, without blemish."
+    },
+    {
+      "n": 17,
+      "c": 43,
+      "v": 26,
+      "ref": "43:26",
+      "text": "שִׁבְעַ֣ת יָמִ֗ים יְכַפְּרוּ֙ אֶת־הַמִּזְבֵּ֔חַ וְטִהֲר֖וּ אֹת֑וֹ וּמִלְא֖וּ <span class=\"mam-kq-trivial\">יָדָֽו</span>׃",
+      "en": "Seven days shall they make atonement for the altar and cleanse it; and they shall consecrate it."
+    },
+    {
+      "n": 18,
+      "c": 43,
+      "v": 27,
+      "ref": "43:27",
+      "text": "וִֽיכַלּ֖וּ אֶת־הַיָּמִ֑ים&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;וְהָיָה֩ בַיּ֨וֹם הַשְּׁמִינִ֜י וָהָ֗לְאָה יַעֲשׂ֨וּ הַכֹּהֲנִ֤ים עַל־הַמִּזְבֵּ֙חַ֙ אֶת־עוֹלֽוֹתֵיכֶם֙ וְאֶת־שַׁלְמֵיכֶ֔ם וְרָצִ֣אתִי אֶתְכֶ֔ם נְאֻ֖ם אֲדֹנָ֥י יֱהֹוִֽה׃&nbsp;<span class=\"mam-spi-samekh\">{ס}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+      "en": "And when these days are expired, it shall be, that upon the eighth day, and onwards, the priests shall make your burnt offerings upon the altar, and your peace offerings; and I will accept you, says the Lord God."
+    }
+  ],
+  "kind": "haftarah",
+  "tropeStyle": "haftarah",
+  "haftarah": {
+    "parashah": "Tetzaveh",
+    "tradition": "ashkenaz",
+    "traditionLabel": "Ashkenazi",
+    "calendarNumber": 20
+  },
+  "parashah": {
+    "en": "Haftarat Tetzaveh",
+    "translit": "Haftarat Tetzaveh",
+    "he": "הפטרת תצוה",
+    "ref": "Ezekiel 43:10-27"
+  },
+  "aliyot": {
+    "annual": [
+      {
+        "n": "H",
+        "start": 1,
+        "end": 18,
+        "ref": "43:10–43:27"
+      }
+    ],
+    "triennial": {}
+  },
+  "aliyotAttribution": "Haftarah boundaries from Hebcal (hebcal-leyning, BSD-2-Clause); Ashkenazi rite."
+}
