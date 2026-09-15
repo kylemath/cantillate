@@ -169,9 +169,16 @@ export async function initAuth({ onUserChange, onProgressMerged } = {}) {
     ]);
     fb = { ...authMod, ...fsMod };
     const app = appMod.initializeApp(firebaseConfig);
-    auth = authMod.getAuth(app);
+    try {
+      auth = authMod.initializeAuth(app, { persistence: authMod.browserLocalPersistence });
+    } catch (e) {
+      try {
+        auth = authMod.initializeAuth(app, { persistence: authMod.inMemoryPersistence });
+      } catch (e2) {
+        auth = authMod.getAuth(app);
+      }
+    }
     db = fsMod.getFirestore(app);
-    try { await authMod.setPersistence(auth, authMod.browserLocalPersistence); } catch (e) { /* default persistence */ }
 
     authMod.onAuthStateChanged(auth, (user) => { handleUser(user); });
     notifyWatchers();

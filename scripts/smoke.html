@@ -219,6 +219,48 @@ try {
   log(!pointed.html.includes(' sel') && pointed.html.includes('>א</span>'),
     'tikkun: selectedVerse and renderWord are not frozen into the annotation');
 
+  // Windowed render: a long reading must be able to paint one page and leave
+  // the rest as height-matched stubs, then fill a single page later.
+  const tikkunSof = '\u05C3';
+  const tikkunMulti = {
+    source: { layout: 'smoke' },
+    pages: [1, 2, 3].map((number) => ({
+      number,
+      lines: [{
+        text: [[`\u05D0\u05D1\u05D2${number}${tikkunSof}`]],
+        verses: [{ book: 1, chapter: 1, verse: number }],
+      }],
+    })),
+  };
+  const tikkunMultiReading = {
+    book: { en: 'Genesis' },
+    chapter: 1,
+    verses: [1, 2, 3].map((n) => ({ n, c: 1, v: n, text: `\u05D0\u05D1\u05D2${n}${tikkunSof}` })),
+  };
+  const ranged = { focusStart: 1, focusEnd: 3, contextStart: 1, contextEnd: 3 };
+  const windowed = tikkun.renderTikkunPages(tikkunMulti, tikkunMultiReading, {
+    ...ranged, selectedVerse: 1, hydratePages: [1],
+  });
+  log(!!(windowed && windowed.pageNumbers && windowed.pageNumbers.join(',') === '1,2,3'),
+    `tikkun: windowed render lists every in-range page (got ${windowed && windowed.pageNumbers})`);
+  log(windowed.html.includes('data-verse="1"') && !windowed.html.includes('data-verse="2"'),
+    'tikkun: hydratePages paints only the requested page');
+  log((windowed.html.match(/data-stub="1"/g) || []).length === 2,
+    'tikkun: unhydrated pages are stubs');
+  const page2 = tikkun.renderTikkunPageHtml(tikkunMulti, tikkunMultiReading, {
+    ...ranged, selectedVerse: 2,
+  }, 2);
+  log(!!(page2 && page2.includes('data-verse="2"') && !page2.includes('data-stub')),
+    'tikkun: renderTikkunPageHtml paints one page for later hydration');
+  const stub2 = tikkun.renderTikkunPageHtml(tikkunMulti, tikkunMultiReading, {
+    ...ranged, stub: true,
+  }, 2);
+  log(!!(stub2 && stub2.includes('data-stub="1"') && !stub2.includes('data-verse')),
+    'tikkun: renderTikkunPageHtml can emit a stub');
+  const atV3 = tikkun.tikkunPageForVerse(tikkunMulti, tikkunMultiReading, ranged, 3);
+  log(!!(atV3 && atV3.number === 3),
+    `tikkun: tikkunPageForVerse finds the page that holds a pasuk (got ${atV3 && atV3.number})`);
+
   // Stretchable letters (ה ח ל ר ת ד ם) are what the justifier elongates;
   // everything else stays a bare character.
   log(justify.wrapStretchHtml('ה') === '<span class="stretch">ה</span>',

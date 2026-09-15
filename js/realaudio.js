@@ -5,7 +5,7 @@
 // or a single word) using the mp3 track times.
 
 import { detectPitch } from './pitch.js';
-import { getCtx } from './audio.js';
+import { getCtx, getListenRate } from './audio.js';
 import { getObjectUrl } from './offline.js';
 
 let ctx = null;
@@ -14,6 +14,7 @@ const cache = new Map(); // url -> { el, source, analyser }
 // window can be resumed or scrubbed word-by-word) and is only torn down by
 // stopVerseAudio or by reaching the end of the segment.
 let active = null;       // { el, raf, start, end, total, cb, paused, previewFrom, previewUntil }
+let playGen = 0;         // bumped to cancel a playSegment still waiting on seek
 
 // The page's single AudioContext (see getCtx in audio.js). It matters here twice
 // over: a MediaElementSource is welded to the context that made it and the cache
@@ -52,6 +53,23 @@ function pastCut(url, t) {
   return null;
 }
 
+function applyListenRate(el) {
+  const r = getListenRate() || 1;
+  try {
+    el.preservesPitch = true;
+    if ('webkitPreservesPitch' in el) el.webkitPreservesPitch = true;
+    if ('mozPreservesPitch' in el) el.mozPreservesPitch = true;
+    el.playbackRate = r;
+    el.defaultPlaybackRate = r;
+  } catch (err) { /* older WebKit without preservesPitch */ }
+}
+
+// Re-apply the current listen speed to every loaded file (and the one that is
+// playing). Called when the reader taps a slower speed mid-verse.
+export function syncListenRate() {
+  for (const e of cache.values()) applyListenRate(e.el);
+}
+
 function getEntry(url) {
   let e = cache.get(url);
   if (!e) {
@@ -60,6 +78,7 @@ function getEntry(url) {
     // Prefer a locally-stored blob (downloaded for offline) so playback uses no
     // network; fall back to the network path when the reading isn't downloaded.
     el.src = getObjectUrl(url) || url;
+    applyListenRate(el);
     const c = ensureCtx();
     const source = c.createMediaElementSource(el);
     const analyser = c.createAnalyser();
@@ -74,6 +93,7 @@ function getEntry(url) {
 }
 
 export function stopVerseAudio() {
+  playGen += 1;
   if (active) {
     try { active.el.pause(); } catch (e) { /* noop */ }
     cancelAnimationFrame(active.raf);
@@ -86,12 +106,15 @@ export function stopVerseAudio() {
 export function playSegment(url, start, end, cb = {}) {
   ensureCtx();
   stopVerseAudio();
+  const my = playGen;
   const e = getEntry(url);
   const analyser = e.analyser;
   const timeBuf = new Float32Array(analyser.fftSize);
   const freqBuf = new Uint8Array(analyser.frequencyBinCount);
 
   const begin = () => {
+    if (my !== playGen) return;
+    applyListenRate(e.el);
     try { e.el.currentTime = start; } catch (err) { /* retry via canplay */ }
     const total = (end != null ? end : e.el.duration) - start;
 
@@ -147,14 +170,27 @@ export function playSegment(url, start, end, cb = {}) {
     };
 
     e.el.onended = () => { if (active && active.el === e.el) finish(); };
-    e.el.play().then(() => {
-      active = { el: e.el, raf: 0, start, end, total, cb, paused: false, tick, holdAt };
-      active.raf = requestAnimationFrame(tick);
-    }).catch((err) => { if (cb.onError) cb.onError(err); });
+    const go = () => {
+      if (my !== playGen) return;
+      e.el.play().then(() => {
+        active = { el: e.el, raf: 0, start, end, total, cb, paused: false, tick, holdAt };
+        active.raf = requestAnimationFrame(tick);
+      }).catch((err) => { if (cb.onError) cb.onError(err); });
+    };
+    // Wait for the seek to land. PocketTorah's faster (Bereshit) files are raw
+    // CBR MP3s with no Xing seek index; starting play() before seeked is how
+    // a word clip picks up the previous word's tail.
+    const seekWait = () => {
+      if (Math.abs(e.el.currentTime - start) < 0.04) { go(); return; }
+      const onSeeked = () => { e.el.removeEventListener('seeked', onSeeked); go(); };
+      e.el.addEventListener('seeked', onSeeked);
+      setTimeout(() => { e.el.removeEventListener('seeked', onSeeked); go(); }, 400);
+    };
+    seekWait();
   };
 
   if (e.el.readyState >= 1 && !isNaN(e.el.duration)) begin();
-  else e.el.addEventListener('loadedmetadata', begin, { once: true });
+  else e.el.addEventListener('loadedmetadata', () => { if (my === playGen) begin(); }, { once: true });
 }
 
 function clamp01(x) { return Math.min(1, Math.max(0, x)); }
@@ -186,6 +222,7 @@ export function resumeVerseAudio() {
   active.previewUntil = null;
   if (!active.paused) return true;
   active.paused = false;
+  applyListenRate(active.el);
   active.el.play().then(() => {
     if (active) active.raf = requestAnimationFrame(active.tick);
   }).catch(() => { if (active) active.paused = true; });

@@ -487,7 +487,8 @@ body.settings-open #settingsBackdrop { opacity: 1; pointer-events: auto; }
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
   .transport #btnRealWord,
-  .transport #btnTonic { display: none; }               /* non-essential on mobile */
+  .transport #btnTonic,
+  .transport .listen-speed { display: none; }            /* non-essential on mobile */
   .transport #btnReal ~ #btnPlay { display: none; }       /* voice guide hidden when real chant exists */
   .transport #btnStop:disabled { display: none; }         /* Stop appears only when actionable */
   body.settings-open .transport,
@@ -1231,6 +1232,8 @@ canvas.spectro { width: 100%; height: 120px; display: block; }
 .readsize input[type="range"] { width: 110px; accent-color: var(--accent); cursor: pointer; }
 
 .transport { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 10px 0; }
+.transport .listen-speed { display: inline-flex; align-items: center; gap: 6px; }
+.transport .listen-speed .seg .lr { font-variant-numeric: tabular-nums; padding: 6px 9px; font-size: 12px; }
 /* Hold-and-scrub group: pause the chant and step back a word at a time to retry
    the stretch you fumbled, instead of restarting the pasuk. */
 .transport-scrub { display: inline-flex; gap: 4px; align-items: center; }

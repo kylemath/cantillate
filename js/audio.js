@@ -15,6 +15,37 @@ export function getCtx() {
   return ctx;
 }
 
+// Listen speed: the recorded chant (and the synth guide) can be played slower
+// without dropping pitch — the same idea as YouTube's 0.5× / 0.75×, except the
+// factors here are "this many times slower" because the Bereshit-voice readings
+// are quite a bit faster than the Devarim-voice ones and a learner needs time
+// to hear each word. 1 = normal; 1/1.5 and 1/1.75 are the two practice speeds.
+export const LISTEN_RATES = [
+  { id: '1', label: '1×', title: 'Normal speed', rate: 1 },
+  { id: '1.5', label: '1.5× slow', title: 'Play 1.5 times slower, keeping the same pitch', rate: 1 / 1.5 },
+  { id: '1.75', label: '1.75× slow', title: 'Play 1.75 times slower, keeping the same pitch', rate: 1 / 1.75 },
+];
+
+let listenRateId = '1';
+let listenRate = 1;
+
+export function getListenRate() { return listenRate; }
+export function getListenRateId() { return listenRateId; }
+export function listenRateOpt(id) {
+  return LISTEN_RATES.find((o) => o.id === id) || LISTEN_RATES[0];
+}
+export function setListenRateId(id) {
+  const opt = listenRateOpt(id);
+  listenRateId = opt.id;
+  listenRate = opt.rate;
+  return opt;
+}
+
+// Wall-clock seconds for `sec` of audio (or synth) at the current listen speed.
+function listenWall(sec) {
+  return sec / (listenRate || 1);
+}
+
 let current = null; // { osc, gain, stopAt }
 
 export function stopPlayback() {
@@ -36,7 +67,7 @@ export function playMelody(points, opts = {}) {
   stopPlayback();
 
   const sorted = [...points].sort((a, b) => a.t - b.t);
-  const dur = durationSec || Math.max(2.2, sorted.length * 0.32);
+  const dur = listenWall(durationSec || Math.max(2.2, sorted.length * 0.32));
 
   const osc = c.createOscillator();
   osc.type = 'triangle';
@@ -103,7 +134,7 @@ export function singMelody(segs, opts = {}) {
 
   const nw = segs.length || 1;
   const totalSyl = segs.reduce((a, s) => a + (s.syllables || 1), 0);
-  const dur = Math.max(1.4, totalSyl * 0.42);
+  const dur = listenWall(Math.max(1.4, totalSyl * 0.42));
   const t0 = c.currentTime + 0.06;
   const wordSlice = dur / nw;
 
@@ -181,7 +212,7 @@ export function singSteps(steps, opts = {}) {
   const c = getCtx();
   stopPlayback();
   if (!steps.length) { if (onEnd) onEnd(); return { durationSec, cancel: () => {} }; }
-  const dur = durationSec;
+  const dur = listenWall(durationSec);
   const t0 = c.currentTime + 0.06;
 
   const osc = c.createOscillator();

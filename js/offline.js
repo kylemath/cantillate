@@ -21,15 +21,18 @@ const STORE = 'audio';
 const objectUrls = new Map();
 
 let dbPromise = null;
+let idbBlocked = false;
 
 function openDb() {
+  if (idbBlocked) return Promise.resolve(null);
   if (dbPromise) return dbPromise;
-  dbPromise = new Promise((resolve, reject) => {
+  dbPromise = new Promise((resolve) => {
     let req;
     try {
       req = indexedDB.open(DB_NAME, DB_VERSION);
     } catch (e) {
-      reject(e);
+      idbBlocked = true;
+      resolve(null);
       return;
     }
     req.onupgradeneeded = () => {
@@ -39,28 +42,36 @@ function openDb() {
       }
     };
     req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
+    // Restricted contexts (some in-app browsers, sandboxed iframes) reject
+    // IndexedDB. Swallow it so a blocked store never surfaces as an uncaught
+    // promise — playback just uses the network path instead.
+    req.onerror = (ev) => {
+      if (ev && ev.preventDefault) ev.preventDefault();
+      idbBlocked = true;
+      dbPromise = null;
+      resolve(null);
+    };
   });
   return dbPromise;
 }
 
 function idbTx(mode, fn) {
-  return openDb().then(
-    (db) =>
-      new Promise((resolve, reject) => {
-        const tx = db.transaction(STORE, mode);
-        const store = tx.objectStore(STORE);
-        let result;
-        Promise.resolve(fn(store))
-          .then((r) => {
-            result = r;
-          })
-          .catch(reject);
-        tx.oncomplete = () => resolve(result);
-        tx.onerror = () => reject(tx.error);
-        tx.onabort = () => reject(tx.error);
-      })
-  );
+  return openDb().then((db) => {
+    if (!db) return undefined;
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE, mode);
+      const store = tx.objectStore(STORE);
+      let result;
+      Promise.resolve(fn(store))
+        .then((r) => {
+          result = r;
+        })
+        .catch(reject);
+      tx.oncomplete = () => resolve(result);
+      tx.onerror = () => reject(tx.error);
+      tx.onabort = () => reject(tx.error);
+    });
+  });
 }
 
 function reqAsPromise(req) {

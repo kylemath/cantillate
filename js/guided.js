@@ -751,6 +751,7 @@ function renderMenu() {
           <input type="range" id="gTextSize" min="0.8" max="2.4" step="0.1" value="${api.readScale()}" /></label>
         ${translitRowHtml()}
         ${sourceRowHtml()}
+        ${listenRateRowHtml()}
         <label class="g-row g-row-check"><span>Show the pitch analysis</span>
           <input type="checkbox" id="gAnalysis" ${api.analysisOn() ? 'checked' : ''} /></label>
         <button class="g-row-btn" id="gOffline">\u2b07 Save the audio for offline</button>
@@ -792,6 +793,19 @@ function sourceRowHtml() {
   }).join('');
   return `<label class="g-row"><span>Style</span>
           <select id="gAudioSource">${opts}</select></label>`;
+}
+
+function listenRateRowHtml() {
+  if (!api.listenRates) return '';
+  const rates = api.listenRates() || [];
+  if (!rates.length) return '';
+  const cur = api.listenRate ? api.listenRate() : '1';
+  const opts = rates.map((o) => {
+    const sel = o.id === cur ? ' selected' : '';
+    return `<option value="${escapeAttr(o.id)}"${sel}>${escapeHtml(o.label)}</option>`;
+  }).join('');
+  return `<label class="g-row"><span>Listen speed</span>
+          <select id="gListenRate" title="Play the recording slower without changing pitch">${opts}</select></label>`;
 }
 
 function translitRowHtml() {
@@ -1000,6 +1014,10 @@ function wireMenu() {
   const src = byId('gAudioSource');
   if (src) src.addEventListener('change', () => {
     if (api.setAudioSource) api.setAudioSource(src.value);
+  });
+  const lr = byId('gListenRate');
+  if (lr) lr.addEventListener('change', () => {
+    if (api.setListenRate) api.setListenRate(lr.value);
   });
   const an = byId('gAnalysis');
   if (an) an.addEventListener('change', () => api.setAnalysis(an.checked));

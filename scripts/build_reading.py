@@ -654,9 +654,9 @@ def main():
     os.makedirs(AUDIO_DIR, exist_ok=True)
     os.makedirs(DATA_DIR, exist_ok=True)
     print(f"== building '{slug}' ({len(sources)} audio source(s)) ==")
-    print("[1/3] text")
+    print("[1/4] text")
     verses, bounds = build_text(cfg)
-    print("[2/3] audio + pitch per source")
+    print("[2/4] audio + pitch per source")
     if not sources:
         print("  none: text-only reading; the coach line comes from the measured "
               "trope shapes for its style")
@@ -664,7 +664,12 @@ def main():
         print(f"  -- source '{src.get('id', DEFAULT_SOURCE)}' ({src.get('kind', 'pockettorah')}) --")
         audio_verses = build_audio(cfg, src, verses, bounds)
         extract_pitch(cfg, src, verses, audio_verses)
-    print("[3/3] register")
+    print("[3/4] pitch shards")
+    import split_pitch
+    for src in sources:
+        stem = out_name(cfg, src, "pitch.json")[:-len("_pitch.json")]
+        split_pitch.process_slug(stem)
+    print("[4/4] register")
     register(cfg, sources)
     # The trope drills draw their melody and their spliced recitation from
     # whatever is recorded, so a new reading immediately improves both. Torah and

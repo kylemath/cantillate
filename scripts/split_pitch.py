@@ -26,6 +26,20 @@ PITCH_DIR = os.path.join(DATA_DIR, "pitch")
 
 ROUND_DP = 4
 
+# Non-default audio sources write `data/<slug>_<id>_pitch.json`. Shards for
+# those live under data/pitch/<slug>/<id>/ so they match pitchIndexPath() in
+# js/app.js. Slim/raw monoliths keep the suffixed filename.
+KNOWN_SOURCE_IDS = ("teplitz", "teacher", "ptaudioonly")
+
+
+def parse_stem(stem):
+    """Split a *_pitch.json stem into (slug, source_id_or_None)."""
+    for sid in KNOWN_SOURCE_IDS:
+        tail = "_" + sid
+        if stem.endswith(tail):
+            return stem[:-len(tail)], sid
+    return stem, None
+
 
 def round_floats(obj):
     """Recursively round every float in a JSON-like structure to ROUND_DP."""
@@ -117,7 +131,9 @@ def process_slug(slug):
     raw_size = write_json(raw_path, raw_data)
 
     # (c/d) per-verse shards ------------------------------------------------
-    shard_dir = os.path.join(PITCH_DIR, slug)
+    reading_slug, sid = parse_stem(slug)
+    shard_dir = (os.path.join(PITCH_DIR, reading_slug, sid) if sid
+                 else os.path.join(PITCH_DIR, reading_slug))
     os.makedirs(shard_dir, exist_ok=True)
 
     verse_ints = []
@@ -131,7 +147,7 @@ def process_slug(slug):
 
     # (e) manifest ----------------------------------------------------------
     manifest = {
-        "slug": data.get("slug", slug),
+        "slug": data.get("slug", reading_slug),
         "verses": sorted(verse_ints),
         "hasRaw": True,
     }

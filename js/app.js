@@ -3,10 +3,11 @@ import { transliterate } from './translit.js';
 import { buildLineMelody, splitPhrases, splitAtRank, RANK, RANK_LABELS, rankFor, FAMILIES,
   markGlyph, NAMES, motifFor, nameFor, SOF_PASUK_NAME, sofPasukMotif,
   STYLES, DEFAULT_STYLE, styleOf } from './trope.js';
-import { singSteps, playTone, stopPlayback } from './audio.js';
+import { singSteps, playTone, stopPlayback, LISTEN_RATES, getListenRate, getListenRateId,
+  setListenRateId } from './audio.js';
 import { playSegment, stopVerseAudio, pauseVerseAudio, resumeVerseAudio, seekVerseAudio,
   previewVerseAudio, isVerseAudioLoaded, isVerseAudioPaused, verseAudioProgress,
-  setAudioCuts } from './realaudio.js';
+  setAudioCuts, syncListenRate } from './realaudio.js';
 import { startMic, stopMic } from './pitch.js';
 import { ContourView, Spectrogram, scoreTrail, scoreNotes, stepsToPoints, sampleContour } from './viz.js';
 import { LEVELS, levelById, VERSE_MODES, skillForLevel, DIVISIONS, divisionByRank,
@@ -17,7 +18,7 @@ import * as store from './store.js';
 import * as auth from './auth.js';
 import * as scores from './scores.js';
 import * as offline from './offline.js';
-import { loadTikkunData, renderTikkunPages, TIKKUN_DATA_URL } from './tikkun.js';
+import { loadTikkunData, renderTikkunPages, renderTikkunPageHtml, visibleTikkunPages, tikkunPageForVerse, TIKKUN_DATA_URL } from './tikkun.js';
 import { justifyTikkun, wrapStretchHtml, STRETCHABLE } from './justify.js';
 
 // The plan, the guided surface and the wizard are only reachable from a reading
@@ -156,6 +157,7 @@ const state = {
   //   'contour' = melody/shape scorer (scoreTrail, the original)
   //   'gh'      = Guitar-Hero note-hit scorer (scoreNotes)
   scoreModel: 'contour',
+  listenRate: '1',    // LISTEN_RATES id: '1' | '1.5' | '1.75' (times slower)
 };
 
 // The service-worker auto-update consults this before it reloads the page (see
@@ -385,6 +387,8 @@ async function init() {
   sel.addEventListener('change', () => loadData(sel.value));
   $('tonic').addEventListener('change', (e) => { state.tonicHz = parseFloat(e.target.value); });
   $('audioSource').addEventListener('change', (e) => { switchAudioSource(e.target.value); });
+  initListenRate();
+  wireListenRateSegs(document);
 
   bindToggle('tgVowels', () => { state.showVowels = !state.showVowels; refreshText(); });
   bindToggle('tgTaamim', () => { state.showTaamim = !state.showTaamim; refreshText(); });
@@ -742,6 +746,9 @@ function guidedApi() {
     audioSources: () => (state.sources || []).slice(),
     audioSource: () => state.audioSource,
     setAudioSource: (sid) => switchAudioSource(sid),
+    listenRate: () => getListenRateId(),
+    listenRates: () => LISTEN_RATES.slice(),
+    setListenRate: (id) => applyListenRate(id),
     download: () => { const b = $('btnOffline'); if (b && !b.hidden) b.click(); },
 
     // The account, for a reader who never sees the workshop's topbar: guided mode
@@ -2242,6 +2249,7 @@ function fitScrollPages() {
       box.dataset.justifiedFor = widthKey;
     }
     if (box.dataset.scrollToStart === '1') scrollTikkunStartIntoView();
+    prefetchTikkunAhead(box);
   };
   // Same width and same glyph HTML: the stretch spans are already the right
   // size. Still honour a pending scroll-to-start (the pane may have just
@@ -2494,6 +2502,10 @@ function transportLive() {
 function transportPos() {
   if (state.paused) return state.pausedAt;
   if (state.recording) {
+    if (state._singAlong && isVerseAudioLoaded()) {
+      const p = verseAudioProgress();
+      if (p != null) return p;
+    }
     const dur = state.expectedDur || unitDuration();
     return clamp01((performance.now() - state.recStart) / 1000 / (dur || 1));
   }
@@ -2628,9 +2640,16 @@ function resetTransport() {
 // treat it like a single window.
 
 function aliyahElapsed() {
-  if (!state._aliyaT0) return 0;
   if (state.paused) return state._aliyaPausedAt || 0;
-  return (performance.now() - state._aliyaT0) / 1000;
+  // Prefer the audio element's own clock when a verse is loaded: listen-speed
+  // stretches wall time, and currentTime still walks the recording in seconds.
+  if (state._aliyaSeg && isVerseAudioLoaded()) {
+    const p = verseAudioProgress();
+    if (p != null) return state._aliyaSeg.gStart + p * state._aliyaSeg.dur;
+  }
+  if (!state._aliyaT0) return 0;
+  const r = (state._aliyaRunning === 'rec' && !state._aliyaDuet) ? 1 : (getListenRate() || 1);
+  return (performance.now() - state._aliyaT0) / 1000 * r;
 }
 
 function aliyahSegAtPos() {
@@ -2662,7 +2681,8 @@ function resumeAliyahTimers(heldMs) {
   const tl = state._aliyaTl;
   if (!tl) return;
   if (state._aliyaRunning === 'rec') {
-    const remaining = Math.max(400, (tl.total - aliyahElapsed()) * 1000 + 900);
+    const recRate = state._aliyaDuet ? (getListenRate() || 1) : 1;
+    const remaining = Math.max(400, (tl.total - aliyahElapsed()) * 1000 / recRate + 900);
     state._aliyaTimer = setTimeout(() => finishAliyahRecord(tl), remaining);
     if (state._aliyaDuet) scheduleAliyahDuet(tl, state._aliyaT0);
   }
@@ -2704,7 +2724,8 @@ function playUnit() {
   resetTransport();
   syncTransportUI();
   $('result').innerHTML = '<span class="hint">Playing this ' + (state.unitSegs.length > 1 ? 'unit (with the pauses between words)' : 'word') + ' from the recording… Space holds it, <b>,</b> / <b>.</b> step a word.</span>';
-  playSegment(info.file, coach.start, coach.end, {
+  const late = state.unitSegs.length === 1 ? wordWindowLate(info.onsets) : 0;
+  playSegment(info.file, coach.start + late, coach.end + late, {
     onProgress: (t01) => { state.view.setPlayhead(t01); highlightWord(wordAtTime(coach, t01)); scrollFollow(t01); },
     onAnalysis: (a) => onRealAnalysis(a, tonic),
     onEnd: onRealEnd,
@@ -3104,6 +3125,53 @@ function syncPortionUI() {
     const c = $(id);
     if (c) c.hidden = fixed;
   }
+}
+
+// ---------------------------------------------------------------------------
+// Listen speed. Slows every recorded voice (and the synth guide) while keeping
+// pitch — YouTube-style — so a faster reader (the Bereshit PocketTorah voice)
+// can be heard word by word. Applied in realaudio.js / audio.js; this is the
+// pref + the control that lives in Settings, on the transport, and in guided.
+// ---------------------------------------------------------------------------
+
+const LISTEN_RATE_KEY = 'cantillate.listenRate';
+
+function initListenRate() {
+  let id = '1';
+  try { id = localStorage.getItem(LISTEN_RATE_KEY) || '1'; } catch (e) { /* private mode */ }
+  applyListenRate(id, { persist: false });
+}
+
+function applyListenRate(id, opts = {}) {
+  const opt = setListenRateId(id);
+  state.listenRate = opt.id;
+  if (opts.persist !== false) {
+    try { localStorage.setItem(LISTEN_RATE_KEY, opt.id); } catch (e) { /* private mode */ }
+  }
+  syncListenRate();
+  document.querySelectorAll('.seg[data-listen-rate] .lr').forEach((b) => {
+    b.classList.toggle('on', b.dataset.lr === opt.id);
+  });
+  const g = document.getElementById('gListenRate');
+  if (g) g.value = opt.id;
+}
+
+function listenRateSegHtml() {
+  const cur = getListenRateId();
+  const btns = LISTEN_RATES.map((o) =>
+    `<button type="button" class="lr${o.id === cur ? ' on' : ''}" data-lr="${o.id}" title="${o.title}">${o.label}</button>`
+  ).join('');
+  return `<span class="seg" data-listen-rate="1" title="Play the recording slower without changing pitch">${btns}</span>`;
+}
+
+function wireListenRateSegs(root) {
+  (root || document).querySelectorAll('.seg[data-listen-rate]').forEach((seg) => {
+    if (seg.dataset.wired) return;
+    seg.dataset.wired = '1';
+    seg.querySelectorAll('.lr').forEach((b) => {
+      b.addEventListener('click', () => applyListenRate(b.dataset.lr));
+    });
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -4234,22 +4302,26 @@ async function refreshOfflineButton() {
   const btn = $('btnOffline');
   if (!btn) return;
   if (!offline.offlineSupported()) { btn.hidden = true; return; }
-  const files = readingAudioFiles();
-  if (!files.length) { btn.hidden = true; return; } // no recorded chant for this reading
-  btn.hidden = false;
-  if (_offlineBusy) return;
-  const st = await offline.readingStatus(files);
-  btn.dataset.slug = state.slug;
-  if (st.complete) {
-    btn.textContent = '✓ Offline';
-    btn.classList.add('on');
-    btn.title = 'This reading is downloaded — its chant plays with no network. Click to remove the download and free space.';
-  } else {
-    const est = await offline.estimateReadingSize(files);
-    const size = est.known && est.bytes ? ` (${offline.formatBytes(est.bytes)})` : '';
-    btn.textContent = st.cached > 0 ? `⬇ Offline (${st.cached}/${st.total})` : `⬇ Offline${size}`;
-    btn.classList.remove('on');
-    btn.title = 'Download this reading\u2019s audio so it plays with no network (minimal data after the first download).';
+  try {
+    const files = readingAudioFiles();
+    if (!files.length) { btn.hidden = true; return; } // no recorded chant for this reading
+    btn.hidden = false;
+    if (_offlineBusy) return;
+    const st = await offline.readingStatus(files);
+    btn.dataset.slug = state.slug;
+    if (st.complete) {
+      btn.textContent = '✓ Offline';
+      btn.classList.add('on');
+      btn.title = 'This reading is downloaded — its chant plays with no network. Click to remove the download and free space.';
+    } else {
+      const est = await offline.estimateReadingSize(files);
+      const size = est.known && est.bytes ? ` (${offline.formatBytes(est.bytes)})` : '';
+      btn.textContent = st.cached > 0 ? `⬇ Offline (${st.cached}/${st.total})` : `⬇ Offline${size}`;
+      btn.classList.remove('on');
+      btn.title = 'Download this reading\u2019s audio so it plays with no network (minimal data after the first download).';
+    }
+  } catch (e) {
+    btn.hidden = true;
   }
 }
 
@@ -5049,17 +5121,21 @@ function scrollTikkunStartIntoView() {
   const pane = $('scrollpane');
   const box = $('scrollVerses');
   if (!pane || !box) return;
+  const startOf = (root) => root.querySelector('.range-start')
+    || (state.selectedVerse != null
+      ? root.querySelector(`.sw[data-verse="${state.selectedVerse}"]`)
+      : null);
   const tracks = [...box.querySelectorAll('.scroll-track')];
   if (tracks.length) {
     tracks.forEach((track) => {
-      const start = track.querySelector('.range-start');
+      const start = startOf(track);
       if (!start || !track.clientHeight) return;
       const delta = start.getBoundingClientRect().top - track.getBoundingClientRect().top;
       track.scrollTop = Math.max(0, track.scrollTop + delta - 34);
     });
   } else {
     const scroller = pane.querySelector('.pane-body') || pane;
-    const start = box.querySelector('.range-start');
+    const start = startOf(box);
     if (!start || !scroller.clientHeight) return;
     const delta = start.getBoundingClientRect().top - scroller.getBoundingClientRect().top;
     scroller.scrollTop = Math.max(0, scroller.scrollTop + delta - 48);
@@ -5157,14 +5233,207 @@ function pointedTikkunWordRender(word) {
 // back to null exactly when renderTikkunPages does (fixed page data not yet
 // loaded, or the range isn't covered by it), so callers can chain their own
 // naturally-wrapping fallback.
-function renderPointedTikkunHtml({ focusStart, focusEnd, contextStart, contextEnd, selectedVerse, columnClass, columnId }) {
+function renderPointedTikkunHtml({ focusStart, focusEnd, contextStart, contextEnd, selectedVerse, columnClass, columnId, hydratePages }) {
   const tikkun = renderTikkunPages(state.tikkun, state.data, {
     focusStart, focusEnd, contextStart, contextEnd, selectedVerse,
     columnClass: `pointed-tikkun${columnClass ? ` ${columnClass}` : ''}`,
     columnId,
     renderWord: pointedTikkunWordRender,
+    hydratePages,
   });
   return tikkun ? tikkun.html : null;
+}
+
+// Windowed tikkun: paint the current page immediately, then fill in the next
+// page once fonts/justify have settled. Every other in-range page stays a
+// height-matched stub so an annual (or a long triennial third) does not put
+// thousands of word nodes — doubled in dual view — into the DOM.
+const TIKKUN_AHEAD = 1;
+let _tikkunWindow = null;
+
+function tikkunRangeOf(focusStart, focusEnd, contextStart, contextEnd) {
+  return {
+    focusStart, focusEnd,
+    contextStart: contextStart != null ? contextStart : focusStart,
+    contextEnd: contextEnd != null ? contextEnd : focusEnd,
+  };
+}
+
+function tikkunWantedPages(pageNumbers, current) {
+  const idx = pageNumbers.indexOf(current);
+  const start = idx >= 0 ? idx : 0;
+  const out = [];
+  for (let i = 0; i <= TIKKUN_AHEAD; i++) {
+    const n = pageNumbers[start + i];
+    if (n != null) out.push(n);
+  }
+  return out;
+}
+
+function replaceTikkunShell(column, pageNumber, html) {
+  const shell = column.querySelector(`.scroll-page-shell[data-page="${pageNumber}"]`);
+  if (!shell || !html) return null;
+  const tmpl = document.createElement('template');
+  tmpl.innerHTML = html.trim();
+  const next = tmpl.content.firstElementChild;
+  if (!next) return null;
+  shell.replaceWith(next);
+  return next;
+}
+
+function tikkunColumnOpts(win, column) {
+  if (column.classList.contains('pointed-tikkun')) return win.pointedOpts;
+  return win.stamOpts;
+}
+
+function retouchScrollChrome(box) {
+  if (!box) return;
+  updateScrollSelection(box, state.selectedVerse);
+  applyScrollWordHits();
+  applyScrollOverlay();
+  if (state.aliyah) {
+    if (state._aliyaTl) markAliyahEnds(state._aliyaTl, !!state._aliyaEnded);
+    if (state._aliyaWordHits) applyAliyahWordHits(state._aliyaWordHits);
+  }
+}
+
+function applyTikkunWindow(box, current, { includeAhead = true } = {}) {
+  const win = _tikkunWindow;
+  if (!win || !box || !state.tikkun || !state.data) return;
+  if (box.dataset.layoutKey !== win.layoutKey) return;
+  const pageNumbers = win.pageNumbers;
+  if (!pageNumbers.length) return;
+  const currentPage = pageNumbers.includes(current) ? current : pageNumbers[0];
+  const wanted = includeAhead
+    ? new Set(tikkunWantedPages(pageNumbers, currentPage))
+    : new Set([currentPage]);
+  const columns = [...box.querySelectorAll('.tikkun-column')];
+  if (!columns.length) return;
+  let painted = false;
+  columns.forEach((column) => {
+    const opts = tikkunColumnOpts(win, column);
+    if (!opts) return;
+    pageNumbers.forEach((n) => {
+      const shell = column.querySelector(`.scroll-page-shell[data-page="${n}"]`);
+      if (!shell) return;
+      const isStub = shell.hasAttribute('data-stub');
+      const want = wanted.has(n);
+      if (want && isStub) {
+        const html = renderTikkunPageHtml(state.tikkun, state.data, { ...opts, stub: false }, n);
+        const el = replaceTikkunShell(column, n, html);
+        if (el) {
+          justifyTikkun(el);
+          painted = true;
+        }
+      } else if (!want && !isStub) {
+        const html = renderTikkunPageHtml(state.tikkun, state.data, { ...opts, stub: true }, n);
+        replaceTikkunShell(column, n, html);
+      }
+    });
+  });
+  win.current = currentPage;
+  win.hydrated = wanted;
+  box.dataset.tikkunCurrent = String(currentPage);
+  if (painted) retouchScrollChrome(box);
+}
+
+function prefetchTikkunAhead(box) {
+  const win = _tikkunWindow;
+  if (!win || !box) return;
+  const token = `${win.layoutKey}:${win.current}`;
+  if (box.dataset.tikkunPrefetch === token) return;
+  box.dataset.tikkunPrefetch = token;
+  const run = () => {
+    if (_tikkunWindow !== win) return;
+    if (box.dataset.layoutKey !== win.layoutKey) return;
+    applyTikkunWindow(box, win.current, { includeAhead: true });
+  };
+  if (typeof requestIdleCallback === 'function') {
+    requestIdleCallback(run, { timeout: 500 });
+  } else {
+    setTimeout(run, 0);
+  }
+}
+
+function tikkunPageAtScroller(scroller, column) {
+  const shells = column.querySelectorAll('.scroll-page-shell');
+  if (!shells.length) return null;
+  const top = scroller.getBoundingClientRect().top + 36;
+  let current = shells[0];
+  for (const shell of shells) {
+    if (shell.getBoundingClientRect().top <= top) current = shell;
+    else break;
+  }
+  const n = parseInt(current.dataset.page, 10);
+  return Number.isFinite(n) ? n : null;
+}
+
+function wireTikkunWindowScroll(box) {
+  if (!box || box.dataset.tikkunWinBound) return;
+  box.dataset.tikkunWinBound = '1';
+  let scrollRaf = 0;
+  const onScroll = (scroller) => {
+    if (scrollRaf) return;
+    scrollRaf = requestAnimationFrame(() => {
+      scrollRaf = 0;
+      const win = _tikkunWindow;
+      if (!win || box.dataset.layoutKey !== win.layoutKey) return;
+      const column = (scroller && scroller.querySelector && scroller.querySelector('.tikkun-column'))
+        || box.querySelector('.tikkun-column');
+      if (!column) return;
+      const page = tikkunPageAtScroller(scroller, column);
+      if (page == null || page === win.current) return;
+      applyTikkunWindow(box, page, { includeAhead: false });
+      prefetchTikkunAhead(box);
+    });
+  };
+  // Dual: each .scroll-track is its own scroller (the event does not bubble
+  // from overflow children, so listen in capture on the pane).
+  box.addEventListener('scroll', (e) => {
+    const t = e.target;
+    if (t && t.classList && t.classList.contains('scroll-track')) onScroll(t);
+  }, { passive: true, capture: true });
+  // Single-column: the pane-body, not #scrollVerses, is what actually scrolls.
+  const pane = $('scrollpane');
+  const body = pane && pane.querySelector('.pane-body');
+  if (body && !body.dataset.tikkunWinBound) {
+    body.dataset.tikkunWinBound = '1';
+    body.addEventListener('scroll', () => {
+      if (state.scrollTextMode === 'dual') return;
+      onScroll(body);
+    }, { passive: true });
+  }
+}
+
+function ensureTikkunWindowForVerse(box, verseN) {
+  const win = _tikkunWindow;
+  if (!win || !box || !state.tikkun) return;
+  const page = tikkunPageForVerse(state.tikkun, state.data, win.rangeOpts, verseN);
+  if (!page) return;
+  if (page.number === win.current && win.hydrated && win.hydrated.has(page.number)) return;
+  applyTikkunWindow(box, page.number, { includeAhead: false });
+  prefetchTikkunAhead(box);
+}
+
+function beginTikkunWindow({ box, layoutKey, rangeOpts, stamOpts, pointedOpts, selectedVerse }) {
+  const pages = visibleTikkunPages(state.tikkun, state.data, rangeOpts);
+  const pageNumbers = pages.map((p) => p.number);
+  const currentPage = tikkunPageForVerse(state.tikkun, state.data, rangeOpts, selectedVerse);
+  const current = currentPage ? currentPage.number : pageNumbers[0];
+  const hydratePages = current != null ? [current] : [];
+  _tikkunWindow = {
+    layoutKey,
+    pageNumbers,
+    current,
+    hydrated: new Set(hydratePages),
+    rangeOpts,
+    stamOpts,
+    pointedOpts,
+  };
+  box.dataset.tikkunCurrent = current != null ? String(current) : '';
+  delete box.dataset.tikkunPrefetch;
+  wireTikkunWindowScroll(box);
+  return { hydratePages, pageNumbers, current };
 }
 
 // A full-reading counterpart to the STA"M column: the same verse/word mapping,
@@ -5274,6 +5543,7 @@ function renderScrollPane() {
     box.innerHTML = '';
     delete box.dataset.layoutKey;
     delete box.dataset.justifiedFor;
+    _tikkunWindow = null;
     return;
   }
   const [start, end] = divisionRange();
@@ -5287,9 +5557,26 @@ function renderScrollPane() {
     updateScrollSelection(box, state.selectedVerse);
     applyScrollWordHits();
     applyScrollOverlay();
+    if (state.tikkun) ensureTikkunWindowForVerse(box, state.selectedVerse);
     return;
   }
   const previousKey = box.dataset.layoutKey;
+  const rangeOpts = tikkunRangeOf(start, end, start, end);
+  const inTikkun = !!(state.tikkun && visibleTikkunPages(state.tikkun, state.data, rangeOpts).length);
+  let hydratePages;
+  if (inTikkun) {
+    hydratePages = beginTikkunWindow({
+      box, layoutKey, rangeOpts,
+      stamOpts: { ...rangeOpts, selectedVerse: state.selectedVerse },
+      pointedOpts: state.scrollTextMode === 'stam' ? null : {
+        ...rangeOpts, selectedVerse: state.selectedVerse,
+        renderWord: pointedTikkunWordRender,
+      },
+      selectedVerse: state.selectedVerse,
+    }).hydratePages;
+  } else {
+    _tikkunWindow = null;
+  }
   let stamHtml = '';
   if (state.scrollTextMode !== 'pointed') {
     const tikkun = renderTikkunPages(state.tikkun, state.data, {
@@ -5298,6 +5585,7 @@ function renderScrollPane() {
       contextStart: start,
       contextEnd: end,
       selectedVerse: state.selectedVerse,
+      hydratePages,
     });
     if (tikkun) {
       stamHtml = tikkun.html;
@@ -5318,6 +5606,7 @@ function renderScrollPane() {
   const pointedHtml = state.scrollTextMode === 'stam' ? '' : (renderPointedTikkunHtml({
     focusStart: start, focusEnd: end, contextStart: start, contextEnd: end,
     selectedVerse: state.selectedVerse, columnId: 'pointedScroll',
+    hydratePages,
   }) || renderPointedScrollColumn({
     from: start, to: end, focusStart: start, focusEnd: end,
     selectedVerse: state.selectedVerse, id: 'pointedScroll',
@@ -5405,6 +5694,7 @@ function renderAliyahScroll(box) {
     box.innerHTML = '';
     delete box.dataset.layoutKey;
     delete box.dataset.justifiedFor;
+    _tikkunWindow = null;
     return;
   }
   const maxV = state.data.verses.length;
@@ -5424,7 +5714,24 @@ function renderAliyahScroll(box) {
     updateScrollSelection(box, state.selectedVerse);
     if (state._aliyaTl) markAliyahEnds(state._aliyaTl, !!state._aliyaEnded);
     if (state._aliyaWordHits) applyAliyahWordHits(state._aliyaWordHits);
+    if (state.tikkun) ensureTikkunWindowForVerse(box, state.selectedVerse);
     return;
+  }
+  const rangeOpts = tikkunRangeOf(first, last, from, to);
+  const inTikkun = !!(state.tikkun && visibleTikkunPages(state.tikkun, state.data, rangeOpts).length);
+  let hydratePages;
+  if (inTikkun) {
+    hydratePages = beginTikkunWindow({
+      box, layoutKey, rangeOpts,
+      stamOpts: { ...rangeOpts, selectedVerse: state.selectedVerse, columnClass: 'aliyah-scroll' },
+      pointedOpts: state.scrollTextMode === 'stam' ? null : {
+        ...rangeOpts, selectedVerse: state.selectedVerse,
+        renderWord: pointedTikkunWordRender, columnClass: 'aliyah-scroll',
+      },
+      selectedVerse: first,
+    }).hydratePages;
+  } else {
+    _tikkunWindow = null;
   }
   let stamHtml = '';
   if (state.scrollTextMode !== 'pointed') {
@@ -5436,6 +5743,7 @@ function renderAliyahScroll(box) {
       selectedVerse: state.selectedVerse,
       columnClass: 'aliyah-scroll',
       columnId: 'aliyahScroll',
+      hydratePages,
     });
     if (tikkun) {
       stamHtml = tikkun.html;
@@ -5456,6 +5764,7 @@ function renderAliyahScroll(box) {
   const pointedHtml = state.scrollTextMode === 'stam' ? '' : (renderPointedTikkunHtml({
     focusStart: first, focusEnd: last, contextStart: from, contextEnd: to,
     selectedVerse: state.selectedVerse, columnClass: 'aliyah-scroll', columnId: 'aliyahPointed',
+    hydratePages,
   }) || renderPointedScrollColumn({
     from, to, focusStart: first, focusEnd: last,
     selectedVerse: state.selectedVerse, id: 'aliyahPointed',
@@ -5849,6 +6158,7 @@ function renderAliyahView() {
     </div>
     <div class="aliyah-top">
     <div class="transport">
+      <span class="listen-speed" title="Play the recording slower without changing pitch">${listenRateSegHtml()}</span>
       <button class="primary" id="alGuide" title="Play the real chant across the whole ${chunkNoun(a)} (Space)">▶ Guided read (real chant)</button>
       <button class="warn" id="alRec" title="Record your solo chant (↓)">● Record my ${chunkNoun(a)}</button>
       <button id="alDuet" title="Sing along with the real chant while recording (↑)">⇅ Duet (sing along)</button>
@@ -5893,6 +6203,7 @@ function renderAliyahView() {
     if (state.selectedVerse) renderPractice();
     else { $('practice').classList.remove('aliyah-fill'); $('practice').innerHTML = '<p class="empty">Select a verse on the left to begin practicing.</p>'; }
   });
+  wireListenRateSegs(p);
   $('alGuide').addEventListener('click', () => playAliyahGuided(tl));
   $('alRec').addEventListener('click', () => recordAliyahRun(tl));
   $('alDuet').addEventListener('click', () => recordAliyahRun(tl, { duet: true }));
@@ -6027,6 +6338,7 @@ function paintWordTint(box, verseN, widx, frac) {
 function stopAliyah() {
   state._aliyaRunning = null;
   state._aliyaDuet = false;
+  state._aliyaSeg = null;
   window.__cantillateBusy = false;
   clearTimeout(state._aliyaTimer);
   if (state._aliyaGuideTimers) { state._aliyaGuideTimers.forEach(clearTimeout); state._aliyaGuideTimers = []; }
@@ -6054,7 +6366,9 @@ function playAliyahGuided(tl) {
     if (!seg.file) { i++; playNext(); return; }
     // Anchor the shared clock to this verse's slot so pausing and stepping resolve
     // to the right segment while the guided read chains through the aliyah.
-    state._aliyaT0 = performance.now() - seg.gStart * 1000;
+    state._aliyaSeg = seg;
+    const r = getListenRate() || 1;
+    state._aliyaT0 = performance.now() - seg.gStart * 1000 / r;
     $('aliyaResult').innerHTML = `<span class="hint">Reading verse ${seg.n}… Space holds it, <b>,</b> / <b>.</b> step a word.</span>`;
     playSegment(seg.file, seg.aStart, seg.aEnd, {
       onProgress: (t01) => { if (seg.coach) highlightAliyah(seg.n, wordAtTime(seg.coach, t01)); },
@@ -6123,7 +6437,7 @@ async function recordAliyahRun(tl, opts = {}) {
     if (state.paused) return; // held mid-take: the clock and the samples both stop
     const now = performance.now();
     if (now < state._aliyaT0) return;
-    const tG = (now - state._aliyaT0) / 1000;
+    const tG = aliyahElapsed();
     if (tG >= tl.total) { finishAliyahRecord(tl); return; }
     state._aliyaSamples.push({ tG, hz: hz > 0 ? hz : 0, rms });
     const seg = tl.segs.find((s) => tG >= s.gStart && tG < s.gEnd);
@@ -6152,12 +6466,14 @@ async function recordAliyahRun(tl, opts = {}) {
   }, () => {});
   const t0 = Math.max(planned, performance.now() + 250);
   state._aliyaT0 = t0;
+  state._aliyaSeg = null;
   // Duet: play the real chant in time with your take, one segment per verse,
   // each scheduled at its slot on the shared timeline so the two stay aligned —
   // against the same anchor as the take, or the guide sings ahead of the yad.
   if (duet) scheduleAliyahDuet(tl, t0);
+  const recRate = duet ? (getListenRate() || 1) : 1;
   state._aliyaTimer = setTimeout(() => finishAliyahRecord(tl),
-    Math.max(0, t0 - performance.now()) + tl.total * 1000 + 900);
+    Math.max(0, t0 - performance.now()) + tl.total * 1000 / recRate + 900);
   syncTransportUI();
 }
 
@@ -6168,12 +6484,14 @@ function scheduleAliyahDuet(tl, t0) {
   if (state._aliyaGuideTimers) state._aliyaGuideTimers.forEach(clearTimeout);
   state._aliyaGuideTimers = [];
   const now = performance.now();
+  const r = getListenRate() || 1;
   for (const seg of tl.segs) {
     if (!seg.file) continue;
-    const at = t0 + seg.gStart * 1000;
-    if (at + seg.dur * 1000 < now) continue; // already sung past this verse
+    const at = t0 + seg.gStart * 1000 / r;
+    if (at + seg.dur * 1000 / r < now) continue; // already sung past this verse
     state._aliyaGuideTimers.push(setTimeout(() => {
       if (state._aliyaRunning !== 'rec' || state.paused) return;
+      state._aliyaSeg = seg;
       playSegment(seg.file, seg.aStart, seg.aEnd, { onEnd: () => {}, onError: () => {} });
     }, Math.max(0, at - now)));
   }
@@ -6599,6 +6917,7 @@ function renderPractice() {
       ${hasReal ? `<button class="primary" id="btnReal">♪ Hear real chant (verse)</button>` : ''}
       ${hasReal ? `<button id="btnRealWord">♪ Hear this ${level.unit === 'word' ? 'word' : level.unit} (real)</button>` : ''}
       <button class="${hasReal ? '' : 'primary'}" id="btnPlay">${state.drill ? '▶ Sing these words' : '▶ Hear voice guide'}</button>
+      <span class="listen-speed" title="Play the recording slower without changing pitch">${listenRateSegHtml()}</span>
       ${state.drill ? `<button id="btnRecite" title="Find the same accents in the recorded readings and splice them together. A human voice, but different words — the drill's own words were never recorded.">🎤 Same tropes, real voice</button>` : ''}
       <button id="btnTonic">Give me the tonic</button>
       <button class="warn" id="btnRec">● Record my try</button>
@@ -6725,6 +7044,7 @@ function renderPractice() {
   $('btnStepBack').addEventListener('click', () => stepWord(-1));
   $('btnStepFwd').addEventListener('click', () => stepWord(1));
   $('btnStop').addEventListener('click', stopAll);
+  wireListenRateSegs(p);
   syncTransportUI();
   const btnAnalysis = $('btnAnalysis');
   if (btnAnalysis) btnAnalysis.addEventListener('click', toggleAnalysis);
@@ -6968,7 +7288,22 @@ function wordTimeRange(verseN, tokenIndex) {
     const avg = gaps.length ? gaps.reduce((x, y) => x + y, 0) / gaps.length : 1.0;
     end = start + Math.max(0.6, avg);
   }
-  return { file: info.file, start, end };
+  // The Devarim-voice labels sit on a pause; the faster Bereshit-voice chant
+  // has almost no gap, so a hard cut at the next onset still holds the previous
+  // word's tail and loses this word's ending. Slide the isolated-word window
+  // later by a fraction of the typical gap. Verse playback is unchanged.
+  const late = wordWindowLate(onsets);
+  return { file: info.file, start: start + late, end: end + late };
+}
+
+function wordWindowLate(onsets) {
+  if (!onsets || onsets.length < 2) return 0;
+  const gaps = [];
+  for (let i = 1; i < onsets.length; i++) gaps.push(onsets[i] - onsets[i - 1]);
+  gaps.sort((a, b) => a - b);
+  const med = gaps[(gaps.length / 2) | 0];
+  if (med >= 1.2) return 0;
+  return Math.min(0.22, Math.max(0.08, (1.2 - med) * 0.5));
 }
 
 // Focus a single word: switch to single-word mode, load that word's coach line
@@ -7557,6 +7892,7 @@ async function startRecording(opts = {}) {
     : '<span class="hint">Recording… start on any comfortable pitch; your first note is matched to the coach, so just follow the shape.</span>';
 
   const dur = unitDuration();
+  const listen = getListenRate() || 1;
   state.expectedDur = dur;
   const bounds = state.coach ? state.coach.wordBounds : [0];
   // Sing-along guide choice: single words (early levels) use the clean synth
@@ -7566,7 +7902,8 @@ async function startRecording(opts = {}) {
   // to the audio's true start (below) so the two stay in sync despite decode lag.
   const voiceGuide = singAlong && (level.unit === 'phrase' || level.unit === 'line')
     && !!verseAudio(state.selectedVerse) && !!state.coach;
-  const leadIn = singAlong ? (voiceGuide ? 0 : 500) : (level.mode === 'listen' ? dur * 1000 + 250 : 250);
+  const leadIn = singAlong ? (voiceGuide ? 0 : 500)
+    : (level.mode === 'listen' ? dur * 1000 / listen + 250 : 250);
   // Where the window would open on a warm mic: the lead-in runs from here (in
   // listen mode it counts off the target playing above), but the clock itself is
   // only started once the mic is live (below).
@@ -7581,7 +7918,10 @@ async function startRecording(opts = {}) {
     if (state.paused) return; // held mid-take: the clock and the trail both stop
     const now = performance.now();
     if (now < state.recStart) { return; } // lead-in; let playback drive the cue
-    const t01 = (now - state.recStart) / 1000 / dur;
+    // Sing-along with the recording: t01 comes from the audio clock so a slower
+    // listen speed keeps the cue, the karaoke and the take on the same word.
+    const audioT = (voiceGuide && isVerseAudioLoaded()) ? verseAudioProgress() : null;
+    const t01 = audioT != null ? audioT : (now - state.recStart) / 1000 / dur;
     if (t01 >= 1) { finishRecording(); return; }
     state.view.setPlayhead(t01);
     const liveWi = wordAtTime(state.coach, t01);
@@ -7661,7 +8001,8 @@ async function startRecording(opts = {}) {
   // this is a backstop, and for the voice guide it also covers the case where the
   // audio never starts (recStart would otherwise stay in the future).
   const base = voiceGuide ? (performance.now() + 3500) : state.recStart;
-  const stopIn = Math.max(0, base - performance.now()) + dur * 1000 + 800;
+  const recRate = voiceGuide ? listen : 1;
+  const stopIn = Math.max(0, base - performance.now()) + dur * 1000 / recRate + 800;
   state._recTimer = setTimeout(finishRecording, stopIn);
 }
 

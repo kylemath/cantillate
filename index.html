@@ -133,6 +133,14 @@
             <button class="ov" data-ov="verse">Verse</button>
           </span>
         </div>
+        <div class="set-row" id="listenRateRow">
+          <span class="label">Listen speed</span>
+          <span class="seg" data-listen-rate="1" id="listenRateSeg" title="Play the recorded chant slower without changing pitch, like YouTube">
+            <button type="button" class="lr on" data-lr="1" title="Normal speed">1×</button>
+            <button type="button" class="lr" data-lr="1.5" title="Play 1.5 times slower, keeping the same pitch">1.5× slow</button>
+            <button type="button" class="lr" data-lr="1.75" title="Play 1.75 times slower, keeping the same pitch">1.75× slow</button>
+          </span>
+        </div>
         <div class="set-row">
           <span class="label">Scoring</span>
           <span class="seg" id="scoreModelSeg" title="Which scoring model counts (both are always shown side by side for testing). Melody = pitch-shape match; Note-hit = Guitar-Hero-style per-note hits.">

@@ -205,31 +205,91 @@ function lineHtml(line, options) {
   return `<div class="scroll-line${line.isPetucha ? ' petucha' : ''}" data-line="${line.lineIndex + 1}">${columns}</div>`;
 }
 
-export function renderTikkunPages(data, reading, options) {
-  if (!data || !reading) return null;
-  const pages = annotatedPages(data, reading);
-  const visiblePages = pages.filter((page) => page.words.some((word) =>
+// Empty lines keep the same 1.62em row height as a painted page, so a stub
+// occupies the same scroll space as the real column. A long annual (or a long
+// triennial third) can be dozens of Davidovich pages; painting every word of
+// every page — twice in dual view — is what used to stall the pane.
+function stubLineHtml(line) {
+  return `<div class="scroll-line${line.isPetucha ? ' petucha' : ''}" data-line="${line.lineIndex + 1}"></div>`;
+}
+
+function pageInRange(page, options) {
+  return page.words.some((word) =>
     word.verse != null &&
     word.verse >= options.contextStart &&
-    word.verse <= options.contextEnd));
-  if (!visiblePages.length) return null;
+    word.verse <= options.contextEnd);
+}
 
-  const html = visiblePages.map((page) => `
-    <div class="scroll-page-shell" data-page="${page.number}">
-      <section class="scroll-page" aria-label="Tikkun column ${page.number}">
+export function visibleTikkunPages(data, reading, options) {
+  if (!data || !reading || !options) return [];
+  return annotatedPages(data, reading).filter((page) => pageInRange(page, options));
+}
+
+// The page that should be on screen for a pasuk: the one that holds its first
+// mapped word, falling back to the first in-range page so an unselected column
+// still has somewhere to start.
+export function tikkunPageForVerse(data, reading, options, verseN) {
+  const pages = visibleTikkunPages(data, reading, options);
+  if (!pages.length) return null;
+  if (verseN == null) return pages[0];
+  return pages.find((page) => page.words.some((word) =>
+    word.verse === verseN && word.widx === 0))
+    || pages.find((page) => page.words.some((word) => word.verse === verseN))
+    || pages[0];
+}
+
+function pageShellHtml(page, inner, stub) {
+  return `
+    <div class="scroll-page-shell" data-page="${page.number}"${stub ? ' data-stub="1"' : ''}>
+      <section class="scroll-page" aria-label="Tikkun column ${page.number}"${stub ? ' aria-hidden="true"' : ''}>
         <span class="scroll-page-number">עמוד ${page.number}</span>
         <div class="scroll-lines">
-          ${page.lines.map((line) => lineHtml(line, options)).join('')}
+          ${inner}
         </div>
       </section>
     </div>
-  `).join('');
+  `;
+}
+
+function renderPageHtml(page, options, stub) {
+  const inner = stub
+    ? page.lines.map(stubLineHtml).join('')
+    : page.lines.map((line) => lineHtml(line, options)).join('');
+  return pageShellHtml(page, inner, stub);
+}
+
+function hydrateSetFrom(options) {
+  if (!options || options.hydratePages == null) return null;
+  return new Set(options.hydratePages);
+}
+
+// One page, either fully painted or a height-matched stub. Used to swap a
+// placeholder for real glyphs (or the reverse) without rebuilding the column.
+export function renderTikkunPageHtml(data, reading, options, pageNumber) {
+  if (!data || !reading || pageNumber == null) return null;
+  const page = visibleTikkunPages(data, reading, options)
+    .find((p) => p.number === pageNumber);
+  if (!page) return null;
+  return renderPageHtml(page, options, !!options.stub);
+}
+
+export function renderTikkunPages(data, reading, options) {
+  if (!data || !reading) return null;
+  const visiblePages = visibleTikkunPages(data, reading, options);
+  if (!visiblePages.length) return null;
+
+  const hydrate = hydrateSetFrom(options);
+  const html = visiblePages.map((page) => {
+    const stub = !!(hydrate && !hydrate.has(page.number));
+    return renderPageHtml(page, options, stub);
+  }).join('');
 
   const extraClass = options.columnClass ? ` ${escapeHtml(options.columnClass)}` : '';
   const id = options.columnId ? ` id="${escapeHtml(options.columnId)}"` : '';
   return {
     html: `<div class="scroll-column tikkun-column${extraClass}"${id}>${html}</div>`,
     pages: visiblePages.length,
+    pageNumbers: visiblePages.map((page) => page.number),
     source: data.source,
   };
 }
