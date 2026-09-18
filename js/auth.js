@@ -19,6 +19,7 @@ const stateCb = { onUserChange: () => {}, onProgressMerged: () => {} };
 
 let fb = null;         // resolved Firebase SDK fns (once loaded)
 let auth = null;
+let popupResolver = null; // browserPopupRedirectResolver from the Auth SDK
 let db = null;
 let currentUser = null;
 let loadFailed = false; // the SDK never arrived (offline, blocked); see readyState
@@ -169,11 +170,25 @@ export async function initAuth({ onUserChange, onProgressMerged } = {}) {
     ]);
     fb = { ...authMod, ...fsMod };
     const app = appMod.initializeApp(firebaseConfig);
+    // initializeAuth() does NOT install a popup/redirect resolver the way
+    // getAuth() does. signInWithPopup then throws auth/argument-error at
+    // _withDefaultResolver unless we pass browserPopupRedirectResolver here
+    // (or as the third argument to the popup call). Keep the resolver from
+    // the Auth module itself — not the merged `fb` object — so a Firestore
+    // export can never overwrite it. Every sign-in button (onboarding intro,
+    // onboarding account step, guided menu, workshop header) calls signIn().
+    popupResolver = authMod.browserPopupRedirectResolver;
     try {
-      auth = authMod.initializeAuth(app, { persistence: authMod.browserLocalPersistence });
+      auth = authMod.initializeAuth(app, {
+        persistence: authMod.browserLocalPersistence,
+        popupRedirectResolver: popupResolver,
+      });
     } catch (e) {
       try {
-        auth = authMod.initializeAuth(app, { persistence: authMod.inMemoryPersistence });
+        auth = authMod.initializeAuth(app, {
+          persistence: authMod.inMemoryPersistence,
+          popupRedirectResolver: popupResolver,
+        });
       } catch (e2) {
         auth = authMod.getAuth(app);
       }
@@ -181,6 +196,14 @@ export async function initAuth({ onUserChange, onProgressMerged } = {}) {
     db = fsMod.getFirestore(app);
 
     authMod.onAuthStateChanged(auth, (user) => { handleUser(user); });
+    // Completes a signInWithRedirect that started on a previous page load
+    // (popup-blocked fallback). onAuthStateChanged still fires; this just
+    // consumes the pending redirect so it isn't retried.
+    if (authMod.getRedirectResult) {
+      try { await authMod.getRedirectResult(auth); } catch (e) {
+        console.warn('[auth] redirect sign-in did not complete:', e);
+      }
+    }
     notifyWatchers();
     return { configured: true };
   } catch (e) {
@@ -218,24 +241,58 @@ async function handleUser(user) {
   pushNow();
 }
 
+// Firebase authorizes the name `localhost` by default, not the loopback IP.
+// Opening the app at http://127.0.0.1:... makes Google sign-in fail with an
+// unauthorized-domain iframe warning, then auth/popup-blocked. Callers can
+// send the reader to this URL instead of fighting the popup.
+export function loopbackSignInUrl() {
+  if (typeof location === 'undefined') return null;
+  const host = location.hostname;
+  if (host !== '127.0.0.1' && host !== '[::1]') return null;
+  try {
+    const u = new URL(location.href);
+    u.hostname = 'localhost';
+    return u.href;
+  } catch (e) {
+    return null;
+  }
+}
+
+function popupBlocked(e) {
+  return !!(e && (e.code === 'auth/popup-blocked'
+    || e.code === 'auth/operation-not-supported-in-this-environment'));
+}
+
 export async function signIn() {
   if (!auth || !fb) throw new Error('Sign-in is not configured.');
   const provider = new fb.GoogleAuthProvider();
-  // Upgrade path: if the user is currently anonymous, LINK the Google identity
-  // to the same uid so their anonymous progress + leaderboard standing carry
-  // over. If that account already exists (or linking fails), fall back to a
-  // normal sign-in — handleUser still merges the local progress in either way.
-  if (currentUser && currentUser.isAnonymous && fb.linkWithPopup) {
-    try {
-      await fb.linkWithPopup(currentUser, provider);
-      await waitForSignedInSync();
-      return;
-    } catch (e) {
-      console.warn('[auth] could not link anonymous account, signing in fresh:', e);
+  const resolver = popupResolver || fb.browserPopupRedirectResolver;
+  // Must open the popup in this turn of the click handler. Any await before
+  // window.open (or tearing down the button that was clicked) is what the
+  // browser reports as auth/popup-blocked.
+  try {
+    if (currentUser && currentUser.isAnonymous && fb.linkWithPopup) {
+      try {
+        await fb.linkWithPopup(currentUser, provider, resolver);
+        await waitForSignedInSync();
+        return;
+      } catch (e) {
+        // A blocked or dismissed popup is done — a second popup would also be
+        // blocked because the user gesture is spent. Other link failures (the
+        // Google account already exists) fall through to a fresh sign-in.
+        if (popupBlocked(e) || (e && e.code === 'auth/popup-closed-by-user')) throw e;
+        console.warn('[auth] could not link anonymous account, signing in fresh:', e);
+      }
     }
+    await fb.signInWithPopup(auth, provider, resolver);
+    await waitForSignedInSync();
+  } catch (e) {
+    if (popupBlocked(e) && fb.signInWithRedirect && !loopbackSignInUrl()) {
+      await fb.signInWithRedirect(auth, provider, resolver);
+      return;
+    }
+    throw e;
   }
-  await fb.signInWithPopup(auth, provider);
-  await waitForSignedInSync();
 }
 
 // Sign in anonymously (no Google account) so a logged-out user can still post

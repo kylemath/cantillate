@@ -891,6 +891,14 @@ function signinLabel(a) {
 }
 
 function signinFailedNote() {
+  const loop = api.loopbackSignInUrl && api.loopbackSignInUrl();
+  if (loop) {
+    let host = 'localhost';
+    try { host = new URL(loop).host; } catch (e) { /* keep localhost */ }
+    return `<p class="g-menu-note">Google sign-in is not allowed on this address. Open
+      <a href="${escapeAttr(loop)}">${escapeHtml(host)}</a> instead (Firebase authorizes
+      <code>localhost</code>, not <code>127.0.0.1</code>).</p>`;
+  }
   const a = api.account();
   if (a && a.state === 'failed') {
     return `<p class="g-menu-note">Sign-in can\u2019t be reached right now \u2014 try again when you have
@@ -1036,7 +1044,9 @@ function wireMenu() {
   if (signIn) signIn.addEventListener('click', async () => {
     signinBusy = true;
     signinFailed = false;
-    renderMenu();
+    // Disable in place — do not re-render the menu first. Replacing the
+    // clicked button before window.open is what browsers report as popup-blocked.
+    signIn.disabled = true;
     try {
       await api.signIn();
     } catch (e) {

@@ -339,8 +339,7 @@ function installBody() {
       ? `<p class="ob-warn">Signing in isn\u2019t reachable right now. Carry on and use the \u2630
           menu once you have a signal.</p>`
       : signInButton(state)}
-    ${signinFailed ? `<p class="ob-warn">That didn\u2019t finish \u2014 the popup may have been closed or
-      blocked. Try again, or carry on and sign in later from the \u2630 menu.</p>` : ''}`;
+    ${loopbackNote() || (signinFailed ? signInFailedNote() : '')}`;
   const skip = offerSignIn
     ? 'I\u2019m new \u2014 let\u2019s start'
     : (installed ? 'Continue' : 'I\u2019ll do it later \u2014 let\u2019s start');
@@ -363,6 +362,23 @@ function signInButton(state) {
   const label = signinBusy ? 'Signing in\u2026' : (loading ? 'Preparing sign-in\u2026' : 'Sign in with Google');
   return `<button class="ob-go" id="obSignIn" ${loading || signinBusy ? 'disabled' : ''}>
       <span class="ob-g" aria-hidden="true">G</span> ${label}</button>`;
+}
+
+// Firebase allows `localhost` by default, not the loopback IP. Shown before
+// they even tap, because the popup cannot succeed from http://127.0.0.1.
+function loopbackNote() {
+  const href = auth.loopbackSignInUrl();
+  if (!href) return '';
+  let host = 'localhost';
+  try { host = new URL(href).host; } catch (e) { /* keep localhost */ }
+  return `<p class="ob-warn">Google sign-in is not allowed on <code>${escapeHtml(location.hostname)}</code>.
+    Open <a href="${escapeAttr(href)}">${escapeHtml(host)}</a> instead, or add
+    <code>127.0.0.1</code> under Firebase \u2192 Authentication \u2192 Settings \u2192 Authorized domains.</p>`;
+}
+
+function signInFailedNote() {
+  return `<p class="ob-warn">That didn\u2019t finish \u2014 the popup may have been closed or
+    blocked. Try again, or carry on and sign in later from the \u2630 menu.</p>`;
 }
 
 // 2. What the occasion is. Tapping an answer IS moving on — a question with four
@@ -628,8 +644,7 @@ function accountBody() {
       name you appear under, and only scores you deliberately submit are ever shared.</p>
     ${anon ? `<p class="ob-note">You\u2019re posting anonymously at the moment. Signing in keeps that
       nickname and everything already earned under it.</p>` : ''}
-    ${signinFailed ? `<p class="ob-warn">That didn\u2019t finish \u2014 the popup may have been closed or
-      blocked. Try again, or carry on and sign in later from the \u2630 menu.</p>` : ''}
+    ${loopbackNote() || (signinFailed ? signInFailedNote() : '')}
     ${signInButton(state)}
     <button class="ob-go ob-ghost" id="obSkipAccount">Not now \u2014 keep it on this device</button>`;
 }
@@ -816,7 +831,10 @@ function wireSignIn(after) {
   signIn.addEventListener('click', async () => {
     signinBusy = true;
     signinFailed = false;
-    render();
+    // Disable in place — do not re-render the wizard first. Replacing the
+    // clicked button before window.open is what browsers report as popup-blocked.
+    signIn.disabled = true;
+    signIn.innerHTML = `<span class="ob-g" aria-hidden="true">G</span> Signing in\u2026`;
     try {
       await auth.signIn();
     } catch (e) {

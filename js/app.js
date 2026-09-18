@@ -764,6 +764,7 @@ function guidedApi() {
     },
     signIn: () => auth.signIn(),
     signOut: () => auth.signOutUser(),
+    loopbackSignInUrl: () => auth.loopbackSignInUrl(),
     editIdentity: () => openProfileModal({ firstTime: false }),
 
     editPlan: () => editPlan(),
@@ -1271,11 +1272,7 @@ function renderAuthBox() {
       try { await auth.signOutUser(); } catch (e) { /* ignore */ }
     });
     const upgradeBtn = $('btnSignIn');
-    if (upgradeBtn) upgradeBtn.addEventListener('click', async () => {
-      authState.busy = true; renderAuthBox();
-      try { await auth.signIn(); }
-      catch (e) { authState.busy = false; renderAuthBox(); console.warn('sign-in failed', e); }
-    });
+    if (upgradeBtn) upgradeBtn.addEventListener('click', () => startGoogleSignIn(upgradeBtn));
     return;
   }
   if (!authState.configured) {
@@ -1284,14 +1281,19 @@ function renderAuthBox() {
   }
   box.innerHTML = `<button id="btnSignIn" class="auth-btn primary" ${authState.busy ? 'disabled' : ''}>
       <span class="g-mark">G</span> ${authState.busy ? 'Signing in…' : 'Sign in with Google'}</button>`;
-  $('btnSignIn').addEventListener('click', async () => {
-    authState.busy = true; renderAuthBox();
-    try {
-      await auth.signIn();
-    } catch (e) {
-      authState.busy = false; renderAuthBox();
-      console.warn('sign-in failed', e);
-    }
+  $('btnSignIn').addEventListener('click', () => startGoogleSignIn($('btnSignIn')));
+}
+
+function startGoogleSignIn(btn) {
+  authState.busy = true;
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = `<span class="g-mark">G</span> Signing in…`;
+  }
+  auth.signIn().catch((e) => {
+    authState.busy = false;
+    renderAuthBox();
+    console.warn('sign-in failed', e);
   });
 }
 

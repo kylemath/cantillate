@@ -944,8 +944,8 @@ show the submit button and stays offline-only for logged-out users.
 
 1. Create a project at the [Firebase console](https://console.firebase.google.com).
 2. **Build → Authentication → Sign-in method → Google → Enable.** Add your site's
-   domain (e.g. `kylemath.github.io` and `localhost`) under **Authentication →
-   Settings → Authorized domains.**
+   domain (e.g. `kylemath.github.io`, `localhost`, and `127.0.0.1`) under **Authentication →
+   Settings → Authorized domains.** `localhost` is allowed by default; `127.0.0.1` is not.
 2b. *(optional, for logged-out submissions)* On the same **Sign-in method** page,
    enable **Anonymous**. This lets readers post a full-verse score without a
    Google account (see [Submit a score without an account](#submit-a-score-without-an-account)).
