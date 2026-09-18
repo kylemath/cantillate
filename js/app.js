@@ -4,7 +4,7 @@ import { buildLineMelody, splitPhrases, splitAtRank, RANK, RANK_LABELS, rankFor,
   markGlyph, NAMES, motifFor, nameFor, SOF_PASUK_NAME, sofPasukMotif,
   STYLES, DEFAULT_STYLE, styleOf } from './trope.js';
 import { singSteps, playTone, stopPlayback, LISTEN_RATES, getListenRate, getListenRateId,
-  setListenRateId } from './audio.js';
+  setListenRateId, listenWall } from './audio.js';
 import { playSegment, stopVerseAudio, pauseVerseAudio, resumeVerseAudio, seekVerseAudio,
   previewVerseAudio, isVerseAudioLoaded, isVerseAudioPaused, verseAudioProgress,
   setAudioCuts, syncListenRate } from './realaudio.js';
@@ -2574,14 +2574,30 @@ function transportPos() {
       const p = verseAudioProgress();
       if (p != null) return p;
     }
-    const dur = state.expectedDur || unitDuration();
-    return clamp01((performance.now() - state.recStart) / 1000 / (dur || 1));
+    const dur = listenWallMs(state.expectedDur || unitDuration());
+    return clamp01((performance.now() - state.recStart) / (dur || 1));
   }
   const p = verseAudioProgress();
   return p != null ? p : 0;
 }
 
 function clamp01(x) { return Math.min(1, Math.max(0, Number(x) || 0)); }
+
+// Wall-clock length of `audioSec` of coach/recording at the current listen
+// speed. Solo takes stretch the same way as the example and the duet, so a
+// 1.5×-slow voice is matched by a 1.5×-slow recitation window.
+function listenWallMs(audioSec) {
+  return listenWall(audioSec) * 1000;
+}
+
+// Harness: scripts/check_app.py reads the record clock without going through the UI.
+window.__cantillateRecClock = () => ({
+  pos: transportPos(),
+  dur: state.expectedDur || 0,
+  rate: getListenRate() || 1,
+  recording: !!state.recording,
+  started: !!state._recHasStarted,
+});
 
 // Whether this verse take has crossed t=0. The sticky bit matters after pause or
 // rewind: recStart can be re-anchored, but a take that already began remains a
@@ -2625,7 +2641,7 @@ function resumeTransport() {
   const held = performance.now() - (state._pausedSince || performance.now());
   state._pausedSince = 0;
   if (state.recording) {
-    const dur = (state.expectedDur || unitDuration()) * 1000;
+    const dur = listenWallMs(state.expectedDur || unitDuration());
     state.recStart = performance.now() - state.pausedAt * dur;
     // Re-arm the backstop that ends the take, minus what has already been sung.
     state._recTimer = setTimeout(finishRecording, Math.max(400, (1 - state.pausedAt) * dur + 800));
@@ -2658,7 +2674,7 @@ function seekTo(t01, wordEnd) {
     if (state.view) state.view.rewindUser(pos);
     if (state._diffs) state._diffs.length = 0;
     if (state._liveDiffs) state._liveDiffs.length = 0;
-    const dur = (state.expectedDur || unitDuration()) * 1000;
+    const dur = listenWallMs(state.expectedDur || unitDuration());
     if (!state.paused) state.recStart = performance.now() - pos * dur;
   }
   state.pausedAt = pos;
@@ -2734,8 +2750,7 @@ function aliyahElapsed() {
     if (p != null) return state._aliyaSeg.gStart + p * state._aliyaSeg.dur;
   }
   if (!state._aliyaT0) return 0;
-  const r = (state._aliyaRunning === 'rec' && !state._aliyaDuet) ? 1 : (getListenRate() || 1);
-  return (performance.now() - state._aliyaT0) / 1000 * r;
+  return (performance.now() - state._aliyaT0) / 1000 * (getListenRate() || 1);
 }
 
 function aliyahSegAtPos() {
@@ -2767,8 +2782,7 @@ function resumeAliyahTimers(heldMs) {
   const tl = state._aliyaTl;
   if (!tl) return;
   if (state._aliyaRunning === 'rec') {
-    const recRate = state._aliyaDuet ? (getListenRate() || 1) : 1;
-    const remaining = Math.max(400, (tl.total - aliyahElapsed()) * 1000 / recRate + 900);
+    const remaining = Math.max(400, listenWallMs(tl.total - aliyahElapsed()) + 900);
     state._aliyaTimer = setTimeout(() => finishAliyahRecord(tl), remaining);
     if (state._aliyaDuet) scheduleAliyahDuet(tl, state._aliyaT0);
   }
@@ -6667,9 +6681,8 @@ async function recordAliyahRun(tl, opts = {}) {
   // each scheduled at its slot on the shared timeline so the two stay aligned —
   // against the same anchor as the take, or the guide sings ahead of the yad.
   if (duet) scheduleAliyahDuet(tl, t0);
-  const recRate = duet ? (getListenRate() || 1) : 1;
   state._aliyaTimer = setTimeout(() => finishAliyahRecord(tl),
-    Math.max(0, t0 - performance.now()) + tl.total * 1000 / recRate + 900);
+    Math.max(0, t0 - performance.now()) + listenWallMs(tl.total) + 900);
   syncTransportUI();
 }
 
@@ -8136,7 +8149,6 @@ async function startRecording(opts = {}) {
   $('result').innerHTML = '<span class="hint">Preparing microphone…</span>';
 
   const dur = unitDuration();
-  const listen = getListenRate() || 1;
   state.expectedDur = dur;
   const bounds = state.coach ? state.coach.wordBounds : [0];
   // Sing-along guide choice: single words (early levels) use the clean synth
@@ -8147,7 +8159,7 @@ async function startRecording(opts = {}) {
   const voiceGuide = singAlong && (level.unit === 'phrase' || level.unit === 'line')
     && !!verseAudio(state.selectedVerse) && !!state.coach;
   const leadIn = singAlong ? (voiceGuide ? 0 : 500)
-    : (level.mode === 'listen' ? dur * 1000 / listen + 250 : 250);
+    : (level.mode === 'listen' ? listenWallMs(dur) + 250 : 250);
   // Where the window would open on a warm mic: the lead-in runs from here (in
   // listen mode it counts off the target playing above), but the clock itself is
   // only started once the mic is live (below).
@@ -8164,10 +8176,11 @@ async function startRecording(opts = {}) {
     const now = performance.now();
     if (now < state.recStart) { return; } // lead-in; let playback drive the cue
     markTakeStarted('_recHasStarted');
-    // Sing-along with the recording: t01 comes from the audio clock so a slower
-    // listen speed keeps the cue, the karaoke and the take on the same word.
+    // t01 walks the coach window at listen speed so a slower voice is matched
+    // by a slower recitation — same as the duet. When the voice guide is
+    // playing, the audio clock is the source of truth.
     const audioT = (voiceGuide && isVerseAudioLoaded()) ? verseAudioProgress() : null;
-    const t01 = audioT != null ? audioT : (now - state.recStart) / 1000 / dur;
+    const t01 = audioT != null ? audioT : (now - state.recStart) / (listenWallMs(dur) || 1);
     if (t01 >= 1) { finishRecording(); return; }
     state.view.setPlayhead(t01);
     const liveWi = wordAtTime(state.coach, t01);
@@ -8260,8 +8273,7 @@ async function startRecording(opts = {}) {
   // this is a backstop, and for the voice guide it also covers the case where the
   // audio never starts (recStart would otherwise stay in the future).
   const base = voiceGuide ? (performance.now() + 3500) : state.recStart;
-  const recRate = voiceGuide ? listen : 1;
-  const stopIn = Math.max(0, base - performance.now()) + dur * 1000 / recRate + 800;
+  const stopIn = Math.max(0, base - performance.now()) + listenWallMs(dur) + 800;
   state._recTimer = setTimeout(finishRecording, stopIn);
 }
 

@@ -383,6 +383,14 @@ try {
     `naming a passage doesn't move its progress (${named.slug})`);
 
   log(typeof audio.singSteps === 'function', 'audio.singSteps exported');
+  log(typeof audio.listenWall === 'function', 'audio.listenWall exported');
+  audio.setListenRateId('1');
+  log(audio.listenWall(6) === 6, 'listenWall at 1× is the audio length');
+  audio.setListenRateId('1.5');
+  log(Math.abs(audio.listenWall(6) - 9) < 1e-9, 'listenWall at 1.5× slow is 1.5 times the audio');
+  audio.setListenRateId('1.75');
+  log(Math.abs(audio.listenWall(7) - 12.25) < 1e-9, 'listenWall at 1.75× slow is 1.75 times the audio');
+  audio.setListenRateId('1');
 
   // Dual-column tikkun used to re-tokenize the whole Torah corpus on every
   // click (STA"M, then pointed). A one-page fixture is enough to check the

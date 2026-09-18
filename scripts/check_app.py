@@ -445,6 +445,33 @@ RECORD_STEPS = [
      " return __t.settle(()=>/accuracy/i.test(__t.q('#result').textContent)"
      "   && __t.q('#btnPause').disabled,"
      "   'OK '+__t.q('#result').textContent.trim().slice(0,60), 'the take produced no score', 6000);})()"),
+    # Solo recording used to ignore listen speed (the duet already followed it),
+    # so a 1.5×-slow voice still expected a 1× recitation. The cue's t01 must
+    # advance at listen-rate × audio, not at wall / audio.
+    ("solo recording at 1.5× slow stretches the cue to match the voice",
+     "(async()=>{__t.pickVerse(); __t.stage(4);"
+     " const slow=__t.q('.lr[data-lr=\"1.5\"]'); if(!slow) return 'no 1.5× control';"
+     " slow.click();"
+     " __t.q('#btnRec').click();"
+     " const live=await __t.settle(()=>{"
+     "   const c=window.__cantillateRecClock&&window.__cantillateRecClock();"
+     "   return !!(c&&c.recording&&c.started&&c.dur>1&&c.pos>0.01);"
+     " }, true, false, 8000);"
+     " if(!live) return 'the take never started';"
+     " const c0=window.__cantillateRecClock();"
+     " const t0=performance.now();"
+     " await __t.after(1600, ()=>0);"
+     " const c1=window.__cantillateRecClock();"
+     " const dt=(performance.now()-t0)/1000;"
+     " const dp=c1.pos-c0.pos;"
+     " const fast=dt/(c1.dur||1);"
+     " const ratio=dp/(fast||1e-9);"
+     " __t.key('Escape');"
+     " const reset=__t.q('.lr[data-lr=\"1\"]'); if(reset) reset.click();"
+     " return c1.rate<1 && ratio>0.5 && ratio<0.85"
+     "   ? `OK cue at ${c1.rate.toFixed(3)}× of the recording (${ratio.toFixed(2)} of 1× pace)`"
+     "   : `ratio=${ratio.toFixed(2)} (want ~0.67) Δt01=${dp.toFixed(3)} dur=${c1.dur} rate=${c1.rate}`;"
+     "})()"),
 ]
 
 # After the walk above, switch readings and re-probe.
