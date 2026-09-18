@@ -38,7 +38,7 @@ try {
     'isVerseAudioLoaded', 'isVerseAudioPaused', 'verseAudioProgress'])
     log(typeof realaudio[fn] === 'function', `realaudio.${fn} exported`);
   for (const fn of ['recordSectionScore', 'getSectionScores', 'recordChainScore', 'getChainScore',
-    'getSavedPassages', 'setSavedPassages'])
+    'getSavedPassages', 'setSavedPassages', 'batch'])
     log(typeof store[fn] === 'function', `store.${fn} exported`);
 
   log(levels.LEVELS.length === 9, `9 stages (got ${levels.LEVELS.length})`);
@@ -129,6 +129,139 @@ try {
   log(view.noteStatus[0] === 'hit' && view.noteStatus[1] === undefined,
     'rewind un-lights only the notes after the point');
 
+  // Scoring lookup regressions. These deliberately retain the former linear
+  // implementations as local references so lookup optimizations must remain
+  // bit-for-bit equivalent at endpoints, duplicate times, gaps and overlaps.
+  const linearSampleContour = (points, t) => {
+    if (!points.length) return 0;
+    if (t <= points[0].t) return points[0].p;
+    const last = points[points.length - 1];
+    if (t >= last.t) return last.p;
+    for (let i = 1; i < points.length; i++) {
+      if (t <= points[i].t) {
+        const a = points[i - 1], b = points[i];
+        const f = (t - a.t) / (b.t - a.t || 1);
+        return a.p + (b.p - a.p) * f;
+      }
+    }
+    return last.p;
+  };
+  const contourCases = [
+    [[], 0.3],
+    [[{ t: 0.4, p: 7 }], -1],
+    [[{ t: 0, p: 0 }, { t: 0.4, p: 4 }, { t: 0.4, p: 7 }, { t: 1, p: 10 }], 0.4],
+    [[{ t: 0, p: 0 }, { t: 0.4, p: 4 }, { t: 0.4, p: 7 }, { t: 1, p: 10 }], 0.400001],
+    [[{ t: 0, p: -2 }, { t: 1, p: 6 }], 0.375],
+    [[{ t: 0, p: -2 }, { t: 1, p: 6 }], 2],
+  ];
+  log(contourCases.every(([points, t]) =>
+    Object.is(viz.sampleContour(points, t), linearSampleContour(points, t))),
+  'sampleContour binary lookup matches the linear reference');
+
+  const linearScoreNotes = (userTrail, steps, opts = {}) => {
+    const band = opts.band ?? 1.5;
+    const minFrac = opts.minFrac ?? 0.5;
+    const K = opts.samples ?? 8;
+    const window = opts.window ?? 0.04;
+    const total = (steps || []).length;
+    if (!userTrail || !userTrail.length || !total) {
+      return { score: 0, hits: 0, total, longest: 0, notes: [] };
+    }
+    const voiced = [];
+    for (const s of userTrail) {
+      if (s.rms < 0.01) continue;
+      const up = s.sp != null ? s.sp : s.p;
+      if (up != null) voiced.push({ t: s.t, p: up });
+    }
+    voiced.sort((a, b) => a.t - b.t);
+    if (!voiced.length) return { score: 0, hits: 0, total, longest: 0, notes: [] };
+    const pitchAt = (tg) => {
+      let before = null, after = null;
+      for (let i = 0; i < voiced.length; i++) {
+        if (voiced[i].t <= tg) before = voiced[i];
+        else { after = voiced[i]; break; }
+      }
+      if (before && after) {
+        if (tg - before.t <= window && after.t - tg <= window) {
+          const f = (tg - before.t) / (after.t - before.t || 1);
+          return before.p + (after.p - before.p) * f;
+        }
+        if (tg - before.t <= after.t - tg) return tg - before.t <= window ? before.p : null;
+        return after.t - tg <= window ? after.p : null;
+      }
+      if (before && tg - before.t <= window) return before.p;
+      if (after && after.t - tg <= window) return after.p;
+      return null;
+    };
+    const notes = [];
+    let hits = 0, sumFrac = 0, streak = 0, longest = 0;
+    const ordered = [...steps].sort((a, b) => a.t0 - b.t0);
+    for (const st of ordered) {
+      const dur = Math.max(1e-4, st.t1 - st.t0);
+      let inBand = 0;
+      for (let k = 0; k < K; k++) {
+        const tg = st.t0 + ((k + 0.5) / K) * dur;
+        const up = pitchAt(tg);
+        if (up != null && Math.abs(up - st.p) <= band) inBand++;
+      }
+      const frac = inBand / K;
+      const hit = frac >= minFrac;
+      sumFrac += frac;
+      if (hit) { hits++; streak++; if (streak > longest) longest = streak; } else streak = 0;
+      notes.push({ w: st.w, frac, hit });
+    }
+    const score = Math.max(0, Math.min(100, 100 * (sumFrac / ordered.length)));
+    return { score, hits, total: ordered.length, longest, notes };
+  };
+  const sameValue = (a, b) => {
+    if (Object.is(a, b)) return true;
+    if (!a || !b || typeof a !== 'object' || typeof b !== 'object') return false;
+    const ak = Object.keys(a), bk = Object.keys(b);
+    return ak.length === bk.length && ak.every((k, i) => k === bk[i] && sameValue(a[k], b[k]));
+  };
+  const scoreNoteCases = [
+    {
+      name: 'unsorted input, filtering and offset pitch',
+      trail: [{ t: 0.75, p: 4, rms: 0.2 }, { t: 0, p: 0, rms: 0.2 },
+        { t: 0.5, p: 30, sp: 2, rms: 0.2 }, { t: 0.25, p: 1, rms: 0.2 },
+        { t: 0.51, p: 99, rms: 0 }, { t: 0.9, p: null, rms: 0.2 }],
+      steps: [{ t0: 0.5, t1: 0.8, p: 3, w: 1 }, { t0: 0, t1: 0.5, p: 1, w: 0 }],
+      opts: { samples: 8, window: 0.2 },
+    },
+    {
+      name: 'duplicate timestamps and exact boundaries',
+      trail: [{ t: 0.25, p: -8, rms: 0.2 }, { t: 0.25, p: 2, rms: 0.2 },
+        { t: 0.75, p: 2, rms: 0.2 }],
+      steps: [{ t0: 0, t1: 1, p: 2, w: 0 }],
+      opts: { samples: 2, window: 0.1 },
+    },
+    {
+      name: 'overlapping windows with backward sample times',
+      trail: Array.from({ length: 11 }, (_, i) => ({ t: i / 10, p: i / 2, rms: 0.2 })),
+      steps: [{ t0: 0.1, t1: 0.9, p: 2, w: 0 }, { t0: 0.2, t1: 0.3, p: 1, w: 1 }],
+      opts: { samples: 4, window: 0.11 },
+    },
+    {
+      name: 'gaps, nearest-frame ties and one-sided lookup',
+      trail: [{ t: 0.2, p: 1, rms: 0.2 }, { t: 0.8, p: 4, rms: 0.2 }],
+      steps: [{ t0: 0, t1: 1, p: 1, w: 0 }],
+      opts: { samples: 4, window: 0.16 },
+    },
+    {
+      name: 'zero and reversed note durations',
+      trail: [{ t: 0.3, p: 2, rms: 0.2 }, { t: 0.6, p: 3, rms: 0.2 }],
+      steps: [{ t0: 0.3, t1: 0.3, p: 2, w: 0 }, { t0: 0.6, t1: 0.4, p: 3, w: 1 }],
+      opts: { samples: 3, window: 0.01 },
+    },
+  ];
+  for (const c of scoreNoteCases) {
+    log(sameValue(viz.scoreNotes(c.trail, c.steps, c.opts), linearScoreNotes(c.trail, c.steps, c.opts)),
+      `scoreNotes binary lookup matches linear reference: ${c.name}`);
+  }
+  const perfectTrail = Array.from({ length: 201 }, (_, i) => ({ t: i / 200, p: 3, rms: 0.2 }));
+  log(viz.scoreTrail(perfectTrail, [{ t: 0, p: 3 }, { t: 1, p: 3 }]) === 100,
+    'scoreTrail remains exactly 100 for a fully covered matching contour');
+
   // Progress migration: stages 4+ shift up by one, below stays put.
   localStorage.setItem('cantillate.v1', JSON.stringify({ levels: { 'x:1': 3, 'x:2': 4, 'x:3': 8 } }));
   const lv = store.getAll().levels;
@@ -161,6 +294,77 @@ try {
   const synced = store.getSavedPassages();
   log(synced.length === 1 && synced[0].name === 'Elul',
     `a newer list from another device wins (got ${synced.map((p) => p.name).join()})`);
+
+  // Store transactions keep all helpers synchronous, but defer persistence and
+  // cloud-sync notifications until the outer transaction completes.
+  store.replaceAll({ schema: 2 });
+  let saveNotifications = 0;
+  store.onSave(() => { saveNotifications += 1; });
+  const nativeSetItem = Storage.prototype.setItem;
+  let progressWrites = 0;
+  Storage.prototype.setItem = function (key, value) {
+    if (key === 'cantillate.v1') progressWrites += 1;
+    return nativeSetItem.call(this, key, value);
+  };
+  try {
+    const ordinaryResult = store.recordVerseScore('batch-test', 1, 41);
+    log(ordinaryResult === 41 && progressWrites === 1 && saveNotifications === 1,
+      'an ordinary helper still writes and notifies immediately');
+
+    progressWrites = 0;
+    saveNotifications = 0;
+    let sharedLiveObject = false;
+    const batchResult = store.batch(() => {
+      const live = store.getAll();
+      const verseResult = store.recordVerseScore('batch-test', 2, 72);
+      const passageResult = store.setSavedPassages([
+        { book: 'jonah', from: [1, 1], to: [1, 3], name: 'Batch passage' },
+      ]);
+      sharedLiveObject = store.getAll() === live;
+      return `${verseResult}:${passageResult[0].name}`;
+    });
+    log(batchResult === '72:Batch passage' && sharedLiveObject
+      && store.getVerseScore('batch-test', 2) === 72
+      && progressWrites === 1 && saveNotifications === 1,
+    'a batch shares live data, preserves results, and persists/notifies once');
+
+    progressWrites = 0;
+    saveNotifications = 0;
+    let nestedSharedObject = false;
+    const nestedResult = store.batch(() => {
+      const outerData = store.getAll();
+      store.recordWordScore('batch-test', 3, 0, 63);
+      const innerResult = store.batch(() => {
+        nestedSharedObject = store.getAll() === outerData;
+        store.recordPhraseScore('batch-test', 3, 0, 64);
+        return 'inner-result';
+      });
+      store.recordSectionScore('batch-test', 3, '0-2', 65);
+      return innerResult;
+    });
+    log(nestedResult === 'inner-result' && nestedSharedObject
+      && progressWrites === 1 && saveNotifications === 1,
+    'nested batches share one transaction and flush only at the outer edge');
+
+    progressWrites = 0;
+    saveNotifications = 0;
+    const expectedBatchError = new Error('expected batch failure');
+    let caughtBatchError;
+    try {
+      store.batch(() => {
+        store.recordChainScore('batch-test', 4, 5, 66);
+        throw expectedBatchError;
+      });
+    } catch (e) {
+      caughtBatchError = e;
+    }
+    log(caughtBatchError === expectedBatchError
+      && store.getChainScore('batch-test', 4, 5) === 66
+      && progressWrites === 1 && saveNotifications === 1,
+    'a throwing batch flushes applied mutations once, then rethrows');
+  } finally {
+    Storage.prototype.setItem = nativeSetItem;
+  }
   localStorage.removeItem('cantillate.v1');
 
   // A name is a label: it changes what a passage is called everywhere it is

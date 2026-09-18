@@ -311,6 +311,37 @@ UNLOCKED_STEPS = [
 # The transport under real playback. These need audio actually rolling, so each
 # one waits for the chant to start before acting on it.
 TRANSPORT_STEPS = [
+    ("a click starts the real chant once, after the seek fallback",
+     "(async()=>{__t.pickVerse(); __t.stage(4);"
+     " const ra=await import('/js/realaudio.js'); ra.stopVerseAudio();"
+     " const p=HTMLMediaElement.prototype;"
+     " const play0=p.play, add0=p.addEventListener;"
+     " const playDesc=Object.getOwnPropertyDescriptor(p,'play');"
+     " const addDesc=Object.getOwnPropertyDescriptor(p,'addEventListener');"
+     " const time0=Object.getOwnPropertyDescriptor(p,'currentTime');"
+     " let calls=0, clicked=0, played=0, forcing=true;"
+     " try {"
+     "   if(!time0||!time0.configurable) return 'currentTime cannot be instrumented';"
+     "   Object.defineProperty(p,'currentTime',{configurable:true,enumerable:time0.enumerable,"
+     "     get(){const t=time0.get.call(this); return forcing?t+1:t;},"
+     "     set(v){time0.set.call(this,v);}});"
+     "   p.addEventListener=function(type,fn,opt){"
+     "     if(forcing&&type==='seeked') return; return add0.call(this,type,fn,opt);};"
+     "   p.play=function(){calls++; played=performance.now(); forcing=false;"
+     "     Object.defineProperty(p,'currentTime',time0);"
+     "     if(addDesc) Object.defineProperty(p,'addEventListener',addDesc);"
+     "     else delete p.addEventListener;"
+     "     return play0.call(this);};"
+     "   clicked=performance.now(); __t.q('#btnReal').click();"
+     "   const started=await __t.settle(()=>calls>0,true,false,2000);"
+     "   const elapsed=played-clicked; ra.stopVerseAudio();"
+     "   return started&&calls===1&&elapsed>=395"
+     "     ? `OK play called once after ${Math.round(elapsed)}ms`"
+     "     : `play calls=${calls}, first at ${Math.round(elapsed)}ms`;"
+     " } finally { forcing=false;"
+     "   if(playDesc) Object.defineProperty(p,'play',playDesc); else delete p.play;"
+     "   if(addDesc) Object.defineProperty(p,'addEventListener',addDesc); else delete p.addEventListener;"
+     "   if(time0) Object.defineProperty(p,'currentTime',time0); ra.stopVerseAudio(); }})()"),
     ("playing the chant enables the transport",
      "(()=>{__t.pickVerse(); __t.stage(4); __t.q('#btnReal').click();"
      " return __t.settle(()=>!__t.q('#btnPause').disabled, 'OK pause became available',"
@@ -372,6 +403,22 @@ TRANSPORT_STEPS = [
 # step back, carry on — and what was sung past that point must be discarded so the
 # retry replaces it rather than scoring on top of it.
 RECORD_STEPS = [
+    ("cancelling while the microphone opens saves nothing",
+     "(async()=>{const pitch=await import('/js/pitch.js');"
+     " __t.pickVerse(); __t.stage(4); pitch.releaseMic();"
+     " const snap=()=>JSON.stringify(Object.keys(localStorage).sort()"
+     "   .map(k=>[k,localStorage.getItem(k)]));"
+     " const before=snap();"
+     " const starts=performance.getEntriesByName('cantillate:take-start').length;"
+     " __t.q('#btnSing').click(); __t.key('Escape');"
+     " const cancelled=/cancelled/i.test(__t.text(__t.q('#result')));"
+     " await pitch.startMic(()=>{},()=>{}); pitch.releaseMic();"
+     " const after=snap(), noStart=performance.getEntriesByName('cantillate:take-start').length===starts;"
+     " const controls=!__t.q('#btnRec').disabled&&__t.q('#btnStop').disabled;"
+     " __t.pickVerse(); __t.stage(4);"
+     " return cancelled&&before===after&&noStart&&controls"
+     "   ? 'OK cancelled before mic continuation; storage unchanged'"
+     "   : `cancelled=${cancelled} storageChanged=${before!==after} started=${!noStart} controls=${controls}`;})()"),
     ("recording starts and the cue moves",
      "(()=>{__t.pickVerse(); __t.stage(4); __t.q('#btnSing').click();"
      " return __t.settle(()=>__t.wordAt()>1, 'OK duet under way', 'the take never started', 8000);})()"),
@@ -1011,15 +1058,40 @@ GUIDED_STEPS = [
     ("and goes back to Listen and Sing when it finishes",
      "(()=>__t.settle(()=>__t.all('.g-act').length>=2,"
      "   'OK the bar came back', 'the bar stayed on Stop', 20000))()"),
-    ("singing it records a take and scores it, with one number and one next step",
-     "(()=>{__t.tap('.g-sing');"
-     " return __t.settle(()=>__t.all('.g-act').some(b=>/Stop/.test(__t.text(b))), null, null, 8000)"
-     "  .then(()=>__t.after(1200, ()=>__t.key('Escape')))"
-     "  .then(()=>__t.settle(()=>!!__t.q('.g-score'), null, null, 9000))"
-     "  .then(()=>{const s=__t.q('.g-score'), acts=__t.all('.g-result-actions button');"
-     "    return s && acts.length===2"
-     "      ? `OK scored ${__t.text(s)}, offering ${acts.map(b=>__t.text(b)).join(' / ')}`"
-     "      : `no verdict (${s?__t.text(s):'no score'}, ${acts.length} buttons)`;});})()"),
+    ("a signed-out take writes progress once without fetching the corpus",
+     "(async()=>{const auth=await import('/js/auth.js');"
+     " const names=['take-start','take-end','score-visible','ui-complete'];"
+     " const count=n=>performance.getEntriesByName(`cantillate:${n}`).length;"
+     " const before=Object.fromEntries(names.map(n=>[n,count(n)]));"
+     " const proto=Storage.prototype, set0=proto.setItem, fetch0=window.fetch;"
+     " let writes=0, readingFetches=[];"
+     " try {"
+     "   proto.setItem=function(k,v){if(this===localStorage&&k==='cantillate.v1') writes++;"
+     "     return set0.call(this,k,v);};"
+     "   window.fetch=function(input,init){"
+     "     const raw=typeof input==='string'?input:(input&&input.url)||'';"
+     "     const path=new URL(raw,location.href).pathname;"
+     "     if(/^\\/data\\/[^/]+\\.json$/.test(path)"
+     "       && !/^\\/data\\/(readings|trope-index|trope-shapes|haftarah-shapes)\\.json$/.test(path))"
+     "       readingFetches.push(path);"
+     "     return fetch0.call(this,input,init);};"
+     "   if(auth.getUser()) return 'expected a signed-out guided session';"
+     "   __t.tap('.g-sing');"
+     "   await __t.settle(()=>count('take-start')>before['take-start'],null,null,12000);"
+     "   __t.key('Escape');"
+     "   await __t.settle(()=>count('ui-complete')>before['ui-complete']&&!!__t.q('.g-score'),"
+     "     null,null,9000);"
+     "   await Promise.resolve();"
+     "   const delta=Object.fromEntries(names.map(n=>[n,count(n)-before[n]]));"
+     "   const marks=names.map(n=>performance.getEntriesByName(`cantillate:${n}`).at(-1).startTime);"
+     "   const ordered=marks.every((t,i)=>i===0||t>=marks[i-1]);"
+     "   const s=__t.q('.g-score'), acts=__t.all('.g-result-actions button');"
+     "   return names.every(n=>delta[n]===1)&&ordered&&writes===1&&readingFetches.length===0"
+     "     &&s&&acts.length===2"
+     "     ? `OK scored ${__t.text(s)}; one write, zero reading fetches, ordered marks`"
+     "     : `marks=${JSON.stringify(delta)} ordered=${ordered} writes=${writes}"
+     " fetches=${readingFetches.join(',')||'(none)'} score=${__t.text(s)} actions=${acts.length}`;"
+     " } finally {proto.setItem=set0; window.fetch=fetch0;}})()"),
     ("the menu shows the plan, its parts and how far each round has got",
      "(()=>{__t.tap('.g-menu-btn');"
      " const head=__t.text(__t.q('.g-menu-head'));"

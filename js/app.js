@@ -176,6 +176,16 @@ const TRANSLIT_EM = 0.5;
 
 const $ = (id) => document.getElementById(id);
 
+// Audit milestones are deliberately best-effort: older WebViews can expose a
+// partial Performance API, and instrumentation must never interrupt a take.
+function markPerformance(name) {
+  try {
+    if (typeof performance !== 'undefined' && typeof performance.mark === 'function') {
+      performance.mark(`cantillate:${name}`);
+    }
+  } catch (e) { /* performance marks are diagnostic only */ }
+}
+
 // User-facing label for a verse. Multi-chapter readings carry per-verse chapter
 // (c) and verse (v) numbers, shown as plain "chapter:verse" so the reference is
 // unambiguous across chapters. Single-chapter readings (no c/v) fall back to the
@@ -724,6 +734,7 @@ function guidedApi() {
     },
     stopAll: () => stopAll(),
     isBusy: () => !!(state.recording || state.playingReal || state._aliyaRunning),
+    micPreparing: () => !!state._micPreparing,
     hasRecording: () => !!verseAudio(state.selectedVerse),
 
     readScale: () => state.readScale,
@@ -1063,6 +1074,10 @@ function setupAuth() {
       renderAuthBox();
       if (guided) guided.accountChanged();
       maybeOfferProfile();
+      // A take can finish while Firebase is still restoring the user. Its
+      // context was retained but not scheduled, so add the resident reading and
+      // release the queue once the merged store is the source of truth.
+      if (state.data && state.slug) maybePushScopes();
     },
   });
 }
@@ -2098,23 +2113,38 @@ async function navigateToScope(scope) {
 // in scores.js) so a learner who has only done pesukim still appears — at a low,
 // improvable score — until they record the continuous chain.
 // ---------------------------------------------------------------------------
-function pasukBest(verseN) {
-  return bestVerseScore(verseN);
+function pasukBest(slug, verseN) {
+  // Keep this exactly aligned with bestVerseScore: leaderboard pasuk rollups
+  // count whole-verse mode scores, not legacy heatmap/word scores.
+  const ms = store.getVerseModeScores(slug, verseN);
+  return Math.max(0, ...VERSE_MODES.map((m) => ms[m.key] || 0));
 }
 
-function computeScopeEntries() {
-  const par = parashahForReading();
-  const parId = scores.parashaIdFor(par, state.slug);
-  const maxV = state.data.verses.length;
+// Context-safe twin of defaultAliyot(). Embedded reading divisions win; older
+// readings without them retain the hardcoded aliyot.js fallback.
+function defaultAliyotForScope(data, slug, cycle, year) {
+  if (!data.aliyot) return aliyotFor(slug, cycle, year);
+  if (cycle !== 'triennial') return data.aliyot.annual || [];
+  const tri = data.aliyot.triennial;
+  return (tri && tri[year]) || data.aliyot.annual || [];
+}
+
+function computeScopeEntries(context = null) {
+  const data = (context && context.data) || state.data;
+  const slug = (context && context.slug) || state.slug;
+  if (!data || !slug) return [];
+  const par = data.parashah || parashahOf(slug);
+  const parId = scores.parashaIdFor(par, slug);
+  const maxV = data.verses.length;
   const entries = [];
 
   // Pasuk: each verse's best whole-verse accuracy (cycle-independent).
   const allBests = [];
   for (let n = 1; n <= maxV; n++) {
-    const sc = pasukBest(n);
+    const sc = pasukBest(slug, n);
     if (sc > 0) {
       allBests.push(sc);
-      entries.push({ type: 'pasuk', refId: scores.pasukIdFor(state.data, n), score: sc, label: `${(state.data.book && state.data.book.en) || ''} ${verseRefLabel(state.data.verses[n - 1], n)}`, runs: store.getVerseRunLog(state.slug, n).map((x) => x.s) });
+      entries.push({ type: 'pasuk', refId: scores.pasukIdFor(data, n), score: sc, label: `${(data.book && data.book.en) || ''} ${verseRefLabel(data.verses[n - 1], n)}`, runs: store.getVerseRunLog(slug, n).map((x) => x.s) });
     }
   }
 
@@ -2127,11 +2157,11 @@ function computeScopeEntries() {
     const scoreUnit = (a, label) => {
       const childBests = [];
       for (let n = a.start; n <= Math.min(a.end, maxV); n++) {
-        const b = pasukBest(n);
+        const b = pasukBest(slug, n);
         if (b > 0) childBests.push(b);
       }
-      const direct = store.getAliyahScore(state.slug, cycle, year, a.n);
-      const solo = store.getAliyahSolo(state.slug, cycle, year, a.n);
+      const direct = store.getAliyahScore(slug, cycle, year, a.n);
+      const solo = store.getAliyahSolo(slug, cycle, year, a.n);
       const sc = scores.deriveScore(direct, childBests);
       if (sc > 0) {
         // `incomplete` = no continuous take yet (score is only the derived floor
@@ -2139,12 +2169,17 @@ function computeScopeEntries() {
         entries.push({
           type: 'aliyah', refId: scores.aliyahIdFor(parId, cycle, year, a.n), score: sc, cycle, label,
           incomplete: direct <= 0, solo: solo > 0,
-          runs: store.getAliyahRunLog(state.slug, cycle, year, a.n).map((x) => x.s),
+          runs: store.getAliyahRunLog(slug, cycle, year, a.n).map((x) => x.s),
         });
       }
     };
-    for (const a of defaultAliyot(cycle, year)) scoreUnit(a, `${chunkTitle(a)} · ${a.ref || ''}`);
-    const maf = maftirForReading(cycle, year);
+    const aliyot = data.aliyot;
+    const list = defaultAliyotForScope(data, slug, cycle, year);
+    for (const a of list) scoreUnit(a, `${chunkTitle(a)} · ${a.ref || ''}`);
+    const maftir = aliyot && aliyot.maftir;
+    const maf = maftir
+      ? (cycle === 'triennial' ? (maftir.triennial && maftir.triennial[year]) || null : maftir.annual || null)
+      : null;
     if (maf) scoreUnit(maf, `Maftir · ${maf.ref || ''}`);
   }
 
@@ -2155,29 +2190,59 @@ function computeScopeEntries() {
     const parScore = scores.deriveScore(0, allBests);
     if (parScore > 0) {
       const coverage = allBests.length / maxV;
-      entries.push({ type: 'parasha', refId: parId, score: parScore, partial: coverage < 0.5, label: (par && (par.en || par.he)) || state.slug });
+      entries.push({ type: 'parasha', refId: parId, score: parScore, partial: coverage < 0.5, label: (par && (par.en || par.he)) || slug });
     }
   }
   return entries;
 }
 
-// Fire-and-forget: recompute and push scope scores if the sync layer supports
-// it and the user is signed in. Guarded so it is a no-op offline or before the
-// per-scope board functions are available.
+// Score completion is latency-sensitive, while leaderboard rollups are not.
+// Coalesce completions and do both the reading-wide and corpus-wide aggregation
+// at idle. The guards intentionally precede ALL aggregation: a signed-out or
+// unconfigured browser must not walk a hundred verses for an unusable upload.
+let _scopePushScheduled = false;
+const _scopePushContexts = new Map();
 function maybePushScopes() {
-  try {
-    if (typeof auth.pushScopeScores !== 'function') return;
-    auth.pushScopeScores(computeScopeEntries());
-  } catch (e) { /* leaderboard push is best-effort */ }
-  // Recompute the corpus-wide aggregates (per-sefer + overall practice counts +
-  // hours) and hand them to the sync layer for the Sefer/Overall boards.
-  try {
-    if (typeof auth.updateSummaryExtras === 'function') {
-      computeCorpusAggregates().then((agg) => {
-        if (agg) auth.updateSummaryExtras(agg.summaryExtras);
-      }).catch(() => {});
+  const canScopes = typeof auth.pushScopeScores === 'function';
+  const canSummary = typeof auth.updateSummaryExtras === 'function';
+  // Configured sessions retain the cheap reading identity even before Firebase
+  // finishes restoring currentUser. No scope/corpus aggregation starts yet.
+  if (!auth.isConfigured() || (!canScopes && !canSummary)) return;
+  if (state.slug && state.data) {
+    _scopePushContexts.set(state.slug, { slug: state.slug, data: state.data });
+  }
+  if (!auth.getUser()) return;
+  if (_scopePushScheduled) return;
+  _scopePushScheduled = true;
+
+  setTimeout(() => whenIdle(async () => {
+    try {
+      // Authentication may have changed while this noncritical work waited.
+      if (!auth.isConfigured() || !auth.getUser()) return;
+      const contexts = Array.from(_scopePushContexts.values());
+      _scopePushContexts.clear();
+      if (canScopes) {
+        for (const context of contexts) {
+          // Await each reading before starting the next: pushScopeScores updates
+          // its improved-score cache after Firestore writes, so overlapping
+          // passes could otherwise race that cache and duplicate/stale writes.
+          try { await auth.pushScopeScores(computeScopeEntries(context)); }
+          catch (e) { /* leaderboard push is best-effort */ }
+        }
+      }
+      if (canSummary) {
+        try {
+          const agg = await computeCorpusAggregates();
+          if (agg && auth.isConfigured() && auth.getUser()) {
+            auth.updateSummaryExtras(agg.summaryExtras);
+          }
+        } catch (e) { /* corpus summary is best-effort */ }
+      }
+    } finally {
+      _scopePushScheduled = false;
+      if (_scopePushContexts.size) maybePushScopes();
     }
-  } catch (e) { /* best-effort */ }
+  }, 2500), 180);
 }
 
 // After a full-verse take, invite a logged-out user to post their score to the
@@ -2518,6 +2583,22 @@ function transportPos() {
 
 function clamp01(x) { return Math.min(1, Math.max(0, Number(x) || 0)); }
 
+// Whether this verse take has crossed t=0. The sticky bit matters after pause or
+// rewind: recStart can be re-anchored, but a take that already began remains a
+// real (scoreable) attempt. A paused pre-roll remains unstarted while held.
+function markTakeStarted(key) {
+  if (state[key]) return true;
+  state[key] = true;
+  markPerformance('take-start');
+  return true;
+}
+
+function verseTakeStarted() {
+  if (state._recHasStarted) return true;
+  if (state._micPreparing || state.paused || !Number.isFinite(state.recStart)) return false;
+  return performance.now() >= state.recStart ? markTakeStarted('_recHasStarted') : false;
+}
+
 function togglePause() {
   if (state.paused) resumeTransport();
   else pauseTransport();
@@ -2526,6 +2607,7 @@ function togglePause() {
 function pauseTransport() {
   if (state.paused || !transportLive()) return;
   state.pausedAt = transportPos();
+  if (state.recording && verseTakeStarted()) state._recHasStarted = true;
   state.paused = true;
   state._pausedSince = performance.now();
   // The synthesized voice guide is scheduled ahead on the audio clock and can't
@@ -2575,6 +2657,7 @@ function seekTo(t01, wordEnd) {
     // recorded past this point before the take continues.
     if (state.view) state.view.rewindUser(pos);
     if (state._diffs) state._diffs.length = 0;
+    if (state._liveDiffs) state._liveDiffs.length = 0;
     const dur = (state.expectedDur || unitDuration()) * 1000;
     if (!state.paused) state.recStart = performance.now() - pos * dur;
   }
@@ -4329,43 +4412,80 @@ function readingDataFiles(slug) {
 }
 
 let _offlineBusy = false;
+const _offlineSizeCache = new Map();
+const _offlineSizePending = new Map();
 
-async function refreshOfflineButton() {
+async function refreshOfflineButton({ estimateSize = false } = {}) {
   const btn = $('btnOffline');
   if (!btn) return;
   if (!offline.offlineSupported()) { btn.hidden = true; return; }
+  let stillCurrent = () => false;
   try {
     const files = readingAudioFiles();
     if (!files.length) { btn.hidden = true; return; } // no recorded chant for this reading
+    const fileKey = files.join('\n');
+    const slug = state.slug;
+    const source = state.audioSource;
+    // Slug alone is insufficient: switching cantor can keep the same reading
+    // while replacing every audio file under an in-flight status/size request.
+    stillCurrent = () => state.slug === slug && state.audioSource === source
+      && readingAudioFiles().join('\n') === fileKey;
     btn.hidden = false;
     if (_offlineBusy) return;
     const st = await offline.readingStatus(files);
-    btn.dataset.slug = state.slug;
+    if (_offlineBusy || !stillCurrent()) return;
+    btn.dataset.slug = slug;
+    btn.dataset.audioSource = source || '';
+    btn.dataset.fileKey = fileKey;
     if (st.complete) {
       btn.textContent = '✓ Offline';
       btn.classList.add('on');
       btn.title = 'This reading is downloaded — its chant plays with no network. Click to remove the download and free space.';
     } else {
-      const est = await offline.estimateReadingSize(files);
-      const size = est.known && est.bytes ? ` (${offline.formatBytes(est.bytes)})` : '';
+      // estimateReadingSize may issue a HEAD for every MP3. Never do that while
+      // loading a reading; only pay for it after hover/focus signals real intent.
+      let est = _offlineSizeCache.get(fileKey) || null;
+      if (estimateSize && !est) {
+        let pending = _offlineSizePending.get(fileKey);
+        if (!pending) {
+          pending = offline.estimateReadingSize(files)
+            .finally(() => _offlineSizePending.delete(fileKey));
+          _offlineSizePending.set(fileKey, pending);
+        }
+        est = await pending;
+        if (_offlineBusy || !stillCurrent()) return;
+        _offlineSizeCache.set(fileKey, est);
+      }
+      if (_offlineBusy || !stillCurrent()) return;
+      const size = est && est.known && est.bytes ? ` (${offline.formatBytes(est.bytes)})` : '';
       btn.textContent = st.cached > 0 ? `⬇ Offline (${st.cached}/${st.total})` : `⬇ Offline${size}`;
       btn.classList.remove('on');
       btn.title = 'Download this reading\u2019s audio so it plays with no network (minimal data after the first download).';
     }
   } catch (e) {
-    btn.hidden = true;
+    // A failed stale request must not hide the button for a newer source, and a
+    // download/removal in progress owns its working-state UI until it finishes.
+    if (!_offlineBusy && stillCurrent()) btn.hidden = true;
   }
 }
 
 function setupOfflineButton() {
   const btn = $('btnOffline');
   if (!btn) return;
+  // Lazy size discovery preserves the estimate without turning reading load
+  // into one metadata request per audio file.
+  btn.addEventListener('pointerenter', () => refreshOfflineButton({ estimateSize: true }), { passive: true });
+  btn.addEventListener('focus', () => refreshOfflineButton({ estimateSize: true }));
   btn.addEventListener('click', async () => {
     if (_offlineBusy) return;
     const files = readingAudioFiles();
     if (!files.length) return;
     const slug = state.slug;
+    const source = state.audioSource;
+    const fileKey = files.join('\n');
     const st = await offline.readingStatus(files);
+    if (_offlineBusy || state.slug !== slug || state.audioSource !== source
+      || readingAudioFiles().join('\n') !== fileKey) return;
     if (st.complete) {
       // Toggle off: remove the download to free space.
       _offlineBusy = true;
@@ -4384,17 +4504,26 @@ function setupOfflineButton() {
     const spec = { audioFiles: files, dataFiles: readingDataFiles(slug) };
     try {
       await offline.downloadReading(spec, (p) => {
-        if (state.slug !== slug) return;
+        if (state.slug !== slug || state.audioSource !== source
+          || readingAudioFiles().join('\n') !== fileKey) return;
         const pct = p.total ? Math.round((p.loaded / p.total) * 100) : 0;
         btn.textContent = `Downloading… ${pct}%`;
       });
-      btn.classList.add('flash');
-      setTimeout(() => btn.classList.remove('flash'), 900);
+      if (state.slug === slug && state.audioSource === source
+        && readingAudioFiles().join('\n') === fileKey) {
+        btn.classList.add('flash');
+        setTimeout(() => btn.classList.remove('flash'), 900);
+      }
     } catch (e) {
-      btn.textContent = '⚠ Retry download';
-      btn.title = 'Download failed (are you offline?). Click to try again.';
+      const sameFiles = state.slug === slug && state.audioSource === source
+        && readingAudioFiles().join('\n') === fileKey;
+      if (sameFiles) {
+        btn.textContent = '⚠ Retry download';
+        btn.title = 'Download failed (are you offline?). Click to try again.';
+      }
       _offlineBusy = false;
       btn.classList.remove('working');
+      if (!sameFiles) refreshOfflineButton();
       return;
     }
     _offlineBusy = false;
@@ -6293,6 +6422,9 @@ function aliyahPhraseMembers(seg, widx) {
 function highlightAliyah(verseN, widx) {
   const box = $('scrollVerses');
   if (!box) return;
+  const key = verseN == null ? '' : `${state.aliyahCue}:${verseN}:${widx}`;
+  if (state._aliyaHighlightKey === key) return;
+  state._aliyaHighlightKey = key;
   box.querySelectorAll('.yad-cur').forEach((e) => e.classList.remove('yad-cur'));
   if (verseN == null) return;
   let members = [widx];
@@ -6315,13 +6447,18 @@ const LIVE_HIT_BAND_GH = 1.5;      // note-hit band (matches scoreNotes' default
 const LIVE_HIT_BAND_MELODY = 0.9;  // contour "perfect" zone (matches DEADZONE)
 function trackLiveWordHit(verseN, widx, inBand) {
   const cur = state._aliyaLiveWord;
-  if (!cur || cur.verseN !== verseN || cur.widx !== widx) {
-    state._aliyaLiveWord = { verseN, widx, inband: 0, total: 0 };
+  const changed = !cur || cur.verseN !== verseN || cur.widx !== widx;
+  if (changed) {
+    state._aliyaLiveWord = { verseN, widx, inband: 0, total: 0, paintedAt: 0 };
   }
   const w = state._aliyaLiveWord;
   w.total++;
   if (inBand) w.inband++;
-  paintWordTint($('scrollVerses'), verseN, widx, w.inband / w.total);
+  const now = performance.now();
+  if (changed || now - w.paintedAt >= 50) {
+    w.paintedAt = now;
+    paintWordTint($('scrollVerses'), verseN, widx, w.inband / w.total);
+  }
 }
 // Single-verse (non-aliyah) twin of trackLiveWordHit: while recording one pasuk,
 // tint the yad-pointed word in the STA"M column (#scrollVerses) live by its
@@ -6332,13 +6469,18 @@ function trackLiveWordHit(verseN, widx, inBand) {
 function trackLiveScrollWordHit(verseN, gi, inBand) {
   if (verseN == null || gi == null || gi < 0) return;
   const cur = state._scrollLiveWord;
-  if (!cur || cur.verseN !== verseN || cur.gi !== gi) {
-    state._scrollLiveWord = { verseN, gi, inband: 0, total: 0 };
+  const changed = !cur || cur.verseN !== verseN || cur.gi !== gi;
+  if (changed) {
+    state._scrollLiveWord = { verseN, gi, inband: 0, total: 0, paintedAt: 0 };
   }
   const w = state._scrollLiveWord;
   w.total++;
   if (inBand) w.inband++;
-  paintWordTint($('scrollVerses'), verseN, gi, w.inband / w.total);
+  const now = performance.now();
+  if (changed || now - w.paintedAt >= 50) {
+    w.paintedAt = now;
+    paintWordTint($('scrollVerses'), verseN, gi, w.inband / w.total);
+  }
 }
 // Score ONE word with the contour (melody) model: restrict the trail and the
 // word's steps to the word's own time window and re-normalize both to [0,1] so
@@ -6368,7 +6510,12 @@ function paintWordTint(box, verseN, widx, frac) {
 }
 
 function stopAliyah() {
+  // This is always cancellation, including while startMic is pending: invalidate
+  // the opener and discard samples without entering finishAliyahRecord/store.batch.
+  state._micStartToken = (state._micStartToken || 0) + 1;
   state._aliyaRunning = null;
+  state._micPreparing = false;
+  state._aliyaHasStarted = false;
   state._aliyaDuet = false;
   state._aliyaSeg = null;
   window.__cantillateBusy = false;
@@ -6436,8 +6583,10 @@ async function recordAliyahRun(tl, opts = {}) {
   window.__cantillateBusy = true; // hold off any service-worker auto-reload
   state._aliyaSamples = [];
   state._aliyaDiffs = [];
+  state._aliyaHasStarted = false;
   state._aliyaWordHits = null; // wipe any prior take's per-word hit tint
   state._aliyaLiveWord = null; // reset the live per-word accuracy accumulator
+  state._aliyaHighlightKey = null;
   clearAliyahWordHits();
   setAliyahButtons(true);
   markAliyahEnds(tl, false);
@@ -6460,19 +6609,29 @@ async function recordAliyahRun(tl, opts = {}) {
   state._aliyaT0 = Infinity;
   state._aliyaDuet = duet;
   state._aliyaPausedAt = 0;
+  const micToken = (state._micStartToken || 0) + 1;
+  state._micStartToken = micToken;
+  state._micPreparing = true;
   resetTransport();
-  $('aliyaResult').innerHTML = duet
+  const activeMessage = duet
     ? '<span class="hint">Duet — sing along with the real chant (use headphones + a wired mic) as you follow the yad.</span>'
     : '<span class="hint">Get ready… begin at the glowing first word and follow the yad.</span>';
+  $('aliyaResult').innerHTML = '<span class="hint">Preparing microphone…</span>';
+  let liveSegIndex = 0;
   await startMic((hz, rms) => {
+    if (state._micStartToken !== micToken) return;
     if (state._aliyaRunning !== 'rec') return;
     if (state.paused) return; // held mid-take: the clock and the samples both stop
     const now = performance.now();
     if (now < state._aliyaT0) return;
+    markTakeStarted('_aliyaHasStarted');
     const tG = aliyahElapsed();
     if (tG >= tl.total) { finishAliyahRecord(tl); return; }
     state._aliyaSamples.push({ tG, hz: hz > 0 ? hz : 0, rms });
-    const seg = tl.segs.find((s) => tG >= s.gStart && tG < s.gEnd);
+    if (liveSegIndex >= tl.segs.length || tG < tl.segs[liveSegIndex].gStart) liveSegIndex = 0;
+    while (liveSegIndex < tl.segs.length && tG >= tl.segs[liveSegIndex].gEnd) liveSegIndex++;
+    const candidate = tl.segs[liveSegIndex];
+    const seg = candidate && tG >= candidate.gStart && tG < candidate.gEnd ? candidate : null;
     if (seg && seg.coach) {
       const t01 = (tG - seg.gStart) / (seg.dur || 1);
       const widx = wordAtTime(seg.coach, t01);
@@ -6496,6 +6655,11 @@ async function recordAliyahRun(tl, opts = {}) {
       highlightAliyah(null);
     }
   }, () => {});
+  if (state._micStartToken !== micToken) return;
+  state._micPreparing = false;
+  syncTransportUI();
+  if (state._aliyaRunning !== 'rec') return;
+  $('aliyaResult').innerHTML = activeMessage;
   const t0 = Math.max(planned, performance.now() + 250);
   state._aliyaT0 = t0;
   state._aliyaSeg = null;
@@ -6529,9 +6693,32 @@ function scheduleAliyahDuet(tl, t0) {
   }
 }
 
-function scoreAliyahVerse(seg, samples) {
+function indexStepsByWord(steps) {
+  const byWord = [];
+  for (const step of steps || []) {
+    if (!byWord[step.w]) byWord[step.w] = [];
+    byWord[step.w].push(step);
+  }
+  return byWord;
+}
+
+// Samples arrive in timeline order. Split them once for the whole run instead
+// of scanning the complete (potentially very long) take for every pasuk.
+function partitionAliyahSamples(segs, samples) {
+  const buckets = segs.map(() => []);
+  let si = 0;
+  for (const sample of samples) {
+    if (!(sample.hz > 0)) continue;
+    if (si >= segs.length || sample.tG < segs[si].gStart) si = 0;
+    while (si < segs.length && sample.tG >= segs[si].gEnd) si++;
+    const seg = segs[si];
+    if (seg && sample.tG >= seg.gStart && sample.tG < seg.gEnd) buckets[si].push(sample);
+  }
+  return buckets;
+}
+
+function scoreAliyahVerse(seg, local) {
   if (!seg.coach || !seg.coach.points.length) return { score: 0, wordHits: [] };
-  const local = samples.filter((s) => s.tG >= seg.gStart && s.tG < seg.gEnd && s.hz > 0);
   if (local.length < 3) return { score: 0, wordHits: [] };
   const tonic = seg.coach.tonicHz || 200;
   const trail = [];
@@ -6553,8 +6740,9 @@ function scoreAliyahVerse(seg, samples) {
   const wordHits = [];
   const ow = seg.coach.overlayWords || [];
   const vsegs = seg.vsegs || [];
+  const wordSteps = indexStepsByWord(seg.coach.steps);
   for (let wi = 0; wi < ow.length; wi++) {
-    const wSteps = seg.coach.steps.filter((st) => st.w === wi);
+    const wSteps = wordSteps[wi] || [];
     if (!wSteps.length) continue;
     const wScore = state.scoreModel === 'gh'
       ? scoreNotes(trail, wSteps).score
@@ -6585,8 +6773,12 @@ function applyAliyahWordHits(perVerse) {
 
 function finishAliyahRecord(tl) {
   if (state._aliyaRunning !== 'rec') return;
+  markTakeStarted('_aliyaHasStarted');
+  markPerformance('take-end');
+  state._micStartToken = (state._micStartToken || 0) + 1;
   const assisted = !!state._aliyaAssisted; // duet take: scaled down + capped (see scores.js)
   state._aliyaRunning = null;
+  state._micPreparing = false;
   state._aliyaEnded = true;
   state._aliyaAssisted = false;
   state._aliyaDuet = false;
@@ -6599,7 +6791,8 @@ function finishAliyahRecord(tl) {
   stopLiveMeter();
   highlightAliyah(null);
   const samples = state._aliyaSamples || [];
-  const perVerse = tl.segs.map((seg) => ({ seg, ...scoreAliyahVerse(seg, samples) }));
+  const sampleBuckets = partitionAliyahSamples(tl.segs, samples);
+  const perVerse = tl.segs.map((seg, i) => ({ seg, ...scoreAliyahVerse(seg, sampleBuckets[i]) }));
   const scored = perVerse.map((x) => x.score).filter((x) => x > 0);
   const raw = scored.length ? Math.round(scored.reduce((a, b) => a + b, 0) / scored.length) : 0;
   // A duet is easier than an unaided read, so it's worth less and capped below
@@ -6608,21 +6801,23 @@ function finishAliyahRecord(tl) {
   const a = state.aliyah;
   const kind = chunkKind(a);
   const surface = chainSurfaceNow();
-  if (kind === 'chain') {
-    // A chain is a practice run between pasuk and aliyah, so it keeps its own
-    // best and stays off the aliyah boards. Filed under the text it was read
-    // from, because the same run off the bare scroll is the harder feat and the
-    // two bests are what the chaining round steps between.
-    store.recordChainScore(state.slug, a.start, a.end, score, surface);
-  } else {
-    store.recordAliyahScore(state.slug, a.cycle, a.year, a.n, score);
-    // Log this continuous take (with the duet flag) for the score-over-runs
-    // colourbar, and separately record a genuine solo chain so the leaderboard can
-    // rank solo takes above duet takes above a derived-from-pesukim floor.
-    store.recordAliyahRunLog(state.slug, a.cycle, a.year, a.n, score, assisted);
-    if (!assisted && raw > 0) store.recordAliyahSolo(state.slug, a.cycle, a.year, a.n, raw);
-  }
-  store.addPracticeSeconds(tl.total || 0);
+  store.batch(() => {
+    if (kind === 'chain') {
+      // A chain is a practice run between pasuk and aliyah, so it keeps its own
+      // best and stays off the aliyah boards. Filed under the text it was read
+      // from, because the same run off the bare scroll is the harder feat and the
+      // two bests are what the chaining round steps between.
+      store.recordChainScore(state.slug, a.start, a.end, score, surface);
+    } else {
+      store.recordAliyahScore(state.slug, a.cycle, a.year, a.n, score);
+      // Log this continuous take (with the duet flag) for the score-over-runs
+      // colourbar, and separately record a genuine solo chain so the leaderboard can
+      // rank solo takes above duet takes above a derived-from-pesukim floor.
+      store.recordAliyahRunLog(state.slug, a.cycle, a.year, a.n, score, assisted);
+      if (!assisted && raw > 0) store.recordAliyahSolo(state.slug, a.cycle, a.year, a.n, raw);
+    }
+    store.addPracticeSeconds(tl.total || 0);
+  });
   markAliyahEnds(tl, true);
   setAliyahButtons(false);
   const msg = score <= 0 ? 'No clear pitch captured — check your mic and follow the yad.'
@@ -6637,11 +6832,18 @@ function finishAliyahRecord(tl) {
     : kind === 'chain' ? 'Chain accuracy' : kind === 'maftir' ? 'Maftir accuracy'
       : kind === 'haftarah' ? 'Haftarah accuracy'
         : kind === 'passage' ? 'Passage accuracy' : 'Aliyah accuracy';
+  const guidedActive = !!guided && guided.isActive();
+  // This single hidden-state update is intentional in guided mode: unlike the
+  // verse pane, leaveGuided does not rebuild an open aliyah practice pane, so
+  // the workshop must inherit the score rather than its stale pre-take prompt.
   $('aliyaResult').innerHTML = `<span class="scorelabel">${scoreLabel}</span> `
     + `<span class="num">${score}</span><span class="ceil"> / 100</span>`
     + `<br><span class="hint">${msg}</span>`;
-  renderAliyot();
-  renderVerses(); // refresh the chain chips / aliyah cards with the new best
+  if (!guidedActive) {
+    markPerformance('score-visible');
+    renderAliyot();
+    renderVerses(); // refresh the chain chips / aliyah cards with the new best
+  }
   if (kind !== 'chain') maybePushScopes();
   // Paint the per-word "notes hit" clue LAST, so no earlier render can wipe it,
   // and remember it so a later pane rebuild (toolbar toggle) can re-apply it.
@@ -6658,6 +6860,8 @@ function finishAliyahRecord(tl) {
     passed: score >= ALIYAH_PASS,
     assisted,
   });
+  if (guidedActive) markPerformance('score-visible');
+  markPerformance('ui-complete');
 }
 
 // What counts as chanting a whole aliyah / chain / haftarah well enough to move
@@ -7897,7 +8101,11 @@ async function startRecording(opts = {}) {
   stopVerseAudio();
   state.playingReal = false;
   state.recording = true;
+  const micToken = (state._micStartToken || 0) + 1;
+  state._micStartToken = micToken;
+  state._micPreparing = true;
   state._singAlong = singAlong;
+  state._recHasStarted = false;
   state._scrollWordHits = null; // wipe the prior take's per-word STA"M tint
   state._scrollLiveWord = null; // reset the live per-word accumulator
   clearScrollWordHits();
@@ -7906,6 +8114,9 @@ async function startRecording(opts = {}) {
   // whole line by the best-fit (median) offset, so singing the right shape in a
   // different key still scores well. Only the relative shape is judged.
   state._diffs = [];
+  state._liveDiffs = [];
+  state._recLiveWord = -2;
+  state._lastLiveScrollAt = 0;
   state.view.clearUser();
   if (state.userSpectro) state.userSpectro.clearPlot();
   startLiveMeter('liveMeter', 'liveMeterFill', 'liveMeterVal');
@@ -7919,9 +8130,10 @@ async function startRecording(opts = {}) {
   $('btnRec').disabled = true;
   $('btnStop').disabled = false;
   syncTransportUI(); // the take is live now: arm the scrub + guided Stop button
-  $('result').innerHTML = singAlong
+  const activeMessage = singAlong
     ? '<span class="hint">Sing along — the voice guide plays (use headphones + a wired mic) as you match its shape.</span>'
     : '<span class="hint">Recording… start on any comfortable pitch; your first note is matched to the coach, so just follow the shape.</span>';
+  $('result').innerHTML = '<span class="hint">Preparing microphone…</span>';
 
   const dur = unitDuration();
   const listen = getListenRate() || 1;
@@ -7947,9 +8159,11 @@ async function startRecording(opts = {}) {
   state.recStart = Infinity;
 
   await startMic((hz, rms, frame) => {
+    if (state._micStartToken !== micToken || !state.recording) return;
     if (state.paused) return; // held mid-take: the clock and the trail both stop
     const now = performance.now();
     if (now < state.recStart) { return; } // lead-in; let playback drive the cue
+    markTakeStarted('_recHasStarted');
     // Sing-along with the recording: t01 comes from the audio clock so a slower
     // listen speed keeps the cue, the karaoke and the take on the same word.
     const audioT = (voiceGuide && isVerseAudioLoaded()) ? verseAudioProgress() : null;
@@ -7957,8 +8171,14 @@ async function startRecording(opts = {}) {
     if (t01 >= 1) { finishRecording(); return; }
     state.view.setPlayhead(t01);
     const liveWi = wordAtTime(state.coach, t01);
-    highlightWord(liveWi);
-    scrollFollow(t01);
+    if (liveWi !== state._recLiveWord) {
+      state._recLiveWord = liveWi;
+      highlightWord(liveWi);
+    }
+    if (!state._lastLiveScrollAt || now - state._lastLiveScrollAt >= 32) {
+      state._lastLiveScrollAt = now;
+      scrollFollow(t01);
+    }
     updateNoteShading(t01); // Note-hit mode: light up each coach bar as it's passed
     // Live spectrogram of the user's voice, aligned in time with the example.
     if (frame && state.userSpectro) {
@@ -7970,7 +8190,9 @@ async function startRecording(opts = {}) {
       const rawT = 12 * Math.log2(hz / state.tonicHz);
       const tgt = state.targetPoints.length ? sampleContour(state.targetPoints, t01) : rawT;
       state._diffs.push(tgt - rawT);
-      const O = median(state._diffs);
+      state._liveDiffs.push(tgt - rawT);
+      if (state._liveDiffs.length > 200) state._liveDiffs.shift();
+      const O = median(state._liveDiffs);
       const aligned = rawT + O;
       const err = aligned - tgt;
       // Colour + magnet the live dot by the SELECTED scoring model's criteria,
@@ -7990,6 +8212,11 @@ async function startRecording(opts = {}) {
       state.view.pushUser(t01, null, rms);
     }
   }, () => {});
+  if (state._micStartToken !== micToken) return;
+  state._micPreparing = false;
+  syncTransportUI();
+  if (!state.recording) return;
+  $('result').innerHTML = activeMessage;
 
   // t=0, now that the mic is genuinely live and the frame loop is already
   // turning: the first frame the window admits lands at the very start of the
@@ -8042,6 +8269,7 @@ async function startRecording(opts = {}) {
 // ready to begin again. Used both by "restart" (re-pressing record) and by the
 // start of a new take.
 function cancelRecording() {
+  state._micStartToken = (state._micStartToken || 0) + 1;
   clearTimeout(state._recTimer);
   clearTimeout(state._guideTimer);
   stopMic();
@@ -8051,8 +8279,14 @@ function cancelRecording() {
   stopGhLiveMeter();
   highlightWord(-1);
   state.recording = false;
+  state._micPreparing = false;
   state._singAlong = false;
   window.__cantillateBusy = false;
+  const rec = $('btnRec'), stop = $('btnStop');
+  if (rec) rec.disabled = false;
+  if (stop) stop.disabled = true;
+  const result = $('result');
+  if (result) result.innerHTML = '<span class="hint">Recording cancelled.</span>';
   resetTransport();
 }
 
@@ -8066,6 +8300,12 @@ function playGuideAudioOnly() {
 
 function stopAll() {
   state._recitationId = (state._recitationId || 0) + 1; // abandon any spliced chain
+  // Guided exit and other shared stop paths do not click #alStop themselves.
+  // Route an aliyah mic opener through the same non-scoring cancellation path.
+  if (state._aliyaRunning) {
+    stopAliyah();
+    setAliyahButtons(false);
+  }
   stopVerseAudio();
   if (state.playingReal) {
     state.playingReal = false;
@@ -8073,7 +8313,12 @@ function stopAll() {
     if (state.view) state.view.setPlayhead(null);
     $('btnStop').disabled = true;
   }
-  if (state.recording) finishRecording();
+  // Before the stream opens there is no take to score. Stop must invalidate the
+  // pending opener and restore controls, not persist a zero/aborted attempt.
+  if (state.recording) {
+    if (!verseTakeStarted()) cancelRecording();
+    else finishRecording();
+  }
   else stopPlayback();
   // Last: the transport buttons key off `recording`/`playingReal`, so clearing
   // them first would leave the pause button armed with nothing to pause.
@@ -8082,8 +8327,14 @@ function stopAll() {
 
 function finishRecording() {
   if (!state.recording) return;
+  // Also protect non-button completion paths (notably the voice-guide safety
+  // timer): an opener whose t=0 never arrived is cancellation, not a zero take.
+  if (!verseTakeStarted()) { cancelRecording(); return; }
+  markPerformance('take-end');
+  state._micStartToken = (state._micStartToken || 0) + 1;
   const assisted = !!state._singAlong; // duet take: scored lower, capped (see scores.js)
   state.recording = false;
+  state._micPreparing = false;
   state._singAlong = false;
   window.__cantillateBusy = false;
   resetTransport();
@@ -8099,6 +8350,7 @@ function finishRecording() {
   $('btnStop').disabled = true;
 
   const level = levelById(state.level);
+  const guidedActive = !!guided && guided.isActive();
   const coach = state.coach;
   const trail = state.view.userTrail;
 
@@ -8118,14 +8370,18 @@ function finishRecording() {
   // downstream number stays consistent and a later solo can always exceed it.
   const grade = (raw) => (assisted ? scores.assistedScore(raw) : Math.round(raw));
 
+  let headline = 0;
+  let th = 0;
+  store.batch(() => {
   const bounds = (coach && coach.wordBounds) || [0];
   const wordScores = [];
   const profileByGi = {}; // this take's per-word scores (good/bad shape)
+  const wordSteps = indexStepsByWord(coach && coach.steps);
   for (let wi = 0; wi < bounds.length; wi++) {
     const t0 = bounds[wi];
     const t1 = wi + 1 < bounds.length ? bounds[wi + 1] : 1.0001;
     const uS = trail.filter((s) => s.t >= t0 && s.t < t1);
-    const wSteps = coach ? coach.steps.filter((s) => s.w === wi) : [];
+    const wSteps = wordSteps[wi] || [];
     const sc = wSteps.length ? grade(scoreSteps(uS, wSteps).active) : 0;
     wordScores.push(sc);
     const gi = state.unitSegs[wi] ? state.unitSegs[wi].index : wi;
@@ -8158,7 +8414,7 @@ function finishRecording() {
   } else {
     rawAcc = 0;
   }
-  const headline = rawAcc;
+  headline = rawAcc;
   let label;
   if (level.unit === 'phrase') {
     store.recordPhraseScore(state.slug, state.selectedVerse, state.unitIndex, headline);
@@ -8192,7 +8448,7 @@ function finishRecording() {
     label = 'Word accuracy';
   }
 
-  const th = effectiveThreshold(level); // eased for the note-hit model (see above)
+  th = effectiveThreshold(level); // eased for the note-hit model (see above)
   const stars = headline >= 95 ? '★★★' : headline >= 85 ? '★★' : headline >= th ? '★' : '';
   const prize = headline >= 95 ? ' ✨ Masterful!' : headline >= 85 ? ' 🎉 Great!' : '';
   let msg = `<span class="scorelabel">${label}</span> `
@@ -8228,7 +8484,9 @@ function finishRecording() {
   if (assisted) {
     msg += `<br><span class="hint">🎧 Assisted take (sang with the guide): scaled to ${Math.round(scores.ASSIST_MULT * 100)}% and capped at ${scores.ASSIST_CAP}. Record solo to break the cap, reach 100, and top the leaderboard.</span>`;
   }
-  $('result').innerHTML = msg;
+  if (!guidedActive) {
+    $('result').innerHTML = msg;
+  }
   // Freeze BOTH live meters at their FINAL scores (not the running estimate) and
   // leave them on screen for reference, so you can compare the two models after
   // the take. The goal markers ("Your best" / record) stay too.
@@ -8239,13 +8497,17 @@ function finishRecording() {
   // Estimate of time spent: count this take's recording window (accurate going
   // forward; historical progress is estimated from attempt counts in the store).
   store.addPracticeSeconds((coach && coach.dur) || state.expectedDur || 0);
-  renderAccuracyPanel();
-  renderVerses();
-  renderAliyot();
-  applyHighlight();
-  renderStageBar();
+  });
+  if (!guidedActive) markPerformance('score-visible');
+  if (!guidedActive) {
+    renderAccuracyPanel();
+    renderVerses();
+    renderAliyot();
+    applyHighlight();
+    renderStageBar();
+  }
   maybePushScopes();
-  if (level.unit === 'line') maybeOfferLeaderboardSubmit(headline);
+  if (!guidedActive && level.unit === 'line') maybeOfferLeaderboardSubmit(headline);
   // Guided mode draws its own verdict from this and decides what comes next.
   if (guided) guided.notifyScore({
     kind: 'verse',
@@ -8259,6 +8521,8 @@ function finishRecording() {
     passed: headline >= th,
     assisted,
   });
+  if (guidedActive) markPerformance('score-visible');
+  markPerformance('ui-complete');
 }
 
 // Greyed page shown when navigating to a stage not yet unlocked for this verse.

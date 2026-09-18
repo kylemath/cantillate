@@ -397,14 +397,18 @@ export function sampleContour(points, t) {
   if (t <= points[0].t) return points[0].p;
   const last = points[points.length - 1];
   if (t >= last.t) return last.p;
-  for (let i = 1; i < points.length; i++) {
-    if (t <= points[i].t) {
-      const a = points[i - 1], b = points[i];
-      const f = (t - a.t) / (b.t - a.t || 1);
-      return a.p + (b.p - a.p) * f;
-    }
+  // Lower bound for the first point at or after t. Starting at 1 preserves the
+  // endpoint handling above and, for duplicate timestamps, selects the same
+  // segment as the former left-to-right scan.
+  let lo = 1, hi = points.length - 1;
+  while (lo < hi) {
+    const mid = (lo + hi) >>> 1;
+    if (t <= points[mid].t) hi = mid;
+    else lo = mid + 1;
   }
-  return last.p;
+  const a = points[lo - 1], b = points[lo];
+  const f = (t - a.t) / (b.t - a.t || 1);
+  return a.p + (b.p - a.p) * f;
 }
 
 // Score how closely the user's trail matches the coach steps (0..100).
@@ -564,11 +568,17 @@ export function scoreNotes(userTrail, steps, opts = {}) {
   // User pitch at time tg: linear interp inside `window`, nearer frame otherwise,
   // null when there's no voiced frame close enough (a gap -> counts as off-note).
   const pitchAt = (tg) => {
-    let before = null, after = null;
-    for (let i = 0; i < voiced.length; i++) {
-      if (voiced[i].t <= tg) before = voiced[i];
-      else { after = voiced[i]; break; }
+    // Upper bound: the old scan chose the LAST frame at or before tg (including
+    // duplicate timestamps) and the first one after it. Binary search keeps
+    // those exact brackets without restarting at frame zero for every sample.
+    let lo = 0, hi = voiced.length;
+    while (lo < hi) {
+      const mid = (lo + hi) >>> 1;
+      if (voiced[mid].t <= tg) lo = mid + 1;
+      else hi = mid;
     }
+    const before = lo > 0 ? voiced[lo - 1] : null;
+    const after = lo < voiced.length ? voiced[lo] : null;
     if (before && after) {
       if (tg - before.t <= window && after.t - tg <= window) {
         const f = (tg - before.t) / (after.t - before.t || 1);

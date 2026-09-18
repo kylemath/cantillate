@@ -664,7 +664,9 @@ function renderBar() {
   const chunky = task.kind === 'chain' || task.kind === 'whole';
   const running = api.isBusy();
   const round = activeRound();
-  if (running) {
+  if (api.micPreparing && api.micPreparing()) {
+    el.bar.innerHTML = `<button class="g-act g-stop" data-click="${chunky ? 'alStop,btnStop' : 'btnStop,alStop'}">Preparing microphone\u2026 \u25a0 Stop</button>`;
+  } else if (running) {
     el.bar.innerHTML = `<button class="g-act g-stop" data-click="${chunky ? 'alStop,btnStop' : 'btnStop,alStop'}">\u25a0 Stop</button>`;
   } else {
     // Listen to what the mission actually asks for. In the early rounds that is
