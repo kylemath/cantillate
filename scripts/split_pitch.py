@@ -29,7 +29,7 @@ ROUND_DP = 4
 # Non-default audio sources write `data/<slug>_<id>_pitch.json`. Shards for
 # those live under data/pitch/<slug>/<id>/ so they match pitchIndexPath() in
 # js/app.js. Slim/raw monoliths keep the suffixed filename.
-KNOWN_SOURCE_IDS = ("teplitz", "teacher", "ptaudioonly")
+KNOWN_SOURCE_IDS = ("teplitz", "teacher", "ptaudioonly", "alevsky")
 
 
 def parse_stem(stem):

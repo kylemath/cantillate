@@ -3,6 +3,14 @@ __pycache__/
 *.pyc
 .DS_Store
 
+# Chabad trainer audio (Chayim B. Alevsky / Michoel Slavin) is copyrighted
+# with no redistribution license. ingest_alevsky.py keeps a local copy for
+# private study; do not commit it.
+audio/alevsky/
+data/local_sources/alevsky/
+data/*_alevsky_*
+data/pitch/*/alevsky/
+
 # Firebase CLI local state (rules/firebase.json ARE committed; this is runtime cruft)
 .firebase/
 firebase-debug.log

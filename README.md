@@ -794,7 +794,22 @@ for where the onsets come from.
 > [Chabad trainer](https://www.chabad.org/library/howto/trainer_cdo/aid/1771208)
 > (readers Chayim B. Alevsky and Michoel Slavin) are **not** bundled: that audio
 > is copyrighted with no redistribution license, so it can only be added as a
-> `local` source once you have written permission.
+> `local` source once you have written permission — or, for **private study on
+> this machine only**, ingested without committing the files.
+>
+> Bereshit is wired for Alevsky. After you have a trainer snapshot at
+> `data/local_sources/alevsky/bereshit.trainer.json` (the live widget's words +
+> cue points + MP3 URLs, one aliya at a time):
+>
+> ```bash
+> .venv/bin/python scripts/ingest_alevsky.py bereshit
+> ```
+>
+> That downloads the seven aliya MP3s into `audio/alevsky/` (gitignored),
+> expands each cue into Masoretic word onsets, extracts pitch, and adds
+> **Voice → Chayim B. Alevsky (Chabad trainer)** next to PocketTorah. Reload the
+> app; the selector appears only when those local files are present. Do not
+> commit or redistribute the audio.
 
 ### A passage taught by your own recording
 
@@ -1040,6 +1055,7 @@ scripts/build_trope_shapes.py regenerate the measured per-accent shapes
 scripts/organize_readings.py  group the Reading menu by sefer, in chumash order
 scripts/serve.py      range-enabled static server (audio seeking)
 scripts/align_recording.py    word onsets for a recording of your own (TTS + DTW)
+scripts/ingest_alevsky.py     local Chabad-trainer voice (Alevsky) for private study
 scripts/label.html            fix those onsets by ear; cut out false starts
 scripts/onsettrack.py         the onset track format, cuts included
 scripts/local_readings.py     passages taught by a recording of one's own

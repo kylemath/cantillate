@@ -791,7 +791,8 @@ function sourceRowHtml() {
     const sel = id === cur ? ' selected' : '';
     return `<option value="${escapeAttr(id)}"${sel}>${escapeHtml(s.label || id)}</option>`;
   }).join('');
-  return `<label class="g-row"><span>Style</span>
+  const kind = (api.sourceSelectorLabel && api.sourceSelectorLabel()) || 'Voice';
+  return `<label class="g-row"><span>${kind}</span>
           <select id="gAudioSource">${opts}</select></label>`;
 }
 

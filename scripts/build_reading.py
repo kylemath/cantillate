@@ -96,6 +96,22 @@ def is_default_source(src):
     return src.get("id", DEFAULT_SOURCE) == DEFAULT_SOURCE
 
 
+def local_source_ready(src):
+    """True when a `local` source has its audio + onset tracks on disk.
+
+    Licensed drop-ins (Chabad trainer, a teacher's recording) are not bundled,
+    so a clone without those files must still build the voices that *are* here.
+    """
+    if src.get("kind") != "local":
+        return True
+    sid = src.get("id", DEFAULT_SOURCE)
+    for i in src.get("pt_files") or []:
+        lbl = os.path.join(LOCAL_LABELS_DIR, sid, pt_name(src, "pt_label", i))
+        if not os.path.exists(lbl) or not os.path.exists(mp3_disk(src, i)):
+            return False
+    return True
+
+
 # Output data-file name for a source. The default source keeps the original
 # unsuffixed names (zero migration); other sources use a `_<id>` suffix. Must
 # stay in sync with srcPath() in js/app.js.
@@ -660,17 +676,22 @@ def main():
     if not sources:
         print("  none: text-only reading; the coach line comes from the measured "
               "trope shapes for its style")
+    built = []
     for src in sources:
+        if src.get("kind") == "local" and not local_source_ready(src):
+            print(f"  -- skip '{src.get('id')}' (local audio/onsets not present) --")
+            continue
         print(f"  -- source '{src.get('id', DEFAULT_SOURCE)}' ({src.get('kind', 'pockettorah')}) --")
         audio_verses = build_audio(cfg, src, verses, bounds)
         extract_pitch(cfg, src, verses, audio_verses)
+        built.append(src)
     print("[3/4] pitch shards")
     import split_pitch
-    for src in sources:
+    for src in built:
         stem = out_name(cfg, src, "pitch.json")[:-len("_pitch.json")]
         split_pitch.process_slug(stem)
     print("[4/4] register")
-    register(cfg, sources)
+    register(cfg, built)
     # The trope drills draw their melody and their spliced recitation from
     # whatever is recorded, so a new reading immediately improves both. Torah and
     # haftarah are kept apart: they are different melodies for the same accents,
@@ -684,7 +705,7 @@ def main():
     # (Skipped for Nevi'im, which has no tikkun column data.)
     import build_tikkun
     build_tikkun.build()
-    print(f"done: {slug} ({len(verses)} verses, {len(sources)} source(s)). "
+    print(f"done: {slug} ({len(verses)} verses, {len(built)} source(s)). "
           f"Reload the app; it's in the Reading menu.")
 
 

@@ -745,6 +745,7 @@ function guidedApi() {
     setTranslit: (on) => { if (on !== state.showTranslit) setTranslit(on); },
     audioSources: () => (state.sources || []).slice(),
     audioSource: () => state.audioSource,
+    sourceSelectorLabel: () => sourceSelectorLabel(state.sources || []),
     setAudioSource: (sid) => switchAudioSource(sid),
     listenRate: () => getListenRateId(),
     listenRates: () => LISTEN_RATES.slice(),
@@ -3366,6 +3367,29 @@ function readingSources(meta) {
   return [{ id: DEFAULT_SOURCE, label: 'PocketTorah (Neiss & Schwartz)', default: true }];
 }
 
+// Local drop-in voices (Alevsky, a teacher's recording) are gitignored, so a
+// clone can list them in the manifest without shipping the files. Drop any
+// extra source whose audio.json is not actually here, so the selector never
+// offers a voice that cannot play.
+async function filterAvailableSources(slug, sources) {
+  if (!sources || sources.length < 2) return sources || [];
+  const flags = await Promise.all(sources.map(async (s) => {
+    if (isDefaultSource(s.id)) return true;
+    const url = srcPath(slug, s.id, 'audio.json');
+    try {
+      const head = await fetch(url, { method: 'HEAD' });
+      if (head.ok) return true;
+      if (head.status === 404) return false;
+      const get = await fetch(url);
+      return get.ok;
+    } catch (e) {
+      return false;
+    }
+  }));
+  const kept = sources.filter((_, i) => flags[i]);
+  return kept.length ? kept : sources.slice(0, 1);
+}
+
 function loadSourcePref() {
   try { return localStorage.getItem(SOURCE_PREF_KEY) || null; } catch (e) { return null; }
 }
@@ -3457,21 +3481,27 @@ async function loadCorpusShapes() {
 }
 
 // Populate + show/hide the topbar source selector for the current reading.
-// Relabeled Style when a reading offers more than one recorded source (weekly vs
-// High Holiday cantillation, or Eikev's demo second voice). Same #audioSource
-// control — no second dropdown.
+// "Style" when the extra source is a different cantillation (High Holiday
+// Teplitz vs weekly PocketTorah); "Voice" when it is another reader of the
+// same melody (Alevsky, Eikev's demo). Same #audioSource control.
+function sourceSelectorLabel(sources) {
+  const ids = (sources || []).map((s) => s && s.id);
+  return ids.includes('teplitz') ? 'Style' : 'Voice';
+}
+
 function renderSourceSelector() {
   const sel = $('audioSource');
   const label = $('audioSourceLabel');
   if (!sel) return;
   const sources = state.sources || [];
   const multi = sources.length > 1;
+  const kind = sourceSelectorLabel(sources);
   sel.hidden = !multi;
   if (label) {
     label.hidden = !multi;
-    label.textContent = multi ? 'Style' : 'Voice';
+    label.textContent = kind;
   }
-  sel.title = multi
+  sel.title = kind === 'Style'
     ? 'Choose which recorded style to hear for the example and duet practice'
     : 'Choose which recorded voice to hear for the example and duet practice';
   sel.innerHTML = '';
@@ -3667,7 +3697,7 @@ async function loadData(readingId) {
   // Resolve which recorded voice (audio source) to load for this reading, then
   // fetch its recorded-chant / pitch / shapes data. Honours the user's saved
   // voice preference when this reading offers it, else the reading's default.
-  state.sources = readingSources(meta);
+  state.sources = await filterAvailableSources(dataSlug, readingSources(meta));
   const effectiveSource = resolveAudioSource(state.sources);
   await loadAudioSource(dataSlug, effectiveSource);
   renderSourceSelector();
