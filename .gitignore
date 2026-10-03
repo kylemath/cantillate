@@ -6,3 +6,6 @@ __pycache__/
 # Firebase CLI local state (rules/firebase.json ARE committed; this is runtime cruft)
 .firebase/
 firebase-debug.log
+
+backgroundMaterial/
+data/local_sources/teplitz/
