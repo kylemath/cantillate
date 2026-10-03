@@ -42,7 +42,7 @@ export function setListenRateId(id) {
 }
 
 // Wall-clock seconds for `sec` of audio (or synth) at the current listen speed.
-function listenWall(sec) {
+export function listenWall(sec) {
   return sec / (listenRate || 1);
 }
 

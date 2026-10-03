@@ -35,7 +35,15 @@ function migrate(d) {
 let cached = null;
 let cachedRaw = null;
 
+// A batch keeps one live progress object in memory while existing record*/set*
+// helpers make their usual mutations. Their save() calls only mark the batch
+// dirty; the outermost batch performs the stringify/write/notification once.
+let batchDepth = 0;
+let batchData = null;
+let batchSaveRequested = false;
+
 function load() {
+  if (batchDepth > 0 && batchData !== null) return batchData;
   let raw;
   try { raw = localStorage.getItem(KEY); }
   catch (e) { return cached || (cached = {}); }
@@ -55,6 +63,11 @@ const saveListeners = [];
 export function onSave(cb) { if (typeof cb === 'function') saveListeners.push(cb); }
 
 function save(d) {
+  if (batchDepth > 0) {
+    batchData = d;
+    batchSaveRequested = true;
+    return;
+  }
   // Re-parse after stringify so the in-memory cache matches localStorage:
   // JSON drops keys whose value is `undefined`, but assigning `cached = d`
   // would keep those keys around — and a later cloud push of getAll() would
@@ -63,6 +76,44 @@ function save(d) {
   cached = JSON.parse(cachedRaw);
   localStorage.setItem(KEY, cachedRaw);
   for (const cb of saveListeners) { try { cb(cached); } catch (e) { /* ignore listener errors */ } }
+}
+
+// Run synchronous progress mutations as one persistence transaction. Nested
+// batches share the outer batch's live object. If the callback throws, already
+// applied mutations are still flushed before the original error is rethrown.
+export function batch(fn) {
+  const outermost = batchDepth === 0;
+  if (outermost) {
+    batchData = load();
+    batchSaveRequested = false;
+  }
+
+  batchDepth += 1;
+  let result;
+  let callbackThrew = false;
+  let callbackError;
+  try {
+    result = fn();
+  } catch (e) {
+    callbackThrew = true;
+    callbackError = e;
+  }
+  batchDepth -= 1;
+
+  let flushError;
+  if (outermost) {
+    const data = batchData;
+    const shouldSave = batchSaveRequested;
+    batchData = null;
+    batchSaveRequested = false;
+    if (shouldSave) {
+      try { save(data); } catch (e) { flushError = e; }
+    }
+  }
+
+  if (callbackThrew) throw callbackError;
+  if (flushError) throw flushError;
+  return result;
 }
 
 // The entire progress object (verses/words/phrases/modes/profiles/aliyot/levels).

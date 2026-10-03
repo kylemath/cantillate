@@ -352,10 +352,35 @@ REGISTRY = {
         "heRef": "\u05d1\u05e8\u05d0\u05e9\u05d9\u05ea \u05d0\u05f3:\u05d0-\u05d5\u05f3:\u05d7",
         "range": [(1, 1, None), (2, 1, None), (3, 1, None),
                   (4, 1, None), (5, 1, None), (6, 1, 8)],
-        "pt_files": [1, 2, 3, 4, 5, 6, 7],
-        "pt_label": "Bereshit-{i}.txt",
-        "pt_audio": "Bereshit-{i}.mp3",
-        "audio_slug": "bereshit",
+        # PocketTorah remains the default/unsuffixed source. Alevsky is a local
+        # drop-in (Chabad trainer, copyrighted — see ingest_alevsky.py). Missing
+        # local files are skipped at build time so a clone without them still
+        # ships PocketTorah only.
+        "sources": [{
+            "id": "pockettorah",
+            "label": "PocketTorah (Neiss & Schwartz)",
+            "default": True,
+            "kind": "pockettorah",
+            "pt_files": [1, 2, 3, 4, 5, 6, 7],
+            "pt_label": "Bereshit-{i}.txt",
+            "pt_audio": "Bereshit-{i}.mp3",
+            "audio_slug": "bereshit",
+            "source_url": "https://pockettorah.com",
+            "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC.",
+            "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
+        }, {
+            "id": "alevsky",
+            "label": "Chayim B. Alevsky (Chabad trainer)",
+            "kind": "local",
+            "pt_files": [1, 2, 3, 4, 5, 6, 7],
+            "pt_label": "bereshit-{i}.txt",
+            "audio_slug": "bereshit",
+            "source_url": "https://www.chabad.org/library/howto/trainer_cdo/aid/1771208",
+            "license": "Chabad.org trainer audio (Chayim B. Alevsky). Copyrighted; "
+                       "no redistribution license. Local study only — not bundled.",
+            "attribution": "Recorded chanting by Chayim B. Alevsky, from the Chabad.org "
+                           "Torah/Haftarah trop trainer. Used locally; not redistributed.",
+        }],
         "annual": [((1, 1), (2, 3)), ((2, 4), (2, 19)), ((2, 20), (3, 21)),
                    ((3, 22), (4, 18)), ((4, 19), (4, 22)), ((4, 23), (5, 24)),
                    ((5, 25), (6, 8))],

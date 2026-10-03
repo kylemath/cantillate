@@ -10,11 +10,17 @@ import { getObjectUrl } from './offline.js';
 
 let ctx = null;
 const cache = new Map(); // url -> { el, source, analyser }
+// Media elements can retain sizable network/decoder buffers. Six files keeps
+// the current reading and several recent files warm without allowing a long
+// browsing session to grow the cache without bound.
+const MEDIA_CACHE_LIMIT = 6;
 // The one segment currently loaded in the transport. It survives a pause (so the
 // window can be resumed or scrubbed word-by-word) and is only torn down by
 // stopVerseAudio or by reaching the end of the segment.
 let active = null;       // { el, raf, start, end, total, cb, paused, previewFrom, previewUntil }
 let playGen = 0;         // bumped to cancel a playSegment still waiting on seek
+let pendingSeekCancel = null;
+let pendingPlay = null;
 
 // The page's single AudioContext (see getCtx in audio.js). It matters here twice
 // over: a MediaElementSource is welded to the context that made it and the cache
@@ -70,9 +76,40 @@ export function syncListenRate() {
   for (const e of cache.values()) applyListenRate(e.el);
 }
 
+function disposeEntry(e) {
+  try { e.el.pause(); } catch (err) { /* noop */ }
+  e.el.onended = null;
+  try { e.source.disconnect(); } catch (err) { /* already disconnected */ }
+  try { e.analyser.disconnect(); } catch (err) { /* already disconnected */ }
+  try {
+    e.el.removeAttribute('src');
+    e.el.load();
+  } catch (err) { /* best effort release on older WebKit */ }
+}
+
+function trimCache(protectedEntry) {
+  while (cache.size > MEDIA_CACHE_LIMIT) {
+    let victim = null;
+    for (const [url, e] of cache) {
+      if (e === protectedEntry) continue;
+      if (active && active.el === e.el) continue;
+      if (pendingPlay && pendingPlay.entry === e) continue;
+      victim = [url, e];
+      break;
+    }
+    if (!victim) return;
+    cache.delete(victim[0]);
+    disposeEntry(victim[1]);
+  }
+}
+
 function getEntry(url) {
   let e = cache.get(url);
-  if (!e) {
+  if (e) {
+    // Map insertion order doubles as LRU order.
+    cache.delete(url);
+    cache.set(url, e);
+  } else {
     const el = new Audio();
     el.preload = 'auto';
     // Prefer a locally-stored blob (downloaded for offline) so playback uses no
@@ -88,12 +125,20 @@ function getEntry(url) {
     analyser.connect(c.destination);
     e = { el, source, analyser };
     cache.set(url, e);
+    trimCache(e);
   }
   return e;
 }
 
 export function stopVerseAudio() {
   playGen += 1;
+  if (pendingSeekCancel) pendingSeekCancel();
+  if (pendingPlay) {
+    const attempt = pendingPlay;
+    pendingPlay = null;
+    attempt.cancelled = true;
+    try { attempt.entry.el.pause(); } catch (e) { /* noop */ }
+  }
   if (active) {
     try { active.el.pause(); } catch (e) { /* noop */ }
     cancelAnimationFrame(active.raf);
@@ -119,8 +164,9 @@ export function playSegment(url, start, end, cb = {}) {
     const total = (end != null ? end : e.el.duration) - start;
 
     const finish = () => {
+      if (!active || active.gen !== my || active.el !== e.el) return;
       e.el.pause();
-      if (active) cancelAnimationFrame(active.raf);
+      cancelAnimationFrame(active.raf);
       e.el.onended = null;
       const done = cb.onEnd;
       active = null;
@@ -128,7 +174,7 @@ export function playSegment(url, start, end, cb = {}) {
     };
 
     const tick = () => {
-      if (!active || active.paused) return;
+      if (!active || active.gen !== my || active.el !== e.el || active.paused) return;
       const t = e.el.currentTime;
       // Jump anything cut out of the reading. The playhead is read back from the
       // element rather than from elapsed time, so everything on screen follows
@@ -147,7 +193,9 @@ export function playSegment(url, start, end, cb = {}) {
       if (cb.onAnalysis) {
         cb.onAnalysis({ t01, hz, freq: freqBuf, sampleRate: ctx.sampleRate, fftSize: analyser.fftSize });
       }
+      if (!active || active.gen !== my || active.el !== e.el) return;
       if (cb.onProgress) cb.onProgress(t01);
+      if (!active || active.gen !== my || active.el !== e.el) return;
       // A word preview plays one word and parks the transport back at its start,
       // so scrubbing while paused stays paused.
       if (active.previewUntil != null && t >= active.previewUntil) {
@@ -160,7 +208,7 @@ export function playSegment(url, start, end, cb = {}) {
 
     // Freeze the transport at an absolute track time without tearing it down.
     const holdAt = (time) => {
-      if (!active) return;
+      if (!active || active.gen !== my || active.el !== e.el) return;
       cancelAnimationFrame(active.raf);
       active.paused = true;
       active.previewUntil = null;
@@ -172,19 +220,63 @@ export function playSegment(url, start, end, cb = {}) {
     e.el.onended = () => { if (active && active.el === e.el) finish(); };
     const go = () => {
       if (my !== playGen) return;
+      const attempt = { entry: e, gen: my, cancelled: false };
+      e.playAttempt = attempt;
+      pendingPlay = attempt;
       e.el.play().then(() => {
-        active = { el: e.el, raf: 0, start, end, total, cb, paused: false, tick, holdAt };
+        const ownsAttempt = e.playAttempt === attempt;
+        const isCurrent = ownsAttempt && pendingPlay === attempt &&
+          !attempt.cancelled && my === playGen;
+        if (!isCurrent) {
+          // A newer attempt on this same element owns playback now; never pause
+          // it from an older promise. If nobody superseded us, stop the late play.
+          if (ownsAttempt) {
+            e.playAttempt = null;
+            if (!active || active.el !== e.el) {
+              try { e.el.pause(); } catch (err) { /* noop */ }
+            }
+          }
+          return;
+        }
+        pendingPlay = null;
+        e.playAttempt = null;
+        active = { el: e.el, raf: 0, start, end, total, cb, paused: false, tick, holdAt, gen: my };
         active.raf = requestAnimationFrame(tick);
-      }).catch((err) => { if (cb.onError) cb.onError(err); });
+      }).catch((err) => {
+        const isCurrent = e.playAttempt === attempt && pendingPlay === attempt &&
+          !attempt.cancelled && my === playGen;
+        if (pendingPlay === attempt) pendingPlay = null;
+        if (e.playAttempt === attempt) e.playAttempt = null;
+        if (isCurrent && cb.onError) cb.onError(err);
+      });
     };
     // Wait for the seek to land. PocketTorah's faster (Bereshit) files are raw
     // CBR MP3s with no Xing seek index; starting play() before seeked is how
     // a word clip picks up the previous word's tail.
     const seekWait = () => {
       if (Math.abs(e.el.currentTime - start) < 0.04) { go(); return; }
-      const onSeeked = () => { e.el.removeEventListener('seeked', onSeeked); go(); };
-      e.el.addEventListener('seeked', onSeeked);
-      setTimeout(() => { e.el.removeEventListener('seeked', onSeeked); go(); }, 400);
+      let settled = false;
+      let timer = null;
+      const cleanup = () => {
+        e.el.removeEventListener('seeked', settle);
+        if (timer != null) clearTimeout(timer);
+      };
+      const cancel = () => {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        if (pendingSeekCancel === cancel) pendingSeekCancel = null;
+      };
+      const settle = () => {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        if (pendingSeekCancel === cancel) pendingSeekCancel = null;
+        if (my === playGen) go();
+      };
+      pendingSeekCancel = cancel;
+      timer = setTimeout(settle, 400);
+      e.el.addEventListener('seeked', settle);
     };
     seekWait();
   };
@@ -217,6 +309,8 @@ export function pauseVerseAudio() {
 
 export function resumeVerseAudio() {
   if (!active) return false;
+  const transport = active;
+  const my = playGen;
   // Cancel any word preview first: left armed, it would park the transport again
   // a moment after we resumed, and playback would silently stop.
   active.previewUntil = null;
@@ -224,8 +318,12 @@ export function resumeVerseAudio() {
   active.paused = false;
   applyListenRate(active.el);
   active.el.play().then(() => {
-    if (active) active.raf = requestAnimationFrame(active.tick);
-  }).catch(() => { if (active) active.paused = true; });
+    if (active === transport && playGen === my && !transport.paused) {
+      transport.raf = requestAnimationFrame(transport.tick);
+    }
+  }).catch(() => {
+    if (active === transport && playGen === my) transport.paused = true;
+  });
   return true;
 }
 
@@ -243,6 +341,8 @@ export function seekVerseAudio(t01) {
 // stepping between words while paused lets you hear the word you land on.
 export function previewVerseAudio(fromT01, toT01) {
   if (!active) return false;
+  const transport = active;
+  const my = playGen;
   const dur = active.total || 1;
   const from = active.start + clamp01(fromT01) * dur;
   try { active.el.currentTime = from; } catch (e) { return false; }
@@ -251,8 +351,12 @@ export function previewVerseAudio(fromT01, toT01) {
   if (active.paused) {
     active.paused = false;
     active.el.play().then(() => {
-      if (active) active.raf = requestAnimationFrame(active.tick);
-    }).catch(() => { if (active) active.paused = true; });
+      if (active === transport && playGen === my && !transport.paused) {
+        transport.raf = requestAnimationFrame(transport.tick);
+      }
+    }).catch(() => {
+      if (active === transport && playGen === my) transport.paused = true;
+    });
   }
   return true;
 }

@@ -10,6 +10,12 @@
         "default": true,
         "attribution": "Recorded chanting courtesy of PocketTorah (Neiss & Schwartz), CC-BY-SA.",
         "license": "PocketTorah audio & timing metadata, CC-BY-SA. Alignment via WLC."
+      },
+      {
+        "id": "alevsky",
+        "label": "Chayim B. Alevsky (Chabad trainer)",
+        "attribution": "Recorded chanting by Chayim B. Alevsky, from the Chabad.org Torah/Haftarah trop trainer. Used locally; not redistributed.",
+        "license": "Chabad.org trainer audio (Chayim B. Alevsky). Copyrighted; no redistribution license. Local study only — not bundled."
       }
     ],
     "covers": {
